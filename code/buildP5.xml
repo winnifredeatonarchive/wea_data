@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="buildP5" >
+<project basedir="." name="buildP5" default="all">
     
     <!--This build, which should only be run once, takes all the existing P4 TEI files and modifes them
         into P5; it then validates against the P5 schema.-->

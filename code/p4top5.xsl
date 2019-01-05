@@ -10,6 +10,8 @@
         them up and make the encoding a bit more sensible-->
     
     <xsl:variable name="uri" select="document-uri(.)"/>
+    <xsl:variable name="oldId" select="//TEI.2/@id"/>
+    
     <xsl:variable name="id" select="replace(substring-before(tokenize($uri,'/')[last()],'.xml'),'(\s|%20)+','_')"/>
     
     
@@ -63,6 +65,7 @@
     <xsl:template match="revisionDesc[change[respStmt]]">
         <revisionDesc>
             <xsl:apply-templates select="@*"/>
+            <change when="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}">Joey Takeda: Converted document from P4 (old <att>xml:id</att>=<xsl:value-of select="$oldId"/>; old filename=<xsl:value-of select="tokenize($uri,'/')[last()]"/>.</change>
             <xsl:for-each select="change">
                 <xsl:sort select="date/@value/." order="descending"/>
                 <xsl:apply-templates select="."/>
