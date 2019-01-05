@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="buildP5" default="all">
+<project basedir="." name="buildP5" >
     
     <!--This build, which should only be run once, takes all the existing P4 TEI files and modifes them
         into P5; it then validates against the P5 schema.-->
     
+    <!--JT ran on January 4th, 2018 and commited files to Github. Commit #-->
+    
     
     <!--First step, copy over into the Github repo-->
     
-    <dirname property="driveDir" file="../../../Drive/WEaton Anew/WEA.xpr"/>
+    <property name="driveDir" value="../../../../Drive/WEaton Anew/"/>
     
-    <property name="gitDir" value="../git/wea"/>
+    <property name="gitDir" value="../"/>
     
     <property name="textsDir" value="${gitDir}/texts/"/>
     <property name="p4Temp" value="${gitDir}/p4Temp/"/>
@@ -137,6 +139,15 @@
         </apply>
         <!--Do Jing and schematron validation here: reminder to download Jing (but perhaps only temporarily)-->
     </target>
+    
+    <target name="move">
+        <mkdir dir="${textsDir}"/>
+        <copy todir="${textsDir}">
+            <fileset dir="${p5Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </copy>
+    </target>
   
-  <target name="all" depends="init, copy, convert, validate"/>
+  <target name="all" depends="init, copy, convert, validate, move"/>
 </project>

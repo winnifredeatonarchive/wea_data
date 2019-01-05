@@ -69,6 +69,7 @@
             </xsl:for-each>
         </revisionDesc>
     </xsl:template>
+    
     <xsl:template match="change[respStmt]">
         <change>
             <xsl:attribute name="when" select="date/@value"/>
