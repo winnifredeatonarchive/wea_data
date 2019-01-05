@@ -93,7 +93,7 @@
         <revisionDesc>
             <xsl:apply-templates select="@*"/>
             <!--Add myself and add some extra info for backwards compatibility-->
-            <change when="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}">Joey Takeda: Converted document from P4 (old <att>xml:id</att>=<xsl:value-of select="$oldId"/>; old filename=<xsl:value-of select="tokenize($uri,'/')[last()]"/>.</change>
+            <change when="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: <xsl:value-of select="$oldId"/>. Old filename: <xsl:value-of select="tokenize($uri,'/')[last()]"/>.)</change>
             <!--Now apply templates to change and order them-->
             <xsl:for-each select="change">
                 <xsl:sort select="date/@value/." order="descending"/>
