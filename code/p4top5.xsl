@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
     xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:wea="https://github.com/wearchive/wea_data/ns/1.0"
     version="3.0">
     
     <!--This stylesheet takes the P4 files for the WEA project
@@ -13,16 +14,16 @@
     <xsl:variable name="oldId" select="//TEI.2/@id"/>
     
     <xsl:variable name="id" select="replace(substring-before(tokenize($uri,'/')[last()],'.xml'),'(\s|%20)+','_')"/>
-    
+    <xsl:output method="xml" indent="yes"/>
     
     <!--Root template-->
     <xsl:template match="TEI.2">
-        <xsl:message>Converting <xsl:value-of select="@id"/> to <xsl:value-of select="$id"/></xsl:message>
-        <xsl:result-document href="{$id}.xml" method="xml" indent="yes">
+        <xsl:message>Converting <xsl:value-of select="$uri"/> to <xsl:value-of select="$id"/></xsl:message>
+    <!--    <xsl:result-document href="{$id}.xml" method="xml" indent="yes">-->
             <TEI>
                 <xsl:apply-templates select="@*|node()"/>
             </TEI>
-        </xsl:result-document>
+        <!--</xsl:result-document>-->
        
     </xsl:template>
     
@@ -52,6 +53,19 @@
            <name>Joey Takeda</name>
        </respStmt>
    </xsl:template>
+    
+    <!--To retain the structural information from the Google Drive folders, we add a quick text class-->
+    <xsl:template match="textClass">
+        <textClass>
+            <xsl:apply-templates select="@*"/>
+            <keywords n="Location">
+                <!--Add the location name-->
+                <xsl:variable name="location" select="tokenize(substring-after($uri,'p4Temp/'),'/')[1]"/>
+                <term><xsl:value-of select="wea:cleanLoc($location)"/></term>
+            </keywords>
+            <xsl:apply-templates select="node()"/>
+        </textClass>
+    </xsl:template>
    
    <!--Switch @value to @when-->
     <xsl:template match="date/@value">
@@ -147,6 +161,12 @@
         </choice>
     </xsl:template>
     
+    <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
+<!--    
+    <xsl:template match="p[matches(text()[1],'^\s+')]/text()[1]">
+        <xsl:value-of select="replace(.,'^\s+','')"/>
+    </xsl:template>
+    -->
     <!--This is the easiest way to deal with namespaces-->
     <xsl:template match="*" priority="-1">
         <xsl:element name="{local-name()}">
@@ -169,7 +189,16 @@
     <!--Get rid of these-->
     <xsl:template match="teiHeader/@type | teiHeader/@creator"/>
         
+    <!--FUNCTIONS-->
     
+    <!--A small utility fn to clean up the "location"
+        identifier found within the directory name of the Google Drive-->
+    <xsl:function name="wea:cleanLoc">
+        <xsl:param name="in"/>
+        <xsl:variable name="tokens" select="tokenize($in,'\s+')"/>
+        <xsl:variable name="cleaned" select="for $n in $tokens return concat(upper-case(substring($n,1,1)),lower-case(substring($n,2,string-length($n))))"/>
+        <xsl:value-of select="string-join($cleaned,' ')"/>
+    </xsl:function>
 
     
 </xsl:stylesheet>

@@ -31,97 +31,43 @@
             <fileset dir="${driveDir}/UPDATED Texts by OW">
                 <include name="**/**.xml"/>
             </fileset>
-            <flattenmapper/>
+            <!--Use a filterchain here to normalize of all sorts of weirdness-->
+            <filterchain>
+                <replaceregex byline="true" pattern="^(&lt;!.+|\]&gt;)" replace=""/>
+                <!--And now replace all of the entities-->
+                <replaceregex  pattern="&amp;copy;" replace="©"/>
+                <!--Double quotes-->
+                <replaceregex flags="g" pattern="&amp;ldquo;" replace="“"/>
+                <replaceregex flags="g" pattern="&amp;rdquo;" replace="”"/>
+                <!--Single quotes-->
+                <replaceregex flags="g" pattern="&amp;lsquo;" replace="‘"/>
+                <replaceregex flags="g" pattern="&amp;rsquo;" replace="’"/>
+                <replaceregex flags="g" pattern="&amp;mdash;" replace="—"/>
+                <replaceregex flags="g" pattern="&amp;eacute;" replace="é"/>
+                <replaceregex flags="g" pattern="&amp;ecirc;" replace="ê"/>
+                <replaceregex flags="g" pattern="&amp;agrave;" replace="à"/>
+                <replaceregex flags="g" pattern="&amp;nbsp;" replace=" "/>
+                <replaceregex flags="g" pattern="&amp;iuml;" replace="ï"/>
+                <replaceregex flags="g" pattern="&amp;ndash;" replace="–"/>
+            </filterchain>
         </copy>
     </target>
     
     <target name="convert">
-        <!--Now convert-->
-        
-        <!--First thing we have to do is get rid of the damn DTD-->
-        <replaceregexp byline="true" match="^(&lt;!.+|\]&gt;)" replace="">
+        <xslt force="yes" style="p4top5.xsl" destdir="${p5Temp}" useimplicitfileset="false">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="../lib/saxon9he.jar"/>
             <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
+                <include name="**/**.xml"/>
             </fileset>
-        </replaceregexp>
-        
-        <!--And now replace all of the entities-->
-        <replaceregexp  match="&amp;copy;" replace="©">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <!--Double quotes-->
-        <replaceregexp flags="g" match="&amp;ldquo;" replace="“">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;rdquo;" replace="”">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        
-        <!--Single quotes-->
-        <replaceregexp flags="g" match="&amp;lsquo;" replace="‘">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;rsquo;" replace="’">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;mdash;" replace="—">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;eacute;" replace="é">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;ecirc;" replace="ê">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;agrave;" replace="à">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;nbsp;" replace=" ">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;iuml;" replace="ï">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-        <replaceregexp flags="g" match="&amp;ndash;" replace="–">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </replaceregexp>
-
-        
-
-        <java jar="../lib/saxon9he.jar" fork="true">
-            <arg value="-xsl:p4top5.xsl"/>
-            <arg value="-s:${p4Temp}"/>
-            <arg value="-o:${p5Temp}"/>
-        </java>
-       <!-- <xslt style="p4top5.xsl" destdir="${p5Temp}">
-            <fileset dir="${p4Temp}">
-                <include name="**.xml"/>
-            </fileset>
-        </xslt>-->
+            <chainedmapper>
+                <flattenmapper/>
+                <filtermapper>
+                    <replacestring from=" " to="_"/>
+                    <replaceregex pattern="(\s|%20)+" replace="_"/>
+                </filtermapper>
+            </chainedmapper>
+        </xslt>
     </target>
     
     <target name="validate">
