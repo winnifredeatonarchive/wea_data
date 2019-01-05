@@ -1,0 +1,37 @@
+## Conversion from P4 --> P5
+
+* Is there old documentation (other than the DTD) for these documents re: encoding standards/practice?
+
+* Do we want to retain the numbered <div> system (<div1>, <div2>)? (I think not; they can be infered via the hierarchy)
+
+* Are the footnotes in the document transcriptions or editorial? (I think they are editorial—glosses, definitions, translations, corrections—but I haven't looked through them all.) 
+** If editorial, did we want to embed them at their spot of attachment? (i.e. "Here is my phrase<note>Here is where my footnote goes</note>"); this helps with ensuring that note numbers don't get out of sync.
+** If from the transcriptions, then should we perhaps differentiate these with types? (i.e. <note type="editorial"> vs <note>?). We could also add a @resp attribute to it, but that might not be helpful.
+
+* There are some instances (see Bride_Of_Yonejiro) where the <orig> element is used to denote soft end of line punctation. I don't think using <orig> is the right approach; we could use <pc force="weak">, which denotes that the "the punctuation mark is not a word separator." We could also just ignore them (and note that in the header).
+
+* What are our @xml:id and filename conventions? In my experience, life is a lot easier when file names match the root @xml:id of the document, but I can be persuaded otherwise. I'm not sure if Omeka lets one choose the result URL for each document, but if it does, then I think it ought to be the same as the filename itself (which, I argue, should be the same as the root @xml:id).
+
+* I would also suggest encoding the locations (i.e. Japan, Alberta, et cetera) that are used in the folder structure in the documents; that way, we can detect programatically if the document is in the wrong folder. Plus, this also ensures that these categorical distinctions are encoded with the documents themselves.
+
+* How to encode title, attribution, et cetera? We can, of course, just encode that in the metadata in the header and display it in some way, but we might decide that we want to explicitly have it as part of the body of the text. This is easiest if the text itself would never have front matter explicitly, since we can then add editorial content (The title of the text, the source information, byline information, explanatory/prefatory notes [if nec.]) right into the <front> element. However, if the texts do have front matter that we will want to capture in the <front> element, then it becomes a bit trickier.
+
+* I think the leading and trailing spaces of each <p> element should be trimmed. 
+
+* I've never understood the necessity for the <extent> element; do we still need it? (We can retain it, but it will likely be wrong, since the file size will likely change)
+
+* Do we need the sorting title (<title type="sort">)? Will we want to sort these in some way that cannot be done automatically (all of the sort titles seem to just be lowercase versions of the regular title)
+
+* What are the dlps processing-instructions at the top of these files? AFAICT, they just give the id and some other information about the text; I don't think we need that, since all of that can be determined in processing (i..e whether or not the thing has figures, page images). The dlps transcription type is always "other" for every document, so I don't think it gives us any currently useful information about these documents.
+
+* Are the end of line hard returns important? From a quick investigation over a small sample, it seems that they do not align with the original line breaks. Can they be normalized (as with the tabs before each paragraph?)
+
+* Should curly quotes (entities &rdquo; and &ldquo;) be normalized into straight quotation marks? Or do we want to retain the curly left and right quotation marks? We could also tag the quotation using the <quote>/<q>/<said> element. 
+
+* How much do we want to normalize the spacing of some of these texts? There are odd breaks and spacing everywhere--are the spaces significant or can they be normalized?
+
+* How much of this metadata do we need to retain? Do we consider these files *new* digital artifacts? If so, then we should migrate any relevant metadata for the production of this file into the <sourceDesc> element (since that is the source of this file) and add new metadata (I think this is the right approach)
+
+* Do we want to embed notes at their point of attachment? Are they all editorial or are some from the source? How should we differentiate?
+
+

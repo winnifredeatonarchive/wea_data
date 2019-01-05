@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildP5" default="all">
+    
+    <!--This build, which should only be run once, takes all the existing P4 TEI files and modifes them
+        into P5; it then validates against the P5 schema.-->
+    
+    
+    <!--First step, copy over into the Github repo-->
+    
+    <dirname property="driveDir" file="../../../Drive/WEaton Anew/WEA.xpr"/>
+    
+    <property name="gitDir" value="../git/wea"/>
+    
+    <property name="textsDir" value="${gitDir}/texts/"/>
+    <property name="p4Temp" value="${gitDir}/p4Temp/"/>
+    <property name="p5Temp" value="${gitDir}/p5Temp/"/>
+    
+    <!--Clean up and initialize the build-->
+    <target name="init">
+        <delete dir="${p4Temp}"/>
+        <delete dir="${p5Temp}"/>
+        <mkdir dir="${p4Temp}"/>
+        <mkdir dir="${p5Temp}"/>
+    </target>
+    
+    <target name="copy">
+        <!--First thing to do is copy and flatten-->
+        <copy todir="${p4Temp}" verbose="true">
+            <fileset dir="${driveDir}/UPDATED Texts by OW">
+                <include name="**/**.xml"/>
+            </fileset>
+            <flattenmapper/>
+        </copy>
+    </target>
+    
+    <target name="convert">
+        <!--Now convert-->
+        
+        <!--First thing we have to do is get rid of the damn DTD-->
+        <replaceregexp byline="true" match="^(&lt;!.+|\]&gt;)" replace="">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        
+        <!--And now replace all of the entities-->
+        <replaceregexp  match="&amp;copy;" replace="©">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <!--Double quotes-->
+        <replaceregexp flags="g" match="&amp;ldquo;" replace="“">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;rdquo;" replace="”">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        
+        <!--Single quotes-->
+        <replaceregexp flags="g" match="&amp;lsquo;" replace="‘">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;rsquo;" replace="’">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;mdash;" replace="—">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;eacute;" replace="é">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;ecirc;" replace="ê">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;agrave;" replace="à">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;nbsp;" replace=" ">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;iuml;" replace="ï">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+        <replaceregexp flags="g" match="&amp;ndash;" replace="–">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </replaceregexp>
+
+        
+
+        <java jar="../lib/saxon9he.jar" fork="true">
+            <arg value="-xsl:p4top5.xsl"/>
+            <arg value="-s:${p4Temp}"/>
+            <arg value="-o:${p5Temp}"/>
+        </java>
+       <!-- <xslt style="p4top5.xsl" destdir="${p5Temp}">
+            <fileset dir="${p4Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </xslt>-->
+    </target>
+    
+    <target name="validate">
+        <!--First get TEI all-->
+        
+      <!--  <get src="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+            dest="../sch/tei_all.rng" usetimestamp="true"/>-->
+        
+        <apply executable="java" parallel="true" failonerror="true">
+            <arg line="-jar  ../lib/jing.jar"/>
+            <arg value="../sch/tei_all.rng"/>
+            <fileset dir="${p5Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </apply>
+        <!--Do Jing and schematron validation here: reminder to download Jing (but perhaps only temporarily)-->
+    </target>
+  
+  <target name="all" depends="init, copy, convert, validate"/>
+</project>
