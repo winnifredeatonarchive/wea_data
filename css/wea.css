@@ -1,0 +1,31 @@
+/* Created on: January 5, 2019 */
+/* Author: Joey Takeda */
+/* This is the basic CSS file for the WEA texts */
+
+body{
+    margin-left:10%;
+    margin-right:10%;
+}
+
+div[data-el=body]{
+    border:solid 1px black;
+}
+
+div[data-el=body]>div[data-el=div]{
+    padding:.5em;
+    margin:0 .5em;
+}
+
+div[data-el=p]{
+    padding:.25em 0;
+}
+hr{
+    width:100%;
+}
+
+div[data-el=note]{
+    background:#f8f8ff; /*  Also known as Ghostwhite */
+    border:dotted 1px black;
+    padding:.5em;
+    font-size:95%;
+    }

@@ -3,7 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
     xmlns="http://www.tei-c.org/ns/1.0"
-    xmlns:wea="https://github.com/wearchive/wea_data/ns/1.0"
+    xmlns:wea="https://github.com/wearchive/ns/1.0"
     version="3.0">
     
     <!--This stylesheet takes the P4 files for the WEA project
