@@ -2,10 +2,13 @@
 <project basedir="." name="Build Site" default="all">
   
   <property name="echo.separator">***********************************</property>
-  <property name="siteDir" value="../../wea/"/>
-  <property name="siteTemp" value="../products/"/>
-  <property name="textsDir" value="../texts/"/>
-  <property name="xhValidationDir" value="../xhValidation/"/>
+    
+    
+  <dirname property="data.dir" file="../README.md"/>
+  <property name="siteTemp" value="${data.dir}/products/"/>
+  <property name="textsDir" value="${data.dir}/texts/"/>
+  <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
+
     
   <fileset id="texts" dir="${textsDir}">
       <include name="**.xml"/>
@@ -27,12 +30,11 @@
                 <include name="**.js"/>
             </fileset>
         </copy>
-        
     </target>
     
   <target name="createSite">
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-          <arg value="-xsl:xhtml_master.xsl"/>
+          <arg value="-xsl:${data.dir}/code/xhtml_master.xsl"/>
           <arg value="-s:${textsDir}"/>
           <arg value="-o:${siteTemp}"/>
       </java>
@@ -52,7 +54,7 @@
                 <include name="*.html"/>
             </fileset>
         </copy>
-        <java jar="../lib/vnu/vnu.jar" failonerror="false" fork="true">
+        <java jar="${data.dir}/lib/vnu/vnu.jar" failonerror="false" fork="true">
             <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
             <arg value="--format text"/>
             <arg value="--skip-non-html"/>

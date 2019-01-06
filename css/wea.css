@@ -2,13 +2,26 @@
 /* Author: Joey Takeda */
 /* This is the basic CSS file for the WEA texts */
 
+html{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:13pt;
+    
+}
+
 body{
     margin-left:10%;
     margin-right:10%;
+    line-height: 1.2;
 }
 
 div[data-el=body]{
+    margin: 0 auto;
     border:solid 1px black;
+    max-width:55em;
+}
+
+div[data-el=body] > div[data-el=div] > h2{
+    text-align:center;
 }
 
 div[data-el=body]>div[data-el=div]{
@@ -17,10 +30,16 @@ div[data-el=body]>div[data-el=div]{
 }
 
 div[data-el=p]{
-    padding:.25em 0;
+    padding:.5em 0;
 }
+
+div[data-el='note'] > div[data-el='p']{
+    display:inline;
+}
+
 hr{
     width:100%;
+    margin:2.25em 0 2.25em 0;
 }
 
 div[data-el=note]{
@@ -29,3 +48,7 @@ div[data-el=note]{
     padding:.5em;
     font-size:95%;
     }
+    
+div[data-el=note] + div[data-el=note]{
+    padding-top:.3em;
+}

@@ -135,10 +135,9 @@
     <xsl:template match="@rend">
         <xsl:variable name="value" as="xs:string?">
             <xsl:choose>
-                <xsl:when test=".='center' and parent::seg | parent::hi">text-align:center;"</xsl:when>
-                <xsl:when test=".='center'">margin:0 auto;</xsl:when>
+                <xsl:when test=".='center'">text-align:center;</xsl:when>
                 <xsl:when test=".='italic'">font-style: italic;</xsl:when>
-                <xsl:when test=".='bold'">font-style: bold;</xsl:when>
+                <xsl:when test=".='bold'">font-weight: bold;</xsl:when>
                 <xsl:when test=".='underline'">text-decoration:underline;</xsl:when>
                 <xsl:otherwise>
                     <xsl:message>Rend value <xsl:value-of select="."/> not found.</xsl:message>
