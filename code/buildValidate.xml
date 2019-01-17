@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Validate TEI files" default="all">
+  
+  <!--The project directory-->
+  <dirname property="project.dir" file="../wea_data.xpr"/>
+  
+  <!--The schema directory-->
+  <property name="sch.dir" value="${project.dir}/sch"/>
+    
+  <!--Lib directory-->
+  <property name="lib.dir" value="${project.dir}/lib"/>
+    
+  <!--RNG file-->  
+  <property name="rng" value="${sch.dir}/wea.rng"/>
+  
+  <!--Schematron file-->
+  <property name="sch" value="${sch.dir}/wea.sch"/>
+   
+  <!--Schematron XSL file-->
+  <property name="sch.xsl" value="${sch.dir}/weaSchematron.xsl"/>
+  
+  <!--NOTE: THIS WILL CHANGE IN FUTURE-->
+  <property name="data.dir" value="${project.dir}/texts"/>
+  
+  <!--Data fileset-->
+  <fileset id="data" dir="${data.dir}">
+      <include name="**.xml"/>
+  </fileset>
+    
+    
+  <target name="validateRng">
+      <apply executable="java" parallel="true" failonerror="true">
+          <arg line="-jar ${lib.dir}/jing.jar"/>
+          <arg value="${rng}"/>
+          <fileset refid="data"/>
+      </apply>
+  </target>
+    
+    
+    <target name="all" depends="validateRng"/>
+    
+ 
+</project>
