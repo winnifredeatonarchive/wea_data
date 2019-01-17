@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="all" name="createXsltFromSchematron">
+    
+    <description>
+        ########################################################################
+        # This is a modified version of the
+        Schematron extraction file by Martin Holmes (mholmes@uvic.ca), 2018. 
+             #
+        
+        This process extracts the Schematron from inside the lemdo.rng file,
+        then processes it to create an XSLT file which can be used to do the
+        validation.
+        
+        #                                                                      #
+        ########################################################################
+    </description>
+    
+    <property name="echo.separator" value="************************************************"/>
+    
+    <!--THESE MUST BE SET-->
+    <property name="in.rng" value=""/>
+    <property name="out.sch" value=""/>
+    <property name="out.xsl" value=""/>
+    <property name="saxon" value=""/>
+    
+    
+    <!--THESE DO NOT NEED TO BE-->
+    <property name="tempDir" value="tmp"/>
+
+
+    <basename property="basename" file="${in.rng}" suffix="rng"/>
+    <property name="temp1.sch" value="${tempDir}/${basename}_1.sch"/>
+    <property name="temp2.sch" value="${tempDir}/${basename}_2.sch"/>
+    
+    <property name="schematronXsl.dir" value="schematron"/>
+    
+    
+    
+    <target name="init">
+        <description>This target initiates the build by deleting and 
+            making the temporary directory.</description>
+        <mkdir dir="${tempDir}"/>
+        <echo message="${echo.separator}"/>
+        <echo message="Initiating schematron extraction and conversion..."/>
+    </target>
+    
+    <target name="extractSchematron">
+        <description>
+            This target extracts the Schematron ruleset from the lemdo.rng RelaxNG schema, 
+            so that it can be used for validation.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Extracting Schematron from RelaxNG schema for separate validation."/>
+        <echo message="Extracting schematron from ${in.rng} into ${out.sch}"/>
+        <java jar="${saxon}" fork="true">
+            <arg line="-s:${in.rng}"/>
+            <arg line="-o:${out.sch}"/>
+            <arg line="-xsl:${schematronXsl.dir}/ExtractSchFromRNG-2.xsl"/>
+        </java>
+    </target>
+    
+    <target name="iso_dsdl_include">
+        <description>
+            This target is a preprocessor which handles various types of inclusion that might
+            be in a Schematron file.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Step 1/3: Processing inclusions..."/>
+        <echo message="Converting ${out.sch} to ${temp1.sch}"/>
+        <java jar="${saxon}" fork="true">
+            <arg line="-s:${out.sch}"/>
+            <arg line="-o:${temp1.sch}"/>
+            <arg line="-xsl:${schematronXsl.dir}/iso_dsdl_include.xsl"/>
+        </java>
+    </target>
+    
+    <target name="iso_abstract_expand">
+        <description>
+            This target is a preprocessor which implements various abstract patterns.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Step 2/3: Expanding abstract patterns..."/>
+        <echo message="Converting ${temp1.sch} to ${temp2.sch}"/>
+        <java jar="${saxon}" fork="true">
+            <arg line="-s:${temp1.sch}"/>
+            <arg line="-o:${temp2.sch}"/>
+            <arg line="-xsl:${schematronXsl.dir}/iso_abstract_expand.xsl"/>
+        </java>
+    </target>
+    
+    
+    
+    <target name="iso_svrl_for_xslt2">
+        <description>This target compiles the SVRL format into an XSLT.</description>
+        <echo message="${echo.separator}"/>
+        <echo message="Step 3/3: Converting SVRL to XSLT..."/>
+        <echo message="Converting ${temp2.sch} to ${out.xsl}"/>
+        <java jar="${saxon}" fork="true">
+            <arg line="-s:${temp2.sch}"/>
+            <arg line="-o:${out.xsl}"/>
+            <arg line="-xsl:${schematronXsl.dir}/iso_svrl_for_xslt2.xsl"/>
+            <!--The allow-foreign parameter is neccessary in order to process
+                XSL variables and other bits from the RNG. The default is 
+                false.-->
+            <arg line="allow-foreign=true"/>
+        </java>
+    </target>
+    
+    <target name="clean">
+        <description>
+            This target cleans up temporary files after the build process has completed.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Deleting temporary directory ${tempDir}"/>
+        <delete dir="${tempDir}"/>
+    </target>
+    
+    <target name="sch2xsl" depends="init, iso_dsdl_include, iso_abstract_expand, iso_svrl_for_xslt2, clean">
+        <description>This target just runs the suite of schematron to XSLT conversion, without extracting from RNG.</description>
+    </target>
+    
+    <target name="all" depends="init, extractSchematron, sch2xsl, clean">
+        <description>This target does everything, including initializing, extracting the schematron from an RNG, and then converting that schematron
+            into an XSLT.</description>
+    </target>
+    
+    
+</project>

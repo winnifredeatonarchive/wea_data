@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Build base schema" default="all">
+    <description>This build creates the basic schema for the Winnifred Eaton Archive.</description>
+    <description>This build should be run in the oXygen environment for best results. However, it can be run at the command line using:
+        ant -lib lib -f code/buildSchema.xml
+    </description>
+    
+    <!--****************************************************************
+     *                                                              *
+     *                           PROPERTIES                         *
+     *                                                              *
+     ****************************************************************-->
+    
+    <!--Echo separator for output messages-->
+    <property name="echo.separator" value="*************************************"/>
+    
+    <!--****************** DIRECTORIES ******************-->
+    
+    <!--The project directory as supplied by oXygen; if run at the
+  command line, using -Dproject.dir=../../ -->
+    <dirname property="project.dir" file="../wea_data.xpr"/>
+    
+    <!--Schema building dir; equivalent to ${basedir}.-->
+    <property name="schemaBuild.dir" value="${project.dir}/code"/>
+    
+    <!--Schema XSLT dir-->
+    <property name="schemaXsl.dir" value="${schemaBuild.dir}/xsl"/>
+    
+    <!--Data directory-->
+    <property name="data.dir" value="${project.dir}/data"/>
+    
+    <!--The directory for the schemas-->
+    <property name="schema.dir" value="${project.dir}/sch"/>
+    
+    <!--Library dir-->
+    <property name="lib.dir" value="${project.dir}/lib"/>
+    
+    <!--****************** FILES ******************-->
+    
+    
+    <!--********* LEMDO Schemas ********** -->
+    
+    <!--The WEA base odd-->
+    <property name="wea.odd.src" value="${schema.dir}/wea.odd"/>
+    
+    
+    <!--LEMDO processed (i.e. combined with P5)-->
+    <property name="wea.odd.processed" value="${schema.dir}/wea-processed.odd"/>
+    
+    <!--LEMDO result RNG-->
+    <property name="wea.rng" value="${schema.dir}/wea.rng"/>
+    
+    <!--LEMDO result schematron-->
+    <property name="wea.sch" value="${schema.dir}/wea.sch"/>
+    
+   <!--WEA schematron XSL-->
+    <property name="weaSchematron.xsl" value="${schema.dir}/weaSchematron.xsl"/>
+    
+    
+    <!--*********** TEI SCHEMAS ************-->
+    
+    <property name="tei_all.src" value="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"/>
+    
+    <!--************ XSLTs ************** -->
+    
+    <!--ODD 2 ODD XSLT (from the TEI framework)-->
+    <property name="odd2odd.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/odds/odd2odd.xsl"/>
+    
+    <!--ODD 2 RNG XSLT (from the TEI framework)-->
+    <property name="odd2rng.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/profiles/tei/relaxng/to.xsl"/>
+    
+    <!--ODD 2 Schematron XSLT (from the TEI framework)-->
+    <property name="odd2sch.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/odds/extract-isosch.xsl"/>
+    
+    
+    <!--Saxon-->
+    <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
+    
+    
+    
+    <!--****************************************************************
+     *                                                              *
+     *                           Targets                            *
+     *                                                              *
+     ****************************************************************-->
+    
+  
+    
+    <target name="odd2processedOdd">
+        <description>Processes the W ODD against the TEI All using
+            TEI stylesheets.</description>
+        <echo message="${echo.separator}"/>
+        <echo message="Processing the WEA ODD and combining with P5..."/>
+        <echo message="${echo.separator}"/>
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${wea.odd.src}"/>
+            <arg line="-o:${wea.odd.processed}"/>
+            <arg line="-xsl:'${odd2odd.xsl}'"/>
+            <!--These parameters are temporary and should only be used when the TEI server is down-->
+            <!--  <arg line="defaultTEIServer=http://teijenkins.hcmc.uvic.ca/job/TEIP5/lastSuccessfulBuild/artifact/P5/release"/>
+   <arg line="defaultTEIVersion=''"/>-->
+        </java>
+    </target>
+    
+    <target name="odd2rng">
+        <description>Creates a RelaxNG schema from the processed ODD file.</description>
+        <echo>Building RelaxNG schema: ${wea.rng}</echo>
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${wea.odd.processed}"/>
+            <arg line="-o:${wea.rng}"/>
+            <arg line="-xsl:'${odd2rng.xsl}'"/>
+        </java>
+    </target>
+   
+    <target name="odd2sch">
+        <description>This target extracts the embedded schematron rules
+            from within the RNG file.</description>
+        <echo message="${echo.separator}"/>
+        <echo message="Extracting schematron from ${wea.rng}..."/>
+        <echo message="${echo.separator}"/>
+        <ant antfile="buildSchematron.xml" inheritall="false">
+            <property name="in.rng" value="${wea.rng}"/>
+            <property name="out.sch" value="${wea.sch}"/>
+            <property name="out.xsl" value="${weaSchematron.xsl}"/>
+            <property name="saxon" value="${saxon}"/>
+        </ant>
+    </target>
+    
+    <target name="clean">
+        <delete file="${wea.odd.processed}"/>
+    </target>
+        
+    
+    
+    <target name="all" depends="odd2processedOdd, odd2rng, odd2sch, clean">
+        <description>Processes the WEA ODD and create the standard WEA schema.</description>
+    </target>
+    
+    
+    
+    
+    
+</project>

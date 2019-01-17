@@ -161,12 +161,28 @@
         </choice>
     </xsl:template>
     
+    <!--We need to embed notes-->
+    
+    <xsl:template match="ref">
+        <xsl:variable name="thisTarg" select="@target"/>
+        <xsl:variable name="thisNote" select="ancestor::TEI.2//note[@id=$thisTarg]"/>
+        <note type="editorial"><xsl:apply-templates select="$thisNote/p"/></note>
+        
+    </xsl:template>
+    
+    <xsl:template match="note/p">
+        <xsl:apply-templates/>
+    </xsl:template>
+   
+    <!--Just delete the note since we deal wiht it-->
+    <xsl:template match="note[@id] | note/seg"/>
+    
     <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
-<!--    
+    
     <xsl:template match="p[matches(text()[1],'^\s+')]/text()[1]">
         <xsl:value-of select="replace(.,'^\s+','')"/>
     </xsl:template>
-    -->
+    
     <!--This is the easiest way to deal with namespaces-->
     <xsl:template match="*" priority="-1">
         <xsl:element name="{local-name()}">
