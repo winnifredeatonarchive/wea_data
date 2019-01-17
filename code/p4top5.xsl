@@ -154,13 +154,20 @@
  
     <!--Have to deal with janus elements-->
     
-    <xsl:template match="orig[@reg]">
-        <choice>
-            <orig><xsl:apply-templates/></orig>
-            <reg><xsl:value-of select="@reg"/></reg>
-        </choice>
+    <xsl:template match="orig[@reg][pb]">
+        <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="orig[pb]/text()[following-sibling::pb]">
+        <xsl:analyze-string regex="-" select=".">
+            <xsl:matching-substring>
+                <pc force="weak">-</pc>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
     <!--We need to embed notes-->
     
     <xsl:template match="ref">
@@ -176,6 +183,12 @@
    
     <!--Just delete the note since we deal wiht it-->
     <xsl:template match="note[@id] | note/seg"/>
+    
+    <!--Get rid of unnecessary sorting title-->
+    <xsl:template match="title[@type='sort']"/>
+    
+    <!--No longer need extent-->
+    <xsl:template match="extent"/>
     
     <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
     
