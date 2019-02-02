@@ -72,6 +72,9 @@
     <!--ODD 2 Schematron XSLT (from the TEI framework)-->
     <property name="odd2sch.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/odds/extract-isosch.xsl"/>
     
+    <!--ODD 2 HTML XSLT -->
+    <property name="odd2html.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/odds/odd2html.xsl"/>
+    
     
     <!--Saxon-->
     <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
@@ -126,13 +129,42 @@
         </ant>
     </target>
     
+    <target name="odd2html">
+        <description>Create documentation from the ODD file.</description>
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${wea.odd.processed}"/>
+            <arg line="-o:${project.dir}/docs/documentation_full.html"/>
+            <arg line="-xsl:'${odd2html.xsl}'"/>
+        </java>
+        
+        <!--Fix up some of the legacy cruft in the TEI's stylesheets-->
+        <replaceregexp file="${project.dir}/docs/documentation_full.html"
+            match="&lt;!DOCTYPE html"
+            replace=""
+            byline="false"/>
+        <replaceregexp file="${project.dir}/docs/documentation_full.html"
+            match="SYSTEM .about:legacy-compat.&gt;"
+            replace=""
+            byline="false"/>
+    
+       
+
+        
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${project.dir}/docs/documentation_full.html"/>
+            <arg line="-o:${project.dir}/editor_documentation.html"/>
+            <arg line="-xsl:${project.dir}/code/clean_documentation.xsl"/>
+        </java>
+
+    </target>
+    
     <target name="clean">
         <delete file="${wea.odd.processed}"/>
     </target>
         
     
     
-    <target name="all" depends="odd2processedOdd, odd2rng, odd2sch, clean">
+    <target name="all" depends="odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     
