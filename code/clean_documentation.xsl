@@ -20,6 +20,8 @@
     
     <xsl:param name="deleteContentModel" select="true()"/>
     <xsl:param name="deleteSchemaDeclaration" select="true()"/>
+    <xsl:param name="deleteModule" select="true()"/>
+    <xsl:param name="deleteMemberOf" select="true()"/>
     
     <xsl:output method="xhtml" html-version="5.0" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
     
@@ -88,23 +90,91 @@
     <!--Delete models, teidata, and macro divs-->
     <xsl:template match="div[h3[matches(@id,concat('^(',$deleteDivsRegex,')\.'))]]"/>
     
-    <!--div/h3's with ids that do not contain . must be an element-->
-    <xsl:template match="div[h3[@id][not(contains(@id,'.'))]]">
+    <xsl:template match="a[starts-with(@href,'#') and not(contains(@href,'.'))][ancestor::p]">
         <xsl:copy>
-            <xsl:attribute name="id" select="h3/@id"/>
-            <xsl:apply-templates select="@*[not(local-name()='id')]|node()"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="class" select="'gi'"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template match="div/h3[not(contains(@id,'.'))]/@id"/>
     
     <xsl:template match="a[@href[matches(.,concat('^#(',$deleteDivsRegex,')'))]]">
         <xsl:apply-templates select="node()"/>
     </xsl:template>
     
+    <xsl:template match="tr[normalize-space(td[1]/span[@class='label']/text()) = 'Module']">
+        <xsl:if test="not($deleteModule)">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="tr[normalize-space(td[1]/span[@class='label']/text()) = 'Member of']">
+        <xsl:if test="not($deleteMemberOf)">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="dd[normalize-space(string-join(.,'')) = '']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:text>[No description available]</xsl:text>
+        </xsl:copy>
+    </xsl:template>
+    
+    
+    <!--Get rid of explicit  &lt; and &gt;, which will be subbed out
+        via CSS-->
+    <xsl:template match="h3/text() | span[@class='label']/text() | span[@class='gi']/text()">
+        <xsl:variable name="parent" select="parent::*"/>
+        <xsl:analyze-string select="." regex="&lt;(.+)&gt;(\s+)?">
+            <xsl:matching-substring>
+                <xsl:choose>
+                    <xsl:when test="$parent[@class='gi']">
+                        <xsl:value-of select="regex-group(1)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <span class="gi"><xsl:value-of select="regex-group(1)"/></span><xsl:value-of select="regex-group(2)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+               
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    
+    
+    
+    <xsl:template match="td[@colspan='2'][ancestor::div[1]/h3[not(contains(@id,'.'))]]">
+        <xsl:variable name="id" select="ancestor::div[1]/h3/@id"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+            [<a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-{$id}.html">TEI Guidelines</a>]
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="td[@colspan='2']/text()">
+        <xsl:analyze-string select="." regex="\[[^\[]+\]">
+            <xsl:matching-substring/>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    
+    <xsl:template match="td[@class='odd_label'][parent::tr/parent::table[@class='attList']]/text()">
+        <span class="attribute"><xsl:text>@</xsl:text><xsl:value-of select="."/></span>
+    </xsl:template>
+    
+    <!--Delete extraneous attributes that are just bloating the output-->
     <!--we don't use these classes-->
     <!--And we only are doing english-->
-    <xsl:template match="td/@class | a/@class | span[@class='label']/@lang"/>
+    <xsl:template match="td/@class | a/@class | span[@class='label']/@lang | table/@class | h3/@class | section/@class | dl/@class | dt/@class | dd/@class"/>
     
     <xsl:template match="span[@class='specChildElements']">
         <xsl:apply-templates/>

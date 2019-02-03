@@ -265,6 +265,18 @@ div.egXML_invalid{
     background-color:#fdbbac;
 }
 
+.gi::before{
+    content:"<";
+}
+
+a[href].gi::after{
+ link:attr(href);
+            content: ">\2009\2197";
+}
+
+.gi::after{
+    content:">";
+}
 
 .element, .attribute, .attributevalue, .comment{
     font-family: monospace;
