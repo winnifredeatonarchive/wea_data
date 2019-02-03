@@ -28,8 +28,22 @@
             .label{
                 font-weight:bold;
             }
-            
-            p, table{
+           
+           
+           p{
+               margin:.25rem;
+           }
+           
+           td>p{
+               margin:0;
+               padding:0;
+           }
+           
+           td>p+p{
+               margin-top:.25rem;
+           }
+           
+           table{
                 margin:1em;
             }
             
@@ -253,7 +267,7 @@ div.egXML_invalid{
 
 
 .element, .attribute, .attributevalue, .comment{
-    font-family: var(--xml-font);
+    font-family: monospace;
     font-variant: normal;
 }
 

@@ -106,6 +106,19 @@
     <!--And we only are doing english-->
     <xsl:template match="td/@class | a/@class | span[@class='label']/@lang"/>
     
+    <xsl:template match="span[@class='specChildElements']">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="span[@class='specChildModule']">
+        <span class="label">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    <!--We'll delete comments too-->
+    <xsl:template match="comment()"/>
+    
     
     <xsl:template match="div/@class[not(matches(.,'\s*egXML'))]">
         <xsl:if test=".='specChildModule'">
