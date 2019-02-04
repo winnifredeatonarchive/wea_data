@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 ## Winnifred Eaton Archive Project Documentation
-Note that this is an abridged version of the documentation for editorial use within oXygen. See [docs/documentation_full.html](documentation_full.html) for full documentation. 
+ 
+<span id="TOP.note"/>Note that this is an abridged version of the documentation for editorial use within oXygen. See [docs/documentation_full.html](documentation_full.html) for full documentation. 
 ## Table of contents
  
  
@@ -19,10 +20,12 @@ Note that this is an abridged version of the documentation for editorial use wit
 [abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
  
  
+<span id="index.xml-body.1_div.1"/>
 ## 1 Introduction
  
 The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development. 
  
+<span id="index.xml-body.1_div.2"/>
 ## 2 Setting up Github
  
  
@@ -51,14 +54,19 @@ git pull https://github.com/winnifredeatonarchive/wea_data
  
  
  
+<span id="index.xml-body.1_div.3"/>
 ## 3 Updating the Git repository
  
+<span id="index.xml-body.1_div.4"/>
 ## 4 Committing Changes
  
+<span id="index.xml-body.1_div.5"/>
 ## 5 Setting up oXygen
  
+<span id="index.xml-body.1_div.6"/>
 ## 6 Editing the Texts
  
+<span id="index.xml-body.1_div.7"/>
 ## 7 Building the Schema
  
 All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
@@ -73,12 +81,13 @@ ant -lib lib -f code/buildSchemas.xml
 ```
  Note that you must have ant installed. 
  
+<span id="index.xml-back.1_div.1"/>
 ## Appendix A 
  
 ## Schema wea: Elements
-
-        [abstract](#abstract)
-    
+ 
+### `abstract`<span id="abstract"/>
+ 
  
 **abstract** contains a summary or formal abstract prefixed to an existing source document by the encoder. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-abstract.html) ] 
  
@@ -122,22 +131,17 @@ This element is intended only for cases where no abstract is available in the or
 #### **Example**
  
  
-```
- 
-<profileDesc> <abstract resp="#LB">
+<span id="index.xml-egXML-d38e18658"/><profileDesc> <abstract resp="#LB">
                                 <p>Good database design involves the acquisition and deployment of     skills which have a wider relevance to the educational process. From     a set of more or less instinctive rules of thumb a formal discipline     or "methodology" of database design has evolved. Applying that     methodology can be of great benefit to a very wide range of academic     subjects: it requires fundamental skills of abstraction and     generalisation and it provides a simple mechanism whereby complex     ideas and information structures can be represented and manipulated,     even without the use of a computer. </p> </abstract></profileDesc>
- 
-```
- 
  
  
  
  
  
  ----- 
-
-        [att](#att)
-    
+ 
+### `att`<span id="att"/>
+ 
  
 **att** (attribute) contains the name of an attribute appearing within running text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.html) ] 
  
@@ -204,13 +208,8 @@ As an alternative to using the scheme attribute a namespace prefix may be used. 
 #### **Example**
  
  
-```
- 
-<p>The TEI defines several <soCalled>global</soCalled> attributes; their names include<att>xml:id</att>, <att>rend</att>, <att>xml:lang</att>, <att>n</att>, <att>xml:space</att>, and <att>xml:base</att>; <att scheme="XX">
+<span id="index.xml-egXML-d38e19857"/><p>The TEI defines several <soCalled>global</soCalled> attributes; their names include<att>xml:id</att>, <att>rend</att>, <att>xml:lang</att>, <att>n</att>, <att>xml:space</att>, and <att>xml:base</att>; <att scheme="XX">
                               type</att> is not amongst them.</p>
- 
-```
- 
  
  
  
@@ -218,9 +217,9 @@ As an alternative to using the scheme attribute a namespace prefix may be used. 
  
  
  ----- 
-
-        [author](#author)
-    
+ 
+### `author`<span id="author"/>
+ 
  
 **author** in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-author.html) ] 
  
@@ -272,13 +271,8 @@ Particularly where cataloguing is likely to be based on the content of the heade
 #### **Example**
  
  
-```
- 
-<author>British Broadcasting Corporation</author><author>La Fayette, Marie Madeleine Pioche de la Vergne, comtesse de (1634–1693)</author><author>Anonymous</author><author>Bill and Melinda Gates Foundation</author><author> <persName>Beaumont, Francis</persName> and<persName>John Fletcher</persName></author><author> <orgName key="BBC">
+<span id="index.xml-egXML-d38e13531"/><author>British Broadcasting Corporation</author><author>La Fayette, Marie Madeleine Pioche de la Vergne, comtesse de (1634–1693)</author><author>Anonymous</author><author>Bill and Melinda Gates Foundation</author><author> <persName>Beaumont, Francis</persName> and<persName>John Fletcher</persName></author><author> <orgName key="BBC">
                               British Broadcasting   Corporation</orgName>: Radio 3 Network</author>
- 
-```
- 
  
  
  
@@ -286,9 +280,9 @@ Particularly where cataloguing is likely to be based on the content of the heade
  
  
  ----- 
-
-        [authority](#authority)
-    
+ 
+### `authority`<span id="authority"/>
+ 
  
 **authority** (release authority) supplies the name of a person or other agency responsible for making a work available, other than a publisher or distributor. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-authority.html) ] 
  
@@ -328,12 +322,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<authority>John Smith</authority>
- 
-```
- 
+<span id="index.xml-egXML-d38e16862"/><authority>John Smith</authority>
  
  
  
@@ -341,9 +330,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [availability](#availability)
-    
+ 
+### `availability`<span id="availability"/>
+ 
  
 **availability** supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-availability.html) ] 
  
@@ -408,15 +397,10 @@ A consistent format should be adopted
 #### **Example**
  
  
-```
- 
-<availability status="restricted">
+<span id="index.xml-egXML-d38e17139"/><availability status="restricted">
                                <p>Available for academic research purposes only.</p></availability><availability status="free">
                                <p>In the public domain</p></availability><availability status="restricted">
                                <p>Available under licence from the publishers.</p></availability>
- 
-```
- 
  
  
  
@@ -425,13 +409,8 @@ A consistent format should be adopted
 #### **Example**
  
  
-```
- 
-<availability> <licence target="http://opensource.org/licenses/MIT">
+<span id="index.xml-egXML-d38e17166"/><availability> <licence target="http://opensource.org/licenses/MIT">
                                 <p>The MIT License     applies to this document.</p>  <p>Copyright (C) 2011 by The University of Victoria</p>  <p>Permission is hereby granted, free of charge, to any person obtaining a copy     of this software and associated documentation files (the "Software"), to deal     in the Software without restriction, including without limitation the rights     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     copies of the Software, and to permit persons to whom the Software is     furnished to do so, subject to the following conditions:</p>  <p>The above copyright notice and this permission notice shall be included in     all copies or substantial portions of the Software.</p>  <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN     THE SOFTWARE.</p> </licence></availability>
- 
-```
- 
  
  
  
@@ -439,9 +418,9 @@ A consistent format should be adopted
  
  
  ----- 
-
-        [back](#back)
-    
+ 
+### `back`<span id="back"/>
+ 
  
 **back** (back matter) contains any appendixes, etc. following the main part of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-back.html) ] 
  
@@ -487,9 +466,7 @@ Because cultural conventions differ as to which elements are grouped as back mat
 #### **Example**
  
  
-```
- 
-<back> <div type="appendix">
+<span id="index.xml-egXML-d38e22895"/><back> <div type="appendix">
                                 <head>The Golden Dream or, the Ingenuous Confession</head>  <p>TO shew the Depravity of human Nature, and how apt the Mind is to be misled by Trinkets     and false Appearances, Mrs. Two-Shoes does acknowledge, that after she became
                            rich, she     had like to have been, too fond of Money <!-- .... -->  </p> </div><!-- ... --> <div type="epistle">
                                 <head>A letter from the Printer, which he desires may be inserted</head>  <salute>Sir.</salute>  <p>I have done with your Copy, so you may return it to the Vatican, if you please;  <!-- ... -->  </p> </div> <div type="advert">
@@ -502,18 +479,15 @@ Because cultural conventions differ as to which elements are grouped as back mat
                               Dr. James's Powders for Fevers, the Small-Pox, Measles, Colds, &amp;c. 2s.       6d</item>   <item n="2">
                               Dr. Hooper's Female Pills, 1s.</item><!-- ... -->  </list> </div></back>
  
-```
- 
- 
  
  
  
  
  
  ----- 
-
-        [bibl](#bibl)
-    
+ 
+### `bibl`<span id="bibl"/>
+ 
  
 **bibl** (bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bibl.html) ] 
  
@@ -567,12 +541,7 @@ Contains phrase-level elements, together with any combination of elements from t
 #### **Example**
  
  
-```
- 
-<bibl>Blain, Clements and Grundy: Feminist Companion to Literature in English (Yale, 1990)</bibl>
- 
-```
- 
+<span id="index.xml-egXML-d38e14736"/><bibl>Blain, Clements and Grundy: Feminist Companion to Literature in English (Yale, 1990)</bibl>
  
  
  
@@ -581,14 +550,9 @@ Contains phrase-level elements, together with any combination of elements from t
 #### **Example**
  
  
-```
- 
-<bibl> <title level="a">
+<span id="index.xml-egXML-d38e14781"/><bibl> <title level="a">
                               The Interesting story of the Children in the Wood</title>. In<author>Victor E Neuberg</author>, <title>The Penny Histories</title>.<publisher>OUP</publisher> <date>1968</date>. </bibl>
  
-```
- 
- 
  
  
  
@@ -596,17 +560,12 @@ Contains phrase-level elements, together with any combination of elements from t
 #### **Example**
  
  
-```
- 
-<bibl type="article" subtype="book_chapter" xml:id="carlin_2003">
+<span id="index.xml-egXML-d38e14799"/><bibl type="article" subtype="book_chapter" xml:id="carlin_2003">
                                <author>  <name>   <surname>Carlin</surname>     (<forename>Claire</forename>)</name> </author>,<title level="a">
                               The Staging of Impotence : France’s last   congrès</title> dans<bibl type="monogr">
                                 <title level="m">
                               Theatrum mundi : studies in honor of Ronald W.     Tobin</title>, éd. <editor>   <name>    <forename>Claire</forename>    <surname>Carlin</surname>   </name>  </editor> et <editor>   <name>    <forename>Kathleen</forename>    <surname>Wine</surname>   </name>  </editor>, <pubPlace>Charlottesville, Va.</pubPlace>, <publisher>Rookwood Press</publisher>, <date when="2003">
                               2003</date>. </bibl></bibl>
- 
-```
- 
  
  
  
@@ -614,9 +573,9 @@ Contains phrase-level elements, together with any combination of elements from t
  
  
  ----- 
-
-        [biblFull](#biblFull)
-    
+ 
+### `biblFull`<span id="biblFull"/>
+ 
  
 **biblFull** (fully-structured bibliographic citation) contains a fully-structured bibliographic citation, in which all components of the TEI file description are present. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-biblFull.html) ] 
  
@@ -656,12 +615,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<biblFull> <titleStmt>  <title>The Feminist Companion to Literature in English: women writers from the middle ages     to the present</title>  <author>Blain, Virginia</author>  <author>Clements, Patricia</author>  <author>Grundy, Isobel</author> </titleStmt> <editionStmt>  <edition>UK edition</edition> </editionStmt> <extent>1231 pp</extent> <publicationStmt>  <publisher>Yale University Press</publisher>  <pubPlace>New Haven and London</pubPlace>  <date>1990</date> </publicationStmt> <sourceDesc>  <p>No source: this is an original work</p> </sourceDesc></biblFull>
- 
-```
- 
+<span id="index.xml-egXML-d38e17727"/><biblFull> <titleStmt>  <title>The Feminist Companion to Literature in English: women writers from the middle ages     to the present</title>  <author>Blain, Virginia</author>  <author>Clements, Patricia</author>  <author>Grundy, Isobel</author> </titleStmt> <editionStmt>  <edition>UK edition</edition> </editionStmt> <extent>1231 pp</extent> <publicationStmt>  <publisher>Yale University Press</publisher>  <pubPlace>New Haven and London</pubPlace>  <date>1990</date> </publicationStmt> <sourceDesc>  <p>No source: this is an original work</p> </sourceDesc></biblFull>
  
  
  
@@ -669,9 +623,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [body](#body)
-    
+ 
+### `body`<span id="body"/>
+ 
  
 **body** (text body) contains the whole body of a single unitary text, excluding any front or back matter. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-body.html) ] 
  
@@ -711,12 +665,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<body> <l>Nu scylun hergan hefaenricaes uard</l> <l>metudæs maecti end his modgidanc</l> <l>uerc uuldurfadur sue he uundra gihuaes</l> <l>eci dryctin or astelidæ</l> <l>he aerist scop aelda barnum</l> <l>heben til hrofe haleg scepen.</l> <l>tha middungeard moncynnæs uard</l> <l>eci dryctin æfter tiadæ</l> <l>firum foldu frea allmectig</l> <trailer>primo cantauit Cædmon istud carmen.</trailer></body>
- 
-```
- 
+<span id="index.xml-egXML-d38e21066"/><body> <l>Nu scylun hergan hefaenricaes uard</l> <l>metudæs maecti end his modgidanc</l> <l>uerc uuldurfadur sue he uundra gihuaes</l> <l>eci dryctin or astelidæ</l> <l>he aerist scop aelda barnum</l> <l>heben til hrofe haleg scepen.</l> <l>tha middungeard moncynnæs uard</l> <l>eci dryctin æfter tiadæ</l> <l>firum foldu frea allmectig</l> <trailer>primo cantauit Cædmon istud carmen.</trailer></body>
  
  
  
@@ -724,9 +673,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [byline](#byline)
-    
+ 
+### `byline`<span id="byline"/>
+ 
  
 **byline** contains the primary statement of responsibility given for a work on its title page or at the head or end of the work. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-byline.html) ] 
  
@@ -780,26 +729,7 @@ The byline on a title page may include either the name or a description for the 
 #### **Example**
  
  
-```
- 
-<byline>Written by a CITIZEN who continued all the while in London. Never made publick before.</byline>
- 
-```
- 
- 
- 
- 
- 
- 
-#### **Example**
- 
- 
-```
- 
-<byline>Written from her own MEMORANDUMS</byline>
- 
-```
- 
+<span id="index.xml-egXML-d38e21415"/><byline>Written by a CITIZEN who continued all the while in London. Never made publick before.</byline>
  
  
  
@@ -808,12 +738,7 @@ The byline on a title page may include either the name or a description for the 
 #### **Example**
  
  
-```
- 
-<byline>By George Jones, Political Editor, in Washington</byline>
- 
-```
- 
+<span id="index.xml-egXML-d38e21469"/><byline>Written from her own MEMORANDUMS</byline>
  
  
  
@@ -822,12 +747,16 @@ The byline on a title page may include either the name or a description for the 
 #### **Example**
  
  
-```
+<span id="index.xml-egXML-d38e21473"/><byline>By George Jones, Political Editor, in Washington</byline>
  
-<byline>BY<docAuthor>THOMAS PHILIPOTT,</docAuthor> Master of Arts, (Somtimes) Of Clare-Hall in Cambridge.</byline>
  
-```
  
+ 
+ 
+#### **Example**
+ 
+ 
+<span id="index.xml-egXML-d38e21477"/><byline>BY<docAuthor>THOMAS PHILIPOTT,</docAuthor> Master of Arts, (Somtimes) Of Clare-Hall in Cambridge.</byline>
  
  
  
@@ -835,9 +764,9 @@ The byline on a title page may include either the name or a description for the 
  
  
  ----- 
-
-        [category](#category)
-    
+ 
+### `category`<span id="category"/>
+ 
  
 **category** contains an individual descriptive category, possibly nested within a superordinate category, within a user-defined taxonomy. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-category.html) ] 
  
@@ -873,13 +802,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<category xml:id="b1">
+<span id="index.xml-egXML-d38e18440"/><category xml:id="b1">
                                <catDesc>Prose reportage</catDesc></category>
- 
-```
- 
  
  
  
@@ -888,16 +812,11 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<category xml:id="b2">
+<span id="index.xml-egXML-d38e18476"/><category xml:id="b2">
                                <catDesc>Prose </catDesc> <category xml:id="b11">
                                 <catDesc>journalism</catDesc> </category> <category xml:id="b12">
                                 <catDesc>fiction</catDesc> </category></category>
  
-```
- 
- 
  
  
  
@@ -905,9 +824,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<category xml:id="LIT">
+<span id="index.xml-egXML-d38e18487"/><category xml:id="LIT">
                                <catDesc xml:lang="pl">
                               literatura piękna</catDesc> <catDesc xml:lang="en">
                               fiction</catDesc> <category xml:id="LPROSE">
@@ -921,18 +838,15 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
                               dramat</catDesc>  <catDesc xml:lang="en">
                               drama</catDesc> </category></category>
  
-```
- 
- 
  
  
  
  
  
  ----- 
-
-        [catRef](#catRef)
-    
+ 
+### `catRef`<span id="catRef"/>
+ 
  
 **catRef** (category reference) specifies one or more defined categories within some taxonomy or text typology. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-catRef.html) ] 
  
@@ -986,16 +900,11 @@ The scheme attribute needs to be supplied only if more than one taxonomy has bee
 #### **Example**
  
  
-```
- 
-<catRef scheme="#myTopics" target="#news #prov #sales2"/><!-- elsewhere --><taxonomy xml:id="myTopics">
+<span id="index.xml-egXML-d38e19376"/><catRef scheme="#myTopics" target="#news #prov #sales2"/><!-- elsewhere --><taxonomy xml:id="myTopics">
                                <category xml:id="news">
                                 <catDesc>Newspapers</catDesc> </category> <category xml:id="prov">
                                 <catDesc>Provincial</catDesc> </category> <category xml:id="sales2">
                                 <catDesc>Low to average annual sales</catDesc> </category></taxonomy>
- 
-```
- 
  
  
  
@@ -1003,9 +912,9 @@ The scheme attribute needs to be supplied only if more than one taxonomy has bee
  
  
  ----- 
-
-        [change](#change)
-    
+ 
+### `change`<span id="change"/>
+ 
  
 **change** documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-change.html) ] 
  
@@ -1067,9 +976,7 @@ The who attribute may be used to point to any other element, but will typically 
 #### **Example**
  
  
-```
- 
-<titleStmt> <title> ... </title> <editor xml:id="LDB">
+<span id="index.xml-egXML-d38e19611"/><titleStmt> <title> ... </title> <editor xml:id="LDB">
                               Lou Burnard</editor> <respStmt xml:id="BZ">
                                 <resp>copy editing</resp>  <name>Brett Zamir</name> </respStmt></titleStmt><!-- ... --><revisionDesc status="published">
                                <change who="#BZ" when="2008-02-02"  status="public">
@@ -1078,9 +985,6 @@ The who attribute may be used to point to any other element, but will typically 
                               Added examples to section 3</change> <change when="1991-11-11" who="#MSM">
                               Deleted chapter 10</change></revisionDesc>
  
-```
- 
- 
  
  
  
@@ -1088,15 +992,10 @@ The who attribute may be used to point to any other element, but will typically 
 #### **Example**
  
  
-```
- 
-<profileDesc> <creation>  <listChange>   <change xml:id="DRAFT1">
+<span id="index.xml-egXML-d38e19634"/><profileDesc> <creation>  <listChange>   <change xml:id="DRAFT1">
                               First draft in pencil</change>   <change xml:id="DRAFT2"    notBefore="1880-12-09">
                               First revision, mostly       using green ink</change>   <change xml:id="DRAFT3"    notBefore="1881-02-13">
                               Final corrections as       supplied to printer.</change>  </listChange> </creation></profileDesc>
- 
-```
- 
  
  
  
@@ -1104,9 +1003,9 @@ The who attribute may be used to point to any other element, but will typically 
  
  
  ----- 
-
-        [choice](#choice)
-    
+ 
+### `choice`<span id="choice"/>
+ 
  
 **choice** groups a number of alternative encodings for the same point in a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-choice.html) ] 
  
@@ -1156,12 +1055,7 @@ Because the children of a  [choice](#choice)  element all represent alternative 
 #### **Example**
  
 An American encoding of Gulliver's Travels which retains the British spelling but also provides a version regularized to American spelling might be encoded as follows. 
-```
- 
-<p>Lastly, That, upon his solemn oath to observe all the above articles, the said man-mountain shall have a daily allowance of meat and drink sufficient for the support of <choice>  <sic>1724</sic>  <corr>1728</corr> </choice> of our subjects, with free access to our royal person, and other marks of our<choice>  <orig>favour</orig>  <reg>favor</reg> </choice>.</p>
- 
-```
- 
+<span id="index.xml-egXML-d38e9987"/><p>Lastly, That, upon his solemn oath to observe all the above articles, the said man-mountain shall have a daily allowance of meat and drink sufficient for the support of <choice>  <sic>1724</sic>  <corr>1728</corr> </choice> of our subjects, with free access to our royal person, and other marks of our<choice>  <orig>favour</orig>  <reg>favor</reg> </choice>.</p>
  
  
  
@@ -1169,9 +1063,9 @@ An American encoding of Gulliver's Travels which retains the British spelling bu
  
  
  ----- 
-
-        [closer](#closer)
-    
+ 
+### `closer`<span id="closer"/>
+ 
  
 **closer** groups together salutations, datelines, and similar phrases appearing as a final group at the end of a division, especially of a letter. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html) ] 
  
@@ -1217,13 +1111,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<div type="letter">
+<span id="index.xml-egXML-d38e21714"/><div type="letter">
                                <p> perhaps you will favour me with a sight of it when convenient.</p> <closer>  <salute>I remain, &amp;c. &amp;c.</salute>  <signed>H. Colburn</signed> </closer></div>
- 
-```
- 
  
  
  
@@ -1232,14 +1121,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<div type="chapter">
+<span id="index.xml-egXML-d38e21768"/><div type="chapter">
                                <p><!-- ... --> and his heart was going like mad and yes I said yes I will Yes.</p> <closer>  <dateline>   <name type="place">
                               Trieste-Zürich-Paris,</name>   <date>1914–1921</date>  </dateline> </closer></div>
- 
-```
- 
  
  
  
@@ -1247,9 +1131,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [code](#code)
-    
+ 
+### `code`<span id="code"/>
+ 
  
 **code** contains literal code from some formal language such as a programming language. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-code.html) ] 
  
@@ -1299,13 +1183,8 @@ Character data only
 #### **Example**
  
  
-```
- 
-<code lang="JAVA">
+<span id="index.xml-egXML-d38e20161"/><code lang="JAVA">
                                Size fCheckbox1Size = new Size(); fCheckbox1Size.Height = 500; fCheckbox1Size.Width = 500; xCheckbox1.setSize(fCheckbox1Size);</code>
- 
-```
- 
  
  
  
@@ -1313,9 +1192,9 @@ Character data only
  
  
  ----- 
-
-        [corr](#corr)
-    
+ 
+### `corr`<span id="corr"/>
+ 
  
 **corr** (correction) contains the correct form of a passage apparently erroneous in the copy text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-corr.html) ] 
  
@@ -1363,13 +1242,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
 If all that is desired is to call attention to the fact that the copy text has been corrected,  [corr](#corr)  may be used alone: 
-```
- 
-I don't know, Juan. It's so far in the past now — how <corr>can we</corr> prove or disprove anyone's theories?
+<span id="index.xml-egXML-d38e9843"/>I don't know, Juan. It's so far in the past now — how <corr>can we</corr> prove or disprove anyone's theories?
                         
- 
-```
- 
  
  
  
@@ -1378,13 +1252,8 @@ I don't know, Juan. It's so far in the past now — how <corr>can we</corr> prov
 #### **Example**
  
 It is also possible, using the  [choice](#choice)  and  [sic](#sic)  elements, to provide an uncorrected reading: 
-```
- 
-I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</sic> <corr>can we</corr></choice> prove or disprove anyone's theories?
+<span id="index.xml-egXML-d38e9911"/>I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</sic> <corr>can we</corr></choice> prove or disprove anyone's theories?
                         
- 
-```
- 
  
  
  
@@ -1392,9 +1261,9 @@ I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</s
  
  
  ----- 
-
-        [creation](#creation)
-    
+ 
+### `creation`<span id="creation"/>
+ 
  
 **creation** contains information about the creation of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-creation.html) ] 
  
@@ -1442,12 +1311,7 @@ The  [creation](#creation)  element may be used to record details of a text's cr
 #### **Example**
  
  
-```
- 
-<creation> <date>Before 1987</date></creation>
- 
-```
- 
+<span id="index.xml-egXML-d38e18723"/><creation> <date>Before 1987</date></creation>
  
  
  
@@ -1456,13 +1320,8 @@ The  [creation](#creation)  element may be used to record details of a text's cr
 #### **Example**
  
  
-```
- 
-<creation> <date when="1988-07-10">
+<span id="index.xml-egXML-d38e18748"/><creation> <date when="1988-07-10">
                               10 July 1988</date></creation>
- 
-```
- 
  
  
  
@@ -1470,9 +1329,9 @@ The  [creation](#creation)  element may be used to record details of a text's cr
  
  
  ----- 
-
-        [date](#date)
-    
+ 
+### `date`<span id="date"/>
+ 
  
 **date** contains a date in any format. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html) ] 
  
@@ -1518,13 +1377,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<date when="1980-02">
+<span id="index.xml-egXML-d38e11410"/><date when="1980-02">
                               early February 1980</date>
- 
-```
- 
  
  
  
@@ -1533,15 +1387,10 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-Given on the <date when="1977-06-12">
+<span id="index.xml-egXML-d38e11458"/>Given on the <date when="1977-06-12">
                               Twelfth Day of June in the Year of Our Lord One Thousand Nine Hundred and Seventy-seven of the
                            Republic the Two Hundredth and first and of the University the Eighty-Sixth.</date>
  
-```
- 
- 
  
  
  
@@ -1549,13 +1398,8 @@ Given on the <date when="1977-06-12">
 #### **Example**
  
  
-```
- 
-<date when="1990-09">
+<span id="index.xml-egXML-d38e11463"/><date when="1990-09">
                               September 1990</date>
- 
-```
- 
  
  
  
@@ -1563,9 +1407,9 @@ Given on the <date when="1977-06-12">
  
  
  ----- 
-
-        [dateline](#dateline)
-    
+ 
+### `dateline`<span id="dateline"/>
+ 
  
 **dateline** contains a brief description of the place, date, time, etc. of production of a letter, newspaper story, or other work, prefixed or suffixed to it as a kind of heading or trailer. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dateline.html) ] 
  
@@ -1611,12 +1455,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<dateline>Walden, this 29. of August 1592</dateline>
- 
-```
- 
+<span id="index.xml-egXML-d38e21554"/><dateline>Walden, this 29. of August 1592</dateline>
  
  
  
@@ -1625,14 +1464,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<div type="chapter">
+<span id="index.xml-egXML-d38e21590"/><div type="chapter">
                                <p><!-- ... --> and his heart was going like mad and yes I said yes I will Yes.</p> <closer>  <dateline>   <name type="place">
                               Trieste-Zürich-Paris,</name>   <date>1914–1921</date>  </dateline> </closer></div>
- 
-```
- 
  
  
  
@@ -1640,9 +1474,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [distributor](#distributor)
-    
+ 
+### `distributor`<span id="distributor"/>
+ 
  
 **distributor** supplies the name of a person or other agency responsible for the distribution of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-distributor.html) ] 
  
@@ -1686,12 +1520,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<distributor>Oxford Text Archive</distributor><distributor>Redwood and Burn Ltd</distributor>
- 
-```
- 
+<span id="index.xml-egXML-d38e16797"/><distributor>Oxford Text Archive</distributor><distributor>Redwood and Burn Ltd</distributor>
  
  
  
@@ -1699,9 +1528,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [div](#div)
-    
+ 
+### `div`<span id="div"/>
+ 
  
 **div** (text division) contains a subdivision of the front, body, or back of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html) ] 
  
@@ -1741,16 +1570,11 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<body> <div type="part">
+<span id="index.xml-egXML-d38e21201"/><body> <div type="part">
                                 <head>Fallacies of Authority</head>  <p>The subject of which is Authority in various shapes, and the object, to repress all     exercise of the reasoning faculty.</p>  <div n="1" type="chapter">
                                  <head>The Nature of Authority</head>   <p>With reference to any proposed measures having for their object the greatest       happiness of the greatest number [...]</p>   <div n="1.1" type="section">
                                   <head>Analysis of Authority</head>    <p>What on any given occasion is the legitimate weight or influence to be attached to         authority [...] </p>   </div>   <div n="1.2" type="section">
                                   <head>Appeal to Authority, in What Cases Fallacious.</head>    <p>Reference to authority is open to the charge of fallacy when [...] </p>   </div>  </div> </div></body>
- 
-```
- 
  
  
  
@@ -1758,9 +1582,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [docAuthor](#docAuthor)
-    
+ 
+### `docAuthor`<span id="docAuthor"/>
+ 
  
 **docAuthor** (document author) contains the name of the author of the document, as given on the title page (often but not always contained in a byline). [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docAuthor.html) ] 
  
@@ -1812,12 +1636,7 @@ The document author's name often occurs within a byline, but the  [docAuthor](#d
 #### **Example**
  
  
-```
- 
-<titlePage> <docTitle>  <titlePart>Travels into Several Remote Nations of the World, in Four     Parts.</titlePart> </docTitle> <byline> By <docAuthor>Lemuel Gulliver</docAuthor>, First a Surgeon,   and then a Captain of several Ships</byline></titlePage>
- 
-```
- 
+<span id="index.xml-egXML-d38e22322"/><titlePage> <docTitle>  <titlePart>Travels into Several Remote Nations of the World, in Four     Parts.</titlePart> </docTitle> <byline> By <docAuthor>Lemuel Gulliver</docAuthor>, First a Surgeon,   and then a Captain of several Ships</byline></titlePage>
  
  
  
@@ -1825,9 +1644,9 @@ The document author's name often occurs within a byline, but the  [docAuthor](#d
  
  
  ----- 
-
-        [docDate](#docDate)
-    
+ 
+### `docDate`<span id="docDate"/>
+ 
  
 **docDate** (document date) contains the date of a document, as given on a title page or in a dateline. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docDate.html) ] 
  
@@ -1892,12 +1711,7 @@ Cf. the general  [date](#date)  element in the core tag set. This specialized el
 #### **Example**
  
  
-```
- 
-<docImprint>Oxford, Clarendon Press, <docDate>1987</docDate></docImprint>
- 
-```
- 
+<span id="index.xml-egXML-d38e22444"/><docImprint>Oxford, Clarendon Press, <docDate>1987</docDate></docImprint>
  
  
  
@@ -1905,9 +1719,9 @@ Cf. the general  [date](#date)  element in the core tag set. This specialized el
  
  
  ----- 
-
-        [docTitle](#docTitle)
-    
+ 
+### `docTitle`<span id="docTitle"/>
+ 
  
 **docTitle** (document title) contains the title of a document, including all its constituents, as given on a title page. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docTitle.html) ] 
  
@@ -1945,14 +1759,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<docTitle> <titlePart type="main">
+<span id="index.xml-egXML-d38e22022"/><docTitle> <titlePart type="main">
                               The DUNCIAD, VARIOURVM.</titlePart> <titlePart type="sub">
                               WITH THE PROLEGOMENA of SCRIBLERUS.</titlePart></docTitle>
- 
-```
- 
  
  
  
@@ -1960,9 +1769,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [edition](#edition)
-    
+ 
+### `edition`<span id="edition"/>
+ 
  
 **edition** describes the particularities of one edition of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-edition.html) ] 
  
@@ -2006,13 +1815,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<edition>First edition <date>Oct 1990</date></edition><edition n="S2">
+<span id="index.xml-egXML-d38e16580"/><edition>First edition <date>Oct 1990</date></edition><edition n="S2">
                               Students' edition</edition>
- 
-```
- 
  
  
  
@@ -2020,9 +1824,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [editionStmt](#editionStmt)
-    
+ 
+### `editionStmt`<span id="editionStmt"/>
+ 
  
 **editionStmt** (edition statement) groups information relating to one edition of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editionStmt.html) ] 
  
@@ -2060,13 +1864,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<editionStmt> <edition n="S2">
+<span id="index.xml-egXML-d38e16481"/><editionStmt> <edition n="S2">
                               Students' edition</edition> <respStmt>  <resp>Adapted by </resp>  <name>Elizabeth Kirk</name> </respStmt></editionStmt>
- 
-```
- 
  
  
  
@@ -2075,12 +1874,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<editionStmt> <p>First edition, <date>Michaelmas Term, 1991.</date> </p></editionStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e16529"/><editionStmt> <p>First edition, <date>Michaelmas Term, 1991.</date> </p></editionStmt>
  
  
  
@@ -2088,9 +1882,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [editor](#editor)
-    
+ 
+### `editor`<span id="editor"/>
+ 
  
 **editor** contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editor.html) ] 
  
@@ -2142,15 +1936,10 @@ A consistent format should be adopted.Particularly where cataloguing is likely t
 #### **Example**
  
  
-```
- 
-<editor role="Technical_Editor">
+<span id="index.xml-egXML-d38e13655"/><editor role="Technical_Editor">
                               Ron Van den Branden</editor><editor role="Editor-in-Chief">
                               John Walsh</editor><editor role="Managing_Editor">
                               Anne Baillot</editor>
- 
-```
- 
  
  
  
@@ -2158,9 +1947,9 @@ A consistent format should be adopted.Particularly where cataloguing is likely t
  
  
  ----- 
-
-        [editorialDecl](#editorialDecl)
-    
+ 
+### `editorialDecl`<span id="editorialDecl"/>
+ 
  
 **editorialDecl** (editorial practice declaration) provides details of editorial principles and practices applied during the encoding of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editorialDecl.html) ] 
  
@@ -2198,13 +1987,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<editorialDecl> <normalization>  <p>All words converted to Modern American spelling using     Websters 9th Collegiate dictionary  </p> </normalization> <quotation marks="all">
+<span id="index.xml-egXML-d38e18003"/><editorialDecl> <normalization>  <p>All words converted to Modern American spelling using     Websters 9th Collegiate dictionary  </p> </normalization> <quotation marks="all">
                                 <p>All opening quotation marks converted to “ all closing     quotation marks converted to &amp;cdq;.</p> </quotation></editorialDecl>
- 
-```
- 
  
  
  
@@ -2212,9 +1996,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [emph](#emph)
-    
+ 
+### `emph`<span id="emph"/>
+ 
  
 **emph** (emphasized) marks words or phrases which are stressed or emphasized for linguistic or rhetorical effect. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-emph.html) ] 
  
@@ -2260,13 +2044,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-You took the car and did <emph>what</emph>?!!
+<span id="index.xml-egXML-d38e8852"/>You took the car and did <emph>what</emph>?!!
                         
- 
-```
- 
  
  
  
@@ -2275,12 +2054,7 @@ You took the car and did <emph>what</emph>?!!
 #### **Example**
  
  
-```
- 
-<q>What it all comes to is this,</q> he said. <q> <emph>What   does Christopher Robin do in the morning nowadays?</emph></q>
- 
-```
- 
+<span id="index.xml-egXML-d38e8897"/><q>What it all comes to is this,</q> he said. <q> <emph>What   does Christopher Robin do in the morning nowadays?</emph></q>
  
  
  
@@ -2288,9 +2062,9 @@ You took the car and did <emph>what</emph>?!!
  
  
  ----- 
-
-        [encodingDesc](#encodingDesc)
-    
+ 
+### `encodingDesc`<span id="encodingDesc"/>
+ 
  
 **encodingDesc** (encoding description) documents the relationship between an electronic text and the source or sources from which it was derived. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-encodingDesc.html) ] 
  
@@ -2328,12 +2102,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<encodingDesc> <p>Basic encoding, capturing lexical information only. All   hyphenation, punctuation, and variant spellings normalized. No   formatting or layout information preserved.</p></encodingDesc>
- 
-```
- 
+<span id="index.xml-egXML-d38e17863"/><encodingDesc> <p>Basic encoding, capturing lexical information only. All   hyphenation, punctuation, and variant spellings normalized. No   formatting or layout information preserved.</p></encodingDesc>
  
  
  
@@ -2341,9 +2110,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [epigraph](#epigraph)
-    
+ 
+### `epigraph`<span id="epigraph"/>
+ 
  
 **epigraph** contains a quotation, anonymous or attributed, appearing at the start or end of a section or on a title page. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-epigraph.html) ] 
  
@@ -2383,14 +2152,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<epigraph xml:lang="la">
+<span id="index.xml-egXML-d38e21638"/><epigraph xml:lang="la">
                                <cit>  <bibl>Lucret.</bibl>  <quote>   <l part="F">
                               petere inde coronam,</l>   <l>Vnde prius nulli velarint tempora Musae.</l>  </quote> </cit></epigraph>
- 
-```
- 
  
  
  
@@ -2398,9 +2162,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [fileDesc](#fileDesc)
-    
+ 
+### `fileDesc`<span id="fileDesc"/>
+ 
  
 **fileDesc** (file description) contains a full bibliographic description of an electronic file. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fileDesc.html) ] 
  
@@ -2444,12 +2208,7 @@ The major source of information for those seeking to create a catalogue entry or
 #### **Example**
  
  
-```
- 
-<fileDesc> <titleStmt>  <title>The shortest possible TEI document</title> </titleStmt> <publicationStmt>  <p>Distributed as part of TEI P5</p> </publicationStmt> <sourceDesc>  <p>No print source exists: this is an original digital text</p> </sourceDesc></fileDesc>
- 
-```
- 
+<span id="index.xml-egXML-d38e16286"/><fileDesc> <titleStmt>  <title>The shortest possible TEI document</title> </titleStmt> <publicationStmt>  <p>Distributed as part of TEI P5</p> </publicationStmt> <sourceDesc>  <p>No print source exists: this is an original digital text</p> </sourceDesc></fileDesc>
  
  
  
@@ -2457,9 +2216,9 @@ The major source of information for those seeking to create a catalogue entry or
  
  
  ----- 
-
-        [foreign](#foreign)
-    
+ 
+### `foreign`<span id="foreign"/>
+ 
  
 **foreign** identifies a word or phrase as belonging to some language other than that of the surrounding text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-foreign.html) ] 
  
@@ -2513,14 +2272,9 @@ The global xml:lang attribute should be supplied for this element to identify th
 #### **Example**
  
  
-```
- 
-This is heathen Greek to you still? Your <foreign xml:lang="la">
+<span id="index.xml-egXML-d38e8686"/>This is heathen Greek to you still? Your <foreign xml:lang="la">
                               lapis philosophicus</foreign>?
                         
- 
-```
- 
  
  
  
@@ -2528,9 +2282,9 @@ This is heathen Greek to you still? Your <foreign xml:lang="la">
  
  
  ----- 
-
-        [front](#front)
-    
+ 
+### `front`<span id="front"/>
+ 
  
 **front** (front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-front.html) ] 
  
@@ -2576,17 +2330,12 @@ Because cultural conventions differ as to which elements are grouped as front ma
 #### **Example**
  
  
-```
- 
-<front> <epigraph>  <quote>Nam Sibyllam quidem Cumis ego ipse oculis meis vidi in ampulla     pendere, et cum illi pueri dicerent: <q xml:lang="gr">
+<span id="index.xml-egXML-d38e22656"/><front> <epigraph>  <quote>Nam Sibyllam quidem Cumis ego ipse oculis meis vidi in ampulla     pendere, et cum illi pueri dicerent: <q xml:lang="gr">
                               Σίβυλλα τί       θέλεις</q>; respondebat illa: <q xml:lang="gr">
                               ὰποθανεῖν θέλω.</q>  </quote> </epigraph> <div type="dedication">
                                 <p>For Ezra Pound <q xml:lang="it">
                               il miglior fabbro.</q>  </p> </div></front>
  
-```
- 
- 
  
  
  
@@ -2594,15 +2343,10 @@ Because cultural conventions differ as to which elements are grouped as front ma
 #### **Example**
  
  
-```
- 
-<front> <div type="dedication">
+<span id="index.xml-egXML-d38e22731"/><front> <div type="dedication">
                                 <p>To our three selves</p> </div> <div type="preface">
                                 <head>Author's Note</head>  <p>All the characters in this book are purely imaginary, and if the     author has used names that may suggest a reference to living persons     she has done so inadvertently. ...</p> </div></front>
  
-```
- 
- 
  
  
  
@@ -2610,13 +2354,8 @@ Because cultural conventions differ as to which elements are grouped as front ma
 #### **Example**
  
  
-```
- 
-<front> <div type="abstract">
+<span id="index.xml-egXML-d38e22743"/><front> <div type="abstract">
                                 <div>   <head> BACKGROUND:</head>   <p>Food insecurity can put children at greater risk of obesity because       of altered food choices and nonuniform consumption patterns.</p>  </div>  <div>   <head> OBJECTIVE:</head>   <p>We examined the association between obesity and both child-level       food insecurity and personal food insecurity in US children.</p>  </div>  <div>   <head> DESIGN:</head>   <p>Data from 9,701 participants in the National Health and Nutrition       Examination Survey, 2001-2010, aged 2 to 11 years were analyzed.       Child-level food insecurity was assessed with the US Department of       Agriculture's Food Security Survey Module based on eight       child-specific questions. Personal food insecurity was assessed with       five additional questions. Obesity was defined, using physical       measurements, as body mass index (calculated as kg/m2) greater than       or equal to the age- and sex-specific 95th percentile of the Centers       for Disease Control and Prevention growth charts. Logistic       regressions adjusted for sex, race/ethnic group, poverty level, and       survey year were conducted to describe associations between obesity       and food insecurity.</p>  </div>  <div>   <head> RESULTS:</head>   <p>Obesity was significantly associated with personal food insecurity       for children aged 6 to 11 years (odds ratio=1.81; 95% CI 1.33 to       2.48), but not in children aged 2 to 5 years (odds ratio=0.88; 95%       CI 0.51 to 1.51). Child-level food insecurity was not associated       with obesity among 2- to 5-year-olds or 6- to 11-year-olds.</p>  </div>  <div>   <head> CONCLUSIONS:</head>   <p>Personal food insecurity is associated with an increased risk of       obesity only in children aged 6 to 11 years. Personal       food-insecurity measures may give different results than aggregate       food-insecurity measures in children.</p>  </div> </div></front>
- 
-```
- 
  
  
  
@@ -2624,9 +2363,9 @@ Because cultural conventions differ as to which elements are grouped as front ma
  
  
  ----- 
-
-        [gap](#gap)
-    
+ 
+### `gap`<span id="gap"/>
+ 
  
 **gap** indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gap.html) ] 
  
@@ -2706,26 +2445,7 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
 #### **Example**
  
  
-```
- 
-<gap quantity="4" unit="chars" reason="illegible"/>
- 
-```
- 
- 
- 
- 
- 
- 
-#### **Example**
- 
- 
-```
- 
-<gap quantity="1" unit="essay" reason="sampling"/>
- 
-```
- 
+<span id="index.xml-egXML-d38e10625"/><gap quantity="4" unit="chars" reason="illegible"/>
  
  
  
@@ -2734,12 +2454,7 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
 #### **Example**
  
  
-```
- 
-<del> <gap atLeast="4" atMost="8" unit="chars"  reason="illegible"/></del>
- 
-```
- 
+<span id="index.xml-egXML-d38e10640"/><gap quantity="1" unit="essay" reason="sampling"/>
  
  
  
@@ -2748,12 +2463,16 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
 #### **Example**
  
  
-```
+<span id="index.xml-egXML-d38e10643"/><del> <gap atLeast="4" atMost="8" unit="chars"  reason="illegible"/></del>
  
-<gap extent="several lines" reason="lost"/>
  
-```
  
+ 
+ 
+#### **Example**
+ 
+ 
+<span id="index.xml-egXML-d38e10647"/><gap extent="several lines" reason="lost"/>
  
  
  
@@ -2761,9 +2480,9 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
  
  
  ----- 
-
-        [gi](#gi)
-    
+ 
+### `gi`<span id="gi"/>
+ 
  
 **gi** (element name) contains the name (generic identifier) of an element. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gi.html) ] 
  
@@ -2820,13 +2539,8 @@ Empty element
 #### **Example**
  
  
-```
- 
-<p>The <gi>xhtml:li</gi> element is roughly analogous to the <gi>item</gi> element, as is the<gi scheme="DBK">
-                              listItem</gi> element.</p>
- 
-```
-This example shows the use of both a namespace prefix and the scheme attribute as alternative ways of indicating that the  [gi](#gi)  in question is not a TEI element name: in practice only one method should be adopted. 
+<span id="index.xml-egXML-d38e20238"/><p>The <gi>xhtml:li</gi> element is roughly analogous to the <gi>item</gi> element, as is the<gi scheme="DBK">
+                              listItem</gi> element.</p>This example shows the use of both a namespace prefix and the scheme attribute as alternative ways of indicating that the  [gi](#gi)  in question is not a TEI element name: in practice only one method should be adopted. 
  
  
  
@@ -2834,9 +2548,9 @@ This example shows the use of both a namespace prefix and the scheme attribute a
  
  
  ----- 
-
-        [head](#head)
-    
+ 
+### `head`<span id="head"/>
+ 
  
 **head** (heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html) ] 
  
@@ -2888,14 +2602,9 @@ The  [head](#head)  element is used for headings at all levels; software which t
 #### **Example**
  
 The most common use for the  [head](#head)  element is to mark the headings of sections. In older writings, the headings or incipits may be rather longer than usual in modern works. If a section has an explicit ending as well as a heading, it should be marked as a  [trailer](#trailer) , as in this example: 
-```
- 
-<div1 n="I" type="book">
+<span id="index.xml-egXML-d38e12382"/><div1 n="I" type="book">
                                <head>In the name of Christ here begins the first book of the ecclesiastical history of   Georgius Florentinus, known as Gregory, Bishop of Tours.</head> <div2 type="section">
                                 <head>In the name of Christ here begins Book I of the history.</head>  <p>Proposing as I do ...</p>  <p>From the Passion of our Lord until the death of Saint Martin four hundred and twelve     years passed.</p>  <trailer>Here ends the first Book, which covers five thousand, five hundred and ninety-six     years from the beginning of the world down to the death of Saint Martin.</trailer> </div2></div1>
- 
-```
- 
  
  
  
@@ -2904,15 +2613,10 @@ The most common use for the  [head](#head)  element is to mark the headings of s
 #### **Example**
  
 When headings are not inline with the running text (see e.g.  [the heading "Secunda conclusio"](http://diglib.hab.de/show_image.php?dir=drucke/ed000364&amp;pointer=34) ) they might however be encoded as if. The actual placement in the source document can be captured with the place attribute. 
-```
- 
-<div type="subsection">
+<span id="index.xml-egXML-d38e12429"/><div type="subsection">
                                <head place="margin">
                               Secunda conclusio</head> <p>  <lb n="1251"/>  <hi rend="large">
                               Potencia: habitus: et actus: recipiunt speciem ab obiectis<supplied>.</supplied>  </hi>  <lb n="1252"/>Probatur sic. Omne importans necessariam habitudinem ad proprium   [...] </p></div>
- 
-```
- 
  
  
  
@@ -2921,13 +2625,8 @@ When headings are not inline with the running text (see e.g.  [the heading "Secu
 #### **Example**
  
 The  [head](#head)  element is also used to mark headings of other units, such as lists: 
-```
- 
-With a few exceptions, connectives are equally useful in all kinds of discourse: description, narration, exposition, argument. <list rend="bulleted">
+<span id="index.xml-egXML-d38e12533"/>With a few exceptions, connectives are equally useful in all kinds of discourse: description, narration, exposition, argument. <list rend="bulleted">
                                <head>Connectives</head> <item>above</item> <item>accordingly</item> <item>across from</item> <item>adjacent to</item> <item>again</item> <item><!-- ... --> </item></list>
- 
-```
- 
  
  
  
@@ -2935,9 +2634,9 @@ With a few exceptions, connectives are equally useful in all kinds of discourse:
  
  
  ----- 
-
-        [hi](#hi)
-    
+ 
+### `hi`<span id="hi"/>
+ 
  
 **hi** (highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html) ] 
  
@@ -2983,15 +2682,10 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<hi rend="gothic">
+<span id="index.xml-egXML-d38e8952"/><hi rend="gothic">
                               And this Indenture further witnesseth</hi> that the said <hi rend="italic">
                               Walter Shandy</hi>, merchant, in consideration of the said intended marriage ...
                         
- 
-```
- 
  
  
  
@@ -2999,9 +2693,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [hyphenation](#hyphenation)
-    
+ 
+### `hyphenation`<span id="hyphenation"/>
+ 
  
 **hyphenation** summarizes the way in which hyphenation in a source text has been treated in an encoded version of it. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hyphenation.html) ] 
  
@@ -3061,13 +2755,8 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<hyphenation eol="some">
+<span id="index.xml-egXML-d38e18067"/><hyphenation eol="some">
                                <p>End-of-line hyphenation silently removed where appropriate</p></hyphenation>
- 
-```
- 
  
  
  
@@ -3075,9 +2764,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  ----- 
-
-        [idno](#idno)
-    
+ 
+### `idno`<span id="idno"/>
+ 
  
 **idno** (identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html) ] 
  
@@ -3162,9 +2851,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<idno type="ISBN">
+<span id="index.xml-egXML-d38e16927"/><idno type="ISBN">
                               978-1-906964-22-1</idno><idno type="ISSN">
                               0143-3385</idno><idno type="DOI">
                               10.1000/123</idno><idno type="URI">
@@ -3172,10 +2859,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
                               http://authority.nzetc.org/463/</idno><idno type="LT">
                               Thomason Tract E.537(17)</idno><idno type="Wing">
                               C695</idno><idno type="oldCat">
-                               <g ref="#sym"/>345</idno>
- 
-```
-In the last case, the identifier includes a non-Unicode character which is defined elsewhere by means of a `glyph` or `char` element referenced here as `#sym`. 
+                               <g ref="#sym"/>345</idno>In the last case, the identifier includes a non-Unicode character which is defined elsewhere by means of a `glyph` or `char` element referenced here as `#sym`. 
  
  
  
@@ -3183,9 +2867,9 @@ In the last case, the identifier includes a non-Unicode character which is defin
  
  
  ----- 
-
-        [item](#item)
-    
+ 
+### `item`<span id="item"/>
+ 
  
 **item** contains one component of a list. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-item.html) ] 
  
@@ -3235,9 +2919,7 @@ May contain simple prose or a sequence of chunks.Whatever string of characters i
 #### **Example**
  
  
-```
- 
-<list rend="numbered">
+<span id="index.xml-egXML-d38e12158"/><list rend="numbered">
                                <head>Here begin the chapter headings of Book IV</head> <item n="4.1">
                               The death of Queen Clotild.</item> <item n="4.2">
                               How King Lothar wanted to appropriate one third of the Church revenues.</item> <item n="4.3">
@@ -3246,18 +2928,15 @@ May contain simple prose or a sequence of chunks.Whatever string of characters i
                               Saint Gall the Bishop.</item> <item n="4.6">
                               The priest Cato.</item> <item> ...</item></list>
  
-```
- 
- 
  
  
  
  
  
  ----- 
-
-        [keywords](#keywords)
-    
+ 
+### `keywords`<span id="keywords"/>
+ 
  
 **keywords** contains a list of keywords or phrases identifying the topic or nature of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-keywords.html) ] 
  
@@ -3313,13 +2992,8 @@ Each individual keyword (including compound subject headings) should be supplied
 #### **Example**
  
  
-```
- 
-<keywords scheme="http://classificationweb.net">
+<span id="index.xml-egXML-d38e19221"/><keywords scheme="http://classificationweb.net">
                                <term>Babbage, Charles</term> <term>Mathematicians - Great Britain - Biography</term></keywords>
- 
-```
- 
  
  
  
@@ -3328,12 +3002,7 @@ Each individual keyword (including compound subject headings) should be supplied
 #### **Example**
  
  
-```
- 
-<keywords> <term>Fermented beverages</term> <term>Central Andes</term> <term>Schinus molle</term> <term>Molle beer</term> <term>Indigenous peoples</term> <term>Ethnography</term> <term>Archaeology</term></keywords>
- 
-```
- 
+<span id="index.xml-egXML-d38e19228"/><keywords> <term>Fermented beverages</term> <term>Central Andes</term> <term>Schinus molle</term> <term>Molle beer</term> <term>Indigenous peoples</term> <term>Ethnography</term> <term>Archaeology</term></keywords>
  
  
  
@@ -3341,9 +3010,9 @@ Each individual keyword (including compound subject headings) should be supplied
  
  
  ----- 
-
-        [l](#l)
-    
+ 
+### `l`<span id="l"/>
+ 
  
 **l** (verse line) contains a single, possibly incomplete, line of verse. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-l.html) ] 
  
@@ -3389,13 +3058,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<l met="x/x/x/x/x/" real="/xx/x/x/x/">
+<span id="index.xml-egXML-d38e15184"/><l met="x/x/x/x/x/" real="/xx/x/x/x/">
                               Shall I compare thee to a summer's day?</l>
- 
-```
- 
  
  
  
@@ -3403,9 +3067,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [language](#language)
-    
+ 
+### `language`<span id="language"/>
+ 
  
 **language** characterizes a single language or sublanguage used within a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-language.html) ] 
  
@@ -3473,15 +3137,10 @@ Particularly for sublanguages, an informal prose characterization should be supp
 #### **Example**
  
  
-```
- 
-<langUsage> <language ident="en-US" usage="75">
+<span id="index.xml-egXML-d38e18934"/><langUsage> <language ident="en-US" usage="75">
                               modern American English</language> <language ident="i-az-Arab" usage="20">
                               Azerbaijani in Arabic script</language> <language ident="x-lap" usage="05">
                               Pig Latin</language></langUsage>
- 
-```
- 
  
  
  
@@ -3489,9 +3148,9 @@ Particularly for sublanguages, an informal prose characterization should be supp
  
  
  ----- 
-
-        [langUsage](#langUsage)
-    
+ 
+### `langUsage`<span id="langUsage"/>
+ 
  
 **langUsage** (language usage) describes the languages, sublanguages, registers, dialects, etc. represented within a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-langUsage.html) ] 
  
@@ -3529,15 +3188,10 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<langUsage> <language ident="fr-CA" usage="60">
+<span id="index.xml-egXML-d38e18867"/><langUsage> <language ident="fr-CA" usage="60">
                               Québecois</language> <language ident="en-CA" usage="20">
                               Canadian business English</language> <language ident="en-GB" usage="20">
                               British English</language></langUsage>
- 
-```
- 
  
  
  
@@ -3545,9 +3199,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [lb](#lb)
-    
+ 
+### `lb`<span id="lb"/>
+ 
  
 **lb** (line beginning) marks the beginning of a new (typographic) line in some edition or version of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lb.html) ] 
  
@@ -3593,12 +3247,7 @@ By convention,  [lb](#lb)  elements should appear at the point in the text where
 #### **Example**
  
 This example shows typographical line breaks within metrical lines, where they occur at different places in different editions: 
-```
- 
-<l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l><l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l><l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
- 
-```
- 
+<span id="index.xml-egXML-d38e13287"/><l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l><l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l><l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
  
  
  
@@ -3607,12 +3256,7 @@ This example shows typographical line breaks within metrical lines, where they o
 #### **Example**
  
 This example encodes typographical line breaks as a means of preserving the visual appearance of a title page. The break attribute is used to show that the line break does not (as elsewhere) mark the start of a new word. 
-```
- 
-<titlePart> <lb/>With Additions, ne-<lb break="no"/>ver before Printed.</titlePart>
- 
-```
- 
+<span id="index.xml-egXML-d38e13350"/><titlePart> <lb/>With Additions, ne-<lb break="no"/>ver before Printed.</titlePart>
  
  
  
@@ -3620,9 +3264,9 @@ This example encodes typographical line breaks as a means of preserving the visu
  
  
  ----- 
-
-        [lg](#lg)
-    
+ 
+### `lg`<span id="lg"/>
+ 
  
 **lg** (line group) contains one or more verse lines functioning as a formal unit, e.g. a stanza, refrain, verse paragraph, etc. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lg.html) ] 
  
@@ -3672,15 +3316,10 @@ contains verse lines or nested line groups only, possibly prefixed by a heading.
 #### **Example**
  
  
-```
- 
-<lg type="free">
+<span id="index.xml-egXML-d38e15299"/><lg type="free">
                                <l>Let me be my own fool</l> <l>of my own making, the sum of it</l></lg><lg type="free">
                                <l>is equivocal.</l> <l>One says of the drunken farmer:</l></lg><lg type="free">
                                <l>leave him lay off it. And this is</l> <l>the explanation.</l></lg>
- 
-```
- 
  
  
  
@@ -3688,9 +3327,9 @@ contains verse lines or nested line groups only, possibly prefixed by a heading.
  
  
  ----- 
-
-        [licence](#licence)
-    
+ 
+### `licence`<span id="licence"/>
+ 
  
 **licence** contains information about a licence or other legal agreement applicable to the text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-licence.html) ] 
  
@@ -3740,13 +3379,8 @@ A  [licence](#licence)  element should be supplied for each licence agreement ap
 #### **Example**
  
  
-```
- 
-<licence target="http://www.nzetc.org/tm/scholarly/tei-NZETC-Help.html#licensing">
+<span id="index.xml-egXML-d38e17297"/><licence target="http://www.nzetc.org/tm/scholarly/tei-NZETC-Help.html#licensing">
                                Licence: Creative Commons Attribution-Share Alike 3.0 New Zealand Licence</licence>
- 
-```
- 
  
  
  
@@ -3755,13 +3389,8 @@ A  [licence](#licence)  element should be supplied for each licence agreement ap
 #### **Example**
  
  
-```
- 
-<availability> <licence target="http://creativecommons.org/licenses/by/3.0/"  notBefore="2013-01-01">
+<span id="index.xml-egXML-d38e17309"/><availability> <licence target="http://creativecommons.org/licenses/by/3.0/"  notBefore="2013-01-01">
                                 <p>The Creative Commons Attribution 3.0 Unported (CC BY 3.0) Licence     applies to this document.</p>  <p>The licence was added on January 1, 2013.</p> </licence></availability>
- 
-```
- 
  
  
  
@@ -3769,9 +3398,9 @@ A  [licence](#licence)  element should be supplied for each licence agreement ap
  
  
  ----- 
-
-        [list](#list)
-    
+ 
+### `list`<span id="list"/>
+ 
  
 **list** contains any sequence of items organized as a list. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-list.html) ] 
  
@@ -3850,15 +3479,10 @@ May contain an optional heading followed by a series of items, or a series of la
 #### **Example**
  
  
-```
- 
-<list rend="numbered">
+<span id="index.xml-egXML-d38e11710"/><list rend="numbered">
                                <item>a butcher</item> <item>a baker</item> <item>a candlestick maker, with <list rend="bulleted">
                                  <item>rings on his fingers</item>   <item>bells on his toes</item>  </list> </item></list>
  
-```
- 
- 
  
  
  
@@ -3866,14 +3490,9 @@ May contain an optional heading followed by a series of items, or a series of la
 #### **Example**
  
  
-```
- 
-<list type="syllogism" rend="bulleted">
+<span id="index.xml-egXML-d38e11724"/><list type="syllogism" rend="bulleted">
                                <item>All Cretans are liars.</item> <item>Epimenides is a Cretan.</item> <item>ERGO Epimenides is a liar.</item></list>
  
-```
- 
- 
  
  
  
@@ -3881,13 +3500,8 @@ May contain an optional heading followed by a series of items, or a series of la
 #### **Example**
  
  
-```
- 
-<list type="litany" rend="simple">
+<span id="index.xml-egXML-d38e11733"/><list type="litany" rend="simple">
                                <item>God save us from drought.</item> <item>God save us from pestilence.</item> <item>God save us from wickedness in high places.</item> <item>Praise be to God.</item></list>
- 
-```
- 
  
  
  
@@ -3896,9 +3510,7 @@ May contain an optional heading followed by a series of items, or a series of la
 #### **Example**
  
 The following example treats the short numbered clauses of Anglo-Saxon legal codes as lists of items. The text is from an ordinance of King Athelstan (924–939): 
-```
- 
-<div1 type="section">
+<span id="index.xml-egXML-d38e11867"/><div1 type="section">
                                <head>Athelstan's Ordinance</head> <list rend="numbered">
                                 <item n="1">
                               Concerning thieves. First, that no thief is to be spared who is caught with     the stolen goods, [if he is] over twelve years and [if the value of the goods
@@ -3928,10 +3540,7 @@ The following example treats the short numbered clauses of Anglo-Saxon legal cod
                            owns.</item>    <item n="3.2">
                               And likewise any of the king's treasurers or of our reeves, who has been         an accessory of thieves who have committed theft, is to liable to the same.</item>   </list>  </item>  <item n="4">
                               Concerning treachery to a lord. And we have pronounced concerning treachery to     a lord, that he [who is accused] is to forfeit his life if he cannot deny it
-                           or is     afterwards convicted at the three-fold ordeal.</item> </list></div1>
- 
-```
-Note that nested lists have been used so the tagging mirrors the structure indicated by the two-level numbering of the clauses. The clauses could have been treated as a one-level list with irregular numbering, if desired. 
+                           or is     afterwards convicted at the three-fold ordeal.</item> </list></div1>Note that nested lists have been used so the tagging mirrors the structure indicated by the two-level numbering of the clauses. The clauses could have been treated as a one-level list with irregular numbering, if desired. 
  
  
  
@@ -3940,16 +3549,11 @@ Note that nested lists have been used so the tagging mirrors the structure indic
 #### **Example**
  
  
-```
- 
-<p>These decrees, most blessed Pope Hadrian, we propounded in the public council ...
+<span id="index.xml-egXML-d38e11947"/><p>These decrees, most blessed Pope Hadrian, we propounded in the public council ...
                            and they confirmed them in our hand in your stead with the sign of the Holy Cross, and afterwards inscribed with a careful pen on the paper of this page, affixing thus the sign of
                            the Holy Cross.<list rend="simple">
                                 <item>I, Eanbald, by the grace of God archbishop of the holy church of York, have     subscribed to the pious and catholic validity of this document with the sign
                            of the Holy     Cross.</item>  <item>I, Ælfwold, king of the people across the Humber, consenting have subscribed with     the sign of the Holy Cross.</item>  <item>I, Tilberht, prelate of the church of Hexham, rejoicing have subscribed with the     sign of the Holy Cross.</item>  <item>I, Higbald, bishop of the church of Lindisfarne, obeying have subscribed with the     sign of the Holy Cross.</item>  <item>I, Ethelbert, bishop of Candida Casa, suppliant, have subscribed with thef sign of     the Holy Cross.</item>  <item>I, Ealdwulf, bishop of the church of Mayo, have subscribed with devout will.</item>  <item>I, Æthelwine, bishop, have subscribed through delegates.</item>  <item>I, Sicga, patrician, have subscribed with serene mind with the sign of the Holy     Cross.</item> </list></p>
- 
-```
- 
  
  
  
@@ -3957,9 +3561,9 @@ Note that nested lists have been used so the tagging mirrors the structure indic
  
  
  ----- 
-
-        [listBibl](#listBibl)
-    
+ 
+### `listBibl`<span id="listBibl"/>
+ 
  
 **listBibl** (citation list) contains a list of bibliographic citations of any kind. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listBibl.html) ] 
  
@@ -4001,12 +3605,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<listBibl> <head>Works consulted</head> <bibl>Blain, Clements and Grundy: Feminist Companion to   Literature in English (Yale, 1990) </bibl> <biblStruct>  <analytic>   <title>The Interesting story of the Children in the Wood</title>  </analytic>  <monogr>   <title>The Penny Histories</title>   <author>Victor E Neuberg</author>   <imprint>    <publisher>OUP</publisher>    <date>1968</date>   </imprint>  </monogr> </biblStruct></listBibl>
- 
-```
- 
+<span id="index.xml-egXML-d38e14944"/><listBibl> <head>Works consulted</head> <bibl>Blain, Clements and Grundy: Feminist Companion to   Literature in English (Yale, 1990) </bibl> <biblStruct>  <analytic>   <title>The Interesting story of the Children in the Wood</title>  </analytic>  <monogr>   <title>The Penny Histories</title>   <author>Victor E Neuberg</author>   <imprint>    <publisher>OUP</publisher>    <date>1968</date>   </imprint>  </monogr> </biblStruct></listBibl>
  
  
  
@@ -4014,9 +3613,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [listChange](#listChange)
-    
+ 
+### `listChange`<span id="listChange"/>
+ 
  
 **listChange** groups a number of change descriptions associated with either the creation of a source text or the revision of an encoded text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listChange.html) ] 
  
@@ -4073,14 +3672,9 @@ When this element appears within the  [creation](#creation)  element it document
 #### **Example**
  
  
-```
- 
-<revisionDesc> <listChange>  <change when="1991-11-11" who="#LB">
+<span id="index.xml-egXML-d38e19766"/><revisionDesc> <listChange>  <change when="1991-11-11" who="#LB">
                                deleted chapter 10 </change>  <change when="1991-11-02" who="#MSM">
                                completed first draft </change> </listChange></revisionDesc>
- 
-```
- 
  
  
  
@@ -4089,17 +3683,12 @@ When this element appears within the  [creation](#creation)  element it document
 #### **Example**
  
  
-```
- 
-<profileDesc> <creation>  <listChange ordered="true">
+<span id="index.xml-egXML-d38e19774"/><profileDesc> <creation>  <listChange ordered="true">
                                  <change xml:id="CHG-1">
                               First stage, written in ink by a writer</change>   <change xml:id="CHG-2">
                               Second stage, written in Goethe's hand using pencil</change>   <change xml:id="CHG-3">
                               Fixation of the revised passages and further revisions by       Goethe using ink</change>   <change xml:id="CHG-4">
                               Addition of another stanza in a different hand,       probably at a later stage</change>  </listChange> </creation></profileDesc>
- 
-```
- 
  
  
  
@@ -4107,9 +3696,9 @@ When this element appears within the  [creation](#creation)  element it document
  
  
  ----- 
-
-        [listPrefixDef](#listPrefixDef)
-    
+ 
+### `listPrefixDef`<span id="listPrefixDef"/>
+ 
  
 **listPrefixDef** (list of prefix definitions) contains a list of definitions of prefixing schemes used in data.pointer values, showing how abbreviated URIs using each scheme may be expanded into full URIs. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPrefixDef.html) ] 
  
@@ -4145,14 +3734,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
 In this example, two private URI scheme prefixes are defined and patterns are provided for dereferencing them. Each prefix is also supplied with a human-readable explanation in a  [p](#p)  element. 
-```
- 
-<listPrefixDef> <prefixDef ident="psn"  matchPattern="([A-Z]+)"  replacementPattern="personography.xml#$1">
+<span id="index.xml-egXML-d38e18367"/><listPrefixDef> <prefixDef ident="psn"  matchPattern="([A-Z]+)"  replacementPattern="personography.xml#$1">
                                 <p> Private URIs using the <code>psn</code>     prefix are pointers to <gi>person</gi>     elements in the personography.xml file.     For example, <code>psn:MDH</code>     dereferences to <code>personography.xml#MDH</code>.  </p> </prefixDef> <prefixDef ident="bibl"  matchPattern="([a-z]+[a-z0-9]*)"  replacementPattern="http://www.example.com/getBibl.xql?id=$1">
                                 <p> Private URIs using the <code>bibl</code> prefix can be     expanded to form URIs which retrieve the relevant     bibliographical reference from www.example.com.  </p> </prefixDef></listPrefixDef>
- 
-```
- 
  
  
  
@@ -4160,9 +3744,9 @@ In this example, two private URI scheme prefixes are defined and patterns are pr
  
  
  ----- 
-
-        [milestone](#milestone)
-    
+ 
+### `milestone`<span id="milestone"/>
+ 
  
 **milestone** marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-milestone.html) ] 
  
@@ -4208,13 +3792,8 @@ For this element, the global n attribute indicates the new number or other value
 #### **Example**
  
  
-```
- 
-<milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/> ...
+<span id="index.xml-egXML-d38e12971"/><milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/> ...
                         
- 
-```
- 
  
  
  
@@ -4222,9 +3801,9 @@ For this element, the global n attribute indicates the new number or other value
  
  
  ----- 
-
-        [name](#name)
-    
+ 
+### `name`<span id="name"/>
+ 
  
 **name** (name, proper noun) contains a proper noun or noun phrase. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html) ] 
  
@@ -4278,16 +3857,11 @@ Proper nouns referring to people, places, and organizations may be tagged instea
 #### **Example**
  
  
-```
- 
-<name type="person">
+<span id="index.xml-egXML-d38e11030"/><name type="person">
                               Thomas Hoccleve</name><name type="place">
                               Villingaholt</name><name type="org">
                               Vetus Latina Institut</name><name type="person" ref="#HOC001">
                               Occleve</name>
- 
-```
- 
  
  
  
@@ -4295,9 +3869,9 @@ Proper nouns referring to people, places, and organizations may be tagged instea
  
  
  ----- 
-
-        [note](#note)
-    
+ 
+### `note`<span id="note"/>
+ 
  
 **note** contains a note or annotation. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-note.html) ] 
  
@@ -4366,15 +3940,10 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
 In the following example, the translator has supplied a footnote containing an explanation of the term translated as "painterly": 
-```
- 
-And yet it is not only in the great line of Italian renaissance art, but even in the painterly <note place="bottom" type="gloss" resp="#MDMH">
+<span id="index.xml-egXML-d38e12678"/>And yet it is not only in the great line of Italian renaissance art, but even in the painterly <note place="bottom" type="gloss" resp="#MDMH">
                                <term xml:lang="de">
                               Malerisch</term>. This word has, in the German, two distinct meanings, one objective, a quality residing in the object, the other subjective, a mode of apprehension and creation. To avoid confusion, they have been distinguished in English as<mentioned>picturesque</mentioned> and<mentioned>painterly</mentioned> respectively.</note> style of the Dutch genre painters of the seventeenth century that drapery has this psychological significance.<!-- elsewhere in the document --><respStmt xml:id="MDMH">
-                               <resp>translation from German to English</resp> <name>Hottinger, Marie Donald Mackie</name></respStmt>
- 
-```
-For this example to be valid, the code MDMH must be defined elsewhere, for example by means of a responsibility statement in the associated TEI header. 
+                               <resp>translation from German to English</resp> <name>Hottinger, Marie Donald Mackie</name></respStmt>For this example to be valid, the code MDMH must be defined elsewhere, for example by means of a responsibility statement in the associated TEI header. 
  
  
  
@@ -4383,15 +3952,10 @@ For this example to be valid, the code MDMH must be defined elsewhere, for examp
 #### **Example**
  
 The global n attribute may be used to supply the symbol or number used to mark the note's point of attachment in the source text, as in the following example: 
-```
- 
-Mevorakh b. Saadya's mother, the matriarch of the family during the second half of the eleventh century, <note n="126" anchored="true">
+<span id="index.xml-egXML-d38e12766"/>Mevorakh b. Saadya's mother, the matriarch of the family during the second half of the eleventh century, <note n="126" anchored="true">
                                The alleged mention of Judah Nagid's mother in a letter from 1071 is, in fact, a reference
                            to Judah's children; cf. above, nn. 111 and 54. </note> is well known from Geniza documents published by Jacob Mann.
-                        
- 
-```
-However, if notes are numbered in sequence and their numbering can be reconstructed automatically by processing software, it may well be considered unnecessary to record the note numbers. 
+                        However, if notes are numbered in sequence and their numbering can be reconstructed automatically by processing software, it may well be considered unnecessary to record the note numbers. 
  
  
  
@@ -4399,9 +3963,9 @@ However, if notes are numbered in sequence and their numbering can be reconstruc
  
  
  ----- 
-
-        [notesStmt](#notesStmt)
-    
+ 
+### `notesStmt`<span id="notesStmt"/>
+ 
  
 **notesStmt** (notes statement) collects together any notes providing information about a text additional to that recorded in other parts of the bibliographic description. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-notesStmt.html) ] 
  
@@ -4445,12 +4009,7 @@ Information of different kinds should not be grouped together into the same note
 #### **Example**
  
  
-```
- 
-<notesStmt> <note>Historical commentary provided by Mark Cohen</note> <note>OCR scanning done at University of Toronto</note></notesStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e17533"/><notesStmt> <note>Historical commentary provided by Mark Cohen</note> <note>OCR scanning done at University of Toronto</note></notesStmt>
  
  
  
@@ -4458,9 +4017,9 @@ Information of different kinds should not be grouped together into the same note
  
  
  ----- 
-
-        [num](#num)
-    
+ 
+### `num`<span id="num"/>
+ 
  
 **num** (number) contains a number, written in any form. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-num.html) ] 
  
@@ -4543,16 +4102,11 @@ Detailed analyses of quantities and units of measure in historical documents may
 #### **Example**
  
  
-```
- 
-<p>I reached <num type="cardinal" value="21">
+<span id="index.xml-egXML-d38e11144"/><p>I reached <num type="cardinal" value="21">
                               twenty-one</num> on my <num type="ordinal" value="21">
                               twenty-first</num> birthday</p><p>Light travels at <num value="3E10">
                               3×10<hi rend="sup">
                               10</hi> </num> cm per second.</p>
- 
-```
- 
  
  
  
@@ -4560,9 +4114,9 @@ Detailed analyses of quantities and units of measure in historical documents may
  
  
  ----- 
-
-        [orig](#orig)
-    
+ 
+### `orig`<span id="orig"/>
+ 
  
 **orig** (original form) contains a reading which is marked as following the original, rather than being normalized or corrected. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orig.html) ] 
  
@@ -4610,12 +4164,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
 If all that is desired is to call attention to the original version in the copy text,  [orig](#orig)  may be used alone: 
-```
- 
-<l>But this will be a <orig>meere</orig> confusion</l><l>And hardly shall we all be <orig>vnderstoode</orig></l>
- 
-```
- 
+<span id="index.xml-egXML-d38e10431"/><l>But this will be a <orig>meere</orig> confusion</l><l>And hardly shall we all be <orig>vnderstoode</orig></l>
  
  
  
@@ -4624,12 +4173,7 @@ If all that is desired is to call attention to the original version in the copy 
 #### **Example**
  
 More usually, an  [orig](#orig)  will be combined with a regularized form within a  [choice](#choice)  element: 
-```
- 
-<l>But this will be a <choice>  <orig>meere</orig>  <reg>mere</reg> </choice> confusion</l><l>And hardly shall we all be <choice>  <orig>vnderstoode</orig>  <reg>understood</reg> </choice></l>
- 
-```
- 
+<span id="index.xml-egXML-d38e10541"/><l>But this will be a <choice>  <orig>meere</orig>  <reg>mere</reg> </choice> confusion</l><l>And hardly shall we all be <choice>  <orig>vnderstoode</orig>  <reg>understood</reg> </choice></l>
  
  
  
@@ -4637,9 +4181,9 @@ More usually, an  [orig](#orig)  will be combined with a regularized form within
  
  
  ----- 
-
-        [p](#p)
-    
+ 
+### `p`<span id="p"/>
+ 
  
 **p** (paragraph) marks paragraphs in prose. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-p.html) ] 
  
@@ -4685,12 +4229,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<p>Hallgerd was outside. <q>There is blood on your axe,</q> she said. <q>What have you   done?</q></p><p> <q>I have now arranged that you can be married a second time,</q> replied Thjostolf.</p><p> <q>Then you must mean that Thorvald is dead,</q> she said.</p><p> <q>Yes,</q> said Thjostolf. <q>And now you must think up some plan for me.</q></p>
- 
-```
- 
+<span id="index.xml-egXML-d38e8583"/><p>Hallgerd was outside. <q>There is blood on your axe,</q> she said. <q>What have you   done?</q></p><p> <q>I have now arranged that you can be married a second time,</q> replied Thjostolf.</p><p> <q>Then you must mean that Thorvald is dead,</q> she said.</p><p> <q>Yes,</q> said Thjostolf. <q>And now you must think up some plan for me.</q></p>
  
  
  
@@ -4698,9 +4237,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [pb](#pb)
-    
+ 
+### `pb`<span id="pb"/>
+ 
  
 **pb** (page beginning) marks the beginning of a new page in a paginated document. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html) ] 
  
@@ -4746,12 +4285,7 @@ A  [pb](#pb)  element should appear at the start of the page which it identifies
 #### **Example**
  
 Page numbers may vary in different editions of a text.
-```
- 
-<p> ... <pb n="145" ed="ed2"/><!-- Page 145 in edition "ed2" starts here --> ... <pb n="283" ed="ed1"/><!-- Page 283 in edition "ed1" starts here--> ... </p>
- 
-```
- 
+<span id="index.xml-egXML-d38e13099"/><p> ... <pb n="145" ed="ed2"/><!-- Page 145 in edition "ed2" starts here --> ... <pb n="283" ed="ed1"/><!-- Page 283 in edition "ed1" starts here--> ... </p>
  
  
  
@@ -4760,13 +4294,8 @@ Page numbers may vary in different editions of a text.
 #### **Example**
  
 A page break may be associated with a facsimile image of the page it introduces by means of the facs attribute 
-```
- 
-<body> <pb n="1" facs="page1.png"/><!-- page1.png contains an image of the page;
+<span id="index.xml-egXML-d38e13126"/><body> <pb n="1" facs="page1.png"/><!-- page1.png contains an image of the page;
                               the text it contains is encoded here --> <p><!-- ... --> </p> <pb n="2" facs="page2.png"/><!-- similarly, for page 2 --> <p><!-- ... --> </p></body>
- 
-```
- 
  
  
  
@@ -4774,9 +4303,9 @@ A page break may be associated with a facsimile image of the page it introduces 
  
  
  ----- 
-
-        [pc](#pc)
-    
+ 
+### `pc`<span id="pc"/>
+ 
  
 **pc** (punctuation character) contains a character or string of characters regarded as constituting a single punctuation mark. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pc.html) ] 
  
@@ -4849,13 +4378,8 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<phr> <w>do</w> <w>you</w> <w>understand</w> <pc type="interrogative">
+<span id="index.xml-egXML-d38e15749"/><phr> <w>do</w> <w>you</w> <w>understand</w> <pc type="interrogative">
                               ?</pc></phr>
- 
-```
- 
  
  
  
@@ -4864,9 +4388,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
 Example encoding of the German sentence Wir fahren in den Urlaub., encoded with attributes from  [att.linguistic](#att.linguistic)  discussed in section [ID AILALW in TEI Guidelines]. 
-```
- 
-<s> <w pos="PPER" msd="1.Pl.*.Nom">
+<span id="index.xml-egXML-d38e15770"/><s> <w pos="PPER" msd="1.Pl.*.Nom">
                               Wir</w> <w pos="VVFIN" msd="1.Pl.Pres.Ind">
                               fahren</w> <w pos="APPR" msd="--">
                               in</w> <w pos="ART" msd="Def.Masc.Akk.Sg.">
@@ -4874,18 +4396,15 @@ Example encoding of the German sentence Wir fahren in den Urlaub., encoded with 
                               Urlaub</w> <pc pos="$." msd="--" join="left">
                               .</pc></s>
  
-```
- 
- 
  
  
  
  
  
  ----- 
-
-        [prefixDef](#prefixDef)
-    
+ 
+### `prefixDef`<span id="prefixDef"/>
+ 
  
 **prefixDef** (prefix definition) defines a prefixing scheme used in data.pointer values, showing how abbreviated URIs using the scheme may be expanded into full URIs. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html) ] 
  
@@ -4942,13 +4461,8 @@ The abbreviated pointer may be dereferenced to produce either an absolute or a r
 #### **Example**
  
  
-```
- 
-<prefixDef ident="ref" matchPattern="([a-z]+)" replacementPattern="../../references/references.xml#$1">
+<span id="index.xml-egXML-d38e18306"/><prefixDef ident="ref" matchPattern="([a-z]+)" replacementPattern="../../references/references.xml#$1">
                                <p> In the context of this project, private URIs with   the prefix "ref" point to <gi>div</gi> elements in   the project's global references.xml file. </p></prefixDef>
- 
-```
- 
  
  
  
@@ -4956,9 +4470,9 @@ The abbreviated pointer may be dereferenced to produce either an absolute or a r
  
  
  ----- 
-
-        [profileDesc](#profileDesc)
-    
+ 
+### `profileDesc`<span id="profileDesc"/>
+ 
  
 **profileDesc** (text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-profileDesc.html) ] 
  
@@ -5002,15 +4516,10 @@ Although the content model permits it, it is rarely meaningful to supply multipl
 #### **Example**
  
  
-```
- 
-<profileDesc> <langUsage>  <language ident="fr">
+<span id="index.xml-egXML-d38e18552"/><profileDesc> <langUsage>  <language ident="fr">
                               French</language> </langUsage> <textDesc n="novel">
                                 <channel mode="w">
                               print; part issues</channel>  <constitution type="single"/>  <derivation type="original"/>  <domain type="art"/>  <factuality type="fiction"/>  <interaction type="none"/>  <preparedness type="prepared"/>  <purpose type="entertain" degree="high"/>  <purpose type="inform" degree="medium"/> </textDesc> <settingDesc>  <setting>   <name>Paris, France</name>   <time>Late 19th century</time>  </setting> </settingDesc></profileDesc>
- 
-```
- 
  
  
  
@@ -5018,9 +4527,9 @@ Although the content model permits it, it is rarely meaningful to supply multipl
  
  
  ----- 
-
-        [projectDesc](#projectDesc)
-    
+ 
+### `projectDesc`<span id="projectDesc"/>
+ 
  
 **projectDesc** (project description) describes in detail the aim or purpose for which an electronic file was encoded, together with any other relevant information concerning the process by which it was assembled or collected. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-projectDesc.html) ] 
  
@@ -5056,12 +4565,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<projectDesc> <p>Texts collected for use in the Claremont Shakespeare Clinic, June 1990</p></projectDesc>
- 
-```
- 
+<span id="index.xml-egXML-d38e17923"/><projectDesc> <p>Texts collected for use in the Claremont Shakespeare Clinic, June 1990</p></projectDesc>
  
  
  
@@ -5069,9 +4573,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [publicationStmt](#publicationStmt)
-    
+ 
+### `publicationStmt`<span id="publicationStmt"/>
+ 
  
 **publicationStmt** (publication statement) groups information concerning the publication or distribution of an electronic or other text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publicationStmt.html) ] 
  
@@ -5117,12 +4621,7 @@ Where a publication statement contains several members of the model.publicationS
 #### **Example**
  
  
-```
- 
-<publicationStmt> <publisher>C. Muquardt </publisher> <pubPlace>Bruxelles &amp; Leipzig</pubPlace> <date when="1846"/></publicationStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e16656"/><publicationStmt> <publisher>C. Muquardt </publisher> <pubPlace>Bruxelles &amp; Leipzig</pubPlace> <date when="1846"/></publicationStmt>
  
  
  
@@ -5131,14 +4630,9 @@ Where a publication statement contains several members of the model.publicationS
 #### **Example**
  
  
-```
- 
-<publicationStmt> <publisher>Chadwyck Healey</publisher> <pubPlace>Cambridge</pubPlace> <availability>  <p>Available under licence only</p> </availability> <date when="1992">
+<span id="index.xml-egXML-d38e16703"/><publicationStmt> <publisher>Chadwyck Healey</publisher> <pubPlace>Cambridge</pubPlace> <availability>  <p>Available under licence only</p> </availability> <date when="1992">
                               1992</date></publicationStmt>
  
-```
- 
- 
  
  
  
@@ -5146,13 +4640,8 @@ Where a publication statement contains several members of the model.publicationS
 #### **Example**
  
  
-```
- 
-<publicationStmt> <publisher>Zea Books</publisher> <pubPlace>Lincoln, NE</pubPlace> <date>2017</date> <availability>  <p>This is an open access work licensed under a Creative Commons Attribution 4.0 International
+<span id="index.xml-egXML-d38e16715"/><publicationStmt> <publisher>Zea Books</publisher> <pubPlace>Lincoln, NE</pubPlace> <date>2017</date> <availability>  <p>This is an open access work licensed under a Creative Commons Attribution 4.0 International
                            license.</p> </availability> <ptr target="http://digitalcommons.unl.edu/zeabook/55"/></publicationStmt>
- 
-```
- 
  
  
  
@@ -5160,9 +4649,9 @@ Where a publication statement contains several members of the model.publicationS
  
  
  ----- 
-
-        [publisher](#publisher)
-    
+ 
+### `publisher`<span id="publisher"/>
+ 
  
 **publisher** provides the name of the organization responsible for the publication or distribution of a bibliographic item. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publisher.html) ] 
  
@@ -5214,12 +4703,7 @@ Use the full form of the name by which a company is usually referred to, rather 
 #### **Example**
  
  
-```
- 
-<imprint> <pubPlace>Oxford</pubPlace> <publisher>Clarendon Press</publisher> <date>1987</date></imprint>
- 
-```
- 
+<span id="index.xml-egXML-d38e14564"/><imprint> <pubPlace>Oxford</pubPlace> <publisher>Clarendon Press</publisher> <date>1987</date></imprint>
  
  
  
@@ -5227,9 +4711,9 @@ Use the full form of the name by which a company is usually referred to, rather 
  
  
  ----- 
-
-        [pubPlace](#pubPlace)
-    
+ 
+### `pubPlace`<span id="pubPlace"/>
+ 
  
 **pubPlace** (publication place) contains the name of the place where a bibliographic item was published. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pubPlace.html) ] 
  
@@ -5273,12 +4757,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<publicationStmt> <publisher>Oxford University Press</publisher> <pubPlace>Oxford</pubPlace> <date>1989</date></publicationStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e14651"/><publicationStmt> <publisher>Oxford University Press</publisher> <pubPlace>Oxford</pubPlace> <date>1989</date></publicationStmt>
  
  
  
@@ -5286,9 +4765,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [q](#q)
-    
+ 
+### `q`<span id="q"/>
+ 
  
 **q** (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-q.html) ] 
  
@@ -5365,12 +4844,7 @@ May be used to indicate that a passage is distinguished from the surrounding tex
 #### **Example**
  
  
-```
- 
-It is spelled <q>Tübingen</q> — to enter the letter <q>u</q> with an umlaut hold down the <q>option</q> key and press <q>0 0 f c</q>
- 
-```
- 
+<span id="index.xml-egXML-d38e9119"/>It is spelled <q>Tübingen</q> — to enter the letter <q>u</q> with an umlaut hold down the <q>option</q> key and press <q>0 0 f c</q>
  
  
  
@@ -5378,9 +4852,9 @@ It is spelled <q>Tübingen</q> — to enter the letter <q>u</q> with an umlaut h
  
  
  ----- 
-
-        [quote](#quote)
-    
+ 
+### `quote`<span id="quote"/>
+ 
  
 **quote** (quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-quote.html) ] 
  
@@ -5434,12 +4908,7 @@ If a bibliographic citation is supplied for the source of a quotation, the two m
 #### **Example**
  
  
-```
- 
-Lexicography has shown little sign of being affected by the work of followers of J.R. Firth, probably best summarized in his slogan, <quote>You shall know a word by the company it keeps</quote><ref>(Firth, 1957)</ref>
- 
-```
- 
+<span id="index.xml-egXML-d38e9023"/>Lexicography has shown little sign of being affected by the work of followers of J.R. Firth, probably best summarized in his slogan, <quote>You shall know a word by the company it keeps</quote><ref>(Firth, 1957)</ref>
  
  
  
@@ -5447,9 +4916,9 @@ Lexicography has shown little sign of being affected by the work of followers of
  
  
  ----- 
-
-        [ref](#ref)
-    
+ 
+### `ref`<span id="ref"/>
+ 
  
 **ref** (reference) defines a reference to another location, possibly modified by additional text or comment. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ref.html) ] 
  
@@ -5503,13 +4972,8 @@ The target and cRef attributes are mutually exclusive.
 #### **Example**
  
  
-```
- 
-See especially <ref target="http://www.natcorp.ox.ac.uk/Texts/A02.xml#s2">
+<span id="index.xml-egXML-d38e11541"/>See especially <ref target="http://www.natcorp.ox.ac.uk/Texts/A02.xml#s2">
                               the second sentence</ref>
- 
-```
- 
  
  
  
@@ -5518,14 +4982,9 @@ See especially <ref target="http://www.natcorp.ox.ac.uk/Texts/A02.xml#s2">
 #### **Example**
  
  
-```
- 
-See also <ref target="#locution">
+<span id="index.xml-egXML-d38e11546"/>See also <ref target="#locution">
                               s.v. <term>locution</term></ref>.
                         
- 
-```
- 
  
  
  
@@ -5533,9 +4992,9 @@ See also <ref target="#locution">
  
  
  ----- 
-
-        [reg](#reg)
-    
+ 
+### `reg`<span id="reg"/>
+ 
  
 **reg** (regularization) contains a reading which has been regularized or normalized in some sense. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-reg.html) ] 
  
@@ -5583,12 +5042,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
 If all that is desired is to call attention to the fact that the copy text has been regularized,  [reg](#reg)  may be used alone: 
-```
- 
-<q>Please <reg>knock</reg> if an <reg>answer</reg> is <reg>required</reg></q>
- 
-```
- 
+<span id="index.xml-egXML-d38e10213"/><q>Please <reg>knock</reg> if an <reg>answer</reg> is <reg>required</reg></q>
  
  
  
@@ -5597,13 +5051,8 @@ If all that is desired is to call attention to the fact that the copy text has b
 #### **Example**
  
 It is also possible to identify the individual responsible for the regularization, and, using the  [choice](#choice)  and  [orig](#orig)  elements, to provide both the original and regularized readings: 
-```
- 
-<q>Please <choice>  <reg resp="#LB">
+<span id="index.xml-egXML-d38e10325"/><q>Please <choice>  <reg resp="#LB">
                               knock</reg>  <orig>cnk</orig> </choice> if an <choice>  <reg>answer</reg>  <orig>nsr</orig> </choice> is <choice>  <reg>required</reg>  <orig>reqd</orig> </choice></q>
- 
-```
- 
  
  
  
@@ -5611,9 +5060,9 @@ It is also possible to identify the individual responsible for the regularizatio
  
  
  ----- 
-
-        [relatedItem](#relatedItem)
-    
+ 
+### `relatedItem`<span id="relatedItem"/>
+ 
  
 **relatedItem** contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-relatedItem.html) ] 
  
@@ -5673,16 +5122,11 @@ If the target attribute is used to reference the related bibliographic item, the
 #### **Example**
  
  
-```
- 
-<biblStruct> <monogr>  <author>Shirley, James</author>  <title type="main">
+<span id="index.xml-egXML-d38e15063"/><biblStruct> <monogr>  <author>Shirley, James</author>  <title type="main">
                               The gentlemen of Venice</title>  <imprint>   <pubPlace>New York</pubPlace>   <publisher>Readex Microprint</publisher>   <date>1953</date>  </imprint>  <extent>1 microprint card, 23 x 15 cm.</extent> </monogr> <series>  <title>Three centuries of drama: English, 1642–1700</title> </series> <relatedItem type="otherForm">
                                 <biblStruct>   <monogr>    <author>Shirley, James</author>    <title type="main">
                               The gentlemen of Venice</title>    <title type="sub">
                               a tragi-comedie presented at the private house in Salisbury         Court by Her Majesties servants</title>    <imprint>     <pubPlace>London</pubPlace>     <publisher>H. Moseley</publisher>     <date>1655</date>    </imprint>    <extent>78 p.</extent>   </monogr>  </biblStruct> </relatedItem></biblStruct>
- 
-```
- 
  
  
  
@@ -5690,9 +5134,9 @@ If the target attribute is used to reference the related bibliographic item, the
  
  
  ----- 
-
-        [rendition](#rendition)
-    
+ 
+### `rendition`<span id="rendition"/>
+ 
  
 **rendition** supplies information about the rendition or appearance of one or more elements in the source text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html) ] 
  
@@ -5722,21 +5166,11 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<rendition scheme="css" selector="text, front, back, body, div, p, ab">
-                                                 display: block;</rendition>
- 
-```
- [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html) ] : 
+<span id="index.xml-egXML-d38e18261"/><rendition scheme="css" selector="text, front, back, body, div, p, ab">
+                                                 display: block;</rendition> [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html) ] : 
 *  
-```
- 
-<rendition scheme="css" selector="*[rend*=italic]">
-                                                 font-style: italic;</rendition>
- 
-```
- [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html) ] : 
+<span id="index.xml-egXML-d38e18265"/><rendition scheme="css" selector="*[rend*=italic]">
+                                                 font-style: italic;</rendition> [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html) ] : 
 *  **Note**: Since the default value of the scheme attribute is assumed to be CSS, the default expectation for this attribute, in the absence of scheme, is that CSS selector syntax will be used. 
 *  **Note**: While rendition is used to point from an element in the transcribed source to a  [rendition](#rendition)  element in the header which describes how it appears, the selector attribute allows the encoder to point in the other direction: from a  [rendition](#rendition)  in the header to a collection of elements which all share the same renditional features. In both cases, the intention is to record the appearance of the source text, not to prescribe any particular output rendering. 
  
@@ -5774,16 +5208,11 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<tagsDecl> <rendition xml:id="r-center" scheme="css">
+<span id="index.xml-egXML-d38e18211"/><tagsDecl> <rendition xml:id="r-center" scheme="css">
                               text-align: center;</rendition> <rendition xml:id="r-small" scheme="css">
                               font-size: small;</rendition> <rendition xml:id="r-large" scheme="css">
                               font-size: large;</rendition> <rendition xml:id="initcaps"  scope="first-letter" scheme="css">
                               font-size: xx-large</rendition></tagsDecl>
- 
-```
- 
  
  
  
@@ -5791,9 +5220,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  ----- 
-
-        [resp](#resp)
-    
+ 
+### `resp`<span id="resp"/>
+ 
  
 **resp** (responsibility) contains a phrase describing the nature of a person's intellectual responsibility, or an organization's role in the production or distribution of a work. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-resp.html) ] 
  
@@ -5841,13 +5270,8 @@ The attribute ref, inherited from the class  [att.canonical](#att.canonical)  ma
 #### **Example**
  
  
-```
- 
-<respStmt> <resp ref="http://id.loc.gov/vocabulary/relators/com.html">
+<span id="index.xml-egXML-d38e13863"/><respStmt> <resp ref="http://id.loc.gov/vocabulary/relators/com.html">
                               compiler</resp> <name>Edward Child</name></respStmt>
- 
-```
- 
  
  
  
@@ -5855,9 +5279,9 @@ The attribute ref, inherited from the class  [att.canonical](#att.canonical)  ma
  
  
  ----- 
-
-        [respStmt](#respStmt)
-    
+ 
+### `respStmt`<span id="respStmt"/>
+ 
  
 **respStmt** (statement of responsibility) supplies a statement of responsibility for the intellectual content of a text, edition, recording, or series, where the specialized elements for authors, editors, etc. do not suffice or do not apply. May also be used to encode information about individuals or organizations which have played a role in the production or distribution of a bibliographic work. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-respStmt.html) ] 
  
@@ -5895,12 +5319,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<respStmt> <resp>transcribed from original ms</resp> <persName>Claus Huitfeldt</persName></respStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e13768"/><respStmt> <resp>transcribed from original ms</resp> <persName>Claus Huitfeldt</persName></respStmt>
  
  
  
@@ -5909,12 +5328,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<respStmt> <resp>converted to XML encoding</resp> <name>Alan Morrison</name></respStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e13803"/><respStmt> <resp>converted to XML encoding</resp> <name>Alan Morrison</name></respStmt>
  
  
  
@@ -5922,9 +5336,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [revisionDesc](#revisionDesc)
-    
+ 
+### `revisionDesc`<span id="revisionDesc"/>
+ 
  
 **revisionDesc** (revision description) summarizes the revision history for a file. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-revisionDesc.html) ] 
  
@@ -5970,14 +5384,9 @@ If present on this element, the status attribute should indicate the current sta
 #### **Example**
  
  
-```
- 
-<revisionDesc status="embargoed">
+<span id="index.xml-egXML-d38e19521"/><revisionDesc status="embargoed">
                                <change when="1991-11-11" who="#LB">
                                deleted chapter 10 </change></revisionDesc>
- 
-```
- 
  
  
  
@@ -5985,9 +5394,9 @@ If present on this element, the status attribute should indicate the current sta
  
  
  ----- 
-
-        [seriesStmt](#seriesStmt)
-    
+ 
+### `seriesStmt`<span id="seriesStmt"/>
+ 
  
 **seriesStmt** (series statement) groups information about the series, if any, to which a publication belongs. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seriesStmt.html) ] 
  
@@ -6025,14 +5434,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<seriesStmt> <title>Machine-Readable Texts for the Study of Indian Literature</title> <respStmt>  <resp>ed. by</resp>  <name>Jan Gonda</name> </respStmt> <biblScope unit="volume">
+<span id="index.xml-egXML-d38e17438"/><seriesStmt> <title>Machine-Readable Texts for the Study of Indian Literature</title> <respStmt>  <resp>ed. by</resp>  <name>Jan Gonda</name> </respStmt> <biblScope unit="volume">
                               1.2</biblScope> <idno type="ISSN">
                               0 345 6789</idno></seriesStmt>
- 
-```
- 
  
  
  
@@ -6040,9 +5444,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [sic](#sic)
-    
+ 
+### `sic`<span id="sic"/>
+ 
  
 **sic** (Latin for thus or so) contains text reproduced although apparently incorrect or inaccurate. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sic.html) ] 
  
@@ -6090,13 +5494,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-for his nose was as sharp as a pen, and <sic>a Table</sic> of green fields.
+<span id="index.xml-egXML-d38e9652"/>for his nose was as sharp as a pen, and <sic>a Table</sic> of green fields.
                         
- 
-```
- 
  
  
  
@@ -6105,13 +5504,8 @@ for his nose was as sharp as a pen, and <sic>a Table</sic> of green fields.
 #### **Example**
  
 If all that is desired is to call attention to the apparent problem in the copy text,  [sic](#sic)  may be used alone: 
-```
- 
-I don't know, Juan. It's so far in the past now — how <sic>we can</sic> prove or disprove anyone's theories?
+<span id="index.xml-egXML-d38e9736"/>I don't know, Juan. It's so far in the past now — how <sic>we can</sic> prove or disprove anyone's theories?
                         
- 
-```
- 
  
  
  
@@ -6120,13 +5514,8 @@ I don't know, Juan. It's so far in the past now — how <sic>we can</sic> prove 
 #### **Example**
  
 It is also possible, using the  [choice](#choice)  and  [corr](#corr)  elements, to provide a corrected reading: 
-```
- 
-I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</sic> <corr>can we</corr></choice> prove or disprove anyone's theories?
+<span id="index.xml-egXML-d38e9762"/>I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</sic> <corr>can we</corr></choice> prove or disprove anyone's theories?
                         
- 
-```
- 
  
  
  
@@ -6135,13 +5524,8 @@ I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</s
 #### **Example**
  
  
-```
- 
-for his nose was as sharp as a pen, and <choice> <sic>a Table</sic> <corr>a' babbld</corr></choice> of green fields.
+<span id="index.xml-egXML-d38e9788"/>for his nose was as sharp as a pen, and <choice> <sic>a Table</sic> <corr>a' babbld</corr></choice> of green fields.
                         
- 
-```
- 
  
  
  
@@ -6149,9 +5533,9 @@ for his nose was as sharp as a pen, and <choice> <sic>a Table</sic> <corr>a' b
  
  
  ----- 
-
-        [sourceDesc](#sourceDesc)
-    
+ 
+### `sourceDesc`<span id="sourceDesc"/>
+ 
  
 **sourceDesc** (source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sourceDesc.html) ] 
  
@@ -6189,13 +5573,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<sourceDesc> <bibl>  <title level="a">
+<span id="index.xml-egXML-d38e17624"/><sourceDesc> <bibl>  <title level="a">
                               The Interesting story of the Children in the Wood</title>. In <author>Victor E Neuberg</author>, <title>The Penny Histories</title>. <publisher>OUP</publisher>  <date>1968</date>. </bibl></sourceDesc>
- 
-```
- 
  
  
  
@@ -6204,12 +5583,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<sourceDesc> <p>Born digital: no previous source exists.</p></sourceDesc>
- 
-```
- 
+<span id="index.xml-egXML-d38e17652"/><sourceDesc> <p>Born digital: no previous source exists.</p></sourceDesc>
  
  
  
@@ -6217,9 +5591,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [TEI](#TEI)
-    
+ 
+### `TEI`<span id="TEI"/>
+ 
  
 **TEI** (TEI document) contains a single TEI-conformant document, combining a single TEI header with one or more members of the model.resourceLike class. Multiple  [TEI](#TEI)  elements may be combined to form a `teiCorpus` element. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-TEI.html) ] 
  
@@ -6276,12 +5650,7 @@ This element is required. It is customary to specify the TEI namespace `http://w
 #### **Example**
  
  
-```
- 
-<TEI version="3.3.0" xmlns="http://www.tei-c.org/ns/1.0"> <teiHeader>  <fileDesc>   <titleStmt>    <title>The shortest TEI Document Imaginable</title>   </titleStmt>   <publicationStmt>    <p>First published as part of TEI P2, this is the P5         version using a name space.</p>   </publicationStmt>   <sourceDesc>    <p>No source: this is an original work.</p>   </sourceDesc>  </fileDesc> </teiHeader> <text>  <body>   <p>This is about the shortest TEI document imaginable.</p>  </body> </text></TEI>
- 
-```
- 
+<span id="index.xml-egXML-d38e20584"/><TEI version="3.3.0" xmlns="http://www.tei-c.org/ns/1.0"> <teiHeader>  <fileDesc>   <titleStmt>    <title>The shortest TEI Document Imaginable</title>   </titleStmt>   <publicationStmt>    <p>First published as part of TEI P2, this is the P5         version using a name space.</p>   </publicationStmt>   <sourceDesc>    <p>No source: this is an original work.</p>   </sourceDesc>  </fileDesc> </teiHeader> <text>  <body>   <p>This is about the shortest TEI document imaginable.</p>  </body> </text></TEI>
  
  
  
@@ -6290,12 +5659,7 @@ This element is required. It is customary to specify the TEI namespace `http://w
 #### **Example**
  
  
-```
- 
-<TEI version="2.9.1" xmlns="http://www.tei-c.org/ns/1.0"> <teiHeader>  <fileDesc>   <titleStmt>    <title>A TEI Document containing four page images </title>   </titleStmt>   <publicationStmt>    <p>Unpublished demonstration file.</p>   </publicationStmt>   <sourceDesc>    <p>No source: this is an original work.</p>   </sourceDesc>  </fileDesc> </teiHeader> <facsimile>  <graphic url="page1.png"/>  <graphic url="page2.png"/>  <graphic url="page3.png"/>  <graphic url="page4.png"/> </facsimile></TEI>
- 
-```
- 
+<span id="index.xml-egXML-d38e20602"/><TEI version="2.9.1" xmlns="http://www.tei-c.org/ns/1.0"> <teiHeader>  <fileDesc>   <titleStmt>    <title>A TEI Document containing four page images </title>   </titleStmt>   <publicationStmt>    <p>Unpublished demonstration file.</p>   </publicationStmt>   <sourceDesc>    <p>No source: this is an original work.</p>   </sourceDesc>  </fileDesc> </teiHeader> <facsimile>  <graphic url="page1.png"/>  <graphic url="page2.png"/>  <graphic url="page3.png"/>  <graphic url="page4.png"/> </facsimile></TEI>
  
  
  
@@ -6303,9 +5667,9 @@ This element is required. It is customary to specify the TEI namespace `http://w
  
  
  ----- 
-
-        [teiHeader](#teiHeader)
-    
+ 
+### `teiHeader`<span id="teiHeader"/>
+ 
  
 **teiHeader** (TEI header) supplies descriptive and declarative metadata associated with a digital resource or set of resources. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiHeader.html) ] 
  
@@ -6349,9 +5713,7 @@ One of the few elements unconditionally required in any TEI document.
 #### **Example**
  
  
-```
- 
-<teiHeader> <fileDesc>  <titleStmt>   <title>Shakespeare: the first folio (1623) in electronic form</title>   <author>Shakespeare, William (1564–1616)</author>   <respStmt>    <resp>Originally prepared by</resp>    <name>Trevor Howard-Hill</name>   </respStmt>   <respStmt>    <resp>Revised and edited by</resp>    <name>Christine Avern-Carr</name>   </respStmt>  </titleStmt>  <publicationStmt>   <distributor>Oxford Text Archive</distributor>   <address>    <addrLine>13 Banbury Road, Oxford OX2 6NN, UK</addrLine>   </address>   <idno type="OTA">
+<span id="index.xml-egXML-d38e16043"/><teiHeader> <fileDesc>  <titleStmt>   <title>Shakespeare: the first folio (1623) in electronic form</title>   <author>Shakespeare, William (1564–1616)</author>   <respStmt>    <resp>Originally prepared by</resp>    <name>Trevor Howard-Hill</name>   </respStmt>   <respStmt>    <resp>Revised and edited by</resp>    <name>Christine Avern-Carr</name>   </respStmt>  </titleStmt>  <publicationStmt>   <distributor>Oxford Text Archive</distributor>   <address>    <addrLine>13 Banbury Road, Oxford OX2 6NN, UK</addrLine>   </address>   <idno type="OTA">
                               119</idno>   <availability>    <p>Freely available on a non-commercial basis.</p>   </availability>   <date when="1968">
                               1968</date>  </publicationStmt>  <sourceDesc>   <bibl>The first folio of Shakespeare, prepared by Charlton Hinman (The Norton Facsimile,       1968)</bibl>  </sourceDesc> </fileDesc> <encodingDesc>  <projectDesc>   <p>Originally prepared for use in the production of a series of old-spelling       concordances in 1968, this text was extensively checked and revised for use
                            during the       editing of the new Oxford Shakespeare (Wells and Taylor, 1989).</p>  </projectDesc>  <editorialDecl>   <correction>    <p>Turned letters are silently corrected.</p>   </correction>   <normalization>    <p>Original spelling and typography is retained, except that long s and ligatured         forms are not encoded.</p>   </normalization>  </editorialDecl>  <refsDecl xml:id="ASLREF">
@@ -6360,18 +5722,15 @@ One of the few elements unconditionally required in any TEI document.
                               12 Apr 89</date> Last checked by CAC</item>   <item>    <date when="1989-03-01">
                               1 Mar 89</date> LB made new file</item>  </list> </revisionDesc></teiHeader>
  
-```
- 
- 
  
  
  
  
  
  ----- 
-
-        [term](#term)
-    
+ 
+### `term`<span id="term"/>
+ 
  
 **term** contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-term.html) ] 
  
@@ -6425,13 +5784,8 @@ When this element appears within an `index` element, it is understood to supply 
 #### **Example**
  
  
-```
- 
-A computational device that infers structure from grammatical strings of words is known as a <term>parser</term>, and much of the history of NLP over the last 20 years has been occupied with the design of parsers.
+<span id="index.xml-egXML-d38e9420"/>A computational device that infers structure from grammatical strings of words is known as a <term>parser</term>, and much of the history of NLP over the last 20 years has been occupied with the design of parsers.
                         
- 
-```
- 
  
  
  
@@ -6440,16 +5794,11 @@ A computational device that infers structure from grammatical strings of words i
 #### **Example**
  
  
-```
- 
-We may define <term xml:id="TDPV1" rend="sc">
+<span id="index.xml-egXML-d38e9472"/>We may define <term xml:id="TDPV1" rend="sc">
                               discoursal point of view</term> as <gloss target="#TDPV1">
                               the relationship, expressed through discourse structure, between the implied author or some other addresser,
                            and the fiction.</gloss>
  
-```
- 
- 
  
  
  
@@ -6457,16 +5806,11 @@ We may define <term xml:id="TDPV1" rend="sc">
 #### **Example**
  
  
-```
- 
-We may define <term ref="#TDPV2" rend="sc">
+<span id="index.xml-egXML-d38e9480"/>We may define <term ref="#TDPV2" rend="sc">
                               discoursal point of view</term> as <gloss xml:id="TDPV2">
                               the relationship, expressed through discourse structure, between the implied author or some other addresser,
                            and the fiction.</gloss>
  
-```
- 
- 
  
  
  
@@ -6474,14 +5818,9 @@ We may define <term ref="#TDPV2" rend="sc">
 #### **Example**
  
  
-```
- 
-We discuss Leech's concept of <term ref="myGlossary.xml#TDPV2" rend="sc">
+<span id="index.xml-egXML-d38e9488"/>We discuss Leech's concept of <term ref="myGlossary.xml#TDPV2" rend="sc">
                               discoursal point of view</term> below. 
                         
- 
-```
- 
  
  
  
@@ -6489,9 +5828,9 @@ We discuss Leech's concept of <term ref="myGlossary.xml#TDPV2" rend="sc">
  
  
  ----- 
-
-        [text](#text)
-    
+ 
+### `text`<span id="text"/>
+ 
  
 **text** contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-text.html) ] 
  
@@ -6537,12 +5876,7 @@ This element should not be used to represent a text which is inserted at an arbi
 #### **Example**
  
  
-```
- 
-<text> <front>  <docTitle>   <titlePart>Autumn Haze</titlePart>  </docTitle> </front> <body>  <l>Is it a dragonfly or a maple leaf</l>  <l>That settles softly down upon the water?</l> </body></text>
- 
-```
- 
+<span id="index.xml-egXML-d38e20795"/><text> <front>  <docTitle>   <titlePart>Autumn Haze</titlePart>  </docTitle> </front> <body>  <l>Is it a dragonfly or a maple leaf</l>  <l>That settles softly down upon the water?</l> </body></text>
  
  
  
@@ -6551,12 +5885,7 @@ This element should not be used to represent a text which is inserted at an arbi
 #### **Example**
  
 The body of a text may be replaced by a group of nested texts, as in the following schematic: 
-```
- 
-<text> <front><!-- front matter for the whole group --> </front> <group>  <text><!-- first text -->  </text>  <text><!-- second text -->  </text> </group></text>
- 
-```
- 
+<span id="index.xml-egXML-d38e20869"/><text> <front><!-- front matter for the whole group --> </front> <group>  <text><!-- first text -->  </text>  <text><!-- second text -->  </text> </group></text>
  
  
  
@@ -6564,9 +5893,9 @@ The body of a text may be replaced by a group of nested texts, as in the followi
  
  
  ----- 
-
-        [textClass](#textClass)
-    
+ 
+### `textClass`<span id="textClass"/>
+ 
  
 **textClass** (text classification) groups information which describes the nature or topic of a text in terms of a standard classification scheme, thesaurus, etc. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-textClass.html) ] 
  
@@ -6602,15 +5931,10 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<taxonomy> <category xml:id="acprose">
+<span id="index.xml-egXML-d38e19128"/><taxonomy> <category xml:id="acprose">
                                 <catDesc>Academic prose</catDesc> </category><!-- other categories here --></taxonomy><!-- ... --><textClass> <catRef target="#acprose"/> <classCode scheme="http://www.udcc.org">
                               001.9</classCode> <keywords scheme="http://authorities.loc.gov">
                                 <list>   <item>End of the world</item>   <item>History - philosophy</item>  </list> </keywords></textClass>
- 
-```
- 
  
  
  
@@ -6618,9 +5942,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [title](#title)
-    
+ 
+### `title`<span id="title"/>
+ 
  
 **title** contains a title for any kind of work. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html) ] 
  
@@ -6723,26 +6047,7 @@ The attributes key and ref, inherited from the class  [att.canonical](#att.canon
 #### **Example**
  
  
-```
- 
-<title>Information Technology and the Research Process: Proceedings of a conference held at Cranfield Institute of Technology, UK, 18–21 July 1989</title>
- 
-```
- 
- 
- 
- 
- 
- 
-#### **Example**
- 
- 
-```
- 
-<title>Hardy's Tess of the D'Urbervilles: a machine readable edition</title>
- 
-```
- 
+<span id="index.xml-egXML-d38e13971"/><title>Information Technology and the Research Process: Proceedings of a conference held at Cranfield Institute of Technology, UK, 18–21 July 1989</title>
  
  
  
@@ -6751,15 +6056,19 @@ The attributes key and ref, inherited from the class  [att.canonical](#att.canon
 #### **Example**
  
  
-```
+<span id="index.xml-egXML-d38e14013"/><title>Hardy's Tess of the D'Urbervilles: a machine readable edition</title>
  
-<title type="full">
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+<span id="index.xml-egXML-d38e14018"/><title type="full">
                                <title type="main">
                               Synthèse</title> <title type="sub">
                               an international journal for   epistemology, methodology and history of   science</title></title>
- 
-```
- 
  
  
  
@@ -6767,9 +6076,9 @@ The attributes key and ref, inherited from the class  [att.canonical](#att.canon
  
  
  ----- 
-
-        [titlePage](#titlePage)
-    
+ 
+### `titlePage`<span id="titlePage"/>
+ 
  
 **titlePage** (title page) contains the title page of a text, appearing within the front or back matter. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePage.html) ] 
  
@@ -6820,15 +6129,10 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<titlePage> <docTitle>  <titlePart type="main">
+<span id="index.xml-egXML-d38e21840"/><titlePage> <docTitle>  <titlePart type="main">
                               THOMAS OF Reading.</titlePart>  <titlePart type="alt">
                               OR, The sixe worthy yeomen of the West.</titlePart> </docTitle> <docEdition>Now the fourth time corrected and enlarged</docEdition> <byline>By T.D.</byline> <figure>  <head>TP</head>  <p>Thou shalt labor till thou returne to duste</p>  <figDesc>Printers Ornament used by TP</figDesc> </figure> <docImprint>Printed at <name type="place">
                               London</name> for <name>T.P.</name>  <date>1612.</date> </docImprint></titlePage>
- 
-```
- 
  
  
  
@@ -6836,9 +6140,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  ----- 
-
-        [titlePart](#titlePart)
-    
+ 
+### `titlePart`<span id="titlePart"/>
+ 
  
 **titlePart** contains a subsection or division of the title of a work, as indicated on a title page. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePart.html) ] 
  
@@ -6899,14 +6203,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
 #### **Example**
  
  
-```
- 
-<docTitle> <titlePart type="main">
+<span id="index.xml-egXML-d38e22077"/><docTitle> <titlePart type="main">
                               THE FORTUNES   AND MISFORTUNES Of the FAMOUS   Moll Flanders, &amp;c. </titlePart> <titlePart type="desc">
                               Who was BORN in NEWGATE,   And during a Life of continu'd Variety for   Threescore Years, besides her Childhood, was   Twelve Year a <hi>Whore</hi>, five times a <hi>Wife</hi> (wherof   once to her own Brother) Twelve Year a <hi>Thief,</hi>   Eight Year a Transported <hi>Felon</hi> in <hi>Virginia</hi>,   at last grew <hi>Rich</hi>, liv'd <hi>Honest</hi>, and died a <hi>Penitent</hi>.</titlePart></docTitle>
- 
-```
- 
  
  
  
@@ -6914,9 +6213,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  ----- 
-
-        [titleStmt](#titleStmt)
-    
+ 
+### `titleStmt`<span id="titleStmt"/>
+ 
  
 **titleStmt** (title statement) groups information about the title of a work and those responsible for its content. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titleStmt.html) ] 
  
@@ -6952,12 +6251,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<titleStmt> <title>Capgrave's Life of St. John Norbert: a machine-readable transcription</title> <respStmt>  <resp>compiled by</resp>  <name>P.J. Lucas</name> </respStmt></titleStmt>
- 
-```
- 
+<span id="index.xml-egXML-d38e16377"/><titleStmt> <title>Capgrave's Life of St. John Norbert: a machine-readable transcription</title> <respStmt>  <resp>compiled by</resp>  <name>P.J. Lucas</name> </respStmt></titleStmt>
  
  
  
@@ -6965,9 +6259,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  ----- 
-
-        [trailer](#trailer)
-    
+ 
+### `trailer`<span id="trailer"/>
+ 
  
 **trailer** contains a closing title or footer appearing at the end of a division of a text. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-trailer.html) ] 
  
@@ -7011,12 +6305,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<trailer>Explicit pars tertia</trailer>
- 
-```
- 
+<span id="index.xml-egXML-d38e21321"/><trailer>Explicit pars tertia</trailer>
  
  
  
@@ -7025,12 +6314,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
 #### **Example**
  
  
-```
- 
-<trailer> <l>In stead of FINIS this advice <hi>I</hi> send,</l> <l>Let Rogues and Thieves beware of <lb/>  <hi>Hamans</hi> END.</l></trailer>
- 
-```
-From EEBO A87070
+<span id="index.xml-egXML-d38e21325"/><trailer> <l>In stead of FINIS this advice <hi>I</hi> send,</l> <l>Let Rogues and Thieves beware of <lb/>  <hi>Hamans</hi> END.</l></trailer>From EEBO A87070
  
  
  
@@ -7038,9 +6322,9 @@ From EEBO A87070
  
  
  ----- 
-
-        [val](#val)
-    
+ 
+### `val`<span id="val"/>
+ 
  
 **val** (value) contains a single attribute value. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-val.html) ] 
  
@@ -7078,12 +6362,7 @@ Character data only
 #### **Example**
  
  
-```
- 
-<val>unknown</val>
- 
-```
- 
+<span id="index.xml-egXML-d38e20462"/><val>unknown</val>
  
  
  
@@ -7093,9 +6372,9 @@ Character data only
 ## Schema wea: Attribute classes
  
  ----- 
-
-        [att.ascribed](#att.ascribed)
-    
+ 
+### att.ascribed<span id="att.ascribed"/>
+ 
  
 **att.ascribed** provides attributes for elements representing speech or action that can be ascribed to a specific individual. 
  
@@ -7119,9 +6398,7 @@ Character data only
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
 *  In the following example from Hamlet, speeches (`sp`) in the body of the play are linked to `castItem` elements in the `castList` using the who attribute. 
-```
- 
-<castItem type="role">
+<span id="index.xml-egXML-d38e138"/><castItem type="role">
                                                  <role xml:id="Barnardo">
                                                 Bernardo</role></castItem><castItem type="role">
                                                  <role xml:id="Francisco">
@@ -7129,10 +6406,7 @@ Character data only
                                                  <speaker>Bernardo</speaker> <l n="1">
                                                 Who's there?</l></sp><sp who="#Francisco">
                                                  <speaker>Francisco</speaker> <l n="2">
-                                                Nay, answer me: stand, and unfold yourself.</l></sp>
- 
-```
-: 
+                                                Nay, answer me: stand, and unfold yourself.</l></sp>: 
 *  **Note**: For transcribed speech, this will typically identify a participant or participant group; in other contexts, it will point to any identified `person` element. 
  
  
@@ -7146,9 +6420,9 @@ Character data only
  
  
  ----- 
-
-        [att.ascribed.directed](#att.ascribed.directed)
-    
+ 
+### att.ascribed.directed<span id="att.ascribed.directed"/>
+ 
  
 **att.ascribed.directed** provides attributes for elements representing speech or action that can be directed at a group or individual. 
  
@@ -7172,9 +6446,7 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
 *  In the following example from Mary Pix's The False Friend, speeches (`sp`) in the body of the play are linked to `castItem` elements in the `castList` using the toWhom attribute, which is used to specify who the speech is directed to. Additionally, the `stage` includes toWhom to indicate the directionality of the action. 
-```
- 
-<castItem type="role">
+<span id="index.xml-egXML-d38e215"/><castItem type="role">
                                                  <role xml:id="emil">
                                                 Emilius.</role></castItem><castItem type="role">
                                                  <role xml:id="lov">
@@ -7185,10 +6457,7 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
                                                 My love!</l></sp><sp who="#lov" toWhom="#emil">
                                                  <speaker>Lov.</speaker> <l n="2">
                                                 I have no Witness of my Noble Birth</l> <stage who="emil" toWhom="#serv">
-                                                Pointing to her Woman.</stage> <l>But that poor helpless wretch——</l></sp>
- 
-```
-: 
+                                                Pointing to her Woman.</stage> <l>But that poor helpless wretch——</l></sp>: 
 *  **Note**: To indicate the recipient of written correspondence, use the elements used in section  [2.4.6. Correspondence Description](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD) , rather than a toWhom attribute. 
  
  
@@ -7202,9 +6471,9 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
  
  ----- 
-
-        [att.breaking](#att.breaking)
-    
+ 
+### att.breaking<span id="att.breaking"/>
+ 
  
 **att.breaking** provides an attribute to indicate whether or not the element concerned is considered to mark the end of an orthographic token in the same way as whitespace. 
  
@@ -7237,12 +6506,7 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
                                              
      *    **maybe** the encoding does not take any position on this issue.
 *  In the following lines from the Dream of the Rood, linebreaks occur in the middle of the words lāðost and reord-berendum. 
-```
- 
-<ab> ...eƿesa tome iu icƿæs ȝeƿorden ƿita heardoſt . leodum la<lb break="no"/> ðost ærþan ichim lifes ƿeȝ rihtne ȝerymde reord be<lb break="no"/> rendum hƿæt me þaȝeƿeorðode ƿuldres ealdor ofer...</ab>
- 
-```
-: 
+<span id="index.xml-egXML-d38e662"/><ab> ...eƿesa tome iu icƿæs ȝeƿorden ƿita heardoſt . leodum la<lb break="no"/> ðost ærþan ichim lifes ƿeȝ rihtne ȝerymde reord be<lb break="no"/> rendum hƿæt me þaȝeƿeorðode ƿuldres ealdor ofer...</ab>: 
  
  
  
@@ -7255,9 +6519,9 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
  
  ----- 
-
-        [att.canonical](#att.canonical)
-    
+ 
+### att.canonical<span id="att.canonical"/>
+ 
  
 **att.canonical** provides attributes which can be used to associate a representation such as a name or title with canonical information about the object being named or referenced. 
  
@@ -7281,21 +6545,11 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<author> <name key="name 427308"  type="organisation">
-                                                [New Zealand Parliament, Legislative Council]</name></author>
- 
-```
-: 
+<span id="index.xml-egXML-d38e272"/><author> <name key="name 427308"  type="organisation">
+                                                [New Zealand Parliament, Legislative Council]</name></author>: 
 *  
-```
- 
-<author> <name key="Hugo, Victor (1802-1885)"  ref="http://www.idref.fr/026927608">
-                                                Victor Hugo</name></author>
- 
-```
-: 
+<span id="index.xml-egXML-d38e277"/><author> <name key="Hugo, Victor (1802-1885)"  ref="http://www.idref.fr/026927608">
+                                                Victor Hugo</name></author>: 
 *  **Note**: The value may be a unique identifier from a database, or any other externally-defined string identifying the referent. No particular syntax is proposed for the values of the key attribute, since its form will depend entirely on practice within a given project. For the same reason, this attribute is not recommended in data interchange, since there is no way of ensuring that the values used by one project are distinct from those used by another. In such a situation, a preferable approach for magic tokens which follows standard practice on the Web is to use a ref attribute whose value is a tag URI as defined in RFC 4151. 
  
  
@@ -7306,13 +6560,8 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
 *  
-```
- 
-<name ref="http://viaf.org/viaf/109557338" type="person">
-                                                Seamus Heaney</name>
- 
-```
-: 
+<span id="index.xml-egXML-d38e326"/><name ref="http://viaf.org/viaf/109557338" type="person">
+                                                Seamus Heaney</name>: 
 *  **Note**: The value must point directly to one or more XML elements or other resources by means of one or more URIs, separated by whitespace. If more than one is supplied the implication is that the name identifies several distinct entities. 
  
  
@@ -7326,9 +6575,9 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
  
  ----- 
-
-        [att.cReferencing](#att.cReferencing)
-    
+ 
+### att.cReferencing<span id="att.cReferencing"/>
+ 
  
 **att.cReferencing** provides an attribute which may be used to supply a canonical reference as a means of identifying the target of a pointer. 
  
@@ -7364,9 +6613,9 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
  
  ----- 
-
-        [att.datable](#att.datable)
-    
+ 
+### att.datable<span id="att.datable"/>
+ 
  
 **att.datable** provides attributes for normalization of elements that contain dates, times, or datable events. 
  
@@ -7390,15 +6639,10 @@ Attributes  [att.datable.w3c](#att.datable.w3c) `@when`, `@notBefore`, `@notAft
 *  **Status**: Optional
 *  **Datatype**: teidata.pointer
 *  
-```
- 
-He was born on <date calendar="#gregorian">
+<span id="index.xml-egXML-d38e1300"/>He was born on <date calendar="#gregorian">
                                                 Feb. 22, 1732</date> (<date calendar="#julian" when="1732-02-22">
                                                  Feb. 11, 1731/32, O.S.</date>).
-                                          
- 
-```
-: 
+                                          : 
 *  **Note**: Note that the calendar attribute (unlike datingMethod defined in att.datable.custom) defines the calendar system of the date in the original material defined by the parent element, not the calendar to which the date is normalized. 
  
  
@@ -7428,9 +6672,9 @@ This ‘superclass’ provides attributes that can be used to provide normalized
  
  
  ----- 
-
-        [att.datable.w3c](#att.datable.w3c)
-    
+ 
+### att.datable.w3c<span id="att.datable.w3c"/>
+ 
  
 **att.datable.w3c** provides attributes for normalization of elements that contain datable events conforming to the W3C XML Schema Part 2: Datatypes Second Edition. 
  
@@ -7454,9 +6698,7 @@ This ‘superclass’ provides attributes that can be used to provide normalized
 *  **Status**: Optional
 *  **Datatype**: teidata.temporal.w3c
 *  Examples of W3C date, time, and date &amp; time formats.
-```
- 
-<p> <date when="1945-10-24">
+<span id="index.xml-egXML-d38e857"/><p> <date when="1945-10-24">
                                                 24 Oct 45</date> <date when="1996-09-24T07:25:00Z">
                                                 September 24th, 1996 at 3:25 in the morning</date> <time when="1999-01-04T20:42:00-05:00">
                                                 Jan 4 1999 at 8 pm</time> <time when="14:12:38">
@@ -7467,28 +6709,15 @@ This ‘superclass’ provides attributes that can be used to provide normalized
                                                 August</date> <date when="2006">
                                                 MMVI</date> <date when="0056">
                                                 AD 56</date> <date when="-0056">
-                                                56 BC</date></p>
- 
-```
-: 
+                                                56 BC</date></p>: 
 *  
-```
- 
-This list begins in the year 1632, more precisely on Trinity Sunday, i.e. the Sunday after Pentecost, in that year the<date calendar="#julian" when="1632-06-06">
+<span id="index.xml-egXML-d38e916"/>This list begins in the year 1632, more precisely on Trinity Sunday, i.e. the Sunday after Pentecost, in that year the<date calendar="#julian" when="1632-06-06">
                                                 27th of May (old style)</date>.
-                                          
- 
-```
-: 
+                                          : 
 *  
-```
- 
-<opener> <dateline>  <placeName>Dorchester, Village,</placeName>  <date when="1828-03-02">
+<span id="index.xml-egXML-d38e923"/><opener> <dateline>  <placeName>Dorchester, Village,</placeName>  <date when="1828-03-02">
                                                 March 2d. 1828.</date> </dateline> <salute>To   Mrs. Cornell,</salute> Sunday <time when="12:00:00">
-                                                noon.</time></opener>
- 
-```
-: 
+                                                noon.</time></opener>: 
  
  
  
@@ -7534,13 +6763,8 @@ This list begins in the year 1632, more precisely on Trinity Sunday, i.e. the Su
 #### **Example**
  
  
-```
- 
-<date from="1863-05-28" to="1863-06-01">
+<span id="index.xml-egXML-d38e1005"/><date from="1863-05-28" to="1863-06-01">
                               28 May through 1 June 1863</date>
- 
-```
- 
  
  
  
@@ -7556,9 +6780,9 @@ The value of these attributes should be a normalized representation of the date,
  
  
  ----- 
-
-        [att.datcat](#att.datcat)
-    
+ 
+### att.datcat<span id="att.datcat"/>
+ 
  
 **att.datcat** provides the dcr:datacat and dcr:ValueDatacat attributes which are used to align XML elements or attributes with the appropriate Data Categories (DCs) defined by the ISO 12620:2009 standard and stored in the Web repository called ISOCat at  [http://www.isocat.org/](http://www.isocat.org/) . 
  
@@ -7602,12 +6826,7 @@ The value of these attributes should be a normalized representation of the date,
 #### **Example**
  
 In this example dcr:datcat relates the feature name to the data category "partOfSpeech" and dcr:valueDatcat the feature value to the data category "commonNoun". Both these data categories reside in the ISOcat DCR at  [www.isocat.org](http://www.isocat.org) , which is the DCR used by ISO TC37 and hosted by its registration authority, the MPI for Psycholinguistics in Nijmegen. 
-```
- 
-<fs> <f name="POS"  dcr:datcat="http://www.isocat.org/datcat/DC-1345" fVal="#commonNoun"  dcr:valueDatcat="http://www.isocat.org/datcat/DC-1256"/></fs>
- 
-```
- 
+<span id="index.xml-egXML-d38e1437"/><fs> <f name="POS"  dcr:datcat="http://www.isocat.org/datcat/DC-1345" fVal="#commonNoun"  dcr:valueDatcat="http://www.isocat.org/datcat/DC-1256"/></fs>
  
  
  
@@ -7623,9 +6842,9 @@ ISO 12620:2009 is a standard describing the data model and procedures for a Data
  
  
  ----- 
-
-        [att.declarable](#att.declarable)
-    
+ 
+### att.declarable<span id="att.declarable"/>
+ 
  
 **att.declarable** provides attributes for those elements in the TEI header which may be independently selected by means of the special purpose decls attribute. 
  
@@ -7673,9 +6892,9 @@ The rules governing the association of declarable elements with individual parts
  
  
  ----- 
-
-        [att.declaring](#att.declaring)
-    
+ 
+### att.declaring<span id="att.declaring"/>
+ 
  
 **att.declaring** provides attributes for elements which may be independently associated with a particular declarable element within the header, thus overriding the inherited default for that element. 
  
@@ -7718,9 +6937,9 @@ The rules governing the association of declarable elements with individual parts
  
  
  ----- 
-
-        [att.dimensions](#att.dimensions)
-    
+ 
+### att.dimensions<span id="att.dimensions"/>
+ 
  
 **att.dimensions** provides attributes for describing the size of physical objects. 
  
@@ -7767,19 +6986,9 @@ Attributes  [att.ranging](#att.ranging) `@atLeast`, `@atMost`, `@min`, `@max`, 
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<gap extent="5 words"/>
- 
-```
-: 
+<span id="index.xml-egXML-d38e510"/><gap extent="5 words"/>: 
 *  
-```
- 
-<height extent="half the page"/>
- 
-```
-: 
+<span id="index.xml-egXML-d38e513"/><height extent="half the page"/>: 
  
  
  
@@ -7813,9 +7022,9 @@ Attributes  [att.ranging](#att.ranging) `@atLeast`, `@atMost`, `@min`, `@max`, 
  
  
  ----- 
-
-        [att.divLike](#att.divLike)
-    
+ 
+### att.divLike<span id="att.divLike"/>
+ 
  
 **att.divLike** provides attributes common to all elements which behave in the same way as divisions. 
  
@@ -7872,9 +7081,9 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
  
  
  ----- 
-
-        [att.docStatus](#att.docStatus)
-    
+ 
+### att.docStatus<span id="att.docStatus"/>
+ 
  
 **att.docStatus** provides attributes for use on metadata elements describing the status of a document. 
  
@@ -7927,13 +7136,8 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
 #### **Example**
  
  
-```
- 
-<revisionDesc status="published">
+<span id="index.xml-egXML-d38e1928"/><revisionDesc status="published">
                                <change when="2010-10-21"  status="published"/> <change when="2010-10-02" status="cleared"/> <change when="2010-08-02"  status="embargoed"/> <change when="2010-05-01" status="frozen"  who="#MSM"/> <change when="2010-03-01" status="draft"  who="#LB"/></revisionDesc>
- 
-```
- 
  
  
  
@@ -7941,9 +7145,9 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
  
  
  ----- 
-
-        [att.edition](#att.edition)
-    
+ 
+### att.edition<span id="att.edition"/>
+ 
  
 **att.edition** provides attributes identifying the source edition from which some encoded feature derives. 
  
@@ -7987,12 +7191,7 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
 #### **Example**
  
  
-```
- 
-<l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l><l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l><l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
- 
-```
- 
+<span id="index.xml-egXML-d38e3858"/><l>Of Mans First Disobedience,<lb ed="1674"/> and<lb ed="1667"/> the Fruit</l><l>Of that Forbidden Tree, whose<lb ed="1667 1674"/> mortal tast</l><l>Brought Death into the World,<lb ed="1667"/> and all<lb ed="1674"/> our woe,</l>
  
  
  
@@ -8001,14 +7200,9 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
 #### **Example**
  
  
-```
- 
-<listBibl> <bibl xml:id="stapledon1937">
+<span id="index.xml-egXML-d38e3876"/><listBibl> <bibl xml:id="stapledon1937">
                                 <author>Olaf Stapledon</author>, <title>Starmaker</title>, <publisher>Methuen</publisher>, <date>1937</date> </bibl> <bibl xml:id="stapledon1968">
                                 <author>Olaf Stapledon</author>, <title>Starmaker</title>, <publisher>Dover</publisher>, <date>1968</date> </bibl></listBibl><!-- ... --><p>Looking into the future aeons from the supreme moment of the cosmos, I saw the populations still with all their strength maintaining the<pb n="411" edRef="#stapledon1968"/>essentials of their ancient culture, still living their personal lives in zest and endless novelty of action, … I saw myself still preserving, though with increasing difficulty, my lucid con-<pb n="291" edRef="#stapledon1937"/>sciousness;</p>
- 
-```
- 
  
  
  
@@ -8016,9 +7210,9 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
  
  
  ----- 
-
-        [att.editLike](#att.editLike)
-    
+ 
+### att.editLike<span id="att.editLike"/>
+ 
  
 **att.editLike** provides attributes describing the nature of an encoded scholarly intervention or interpretation of any kind. 
  
@@ -8085,9 +7279,9 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
  
  ----- 
-
-        [att.fragmentable](#att.fragmentable)
-    
+ 
+### att.fragmentable<span id="att.fragmentable"/>
+ 
  
 **att.fragmentable** provides an attribute for representing fragmentation of a structural element, typically as a consequence of some overlapping hierarchy. 
  
@@ -8130,9 +7324,9 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
  
  ----- 
-
-        [att.global](#att.global)
-    
+ 
+### att.global<span id="att.global"/>
+ 
  
 **att.global** provides attributes common to all elements in the TEI encoding scheme. 
  
@@ -8174,13 +7368,8 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 *  **Status**: Optional
 *  **Datatype**: teidata.language
 *  
-```
- 
-<p> … The consequences of this rapid depopulation were the loss of the last<foreign xml:lang="rap">
-                                                ariki</foreign> or chief (Routledge 1920:205,210) and their connections to ancestral territorial organization.</p>
- 
-```
-: 
+<span id="index.xml-egXML-d38e2787"/><p> … The consequences of this rapid depopulation were the loss of the last<foreign xml:lang="rap">
+                                                ariki</foreign> or chief (Routledge 1920:205,210) and their connections to ancestral territorial organization.</p>: 
 *  **Note**: The xml:lang value will be inherited from the immediately enclosing element, or from its parent, and so on up the document hierarchy. It is generally good practice to specify xml:lang at the highest appropriate level, noticing that a different default may be needed for the teiHeader from that needed for the associated resource element or elements, and that a single TEI document may contain texts in many languages. The authoritative list of registered language subtags is maintained by IANA and is available at  [http://www.iana.org/assignments/language-subtag-registry](http://www.iana.org/assignments/language-subtag-registry) . For a good general overview of the construction of language tags, see  [http://www.w3.org/International/articles/language-tags/](http://www.w3.org/International/articles/language-tags/) , and for a practical step-by-step guide, see  [https://www.w3.org/International/questions/qa-choosing-language-tags.en.php](https://www.w3.org/International/questions/qa-choosing-language-tags.en.php) . The value used must conform with BCP 47. If the value is a private use code (i.e., starts with x- or contains -x-), a  [language](#language)  element with a matching value for its ident attribute should be supplied in the TEI header to document this value. Such documentation may also optionally be supplied for non-private-use codes, though these must remain consistent with their  (IETF)Internet Engineering Task Force definitions. 
  
  
@@ -8191,17 +7380,12 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 *  **Status**: Optional
 *  **Datatype**: teidata.pointer
 *  
-```
- 
-<div type="bibl">
+<span id="index.xml-egXML-d38e2889"/><div type="bibl">
                                                  <head>Bibliography</head> <listBibl xml:base="http://www.lib.ucdavis.edu/BWRP/Works/">
                                                   <bibl>   <author>    <name>Landon, Letitia Elizabeth</name>   </author>   <ref target="LandLVowOf.sgm">
                                                     <title>The Vow of the Peacock</title>   </ref>  </bibl>  <bibl>   <author>    <name>Compton, Margaret Clephane</name>   </author>   <ref target="NortMIrene.sgm">
                                                     <title>Irene, a Poem in Six Cantos</title>   </ref>  </bibl>  <bibl>   <author>    <name>Taylor, Jane</name>   </author>   <ref target="TaylJEssay.sgm">
-                                                    <title>Essays in Rhyme on Morals and Manners</title>   </ref>  </bibl> </listBibl></div>
- 
-```
-: 
+                                                    <title>Essays in Rhyme on Morals and Manners</title>   </ref>  </bibl> </listBibl></div>: 
  
  
  
@@ -8227,9 +7411,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
  
  ----- 
-
-        [att.global.analytic](#att.global.analytic)
-    
+ 
+### att.global.analytic<span id="att.global.analytic"/>
+ 
  
 **att.global.analytic** provides additional global attributes for associating specific analyses or interpretations with appropriate portions of a text. 
  
@@ -8265,9 +7449,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
  
  ----- 
-
-        [att.global.rendition](#att.global.rendition)
-    
+ 
+### att.global.rendition<span id="att.global.rendition"/>
+ 
  
 **att.global.rendition** provides rendering attributes common to all elements in the TEI encoding scheme. 
  
@@ -8291,14 +7475,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.word separated by whitespace
 *  
-```
- 
-<head rend="align(center) case(allcaps)">
+<span id="index.xml-egXML-d38e2224"/><head rend="align(center) case(allcaps)">
                                                  <lb/>To The <lb/>Duchesse <lb/>of <lb/>Newcastle,<lb/>On Her <lb/> <hi rend="case(mixed)">
-                                                New Blazing-World</hi>. </head>
- 
-```
-: 
+                                                New Blazing-World</hi>. </head>: 
 *  **Note**: These Guidelines make no binding recommendations for the values of the rend attribute; the characteristics of visual presentation vary too much from text to text and the decision to record or ignore individual characteristics varies too much from project to project. Some potentially useful conventions are noted from time to time at appropriate points in the Guidelines. The values of the rend attribute are a set of sequence-indeterminate individual tokens separated by whitespace. 
  
  
@@ -8309,14 +7488,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<head style="text-align: center; font-variant: small-caps">
+<span id="index.xml-egXML-d38e2285"/><head style="text-align: center; font-variant: small-caps">
                                                  <lb/>To The <lb/>Duchesse <lb/>of <lb/>Newcastle, <lb/>On Her<lb/> <hi style="font-variant: normal">
-                                                New Blazing-World</hi>. </head>
- 
-```
-: 
+                                                New Blazing-World</hi>. </head>: 
 *  **Note**: Unlike the attribute values of rend, which uses whitespace as a separator, the style attribute may contain whitespace. This attribute is intended for recording inline stylistic information concerning the source, not any particular output. The formal language in which values for this attribute are expressed may be specified using the `styleDefDecl` element in the TEI header. If style and rendition are both present on an element, then style overrides or complements rendition. style should not be used in conjunction with rend, because the latter does not employ a formal style definition language. 
  
  
@@ -8327,17 +7501,12 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
 *  
-```
- 
-<head rendition="#ac #sc">
+<span id="index.xml-egXML-d38e2353"/><head rendition="#ac #sc">
                                                  <lb/>To The <lb/>Duchesse <lb/>of <lb/>Newcastle, <lb/>On Her<lb/> <hi rendition="#normal">
                                                 New Blazing-World</hi>. </head><!-- elsewhere... --><rendition xml:id="sc" scheme="css">
                                                 font-variant: small-caps</rendition><rendition xml:id="normal" scheme="css">
                                                 font-variant: normal</rendition><rendition xml:id="ac" scheme="css">
-                                                text-align: center</rendition>
- 
-```
-: 
+                                                text-align: center</rendition>: 
 *  **Note**: The rendition attribute is used in a very similar way to the class attribute defined for XHTML but with the important distinction that its function is to describe the appearance of the source text, not necessarily to determine how that text should be presented on screen or paper. If rendition is used to refer to a style definition in a formal language like CSS, it is recommended that it not be used in conjunction with rend. Where both rendition and rend are supplied, the latter is understood to override or complement the former. Each URI provided should indicate a  [rendition](#rendition)  element defining the intended rendition in terms of some appropriate style language, as indicated by the scheme attribute. 
  
  
@@ -8351,9 +7520,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
  
  ----- 
-
-        [att.global.responsibility](#att.global.responsibility)
-    
+ 
+### att.global.responsibility<span id="att.global.responsibility"/>
+ 
  
 **att.global.responsibility** provides attributes indicating the agent responsible for some aspect of the text, the markup or something asserted by the markup, and the degree of certainty associated with it. 
  
@@ -8398,14 +7567,9 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
 #### **Example**
  
  
-```
- 
-Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="high">
+<span id="index.xml-egXML-d38e2027"/>Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="high">
                               peacemakers</corr></choice>: for they shall be called the children of God.
                         
- 
-```
- 
  
  
  
@@ -8414,15 +7578,10 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
 #### **Example**
  
  
-```
- 
-<!-- in the <text> ... --><lg><!-- ... --> <l>Punkes, Panders, baſe extortionizing   sla<choice>   <sic>n</sic>   <corr resp="#JENS1_transcriber">
+<span id="index.xml-egXML-d38e2036"/><!-- in the <text> ... --><lg><!-- ... --> <l>Punkes, Panders, baſe extortionizing   sla<choice>   <sic>n</sic>   <corr resp="#JENS1_transcriber">
                               u</corr>  </choice>es,</l><!-- ... --></lg><!-- in the <teiHeader> ... --><!-- ... --><respStmt xml:id="JENS1_transcriber">
                                <resp when="2014">
                               Transcriber</resp> <name>Janelle Jenstad</name></respStmt>
- 
-```
- 
  
  
  
@@ -8430,9 +7589,9 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
  
  
  ----- 
-
-        [att.global.source](#att.global.source)
-    
+ 
+### att.global.source<span id="att.global.source"/>
+ 
  
 **att.global.source** provides an attribute used by elements to point to an external source. 
  
@@ -8469,14 +7628,9 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
 #### **Example**
  
  
-```
- 
-<p><!-- ... --> As Willard McCarty (<bibl xml:id="mcc_2012">
+<span id="index.xml-egXML-d38e2534"/><p><!-- ... --> As Willard McCarty (<bibl xml:id="mcc_2012">
                               2012, p.2</bibl>) tells us, <quote source="#mcc_2012">
                               ‘Collaboration’ is a problematic and should be a contested   term.</quote><!-- ... --></p>
- 
-```
- 
  
  
  
@@ -8485,16 +7639,20 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
 #### **Example**
  
  
-```
- 
-<p><!-- ... --> <quote source="#chicago_15_ed">
+<span id="index.xml-egXML-d38e2545"/><p><!-- ... --> <quote source="#chicago_15_ed">
                               Grammatical theories are in flux, and the more we learn, the   less we seem to know.</quote><!-- ... --></p><!-- ... --><bibl xml:id="chicago_15_ed">
                                <title level="m">
                               The Chicago Manual of Style</title>,<edition>15th edition</edition>. <pubPlace>Chicago</pubPlace>: <publisher>University of   Chicago Press</publisher> (<date>2003</date>), <biblScope unit="page">
                               p.147</biblScope>.</bibl>
  
-```
  
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+<span id="index.xml-egXML-d38e2572"/><elementRef key="p" source="tei:2.0.1"/>Include in the schema an element named  [p](#p)  available from the TEI P5 2.0.1 release. 
  
  
  
@@ -8503,27 +7661,8 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
 #### **Example**
  
  
-```
- 
-<elementRef key="p" source="tei:2.0.1"/>
- 
-```
-Include in the schema an element named  [p](#p)  available from the TEI P5 2.0.1 release. 
- 
- 
- 
- 
- 
-#### **Example**
- 
- 
-```
- 
-<schemaSpec ident="myODD" source="mycompiledODD.xml">
-                              <!-- further declarations specifying the components required --></schemaSpec>
- 
-```
-Create a schema using components taken from the file mycompiledODD.xml. 
+<span id="index.xml-egXML-d38e2580"/><schemaSpec ident="myODD" source="mycompiledODD.xml">
+                              <!-- further declarations specifying the components required --></schemaSpec>Create a schema using components taken from the file mycompiledODD.xml. 
  
  
  
@@ -8531,9 +7670,9 @@ Create a schema using components taken from the file mycompiledODD.xml.
  
  
  ----- 
-
-        [att.internetMedia](#att.internetMedia)
-    
+ 
+### att.internetMedia<span id="att.internetMedia"/>
+ 
  
 **att.internetMedia** provides attributes for specifying the type of a computer resource using a standard taxonomy. 
  
@@ -8569,12 +7708,7 @@ Create a schema using components taken from the file mycompiledODD.xml.
 #### **Example**
  
 In this example mimeType is used to indicate that the URL points to a TEI XML file encoded in UTF-8. 
-```
- 
-<ref mimeType="application/tei+xml; charset=UTF-8" target="http://sourceforge.net/p/tei/code/HEAD/tree/trunk/P5/Source/guidelines-en.xml"/>
- 
-```
- 
+<span id="index.xml-egXML-d38e2990"/><ref mimeType="application/tei+xml; charset=UTF-8" target="http://sourceforge.net/p/tei/code/HEAD/tree/trunk/P5/Source/guidelines-en.xml"/>
  
  
  
@@ -8590,9 +7724,9 @@ This attribute class provides an attribute for describing a computer resource, t
  
  
  ----- 
-
-        [att.linguistic](#att.linguistic)
-    
+ 
+### att.linguistic<span id="att.linguistic"/>
+ 
  
 **att.linguistic** provides a set of attributes concerning linguistic features of tokens, for usage within token-level elements, specifically `w` and  [pc](#pc)  in the analysis module. 
  
@@ -8616,21 +7750,11 @@ This attribute class provides an attribute for describing a computer resource, t
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<w lemma="wife">
-                                                wives</w>
- 
-```
-: 
+<span id="index.xml-egXML-d38e15430"/><w lemma="wife">
+                                                wives</w>: 
 *  
-```
- 
-<w lemma="Arznei">
-                                                Artzeneyen</w>
- 
-```
-: 
+<span id="index.xml-egXML-d38e15434"/><w lemma="Arznei">
+                                                Artzeneyen</w>: 
  
  
  
@@ -8640,14 +7764,9 @@ This attribute class provides an attribute for describing a computer resource, t
 *  **Status**: Optional
 *  **Datatype**: teidata.pointer
 *  
-```
- 
-<w type="verb" lemma="hit" lemmaRef="http://www.example.com/lexicon/hitvb.xml">
+<span id="index.xml-egXML-d38e15449"/><w type="verb" lemma="hit" lemmaRef="http://www.example.com/lexicon/hitvb.xml">
                                                 hitt<m type="suffix">
-                                                ing</m></w>
- 
-```
-: 
+                                                ing</m></w>: 
  
  
  
@@ -8657,22 +7776,15 @@ This attribute class provides an attribute for describing a computer resource, t
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  The German sentence ‘Wir fahren in den Urlaub.’ tagged with the Stuttgart-Tuebingen-Tagset (STTS). 
-```
- 
-<s> <w pos="PPER">
+<span id="index.xml-egXML-d38e15471"/><s> <w pos="PPER">
                                                 Wir</w> <w pos="VVFIN">
                                                 fahren</w> <w pos="APPR">
                                                 in</w> <w pos="ART">
                                                 den</w> <w pos="NN">
                                                 Urlaub</w> <w pos="$.">
-                                                .</w></s>
- 
-```
-: 
+                                                .</w></s>: 
 *  The English sentence ‘We're going to Brazil.’ tagged with the  [CLAWS-5](http://ucrel.lancs.ac.uk/claws5tags.html)  tagset, arranged inline (with significant whitespace). 
-```
- 
-<p><w pos="PNP">
+<span id="index.xml-egXML-d38e15494"/><p><w pos="PNP">
                                                 We</w><w pos="VBB">
                                                 're</w> <w pos="VVG">
                                                 going</w> <w pos="PRP">
@@ -8680,14 +7792,9 @@ This attribute class provides an attribute for describing a computer resource, t
                                                 Brazil</w><pc pos="PUN">
                                                 .</pc></p>
                                                      
-                                          
- 
-```
-: 
+                                          : 
 *  The English sentence ‘We're going on vacation to Brazil for a month!’ tagged with the  [CLAWS-7](http://ucrel.lancs.ac.uk/claws7tags.html)  tagset and arranged sequentially. 
-```
- 
-<p> <w pos="PPIS2">
+<span id="index.xml-egXML-d38e15521"/><p> <w pos="PPIS2">
                                                 We</w> <w pos="VBR">
                                                 're</w> <w pos="VVG">
                                                 going</w> <w pos="II">
@@ -8698,10 +7805,7 @@ This attribute class provides an attribute for describing a computer resource, t
                                                 for</w> <w pos="AT1">
                                                 a</w> <w pos="NNT1">
                                                 month</w> <pc pos="!">
-                                                !</pc></p>
- 
-```
-: 
+                                                !</pc></p>: 
  
  
  
@@ -8711,18 +7815,13 @@ This attribute class provides an attribute for describing a computer resource, t
 *  **Status**: Optional
 *  **Datatype**: teidata.text
 *  
-```
- 
-<ab> <w pos="PPER" msd="1.Pl.*.Nom">
+<span id="index.xml-egXML-d38e15557"/><ab> <w pos="PPER" msd="1.Pl.*.Nom">
                                                 Wir</w> <w pos="VVFIN" msd="1.Pl.Pres.Ind">
                                                 fahren</w> <w pos="APPR" msd="--">
                                                 in</w> <w pos="ART" msd="Def.Masc.Akk.Sg">
                                                 den</w> <w pos="NN" msd="Masc.Akk.Sg">
                                                 Urlaub</w> <pc pos="$." msd="--">
-                                                .</pc></ab>
- 
-```
-: 
+                                                .</pc></ab>: 
  
  
  
@@ -8742,30 +7841,20 @@ This attribute class provides an attribute for describing a computer resource, t
                                                 
                                              
 *  The example below assumes that the lack of whitespace is marked redundantly, by using the appropriate values of join. 
-```
- 
-<s> <pc join="right">
+<span id="index.xml-egXML-d38e15598"/><s> <pc join="right">
                                                 "</pc> <w join="left">
                                                 Friends</w> <w>will</w> <w>be</w> <w join="right">
                                                 friends</w> <pc join="both">
                                                 .</pc> <pc join="left">
-                                                "</pc></s>
- 
-```
-Note that a project may make a decision to only indicate lack of whitespace in one direction, or do that non-redundantly. The existing proposal is the broadest possible, on the assumption that we adopt the "streamable view", where all the information on the current element needs to be represented locally. : 
+                                                "</pc></s>Note that a project may make a decision to only indicate lack of whitespace in one direction, or do that non-redundantly. The existing proposal is the broadest possible, on the assumption that we adopt the "streamable view", where all the information on the current element needs to be represented locally. : 
 *  The English sentence ‘We're going on vacation.’ tagged with the CLAWS-5 tagset, arranged sequentially, tagged on the assumption that only the lack of the preceding whitespace is indicated. 
-```
- 
-<p> <w pos="PNP">
+<span id="index.xml-egXML-d38e15622"/><p> <w pos="PNP">
                                                 We</w> <w pos="VBB" join="left">
                                                 're</w> <w pos="VVG">
                                                 going</w> <w pos="PRP">
                                                 on</w> <w pos="NN1">
                                                 vacation</w> <pc pos="PUN" join="left">
-                                                .</pc></p>
- 
-```
-: 
+                                                .</pc></p>: 
  
  
  
@@ -8786,9 +7875,9 @@ These attributes make it possible to encode simple language corpora and to add a
  
  
  ----- 
-
-        [att.milestoneUnit](#att.milestoneUnit)
-    
+ 
+### att.milestoneUnit<span id="att.milestoneUnit"/>
+ 
  
 **att.milestoneUnit** provides an attribute to indicate the type of section which is changing at a specific milestone. 
  
@@ -8829,13 +7918,8 @@ These attributes make it possible to encode simple language corpora and to add a
      *    **absent** passages not present in the reference edition.
      *    **unnumbered** passages present in the text, but not to be included as part of the reference.
 *  
-```
- 
-<milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/> ...
-                                          
- 
-```
-: 
+<span id="index.xml-egXML-d38e8444"/><milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/> ...
+                                          : 
 *  **Note**: If the milestone marks the beginning of a piece of text not present in the reference edition, the special value absent may be used as the value of unit. The normal interpretation is that the reference edition does not contain the text which follows, until the next  [milestone](#milestone)  tag for the edition in question is encountered. In addition to the values suggested, other terms may be appropriate (e.g. Stephanus for the Stephanus numbers in Plato). 
  
  
@@ -8849,9 +7933,9 @@ These attributes make it possible to encode simple language corpora and to add a
  
  
  ----- 
-
-        [att.naming](#att.naming)
-    
+ 
+### att.naming<span id="att.naming"/>
+ 
  
 **att.naming** provides attributes common to elements which refer to named persons, places, organizations etc. 
  
@@ -8895,9 +7979,9 @@ Attributes  [att.canonical](#att.canonical) `@key`, `@ref`)
  
  
  ----- 
-
-        [att.notated](#att.notated)
-    
+ 
+### att.notated<span id="att.notated"/>
+ 
  
 **att.notated** provides an attribute to indicate any specialised notation used for element content. 
  
@@ -8932,9 +8016,9 @@ Attributes  [att.canonical](#att.canonical) `@key`, `@ref`)
  
  
  ----- 
-
-        [att.patternReplacement](#att.patternReplacement)
-    
+ 
+### att.patternReplacement<span id="att.patternReplacement"/>
+ 
  
 **att.patternReplacement** provides attributes for regular-expression matching and replacement. 
  
@@ -8979,9 +8063,9 @@ Attributes  [att.canonical](#att.canonical) `@key`, `@ref`)
  
  
  ----- 
-
-        [att.personal](#att.personal)
-    
+ 
+### att.personal<span id="att.personal"/>
+ 
  
 **att.personal** (attributes for components of names usually, but not necessarily, personal names) common attributes for those elements which form part of a name usually, but not necessarily, a personal name. 
  
@@ -9029,9 +8113,9 @@ Attributes  [att.naming](#att.naming) `@role`, `@nymRef`) ( [att.canonical](#at
  
  
  ----- 
-
-        [att.placement](#att.placement)
-    
+ 
+### att.placement<span id="att.placement"/>
+ 
  
 **att.placement** provides attributes for describing where on the source page or object a textual element appears. 
  
@@ -9067,22 +8151,12 @@ Attributes  [att.naming](#att.naming) `@role`, `@nymRef`) ( [att.canonical](#at
      *    **inline** within the body of the text.
      *    **inspace** in a predefined space, for example left by an earlier scribe.
 *  
-```
- 
-<add place="margin">
+<span id="index.xml-egXML-d38e3280"/><add place="margin">
                                                 [An addition written in the margin]</add><add place="bottom opposite">
-                                                [An addition written at the foot of the current page and also on the facing page]</add>
- 
-```
-: 
+                                                [An addition written at the foot of the current page and also on the facing page]</add>: 
 *  
-```
- 
-<note place="bottom">
-                                                Ibid, p.7</note>
- 
-```
-: 
+<span id="index.xml-egXML-d38e3286"/><note place="bottom">
+                                                Ibid, p.7</note>: 
  
  
  
@@ -9095,9 +8169,9 @@ Attributes  [att.naming](#att.naming) `@role`, `@nymRef`) ( [att.canonical](#at
  
  
  ----- 
-
-        [att.pointing](#att.pointing)
-    
+ 
+### att.pointing<span id="att.pointing"/>
+ 
  
 **att.pointing** provides a set of attributes used by all elements which point to other elements by means of one or more URI references. 
  
@@ -9121,13 +8195,8 @@ Attributes  [att.naming](#att.naming) `@role`, `@nymRef`) ( [att.canonical](#at
 *  **Status**: Optional
 *  **Datatype**: teidata.language
 *  
-```
- 
-<linkGrp xml:id="pol-swh_aln_2.1-linkGrp">
-                                                 <ptr xml:id="pol-swh_aln_2.1.1-ptr"  target="pol/UDHR/text.xml#pol_txt_1-head" type="tuv" targetLang="pl"/> <ptr xml:id="pol-swh_aln_2.1.2-ptr"  target="swh/UDHR/text.xml#swh_txt_1-head" type="tuv" targetLang="sw"/></linkGrp>
- 
-```
-In the example above, the `linkGrp` combines pointers at parallel fragments of the Universal Declaration of Human Rights: one of them is in Polish, the other in Swahili. : 
+<span id="index.xml-egXML-d38e3509"/><linkGrp xml:id="pol-swh_aln_2.1-linkGrp">
+                                                 <ptr xml:id="pol-swh_aln_2.1.1-ptr"  target="pol/UDHR/text.xml#pol_txt_1-head" type="tuv" targetLang="pl"/> <ptr xml:id="pol-swh_aln_2.1.2-ptr"  target="swh/UDHR/text.xml#swh_txt_1-head" type="tuv" targetLang="sw"/></linkGrp>In the example above, the `linkGrp` combines pointers at parallel fragments of the Universal Declaration of Human Rights: one of them is in Polish, the other in Swahili. : 
 *  **Note**: The value must conform to BCP 47. If the value is a private use code (i.e., starts with x- or contains -x-), a  [language](#language)  element with a matching value for its ident attribute should be supplied in the TEI header to document this value. Such documentation may also optionally be supplied for non-private-use codes, though these must remain consistent with their  (IETF)Internet Engineering Task Force definitions. 
  
  
@@ -9170,9 +8239,9 @@ In the example above, the `linkGrp` combines pointers at parallel fragments of t
  
  
  ----- 
-
-        [att.ranging](#att.ranging)
-    
+ 
+### att.ranging<span id="att.ranging"/>
+ 
  
 **att.ranging** provides attributes for describing numerical ranges. 
  
@@ -9240,13 +8309,8 @@ In the example above, the `linkGrp` combines pointers at parallel fragments of t
 #### **Example**
  
  
-```
- 
-The MS. was lost in transmission by mail from <del rend="overstrike">
+<span id="index.xml-egXML-d38e385"/>The MS. was lost in transmission by mail from <del rend="overstrike">
                                <gap reason="illegible"  extent="one or two letters" atLeast="1" atMost="2" unit="chars"/></del> Philadelphia to the Graphic office, New York.
- 
-```
- 
  
  
  
@@ -9254,9 +8318,9 @@ The MS. was lost in transmission by mail from <del rend="overstrike">
  
  
  ----- 
-
-        [att.segLike](#att.segLike)
-    
+ 
+### att.segLike<span id="att.segLike"/>
+ 
  
 **att.segLike** provides attributes for elements used for arbitrary segmentation. 
  
@@ -9292,9 +8356,9 @@ Attributes  [att.datcat](#att.datcat) `@datcat`, `@valueDatcat`)  [att.fragment
  
  
  ----- 
-
-        [att.sortable](#att.sortable)
-    
+ 
+### att.sortable<span id="att.sortable"/>
+ 
  
 **att.sortable** provides attributes for elements in lists or groups that are sortable, but whose sorting key cannot be derived mechanically from the element content. 
  
@@ -9318,15 +8382,10 @@ Attributes  [att.datcat](#att.datcat) `@datcat`, `@valueDatcat`)  [att.fragment
 *  **Status**: Optional
 *  **Datatype**: teidata.word
 *  
-```
- 
-David's other principal backer, Josiah ha-Kohen <index indexName="NAMES">
+<span id="index.xml-egXML-d38e3713"/>David's other principal backer, Josiah ha-Kohen <index indexName="NAMES">
                                                  <term sortKey="Azarya_Josiah_Kohen">
                                                 Josiah ha-Kohen b. Azarya</term></index> b. Azarya, son of one of the last gaons of Sura was David's own first cousin.
-                                          
- 
-```
-: 
+                                          : 
 *  **Note**: The sort key is used to determine the sequence and grouping of entries in an index. It provides a sequence of characters which, when sorted with the other values, will produced the desired order; specifics of sort key construction are application-dependent Dictionary order often differs from the collation sequence of machine-readable character sets; in English-language dictionaries, an entry for 4-H will often appear alphabetized under ‘fourh’, and McCoy may be alphabetized under ‘maccoy’, while A1, A4, and A5 may all appear in numeric order ‘alphabetized’ between ‘a-’ and ‘AA’. The sort key is required if the orthography of the dictionary entry does not suffice to determine its location. 
  
  
@@ -9340,9 +8399,9 @@ David's other principal backer, Josiah ha-Kohen <index indexName="NAMES">
  
  
  ----- 
-
-        [att.spanning](#att.spanning)
-    
+ 
+### att.spanning<span id="att.spanning"/>
+ 
  
 **att.spanning** provides attributes for elements which delimit a span of text by pointing mechanisms rather than by enclosing it. 
  
@@ -9385,9 +8444,9 @@ The span is defined as running in document order from the start of the content o
  
  
  ----- 
-
-        [att.styleDef](#att.styleDef)
-    
+ 
+### att.styleDef<span id="att.styleDef"/>
+ 
  
 **att.styleDef** provides attributes to specify the name of a formal definition language used to provide formatting or rendition information. 
  
@@ -9438,9 +8497,9 @@ The span is defined as running in document order from the start of the content o
  
  
  ----- 
-
-        [att.timed](#att.timed)
-    
+ 
+### att.timed<span id="att.timed"/>
+ 
  
 **att.timed** provides attributes common to those elements which have a duration in time, expressed either absolutely or by reference to an alignment map. 
  
@@ -9485,9 +8544,9 @@ The span is defined as running in document order from the start of the content o
  
  
  ----- 
-
-        [att.typed](#att.typed)
-    
+ 
+### att.typed<span id="att.typed"/>
+ 
 **Members**
  
  [TEI](#TEI)  [bibl](#bibl)  [change](#change)  [corr](#corr)  [date](#date)  [div](#div)  [head](#head)  [lb](#lb)  [lg](#lg)  [listBibl](#listBibl)  [listChange](#listChange)  [milestone](#milestone)  [name](#name)  [note](#note)  [pb](#pb)  [pc](#pc)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [term](#term)  [text](#text)  [trailer](#trailer) 
@@ -9505,15 +8564,10 @@ The span is defined as running in document order from the start of the content o
 *  **Status**: Optional
 *  **Datatype**: teidata.enumerated
 *  
-```
- 
-<div type="verse">
+<span id="index.xml-egXML-d38e3339"/><div type="verse">
                                                  <head>Night in Tarras</head> <lg type="stanza">
                                                   <l>At evening tramping on the hot white road</l>  <l>…</l> </lg> <lg type="stanza">
-                                                  <l>A wind sprang up from nowhere as the sky</l>  <l>…</l> </lg></div>
- 
-```
-: 
+                                                  <l>A wind sprang up from nowhere as the sky</l>  <l>…</l> </lg></div>: 
 *  **Note**: The type attribute is present on a number of elements, not all of which are members of  [att.typed](#att.typed) , usually because these elements restrict the possible values for the attribute in a specific way. 
  
  
@@ -9544,9 +8598,9 @@ When appropriate, values from an established typology should be used. Alternativ
  
  
  ----- 
-
-        [att.written](#att.written)
-    
+ 
+### att.written<span id="att.written"/>
+ 
  
 **att.written** provides an attribute to indicate the hand in which the content of an element was written in the source being transcribed. 
  

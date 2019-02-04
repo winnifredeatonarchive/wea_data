@@ -44,6 +44,8 @@
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
+
+    
     
     <xsl:template match="h1 | h2 | h3 | h4 | h5 | h6">
         <xsl:variable name="num" select="xs:integer(substring-after(local-name(),'h'))" as="xs:integer"/>
@@ -76,6 +78,12 @@
     <xsl:template match="node()[ancestor::div[contains(@class,'egXML')]]">
         
         <xsl:value-of select="." disable-output-escaping="yes"/>
+    </xsl:template>
+    
+    <xsl:template match="div[@id] | section[@id]">
+        <xsl:copy-of select="$newLine"/>
+        <span id="{@id}"/>
+        <xsl:apply-templates/>
     </xsl:template>
     
     
@@ -199,9 +207,7 @@
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
-    <xsl:template match="h3[@id]">
-        [<xsl:value-of select="@id"/>](#<xsl:value-of select="@id"/>)
-    </xsl:template>
+
     
     <xsl:template match="br">
         <xsl:copy-of select="$newLine"/>
