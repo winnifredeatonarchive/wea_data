@@ -10,7 +10,7 @@ Our full documentation can be found within the [ODD File](sch/wea.odd). From the
 * An XSLT derived from the embedded schematron for validation
 * Three versions of documentation:
    * [A full HTML version](docs/documentation_full.html), using the TEI's odd2html.xsl
-   * [An abridged version for editorial use within oXygen](docs/oxygen_documentation.md)
+   * [An abridged version for editorial use within oXygen](docs/oxygen_documentation.html)
    * [An abridged version for editorial use within Github](docs/github_documentation.md)
    
    
