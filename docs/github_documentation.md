@@ -5,13 +5,13 @@ Note that this is an abridged version of the documentation for editorial use wit
  
  
  
-*  1 [Introduction](#index.xml-body.1_div.1)
-*  2 [Setting up Github](#index.xml-body.1_div.2)
-*  3 [Updating the Git repository](#index.xml-body.1_div.3)
-*  4 [Committing Changes](#index.xml-body.1_div.4)
-*  5 [Setting up oXygen](#index.xml-body.1_div.5)
-*  6 [Editing the Texts](#index.xml-body.1_div.6)
-*  7 [Building the Schema](#index.xml-body.1_div.7)
+* [Introduction](#index.xml-body.1_div.1)
+* [Setting up Github](#index.xml-body.1_div.2)
+* [Updating the Git repository](#index.xml-body.1_div.3)
+* [Committing Changes](#index.xml-body.1_div.4)
+* [Setting up oXygen](#index.xml-body.1_div.5)
+* [Editing the Texts](#index.xml-body.1_div.6)
+* [Building the Schema](#index.xml-body.1_div.7)
  
  
 ## Element and Attribute Index
@@ -19,11 +19,11 @@ Note that this is an abridged version of the documentation for editorial use wit
 [abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
  
  
-## 1 Introduction  <span id="index.xml-body.1_div.1"/>
+## Introduction  <span id="index.xml-body.1_div.1"/>
  
 The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development. 
  
-## 2 Setting up Github  <span id="index.xml-body.1_div.2"/>
+## Setting up Github  <span id="index.xml-body.1_div.2"/>
  
  
  
@@ -51,15 +51,15 @@ git pull https://github.com/winnifredeatonarchive/wea_data
  
  
  
-## 3 Updating the Git repository  <span id="index.xml-body.1_div.3"/>
+## Updating the Git repository  <span id="index.xml-body.1_div.3"/>
  
-## 4 Committing Changes  <span id="index.xml-body.1_div.4"/>
+## Committing Changes  <span id="index.xml-body.1_div.4"/>
  
-## 5 Setting up oXygen  <span id="index.xml-body.1_div.5"/>
+## Setting up oXygen  <span id="index.xml-body.1_div.5"/>
  
-## 6 Editing the Texts  <span id="index.xml-body.1_div.6"/>
+## Editing the Texts  <span id="index.xml-body.1_div.6"/>
  
-## 7 Building the Schema  <span id="index.xml-body.1_div.7"/>
+## Building the Schema  <span id="index.xml-body.1_div.7"/>
  
 All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
  
@@ -73,7 +73,7 @@ ant -lib lib -f code/buildSchemas.xml
 ```
  Note that you must have ant installed. 
  
-## Appendix A 
+## 
  
 ## Schema wea: Elements
  

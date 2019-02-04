@@ -244,6 +244,9 @@
         <h3><xsl:apply-templates select="@*|node()"/></h3>
     </xsl:template>
     
+    <!--Delete heading numbers-->
+    <xsl:template match="span[@class='headingNumber']"/>
+    
     <!-- Get rid of the meta charset element, since we already 
      get the http-equiv one from Saxon and both should not 
      be present. -->
