@@ -169,6 +169,7 @@
             <xsl:apply-templates mode="#current"/>
         </xsl:copy>
     </xsl:template>
+
    
    
    <xsl:template match="head"/>
@@ -182,6 +183,24 @@
         <xsl:apply-templates/>
         <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
+        <xsl:if test="contains(@class,'toc')">
+            <xsl:call-template name="createToc"/>
+            
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="createToc">
+        <xsl:copy-of select="$newLine"/>
+        <xsl:text>## Element and Attribute Index</xsl:text>
+        <xsl:copy-of select="$newLine"/>
+        <xsl:copy-of select="$newLine"/>
+        <xsl:value-of select="string-join(for $n in ancestor::html//h3[@id] return concat('[',string-join($n/descendant::text(),''),'](',$n/@id,')'),' | ')"/>
+        <xsl:copy-of select="$newLine"/>
+        <xsl:copy-of select="$newLine"/>
+    </xsl:template>
+    
+    <xsl:template match="h3[@id]">
+        [<xsl:value-of select="@id"/>](#<xsl:value-of select="@id"/>)
     </xsl:template>
     
     <xsl:template match="br">
@@ -189,7 +208,20 @@
     </xsl:template>
     
     <xsl:template match="code">
-        `<xsl:apply-templates/>`
+        <xsl:choose>
+            <xsl:when test="@class='block'">
+                <xsl:copy-of select="$newLine"/>
+                <xsl:text>```</xsl:text>
+                <xsl:copy-of select="$newLine"/>
+                <xsl:apply-templates/>
+                <xsl:copy-of select="$newLine"/>
+                <xsl:text>```</xsl:text>
+                <xsl:copy-of select="$newLine"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>`</xsl:text><xsl:apply-templates/><xsl:text>`</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="li">

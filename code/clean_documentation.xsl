@@ -249,6 +249,7 @@
      be present. -->
     <xsl:template match="meta[@charset]"/>
     
+    <xsl:template match="div[contains(@class,'stdfooter')]"/>
     
     
 </xsl:stylesheet>
