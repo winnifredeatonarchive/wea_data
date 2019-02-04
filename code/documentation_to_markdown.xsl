@@ -194,7 +194,7 @@
         <xsl:text>## Element and Attribute Index</xsl:text>
         <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
-        <xsl:value-of select="string-join(for $n in ancestor::html//h3[@id] return concat('[',string-join($n/descendant::text(),''),'](',$n/@id,')'),' | ')"/>
+        <xsl:value-of select="string-join(for $n in ancestor::html//h3[@id] return concat('[',string-join($n/descendant::text(),''),'](#',$n/@id,')'),' | ')"/>
         <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
