@@ -176,7 +176,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="ul">
+    <xsl:template match="ul | ol">
         <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
         <xsl:apply-templates/>
@@ -184,9 +184,24 @@
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
+    <xsl:template match="br">
+        <xsl:copy-of select="$newLine"/>
+    </xsl:template>
+    
+    <xsl:template match="code">
+        `<xsl:apply-templates/>`
+    </xsl:template>
+    
     <xsl:template match="li">
         <xsl:copy-of select="$newLine"/>
-        <xsl:text>* </xsl:text><xsl:apply-templates/>
+        <xsl:choose>
+            <xsl:when test="parent::ol">
+                <xsl:text>1. </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>* </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose><xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="dl">

@@ -6,27 +6,64 @@ Note that this is an abridged version of the documentation for editorial use wit
  
  
 *  1 [Introduction](#index.xml-body.1_div.1)
- 
- 
-*  1.1 [History and Pre-amble](#index.xml-body.1_div.1_div.1)
- 
- 
 *  2 [Setting up Github](#index.xml-body.1_div.2)
-*  3 [Setting up oXygen](#index.xml-body.1_div.3)
-*  4 [Editing the Texts](#index.xml-body.1_div.4)
+*  3 [Updating the Git repository](#index.xml-body.1_div.3)
+*  4 [Committing Changes](#index.xml-body.1_div.4)
+*  5 [Setting up oXygen](#index.xml-body.1_div.5)
+*  6 [Editing the Texts](#index.xml-body.1_div.6)
+*  7 [Building the Schema](#index.xml-body.1_div.7)
  
  
 ## 1 Introduction
  
 The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development. 
  
-### 1.1 History and Pre-amble
- 
 ## 2 Setting up Github
  
-## 3 Setting up oXygen
  
-## 4 Editing the Texts
+ 
+1. Ensure that you have git installed on your local system [[add link here]]
+1. Open the terminal
+1. Create a directory for working in:
+
+        `mkdir wea`
+    
+1. Go into the directory:
+
+        `cd wea`
+    
+1. Initialize the repository:
+
+        `git init .`
+    
+1. Pull the repository:
+
+        `git pull https://github.com/winnifredeatonarchive/wea_data`
+    
+ 
+ 
+## 3 Updating the Git repository
+ 
+## 4 Committing Changes
+ 
+## 5 Setting up oXygen
+ 
+## 6 Editing the Texts
+ 
+## 7 Building the Schema
+ 
+All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
+ 
+To regenerate the schema and the documentation follow these directions
+ 
+In oXygen: Simply open the ODD file in the oXygen project file and press the red "play" button. 
+ 
+Command line: in the root project directory (
+        `wea_data`
+    ), run:
+
+        `ant -lib lib -f code/buildSchemas.xml`
+     Note that you must have ant installed. 
  
 ## Appendix A 
  
@@ -3130,7 +3167,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
                                <g ref="#sym"/>345</idno>
  
 ```
-In the last case, the identifier includes a non-Unicode character which is defined elsewhere by means of a `glyph` or `char` element referenced here as #sym. 
+In the last case, the identifier includes a non-Unicode character which is defined elsewhere by means of a `glyph` or `char` element referenced here as 
+        `#sym`
+    . 
  
  
  
@@ -6222,7 +6261,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 #### **Note**
  
-This element is required. It is customary to specify the TEI namespace http://www.tei-c.org/ns/1.0 on it, using the xmlns attribute. 
+This element is required. It is customary to specify the TEI namespace 
+        `http://www.tei-c.org/ns/1.0`
+     on it, using the xmlns attribute. 
  
  
  
@@ -7503,7 +7544,21 @@ This list begins in the year 1632, more precisely on Trinity Sunday, i.e. the Su
  
 #### **Note**
  
-The value of these attributes should be a normalized representation of the date, time, or combined date &amp; time intended, in any of the standard formats specified by XML Schema Part 2: Datatypes Second Edition, using the Gregorian calendar. The most commonly-encountered format for the date portion of a temporal attribute is yyyy-mm-dd, but yyyy, --mm, ---dd, yyyy-mm, or --mm-dd may also be used. For the time part, the form hh:mm:ss is used. Note that this format does not currently permit use of the value 0000 to represent the year 1 BCE; instead the value -0001 should be used. 
+The value of these attributes should be a normalized representation of the date, time, or combined date &amp; time intended, in any of the standard formats specified by XML Schema Part 2: Datatypes Second Edition, using the Gregorian calendar. The most commonly-encountered format for the date portion of a temporal attribute is 
+        `yyyy-mm-dd`
+    , but 
+        `yyyy`
+    , 
+        `--mm`
+    , 
+        `---dd`
+    , 
+        `yyyy-mm`
+    , or 
+        `--mm-dd`
+     may also be used. For the time part, the form 
+        `hh:mm:ss`
+     is used. Note that this format does not currently permit use of the value 0000 to represent the year 1 BCE; instead the value -0001 should be used. 
  
  
  
@@ -8921,7 +8976,9 @@ Attributes  [att.canonical](#att.canonical) `@key`, `@ref`)
  
 *  **Status**: Required
 *  **Datatype**: teidata.replacement
-*  **Note**: The strings $1, $2 etc. are references to the corresponding group in the regular expression specified by matchPattern (counting open parenthesis, left to right). Processors are expected to replace them with whatever matched the corresponding group in the regular expression. If a digit preceded by a dollar sign is needed in the actual replacement pattern (as opposed to being used as a back reference), the dollar sign must be written as %24. 
+*  **Note**: The strings $1, $2 etc. are references to the corresponding group in the regular expression specified by matchPattern (counting open parenthesis, left to right). Processors are expected to replace them with whatever matched the corresponding group in the regular expression. If a digit preceded by a dollar sign is needed in the actual replacement pattern (as opposed to being used as a back reference), the dollar sign must be written as 
+        `%24`
+    . 
  
  
  
@@ -9092,7 +9149,9 @@ In the example above, the `linkGrp` combines pointers at parallel fragments of t
  
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
-*  **Note**: One or more syntactically valid URI references, separated by whitespace. Because whitespace is used to separate URIs, no whitespace is permitted inside a single URI. If a whitespace character is required in a URI, it should be escaped with the normal mechanism, e.g. TEI%20Consortium. 
+*  **Note**: One or more syntactically valid URI references, separated by whitespace. Because whitespace is used to separate URIs, no whitespace is permitted inside a single URI. If a whitespace character is required in a URI, it should be escaped with the normal mechanism, e.g. 
+        `TEI%20Consortium`
+    . 
  
  
  

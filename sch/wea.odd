@@ -29,14 +29,32 @@
         <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
         uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
         the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
-        <div>
-          <head>History and Pre-amble</head>
-        </div>
       </div>
 
       <div>
         <head>Setting up Github</head>
+        <list rend="ordered">
+          <item>Ensure that you have git installed on your local system [[add link here]]</item>
+          <item>Open the terminal</item>
+          <item>Create a directory for working in:<lb/>
+          <code>mkdir wea</code>
+          </item>
+          <item>Go into the directory:<lb/>
+          <code>cd wea</code>
+          </item>
+          <item>Initialize the repository:<lb/>
+          <code>git init .</code></item>
+          <item>Pull the repository:<lb/>
+          <code>git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
+        </list>
       </div>
+      <div>
+        <head>Updating the Git repository</head>
+      </div>
+      <div>
+        <head>Committing Changes</head>
+      </div>
+      
       <div>
         <head>Setting up oXygen</head>
       </div>
@@ -44,7 +62,16 @@
         <head>Editing the Texts</head>
       </div>
       
-
+      <div>
+        <head>Building the Schema</head>
+        <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+        <p>To regenerate the schema and the documentation follow these directions</p>
+        <p><emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
+        <p><emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:<lb/>
+          <code>ant -lib lib -f code/buildSchemas.xml</code>
+          Note that you must have ant installed.
+        </p>
+      </div>
 
     </body>
     <back>
