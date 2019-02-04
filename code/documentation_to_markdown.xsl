@@ -28,9 +28,9 @@
     </xsl:template>
     
     <xsl:template match="div[@id='TOP.note']/text()">
-        <xsl:analyze-string select="." regex="for use in oXygen">
+        <xsl:analyze-string select="." regex="oXygen">
             <xsl:matching-substring>
-                <xsl:text>for viewing on Github</xsl:text>
+                <xsl:text>Github</xsl:text>
             </xsl:matching-substring>
             <xsl:non-matching-substring>
                 <xsl:value-of select="."/>

@@ -39,7 +39,7 @@
     <!-- Switch to our own css file. -->
     <xsl:template match="link[@type='text/css']">
         <xsl:if test="not(preceding-sibling::link[@type='text/css'])">
-            <link rel="stylesheet" href="code/oxygen.css" type="text/css"/>
+            <link rel="stylesheet" href="oxygen.css" type="text/css"/>
         </xsl:if>
     </xsl:template>
     
@@ -203,6 +203,8 @@
             <xsl:apply-templates select="@*|node()"/><xsl:text>="</xsl:text>
         </xsl:copy>
     </xsl:template>
+    
+    <xsl:template match="td[table[@class='attList']]/text()[1]"/>
     
     <xsl:template match="span[@class='element']/text()">
         <xsl:variable name="dq">"</xsl:variable>

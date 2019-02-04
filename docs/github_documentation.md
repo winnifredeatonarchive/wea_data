@@ -99,7 +99,7 @@ This element is intended only for cases where no abstract is available in the or
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` supplies an identifier for the scheme in which this name is defined. 
@@ -305,7 +305,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
 `@status` supplies a code identifying the current availability of the text. 
@@ -894,7 +894,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`) 
  
  
 `@scheme` identifies the classification scheme within which the set of categories concerned is defined, for example by a `taxonomy` element, or by some other resource. 
@@ -967,7 +967,7 @@ The scheme attribute needs to be supplied only if more than one taxonomy has bee
  
 #### **Attributes**
  
-Attributes  [att.ascribed](#att.ascribed)  (`@who`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.docStatus](#att.docStatus)  (`@status`)  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.ascribed](#att.ascribed) `@who`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.docStatus](#att.docStatus)  (`@status`)  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@target` points to one or more elements that belong to this change. 
@@ -1211,7 +1211,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@lang` (formal language) a name identifying the formal language in which the code is expressed 
@@ -1789,7 +1789,7 @@ The document author's name often occurs within a byline, but the  [docAuthor](#d
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@when` gives the value of the date in standard form, i.e. YYYY-MM-DD. 
@@ -2588,7 +2588,7 @@ Because cultural conventions differ as to which elements are grouped as front ma
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.timed](#att.timed)  (`@start`, `@end`)  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.timed](#att.timed)  (`@start`, `@end`)  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
  
  
 `@reason` gives the reason for omission 
@@ -2725,7 +2725,7 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` supplies the name of the scheme in which this name is defined. 
@@ -2963,7 +2963,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
 `@eol` (end-of-line) indicates whether or not end-of-line hyphenation has been retained in a text. 
@@ -3039,7 +3039,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` categorizes the identifier, for example as an ISBN, Social Security number, etc. 
@@ -3219,7 +3219,7 @@ May contain simple prose or a sequence of chunks.Whatever string of characters i
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a `taxonomy` element, or by some other resource. 
@@ -3367,7 +3367,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@ident` (identifier) Supplies a language code constructed as defined in  [BCP 47](https://tools.ietf.org/html/bcp47)  which is used to identify the language documented by this element, and which is referenced by the global xml:lang attribute. 
@@ -3733,7 +3733,7 @@ A  [licence](#licence)  element should be supplied for each licence agreement ap
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` describes the nature of the items in the list. 
@@ -3978,7 +3978,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@ordered` indicates whether the ordering of its child  [change](#change)  elements is to be considered significant or not 
@@ -4259,7 +4259,7 @@ Proper nouns referring to people, places, and organizations may be tagged instea
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.placement](#att.placement)  (`@place`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.placement](#att.placement)  (`@place`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
  
  
 `@anchored` indicates whether the copy text shows the exact place of reference for the note. 
@@ -4422,7 +4422,7 @@ Information of different kinds should not be grouped together into the same note
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
  
  
 `@type` indicates the type of numeric value. 
@@ -4738,7 +4738,7 @@ A page break may be associated with a facsimile image of the page it introduces 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.segLike](#att.segLike)  (`@function`) ( [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.linguistic](#att.linguistic)  (`@lemma`, `@lemmaRef`, `@pos`, `@msd`, `@join`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.segLike](#att.segLike)  (`@function`) ( [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.linguistic](#att.linguistic)  (`@lemma`, `@lemmaRef`, `@pos`, `@msd`, `@join`) 
  
  
 `@force` indicates the extent to which this punctuation mark conventionally separates words or phrases 
@@ -4847,7 +4847,7 @@ Example encoding of the German sentence Wir fahren in den Urlaub., encoded with 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.patternReplacement](#att.patternReplacement)  (`@matchPattern`, `@replacementPattern`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.patternReplacement](#att.patternReplacement)  (`@matchPattern`, `@replacementPattern`) 
  
  
 `@ident` supplies a name which functions as the prefix for an abbreviated pointing scheme such as a private URI scheme. The prefix constitutes the text preceding the first colon. 
@@ -5250,7 +5250,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ascribed.directed](#att.ascribed.directed)  (`@toWhom`) ( [att.ascribed](#att.ascribed)  (`@who`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ascribed.directed](#att.ascribed.directed)  (`@toWhom`) ( [att.ascribed](#att.ascribed)  (`@who`)) 
  
  
 `@type` may be used to indicate whether the offset passage is spoken or thought, or to characterize it more finely. 
@@ -5575,7 +5575,7 @@ It is also possible to identify the individual responsible for the regularizatio
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@target` points to the related bibliographic element by means of an absolute or relative URI reference 
@@ -5654,7 +5654,7 @@ If the target attribute is used to reference the related bibliographic item, the
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.styleDef](#att.styleDef)  (`@scheme`, `@schemeVersion`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.styleDef](#att.styleDef)  (`@scheme`, `@schemeVersion`) 
  
  
 `@scope` where CSS is used, provides a way of defining ‘pseudo-elements’, that is, styling rules applicable to specific sub-portions of an element. 
@@ -6181,7 +6181,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@version` specifies the version number of the TEI Guidelines against which this document is valid. 
@@ -6582,7 +6582,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` classifies the title according to some convenient typology. 
@@ -6731,7 +6731,7 @@ The attributes key and ref, inherited from the class  [att.canonical](#att.canon
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@type` classifies the title page according to any convenient typology. 
@@ -6800,7 +6800,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@type` specifies the role of this subdivision of the title. 
@@ -7065,7 +7065,7 @@ Character data only
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@who` indicates the person, or group of people, to whom the element content is ascribed. 
@@ -7118,7 +7118,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes  [att.ascribed](#att.ascribed)  (`@who`) 
+Attributes  [att.ascribed](#att.ascribed) `@who`) 
  
  
 `@toWhom` indicates the person, or group of people, to whom a speech act or action is directed. 
@@ -7174,7 +7174,7 @@ Attributes  [att.ascribed](#att.ascribed)  (`@who`)
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@break` indicates whether or not the element bearing this attribute should be considered to mark the end of an orthographic token in the same way as whitespace. 
@@ -7227,7 +7227,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@key` provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind. 
@@ -7298,7 +7298,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@cRef` (canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a `refsDecl` element in the TEI header 
@@ -7336,7 +7336,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes  [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`) 
+Attributes  [att.datable.w3c](#att.datable.w3c) `@when`, `@notBefore`, `@notAfter`, `@from`, `@to`) 
  
  
 `@calendar` indicates the system or calendar to which the date represented by the content of this element belongs. 
@@ -7400,7 +7400,7 @@ This ‘superclass’ provides attributes that can be used to provide normalized
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@when` supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd. 
@@ -7528,7 +7528,7 @@ The value of these attributes should be a normalized representation of the date,
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@datcat` contains a PID (persistent identifier) that aligns the given element with the appropriate Data Category (or categories) in ISOcat. 
@@ -7595,7 +7595,7 @@ ISO 12620:2009 is a standard describing the data model and procedures for a Data
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@default` indicates whether or not this element is selected by default when its parent is selected. 
@@ -7645,7 +7645,7 @@ The rules governing the association of declarable elements with individual parts
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@decls` identifies one or more declarable elements within the header, which are understood to apply to the element bearing this attribute and its content. 
@@ -7690,7 +7690,7 @@ The rules governing the association of declarable elements with individual parts
  
 #### **Attributes**
  
-Attributes  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
+Attributes  [att.ranging](#att.ranging) `@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
  
  
 `@unit` names the unit used for the measurement 
@@ -7785,7 +7785,7 @@ Attributes  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`
  
 #### **Attributes**
  
-Attributes  [att.fragmentable](#att.fragmentable)  (`@part`) 
+Attributes  [att.fragmentable](#att.fragmentable) `@part`) 
  
  
 `@org` (organization) specifies how the content of the division is organized. 
@@ -7844,7 +7844,7 @@ Attributes  [att.fragmentable](#att.fragmentable)  (`@part`)
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@status` describes the status of a document either currently or, when associated with a dated element, at the time indicated. 
@@ -7913,7 +7913,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@ed` (edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text. 
@@ -7988,7 +7988,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@evidence` indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation. 
@@ -8057,7 +8057,7 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@part` specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers. 
@@ -8102,7 +8102,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes  [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)  [att.global.analytic](#att.global.analytic)  (`@ana`)  [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)  [att.global.source](#att.global.source)  (`@source`) 
+Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@rendition`)  [att.global.analytic](#att.global.analytic)  (`@ana`)  [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)  [att.global.source](#att.global.source)  (`@source`) 
  
  
 `@xml:id` (identifier) provides a unique identifier for the element bearing the attribute. 
@@ -8199,7 +8199,7 @@ Attributes  [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, 
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@ana` (analysis) indicates one or more elements containing interpretations of the element on which the ana attribute appears. 
@@ -8237,7 +8237,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@rend` (rendition) indicates how the element in question was rendered or presented in the source text. 
@@ -8323,7 +8323,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@cert` (certainty) signifies the degree of certainty associated with the intervention or interpretation. 
@@ -8402,7 +8402,7 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@source` specifies the source from which some aspect of this element is drawn. 
@@ -8503,7 +8503,7 @@ Create a schema using components taken from the file mycompiledODD.xml.
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@mimeType` (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type 
@@ -8562,7 +8562,7 @@ This attribute class provides an attribute for describing a computer resource, t
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@lemma` provides a lemma (base form) for the word, typically uninflected and serving both as an identifier (e.g. in dictionary contexts, as a headword), and as a basis for potential inflections. 
@@ -8758,7 +8758,7 @@ These attributes make it possible to encode simple language corpora and to add a
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@unit` provides a conventional name for the kind of section changing at this milestone. 
@@ -8821,7 +8821,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.canonical](#att.canonical) `@key`, `@ref`) 
  
  
 `@role` may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place. 
@@ -8867,7 +8867,7 @@ Attributes  [att.canonical](#att.canonical)  (`@key`, `@ref`)
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@notation` names the notation used for the content of the element. 
@@ -8904,7 +8904,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@matchPattern` specifies a regular expression against which the values of other attributes can be matched. 
@@ -8951,7 +8951,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
+Attributes  [att.naming](#att.naming) `@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
  
  
 `@full` indicates whether the name component is given in full, as an abbreviation or simply as an initial. 
@@ -9001,7 +9001,7 @@ Attributes  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@place` specifies where this item is placed. 
@@ -9067,7 +9067,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@targetLang` specifies the language of the content to be found at the destination referenced by target, using a ‘language tag’ generated according to  [BCP 47](http://www.rfc-editor.org/rfc/bcp/bcp47.txt) . 
@@ -9142,7 +9142,7 @@ In the example above, the `linkGrp` combines pointers at parallel fragments of t
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@atLeast` gives a minimum estimated value for the approximate measurement. 
@@ -9226,7 +9226,7 @@ The MS. was lost in transmission by mail from <del rend="overstrike">
  
 #### **Attributes**
  
-Attributes  [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)  [att.fragmentable](#att.fragmentable)  (`@part`) 
+Attributes  [att.datcat](#att.datcat) `@datcat`, `@valueDatcat`)  [att.fragmentable](#att.fragmentable)  (`@part`) 
  
  
 `@function` characterizes the function of the segment. 
@@ -9264,7 +9264,7 @@ Attributes  [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)  [att.fragme
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@sortKey` supplies the sort key for this element in an index, list or group which contains it. 
@@ -9312,7 +9312,7 @@ David's other principal backer, Josiah ha-Kohen <index indexName="NAMES">
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@spanTo` indicates the end of a span initiated by the element bearing this attribute. 
@@ -9357,7 +9357,7 @@ The span is defined as running in document order from the start of the content o
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@scheme` identifies the language used to describe the rendition. 
@@ -9410,7 +9410,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@start` indicates the location within a temporal alignment at which this element begins. 
@@ -9451,7 +9451,7 @@ Attributes
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@type` characterizes the element in some sense, using any convenient classification scheme or typology. 
@@ -9516,7 +9516,7 @@ When appropriate, values from an established typology should be used. Alternativ
  
 #### **Attributes**
  
-Attributes 
+ 
  
  
 `@hand` points to a `handNote` element describing the hand considered responsible for the content of the element concerned. 
