@@ -53,8 +53,8 @@
         <xsl:for-each select="1 to $num"><xsl:text>#</xsl:text></xsl:for-each><xsl:text> </xsl:text><xsl:apply-templates/><xsl:if test="@id">
             <span id="{@id}"/>
         </xsl:if>
-       <xsl:if test="parent::*[@id]">
-           <span id="{parent::*[@id]/@id}"/>
+       <xsl:if test="parent::header/parent::section[@id]">
+           <xsl:text>  </xsl:text><span id="{parent::header/parent::section[@id]/@id}"/>
        </xsl:if>
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
