@@ -152,8 +152,16 @@
         
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${project.dir}/docs/documentation_full.html"/>
-            <arg line="-o:${project.dir}/editor_documentation.html"/>
+            <arg line="-o:${project.dir}/docs/oxygen_documentation.html"/>
             <arg line="-xsl:${project.dir}/code/clean_documentation.xsl"/>
+        </java>
+        
+        <!--And now convert to markdown-->
+        
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${project.dir}/docs/oxygen_documentation.html"/>
+            <arg line="-o:${project.dir}/docs/github_documentation.md"/>
+            <arg line="-xsl:${project.dir}/code/documentation_to_markdown.xsl"/>
         </java>
 
     </target>

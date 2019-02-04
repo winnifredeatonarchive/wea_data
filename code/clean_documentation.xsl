@@ -51,8 +51,8 @@
         <div>
             <h2>Winnifred Eaton Archive Project Documentation</h2>
         </div>
-        <div class="note">Note that this is an abridged version of the documentation for editorial use within oXygen.
-        See <a href="docs/documentation_full.html">docs/documentation_full.html</a> for full documentation.</div>
+        <div id="TOP.note">Note that this is an abridged version of the documentation for editorial use within oXygen.
+        See <a href="documentation_full.html">docs/documentation_full.html</a> for full documentation.</div>
     </xsl:template>
     
     <!--Delete the schema declaration-->
