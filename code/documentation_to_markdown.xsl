@@ -53,6 +53,9 @@
         <xsl:for-each select="1 to $num"><xsl:text>#</xsl:text></xsl:for-each><xsl:text> </xsl:text><xsl:apply-templates/><xsl:if test="@id">
             <span id="{@id}"/>
         </xsl:if>
+       <xsl:if test="parent::*[@id]">
+           <span id="{parent::*[@id]/@id}"/>
+       </xsl:if>
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
@@ -79,12 +82,7 @@
         
         <xsl:value-of select="." disable-output-escaping="yes"/>
     </xsl:template>
-    
-    <xsl:template match="div[@id] | section[@id]">
-        <xsl:copy-of select="$newLine"/>
-        <span id="{@id}"/>
-        <xsl:apply-templates/>
-    </xsl:template>
+
     
     
     
