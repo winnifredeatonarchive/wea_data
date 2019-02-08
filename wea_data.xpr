@@ -8387,6 +8387,10 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                         </documentTypeDescriptor-array>
                     </entry>
                     <entry>
+                        <String>key.custom.editor.variables.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.document.templates.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
@@ -8543,6 +8547,66 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                         <String-array>
                             <String>${pdu}/templates</String>
                         </String-array>
+                    </entry>
+                    <entry>
+                        <String>user.defined.editor.variables</String>
+                        <userEditorVariable-array>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${anchors1}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${xpath_eval(count(ancestor::TEI//anchor)+1)}</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${docId}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${xpath_eval(//TEI/@xml:id)}</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${anchors2}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${xpath_eval(count(ancestor::TEI//anchor)+2)}</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${people}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${pdu}/people.xml</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String>People</String>
+                                </field>
+                            </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${userid}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${ask('What is your id?',String,'',@id)}</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String></String>
+                                </field>
+                            </userEditorVariable>
+                        </userEditorVariable-array>
                     </entry>
                 </serializableOrderedMap>
             </serialized>
