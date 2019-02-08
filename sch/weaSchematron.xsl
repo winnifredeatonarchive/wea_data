@@ -346,6 +346,20 @@
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M21"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M22"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M23"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -866,5 +880,51 @@ relatedItem element must be empty</svrl:text>
    <xsl:template match="text()" priority="-1" mode="M21"/>
    <xsl:template match="@*|node()" priority="-2" mode="M21">
       <xsl:apply-templates select="*" mode="M21"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+   <xsl:variable name="spaceRegex" select="'(^\s)|(\s$)'"/>
+   <xsl:variable name="docId" select="root(/)/tei:*/@xml:id"/>
+   <xsl:variable name="docUri" select="document-uri(/)"/>
+   <xsl:variable name="docIds" select="//tei:*[@xml:id]/@xml:id"/>
+   <xsl:template match="text()" priority="-1" mode="M22"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M22">
+      <xsl:apply-templates select="*" mode="M22"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"
+                 priority="1000"
+                 mode="M23">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text> ERROR: Document
+                    xml:id (<xsl:text/>
+                  <xsl:value-of select="$docId"/>
+                  <xsl:text/>) does not match the document file
+                    name (<xsl:text/>
+                  <xsl:value-of select="$docUri"/>
+                  <xsl:text/>). </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M23"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M23"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M23">
+      <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
 </xsl:stylesheet>

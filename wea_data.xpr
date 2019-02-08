@@ -7360,6 +7360,7 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="templatesLocations">
                                     <String-array>
                                         <String>${frameworksDir}/tei/templates/TEI P5</String>
+                                        <String>${pdu}/templates</String>
                                     </String-array>
                                 </field>
                                 <field name="xmlCatalogs">
@@ -8386,6 +8387,10 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                         </documentTypeDescriptor-array>
                     </entry>
                     <entry>
+                        <String>key.document.templates.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.editor.document.type.association.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
@@ -8532,6 +8537,12 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 </field>
                             </antScenario>
                         </scenario-array>
+                    </entry>
+                    <entry>
+                        <String>user.custom.templates.directories</String>
+                        <String-array>
+                            <String>${pdu}/templates</String>
+                        </String-array>
                     </entry>
                 </serializableOrderedMap>
             </serialized>

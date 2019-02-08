@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="${cfn}">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>${ask('What is the document's title?', string, '', @title)}</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name>Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name><!--Enter name of person who transcribed this file--></name>
+            </respStmt>
+            <respStmt>
+               <resp>Copy Editor</resp>
+               <name>><!--Enter name of person who copy edited this file--></name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name>${ask('Your full name', string, '', @name)}</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+     <revisionDesc>
+        <change when="${xpath_eval(format-date(current-date(),'[Y0001]-[M01]-[D01]'))}">${answer(@name)}: Created file.</change>
+     </revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+  </text>
+</TEI>

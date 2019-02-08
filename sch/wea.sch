@@ -284,5 +284,30 @@ relatedItem element must be empty</sch:report>
       </report>
             </rule>
          </pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
+                <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
+                <sch:let name="docUri" value="document-uri(/)"/>
+                <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
+              </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
+                  <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+                    xml:id (<sch:value-of select="$docId"/>) does not match the document file
+                    name (<sch:value-of select="$docUri"/>). </sch:assert>
+                </sch:rule>
+              </sch:pattern>
    <sch:diagnostics/>
 </sch:schema>
