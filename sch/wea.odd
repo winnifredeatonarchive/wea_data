@@ -76,13 +76,15 @@
         <schemaSpec ident="wea" start="TEI">
           <moduleRef key="analysis" include="pc"/>
           
-          <moduleRef key="core" include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title"/>
+          <moduleRef key="core" include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
           <moduleRef key="header" include="abstract authority availability biblFull catRef category change creation distributor edition editionStmt editorialDecl encodingDesc fileDesc hyphenation idno keywords langUsage language licence listChange listPrefixDef notesStmt prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
           <moduleRef key="tagdocs" include="att code gi val"/>
           <!--Include all TEI modules-->
           <moduleRef key="tei"/>
           
-          <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph front text titlePage titlePart trailer"/>
+          <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph front opener text titlePage titlePart trailer"/>
+          
+          <moduleRef key="transcr" include="supplied"/>
           
           <!--VARIABLES-->
           

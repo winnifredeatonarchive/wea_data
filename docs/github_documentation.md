@@ -16,7 +16,7 @@ Note that this is an abridged version of the documentation for editorial use wit
  
 ## Element and Attribute Index
  
-[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
+[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [opener](#opener) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [supplied](#supplied) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [unclear](#unclear) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.change](#att.global.change) | [att.global.facs](#att.global.facs) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
  
  
 ## Introduction  <span id="index.xml-body.1_div.1"/>
@@ -85,7 +85,7 @@ ant -lib lib -f code/buildSchemas.xml
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -144,7 +144,7 @@ This element is intended only for cases where no abstract is available in the or
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` supplies an identifier for the scheme in which this name is defined. 
@@ -175,11 +175,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -227,7 +229,7 @@ As an alternative to using the scheme attribute a namespace prefix may be used. 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
  
  
  
@@ -251,11 +253,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -295,7 +299,7 @@ Particularly where cataloguing is likely to be based on the content of the heade
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -350,7 +354,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
 `@status` supplies a code identifying the current availability of the text. 
@@ -448,7 +452,7 @@ A consistent format should be adopted
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
  
  
  
@@ -520,7 +524,7 @@ Because cultural conventions differ as to which elements are grouped as back mat
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.docStatus](#att.docStatus)  (`@status`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.docStatus](#att.docStatus)  (`@status`) 
  
  
  
@@ -530,11 +534,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [bibl](#bibl)  [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title) 
+**core:** [bibl](#bibl)  [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [licence](#licence)  [rendition](#rendition)  [sourceDesc](#sourceDesc) 
  
 **textstructure:** [body](#body)  [div](#div)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -546,11 +552,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [pubPlace](#pubPlace)  [publisher](#publisher)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [pubPlace](#pubPlace)  [publisher](#publisher)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [availability](#availability)  [distributor](#distributor)  [edition](#edition)  [idno](#idno) 
  
-**tagdocs:** [code](#code) character data
+**tagdocs:** [code](#code) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -623,7 +631,7 @@ Contains phrase-level elements, together with any combination of elements from t
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.docStatus](#att.docStatus)  (`@status`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.docStatus](#att.docStatus)  (`@status`) 
  
  
  
@@ -633,11 +641,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title) 
+**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [licence](#licence)  [rendition](#rendition)  [sourceDesc](#sourceDesc) 
  
 **textstructure:** [body](#body)  [div](#div)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -678,7 +688,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
  
  
  
@@ -702,7 +712,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **header:** [biblFull](#biblFull) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [opener](#opener)  [trailer](#trailer) 
  
  
  
@@ -733,7 +743,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -745,7 +755,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **core:** [lg](#lg)  [list](#list) 
  
-**textstructure:** [back](#back)  [body](#body)  [div](#div)  [front](#front)  [titlePage](#titlePage) 
+**textstructure:** [back](#back)  [body](#body)  [div](#div)  [front](#front)  [opener](#opener)  [titlePage](#titlePage) 
  
  
  
@@ -757,13 +767,15 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
 **tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
  
-**textstructure:** [docAuthor](#docAuthor) character data
+**textstructure:** [docAuthor](#docAuthor) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -844,7 +856,7 @@ The byline on a title page may include either the name or a description for the 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -939,7 +951,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`) 
  
  
 `@scheme` identifies the classification scheme within which the set of categories concerned is defined, for example by a `taxonomy` element, or by some other resource. 
@@ -1012,7 +1024,7 @@ The scheme attribute needs to be supplied only if more than one taxonomy has bee
  
 #### **Attributes**
  
-Attributes  [att.ascribed](#att.ascribed) `@who`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.docStatus](#att.docStatus)  (`@status`)  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.ascribed](#att.ascribed) `@who`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.docStatus](#att.docStatus)  (`@status`)  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@target` points to one or more elements that belong to this change. 
@@ -1046,11 +1058,13 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)  [att.datable](#att.datable) 
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1113,7 +1127,7 @@ The who attribute may be used to point to any other element, but will typically 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -1125,11 +1139,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -1139,7 +1155,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [choice](#choice)  [corr](#corr)  [orig](#orig)  [reg](#reg)  [sic](#sic) 
+**core:** [choice](#choice)  [corr](#corr)  [orig](#orig)  [reg](#reg)  [sic](#sic)  [unclear](#unclear) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -1178,7 +1196,7 @@ An American encoding of Gulliver's Travels which retains the British spelling bu
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -1202,13 +1220,15 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
 **tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
  
-**textstructure:** [dateline](#dateline) character data
+**textstructure:** [dateline](#dateline) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1256,7 +1276,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@lang` (formal language) a name identifying the formal language in which the code is expressed 
@@ -1278,11 +1298,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -1322,7 +1344,7 @@ Character data only
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -1334,11 +1356,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -1350,11 +1374,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1401,7 +1427,7 @@ I don't know, Juan. It's so far in the past now — how <choice> <sic>we can</s
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
  
  
  
@@ -1479,7 +1505,7 @@ The  [creation](#creation)  element may be used to record details of a text's cr
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -1489,11 +1515,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [publicationStmt](#publicationStmt)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -1505,11 +1533,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1572,7 +1602,7 @@ Given on the <date when="1977-06-12">
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -1584,7 +1614,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **core:** [lg](#lg)  [list](#list) 
  
-**textstructure:** [body](#body)  [closer](#closer)  [div](#div)  [front](#front) 
+**textstructure:** [body](#body)  [closer](#closer)  [div](#div)  [front](#front)  [opener](#opener) 
  
  
  
@@ -1596,13 +1626,15 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
 **tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
  
-**textstructure:** [docDate](#docDate) character data
+**textstructure:** [docDate](#docDate) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1649,7 +1681,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -1673,11 +1705,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1708,7 +1742,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  (`@org`, `@sample`) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  (`@org`, `@sample`) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`)  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -1732,7 +1766,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **header:** [biblFull](#biblFull) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [opener](#opener)  [trailer](#trailer) 
  
  
  
@@ -1767,7 +1801,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -1791,11 +1825,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1834,7 +1870,7 @@ The document author's name often occurs within a byline, but the  [docAuthor](#d
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@when` gives the value of the date in standard form, i.e. YYYY-MM-DD. 
@@ -1871,11 +1907,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -1914,7 +1952,7 @@ Cf. the general  [date](#date)  element in the core tag set. This specialized el
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -1969,7 +2007,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -1993,11 +2031,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -2029,7 +2069,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2097,7 +2137,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
  
  
  
@@ -2121,11 +2161,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -2167,7 +2209,7 @@ A consistent format should be adopted.Particularly where cataloguing is likely t
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
  
@@ -2221,7 +2263,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2231,11 +2273,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -2247,11 +2291,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -2297,7 +2343,7 @@ You took the car and did <emph>what</emph>?!!
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2350,7 +2396,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2362,7 +2408,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **core:** [lg](#lg)  [list](#list) 
  
-**textstructure:** [back](#back)  [body](#body)  [div](#div)  [front](#front)  [titlePage](#titlePage) 
+**textstructure:** [back](#back)  [body](#body)  [div](#div)  [front](#front)  [opener](#opener)  [titlePage](#titlePage) 
  
  
  
@@ -2407,7 +2453,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2466,7 +2512,7 @@ The major source of information for those seeking to create a catalogue entry or
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2476,11 +2522,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -2492,11 +2540,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -2537,7 +2587,7 @@ This is heathen Greek to you still? Your <foreign xml:lang="la">
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`) 
  
  
  
@@ -2633,7 +2683,7 @@ Because cultural conventions differ as to which elements are grouped as front ma
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.timed](#att.timed)  (`@start`, `@end`)  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.timed](#att.timed)  (`@start`, `@end`)  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
  
  
 `@reason` gives the reason for omission 
@@ -2677,11 +2727,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence) 
  
-**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [opener](#opener)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -2697,7 +2749,7 @@ Empty element
  
 #### **Note**
  
-The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied in use with the `damage` and `supplied` elements, available when using the additional tagset for transcription of primary sources. See section  [11.3.3.2. Use of the gap, del, damage, unclear, and supplied Elements in Combination](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB)  for discussion of which element is appropriate for which circumstance. The  [gap](#gap)  tag simply signals the editors decision to omit or inability to transcribe a span of text. Other information, such as the interpretation that text was deliberately erased or covered, should be indicated using the relevant tags, such as `del` in the case of deliberate deletion. 
+The  [gap](#gap) ,  [unclear](#unclear) , and `del` core tag elements may be closely allied in use with the `damage` and  [supplied](#supplied)  elements, available when using the additional tagset for transcription of primary sources. See section  [11.3.3.2. Use of the gap, del, damage, unclear, and supplied Elements in Combination](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB)  for discussion of which element is appropriate for which circumstance. The  [gap](#gap)  tag simply signals the editors decision to omit or inability to transcribe a span of text. Other information, such as the interpretation that text was deliberately erased or covered, should be indicated using the relevant tags, such as `del` in the case of deliberate deletion. 
  
  
  
@@ -2770,7 +2822,7 @@ The  [gap](#gap) , `unclear`, and `del` core tag elements may be closely allied 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` supplies the name of the scheme in which this name is defined. 
@@ -2799,11 +2851,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -2843,7 +2897,7 @@ This example shows the use of both a namespace prefix and the scheme attribute a
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.placement](#att.placement)  (`@place`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.placement](#att.placement)  (`@place`)  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -2867,11 +2921,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -2944,7 +3000,7 @@ With a few exceptions, connectives are equally useful in all kinds of discourse:
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -2954,11 +3010,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -2970,11 +3028,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -3008,7 +3068,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
 `@eol` (end-of-line) indicates whether or not end-of-line hyphenation has been retained in a text. 
@@ -3084,7 +3144,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` categorizes the identifier, for example as an ISBN, Social Security number, etc. 
@@ -3131,11 +3191,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [idno](#idno)  [language](#language)  [licence](#licence)  [publicationStmt](#publicationStmt)  [rendition](#rendition)  [seriesStmt](#seriesStmt) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -3192,7 +3254,7 @@ In the last case, the identifier includes a non-Unicode character which is defin
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`) 
  
  
  
@@ -3214,11 +3276,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -3264,7 +3328,7 @@ May contain simple prose or a sequence of chunks.Whatever string of characters i
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@scheme` identifies the controlled vocabulary within which the set of keywords concerned is defined, for example by a `taxonomy` element, or by some other resource. 
@@ -3350,7 +3414,7 @@ Each individual keyword (including compound subject headings) should be supplied
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.fragmentable](#att.fragmentable)  (`@part`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.fragmentable](#att.fragmentable)  (`@part`) 
  
  
  
@@ -3360,11 +3424,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [lg](#lg)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title) 
+**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [lg](#lg)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [licence](#licence) 
  
 **textstructure:** [body](#body)  [div](#div)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -3376,11 +3442,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -3412,7 +3480,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@ident` (identifier) Supplies a language code constructed as defined in  [BCP 47](https://tools.ietf.org/html/bcp47)  which is used to identify the language documented by this element, and which is referenced by the global xml:lang attribute. 
@@ -3498,7 +3566,7 @@ Particularly for sublanguages, an informal prose characterization should be supp
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
  
@@ -3554,7 +3622,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
  
  
  
@@ -3564,11 +3632,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence) 
  
-**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [opener](#opener)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -3629,7 +3699,7 @@ This example encodes typographical line breaks as a means of preserving the visu
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  (`@org`, `@sample`) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  (`@org`, `@sample`) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`) 
  
  
  
@@ -3639,11 +3709,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [lg](#lg)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title) 
+**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [lg](#lg)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [licence](#licence) 
  
 **textstructure:** [body](#body)  [div](#div)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -3655,7 +3727,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **core:** [gap](#gap)  [head](#head)  [l](#l)  [lb](#lb)  [lg](#lg)  [milestone](#milestone)  [note](#note)  [pb](#pb) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [opener](#opener)  [trailer](#trailer) 
  
  
  
@@ -3697,7 +3769,7 @@ contains verse lines or nested line groups only, possibly prefixed by a heading.
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
  
  
  
@@ -3719,11 +3791,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -3778,7 +3852,7 @@ A  [licence](#licence)  element should be supplied for each licence agreement ap
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` describes the nature of the items in the list. 
@@ -3817,11 +3891,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title) 
+**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [abstract](#abstract)  [change](#change)  [keywords](#keywords)  [licence](#licence)  [rendition](#rendition)  [revisionDesc](#revisionDesc)  [sourceDesc](#sourceDesc) 
  
 **textstructure:** [back](#back)  [body](#body)  [div](#div)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -3833,7 +3909,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **core:** [gap](#gap)  [head](#head)  [item](#item)  [lb](#lb)  [milestone](#milestone)  [note](#note)  [pb](#pb) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [opener](#opener)  [trailer](#trailer) 
  
  
  
@@ -3966,7 +4042,7 @@ Note that nested lists have been used so the tagging mirrors the structure indic
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.declarable](#att.declarable)  (`@default`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.declarable](#att.declarable)  (`@default`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -3976,11 +4052,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title) 
+**core:** [corr](#corr)  [emph](#emph)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [listBibl](#listBibl)  [note](#note)  [orig](#orig)  [p](#p)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [sic](#sic)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [licence](#licence)  [rendition](#rendition)  [sourceDesc](#sourceDesc) 
  
 **textstructure:** [back](#back)  [body](#body)  [div](#div)  [epigraph](#epigraph)  [front](#front)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4023,7 +4101,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.sortable](#att.sortable)  (`@sortKey`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@ordered` indicates whether the ordering of its child  [change](#change)  elements is to be considered significant or not 
@@ -4116,7 +4194,7 @@ When this element appears within the  [creation](#creation)  element it document
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -4169,7 +4247,7 @@ In this example, two private URI scheme prefixes are defined and patterns are pr
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.milestoneUnit](#att.milestoneUnit)  (`@unit`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.milestoneUnit](#att.milestoneUnit)  (`@unit`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
  
  
  
@@ -4179,11 +4257,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence) 
  
-**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [opener](#opener)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4231,7 +4311,7 @@ For this element, the global n attribute indicates the new number or other value
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.personal](#att.personal)  (`@full`, `@sort`) ( [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) )  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.personal](#att.personal)  (`@full`, `@sort`) ( [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) )  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -4241,11 +4321,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4257,11 +4339,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4304,7 +4388,7 @@ Proper nouns referring to people, places, and organizations may be tagged instea
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.placement](#att.placement)  (`@place`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.placement](#att.placement)  (`@place`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
  
  
 `@anchored` indicates whether the copy text shows the exact place of reference for the note. 
@@ -4337,11 +4421,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [respStmt](#respStmt)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [notesStmt](#notesStmt) 
  
-**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [opener](#opener)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4353,11 +4439,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4408,7 +4496,7 @@ However, if notes are numbered in sequence and their numbering can be reconstruc
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -4467,7 +4555,7 @@ Information of different kinds should not be grouped together into the same note
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`) 
  
  
 `@type` indicates the type of numeric value. 
@@ -4506,11 +4594,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4522,11 +4612,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4561,15 +4653,15 @@ Detailed analyses of quantities and units of measure in historical documents may
  
  ----- 
  
-### `orig`<span id="orig"/>
+### `opener`<span id="opener"/>
  
  
-**orig** (original form) contains a reading which is marked as following the original, rather than being normalized or corrected. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orig.html) ] 
+**opener** groups together dateline, byline, salutation, and similar phrases appearing as a preliminary group at the start of a division, especially of a letter. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html) ] 
  
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -4579,13 +4671,9 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**analysis:** [pc](#pc) 
+**core:** [lg](#lg)  [list](#list) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
- 
-**header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
- 
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [body](#body)  [div](#div) 
  
  
  
@@ -4597,11 +4685,98 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [idno](#idno) 
+ 
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**textstructure:** [byline](#byline)  [dateline](#dateline)  [epigraph](#epigraph) 
+ 
+**transcr:** [supplied](#supplied) character data
+ 
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+```
+ 
+<opener> <dateline>Walden, this 29. of August 1592</dateline></opener>
+ 
+```
+ 
+ 
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+```
+ 
+<opener> <dateline>  <name type="place">
+                              Great Marlborough Street</name>  <date>November 11, 1848</date> </dateline> <salute>My dear Sir,</salute></opener><p>I am sorry to say that absence from town and other circumstances have prevented me
+                           from earlier enquiring...</p>
+ 
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----- 
+ 
+### `orig`<span id="orig"/>
+ 
+ 
+**orig** (original form) contains a reading which is marked as following the original, rather than being normalized or corrected. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orig.html) ] 
+ 
+ 
+#### **Attributes**
+ 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+ 
+ 
+ 
+ 
+ 
+#### **Contained by**
+ 
+ 
+ 
+**analysis:** [pc](#pc) 
+ 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
+ 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
+ 
+ 
+ 
+ 
+ 
+#### **May contain**
+ 
+ 
+ 
+**analysis:** [pc](#pc) 
+ 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4646,7 +4821,7 @@ More usually, an  [orig](#orig)  will be combined with a regularized form within
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.fragmentable](#att.fragmentable)  (`@part`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.fragmentable](#att.fragmentable)  (`@part`)  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -4672,11 +4847,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4707,7 +4884,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.edition](#att.edition)  (`@ed`, `@edRef`)  [att.spanning](#att.spanning)  (`@spanTo`)  [att.breaking](#att.breaking)  (`@break`) 
  
  
  
@@ -4717,11 +4894,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence) 
  
-**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [back](#back)  [body](#body)  [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [epigraph](#epigraph)  [front](#front)  [opener](#opener)  [text](#text)  [titlePage](#titlePage)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4783,7 +4962,7 @@ A page break may be associated with a facsimile image of the page it introduces 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.segLike](#att.segLike)  (`@function`) ( [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.linguistic](#att.linguistic)  (`@lemma`, `@lemmaRef`, `@pos`, `@msd`, `@join`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.segLike](#att.segLike)  (`@function`) ( [att.datcat](#att.datcat)  (`@datcat`, `@valueDatcat`)) ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.linguistic](#att.linguistic)  (`@lemma`, `@lemmaRef`, `@pos`, `@msd`, `@join`) 
  
  
 `@force` indicates the extent to which this punctuation mark conventionally separates words or phrases 
@@ -4826,11 +5005,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -4840,7 +5021,9 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [choice](#choice)  [corr](#corr)  [orig](#orig)  [reg](#reg)  [sic](#sic) character data
+**core:** [choice](#choice)  [corr](#corr)  [orig](#orig)  [reg](#reg)  [sic](#sic)  [unclear](#unclear) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -4892,7 +5075,7 @@ Example encoding of the German sentence Wir fahren in den Urlaub., encoded with 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.patternReplacement](#att.patternReplacement)  (`@matchPattern`, `@replacementPattern`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.patternReplacement](#att.patternReplacement)  (`@matchPattern`, `@replacementPattern`) 
  
  
 `@ident` supplies a name which functions as the prefix for an abbreviated pointing scheme such as a private URI scheme. The prefix constitutes the text preceding the first colon. 
@@ -4965,7 +5148,7 @@ The abbreviated pointer may be dereferenced to produce either an absolute or a r
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -5027,7 +5210,7 @@ Although the content model permits it, it is rarely meaningful to supply multipl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
  
@@ -5078,7 +5261,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -5169,7 +5352,7 @@ Where a publication statement contains several members of the model.publicationS
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -5193,11 +5376,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5236,7 +5421,7 @@ Use the full form of the name by which a company is usually referred to, rather 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`, `@nymRef`) ( [att.canonical](#att.canonical)  (`@key`, `@ref`)) 
  
  
  
@@ -5260,11 +5445,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5295,7 +5482,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ascribed.directed](#att.ascribed.directed)  (`@toWhom`) ( [att.ascribed](#att.ascribed)  (`@who`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.ascribed.directed](#att.ascribed.directed)  (`@toWhom`) ( [att.ascribed](#att.ascribed)  (`@who`)) 
  
  
 `@type` may be used to indicate whether the offset passage is spoken or thought, or to characterize it more finely. 
@@ -5328,11 +5515,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [corr](#corr)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [corr](#corr)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence)  [rendition](#rendition) 
  
 **textstructure:** [body](#body)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -5344,11 +5533,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5387,7 +5578,7 @@ It is spelled <q>Tübingen</q> — to enter the letter <q>u</q> with an umlaut h
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.notated](#att.notated)  (`@notation`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.notated](#att.notated)  (`@notation`) 
  
  
  
@@ -5397,11 +5588,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [corr](#corr)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [corr](#corr)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence)  [rendition](#rendition) 
  
 **textstructure:** [body](#body)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [epigraph](#epigraph)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -5413,11 +5606,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5456,7 +5651,7 @@ Lexicography has shown little sign of being affected by the work of followers of
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.internetMedia](#att.internetMedia)  (`@mimeType`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`)  [att.cReferencing](#att.cReferencing)  (`@cRef`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.internetMedia](#att.internetMedia)  (`@mimeType`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.declaring](#att.declaring)  (`@decls`)  [att.cReferencing](#att.cReferencing)  (`@cRef`) 
  
  
  
@@ -5466,11 +5661,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [publicationStmt](#publicationStmt)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -5482,11 +5679,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5542,7 +5741,7 @@ See also <ref target="#locution">
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -5554,11 +5753,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -5570,11 +5771,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -5620,7 +5823,7 @@ It is also possible to identify the individual responsible for the regularizatio
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@target` points to the related bibliographic element by means of an absolute or relative URI reference 
@@ -5699,7 +5902,7 @@ If the target attribute is used to reference the related bibliographic item, the
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.styleDef](#att.styleDef)  (`@scheme`, `@schemeVersion`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.styleDef](#att.styleDef)  (`@scheme`, `@schemeVersion`) 
  
  
 `@scope` where CSS is used, provides a way of defining ‘pseudo-elements’, that is, styling rules applicable to specific sub-portions of an element. 
@@ -5800,7 +6003,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
  
  
  
@@ -5864,7 +6067,7 @@ The attribute ref, inherited from the class  [att.canonical](#att.canonical)  ma
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -5931,7 +6134,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.docStatus](#att.docStatus)  (`@status`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.docStatus](#att.docStatus)  (`@status`) 
  
  
  
@@ -5994,7 +6197,7 @@ If present on this element, the status attribute should indicate the current sta
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -6049,7 +6252,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -6061,11 +6264,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -6077,11 +6282,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -6158,7 +6365,7 @@ for his nose was as sharp as a pen, and <choice> <sic>a Table</sic> <corr>a' b
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
  
@@ -6218,6 +6425,111 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  ----- 
  
+### `supplied`<span id="supplied"/>
+ 
+ 
+**supplied** signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-supplied.html) ] 
+ 
+ 
+#### **Attributes**
+ 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
+ 
+ 
+`@reason` one or more words indicating why the text has had to be supplied, e.g. overbinding, faded-ink, lost-folio, omitted-in-original. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**:  1–∞ occurrences of teidata.word separated by whitespace
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#### **Contained by**
+ 
+ 
+ 
+**analysis:** [pc](#pc) 
+ 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
+ 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
+ 
+ 
+ 
+ 
+ 
+#### **May contain**
+ 
+ 
+ 
+**analysis:** [pc](#pc) 
+ 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [biblFull](#biblFull)  [idno](#idno) 
+ 
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
+ 
+ 
+ 
+ 
+ 
+#### **Note**
+ 
+The `damage`,  [gap](#gap) , `del`,  [unclear](#unclear)  and  [supplied](#supplied)  elements may be closely allied in use. See section  [11.3.3.2. Use of the gap, del, damage, unclear, and supplied Elements in Combination](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB)  for discussion of which element is appropriate for which circumstance. 
+ 
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+```
+ 
+I am dr Sr yr<supplied reason="illegible" source="#amanuensis_copy">
+                              very humble Servt</supplied> Sydney Smith
+                        
+ 
+```
+ 
+ 
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+```
+ 
+<supplied reason="omitted-in-original">
+                              Dedication</supplied> to the duke of Bejar
+                        
+ 
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----- 
+ 
 ### `TEI`<span id="TEI"/>
  
  
@@ -6226,7 +6538,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
 `@version` specifies the version number of the TEI Guidelines against which this document is valid. 
@@ -6312,7 +6624,7 @@ This element is required. It is customary to specify the TEI namespace `http://w
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -6378,7 +6690,7 @@ One of the few elements unconditionally required in any TEI document.
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.cReferencing](#att.cReferencing)  (`@cRef`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.pointing](#att.pointing)  (`@targetLang`, `@target`, `@evaluate`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.sortable](#att.sortable)  (`@sortKey`)  [att.cReferencing](#att.cReferencing)  (`@cRef`) 
  
  
  
@@ -6388,11 +6700,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [keywords](#keywords)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -6404,11 +6718,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [lb](#lb)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -6498,7 +6814,7 @@ We discuss Leech's concept of <term ref="myGlossary.xml#TDPV2" rend="sc">
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declaring](#att.declaring)  (`@decls`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.written](#att.written)  (`@hand`) 
  
  
  
@@ -6573,7 +6889,7 @@ The body of a text may be replaced by a group of nested texts, as in the followi
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.declarable](#att.declarable)  (`@default`) 
  
  
  
@@ -6627,7 +6943,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`, `@period`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` classifies the title according to some convenient typology. 
@@ -6686,11 +7002,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
  
  
-**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [author](#author)  [bibl](#bibl)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition)  [seriesStmt](#seriesStmt)  [titleStmt](#titleStmt) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -6702,11 +7020,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -6776,7 +7096,7 @@ The attributes key and ref, inherited from the class  [att.canonical](#att.canon
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@type` classifies the title page according to any convenient typology. 
@@ -6845,7 +7165,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
 `@type` specifies the role of this subdivision of the title. 
@@ -6886,11 +7206,13 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -6923,7 +7245,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -6974,7 +7296,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -6998,11 +7320,13 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
 **analysis:** [pc](#pc) 
  
-**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title) 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [biblFull](#biblFull)  [idno](#idno) 
  
-**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) character data
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
  
  
  
@@ -7039,15 +7363,56 @@ From EEBO A87070
  
  ----- 
  
-### `val`<span id="val"/>
+### `unclear`<span id="unclear"/>
  
  
-**val** (value) contains a single attribute value. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-val.html) ] 
+**unclear** contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unclear.html) ] 
  
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`, `@instant`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) ( [att.ranging](#att.ranging)  (`@atLeast`, `@atMost`, `@min`, `@max`, `@confidence`)) 
+ 
+ 
+`@reason` indicates why the material is hard to transcribe. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**:  1–∞ occurrences of teidata.enumerated separated by whitespace
+*  **Suggested values include:**: 
+ 
+     *    **illegible** [No description available]
+     *    **inaudible** [No description available]
+     *    **faded** [No description available]
+     *    **background_noise** [No description available]
+     *    **eccentric_ductus** [No description available]
+*  
+```
+ 
+<div> <head>Rx</head> <p>500 mg <unclear reason="illegible">
+                                                placebo</unclear> </p></div>
+ 
+```
+ [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unclear.html) ] : 
+*  **Note**: One or more words may be used to describe the reason; usually each word will refer to a single cause. 
+ 
+ 
+ 
+`@agent` Where the difficulty in transcription arises from damage, categorizes the cause of the damage, if it can be identified. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**: teidata.enumerated
+*  **Sample values include:**: 
+ 
+     *    **rubbing** damage results from rubbing of the leaf edges
+     *    **mildew** damage results from mildew on the leaf surface
+     *    **smoke** damage results from smoke
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -7057,11 +7422,89 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:bas
  
  
  
-**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title) 
+**analysis:** [pc](#pc) 
+ 
+**core:** [author](#author)  [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [change](#change)  [distributor](#distributor)  [edition](#edition)  [licence](#licence) 
+ 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
+ 
+ 
+ 
+ 
+ 
+#### **May contain**
+ 
+ 
+ 
+**analysis:** [pc](#pc) 
+ 
+**core:** [bibl](#bibl)  [choice](#choice)  [corr](#corr)  [date](#date)  [emph](#emph)  [foreign](#foreign)  [gap](#gap)  [hi](#hi)  [l](#l)  [lb](#lb)  [lg](#lg)  [list](#list)  [listBibl](#listBibl)  [milestone](#milestone)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [pb](#pb)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
+ 
+**header:** [biblFull](#biblFull)  [idno](#idno) 
+ 
+**tagdocs:** [att](#att)  [code](#code)  [gi](#gi)  [val](#val) 
+ 
+**transcr:** [supplied](#supplied) character data
+ 
+ 
+ 
+ 
+ 
+#### **Note**
+ 
+The same element is used for all cases of uncertainty in the transcription of element content, whether for written or spoken material. For other aspects of certainty, uncertainty, and reliability of tagging and transcription, see chapter  [21. Certainty, Precision, and Responsibility](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html#CE) . The `damage`,  [gap](#gap) , `del`,  [unclear](#unclear)  and  [supplied](#supplied)  elements may be closely allied in use. See section  [11.3.3.2. Use of the gap, del, damage, unclear, and supplied Elements in Combination](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB)  for discussion of which element is appropriate for which circumstance. The hand attribute points to a definition of the hand concerned, as further discussed in section  [11.3.2.1. Document Hands](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDH) . 
+ 
+ 
+ 
+ 
+ 
+#### **Example**
+ 
+ 
+```
+ 
+<u> ...and then <unclear reason="background-noise">
+                              Nathalie</unclear> said ... </u>
+ 
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----- 
+ 
+### `val`<span id="val"/>
+ 
+ 
+**val** (value) contains a single attribute value. [ [TEI Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-val.html) ] 
+ 
+ 
+#### **Attributes**
+ 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`, `@xml:base`, `@xml:space`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.analytic](#att.global.analytic)  (`@ana`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
+ 
+ 
+ 
+ 
+ 
+#### **Contained by**
+ 
+ 
+ 
+**core:** [author](#author)  [corr](#corr)  [date](#date)  [editor](#editor)  [emph](#emph)  [foreign](#foreign)  [head](#head)  [hi](#hi)  [item](#item)  [l](#l)  [name](#name)  [note](#note)  [num](#num)  [orig](#orig)  [p](#p)  [pubPlace](#pubPlace)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [resp](#resp)  [sic](#sic)  [term](#term)  [title](#title)  [unclear](#unclear) 
  
 **header:** [authority](#authority)  [change](#change)  [creation](#creation)  [distributor](#distributor)  [edition](#edition)  [language](#language)  [licence](#licence)  [rendition](#rendition) 
  
-**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [titlePart](#titlePart)  [trailer](#trailer) 
+**textstructure:** [byline](#byline)  [closer](#closer)  [dateline](#dateline)  [docAuthor](#docAuthor)  [docDate](#docDate)  [opener](#opener)  [titlePart](#titlePart)  [trailer](#trailer) 
+ 
+**transcr:** [supplied](#supplied) 
  
  
  
@@ -7727,7 +8170,7 @@ The rules governing the association of declarable elements with individual parts
  
 #### **Members**
  
- [date](#date)  [gap](#gap) 
+ [date](#date)  [gap](#gap)  [supplied](#supplied)  [unclear](#unclear) 
  
  
  
@@ -8025,7 +8468,7 @@ Attributes  [att.fragmentable](#att.fragmentable) `@part`)
  
 #### **Members**
  
- [corr](#corr)  [date](#date)  [gap](#gap)  [name](#name)  [reg](#reg) 
+ [corr](#corr)  [date](#date)  [gap](#gap)  [name](#name)  [reg](#reg)  [supplied](#supplied)  [unclear](#unclear) 
  
  
  
@@ -8139,7 +8582,7 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
 #### **Members**
  
- [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [val](#val) 
+ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) 
  
  
  
@@ -8147,7 +8590,7 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
 #### **Attributes**
  
-Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@rendition`)  [att.global.analytic](#att.global.analytic)  (`@ana`)  [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)  [att.global.source](#att.global.source)  (`@source`) 
+Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@rendition`)  [att.global.analytic](#att.global.analytic)  (`@ana`)  [att.global.facs](#att.global.facs)  (`@facs`)  [att.global.change](#att.global.change)  (`@change`)  [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)  [att.global.source](#att.global.source)  (`@source`) 
  
  
 `@xml:id` (identifier) provides a unique identifier for the element bearing the attribute. 
@@ -8236,7 +8679,7 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
 #### **Members**
  
- [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [val](#val) ] 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
  
  
  
@@ -8266,6 +8709,80 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
  ----- 
  
+### att.global.change<span id="att.global.change"/>
+ 
+ 
+**att.global.change** supplies the change attribute, allowing its member elements to specify one or more states or revision campaigns with which they are associated. 
+ 
+ 
+#### **Members**
+ 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
+ 
+ 
+ 
+ 
+ 
+#### **Attributes**
+ 
+ 
+ 
+ 
+`@change` points to one or more  [change](#change)  elements documenting a state or revision campaign to which the element bearing this attribute and its children have been assigned by the encoder. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----- 
+ 
+### att.global.facs<span id="att.global.facs"/>
+ 
+ 
+**att.global.facs** provides an attribute used to express correspondence between an element containing transcribed text and all or part of an image representing that text. 
+ 
+ 
+#### **Members**
+ 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
+ 
+ 
+ 
+ 
+ 
+#### **Attributes**
+ 
+ 
+ 
+ 
+`@facs` (facsimile) points to all or part of an image which corresponds with the content of the element. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----- 
+ 
 ### att.global.rendition<span id="att.global.rendition"/>
  
  
@@ -8274,7 +8791,7 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
 #### **Members**
  
- [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [val](#val) ] 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
  
  
  
@@ -8360,7 +8877,7 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
 #### **Members**
  
- [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [val](#val) ] 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
  
  
  
@@ -8439,7 +8956,7 @@ Blessed are the<choice> <sic>cheesemakers</sic> <corr resp="#editor" cert="h
  
 #### **Members**
  
- [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [val](#val) ] 
+ [att.global](#att.global)  [ [TEI](#TEI)  [abstract](#abstract)  [att](#att)  [author](#author)  [authority](#authority)  [availability](#availability)  [back](#back)  [bibl](#bibl)  [biblFull](#biblFull)  [body](#body)  [byline](#byline)  [catRef](#catRef)  [category](#category)  [change](#change)  [choice](#choice)  [closer](#closer)  [code](#code)  [corr](#corr)  [creation](#creation)  [date](#date)  [dateline](#dateline)  [distributor](#distributor)  [div](#div)  [docAuthor](#docAuthor)  [docDate](#docDate)  [docTitle](#docTitle)  [edition](#edition)  [editionStmt](#editionStmt)  [editor](#editor)  [editorialDecl](#editorialDecl)  [emph](#emph)  [encodingDesc](#encodingDesc)  [epigraph](#epigraph)  [fileDesc](#fileDesc)  [foreign](#foreign)  [front](#front)  [gap](#gap)  [gi](#gi)  [head](#head)  [hi](#hi)  [hyphenation](#hyphenation)  [idno](#idno)  [item](#item)  [keywords](#keywords)  [l](#l)  [langUsage](#langUsage)  [language](#language)  [lb](#lb)  [lg](#lg)  [licence](#licence)  [list](#list)  [listBibl](#listBibl)  [listChange](#listChange)  [listPrefixDef](#listPrefixDef)  [milestone](#milestone)  [name](#name)  [note](#note)  [notesStmt](#notesStmt)  [num](#num)  [opener](#opener)  [orig](#orig)  [p](#p)  [pb](#pb)  [pc](#pc)  [prefixDef](#prefixDef)  [profileDesc](#profileDesc)  [projectDesc](#projectDesc)  [pubPlace](#pubPlace)  [publicationStmt](#publicationStmt)  [publisher](#publisher)  [q](#q)  [quote](#quote)  [ref](#ref)  [reg](#reg)  [relatedItem](#relatedItem)  [rendition](#rendition)  [resp](#resp)  [respStmt](#respStmt)  [revisionDesc](#revisionDesc)  [seriesStmt](#seriesStmt)  [sic](#sic)  [sourceDesc](#sourceDesc)  [supplied](#supplied)  [teiHeader](#teiHeader)  [term](#term)  [text](#text)  [textClass](#textClass)  [title](#title)  [titlePage](#titlePage)  [titlePart](#titlePart)  [titleStmt](#titleStmt)  [trailer](#trailer)  [unclear](#unclear)  [val](#val) ] 
  
  
  
@@ -9179,7 +9696,7 @@ In the example above, the `linkGrp` combines pointers at parallel fragments of t
  
 #### **Members**
  
- [att.dimensions](#att.dimensions)  [ [date](#date)  [gap](#gap) ]  [num](#num) 
+ [att.dimensions](#att.dimensions)  [ [date](#date)  [gap](#gap)  [supplied](#supplied)  [unclear](#unclear) ]  [num](#num) 
  
  
  
@@ -9553,7 +10070,7 @@ When appropriate, values from an established typology should be used. Alternativ
  
 #### **Members**
  
- [closer](#closer)  [div](#div)  [head](#head)  [hi](#hi)  [note](#note)  [p](#p)  [text](#text) 
+ [closer](#closer)  [div](#div)  [head](#head)  [hi](#hi)  [note](#note)  [opener](#opener)  [p](#p)  [text](#text) 
  
  
  

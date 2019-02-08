@@ -251,8 +251,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-p-abstractModel-structure-p-constraint-report-4</xsl:attribute>
-            <xsl:attribute name="name">wea-p-abstractModel-structure-p-constraint-report-4</xsl:attribute>
+            <xsl:attribute name="id">wea-p-abstractModel-structure-p-constraint-report-5</xsl:attribute>
+            <xsl:attribute name="name">wea-p-abstractModel-structure-p-constraint-report-5</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M11"/>
@@ -260,8 +260,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-p-abstractModel-structure-l-constraint-report-5</xsl:attribute>
-            <xsl:attribute name="name">wea-p-abstractModel-structure-l-constraint-report-5</xsl:attribute>
+            <xsl:attribute name="id">wea-p-abstractModel-structure-l-constraint-report-6</xsl:attribute>
+            <xsl:attribute name="name">wea-p-abstractModel-structure-l-constraint-report-6</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M12"/>
@@ -269,8 +269,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-ref-refAtts-constraint-report-6</xsl:attribute>
-            <xsl:attribute name="name">wea-ref-refAtts-constraint-report-6</xsl:attribute>
+            <xsl:attribute name="id">wea-ref-refAtts-constraint-report-7</xsl:attribute>
+            <xsl:attribute name="name">wea-ref-refAtts-constraint-report-7</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M13"/>
@@ -278,8 +278,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-list-gloss-list-must-have-labels-constraint-rule-9</xsl:attribute>
-            <xsl:attribute name="name">wea-list-gloss-list-must-have-labels-constraint-rule-9</xsl:attribute>
+            <xsl:attribute name="id">wea-list-gloss-list-must-have-labels-constraint-rule-10</xsl:attribute>
+            <xsl:attribute name="name">wea-list-gloss-list-must-have-labels-constraint-rule-10</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M14"/>
@@ -287,8 +287,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-relatedItem-targetorcontent1-constraint-report-7</xsl:attribute>
-            <xsl:attribute name="name">wea-relatedItem-targetorcontent1-constraint-report-7</xsl:attribute>
+            <xsl:attribute name="id">wea-relatedItem-targetorcontent1-constraint-report-8</xsl:attribute>
+            <xsl:attribute name="name">wea-relatedItem-targetorcontent1-constraint-report-8</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M15"/>
@@ -305,8 +305,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-l-abstractModel-structure-l-constraint-report-8</xsl:attribute>
-            <xsl:attribute name="name">wea-l-abstractModel-structure-l-constraint-report-8</xsl:attribute>
+            <xsl:attribute name="id">wea-l-abstractModel-structure-l-constraint-report-9</xsl:attribute>
+            <xsl:attribute name="name">wea-l-abstractModel-structure-l-constraint-report-9</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M17"/>
@@ -323,8 +323,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-lg-abstractModel-structure-l-constraint-report-9</xsl:attribute>
-            <xsl:attribute name="name">wea-lg-abstractModel-structure-l-constraint-report-9</xsl:attribute>
+            <xsl:attribute name="id">wea-lg-abstractModel-structure-l-constraint-report-10</xsl:attribute>
+            <xsl:attribute name="name">wea-lg-abstractModel-structure-l-constraint-report-10</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M19"/>
@@ -332,8 +332,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-div-abstractModel-structure-l-constraint-report-10</xsl:attribute>
-            <xsl:attribute name="name">wea-div-abstractModel-structure-l-constraint-report-10</xsl:attribute>
+            <xsl:attribute name="id">wea-div-abstractModel-structure-l-constraint-report-11</xsl:attribute>
+            <xsl:attribute name="name">wea-div-abstractModel-structure-l-constraint-report-11</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M20"/>
@@ -341,8 +341,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-div-abstractModel-structure-p-constraint-report-11</xsl:attribute>
-            <xsl:attribute name="name">wea-div-abstractModel-structure-p-constraint-report-11</xsl:attribute>
+            <xsl:attribute name="id">wea-div-abstractModel-structure-p-constraint-report-12</xsl:attribute>
+            <xsl:attribute name="name">wea-div-abstractModel-structure-p-constraint-report-12</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M21"/>
@@ -590,7 +590,7 @@ The element indicated by @spanTo (<xsl:text/>
       <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
 
-   <!--PATTERN wea-p-abstractModel-structure-p-constraint-report-4-->
+   <!--PATTERN wea-p-abstractModel-structure-p-constraint-report-5-->
 
 
 	  <!--RULE -->
@@ -616,7 +616,7 @@ The element indicated by @spanTo (<xsl:text/>
       <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
 
-   <!--PATTERN wea-p-abstractModel-structure-l-constraint-report-5-->
+   <!--PATTERN wea-p-abstractModel-structure-l-constraint-report-6-->
 
 
 	  <!--RULE -->
@@ -642,7 +642,7 @@ The element indicated by @spanTo (<xsl:text/>
       <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
 
-   <!--PATTERN wea-ref-refAtts-constraint-report-6-->
+   <!--PATTERN wea-ref-refAtts-constraint-report-7-->
 
 
 	  <!--RULE -->
@@ -669,7 +669,7 @@ The element indicated by @spanTo (<xsl:text/>
       <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
 
-   <!--PATTERN wea-list-gloss-list-must-have-labels-constraint-rule-9-->
+   <!--PATTERN wea-list-gloss-list-must-have-labels-constraint-rule-10-->
 
 
 	  <!--RULE -->
@@ -696,7 +696,7 @@ The element indicated by @spanTo (<xsl:text/>
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
 
-   <!--PATTERN wea-relatedItem-targetorcontent1-constraint-report-7-->
+   <!--PATTERN wea-relatedItem-targetorcontent1-constraint-report-8-->
 
 
 	  <!--RULE -->
@@ -751,7 +751,7 @@ relatedItem element must be empty</svrl:text>
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
 
-   <!--PATTERN wea-l-abstractModel-structure-l-constraint-report-8-->
+   <!--PATTERN wea-l-abstractModel-structure-l-constraint-report-9-->
 
 
 	  <!--RULE -->
@@ -805,7 +805,7 @@ relatedItem element must be empty</svrl:text>
       <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
 
-   <!--PATTERN wea-lg-abstractModel-structure-l-constraint-report-9-->
+   <!--PATTERN wea-lg-abstractModel-structure-l-constraint-report-10-->
 
 
 	  <!--RULE -->
@@ -831,7 +831,7 @@ relatedItem element must be empty</svrl:text>
       <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
 
-   <!--PATTERN wea-div-abstractModel-structure-l-constraint-report-10-->
+   <!--PATTERN wea-div-abstractModel-structure-l-constraint-report-11-->
 
 
 	  <!--RULE -->
@@ -856,7 +856,7 @@ relatedItem element must be empty</svrl:text>
       <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
 
-   <!--PATTERN wea-div-abstractModel-structure-p-constraint-report-11-->
+   <!--PATTERN wea-div-abstractModel-structure-p-constraint-report-12-->
 
 
 	  <!--RULE -->
