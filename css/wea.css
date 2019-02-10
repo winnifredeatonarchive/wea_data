@@ -42,6 +42,21 @@ hr{
     margin:2.25em 0 2.25em 0;
 }
 
+[data-el='supplied']::before{
+    content:'[';
+}
+
+[data-el='supplied']::after{
+    content:']';
+}
+
+[data-el='gap']::after{
+    content:'[...]';
+}
+
+[title]{
+    cursor:help;
+}
 
 .noteMarker{
     vertical-align:super;

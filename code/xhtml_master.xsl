@@ -71,6 +71,25 @@
         </span>
     </xsl:template>
     
+    <xsl:template match="supplied | gap" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:if test="@reason | @cert | @resp">
+                <xsl:attribute name="title">
+                    <xsl:variable name="title">
+                        <xsl:if test="@reason">Reason: <xsl:value-of select="@reason"/>.</xsl:if>
+                        <xsl:if test="@cert">Certainty: <xsl:value-of select="@cert"/>.</xsl:if>
+                        <xsl:if test="@resp">Supplied by: <xsl:value-of select="@resp"/>.</xsl:if>
+                    </xsl:variable>
+                    <xsl:value-of select="string-join($title,' ')"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
+    
+    
+    
     <xsl:template match="ref" mode="tei">
         <a href="{@target}">
             <xsl:call-template name="processAtts"/>
