@@ -33,6 +33,7 @@
     </target>
     
   <target name="createSite">
+      <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
           <arg value="-xsl:${data.dir}/code/xhtml_master.xsl"/>
           <arg value="-s:${textsDir}"/>

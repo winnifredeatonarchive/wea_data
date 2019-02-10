@@ -19,69 +19,73 @@
     
     <xsl:param name="verbose">false</xsl:param>
     
-    <xsl:template match="TEI">
+    <xsl:template match="/">
+        <xsl:apply-templates mode="tei"/>
+    </xsl:template>
+    <xsl:template match="TEI" mode="tei">
         <xsl:message>Processing <xsl:value-of select="@xml:id"/></xsl:message>
         <xsl:result-document href="{@xml:id}.html" method="xhtml" encoding="UTF-8" indent="yes" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
             <html lang="en">
                 <xsl:call-template name="processAtts"/>
-                <xsl:apply-templates/>
+                <xsl:apply-templates mode="#current"/>
             </html>
         </xsl:result-document>
     </xsl:template>
     
     <!--TODO: METADATA STUFF-->
-    <xsl:template match="teiHeader">
+    <xsl:template match="teiHeader" mode="tei">
         <head>
             <title><xsl:value-of select="fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="addScripts"/>
         </head>
     </xsl:template>
     
-    <xsl:template match="text">
+    <xsl:template match="text" mode="tei">
         <body>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
+            <xsl:call-template name="createAppendix"/>
         </body>
     </xsl:template>
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | note | lg | l | q">
+    <xsl:template match="body | div | p | note | lg | l | q" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
     
-    <xsl:template match="head">
+    <xsl:template match="head" mode="tei">
         <xsl:variable name="nestLevel" select="count(ancestor::div)+1"/>
         <xsl:element name="{concat('h',$nestLevel)}">
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg">
+    <xsl:template match="hi | seg" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
     
-    <xsl:template match="ref">
+    <xsl:template match="ref" mode="tei">
         <a href="{@target}">
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </a>
     </xsl:template>
     
-    <xsl:template match="pb">
+    <xsl:template match="pb" mode="tei">
         <hr>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </hr>
     </xsl:template>
     
-    <xsl:template match="lb">
+    <xsl:template match="lb" mode="tei">
         <br>
             <xsl:call-template name="processAtts"/>
         </br>
@@ -89,19 +93,41 @@
     
     <!--Now janus elements-->
     
-    <xsl:template match="choice">
+    <xsl:template match="choice" mode="tei">
         <span title="{normalize-space(orig)}">
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
     
     <xsl:template match="choice/orig"/>
     
-    <xsl:template match="choice/reg">
-        <xsl:apply-templates/>
+    <xsl:template match="choice/reg" mode="tei">
+        <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
+    
+    <!--NOTES-->
+    
+    <xsl:template match="note[@type='editorial']" mode="tei">
+        <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
+        <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
+        <a href="#{$noteId}"  id="noteMarker_{$noteNum}" class="noteMarker" title="{normalize-space(string-join(descendant::text(),''))}"><xsl:value-of select="$noteNum"/></a>
+    </xsl:template>
+    
+    
+    <xsl:template match="note[@type='editorial']" mode="appendix">
+        <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
+        <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
+        <div data-notenum="{$noteNum}">
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id" select="$noteId"/>
+            </xsl:call-template>
+            <xsl:apply-templates mode="tei"/>
+            <a class="returnToNote" href="#noteMarker_{$noteNum}">↑</a>
+        </div>
+    </xsl:template>
+  
     
     
     
@@ -112,27 +138,27 @@
        *                                                            *
        **************************************************************-->
     
-    <xsl:template match="@xml:id">
+    <xsl:template match="@xml:id" mode="tei">
         <xsl:attribute name="id" select="."/>
     </xsl:template>
     
-    <xsl:template match="@xml:lang">
+    <xsl:template match="@xml:lang" mode="tei">
         <xsl:attribute name="lang" select="."/>
     </xsl:template>
     
-    <xsl:template match="@rendition">
+    <xsl:template match="@rendition" mode="tei">
         <xsl:param name="classes" as="xs:string*" tunnel="yes"/>
         <xsl:variable name="theseVals" select="translate(.,'#','')"/>
         <xsl:attribute name="class" select="string-join(($classes,$theseVals),' ')"/>
     </xsl:template>
     
     <!--Just copy out style-->
-    <xsl:template match="@style">
+    <xsl:template match="@style" mode="tei">
         <xsl:attribute name="style" select="."/>
     </xsl:template>
     
     <!--We have to handle this for now, but these should probably be @rendition-->
-    <xsl:template match="@rend">
+    <xsl:template match="@rend" mode="tei">
         <xsl:variable name="value" as="xs:string?">
             <xsl:choose>
                 <xsl:when test=".='center'">text-align:center;</xsl:when>
@@ -236,5 +262,24 @@
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
     </xsl:template>
     
+    
+    <xsl:template name="createAppendix">
+        <div id="appendix">
+           <xsl:call-template name="createNotes"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template name="createNotes">
+        <div id="notes">
+            <h3>Notes</h3>
+            <xsl:apply-templates select="//note[@type='editorial']" mode="appendix"/>
+        </div>
+    </xsl:template>
+    <!--FUNCTIONS-->
+    
+    <xsl:function name="wea:getNoteId">
+        <xsl:param name="note"/>
+        <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
+    </xsl:function>
     
 </xsl:stylesheet>

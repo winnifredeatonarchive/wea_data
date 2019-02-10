@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Processing instructions for the TEI ODDs rng-->
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>ODD Customization for the Winniferd Eaton Archive Project</title>
+        <respStmt>
+          <resp>Author</resp>
+          <name>Joey Takeda</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <p>Open access?</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <div>
+        <head>Introduction</head>
+        <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
+        uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
+        the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
+      </div>
+
+      <div>
+        <head>Setting up Github</head>
+        <list rend="ordered">
+          <item>Ensure that you have git installed on your local system [[add link here]]</item>
+          <item>Open the terminal</item>
+          <item>Create a directory for working in: <code rend="block">mkdir wea</code>
+          </item>
+          <item>Go into the directory: <code rend="block">cd wea</code>
+          </item>
+          <item>Initialize the repository: <code rend="block">git init .</code></item>
+          <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
+        </list>
+      </div>
+      <div>
+        <head>Updating the Git repository</head>
+      </div>
+      <div>
+        <head>Committing Changes</head>
+      </div>
+      
+      <div>
+        <head>Setting up oXygen</head>
+      </div>
+      <div>
+        <head>Editing the Texts</head>
+      </div>
+      
+      <div>
+        <head>Building the Schema</head>
+        <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+        <p>To regenerate the schema and the documentation follow these directions</p>
+        <p><emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
+        <p><emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
+          <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
+          Note that you must have ant installed.
+        </p>
+      </div>
+
+    </body>
+    <back>
+      <div>
+        <schemaSpec ident="wea" start="TEI">
+          <moduleRef key="analysis" include="pc"/>
+          
+          <moduleRef key="core" include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+          <moduleRef key="header" include="abstract authority availability biblFull catRef category change creation distributor edition editionStmt editorialDecl encodingDesc fileDesc hyphenation idno keywords langUsage language licence listChange listPrefixDef notesStmt prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
+          <moduleRef key="tagdocs" include="att code gi val"/>
+          <!--Include all TEI modules-->
+          <moduleRef key="tei"/>
+          
+          <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph front opener text titlePage titlePart trailer"/>
+          
+          <moduleRef key="transcr" include="supplied"/>
+          
+          <!--VARIABLES-->
+          
+          <constraintSpec ident="global.variables" scheme="schematron">
+            <constraint>
+              
+              <sch:pattern>
+                <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
+                <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
+                <sch:let name="docUri" value="document-uri(/)"/>
+                <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
+              </sch:pattern>
+            </constraint>
+          </constraintSpec>
+          
+          <!--Basic constraints-->
+          <constraintSpec scheme="schematron" ident="TEI.docNameSameAsId">
+            <desc>All root elements must have an <att>xml:id</att> that matches the document filename.</desc>
+            <constraint>
+              <sch:pattern>
+                <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
+                  <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+                    xml:id (<sch:value-of select="$docId"/>) does not match the document file
+                    name (<sch:value-of select="$docUri"/>). </sch:assert>
+                </sch:rule>
+              </sch:pattern>
+            </constraint>
+          </constraintSpec>
+        </schemaSpec>
+      </div>
+     
+    </back>
+  </text>
+</TEI>

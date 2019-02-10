@@ -154,19 +154,48 @@
  
     <!--Have to deal with janus elements-->
     
-    <xsl:template match="orig[@reg]">
-        <choice>
-            <orig><xsl:apply-templates/></orig>
-            <reg><xsl:value-of select="@reg"/></reg>
-        </choice>
+    <xsl:template match="orig[@reg][pb]">
+        <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="orig[pb]/text()[following-sibling::pb]">
+        <xsl:analyze-string regex="-" select=".">
+            <xsl:matching-substring>
+                <pc force="weak">-</pc>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    <!--We need to embed notes-->
+    
+    <xsl:template match="ref">
+        <xsl:variable name="thisTarg" select="@target"/>
+        <xsl:variable name="thisNote" select="ancestor::TEI.2//note[@id=$thisTarg]"/>
+        <note type="editorial"><xsl:apply-templates select="$thisNote/p"/></note>
+        
+    </xsl:template>
+    
+    <xsl:template match="note/p">
+        <xsl:apply-templates/>
+    </xsl:template>
+   
+    <!--Just delete the note since we deal wiht it-->
+    <xsl:template match="note[@id] | note/seg"/>
+    
+    <!--Get rid of unnecessary sorting title-->
+    <xsl:template match="title[@type='sort']"/>
+    
+    <!--No longer need extent-->
+    <xsl:template match="extent"/>
+    
     <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
-<!--    
+    
     <xsl:template match="p[matches(text()[1],'^\s+')]/text()[1]">
         <xsl:value-of select="replace(.,'^\s+','')"/>
     </xsl:template>
-    -->
+    
     <!--This is the easiest way to deal with namespaces-->
     <xsl:template match="*" priority="-1">
         <xsl:element name="{local-name()}">
