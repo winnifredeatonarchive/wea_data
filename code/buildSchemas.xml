@@ -79,6 +79,22 @@
     <!--Saxon-->
     <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
     
+    <!--Condition set for the TEI server, since the TEI site can go down periodically:
+  If we can reach the TEI guidelines-->
+    <condition property="useLiveTEI" value="true" else="false">
+        <http url="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/"/>
+    </condition>
+    
+    <!--Default TEI Server property; fallback if the TEI server isn't working...-->
+    <condition property="defaultTEIServer" value="http://www.tei-c.org/Vault/P5/" else="https://teijenkins.hcmc.uvic.ca/job/TEIP5/lastSuccessfulBuild/artifact/P5/release/" >
+        <istrue value="${useLiveTEI}"/>
+    </condition>
+    
+    <!--The defaultTEIVersion-->
+    <condition property="defaultTEIVersion" value="current" else="''">
+        <istrue value="${useLiveTEI}"/>
+    </condition>
+    
     
     
     <!--****************************************************************
@@ -100,8 +116,8 @@
             <arg line="-o:${wea.odd.processed}"/>
             <arg line="-xsl:'${odd2odd.xsl}'"/>
             <!--These parameters are temporary and should only be used when the TEI server is down-->
-            <!--  <arg line="defaultTEIServer=http://teijenkins.hcmc.uvic.ca/job/TEIP5/lastSuccessfulBuild/artifact/P5/release"/>
-   <arg line="defaultTEIVersion=''"/>-->
+            <arg line="defaultTEIServer=${defaultTEIServer}"/>
+            <arg line="defaultTEIVersion=${defaultTEIVersion}"/>
         </java>
     </target>
     
