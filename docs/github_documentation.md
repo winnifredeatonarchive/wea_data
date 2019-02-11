@@ -26,9 +26,8 @@
  
  
  
-* [Creating a new file:](#index.xml-body.1_div.4)
-* [Editing the Texts](#index.xml-body.1_div.5)
-* [Building the Schema](#index.xml-body.1_div.6)
+* [Creating a New Text in oXygen](#index.xml-body.1_div.4)
+* [Building the Schema](#index.xml-body.1_div.5)
  
  
 ## Introduction  <span id="index.xml-body.1_div.1"/>
@@ -160,10 +159,18 @@ On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." t
 git add README.md
 ```
  
+ 
+![../graphics/git_add_1.gif](../graphics/git_add_1.gif)
+ 
+ 
 * Third, commit the files to the repository, including a commit message that explains what you did: 
 ```
 git commit -m "Encoding a new poem."
 ```
+ 
+ 
+![../graphics/git_commit_1.gif](../graphics/git_commit_1.gif)
+ 
  
 * Fourth, push the files to the repository: 
 ```
@@ -173,6 +180,10 @@ git push
 ```
 Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt; 
 ```
+ 
+ 
+![../graphics/git_push_first_1.gif](../graphics/git_push_first_1.gif)
+ 
  This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: 
 ```
 git remote add wea https://github.com/winnifredeatonarchive/wea_data
@@ -189,16 +200,44 @@ fatal: The current branch master has no upstream branch. To push the current bra
 ```
 git push --set-upstream wea master 
 ```
+ 
+ 
+![../graphics/git_push_2.gif](../graphics/git_push_2.gif)
+ 
  You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit. 
  
  
  
  
-## Creating a new file:  <span id="index.xml-body.1_div.4"/>
+## Creating a New Text in oXygen  <span id="index.xml-body.1_div.4"/>
  
-## Editing the Texts  <span id="index.xml-body.1_div.5"/>
+To create a new text file, use the built in text template
  
-## Building the Schema  <span id="index.xml-body.1_div.6"/>
+ 
+ 
+* First, in the project view in oXygen, right click the data/texts folder and click "Add new file" 
+ 
+![../src/create_new_file_1.gif](../src/create_new_file_1.gif)
+ 
+ 
+* Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores. 
+ 
+![../src/create_new_file_2.gif](../src/create_new_file_2.gif)
+ 
+ 
+* Answer the prompts, filling in the (modernized) title of the text and your @xml:id. 
+ 
+![../src/create_new_file_3.gif](../src/create_new_file_3.gif)
+ 
+ 
+* Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader. 
+ 
+![../src/create_new_file_4.gif](../src/create_new_file_4.gif)
+ 
+ 
+ 
+ 
+## Building the Schema  <span id="index.xml-body.1_div.5"/>
  
 All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
  

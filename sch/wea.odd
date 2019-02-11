@@ -121,9 +121,15 @@
               <item>If there are changes, then add the files/folders that you want to commit to the repository.
               <code rend="block">git add README.md</code>
               </item>
+              <figure>
+                <graphic url="../graphics/git_add_1.gif"/>
+              </figure>
               <item>Third, commit the files to the repository, including a commit message that explains what you did:
               <code rend="block">git commit -m "Encoding a new poem."</code>
               </item>
+              <figure>
+                <graphic url="../graphics/git_commit_1.gif"/>
+              </figure>
               <item>Fourth, push the files to the repository:
               <code rend="block">git push</code>
               Note that, if you are committing for the first time, you'll like see something like this:
@@ -136,6 +142,9 @@
                 
                 git push &lt;name&gt;
               </code>
+                <figure>
+                  <graphic url="../graphics/git_push_first_1.gif"/>
+                </figure>
               This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
                 <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
                 <code rend="block">git push wea</code>
@@ -150,6 +159,9 @@
                 <code rend="block">
                   git push --set-upstream wea master
                 </code>
+                <figure>
+                  <graphic url="../graphics/git_push_2.gif"/>
+                </figure>
                 You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
               </item>
             </list>
@@ -160,12 +172,27 @@
       </div>
       
       <div>
-        <head>Creating a new file:</head>
+        <head>Creating a New Text in oXygen</head>
+        <p>To create a new text file, use the built in text template</p>
+        <list>
+          <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
+          <figure>
+            <graphic url="../src/create_new_file_1.gif"/>
+          </figure>
+          <item>Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores.</item>
+          <figure>
+            <graphic url="../src/create_new_file_2.gif"/>
+          </figure>
+          <item>Answer the prompts, filling in the (modernized) title of the text and your @<att>xml:id</att>.</item>
+          <figure>
+            <graphic url="../src/create_new_file_3.gif"/>
+          </figure>
+          <item>Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader.</item>
+          <figure>
+            <graphic url="../src/create_new_file_4.gif"/>
+          </figure>
+        </list>
         
-        
-      </div>
-      <div>
-        <head>Editing the Texts</head>
       </div>
       
       <div>
