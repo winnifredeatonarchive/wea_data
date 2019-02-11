@@ -106,6 +106,13 @@
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
+    <xsl:template match="div[@id='TOP.note']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+        <xsl:call-template name="createToc"/>
+    </xsl:template>
+    
     
     
 
@@ -189,13 +196,11 @@
         <xsl:apply-templates/>
         <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
-        <xsl:if test="contains(@class,'toc')">
-            <xsl:call-template name="createToc"/>
-            
-        </xsl:if>
+
     </xsl:template>
     
     <xsl:template name="createToc">
+        <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
         <xsl:text>## Element and Attribute Index</xsl:text>
         <xsl:copy-of select="$newLine"/>
@@ -208,6 +213,14 @@
 
     
     <xsl:template match="br">
+        <xsl:copy-of select="$newLine"/>
+    </xsl:template>
+    
+    <xsl:template match="img">
+        <xsl:copy-of select="$newLine"/>
+        <xsl:copy-of select="$newLine"/>
+        <xsl:text>![</xsl:text><xsl:value-of select="@src"/><xsl:text>]</xsl:text><xsl:text>(</xsl:text><xsl:value-of select="@src"/><xsl:text>)</xsl:text>
+        <xsl:copy-of select="$newLine"/>
         <xsl:copy-of select="$newLine"/>
     </xsl:template>
     

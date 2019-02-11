@@ -49,14 +49,21 @@
         <div xml:id="github_get">
           <head>Setting up the repository</head>
           <p>To get the data, you must first checkout a copy of the repository as follows:</p>
-          <list rend="ordered">
+          <list>
             <item>Open the terminal</item>
             <item>Create a directory for working in: <code rend="block">mkdir wea</code>
+
             </item>
             <item>Go into the directory: <code rend="block">cd wea</code>
             </item>
             <item>Initialize the repository: <code rend="block">git init .</code></item>
+            <figure>
+              <graphic url="../graphics/git_checkout_1.gif"/>
+            </figure>
             <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
+            <figure>
+              <graphic url="../graphics/git_checkout_2.gif"/>
+            </figure>
           </list>
           <p>Note that you only need to do this the first time you start working in the Github repository.</p>
         </div>
@@ -108,6 +115,9 @@
                 no changes added to commit (use "git add" and/or "git commit -a")
               </code>
               </item>
+              <figure>
+                <graphic url="../graphics/git_status_1.gif"/>
+              </figure>
               <item>If there are changes, then add the files/folders that you want to commit to the repository.
               <code rend="block">git add README.md</code>
               </item>
@@ -148,9 +158,11 @@
         </div>
         
       </div>
+      
       <div>
-        <head>Working in oXygen</head>
-        <p>First, ensure that you're working in the wea_data.xpr project file.</p>
+        <head>Creating a new file:</head>
+        
+        
       </div>
       <div>
         <head>Editing the Texts</head>

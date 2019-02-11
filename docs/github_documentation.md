@@ -26,7 +26,7 @@
  
  
  
-* [Working in oXygen](#index.xml-body.1_div.4)
+* [Creating a new file:](#index.xml-body.1_div.4)
 * [Editing the Texts](#index.xml-body.1_div.5)
 * [Building the Schema](#index.xml-body.1_div.6)
  
@@ -80,10 +80,18 @@ cd wea
 git init .
 ```
  
+ 
+![../graphics/git_checkout_1.gif](../graphics/git_checkout_1.gif)
+ 
+ 
 * Pull the repository: 
 ```
 git pull https://github.com/winnifredeatonarchive/wea_data
 ```
+ 
+ 
+![../graphics/git_checkout_2.gif](../graphics/git_checkout_2.gif)
+ 
  
  
  
@@ -143,6 +151,10 @@ On branch master nothing to commit, working tree clean
 On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) modified: README.md no changes added to commit (use "git add" and/or "git commit -a") 
 ```
  
+ 
+![../graphics/git_status_1.gif](../graphics/git_status_1.gif)
+ 
+ 
 * If there are changes, then add the files/folders that you want to commit to the repository. 
 ```
 git add README.md
@@ -182,9 +194,7 @@ git push --set-upstream wea master
  
  
  
-## Working in oXygen  <span id="index.xml-body.1_div.4"/>
- 
-First, ensure that you're working in the wea_data.xpr project file.
+## Creating a new file:  <span id="index.xml-body.1_div.4"/>
  
 ## Editing the Texts  <span id="index.xml-body.1_div.5"/>
  

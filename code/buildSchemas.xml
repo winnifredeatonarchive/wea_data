@@ -115,7 +115,6 @@
             <arg line="-s:${wea.odd.src}"/>
             <arg line="-o:${wea.odd.processed}"/>
             <arg line="-xsl:'${odd2odd.xsl}'"/>
-            <!--These parameters are temporary and should only be used when the TEI server is down-->
             <arg line="defaultTEIServer=${defaultTEIServer}"/>
             <arg line="defaultTEIVersion=${defaultTEIVersion}"/>
         </java>
