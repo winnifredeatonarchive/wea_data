@@ -6,12 +6,33 @@ Note that this is an abridged version of the documentation for editorial use wit
  
  
 * [Introduction](#index.xml-body.1_div.1)
-* [Setting up Github](#index.xml-body.1_div.2)
-* [Updating the Git repository](#index.xml-body.1_div.3)
-* [Committing Changes](#index.xml-body.1_div.4)
-* [Setting up oXygen](#index.xml-body.1_div.5)
-* [Editing the Texts](#index.xml-body.1_div.6)
-* [Building the Schema](#index.xml-body.1_div.7)
+* [Requirements](#index.xml-body.1_div.2)
+* [Using Github](#github)
+ 
+ 
+* [Setting up the repository](#github_get)
+* [The Github Workflow](#index.xml-body.1_div.3_div.2)
+ 
+ 
+* [Updating](#index.xml-body.1_div.3_div.2_div.1)
+* [Committing](#index.xml-body.1_div.3_div.2_div.2)
+ 
+ 
+## Element and Attribute Index
+ 
+[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [opener](#opener) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [supplied](#supplied) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [unclear](#unclear) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.change](#att.global.change) | [att.global.facs](#att.global.facs) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
+ 
+ 
+ 
+ 
+## Element and Attribute Index
+ 
+[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editionStmt](#editionStmt) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [keywords](#keywords) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [notesStmt](#notesStmt) | [num](#num) | [opener](#opener) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [seriesStmt](#seriesStmt) | [sic](#sic) | [sourceDesc](#sourceDesc) | [supplied](#supplied) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [unclear](#unclear) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.cReferencing](#att.cReferencing) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.datcat](#att.datcat) | [att.declarable](#att.declarable) | [att.declaring](#att.declaring) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.edition](#att.edition) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.analytic](#att.global.analytic) | [att.global.change](#att.global.change) | [att.global.facs](#att.global.facs) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.ranging](#att.ranging) | [att.segLike](#att.segLike) | [att.sortable](#att.sortable) | [att.spanning](#att.spanning) | [att.styleDef](#att.styleDef) | [att.timed](#att.timed) | [att.typed](#att.typed) | [att.written](#att.written)
+ 
+ 
+* [Working in oXygen](#index.xml-body.1_div.4)
+* [Editing the Texts](#index.xml-body.1_div.5)
+* [Building the Schema](#index.xml-body.1_div.6)
  
  
 ## Element and Attribute Index
@@ -23,11 +44,35 @@ Note that this is an abridged version of the documentation for editorial use wit
  
 The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development. 
  
-## Setting up Github  <span id="index.xml-body.1_div.2"/>
+## Requirements  <span id="index.xml-body.1_div.2"/>
+ 
+To edit material for the site, you will need to use a computer with the following software: 
  
  
  
-1. Ensure that you have git installed on your local system [[add link here]]
+* Git (to get data from and commit data to the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in 
+```
+git --version
+```
+. If you get something like this in response: 
+```
+git version 2.17.2 (Apple Git-113)
+```
+, then you have Git installed. Otherwise, follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+* oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)
+* You must also set up a free Github account [here](https://github.com/). It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository. 
+ 
+ 
+## Using Github  <span id="github"/>
+ 
+All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is [https://github.com/winnifredeatonarchive/wea_data](https://github.com/winnifredeatonarchive/wea_data). 
+ 
+### Setting up the repository
+ 
+To get the data, you must first checkout a copy of the repository as follows:
+ 
+ 
+ 
 1. Open the terminal
 1. Create a directory for working in: 
 ```
@@ -51,15 +96,108 @@ git pull https://github.com/winnifredeatonarchive/wea_data
  
  
  
-## Updating the Git repository  <span id="index.xml-body.1_div.3"/>
+Note that you only need to do this the first time you start working in the Github repository. 
  
-## Committing Changes  <span id="index.xml-body.1_div.4"/>
+ ----- 
  
-## Setting up oXygen  <span id="index.xml-body.1_div.5"/>
+### The Github Workflow
  
-## Editing the Texts  <span id="index.xml-body.1_div.6"/>
+The normal workflow for working in Github (and any version software) is as follows: 
  
-## Building the Schema  <span id="index.xml-body.1_div.7"/>
+ 
+ 
+* Update your repository so that any changes made by others are pushed into your local system 
+* Commit the items to the repository
+* Push those items to the Github interface
+ 
+ 
+### Updating
+ 
+Make sure to update as often as possible; always update at the beginning of your working session. 
+ 
+To update: 
+ 
+ 
+ 
+* Go into your working folder: 
+```
+cd wea
+```
+ 
+* Pull the repository: 
+```
+git pull
+```
+ 
+ 
+ 
+ ----- 
+ 
+### Committing
+ 
+Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository. 
+ 
+ 
+ 
+* First, check the status of your files to see what you have changed since your last commit: 
+```
+git status
+```
+ If there are no changes to the repository, then you'll like see something like this: 
+```
+On branch master nothing to commit, working tree clean 
+```
+ If there are changes, you should see something like this: 
+```
+On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) modified: README.md no changes added to commit (use "git add" and/or "git commit -a") 
+```
+ 
+* If there are changes, then add the files/folders that you want to commit to the repository. 
+```
+git add README.md
+```
+ 
+* Third, commit the files to the repository, including a commit message that explains what you did: 
+```
+git commit -m "Encoding a new poem."
+```
+ 
+* Fourth, push the files to the repository: 
+```
+git push
+```
+ Note that, if you are committing for the first time, you'll like see something like this: 
+```
+Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt; 
+```
+ This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: 
+```
+git remote add wea https://github.com/winnifredeatonarchive/wea_data
+```
+ 
+```
+git push wea
+```
+ You'll then like get another message, saying something like: 
+```
+fatal: The current branch master has no upstream branch. To push the current branch and set the remote as upstream, use git push --set-upstream wea master 
+```
+ To resolve that, simply: 
+```
+git push --set-upstream wea master 
+```
+ You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit. 
+ 
+ 
+ 
+ 
+## Working in oXygen  <span id="index.xml-body.1_div.4"/>
+ 
+First, ensure that you're working in the wea_data.xpr project file.
+ 
+## Editing the Texts  <span id="index.xml-body.1_div.5"/>
+ 
+## Building the Schema  <span id="index.xml-body.1_div.6"/>
  
 All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
  

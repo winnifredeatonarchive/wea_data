@@ -31,29 +31,126 @@
         uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
         the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
       </div>
-
       <div>
-        <head>Setting up Github</head>
-        <list rend="ordered">
-          <item>Ensure that you have git installed on your local system [[add link here]]</item>
-          <item>Open the terminal</item>
-          <item>Create a directory for working in: <code rend="block">mkdir wea</code>
-          </item>
-          <item>Go into the directory: <code rend="block">cd wea</code>
-          </item>
-          <item>Initialize the repository: <code rend="block">git init .</code></item>
-          <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
+        <head>Requirements</head>
+        <p>To edit material for the site, you will need to use a computer with the following software:
+        <list>
+          <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+          <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
+          <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
         </list>
+        </p>
+      </div>
+
+      <div xml:id="github">
+        <head>Using Github</head>
+        <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+        <p></p>
+        <div xml:id="github_get">
+          <head>Setting up the repository</head>
+          <p>To get the data, you must first checkout a copy of the repository as follows:</p>
+          <list rend="ordered">
+            <item>Open the terminal</item>
+            <item>Create a directory for working in: <code rend="block">mkdir wea</code>
+            </item>
+            <item>Go into the directory: <code rend="block">cd wea</code>
+            </item>
+            <item>Initialize the repository: <code rend="block">git init .</code></item>
+            <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
+          </list>
+          <p>Note that you only need to do this the first time you start working in the Github repository.</p>
+        </div>
+        
+        <div>
+          <head>The Github Workflow</head>
+          <p>The normal workflow for working in Github (and any version software) is as follows:
+          <list>
+            <item>Update your repository so that any changes made by others are pushed into your local system</item>
+            <item>Commit the items to the repository</item>
+            <item>Push those items to the Github interface</item>
+          </list>
+          </p>
+          <div>
+            <head>Updating</head>
+            <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
+            <p>To update:
+            <list>
+              <item>Go into your working folder: 
+                <code rend="block">cd wea</code>
+              </item>
+              <item>Pull the repository:
+              <code rend="block">git pull</code>
+              </item>
+            </list>
+            </p>
+          </div>
+          <div>
+            <head>Committing</head>
+            <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository.
+            <list>
+              <item>First, check the status of your files to see what you have changed since your last commit:
+              <code rend="block">git status</code>
+              If there are no changes to the repository, then you'll like see something like this:
+              <code rend="block">
+                On branch master
+                nothing to commit, working tree clean
+              </code>
+              If there are changes, you should see something like this:
+              
+              <code rend="block">
+                On branch master
+                Changes not staged for commit:
+                (use "git add &lt;file&gt;..." to update what will be committed)
+                (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+                
+                modified:   README.md
+                
+                no changes added to commit (use "git add" and/or "git commit -a")
+              </code>
+              </item>
+              <item>If there are changes, then add the files/folders that you want to commit to the repository.
+              <code rend="block">git add README.md</code>
+              </item>
+              <item>Third, commit the files to the repository, including a commit message that explains what you did:
+              <code rend="block">git commit -m "Encoding a new poem."</code>
+              </item>
+              <item>Fourth, push the files to the repository:
+              <code rend="block">git push</code>
+              Note that, if you are committing for the first time, you'll like see something like this:
+              <code rend="block">
+                Either specify the URL from the command-line or configure a remote repository using
+                
+                git remote add &lt;name&gt; &lt;url&gt;
+                
+                and then push using the remote name
+                
+                git push &lt;name&gt;
+              </code>
+              This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
+                <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
+                <code rend="block">git push wea</code>
+                You'll then like get another message, saying something like:
+                <code rend="block">fatal: The current branch master has no upstream branch.
+                  To push the current branch and set the remote as upstream, use
+                  
+                  git push --set-upstream wea master
+                  
+                </code>
+                To resolve that, simply:
+                <code rend="block">
+                  git push --set-upstream wea master
+                </code>
+                You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
+              </item>
+            </list>
+            </p>
+          </div>
+        </div>
+        
       </div>
       <div>
-        <head>Updating the Git repository</head>
-      </div>
-      <div>
-        <head>Committing Changes</head>
-      </div>
-      
-      <div>
-        <head>Setting up oXygen</head>
+        <head>Working in oXygen</head>
+        <p>First, ensure that you're working in the wea_data.xpr project file.</p>
       </div>
       <div>
         <head>Editing the Texts</head>
