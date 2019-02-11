@@ -18,6 +18,10 @@
     </xd:doc>
     
     <xsl:param name="verbose">false</xsl:param>
+    <xsl:variable name="personography" select="document('../products/personography.xml')"/>
+    <xsl:variable name="people">
+        <xsl:call-template name="getPeople"/>
+    </xsl:variable>
     
     <xsl:template match="/">
         <xsl:apply-templates mode="tei"/>
@@ -119,7 +123,7 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="choice/orig"/>
+    <xsl:template match="choice/orig" mode="tei"/>
     
     <xsl:template match="choice/reg" mode="tei">
         <xsl:apply-templates mode="#current"/>
@@ -289,10 +293,21 @@
     </xsl:template>
     
     <xsl:template name="createNotes">
-        <div id="notes">
-            <h3>Notes</h3>
-            <xsl:apply-templates select="//note[@type='editorial']" mode="appendix"/>
-        </div>
+        <xsl:if test="//note[@type='editorial']">
+            <div id="notes">
+                <h3>Notes</h3>
+                <xsl:apply-templates select="//note[@type='editorial']" mode="appendix"/>
+            </div>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="getPeople">
+        <xsl:variable name="who" select="//*/@who"/>
+        <xsl:variable name="resp" select="//*/@resp"/>
+        <xsl:variable name="ref" select="//*/name/@ref | //*/persName/@ref | //*/docAuthor/@ref"/>
+        <xsl:variable name="distinct" select="
+            distinct-values(for $q in (for $p in ($who, $resp, $ref) return tokenize($p,'\s+')) return if (starts-with($q,'pers:')) then substring-after($q,'pers:') else ())"/>
+        <xsl:copy-of select="$personography//person[@xml:id=$distinct]"/>
     </xsl:template>
     <!--FUNCTIONS-->
     
@@ -300,5 +315,7 @@
         <xsl:param name="note"/>
         <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
     </xsl:function>
+    
+
     
 </xsl:stylesheet>
