@@ -128,6 +128,10 @@ git pull
 ```
  
  
+![../graphic/git_pull_1.gif](../graphic/git_pull_1.gif)
+ 
+ 
+ 
  
  ----- 
  
@@ -176,14 +180,14 @@ git commit -m "Encoding a new poem."
 ```
 git push
 ```
- Note that, if you are committing for the first time, you'll like see something like this: 
-```
-Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt; 
-```
  
  
 ![../graphics/git_push_first_1.gif](../graphics/git_push_first_1.gif)
  
+ Note that, if you are committing for the first time, you'll like see something like this: 
+```
+Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt; 
+```
  This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: 
 ```
 git remote add wea https://github.com/winnifredeatonarchive/wea_data
@@ -192,6 +196,10 @@ git remote add wea https://github.com/winnifredeatonarchive/wea_data
 ```
 git push wea
 ```
+ 
+ 
+![../graphics/git_remote_add_1.gif](../graphics/git_remote_add_1.gif)
+ 
  You'll then like get another message, saying something like: 
 ```
 fatal: The current branch master has no upstream branch. To push the current branch and set the remote as upstream, use git push --set-upstream wea master 
@@ -217,22 +225,22 @@ To create a new text file, use the built in text template
  
 * First, in the project view in oXygen, right click the data/texts folder and click "Add new file" 
  
-![../src/create_new_file_1.gif](../src/create_new_file_1.gif)
+![../graphics/create_new_file_1.gif](../graphics/create_new_file_1.gif)
  
  
 * Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores. 
  
-![../src/create_new_file_2.gif](../src/create_new_file_2.gif)
+![../graphics/create_new_file_2.gif](../graphics/create_new_file_2.gif)
  
  
 * Answer the prompts, filling in the (modernized) title of the text and your @xml:id. 
  
-![../src/create_new_file_3.gif](../src/create_new_file_3.gif)
+![../graphics/create_new_file_3.gif](../graphics/create_new_file_3.gif)
  
  
 * Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader. 
  
-![../src/create_new_file_4.gif](../src/create_new_file_4.gif)
+![../graphics/create_new_file_4.gif](../graphics/create_new_file_4.gif)
  
  
  

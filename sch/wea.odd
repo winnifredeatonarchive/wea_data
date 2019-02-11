@@ -88,6 +88,9 @@
               <item>Pull the repository:
               <code rend="block">git pull</code>
               </item>
+               <figure>
+                 <graphic url="../graphic/git_pull_1.gif"/>
+               </figure>
             </list>
             </p>
           </div>
@@ -132,6 +135,9 @@
               </figure>
               <item>Fourth, push the files to the repository:
               <code rend="block">git push</code>
+                <figure>
+                  <graphic url="../graphics/git_push_first_1.gif"/>
+                </figure>
               Note that, if you are committing for the first time, you'll like see something like this:
               <code rend="block">
                 Either specify the URL from the command-line or configure a remote repository using
@@ -142,12 +148,13 @@
                 
                 git push &lt;name&gt;
               </code>
-                <figure>
-                  <graphic url="../graphics/git_push_first_1.gif"/>
-                </figure>
+
               This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
                 <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
                 <code rend="block">git push wea</code>
+                <figure>
+                  <graphic url="../graphics/git_remote_add_1.gif"/>
+                </figure>
                 You'll then like get another message, saying something like:
                 <code rend="block">fatal: The current branch master has no upstream branch.
                   To push the current branch and set the remote as upstream, use
@@ -177,19 +184,19 @@
         <list>
           <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
           <figure>
-            <graphic url="../src/create_new_file_1.gif"/>
+            <graphic url="../graphics/create_new_file_1.gif"/>
           </figure>
           <item>Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores.</item>
           <figure>
-            <graphic url="../src/create_new_file_2.gif"/>
+            <graphic url="../graphics/create_new_file_2.gif"/>
           </figure>
           <item>Answer the prompts, filling in the (modernized) title of the text and your @<att>xml:id</att>.</item>
           <figure>
-            <graphic url="../src/create_new_file_3.gif"/>
+            <graphic url="../graphics/create_new_file_3.gif"/>
           </figure>
           <item>Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader.</item>
           <figure>
-            <graphic url="../src/create_new_file_4.gif"/>
+            <graphic url="../graphics/create_new_file_4.gif"/>
           </figure>
         </list>
         
