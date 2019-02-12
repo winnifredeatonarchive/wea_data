@@ -128,7 +128,7 @@ git pull
 ```
  
  
-![../graphic/git_pull_1.gif](../graphic/git_pull_1.gif)
+![../graphics/git_pull_1.gif](../graphics/git_pull_1.gif)
  
  
  
