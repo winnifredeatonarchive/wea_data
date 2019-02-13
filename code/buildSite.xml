@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Build Site" default="all">
+  
+  <property name="echo.separator">***********************************</property>
+    
+    
+  <dirname property="data.dir" file="../README.md"/>
+  <property name="siteTemp" value="${data.dir}/products/"/>
+  <property name="textsDir" value="${data.dir}/texts/"/>
+  <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
+
+    
+  <fileset id="texts" dir="${textsDir}">
+      <include name="**.xml"/>
+  </fileset>
+    
+    <target name="init">
+        <delete dir="${siteTemp}"/>
+        <mkdir dir="${siteTemp}"/>
+    </target>
+    
+    <target name="copyAuxFiles">
+        <copy todir="${siteTemp}/css">
+            <fileset dir="../css">
+                <include name="**.css"/>
+            </fileset>
+        </copy>
+        <copy todir="${siteTemp}/js">
+            <fileset dir="../js">
+                <include name="**.js"/>
+            </fileset>
+        </copy>
+    </target>
+    
+  <target name="createSite">
+      <echo message="Creating site..."/>
+      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+          <arg value="-xsl:${data.dir}/code/xhtml_master.xsl"/>
+          <arg value="-s:${textsDir}"/>
+          <arg value="-o:${siteTemp}"/>
+      </java>
+      
+  </target>
+    
+    <target name="validate">
+        <description>
+            This target validates the XHTML against the VNU validator.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Validating XHTML..."/>
+        <echo message="${echo.separator}"/>
+        <mkdir dir="${xhValidationDir}"/>
+        <copy todir="${xhValidationDir}">
+            <fileset dir="${siteTemp}">
+                <include name="*.html"/>
+            </fileset>
+        </copy>
+        <java jar="${data.dir}/lib/vnu/vnu.jar" failonerror="false" fork="true">
+            <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
+            <arg value="--format text"/>
+            <arg value="--skip-non-html"/>
+            <arg value="${xhValidationDir}/"/>
+        </java>
+        <delete dir="${xhValidationDir}"/>
+    </target>
+    
+    <target name="copyProducts">
+        <copy todir="${siteDir}">
+            <fileset dir="${siteTemp}">
+                <include name="**.html"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="all" depends="init, copyAuxFiles, createSite, validate"/>
+    
+    
+</project>
