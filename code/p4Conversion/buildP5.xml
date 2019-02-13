@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildP5" default="all">
+    
+    <!--This build, which should only be run once, takes all the existing P4 TEI files and modifes them
+        into P5; it then validates against the P5 schema.-->
+   
+    
+    
+    <!--First step, copy over into the Github repo-->
+    
+    <property name="driveDir" value="../../../../Drive/WEaton Anew/"/>
+    
+    <property name="gitDir" value="../"/>
+    
+    <property name="textsDir" value="${gitDir}/texts/"/>
+    <property name="p4Temp" value="${gitDir}/p4Temp/"/>
+    <property name="p5Temp" value="${gitDir}/p5Temp/"/>
+    
+    <!--Clean up and initialize the build-->
+    <target name="init">
+        <delete dir="${p4Temp}"/>
+        <delete dir="${p5Temp}"/>
+        <mkdir dir="${p4Temp}"/>
+        <mkdir dir="${p5Temp}"/>
+    </target>
+    
+    <target name="copy">
+        <!--First thing to do is copy and flatten-->
+        <copy todir="${p4Temp}" verbose="true">
+            <fileset dir="${driveDir}/UPDATED Texts by OW">
+                <include name="**/**.xml"/>
+            </fileset>
+            <!--Use a filterchain here to normalize of all sorts of weirdness-->
+            <filterchain>
+                <replaceregex byline="true" pattern="^(&lt;!.+|\]&gt;)" replace=""/>
+                <!--And now replace all of the entities-->
+                <replaceregex  pattern="&amp;copy;" replace="©"/>
+                <!--Double quotes-->
+                <replaceregex flags="g" pattern="&amp;ldquo;" replace="“"/>
+                <replaceregex flags="g" pattern="&amp;rdquo;" replace="”"/>
+                <!--Single quotes-->
+                <replaceregex flags="g" pattern="&amp;lsquo;" replace="‘"/>
+                <replaceregex flags="g" pattern="&amp;rsquo;" replace="’"/>
+                <replaceregex flags="g" pattern="&amp;mdash;" replace="—"/>
+                <replaceregex flags="g" pattern="&amp;eacute;" replace="é"/>
+                <replaceregex flags="g" pattern="&amp;ecirc;" replace="ê"/>
+                <replaceregex flags="g" pattern="&amp;agrave;" replace="à"/>
+                <replaceregex flags="g" pattern="&amp;nbsp;" replace=" "/>
+                <replaceregex flags="g" pattern="&amp;iuml;" replace="ï"/>
+                <replaceregex flags="g" pattern="&amp;ndash;" replace="–"/>
+            </filterchain>
+        </copy>
+    </target>
+    
+    <target name="convert">
+        <xslt force="yes" style="p4top5.xsl" destdir="${p5Temp}" useimplicitfileset="false">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="../lib/saxon9he.jar"/>
+            <fileset dir="${p4Temp}">
+                <include name="**/**.xml"/>
+            </fileset>
+            <chainedmapper>
+                <flattenmapper/>
+                <filtermapper>
+                    <replacestring from=" " to="_"/>
+                    <replaceregex pattern="(\s|%20)+" replace="_"/>
+                </filtermapper>
+            </chainedmapper>
+        </xslt>
+    </target>
+    
+    <target name="validate">
+        <!--First get TEI all-->
+        
+      <!--  <get src="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"
+            dest="../sch/tei_all.rng" usetimestamp="true"/>-->
+        
+        <apply executable="java" parallel="true" failonerror="true">
+            <arg line="-jar  ../lib/jing.jar"/>
+            <arg value="../sch/tei_all.rng"/>
+            <fileset dir="${p5Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </apply>
+        <!--Do Jing and schematron validation here: reminder to download Jing (but perhaps only temporarily)-->
+    </target>
+    
+    <target name="move">
+        <mkdir dir="${textsDir}"/>
+        <copy todir="${textsDir}">
+            <fileset dir="${p5Temp}">
+                <include name="**.xml"/>
+            </fileset>
+        </copy>
+    </target>
+  
+  <target name="all" depends="init, copy, convert, validate, move"/>
+</project>
