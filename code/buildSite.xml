@@ -98,7 +98,7 @@
     <target name="copyProducts">
         <copy todir="${siteDir}">
             <fileset dir="${siteTemp}">
-                <include name="**.html"/>
+                <include name="**"/>
             </fileset>
         </copy>
     </target>
