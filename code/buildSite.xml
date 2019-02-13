@@ -9,7 +9,7 @@
   <property name="textsDir" value="${data.dir}/data/texts/"/>
   <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
     
- <property name="siteDir" value="${data.dir}/docs"/>
+ <property name="siteDir" value="${data.dir}/../wea/"/>
 
     
   <fileset id="texts" dir="${textsDir}">
@@ -32,17 +32,46 @@
                 <include name="**.js"/>
             </fileset>
         </copy>
+        <copy todir="${siteTemp}">
+            <fileset dir="../documentation">
+                <include name="**.html"/>
+            </fileset>
+        </copy>
+        <copy todir="${siteTemp}/graphics">
+            <fileset dir="../graphics">
+                <include name="**"/>
+            </fileset>
+        </copy>
     </target>
     
+    
+    
+
   <target name="createSite">
       <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
           <arg value="-xsl:${data.dir}/code/xhtml_master.xsl"/>
-          <arg value="-s:${textsDir}"/>
-          <arg value="-o:${siteTemp}"/>
+          <arg value="-s:${data.dir}/code/xhtml_master.xsl"/>
+          <arg value="outDir=${siteTemp}"/>
+          <arg value="--suppressXsltNamespaceCheck:on"/>
+          
       </java>
-      
   </target>
+    
+    <target name="createIndex">
+        <echo message="Creating index..."/>
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+            <arg value="-xsl:${data.dir}/code/xhtml5_index_master.xsl"/>
+            <arg value="-s:${data.dir}/code/xhtml5_index_master.xsl"/>
+            <arg value="outDir=${siteTemp}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>  
+    
+    <target name="copyDocumentation">
+        <echo message="Copying documentation..."/>
+
+    </target>
     
     <target name="validate">
         <description>
@@ -74,7 +103,20 @@
         </copy>
     </target>
     
-    <target name="all" depends="init, copyAuxFiles, createSite, validate, copyProducts"/>
+    <target name="pushSite">
+        <exec executable="git">
+            <arg line="add ${siteDir}"/>
+        </exec>
+        <exec executable="git">
+            <arg line="commit -m 'Updating site'"/>
+        </exec>
+        <exec executable="git">
+            <arg line="push"/>
+        </exec>
+    </target>
     
+    <target name="all" depends="init, copyAuxFiles, createSite, createIndex, validate"/>
+    
+    <target name="pushToLive" depends="copyProducts, pushSite"/>
     
 </project>

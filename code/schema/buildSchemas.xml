@@ -175,16 +175,16 @@
         <description>Create documentation from the ODD file.</description>
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${wea.odd.processed}"/>
-            <arg line="-o:${project.dir}/docs/documentation.html"/>
+            <arg line="-o:${project.dir}/documentation/documentation.html"/>
             <arg line="-xsl:'${odd2html.xsl}'"/>
         </java>
         
         <!--Fix up some of the legacy cruft in the TEI's stylesheets-->
-        <replaceregexp file="${project.dir}/docs/documentation.html"
+        <replaceregexp file="${project.dir}/documentation/documentation.html"
             match="&lt;!DOCTYPE html"
             replace=""
             byline="false"/>
-        <replaceregexp file="${project.dir}/docs/documentation.html"
+        <replaceregexp file="${project.dir}/documentation/documentation.html"
             match="SYSTEM .about:legacy-compat.&gt;"
             replace=""
             byline="false"/>
@@ -193,12 +193,12 @@
 
         
         <java jar="${saxon}" fork="true" failonerror="true">
-            <arg line="-s:${project.dir}/docs/documentation.html"/>
-            <arg line="-o:${project.dir}/docs/documentation_small.html"/>
+            <arg line="-s:${project.dir}/documentation/documentation.html"/>
+            <arg line="-o:${project.dir}/documentation/documentation_small.html"/>
             <arg line="-xsl:${project.dir}/code/schema/clean_documentation.xsl"/>
         </java>
         
-        <move file="${project.dir}/docs/documentation_small.html" tofile="${project.dir}/docs/documentation.html" overwrite="true"/>
+        <move file="${project.dir}/documentation/documentation_small.html" tofile="${project.dir}/documentation/documentation.html" overwrite="true"/>
         
   <!--      <!-\-And now convert to markdown-\->
         

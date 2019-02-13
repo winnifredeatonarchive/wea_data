@@ -39,7 +39,7 @@
     <!-- Switch to our own css file. -->
     <xsl:template match="link[@type='text/css']">
         <xsl:if test="not(preceding-sibling::link[@type='text/css'])">
-            <link rel="stylesheet" href="css/documentation.css" type="text/css"/>
+            <link rel="stylesheet" href="css/wea.css" type="text/css"/>
         </xsl:if>
     </xsl:template>
     
@@ -63,6 +63,9 @@
             </xsl:copy>
         </xsl:if>
     </xsl:template>
+    
+    <!--Delete empty headings-->
+    <xsl:template match="h2[normalize-space(string-join(descendant::text(),''))='']"/>
 
     
     <!--Delete the content model-->
