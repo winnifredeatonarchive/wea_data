@@ -178,6 +178,17 @@
         </xsl:analyze-string>
     </xsl:template>
     
+    <xsl:template match="div/table">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <colgroup>
+                <col/>
+                <col/>
+            </colgroup>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="td[@class='odd_label'][parent::tr/parent::table[@class='attList']]/text()">
         <span class="attribute"><xsl:text>@</xsl:text><xsl:value-of select="."/></span>
     </xsl:template>
