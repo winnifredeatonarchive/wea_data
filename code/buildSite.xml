@@ -104,8 +104,11 @@
     </target>
     
     <target name="pushSite">
+        <exec executable="cd">
+            <arg line="../../${siteDir}"/>
+        </exec>
         <exec executable="git">
-            <arg line="add ${siteDir}"/>
+            <arg line="add ."/>
         </exec>
         <exec executable="git">
             <arg line="commit -m 'Updating site'"/>
