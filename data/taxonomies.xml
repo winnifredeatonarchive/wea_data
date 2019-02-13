@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="taxonomies">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Taxonomies</title>
+            <respStmt>
+               <resp>Encoder</resp>
+               
+               <name ref="pers:JT"/>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl><author>Eaton, Winnifred</author>. </bibl>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef scheme="wdt:locations" target="wdt:locNY"/>
+           <catRef scheme="wdt:docType" target="wdt:bornDigital"/>
+           <catRef scheme="wdt:genre" target="wdt:genreFilm"/>
+           <catRef scheme="wdt:object" target="wdt:objectPhoto"/>
+        </textClass>
+     </profileDesc>
+     <encodingDesc>
+        <classDecl>
+           
+           <!--hort story, non-fiction, autobiography, film scenario, film treatment, poem, serialized novel plus some of the more visual “objects” like photograph, portrait, film clip, ) I’m wondering if we would like to complicate the non-fiction category, I.e. Autobiography, dedication, interview, introduction, ethnography-->
+           <taxonomy xml:id="docClassTaxonomies">
+              <taxonomy xml:id="docType">
+                 <bibl>Document Type</bibl>
+                 <category xml:id="primarySource">
+                    <catDesc>Primary Source</catDesc>
+                 </category>
+                 <category xml:id="bornDigital">
+                    <catDesc>Born Digital document</catDesc>
+                 </category>
+              </taxonomy>
+              
+              <taxonomy xml:id="genre">
+                 <bibl>Genre</bibl>
+                 <category xml:id="genreShortStory">
+                    <catDesc>Short Story</catDesc>
+                 </category>
+                 <category xml:id="genreNF">
+                    <catDesc>Non-fiction</catDesc>
+                    <category xml:id="genreNFAuto">
+                       <catDesc>Non-fiction: Autobiography</catDesc>
+                    </category>
+                    <category xml:id="genreNFDedication">
+                       <catDesc>Non-fiction: Dedication</catDesc>
+                    </category>
+                    <category xml:id="genreNFInterview">
+                       <catDesc>Non-Fiction: Interview</catDesc>
+                    </category>
+                    <category xml:id="genreNFIntroduction">
+                       <catDesc>Non-fiction: Introduction</catDesc>
+                    </category>
+                    <category xml:id="genreNFEthnography">
+                       <catDesc>Non-fiction: Ethnography</catDesc>
+                    </category>
+                 </category>
+                 <category xml:id="genreFilm">
+                    <catDesc>Film</catDesc>
+                    <category xml:id="genreFilmScenario">
+                       <catDesc>Film: Scenario</catDesc>
+                    </category>
+                    <category xml:id="genreFilmTreatment">
+                       <catDesc>Film: Treatment</catDesc>
+                    </category>
+                 </category>
+                 <category xml:id="genrePoem">
+                    <catDesc>Poem</catDesc>
+                 </category>
+                 <category xml:id="genreNovel">
+                    <catDesc>Novel</catDesc>
+                    <category xml:id="genreNovelSerial">
+                       <catDesc>Novel: Serial</catDesc>
+                    </category>
+                 </category>
+              </taxonomy>
+                 
+                 
+              <taxonomy xml:id="object">
+                 <bibl>Object</bibl>
+                 <category xml:id="objectText">
+                    <catDesc>Object: Text</catDesc>
+                 </category>
+                 <category xml:id="objectPhoto">
+                    <catDesc>Object: Photo</catDesc>
+                 </category>
+       
+                 <category xml:id="objectFilm">
+                    <catDesc>Object: Film</catDesc>
+                 </category>
+                 <category xml:id="objectPoster">
+                    <catDesc>Object: Poster</catDesc>
+                 </category>
+              </taxonomy>
+              
+              <taxonomy xml:id="locations">
+                 <bibl>Locations</bibl>
+                 <category xml:id="locJapan">
+                    <catDesc>Japan</catDesc>
+                 </category>
+                 <category xml:id="locAlberta">
+                    <catDesc>Alberta</catDesc>
+                 </category>
+                 <category xml:id="locHollywood">
+                    <catDesc>Hollywood</catDesc>
+                 </category>
+                 <category xml:id="locMontreal">
+                    <catDesc>Montreal</catDesc>
+                 </category>
+                 <category xml:id="locNY">
+                    <catDesc>New York</catDesc>
+                 </category>
+              </taxonomy>
+              
+           </taxonomy>
+        </classDecl>
+     </encodingDesc>
+     <revisionDesc>
+        <change when="2019-02-13"
+           who="pers:JT">Created file.</change>
+     </revisionDesc>
+     
+  </teiHeader>
+  <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+  </text>
+</TEI>

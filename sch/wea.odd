@@ -2,103 +2,107 @@
 <!--Processing instructions for the TEI ODDs rng-->
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
-  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:math="http://www.w3.org/1998/Math/MathML"
+     xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <teiHeader>
-    <fileDesc>
-      <titleStmt>
-        <title>ODD Customization for the Winniferd Eaton Archive Project</title>
-        <respStmt>
-          <resp>Author</resp>
-          <name>Joey Takeda</name>
-        </respStmt>
-      </titleStmt>
-      <publicationStmt>
-        <p>Open access?</p>
-      </publicationStmt>
-      <sourceDesc>
-        <p>Born digital.</p>
-      </sourceDesc>
-    </fileDesc>
+      <fileDesc>
+         <titleStmt>
+            <title>ODD Customization for the Winniferd Eaton Archive Project</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name>Joey Takeda</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Open access?</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Born digital.</p>
+         </sourceDesc>
+      </fileDesc>
   </teiHeader>
   <text>
-    <body>
+      <body>
 
-      <div>
-        <head>Introduction</head>
-        <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
+         <div>
+            <head>Introduction</head>
+            <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
         uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
         the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
-      </div>
-      <div>
-        <head>Requirements</head>
-        <p>To edit material for the site, you will need to use a computer with the following software:
+         </div>
+         <div>
+            <head>Requirements</head>
+            <p>To edit material for the site, you will need to use a computer with the following software:
         <list>
-          <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
-          <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
-          <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
-        </list>
-        </p>
-      </div>
-
-      <div xml:id="github">
-        <head>Using Github</head>
-        <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
-        <p></p>
-        <div xml:id="github_get">
-          <head>Setting up the repository</head>
-          <p>To get the data, you must first checkout a copy of the repository as follows:</p>
-          <list>
-            <item>Open the terminal</item>
-            <item>Create a directory for working in: <code rend="block">mkdir wea</code>
-
-            </item>
-            <item>Go into the directory: <code rend="block">cd wea</code>
-            </item>
-            <item>Initialize the repository: <code rend="block">git init .</code></item>
-            <figure>
-              <graphic url="../graphics/git_checkout_1.gif"/>
-            </figure>
-            <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></item>
-            <figure>
-              <graphic url="../graphics/git_checkout_2.gif"/>
-            </figure>
-          </list>
-          <p>Note that you only need to do this the first time you start working in the Github repository.</p>
-        </div>
-        
-        <div>
-          <head>The Github Workflow</head>
-          <p>The normal workflow for working in Github (and any version software) is as follows:
-          <list>
-            <item>Update your repository so that any changes made by others are pushed into your local system</item>
-            <item>Commit the items to the repository</item>
-            <item>Push those items to the Github interface</item>
-          </list>
-          </p>
-          <div>
-            <head>Updating</head>
-            <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
-            <p>To update:
-            <list>
-              <item>Go into your working folder: 
-                <code rend="block">cd wea</code>
-              </item>
-              <item>Pull the repository:
-              <code rend="block">git pull</code>
-              </item>
-               <figure>
-                 <graphic url="../graphics/git_pull_1.gif"/>
-               </figure>
-            </list>
+                  <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+                  <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
+                  <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
+               </list>
             </p>
-          </div>
-          <div>
-            <head>Committing</head>
-            <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository.
+         </div>
+
+         <div xml:id="github">
+            <head>Using Github</head>
+            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+            <p/>
+            <div xml:id="github_get">
+               <head>Setting up the repository</head>
+               <p>To get the data, you must first checkout a copy of the repository as follows:</p>
+               <list>
+                  <item>Open the terminal</item>
+                  <item>Create a directory for working in: <code rend="block">mkdir wea</code>
+
+                  </item>
+                  <item>Go into the directory: <code rend="block">cd wea</code>
+                  </item>
+                  <item>Initialize the repository: <code rend="block">git init .</code>
+                  </item>
+                  <figure>
+                     <graphic url="../graphics/git_checkout_1.gif"/>
+                  </figure>
+                  <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
+                  </item>
+                  <figure>
+                     <graphic url="../graphics/git_checkout_2.gif"/>
+                  </figure>
+               </list>
+               <p>Note that you only need to do this the first time you start working in the Github repository.</p>
+            </div>
+        
+            <div>
+               <head>The Github Workflow</head>
+               <p>The normal workflow for working in Github (and any version software) is as follows:
+          <list>
+                     <item>Update your repository so that any changes made by others are pushed into your local system</item>
+                     <item>Commit the items to the repository</item>
+                     <item>Push those items to the Github interface</item>
+                  </list>
+               </p>
+               <div>
+                  <head>Updating</head>
+                  <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
+                  <p>To update:
             <list>
-              <item>First, check the status of your files to see what you have changed since your last commit:
+                        <item>Go into your working folder: 
+                <code rend="block">cd wea</code>
+                        </item>
+                        <item>Pull the repository:
+              <code rend="block">git pull</code>
+                        </item>
+                        <figure>
+                           <graphic url="../graphics/git_pull_1.gif"/>
+                        </figure>
+                     </list>
+                  </p>
+               </div>
+               <div>
+                  <head>Committing</head>
+                  <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository.
+            <list>
+                        <item>First, check the status of your files to see what you have changed since your last commit:
               <code rend="block">git status</code>
               If there are no changes to the repository, then you'll like see something like this:
               <code rend="block">
@@ -117,27 +121,27 @@
                 
                 no changes added to commit (use "git add" and/or "git commit -a")
               </code>
-              </item>
-              <figure>
-                <graphic url="../graphics/git_status_1.gif"/>
-              </figure>
-              <item>If there are changes, then add the files/folders that you want to commit to the repository.
+                        </item>
+                        <figure>
+                           <graphic url="../graphics/git_status_1.gif"/>
+                        </figure>
+                        <item>If there are changes, then add the files/folders that you want to commit to the repository.
               <code rend="block">git add README.md</code>
-              </item>
-              <figure>
-                <graphic url="../graphics/git_add_1.gif"/>
-              </figure>
-              <item>Third, commit the files to the repository, including a commit message that explains what you did:
+                        </item>
+                        <figure>
+                           <graphic url="../graphics/git_add_1.gif"/>
+                        </figure>
+                        <item>Third, commit the files to the repository, including a commit message that explains what you did:
               <code rend="block">git commit -m "Encoding a new poem."</code>
-              </item>
-              <figure>
-                <graphic url="../graphics/git_commit_1.gif"/>
-              </figure>
-              <item>Fourth, push the files to the repository:
+                        </item>
+                        <figure>
+                           <graphic url="../graphics/git_commit_1.gif"/>
+                        </figure>
+                        <item>Fourth, push the files to the repository:
               <code rend="block">git push</code>
-                <figure>
-                  <graphic url="../graphics/git_push_first_1.gif"/>
-                </figure>
+                           <figure>
+                              <graphic url="../graphics/git_push_first_1.gif"/>
+                           </figure>
               Note that, if you are committing for the first time, you'll like see something like this:
               <code rend="block">
                 Either specify the URL from the command-line or configure a remote repository using
@@ -151,10 +155,10 @@
 
               This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
                 <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
-                <code rend="block">git push wea</code>
-                <figure>
-                  <graphic url="../graphics/git_remote_add_1.gif"/>
-                </figure>
+                           <code rend="block">git push wea</code>
+                           <figure>
+                              <graphic url="../graphics/git_remote_add_1.gif"/>
+                           </figure>
                 You'll then like get another message, saying something like:
                 <code rend="block">fatal: The current branch master has no upstream branch.
                   To push the current branch and set the remote as upstream, use
@@ -166,99 +170,451 @@
                 <code rend="block">
                   git push --set-upstream wea master
                 </code>
-                <figure>
-                  <graphic url="../graphics/git_push_2.gif"/>
-                </figure>
+                           <figure>
+                              <graphic url="../graphics/git_push_2.gif"/>
+                           </figure>
                 You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
               </item>
+                     </list>
+                  </p>
+               </div>
+            </div>
+        
+         </div>
+      
+         <div>
+            <head>Creating a New Text in oXygen</head>
+            <p>To create a new text file, use the built in text template</p>
+            <list>
+               <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
+               <figure>
+                  <graphic url="../graphics/create_new_file_1.gif"/>
+               </figure>
+               <item>Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores.</item>
+               <figure>
+                  <graphic url="../graphics/create_new_file_2.gif"/>
+               </figure>
+               <item>Answer the prompts, filling in the (modernized) title of the text and your @<att>xml:id</att>.</item>
+               <figure>
+                  <graphic url="../graphics/create_new_file_3.gif"/>
+               </figure>
+               <item>Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader.</item>
+               <figure>
+                  <graphic url="../graphics/create_new_file_4.gif"/>
+               </figure>
             </list>
-            </p>
-          </div>
-        </div>
         
-      </div>
+         </div>
       
-      <div>
-        <head>Creating a New Text in oXygen</head>
-        <p>To create a new text file, use the built in text template</p>
-        <list>
-          <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
-          <figure>
-            <graphic url="../graphics/create_new_file_1.gif"/>
-          </figure>
-          <item>Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores.</item>
-          <figure>
-            <graphic url="../graphics/create_new_file_2.gif"/>
-          </figure>
-          <item>Answer the prompts, filling in the (modernized) title of the text and your @<att>xml:id</att>.</item>
-          <figure>
-            <graphic url="../graphics/create_new_file_3.gif"/>
-          </figure>
-          <item>Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader.</item>
-          <figure>
-            <graphic url="../graphics/create_new_file_4.gif"/>
-          </figure>
-        </list>
-        
-      </div>
-      
-      <div>
-        <head>Building the Schema</head>
-        <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
-        <p>To regenerate the schema and the documentation follow these directions</p>
-        <p><emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
-        <p><emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
+         <div>
+            <head>Building the Schema</head>
+            <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+            <p>To regenerate the schema and the documentation follow these directions</p>
+            <p>
+               <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
+            <p>
+               <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
           <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
           Note that you must have ant installed.
         </p>
-      </div>
+         </div>
 
-    </body>
-    <back>
-      <div>
-        <schemaSpec ident="wea" start="TEI">
-          <moduleRef key="analysis" include="pc"/>
+      </body>
+      <back>
+         <div>
+            <schemaSpec ident="wea" start="TEI">
+               <moduleRef key="analysis" include="pc"/>
           
-          <moduleRef key="core" include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
-          <moduleRef key="header" include="abstract authority availability biblFull catRef category change creation distributor edition editionStmt editorialDecl encodingDesc fileDesc hyphenation idno keywords langUsage language licence listChange listPrefixDef notesStmt prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
-          <moduleRef key="tagdocs" include="att code gi val"/>
-          <!--Include all TEI modules-->
-          <moduleRef key="tei"/>
+               <moduleRef key="core"
+                          include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+               <moduleRef key="header"
+                          include="abstract authority availability biblFull catRef catDesc category change classDecl creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno langUsage language licence listChange listPrefixDef prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
+               <moduleRef key="tagdocs" include="att code gi val"/>
+               <!--Include all TEI modules-->
+               <moduleRef key="tei"/>
           
-          <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph front opener text titlePage titlePart trailer"/>
+               <moduleRef key="textstructure"
+                          include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph front opener text titlePage titlePart trailer"/>
           
-          <moduleRef key="transcr" include="supplied"/>
+               <moduleRef key="transcr" include="supplied"/>
           
-          <!--VARIABLES-->
+               <!--MODULE: HEADER-->
           
-          <constraintSpec ident="global.variables" scheme="schematron">
-            <constraint>
+               <elementSpec ident="teiHeader" module="header" mode="change">
+            <!--Make all the bits we want of the teiHeader mandatory-->
+                  <content>
+                     <elementRef key="fileDesc"/>
+                     <elementRef key="profileDesc"/>
+                     <!--Make encodingDesc optional-->
+                     <elementRef key="encodingDesc" minOccurs="0" maxOccurs="1"/>
+                     <elementRef key="revisionDesc"/>
+                  </content>
+               </elementSpec>
+          
+               <!--Make profileDesc/textClass mandatory-->
+               <elementSpec ident="profileDesc" module="header" mode="change">
+                  <content>
+                     <elementRef key="textClass"/>
+                  </content>
+               </elementSpec>
+          
+               <!--And make at least one catRef mandatory-->
+               <elementSpec ident="textClass" module="header" mode="change">
+                  <content>
+                     <elementRef key="catRef" minOccurs="1" maxOccurs="unbounded"/>
+                  </content>
+                  <constraintSpec scheme="schematron" ident="textClass.oneofEach">
+                     <desc>An XSLT restraint for one of each catRef</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:docType']">
+                            ERROR: Missing category reference docType.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:genre']">
+                            ERROR: Missing category reference genre.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:object']">
+                            ERROR: Missing category reference object.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:locations']">
+                            ERROR: Missing category reference locations.
+                        </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+    
+               </elementSpec>
+          
+               <elementSpec ident="catRef" module="header" mode="change">
+
+                  <constraintSpec scheme="schematron" ident="catRef.occurence">
+                     <desc>An XsLT generated co-occurence constraint</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:catRef[@scheme='wdt:docType']">
+                              <sch:assert test="matches(@target,'^((wdt:bornDigital)|(wdt:primarySource))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:genre']">
+                              <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:object']">
+                              <sch:assert test="matches(@target,'^((wdt:objectPhoto)|(wdt:objectText)|(wdt:objectFilm)|(wdt:objectPoster))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:locations']">
+                              <sch:assert test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                     
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="cert" mode="delete"/>
+                     <attDef ident="change" mode="delete"/>
+                     <attDef ident="facs" mode="delete"/>
+                     <attDef ident="rend" mode="delete"/>
+                     <attDef ident="source" mode="delete"/>
+                     <attDef ident="xml:id" mode="delete"/>
+                     <attDef ident="xml:lang" mode="delete"/>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="n" mode="delete"/>
+                     <attDef ident="next" mode="delete"/>
+                     <attDef ident="prev" mode="delete"/>
+                     <attDef ident="rendition" mode="delete"/>
+                     <attDef ident="resp" mode="delete"/>
+                     <attDef ident="style" mode="delete"/>
+                     <!--Auto generated values-->
+                     <attDef ident="scheme" mode="change" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="wdt:docType">
+                              <desc>Document Type</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genre">
+                              <desc>Genre</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:object">
+                              <desc>Object</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locations">
+                              <desc>Locations</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="wdt:bornDigital">
+                              <desc>Born Digital document</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:primarySource">
+                              <desc>Primary Source</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreShortStory">
+                              <desc>Short Story</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNF">
+                              <desc>Non-fiction</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNFAuto">
+                              <desc>Non-fiction: Autobiography</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNFDedication">
+                              <desc>Non-fiction: Dedication</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNFInterview">
+                              <desc>Non-Fiction: Interview</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNFIntroduction">
+                              <desc>Non-fiction: Introduction</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNFEthnography">
+                              <desc>Non-fiction: Ethnography</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreFilm">
+                              <desc>Film</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreFilmScenario">
+                              <desc>Film: Scenario</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreFilmTreatment">
+                              <desc>Film: Treatment</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genrePoem">
+                              <desc>Poem</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNovel">
+                              <desc>Novel</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genreNovelSerial">
+                              <desc>Novel: Serial</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:objectPhoto">
+                              <desc>Object: Photo</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:objectText">
+                              <desc>Object: Text</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:objectFilm">
+                              <desc>Object: Film</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:objectPoster">
+                              <desc>Object: Poster</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locJapan">
+                              <desc>Japan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locAlberta">
+                              <desc>Alberta</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locHollywood">
+                              <desc>Hollywood</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locMontreal">
+                              <desc>Montreal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:locNY">
+                              <desc>New York</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     
+                  </attList>
+                  
+               </elementSpec>
+         
+          
+               <elementSpec mode="change" module="header" ident="sourceDesc">
+                  <content>
+                     <alternate>
+                        <elementRef key="p"/>
+                        <elementRef key="bibl"/>
+                     </alternate>
+                  </content>
+                  <constraintSpec ident="useBiblInPS" scheme="schematron">
+                     <desc>All primary sources must use a <gi>bibl</gi> element in the <gi>sourceDesc</gi>
+                     </desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
+                      ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
+                      source descriptions.
+                    </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+          
+               <elementSpec mode="change" module="header" ident="sourceDesc">
+            
+          </elementSpec>
+          
+          
+               <classSpec type="atts" module="tei" ident="att.canonical" mode="change">
+                  <attList>
+                     <attDef ident="key" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.datable" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="period" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.datcat" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.declarable" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.declaring" module="tei" type="atts" mode="delete"/>
+               <!--WE need this for rhyme-->
+               <classSpec ident="att.divLike" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="org" mode="delete"/>
+                     <attDef ident="sample" mode="delete"/>
+                  </attList>
+               </classSpec>               
+               <classSpec ident="att.docStatus" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="status" mode="change">
+                        <valList mode="add" type="open">
+                           <valItem ident="draft" mode="add">
+                              <gloss>This document is currently being edited. It is not ready for
+                                 publication or peer-review.</gloss>
+                           </valItem>
+                           <valItem ident="published" mode="add">
+                              <gloss>This document is ready to be published.</gloss>
+                           </valItem>
+                           <valItem ident="deprecated" mode="add">
+                              <gloss>This document is no longer relevant, but is being preserved for
+                                 archival purposes.</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.duration.w3c" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.duration.iso" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.editLike" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="instant" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.global" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="xml:base" mode="delete"/>
+                     <attDef ident="xml:space" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.interpLike" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.measurement" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.naming" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="nymRef" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.notation" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.pointing" module="tei" type="atts" mode="change">
+                  <attList>
+                     <attDef ident="targetLang" mode="delete"/>
+                     <attDef ident="evaluate" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.pointingGroup"
+                          module="tei"
+                          type="atts"
+                          mode="delete"/>
+               <classSpec ident="att.scoping" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.segLike" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.sortable" module="tei" type="atts" mode="delete"/>
+                <classSpec ident="att.edition" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.spanning" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.timed" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.transcriptional"
+                          type="atts"
+                          module="tei"
+                          mode="delete"/>
+               <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.citing" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.partials" type="atts" module="tei" mode="delete"/>
+               <classSpec ident="att.personal" type="atts" module="tei" mode="change">
+                  <attList>
+                     <attDef ident="full" mode="delete"/>
+                     <attDef ident="sort" mode="delete"/>
+                  </attList>
+               </classSpec>
+               
+               
+               <classSpec ident="att.global.analytic"
+                          type="atts"
+                          module="tei"
+                          mode="delete"/>
+               <classSpec ident="att.pointing.group"
+                          type="atts"
+                          module="tei"
+                          mode="delete"/>
+               
+               <!--CONSTRAINTS-->
+          
+               <constraintSpec ident="global.variables" scheme="schematron">
+                  <constraint>
               
-              <sch:pattern>
-                <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
-                <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
-                <sch:let name="docUri" value="document-uri(/)"/>
-                <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
+                     <sch:pattern>
+                        <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
+                        <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
+                        <sch:let name="docUri" value="document-uri(/)"/>
+                        <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
+                        <sch:let name="docTypes" value="//tei:catRef/@target"/>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
           
-          <!--Basic constraints-->
-          <constraintSpec scheme="schematron" ident="TEI.docNameSameAsId">
-            <desc>All root elements must have an <att>xml:id</att> that matches the document filename.</desc>
-            <constraint>
-              <sch:pattern>
-                <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-                  <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+               <!--Basic constraints-->
+               <constraintSpec scheme="schematron" ident="TEI.docNameSameAsId">
+                  <desc>All root elements must have an <att>xml:id</att> that matches the document filename.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
+                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
-                </sch:rule>
-              </sch:pattern>
-            </constraint>
-          </constraintSpec>
-        </schemaSpec>
-      </div>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+            </schemaSpec>
+         </div>
+         
+         <div xml:id="oxygen_values">
+            <head>Values for oXygen Template</head>
+            <p>Below are the values for the oXygen templates; they are generated from the taxonomy files and should not be edited by hand.</p>
+            <ab>
+               <seg xml:id="values_people">('JT':'Joey Takeda';'SL':'Sydney Lines';'KI':'Ken Ip';'MC':'Mary Chapman';'JLC':'Jean Lee Cole')</seg>
+               <seg xml:id="values_genres"/>
+               <seg xml:id="values_locations"/>
+               <seg xml:id="values_object"/>
+               <seg xml:id="values_docType"/>
+            </ab>
+
+         </div>
      
-    </back>
+      </back>
   </text>
 </TEI>

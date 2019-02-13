@@ -91,35 +91,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.pointing-targetLang-targetLang-constraint-rule-6">
-      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
-            <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
-          </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.spanning-spanTo-spanTo-2-constraint-rule-7">
-      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                context="tei:*[@spanTo]">
-            <sch:assert test="id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]">
-The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow the current element <sch:name/>
-                  </sch:assert>
-          </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-8">
+            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-6">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -176,7 +148,7 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-list-gloss-list-must-have-labels-constraint-rule-10">
+            id="wea-list-gloss-list-must-have-labels-constraint-rule-8">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -204,7 +176,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-assert-7">
+            id="wea-relatedItem-targetorcontent1-constraint-assert-5">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -232,7 +204,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-8">
+            id="wea-lg-atleast1oflggapl-constraint-assert-6">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -256,6 +228,76 @@ relatedItem element must be empty</sch:report>
       </report>
             </rule>
          </pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
+                      ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
+                      source descriptions.
+                    </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:docType']">
+                            ERROR: Missing category reference docType.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:genre']">
+                            ERROR: Missing category reference genre.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:object']">
+                            ERROR: Missing category reference object.
+                        </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:textClass">
+                              <sch:assert test="tei:catRef[@scheme='wdt:locations']">
+                            ERROR: Missing category reference locations.
+                        </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:catRef[@scheme='wdt:docType']">
+                              <sch:assert test="matches(@target,'^((wdt:bornDigital)|(wdt:primarySource))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:genre']">
+                              <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:object']">
+                              <sch:assert test="matches(@target,'^((wdt:objectPhoto)|(wdt:objectText)|(wdt:objectFilm)|(wdt:objectPoster))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                           <sch:rule context="tei:catRef[@scheme='wdt:locations']">
+                              <sch:assert test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')">
+                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -291,11 +333,12 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
-                <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
-                <sch:let name="docUri" value="document-uri(/)"/>
-                <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
-              </sch:pattern>
+                        <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
+                        <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
+                        <sch:let name="docUri" value="document-uri(/)"/>
+                        <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
+                        <sch:let name="docTypes" value="//tei:catRef/@target"/>
+                     </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -303,11 +346,11 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-                  <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+                        <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
+                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
-                </sch:rule>
-              </sch:pattern>
+                        </sch:rule>
+                     </sch:pattern>
    <sch:diagnostics/>
 </sch:schema>

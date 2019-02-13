@@ -8606,6 +8606,17 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                     <String></String>
                                 </field>
                             </userEditorVariable>
+                            <userEditorVariable>
+                                <field name="name">
+                                    <String>${odd}</String>
+                                </field>
+                                <field name="value">
+                                    <String>${pdu}/sch/wea.odd</String>
+                                </field>
+                                <field name="shortDescription">
+                                    <String>The WEA ODD file</String>
+                                </field>
+                            </userEditorVariable>
                         </userEditorVariable-array>
                     </entry>
                 </serializableOrderedMap>

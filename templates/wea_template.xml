@@ -10,27 +10,37 @@
             </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
-               <name><!--Enter name of person who transcribed this file--></name>
+               <name ref="pers:${ask('Transcriber',radio,('MC':'Mary Chapman';'JLC':'Jean Lee Cole';'SL':'Sydney Lines';'KI':'Ken Ip';'JT':'Joey Takeda'),'MC', @transcriber)}"/>
             </respStmt>
             <respStmt>
                <resp>Copy Editor</resp>
-               <name>><!--Enter name of person who copy edited this file--></name>
+               <name ref="pers:${ask('Copy Editor',radio,('MC':'Mary Chapman';'JLC':'Jean Lee Cole';'SL':'Sydney Lines';'KI':'Ken Ip';'JT':'Joey Takeda'),'MC', @copyeditor)}"/>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:${ask('Your xml:id', String,'', @user_id)}">${xpath_eval(doc('${people}')//*:person[@xml:id='${answer(@user_id)}']/*:persName/text())}</name>
+               <name ref="pers:${ask('Encoder',radio,('MC':'Mary Chapman';'JLC':'Jean Lee Cole';'SL':'Sydney Lines';'KI':'Ken Ip';'JT':'Joey Takeda'),'MC', @encoder)}"/>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <p>Information about the source</p>
+            <bibl><!--Encode bibliographic citation for the source here--></bibl>
          </sourceDesc>
       </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef scheme="wdt:docType" target="wdt:primarySource"/>
+           <catRef scheme="wdt:object" target="wdt:objectText"/>
+           <catRef scheme="wdt:genre"
+                    target="wdt:${ask('Genre',radio,('genreShortStory':'Short Story';'genreNF':'Non-fiction';'genreNFAuto':'Non-fiction: Autobiography';'genreNFDedication':'Non-fiction: Dedication';'genreNFInterview':'Non-Fiction: Interview';'genreNFIntroduction':'Non-fiction: Introduction';'genreNFEthnography':'Non-fiction: Ethnography';'genreFilm':'Film';'genreFilmScenario':'Film: Scenario';'genreFilmTreatment':'Film: Treatment';'genrePoem':'Poem';'genreNovel':'Novel';'genreNovelSerial':'Novel: Serial'),'genreShortStory', @genre)}"/>
+           <catRef scheme="wdt:locations"
+                    target="wdt:${ask('Location',radio,('locJapan':'Japan';'locAlberta':'Alberta';'locHollywood':'Hollywood';'locMontreal':'Montreal';'locNY':'New York'),'locJapan', @location)}"/>
+        </textClass>
+     </profileDesc>
      <revisionDesc>
         <change when="${xpath_eval(format-date(current-date(),'[Y0001]-[M01]-[D01]'))}"
-           who="pers:${answer(@user_id)}">Created file.</change>
+                 who="pers:${answer(@encoder)}">Created file.</change>
      </revisionDesc>
   </teiHeader>
   <text>
