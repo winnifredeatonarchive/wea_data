@@ -42,6 +42,18 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="elementSpec[@ident='name']/attList/attDef[@ident='ref']/valList | classSpec[@ident='att.global.responsibility']/attList/attDef[@ident='resp']/valList">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:for-each select="$people//person[@xml:id]">
+                <valItem mode="add" ident="pers:{@xml:id}">
+                    <desc><xsl:value-of select="@xml:id"/></desc>
+                    <gloss><xsl:value-of select="persName"/></gloss>
+                </valItem>
+            </xsl:for-each>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="constraintSpec[@ident='textClass.oneofEach']/constraint">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

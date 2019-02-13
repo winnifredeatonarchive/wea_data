@@ -4,7 +4,7 @@
  
 ## Element and Attribute Index
  
-[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [catDesc](#catDesc) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [classDecl](#classDecl) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [num](#num) | [opener](#opener) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [sic](#sic) | [sourceDesc](#sourceDesc) | [supplied](#supplied) | [taxonomy](#taxonomy) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [unclear](#unclear) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.dimensions](#att.dimensions) | [att.divLike](#att.divLike) | [att.docStatus](#att.docStatus) | [att.editLike](#att.editLike) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.change](#att.global.change) | [att.global.facs](#att.global.facs) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.naming](#att.naming) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.styleDef](#att.styleDef) | [att.typed](#att.typed)
+[abstract](#abstract) | [att](#att) | [author](#author) | [authority](#authority) | [availability](#availability) | [back](#back) | [bibl](#bibl) | [biblFull](#biblFull) | [body](#body) | [byline](#byline) | [catDesc](#catDesc) | [category](#category) | [catRef](#catRef) | [change](#change) | [choice](#choice) | [classDecl](#classDecl) | [closer](#closer) | [code](#code) | [corr](#corr) | [creation](#creation) | [date](#date) | [dateline](#dateline) | [distributor](#distributor) | [div](#div) | [docAuthor](#docAuthor) | [docDate](#docDate) | [docTitle](#docTitle) | [edition](#edition) | [editor](#editor) | [editorialDecl](#editorialDecl) | [emph](#emph) | [encodingDesc](#encodingDesc) | [epigraph](#epigraph) | [fileDesc](#fileDesc) | [foreign](#foreign) | [front](#front) | [gap](#gap) | [gi](#gi) | [head](#head) | [hi](#hi) | [hyphenation](#hyphenation) | [idno](#idno) | [item](#item) | [l](#l) | [language](#language) | [langUsage](#langUsage) | [lb](#lb) | [lg](#lg) | [licence](#licence) | [list](#list) | [listBibl](#listBibl) | [listChange](#listChange) | [listPrefixDef](#listPrefixDef) | [milestone](#milestone) | [name](#name) | [note](#note) | [num](#num) | [opener](#opener) | [orig](#orig) | [p](#p) | [pb](#pb) | [pc](#pc) | [prefixDef](#prefixDef) | [profileDesc](#profileDesc) | [projectDesc](#projectDesc) | [publicationStmt](#publicationStmt) | [publisher](#publisher) | [pubPlace](#pubPlace) | [q](#q) | [quote](#quote) | [ref](#ref) | [reg](#reg) | [relatedItem](#relatedItem) | [rendition](#rendition) | [resp](#resp) | [respStmt](#respStmt) | [revisionDesc](#revisionDesc) | [sic](#sic) | [sourceDesc](#sourceDesc) | [supplied](#supplied) | [taxonomy](#taxonomy) | [TEI](#TEI) | [teiHeader](#teiHeader) | [term](#term) | [text](#text) | [textClass](#textClass) | [title](#title) | [titlePage](#titlePage) | [titlePart](#titlePart) | [titleStmt](#titleStmt) | [trailer](#trailer) | [unclear](#unclear) | [val](#val) | [att.ascribed](#att.ascribed) | [att.ascribed.directed](#att.ascribed.directed) | [att.breaking](#att.breaking) | [att.canonical](#att.canonical) | [att.datable](#att.datable) | [att.datable.w3c](#att.datable.w3c) | [att.dimensions](#att.dimensions) | [att.docStatus](#att.docStatus) | [att.fragmentable](#att.fragmentable) | [att.global](#att.global) | [att.global.change](#att.global.change) | [att.global.facs](#att.global.facs) | [att.global.rendition](#att.global.rendition) | [att.global.responsibility](#att.global.responsibility) | [att.global.source](#att.global.source) | [att.internetMedia](#att.internetMedia) | [att.linguistic](#att.linguistic) | [att.milestoneUnit](#att.milestoneUnit) | [att.notated](#att.notated) | [att.patternReplacement](#att.patternReplacement) | [att.personal](#att.personal) | [att.placement](#att.placement) | [att.pointing](#att.pointing) | [att.styleDef](#att.styleDef) | [att.typed](#att.typed)
  
  
 ## Table of contents
@@ -27,7 +27,16 @@
  
  
 * [Creating a New Text in oXygen](#index.xml-body.1_div.4)
-* [Building the Schema](#index.xml-body.1_div.5)
+* [Encoding a Primary Source Document](#index.xml-body.1_div.5)
+ 
+ 
+* [Structure](#index.xml-body.1_div.5_div.1)
+* [Openers and Closers](#index.xml-body.1_div.5_div.2)
+* [Bylines](#index.xml-body.1_div.5_div.3)
+* [Gaps and omissions](#index.xml-body.1_div.5_div.4)
+ 
+ 
+* [Building the Schema](#index.xml-body.1_div.6)
  
  
 ## Introduction  <span id="index.xml-body.1_div.1"/>
@@ -271,7 +280,65 @@ To create a new text file, use the built in text template
 * Remember to commit the changes to the repository using the above instructions.
  
  
-## Building the Schema  <span id="index.xml-body.1_div.5"/>
+## Encoding a Primary Source Document  <span id="index.xml-body.1_div.5"/>
+ 
+Below are abbreviated discussions on how to encode various features of a text
+ 
+### Structure
+All content of the texts goes into the [body](#body) element. Surround all content with a [div](#div) element like so: 
+```
+ 
+<body> <div><!--Content goes here--> </div></body>
+ 
+```
+Individual sections can be encoded using nested [div](#div) tags, if desired: 
+```
+ 
+<body> <div>  <head>A Poor Devil</head>  <opener>   <opener>    <byline>By <name ref="pers:WE">
+                        Winnie Eaton</name>, Montreal.</byline>    <note>[Written for the Metropolitan.]</note>   </opener>  </opener>  <div><!--Section 1-->   <div><!--Section 1.1-->   </div>   <div><!--Section 1.2-->   </div>  </div>  <div><!--Section 2-->  </div> </div></body>
+ 
+```
+ 
+ ----- 
+ 
+### Openers and Closers
+ 
+Most of the texts have some sort of header or closer with the author's name, date of publication, et cetera. Use the [opener](#opener) element if this occurs at the beginning of the text and the [closer](#closer) element if it is at the bottom. 
+ 
+ 
+ ----- 
+ 
+### Bylines
+ 
+If there is an authorial statement of responsibility of some sort, enclose this in a [byline](#byline) element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the [name](#name) tag with an ref value of pers:WE. 
+ 
+ 
+ ----- 
+ 
+### Gaps and omissions
+If the text cannot be transcribed for some reason (damage, etc), then use the [gap](#gap) element to signify that there is a gap in transcription: 
+```
+ 
+<gap reason="damaged"/>
+ 
+```
+If you can supply the damaged text, use the [supplied](#supplied) element instead with an resp value pointing to your xml:id (which is usually your initials): 
+```
+ 
+<supplied resp="pers:JT">
+                        ed</supplied>
+ 
+```
+You can encode how certain you are of your editorial addition by using the cert attribute on supplied with a value of "low" "medium" or "high". If no cert is supplied, it is assumed that it has a high value of certainty: 
+```
+ 
+<supplied resp="pers:JT" cert="low">
+                        ed</supplied>
+ 
+```
+ 
+ 
+## Building the Schema  <span id="index.xml-body.1_div.6"/>
  
 All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT. 
  
@@ -439,7 +506,7 @@ As an alternative to using the scheme attribute a namespace prefix may be used. 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`) ( [att.canonical](#att.canonical)  (`@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -509,7 +576,7 @@ Particularly where cataloguing is likely to be based on the content of the heade
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -1719,7 +1786,7 @@ Character data only
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -1878,7 +1945,7 @@ The  [creation](#creation)  element may be used to record details of a text's cr
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -2054,7 +2121,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -2115,7 +2182,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -2174,7 +2241,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -2325,7 +2392,7 @@ Cf. the general  [date](#date)  element in the core tag set. This specialized el
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -2440,7 +2507,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`) ( [att.canonical](#att.canonical)  (`@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -2986,7 +3053,7 @@ Because cultural conventions differ as to which elements are grouped as front ma
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
  
  
 `@reason` gives the reason for omission 
@@ -3914,7 +3981,7 @@ This example encodes typographical line breaks as a means of preserving the visu
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.divLike](#att.divLike)  ( [att.fragmentable](#att.fragmentable)  (`@part`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -4526,7 +4593,26 @@ For this element, the global n attribute indicates the new number or other value
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.personal](#att.personal)  ( [att.naming](#att.naming)  (`@role`) ( [att.canonical](#att.canonical)  (`@ref`)) )  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.personal](#att.personal)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+ 
+ 
+`@ref` 
+ 
+ 
+*  **Status**: Optional
+*  **Legal values are:**: 
+ 
+     *    **pers:WE** (Winnifred Eaton) WE
+     *    **pers:MC** (Mary Chapman) MC
+     *    **pers:JLC** (Jean Lee Cole) JLC
+     *    **pers:SL** (Sydney Lines) SL
+     *    **pers:KI** (Ken Ip) KI
+     *    **pers:JT** (Joey Takeda) JT
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -5508,7 +5594,7 @@ Where a publication statement contains several members of the model.publicationS
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -5577,7 +5663,7 @@ Use the full form of the name by which a company is usually referred to, rather 
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.naming](#att.naming)  (`@role`) ( [att.canonical](#att.canonical)  (`@ref`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`)) 
  
  
  
@@ -5897,7 +5983,7 @@ See also <ref target="#locution">
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.typed](#att.typed)  (`@type`, `@subtype`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.typed](#att.typed)  (`@type`, `@subtype`) 
  
  
  
@@ -6157,7 +6243,7 @@ Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.glob
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`)) 
  
  
  
@@ -6221,7 +6307,7 @@ The attribute ref, inherited from the class  [att.canonical](#att.canonical)  ma
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -6530,7 +6616,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
  
  
 `@reason` one or more words indicating why the text has had to be supplied, e.g. overbinding, faded-ink, lost-folio, omitted-in-original. 
@@ -6888,7 +6974,7 @@ One of the few elements unconditionally required in any TEI document.
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@target`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.canonical](#att.canonical)  (`@ref`) 
+Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.pointing](#att.pointing)  (`@target`)  [att.typed](#att.typed)  (`@type`, `@subtype`)  [att.canonical](#att.canonical)  (`@key`, `@ref`) 
  
  
  
@@ -7141,7 +7227,7 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.canonical](#att.canonical)  (`@key`, `@ref`)  [att.datable](#att.datable)  (`@calendar`) ( [att.datable.w3c](#att.datable.w3c)  (`@when`, `@notBefore`, `@notAfter`, `@from`, `@to`))  [att.typed](#att.typed)  (type, @subtype) 
  
  
 `@type` classifies the title according to some convenient typology. 
@@ -7569,7 +7655,7 @@ From EEBO A87070
  
 #### **Attributes**
  
-Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.editLike](#att.editLike)  (`@evidence`)  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
+Attributes  [att.global](#att.global) `@xml:id`, `@n`, `@xml:lang`) ( [att.global.rendition](#att.global.rendition)  (`@rend`, `@style`, `@rendition`)) ( [att.global.facs](#att.global.facs)  (`@facs`)) ( [att.global.change](#att.global.change)  (`@change`)) ( [att.global.responsibility](#att.global.responsibility)  (`@cert`, `@resp`)) ( [att.global.source](#att.global.source)  (`@source`))  [att.dimensions](#att.dimensions)  (`@unit`, `@quantity`, `@extent`, `@precision`, `@scope`) 
  
  
 `@reason` indicates why the material is hard to transcribe. 
@@ -7905,7 +7991,7 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
 #### **Members**
  
- [att.naming](#att.naming)  [ [att.personal](#att.personal)  [ [name](#name) ]  [author](#author)  [editor](#editor)  [pubPlace](#pubPlace) ]  [authority](#authority)  [date](#date)  [distributor](#distributor)  [docAuthor](#docAuthor)  [docTitle](#docTitle)  [publisher](#publisher)  [resp](#resp)  [respStmt](#respStmt)  [term](#term)  [title](#title) 
+ [authority](#authority)  [date](#date)  [distributor](#distributor)  [docAuthor](#docAuthor)  [docTitle](#docTitle)  [publisher](#publisher)  [resp](#resp)  [respStmt](#respStmt)  [term](#term)  [title](#title) 
  
  
  
@@ -7913,6 +7999,31 @@ Attributes  [att.ascribed](#att.ascribed) `@who`)
  
 #### **Attributes**
  
+ 
+ 
+ 
+`@key` provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind. 
+ 
+ 
+*  **Status**: Optional
+*  **Datatype**: teidata.text
+*  
+```
+ 
+<author> <name key="name 427308"  type="organisation">
+                                                [New Zealand Parliament, Legislative Council]</name></author>
+ 
+```
+: 
+*  
+```
+ 
+<author> <name key="Hugo, Victor (1802-1885)"  ref="http://www.idref.fr/026927608">
+                                                Victor Hugo</name></author>
+ 
+```
+: 
+*  **Note**: The value may be a unique identifier from a database, or any other externally-defined string identifying the referent. No particular syntax is proposed for the values of the key attribute, since its form will depend entirely on practice within a given project. For the same reason, this attribute is not recommended in data interchange, since there is no way of ensuring that the values used by one project are distinct from those used by another. In such a situation, a preferable approach for magic tokens which follows standard practice on the Web is to use a ref attribute whose value is a tag URI as defined in RFC 4151. 
  
  
  
@@ -8222,31 +8333,6 @@ The value of these attributes should be a normalized representation of the date,
  
  ----- 
  
-### att.divLike<span id="att.divLike"/>
- 
- 
-**att.divLike** provides attributes common to all elements which behave in the same way as divisions. 
- 
- 
-#### **Members**
- 
- [div](#div)  [lg](#lg) 
- 
- 
- 
- 
- 
-#### **Attributes**
- 
-Attributes  [att.fragmentable](#att.fragmentable)  (`@part`) 
- 
- 
- 
- 
- 
- 
- ----- 
- 
 ### att.docStatus<span id="att.docStatus"/>
  
  
@@ -8307,66 +8393,6 @@ Attributes  [att.fragmentable](#att.fragmentable)  (`@part`)
  
  ----- 
  
-### att.editLike<span id="att.editLike"/>
- 
- 
-**att.editLike** provides attributes describing the nature of an encoded scholarly intervention or interpretation of any kind. 
- 
- 
-#### **Members**
- 
- [corr](#corr)  [date](#date)  [gap](#gap)  [name](#name)  [reg](#reg)  [supplied](#supplied)  [unclear](#unclear) 
- 
- 
- 
- 
- 
-#### **Attributes**
- 
- 
- 
- 
-`@evidence` indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation. 
- 
- 
-*  **Status**: Optional
-*  **Datatype**:  1–∞ occurrences of teidata.enumerated separated by whitespace
-*  **Suggested values include:**: 
- 
-     *    **internal** there is internal evidence to support the intervention.
-     *    **external** there is external evidence to support the intervention.
-     *    **conjecture** the intervention or interpretation has been made by the editor, cataloguer, or scholar
-                                                on the basis of their expertise.
-                                             
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#### **Note**
- 
-The members of this attribute class are typically used to represent any kind of editorial intervention in a text, for example a correction or interpretation, or to date or localize manuscripts etc. 
- 
- 
- 
- 
- 
-#### **Note**
- 
-Each pointer on the source (if present) corresponding to a witness or witness group should reference a bibliographic citation such as a `witness`, `msDesc`, or  [bibl](#bibl)  element, or another external bibliographic citation, documenting the source concerned. 
- 
- 
- 
- 
- 
- 
- ----- 
- 
 ### att.fragmentable<span id="att.fragmentable"/>
  
  
@@ -8375,7 +8401,7 @@ Each pointer on the source (if present) corresponding to a witness or witness gr
  
 #### **Members**
  
- [att.divLike](#att.divLike)  [ [div](#div)  [lg](#lg) ]  [l](#l)  [p](#p) 
+ [l](#l)  [p](#p) 
  
  
  
@@ -8668,6 +8694,14 @@ Attributes  [att.global.rendition](#att.global.rendition) `@rend`, `@style`, `@
  
 *  **Status**: Optional
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
+*  **Legal values are:**: 
+ 
+     *    **pers:WE** (Winnifred Eaton) WE
+     *    **pers:MC** (Mary Chapman) MC
+     *    **pers:JLC** (Jean Lee Cole) JLC
+     *    **pers:SL** (Sydney Lines) SL
+     *    **pers:KI** (Ken Ip) KI
+     *    **pers:JT** (Joey Takeda) JT
 *  **Note**: To reduce the ambiguity of a resp pointing directly to a person or organization, we recommend that resp be used to point not to an agent (`person` or `org`) but to a  [respStmt](#respStmt) ,  [author](#author) ,  [editor](#editor)  or similar element which clarifies the exact role played by the agent. Pointing to multiple  [respStmt](#respStmt) s allows the encoder to specify clearly each of the roles played in part of a TEI file (creating, transcribing, encoding, editing, proofing etc.). 
  
  
@@ -9134,43 +9168,6 @@ These attributes make it possible to encode simple language corpora and to add a
  
  ----- 
  
-### att.naming<span id="att.naming"/>
- 
- 
-**att.naming** provides attributes common to elements which refer to named persons, places, organizations etc. 
- 
- 
-#### **Members**
- 
- [att.personal](#att.personal)  [ [name](#name) ]  [author](#author)  [editor](#editor)  [pubPlace](#pubPlace) 
- 
- 
- 
- 
- 
-#### **Attributes**
- 
-Attributes  [att.canonical](#att.canonical) `@ref`) 
- 
- 
-`@role` may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place. 
- 
- 
-*  **Status**: Optional
-*  **Datatype**:  1–∞ occurrences of teidata.enumerated separated by whitespace
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- ----- 
- 
 ### att.notated<span id="att.notated"/>
  
  
@@ -9271,7 +9268,7 @@ Attributes  [att.canonical](#att.canonical) `@ref`)
  
 #### **Attributes**
  
-Attributes  [att.naming](#att.naming)  (`@role`) ( [att.canonical](#att.canonical)  (`@ref`)) 
+Attributes
  
  
  

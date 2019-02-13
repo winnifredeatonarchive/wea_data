@@ -226,7 +226,79 @@
             </list>
         
          </div>
-      
+         
+         <div>
+            <head>Encoding a Primary Source Document</head>
+            <p>Below are abbreviated discussions on how to encode various features of a text</p>
+            <div>
+               <head>Structure</head>
+               <p>All content of the texts goes into the <gi>body</gi> element. Surround all content with a <gi>div</gi> element like so:
+               
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <!--Content goes here-->
+                        </div>
+                     </body>
+                  </egXML>
+               </p>
+               <p>Individual sections can be encoded using nested <gi>div</gi> tags, if desired:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <body>
+                        <div>
+                           <head>A Poor Devil</head>
+                           <opener>
+                              <opener>
+                                 <byline>By <name ref="pers:WE">Winnie Eaton</name>, Montreal.</byline>
+                                 <note>[Written for the Metropolitan.]</note>
+                              </opener>
+                           </opener>
+                           <div>
+                           <!--Section 1-->
+                              <div>
+                              <!--Section 1.1-->
+                           </div>
+                              <div>
+                              <!--Section 1.2-->
+                           </div>
+                           </div>
+                           <div>
+                           <!--Section 2-->
+                        </div>
+                        </div>
+                     </body>
+                  </egXML>
+               </p>
+            </div>
+            <div>
+               <head>Openers and Closers</head>
+               <p>Most of the texts have some sort of header or closer with the author's name, date of publication, et cetera. Use the <gi>opener</gi> element if this occurs at the beginning of the text and the <gi>closer</gi> element if it is at the bottom.</p>
+            </div>
+            <div>
+               <head>Bylines</head>
+               <p>If there is an authorial statement of responsibility of some sort, enclose this in a <gi>byline</gi> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <gi>name</gi> tag
+               with an <att>ref</att> value of <val>pers:WE</val>.</p>
+            </div>
+            <div>
+               <head>Gaps and omissions</head>
+               <p>If the text cannot be transcribed for some reason (damage, etc), then use the <gi>gap</gi> element to signify that there is a gap in transcription:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <gap reason="damaged"/>
+                  </egXML>
+               </p>
+               <p>If you can supply the damaged text, use the <gi>supplied</gi> element instead with an <att>resp</att> value pointing to your <att>xml:id</att> (which is usually your initials):
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <supplied resp="pers:JT">ed</supplied>
+                  </egXML>
+               </p>
+               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of "low" "medium" or "high". If no <att>cert</att> is supplied, it is assumed
+               that it has a high value of certainty:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <supplied resp="pers:JT" cert="low">ed</supplied>
+                  </egXML>
+               </p>
+            </div>
+         </div>
          <div>
             <head>Building the Schema</head>
             <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
@@ -235,9 +307,9 @@
                <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
             <p>
                <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
-          <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
-          Note that you must have ant installed.
-        </p>
+               <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
+               Note that you must have ant installed.
+            </p>
          </div>
 
       </body>
@@ -480,17 +552,48 @@
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-          
-               <elementSpec mode="change" module="header" ident="sourceDesc">
-            
-          </elementSpec>
-          
-          
+               
+               <elementSpec ident="name" module="core" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="add">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="pers:WE">
+                              <desc>WE</desc>
+                              <gloss>Winnifred Eaton</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:MC">
+                              <desc>MC</desc>
+                              <gloss>Mary Chapman</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JLC">
+                              <desc>JLC</desc>
+                              <gloss>Jean Lee Cole</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SL">
+                              <desc>SL</desc>
+                              <gloss>Sydney Lines</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:KI">
+                              <desc>KI</desc>
+                              <gloss>Ken Ip</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JT">
+                              <desc>JT</desc>
+                              <gloss>Joey Takeda</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
+               
+               <!--CLASS SPECS-->
+               <!--
                <classSpec type="atts" module="tei" ident="att.canonical" mode="change">
                   <attList>
                      <attDef ident="key" mode="delete"/>
                   </attList>
-               </classSpec>
+               </classSpec>-->
                <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
@@ -503,12 +606,7 @@
                <classSpec ident="att.declarable" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.declaring" module="tei" type="atts" mode="delete"/>
                <!--WE need this for rhyme-->
-               <classSpec ident="att.divLike" module="tei" type="atts" mode="change">
-                  <attList>
-                     <attDef ident="org" mode="delete"/>
-                     <attDef ident="sample" mode="delete"/>
-                  </attList>
-               </classSpec>               
+               <classSpec ident="att.divLike" module="tei" type="atts" mode="delete"/>               
                <classSpec ident="att.docStatus" module="tei" type="atts" mode="change">
                   <attList>
                      <attDef ident="status" mode="change">
@@ -528,13 +626,44 @@
                      </attDef>
                   </attList>
                </classSpec>
-               <classSpec ident="att.duration.w3c" module="tei" type="atts" mode="delete"/>
-               <classSpec ident="att.duration.iso" module="tei" type="atts" mode="delete"/>
-               <classSpec ident="att.editLike" module="tei" type="atts" mode="change">
+               <classSpec ident="att.global.responsibility"
+                          module="tei"
+                          type="atts"
+                          mode="change">
                   <attList>
-                     <attDef ident="instant" mode="delete"/>
+                     <attDef ident="resp" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="pers:WE">
+                              <desc>WE</desc>
+                              <gloss>Winnifred Eaton</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:MC">
+                              <desc>MC</desc>
+                              <gloss>Mary Chapman</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JLC">
+                              <desc>JLC</desc>
+                              <gloss>Jean Lee Cole</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SL">
+                              <desc>SL</desc>
+                              <gloss>Sydney Lines</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:KI">
+                              <desc>KI</desc>
+                              <gloss>Ken Ip</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JT">
+                              <desc>JT</desc>
+                              <gloss>Joey Takeda</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
                   </attList>
                </classSpec>
+               <classSpec ident="att.duration.w3c" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.duration.iso" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.editLike" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.global" module="tei" type="atts" mode="change">
                   <attList>
                      <attDef ident="xml:base" mode="delete"/>
@@ -544,11 +673,7 @@
                <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.interpLike" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.measurement" module="tei" type="atts" mode="delete"/>
-               <classSpec ident="att.naming" module="tei" type="atts" mode="change">
-                  <attList>
-                     <attDef ident="nymRef" mode="delete"/>
-                  </attList>
-               </classSpec>
+               <classSpec ident="att.naming" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.notation" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.pointing" module="tei" type="atts" mode="change">
                   <attList>

@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-02-13T20:42:33Z. .
+Schema generated from ODD source 2019-02-13T21:48:21Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -88,7 +88,16 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
       </optional>
    </define>
    <define name="att.canonical.attributes">
+      <ref name="att.canonical.attribute.key"/>
       <ref name="att.canonical.attribute.ref"/>
+   </define>
+   <define name="att.canonical.attribute.key">
+      <optional>
+         <attribute name="key">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
    </define>
    <define name="att.canonical.attribute.ref">
       <optional>
@@ -373,9 +382,6 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
          </attribute>
       </optional>
    </define>
-   <define name="att.divLike.attributes">
-      <ref name="att.fragmentable.attributes"/>
-   </define>
    <define name="att.docStatus.attributes">
       <ref name="att.docStatus.attribute.status"/>
    </define>
@@ -424,32 +430,19 @@ Sample values include: 1] draft(This document is currently being edited. It is n
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
             <list>
                <oneOrMore>
-                  <data type="anyURI"/>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="att.editLike.attributes">
-      <ref name="att.editLike.attribute.evidence"/>
-   </define>
-   <define name="att.editLike.attribute.evidence">
-      <optional>
-         <attribute name="evidence">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the nature of the evidence supporting the reliability or accuracy of the intervention or interpretation.
-Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentation>
-            <list>
-               <oneOrMore>
                   <choice>
-                     <value>internal</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is internal evidence to support the intervention.</a:documentation>
-                     <value>external</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is external evidence to support the intervention.</a:documentation>
-                     <value>conjecture</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the intervention or interpretation has been made by the editor, cataloguer, or scholar on the basis of their expertise.</a:documentation>
-                     <data type="token">
-                        <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                     </data>
+                     <value>pers:WE</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE</a:documentation>
+                     <value>pers:MC</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC</a:documentation>
+                     <value>pers:JLC</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jean Lee Cole) JLC</a:documentation>
+                     <value>pers:SL</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sydney Lines) SL</a:documentation>
+                     <value>pers:KI</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI</a:documentation>
+                     <value>pers:JT</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT</a:documentation>
                   </choice>
                </oneOrMore>
             </list>
@@ -557,24 +550,6 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</a:documentati
       <optional>
          <attribute name="mimeType">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type</a:documentation>
-            <list>
-               <oneOrMore>
-                  <data type="token">
-                     <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                  </data>
-               </oneOrMore>
-            </list>
-         </attribute>
-      </optional>
-   </define>
-   <define name="att.naming.attributes">
-      <ref name="att.canonical.attributes"/>
-      <ref name="att.naming.attribute.role"/>
-   </define>
-   <define name="att.naming.attribute.role">
-      <optional>
-         <attribute name="role">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</a:documentation>
             <list>
                <oneOrMore>
                   <data type="token">
@@ -1774,7 +1749,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </choice>
    </define>
    <define name="att.personal.attributes">
-      <ref name="att.naming.attributes"/>
+      <empty/>
    </define>
    <define name="att.milestoneUnit.attributes">
       <ref name="att.milestoneUnit.attribute.unit"/>
@@ -1945,7 +1920,6 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1. Apparent Errors]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
       </element>
@@ -1969,7 +1943,6 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
 Normalization 12. Critical Apparatus]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
       </element>
@@ -1993,7 +1966,6 @@ Normalization 12. Critical Apparatus]</a:documentation>
             </choice>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.dimensions.attributes"/>
          <optional>
             <attribute name="reason">
@@ -2041,7 +2013,6 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.4.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.dimensions.attributes"/>
          <optional>
             <attribute name="reason">
@@ -2087,8 +2058,26 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <ref name="att.global.attributes"/>
          <ref name="att.personal.attributes"/>
          <ref name="att.datable.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.typed.attributes"/>
+         <optional>
+            <attribute name="ref">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>pers:WE</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE</a:documentation>
+                  <value>pers:MC</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC</a:documentation>
+                  <value>pers:JLC</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jean Lee Cole) JLC</a:documentation>
+                  <value>pers:SL</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sydney Lines) SL</a:documentation>
+                  <value>pers:KI</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI</a:documentation>
+                  <value>pers:JT</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
@@ -2146,7 +2135,6 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
          <ref name="att.global.attributes"/>
          <ref name="att.canonical.attributes"/>
          <ref name="att.datable.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.dimensions.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
@@ -2375,7 +2363,6 @@ Elements 7.2.5. Speech Contents]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.naming.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2384,7 +2371,6 @@ Elements 7.2.5. Speech Contents]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc. [3.11.2.2. Titles, Authors, and Editors]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.naming.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2488,7 +2474,6 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication place) contains the name of the place where a bibliographic item was published. [3.11.2.4. Imprint, Size of a Document, and Reprint Information]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.naming.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2685,7 +2670,6 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
-         <ref name="att.divLike.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
       </element>
@@ -3881,7 +3865,6 @@ Sample values include: 1] TEI; 2] DBK (docbook) ; 3] XX (unknown) ; 4] Schematro
             </rule>
          </pattern>
          <ref name="att.global.attributes"/>
-         <ref name="att.divLike.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
       </element>
@@ -4277,7 +4260,6 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">signifies text supplied by the transcriber or editor for any reason; for example because the original cannot be read due to physical damage, or because of an obvious omission by the author or scribe. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <ref name="att.dimensions.attributes"/>
          <optional>
             <attribute name="reason">

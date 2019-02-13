@@ -85,7 +85,7 @@
     
     <!--Condition set for the TEI server, since the TEI site can go down periodically:
   If we can reach the TEI guidelines-->
-    <condition property="useLiveTEI" value="true" else="false">
+    <condition property="useLiveTEI" value="false" else="false">
         <http url="https://www.tei-c.org/Vault/P5/"/>
     </condition>
     
