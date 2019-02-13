@@ -38,7 +38,7 @@
                                    <tei:cell>ID</tei:cell>
                                </tei:row>
                                <tei:row>
-                                   <tei:cell><ref target="documentation.html">Documentation</ref></tei:cell>
+                                   <tei:cell><tei:ref target="documentation.html">Documentation</tei:ref></tei:cell>
                                    <tei:cell>documentation</tei:cell>
                                </tei:row>
                                <xsl:for-each select="$xmlDocs">

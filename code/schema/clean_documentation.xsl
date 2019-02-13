@@ -51,8 +51,6 @@
         <div>
             <h2>Winnifred Eaton Archive Project Documentation</h2>
         </div>
-        <div id="TOP.note">Note that this is an abridged version of the documentation for editorial use within oXygen.
-        See <a href="documentation_full.html">docs/documentation_full.html</a> for full documentation.</div>
     </xsl:template>
     
     <!--Delete the schema declaration-->
@@ -114,7 +112,7 @@
     </xsl:template>
     
     <xsl:template match="img/@src">
-        <xsl:attribute name="src" select="concat('../graphics/',tokenize(.,'/')[last()])"/>
+        <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
     </xsl:template>
     
     <xsl:template match="tr[normalize-space(td[1]/span[@class='label']/text()) = 'Member of']">

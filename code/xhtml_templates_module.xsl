@@ -57,6 +57,8 @@
         </div>
     </xsl:template>
     
+
+    
     <xsl:template match="head" mode="tei">
         <xsl:variable name="nestLevel" select="count(ancestor::div)+1"/>
         <xsl:element name="{concat('h',$nestLevel)}">
@@ -170,7 +172,10 @@
     </xsl:template>
     
     
-    
+    <!--Repoint the src in graphics-->
+    <xsl:template match="img/@src" mode="tei">
+        <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
+    </xsl:template>
     
     
     <!--**************************************************************

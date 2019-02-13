@@ -10,10 +10,6 @@
       <div>
          <h2>Winnifred Eaton Archive Project Documentation</h2>
       </div>
-      <div id="TOP.note">Note that this is an abridged version of the documentation for editorial use within
-         oXygen.
-         See <a href="documentation_full.html">docs/documentation_full.html</a> for full documentation.
-      </div>
       <h2>Table of contents</h2>
       <div data-el="ul" class="toc toc_body">
          <div data-el="li" class="toc"><a href="#index.xml-body.1_div.1">Introduction</a></div>
@@ -86,9 +82,9 @@
                   <div data-el="li" class="item">Create a directory for working in: <code class="block">mkdir wea</code></div>
                   <div data-el="li" class="item">Go into the directory: <code class="block">cd wea</code></div>
                   <div data-el="li" class="item">Initialize the repository: <code class="block">git init .</code></div>
-                  <figure class="figure"><img src="../graphics/git_checkout_1.gif" alt="" class="graphic"/></figure>
+                  <figure class="figure"><img src="graphics/git_checkout_1.gif" alt="" class="graphic"/></figure>
                   <div data-el="li" class="item">Pull the repository: <code class="block">git pull https://github.com/winnifredeatonarchive/wea_data</code></div>
-                  <figure class="figure"><img src="../graphics/git_checkout_2.gif" alt="" class="graphic"/></figure>
+                  <figure class="figure"><img src="graphics/git_checkout_2.gif" alt="" class="graphic"/></figure>
                </div>
                <p>Note that you only need to do this the first time you start working in the Github
                   repository.
@@ -115,7 +111,7 @@
                   <div data-el="ul">
                      <div data-el="li" class="item">Go into your working folder: <code class="block">cd wea</code></div>
                      <div data-el="li" class="item">Pull the repository: <code class="block">git pull</code></div>
-                     <figure class="figure"><img src="../graphics/git_pull_1.gif" alt="" class="graphic"/></figure>
+                     <figure class="figure"><img src="graphics/git_pull_1.gif" alt="" class="graphic"/></figure>
                   </div>
                </div>
                <div id="index.xml-body.1_div.3_div.2_div.2">
@@ -130,21 +126,21 @@
                            what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working
                            directory) modified: README.md no changes added to commit (use "git add" and/or "git
                            commit -a") </code></div>
-                     <figure class="figure"><img src="../graphics/git_status_1.gif" alt="" class="graphic"/></figure>
+                     <figure class="figure"><img src="graphics/git_status_1.gif" alt="" class="graphic"/></figure>
                      <div data-el="li" class="item">If there are changes, then add the files/folders that you want to commit to the repository.
-                        <code class="block">git add README.md</code></div>
-                     <figure class="figure"><img src="../graphics/git_add_1.gif" alt="" class="graphic"/></figure>
+                        <code class="block">git add data/texts/My_Title.xml</code></div>
+                     <figure class="figure"><img src="graphics/git_add_1.gif" alt="" class="graphic"/></figure>
                      <div data-el="li" class="item">Third, commit the files to the repository, including a commit message that explains
-                        what you did: <code class="block">git commit -m "Encoding a new poem."</code></div>
-                     <figure class="figure"><img src="../graphics/git_commit_1.gif" alt="" class="graphic"/></figure>
+                        what you did: <code class="block">git commit -m "Adding new file."</code></div>
+                     <figure class="figure"><img src="graphics/git_commit_1.gif" alt="" class="graphic"/></figure>
                      <div data-el="li" class="item">Fourth, push the files to the repository: <code class="block">git push</code> 
-                        <figure class="figure"><img src="../graphics/git_push_first_1.gif" alt="" class="graphic"/></figure> Note that, if you are committing for the first time, you'll like see something like
+                        <figure class="figure"><img src="graphics/git_push_first_1.gif" alt="" class="graphic"/></figure> Note that, if you are committing for the first time, you'll like see something like
                         this: <code class="block">Either specify the URL from the command-line or configure a remote repository using
                            git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt; </code> This means that you must set up your local copy to track the changes in the global
                         repository. To do that, simply follow the above instructions like so: <code class="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code> <code class="block">git push wea</code> 
-                        <figure class="figure"><img src="../graphics/git_remote_add_1.gif" alt="" class="graphic"/></figure> You'll then like get another message, saying something like: <code class="block">fatal: The current branch master has no upstream branch. To push the current branch
+                        <figure class="figure"><img src="graphics/git_remote_add_1.gif" alt="" class="graphic"/></figure> You'll then like get another message, saying something like: <code class="block">fatal: The current branch master has no upstream branch. To push the current branch
                            and set the remote as upstream, use git push --set-upstream wea master </code> To resolve that, simply: <code class="block">git push --set-upstream wea master </code> 
-                        <figure class="figure"><img src="../graphics/git_push_2.gif" alt="" class="graphic"/></figure> You may then be prompted for your username and password; if this is your first commit,
+                        <figure class="figure"><img src="graphics/git_push_2.gif" alt="" class="graphic"/></figure> You may then be prompted for your username and password; if this is your first commit,
                         then it might give your instructions on how to store those credentials in your local
                         git system so that you do not need to add your username and password every time you
                         commit.
@@ -162,25 +158,25 @@
                <div data-el="li" class="item">First, in the project view in oXygen, right click the data/texts folder and click
                   "Add new file"
                </div>
-               <figure class="figure"><img src="../graphics/create_new_file_1.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_1.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select "wea_template.xml" and give your file a name. The name should be two or three
                   words, separated with underscores.
                </div>
-               <figure class="figure"><img src="../graphics/create_new_file_2.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_2.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Input the (modernized) title of the document</div>
-               <figure class="figure"><img src="../graphics/create_new_file_3.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_3.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select the transciber</div>
-               <figure class="figure"><img src="../graphics/create_new_file_4.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_4.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select the copy editor</div>
-               <figure class="figure"><img src="../graphics/create_new_file_5.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_5.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select the encoder (who is usually you)</div>
-               <figure class="figure"><img src="../graphics/create_new_file_6.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_6.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select the genre</div>
-               <figure class="figure"><img src="../graphics/create_new_file_7.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_7.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select the location (usually derived from the Google Drive folder structure)</div>
-               <figure class="figure"><img src="../graphics/create_new_file_8.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_8.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Your new document should be created!</div>
-               <figure class="figure"><img src="../graphics/create_new_file_9.gif" alt="" class="graphic"/></figure>
+               <figure class="figure"><img src="graphics/create_new_file_9.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Remember to commit the changes to the repository using the above instructions.</div>
             </div>
          </section>
