@@ -39,7 +39,7 @@
     <!-- Switch to our own css file. -->
     <xsl:template match="link[@type='text/css']">
         <xsl:if test="not(preceding-sibling::link[@type='text/css'])">
-            <link rel="stylesheet" href="oxygen.css" type="text/css"/>
+            <link rel="stylesheet" href="css/documentation.css" type="text/css"/>
         </xsl:if>
     </xsl:template>
     
@@ -110,6 +110,10 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="img/@src">
+        <xsl:attribute name="src" select="concat('../graphics/',tokenize(.,'/')[last()])"/>
+    </xsl:template>
+    
     <xsl:template match="tr[normalize-space(td[1]/span[@class='label']/text()) = 'Member of']">
         <xsl:if test="not($deleteMemberOf)">
             <xsl:copy>
@@ -123,6 +127,12 @@
             <xsl:apply-templates select="@*"/>
             <xsl:text>[No description available]</xsl:text>
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="ul | li">
+        <div data-el="{local-name()}">
+            <xsl:apply-templates select="@*|node()"/>
+        </div>
     </xsl:template>
     
     

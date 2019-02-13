@@ -214,6 +214,7 @@
     
     <xsl:template match="br">
         <xsl:copy-of select="$newLine"/>
+        <xsl:copy-of select="$newLine"/>
     </xsl:template>
     
     <xsl:template match="img">

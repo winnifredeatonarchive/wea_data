@@ -6,8 +6,10 @@
     
   <dirname property="data.dir" file="../README.md"/>
   <property name="siteTemp" value="${data.dir}/products/"/>
-  <property name="textsDir" value="${data.dir}/texts/"/>
+  <property name="textsDir" value="${data.dir}/data/texts/"/>
   <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
+    
+ <property name="siteDir" value="${data.dir}/docs"/>
 
     
   <fileset id="texts" dir="${textsDir}">
@@ -72,7 +74,7 @@
         </copy>
     </target>
     
-    <target name="all" depends="init, copyAuxFiles, createSite, validate"/>
+    <target name="all" depends="init, copyAuxFiles, createSite, validate, copyProducts"/>
     
     
 </project>

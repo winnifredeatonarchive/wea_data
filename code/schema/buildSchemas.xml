@@ -175,16 +175,16 @@
         <description>Create documentation from the ODD file.</description>
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${wea.odd.processed}"/>
-            <arg line="-o:${project.dir}/docs/documentation_full.html"/>
+            <arg line="-o:${project.dir}/docs/documentation.html"/>
             <arg line="-xsl:'${odd2html.xsl}'"/>
         </java>
         
         <!--Fix up some of the legacy cruft in the TEI's stylesheets-->
-        <replaceregexp file="${project.dir}/docs/documentation_full.html"
+        <replaceregexp file="${project.dir}/docs/documentation.html"
             match="&lt;!DOCTYPE html"
             replace=""
             byline="false"/>
-        <replaceregexp file="${project.dir}/docs/documentation_full.html"
+        <replaceregexp file="${project.dir}/docs/documentation.html"
             match="SYSTEM .about:legacy-compat.&gt;"
             replace=""
             byline="false"/>
@@ -193,18 +193,20 @@
 
         
         <java jar="${saxon}" fork="true" failonerror="true">
-            <arg line="-s:${project.dir}/docs/documentation_full.html"/>
-            <arg line="-o:${project.dir}/docs/oxygen_documentation.html"/>
+            <arg line="-s:${project.dir}/docs/documentation.html"/>
+            <arg line="-o:${project.dir}/docs/documentation_small.html"/>
             <arg line="-xsl:${project.dir}/code/schema/clean_documentation.xsl"/>
         </java>
         
-        <!--And now convert to markdown-->
+        <move file="${project.dir}/docs/documentation_small.html" tofile="${project.dir}/docs/documentation.html" overwrite="true"/>
+        
+  <!--      <!-\-And now convert to markdown-\->
         
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${project.dir}/docs/oxygen_documentation.html"/>
             <arg line="-o:${project.dir}/docs/github_documentation.md"/>
             <arg line="-xsl:${project.dir}/code/schema/documentation_to_markdown.xsl"/>
-        </java>
+        </java>-->
 
     </target>
     
