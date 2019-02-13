@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="My_Document">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>My Document</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name>Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL"/>
+            </respStmt>
+            <respStmt>
+               <resp>Copy Editor</resp>
+               <name ref="pers:KI"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:JT"/>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl><!--Encode bibliographic citation for the source here--></bibl>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef scheme="wdt:docType" target="wdt:primarySource"/>
+           <catRef scheme="wdt:object" target="wdt:objectText"/>
+           <catRef scheme="wdt:genre"
+                    target="wdt:genreNFEthnography"/>
+           <catRef scheme="wdt:locations"
+                    target="wdt:locAlberta"/>
+        </textClass>
+     </profileDesc>
+     <revisionDesc>
+        <change when="2019-02-13"
+                 who="pers:JT">Created file.</change>
+     </revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+  </text>
+</TEI>

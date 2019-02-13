@@ -908,10 +908,10 @@ relatedItem element must be empty</svrl:text>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:bornDigital)|(wdt:primarySource))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:bornDigital)|(wdt:primarySource))$')">
+                                test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -962,10 +962,10 @@ relatedItem element must be empty</svrl:text>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:objectPhoto)|(wdt:objectText)|(wdt:objectFilm)|(wdt:objectPoster))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:objectPhoto)|(wdt:objectText)|(wdt:objectFilm)|(wdt:objectPoster))$')">
+                                test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

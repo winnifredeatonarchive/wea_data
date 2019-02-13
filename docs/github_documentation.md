@@ -30,11 +30,6 @@
 * [Building the Schema](#index.xml-body.1_div.5)
  
  
- 
- 
-* [Values for oXygen Template](#oxygen_values)
- 
- 
 ## Introduction  <span id="index.xml-body.1_div.1"/>
  
 The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development. 
@@ -238,16 +233,42 @@ To create a new text file, use the built in text template
 ![../graphics/create_new_file_2.gif](../graphics/create_new_file_2.gif)
  
  
-* Answer the prompts, filling in the (modernized) title of the text and your @xml:id. 
+* Input the (modernized) title of the document
  
 ![../graphics/create_new_file_3.gif](../graphics/create_new_file_3.gif)
  
  
-* Fill in any information--including who transcribed the file and who copy-edited the file--in the teiHeader. 
+* Select the transciber
  
 ![../graphics/create_new_file_4.gif](../graphics/create_new_file_4.gif)
  
  
+* Select the copy editor
+ 
+![../graphics/create_new_file_5.gif](../graphics/create_new_file_5.gif)
+ 
+ 
+* Select the encoder (who is usually you)
+ 
+![../graphics/create_new_file_6.gif](../graphics/create_new_file_6.gif)
+ 
+ 
+* Select the genre
+ 
+![../graphics/create_new_file_7.gif](../graphics/create_new_file_7.gif)
+ 
+ 
+* Select the location (usually derived from the Google Drive folder structure)
+ 
+![../graphics/create_new_file_8.gif](../graphics/create_new_file_8.gif)
+ 
+ 
+* Your new document should be created!
+ 
+![../graphics/create_new_file_9.gif](../graphics/create_new_file_9.gif)
+ 
+ 
+* Remember to commit the changes to the repository using the above instructions.
  
  
 ## Building the Schema  <span id="index.xml-body.1_div.5"/>
@@ -1222,8 +1243,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
 *  **Datatype**:  1–∞ occurrences of teidata.pointer separated by whitespace
 *  **Legal values are:**: 
  
-     *    **wdt:bornDigital** Born Digital document
      *    **wdt:primarySource** Primary Source
+     *    **wdt:bornDigital** Born Digital document
      *    **wdt:genreShortStory** Short Story
      *    **wdt:genreNF** Non-fiction
      *    **wdt:genreNFAuto** Non-fiction: Autobiography
@@ -1237,8 +1258,8 @@ Attributes  [att.global](#att.global)  (`@xml:id`, `@n`, `@xml:lang`) ( [att.gl
      *    **wdt:genrePoem** Poem
      *    **wdt:genreNovel** Novel
      *    **wdt:genreNovelSerial** Novel: Serial
-     *    **wdt:objectPhoto** Object: Photo
      *    **wdt:objectText** Object: Text
+     *    **wdt:objectPhoto** Object: Photo
      *    **wdt:objectFilm** Object: Film
      *    **wdt:objectPoster** Object: Poster
      *    **wdt:locJapan** Japan
@@ -9472,8 +9493,3 @@ When appropriate, values from an established typology should be used. Alternativ
  
  
  
- 
-## Values for oXygen Template  <span id="oxygen_values"/>
- 
-Below are the values for the oXygen templates; they are generated from the taxonomy files and should not be edited by hand. 
-'JT':'Joey Takeda';'SL':'Sydney Lines';'KI':'Ken Ip';'MC':'Mary Chapman';'JLC':'Jean Lee Cole'

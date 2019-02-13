@@ -195,7 +195,7 @@
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${project.dir}/docs/documentation_full.html"/>
             <arg line="-o:${project.dir}/docs/oxygen_documentation.html"/>
-            <arg line="-xsl:${project.dir}/code/clean_documentation.xsl"/>
+            <arg line="-xsl:${project.dir}/code/schema/clean_documentation.xsl"/>
         </java>
         
         <!--And now convert to markdown-->
@@ -203,7 +203,7 @@
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${project.dir}/docs/oxygen_documentation.html"/>
             <arg line="-o:${project.dir}/docs/github_documentation.md"/>
-            <arg line="-xsl:${project.dir}/code/documentation_to_markdown.xsl"/>
+            <arg line="-xsl:${project.dir}/code/schema/documentation_to_markdown.xsl"/>
         </java>
 
     </target>
@@ -214,7 +214,7 @@
         
     
     
-    <target name="all" depends="addVals, odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
+    <target name="all" depends="addVals,modifyTemplate, odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     

@@ -12,8 +12,8 @@
     
     <xsl:output indent="yes"/>
     
-    <xsl:variable name="taxonomies" select="document('../data/taxonomies.xml')"/>
-    <xsl:variable name="people" select="document('../data/people.xml')"/>
+    <xsl:variable name="taxonomies" select="document('../../data/taxonomies.xml')"/>
+    <xsl:variable name="people" select="document('../../data/people.xml')"/>
     <xsl:variable name="sq">'</xsl:variable>
     
     

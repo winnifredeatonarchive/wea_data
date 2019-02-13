@@ -10,8 +10,8 @@
     
     <xsl:output method="xml" indent="yes"/>
     
-    <xsl:variable name="taxonomies" select="document('../data/taxonomies.xml')"/>
-    <xsl:variable name="people" select="document('../data/people.xml')"/>
+    <xsl:variable name="taxonomies" select="document('../../data/taxonomies.xml')"/>
+    <xsl:variable name="people" select="document('../../data/people.xml')"/>
     <xsl:variable name="sq">'</xsl:variable>
     
     <xsl:variable name="pplVar" select="concat('(',string-join(for $n in $people//person[@xml:id[not(.='WE')]] return concat($sq,$n/@xml:id,$sq,':',$sq,$n/persName,$sq),';'),')')" as="xs:string"/>

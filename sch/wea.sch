@@ -278,7 +278,7 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:bornDigital)|(wdt:primarySource))$')">
+                              <sch:assert test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -288,7 +288,7 @@ relatedItem element must be empty</sch:report>
                               </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:catRef[@scheme='wdt:object']">
-                              <sch:assert test="matches(@target,'^((wdt:objectPhoto)|(wdt:objectText)|(wdt:objectFilm)|(wdt:objectPoster))$')">
+                              <sch:assert test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
