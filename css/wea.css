@@ -97,6 +97,63 @@ table, th, td {
 td{
     padding: .5rem 1rem;
 }
+    table {
+        display: table; 
+        box-sizing: border-box;
+        text-indent: initial;
+	    border-width: 1px;
+	    border-color: #666666;
+        border-collapse: collapse;
+    }
+    
+    tr {
+    display: table-row;
+    }
+    
+div#status table{
+    width:100%;
+}
+th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+[data-el='ul']{
+    display:block;
+    
+}
+
+[data-el='li']{
+    padding-left:1rem;
+}
+
+th { font-weight: bold; text-align:center;}
+    td, th{
+        display: table-cell;
+        border:1px solid black;
+        border-collapse: collapse;
+        padding: 1px; 
+        }
+        
+thead {
+    display: table-header-group; 
+}
+tbody { 
+    display: table-row-group; 
+}
+tfoot { 
+    display: table-footer-group; 
+}
 
 td>ul{
    list-style-type:none;
