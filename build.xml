@@ -2,7 +2,8 @@
 <project basedir="." name="build">
   
   <target name="test">
-      <echo message="TESTINGTESTINGTESTING"/>
-      <echo message="YES"/>
+      <mkdir dir="travis_products"/>
+      <touch file="travis_products/test.txt"/>
+      <echo message="TESTING" file="travis_products/test.txt"/>
   </target>
 </project>

@@ -4,3 +4,12 @@ notifications:
   email:
     on_success: never # default: change
     on_failure: always # default: always
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: travis_products
+  on:
+    repo: winnifredeatonarchive/dev
+    branch: master
