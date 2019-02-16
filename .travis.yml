@@ -10,6 +10,7 @@ deploy:
   github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   local-dir: travis_products
+  target-branch: master
   on:
     repo: winnifredeatonarchive/dev
     branch: master
