@@ -24,7 +24,6 @@ function addEvents(){
 }
 
     function showHide(){
-        alert('CLICKING');
         var parent = this.parentNode;
         console.log(parent);
         if (parent.classList.contains('open')){

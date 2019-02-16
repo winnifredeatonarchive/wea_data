@@ -113,7 +113,7 @@
     </xsl:template>
     
     <xsl:template match="div[@class='tei_body'][1]">
-        <div id="element_list">
+        <div id="element_list" class="closed">
             <h3>Element Appendix</h3>
             <div>
                 <xsl:for-each select="parent::body//div[h3[@id]]/h3">
