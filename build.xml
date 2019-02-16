@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="build">
+<project basedir="." name="build" default="all">
   
-  <target name="test">
-      <mkdir dir="travis_products"/>
-      <touch file="travis_products/test.txt"/>
-      <echo message="TESTING" file="travis_products/test.txt"/>
-  </target>
+  
+<!--  <target name="validate">
+      <ant antfile="code/buildValidate.xml" inheritall="false"/>
+  </target>-->
+    
+    <target name="createSite">
+        <ant antfile="code/buildSite.xml" inheritall="false"/>
+    </target>
+    
+    <target name="all" depends="createSite"/>
+    
 </project>
