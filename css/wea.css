@@ -58,6 +58,38 @@ hr{
     cursor:help;
 }
 
+div.closed > h3,
+div.open > h3{
+    cursor:pointer;
+}
+
+div.closed > div{
+    display:none;
+}
+
+div.open > div{
+    display:block;
+}
+
+div#element_list{
+    text-align:justify;
+}
+div#element_list > div > span{
+    padding:0 .3rem;
+    display:inline-block;
+}
+
+
+div.closed > h3::after{
+    content:" ▶";
+    }
+    
+
+
+div.open > h3::after{
+    content:" ▼";
+}
+
 .noteMarker{
     vertical-align:super;
     font-size:.8em;

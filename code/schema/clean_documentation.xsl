@@ -40,6 +40,7 @@
     <xsl:template match="link[@type='text/css']">
         <xsl:if test="not(preceding-sibling::link[@type='text/css'])">
             <link rel="stylesheet" href="css/wea.css" type="text/css"/>
+            <script src="js/documentation.js"/>
         </xsl:if>
     </xsl:template>
     
@@ -111,6 +112,19 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="div[@class='tei_body'][1]">
+        <div id="element_list">
+            <h3>Element Appendix</h3>
+            <div>
+                <xsl:for-each select="parent::body//div[h3[@id]]/h3">
+                    <span><a href="#{@id}"><xsl:value-of select="translate(.,'&lt;&gt;','')"/></a></span>
+                </xsl:for-each>
+            </div>
+        </div>
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
     <xsl:template match="img/@src">
         <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
     </xsl:template>
