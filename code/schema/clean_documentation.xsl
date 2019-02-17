@@ -112,11 +112,41 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="h2[text()='Table of contents']"/>
+    
+    <xsl:template match="ul[contains(@class,'toc')][li][not(ancestor::ul)]">
+       <div data-el="ul">
+           <xsl:apply-templates select="@*"/>
+           <h3>Table of Contents</h3>
+           <xsl:apply-templates select="node()"/>
+       </div>
+    </xsl:template>
+    
+    <xsl:template match="ul[contains(@class,'toc')]/@class">
+        <xsl:attribute name="class" select="concat(.,' open')"/>
+    </xsl:template>
+    
     <xsl:template match="div[@class='tei_body'][1]">
-        <div id="element_list" class="closed">
-            <h3>Element Appendix</h3>
+        <div class="toc closed">
+            <h3>Elements</h3>
             <div>
-                <xsl:for-each select="parent::body//div[h3[@id]]/h3">
+                <xsl:for-each select="parent::body//div[h3[not(contains(@id,'.'))]]/h3">
+                    <span><a href="#{@id}"><xsl:value-of select="translate(.,'&lt;&gt;','')"/></a></span>
+                </xsl:for-each>
+            </div>
+        </div>
+      <!--  <div id="element_list" class="closed">
+            <h3>Models</h3>
+            <div>
+                <xsl:for-each select="parent::body//div[h3[starts-with(@id,'model')]]/h3">
+                    <span><a href="#{@id}"><xsl:value-of select="."/></a></span>
+                </xsl:for-each>
+            </div>
+        </div>-->
+        <div class="toc closed">
+            <h3>Attribute Classes</h3>
+            <div>
+                <xsl:for-each select="parent::body//div[h3[starts-with(@id,'att')]]/h3">
                     <span><a href="#{@id}"><xsl:value-of select="translate(.,'&lt;&gt;','')"/></a></span>
                 </xsl:for-each>
             </div>
