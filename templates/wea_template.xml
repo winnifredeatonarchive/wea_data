@@ -6,7 +6,7 @@
             <title>${ask('What is the title of this document?', string, '', @title)}</title>
             <respStmt>
                <resp>Author</resp>
-               <name>Winnifred Eaton</name>
+               <name ref="pers:WE">Winnifred Eaton</name>
             </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
@@ -30,12 +30,12 @@
       </fileDesc>
      <profileDesc>
         <textClass>
-           <catRef scheme="wdt:docType" target="wdt:primarySource"/>
-           <catRef scheme="wdt:object" target="wdt:objectText"/>
+           <catRef scheme="wdt:docType"
+                    target="wdt:${ask('Document Type',radio,('docPrimarySource':'Primary Source';'docPrimarySourceMS':'Primary Source in Manuscript';'docPrimarySourcePublished':'Published Primary Source';'docBornDigital':'Born Digital document'),'docPrimarySource', @doctype)}"/>
            <catRef scheme="wdt:genre"
                     target="wdt:${ask('Genre',radio,('genreShortStory':'Short Story';'genreNF':'Non-fiction';'genreNFAuto':'Non-fiction: Autobiography';'genreNFDedication':'Non-fiction: Dedication';'genreNFInterview':'Non-Fiction: Interview';'genreNFIntroduction':'Non-fiction: Introduction';'genreNFEthnography':'Non-fiction: Ethnography';'genreFilm':'Film';'genreFilmScenario':'Film: Scenario';'genreFilmTreatment':'Film: Treatment';'genrePoem':'Poem';'genreNovel':'Novel';'genreNovelSerial':'Novel: Serial'),'genreShortStory', @genre)}"/>
-           <catRef scheme="wdt:locations"
-                    target="wdt:${ask('Location',radio,(),, @location)}"/>
+           <catRef scheme="wdt:category"
+                    target="wdt:${ask('Category',radio,('catJapan':'Japan';'catAlberta':'Alberta';'catHollywood':'Hollywood';'catEarlyExperiment':'Early Experiments';'catNewYork':'New York'),'catJapan', @category)}"/>
         </textClass>
      </profileDesc>
      <revisionDesc>

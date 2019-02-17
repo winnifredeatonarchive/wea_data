@@ -18,7 +18,7 @@
     <xsl:variable name="docTypeVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='docType']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="objectVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='object']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="genreVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='genre']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
-    <xsl:variable name="locationsVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='locations']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
+    <xsl:variable name="categoryVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='category']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     
     
         
@@ -33,19 +33,20 @@
         <xsl:attribute name="ref" select="concat('pers:',jt:makeCombo('Copy Editor',$pplVar,'copyeditor'))"/>
     </xsl:template>
     
+    
+    
 
-   <!-- <xsl:template match="catRef[@scheme='wdt:docType']/@target">
+    <xsl:template match="catRef[@scheme='wdt:docType']/@target">
         <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Document Type',$docTypeVar,'doctype'))"/>
-        
-    </xsl:template>-->
+    </xsl:template>
 <!--    <xsl:template match="catRef[@scheme='wdt:object']/@target">
         <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Object Type',$objectVar,'object'))"/>
     </xsl:template>-->
     <xsl:template match="catRef[@scheme='wdt:genre']/@target">
         <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Genre',$genreVar,'genre'))"/>
     </xsl:template>
-    <xsl:template match="catRef[@scheme='wdt:locations']/@target">
-        <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Location',$locationsVar,'location'))"/>
+    <xsl:template match="catRef[@scheme='wdt:category']/@target">
+        <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Category',$categoryVar,'category'))"/>
     </xsl:template>
     
     
