@@ -122,7 +122,7 @@
        </div>
     </xsl:template>
     
-    <xsl:template match="ul[contains(@class,'toc')]/@class">
+    <xsl:template match="ul[contains(@class,'toc')][not(ancestor::ul)]/@class">
         <xsl:attribute name="class" select="concat(.,' open')"/>
     </xsl:template>
     
@@ -130,7 +130,7 @@
         <div class="toc closed">
             <h3>Elements</h3>
             <div>
-                <xsl:for-each select="parent::body//div[h3[not(contains(@id,'.'))]]/h3">
+                <xsl:for-each select="parent::body//div[h3[not(contains(@id,'.'))]][preceding::h2[contains(text(),'Elements')]]/h3">
                     <span><a href="#{@id}"><xsl:value-of select="translate(.,'&lt;&gt;','')"/></a></span>
                 </xsl:for-each>
             </div>

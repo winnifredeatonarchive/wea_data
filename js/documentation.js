@@ -15,12 +15,12 @@ else if (window.attachEvent) window.attachEvent('onload', init);
 
 
 function addEvents(){
-    var elList=document.getElementById('element_list');
-    elList.classList.add('closed');
-    var header = elList.getElementsByTagName('h3')[0];
-    console.log(header);
-    header.addEventListener('click',showHide);
-   
+    var tocs=document.querySelectorAll('div.toc.closed, div.toc.open');
+    console.log(tocs);
+    tocs.forEach(function(t){
+            var header = t.getElementsByTagName('h3')[0];
+               header.addEventListener('click',showHide)
+           });
 }
 
     function showHide(){
