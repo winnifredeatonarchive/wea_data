@@ -780,10 +780,10 @@ relatedItem element must be empty</svrl:text>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="some $d in $docTypes satisfies matches($d, 'bornDigital')"/>
+         <xsl:when test="some $d in $docTypes satisfies matches($d, 'BornDigital')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
+                                test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -805,7 +805,7 @@ relatedItem element must be empty</svrl:text>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1003" mode="M19">
+   <xsl:template match="tei:textClass" priority="1002" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
 
 		    <!--ASSERT -->
@@ -827,7 +827,7 @@ relatedItem element must be empty</svrl:text>
    </xsl:template>
 
 	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1002" mode="M19">
+   <xsl:template match="tei:textClass" priority="1001" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
 
 		    <!--ASSERT -->
@@ -849,42 +849,20 @@ relatedItem element must be empty</svrl:text>
    </xsl:template>
 
 	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1001" mode="M19">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:object']"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:object']">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                            ERROR: Missing category reference object.
-                        </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M19"/>
-   </xsl:template>
-
-	  <!--RULE -->
    <xsl:template match="tei:textClass" priority="1000" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:locations']"/>
+         <xsl:when test="tei:catRef[@scheme='wdt:category']"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:locations']">
+                                test="tei:catRef[@scheme='wdt:category']">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                            ERROR: Missing category reference locations.
+                            ERROR: Missing category reference category.
                         </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -901,17 +879,17 @@ relatedItem element must be empty</svrl:text>
 
 	  <!--RULE -->
    <xsl:template match="tei:catRef[@scheme='wdt:docType']"
-                 priority="1003"
+                 priority="1002"
                  mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:catRef[@scheme='wdt:docType']"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')">
+                                test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -929,7 +907,7 @@ relatedItem element must be empty</svrl:text>
    </xsl:template>
 
 	  <!--RULE -->
-   <xsl:template match="tei:catRef[@scheme='wdt:genre']" priority="1002" mode="M20">
+   <xsl:template match="tei:catRef[@scheme='wdt:genre']" priority="1001" mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:catRef[@scheme='wdt:genre']"/>
 
@@ -956,45 +934,18 @@ relatedItem element must be empty</svrl:text>
    </xsl:template>
 
 	  <!--RULE -->
-   <xsl:template match="tei:catRef[@scheme='wdt:object']" priority="1001" mode="M20">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:catRef[@scheme='wdt:object']"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                            ERROR: Value <xsl:text/>
-                  <xsl:value-of select="@target"/>
-                  <xsl:text/> not allowed for category reference <xsl:text/>
-                  <xsl:value-of select="@scheme"/>
-                  <xsl:text/>
-                              </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M20"/>
-   </xsl:template>
-
-	  <!--RULE -->
-   <xsl:template match="tei:catRef[@scheme='wdt:locations']"
+   <xsl:template match="tei:catRef[@scheme='wdt:category']"
                  priority="1000"
                  mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:catRef[@scheme='wdt:locations']"/>
+                       context="tei:catRef[@scheme='wdt:category']"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')">
+                                test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

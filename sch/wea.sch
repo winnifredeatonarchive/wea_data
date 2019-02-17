@@ -236,7 +236,7 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
-                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
                     </sch:assert>
@@ -260,13 +260,8 @@ relatedItem element must be empty</sch:report>
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:object']">
-                            ERROR: Missing category reference object.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:locations']">
-                            ERROR: Missing category reference locations.
+                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
+                            ERROR: Missing category reference category.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -278,7 +273,7 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -287,13 +282,8 @@ relatedItem element must be empty</sch:report>
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:object']">
-                              <sch:assert test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')">
-                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
-                              </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:locations']">
-                              <sch:assert test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')">
+                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                              <sch:assert test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>

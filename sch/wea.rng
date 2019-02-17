@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-02-17T02:03:40Z. .
+Schema generated from ODD source 2019-02-17T05:27:03Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -3141,7 +3141,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
-                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
                     </sch:assert>
@@ -3427,13 +3427,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:object']">
-                            ERROR: Missing category reference object.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:locations']">
-                            ERROR: Missing category reference locations.
+                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
+                            ERROR: Missing category reference category.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -3452,7 +3447,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:primarySource)|(wdt:bornDigital))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -3461,13 +3456,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:object']">
-                              <sch:assert test="matches(@target,'^((wdt:objectText)|(wdt:objectPhoto)|(wdt:objectFilm)|(wdt:objectPoster))$')">
-                            ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
-                              </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:locations']">
-                              <sch:assert test="matches(@target,'^((wdt:locJapan)|(wdt:locAlberta)|(wdt:locHollywood)|(wdt:locMontreal)|(wdt:locNY))$')">
+                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                              <sch:assert test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -3477,9 +3467,13 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             <list>
                <oneOrMore>
                   <choice>
-                     <value>wdt:primarySource</value>
+                     <value>wdt:docPrimarySource</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source</a:documentation>
-                     <value>wdt:bornDigital</value>
+                     <value>wdt:docPrimarySourceMS</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source in Manuscript</a:documentation>
+                     <value>wdt:docPrimarySourcePublished</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Published Primary Source</a:documentation>
+                     <value>wdt:docBornDigital</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Born Digital document</a:documentation>
                      <value>wdt:genreShortStory</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Story</a:documentation>
@@ -3507,23 +3501,15 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel</a:documentation>
                      <value>wdt:genreNovelSerial</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel: Serial</a:documentation>
-                     <value>wdt:objectText</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Object: Text</a:documentation>
-                     <value>wdt:objectPhoto</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Object: Photo</a:documentation>
-                     <value>wdt:objectFilm</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Object: Film</a:documentation>
-                     <value>wdt:objectPoster</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Object: Poster</a:documentation>
-                     <value>wdt:locJapan</value>
+                     <value>wdt:catJapan</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan</a:documentation>
-                     <value>wdt:locAlberta</value>
+                     <value>wdt:catAlberta</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta</a:documentation>
-                     <value>wdt:locHollywood</value>
+                     <value>wdt:catHollywood</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood</a:documentation>
-                     <value>wdt:locMontreal</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Montreal</a:documentation>
-                     <value>wdt:locNY</value>
+                     <value>wdt:catEarlyExperiment</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments</a:documentation>
+                     <value>wdt:catNewYork</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York</a:documentation>
                   </choice>
                </oneOrMore>
@@ -3536,9 +3522,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document Type</a:documentation>
                <value>wdt:genre</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Genre</a:documentation>
-               <value>wdt:object</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Object</a:documentation>
-               <value>wdt:locations</value>
+               <value>wdt:category</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Locations</a:documentation>
             </choice>
          </attribute>

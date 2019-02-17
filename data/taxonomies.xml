@@ -14,15 +14,12 @@
             <p>Publication Information</p>
          </publicationStmt>
          <sourceDesc>
-            <bibl><author>Eaton, Winnifred</author>. </bibl>
+            <p>Born digital.</p>
          </sourceDesc>
       </fileDesc>
      <profileDesc>
         <textClass>
-           <catRef scheme="wdt:locations" target="wdt:locNY"/>
-           <catRef scheme="wdt:docType" target="wdt:bornDigital"/>
-           <catRef scheme="wdt:genre" target="wdt:genreFilm"/>
-           <catRef scheme="wdt:object" target="wdt:objectPhoto"/>
+           <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
         </textClass>
      </profileDesc>
      <encodingDesc>
@@ -32,10 +29,16 @@
            <taxonomy xml:id="docClassTaxonomies">
               <taxonomy xml:id="docType">
                  <bibl>Document Type</bibl>
-                 <category xml:id="primarySource">
+                 <category xml:id="docPrimarySource">
                     <catDesc>Primary Source</catDesc>
+                    <category xml:id="docPrimarySourceMS">
+                       <catDesc>Primary Source in Manuscript</catDesc>
+                    </category>
+                    <category xml:id="docPrimarySourcePublished">
+                       <catDesc>Published Primary Source</catDesc>
+                    </category>
                  </category>
-                 <category xml:id="bornDigital">
+                 <category xml:id="docBornDigital">
                     <catDesc>Born Digital document</catDesc>
                  </category>
               </taxonomy>
@@ -84,7 +87,7 @@
               </taxonomy>
                  
                  
-              <taxonomy xml:id="object">
+              <!--<taxonomy xml:id="object">
                  <bibl>Object</bibl>
                  <category xml:id="objectText">
                     <catDesc>Object: Text</catDesc>
@@ -99,23 +102,23 @@
                  <category xml:id="objectPoster">
                     <catDesc>Object: Poster</catDesc>
                  </category>
-              </taxonomy>
+              </taxonomy>-->
               
-              <taxonomy xml:id="locations">
+              <taxonomy xml:id="category">
                  <bibl>Locations</bibl>
-                 <category xml:id="locJapan">
+                 <category xml:id="catJapan">
                     <catDesc>Japan</catDesc>
                  </category>
-                 <category xml:id="locAlberta">
+                 <category xml:id="catAlberta">
                     <catDesc>Alberta</catDesc>
                  </category>
-                 <category xml:id="locHollywood">
+                 <category xml:id="catHollywood">
                     <catDesc>Hollywood</catDesc>
                  </category>
-                 <category xml:id="locMontreal">
-                    <catDesc>Montreal</catDesc>
+                 <category xml:id="catEarlyExperiment">
+                    <catDesc>Early Experiments</catDesc>
                  </category>
-                 <category xml:id="locNY">
+                 <category xml:id="catNewYork">
                     <catDesc>New York</catDesc>
                  </category>
               </taxonomy>

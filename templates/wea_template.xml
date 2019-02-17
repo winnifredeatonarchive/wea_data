@@ -35,7 +35,7 @@
            <catRef scheme="wdt:genre"
                     target="wdt:${ask('Genre',radio,('genreShortStory':'Short Story';'genreNF':'Non-fiction';'genreNFAuto':'Non-fiction: Autobiography';'genreNFDedication':'Non-fiction: Dedication';'genreNFInterview':'Non-Fiction: Interview';'genreNFIntroduction':'Non-fiction: Introduction';'genreNFEthnography':'Non-fiction: Ethnography';'genreFilm':'Film';'genreFilmScenario':'Film: Scenario';'genreFilmTreatment':'Film: Treatment';'genrePoem':'Poem';'genreNovel':'Novel';'genreNovelSerial':'Novel: Serial'),'genreShortStory', @genre)}"/>
            <catRef scheme="wdt:locations"
-                    target="wdt:${ask('Location',radio,('locJapan':'Japan';'locAlberta':'Alberta';'locHollywood':'Hollywood';'locMontreal':'Montreal';'locNY':'New York'),'locJapan', @location)}"/>
+                    target="wdt:${ask('Location',radio,(),, @location)}"/>
         </textClass>
      </profileDesc>
      <revisionDesc>
