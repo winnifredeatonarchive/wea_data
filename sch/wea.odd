@@ -543,7 +543,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
-                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
                     </sch:assert>

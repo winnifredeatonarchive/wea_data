@@ -2,14 +2,14 @@
 <project basedir="." name="build" default="all">
   
   
-<!--  <target name="validate">
+  <target name="validate">
       <ant antfile="code/buildValidate.xml" inheritall="false"/>
-  </target>-->
+  </target>
     
     <target name="createSite">
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
     
-    <target name="all" depends="createSite"/>
+    <target name="all" depends="validate, createSite"/>
     
 </project>

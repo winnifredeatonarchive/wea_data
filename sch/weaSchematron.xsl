@@ -780,10 +780,10 @@ relatedItem element must be empty</svrl:text>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="some $d in $docTypes satisfies matches($d, 'BornDigital')"/>
+         <xsl:when test="some $d in $docTypes satisfies matches($d, 'bornDigital')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
+                                test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

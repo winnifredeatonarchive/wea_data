@@ -17,13 +17,27 @@
                <name>Joey Takeda</name>
             </respStmt>
          </titleStmt>
+         
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         
          <sourceDesc>
-            <p><!--Citation here?--></p>
+            <bibl><!--Add info here--></bibl>
          </sourceDesc>
+         
       </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef target="wdt:primarySource" scheme="wdt:docType"/>
+           <catRef scheme="wdt:object" target="wdt:objectText"/>
+           <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
+           <catRef scheme="wdt:locations" target="wdt:locMontreal"/>
+        </textClass>
+     </profileDesc>
+     <revisionDesc>
+        <change who="pers:JT" when="2019-02-01">Created file.</change>
+     </revisionDesc>
   </teiHeader>
   <text>
       <body>

@@ -236,7 +236,7 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
-                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
+                              <sch:assert test="some $d in $docTypes satisfies matches($d, 'bornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
                     </sch:assert>
