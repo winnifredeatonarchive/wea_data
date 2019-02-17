@@ -198,6 +198,8 @@
             <arg line="-xsl:${project.dir}/code/schema/clean_documentation.xsl"/>
         </java>
         
+
+        
         
   <!--      <!-\-And now convert to markdown-\->
         
@@ -210,6 +212,7 @@
     </target>
     
     <target name="clean">
+        <delete file="${project.dir}/documentation/documentation_crude.html"/>
         <delete file="${wea.odd.processed}"/>
     </target>
         

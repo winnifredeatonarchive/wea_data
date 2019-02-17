@@ -322,6 +322,9 @@
                           include="author bibl choice corr date editor emph foreign gap head hi item l lb lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno langUsage language licence listChange listPrefixDef prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
+               
+               <moduleRef key="namesdates"
+                          include="death forename listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val"/>
                <!--Include all TEI modules-->
                <moduleRef key="tei"/>
