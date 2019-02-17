@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/winnifredeatonarchive/wea_data.svg?branch=master)](https://travis-ci.com/winnifredeatonarchive/wea_data)
+
 # Data Repository
 
 This is the data repository for the Winnifred Eaton Archive project, which will contain all of the source data (primarily TEI files) and the associated schemas.
