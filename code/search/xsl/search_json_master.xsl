@@ -70,6 +70,13 @@
                                 <number key="count">
                                     <xsl:value-of select="count($spans)"/>
                                 </number>
+                                <array key="forms">
+                                    <map>
+                                        <xsl:for-each-group select="$spans" group-by="text()">
+                                            <string key="form"><xsl:value-of select="current-grouping-key()"/></string>
+                                        </xsl:for-each-group>
+                                    </map>
+                                </array>
                                 <xsl:if test="$createContext">
                                     <array key="contexts">
                                         <xsl:for-each select="$spans">
