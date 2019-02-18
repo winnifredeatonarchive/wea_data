@@ -73,7 +73,7 @@
                                 <array key="forms">
                                     <map>
                                         <xsl:for-each-group select="$spans" group-by="text()">
-                                            <string key="form"><xsl:value-of select="current-grouping-key()"/></string>
+                                            <string><xsl:value-of select="current-grouping-key()"/></string>
                                         </xsl:for-each-group>
                                     </map>
                                 </array>
