@@ -10,6 +10,12 @@
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
     
-    <target name="all" depends="validate, createSite"/>
+    <target name="createSearch">
+        <ant antfile="code/search/buildSearch.xml" inheritall="false"/>
+    </target>
+    
+    
+    
+    <target name="all" depends="validate, createSite, createSearch"/>
     
 </project>

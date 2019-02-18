@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildSearch" default="all">
+  
+    <target name="tokenize">
+        <java fork="true" classname="net.sf.saxon.Transform"
+            classpath="../../lib/saxon9he.jar" failonerror="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:xsl/search_tokenize_master.xsl"/>
+            <arg value="-xsl:xsl/search_tokenize_master.xsl"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
+    
+    <target name="createJSON">
+        <java fork="true" classname="net.sf.saxon.Transform"
+            classpath="../../lib/saxon9he.jar" failonerror="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:xsl/search_json_master.xsl"/>
+            <arg value="-xsl:xsl/search_json_master.xsl"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
+    
+    <target name="all" depends="tokenize, createJSON"/>
+    
+    
+</project>

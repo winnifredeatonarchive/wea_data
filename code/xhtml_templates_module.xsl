@@ -44,7 +44,9 @@
     <xsl:template match="text" mode="tei">
         <body>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates mode="#current"/>
+            <div id="mainBody">
+                <xsl:apply-templates mode="#current"/>
+            </div>
             <xsl:call-template name="createAppendix"/>
         </body>
     </xsl:template>
@@ -97,7 +99,6 @@
     
     <xsl:template match="supplied | gap" mode="tei">
         <span>
-            <xsl:call-template name="processAtts"/>
             <xsl:if test="@reason | @cert | @resp">
                 <xsl:attribute name="title">
                     <xsl:variable name="title">
@@ -108,7 +109,8 @@
                     <xsl:value-of select="string-join($title,' ')"/>
                 </xsl:attribute>
             </xsl:if>
-            <xsl:apply-templates/>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
     
@@ -224,7 +226,7 @@
     
     <!--By default, delete all attributes from being processed
     as text.-->
-    <xsl:template match="@*" priority="-1"/>
+    <xsl:template match="@*" priority="-1" mode="tei"/>
     
     <!--**************************************************************
        *                                                            * 
@@ -299,7 +301,7 @@
         </xsl:for-each>
         
         <!--And now apply templates to the attributes in mode tei-->
-        <xsl:apply-templates select="@*">
+        <xsl:apply-templates select="@*" mode="tei">
             <xsl:with-param name="classes" select="$classes" tunnel="yes"/>
         </xsl:apply-templates>
     </xsl:template>

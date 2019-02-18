@@ -31,6 +31,14 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="html">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="id" select="'documentation'"/>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- Identity transform. -->
     <xsl:template match="@*|node()" priority="-1">
         <xsl:copy><xsl:apply-templates select="@*|node()" mode="#current"/></xsl:copy>
