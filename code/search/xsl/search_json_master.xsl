@@ -49,7 +49,12 @@
             <map xmlns="http://www.w3.org/2005/xpath-functions">
                 <string key="token">
                     <xsl:value-of select="$term"/>
-                </string>     
+                </string>
+                <array key="forms">
+                    <xsl:for-each-group select="current-group()" group-by="text()">
+                        <string><xsl:value-of select="current-grouping-key()"/></string>
+                    </xsl:for-each-group>
+                </array>
                     <array key="instances">
                         <xsl:for-each-group select="current-group()" group-by="ancestor::html/@id">
                             <xsl:sort select="count($tokenizedDocs//html[@id=current-grouping-key()]/descendant::span[@data-stem=$term])" order="descending"/>
@@ -70,13 +75,7 @@
                                 <number key="count">
                                     <xsl:value-of select="count($spans)"/>
                                 </number>
-                                <array key="forms">
-                                    <map>
-                                        <xsl:for-each-group select="$spans" group-by="text()">
-                                            <string><xsl:value-of select="current-grouping-key()"/></string>
-                                        </xsl:for-each-group>
-                                    </map>
-                                </array>
+
                                 <xsl:if test="$createContext">
                                     <array key="contexts">
                                         <xsl:for-each select="$spans">
