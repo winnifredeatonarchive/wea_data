@@ -10,7 +10,8 @@
     <xsl:param name="createContext" select="true()"/>
     
     <xsl:include href="search_globals_module.xsl"/>
-
+    
+  
 
     <xsl:template match="/">
         <xsl:call-template name="createJson"/>

@@ -16,7 +16,7 @@
             English words. We use this to guess whether a word which starts with a capital at the
             beginning of a sentence is a regular word or a proper noun.</xd:desc>
     </xd:doc>
-    <xsl:variable name="simpleDict" select="unparsed-text('../utilities/popular_english_words.txt')"/>
+    <xsl:variable name="simpleDict" select="unparsed-text('../utilities/english_words.txt')"/>
     
     <xd:doc scope="component">
         <xd:desc><xd:ref name="englishWords">englishWords</xd:ref> is a sequence of xs:strings

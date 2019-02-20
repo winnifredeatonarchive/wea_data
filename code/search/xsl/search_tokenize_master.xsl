@@ -9,6 +9,8 @@
     <xsl:include href="search_globals_module.xsl"/>
     
     
+    <xsl:variable name="regex" select="concat('^',string-join(for $e in $englishWords return concat('(',$e,')'),'|'),'$')"/>
+    
     <xsl:template match="/">
         <xsl:for-each select="$contentDocs">
             <xsl:result-document href="{concat($tokenizedDir,'/',//html/@id,'.html')}">
@@ -32,26 +34,23 @@
         <xd:desc>The meat: tokenizing text nodes.</xd:desc>
     </xd:doc>
     <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])]" mode="tokenize">
-        <xsl:variable name="nameTagged" select="exists(ancestor::a[@class])" as="xs:boolean"/>
         <xsl:analyze-string select="normalize-space(.)" regex="[A-Za-z\d]+">
             <xsl:matching-substring>
                 
                 <xsl:variable name="word" select="."/>
+
+                
                 <xsl:variable name="lc" select="lower-case($word)"/>
+                
                 <xsl:variable name="stem" as="xs:string">
                     <xsl:choose>
-                        <xsl:when test="$nameTagged"><xsl:value-of select="$word"/></xsl:when>
-                        <xsl:when test="matches($word,'^[A-Z]')">
-                            <xsl:choose>
-                                <xsl:when test="$lc = $englishWords">
-                                    <xsl:value-of select="jt:stem($lc)"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="$word"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
+                        <xsl:when test="$lc = $englishWords">
+                            <xsl:value-of select="jt:stem($lc)"/>
                         </xsl:when>
-                        <xsl:otherwise><xsl:value-of select="jt:stem($lc)"/></xsl:otherwise>
+                        <xsl:otherwise>
+                            <xsl:message>Not a common English word: <xsl:value-of select="$word"/></xsl:message>
+                            <xsl:value-of select="$word"/>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:choose>
