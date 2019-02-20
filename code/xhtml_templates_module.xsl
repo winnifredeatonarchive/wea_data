@@ -179,6 +179,10 @@
         <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
     </xsl:template>
     
+    <xsl:template match="divGen[@type='searchBox']" mode="tei">
+        <input type="text" name="search" placeholder="Search.."/>
+    </xsl:template>
+    
     
     <!--**************************************************************
        *                                                            * 
@@ -308,6 +312,7 @@
     
     <xsl:template name="addScripts">
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
+        <script src="js/wea.js"/>
     </xsl:template>
     
     

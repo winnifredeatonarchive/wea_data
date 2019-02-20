@@ -211,6 +211,17 @@ code.block{
     margin:1rem;
 }
 
+
+/* Animated search */
+
+div#mainBody input[type=text] {
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
+  }
 /* Eg stuff, taken from the TEI's CSS stylesheet:  */
 
 /* TEI COPYRIGHT NOTICE:

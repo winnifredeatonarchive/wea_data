@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="buildSearch" default="all">
-  
+    
     <target name="tokenize">
         <java fork="true" classname="net.sf.saxon.Transform"
             classpath="../../lib/saxon9he.jar" failonerror="true">

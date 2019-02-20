@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="search">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Search</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:JT">Joey Takeda</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl><!--Encode bibliographic citation for the source here--></bibl>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+        </textClass>
+     </profileDesc>
+     <revisionDesc>
+        <change when="2019-02-19"
+                 who="pers:JT">Created file.</change>
+     </revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <head>Search</head>
+         <div>
+            <p>Use the following input box to search the Winnifred Eaton Archive text collection; note this does not search the Omeka artifact collection.</p>
+         </div>
+         <divGen type="searchBox"/>
+      </body>
+  </text>
+</TEI>
