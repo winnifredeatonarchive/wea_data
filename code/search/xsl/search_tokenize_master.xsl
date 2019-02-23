@@ -5,7 +5,7 @@
     xmlns="http://www.w3.org/1999/xhtml" xmlns:hcmc="http://hcmc.uvic.ca/ns" version="3.0"
     xmlns:jt="http://github.com/joeytakeda">
     
-    <xsl:include href="../../../../stemmer/porterStemmer.xsl"/>
+    <xsl:include href="https://raw.githubusercontent.com/joeytakeda/xslt-stemmer/master/porterStemmer.xsl"/>
     <xsl:include href="search_globals_module.xsl"/>
     
     
