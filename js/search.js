@@ -296,9 +296,8 @@ mdh.LocalSearch.prototype.notFound = function(token){
 mdh.LocalSearch.prototype.getResults = function(){
   if (this.outputDiv == null){return;}
   var hits = {}, arrHits = [], i, imax, j, jmax, token, docId, hitCount, term, hit, p, ul, li, a;
-  var contexts = {};
-  var terms = {};
-
+  var contexts = {}, arrContexts = [];
+  var terms = {}, arrTerms = [];
   this.showDebug('Ready to get results for ' + this.stemmedTokens.toString());
   this.showDebug('Index contains: ' + Object.keys(this.index));
   for (i=0, imax = this.stemmedTokens.length; i < imax; i++){
@@ -315,12 +314,13 @@ mdh.LocalSearch.prototype.getResults = function(){
           hits[docId] = this.index[token].instances[j];
           hits[docId].termCount = 1;
         }
-        contexts[docId] = this.index[token].instances[j].context;
-        terms[docId] = this.index[token].instances[j].context;
+         hits[docId].contexts = this.index[token].instances[j].contexts;
       }
+
     }
   }
-
+  
+  console.log(contexts[docId]);
   //We've put our hits in an object so we could access them by docId, but 
   //now we need to sort them so we need to shift them into an array.
   for (hit in hits){
@@ -338,50 +338,48 @@ mdh.LocalSearch.prototype.getResults = function(){
       return b.termCount - a.termCount;
     }
   });
-  
+    var htmlNS = 'http://www.w3.org/1999/xhtml';
   //Create output message and links
-  ul = document.createElementNS('http://www.w3.org/1999/xhtml', 'ul');
+  var resultsDiv = document.createElementNS(htmlNS,'div');
+  resultsDiv.classList.add('results');
   hitCount = 0;
-  var htmlNS = 'http://www.w3.org/1999/xhtml';
+
   for (i = 0, imax = arrHits.length; i < imax; i++){
+      var docResultsDiv = document.createElementNS(htmlNS,'div');
       var thisHit = arrHits[i];
       var thisDocId = thisHit.docId;
-      console.log(terms[docId]);
-      this.showDebug(thisHit.docId + ': termCount: ' + thisHit.termCount + '; count: ' + thisHit.count);
+      var thisContexts = thisHit.contexts;
+      console.log('Contexts length ' + thisContexts.length);
+      
+      this.showDebug(thisHit.docId + ': termCount: ' + thisHit.termCount + '; count: ' + thisHit.count + '; contexts: ' + thisHit.contexts);
       hitCount++;
+      
+      
       var div = document.createElementNS(htmlNS, 'div');
       a = document.createElementNS(htmlNS, 'a');
       var contextDiv = document.createElementNS(htmlNS,'div');
-      var theseTerms = terms[thisDocId];
-      var theseContexts = contexts[thisDocId];
-      for (var l=0; l < theseTerms.length; l++){
-        var thisTerm = theseTerms[l];
-        var thisContext = theseContexts[l];
-        var regex = '/(\s+|^)(' + thisTerm + ')(\s+|$)/g';
-        var thisCon = thisContext.replace(regex,'<span class="searchMatch">' + thisTerm + '</span>');
-        var innerContextDiv = document.createElementNS(htmlNS,'div');
-        innerContextDiv.innerHTML = thisCon;
-        contextDiv.appendChild(innerContextDiv);
+      for (var c = 0; c < thisContexts.length; c++){
+          var currCon = thisContexts[c];
+          var connDiv = document.createElementNS(htmlNS,'div');
+          connDiv.classList.add('snippet');
+          connDiv.innerHTML = currCon;
+          contextDiv.appendChild(connDiv);
       }
       var cp = document.createElementNS(htmlNS, 'p');
-      cp.innerHTML = context;
       a.setAttribute('href', arrHits[i].docId + '.html');
       a.setAttribute('target', '_blank');
       //this.showDebug(hits[hit].docTitle);
       a.innerHTML = arrHits[i].docTitle;
-      div.appendChild(a);
-      div.appendChild(document.createTextNode(' (Score: ' + arrHits[i].count + ')'));
-      div.appendChild(contextDiv);
-      
+      docResultsDiv.appendChild(a);
+      docResultsDiv.appendChild(document.createTextNode(' (Score: ' + arrHits[i].count + ')'));
+      docResultsDiv.appendChild(contextDiv);
+      resultsDiv.appendChild(docResultsDiv);
   }
-
-  p = document.createElementNS('http://www.w3.org/1999/xhtml', 'p');
-  p.appendChild(document.createTextNode(this.captions.strSearchedFor + ' ' + this.currTokens.join(', ')));
-  p.appendChild(document.createElementNS('http://www.w3.org/1999/xhtml', 'br'));
-  p.appendChild(document.createTextNode(this.captions.strDocumentsFound + ' ' + hitCount));
   while(this.outputDiv.firstChild){this.outputDiv.removeChild(this.outputDiv.firstChild);}
-  this.outputDiv.appendChild(p);
-  this.outputDiv.appendChild(div);
+  this.outputDiv.appendChild(document.createTextNode(this.captions.strSearchedFor + ' ' + this.currTokens.join(', ')));
+  this.outputDiv.appendChild(document.createElementNS('http://www.w3.org/1999/xhtml', 'br'));
+  this.outputDiv.appendChild(document.createTextNode(this.captions.strDocumentsFound + ' ' + hitCount));
+  this.outputDiv.appendChild(resultsDiv);
 };
 
 

@@ -51,11 +51,11 @@
                 <string key="token">
                     <xsl:value-of select="$term"/>
                 </string>
-                <array key="forms">
+<!--                <array key="forms">
                     <xsl:for-each-group select="current-group()" group-by="text()">
                         <string><xsl:value-of select="current-grouping-key()"/></string>
                     </xsl:for-each-group>
-                </array>
+                </array>-->
                     <array key="instances">
                         <xsl:for-each-group select="current-group()" group-by="ancestor::html/@id">
                             <xsl:sort select="count($tokenizedDocs//html[@id=current-grouping-key()]/descendant::span[@data-stem=$term])" order="descending"/>
@@ -80,13 +80,17 @@
                                 <xsl:if test="$createContext">
                                     <array key="contexts">
                                         <xsl:for-each select="$spans">
+                                            <string><xsl:value-of select="hcmc:returnContext(.)"/></string>
+                                        </xsl:for-each>
+
+    <!--                                    <xsl:for-each select="$spans">
                                             <xsl:variable name="term" select="text()"/>
                                             <xsl:variable name="context" select="hcmc:returnContext(.)"/>
                                             <map>
                                                 <string key="term"><xsl:value-of select="$term"/></string>
                                                 <string key="context"><xsl:value-of select="$context"/></string>
                                             </map>
-                                        </xsl:for-each>
+                                        </xsl:for-each>-->
                                         
                                     </array>
                                 </xsl:if>
@@ -102,7 +106,12 @@
     <xsl:function name="hcmc:returnContext">
         <xsl:param name="span" as="element(span)"/>
         <xsl:variable name="thisTerm" select="$span/text()"/>
-        
+        <xsl:variable name="thisTermTagged">
+            <xsl:element name="span" namespace="">
+                <xsl:attribute name="class">highlight</xsl:attribute>
+                <xsl:value-of select="$thisTerm"/>
+            </xsl:element>
+        </xsl:variable>
         <xsl:variable name="start" select="string-join(reverse(for $n in 1 to 7 return $span/preceding-sibling::node()[$n]),'')"/>
         <xsl:variable name="end" select="string-join(for $n in (1 to 7) return $span/following-sibling::node()[$n],'')"/>
         <xsl:variable name="startTrimmed">
@@ -125,7 +134,10 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:value-of select="normalize-space(concat($startTrimmed,' ', $thisTerm,' ',$endTrimmed))"/>
+        <xsl:variable name="out">
+            <xsl:value-of select="normalize-space($startTrimmed)"/><xsl:text> </xsl:text><xsl:copy-of select="$thisTermTagged"/><xsl:text> </xsl:text><xsl:value-of select="normalize-space($endTrimmed)"/>
+        </xsl:variable>
+        <xsl:value-of select="serialize($out)"/>
     </xsl:function>
     
     <xsl:function name="hcmc:getText" as="xs:string">
