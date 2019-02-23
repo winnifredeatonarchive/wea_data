@@ -12,17 +12,17 @@ function init(){
 }
 
 function addSearch(){
-     var srch = document.querySelectorAll('input[type=search]');
-     alert(srch);
-     srch.forEach(function(s){
-                s.addEventListener('keydown',watchSearch)
+     var searches = document.querySelectorAll('input[name=search]');
+     searches.forEach(function(s){
+                s.addEventListener('keydown',initSearch)
            });
 }
 
-function watchSearch(e){
-    alert('hello!');
+function initSearch(){
+    var e=arguments[0];
     if (e.key === 'Enter'){
         console.log('Entered!');
+        console.log('Searching for ' + this.value);
         searcher.search(this.value);
  }
 }

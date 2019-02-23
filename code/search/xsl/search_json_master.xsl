@@ -37,7 +37,7 @@
                 </xsl:call-template>
             </xsl:variable>
             <xsl:message>Creating <xsl:value-of select="$token"/>.json</xsl:message>
-            <xsl:result-document href="../../products/js/json/{$token}.json" method="text">
+            <xsl:result-document href="../../products/js/search/{$token}.json" method="text">
                 <xsl:value-of select="xml-to-json($map, map{'indent': true()})"/>
             </xsl:result-document>
         </xsl:for-each-group>
@@ -105,7 +105,27 @@
         
         <xsl:variable name="start" select="string-join(reverse(for $n in 1 to 7 return $span/preceding-sibling::node()[$n]),'')"/>
         <xsl:variable name="end" select="string-join(for $n in (1 to 7) return $span/following-sibling::node()[$n],'')"/>
-        <xsl:value-of select="normalize-space(concat($start,' ', $thisTerm,' ',$end))"/>
+        <xsl:variable name="startTrimmed">
+            <xsl:choose>
+                <xsl:when test="string-length($start) gt 50">
+                    <xsl:value-of select="replace(substring($start,string-length($start) - 50),'^[a-z]+','')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="replace($start,'^[a-z]+','')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="endTrimmed">
+            <xsl:choose>
+                <xsl:when test="string-length($end) gt 50">
+                    <xsl:value-of select="substring($end,1,50)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$end"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="normalize-space(concat($startTrimmed,' ', $thisTerm,' ',$endTrimmed))"/>
     </xsl:function>
     
     <xsl:function name="hcmc:getText" as="xs:string">

@@ -46,7 +46,9 @@
             <xsl:call-template name="processAtts"/>
             <div id="mainBody">
                 <xsl:apply-templates mode="#current"/>
+                <xsl:call-template name="createSearchResults"/>
             </div>
+            
             <xsl:call-template name="createAppendix"/>
         </body>
     </xsl:template>
@@ -312,10 +314,18 @@
     
     <xsl:template name="addScripts">
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
+        <script src="js/porterStemmer.js"/>
+        <script src="js/search.js"/>
         <script src="js/wea.js"/>
+        
     </xsl:template>
     
     
+    <xsl:template name="createSearchResults">
+        <xsl:if test="ancestor::TEI/@xml:id='search'">
+            <div id="searchResults"/>
+        </xsl:if>
+    </xsl:template>
     <xsl:template name="createAppendix">
         <div id="appendix">
             <xsl:call-template name="createNotes"/>
