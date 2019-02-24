@@ -148,6 +148,7 @@ mdh.LocalSearch.prototype.search = function(str){
   var i, imax, tokensToFind = [], promises = [], emptyIndex;
   var self = this;
   var exact = str.match(/^\".+\"$/);
+  this.stemmedTokens = [];
   if (exact){
       str = str.replace(/"/g,'');
   }
@@ -157,6 +158,7 @@ mdh.LocalSearch.prototype.search = function(str){
     this.showDebug('Tokens are ' + this.currTokens.toString());
 //For each token in the search string
     for (i=0, imax=this.currTokens.length; i<imax; i++){
+        console.log(i);
 //First stem the token
       this.stemmedTokens[i] = this.stemToken(this.currTokens[i], exact);
 //Now check whether we already have an index entry for this token
@@ -166,7 +168,7 @@ mdh.LocalSearch.prototype.search = function(str){
       }
     }
     this.showDebug('Stemmed tokens are ' + this.stemmedTokens.toString());
-
+    
     this.showDebug('Stemmed tokens for which we do not yet have index entries are ' + tokensToFind.toString());
 
 //If we do need to retrieve JSON index data, then do it
@@ -296,8 +298,6 @@ mdh.LocalSearch.prototype.notFound = function(token){
 mdh.LocalSearch.prototype.getResults = function(){
   if (this.outputDiv == null){return;}
   var hits = {}, arrHits = [], i, imax, j, jmax, token, docId, hitCount, term, hit, p, ul, li, a;
-  var contexts = {}, arrContexts = [];
-  var terms = {}, arrTerms = [];
   this.showDebug('Ready to get results for ' + this.stemmedTokens.toString());
   this.showDebug('Index contains: ' + Object.keys(this.index));
   for (i=0, imax = this.stemmedTokens.length; i < imax; i++){
@@ -309,18 +309,20 @@ mdh.LocalSearch.prototype.getResults = function(){
         if (docId in hits){
           hits[docId].count += this.index[token].instances[j].count;
           hits[docId].termCount += 1;
+          hits[docId].contexts.push(this.index[token].instances[j].contexts);
         }
         else{
           hits[docId] = this.index[token].instances[j];
           hits[docId].termCount = 1;
+          hits[docId].contexts = this.index[token].instances[j].contexts;
+          
         }
-         hits[docId].contexts = this.index[token].instances[j].contexts;
+
       }
 
     }
   }
   
-  console.log(contexts[docId]);
   //We've put our hits in an object so we could access them by docId, but 
   //now we need to sort them so we need to shift them into an array.
   for (hit in hits){

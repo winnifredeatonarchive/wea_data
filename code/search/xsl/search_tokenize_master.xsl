@@ -44,6 +44,9 @@
                 
                 <xsl:variable name="stem" as="xs:string">
                     <xsl:choose>
+                        <xsl:when test="matches($word,'^[A-Z]')">
+                            <xsl:value-of select="$word"/>
+                        </xsl:when>
                         <xsl:when test="$lc = $englishWords">
                             <xsl:value-of select="jt:stem($lc)"/>
                         </xsl:when>
