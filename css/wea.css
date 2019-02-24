@@ -24,10 +24,21 @@ body{
 
 #searchResults{
     margin-top:2em;
+    opacity:0;
 }
+
+#searchResults.showing{
+    opacity: 1;
+    transition: opacity .75s;
+}
+
+
+
 
 div.results{
     margin-top:1.5rem;
+    animation: fadein 2s;
+    animation-delay: 2s;
 }
 
 div.results > div{

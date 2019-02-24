@@ -398,6 +398,8 @@ mdh.LocalSearch.prototype.getResults = function(){
   this.outputDiv.appendChild(document.createElementNS('http://www.w3.org/1999/xhtml', 'br'));
   this.outputDiv.appendChild(document.createTextNode(this.captions.strDocumentsFound + ' ' + hitCount));
   this.outputDiv.appendChild(resultsDiv);
+  this.outputDiv.removeAttribute('class');
+  this.outputDiv.classList.add('showing');
 };
 
 
