@@ -4,7 +4,8 @@
  /**
  * @fileOverview This is the code for the front-end of the JSON-based local
  *               search engine, originally written in March 2018 by Martin
- *               Holmes. It depends on the existence of pre-constructed JSON
+ *               Holmes and subsequently modified by Joey Takeda.
+ *               It depends on the existence of pre-constructed JSON
  *               files, one for every token that has been indexed. It is designed
  *               to function as a site-level search engine that does not depend
  *               on any server-side processing.
@@ -143,6 +144,17 @@ mdh.LocalSearch.prototype.stemToken = function(str,exact){
  *              are resolved.
  * @param {string} str The input search string.
  */
+ 
+ /* JT to Modify this function so that the search function always returns
+  * more values for a particular case-insensitive string than not:
+  * So a search for winnifred should return "Winnifred", "winnifr" and "winnifred"
+  * and find all those matches; a search for "Winnifred" would return 
+  * "Winnifred" or "winnifred" (but not "winnifr") (i.e. don't stem that)
+  * and a search for ""Winnifred"" or ""winnifred"" would return just that token
+  * (however, it has to be smart enough to know to stem it first and then see
+  * whether or not that JSON file has a form called "winnifred", since it certainly
+  * could be there but stemmed */
+  
 mdh.LocalSearch.prototype.search = function(str){
   var i, imax, tokensToFind = [], promises = [], emptyIndex;
   var self = this;
@@ -157,7 +169,6 @@ mdh.LocalSearch.prototype.search = function(str){
     this.showDebug('Tokens are ' + this.currTokens.toString());
 //For each token in the search string
     for (i=0, imax=this.currTokens.length; i<imax; i++){
-        console.log(i);
 //First stem the token
       this.stemmedTokens[i] = this.stemToken(this.currTokens[i], exact);
 //Now check whether we already have an index entry for this token
