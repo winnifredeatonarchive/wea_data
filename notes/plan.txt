@@ -1,0 +1,23 @@
+# Release Workflow
+
+All data is built, statically, using Travis-CI and pushed to the development repository (currently just called /wea/). 
+
+HTML Build:
+
+* Get the latest header from the Omeka instance
+* Put tht header into the HTML document
+* Get the latest CSS from the Omeka instance (but, hopefully not the Javascript too) and add our own CSS afterwards to
+  override any existing properties that we might not want (i.e. simple textual stuff).
+* Add our own search mechanism, if possible.
+
+Releasing:
+
+* Create a CSV for import into Omeka
+* Create a ZIP file with the latest compiled HTML documents source code
+* Import the CSV into Omeka (need to check if things overrride or not)
+* Then import the latest texts into the Omeka server (need to see if we can do this ourselves
+or if only the librarian can do this)
+
+IF the above isn't possible, then we'll have to host the texts on our own server, so that means we'll still have to grab the stuff,
+but have some modified functionality to talk back to the Omeka server; that will be annoying from a UX perspective, but maybe necessary?
+

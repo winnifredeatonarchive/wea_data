@@ -18,10 +18,7 @@
     </xd:doc>
     
     
-    
-    <xsl:variable name="people">
-        <xsl:call-template name="getPeople"/>
-    </xsl:variable>
+
     
     <xsl:template match="TEI" mode="tei">
         <xsl:message>Processing <xsl:value-of select="@xml:id"/></xsl:message>
@@ -44,17 +41,54 @@
     <xsl:template match="text" mode="tei">
         <body>
             <xsl:call-template name="processAtts"/>
+            <xsl:call-template name="createAside"/>
             <div id="mainBody">
                 <xsl:apply-templates mode="#current"/>
                 <xsl:call-template name="createSearchResults"/>
             </div>
             
             <xsl:call-template name="createAppendix"/>
+            <xsl:call-template name="createPopup"/>
         </body>
     </xsl:template>
     
+    <xsl:template name="createAside">
+        <aside id="aside" class="closed">
+            <div class="ham"><a href="#aside" id="aside_toggle"/></div>
+            <div id="aside_contents">
+                <div id="credits">
+                    <xsl:apply-templates select="//respStmt" mode="tei"/>
+                </div>
+            </div>
+        </aside>
+    </xsl:template>
+    
+    <xsl:template match="respStmt" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="resp" mode="#current"/>
+            <xsl:apply-templates select="name" mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="respStmt/resp" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="respStmt/name[@ref]" mode="tei">
+        <xsl:variable name="ptr" select="substring-after(@ref,'pers:')"/>
+        <xsl:variable name="thisPerson" select="$personography//person[@xml:id=$ptr]" as="element(person)"/>
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <a href="#{substring-after(@ref,'pers:')}"><xsl:value-of select="$thisPerson/persName"/></a>
+        </div>
+    </xsl:template>
+    
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | note | lg | l | q" mode="tei">
+    <xsl:template match="body | div | p | note | lg | l | q | byline" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -125,11 +159,29 @@
         </a>
     </xsl:template>
     
-    <xsl:template match="pb" mode="tei">
-        <hr>
+    <xsl:template match="name[@ref][not(ancestor::respStmt)]" mode="tei">
+        <a href="#{substring-after(wea:resolvePrefix(@ref),'#')}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
+        </a>
+    </xsl:template>
+    
+    <xsl:template match="pb" mode="tei">
+       
+        <hr>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
+            </xsl:call-template>
+            <xsl:apply-templates mode="#current"/>
         </hr>
+        <xsl:if test="ancestor::text[@facs]">
+            <xsl:variable name="thisFacsPointer" select="wea:resolvePrefix(ancestor::text/@facs)"/>
+            <xsl:variable name="thisPdfImg" select="substring-before($thisFacsPointer,'.pdf')"/>
+            <xsl:variable name="ptr" select="concat($thisPdfImg,'-',count(preceding::pb)+1,'.png')"/>
+            <a href="{$ptr}" class="facs" target="_blank">
+                <img alt="Facsimile page" src="{$thisPdfImg}-{count(preceding::pb)+1}.png" width="100"/>
+            </a>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="lb" mode="tei">
@@ -172,6 +224,14 @@
             </xsl:call-template>
             <xsl:apply-templates mode="tei"/>
             <a class="returnToNote" href="#noteMarker_{$noteNum}">↑</a>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="person" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <h3><xsl:apply-templates select="persName/node()" mode="#current"/></h3>
+            <xsl:apply-templates select="node()[not(self::persName)]" mode="#current"/>
         </div>
     </xsl:template>
     
@@ -329,6 +389,7 @@
     <xsl:template name="createAppendix">
         <div id="appendix">
             <xsl:call-template name="createNotes"/>
+            <xsl:call-template name="createPersonography"/>
         </div>
     </xsl:template>
     
@@ -344,15 +405,33 @@
     
     
     
+    <xsl:template name="createPopup">
+        <div id="popup">
+            <div id="popup_closer">X</div>
+            <div id="popup_content"/>
+        </div>
+    </xsl:template>
     
+    <xsl:template name="createPersonography">
+        <xsl:variable name="people">
+            <xsl:call-template name="getPeople"/>
+        </xsl:variable>
+        <xsl:if test="not(empty($people))">
+            <div id="personography">
+                <h2>People Mentioned</h2>
+                <xsl:apply-templates select="$people" mode="tei"/>
+            </div>
+        </xsl:if>
+        
+    </xsl:template>
     
     <xsl:template name="getPeople">
         <xsl:variable name="who" select="//*/@who"/>
         <xsl:variable name="resp" select="//*/@resp"/>
-        <xsl:variable name="ref" select="//*/name/@ref | //*/persName/@ref | //*/docAuthor/@ref"/>
+        <xsl:variable name="ref" select="//name/@ref | //persName/@ref | //docAuthor/@ref"/>
         <xsl:variable name="distinct" select="
             distinct-values(for $q in (for $p in ($who, $resp, $ref) return tokenize($p,'\s+')) return if (starts-with($q,'pers:')) then substring-after($q,'pers:') else ())"/>
-        <xsl:copy-of select="$personography//person[@xml:id=$distinct]"/>
+        <xsl:sequence select="$personography//person[@xml:id=$distinct]"/>
     </xsl:template>
     <!--FUNCTIONS-->
     
@@ -361,4 +440,13 @@
         <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
     </xsl:function>
     
+    <xsl:function name="wea:resolvePrefix">
+        <xsl:param name="ptr"/>
+        <xsl:variable name="tokens" select="tokenize($ptr,':')"/>
+        <xsl:variable name="prefix" select="$tokens[1]"/>
+        <xsl:variable name="match" select="$prefixDefs[@ident=$prefix]/@matchPattern" as="attribute(matchPattern)"/>
+        <xsl:variable name="replace" select="$prefixDefs[@ident=$prefix]/@replacementPattern" as="attribute(replacementPattern)"/>
+        <xsl:value-of select="replace($tokens[2],$match,$replace)"/>
+    </xsl:function>
+   
 </xsl:stylesheet>

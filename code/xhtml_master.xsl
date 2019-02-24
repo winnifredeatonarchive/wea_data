@@ -22,7 +22,7 @@
     
     <xsl:template match="/">
         <xsl:for-each select="$xmlDocs">
-            <xsl:apply-templates mode="tei"/>
+            <xsl:apply-templates select="." mode="tei"/>
         </xsl:for-each>
     </xsl:template>
     

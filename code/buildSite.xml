@@ -42,6 +42,11 @@
                 <include name="**"/>
             </fileset>
         </copy>
+        <copy todir="${siteTemp}/pdfs">
+            <fileset dir="../data/pdfs">
+                <include name="**"/>
+            </fileset>
+        </copy>
     </target>
     
     

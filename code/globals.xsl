@@ -12,9 +12,13 @@
     <xsl:param name="outDir"/>
     
     
-    <xsl:variable name="xmlDir" select="'../data/texts/'"/>
+    <xsl:variable name="xmlDir" select="'../data/'"/>
     
-    <xsl:variable name="xmlDocs" select="collection(concat($xmlDir,'?select=*.xml&amp;recurse=yes'))"/>  
+    <xsl:variable name="xmlDocs" select="collection(concat($xmlDir,'?select=*.xml&amp;recurse=yes'))//TEI" as="element(TEI)+"/>  
     
-    <xsl:variable name="personography" select="$xmlDocs//TEI[@xml:id='people']"/>
+    <xsl:variable name="personography" select="$xmlDocs[@xml:id='people']" as="element(TEI)"/>
+    
+    <xsl:variable name="taxonomies" select="$xmlDocs[@xml:id='taxonomies']" as="element(TEI)"/>
+    
+    <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
 </xsl:stylesheet>

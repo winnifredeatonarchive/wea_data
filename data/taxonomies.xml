@@ -18,6 +18,7 @@
          </sourceDesc>
       </fileDesc>
      <profileDesc>
+        
         <textClass>
            <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
         </textClass>
@@ -125,6 +126,10 @@
               
            </taxonomy>
         </classDecl>
+        <listPrefixDef>
+           <prefixDef ident="pdf" matchPattern="(.+)" replacementPattern="pdfs/$1.pdf"/>
+           <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
+        </listPrefixDef>
      </encodingDesc>
      <revisionDesc>
         <change when="2019-02-13"
