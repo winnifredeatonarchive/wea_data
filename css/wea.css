@@ -10,15 +10,30 @@ html{
 
 body{
     line-height: 1.2;
+    min-height:40rem;
 }
 
-div[data-el=body]{
-    margin: 0 auto;
+#mainBody{
+        margin: 0 auto;
     max-width:40em;
   background-color: rgba(244, 244, 241,0.8);
-  padding:0 8rem;
-   
+  padding:2rem 8rem;
+  min-height:40rem;
 }
+
+
+#searchResults{
+    margin-top:2em;
+}
+
+div.results{
+    margin-top:1.5rem;
+}
+
+div.results > div{
+    margin-top:1em;
+}
+
 
 
 div[data-el=body] > div[data-el=div] > h2,

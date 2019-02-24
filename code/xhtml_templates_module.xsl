@@ -46,7 +46,6 @@
                 <xsl:apply-templates mode="#current"/>
                 <xsl:call-template name="createSearchResults"/>
             </div>
-            
             <xsl:call-template name="createAppendix"/>
             <xsl:call-template name="createPopup"/>
         </body>
