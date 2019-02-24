@@ -121,7 +121,6 @@ mdh.LocalSearch.prototype.stemToken = function(str,exact){
       console.log('Exact string');
       return str;
   } 
-  
   else if (str.match(/^[A-Z]/)){
     return str;
   }
@@ -181,7 +180,13 @@ mdh.LocalSearch.prototype.search = function(str){
         emptyIndex = {'token': tokensToFind[i], 'instances': []}; //used as return value when nothing retrieved.
 
       //We create an array of fetches to get the json file for each token, assuming it's there.
-        promises[i] = fetch(this.jsonDirectory + tokensToFind[i] + '.json', {
+        var ulDir;
+        if (tokensToFind[i].match(/^[A-Z]/g)){
+            ulDir ='upper/';
+        } else {
+            ulDir='lower/';
+        }
+        promises[i] = fetch(this.jsonDirectory + ulDir + tokensToFind[i] + '.json', {
                             credentials: 'same-origin',
                             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
                             headers: {

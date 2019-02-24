@@ -37,7 +37,7 @@
                 </xsl:call-template>
             </xsl:variable>
             <xsl:message>Creating <xsl:value-of select="$token"/>.json</xsl:message>
-            <xsl:result-document href="../../products/js/search/{$token}.json" method="text">
+            <xsl:result-document href="../../products/js/search/{if (matches($token,'^[A-Z]')) then 'upper' else 'lower'}/{$token}.json" method="text">
                 <xsl:value-of select="xml-to-json($map, map{'indent': true()})"/>
             </xsl:result-document>
         </xsl:for-each-group>
