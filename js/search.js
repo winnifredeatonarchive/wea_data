@@ -71,6 +71,8 @@ mdh.LocalSearch = function(jsonDirectory, outputDivId){
   this.outputDivId   = outputDivId;             //Id of the div that we'll use to show results.
   this.outputDiv     = document.getElementById(this.outputDivId);
   if (!this.outputDiv){this.showDebug('Output div with id ' + this.outputDivId + ' does not exist in the document.');}
+  this.outputDiv.classList.remove("showing");
+  this.outputDiv.classList.add("closed");
 };
 
 /**
@@ -398,7 +400,7 @@ mdh.LocalSearch.prototype.getResults = function(){
   this.outputDiv.appendChild(document.createElementNS('http://www.w3.org/1999/xhtml', 'br'));
   this.outputDiv.appendChild(document.createTextNode(this.captions.strDocumentsFound + ' ' + hitCount));
   this.outputDiv.appendChild(resultsDiv);
-  this.outputDiv.removeAttribute('class');
+  this.outputDiv.classList.remove('closed');
   this.outputDiv.classList.add('showing');
 };
 
