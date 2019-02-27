@@ -43,6 +43,7 @@
                </list>
             </p>
          </div>
+         
 
          <div xml:id="github">
             <head>Using Github</head>
@@ -84,19 +85,17 @@
                <div>
                   <head>Updating</head>
                   <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
-                  <p>To update:
-            <list>
-                        <item>Go into your working folder: 
-                <code rend="block">cd wea</code>
-                        </item>
-                        <item>Pull the repository:
-              <code rend="block">git pull</code>
-                        </item>
-                        <figure>
-                           <graphic url="../graphics/git_pull_1.gif"/>
-                        </figure>
-                     </list>
-                  </p>
+                  <list>
+                     <item>Go into your working folder: 
+                        <code rend="block">cd wea</code>
+                     </item>
+                     <item>Pull the repository:
+                        <code rend="block">git pull</code>
+                     </item>
+                     <figure>
+                        <graphic url="../graphics/git_pull_1.gif"/>
+                     </figure>
+                  </list>
                </div>
                <div>
                   <head>Committing</head>
@@ -179,7 +178,41 @@
                   </p>
                </div>
             </div>
-        
+            <div xml:id="github_summary">
+               <head>Github Summary</head>
+               <p>The basic steps for working with Github are:
+                  
+                  <list>
+                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type "Terminal" to find it)</item>
+                     <item>Go into your working directory (likely called "wea"):
+                        <code rend="block">cd wea</code>
+                     </item>
+                  </list>
+                  Before you start working:
+                  <list>
+                     <item>Pull the changes from the repository so that your repository is up-to-date:
+                        <code rend="block">git pull</code>
+                     </item>
+                  </list>
+                  While you're working:
+                  <list>
+                     <item>Save your file (using command/ctrl + S like in MS Word)</item>
+                     <item>Validate by pressing the red checkmark button in the toolbar in oXygen</item>
+                  </list>
+                  Once your file is valid and you want to save the file to the repository:
+                  <list>
+                     <item>Stage your file to be committed:
+                        <code rend="block">git add .</code>
+                     </item>
+                     <item>Commit your changes:
+                        <code rend="block">git commit -m</code>
+                     </item>
+                     <item>Push your changes to the repository:
+                        <code rend="block">git push</code>
+                     </item>
+                  </list>
+               </p>
+            </div>
          </div>
       
          <div>
@@ -397,7 +430,6 @@
             <p>To regenerate the schema and the documentation follow these directions</p>
             <p>
                <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples"/>
             <p>
                <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
                <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
