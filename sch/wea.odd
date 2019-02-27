@@ -298,6 +298,98 @@
                   </egXML>
                </p>
             </div>
+            <div xml:id="codeTemplates">
+               <head>Code Templates (Shortcuts)</head>
+               <p>The table below lists keyboard shortcuts for inserting common encoding features in a text. In most cases, the code template simply requires selecting (i.e. highlighting) the bit of text you want to encode and then typing in the keystroke; the exception currently is the gap element shortcut, which is simply inserted where your cursor is in the document.</p>
+               
+               <table>
+                  <row>
+                     <cell>M1</cell>
+                     <cell>Command key on MacOS X, Ctrl on other platforms.</cell>
+                  </row>
+                  <row>
+                     <cell>M2</cell>
+                     <cell>Shift</cell>
+                  </row>
+                  <row>
+                     <cell>M3</cell>
+                     <cell>Option on Mac OS X, Alt on other platforms</cell>
+                  </row>
+               </table>
+               <table xml:id="codeTemplates_table">
+                  <row role="label">
+                     <cell>Name</cell>
+                     <cell>Description</cell>
+                     <cell>Result</cell>
+                     <cell>Keystroke</cell>
+                  </row>
+                  <row>
+                     <cell>Insert left quotation mark</cell>
+                     <cell>Insert the the opening curly quotation mark</cell>
+                     <cell>
+                        <code>“</code>
+                     </cell>
+                     <cell>M1 M2 L</cell>
+                  </row>
+                  <row>
+                     <cell>Insert left single quote</cell>
+                     <cell>Inserts the opening single curly apostrophe</cell>
+                     <cell>
+                        <code>‘</code>
+                     </cell>
+                     <cell>M1 M2 A</cell>
+                  </row>
+                  <row>
+                     <cell>Insert right curly quote</cell>
+                     <cell>Inserts the closing curly quotation mark</cell>
+                     <cell>
+                        <code>”</code>
+                     </cell>
+                     <cell>M1 M2 R</cell>
+                  </row>
+                  <row>
+                     <cell>Insert right single curly quote</cell>
+                     <cell>The closing single curly apostrophe</cell>
+                     <cell>
+                        <code>’</code>
+                     </cell>
+                     <cell>M1 M2 Z</cell>
+                  </row>
+                  <row>
+                     <cell>Tag foreign</cell>
+                     <cell>Tag a foreign selection</cell>
+                     <cell>
+                        <code>&lt;foreign&gt;${selection}&lt;/foreign&gt;</code>
+                     </cell>
+                     <cell>M1 M2 F</cell>
+                  </row>
+                  <row>
+                     <cell>Tag gap</cell>
+                     <cell>Insert a gap element</cell>
+                     <cell>
+                        <code>&lt;gap reason="${caret}"/&gt;</code>
+                     </cell>
+                     <cell>M1 M2 G</cell>
+                  </row>
+                  <row>
+                     <cell>Tag paragraph</cell>
+                     <cell>Tag a paragraph</cell>
+                     <cell>
+                        <code>&lt;p&gt;${selection}&lt;/p&gt;</code>
+                     </cell>
+                     <cell>M1 M2 P</cell>
+                  </row>
+                  <row>
+                     <cell>Tag Winnifred Eaton's name</cell>
+                     <cell>Tag a reference to Winnifred Eaton</cell>
+                     <cell>
+                        <code>&lt;name ref="pers:WE"&gt;${selection}&lt;/name&gt;</code>
+                     </cell>
+                     <cell>M1 M2 W</cell>
+                  </row>
+               </table>
+               
+            </div>
          </div>
          <div>
             <head>Building the Schema</head>
@@ -305,6 +397,7 @@
             <p>To regenerate the schema and the documentation follow these directions</p>
             <p>
                <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"/>
             <p>
                <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
                <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>

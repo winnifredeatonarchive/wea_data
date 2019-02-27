@@ -6,6 +6,7 @@
     exclude-result-prefixes="#all"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    xmlns:eg="http://www.tei-c.org/ns/Examples"
     version="2.0">
     
     <!--This stylesheet adds values from our taxonomies to the ODD file-->
@@ -101,6 +102,30 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:value-of select="concat('(',string-join(for $p in $people//person[@xml:id[not(.='WE')]] return concat($sq,$p/@xml:id,$sq,':',$sq,$p/persName/text(),$sq),';'),')')"/>
+        </xsl:copy>
+    </xsl:template>
+    
+
+    <xsl:template match="table[@xml:id='codeTemplates_table']">
+        
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <row role="label">
+                <cell>Name</cell>
+                <cell>Description</cell>
+                <cell>Result</cell>
+                <cell>Keystroke</cell>
+            </row>
+            <xsl:for-each select="document('../../wea_data.xpr')//*:codeTemplateItem[matches(*:field[@name='renderString'], 'WEA:')]">
+                <xsl:sort select="lower-case(normalize-space(*:field[@name='renderString']))"/>
+                <row>
+                    <cell><xsl:value-of select="substring-after(normalize-space(*:field[@name='renderString']), 'WEA: ')"/></cell>
+                    <cell><xsl:value-of select="normalize-space(*:field[@name='descriptionString'])"/></cell>
+                    <cell><code><xsl:value-of select="normalize-space(*:field[@name='unparsedInsertString'])"/></code></cell>
+                    <cell><xsl:value-of select="normalize-space(*:field[@name='accelerator'])"/></cell>
+                </row>
+            </xsl:for-each>
+            
         </xsl:copy>
     </xsl:template>
    
