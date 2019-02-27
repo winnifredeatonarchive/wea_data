@@ -230,7 +230,7 @@
         </xsl:analyze-string>
     </xsl:template>
     
-    <xsl:template match="div/table">
+    <xsl:template match="div/table[ancestor::section[contains(@id,'index.xml-back')]]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <colgroup>
