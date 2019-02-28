@@ -994,7 +994,7 @@
                <constraintSpec scheme="schematron" ident="noCurlyQ">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][not(self::tei:div)][text()]/text()">
              
                            <sch:assert test="not(contains(.,'”') and contains(.,'“'))" sqf:fix="turnToQ">
                               ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead.

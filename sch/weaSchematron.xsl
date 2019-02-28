@@ -1235,11 +1235,11 @@ relatedItem element must be empty</svrl:text>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"
+   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][not(self::tei:div)][text()]/text()"
                  priority="1000"
                  mode="M27">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"/>
+                       context="tei:*[not(ancestor-or-self::tei:code)][not(self::tei:div)][text()]/text()"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

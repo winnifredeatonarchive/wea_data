@@ -466,7 +466,7 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][not(self::tei:div)][text()]/text()">
              
                            <sch:assert test="not(contains(.,'”') and contains(.,'“'))" sqf:fix="turnToQ">
                               ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead.
