@@ -74,9 +74,7 @@
             extension=".xml" classpath="${lib.dir}/saxon9he.jar"
             useImplicitFileset="false" failonerror="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-            <fileset dir="${data.dir}">
-                <include name="**/**.xml"/>
-            </fileset>
+            <fileset refid="data"/>
         </xslt>
         
         <!--Now we process those XML files, checking to see if there
