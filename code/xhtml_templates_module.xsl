@@ -87,7 +87,7 @@
     </xsl:template>
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | note | lg | l | q | byline" mode="tei">
+    <xsl:template match="body | div | p | note | lg | l | byline" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -123,6 +123,13 @@
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </tr>
+    </xsl:template>
+    
+    <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg)]" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
     </xsl:template>
     
     <xsl:template match="cell" mode="tei">
