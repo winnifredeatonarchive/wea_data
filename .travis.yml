@@ -2,6 +2,8 @@ language: java
 script: ant all
 notifications:
   email:
+    recepients:
+      - joey.takeda@gmail.com
     on_success: change
     on_failure: always
 deploy:
