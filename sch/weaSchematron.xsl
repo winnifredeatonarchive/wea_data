@@ -1251,8 +1251,7 @@ relatedItem element must be empty</svrl:text>
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                              ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead (use the Quickfix
-                              to insert the element automatically).
+                              ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead.
                            </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1303,15 +1302,16 @@ relatedItem element must be empty</svrl:text>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:lg/text()" priority="1000" mode="M28">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:lg/text()"/>
+   <xsl:template match="tei:lg[not(child::tei:*)]" priority="1000" mode="M28">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:lg[not(child::tei:*)]"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="not(matches(., '[a-z]+.*[\r\n]'))"/>
+         <xsl:when test="not(matches(text(), '[a-z]+.*[\r\n]'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches(., '[a-z]+.*[\r\n]'))">
+                                test="not(matches(text(), '[a-z]+.*[\r\n]'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -1333,7 +1333,7 @@ relatedItem element must be empty</svrl:text>
                               <sqf:description>
                                  <sqf:title>Attempt to tag verse lines.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
+                              <sqf:replace match="node()">
                                  <xsl:variable name="lgParent" select="parent::tei:lg"/>
                                  <xsl:variable name="lAncestors" select="count($lgParent/ancestor::tei:*)"/>
                                  <xsl:variable name="l.tabCount" select="$lAncestors + 1"/>
@@ -1470,18 +1470,18 @@ relatedItem element must be empty</svrl:text>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:div/text()[not(some $d in $docTypes satisfies contains($d,'Poem'))]"
+   <xsl:template match="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]"
                  priority="1000"
                  mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:div/text()[not(some $d in $docTypes satisfies contains($d,'Poem'))]"/>
+                       context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="not(matches(., '[a-z]+.*[\r\n]'))"/>
+         <xsl:when test="not(matches(text(), '[a-z]+.*[\r\n]'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches(., '[a-z]+.*[\r\n]'))">
+                                test="not(matches(text(), '[a-z]+.*[\r\n]'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -1503,26 +1503,26 @@ relatedItem element must be empty</svrl:text>
                               <sqf:description>
                                  <sqf:title>Attempt to tag paragraphs.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
-                                 <xsl:variable name="parent" select="parent::tei:div"/>
-                                 <xsl:variable name="pAncestors" select="count($parent/ancestor::tei:*)"/>
-                                 <xsl:variable name="tabCount" select="$pAncestors + 1"/>
-                                 <xsl:variable name="newLine">
-                                    <xsl:text>
+                              <sqf:replace match="node()">
+                                    <xsl:variable name="pAncestors" select="count(ancestor::tei:*)"/>
+                                    <xsl:variable name="tabCount" select="$pAncestors + 1"/>
+                                    <xsl:variable name="newLine">
+                                       <xsl:text>
 </xsl:text>
-                                 </xsl:variable>
-                                 <xsl:variable name="tab"
+                                    </xsl:variable>
+                                    <xsl:variable name="tab"
                           select="string-join(for $n in (1 to $tabCount) return '&#x9;','')"/>
-                                 <xsl:variable name="paras"
+                                    <xsl:variable name="paras"
                           select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
-                                 <xsl:for-each select="$paras[not(.='')]">
-                                    <xsl:value-of select="$newLine"/>
-                                    <xsl:value-of select="$tab"/>
-                                    <xsl:element name="p">
-                                       <xsl:value-of select="."/>
-                                    </xsl:element>
-                                    <xsl:value-of select="$newLine"/>
-                                 </xsl:for-each>
+                                    <xsl:for-each select="$paras[not(.='')]">
+                                       <xsl:value-of select="$newLine"/>
+                                       <xsl:value-of select="$tab"/>
+                                       <xsl:element name="p">
+                                          <xsl:value-of select="."/>
+                                       </xsl:element>
+                                       <xsl:value-of select="$newLine"/>
+                                    </xsl:for-each>
+                                 
                               </sqf:replace>
                            </sqf:fix>
       <xsl:apply-templates select="*" mode="M32"/>

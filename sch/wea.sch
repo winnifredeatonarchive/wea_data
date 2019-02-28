@@ -467,9 +467,9 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()">
+             
                            <sch:assert test="not(contains(.,'”') and contains(.,'“'))" sqf:fix="turnToQ">
-                              ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead (use the Quickfix
-                              to insert the element automatically).
+                              ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead.
                            </sch:assert>
                            <sqf:fix id="turnToQ">
                               <sqf:description>
@@ -509,15 +509,15 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:lg/text()">
-                           <sch:assert test="not(matches(., '[a-z]+.*[\r\n]'))" sqf:fix="turnToLines">
+                        <sch:rule context="tei:lg[not(child::tei:*)]">
+                           <sch:assert test="not(matches(text(), '[a-z]+.*[\r\n]'))" sqf:fix="turnToLines">
                               ERROR: QUICKFIX: Untagged text should likely be tagged as verse lines. Use the QuickFix to do so.
                            </sch:assert>
                            <sqf:fix id="turnToLines">
                               <sqf:description>
                                  <sqf:title>Attempt to tag verse lines.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
+                              <sqf:replace match="node()">
                                  <xsl:variable name="lgParent" select="parent::tei:lg"/>
                                  <xsl:variable name="lAncestors" select="count($lgParent/ancestor::tei:*)"/>
                                  <xsl:variable name="l.tabCount" select="$lAncestors + 1"/>
@@ -602,34 +602,34 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:div/text()[not(some $d in $docTypes satisfies contains($d,'Poem'))]">
-                           <sch:assert test="not(matches(., '[a-z]+.*[\r\n]'))" sqf:fix="turnToPara">
+                        <sch:rule context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]">
+                           <sch:assert test="not(matches(text(), '[a-z]+.*[\r\n]'))" sqf:fix="turnToPara">
                               ERROR: QUICKFIX: Untagged text should likely be tagged as paragraphs. Use the QuickFix to do so.
                            </sch:assert>
                            <sqf:fix id="turnToPara">
                               <sqf:description>
                                  <sqf:title>Attempt to tag paragraphs.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
-                                 <xsl:variable name="parent" select="parent::tei:div"/>
-                                 <xsl:variable name="pAncestors" select="count($parent/ancestor::tei:*)"/>
-                                 <xsl:variable name="tabCount" select="$pAncestors + 1"/>
-                                 <xsl:variable name="newLine">
-                                    <xsl:text>
+                              <sqf:replace match="node()">
+                                    <xsl:variable name="pAncestors" select="count(ancestor::tei:*)"/>
+                                    <xsl:variable name="tabCount" select="$pAncestors + 1"/>
+                                    <xsl:variable name="newLine">
+                                       <xsl:text>
 </xsl:text>
-                                 </xsl:variable>
-                                 <xsl:variable name="tab"
+                                    </xsl:variable>
+                                    <xsl:variable name="tab"
                              select="string-join(for $n in (1 to $tabCount) return '&#x9;','')"/>
-                                 <xsl:variable name="paras"
+                                    <xsl:variable name="paras"
                              select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
-                                 <xsl:for-each select="$paras[not(.='')]">
-                                    <xsl:value-of select="$newLine"/>
-                                    <xsl:value-of select="$tab"/>
-                                    <xsl:element name="p">
-                                       <xsl:value-of select="."/>
-                                    </xsl:element>
-                                    <xsl:value-of select="$newLine"/>
-                                 </xsl:for-each>
+                                    <xsl:for-each select="$paras[not(.='')]">
+                                       <xsl:value-of select="$newLine"/>
+                                       <xsl:value-of select="$tab"/>
+                                       <xsl:element name="p">
+                                          <xsl:value-of select="."/>
+                                       </xsl:element>
+                                       <xsl:value-of select="$newLine"/>
+                                    </xsl:for-each>
+                                 
                               </sqf:replace>
                            </sqf:fix>
                         </sch:rule>

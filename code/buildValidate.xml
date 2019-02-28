@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="Validate TEI files" default="all">
   
+  <property name="echo.separator">**************************************</property>
+  
   <!--The project directory-->
   <dirname property="project.dir" file="../wea_data.xpr"/>
   
@@ -21,6 +23,8 @@
   
   <!--NOTE: THIS WILL CHANGE IN FUTURE-->
   <property name="data.dir" value="${project.dir}/data/"/>
+    
+  <property name="tempSchematron.dir" value="${basedir}/schema/tempSchematron"/>
   
   <!--Data fileset-->
   <fileset id="data" dir="${data.dir}">
@@ -29,6 +33,9 @@
     
     
   <target name="validateRng">
+      <echo message="${echo.separator}"/>
+      <echo message="Validating against RNG schema..."/>
+      <echo message="${echo.separator}"/>
       <apply executable="java" parallel="true" failonerror="true">
           <arg line="-jar ${lib.dir}/jing.jar"/>
           <arg value="${rng}"/>
@@ -37,11 +44,64 @@
   </target>
     
     <target name="validateSchematron">
+        <description>
+            TARGET schematronValidateAll
+            This target validates the content of the content
+            folder, which contains all the site pages and timeline files,
+            using Schematron. It uses the utilities/keatsSchematron.xsl
+            file, which is the set of Schematron rules extracted from the
+            schema and compiled into XSLT. Validation results are output
+            to an XML file, which is then processed to generate results
+            which can trigger a build fail.
+        </description>
+        <echo message="${echo.separator}"/>
+        <echo message="Validating XML source files with project Schematron..."/>
+        <!--Delete the old temp.dir if it's there-->
+        <delete dir="${tempSchematron.dir}"/>
         
+        <!--Remake the temp.dir-->
+        <mkdir dir="${tempSchematron.dir}"/>
+        
+        <!--It would be good to be able to conditionally select
+      the fileset to process-->
+        
+        <!--Process the files in source directory with the 
+      lemdoSchematron.xsl (which is created during the ODD
+      build). This creates new XML files in the temp
+      directory-->
+        <xslt destdir="${tempSchematron.dir}"
+            style="${sch.dir}/weaSchematron.xsl"
+            extension=".xml" classpath="${lib.dir}/saxon9he.jar"
+            useImplicitFileset="false" failonerror="true">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <fileset dir="${data.dir}">
+                <include name="**/**.xml"/>
+            </fileset>
+        </xslt>
+        
+        <!--Now we process those XML files, checking to see if there
+      are any errors. If there are, print them out and create a results
+      file in the temporary directory and break the build-->
+        <java fork="true" classname="net.sf.saxon.Transform" classpath="${lib.dir}/saxon9he.jar" failonerror="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:schema/checkSchematronResults.xsl"/>
+            <arg value="-xsl:schema/checkSchematronResults.xsl"/> 
+            <arg value="-o:${tempSchematron.dir}/results.txt"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+            <arg value="tempDir=${tempSchematron.dir}"/>
+        </java>
+        
+        <!--Done!-->
+        <echo message="${echo.separator}"/>
+        <echo message="Schematron validation complete."/>
+        
+        <!--Now we can delete the temporary directory, if 
+      everything is valid-->
+        <delete dir="${tempSchematron.dir}"/>
     </target>
     
     
-    <target name="all" depends="validateRng"/>
+    <target name="all" depends="validateRng, validateSchematron"/>
     
  
 </project>
