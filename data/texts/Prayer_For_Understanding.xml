@@ -33,6 +33,7 @@
            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
            <catRef scheme="wdt:category"
                     target="wdt:catEarlyExperiment"/>
+           <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
         </textClass>
      </profileDesc>
      <revisionDesc>
@@ -42,7 +43,41 @@
   </teiHeader>
   <text>
       <body>
-         <p>Some text here.</p>
+         <head>A PRAYER FOR UNDERSTANDING.</head>
+         
+         <opener>
+            <byline>BY <name ref="pers:WE">ONOTO WATANNA</name>.</byline>
+         </opener>
+         
+         <div style="text-align:center;">
+            <lg>
+               <l>THY Book is here, I hold it now</l>
+               <l style="margin-left:1.5rem;">With hesitating hand;</l>
+               <l>But, ere I ope, give me the power,</l>
+               <l style="margin-left:1.5rem;">Dear Lord,—to understand!</l>
+            </lg>
+            
+            <lg>
+               <l>What lies within? What may I learn?</l>
+               <l style="margin-left:1.5rem;">A thought too great and grand</l>
+               <l>For such as I—so frail, so small,</l>
+               <l style="margin-left:1.5rem;">So weak—to understand?</l>
+            </lg>
+            
+            <lg>
+               <l>Father above, I'm wandering towards</l>
+               <l style="margin-left:1.5rem;">The good and better land:</l>
+               <l>Ah! guide my footsteps in Thy way</l>
+               <l style="margin-left:1.5rem;">And help me—understand.</l>
+            </lg>
+            
+            <p>Written by one who is not a Scientist, but who like a little child lost in the dark is crying vainly for the light. She does not know as yet what the <q>Key to the Scriptures</q> contains. The book lies before her. She will read it soon, and though she has been a freethinker all her life, she prays for understanding before opening it.</p>
+         </div>
+            
+            <closer>
+               <name ref="pers:WE">ONOTO WATANNA</name>.
+            </closer>
+
       </body>
   </text>
 </TEI>

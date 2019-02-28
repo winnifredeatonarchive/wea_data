@@ -554,6 +554,54 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:name | tei:ref | tei:title | tei:l">
+                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                           <sch:assert test="not(matches($text,'^\s+|\s+$'))">
+                              ERROR: <sch:name/> should not begin or end with spaces.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:name">
+                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                           <sch:assert test="not(matches($text,'\.$'))" role="warning">
+                              WARNING: <sch:name/> usually shouldn't end with periods.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:q">
+                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                           <sch:assert test="not(matches($text,'[\.,]$'))">
+                              ERROR: Trailing punctuaton should go outside the <sch:name/> element.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:div/text()[not(some $d in $docTypes satisfies contains($d,'Poem'))]">
                            <sch:assert test="not(matches(., '[a-z]+.*[\r\n]'))" sqf:fix="turnToPara">
                               ERROR: QUICKFIX: Untagged text should likely be tagged as paragraphs. Use the QuickFix to do so.
