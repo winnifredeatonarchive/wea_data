@@ -23,12 +23,25 @@
   </teiHeader>
   <text>
       <body>
-         <listPerson>
+         
+         <listPerson type="primary">
+            
             <person xml:id="WE">
                <persName>Winnifred Eaton</persName>
             </person>
+            <person xml:id="SE">
+               <persName>S. Ehrhart</persName>
+            </person>
+         </listPerson>
+         
+         <listPerson type="contributor">
+
             <person xml:id="MC">
-               <persName>Mary Chapman</persName>
+               <persName>
+                  <forename>Mary</forename>
+                  <surname>Chapman</surname>
+                  <reg>Mary Chapman</reg>
+               </persName>
             </person>
             <person xml:id="JLC">
                <persName>Jean Lee Cole</persName>
@@ -40,9 +53,27 @@
             <person xml:id="KI">
                <persName>Ken Ip</persName>
             </person>
+            
             <person xml:id="JT">
                <persName>Joey Takeda</persName>
             </person>
+            
+            <person xml:id="HB">
+               <persName>Hilary Ball</persName>
+            </person>
+            
+            <person xml:id="XY">
+               <persName>Xine Yao</persName>
+            </person>
+            
+            <person xml:id="PP">
+               <persName>Pavlina Pajot</persName>
+            </person>
+            
+            <person xml:id="LM">
+               <persName>Lucia Maggio</persName>
+            </person>
+            
 
   
          </listPerson>
