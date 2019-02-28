@@ -1475,13 +1475,13 @@ relatedItem element must be empty</svrl:text>
                  mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]"/>
+      <xsl:variable name="text" select="normalize-space(string-join(text(),''))"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="not(matches(text(), '[a-z]+.*[\r\n]'))"/>
+         <xsl:when test="$text=''"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches(text(), '[a-z]+.*[\r\n]'))">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="$text=''">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -1522,6 +1522,7 @@ relatedItem element must be empty</svrl:text>
                                        </xsl:element>
                                        <xsl:value-of select="$newLine"/>
                                     </xsl:for-each>
+                                    
                                  
                               </sqf:replace>
                            </sqf:fix>

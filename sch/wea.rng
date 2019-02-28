@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-02-28T19:32:40Z. .
+Schema generated from ODD source 2019-02-28T22:04:16Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -459,6 +459,14 @@ Sample values include: 1] draft(This document is currently being edited. It is n
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI</a:documentation>
                      <value>pers:JT</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT</a:documentation>
+                     <value>pers:HB</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB</a:documentation>
+                     <value>pers:XY</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Xine Yao) XY</a:documentation>
+                     <value>pers:PP</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pavlina Pajot) PP</a:documentation>
+                     <value>pers:LM</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Lucia Maggio) LM</a:documentation>
                   </choice>
                </oneOrMore>
             </list>
@@ -2290,6 +2298,14 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI</a:documentation>
                   <value>pers:JT</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT</a:documentation>
+                  <value>pers:HB</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB</a:documentation>
+                  <value>pers:XY</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Xine Yao) XY</a:documentation>
+                  <value>pers:PP</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pavlina Pajot) PP</a:documentation>
+                  <value>pers:LM</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Lucia Maggio) LM</a:documentation>
                </choice>
             </attribute>
          </optional>
@@ -5353,7 +5369,8 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]">
-                           <sch:assert test="not(matches(text(), '[a-z]+.*[\r\n]'))" sqf:fix="turnToPara">
+                           <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
+                           <sch:assert test="$text=''" sqf:fix="turnToPara">
                               ERROR: QUICKFIX: Untagged text should likely be tagged as paragraphs. Use the QuickFix to do so.
                            </sch:assert>
                            <sqf:fix id="turnToPara">
@@ -5379,6 +5396,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                                        </xsl:element>
                                        <xsl:value-of select="$newLine"/>
                                     </xsl:for-each>
+                                    
                                  
                               </sqf:replace>
                            </sqf:fix>

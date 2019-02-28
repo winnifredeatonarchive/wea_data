@@ -603,7 +603,8 @@ relatedItem element must be empty</sch:report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]">
-                           <sch:assert test="not(matches(text(), '[a-z]+.*[\r\n]'))" sqf:fix="turnToPara">
+                           <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
+                           <sch:assert test="$text=''" sqf:fix="turnToPara">
                               ERROR: QUICKFIX: Untagged text should likely be tagged as paragraphs. Use the QuickFix to do so.
                            </sch:assert>
                            <sqf:fix id="turnToPara">
@@ -629,6 +630,7 @@ relatedItem element must be empty</sch:report>
                                        </xsl:element>
                                        <xsl:value-of select="$newLine"/>
                                     </xsl:for-each>
+                                    
                                  
                               </sqf:replace>
                            </sqf:fix>
