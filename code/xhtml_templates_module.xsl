@@ -45,14 +45,16 @@
     
     <xsl:template match="text" mode="tei">
         <body>
-            <xsl:call-template name="processAtts"/>
             <xsl:call-template name="createAside"/>
             <div id="mainBody">
                 <xsl:call-template name="createFacsButton"/>
-                <xsl:apply-templates mode="#current"/>
+                <div>
+                    <xsl:call-template name="processAtts"/>
+                    <xsl:apply-templates mode="#current"/>
+                </div>
                 <xsl:call-template name="createSearchResults"/>
+                <xsl:call-template name="createAppendix"/>
             </div>
-            <xsl:call-template name="createAppendix"/>
             <xsl:call-template name="createPopup"/>
         </body>
     </xsl:template>
