@@ -372,6 +372,66 @@ relatedItem element must be empty</sch:report>
                         <sch:let name="docTypes" value="//tei:catRef/@target"/>
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
                         
+                        
+                        <sqf:fix id="globals">
+                           <sqf:description>
+                              <sqf:title>Global Templates</sqf:title>
+                           </sqf:description>
+                           
+                           
+                           <xsl:variable name="apos">'</xsl:variable>
+                              
+                              <xsl:template name="tagBlocks">
+                                 <xsl:param name="verse" select="false()"/>
+                                 <xsl:variable name="ancestors" select="count(ancestor::tei:*)"/>
+                                 <xsl:variable name="tabCount" select="$ancestors"/>
+                                 <xsl:variable name="newLine">
+                                    <xsl:text>
+</xsl:text>
+                                 </xsl:variable>
+                                 <xsl:variable name="tab"
+                          select="string-join(for $n in (2 to $tabCount) return '&#x9;','')"/>
+                                 <xsl:variable name="paras"
+                          select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
+                                 <xsl:for-each select="$paras[not(.='')]">
+                                    <xsl:value-of select="$newLine"/>
+                                    <xsl:value-of select="$tab"/>
+                                    <xsl:element name="{if ($verse) then 'l' else 'p'}">
+                                       <xsl:value-of select="."/>
+                                    </xsl:element>
+                                 </xsl:for-each>
+                              </xsl:template>
+                           
+                           <xsl:template name="replaceApos">
+
+                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
+                                 <xsl:matching-substring>
+                                    <xsl:value-of select="regex-group(1)"/>
+                                    <xsl:text>‘</xsl:text>
+                                 </xsl:matching-substring>
+                                 <xsl:non-matching-substring>
+                                    <xsl:analyze-string select="." regex="{concat('([a-z])',$apos,'([a-z])')}">
+                                       <xsl:matching-substring>
+                                          <xsl:value-of select="regex-group(1)"/>
+                                          <xsl:text>’</xsl:text>
+                                          <xsl:value-of select="regex-group(2)"/>
+                                       </xsl:matching-substring>
+                                       <xsl:non-matching-substring>
+                                          <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
+                                             <xsl:matching-substring>
+                                                <xsl:text>’</xsl:text>
+                                                <xsl:value-of select="regex-group(1)"/>
+                                             </xsl:matching-substring>
+                                             <xsl:non-matching-substring>
+                                                <xsl:value-of select="."/>
+                                             </xsl:non-matching-substring>
+                                          </xsl:analyze-string>
+                                       </xsl:non-matching-substring>
+                                    </xsl:analyze-string>
+                                 </xsl:non-matching-substring>
+                              </xsl:analyze-string>
+                           </xsl:template>
+                        </sqf:fix>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
@@ -397,45 +457,29 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor::tei:code)]/text()">
-                           <sch:let name="thisText" value="."/>
+                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                           <sch:let name="thisText"
+                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
-                           <sch:assert test="empty($cp[.=34])" sqf:fix="replaceStraightApos">
+                           <sch:assert test="empty($distinctCp[.=39])"
+                     sqf:fix="replaceAposHere replaceAposEverywhere">
                               ERROR: QUICKFIX: Do not use straight apostrophes. 
                            </sch:assert>
-                           <sqf:fix id="replaceStraightApos">
+                           <sqf:fix id="replaceAposHere" use-when="self::tei:body">
                               <sqf:description>
-                                 <sqf:title>Replace straight apostrophe with single apostrophe.</sqf:title>
+                                 <sqf:title>GLOBAL: Replace straight apostrophe with curly apostrophe everywhere.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
-                                 <xsl:variable name="apos">'</xsl:variable>
-                                 <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
-                                    <xsl:matching-substring>
-                                       <xsl:value-of select="regex-group(1)"/>
-                                       <xsl:text>‘</xsl:text>
-                                    </xsl:matching-substring>
-                                    <xsl:non-matching-substring>
-                                       <xsl:analyze-string select="." regex="{concat('([a-z])',$apos,'([a-z])')}">
-                                          <xsl:matching-substring>
-                                             <xsl:value-of select="regex-group(1)"/>
-                                             <xsl:text>’</xsl:text>
-                                             <xsl:value-of select="regex-group(2)"/>
-                                          </xsl:matching-substring>
-                                          <xsl:non-matching-substring>
-                                             <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
-                                                <xsl:matching-substring>
-                                                   <xsl:text>’</xsl:text>
-                                                   <xsl:value-of select="regex-group(1)"/>
-                                                </xsl:matching-substring>
-                                                <xsl:non-matching-substring>
-                                                   <xsl:value-of select="."/>
-                                                </xsl:non-matching-substring>
-                                             </xsl:analyze-string>
-                                          </xsl:non-matching-substring>
-                                       </xsl:analyze-string>
-                                    </xsl:non-matching-substring>
-                                 </xsl:analyze-string>
+                              <sqf:replace match="//text()">
+                                 <xsl:call-template name="replaceApos"/>
+                              </sqf:replace>
+                           </sqf:fix>
+                           <sqf:fix id="replaceAposEverywhere" use-when="not(self::tei:body)">
+                              <sqf:description>
+                                 <sqf:title>LOCAL: Replace straight apostrophe with curly apostrophe in this <sch:name/> element.</sqf:title>
+                              </sqf:description>
+                              <sqf:replace match="text()">
+                                 <xsl:call-template name="replaceApos"/>
                               </sqf:replace>
                            </sqf:fix>
                         </sch:rule>
@@ -453,7 +497,7 @@ relatedItem element must be empty</sch:report>
                            <sch:let name="codepoints" value="distinct-values(string-to-codepoints(.))"/>
                            <sch:let name="badPoints" value="$codepoints[.=(8220,8221)]"/>
                            <sch:assert test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()">
-                              ERROR: Do not use curly quotation mark; use the &lt;q&gt; element instead (QuickFix not available).
+                              ERROR: Do not use curly quotation marks; use the &lt;q&gt; element instead (QuickFix not available).
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
@@ -466,16 +510,69 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][not(self::tei:div)][text()]/text()">
-             
-                           <sch:assert test="not(contains(.,'”') and contains(.,'“'))" sqf:fix="turnToQ">
-                              ERROR: QUICKFIX: Do not use curly quotation marks in published documents; use the &lt;q&gt; element instead.
+                        <sch:rule context="tei:body | tei:div | tei:lg">
+                           <sch:let name="divs"
+                  value="if (self::tei:body) then (descendant::tei:div) else ."/>
+                           <sch:let name="noElContentDivs" value="$divs[not(descendant::*)]"/>
+                           <sch:let name="contentDivs"
+                  value="$noElContentDivs[not(normalize-space(string-join(text(),''))='')]"/>
+                           <sch:assert test="empty($contentDivs)" sqf:fix="fixDivsHere fixDivsEverywhere">
+                              ERROR: QUICKFIX: Untagged text should likely be tagged. Use the Quickfix to do so.
                            </sch:assert>
-                           <sqf:fix id="turnToQ">
+                           <sqf:fixes>
+                              
+                              <sqf:fix id="fixDivsHere" use-when="not(self::tei:body)">
+                                 <sqf:description>
+                                    <sqf:title>LOCAL: Fix this <sch:name/>
+                                    </sqf:title>
+                                 </sqf:description>
+                                 <sqf:replace match="node()">
+                                    <xsl:call-template name="tagBlocks">
+                                       <xsl:with-param name="verse"
+                                     select="if (parent::*/self::tei:lg) then true() else false()"/>
+                                    </xsl:call-template>
+                                 </sqf:replace>
+                              </sqf:fix>
+                              
+                              <sqf:fix id="fixDivsEverywhere" use-when="self::tei:body">
+                                 <sqf:description>
+                                    <sqf:title>GLOBAL: Tag all paragraphs within divs and lines within linegroups.</sqf:title>
+                                 </sqf:description>
+                                 <sqf:replace match="//tei:div[not(descendant::*)][not(normalize-space(string-join(text(),''))='')]/node() | //tei:lg[not(descendant::*)][not(normalize-space(string-join(text(),''))='')]/node()">
+                                    <xsl:call-template name="tagBlocks">
+                                       <xsl:with-param name="verse"
+                                     select="if (parent::*/self::tei:lg) then true() else false()"/>
+                                    </xsl:call-template>
+                                 </sqf:replace>
+                              </sqf:fix>
+                              
+                             
+                           </sqf:fixes>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]">
+                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                           <sch:let name="containsCurlyQuotes"
+                  value="matches($text,'“') and matches($text,'”')"/>
+                           <sch:assert test="not($containsCurlyQuotes)"
+                     sqf:fix="fixQuotesHere fixQuotesEverywhere">
+                              ERROR: QUICKFIX: Do not use curly quotes; use the q element instead.
+                           </sch:assert>
+                           <sqf:fix id="fixQuotesHere">
                               <sqf:description>
-                                 <sqf:title>Replace curly quotes with q elements.</sqf:title>
+                                 <sqf:title>
+                                    <sch:name/>: Replace curly quotes with q elements in this <sch:name/> element.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match=".">
+                              <sqf:replace match="text()[contains(.,'“') and contains(.,'”')]">
                                  <xsl:analyze-string select="." regex="“([^”]+)([\.,])”">
                                     <xsl:matching-substring>
                                        <xsl:element name="q">
@@ -497,50 +594,32 @@ relatedItem element must be empty</sch:report>
                                     </xsl:non-matching-substring>
                                  </xsl:analyze-string>
                               </sqf:replace>
-                           </sqf:fix>
-                        </sch:rule>
-                     </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:lg[not(child::tei:*)]">
-                           <sch:assert test="not(matches(text(), '[a-z]+.*[\r\n]'))" sqf:fix="turnToLines">
-                              ERROR: QUICKFIX: Untagged text should likely be tagged as verse lines. Use the QuickFix to do so.
-                           </sch:assert>
-                           <sqf:fix id="turnToLines">
+                           </sqf:fix>         
+                           <sqf:fix id="fixQuotesEverywhere" use-when="self::tei:body">
                               <sqf:description>
-                                 <sqf:title>Attempt to tag verse lines.</sqf:title>
+                                 <sqf:title>GLOBAL: Replace curly quotes with q elements.</sqf:title>
                               </sqf:description>
-                              <sqf:replace match="node()">
-                                 <xsl:variable name="lgParent" select="parent::tei:lg"/>
-                                 <xsl:variable name="lAncestors" select="count($lgParent/ancestor::tei:*)"/>
-                                 <xsl:variable name="l.tabCount" select="$lAncestors + 1"/>
-                                 <xsl:variable name="l.newLine">
-                                    <xsl:text>
-</xsl:text>
-                                 </xsl:variable>
-                                 <xsl:variable name="l.tabs"
-                             select="string-join(for $n in (1 to $l.tabCount) return '&#x9;','')"/>
-                                 <xsl:variable name="lines"
-                             select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
-                                 <xsl:variable name="linesToTag" select="$lines[not(.='')]"/>
-                                 <xsl:for-each select="$linesToTag">
-                                    <xsl:variable name="currPos" select="position()"/>
-                                    <xsl:value-of select="$l.newLine"/>
-                                    <xsl:value-of select="$l.tabs"/>
-                                    <xsl:element name="l">
-                                       <xsl:value-of select="."/>
-                                    </xsl:element>
-                                    <xsl:if test="$currPos = count($linesToTag)">
-                                       <xsl:value-of select="$l.newLine"/>
-                                    </xsl:if>
-                                 </xsl:for-each>
+                              <sqf:replace match="//text()[contains(.,'“') and contains(.,'”')]">
+                                 <xsl:analyze-string select="." regex="“([^”]+)([\.,])”">
+                                    <xsl:matching-substring>
+                                       <xsl:element name="q">
+                                          <xsl:value-of select="regex-group(1)"/>
+                                       </xsl:element>
+                                       <xsl:value-of select="regex-group(2)"/>
+                                    </xsl:matching-substring>
+                                    <xsl:non-matching-substring>
+                                       <xsl:analyze-string select="." regex="“([^”]+)”">
+                                          <xsl:matching-substring>
+                                             <xsl:element name="q">
+                                                <xsl:value-of select="regex-group(1)"/>
+                                             </xsl:element>
+                                          </xsl:matching-substring>
+                                          <xsl:non-matching-substring>
+                                             <xsl:value-of select="."/>
+                                          </xsl:non-matching-substring>
+                                       </xsl:analyze-string>
+                                    </xsl:non-matching-substring>
+                                 </xsl:analyze-string>
                               </sqf:replace>
                            </sqf:fix>
                         </sch:rule>
@@ -591,49 +670,6 @@ relatedItem element must be empty</sch:report>
                            <sch:assert test="not(matches($text,'[\.,]$'))">
                               ERROR: Trailing punctuaton should go outside the <sch:name/> element.
                            </sch:assert>
-                        </sch:rule>
-                     </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:div[not(some $d in $docTypes satisfies contains($d,'Poem'))][not(child::*)]">
-                           <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
-                           <sch:assert test="$text=''" sqf:fix="turnToPara">
-                              ERROR: QUICKFIX: Untagged text should likely be tagged as paragraphs. Use the QuickFix to do so.
-                           </sch:assert>
-                           <sqf:fix id="turnToPara">
-                              <sqf:description>
-                                 <sqf:title>Attempt to tag paragraphs.</sqf:title>
-                              </sqf:description>
-                              <sqf:replace match="node()">
-                                    <xsl:variable name="pAncestors" select="count(ancestor::tei:*)"/>
-                                    <xsl:variable name="tabCount" select="$pAncestors + 1"/>
-                                    <xsl:variable name="newLine">
-                                       <xsl:text>
-</xsl:text>
-                                    </xsl:variable>
-                                    <xsl:variable name="tab"
-                             select="string-join(for $n in (1 to $tabCount) return '&#x9;','')"/>
-                                    <xsl:variable name="paras"
-                             select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
-                                    <xsl:for-each select="$paras[not(.='')]">
-                                       <xsl:value-of select="$newLine"/>
-                                       <xsl:value-of select="$tab"/>
-                                       <xsl:element name="p">
-                                          <xsl:value-of select="."/>
-                                       </xsl:element>
-                                       <xsl:value-of select="$newLine"/>
-                                    </xsl:for-each>
-                                    
-                                 
-                              </sqf:replace>
-                           </sqf:fix>
                         </sch:rule>
                      </sch:pattern>
    <sch:diagnostics/>
