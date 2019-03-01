@@ -227,7 +227,7 @@
         
     
     
-    <target name="all" depends="addVals,modifyTemplate, odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
+    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     

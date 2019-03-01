@@ -123,7 +123,7 @@
     </xsl:template>
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg" mode="tei">
+    <xsl:template match="hi | seg | foreign" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>

@@ -10,25 +10,63 @@
         and converts them to P5. We also process the files to clean
         them up and make the encoding a bit more sensible-->
     
+    <xsl:include href="../../sch/weaQuickFixTemplates.xsl"/>
+    
     <xsl:variable name="uri" select="document-uri(.)"/>
     <xsl:variable name="oldId" select="//TEI.2/@id"/>
     
     <xsl:variable name="id" select="replace(substring-before(tokenize($uri,'/')[last()],'.xml'),'(\s|%20)+','_')"/>
-    <xsl:output method="xml" indent="yes"/>
+    <xsl:output method="xml" indent="yes" suppress-indentation="q p l hi pb"/>
+    
+   <xsl:template match="/">
+       <xsl:apply-templates select="TEI.2" mode="pass1"/>
+   </xsl:template>
+    
     
     <!--Root template-->
-    <xsl:template match="TEI.2">
+    <xsl:template match="TEI.2" mode="pass1">
         <xsl:message>Converting <xsl:value-of select="$uri"/> to <xsl:value-of select="$id"/></xsl:message>
-    <!--    <xsl:result-document href="{$id}.xml" method="xml" indent="yes">-->
-           <xsl:variable name="pass1">
-               <TEI>
-                   <xsl:apply-templates select="@*|node()" mode="#current"/>
-               </TEI>
-           </xsl:variable>
-           <xsl:apply-templates select="$pass1" mode="pass2"/>
-  
-        <!--</xsl:result-document>-->
-       
+        <xsl:variable name="pass1">
+            <TEI>
+                <xsl:apply-templates select="@*|node()" mode="pass1"/>
+            </TEI>
+        </xsl:variable>
+        <xsl:variable name="pass2">
+            <xsl:apply-templates select="$pass1" mode="pass2"/>
+        </xsl:variable>
+        <xsl:apply-templates select="$pass2" mode="pass3"/>
+    </xsl:template>
+    
+    
+    <xsl:template match="*:q" mode="pass3">
+        <q>
+            <xsl:apply-templates mode="#current"/>
+        </q>
+    </xsl:template>
+    
+    <xsl:template match="*:p/text() | *:q/text()" mode="pass3">
+        <xsl:value-of select="replace(.,'\n+',' ')"/>
+    </xsl:template>
+    
+    <xsl:template match="@*|node()" priority="-1" mode="pass2 pass3">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    
+    <xsl:template match="notesStmt" mode="pass1"/>
+    
+    <xsl:template match="text()" mode="pass2">
+        <xsl:variable name="curlyApos">
+            <xsl:call-template name="replaceApos"/> 
+        </xsl:variable>
+        <xsl:for-each select="$curlyApos">
+            <xsl:call-template name="tagQuote">
+                <xsl:with-param name="left" select="'“'"/>
+                <xsl:with-param name="right" select="'”'"/>
+            </xsl:call-template>
+        </xsl:for-each>
     </xsl:template>
     
     <!--Some standard templates-->
@@ -57,6 +95,30 @@
            <name>Joey Takeda</name>
        </respStmt>
    </xsl:template>
+    
+    <xsl:template match="resp" mode="pass1">
+        <resp notAfter="2019">
+            <xsl:apply-templates mode="#current"/>
+        </resp>
+    </xsl:template>
+    
+    <xsl:template match="resp/text() | name/text()" mode="pass1">
+        <xsl:value-of select="replace(.,'[:\.,]$','')"/>
+    </xsl:template>
+    
+    <xsl:template match="author" mode="pass1">
+        <respStmt>
+            <resp>Author</resp>
+            <name ref="pers:WE1">Winnifred Eaton</name>
+        </respStmt>
+    </xsl:template>
+    
+    <xsl:template match="editor" mode="pass1">
+        <respStmt>
+            <resp>Editor</resp>
+            <name ref="pers:JLC1">Jean Lee Cole</name>
+        </respStmt>
+    </xsl:template>
     
     <!--To retain the structural information from the Google Drive folders, we add a quick text class-->
   
@@ -123,7 +185,7 @@
     
     
     <!--Delete for now-->
-    <xsl:template match="encodingDesc" mode="pass1"/>
+    <xsl:template match="encodingDesc" mode="pass1" />
     
     <xsl:template match="publicationStmt" mode="pass1">
         <publicationStmt>
@@ -146,11 +208,7 @@
                <catRef scheme="wdt:category"
                    target="wdt:cat{translate(wea:cleanLoc(tokenize(substring-after($uri,'p4Temp/'),'/')[1]),' ','')}"/>
            </textClass>
-           
        </profileDesc>
-          
-           
-        
     </xsl:template>
     
     
@@ -181,21 +239,14 @@
     </xsl:template>
     
     <xsl:template match="orig[pb]/text()[following-sibling::pb]" mode="pass1">
-        <xsl:analyze-string regex="-" select=".">
-            <xsl:matching-substring>
-                <pc force="weak">-</pc>
-            </xsl:matching-substring>
-            <xsl:non-matching-substring>
-                <xsl:value-of select="."/>
-            </xsl:non-matching-substring>
-        </xsl:analyze-string>
+        <xsl:value-of select="."/>
     </xsl:template>
     <!--We need to embed notes-->
     
     <xsl:template match="ref" mode="pass1">
         <xsl:variable name="thisTarg" select="@target"/>
         <xsl:variable name="thisNote" select="ancestor::TEI.2//note[@id=$thisTarg]"/>
-        <note type="editorial"><xsl:apply-templates select="$thisNote/p" mode="#current"/></note>
+        <note type="editorial" resp="pers:JLC1"><xsl:apply-templates select="$thisNote/p" mode="#current"/></note>
         
     </xsl:template>
     
@@ -210,12 +261,15 @@
     <xsl:template match="title[@type='sort']" mode="pass1"/>
     
     <!--No longer need extent-->
-    <xsl:template match="extent" mode="pass1"/>
+    <xsl:template match="extent" mode="pass1" />
     
     <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
     
     <xsl:template match="p[matches(text()[1],'^\s+')]/text()[1]" mode="pass1">
-        <xsl:value-of select="replace(.,'^\s+','')"/>
+        <xsl:variable name="replaced">
+                    <xsl:value-of select="replace(.,'^\s+','')"/>
+        </xsl:variable>
+        <xsl:apply-templates select="$replaced" mode="#current"/>
     </xsl:template>
     
     <!--This is the easiest way to deal with namespaces-->
@@ -226,7 +280,7 @@
     </xsl:template>
     
     <!--And then priority number 2-->
-    <xsl:template match="node()" priority="-2" mode="pass1">
+    <xsl:template match="node()" priority="-2" mode="#all">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
