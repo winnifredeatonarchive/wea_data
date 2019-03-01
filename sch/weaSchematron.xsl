@@ -1111,18 +1111,16 @@ relatedItem element must be empty</svrl:text>
                               </xsl:template>
                            
                            <xsl:template name="replaceApos">
-
                               <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
                                  <xsl:matching-substring>
                                     <xsl:value-of select="regex-group(1)"/>
                                     <xsl:text>‘</xsl:text>
                                  </xsl:matching-substring>
                                  <xsl:non-matching-substring>
-                                    <xsl:analyze-string select="." regex="{concat('([a-z])',$apos,'([a-z])')}">
+                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$apos)}">
                                        <xsl:matching-substring>
                                           <xsl:value-of select="regex-group(1)"/>
                                           <xsl:text>’</xsl:text>
-                                          <xsl:value-of select="regex-group(2)"/>
                                        </xsl:matching-substring>
                                        <xsl:non-matching-substring>
                                           <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
@@ -1134,6 +1132,33 @@ relatedItem element must be empty</svrl:text>
                                                 <xsl:value-of select="."/>
                                              </xsl:non-matching-substring>
                                           </xsl:analyze-string>
+                                       </xsl:non-matching-substring>
+                                    </xsl:analyze-string>
+                                 </xsl:non-matching-substring>
+                              </xsl:analyze-string>
+                           </xsl:template>
+                           
+                           <xsl:template name="tagQuote">
+                              <xsl:param name="left"/>
+                              <xsl:param name="right"/>
+                              <xsl:variable name="rex1" select="concat($left,'([^',$right,']+)([\.,])',$right)"/>
+                              <xsl:variable name="rex2" select="concat($left,'([^',$right,']+)',$right)"/>
+                              <xsl:analyze-string select="." regex="{$rex1}">
+                                 <xsl:matching-substring>
+                                    <xsl:element name="q">
+                                       <xsl:value-of select="regex-group(1)"/>
+                                    </xsl:element>
+                                    <xsl:value-of select="regex-group(2)"/>
+                                 </xsl:matching-substring>
+                                 <xsl:non-matching-substring>
+                                    <xsl:analyze-string select="." regex="{$rex2}">
+                                       <xsl:matching-substring>
+                                          <xsl:element name="q">
+                                             <xsl:value-of select="regex-group(1)"/>
+                                          </xsl:element>
+                                       </xsl:matching-substring>
+                                       <xsl:non-matching-substring>
+                                          <xsl:value-of select="."/>
                                        </xsl:non-matching-substring>
                                     </xsl:analyze-string>
                                  </xsl:non-matching-substring>
@@ -1185,9 +1210,143 @@ relatedItem element must be empty</svrl:text>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"
+   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"
                  priority="1000"
                  mode="M25">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"/>
+      <xsl:variable name="codepoints" select="distinct-values(string-to-codepoints(.))"/>
+      <xsl:variable name="badPoints" select="$codepoints[.=(8220,8221)]"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              ERROR: Mismatched curly quotes. Either add the curly quotation mark or change to the q element.
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M25"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M25">
+      <xsl:apply-templates select="*" mode="M25"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:name | tei:ref | tei:title | tei:l"
+                 priority="1000"
+                 mode="M26">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:name | tei:ref | tei:title | tei:l"/>
+      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="not(matches($text,'^\s+|\s+$'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="not(matches($text,'^\s+|\s+$'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              ERROR: <xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/> should not begin or end with spaces.
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M26"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M26"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M26">
+      <xsl:apply-templates select="*" mode="M26"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:name" priority="1000" mode="M27">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:name"/>
+      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
+
+		    <!--ASSERT warning-->
+      <xsl:choose>
+         <xsl:when test="not(matches($text,'\.$'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="not(matches($text,'\.$'))">
+               <xsl:attribute name="role">warning</xsl:attribute>
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              WARNING: <xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/> usually shouldn't end with periods.
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M27"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M27"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M27">
+      <xsl:apply-templates select="*" mode="M27"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:q" priority="1000" mode="M28">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:q"/>
+      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="not(matches($text,'[\.,]$'))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="not(matches($text,'[\.,]$'))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              ERROR: Trailing punctuaton should go outside the <xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/> element.
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M28"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M28"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M28">
+      <xsl:apply-templates select="*" mode="M28"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"
+                 priority="1000"
+                 mode="M29">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"/>
       <xsl:variable name="thisText"
@@ -1243,52 +1402,18 @@ relatedItem element must be empty</svrl:text>
                                  <xsl:call-template name="replaceApos"/>
                               </sqf:replace>
                            </sqf:fix>
-      <xsl:apply-templates select="*" mode="M25"/>
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M25"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M25">
-      <xsl:apply-templates select="*" mode="M25"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"
-                 priority="1000"
-                 mode="M26">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()"/>
-      <xsl:variable name="codepoints" select="distinct-values(string-to-codepoints(.))"/>
-      <xsl:variable name="badPoints" select="$codepoints[.=(8220,8221)]"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                              ERROR: Do not use curly quotation marks; use the &lt;q&gt; element instead (QuickFix not available).
-                           </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M26"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M26"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M26">
-      <xsl:apply-templates select="*" mode="M26"/>
+   <xsl:template match="text()" priority="-1" mode="M29"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M29">
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M27">
+   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:div | tei:lg"/>
       <xsl:variable name="divs"
@@ -1345,13 +1470,13 @@ relatedItem element must be empty</svrl:text>
                                  </sqf:replace>
                               </sqf:fix>
                               
-                             
+                              
                            </sqf:fixes>
-      <xsl:apply-templates select="*" mode="M27"/>
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M27"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M27">
-      <xsl:apply-templates select="*" mode="M27"/>
+   <xsl:template match="text()" priority="-1" mode="M30"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M30">
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -1360,7 +1485,7 @@ relatedItem element must be empty</svrl:text>
 	  <!--RULE -->
    <xsl:template match="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]"
                  priority="1000"
-                 mode="M28">
+                 mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
@@ -1393,29 +1518,13 @@ relatedItem element must be empty</svrl:text>
                id="fixQuotesHere">
                               <sqf:description>
                                  <sqf:title>
-                                    <sch:name/>: Replace curly quotes with q elements in this <sch:name/> element.</sqf:title>
+                                    LOCAL: Replace curly quotes with q elements in this <sch:name/> element.</sqf:title>
                               </sqf:description>
                               <sqf:replace match="text()[contains(.,'“') and contains(.,'”')]">
-                                 <xsl:analyze-string select="." regex="“([^”]+)([\.,])”">
-                                    <xsl:matching-substring>
-                                       <xsl:element name="q">
-                                          <xsl:value-of select="regex-group(1)"/>
-                                       </xsl:element>
-                                       <xsl:value-of select="regex-group(2)"/>
-                                    </xsl:matching-substring>
-                                    <xsl:non-matching-substring>
-                                       <xsl:analyze-string select="." regex="“([^”]+)”">
-                                          <xsl:matching-substring>
-                                             <xsl:element name="q">
-                                                <xsl:value-of select="regex-group(1)"/>
-                                             </xsl:element>
-                                          </xsl:matching-substring>
-                                          <xsl:non-matching-substring>
-                                             <xsl:value-of select="."/>
-                                          </xsl:non-matching-substring>
-                                       </xsl:analyze-string>
-                                    </xsl:non-matching-substring>
-                                 </xsl:analyze-string>
+                                 <xsl:call-template name="tagQuote">
+                                    <xsl:with-param name="left" select="'“'"/>
+                                    <xsl:with-param name="right" select="'”'"/>
+                                 </xsl:call-template>
                               </sqf:replace>
                            </sqf:fix>
       <sqf:fix xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1432,128 +1541,12 @@ relatedItem element must be empty</svrl:text>
                                  <sqf:title>GLOBAL: Replace curly quotes with q elements.</sqf:title>
                               </sqf:description>
                               <sqf:replace match="//text()[contains(.,'“') and contains(.,'”')]">
-                                 <xsl:analyze-string select="." regex="“([^”]+)([\.,])”">
-                                    <xsl:matching-substring>
-                                       <xsl:element name="q">
-                                          <xsl:value-of select="regex-group(1)"/>
-                                       </xsl:element>
-                                       <xsl:value-of select="regex-group(2)"/>
-                                    </xsl:matching-substring>
-                                    <xsl:non-matching-substring>
-                                       <xsl:analyze-string select="." regex="“([^”]+)”">
-                                          <xsl:matching-substring>
-                                             <xsl:element name="q">
-                                                <xsl:value-of select="regex-group(1)"/>
-                                             </xsl:element>
-                                          </xsl:matching-substring>
-                                          <xsl:non-matching-substring>
-                                             <xsl:value-of select="."/>
-                                          </xsl:non-matching-substring>
-                                       </xsl:analyze-string>
-                                    </xsl:non-matching-substring>
-                                 </xsl:analyze-string>
+                                 <xsl:call-template name="tagQuote">
+                                    <xsl:with-param name="left" select="'“'"/>
+                                    <xsl:with-param name="right" select="'”'"/>
+                                 </xsl:call-template>
                               </sqf:replace>
                            </sqf:fix>
-      <xsl:apply-templates select="*" mode="M28"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M28"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M28">
-      <xsl:apply-templates select="*" mode="M28"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:name | tei:ref | tei:title | tei:l"
-                 priority="1000"
-                 mode="M29">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:name | tei:ref | tei:title | tei:l"/>
-      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="not(matches($text,'^\s+|\s+$'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches($text,'^\s+|\s+$'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                              ERROR: <xsl:text/>
-                  <xsl:value-of select="name(.)"/>
-                  <xsl:text/> should not begin or end with spaces.
-                           </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M29"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M29"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M29">
-      <xsl:apply-templates select="*" mode="M29"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:name" priority="1000" mode="M30">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:name"/>
-      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
-
-		    <!--ASSERT warning-->
-      <xsl:choose>
-         <xsl:when test="not(matches($text,'\.$'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches($text,'\.$'))">
-               <xsl:attribute name="role">warning</xsl:attribute>
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                              WARNING: <xsl:text/>
-                  <xsl:value-of select="name(.)"/>
-                  <xsl:text/> usually shouldn't end with periods.
-                           </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M30"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M30"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M30">
-      <xsl:apply-templates select="*" mode="M30"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:q" priority="1000" mode="M31">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:q"/>
-      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="not(matches($text,'[\.,]$'))"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches($text,'[\.,]$'))">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                              ERROR: Trailing punctuaton should go outside the <xsl:text/>
-                  <xsl:value-of select="name(.)"/>
-                  <xsl:text/> element.
-                           </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
       <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M31"/>
