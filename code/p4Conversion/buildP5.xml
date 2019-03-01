@@ -8,13 +8,13 @@
     
     <!--First step, copy over into the Github repo-->
     
-    <property name="driveDir" value="../../../../Drive/WEaton Anew/"/>
+    <property name="driveDir" value="${user.home}/Drive/WEaton Anew/"/>
     
-    <property name="gitDir" value="../"/>
+    <property name="gitDir" value="../../"/>
     
-    <property name="textsDir" value="${gitDir}/texts/"/>
-    <property name="p4Temp" value="${gitDir}/p4Temp/"/>
-    <property name="p5Temp" value="${gitDir}/p5Temp/"/>
+    <property name="textsDir" value="${gitDir}/data/texts/"/>
+    <property name="p4Temp" value="${gitDir}/data/p4Temp/"/>
+    <property name="p5Temp" value="${gitDir}/data/p5Temp/"/>
     
     <!--Clean up and initialize the build-->
     <target name="init">
@@ -55,7 +55,7 @@
     <target name="convert">
         <xslt force="yes" style="p4top5.xsl" destdir="${p5Temp}" useimplicitfileset="false">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-            <classpath location="../lib/saxon9he.jar"/>
+            <classpath location="../../lib/saxon9he.jar"/>
             <fileset dir="${p4Temp}">
                 <include name="**/**.xml"/>
             </fileset>
@@ -76,8 +76,8 @@
             dest="../sch/tei_all.rng" usetimestamp="true"/>-->
         
         <apply executable="java" parallel="true" failonerror="true">
-            <arg line="-jar  ../lib/jing.jar"/>
-            <arg value="../sch/tei_all.rng"/>
+            <arg line="-jar  ../../lib/jing.jar"/>
+            <arg value="../../sch/tei_all.rng"/>
             <fileset dir="${p5Temp}">
                 <include name="**.xml"/>
             </fileset>
@@ -94,5 +94,5 @@
         </copy>
     </target>
   
-  <target name="all" depends="init, copy, convert, validate, move"/>
+  <target name="all" depends="init, copy, convert, validate"/>
 </project>
