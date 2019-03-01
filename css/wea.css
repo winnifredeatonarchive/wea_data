@@ -239,6 +239,10 @@ div.open > h3::after{
     display:none;
 }
 
+span[data-el='foreign']{
+    font-style:italic;
+}
+
 span[data-el='q']::before{
     content:"“";
    

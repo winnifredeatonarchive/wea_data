@@ -837,6 +837,14 @@
                      <attDef ident="xml:space" mode="delete"/>
                   </attList>
                </classSpec>
+               <classSpec ident="att.global.rendition"
+                          module="tei"
+                          type="atts"
+                          mode="change">
+                  <attList>
+                     <attDef ident="rend" mode="delete"/>
+                  </attList>
+               </classSpec>
                <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.interpLike" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.measurement" module="tei" type="atts" mode="delete"/>
