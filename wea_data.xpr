@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="20.1">
+<project version="21.0">
     <meta>
         <filters directoryPatterns="" filePatterns="wea_data.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="20.1" xml:space="preserve">
+            <serialized version="21.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>code-templates</String>
@@ -66,26 +66,6 @@
                                 </field>
                                 <field name="accelerator">
                                     <String>M1 M2 R</String>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/any</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>’</String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>The closing single curly apostrophe</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>WEA: Insert right single curly quote</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <String>M1 M2 Z</String>
                                 </field>
                             </codeTemplateItem>
                             <codeTemplateItem>
@@ -10660,6 +10640,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -10679,6 +10662,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>concept</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -10791,6 +10777,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -10810,6 +10799,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>reference</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -10922,6 +10914,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -10941,6 +10936,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>task</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -11053,6 +11051,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -11072,6 +11073,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>topic</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -15416,6 +15420,9 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                 <String>${people}</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
