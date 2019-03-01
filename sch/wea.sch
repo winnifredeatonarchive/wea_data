@@ -481,11 +481,11 @@ relatedItem element must be empty</sch:report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]/text()">
-                           <sch:let name="codepoints" value="distinct-values(string-to-codepoints(.))"/>
-                           <sch:let name="badPoints" value="$codepoints[.=(8220,8221)]"/>
-                           <sch:assert test="if (count($badPoints) = 0 or count($badPoints) = 2) then true() else false()">
-                              ERROR: Mismatched curly quotes. Either add the curly quotation mark or change to the q element.
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]">
+                           <sch:let name="onlyOneQuote"
+                  value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
+                           <sch:assert test="not($onlyOneQuote)">
+                              ERROR: Curly quotes that cannot be QuickFixed. Either add the curly quotation mark or change to the q element.
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
