@@ -132,6 +132,15 @@
         <move file="${wea.template.expanded}" tofile="${wea.template}" overwrite="true"/>
     </target>
     
+    <target name="extractTemplates">
+        <description>Extracts the named templates from the Schematron quick fixes</description>
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${wea.odd.src}"/>
+            <arg line="-o:${schema.dir}/weaQuickFixTemplates.xsl"/>
+            <arg line="-xsl:extract-xslt-from-odd.xsl"/>
+        </java>
+    </target>
+    
     <target name="odd2processedOdd">
         <description>Processes the W ODD against the TEI All using
             TEI stylesheets.</description>
