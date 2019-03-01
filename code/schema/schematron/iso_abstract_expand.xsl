@@ -19,6 +19,10 @@
 -->
 <!-- 
   VERSION INFORMATION
+  
+  2019-02-28 JOEY TAKEDA (FOR WEA PROJECT):
+  		* Remove schematron quickfix from being processed
+  		
   2008-09-18 RJ
   		* move out param test from iso:schema template  to work with XSLT 1. (Noah Fontes)
   		
@@ -67,7 +71,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:iso="http://purl.oclc.org/dsdl/schematron"  
     xmlns:nvdl="http://purl.oclc.org/dsdl/nvdl"  
-    
+    xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
     xmlns:iae="http://www.schematron.com/namespace/iae" 
      
       >
@@ -146,6 +150,8 @@
 			
 	</xslt:template>
 	 
+<!--Get rid of sqf-->
+<xsl:template match="sqf:*" mode="iae:go"/>
 	 
 	
 	<!-- output everything else unchanged -->
