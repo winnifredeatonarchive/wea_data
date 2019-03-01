@@ -6,6 +6,7 @@
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -17,6 +18,10 @@
         </xd:desc>
     </xd:doc>
     
+    <xsl:attribute-set name="newTabLink">
+        <xsl:attribute name="rel">noopener noreferrer</xsl:attribute>
+        <xsl:attribute name="target">_blank</xsl:attribute>
+    </xsl:attribute-set>
     
 
     
@@ -43,12 +48,24 @@
             <xsl:call-template name="processAtts"/>
             <xsl:call-template name="createAside"/>
             <div id="mainBody">
+                <xsl:call-template name="createFacsButton"/>
                 <xsl:apply-templates mode="#current"/>
                 <xsl:call-template name="createSearchResults"/>
             </div>
             <xsl:call-template name="createAppendix"/>
             <xsl:call-template name="createPopup"/>
         </body>
+    </xsl:template>
+    
+    <xsl:template name="createFacsButton">
+        <xsl:if test="@facs">
+            <div class="facsButton">
+                <a href="{wea:resolvePrefix(@facs)}" xsl:use-attribute-sets="newTabLink">
+                    View Facsimile
+                </a>
+            </div> 
+        </xsl:if>
+
     </xsl:template>
     
     <xsl:template name="createAside">
@@ -124,12 +141,23 @@
             <xsl:apply-templates mode="#current"/>
         </tr>
     </xsl:template>
+    <!--QUOTATIONS-->
+    
     
     <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg)]" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
+            <xsl:if test="following::tei:*|text()[1][self::text()] and matches(following::text()[1], '^[,\.]') and not(child::tei:*[self::q][not(following-sibling::text())]) and (not(ancestor::q) or not(following-sibling::*))">
+                <xsl:value-of select="substring(following::text()[1], 1, 1)"/>
+            </xsl:if>
         </span>
+    </xsl:template>
+    
+
+    
+    <xsl:template match="text()[not(ancestor::q)][preceding::text()[1][ancestor::q]][matches(., '^[,\.]')]" mode="tei">
+        <xsl:value-of select="substring(., 2)"/>
     </xsl:template>
     
     <xsl:template match="cell" mode="tei">
@@ -180,14 +208,6 @@
             </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
         </hr>
-        <xsl:if test="ancestor::text[@facs]">
-            <xsl:variable name="thisFacsPointer" select="wea:resolvePrefix(ancestor::text/@facs)"/>
-            <xsl:variable name="thisPdfImg" select="substring-before($thisFacsPointer,'.pdf')"/>
-            <xsl:variable name="ptr" select="concat($thisPdfImg,'-',count(preceding::pb)+1,'.png')"/>
-            <a href="{$ptr}" class="facs" target="_blank">
-                <img alt="Facsimile page" src="{$thisPdfImg}-{count(preceding::pb)+1}.png" width="100"/>
-            </a>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template match="lb" mode="tei">

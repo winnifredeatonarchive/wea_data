@@ -27,6 +27,11 @@
                 <include name="**.css"/>
             </fileset>
         </copy>
+        <copy todir="${siteTemp}/fonts">
+            <fileset dir="../fonts">
+                <include name="**"/>
+            </fileset>
+        </copy>
         <copy todir="${siteTemp}/js">
             <fileset dir="../js">
                 <include name="**.js"/>
