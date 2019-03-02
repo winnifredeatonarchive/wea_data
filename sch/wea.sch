@@ -379,6 +379,7 @@ relatedItem element must be empty</sch:report>
                            
                            
                            <xsl:variable name="apos">'</xsl:variable>
+                           <xsl:variable name="dq">"</xsl:variable>
                               
                               <xsl:template name="tagBlocks">
                                  <xsl:param name="verse" select="false()"/>
@@ -402,21 +403,25 @@ relatedItem element must be empty</sch:report>
                               </xsl:template>
                            
                            <xsl:template name="replaceApos">
-                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
+                              <xsl:param name="useDq" select="false()"/>
+                              <xsl:variable name="thisApos" select="if ($useDq) then $dq else $apos"/>
+                              <xsl:variable name="left" select="if ($useDq) then '“' else '‘'"/>
+                              <xsl:variable name="right" select="if ($useDq) then '”' else '’'"/>
+                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$thisApos)}">
                                  <xsl:matching-substring>
                                     <xsl:value-of select="regex-group(1)"/>
-                                    <xsl:text>‘</xsl:text>
+                                    <xsl:value-of select="$left"/>
                                  </xsl:matching-substring>
                                  <xsl:non-matching-substring>
-                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$apos)}">
+                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$thisApos)}">
                                        <xsl:matching-substring>
                                           <xsl:value-of select="regex-group(1)"/>
-                                          <xsl:text>’</xsl:text>
+                                          <xsl:value-of select="$right"/>
                                        </xsl:matching-substring>
                                        <xsl:non-matching-substring>
-                                          <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
+                                          <xsl:analyze-string select="." regex="{concat($thisApos,'(\s+|$)')}">
                                              <xsl:matching-substring>
-                                                <xsl:text>’</xsl:text>
+                                                <xsl:value-of select="$right"/>
                                                 <xsl:value-of select="regex-group(1)"/>
                                              </xsl:matching-substring>
                                              <xsl:non-matching-substring>
@@ -428,6 +433,7 @@ relatedItem element must be empty</sch:report>
                                  </xsl:non-matching-substring>
                               </xsl:analyze-string>
                            </xsl:template>
+                           
                            
                            <xsl:template name="tagQuote">
                               <xsl:param name="left"/>
@@ -535,6 +541,46 @@ relatedItem element must be empty</sch:report>
                            <sch:assert test="not(matches($text,'[\.,]$'))">
                               ERROR: Trailing punctuaton should go outside the <sch:name/> element.
                            </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                           <sch:let name="thisText"
+                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                           <sch:let name="cp" value="string-to-codepoints($thisText)"/>
+                           <sch:let name="distinctCp" value="distinct-values($cp)"/>
+                           <sch:assert test="empty($distinctCp[.=34])"
+                     sqf:fix="replaceStraightQuotesHere replaceStraightQuotesEverywhere">
+                              ERROR: QUICKFIX: Do not use straight quotation marks.
+                           </sch:assert>
+                           <sqf:fix id="replaceStraightQuotesHere" use-when="self::tei:body">
+                              <sqf:description>
+                                 <sqf:title>GLOBAL: Replace straight quotation mark with curly question marks everywhere.</sqf:title>
+                              </sqf:description>
+                              <sqf:replace match="//text()">
+                                 <xsl:call-template name="replaceApos">
+                                    <xsl:with-param name="useDq" select="true()"/>
+                                 </xsl:call-template>
+                              </sqf:replace>
+                           </sqf:fix>
+                           <sqf:fix id="replaceStraightQuotesEverywhere" use-when="not(self::tei:body)">
+                              <sqf:description>
+                                 <sqf:title>LOCAL: Replace straight quotation marks with curly quotation marks in this <sch:name/> element.</sqf:title>
+                              </sqf:description>
+                              <sqf:replace match="text()">
+                                 <xsl:call-template name="replaceApos">
+                                    <xsl:with-param name="useDq" select="true()"/>
+                                 </xsl:call-template>
+                              </sqf:replace>
+                           </sqf:fix>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"

@@ -9,6 +9,13 @@
                  xmlns="http://www.tei-c.org/ns/1.0"
                  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                  name="apos">'</xsl:variable>
+   <xsl:variable xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 name="dq">"</xsl:variable>
    <xsl:template xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -42,21 +49,25 @@
                  xmlns="http://www.tei-c.org/ns/1.0"
                  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                  name="replaceApos">
-                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
+                              <xsl:param name="useDq" select="false()"/>
+                              <xsl:variable name="thisApos" select="if ($useDq) then $dq else $apos"/>
+                              <xsl:variable name="left" select="if ($useDq) then '“' else '‘'"/>
+                              <xsl:variable name="right" select="if ($useDq) then '”' else '’'"/>
+                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$thisApos)}">
                                  <xsl:matching-substring>
                                     <xsl:value-of select="regex-group(1)"/>
-                                    <xsl:text>‘</xsl:text>
+                                    <xsl:value-of select="$left"/>
                                  </xsl:matching-substring>
                                  <xsl:non-matching-substring>
-                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$apos)}">
+                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$thisApos)}">
                                        <xsl:matching-substring>
                                           <xsl:value-of select="regex-group(1)"/>
-                                          <xsl:text>’</xsl:text>
+                                          <xsl:value-of select="$right"/>
                                        </xsl:matching-substring>
                                        <xsl:non-matching-substring>
-                                          <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
+                                          <xsl:analyze-string select="." regex="{concat($thisApos,'(\s+|$)')}">
                                              <xsl:matching-substring>
-                                                <xsl:text>’</xsl:text>
+                                                <xsl:value-of select="$right"/>
                                                 <xsl:value-of select="regex-group(1)"/>
                                              </xsl:matching-substring>
                                              <xsl:non-matching-substring>

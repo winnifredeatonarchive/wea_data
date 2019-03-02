@@ -912,6 +912,7 @@
                            
                            <!--GLOBAL XSL VARIABLES-->
                            <xsl:variable name="apos">'</xsl:variable>
+                           <xsl:variable name="dq">"</xsl:variable>
                               <!--TAG BLOCKS TEMPLATE-->
                               <xsl:template name="tagBlocks">
                                  <xsl:param name="verse" select="false()"/>
@@ -935,21 +936,25 @@
                               </xsl:template>
                            
                            <xsl:template name="replaceApos">
-                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$apos)}">
+                              <xsl:param name="useDq" select="false()"/>
+                              <xsl:variable name="thisApos" select="if ($useDq) then $dq else $apos"/>
+                              <xsl:variable name="left" select="if ($useDq) then '“' else '‘'"/>
+                              <xsl:variable name="right" select="if ($useDq) then '”' else '’'"/>
+                              <xsl:analyze-string select="." regex="{concat('(^|\s+)',$thisApos)}">
                                  <xsl:matching-substring>
                                     <xsl:value-of select="regex-group(1)"/>
-                                    <xsl:text>‘</xsl:text>
+                                    <xsl:value-of select="$left"/>
                                  </xsl:matching-substring>
                                  <xsl:non-matching-substring>
-                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$apos)}">
+                                    <xsl:analyze-string select="." regex="{concat('([a-zA-Z])',$thisApos)}">
                                        <xsl:matching-substring>
                                           <xsl:value-of select="regex-group(1)"/>
-                                          <xsl:text>’</xsl:text>
+                                          <xsl:value-of select="$right"/>
                                        </xsl:matching-substring>
                                        <xsl:non-matching-substring>
-                                          <xsl:analyze-string select="." regex="{concat($apos,'(\s+|$)')}">
+                                          <xsl:analyze-string select="." regex="{concat($thisApos,'(\s+|$)')}">
                                              <xsl:matching-substring>
-                                                <xsl:text>’</xsl:text>
+                                                <xsl:value-of select="$right"/>
                                                 <xsl:value-of select="regex-group(1)"/>
                                              </xsl:matching-substring>
                                              <xsl:non-matching-substring>
@@ -961,6 +966,7 @@
                                  </xsl:non-matching-substring>
                               </xsl:analyze-string>
                            </xsl:template>
+                           
                            
                            <xsl:template name="tagQuote">
                               <xsl:param name="left"/>
@@ -1065,9 +1071,48 @@
                   </constraint>
                </constraintSpec>
                
+               
+               
                <!--CONSTRAINTS WITH QUICK FIXES-->
                
                <constraintSpec scheme="schematron" ident="noStraightQuote">
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                           <sch:let name="thisText"
+                                    value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                           <sch:let name="cp" value="string-to-codepoints($thisText)"/>
+                           <sch:let name="distinctCp" value="distinct-values($cp)"/>
+                           <sch:assert test="empty($distinctCp[.=34])"
+                                       sqf:fix="replaceStraightQuotesHere replaceStraightQuotesEverywhere">
+                              ERROR: QUICKFIX: Do not use straight quotation marks.
+                           </sch:assert>
+                           <sqf:fix id="replaceStraightQuotesHere" use-when="self::tei:body">
+                              <sqf:description>
+                                 <sqf:title>GLOBAL: Replace straight quotation mark with curly question marks everywhere.</sqf:title>
+                              </sqf:description>
+                              <sqf:replace match="//text()">
+                                 <xsl:call-template name="replaceApos">
+                                    <xsl:with-param name="useDq" select="true()"/>
+                                 </xsl:call-template>
+                              </sqf:replace>
+                           </sqf:fix>
+                           <sqf:fix id="replaceStraightQuotesEverywhere" use-when="not(self::tei:body)">
+                              <sqf:description>
+                                 <sqf:title>LOCAL: Replace straight quotation marks with curly quotation marks in this <sch:name/> element.</sqf:title>
+                              </sqf:description>
+                              <sqf:replace match="text()">
+                                 <xsl:call-template name="replaceApos">
+                                    <xsl:with-param name="useDq" select="true()"/>
+                                 </xsl:call-template>
+                              </sqf:replace>
+                           </sqf:fix>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="noStraightApos">
                   <constraint>
                      <sch:pattern>
                         <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
