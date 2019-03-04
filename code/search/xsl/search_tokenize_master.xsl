@@ -47,7 +47,12 @@
                         <xsl:when test="$isForeign">
                             <xsl:value-of select="$word"/>
                         </xsl:when>
+                        <!--It's capitalized, so probably shouldn't be stemmed-->
                         <xsl:when test="matches($word,'^[A-Z]')">
+                            <xsl:value-of select="$word"/>
+                        </xsl:when>
+                        <!--It's just a digit-->
+                        <xsl:when test="matches($word,'^\d+$')">
                             <xsl:value-of select="$word"/>
                         </xsl:when>
                         <xsl:when test="$lc = $englishWords">
