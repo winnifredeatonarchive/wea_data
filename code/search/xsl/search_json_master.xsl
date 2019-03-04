@@ -112,8 +112,8 @@
                 <xsl:value-of select="$thisTerm"/>
             </xsl:element>
         </xsl:variable>
-        <xsl:variable name="start" select="string-join(reverse(for $n in 1 to 7 return $span/preceding-sibling::node()[$n]),'')"/>
-        <xsl:variable name="end" select="string-join(for $n in (1 to 7) return $span/following-sibling::node()[$n],'')"/>
+        <xsl:variable name="start" select="string-join(reverse(for $n in 1 to 7 return $span/preceding::node()[$n]),'')"/>
+        <xsl:variable name="end" select="string-join(for $n in (1 to 7) return $span/following::node()[$n],'')"/>
         <xsl:variable name="startTrimmed">
             <xsl:choose>
                 <xsl:when test="string-length($start) gt 50">
