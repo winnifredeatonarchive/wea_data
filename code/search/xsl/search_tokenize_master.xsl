@@ -34,16 +34,19 @@
         <xd:desc>The meat: tokenizing text nodes.</xd:desc>
     </xd:doc>
     <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])]" mode="tokenize">
+        <xsl:variable name="isForeign" select="exists(ancestor::span[@data-el='foreign'])"/>
         <xsl:analyze-string select="normalize-space(.)" regex="[A-Za-z\d]+">
             <xsl:matching-substring>
                 
                 <xsl:variable name="word" select="."/>
-
                 
                 <xsl:variable name="lc" select="lower-case($word)"/>
                 
                 <xsl:variable name="stem" as="xs:string">
                     <xsl:choose>
+                        <xsl:when test="$isForeign">
+                            <xsl:value-of select="$word"/>
+                        </xsl:when>
                         <xsl:when test="matches($word,'^[A-Z]')">
                             <xsl:value-of select="$word"/>
                         </xsl:when>

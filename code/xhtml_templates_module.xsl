@@ -203,13 +203,13 @@
     </xsl:template>
     
     <xsl:template match="pb" mode="tei">
-       
-        <hr>
+       <!--This can't really be an hr anymore, since it can't go in <q> (where it appears a lot).-->
+        <span>
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
             </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
-        </hr>
+        </span>
     </xsl:template>
     
     <xsl:template match="lb" mode="tei">

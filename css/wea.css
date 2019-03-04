@@ -80,9 +80,12 @@ div[data-el='note'] > div[data-el='p']{
     text-align:center;
 }
 
-hr{
+span[data-el='hr']{
     width:100%;
     margin:2.25em 0 2.25em 0;
+    display:block;
+    border-style: inset;
+    border-width: 1px;
 }
 
 hr.first{
