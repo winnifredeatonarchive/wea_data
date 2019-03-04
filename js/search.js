@@ -384,15 +384,14 @@ mdh.LocalSearch.prototype.getResults = function(){
           connDiv.classList.add('snippet');
           connDiv.innerHTML = currCon;
           contextDiv.appendChild(connDiv);
-          if (thisContexts.length < thisHit.count){
+      }
+      if (thisContexts.length < thisHit.count){
               var diff = thisHit.count - thisContexts.length;
               var moreInstancesP = document.createElementNS(htmlNS,'div');
               moreInstancesP.classList.add('moreInstances');
               moreInstancesP.innerHTML = "[... + " + diff + ']';
               contextDiv.appendChild(moreInstancesP);
           }
-      }
-      var cp = document.createElementNS(htmlNS, 'p');
       a.setAttribute('href', arrHits[i].docId + '.html');
       a.setAttribute('target', '_blank');
       //this.showDebug(hits[hit].docTitle);
