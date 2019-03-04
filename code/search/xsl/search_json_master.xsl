@@ -8,6 +8,7 @@
     
     
     <xsl:param name="createContext" select="true()"/>
+    <xsl:param name="maxContexts" as="xs:integer" select="3"/>
     
     <xsl:include href="search_globals_module.xsl"/>
     
@@ -79,7 +80,7 @@
 
                                 <xsl:if test="$createContext">
                                     <array key="contexts">
-                                        <xsl:for-each select="$spans">
+                                        <xsl:for-each select="for $n in 1 to $maxContexts return $spans[$n]">
                                             <string><xsl:value-of select="hcmc:returnContext(.)"/></string>
                                         </xsl:for-each>
 
