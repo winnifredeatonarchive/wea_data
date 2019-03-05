@@ -77,6 +77,12 @@
                                 <number key="count">
                                     <xsl:value-of select="count($spans)"/>
                                 </number>
+                                
+                                <array key="forms">
+                                    <xsl:for-each select="distinct-values($spans/text())">
+                                        <string><xsl:value-of select="."/></string>
+                                    </xsl:for-each>
+                                </array>
 
                                 <xsl:if test="$createContext">
                                     <array key="contexts">
@@ -113,25 +119,29 @@
                 <xsl:value-of select="$thisTerm"/>
             </xsl:element>
         </xsl:variable>
-        <xsl:variable name="start" select="string-join(reverse(for $n in 1 to 7 return $span/preceding::node()[$n]),'')"/>
-        <xsl:variable name="end" select="string-join(for $n in (1 to 7) return $span/following::node()[$n],'')"/>
+        <xsl:variable name="preNodes" select="for $n in 1 to 7 return $span/(preceding::span|preceding::text()[not(ancestor::span)])[$n]"/>
+        <xsl:variable name="folNodes" select="for $n in 1 to 7 return $span/(preceding::span|following::text()[not(ancestor::span)])[$n]"/>
+        
+        <xsl:variable name="startString" select="string-join(reverse($preNodes),'')"/>
+        <xsl:variable name="endString" select="string-join($folNodes,'')"/>
+        
         <xsl:variable name="startTrimmed">
             <xsl:choose>
-                <xsl:when test="string-length($start) gt 50">
-                    <xsl:value-of select="replace(substring($start,string-length($start) - 50),'^[a-z]+','')"/>
+                <xsl:when test="string-length($startString) gt 50">
+                    <xsl:value-of select="replace(substring($startString,string-length($startString) - 50),'^[a-z]+','')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="replace($start,'^[a-z]+','')"/>
+                    <xsl:value-of select="replace($startString,'^[a-z]+','')"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="endTrimmed">
             <xsl:choose>
-                <xsl:when test="string-length($end) gt 50">
-                    <xsl:value-of select="substring($end,1,50)"/>
+                <xsl:when test="string-length($endString) gt 50">
+                    <xsl:value-of select="substring($endString,1,50)"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="$end"/>
+                    <xsl:value-of select="$endString"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>

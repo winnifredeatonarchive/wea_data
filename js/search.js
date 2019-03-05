@@ -392,7 +392,8 @@ mdh.LocalSearch.prototype.getResults = function(){
               moreInstancesP.innerHTML = "[... + " + diff + ']';
               contextDiv.appendChild(moreInstancesP);
           }
-      a.setAttribute('href', arrHits[i].docId + '.html');
+      var queryString = this.currTokens.join('|');
+      a.setAttribute('href', arrHits[i].docId + '.html?searchTokens=' + queryString);
       a.setAttribute('target', '_blank');
       //this.showDebug(hits[hit].docTitle);
       a.innerHTML = arrHits[i].docTitle;
