@@ -95,8 +95,6 @@ function highlightSearchMatches(){
     for (t=0; t < tokens.length; t++){
         var thisToken = tokens[t].trim();
         console.log(thisToken);
-        var thisJson
-        var request = new XMLHttpRequest();
         var ulDir;
         if (thisToken.match(/^[A-Z]/g)){
             ulDir ='upper/';
@@ -150,10 +148,6 @@ xmlhttp.send(null);
         }
     }
     
-    function highlightTerm(el, str){
-        var childNodes = el.childNodes;
-        console.log(childNodes.length);
-    }
     
     function returnDoc(obj){
         return obj.docId == docId;

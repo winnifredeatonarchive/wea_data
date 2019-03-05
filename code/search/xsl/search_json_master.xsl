@@ -31,7 +31,7 @@
         <xsl:param name="stems"/>
         <xsl:for-each-group select="$stems" group-by="@data-stem">
             <xsl:variable name="token" select="current-grouping-key()"/>
-<!--            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>-->
+            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>
             <xsl:variable name="map" as="element()">
                 <xsl:call-template name="makeMap">
                     <xsl:with-param name="term" select="$token"/>
@@ -119,8 +119,8 @@
                 <xsl:value-of select="$thisTerm"/>
             </xsl:element>
         </xsl:variable>
-        <xsl:variable name="preNodes" select="for $n in 1 to 7 return $span/(preceding::span|preceding::text()[not(ancestor::span)])[$n]"/>
-        <xsl:variable name="folNodes" select="for $n in 1 to 7 return $span/(preceding::span|following::text()[not(ancestor::span)])[$n]"/>
+        <xsl:variable name="preNodes" select="for $n in 1 to 5 return $span/preceding-sibling::node()[$n]"/>
+        <xsl:variable name="folNodes" select="for $n in 1 to 5 return $span/following-sibling::node()[$n]"/>
         
         <xsl:variable name="startString" select="string-join(reverse($preNodes),'')"/>
         <xsl:variable name="endString" select="string-join($folNodes,'')"/>
