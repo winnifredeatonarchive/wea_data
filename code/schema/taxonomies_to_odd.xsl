@@ -49,7 +49,7 @@
             <xsl:for-each select="$people//person[@xml:id]">
                 <valItem mode="add" ident="pers:{@xml:id}">
                     <desc><xsl:value-of select="@xml:id"/></desc>
-                    <gloss><xsl:value-of select="persName"/></gloss>
+                    <gloss><xsl:value-of select="persName/reg"/></gloss>
                 </valItem>
             </xsl:for-each>
         </xsl:copy>
@@ -97,13 +97,7 @@
             </xsl:for-each>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template match="seg[@xml:id='values_people']">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:value-of select="concat('(',string-join(for $p in $people//person[@xml:id[not(.='WE')]] return concat($sq,$p/@xml:id,$sq,':',$sq,$p/persName/text(),$sq),';'),')')"/>
-        </xsl:copy>
-    </xsl:template>
+
     
 
     <xsl:template match="table[@xml:id='codeTemplates_table']">

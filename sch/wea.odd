@@ -666,23 +666,15 @@
                            </valItem>
                            <valItem mode="add" ident="pers:SE1">
                               <desc>SE1</desc>
-                              <gloss>
-                  S. Ehrhart</gloss>
+                              <gloss/>
                            </valItem>
                            <valItem mode="add" ident="pers:AB1">
                               <desc>AB1</desc>
-                              <gloss>
-                  Albert
-                  Blashfield
-               </gloss>
+                              <gloss/>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
-                              <gloss>
-                  Mary
-                  Chapman
-                  Mary Chapman
-               </gloss>
+                              <gloss>Mary Chapman</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:JLC1">
                               <desc>JLC1</desc>
@@ -719,6 +711,15 @@
                         </valList>
                      </attDef>
                   </attList>
+               </elementSpec>
+               
+               <!--Modify persName so that we need at least one of reg, forename, and surname-->
+               <elementSpec ident="persName" module="namesdates" mode="change">
+                  <content>
+                     <elementRef key="reg" minOccurs="1" maxOccurs="1"/>
+                     <elementRef key="forename" minOccurs="1" maxOccurs="unbounded"/>
+                     <elementRef key="surname" minOccurs="1" maxOccurs="unbounded"/>
+                  </content>
                </elementSpec>
                
                
@@ -774,23 +775,15 @@
                            </valItem>
                            <valItem mode="add" ident="pers:SE1">
                               <desc>SE1</desc>
-                              <gloss>
-                  S. Ehrhart</gloss>
+                              <gloss/>
                            </valItem>
                            <valItem mode="add" ident="pers:AB1">
                               <desc>AB1</desc>
-                              <gloss>
-                  Albert
-                  Blashfield
-               </gloss>
+                              <gloss/>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
-                              <gloss>
-                  Mary
-                  Chapman
-                  Mary Chapman
-               </gloss>
+                              <gloss>Mary Chapman</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:JLC1">
                               <desc>JLC1</desc>

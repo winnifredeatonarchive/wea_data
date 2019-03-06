@@ -14,7 +14,7 @@
     <xsl:variable name="people" select="document('../../data/people.xml')"/>
     <xsl:variable name="sq">'</xsl:variable>
     
-    <xsl:variable name="pplVar" select="concat('(',string-join(for $n in $people//person[@xml:id[not(.='WE')]] return concat($sq,$n/@xml:id,$sq,':',$sq,$n/persName,$sq),';'),')')" as="xs:string"/>
+    <xsl:variable name="pplVar" select="concat('(',string-join(for $n in $people//person[@xml:id[not(.='WE1')]] return concat($sq,$n/@xml:id,$sq,':',$sq,$n/persName/reg,$sq),';'),')')" as="xs:string"/>
     <xsl:variable name="docTypeVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='docType']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="objectVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='object']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="genreVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='genre']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>

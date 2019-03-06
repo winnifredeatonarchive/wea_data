@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="people">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Title</title>
@@ -12,98 +12,139 @@
             <p>Information about the source</p>
          </sourceDesc>
       </fileDesc>
-     <profileDesc>
-        <textClass>
-           <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
-        </textClass>
-     </profileDesc>
-     <revisionDesc>
-        <change who="pers:JT1" when="2019-02-13">Created file.</change>
-     </revisionDesc>
-  </teiHeader>
-  <text>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change who="pers:JT1" when="2019-02-13">Created file.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
       <body>
-         
+
          <listPerson type="primary">
-            
+
             <person xml:id="WE1">
-               <persName>Winnifred Eaton</persName>
+               <persName>
+                  <reg>Winnifred Eaton</reg>
+                  <forename>Winnifred</forename>
+                  <surname>Eaton</surname>
+               </persName>
                <birth when="1875-08-21"/>
                <death when="1954-04-08"/>
-               
+
                <!--Biographical Timeline-->
                <listEvent>
                   <event when="1875" type="birth">
                      <p>Born.</p>
                   </event>
-                  
+
                   <event when="1953" type="death">
                      <p>Died.</p>
                   </event>
                </listEvent>
-               <note>
-                  
-               </note>
+               <note> </note>
             </person>
-            
+
             <!--NEED RESEARCH HERE-->
             <person xml:id="SE1">
                <persName>
+                  <reg>S. Ehrhart</reg>
                   <forename>S.</forename>
                   <surname>Ehrhart</surname>
                </persName>
             </person>
             <person xml:id="AB1">
                <persName>
+                  <reg>Albert Blashfield</reg>
                   <forename>Albert</forename>
                   <surname>Blashfield</surname>
                </persName>
             </person>
          </listPerson>
-         
+
          <listPerson type="contributor">
 
             <person xml:id="MC1">
                <persName>
+                  <reg>Mary Chapman</reg>
                   <forename>Mary</forename>
                   <surname>Chapman</surname>
-                  <reg>Mary Chapman</reg>
                </persName>
+               <note>Biography statement goes here...</note>
             </person>
             <person xml:id="JLC1">
-               <persName>Jean Lee Cole</persName>
+               <persName>
+                  <reg>Jean Lee Cole</reg>
+                  <forename>Jean</forename>
+                  <surname>Lee Cole</surname>
+               </persName>
+               <note>Biography statement goes here...</note>
             </person>
             <person xml:id="SL1">
-               <persName>Sydney Lines</persName>
+               <persName>
+                  <reg>Sydney Lines</reg>
+                  <forename>Sydney</forename>
+                  <surname>Lines</surname>
+               </persName>
+               <note>Biography statement goes here...</note>
             </person>
-            
-            <person xml:id="KI1">
-               <persName>Ken Ip</persName>
-            </person>
-            
-            <person xml:id="JT1">
-               <persName>Joey Takeda</persName>
-            </person>
-            
-            <person xml:id="HB1">
-               <persName>Hilary Ball</persName>
-            </person>
-            
-            <person xml:id="XY1">
-               <persName>Xine Yao</persName>
-            </person>
-            
-            <person xml:id="PP1">
-               <persName>Pavlina Pajot</persName>
-            </person>
-            
-            <person xml:id="LM1">
-               <persName>Lucia Maggio</persName>
-            </person>
-            
 
-  
+            <person xml:id="KI1">
+               <persName>
+                  <reg>Ken Ip</reg>
+                  <forename>Ken</forename>
+                  <surname>Ip</surname>
+               </persName>
+               <note>Biography statement goes here...</note>
+            </person>
+
+            <person xml:id="JT1">
+               <persName>
+                  <reg>Joey Takeda</reg>
+                  <forename>Joey</forename>
+                  <surname>Takeda</surname>
+               </persName>
+               <note>Biography statement goes here...</note>
+            </person>
+
+            <person xml:id="HB1">
+               <persName>
+                  <reg>Hilary Ball</reg>
+                  <forename>Hilary</forename>
+                  <surname>Ball</surname>
+               </persName>
+            </person>
+
+            <person xml:id="XY1">
+               <persName>
+                  <reg>Xine Yao</reg>
+                  <forename>Xine</forename>
+                  <surname>Yao</surname>
+               </persName>
+            </person>
+
+            <person xml:id="PP1">
+               <persName>
+                  <reg>Pavlina Pajot</reg>
+                  <forename>Pavlina</forename>
+                  <surname>Pajot</surname>
+               </persName>
+            </person>
+
+            <person xml:id="LM1">
+               <persName>
+                  <reg>Lucia Maggio</reg>
+                  <forename>Lucia</forename>
+                  <surname>Maggio</surname>
+               </persName>
+            </person>
+
+
+
          </listPerson>
       </body>
-  </text>
+   </text>
 </TEI>
