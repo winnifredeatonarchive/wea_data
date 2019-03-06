@@ -13,9 +13,11 @@ searchParams = url.searchParams;
 
 function init(){
     addDocClass();
-        addSearch();
+    addSearch();
     addPopupClose();
-    makeAsideResponsive();
+    makeFootnotesResponsive();
+    makeNamesResponsive();
+/*    makeAsideResponsive();*/
         if (searchParams.has("searchTokens")){
             highlightSearchMatches();
         
@@ -43,6 +45,74 @@ function showHideAside(){
     }
 }
 
+function makeFootnotesResponsive(){
+    var noteMarkers = document.querySelectorAll('a.noteMarker');
+    noteMarkers.forEach(function(n){
+        n.addEventListener('click',showPopup,true);
+    });
+}
+
+function makeNamesResponsive(){
+    var names = document.querySelectorAll('a[data-el=name]');
+    names.forEach(function(n){
+        n.addEventListener('click', showPopup, true);
+    });
+}
+
+ /** 
+   * Makes the specified popups (which can be a list of ids) popup
+   * The list of ids must be space separated (id1 id2 etc)
+   * author: jtakeda 
+   */
+  function showPopup(){
+      
+      /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
+      var e=arguments[0];
+      /* Stop the onclick from bubbling */
+      e.stopPropagation();
+      /* And prevent default action for links with @href */
+      e.preventDefault();
+      
+      console.log('Showing popup');
+      /* Declare empty var */
+      var id = '';
+      /* If this is an annotation and the annotation button is checked */
+      /* Sometimes the annotation/collation buttons aren't there (if, for instance, there are no collations in the document)
+       * and we have to have a switch for that */
+       
+      if (this.classList.contains('noteMarker')){
+          id = this.getAttribute('href').substring(1);
+      } 
+     /* Else if this is a name element and it has an @href that is a local pointer */
+      else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
+          id=this.getAttribute('href').substring(1);
+      } 
+      /* Otherwise, return */
+      else{
+          console.log ('ERROR: This element does not have a popup; removing the click event');
+          this.removeEventListener('click', showPopup, false);
+          return;
+      }
+      
+      
+      var popup = document.getElementById('popup');
+      var popupContent = document.getElementById('popup_content');
+      var showing = popup.getAttribute('data-showing');
+            /* Close the existing popup, if necessary */
+      closePopup();
+      var thisThing = document.getElementById(id);
+      var clone = thisThing.cloneNode(true);
+      popupContent.appendChild(clone);
+            //Set the popup @data-showing to the ids
+            popup.setAttribute('data-showing',id);
+            //And set the display to block
+            popup.classList.remove('hidden');
+            popup.classList.add('showing');
+      
+   }
+   
+   
+ 
 
 
 function addDocClass(){
@@ -79,6 +149,9 @@ function addPopupClose(){
    
 }
 
+
+      /* Close popup */
+      
 function closePopup(){
     var popup = document.getElementById('popup');
     popup.removeAttribute('class');

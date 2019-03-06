@@ -203,39 +203,54 @@ div.open > h3::after{
     font-size:.8em;
 }
 
+
 #popup{
+    position: fixed;
+    right: 20%;
+    top: 35%;
+    overflow:auto;
+    max-height:fit-content;
+    max-width:10em;
+    border: 1px solid rgb(102, 102, 102);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-right: 0;
+    overflow: auto;
+    padding: 1.25em;
+    word-wrap: break-word;
+    opacity: .95;
+    font-size:1.2rem;
+    background:ghostwhite;
+}
+
+#popup,
+#popup.hidden{
     display:none;
 }
 
-#popup.lightbox{
-    background: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 300;
+#popup.showing{
     display:block;
-    height:100%;
-    width:100%;
 }
 
-#popup.lightbox > #popup_content{
-    height:90%;
-    width:90%;
-    text-align:center;
+#popup_content{
+    margin: .5em .25em .25em .25em;
+    font-size:75%;
 }
-#popup.lightbox img{
-    height:90%;
-    margin:auto;
+
+#popup_content .returnToNote{
+ display:none;   
 }
+
 #popup_closer{
     float:right;
-    margin-right:5rem;
     top:5rem;
+    font-size:70%;
     color:black;
-    font-size:200%;
     font-weight:bold;
+    cursor:pointer;
+}
+
+#popup_closer{
+ 
 }
 
 #aside{
