@@ -116,9 +116,17 @@ aside{
 }
 
 aside.showing{
-    background:rgb(42,44,46);
+    z-index:1000;
+    background:ghostwhite;
+    height:100%;
+    color: black;
+    min-width:20%;
+
 }
 
+aside.showing  #aside_toggle{
+    color:black;
+}
 
 aside:not(.showing) #aside_contents{
     margin-left:-30rem;
@@ -126,11 +134,8 @@ aside:not(.showing) #aside_contents{
 
 aside.showing #aside_contents,
 aside:active #aside_contents{
-   transition: .5s;
+
    margin-left:0;
-   background:black;
-   height:100%;
-   color:white;
 }
 
 #credits{
@@ -159,8 +164,8 @@ aside.closed #aside_toggle::after{
 
 aside.showing #aside_toggle::after{
     content:"X";
-    color:white;
     float:right;
+    margin-right:.5rem;
 }
 
 aside
@@ -252,9 +257,6 @@ div.open > h3::after{
  
 }
 
-#aside{
-    display:none;
-}
 
 span[data-el='foreign']{
     font-style:italic;
@@ -291,7 +293,6 @@ div.facsButton{
     float: left;
     margin-left:-5rem;
     position: absolute;
-    z-index: 100;
     border: 1px solid black;
     vertical-align:middle;
    

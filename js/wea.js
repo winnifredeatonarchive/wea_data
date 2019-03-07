@@ -17,10 +17,9 @@ function init(){
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
-/*    makeAsideResponsive();*/
-        if (searchParams.has("searchTokens")){
-            highlightSearchMatches();
-        
+    makeAsideResponsive();
+   if (searchParams.has("searchTokens")){
+    highlightSearchMatches();     
     }
 
 }

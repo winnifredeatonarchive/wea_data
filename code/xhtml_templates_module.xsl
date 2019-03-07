@@ -99,9 +99,12 @@
     <xsl:template match="respStmt/name[@ref]" mode="tei">
         <xsl:variable name="ptr" select="substring-after(@ref,'pers:')"/>
         <xsl:variable name="thisPerson" select="$personography//person[@xml:id=$ptr]" as="element(person)"/>
+        <xsl:variable name="temp" as="element(tei:name)">
+            <tei:name ref="{@ref}"><xsl:value-of select="$thisPerson/persName/reg"/></tei:name>
+        </xsl:variable>
         <div>
             <xsl:call-template name="processAtts"/>
-            <a href="#{substring-after(@ref,'pers:')}"><xsl:value-of select="$thisPerson/persName"/></a>
+            <xsl:apply-templates select="$temp" mode="#current"/>
         </div>
     </xsl:template>
     
@@ -258,7 +261,7 @@
     <xsl:template match="person" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
-            <h3><xsl:apply-templates select="persName/node()" mode="#current"/></h3>
+            <h3><xsl:apply-templates select="persName/reg" mode="#current"/></h3>
             <xsl:apply-templates select="node()[not(self::persName)]" mode="#current"/>
         </div>
     </xsl:template>
