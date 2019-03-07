@@ -12,13 +12,27 @@
     <xsl:param name="outDir"/>
     
     
-    <xsl:variable name="xmlDir" select="'../data/'"/>
+    <xsl:variable name="sourceDir" select="'../../data/'"/>
     
-    <xsl:variable name="xmlDocs" select="collection(concat($xmlDir,'?select=*.xml&amp;recurse=yes'))//TEI" as="element(TEI)+"/>  
     
-    <xsl:variable name="personography" select="$xmlDocs[@xml:id='people']" as="element(TEI)"/>
+    <xsl:variable name="productsDir" select="'../products/'"/>
     
-    <xsl:variable name="taxonomies" select="$xmlDocs[@xml:id='taxonomies']" as="element(TEI)"/>
+    <xsl:variable name="today" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
+    
+    
+    
+    <xsl:variable name="originalXmlDir" select="concat($productsDir,'xml/original/')"/>
+    <xsl:variable name="standaloneXmlDir" select="concat($productsDir,'xml/standalone/')"/>
+    
+    <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    
+    <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    
+    <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    
+    <xsl:variable name="personography" select="$standaloneXml[@xml:id='people']" as="element(TEI)"/>
+    
+    <xsl:variable name="taxonomies" select="$standaloneXml[@xml:id='taxonomies']" as="element(TEI)"/>
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
 </xsl:stylesheet>

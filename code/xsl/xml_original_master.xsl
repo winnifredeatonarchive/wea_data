@@ -5,7 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
-    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -17,5 +17,34 @@
         </xd:desc>
     </xd:doc>
     <xsl:include href="globals.xsl"/>
+    <xsl:include href="xml_original_category_module.xsl"/>
+    
+    <xsl:template match="/">
+        <xsl:for-each select="$sourceXml">
+            <xsl:variable name="out" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
+            <xsl:message>Processing <xsl:value-of select="document-uri(/)"/> to <xsl:value-of select="$out"/></xsl:message>
+            <xsl:result-document href="{$out}">
+                <xsl:apply-templates select="." mode="original"/>
+            </xsl:result-document>
+        </xsl:for-each>
+        <xsl:call-template name="createCategoryPages"/>
+    </xsl:template>
+    
+    
+    
+    <!--Clean up empty names in the respStmts-->
+    <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
+        <xsl:variable name="thisRef" select="@ref"/>
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:value-of select="$sourceXml[@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="@*|node()" mode="#all">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
     
 </xsl:stylesheet>

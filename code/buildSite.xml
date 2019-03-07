@@ -49,13 +49,18 @@
   <target name="createOriginalXml">
       <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-          <arg value="-xsl:${data.dir}/code/xml_original_master.xsl"/>
-          <arg value="-s:${data.dir}/code/xml_original_master.xsl"/>
+          <arg value="-xsl:${data.dir}/code/xsl/xml_original_master.xsl"/>
+          <arg value="-s:${data.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="outDir=${siteTemp}"/>
-          <arg value="--suppressXsltNamespaceCheck:on"/>
-          
+          <arg value="--suppressXsltNamespaceCheck:on"/>          
       </java>
   </target>  
+    
+    <target name="validateOriginalXml">
+        <ant antfile="buildValidate.xml" inheritall="no">
+            <property name="data.dir" value="${siteTemp}/xml/original"/>
+        </ant>
+    </target>
     
     
  <target name="createStandaloneXml">
