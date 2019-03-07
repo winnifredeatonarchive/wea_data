@@ -19,5 +19,21 @@
     <xsl:include href="globals.xsl"/>
     
     
+    <xsl:template match="/">
+        <xsl:for-each select="$originalXml">
+            <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',@xml:id,'.xml')"/>
+            <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
+            <xsl:result-document href="{$outDir}">
+                <xsl:apply-templates select="." mode="standalone"/>
+            </xsl:result-document>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="@*|node()" priority="-1" mode="#all" >
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
     
 </xsl:stylesheet>

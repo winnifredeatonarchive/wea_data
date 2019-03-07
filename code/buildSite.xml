@@ -72,34 +72,41 @@
      </java>
  </target>
     
+    <target name="validateStandaloneXml">
+        <ant antfile="buildValidate.xml" inheritall="no">
+            <property name="data.dir" value="${siteTemp}/xml/standalone"/>
+            <property name="rng" value="${data.dir}/sch/tei_all.rng"/>
+            <property name="sch" value="${data.dir}/sch/tei_all.sch"/>
+            <property name="sch.xsl" value="${data.dir}/sch/tei_all.xsl"/>
+        </ant>
+    </target>
+    
+    
+    <target name="createIndex">
+        <echo message="Creating index..."/>
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+            <arg value="-xsl:${data.dir}/code/xsl/xml_index_master.xsl"/>
+            <arg value="-s:${data.dir}/code/xml_index_master.xsl"/>
+            <arg value="outDir=${siteTemp}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
 
-  <target name="createSite">
+  <target name="createXhtml">
       <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-          <arg value="-xsl:${data.dir}/code/xhtml_master.xsl"/>
-          <arg value="-s:${data.dir}/code/xhtml_master.xsl"/>
+          <arg value="-xsl:${data.dir}/code/xsl/xhtml_master.xsl"/>
+          <arg value="-s:${data.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${siteTemp}"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>
           
       </java>
   </target>
     
-    <target name="createIndex">
-        <echo message="Creating index..."/>
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-            <arg value="-xsl:${data.dir}/code/xhtml5_index_master.xsl"/>
-            <arg value="-s:${data.dir}/code/xhtml5_index_master.xsl"/>
-            <arg value="outDir=${siteTemp}"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-        </java>
-    </target>  
+  
+ 
     
-    <target name="copyDocumentation">
-        <echo message="Copying documentation..."/>
-
-    </target>
-    
-    <target name="validate">
+    <target name="validateXhtml">
         <description>
             This target validates the XHTML against the VNU validator.
         </description>
@@ -135,8 +142,7 @@
         </exec>
     </target>
     
-    <target name="all" depends="init, copyAuxFiles, createSite, createIndex, validate"/>
+    <target name="all" depends="init, copyAuxFiles, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
-    <target name="pushToLive" depends="copyProducts, pushSite"/>
     
 </project>

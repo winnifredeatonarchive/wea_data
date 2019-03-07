@@ -5,7 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
-    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
     <xsl:param name="verbose">false</xsl:param>
@@ -35,4 +35,45 @@
     <xsl:variable name="taxonomies" select="$standaloneXml[@xml:id='taxonomies']" as="element(TEI)"/>
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
+    
+    <xsl:template name="generateTeiPage">
+  
+        <xsl:param name="outDoc"/>
+        <xsl:param name="thisId"/>
+        <xsl:param name="title"/>
+        <xsl:param name="categories"/>
+        <xsl:param name="content"/>
+        <xsl:message>Generating <xsl:value-of select="$outDoc"/></xsl:message>
+        <xsl:result-document href="{$outDoc}">
+            <TEI xml:id="{$thisId}" xmlns="http://www.tei-c.org/ns/1.0">
+                <teiHeader>
+                    <fileDesc>
+                        <titleStmt>
+                            <title><xsl:sequence select="$title"/></title>
+                        </titleStmt>
+                        <publicationStmt>
+                            <p>???</p>
+                        </publicationStmt>
+                        <sourceDesc>
+                            <p>No Source born digital/</p>
+                        </sourceDesc>
+                    </fileDesc>
+                    <profileDesc>
+                        <textClass>
+                            <xsl:for-each select="$categories">
+                                <catRef scheme="wdt:docType" target="{.}"/>
+                            </xsl:for-each>
+                        </textClass>
+                    </profileDesc>
+                    <revisionDesc>
+                        <change when="{$today}">Generated page.</change>
+                    </revisionDesc>
+                </teiHeader>
+                <text>
+                  <xsl:copy-of select="$content"/>
+                </text>
+            </TEI>
+        </xsl:result-document>
+    </xsl:template>
+    
 </xsl:stylesheet>
