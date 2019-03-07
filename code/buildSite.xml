@@ -22,19 +22,9 @@
     </target>
     
     <target name="copyAuxFiles">
-        <copy todir="${siteTemp}/css">
-            <fileset dir="../css">
-                <include name="**.css"/>
-            </fileset>
-        </copy>
-        <copy todir="${siteTemp}/fonts">
-            <fileset dir="../fonts">
-                <include name="**"/>
-            </fileset>
-        </copy>
-        <copy todir="${siteTemp}/js">
-            <fileset dir="../js">
-                <include name="**.js"/>
+        <copy todir="${siteTemp}">
+            <fileset dir="../site">
+                <include name="**/**"/>
             </fileset>
         </copy>
         <copy todir="${siteTemp}">
@@ -55,6 +45,27 @@
     </target>
     
     
+    
+  <target name="createOriginalXml">
+      <echo message="Creating site..."/>
+      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+          <arg value="-xsl:${data.dir}/code/xml_original_master.xsl"/>
+          <arg value="-s:${data.dir}/code/xml_original_master.xsl"/>
+          <arg value="outDir=${siteTemp}"/>
+          <arg value="--suppressXsltNamespaceCheck:on"/>
+          
+      </java>
+  </target>  
+    
+    
+ <target name="createStandaloneXml">
+     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+         <arg value="-xsl:${data.dir}/code/xml_standalone_master.xsl"/>
+         <arg value="-s:${data.dir}/code/xml_standalone_master.xsl"/>
+         <arg value="outDir=${siteTemp}"/>
+         <arg value="--suppressXsltNamespaceCheck:on"/>
+     </java>
+ </target>
     
 
   <target name="createSite">

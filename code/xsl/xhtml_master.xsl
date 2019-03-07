@@ -16,8 +16,9 @@
             necessitiates it.</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:include href="xhtml_templates_module.xsl"/>
     <xsl:include href="globals.xsl"/>
+    <xsl:include href="xhtml_templates_module.xsl"/>
+
 
     
     <xsl:template match="/">
