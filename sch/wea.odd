@@ -442,6 +442,8 @@
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno langUsage language licence listChange listPrefixDef prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
+               <moduleRef key="figures" include="cell table row"/>
+               
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val"/>
@@ -510,7 +512,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalCategory))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -571,6 +573,9 @@
                            <valItem mode="add" ident="wdt:docBornDigital">
                               <desc>Born Digital document</desc>
                            </valItem>
+                           <valItem mode="add" ident="wdt:docBornDigitalCategory">
+                              <desc>Generated category page.</desc>
+                           </valItem>
                            <valItem mode="add" ident="wdt:genreShortStory">
                               <desc>Short Story</desc>
                            </valItem>
@@ -611,7 +616,9 @@
                               <desc>Novel: Serial</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Japan">
-                              <desc>Japan</desc>
+                              <desc>
+                      
+                       Japan</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Alberta">
                               <desc>Alberta</desc>
