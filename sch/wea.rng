@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-06T19:23:08Z. .
+Schema generated from ODD source 2019-03-07T21:27:35Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -444,9 +444,9 @@ Sample values include: 1] draft(This document is currently being edited. It is n
                      <value>pers:WE1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE1</a:documentation>
                      <value>pers:SE1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SE1</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(S. Ehrhart) SE1</a:documentation>
                      <value>pers:AB1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">AB1</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Albert Blashfield) AB1</a:documentation>
                      <value>pers:MC1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC1</a:documentation>
                      <value>pers:JLC1</value>
@@ -457,6 +457,8 @@ Sample values include: 1] draft(This document is currently being edited. It is n
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
                      <value>pers:JT1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
+                     <value>pers:SP1</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
                      <value>pers:HB1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB1</a:documentation>
                      <value>pers:XY1</value>
@@ -2236,9 +2238,9 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                   <value>pers:WE1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE1</a:documentation>
                   <value>pers:SE1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SE1</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(S. Ehrhart) SE1</a:documentation>
                   <value>pers:AB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">AB1</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Albert Blashfield) AB1</a:documentation>
                   <value>pers:MC1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC1</a:documentation>
                   <value>pers:JLC1</value>
@@ -2249,6 +2251,8 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
                   <value>pers:JT1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
+                  <value>pers:SP1</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
                   <value>pers:HB1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB1</a:documentation>
                   <value>pers:XY1</value>
@@ -3528,7 +3532,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                               </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:catRef[@scheme='wdt:category']">
-                              <sch:assert test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
+                              <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -3572,15 +3576,15 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel</a:documentation>
                      <value>wdt:genreNovelSerial</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel: Serial</a:documentation>
-                     <value>wdt:catJapan</value>
+                     <value>wdt:Japan</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan</a:documentation>
-                     <value>wdt:catAlberta</value>
+                     <value>wdt:Alberta</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta</a:documentation>
-                     <value>wdt:catHollywood</value>
+                     <value>wdt:Hollywood</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood</a:documentation>
-                     <value>wdt:catEarlyExperiment</value>
+                     <value>wdt:EarlyExperiment</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments</a:documentation>
-                     <value>wdt:catNewYork</value>
+                     <value>wdt:NewYork</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York</a:documentation>
                   </choice>
                </oneOrMore>

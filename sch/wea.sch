@@ -319,7 +319,7 @@ relatedItem element must be empty</sch:report>
                               </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:catRef[@scheme='wdt:category']">
-                              <sch:assert test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
+                              <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>

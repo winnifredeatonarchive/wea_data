@@ -520,7 +520,7 @@
                               </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:catRef[@scheme='wdt:category']">
-                              <sch:assert test="matches(@target,'^((wdt:catJapan)|(wdt:catAlberta)|(wdt:catHollywood)|(wdt:catEarlyExperiment)|(wdt:catNewYork))$')">
+                              <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -610,19 +610,19 @@
                            <valItem mode="add" ident="wdt:genreNovelSerial">
                               <desc>Novel: Serial</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:catJapan">
+                           <valItem mode="add" ident="wdt:Japan">
                               <desc>Japan</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:catAlberta">
+                           <valItem mode="add" ident="wdt:Alberta">
                               <desc>Alberta</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:catHollywood">
+                           <valItem mode="add" ident="wdt:Hollywood">
                               <desc>Hollywood</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:catEarlyExperiment">
+                           <valItem mode="add" ident="wdt:EarlyExperiment">
                               <desc>Early Experiments</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:catNewYork">
+                           <valItem mode="add" ident="wdt:NewYork">
                               <desc>New York</desc>
                            </valItem>
                         </valList>
@@ -666,11 +666,11 @@
                            </valItem>
                            <valItem mode="add" ident="pers:SE1">
                               <desc>SE1</desc>
-                              <gloss/>
+                              <gloss>S. Ehrhart</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:AB1">
                               <desc>AB1</desc>
-                              <gloss/>
+                              <gloss>Albert Blashfield</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
@@ -691,6 +691,10 @@
                            <valItem mode="add" ident="pers:JT1">
                               <desc>JT1</desc>
                               <gloss>Joey Takeda</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SP1">
+                              <desc>SP1</desc>
+                              <gloss>Serina Patterson</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:HB1">
                               <desc>HB1</desc>
@@ -775,11 +779,11 @@
                            </valItem>
                            <valItem mode="add" ident="pers:SE1">
                               <desc>SE1</desc>
-                              <gloss/>
+                              <gloss>S. Ehrhart</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:AB1">
                               <desc>AB1</desc>
-                              <gloss/>
+                              <gloss>Albert Blashfield</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
@@ -800,6 +804,10 @@
                            <valItem mode="add" ident="pers:JT1">
                               <desc>JT1</desc>
                               <gloss>Joey Takeda</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SP1">
+                              <desc>SP1</desc>
+                              <gloss>Serina Patterson</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:HB1">
                               <desc>HB1</desc>
