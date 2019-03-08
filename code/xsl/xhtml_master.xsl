@@ -18,6 +18,8 @@
     </xd:doc>
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xhtml_templates_module.xsl"/>
+    <xsl:include href="xhtml_appendix_module.xsl"/>
+    <xsl:include href="xhtml_functions_module.xsl"/>
 
 
     

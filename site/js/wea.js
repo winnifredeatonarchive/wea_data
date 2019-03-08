@@ -13,12 +13,15 @@ searchParams = url.searchParams;
 
 function init(){
     addDocClass();
-    addSearch();
+    if (docId == 'search' || document.getElementById('searchResults') !== null){
+            addSearch();
+    }
+
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
-    makeAsideResponsive();
-   if (searchParams.has("searchTokens")){
+/*    makeAsideResponsive();
+*/   if (searchParams.has("searchTokens")){
     highlightSearchMatches();     
     }
 
@@ -119,6 +122,7 @@ function addDocClass(){
        body.classList.add('JS');
 }
 function addSearch(){
+     searcher = new mdh.LocalSearch('js/search/', 'searchResults');
      var searches = document.querySelectorAll('input[name=search]');
      console.log('Adding search functionality...');
      searches.forEach(function(s){
@@ -154,6 +158,7 @@ function addPopupClose(){
 function closePopup(){
     var popup = document.getElementById('popup');
     popup.removeAttribute('class');
+    popup.removeAttribute('data-showing');
     var popupContent = document.getElementById('popup_content');
     while (popupContent.hasChildNodes()){
         popupContent.removeChild(popupContent.lastChild)

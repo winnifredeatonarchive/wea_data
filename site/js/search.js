@@ -496,4 +496,5 @@ mdh.LocalSearch.prototype.showDebug = function(str){
 
 /* Create a search object. */
 var searcher;
-window.addEventListener('load', function(){searcher = new mdh.LocalSearch('js/search/', 'searchResults');});
+/*window.addEventListener('load', function(){searcher = new mdh.LocalSearch('js/search/', 'searchResults');});
+*/

@@ -280,17 +280,7 @@
     </xsl:template>
     
     
-    <xsl:template match="note[@type='editorial']" mode="appendix">
-        <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
-        <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
-        <div data-notenum="{$noteNum}">
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="id" select="$noteId"/>
-            </xsl:call-template>
-            <xsl:apply-templates mode="tei"/>
-            <a class="returnToNote" href="#noteMarker_{$noteNum}">↑</a>
-        </div>
-    </xsl:template>
+  
     
     <xsl:template match="person" mode="tei">
         <div>
@@ -451,71 +441,10 @@
             <div id="searchResults"/>
         </xsl:if>
     </xsl:template>
-    <xsl:template name="createAppendix">
-        <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>
-    </xsl:template>
-    
-    <xsl:template match="text[@type='standoff']" mode="appendix">
-        <div id="appendix">
-            <xsl:apply-templates mode="#current"/>
-        </div>
-    </xsl:template>
-    
-    <xsl:template match="listPerson" mode="appendix">
-        <div>
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="id" select="'personography'"/>
-            </xsl:call-template>
-            <h2>People Mentioned</h2>
-            <xsl:apply-templates select="person" mode="tei"/>
-        </div>
-    </xsl:template>
-    
-    <xsl:template name="createNotes">
-        <xsl:if test="//note[@type='editorial']">
-            <div id="notes">
-                <h3>Notes</h3>
-                <xsl:apply-templates select="//note[@type='editorial']" mode="appendix"/>
-            </div>
-        </xsl:if>
-    </xsl:template>
-    
-    
-    
-    
-    <xsl:template name="createPopup">
-        <div id="popup">
-            <div id="popup_closer">X</div>
-            <div id="popup_content"/>
-        </div>
-    </xsl:template>
 
 
-    <!--FUNCTIONS-->
+
+
     
-    <xsl:function name="wea:getNoteId">
-        <xsl:param name="note"/>
-        <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
-    </xsl:function>
-    
-    <xsl:function name="wea:resolveTarget">
-        <xsl:param name="target"/>
-        <xsl:choose>
-            <xsl:when test="starts-with($target,'http')">
-                <xsl:value-of select="$target"/>
-            </xsl:when>
-            <xsl:when test="contains($target,'.xml')">
-                <xsl:value-of select="replace($target,'\.xml','.html')"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="$target"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
-        
-    <xsl:function name="wea:bornDigital" as="xs:boolean">
-        <xsl:param name="doc"/>
-        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
-    </xsl:function>
 
 </xsl:stylesheet>
