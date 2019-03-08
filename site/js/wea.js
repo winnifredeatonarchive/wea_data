@@ -211,9 +211,44 @@ xmlhttp.send(null);
             console.log('Pattern: ' + pattern + "; Replace: " + replacement);
             body.innerHTML = body.innerHTML.replace(pattern,replacement);
         }
+        /* Add dehighlight button */
+        addUnhighlightButton();
         /* Now once this is done you can add event listeners */
         addEvents();
     }
+    
+    function addUnhighlightButton(){
+        var button = document.createElement('div');
+        button.setAttribute('id','unhighlightButton');
+        button.setAttribute('class','highlighted');
+        button.setAttribute('data-count', document.querySelectorAll('span.highlight').length);
+        button.addEventListener('click', toggleHighlight);
+        var header = document.getElementsByTagName('header')[0];
+        header.parentNode.insertBefore(button, header.nextSibling);
+        
+    }
+    
+    function toggleHighlight(){
+        var isHighlighted = this.classList.contains('highlighted');
+        var his = document.querySelectorAll('span.highlight');
+        
+        for (var h=0; h < his.length ; h++){
+            if (isHighlighted){
+                 his[h].classList.add('deselected');
+            } else {
+                his[h].classList.remove('deselected');
+            }
+           
+        }
+        if (isHighlighted){
+            this.classList.remove('highlighted');
+            this.classList.add('unhighlighted');
+        } else {
+            this.classList.remove('unhighlighted');
+            this.classList.add('highlighted');
+        }
+    }
+
     
     
     function returnDoc(obj){

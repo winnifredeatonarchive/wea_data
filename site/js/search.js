@@ -172,13 +172,26 @@ mdh.LocalSearch.prototype.search = function(str){
 //For each token in the search string
     for (i=0, imax=this.currTokens.length; i<imax; i++){
 //First stem the token
-      this.stemmedTokens[i] = this.stemToken(this.currTokens[i], exact);
+      this.stemmedTokens[i] = this.stemToken(this.currTokens[i],exact);
 //Now check whether we already have an index entry for this token
       if (!this.index.hasOwnProperty(this.stemmedTokens[i])){
 //If not, add it to the array of tokens we want to retrieve.
         tokensToFind.push(this.stemmedTokens[i]);
       }
     }
+    if (!exact){
+        for (var k=this.currTokens.length; k < this.currTokens.length*2; k++){
+        this.stemmedTokens[k] = this.currTokens[k - this.currTokens.length]
+        if (!this.index.hasOwnProperty(this.stemmedTokens[k])){
+            tokensToFind.push(this.stemmedTokens[k]);
+        }
+    }
+    }
+    
+    
+    
+    
+    this.stemmedTokens = Array.from(new Set(this.stemmedTokens));
     this.showDebug('Stemmed tokens are ' + this.stemmedTokens.toString());
     
     this.showDebug('Stemmed tokens for which we do not yet have index entries are ' + tokensToFind.toString());

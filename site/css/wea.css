@@ -33,6 +33,30 @@ body{
   min-height:40rem;
 }
 
+#unhighlightButton{
+    top: 5%;
+    position:sticky;
+    background-color: #dedede;
+    max-width: 6em;
+    margin-top: .5rem;
+    color: black;
+    font-size: 90%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#unhighlightButton:hover{
+    background-color: #c7c7c7;
+}
+
+#unhighlightButton.unhighlighted::after{
+    content: "Highlight search matches ("attr(data-count)")";
+}
+
+#unhighlightButton.highlighted::after{
+    content: "Unhighlight search matches ("attr(data-count)")";
+}
+
 
 #searchResults{
     margin-top:2em;
@@ -453,8 +477,10 @@ div#mainBody input[type=text] {
 }
 .highlight{
     background: rgba(255,170,235,0.4);
-    padding:.12rem;
-    
+}
+
+.highlight.deselected{
+    background:inherit;
 }
 
 /* When the input field gets focus, change its width to 100% */
