@@ -47,7 +47,6 @@
 
     <xsl:template name="makeMap">
         <xsl:param name="term"/>
-        <xsl:variable name="regex" select="concat('^|\s+',$term,'\s+|$')"/>
             <map xmlns="http://www.w3.org/2005/xpath-functions">
                 <string key="token">
                     <xsl:value-of select="$term"/>
@@ -59,10 +58,10 @@
                 </array>-->
                     <array key="instances">
                         <xsl:for-each-group select="current-group()" group-by="ancestor::html/@id">
-                            <xsl:sort select="count(current-group()[1]/ancestor::html/descendant::span[matches(@data-stem,$regex)])" order="descending"/>
+                            <xsl:sort select="count(current-group()[1]/ancestor::html/descendant::span[@data-stem=$term])" order="descending"/>
                             <xsl:variable name="docId" select="current-grouping-key()"/>
                             <xsl:variable name="thisDoc" select="current-group()[1]/ancestor::html"/>
-                            <xsl:variable name="spans" as="element(span)+" select="$thisDoc//span[@data-stem][matches(@data-stem,$regex)]"/>
+                            <xsl:variable name="spans" as="element(span)+" select="$thisDoc//span[@data-stem=$term]"/>
                             <xsl:variable name="docTitle" select="$thisDoc/head/title[1]"/>
                             
                            
