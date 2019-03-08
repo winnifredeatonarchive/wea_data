@@ -6,7 +6,7 @@
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -23,29 +23,41 @@
     </xsl:template>
     
    <xsl:template name="createIndexPage">
+       <xsl:call-template name="generateTeiPage">
+           <xsl:with-param name="thisId" select="'index'"/>
+           <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/index.xml')"/>
+           <xsl:with-param name="title">Index</xsl:with-param>
+           <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
+           <xsl:with-param name="content">
+               <body>
+                   <div>
+                       <table>
+                           <row role="label">
+                               <cell>Title</cell>
+                               <cell>ID</cell>
+                           </row>
+                           <row>
+                               <cell><ref target="documentation.html">Documentation</ref></cell>
+                               <cell>documentation</cell>
+                           </row>
+                           <xsl:for-each select="$originalXml">
+                               <row>
+                                   <cell><ref target="{//TEI/@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
+                                   <cell><xsl:value-of select="//TEI/@xml:id"/></cell>
+                               </row>
+                           </xsl:for-each>
+                       </table>
+                   </div>
+               </body>
+           </xsl:with-param>
+       </xsl:call-template>
+       
+       
+       
            <TEI xml:id="index">
                <xsl:copy-of select="wea:createTeiHeader('Index')"/>
                <text>
-                   <body>
-                       <div>
-                           <table>
-                               <row role="label">
-                                   <cell>Title</cell>
-                                   <cell>ID</cell>
-                               </row>
-                               <row>
-                                   <cell><ref target="documentation.html">Documentation</ref></cell>
-                                   <cell>documentation</cell>
-                               </row>
-                               <xsl:for-each select="$originalXml">
-                                   <row>
-                                       <cell><ref target="{//TEI/@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
-                                       <cell><xsl:value-of select="//TEI/@xml:id"/></cell>
-                                   </row>
-                               </xsl:for-each>
-                           </table>
-                       </div>
-                   </body>
+                   
                </text>
            </TEI>
    </xsl:template>

@@ -62,11 +62,20 @@
         </ant>
     </target>
     
+    <target name="createIndex">
+        <echo message="Creating index..."/>
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+            <arg value="-xsl:${data.dir}/code/xsl/xml_index_master.xsl"/>
+            <arg value="-s:${data.dir}/code/xsl/xml_index_master.xsl"/>
+            <arg value="outDir=${siteTemp}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
     
  <target name="createStandaloneXml">
      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-         <arg value="-xsl:${data.dir}/code/xml_standalone_master.xsl"/>
-         <arg value="-s:${data.dir}/code/xml_standalone_master.xsl"/>
+         <arg value="-xsl:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
+         <arg value="-s:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${siteTemp}"/>
          <arg value="--suppressXsltNamespaceCheck:on"/>
      </java>
@@ -82,15 +91,7 @@
     </target>
     
     
-    <target name="createIndex">
-        <echo message="Creating index..."/>
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
-            <arg value="-xsl:${data.dir}/code/xsl/xml_index_master.xsl"/>
-            <arg value="-s:${data.dir}/code/xml_index_master.xsl"/>
-            <arg value="outDir=${siteTemp}"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-        </java>
-    </target>
+  
 
   <target name="createXhtml">
       <echo message="Creating site..."/>

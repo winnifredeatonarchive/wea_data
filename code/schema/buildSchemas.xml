@@ -85,7 +85,7 @@
     
     <!--Condition set for the TEI server, since the TEI site can go down periodically:
   If we can reach the TEI guidelines-->
-    <condition property="useLiveTEI" value="false" else="false">
+    <condition property="useLiveTEI" value="true" else="false">
         <http url="https://www.tei-c.org/Vault/P5/"/>
     </condition>
     
@@ -99,6 +99,7 @@
         <istrue value="${useLiveTEI}"/>
     </condition>
     
+    <property name="tei_all.rng" value="${defaultTEIServer}${defaultTEIVersion}/xml/tei/custom/schema/relaxng/tei_all.rng"/>
     
     
     <!--****************************************************************
@@ -107,7 +108,7 @@
      *                                                              *
      ****************************************************************-->
     
-  
+ 
   
   <target name="addVals">
       <description>Add the values from the taxonomy to the ODD</description>
@@ -180,6 +181,23 @@
         </ant>
     </target>
     
+    <target name="getTei">
+        <description>This target extracts the embedded schematron rules
+        from within the TEI all RNG.</description>
+        <echo message="${echo.separator}"/>
+        <echo message="Getting latest TEI all schema..."/>
+        <echo message="${echo.separator}"/>
+        <get src="${tei_all.rng}" dest="${schema.dir}/tei_all.rng"/>
+        <echo message="Extracting schematron from ${schema.dir}/tei_all.rng"/>
+        <echo message="${echo.separator}"/>
+        <ant antfile="buildSchematron.xml" inheritall="false">
+            <property name="in.rng" value="${schema.dir}/tei_all.rng"/>
+            <property name="out.sch" value="${schema.dir}/tei_all.sch"/>
+            <property name="out.xsl" value="${schema.dir}/tei_all.xsl"/>
+            <property name="saxon" value="${saxon}"/>
+        </ant>
+    </target>
+    
     <target name="odd2html">
         <description>Create documentation from the ODD file.</description>
         <java jar="${saxon}" fork="true" failonerror="true">
@@ -227,7 +245,7 @@
         
     
     
-    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2html, clean">
+    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, getTei, odd2html, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     

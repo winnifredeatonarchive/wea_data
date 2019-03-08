@@ -15,7 +15,7 @@
     <xsl:variable name="sourceDir" select="'../../data/'"/>
     
     
-    <xsl:variable name="productsDir" select="'../products/'"/>
+    <xsl:variable name="productsDir" select="'../../products/'"/>
     
     <xsl:variable name="today" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
     
@@ -44,7 +44,7 @@
         <xsl:param name="categories"/>
         <xsl:param name="content"/>
         <xsl:message>Generating <xsl:value-of select="$outDoc"/></xsl:message>
-        <xsl:result-document href="{$outDoc}">
+        <xsl:result-document href="{$outDoc}" method="xml" indent="yes">
             <TEI xml:id="{$thisId}" xmlns="http://www.tei-c.org/ns/1.0">
                 <teiHeader>
                     <fileDesc>

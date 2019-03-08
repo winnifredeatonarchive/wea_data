@@ -143,13 +143,6 @@
                     <row role="label">
                         <cell>Document</cell>
                         
-                        <cell>
-                            <xsl:choose>
-                                <xsl:when test="$thisCat='edtEdition'">Editor</xsl:when>
-                                <xsl:otherwise>Author</xsl:otherwise>
-                            </xsl:choose>
-                        </cell>
-                        <cell>Anthologies</cell>
                     </row>
                     <!--A small function to get the category docs for this category-->
                     <xsl:for-each select="wea:getCatDocs(@xml:id)">
