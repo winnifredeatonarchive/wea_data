@@ -28,7 +28,6 @@
             <xsl:for-each select="distinct-values($words)">
 
                 <xsl:variable name="word" select="."/>
-                <xsl:message>Stemming <xsl:value-of select="$word"/></xsl:message>
                 <xsl:variable name="stem" select="xs:string(jt:stem(.))"/>
                 <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
                 <xsl:variable name="useStem" as="xs:boolean">
