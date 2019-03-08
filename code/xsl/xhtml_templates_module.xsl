@@ -70,6 +70,8 @@
             </div>
             <xsl:call-template name="createPopup"/>
         </body>
+        
+        
     </xsl:template>
     
     <xsl:function name="wea:crumb">
