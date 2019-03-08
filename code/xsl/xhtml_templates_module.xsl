@@ -50,6 +50,9 @@
     <xsl:template match="text[not(@type='standoff')]" mode="tei">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <body>
+            <header>
+                <a href="index.html">WEA</a>
+            </header>
             <div id="mainBody">
                 <xsl:if test="not(wea:bornDigital($root))">
                     <xsl:copy-of select="wea:crumb($root)"/>
