@@ -51,33 +51,6 @@
                </body>
            </xsl:with-param>
        </xsl:call-template>
-       
-       
-       
-           <TEI xml:id="index">
-               <xsl:copy-of select="wea:createTeiHeader('Index')"/>
-               <text>
-                   
-               </text>
-           </TEI>
    </xsl:template>
-    
-    <xsl:function name="wea:createTeiHeader">
-        <xsl:param name="title"/>
-        <teiHeader>
-            <fileDesc>
-                <titleStmt>
-                    <title><xsl:value-of select="$title"/></title>
-                </titleStmt>
-                <publicationStmt>
-                    <p>Publication Information</p>
-                </publicationStmt>
-                <sourceDesc>
-                    <p>Information about the source</p>
-                </sourceDesc>
-            </fileDesc>
-        </teiHeader>
-    </xsl:function>
-    
-    
+   
 </xsl:stylesheet>

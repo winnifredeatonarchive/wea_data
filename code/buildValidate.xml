@@ -70,7 +70,7 @@
       build). This creates new XML files in the temp
       directory-->
         <xslt destdir="${tempSchematron.dir}"
-            style="${sch.dir}/weaSchematron.xsl"
+            style="${sch.xsl}"
             extension=".xml" classpath="${lib.dir}/saxon9he.jar"
             useImplicitFileset="false" failonerror="true">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>

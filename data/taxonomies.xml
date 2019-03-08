@@ -132,6 +132,8 @@
         <listPrefixDef>
            <prefixDef ident="pdf" matchPattern="(.+)" replacementPattern="pdfs/$1.pdf"/>
            <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
+           <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
+           <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
         </listPrefixDef>
      </encodingDesc>
      <revisionDesc>

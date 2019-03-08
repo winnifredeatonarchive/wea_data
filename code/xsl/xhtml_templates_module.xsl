@@ -43,7 +43,11 @@
         </head>
     </xsl:template>
     
-    <xsl:template match="text" mode="tei">
+    <!--delete the standoff from teh regular flow-->
+    <xsl:template match="text[@type='standoff']" mode="tei"/>
+    
+    
+    <xsl:template match="text[not(@type='standoff')]" mode="tei">
         <body>
             <xsl:call-template name="createAside"/>
             <div id="mainBody">
@@ -62,7 +66,7 @@
     <xsl:template name="createFacsButton">
         <xsl:if test="@facs">
             <div class="facsButton">
-                <a href="{wea:resolvePrefix(@facs)}" xsl:use-attribute-sets="newTabLink">
+                <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
                     View Facsimile
                 </a>
             </div> 
@@ -96,15 +100,13 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="respStmt/name[@ref]" mode="tei">
-        <xsl:variable name="ptr" select="substring-after(@ref,'pers:')"/>
-        <xsl:variable name="thisPerson" select="$personography//person[@xml:id=$ptr]" as="element(person)"/>
-        <xsl:variable name="temp" as="element(tei:name)">
-            <tei:name ref="{@ref}"><xsl:value-of select="$thisPerson/persName/reg"/></tei:name>
-        </xsl:variable>
+    <xsl:template match="respStmt/name" mode="tei">
         <div>
+            <xsl:variable name="thisName">
+                <xsl:copy-of select="."/>
+            </xsl:variable>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates select="$temp" mode="#current"/>
+            <xsl:apply-templates select="$thisName" mode="#current"/>
         </div>
     </xsl:template>
     
@@ -192,14 +194,18 @@
     
     
     <xsl:template match="ref" mode="tei">
-        <a href="{@target}">
+        <a href="{wea:resolveTarget(@target)}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </a>
     </xsl:template>
     
+    <xsl:template match="name[not(@ref)][not(ancestor::respStmt)]" mode="tei">
+        <span><xsl:apply-templates mode="#current"/></span>
+    </xsl:template>
+    
     <xsl:template match="name[@ref][not(ancestor::respStmt)]" mode="tei">
-        <a href="#{substring-after(wea:resolvePrefix(@ref),'#')}">
+        <a href="{@ref}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </a>
@@ -418,9 +424,23 @@
         </xsl:if>
     </xsl:template>
     <xsl:template name="createAppendix">
+        <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>
+    </xsl:template>
+    
+    <xsl:template match="text[@type='standoff']" mode="appendix">
         <div id="appendix">
-            <xsl:call-template name="createNotes"/>
-            <xsl:call-template name="createPersonography"/>
+            <h2>Appendix</h2>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="listPerson" mode="appendix">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id" select="'personography'"/>
+            </xsl:call-template>
+            <h2>People Mentioned</h2>
+            <xsl:apply-templates select="person" mode="tei"/>
         </div>
     </xsl:template>
     
@@ -442,28 +462,8 @@
             <div id="popup_content"/>
         </div>
     </xsl:template>
-    
-    <xsl:template name="createPersonography">
-        <xsl:variable name="people">
-            <xsl:call-template name="getPeople"/>
-        </xsl:variable>
-        <xsl:if test="not(empty($people))">
-            <div id="personography">
-                <h2>People Mentioned</h2>
-                <xsl:apply-templates select="$people" mode="tei"/>
-            </div>
-        </xsl:if>
-        
-    </xsl:template>
-    
-    <xsl:template name="getPeople">
-        <xsl:variable name="who" select="//*/@who"/>
-        <xsl:variable name="resp" select="//*/@resp"/>
-        <xsl:variable name="ref" select="//name/@ref | //persName/@ref | //docAuthor/@ref"/>
-        <xsl:variable name="distinct" select="
-            distinct-values(for $q in (for $p in ($who, $resp, $ref) return tokenize($p,'\s+')) return if (starts-with($q,'pers:')) then substring-after($q,'pers:') else ())"/>
-        <xsl:sequence select="$personography//person[@xml:id=$distinct]"/>
-    </xsl:template>
+
+
     <!--FUNCTIONS-->
     
     <xsl:function name="wea:getNoteId">
@@ -471,13 +471,19 @@
         <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
     </xsl:function>
     
-    <xsl:function name="wea:resolvePrefix">
-        <xsl:param name="ptr"/>
-        <xsl:variable name="tokens" select="tokenize($ptr,':')"/>
-        <xsl:variable name="prefix" select="$tokens[1]"/>
-        <xsl:variable name="match" select="$prefixDefs[@ident=$prefix]/@matchPattern" as="attribute(matchPattern)"/>
-        <xsl:variable name="replace" select="$prefixDefs[@ident=$prefix]/@replacementPattern" as="attribute(replacementPattern)"/>
-        <xsl:value-of select="replace($tokens[2],$match,$replace)"/>
+    <xsl:function name="wea:resolveTarget">
+        <xsl:param name="target"/>
+        <xsl:choose>
+            <xsl:when test="starts-with($target,'http')">
+                <xsl:value-of select="$target"/>
+            </xsl:when>
+            <xsl:when test="contains($target,'.xml')">
+                <xsl:value-of select="replace($target,'\.xml','.html')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$target"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
-   
+
 </xsl:stylesheet>
