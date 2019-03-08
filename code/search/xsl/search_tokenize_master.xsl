@@ -46,8 +46,6 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-               
-               <xsl:message>Word: <xsl:value-of select="$word"/>; use stem: <xsl:value-of select="$useStem"/></xsl:message>
                 <xsl:map-entry key="xs:string($word)" select="($stem,$useStem)"/>
                 
             </xsl:for-each>
