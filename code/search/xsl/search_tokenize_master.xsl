@@ -8,8 +8,64 @@
     <xsl:include href="https://raw.githubusercontent.com/joeytakeda/xslt-stemmer/master/porterStemmer.xsl"/>
     <xsl:include href="search_globals_module.xsl"/>
     
+       
+    <xsl:variable name="tokenRegex" select="'[A-Za-z\d]+'"/>
     
-    <xsl:variable name="regex" select="concat('^',string-join(for $e in $englishWords return concat('(',$e,')'),'|'),'$')"/>
+    <xsl:variable name="words" as="xs:string+">
+        <xsl:for-each select="$contentDocs//descendant::text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])][not(ancestor::div[@id='metadata'])]">
+            <xsl:analyze-string select="normalize-space(.)" regex="{$tokenRegex}">
+                <xsl:matching-substring>
+                    <xsl:value-of select="."/>
+                </xsl:matching-substring>
+            </xsl:analyze-string>
+        </xsl:for-each>
+    </xsl:variable>
+    
+    
+    <xsl:variable name="tokenMap" as="map(xs:string, xs:string)">
+        <xsl:message>Tokenizing words...</xsl:message>
+        <xsl:map>
+            <xsl:for-each select="distinct-values($words)">
+
+                <xsl:variable name="word" select="."/>
+                <xsl:message>Stemming <xsl:value-of select="$word"/></xsl:message>
+                <xsl:variable name="stem" select="xs:string(jt:stem(.))"/>
+                <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
+                <xsl:variable name="useStem" as="xs:boolean">
+                    <xsl:choose>
+                        <xsl:when test="matches($word,'^[A-Z]')">
+                            <xsl:value-of select="false()"/>
+                        </xsl:when>
+                        <xsl:when test="matches($word,'\d+')">
+                            <xsl:value-of select="false()"/>
+                        </xsl:when>
+                        <xsl:when test="not($word=$englishWords)">
+                            <xsl:value-of select="false()"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="true()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="entry" as="xs:string">
+                    <xsl:choose>
+                        <xsl:when test="$same">
+                            <xsl:value-of select="$stem"/>
+                        </xsl:when>
+                        <xsl:when test="not($same) and $useStem">
+                            <xsl:value-of select="$stem"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$word"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+               
+                <xsl:map-entry key="xs:string($word)" select="$entry"/>
+                
+            </xsl:for-each>
+        </xsl:map>
+    </xsl:variable>
     
     <xsl:template match="/">
         <xsl:for-each select="$contentDocs">
@@ -19,8 +75,10 @@
         </xsl:for-each>
     </xsl:template>
     
+    
+    
+    
     <xsl:template match="html" mode="tokenize">
-        <xsl:message>Processing <xsl:value-of select="@id"/></xsl:message>
         <xsl:copy>
             <xsl:copy-of select="@*|head"/>
             <xsl:apply-templates select="body" mode="#current"/>
@@ -33,7 +91,7 @@
     <xd:doc scope="component">
         <xd:desc>The meat: tokenizing text nodes.</xd:desc>
     </xd:doc>
-    <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])]" mode="tokenize">
+    <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])][not(ancestor::div[@id='metadata'])]" mode="tokenize">
         <xsl:variable name="isForeign" select="exists(ancestor::span[@data-el='foreign'])"/>
         <xsl:analyze-string select="normalize-space(.)" regex="[A-Za-z\d]+">
             <xsl:matching-substring>
@@ -42,32 +100,12 @@
                 
                 <xsl:variable name="lc" select="lower-case($word)"/>
                 
-                <xsl:variable name="stem" as="xs:string">
-                    <xsl:choose>
-                        <xsl:when test="$isForeign">
-                            <xsl:value-of select="$word"/>
-                        </xsl:when>
-                        <!--It's capitalized, so probably shouldn't be stemmed-->
-                        <xsl:when test="matches($word,'^[A-Z]')">
-                            <xsl:value-of select="$word"/>
-                        </xsl:when>
-                        <!--It's just a digit-->
-                        <xsl:when test="matches($word,'^\d+$')">
-                            <xsl:value-of select="$word"/>
-                        </xsl:when>
-                        <xsl:when test="$lc = $englishWords">
-                            <xsl:value-of select="jt:stem($lc)"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:message>Not a common English word: <xsl:value-of select="$word"/></xsl:message>
-                            <xsl:value-of select="$word"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+                <xsl:variable name="stem" as="xs:string+" select="$tokenMap($word)"/>
                 <xsl:choose>
                     <xsl:when test="hcmc:shouldIndex($lc)">
+                        
                         <span>
-                            <xsl:attribute name="data-stem" select="$stem"/>
+                            <xsl:attribute name="data-stem" select="string-join($stem,' ')"/>
                             <xsl:value-of select="."/>
                         </span>
                     </xsl:when>
