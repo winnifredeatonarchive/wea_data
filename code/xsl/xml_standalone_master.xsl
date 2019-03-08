@@ -183,6 +183,8 @@
         <xsl:attribute name="{$attName}" select="string-join($out,' ')"/>      
     </xsl:template>
     
+    <!--Now delete that copyOf-->
+    <xsl:template match="@copyOf" mode="pass2"/>
 
     
 

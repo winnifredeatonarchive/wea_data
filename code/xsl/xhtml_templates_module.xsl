@@ -48,11 +48,17 @@
     
     
     <xsl:template match="text[not(@type='standoff')]" mode="tei">
+        <xsl:variable name="root" select="ancestor::TEI"/>
         <body>
-            <xsl:call-template name="createAside"/>
             <div id="mainBody">
-                <xsl:call-template name="createFacsButton"/>
-                <div>
+                <xsl:if test="not(wea:bornDigital($root))">
+                    <xsl:copy-of select="wea:crumb($root)"/>
+                </xsl:if>
+                <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
+                <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
+                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
+                </xsl:if>
+                <div id="text">
                     <xsl:call-template name="processAtts"/>
                     <xsl:apply-templates mode="#current"/>
                 </div>
@@ -62,6 +68,13 @@
             <xsl:call-template name="createPopup"/>
         </body>
     </xsl:template>
+    
+    <xsl:function name="wea:crumb">
+        <xsl:param name="doc"/>
+        <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
+        <xsl:variable name="thisCat" select="substring-after($category,'wdt:')"/>
+        <div class="breadcrumb"><a href="{$thisCat}.html"><xsl:value-of select="$thisCat"/></a></div>
+    </xsl:function>
     
     <xsl:template name="createFacsButton">
         <xsl:if test="@facs">
@@ -74,18 +87,28 @@
 
     </xsl:template>
     
-    <xsl:template name="createAside">
-        <aside id="aside" class="closed">
-            <div class="ham"><a href="#aside" id="aside_toggle"/></div>
-            <div id="aside_contents">
-                <div id="credits">
-                    <xsl:apply-templates select="//respStmt" mode="tei"/>
-                </div>
-            </div>
-        </aside>
-    </xsl:template>
     
-    <xsl:template match="respStmt" mode="tei">
+    <xsl:template match="teiHeader" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id">metadata</xsl:with-param>
+            </xsl:call-template>
+            <h3>Metadata</h3>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+   
+   <xsl:template match="sourceDesc" mode="metadata">
+       <div>
+           <xsl:call-template name="processAtts"/>
+           <h4>Source Description</h4>
+           <!--Stuff here-->
+       </div>
+   </xsl:template>
+    
+    <xsl:template match="revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
+    
+    <xsl:template match="respStmt" mode="metadata">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates select="resp" mode="#current"/>
@@ -93,20 +116,20 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="respStmt/resp" mode="tei">
+    <xsl:template match="respStmt/resp" mode="metadata">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
     
-    <xsl:template match="respStmt/name" mode="tei">
+    <xsl:template match="respStmt/name" mode="metadata">
         <div>
             <xsl:variable name="thisName">
                 <xsl:copy-of select="."/>
             </xsl:variable>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates select="$thisName" mode="#current"/>
+            <xsl:apply-templates select="$thisName" mode="tei"/>
         </div>
     </xsl:template>
     
@@ -429,7 +452,6 @@
     
     <xsl:template match="text[@type='standoff']" mode="appendix">
         <div id="appendix">
-            <h2>Appendix</h2>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
@@ -484,6 +506,11 @@
                 <xsl:value-of select="$target"/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:function>
+        
+    <xsl:function name="wea:bornDigital" as="xs:boolean">
+        <xsl:param name="doc"/>
+        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
     </xsl:function>
 
 </xsl:stylesheet>
