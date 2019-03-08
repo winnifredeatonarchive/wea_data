@@ -7,7 +7,7 @@
     xmlns:jt="http://github.com/joeytakeda">
     
     
-    <xsl:param name="createContext" select="false()"/>
+    <xsl:param name="createContext" select="true()"/>
     <xsl:param name="maxContexts" as="xs:integer" select="3"/>
     
     <xsl:include href="search_globals_module.xsl"/>
