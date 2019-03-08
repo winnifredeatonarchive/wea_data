@@ -22,7 +22,7 @@
     </xsl:variable>
     
     
-    <xsl:variable name="tokenMap" as="map(xs:string, item()*)">
+    <xsl:variable name="tokenMap" as="map(xs:string, xs:string)">
         <xsl:message>Tokenizing words...</xsl:message>
         <xsl:map>
             <xsl:for-each select="distinct-values($words)">
@@ -46,7 +46,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-                <xsl:map-entry key="xs:string($word)" select="($stem,$useStem)"/>
+                <xsl:map-entry key="xs:string($word)" select="if ($useStem) then $stem else $word"/>
                 
             </xsl:for-each>
         </xsl:map>
@@ -85,15 +85,12 @@
                 
                 <xsl:variable name="lc" select="lower-case($word)"/>
                 
-                <xsl:variable name="entry" select="$tokenMap($word)"/>
-                <xsl:variable name="stem" select="$entry[1]" as="xs:string"/>
-                <xsl:variable name="useStem" select="$entry[2]" as="xs:boolean"/>
+                <xsl:variable name="stem" select="$tokenMap($word)"/>
                 <xsl:choose>
                     <xsl:when test="hcmc:shouldIndex($lc)">
                         
                         <span>
                             <xsl:attribute name="data-stem" select="$stem"/>
-                            <xsl:attribute name="data-useStem" select="$useStem"/>
                             <xsl:value-of select="."/>
                         </span>
                     </xsl:when>

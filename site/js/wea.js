@@ -13,39 +13,27 @@ searchParams = url.searchParams;
 
 function init(){
     addDocClass();
+   if (searchParams.has("searchTokens")){
+    highlightSearchMatches();
+    } else {
+        addEvents()
+    }
     if (docId == 'search' || document.getElementById('searchResults') !== null){
             addSearch();
     }
 
+/*    makeAsideResponsive();*/
+
+
+}
+
+
+function addEvents(){
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
-/*    makeAsideResponsive();
-*/   if (searchParams.has("searchTokens")){
-    highlightSearchMatches();     
-    }
-
 }
 
-
-function makeAsideResponsive(){
-    var ham = document.getElementById('aside_toggle');
-    ham.addEventListener('click',showHideAside);
-    
-}
-
-function showHideAside(){
-    var e = arguments[0];
-     e.preventDefault();
-    var aside = document.getElementById('aside');
-    if (aside.classList.contains('closed')){
-        aside.classList.remove('closed');
-        aside.classList.add('showing');
-    } else {
-        aside.classList.remove('showing');
-        aside.classList.add('closed');
-    }
-}
 
 function makeFootnotesResponsive(){
     var noteMarkers = document.querySelectorAll('a.noteMarker');
@@ -57,6 +45,7 @@ function makeFootnotesResponsive(){
 function makeNamesResponsive(){
     var names = document.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
+        console.log(n);
         n.addEventListener('click', showPopup, true);
     });
 }
@@ -139,12 +128,7 @@ function initSearch(){
  }
 }
 
-function makeFacsResponsive(){
-    var facs = document.querySelectorAll('a.facs');
-    facs.forEach(function(f){
-        f.addEventListener('click',showLightbox);
-    })
-}
+
 
 function addPopupClose(){
     var closer = document.getElementById('popup_closer');
@@ -179,13 +163,15 @@ function highlightSearchMatches(){
             ulDir='lower/';
         }
         var url ="js/search/" + ulDir + thisToken + ".json";
-        getJson(url, highlightTerms)
+        getJson(url, highlightTerms);
+
 
 }
         
     }
     
-    function getJson(url,callback){
+    function getJson(url, callback){
+     var json = new Array();
      console.log('REquesting ' + url);
      var xmlhttp = new XMLHttpRequest();
 xmlhttp.open('GET', url, true);
@@ -195,16 +181,18 @@ xmlhttp.onreadystatechange = function() {
             var obj = JSON.parse(xmlhttp.responseText);
             callback(obj);
          }
+    } else {
+        addEvents();
     }
 };
+
 xmlhttp.send(null);
     }
     
     
     function highlightTerms(obj){
         var body = document.getElementsByTagName('body')[0];
-        console.log(obj);
-        console.log(docId);
+        console.log(obj[0]);
         var instance;
         for (i=0; i < obj.instances.length; i++){
             thisInstanceId = obj.instances[i].docId;
@@ -223,6 +211,8 @@ xmlhttp.send(null);
             console.log('Pattern: ' + pattern + "; Replace: " + replacement);
             body.innerHTML = body.innerHTML.replace(pattern,replacement);
         }
+        /* Now once this is done you can add event listeners */
+        addEvents();
     }
     
     
