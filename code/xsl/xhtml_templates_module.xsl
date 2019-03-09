@@ -429,6 +429,7 @@
     
     <xsl:template name="addScripts">
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
+        <link rel="icon" type="image/png" href="graphics/icon.png"/>
         <script src="js/porterStemmer.js"/>
         <script src="js/search.js"/>
         <script src="js/wea.js"/>
