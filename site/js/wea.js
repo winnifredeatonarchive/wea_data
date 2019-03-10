@@ -57,7 +57,6 @@ function makeNamesResponsive(){
    */
   function showPopup(){
                  /* Close the existing popup, if necessary */
-      closePopup();
       /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
       var e=arguments[0];
       var el = this;
@@ -89,7 +88,22 @@ function makeNamesResponsive(){
       var popup = document.getElementById('popup');
       var popupContent = document.getElementById('popup_content');
       var showing = popup.getAttribute('data-showing');
- 
+       var c = document.querySelectorAll('.clicked');
+          
+      if (popup.classList.contains('showing')){
+          closePopup();
+          if (this.classList.contains('clicked')){
+            for (var i =0; i <c.length; i++){
+                  c[i].classList.remove('clicked');
+              }
+            return null;
+          } else {
+             for (var i =0; i <c.length; i++){
+                  c[i].classList.remove('clicked');
+              }
+          }
+      }
+   
       var thisThing = document.getElementById(id);
       var clone = thisThing.cloneNode(true);
       
@@ -104,7 +118,8 @@ function makeNamesResponsive(){
         popup.classList.remove('hidden');
         popup.classList.add('showing');
         placeNote(this,popup);
-        this.addEventListener('click',closePopup, false);
+        this.classList.add('clicked');
+
    }
    
 
@@ -189,22 +204,20 @@ function addPopupClose(){
       
 function closePopup(){
     var popup = document.getElementById('popup');
-    if (!(this.id == 'popup_closer')){
-        this.removeEventListener('click', closePopup, false);
-    }
+
     if (popup.classList.contains('showing')){
-    console.log('Removing popup');
-    popup.removeAttribute('style');
-    popup.removeAttribute('class');
-    popup.removeAttribute('data-showing');
-    var popupContent = document.getElementById('popup_content');
-    while (popupContent.hasChildNodes()){
+        console.log('Removing popup');
+         popup.removeAttribute('style');
+         popup.removeAttribute('class');
+         popup.removeAttribute('data-showing');
+         var popupContent = document.getElementById('popup_content');
+         while (popupContent.hasChildNodes()){
         popupContent.removeChild(popupContent.lastChild)
+        }
     }
-    window.removeEventListener('resize',windowResize, false);
-    }
-   
+       window.removeEventListener('resize',windowResize, false);
 }
+
 
 /* This function takes in a query string "?searchTokens" and returns the highlighted tokens */
 function highlightSearchMatches(){
