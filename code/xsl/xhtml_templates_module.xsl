@@ -39,7 +39,7 @@
     <xsl:template match="teiHeader" mode="tei">
         <head>
             <title><xsl:value-of select="fileDesc/titleStmt/title[1]"/></title>
-            <xsl:call-template name="addScripts"/>
+            <xsl:call-template name="createHeader"/>
         </head>
     </xsl:template>
     
@@ -427,12 +427,13 @@
         </xsl:apply-templates>
     </xsl:template>
     
-    <xsl:template name="addScripts">
+    <xsl:template name="createHeader">
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
         <link rel="icon" type="image/png" href="graphics/icon.png"/>
         <script src="js/porterStemmer.js"/>
         <script src="js/search.js"/>
         <script src="js/wea.js"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
     </xsl:template>
     
