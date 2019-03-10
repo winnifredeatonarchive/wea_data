@@ -59,6 +59,7 @@ function makeNamesResponsive(){
       
       /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
       var e=arguments[0];
+      
       /* Stop the onclick from bubbling */
       e.stopPropagation();
       /* And prevent default action for links with @href */
@@ -94,7 +95,8 @@ function makeNamesResponsive(){
       var thisThing = document.getElementById(id);
       var clone = thisThing.cloneNode(true);
       popupContent.appendChild(clone);
-            //Set the popup @data-showing to the ids
+                       //Set the popup @data-showing to the ids
+            
             popup.setAttribute('data-showing',id);
             //And set the display to block
             popup.classList.remove('hidden');
@@ -103,7 +105,13 @@ function makeNamesResponsive(){
    }
    
    
- 
+   
+function placeNote(elem, note) {
+      var coords = elem.getBoundingClientRect();
+          note.style.left = coords.left + elem.offsetWidth + "px";
+          note.style.top = coords.top + "px";
+    }
+  
 
 
 function addDocClass(){
@@ -141,6 +149,7 @@ function addPopupClose(){
       
 function closePopup(){
     var popup = document.getElementById('popup');
+    popup.removeAttribute('style');
     popup.removeAttribute('class');
     popup.removeAttribute('data-showing');
     var popupContent = document.getElementById('popup_content');

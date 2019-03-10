@@ -238,9 +238,41 @@ div.open > h3::after{
     font-size:.8em;
 }
 
+#popup {
+    position:absolute;
+    word-wrap: break-word;
+    opacity: .95;
+    font-size:1.2rem;
+    background:ghostwhite;
+    padding:2em;
+    border: 1px solid black;
+}
+#popup::after, #popup::before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
 
+#popup::after {
+	border-color: rgba(248, 248, 255, 0);
+	border-right-color: #f8f8ff;
+	border-width: 15px;
+	margin-top: -15px;
+}
+#popup::before {
+	border-color: rgba(0, 0, 0, 0);
+	border-right-color: #000000;
+	border-width: 16px;
+	margin-top: -16px;
+}
+
+/*
 #popup{
-    position: fixed;
+    position: absolute;
     right: 20%;
     top: 35%;
     overflow:auto;
@@ -256,6 +288,18 @@ div.open > h3::after{
     font-size:1.2rem;
     background:ghostwhite;
 }
+
+
+#popup::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 0.8em solid transparent;
+	position: absolute;
+	left: -20px;
+    top: 40%;
+    border-right: 10px solid #444;
+}*/
 
 #popup,
 #popup.hidden{
