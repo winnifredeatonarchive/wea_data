@@ -104,7 +104,6 @@ function makeNamesResponsive(){
         popup.classList.remove('hidden');
         popup.classList.add('showing');
         placeNote(this,popup);
-
       
    }
    
@@ -135,8 +134,12 @@ function placeNote(elem, note) {
       var middle = (coords.top + coords.bottom)/2;
       var h = middle - popupHeight/2;
       var w = coords.left + elem.offsetWidth + popupArrowWidth;
-      note.style.left = window.scrollX + w + "px";
-      note.style.top = window.scrollY + h + "px";
+      var x = window.scrollX + w + "px";
+      var y = window.scrollY + h + "px";
+
+
+      note.style.left = x;
+      note.style.top = y;
     }
   
 /*  Taken from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/ */
@@ -186,6 +189,8 @@ function addPopupClose(){
       
 function closePopup(){
     var popup = document.getElementById('popup');
+    if (popup.classList.contains('showing')){
+    console.log('Removing popup');
     popup.removeAttribute('style');
     popup.removeAttribute('class');
     popup.removeAttribute('data-showing');
@@ -194,6 +199,8 @@ function closePopup(){
         popupContent.removeChild(popupContent.lastChild)
     }
     window.removeEventListener('resize',windowResize, false);
+    }
+   
 }
 
 /* This function takes in a query string "?searchTokens" and returns the highlighted tokens */
