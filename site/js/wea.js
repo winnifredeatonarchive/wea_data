@@ -104,7 +104,7 @@ function makeNamesResponsive(){
         popup.classList.remove('hidden');
         popup.classList.add('showing');
         placeNote(this,popup);
-      
+        this.addEventListener('click',closePopup, false);
    }
    
 
@@ -189,6 +189,9 @@ function addPopupClose(){
       
 function closePopup(){
     var popup = document.getElementById('popup');
+    if (!(this.id == 'popup_closer')){
+        this.removeEventListener('click', closePopup, false);
+    }
     if (popup.classList.contains('showing')){
     console.log('Removing popup');
     popup.removeAttribute('style');
