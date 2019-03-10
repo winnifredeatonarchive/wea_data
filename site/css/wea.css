@@ -259,18 +259,18 @@ div.open > h3::after{
 }
 
 #popup::after {
-	border-color: rgba(248, 248, 255, 0);
-	border-right-color: #f8f8ff;
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: white;
 		/* THIS IS WHAT CONTROLS THE ARROW SIZE */
 	border-width: 6px;
 	margin-top: -6px;
 }
 #popup::before {
-	border-color: rgba(0, 0, 0, 0);
-	border-right-color: #000000;
+	border-color: rgba(185, 185, 185, 0);
+	border-right-color: #b9b9b9;
     /* SHHOULD ALWAYS BE +BORERWIDTH */
-	border-width: 7px;
-	margin-top: -7px;
+	border-width: 7.5px;
+	margin-top: -7.5px;
 }
 
 /*
