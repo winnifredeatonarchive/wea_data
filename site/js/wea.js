@@ -46,7 +46,6 @@ function makeFootnotesResponsive(){
 function makeNamesResponsive(){
     var names = document.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
-        console.log(n);
         n.addEventListener('click', showPopup, true);
     });
 }
@@ -61,13 +60,10 @@ function makeNamesResponsive(){
       /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
       var e=arguments[0];
       var el = this;
-      console.log(el);
       /* Stop the onclick from bubbling */
       e.stopPropagation();
       /* And prevent default action for links with @href */
       e.preventDefault();
-      
-      console.log('Showing popup');
       /* Declare empty var */
       var id = '';
       /* If this is an annotation and the annotation button is checked */
@@ -123,8 +119,7 @@ function makeNamesResponsive(){
       resizeTimeout = setTimeout(function() {
         resizeTimeout = null;
         placeNote(el, popup);
-       // The actualResizeHandler will execute at a rate of 15fps
-       }, 5);
+       }, 9);
     }
   }
   
@@ -137,16 +132,11 @@ function placeNote(elem, note) {
       var coords = elem.getBoundingClientRect();
       var popupArrowBorderWidth = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
       var popupArrowWidth = parseInt(popupArrowBorderWidth,10);
-      console.log(elem);
-      console.log('Top:', coords.top);
-      var h = coords.top - popupHeight/2;
-      if (inViewport(header)){
-          h = coords.top - popupHeight/2 + headerHeight;
-      }
-      coords.top - popupHeight/2 + headerHeight;
+      var middle = (coords.top + coords.bottom)/2;
+      var h = middle - popupHeight/2;
       var w = coords.left + elem.offsetWidth + popupArrowWidth;
-          note.style.left = window.scrollX + w + "px";
-          note.style.top = window.scrollY + h + "px";
+      note.style.left = window.scrollX + w + "px";
+      note.style.top = window.scrollY + h + "px";
     }
   
 /*  Taken from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/ */
@@ -253,7 +243,6 @@ xmlhttp.send(null);
         var instance;
         for (i=0; i < obj.instances.length; i++){
             thisInstanceId = obj.instances[i].docId;
-            console.log(i +": " + thisInstanceId);
             if (thisInstanceId == docId){
                 instance = obj.instances[i]
             }
@@ -328,23 +317,3 @@ xmlhttp.send(null);
 
 
 
-
-
-function showLightbox(){
-    var e=arguments[0];
-      /* Stop the onclick from bubbling */
-      e.stopPropagation();
-      /* And prevent default action for links with @href */
-      e.preventDefault();
-    closePopup();
-    console.log('LIGHTbOX');
-    var imgRef = this.getAttribute('href');
-    console.log(imgRef);
-    var popup = document.getElementById('popup');
-    var popupDiv = document.getElementById('popup_content');
-    var imgEl = document.createElement('img');
-    imgEl.src = imgRef;
-    imgEl.alt = 'Facsimile Image';
-    popupDiv.appendChild(imgEl);
-    popup.classList.add('lightbox');
-}

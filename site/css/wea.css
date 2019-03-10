@@ -244,7 +244,7 @@ div.open > h3::after{
     opacity: .95;
     font-size:1.2rem;
     background:ghostwhite;
-    padding:2em;
+    padding:.75em;
     border: 1px solid black;
 }
 #popup::after, #popup::before {
@@ -260,14 +260,16 @@ div.open > h3::after{
 #popup::after {
 	border-color: rgba(248, 248, 255, 0);
 	border-right-color: #f8f8ff;
-	border-width: 15px;
-	margin-top: -15px;
+		/* THIS IS WHAT CONTROLS THE ARROW SIZE */
+	border-width: 6px;
+	margin-top: -6px;
 }
 #popup::before {
 	border-color: rgba(0, 0, 0, 0);
 	border-right-color: #000000;
-	border-width: 16px;
-	margin-top: -16px;
+    /* SHHOULD ALWAYS BE +BORERWIDTH */
+	border-width: 7px;
+	margin-top: -7px;
 }
 
 /*
