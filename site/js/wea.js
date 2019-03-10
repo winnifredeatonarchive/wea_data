@@ -11,6 +11,7 @@ var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 url = new URL(document.URL);
 searchParams = url.searchParams;
 
+
 function init(){
     addDocClass();
    if (searchParams.has("searchTokens")){
@@ -59,7 +60,8 @@ function makeNamesResponsive(){
       
       /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
       var e=arguments[0];
-      
+      var el = this;
+      console.log(el);
       /* Stop the onclick from bubbling */
       e.stopPropagation();
       /* And prevent default action for links with @href */
@@ -94,24 +96,69 @@ function makeNamesResponsive(){
       closePopup();
       var thisThing = document.getElementById(id);
       var clone = thisThing.cloneNode(true);
+      
       popupContent.appendChild(clone);
-                       //Set the popup @data-showing to the ids
-            
-            popup.setAttribute('data-showing',id);
-            //And set the display to block
-            popup.classList.remove('hidden');
-            popup.classList.add('showing');
+            //Set the popup @data-showing to the ids
+        windowResize = function(){
+            resize(el, popup);
+        }
+        window.addEventListener('resize',windowResize, false);
+        popup.setAttribute('data-showing',id);
+        //And set the display to block
+        popup.classList.remove('hidden');
+        popup.classList.add('showing');
+        placeNote(this,popup);
+
       
    }
    
-   
-   
+
+  var resizeTimeout;
+  var windowResize;
+
+  function resize(el, popup) {
+
+    // ignore resize events as long as an actualResizeHandler execution is in the queue
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        placeNote(el, popup);
+       // The actualResizeHandler will execute at a rate of 15fps
+       }, 5);
+    }
+  }
+  
+
 function placeNote(elem, note) {
+
+      var popupHeight = note.offsetHeight;
+      var header = document.getElementsByTagName('header')[0];
+      var headerHeight = header.getBoundingClientRect().top;
       var coords = elem.getBoundingClientRect();
-          note.style.left = coords.left + elem.offsetWidth + "px";
-          note.style.top = coords.top + "px";
+      var popupArrowBorderWidth = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
+      var popupArrowWidth = parseInt(popupArrowBorderWidth,10);
+      console.log(elem);
+      console.log('Top:', coords.top);
+      var h = coords.top - popupHeight/2;
+      if (inViewport(header)){
+          h = coords.top - popupHeight/2 + headerHeight;
+      }
+      coords.top - popupHeight/2 + headerHeight;
+      var w = coords.left + elem.offsetWidth + popupArrowWidth;
+          note.style.left = window.scrollX + w + "px";
+          note.style.top = window.scrollY + h + "px";
     }
   
+/*  Taken from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/ */
+function inViewport (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 
 
 function addDocClass(){
@@ -156,6 +203,7 @@ function closePopup(){
     while (popupContent.hasChildNodes()){
         popupContent.removeChild(popupContent.lastChild)
     }
+    window.removeEventListener('resize',windowResize, false);
 }
 
 /* This function takes in a query string "?searchTokens" and returns the highlighted tokens */

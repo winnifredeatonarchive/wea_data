@@ -24,6 +24,9 @@
     <xsl:variable name="originalXmlDir" select="concat($productsDir,'xml/original/')"/>
     <xsl:variable name="standaloneXmlDir" select="concat($productsDir,'xml/standalone/')"/>
     
+    <!--NOTE TO SELF: These collections should be written without the trailing //TEI
+         as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
+    
     <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
     
     <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
