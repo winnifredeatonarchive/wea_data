@@ -241,11 +241,12 @@ div.open > h3::after{
 #popup {
     position:absolute;
     word-wrap: break-word;
-    opacity: .95;
     font-size:1.2rem;
-    background:ghostwhite;
+    background:white;
     padding:.75em;
-    border: 1px solid black;
+    border: 1px solid #b9b9b9;
+    border-radius: 9px;
+    box-shadow: 1px 1px 1px #b9b9b9;
 }
 #popup::after, #popup::before {
 	right: 100%;
