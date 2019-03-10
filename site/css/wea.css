@@ -238,7 +238,7 @@ div.open > h3::after{
     font-size:.8em;
 }
 
-#popup {
+#popup.showing{
     position:absolute;
     word-wrap: break-word;
     font-size:1.2rem;
@@ -247,6 +247,18 @@ div.open > h3::after{
     border: 1px solid #b9b9b9;
     border-radius: 9px;
     box-shadow: 1px 1px 1px #b9b9b9;
+    display:block;
+    animation: fade-in .5s
+
+}
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
 }
 #popup::after, #popup::before {
 	right: 100%;
@@ -304,14 +316,11 @@ div.open > h3::after{
     border-right: 10px solid #444;
 }*/
 
-#popup,
 #popup.hidden{
     display:none;
+   opacity:0;
 }
 
-#popup.showing{
-    display:block;
-}
 
 #popup_content{
     margin: .5em .25em .25em .25em;

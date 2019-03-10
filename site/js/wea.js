@@ -56,7 +56,8 @@ function makeNamesResponsive(){
    * author: jtakeda 
    */
   function showPopup(){
-      
+                 /* Close the existing popup, if necessary */
+      closePopup();
       /* Cross browser solution for event handling from https://stackoverflow.com/questions/9636400/event-equivalent-in-firefox#answer-15164880 */
       var e=arguments[0];
       var el = this;
@@ -88,8 +89,7 @@ function makeNamesResponsive(){
       var popup = document.getElementById('popup');
       var popupContent = document.getElementById('popup_content');
       var showing = popup.getAttribute('data-showing');
-            /* Close the existing popup, if necessary */
-      closePopup();
+ 
       var thisThing = document.getElementById(id);
       var clone = thisThing.cloneNode(true);
       
