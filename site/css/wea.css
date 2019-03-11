@@ -26,6 +26,10 @@ body{
     padding: 0 5rem;
 }
 
+#text{
+    max-width:40rem;
+}
+
 #info{
       background-color: rgb(242, 245, 243);
       padding-top:5rem;
@@ -140,6 +144,7 @@ div[data-el=body]>div[data-el=div]{
 
 div[data-el=p]{
     padding:.5em 0;
+    text-align:justify;
 }
 
 [data-el='respStmt']{
