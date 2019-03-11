@@ -130,7 +130,7 @@
            </taxonomy>
         </classDecl>
         <listPrefixDef>
-           <prefixDef ident="pdf" matchPattern="(.+)" replacementPattern="pdfs/$1.pdf"/>
+           <prefixDef ident="facs" matchPattern="(.+)" replacementPattern="facsimiles/$1.pdf"/>
            <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
            <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
            <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>

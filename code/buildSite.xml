@@ -37,20 +37,20 @@
                 <include name="**"/>
             </fileset>
         </copy>
-        <copy todir="${siteTemp}/pdfs">
-            <fileset dir="../data/pdfs">
+        <copy todir="${siteTemp}/facsimiles">
+            <fileset dir="../data/facsimiles">
                 <include name="**"/>
             </fileset>
         </copy>
     </target>
     
     <target name="createPDFThumbnails">
-        <apply executable="convert" dest="${siteTemp}/pdfs" force="true" failonerror="true">
+        <apply executable="convert" dest="${siteTemp}/facsimiles" force="true" failonerror="true">
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile suffix="[0]"/>
             <arg line="+profile 'icc'"/>
             <targetfile/>
-            <fileset dir="${siteTemp}/pdfs">
+            <fileset dir="${siteTemp}/facsimiles">
                 <include name="**.pdf"/>
             </fileset>
             <mapper>
