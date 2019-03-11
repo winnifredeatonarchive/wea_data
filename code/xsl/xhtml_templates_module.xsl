@@ -48,19 +48,14 @@
     
     
     <xsl:template match="text[not(@type='standoff')]" mode="tei">
-        <xsl:variable name="root" select="ancestor::TEI"/>
+      
         <body>
             <header>
                 <a href="index.html">WEA</a>
             </header>
             <div id="mainBody">
-                <xsl:if test="not(wea:bornDigital($root))">
-                    <xsl:copy-of select="wea:crumb($root)"/>
-                </xsl:if>
-                <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
-                <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
-                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
-                </xsl:if>
+                <xsl:call-template name="createInfo"/>
+               
                 <div id="text">
                     <xsl:call-template name="processAtts"/>
                     <xsl:apply-templates mode="#current"/>
@@ -74,11 +69,31 @@
         
     </xsl:template>
     
+    <xsl:template name="createInfo">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <div id="info">
+            <xsl:if test="@facs">
+                <figure class="facsThumb">
+                    <a href="{@facs}" title="View facsimile">
+                        <img src="{replace(@facs,'\.pdf$','.png')}" alt="First page of the facsimile"/>
+                    </a>
+                </figure>
+            </xsl:if>
+            <xsl:if test="not(wea:bornDigital($root))">
+                <xsl:copy-of select="wea:crumb($root)"/>
+            </xsl:if>
+            <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
+            <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
+                <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
+            </xsl:if>
+        </div>
+    </xsl:template>
+    
     <xsl:function name="wea:crumb">
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
-        <xsl:variable name="thisCat" select="substring-after($category,'wdt:')"/>
-        <div class="breadcrumb"><a href="{$thisCat}.html"><xsl:value-of select="$thisCat"/></a></div>
+        <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'wdt:')]"/>
+        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/@n"/></a></div>
     </xsl:function>
     
     <xsl:template name="createFacsButton">
@@ -95,10 +110,6 @@
     
     <xsl:template match="teiHeader" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="id">metadata</xsl:with-param>
-            </xsl:call-template>
-            <h3>Metadata</h3>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
@@ -123,7 +134,9 @@
     
     <xsl:template match="respStmt/resp" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes" select="'metadataLabel'"/>
+            </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>

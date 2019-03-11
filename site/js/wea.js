@@ -208,7 +208,8 @@ function closePopup(){
     if (popup.classList.contains('showing')){
         console.log('Removing popup');
          popup.removeAttribute('style');
-         popup.removeAttribute('class');
+         popup.classList.remove('showing');
+         popup.classList.add('hidden');
          popup.removeAttribute('data-showing');
          var popupContent = document.getElementById('popup_content');
          while (popupContent.hasChildNodes()){
