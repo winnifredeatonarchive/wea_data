@@ -44,6 +44,21 @@
         </copy>
     </target>
     
+    <target name="createPDFThumbnails">
+        <apply executable="convert" dest="${siteTemp}/pdfs" force="true">
+            <arg line="-density 150 -thumbnail x600"/>
+            <srcfile suffix="[0]"/>
+            <arg line="+profile 'icc'"/>
+            <targetfile/>
+            <fileset dir="${siteTemp}/pdfs">
+                <include name="**.pdf"/>
+            </fileset>
+            <mapper>
+                <globmapper from="*.pdf" to="*.png"/>
+            </mapper>
+        </apply>
+    </target>
+    
     
     
   <target name="createOriginalXml">
@@ -129,21 +144,9 @@
         <delete dir="${xhValidationDir}"/>
     </target>
     
-    <target name="copyProducts">
-        <copy todir="${siteDir}">
-            <fileset dir="${siteTemp}">
-                <include name="**"/>
-            </fileset>
-        </copy>
-    </target>
+  
     
-    <target name="pushSite">
-        <exec executable="/bin/bash">
-            <arg line="pushToGit.sh ${siteDir} Updating."/>
-        </exec>
-    </target>
-    
-    <target name="all" depends="init, copyAuxFiles, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
     
 </project>
