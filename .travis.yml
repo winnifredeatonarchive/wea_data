@@ -1,4 +1,5 @@
 language: java
+#Have to add ghostscript as an add on for PDF conversion to work properly
 addons:
     apt:
         packages:
@@ -7,9 +8,9 @@ script: ant all
 notifications:
   email:
     recepients:
-      - joey.takeda@gmail.com
-    on_success: change
-    on_failure: always
+      - joey.takeda@gmail.com #Always email Joey
+    on_success: change 
+    on_failure: always # Alert when the build fails
 deploy:
   provider: pages
   skip-cleanup: true
