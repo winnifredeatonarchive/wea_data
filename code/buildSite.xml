@@ -45,7 +45,7 @@
     </target>
     
     <target name="createPDFThumbnails">
-        <apply executable="convert" dest="${siteTemp}/pdfs" force="true">
+        <apply executable="convert" dest="${siteTemp}/pdfs" force="true" failonerror="true">
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile suffix="[0]"/>
             <arg line="+profile 'icc'"/>
