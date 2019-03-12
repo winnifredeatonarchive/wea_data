@@ -54,8 +54,8 @@
                 <a href="index.html">WEA</a>
             </header>
             <div id="mainBody">
+                <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,':'),' ')"/>
                 <xsl:call-template name="createInfo"/>
-               
                 <div id="text">
                     <xsl:call-template name="processAtts"/>
                     <xsl:apply-templates mode="#current"/>
@@ -122,7 +122,7 @@
        </div>
    </xsl:template>
     
-    <xsl:template match="revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
+    <xsl:template match="titleStmt/title | revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
     
     <xsl:template match="respStmt" mode="metadata">
         <div>
