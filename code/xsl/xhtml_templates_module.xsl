@@ -74,9 +74,8 @@
         <div id="info">
             <xsl:if test="@facs">
                 <figure class="facsThumb">
-                    <a href="{@facs}" title="View facsimile">
                         <img src="{replace(@facs,'\.pdf$','.png')}" alt="First page of the facsimile"/>
-                    </a>
+                    <figCaption><a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile</a></figCaption>
                 </figure>
             </xsl:if>
             <xsl:if test="not(wea:bornDigital($root))">
@@ -96,16 +95,6 @@
         <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/@n"/></a></div>
     </xsl:function>
     
-    <xsl:template name="createFacsButton">
-        <xsl:if test="@facs">
-            <div class="facsButton">
-                <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
-                    View Facsimile
-                </a>
-            </div> 
-        </xsl:if>
-
-    </xsl:template>
     
     
     <xsl:template match="teiHeader" mode="metadata">
@@ -115,11 +104,7 @@
     </xsl:template>
    
    <xsl:template match="sourceDesc" mode="metadata">
-       <div>
-           <xsl:call-template name="processAtts"/>
-           <h4>Source Description</h4>
-           <!--Stuff here-->
-       </div>
+       <!--Don't know what to do with this yet, so leave it-->
    </xsl:template>
     
     <xsl:template match="titleStmt/title | revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>

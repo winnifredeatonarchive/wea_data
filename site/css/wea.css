@@ -31,13 +31,12 @@ body{
 
 #info{
       background-color: rgb(242, 245, 243);
-      padding-top:5rem;
       overflow: auto;
-      padding: 5rem 5rem 0 5rem;
+      padding: 4rem;
 }
 
 #mainBody{
-  padding:7.5% 10%;
+  padding:5% 10%;
 }
 
 #unhighlightButton{
@@ -65,27 +64,39 @@ body{
     
 }
 
-.facsThumb>a::before{
-  content: "View Facsimile";
-  position: absolute;
+.facsThumb > figcaption{
+    position: absolute;
     z-index: 1;
-    color:white;
-    background-color:black;
+    color: white;
+    background: transparent;
     opacity: 0;
     left: 0;
     top: 0;
     transition: opacity 0.8s;
     height: 100%;
     width: 100%;
-    content: 'View Facsimile';
+    font-size:400%;
+    text-align:center;
+    overflow:hidden;
 }
 
-.facsThumb>a:visited{
+
+.facsThumb > figCaption > a{
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-decoration:none;
+    padding-top:30%;
+    
+}
+
+.facsThumb a:visited{
     color:inherit;
 }
 
-.facsThumb>a:hover::before{
-    opacity: 0.8;
+.facsThumb > figcaption:hover{
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #unhighlightButton:hover{
