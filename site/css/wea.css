@@ -696,3 +696,24 @@ a[href].gi::after{
     color: #009900;
 }
 
+@media print {
+    
+    #info{
+        background:inherit;
+    }
+    
+    header, footer{
+        display:none;
+    }
+    
+    body,
+    #mainText,
+    #info{
+        padding-left:0;
+        padding-right:0;
+        margin-left:0;
+        margin-right:0;
+    }
+    
+}
+
