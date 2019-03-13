@@ -279,6 +279,11 @@ xmlhttp.send(null);
             console.log('Pattern: ' + pattern + "; Replace: " + replacement);
             body.innerHTML = body.innerHTML.replace(pattern,replacement);
         }
+        
+        /* Scroll the first match into view */        
+        var firstMatch = document.querySelectorAll('.highlight')[0];
+        firstMatch.scrollIntoView();
+        
         /* Add dehighlight button */
         addUnhighlightButton();
         /* Now once this is done you can add event listeners */
