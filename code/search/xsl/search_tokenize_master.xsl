@@ -36,7 +36,6 @@
        <xsl:map>
            <xsl:for-each-group select="$words" group-by=".">
                <xsl:variable name="word" select="current-grouping-key()"/>
-               <xsl:message>Processing <xsl:value-of select="$word"/></xsl:message>
                <xsl:variable name="stem" select="xs:string(jt:stem($word))"/>
                <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
                <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
