@@ -15294,6 +15294,21 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>sch/wea.odd</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>Build Schemas</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>ANT</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>code/gutenberg/html/</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -15319,21 +15334,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>sch/wea.odd</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>Build Schemas</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>ANT</String>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -15743,9 +15743,5 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
     </meta>
     <projectTree name="wea_data.xpr">
         <folder path="."/>
-        <file name="code/gutenberg/tei/Daughters_of_Nijo.xml"/>
-        <file name="code/gutenberg/tei/Moonlight.xml"/>
-        <file name="code/gutenberg/tei/Nume.xml"/>
-        <file name="code/gutenberg/tei/Sunny-San.xml"/>
     </projectTree>
 </project>
