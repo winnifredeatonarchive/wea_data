@@ -333,6 +333,205 @@
                   </egXML>
                </p>
             </div>
+            
+            <div>
+               <head>Quotations</head>
+               <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <gi>q</gi> element:
+               <specList>
+                     <specDesc key="q"/>
+                  </specList>
+               </p>
+               <p>To encode quotations, first follow the quick fixes that are keyed to the body of your document. Right click the <gi>body</gi> element of your file, and you should see a red lightbulb. It should give you options to perform a set of automated fixes for your file.</p>
+               
+               <div>
+                  <head>Block quotations</head>
+                  <p>To tag block quotations, simply use the <gi>q</gi> element with a <gi>p</gi> within it. If it's a block quotation that contains verse, for instance, use the <gi>lg</gi> element (or whatever is the most appropriate for the case):
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q>
+                           <lg>
+                              <l>The summer days are coming</l>
+                              <l>The blossoms deck the bough,</l>
+                              <l>The bees are gaily humming</l>
+                              <l>And the birds are singing now.</l>
+                           </lg>
+                        </q>
+                     </egXML>
+                  </p>
+               </div>
+               <div>
+                  <head>Letters as Quotations and Other Interrupting Texts</head>
+                  <p>Often, especially in the novels, letters appear within the regular narrative flow of the text. To handle this, we use the <gi>floatingText</gi> element:
+                  <specDesc key="floatingText"/>
+                 The <gi>floatingText</gi> element can contain everything a regular <gi>text</gi> element can, and so we can use the appropriate encoding to handle the interrupting texts.
+                  </p>
+                  <p>Most commonly, <gi>floatingText</gi> will be used in combination with <gi>q</gi> to handle letters. To encode the letters, we use the specific elements for encoding letters per the TEI:
+                  <specDesc key="salute"/>
+                     <specDesc key="signed"/>
+                  </p>
+                  <p>To encode a letter, first wrap the letter in a <gi>q</gi>, then a <gi>floatingText</gi> with an <att>type</att>=<val>letter</val>, and then a <gi>body</gi> element. From there, encode the letter using the proper elements (the salute as a <gi>salute</gi>, the signature as <gi>signed</gi>, et cetera):
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q>
+                           <floatingText type="letter">
+                              <body>
+                                 <salute>Darling Girlie:</salute>
+                                 <p>I am counting the hours when I will be with you. I tried to get up
+                                 to see you last night, but it was impossible. Lord Eaton’s son,
+                                 young Albert, was on the steamer coming over, and they are friends
+                                 of the governor’s and I simply had to be with them. You see,
+                                 darling, it means a good deal to me in the future, to be in touch
+                                 with these people. His brother-in-law, whom I met last night, is
+                                 head cockalorum in the House of Parliament, and as I have often
+                                 told you, my ambition is to get into politics. It’s the surest road
+                                 to fame for a Barrister.</p>
+                                 <p>Now I hope my foolish little girl will understand and believe me
+                                 when I say that I am thinking for you as much as for myself.</p>
+                              
+                                 <p>I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
+                              
+                                 <signed>Your own,
+                                 Reggie.</signed>
+                              
+                              </body>
+                           </floatingText>
+                        </q>
+                     </egXML>
+                  
+                  </p>
+                  <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as notes in the text:
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q>
+                           <floatingText type="letter">
+                              <body>
+                                 <salute>Dear Miss Marion:</salute>
+                              
+                              
+                                 <p>Will you and your charming sister take a little drive with me and a
+                                 friend this evening? If so, meet us at eight o’clock, corner of St.
+                                 James and St. Denis streets. My friend has seen your sister in
+                                 Judge Laflamme’s office <note>(Ellen worked there)</note> and he is very
+                                 anxious to know her. As for me, I am thinking only of when I shall
+                                 see my lovely rose again. I am counting the hours!</p>
+                              
+                                 <signed>Devotedly, Fred Stevens.</signed>
+                              
+                              </body>
+                           
+                           </floatingText>
+                        </q>
+                     
+                     
+                     </egXML>
+                  
+                  </p>
+               </div>
+               <div>
+                  <head>Quotations across hierarchies</head>
+                  <p>Particularly in novels, quotations will appear across hierarchies; that is, a quotation will start on one page, be interrupted by content on another page, and then continue on the following page. Take, for instance, this example from <title level="m">Marion</title>:
+                 
+                 
+                 <code rend="block">
+                    “It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know who his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and
+                    
+                    [Image unavailable.]
+                    Someone had passed up to me over the footlights, if you please, a real bouquet of flowers.
+
+                    he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again.”
+                 </code>
+                     
+                     Here, the quotation properly starts at in the first paragraphic block and is then interrupted by an image insert between the pages, and then continues afterwards. To deal with this overlapping hierarchy, there are two steps we must take:
+                     
+                     <list>
+                        <item>First, we must signal that the paragraph before the image inserts is the same paragraph as the one after</item>
+                        <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
+                     </list>
+                  </p>
+                  
+                  <p>To signal the paragraphs continuation, we use the <att>part</att> attribute:
+                  <specDesc key="p" atts="part"/>
+                  We use the value <val>I</val> to signal the initial paragraph, <val>M</val> to signal any medial paragraphs, and <val>F</val> to signal the final paragraph.
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p part="I">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</p>
+                        <pb n="48.1" xml:id="page_48.1"/>
+                        <figure>
+                           <graphic url="images/i_061_sml.jpg"/>
+                           <p>Someone had passed up to me over the footlights, if you
+                              please, a real bouquet of flowers.</p>
+                        </figure>
+                        
+                        <pb n="49" xml:id="page_49"/>
+                        <p part="F">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again.</p>
+                     </egXML>
+                  </p>
+                  
+                  <p>To handle the overlapping quotations, we use a similar approach using the <att>next</att> and <att>prev</att> attributes to signal explicitly the sequence of quotation elements:
+                  <specDesc key="q" atts="next prev"/>
+                  </p>
+                  <p>To do so, we must first give each <gi>q</gi> an <att>xml:id</att>; this can be whatever you want, but it usually makes most sense to prefix it with the file's name and use a sensible numbering system:
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <q xml:id="Marion_q1">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                        is my own fellow. You know who his folks are, and but for them we’d have
+                        been married long ago. Well, Harry’s friend, the one who wants to meet
+                        you, is a swell, too, and he hasn’t been out from England long. Harry
+                        says his folks are big nobs over there, and</q>
+
+                     </egXML>
+                     
+                     We do the same thing for the second quotation element, giving it an <att>xml:id</att>:
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.
+                     </egXML>
+                     
+                     We then use the <att>next</att> and <att>prev</att> attributes to point to each quotation in the sequence.
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</q>
+                        <!--Stuff-->
+                       <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.
+                     </egXML>
+                     
+                     So, putting it all together:
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p part="I">
+                           <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</q>
+                        </p>
+                        <pb n="48.1" xml:id="page_48.1"/>
+                        <figure>
+                           <graphic url="images/i_061_sml.jpg"/>
+                           <p>Someone had passed up to me over the footlights, if you
+                              please, a real bouquet of flowers.</p>
+                        </figure>
+                        
+                        <pb n="49" xml:id="page_49"/>
+                        <p part="F">
+                           <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.</p>
+                     </egXML>
+                  </p>
+                  
+                 
+               </div>
+            </div>
             <div xml:id="codeTemplates">
                <head>Code Templates (Shortcuts)</head>
                <p>The table below lists keyboard shortcuts for inserting common encoding features in a text. In most cases, the code template simply requires selecting (i.e. highlighting) the bit of text you want to encode and then typing in the keystroke; the exception currently is the gap element shortcut, which is simply inserted where your cursor is in the document.</p>
