@@ -81,7 +81,8 @@ body{
 }
 
 
-.facsThumb > figCaption > a{
+.facsThumb > figCaption > a,
+.facsThumb > figCaption > span.noFacsAvailable{
     height: 100%;
     width: 100%;
     display: block;
@@ -99,10 +100,21 @@ body{
 .facsThumb > figcaption:hover{
     opacity: 1;
     background: rgba(0, 0, 0, 0.8);
+    
 }
 
-.facsThumb > figCaption:hover >a{
-    opacity:1
+.facsThumb > figcaption:hover > a,
+.facsThumb > figcaption:hover > span.noFacsAvailable{
+    opacity:1;
+}
+
+
+figCaption:not(a){
+    cursor:default;
+}
+
+.pdfSize{
+    font-size:50%;
 }
 
 

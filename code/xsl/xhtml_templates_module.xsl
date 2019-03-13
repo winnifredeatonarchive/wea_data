@@ -72,12 +72,28 @@
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <div id="info">
-            <xsl:if test="@facs">
+            <xsl:variable name="facsAvailable" select="exists(@facs)"/>
+            <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'graphics/cooking.png'"/>
+            <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
+            <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
+                
                 <figure class="facsThumb">
-                        <img src="{replace(@facs,'\.pdf$','.png')}" alt="First page of the facsimile"/>
-                    <figCaption><a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile</a></figCaption>
+                        <img src="{$thisThumbnail}" alt="{$altText}"/>
+                    <figCaption>
+                        <xsl:choose>
+                            <xsl:when test="$facsAvailable">
+                                <a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile <span class="pdfSize">(<xsl:value-of select="wea:getPDFSize(@facs)"/>)</span></a>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <span class="noFacsAvailable">
+                                    No facsimile available
+                                </span>
+
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        </figCaption>
                 </figure>
-            </xsl:if>
+            
             <xsl:if test="not(wea:bornDigital($root))">
                 <xsl:copy-of select="wea:crumb($root)"/>
             </xsl:if>

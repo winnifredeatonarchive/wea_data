@@ -45,6 +45,9 @@
     </target>
     
     <target name="createPDFThumbnails">
+        <echo message="${echo.separator}"/>
+        <echo message="Creating PDF thumbnails..."/>
+        <echo message="${echo.separator}"/>
         <apply executable="convert" dest="${siteTemp}/facsimiles" force="true" failonerror="true">
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile suffix="[0]"/>
@@ -57,6 +60,20 @@
                 <globmapper from="*.pdf" to="*.png"/>
             </mapper>
         </apply>
+    </target>
+    
+    <target name="getPDFSizes">
+        <echo message="${echo.separator}"/>
+        <echo message="Getting sizes of PDFs..."/>
+        <echo message="${echo.separator}"/>
+        <touch file="${siteTemp}facsimiles/files.txt"/>
+        <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/files.txt" append="true">
+            <arg line="-sh"/>
+            <fileset dir="${siteTemp}/facsimiles">
+                <include name="**.pdf"/>
+            </fileset>
+        </apply>
+      
     </target>
     
     
@@ -148,7 +165,7 @@
     
   
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, getPDFSizes, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
     
 </project>
