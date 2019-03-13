@@ -88,20 +88,11 @@ function makeNamesResponsive(){
       var popup = document.getElementById('popup');
       var popupContent = document.getElementById('popup_content');
       var showing = popup.getAttribute('data-showing');
-       var c = document.querySelectorAll('.clicked');
+      
           
       if (popup.classList.contains('showing')){
           closePopup();
-          if (this.classList.contains('clicked')){
-            for (var i =0; i <c.length; i++){
-                  c[i].classList.remove('clicked');
-              }
-            return null;
-          } else {
-             for (var i =0; i <c.length; i++){
-                  c[i].classList.remove('clicked');
-              }
-          }
+          
       }
    
       var thisThing = document.getElementById(id);
@@ -121,6 +112,7 @@ function makeNamesResponsive(){
         this.classList.add('clicked');
 
    }
+   
    
 
   var resizeTimeout;
@@ -216,6 +208,12 @@ function closePopup(){
         popupContent.removeChild(popupContent.lastChild)
         }
     }
+         var c = document.querySelectorAll('.clicked');
+             for (var i =0; i <c.length; i++){
+                  c[i].classList.remove('clicked');
+                  }
+   
+   
        window.removeEventListener('resize',windowResize, false);
 }
 

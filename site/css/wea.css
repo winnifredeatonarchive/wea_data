@@ -14,7 +14,26 @@ html{
 
 body{
     line-height: 1.2;
+    color: #616464;
 }
+
+
+.breadcrumb > a,
+.breadcrumb > a:visited{
+    color:#DF006E;
+    transition: color 0.2s ease-in;
+}
+
+a, a:visited{
+    color:#2A5DB0;
+}
+
+a:hover,
+a.clicked{
+    color:#DF006E;
+    transition: color 0.2s ease-in-out;
+}
+
 
 .breadcrumb + h2 {
     margin-top:.2rem;
@@ -144,9 +163,15 @@ figCaption:not(a){
     transition: opacity .75s;
 }
 
-
 h1,h2,h3,h4,h5,h6{
     font-family: "Georgia";
+
+}
+
+
+h1,h2,h3,h4,h5,h5,
+.metadataLabel{
+        color: #33383D;
 }
 
 div.results{
@@ -282,7 +307,7 @@ aside.showing #aside_toggle::after{
     margin-right:.5rem;
 }
 
-aside
+
 
 div.closed > h3,
 div.open > h3{
@@ -389,6 +414,12 @@ div.open > h3::after{
  display:none;   
 }
 
+
+a{
+    text-decoration:none;
+}
+
+
 #popup_closer{
     float:right;
     top:5rem;
@@ -399,7 +430,7 @@ div.open > h3::after{
 }
 
 
-div.blockQuote{
+div.blockquote{
     margin:1.5em;
 }
 

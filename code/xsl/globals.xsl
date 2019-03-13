@@ -45,8 +45,8 @@
     <xsl:function name="wea:getPDFSize">
         <xsl:param name="pdfName"/>
         <xsl:variable name="thisLine" select="for $p in $pdfFileSizeDocLines return if (ends-with($p,$pdfName)) then $p else ()" as="xs:string"/>
-        <xsl:variable name="size" select="tokenize($thisLine,'\t')[1]"/>
-        <xsl:variable name="regex">^([\d\.]+)([A-Z]+)$</xsl:variable>
+        <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
+        <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
         <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
         <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
         <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>

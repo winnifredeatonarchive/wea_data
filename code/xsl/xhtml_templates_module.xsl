@@ -159,7 +159,7 @@
     </xsl:template>
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | note | lg | l | byline" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -176,7 +176,7 @@
     </xsl:template>
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign" mode="tei">
+    <xsl:template match="hi | seg | foreign | note" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -217,7 +217,7 @@
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
-    
+
 
     
     <xsl:template match="text()[not(ancestor::q)][preceding::text()[1][ancestor::q]][matches(., '^[,\.]')]" mode="tei">
