@@ -47,7 +47,7 @@
     <xsl:template match="text[@type='standoff']" mode="tei"/>
     
     
-    <xsl:template match="text[not(@type='standoff')]" mode="tei">
+    <xsl:template match="text[not(@type='standoff')][not(ancestor::floatingText)]" mode="tei">
       
         <body>
             <header>
@@ -72,36 +72,42 @@
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <div id="info">
-            <xsl:variable name="facsAvailable" select="exists(@facs)"/>
-            <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'graphics/cooking.png'"/>
-            <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
-            <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
-                
-                <figure class="facsThumb">
-                        <img src="{$thisThumbnail}" alt="{$altText}"/>
-                    <figCaption>
-                        <xsl:choose>
-                            <xsl:when test="$facsAvailable">
-                                <a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile <span class="pdfSize">(<xsl:value-of select="wea:getPDFSize(@facs)"/>)</span></a>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <span class="noFacsAvailable">
-                                    No facsimile available
-                                </span>
-
-                            </xsl:otherwise>
-                        </xsl:choose>
-                        </figCaption>
-                </figure>
             
-            <xsl:if test="not(wea:bornDigital($root))">
-                <xsl:copy-of select="wea:crumb($root)"/>
-            </xsl:if>
+            
+                <xsl:if test="not(wea:bornDigital($root))">
+                    <xsl:call-template name="createFacs"/>
+                  
+                    <xsl:copy-of select="wea:crumb($root)"/>
+                </xsl:if>
+            
             <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
             <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
                 <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
             </xsl:if>
         </div>
+    </xsl:template>
+    
+    <xsl:template name="createFacs">
+        <xsl:variable name="facsAvailable" select="exists(@facs)"/>
+        <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'graphics/cooking.png'"/>
+        <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
+        <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
+        <figure class="facsThumb">
+            <img src="{$thisThumbnail}" alt="{$altText}"/>
+            <figCaption>
+                <xsl:choose>
+                    <xsl:when test="$facsAvailable">
+                        <a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile <span class="pdfSize">(<xsl:value-of select="wea:getPDFSize(@facs)"/>)</span></a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <span class="noFacsAvailable">
+                            No facsimile available
+                        </span>
+                        
+                    </xsl:otherwise>
+                </xsl:choose>
+            </figCaption>
+        </figure>
     </xsl:template>
     
     <xsl:function name="wea:crumb">
@@ -291,6 +297,20 @@
         <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
         <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
         <a href="#{$noteId}"  id="noteMarker_{$noteNum}" class="noteMarker" title="{normalize-space(string-join(descendant::text(),''))}"><xsl:value-of select="$noteNum"/></a>
+    </xsl:template>
+    
+    <xsl:template match="floatingText" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="signed | salute" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
     </xsl:template>
     
     
