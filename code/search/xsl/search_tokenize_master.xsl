@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
     exclude-result-prefixes="#all" xpath-default-namespace="http://www.w3.org/1999/xhtml"
     xmlns="http://www.w3.org/1999/xhtml" xmlns:hcmc="http://hcmc.uvic.ca/ns" version="3.0"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xmlns:jt="http://github.com/joeytakeda">
     
     <xsl:include href="https://raw.githubusercontent.com/joeytakeda/xslt-stemmer/master/porterStemmer.xsl"/>
@@ -21,35 +22,48 @@
         </xsl:for-each>
     </xsl:variable>
     
+    <xsl:variable name="nonEnglishWordsFile" select="if (doc-available('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt')) then doc('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt') else ()"/>
     
-    <xsl:variable name="tokenMap" as="map(xs:string, xs:string)">
+    <xsl:variable name="nonEnglishWords" select="tokenize($nonEnglishWordsFile,'\n')"/>
+   
+    <xsl:variable name="distinctWords" select="distinct-values($words)"/>
+    <xsl:variable name="tokenMap" as="map(xs:string, item()*)">
         <xsl:message>Tokenizing words...</xsl:message>
-        <xsl:map>
-            <xsl:for-each select="distinct-values($words)">
 
-                <xsl:variable name="word" select="."/>
-                <xsl:variable name="stem" select="xs:string(jt:stem(.))"/>
-                <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
-                <xsl:variable name="useStem" as="xs:boolean">
-                    <xsl:choose>
-                        <xsl:when test="matches($word,'^[A-Z]')">
-                            <xsl:value-of select="false()"/>
-                        </xsl:when>
-                        <xsl:when test="matches($word,'\d+')">
-                            <xsl:value-of select="false()"/>
-                        </xsl:when>
-                        <xsl:when test="not($word=$englishWords)">
-                            <xsl:value-of select="false()"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="true()"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
-                <xsl:map-entry key="xs:string($word)" select="if ($useStem) then $stem else $word"/>
+        <!--First create the map-->
+       <xsl:map>
+           <xsl:for-each-group select="$words" group-by=".">
+               <xsl:variable name="word" select="current-grouping-key()"/>
+  <!--             <xsl:message>Processing <xsl:value-of select="$word"/></xsl:message>-->
+               <xsl:variable name="stem" select="xs:string(jt:stem($word))"/>
+               <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
+               <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
+               <xsl:variable name="containsDigit" select="matches($word,'\d+')" as="xs:boolean"/>
+               <xsl:variable name="isForeign" as="xs:boolean">
+                   <xsl:choose>
+                       <xsl:when test="$startsWithCap or $containsDigit">
+                           <xsl:value-of select="false()"/>
+                       </xsl:when>
+                       <xsl:when test="$word=$nonEnglishWords">
+                           <xsl:value-of select="true()"/>
+                       </xsl:when>
+                       <xsl:when test="not($word=$englishWords)">
+                           <xsl:value-of select="true()"/>
+                       </xsl:when>
+                       <xsl:otherwise>
+                           <xsl:value-of select="false()"/>
+                       </xsl:otherwise>
+                   </xsl:choose>
+               </xsl:variable>
+               <xsl:variable name="useStem" select="if ($startsWithCap or $containsDigit or $isForeign) then false() else true()" as="xs:boolean"/>
+               
+               <xsl:map-entry key="xs:string($word)" select="($startsWithCap, $containsDigit, $isForeign, (if ($useStem) then $stem else $word))"/>
+               
+           </xsl:for-each-group>
                 
-            </xsl:for-each>
-        </xsl:map>
+        
+       </xsl:map>
+  
     </xsl:variable>
     
     <xsl:template match="/">
@@ -58,8 +72,21 @@
                 <xsl:apply-templates select="." mode="tokenize"/>
             </xsl:result-document>
         </xsl:for-each>
+        <xsl:call-template name="createForeignWordList"/>
     </xsl:template>
     
+    
+    <xsl:template name="createForeignWordList">
+        <xsl:result-document href="../../products/js/search/nonEnglishWordList.txt" method="text">
+            <xsl:for-each select="$distinctWords">
+                <xsl:variable name="entry" select="$tokenMap(.)"/>
+                <xsl:if test="$entry[3]">
+                    <xsl:message>Found foreign word to add to list! <xsl:value-of select="."/></xsl:message>
+                    <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:result-document>
+    </xsl:template>
     
     
     
@@ -77,7 +104,7 @@
         <xd:desc>The meat: tokenizing text nodes.</xd:desc>
     </xd:doc>
     <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])][not(ancestor::div[@id='metadata'])]" mode="tokenize">
-        <xsl:variable name="isForeign" select="exists(ancestor::span[@data-el='foreign'])"/>
+        <xsl:variable name="currNode" select="."/>
         <xsl:analyze-string select="normalize-space(.)" regex="[A-Za-z\d]+">
             <xsl:matching-substring>
                 
@@ -85,7 +112,12 @@
                 
                 <xsl:variable name="lc" select="lower-case($word)"/>
                 
-                <xsl:variable name="stem" select="$tokenMap($word)"/>
+                <xsl:variable name="result" select="$tokenMap($word)"/>
+                <xsl:variable name="startsWithCap" select="$result[1]"/>
+                <xsl:variable name="containsDigit" select="$result[2]"/>
+                <xsl:variable name="isForeign" select="($result[3] or exists($currNode/ancestor::span[@data-el='foreign']))"/>
+                <xsl:variable name="stem" select="$result[4]"/>
+                
                 <xsl:choose>
                     <xsl:when test="hcmc:shouldIndex($lc)">
                         
