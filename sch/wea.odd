@@ -444,6 +444,7 @@
                
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                
+               <moduleRef key="linking" include="ab seg anchor"/>
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val"/>
@@ -540,8 +541,6 @@
                      <attDef ident="xml:lang" mode="delete"/>
                      <attDef ident="corresp" mode="delete"/>
                      <attDef ident="n" mode="delete"/>
-                     <attDef ident="next" mode="delete"/>
-                     <attDef ident="prev" mode="delete"/>
                      <attDef ident="rendition" mode="delete"/>
                      <attDef ident="resp" mode="delete"/>
                      <attDef ident="style" mode="delete"/>
@@ -849,6 +848,19 @@
                           mode="change">
                   <attList>
                      <attDef ident="rend" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.global.linking"
+                          module="linking"
+                          type="atts"
+                          mode="change">
+                  <attList>
+                     <attDef ident="corresp" mode="delete"/>
+                     <attDef ident="synch" mode="delete"/>
+                     <attDef ident="copyOf" mode="delete"/>
+                     <attDef ident="sameAs" mode="delete"/>
+                     <attDef ident="select" mode="delete"/>
+                     <attDef ident="exclude" mode="delete"/>
                   </attList>
                </classSpec>
                <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>

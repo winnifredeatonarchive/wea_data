@@ -328,7 +328,39 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-l-constraint-report-11">
+            id="wea-ab-abstractModel-structure-ab-constraint-report-11">
+            <rule context="tei:ab">
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)">
+        Abstract model violation: ab may not occur inside paragraphs or other ab elements.
+      </report>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-ab-abstractModel-structure-l-constraint-report-12">
+            <rule context="tei:ab">
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="ancestor::tei:l or ancestor::tei:lg">
+        Abstract model violation: Lines may not contain higher-level divisions such as p or ab.
+      </report>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-div-abstractModel-structure-l-constraint-report-13">
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -344,7 +376,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-p-constraint-report-12">
+            id="wea-div-abstractModel-structure-p-constraint-report-14">
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
