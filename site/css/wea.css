@@ -399,6 +399,10 @@ div.open > h3::after{
 }
 
 
+div.blockQuote{
+    margin:1.5em;
+}
+
 
 span[data-el='foreign']{
     font-style:italic;
@@ -417,6 +421,14 @@ span[data-el='q']::after{
 span[data-el='q']::before{
     content:"“";
    
+}
+
+div[data-el='lg']{
+    padding: 1em 0;
+}
+
+div[data-el='l']{
+    padding:.5em 0;
 }
 
 span[data-el='q'] span[data-el='q']::before{

@@ -199,7 +199,7 @@
     <!--QUOTATIONS-->
     
     
-    <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg)]" mode="tei">
+    <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg | descendant::floatingText)]" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -207,6 +207,15 @@
                 <xsl:value-of select="substring(following::text()[1], 1, 1)"/>
             </xsl:if>
         </span>
+    </xsl:template>
+    
+    <xsl:template match="q[descendant::div | descendant::p | descendant::lg | descendant::floatingText]" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes" select="'blockquote'"/>
+            </xsl:call-template>
+            <xsl:apply-templates mode="#current"/>
+        </div>
     </xsl:template>
     
 
