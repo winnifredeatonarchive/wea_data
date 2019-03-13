@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildPGtoWEA">
+  
+  <description>This build takes texts from Project Gutenberg and converts
+  them to WEA TEI.</description>
+    
+    
+    <!--Get the text-->
+    
+    <target name="getTexts">
+        <delete dir="zip"/>
+        <delete dir="html"/>
+        <mkdir dir="zip"/>
+        <mkdir dir="html"/>
+        <get src="http://www.gutenberg.org/files/58305/58305-h.zip"
+            dest="zip/Nume.zip"/>
+        
+        <get src="http://www.gutenberg.org/files/58091/58091-h.zip"
+            dest="zip/Moonlight.zip"/>
+        
+        <get src="http://www.gutenberg.org/files/57763/57763-h.zip"
+            dest="zip/Daughters_of_Nijo.zip"/>
+        
+        <get src="http://www.gutenberg.org/files/57920/57920-h.zip"
+            dest="zip/Marian.zip"/>
+        <get src="http://www.gutenberg.org/files/58699/58699-h.zip"
+            dest="zip/Sunny-San.zip"/>
+        
+        <unzip src="zip/Nume.zip" dest="html/Nume">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
+        <unzip src="zip/Moonlight.zip" dest="html/Moonlight">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
+        <unzip src="zip/Daughters_of_Nijo.zip" dest="html/Daughters_of_Nizo">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
+        <unzip src="zip/Sunny-San.zip" dest="html/Sunny-San">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
+     </target>
+    
+</project>
