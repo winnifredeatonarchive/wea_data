@@ -58,16 +58,10 @@ a.clicked{
   padding:5% 10%;
 }
 
-#unhighlightButton{
+#searchButtons{
     top: 5%;
     position:sticky;
-    background-color: #dedede;
-    max-width: 6em;
-    margin-top: .5rem;
-    color: black;
-    font-size: 90%;
-    text-align: center;
-    cursor: pointer;
+    
 }
 
 #info .facsThumb{
@@ -76,6 +70,7 @@ a.clicked{
     position:relative; 
     display:inline-block;
 }
+
 
 
 .facsThumb img{
@@ -136,8 +131,27 @@ figCaption:not(a){
     font-size:50%;
 }
 
+#unhighlightButton,
+#goToNextSearch,
+#goToPrevSearch{
+    background-color: #dedede;
+    max-width: 6em;
+    margin-top: .5rem;
+    color: black;
+    font-size: 90%;
+    text-align: center;
+    cursor: pointer;
+    min-height: 4rem;
+}
 
-#unhighlightButton:hover{
+
+#unhighlightButton.unhighlighted ~ div{
+    display:none;
+}
+
+#unhighlightButton:hover,
+#goToNextSearch:hover,
+#goToPrevSearch:hover{
     background-color: #c7c7c7;
 }
 
@@ -149,6 +163,14 @@ figCaption:not(a){
     content: "Unhighlight search matches ("attr(data-count)")";
 }
 
+#goToNextSearch::after{
+    content: "Go to next match";
+}
+
+#goToPrevSearch::after{
+    content: "Go to previous match";
+    
+}
 
 #searchResults{
     margin-top:2em;

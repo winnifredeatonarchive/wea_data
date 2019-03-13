@@ -282,7 +282,9 @@ xmlhttp.send(null);
         
         /* Scroll the first match into view */        
         var firstMatch = document.querySelectorAll('.highlight')[0];
-        firstMatch.scrollIntoView();
+        firstMatch.scrollIntoView(
+        {behavior: "smooth"}
+        );
         
         /* Add dehighlight button */
         addUnhighlightButton();
@@ -291,14 +293,66 @@ xmlhttp.send(null);
     }
     
     function addUnhighlightButton(){
+        var buttonsDiv = document.createElement('div');
+        buttonsDiv.setAttribute('id','searchButtons');
+        buttonsDiv.setAttribute('data-hit', '1');
+       
         var button = document.createElement('div');
+        
+        
         button.setAttribute('id','unhighlightButton');
         button.setAttribute('class','highlighted');
         button.setAttribute('data-count', document.querySelectorAll('span.highlight').length);
         button.addEventListener('click', toggleHighlight);
+        var prevButton = document.createElement('div');
+        prevButton.setAttribute('id', 'goToPrevSearch');
+        var nextButton = document.createElement('div');
+        nextButton.setAttribute('id', 'goToNextSearch');
+        buttonsDiv.appendChild(button);
+        nextButton.addEventListener('click', goToNextHit);
+        prevButton.addEventListener('click', goToPrevHit);
+        if (document.querySelectorAll('span.highlight').length > 1){
+                    buttonsDiv.appendChild(prevButton);
+                    buttonsDiv.appendChild(nextButton);
+        }
         var header = document.getElementsByTagName('header')[0];
-        header.parentNode.insertBefore(button, header.nextSibling);
+        header.parentNode.insertBefore(buttonsDiv, header.nextSibling);
+    }
+    
+    
+    function goToNextHit(){
+        var buttonDiv = document.getElementById('searchButtons');
+        var hits = document.querySelectorAll('span.highlight');
+        var currHit = parseInt(buttonDiv.getAttribute('data-hit'),10);
+        var instance; 
+        console.log(hits.length);
+        if (hits.length == (currHit)){
+            instance = 0;
+        } else {
+            instance = currHit;
+        }
+        console.log('Going to ' + instance);
+               
+        hits[instance].scrollIntoView(
+        )
+        buttonDiv.setAttribute('data-hit', instance + 1);
+    }
+    
+     function goToPrevHit(){
+        var buttonDiv = document.getElementById('searchButtons');
+        var hits = document.querySelectorAll('span.highlight');
+        var currHit = parseInt(buttonDiv.getAttribute('data-hit'),10);
+        var instance; 
+        if (currHit == 1){
+            instance = hits.length - 1;
+        } else {
+            instance = currHit - 2;
+        }
         
+        console.log('Going to ' + instance);
+        hits[instance].scrollIntoView(
+        )
+        buttonDiv.setAttribute('data-hit', instance + 1);
     }
     
     function toggleHighlight(){
