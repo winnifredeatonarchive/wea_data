@@ -110,6 +110,18 @@
         </p>
     </xsl:template>
     
+    <xsl:template match="div[@class='stanza']">
+        <lg>
+            <xsl:apply-templates/>
+        </lg>
+    </xsl:template>
+    
+    <xsl:template match="div[@class='stanza']/span">
+        <l>
+            <xsl:apply-templates/>
+        </l>
+    </xsl:template>
+    
     <xsl:template match="p[count(child::node())=1][span[@class='pagenum']]">
         <xsl:apply-templates/>
     </xsl:template>
