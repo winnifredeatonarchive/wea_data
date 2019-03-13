@@ -22,9 +22,11 @@
         </xsl:for-each>
     </xsl:variable>
     
-    <xsl:variable name="nonEnglishWordsFile" select="if (doc-available('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt')) then doc('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt') else ()"/>
+    <!--We stash a version of the nonEnglishWordsFile in the Github repo and grab it if it's available; 
+        this will make dictionary look ups must faster-->
+    <xsl:variable name="nonEnglishWordsFile" select="if (unparsed-text-available('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt')) then unparsed-text('https://raw.githubusercontent.com/winnifredeatonarchive/wea/master/js/search/nonEnglishWordList.txt') else ()"/>
     
-    <xsl:variable name="nonEnglishWords" select="tokenize($nonEnglishWordsFile,'\n')"/>
+    <xsl:variable name="nonEnglishWords" select="tokenize($nonEnglishWordsFile,'\n')" as="xs:string+"/>
    
     <xsl:variable name="distinctWords" select="distinct-values($words)"/>
     <xsl:variable name="tokenMap" as="map(xs:string, item()*)">
@@ -34,7 +36,7 @@
        <xsl:map>
            <xsl:for-each-group select="$words" group-by=".">
                <xsl:variable name="word" select="current-grouping-key()"/>
-  <!--             <xsl:message>Processing <xsl:value-of select="$word"/></xsl:message>-->
+               <xsl:message>Processing <xsl:value-of select="$word"/></xsl:message>
                <xsl:variable name="stem" select="xs:string(jt:stem($word))"/>
                <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
                <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
