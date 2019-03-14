@@ -137,12 +137,21 @@ function placeNote(elem, note) {
       var headerHeight = header.getBoundingClientRect().top;
       var coords = elem.getBoundingClientRect();
       var popupArrowBorderWidth = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
+      var defaultValue = 7;
       var popupArrowWidth = parseInt(popupArrowBorderWidth,10);
+      if (isNaN(popupArrowWidth)){
+          console.log('WARNING: popupArrowWidth NAN; setting default value of ' + defaultValue);
+          popupArrowWidth = defaultValue;
+      }
       var middle = (coords.top + coords.bottom)/2;
       var h = middle - popupHeight/2;
+      console.log(popupArrowWidth);
       var w = coords.left + elem.offsetWidth + popupArrowWidth;
-      var x = window.scrollX + w + "px";
-      var y = window.scrollY + h + "px";
+
+      var x = window.pageXOffset + w + "px";
+      var y = window.pageYOffset + h + "px";
+            console.log(window.pageXOffset + "+" + w + "px" + "=" + x);
+      console.log(y);
 
 
       note.style.left = x;
