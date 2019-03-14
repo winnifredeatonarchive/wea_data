@@ -29,7 +29,8 @@ a, a:visited{
 }
 
 a:hover,
-a.clicked{
+a.clicked,
+#popup_closer:hover{
     color:#DF006E;
     transition: color 0.2s ease-in-out;
 }
@@ -62,6 +63,7 @@ a.clicked{
     top: 5%;
     position:fixed;
     float:left;
+    
     
 }
 
@@ -367,6 +369,10 @@ div.open > h3::after{
 .noteMarker{
     vertical-align:super;
     font-size:.8em;
+}
+
+.noteMarker:focus{
+    outline: thin dotted;
 }
 
 #popup.hidden{
