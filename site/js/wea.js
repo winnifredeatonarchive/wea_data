@@ -283,7 +283,10 @@ xmlhttp.send(null);
         /* Scroll the first match into view */        
         var firstMatch = document.querySelectorAll('.highlight')[0];
         firstMatch.scrollIntoView(
-        {behavior: "smooth"}
+        {behavior: "smooth",
+         block: "start",
+         inline: "nearest"
+         }
         );
         
         /* Add dehighlight button */
