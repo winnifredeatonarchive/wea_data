@@ -336,8 +336,7 @@ xmlhttp.send(null);
         }
         console.log('Going to ' + instance);
                
-        hits[instance].scrollIntoView(
-        )
+        hits[instance].scrollIntoView(true)
         buttonDiv.setAttribute('data-hit', instance + 1);
     }
     
