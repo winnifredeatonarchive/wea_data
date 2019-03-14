@@ -44,12 +44,15 @@
     
     <xsl:function name="wea:getPDFSize">
         <xsl:param name="pdfName"/>
-        <xsl:variable name="thisLine" select="for $p in $pdfFileSizeDocLines return if (ends-with($p,$pdfName)) then $p else ()" as="xs:string"/>
-        <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
-        <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
-        <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
-        <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
-        <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
+        <xsl:if test="unparsed-text-available($productsDir,'facsimiles/files.txt')">
+            <xsl:variable name="thisLine" select="for $p in $pdfFileSizeDocLines return if (ends-with($p,$pdfName)) then $p else ()" as="xs:string"/>
+            <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
+            <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
+            <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
+            <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
+            <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
+        </xsl:if>
+        
     </xsl:function>
     
     <xsl:template name="generateTeiPage">

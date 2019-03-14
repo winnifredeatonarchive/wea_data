@@ -33,8 +33,15 @@ function addEvents(){
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
+    showHideTitles();
 }
 
+function showHideTitles(){
+    var spansToShow = document.querySelectorAll('.showTitle');
+    spansToShow.forEach(function(n){
+        n.addEventListener('click', showPopup, true);
+    });
+}
 
 function makeFootnotesResponsive(){
     var noteMarkers = document.querySelectorAll('a.noteMarker');
@@ -65,6 +72,7 @@ function makeNamesResponsive(){
       /* And prevent default action for links with @href */
       e.preventDefault();
       /* Declare empty var */
+      var useTitle = false;
       var id = '';
       /* If this is an annotation and the annotation button is checked */
       /* Sometimes the annotation/collation buttons aren't there (if, for instance, there are no collations in the document)
@@ -76,14 +84,16 @@ function makeNamesResponsive(){
      /* Else if this is a name element and it has an @href that is a local pointer */
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
-      } 
+      } else if (this.getAttribute('title') && !(this.getAttribute('href'))){
+          useTitle = true;
+      }
       /* Otherwise, return */
       else{
           console.log ('ERROR: This element does not have a popup; removing the click event');
           this.removeEventListener('click', showPopup, false);
           return;
       }
-      
+     
       
       var popup = document.getElementById('popup');
       var popupContent = document.getElementById('popup_content');
@@ -94,17 +104,29 @@ function makeNamesResponsive(){
           closePopup();
           
       }
+      var content;
+      if (useTitle){
+          var dummyDiv = document.createElement('div');
+          dummyDiv.setAttribute('class','para');
+          dummyDiv.innerHTML = this.getAttribute('title');
+          content = dummyDiv;
+      } else if (!(useTitle) && !(id == '')){
+             var thisThing = document.getElementById(id);
+            var clone = thisThing.cloneNode(true);
+          content = clone;
+      }
    
-      var thisThing = document.getElementById(id);
-      var clone = thisThing.cloneNode(true);
       
-      popupContent.appendChild(clone);
+      popupContent.appendChild(content);
             //Set the popup @data-showing to the ids
         windowResize = function(){
             resize(el, popup);
         }
         window.addEventListener('resize',windowResize, false);
-        popup.setAttribute('data-showing',id);
+        if (!(useTitle)){
+              popup.setAttribute('data-showing',id);
+        }
+      
         //And set the display to block
         popup.classList.remove('hidden');
         popup.classList.add('showing');

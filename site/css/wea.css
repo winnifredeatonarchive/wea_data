@@ -29,12 +29,23 @@ a, a:visited{
 }
 
 a:hover,
-a.clicked,
-#popup_closer:hover{
+.clicked,
+#popup_closer:hover,
+.JS .showTitle:hover{
     color:#DF006E;
     transition: color 0.2s ease-in-out;
 }
 
+
+
+.showTitle{
+    border-bottom: 1px dotted;
+    border-bottom-color: inherit;
+}
+
+.JS .showTitle{
+    cursor:pointer;
+}
 
 .breadcrumb + h2 {
     margin-top:.2rem;
@@ -460,7 +471,8 @@ a{
 
 
 div.blockquote{
-    margin:1.5em;
+    margin:.5rem 1.5rem;
+    font-size:95%;
 }
 
 
@@ -484,11 +496,7 @@ span[data-el='q']::before{
 }
 
 div[data-el='lg']{
-    padding: 1em 0;
-}
-
-div[data-el='l']{
-    padding:.5em 0;
+    padding: .5em 0;
 }
 
 span[data-el='q'] span[data-el='q']::before{
@@ -498,6 +506,24 @@ span[data-el='q'] span[data-el='q']::before{
 span[data-el='q'] span[data-el='q']::after{
     content:"’";
 }
+
+
+[data-el='opener'] > [data-el='salute'],
+[data-el='closer'] > [data-el='signed']{
+    font-variant:small-caps;
+    font-size: 105%;
+}
+
+[data-el='closer']{
+    text-align:right;
+    margin-right:.5rem;
+}
+
+[data-el='closer'] > [data-el='salute']{
+    margin-right:1rem;
+      display:block;
+}
+
 
 .JS #personography{
     display:none;

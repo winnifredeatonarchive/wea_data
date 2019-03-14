@@ -159,7 +159,7 @@
     </xsl:template>
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -179,6 +179,16 @@
     <xsl:template match="hi | seg | foreign | note" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="note[@type='authorial']" mode="tei">
+        <span>
+           <xsl:call-template name="processAtts">
+               <xsl:with-param name="classes">showTitle</xsl:with-param>
+           </xsl:call-template>
+            <xsl:attribute name="title">This is an authorial note.</xsl:attribute>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
@@ -232,18 +242,30 @@
     </xsl:template>
     
     <xsl:template match="supplied | gap" mode="tei">
+        <xsl:variable name="leadingSentence">
+            <xsl:choose>
+                <xsl:when test="self::supplied">
+                    <xsl:variable name="thisResp" select="substring-after(@resp,'#')" as="xs:string?"/>
+                    <xsl:text>This text has been editorially supplied</xsl:text><xsl:if test="not(empty($thisResp))"><xsl:text> by </xsl:text><xsl:value-of select="ancestor::TEI/descendant::person[@xml:id=$thisResp]/persName/reg"/></xsl:if><xsl:text>.</xsl:text>
+                </xsl:when>
+                <xsl:when test="self::gap">
+                    This text has been omitted.
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
         <span>
             <xsl:if test="@reason | @cert | @resp">
                 <xsl:attribute name="title">
                     <xsl:variable name="title">
-                        <xsl:if test="@reason">Reason: <xsl:value-of select="@reason"/>.</xsl:if>
-                        <xsl:if test="@cert">Certainty: <xsl:value-of select="@cert"/>.</xsl:if>
-                        <xsl:if test="@resp">Supplied by: <xsl:value-of select="@resp"/>.</xsl:if>
+                        <xsl:if test="@reason"><xsl:text>Reason: </xsl:text><xsl:value-of select="@reason"/><xsl:text>.</xsl:text></xsl:if>
+                        <xsl:if test="@cert"><xsl:text>Certainty: </xsl:text><xsl:value-of select="@cert"/><xsl:text>.</xsl:text></xsl:if>
                     </xsl:variable>
-                    <xsl:value-of select="string-join($title,' ')"/>
+                    <xsl:value-of select="concat($leadingSentence,' ', string-join($title,' '))"/>
                 </xsl:attribute>
             </xsl:if>
-            <xsl:call-template name="processAtts"/>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes">showTitle</xsl:with-param>
+            </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
@@ -288,7 +310,9 @@
     
     <xsl:template match="choice" mode="tei">
         <span title="{normalize-space(orig)}">
-            <xsl:call-template name="processAtts"/>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes">showTitle</xsl:with-param>
+            </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
