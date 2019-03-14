@@ -254,15 +254,13 @@
             </xsl:choose>
         </xsl:variable>
         <span>
-            <xsl:if test="@reason | @cert | @resp">
-                <xsl:attribute name="title">
-                    <xsl:variable name="title">
-                        <xsl:if test="@reason"><xsl:text>Reason: </xsl:text><xsl:value-of select="@reason"/><xsl:text>.</xsl:text></xsl:if>
-                        <xsl:if test="@cert"><xsl:text>Certainty: </xsl:text><xsl:value-of select="@cert"/><xsl:text>.</xsl:text></xsl:if>
-                    </xsl:variable>
-                    <xsl:value-of select="concat($leadingSentence,' ', string-join($title,' '))"/>
-                </xsl:attribute>
-            </xsl:if>
+            <xsl:attribute name="title">
+                <xsl:variable name="title">
+                    <xsl:if test="@reason"><xsl:text>Reason: </xsl:text><xsl:value-of select="@reason"/><xsl:text>.</xsl:text></xsl:if>
+                    <xsl:if test="@cert"><xsl:text>Certainty: </xsl:text><xsl:value-of select="@cert"/><xsl:text>.</xsl:text></xsl:if>
+                </xsl:variable>
+                <xsl:value-of select="concat($leadingSentence,' ', string-join($title,' '))"/>
+            </xsl:attribute>
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes">showTitle</xsl:with-param>
             </xsl:call-template>
