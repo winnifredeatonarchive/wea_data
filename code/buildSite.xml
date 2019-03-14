@@ -164,6 +164,7 @@
     </target>
     
   
+  <target name="quick" depends="copyAuxFiles, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
     <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, getPDFSizes, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
