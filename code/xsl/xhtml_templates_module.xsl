@@ -246,7 +246,8 @@
             <xsl:choose>
                 <xsl:when test="self::supplied">
                     <xsl:variable name="thisResp" select="substring-after(@resp,'#')" as="xs:string?"/>
-                    <xsl:text>This text has been editorially supplied</xsl:text><xsl:if test="not(empty($thisResp))"><xsl:text> by </xsl:text><xsl:value-of select="ancestor::TEI/descendant::person[@xml:id=$thisResp]/persName/reg"/></xsl:if><xsl:text>.</xsl:text>
+                    
+                    <xsl:text>This text has been editorially supplied</xsl:text><xsl:if test="not($thisResp = '')"><xsl:text> by </xsl:text><xsl:value-of select="ancestor::TEI/descendant::person[@xml:id=$thisResp]/persName/reg"/></xsl:if><xsl:text>.</xsl:text>
                 </xsl:when>
                 <xsl:when test="self::gap">
                     This text has been omitted.

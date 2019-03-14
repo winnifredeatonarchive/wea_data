@@ -73,6 +73,7 @@ function makeNamesResponsive(){
       e.preventDefault();
       /* Declare empty var */
       var useTitle = false;
+      var removeEvent = false;
       var id = '';
       /* If this is an annotation and the annotation button is checked */
       /* Sometimes the annotation/collation buttons aren't there (if, for instance, there are no collations in the document)
@@ -90,8 +91,7 @@ function makeNamesResponsive(){
       /* Otherwise, return */
       else{
           console.log ('ERROR: This element does not have a popup; removing the click event');
-          this.removeEventListener('click', showPopup, false);
-          return;
+          removeEvent = true;
       }
      
       
@@ -111,9 +111,14 @@ function makeNamesResponsive(){
           dummyDiv.innerHTML = this.getAttribute('title');
           content = dummyDiv;
       } else if (!(useTitle) && !(id == '')){
-             var thisThing = document.getElementById(id);
+           var thisThing = document.getElementById(id);
             var clone = thisThing.cloneNode(true);
           content = clone;
+      } else if (removeEvent){
+          var dummyDiv = document.createElement('div');
+          dummyDiv.setAttribute('class','para');
+          dummyDiv.innerHTML = 'This popup is not available.';
+          content = dummyDiv;
       }
    
       
@@ -132,6 +137,10 @@ function makeNamesResponsive(){
         popup.classList.add('showing');
         placeNote(this,popup);
         this.classList.add('clicked');
+        if (removeEvent){
+            this.removeEventListener('click',showPopup,true);
+            this.classList.remove('showTitle');
+        }
 
    }
    
