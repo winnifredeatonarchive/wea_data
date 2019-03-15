@@ -929,6 +929,64 @@
                   </content>
                </elementSpec>
                
+               <!--CORE-->
+               
+               <elementSpec ident="note" module="core" mode="change">
+                  <constraintSpec scheme="schematron" ident="note.authorialInQOnly">
+                     <desc>Use authorial notes only within <gi>q</gi> elements</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='authorial']">
+                              <sch:assert test="ancestor::tei:q">
+                                 ERROR: Authorial notes should only be used within the q element.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.useAuthorialOrEditorialInQ">
+                     <desc>All notes within the <gi>q</gi> element should have a type.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[ancestor::tei:q]">
+                              <sch:assert test="@type">
+                                 ERROR: Notes within the q element should have a type of either authorial
+                                 or editorial.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.editorialShouldHaveResp">
+                     <desc>Editorial notes should always have an <att>resp</att>.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='editorial']">
+                              <sch:assert test="@resp">
+                                 ERROR: Editorial notes should have a @resp attribute pointing to the person who authored this note.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace">
+                        <valList mode="add" type="closed">
+                           <valItem ident="editorial" mode="add">
+                              <desc>editorial</desc>
+                              <gloss>an editorial note (i.e. supplied by an editor)</gloss>
+                           </valItem>
+                           <valItem ident="authorial" mode="add">
+                              <desc>authorial</desc>
+                              <gloss>an authorial note; currently only used with quotations where the author
+                                 interrupts the dominant narrative voice by interjecting explanatory commentary.</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  
+               </elementSpec>
+               
                
                <!--CLASS SPECS-->
                <!--
