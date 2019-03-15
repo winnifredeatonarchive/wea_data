@@ -44,7 +44,7 @@
     
     <xsl:function name="wea:getPDFSize">
         <xsl:param name="pdfName"/>
-        <xsl:if test="unparsed-text-available($productsDir,'facsimiles/files.txt')">
+        <xsl:if test="unparsed-text-available(concat($productsDir,'facsimiles/files.txt'))">
             <xsl:variable name="thisLine" select="for $p in $pdfFileSizeDocLines return if (ends-with($p,$pdfName)) then $p else ()" as="xs:string"/>
             <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
             <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
