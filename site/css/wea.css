@@ -100,10 +100,12 @@ a:hover,
 
 .facsThumb img{
     max-width:18rem;
+    width:100%;
+    height:100%;
     
 }
 
-.facsThumb > figcaption{
+#imageText{
     position: absolute;
     z-index: 1;
     color: white;
@@ -111,17 +113,16 @@ a:hover,
     opacity: 0;
     left: 0;
     top: 0;
-    transition: opacity 0.8s ease-in-out;
+    font-size:2em;
+    transition: all 0.8s ease, font-size 0ms;
     height: 100%;
     width: 100%;
-    font-size:300%;
     text-align:center;
     overflow:hidden;
 }
 
 
-.facsThumb > figCaption > a,
-.facsThumb > figCaption > span.noFacsAvailable{
+/*{
     height: 100%;
     width: 100%;
     position:relative;
@@ -132,32 +133,18 @@ a:hover,
     align-items: center;
     color:inherit;
     
-}
+}*/
 
-.facsThumb a:visited{
-    color:inherit;
-}
 
-.facsThumb > figcaption:hover{
+
+.facsThumb:hover #imageText{
     opacity: 1;
     background: rgba(0, 0, 0, 0.8);
-    border: 1px solid var(--wea-pink);
-    
+    color:white;
 }
 
-.facsThumb > figcaption:hover > a,
-.facsThumb > figcaption:hover > span.noFacsAvailable{
-    opacity:1;
-}
-
-
-figCaption:not(a){
-    cursor:default;
-}
-
-.pdfSize::before{
-      content: "\A";
-  white-space: pre;
+#imageText *{
+    color:white;
 }
 
 .pdfSize{
@@ -833,24 +820,16 @@ a[href].gi::after{
     color: #009900;
 }
 
-@media print {
+
+@media only screen and (max-width: 820px){
     
-    #info{
-        background:inherit;
+    #mainBody{
+        padding-left:5%;
+        padding-right:5%;
     }
     
-    header, footer{
-        display:none;
-    }
-    
-    body,
-    #mainText,
-    #info{
-        padding-left:0;
-        padding-right:0;
-        margin-left:0;
-        margin-right:0;
+    header{
+        position:fixed;
     }
     
 }
-
