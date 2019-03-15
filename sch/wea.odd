@@ -1099,6 +1099,20 @@
                      <attDef ident="xml:space" mode="delete"/>
                   </attList>
                </classSpec>
+               <classSpec ident="att.global.facs" module="tei" type="atts" mode="change">
+                  <constraintSpec scheme="schematron" ident="facs.mustStartWithFacs">
+                     <desc>All <att>facs</att> attributes should start with facs</desc>
+                     <constraint>
+                        <sch:rule context="tei:*[@facs]">
+                           <sch:let name="tokens" value="tokenize(@facs,'\s+')"/>
+                           <sch:let name="facsRegex" value="'^facs:.+'"/>
+                           <sch:assert test="every $t in $tokens satisfies (matches($t,$facsRegex) and not(matches($t,'\..+$')))">
+                              ERROR: All facsimile pointers should start with facs: and not include the file extension.
+                           </sch:assert>
+                        </sch:rule>
+                     </constraint>
+                  </constraintSpec>
+               </classSpec>
                <classSpec ident="att.global.rendition"
                           module="tei"
                           type="atts"

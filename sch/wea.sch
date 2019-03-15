@@ -449,6 +449,25 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
       </report>
             </rule>
          </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-19">
+      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                context="tei:*[@facs]">
+                           <sch:let name="tokens" value="tokenize(@facs,'\s+')"/>
+                           <sch:let name="facsRegex" value="'^facs:.+'"/>
+                           <sch:assert test="every $t in $tokens satisfies (matches($t,$facsRegex) and not(matches($t,'\..+$')))">
+                              ERROR: All facsimile pointers should start with facs: and not include the file extension.
+                           </sch:assert>
+                        </sch:rule>
+   </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

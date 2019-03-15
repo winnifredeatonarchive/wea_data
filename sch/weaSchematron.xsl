@@ -401,6 +401,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
+            <xsl:attribute name="id">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-19</xsl:attribute>
+            <xsl:attribute name="name">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-19</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M29"/>
@@ -467,6 +469,13 @@
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M38"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M39"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -1288,6 +1297,37 @@ On <xsl:text/>
       <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
 
+   <!--PATTERN wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-19-->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:*[@facs]" priority="1000" mode="M29">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@facs]"/>
+      <xsl:variable name="tokens" select="tokenize(@facs,'\s+')"/>
+      <xsl:variable name="facsRegex" select="'^facs:.+'"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="every $t in $tokens satisfies (matches($t,$facsRegex) and not(matches($t,'\..+$')))"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="every $t in $tokens satisfies (matches($t,$facsRegex) and not(matches($t,'\..+$')))">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              ERROR: All facsimile pointers should start with facs: and not include the file extension.
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M29"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M29"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M29">
+      <xsl:apply-templates select="*" mode="M29"/>
+   </xsl:template>
+
    <!--PATTERN -->
    <xsl:variable name="spaceRegex" select="'(^\s)|(\s$)'"/>
    <xsl:variable name="docId" select="root(/)/tei:*/@xml:id"/>
@@ -1295,9 +1335,9 @@ On <xsl:text/>
    <xsl:variable name="docIds" select="//tei:*[@xml:id]/@xml:id"/>
    <xsl:variable name="docTypes" select="//tei:catRef/@target"/>
    <xsl:variable name="docStatus" select="//tei:revisionDesc/@status"/>
-   <xsl:template match="text()" priority="-1" mode="M29"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M29">
-      <xsl:apply-templates select="*" mode="M29"/>
+   <xsl:template match="text()" priority="-1" mode="M30"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M30">
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -1306,7 +1346,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"
                  priority="1000"
-                 mode="M30">
+                 mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"/>
 
@@ -1329,11 +1369,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M30"/>
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M30"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M30">
-      <xsl:apply-templates select="*" mode="M30"/>
+   <xsl:template match="text()" priority="-1" mode="M31"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M31">
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -1342,7 +1382,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()]"
                  priority="1000"
-                 mode="M31">
+                 mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:*[not(ancestor-or-self::tei:code)][text()]"/>
       <xsl:variable name="onlyOneQuote"
@@ -1362,11 +1402,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M31"/>
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M31"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M31">
-      <xsl:apply-templates select="*" mode="M31"/>
+   <xsl:template match="text()" priority="-1" mode="M32"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M32">
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -1375,7 +1415,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:name | tei:ref | tei:title | tei:l"
                  priority="1000"
-                 mode="M32">
+                 mode="M33">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:name | tei:ref | tei:title | tei:l"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
@@ -1397,18 +1437,18 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M32"/>
+      <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M32"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M32">
-      <xsl:apply-templates select="*" mode="M32"/>
+   <xsl:template match="text()" priority="-1" mode="M33"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M33">
+      <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:name" priority="1000" mode="M33">
+   <xsl:template match="tei:name" priority="1000" mode="M34">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:name"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
@@ -1430,18 +1470,18 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M33"/>
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M33"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M33">
-      <xsl:apply-templates select="*" mode="M33"/>
+   <xsl:template match="text()" priority="-1" mode="M34"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M34">
+      <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:q" priority="1000" mode="M34">
+   <xsl:template match="tei:q" priority="1000" mode="M35">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:q"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
@@ -1458,41 +1498,6 @@ On <xsl:text/>
                               ERROR: Trailing punctuaton should go outside the <xsl:text/>
                   <xsl:value-of select="name(.)"/>
                   <xsl:text/> element.
-                           </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M34"/>
-   </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M34"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M34">
-      <xsl:apply-templates select="*" mode="M34"/>
-   </xsl:template>
-
-   <!--PATTERN -->
-
-
-	  <!--RULE -->
-   <xsl:template match="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"
-                 priority="1000"
-                 mode="M35">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"/>
-      <xsl:variable name="thisText"
-                    select="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
-      <xsl:variable name="cp" select="string-to-codepoints($thisText)"/>
-      <xsl:variable name="distinctCp" select="distinct-values($cp)"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="empty($distinctCp[.=34])"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="empty($distinctCp[.=34])">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                              ERROR: QUICKFIX: Do not use straight quotation marks.
                            </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1520,14 +1525,14 @@ On <xsl:text/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="empty($distinctCp[.=39])"/>
+         <xsl:when test="empty($distinctCp[.=34])"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="empty($distinctCp[.=39])">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="empty($distinctCp[.=34])">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                              ERROR: QUICKFIX: Do not use straight apostrophes. 
+                              ERROR: QUICKFIX: Do not use straight quotation marks.
                            </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1543,7 +1548,42 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M37">
+   <xsl:template match="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"
+                 priority="1000"
+                 mode="M37">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']"/>
+      <xsl:variable name="thisText"
+                    select="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+      <xsl:variable name="cp" select="string-to-codepoints($thisText)"/>
+      <xsl:variable name="distinctCp" select="distinct-values($cp)"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="empty($distinctCp[.=39])"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="empty($distinctCp[.=39])">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                              ERROR: QUICKFIX: Do not use straight apostrophes. 
+                           </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M37"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M37"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M37">
+      <xsl:apply-templates select="*" mode="M37"/>
+   </xsl:template>
+
+   <!--PATTERN -->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M38">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:div | tei:lg"/>
       <xsl:variable name="divs"
@@ -1566,11 +1606,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M37"/>
+      <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M37"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M37">
-      <xsl:apply-templates select="*" mode="M37"/>
+   <xsl:template match="text()" priority="-1" mode="M38"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M38">
+      <xsl:apply-templates select="*" mode="M38"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -1579,7 +1619,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]"
                  priority="1000"
-                 mode="M38">
+                 mode="M39">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
@@ -1601,10 +1641,10 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M38"/>
+      <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M38"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M38">
-      <xsl:apply-templates select="*" mode="M38"/>
+   <xsl:template match="text()" priority="-1" mode="M39"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M39">
+      <xsl:apply-templates select="*" mode="M39"/>
    </xsl:template>
 </xsl:stylesheet>
