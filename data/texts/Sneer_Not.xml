@@ -40,31 +40,35 @@
   </teiHeader>
   <text facs="facs:Sneer_Not">
       <body>
-         <div>
+         <head>Sneer not.</head>
             <!--We could either use a <pb/> element to assiciate it with the facs,
                or, for a more general thing, we couldjust put an @facs on the body-->
             <!--Do we care that this is centered, bold, and ibgger?-->
-            <head>Sneer not.</head>
-            <lg>
-               <!--Do we note line breaks?-->
-               <l>Sneer not, ye cynics, who to school once went</l>
-               <l>And talked with knowledge at her many marts;</l>
-               <l>Who through long days and longer nights have spent</l>
-               <l>Your peace of soul to strengthen mental parts.</l>
-               <l>The worth ye garnered is not self-con<!--Do we note the punctuation here?-->fined</l>
-               <l>But spread in plenty like a trader’s show;</l>
-               <l>Year in, year out, for all of human kind</l>
-               <l>What you have learned, a countless number know;</l>
-               <l>But rather court the grace that wisdom gives</l>
-               <l>Which simply means—be fearful of thy might;</l>
-               <l>He knows the most who learns and thereby lives</l>
-               <l>To feel his weakness as he strengthens sight.</l>
-            </lg>
+
+            <div>
+               <lg>
+                  <!--Do we note line breaks?-->
+                  <l>Sneer not, ye cynics, who to school once went</l>
+                  <l>And talked with knowledge at her many marts;</l>
+                  <l>Who through long days and longer nights have spent</l>
+                  <l>Your peace of soul to strengthen mental parts.</l>
+                  <l>The worth ye garnered is not self-con<!--Do we note the punctuation here?-->fined</l>
+                  <l>But spread in plenty like a trader’s show;</l>
+                  <l>Year in, year out, for all of human kind</l>
+                  <l>What you have learned, a countless number know;</l>
+                  <l>But rather court the grace that wisdom gives</l>
+                  <l>Which simply means—be fearful of thy might;</l>
+                  <l>He knows the most who learns and thereby lives</l>
+                  <l>To feel his weakness as he strengthens sight.</l>
+               </lg>
+            </div>
             <!--Do we signal this is to the right and small caps?-->
             <byline>
-               <docAuthor>Winnifred Eaton</docAuthor>
+               <name ref="pers:WE1">Winnifred Eaton</name>
             </byline>
-         </div>
+            
+
+         
       </body>
   </text>
 </TEI>
