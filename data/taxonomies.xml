@@ -24,6 +24,26 @@
         </textClass>
      </profileDesc>
      <encodingDesc>
+        <editorialDecl>
+           <normalization>
+              <p>There has been no normalization.</p>
+           </normalization>
+           <quotation marks="none">
+              <p>We eliminate all quotations mark programatically using the Schematron/XSLT quickfixes contained in the ODD file. Every attempt has been made, in the proofing process, to convert all quotation marks to <gi>q</gi> elements. We do not retain the styling information about the forms of quotation marks nor necessarily the placement of such marks. See the documentation for more specific details on how we handle quotations, block quotations, and floating texts.</p>
+           </quotation>
+           <correction method="markup">
+              <p>We do not correct the text unless the error is obvious and somehow severely impedes the reading process. In the rare cases where there has been editorial correction, we use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements when correcting.</p>
+           </correction>
+           <hyphenation eol="none">
+              <p>All end-of-line hyphens have been removed; however, all other forms of hyphenation (compound words, et cetera) have been retained.</p>
+           </hyphenation>
+           <interpretation>
+              <p>There is little interpretative markup contained within the WEA project. We do tag entities mentioned in the text.</p>
+           </interpretation>
+           <punctuation placement="external">
+              <p>All original punctuation marks have been retained, other than quotation marks (as mentioned above). All trailing punctuation marks that are not necessarily part of the <gi>q</gi> element (i.e. periods or commas) have been moved outside of the <gi>q</gi> element; hard punctuation (like exclamation and question marks) have been retained within the <gi>q</gi>.</p>
+           </punctuation>
+        </editorialDecl>
         <classDecl>
            
            <!--hort story, non-fiction, autobiography, film scenario, film treatment, poem, serialized novel plus some of the more visual “objects” like photograph, portrait, film clip, ) I’m wondering if we would like to complicate the non-fiction category, I.e. Autobiography, dedication, interview, introduction, ethnography-->
