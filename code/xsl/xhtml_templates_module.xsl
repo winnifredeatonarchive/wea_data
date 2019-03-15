@@ -72,20 +72,25 @@
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <div id="info">
-            
-            
+            <div id="facsimile">
                 <xsl:if test="not(wea:bornDigital($root))">
                     <xsl:call-template name="createFacs"/>
-                  
-                    <xsl:copy-of select="wea:crumb($root)"/>
                 </xsl:if>
-            
-            <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
-            <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
-                <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
-            </xsl:if>
+            </div>
+            <div id="metadata">
+                <xsl:copy-of select="wea:crumb($root)"/>
+                <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
+                <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
+                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
+                </xsl:if>
+            </div>
+            <div id="relatedItems">
+                <xsl:call-template name="createRelatedItems"/>
+            </div>
         </div>
     </xsl:template>
+    
+    <xsl:template name="createRelatedItems"/>
     
     <xsl:template name="createFacs">
         <xsl:variable name="facsAvailable" select="exists(@facs)"/>

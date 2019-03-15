@@ -7,6 +7,10 @@
     src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
 }
 
+:root{
+    --wea-pink: #DF006E;
+}
+
 html{
     font-family: Sans;
     font-size:100%;
@@ -64,7 +68,11 @@ a:hover,
       background-color: rgb(242, 245, 243);
       overflow: auto;
       padding: 4rem;
-}
+      display:flex;
+      margin:0 auto;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
 
 #mainBody{
   padding:5% 10%;
@@ -78,6 +86,9 @@ a:hover,
     
 }
 
+#facsimile{
+    width:fit-content;
+}
 #info .facsThumb{
     float:left;
     margin: 0 3rem 1rem 0;
@@ -103,7 +114,7 @@ a:hover,
     transition: opacity 0.8s ease-in-out;
     height: 100%;
     width: 100%;
-    font-size:400%;
+    font-size:300%;
     text-align:center;
     overflow:hidden;
 }
@@ -113,10 +124,12 @@ a:hover,
 .facsThumb > figCaption > span.noFacsAvailable{
     height: 100%;
     width: 100%;
-    display: block;
+    position:relative;
     opacity:0;
     text-decoration:none;
-    padding-top:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color:inherit;
     
 }
@@ -128,6 +141,7 @@ a:hover,
 .facsThumb > figcaption:hover{
     opacity: 1;
     background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--wea-pink);
     
 }
 
@@ -141,8 +155,14 @@ figCaption:not(a){
     cursor:default;
 }
 
+.pdfSize::before{
+      content: "\A";
+  white-space: pre;
+}
+
 .pdfSize{
     font-size:50%;
+    display:inline-block;
 }
 
 #unhighlightButton,
