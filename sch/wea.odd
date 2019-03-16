@@ -270,7 +270,10 @@
                <p>All content of the texts goes into the <gi>body</gi> element. Surround all content with a <gi>div</gi> element like so:
                
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     
+                     
                      <body>
+                        <!--Front matter goes here-->
                         <div>
                            <!--Content goes here-->
                         </div>
@@ -280,14 +283,15 @@
                <p>Individual sections can be encoded using nested <gi>div</gi> tags, if desired:
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <body>
-                        <div>
-                           <head>A Poor Devil</head>
+                        <head>A Poor Devil</head>
+                        <opener>
                            <opener>
-                              <opener>
-                                 <byline>By <name ref="pers:WE">Winnie Eaton</name>, Montreal.</byline>
-                                 <note>[Written for the Metropolitan.]</note>
-                              </opener>
+                              <byline>By <name ref="pers:WE">Winnie Eaton</name>, Montreal.</byline>
+                              <note>[Written for the Metropolitan.]</note>
                            </opener>
+                        </opener>
+                        <div>
+                          
                            <div>
                            <!--Section 1-->
                               <div>
@@ -312,7 +316,7 @@
             <div>
                <head>Bylines</head>
                <p>If there is an authorial statement of responsibility of some sort, enclose this in a <gi>byline</gi> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <gi>name</gi> tag
-               with an <att>ref</att> value of <val>pers:WE</val>.</p>
+               with an <att>ref</att> value of <val>pers:WE1</val>.</p>
             </div>
             <div>
                <head>Gaps and omissions</head>
@@ -323,7 +327,7 @@
                </p>
                <p>If you can supply the damaged text, use the <gi>supplied</gi> element instead with an <att>resp</att> value pointing to your <att>xml:id</att> (which is usually your initials):
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <supplied resp="pers:JT">ed</supplied>
+                     <supplied resp="pers:JT1">ed</supplied>
                   </egXML>
                </p>
                <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of "low" "medium" or "high". If no <att>cert</att> is supplied, it is assumed
@@ -368,52 +372,74 @@
                   <specDesc key="salute"/>
                      <specDesc key="signed"/>
                   </p>
-                  <p>To encode a letter, first wrap the letter in a <gi>q</gi>, then a <gi>floatingText</gi> with an <att>type</att>=<val>letter</val>, and then a <gi>body</gi> element. From there, encode the letter using the proper elements (the salute as a <gi>salute</gi>, the signature as <gi>signed</gi>, et cetera):
+                  <p>To encode a letter, first wrap the letter in a <gi>q</gi>, then a <gi>floatingText</gi> with an <att>type</att>=<val>letter</val>, and then a <gi>body</gi> element.
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <q>
                            <floatingText type="letter">
                               <body>
-                                 <salute>Darling Girlie:</salute>
-                                 <p>I am counting the hours when I will be with you. I tried to get up
-                                 to see you last night, but it was impossible. Lord Eaton’s son,
-                                 young Albert, was on the steamer coming over, and they are friends
-                                 of the governor’s and I simply had to be with them. You see,
-                                 darling, it means a good deal to me in the future, to be in touch
-                                 with these people. His brother-in-law, whom I met last night, is
-                                 head cockalorum in the House of Parliament, and as I have often
-                                 told you, my ambition is to get into politics. It’s the surest road
-                                 to fame for a Barrister.</p>
-                                 <p>Now I hope my foolish little girl will understand and believe me
-                                 when I say that I am thinking for you as much as for myself.</p>
-                              
-                                 <p>I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
-                              
-                                 <signed>Your own,
-                                 Reggie.</signed>
-                              
+                                <!--Content of the letter goes here-->
                               </body>
                            </floatingText>
                         </q>
                      </egXML>
                   
                   </p>
-                  <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as notes in the text:
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>Most often, letters will contain opening and closing matter; often this is a salute (a salutation) or some signature. These are tagged using the <gi>salute</gi> and <gi>signed</gi> elements, wrapped in <gi>opener</gi> and <gi>closer</gi> tags. An example to illustrate:
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <q>
                            <floatingText type="letter">
                               <body>
-                                 <salute>Dear Miss Marion:</salute>
+                                 <opener>
+                                    <salute>Darling Girlie:</salute>
+                                 </opener>
+                                 
+                                 <p>I am counting the hours when I will be with you. I tried to get up
+                                    to see you last night, but it was impossible. Lord Eaton’s son,
+                                    young Albert, was on the steamer coming over, and they are friends
+                                    of the governor’s and I simply had to be with them. You see,
+                                    darling, it means a good deal to me in the future, to be in touch
+                                    with these people. His brother-in-law, whom I met last night, is
+                                    head cockalorum in the House of Parliament, and as I have often
+                                    told you, my ambition is to get into politics. It’s the surest road
+                                    to fame for a Barrister.</p>
+                                 
+                                 <p>Now I hope my foolish little girl will understand and believe me
+                                    when I say that I am thinking for you as much as for myself.</p>
+                                 
+                                 <p>I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
+                                 
+                                 <closer>
+                                    <salute>Your own,</salute>
+                                    <signed>Reggie.</signed>
+                                 </closer>
+                              </body>
+                           </floatingText>
+                        </q>
+                     </egXML>
+                     
+                  </p>
+                  <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <gi>note</gi> element with an <att>type</att>=<val>authorial</val>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <q>
+                           <floatingText type="letter">
+                              <body>
+                                 <opener>
+                                    <salute>Dear Miss Marion:</salute>
+                                 </opener>
+                                
                               
                               
                                  <p>Will you and your charming sister take a little drive with me and a
                                  friend this evening? If so, meet us at eight o’clock, corner of St.
                                  James and St. Denis streets. My friend has seen your sister in
-                                 Judge Laflamme’s office <note>(Ellen worked there)</note> and he is very
+                                 Judge Laflamme’s office <note type="authorial">(Ellen worked there)</note> and he is very
                                  anxious to know her. As for me, I am thinking only of when I shall
                                  see my lovely rose again. I am counting the hours!</p>
                               
-                                 <signed>Devotedly, Fred Stevens.</signed>
-                              
+                                 <closer>
+                                    <salute>Devotedly,</salute>
+                                    <signed>Fred Stevens.</signed>
+                                 </closer>
                               </body>
                            
                            </floatingText>
