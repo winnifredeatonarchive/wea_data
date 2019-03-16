@@ -93,12 +93,12 @@
             </p>
             <p>To build the site, you must have ant installed. In the root directory, run: <code class="block">ant -lib lib</code></p>
             <p>The site build happens in a number of steps: </p>
-            <ol class="ordered">
+            <div data-el="ul">
                <div data-el="li" class="item">All of the source files are validated against the RelaxNG schema and the extracted
                   schematron
                </div>
                <div data-el="li" class="item">If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows: 
-                  <ol class="ordered">
+                  <div data-el="ul">
                      <div data-el="li" class="item">Files </div>
                      <div data-el="li" class="item">All of the source XML is flattened into a single directory and massaged slightly to
                         create the "original" XML
@@ -111,7 +111,7 @@
                      <div data-el="li" class="item">The XHTML5 pages are created from the standalone XML and then validated against the
                         VNU validator
                      </div>
-                  </ol>
+                  </div>
                </div>
                <div data-el="li" class="item">From the site products, we create a search engine, which runs purely using Javascript
                   within the compiled HTML. Each file is tokenized, and each distinct token is stemmed
@@ -120,7 +120,7 @@
                   the search engine is currently experimental and is largely inspired by Martin Holmes'
                   implementation for The John Keats Project and The Robert Graves Diary Project.)
                </div>
-            </ol>
+            </div>
             <div id="index.xml-body.1_div.3_div.1">
                <h3><span class="head">Current Implementation</span></h3>
                <p>Currently, the site build process is associated with the Continuous Integration service

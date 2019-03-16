@@ -52,10 +52,10 @@
             <code rend="block">ant -lib lib</code>
             </p>
             <p>The site build happens in a number of steps:
-            <list rend="ordered">
+            <list>
                   <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
                   <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows:
-               <list rend="ordered">
+               <list>
                         <item>Files </item>
                         <item>All of the source XML is flattened into a single directory and massaged slightly to create the "original" XML</item>
                         <item>The standalone XML is created from the original XML; the standalone XML includes all of the "standoff" materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
