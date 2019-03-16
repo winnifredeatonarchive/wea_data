@@ -45,6 +45,33 @@
                </list>
             </p>
          </div>
+         <div>
+            <head>Site build process</head>
+            <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are "static," and the site itself has no external or server-side dependencies.</p>
+            <p>To build the site, you must have ant installed. In the root directory, run:
+            <code rend="block">ant -lib lib</code>
+            </p>
+            <p>The site build happens in a number of steps:
+            <list rend="ordered">
+                  <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
+                  <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows:
+               <list rend="ordered">
+                        <item>Files </item>
+                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the "original" XML</item>
+                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the "standoff" materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
+                        <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
+                     </list>
+                  
+                  </item>
+                  <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
+               </list>
+            </p>
+            <div>
+               <head>Current Implementation</head>
+               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called "wea." This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
+               <p>Once we are happy with the products on the "wea" site (also called the "beta" site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+            </div>
+         </div>
          
 
          <div xml:id="github">
@@ -306,6 +333,18 @@
                         </div>
                         </div>
                      </body>
+                  </egXML>
+               </p>
+            </div>
+            <div>
+               <head>Associating facsimiles</head>
+               <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
+               <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <gi>text</gi> element, with a pointer to the facsimile's file name using the private "facs:" URI scheme:
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <text facs="facs:Three_Loves_Puritan">
+                     <!--Content here-->
+                  </text>
                   </egXML>
                </p>
             </div>
