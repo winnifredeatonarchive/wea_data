@@ -71,6 +71,10 @@
                 <xsl:call-template name="createAppendix"/>
             </div>
             <xsl:call-template name="createPopup"/>
+            <footer>
+                <div id="lastUpdate">Last updated: <xsl:value-of select="$today"/></div>
+                <div id="gitRevision"><!--Get this--></div>
+            </footer>
         </body>
         
         
