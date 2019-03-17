@@ -51,7 +51,14 @@
       
         <body>
             <header>
-                <a href="index.html">WEA</a>
+                <div class="header-item home"><a href="index.html">WEA</a></div>
+                <div class="header-item">About</div>
+                <div class="header-item">Archive</div>
+                <div class="header-item">Career</div>
+                <div class="header-item">Biography</div>
+                <div class="header-item">Resources</div>
+                <div class="header-item">News</div>
+                <div class="header-item">Contact</div>
             </header>
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,':'),' ')"/>
