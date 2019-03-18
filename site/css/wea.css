@@ -4,7 +4,7 @@
 
 @font-face{
     font-family: "Sans";
-    src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 :root{
@@ -18,12 +18,13 @@ html{
 
 body{
     line-height: 1.2;
-    color: #616464;
+    /* This is slightly darker than in Serina's designs. */
+    color: #484a4a;
     margin:0;
 }
 
 
-header{
+header > nav{
     display:flex;
     flex-direction:row;
     justify-content: center;
@@ -36,6 +37,10 @@ header{
     z-index:1000;
     background:white;
 
+}
+
+#hamburger{
+    display:none;
 }
 
 footer{
@@ -59,12 +64,12 @@ header a:hover{
     color:var(--wea-pink);
 }
 
-.header-item.home{
+.nav-item.home{
     font-size:1.5rem;
     font-family: "Georgia";
     margin-right:2em;
 }
-.header-item{
+.nav-item{
     margin:0 .75rem;
     text-transform:uppercase;
     
@@ -879,5 +884,104 @@ a[href].gi::after{
     header{
         position:fixed;
     }
+    
+    header > nav{
+        display:none;
+    }
+    
+    #hamburger{
+    display:block
+    }
+    
+    .hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+  .hamburger.is-active:hover {
+    opacity: 0.7; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+
+  display: block;
+  top: 50%;
+  margin-top: -2px; 
+  }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+    }
+    
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; 
+    }
+  .hamburger-inner::before {
+  
+    top: -10px;
+    
+    }
+  .hamburger-inner::after {
+  
+    bottom: -10px; 
+    }
+    
+    
+    /* Hamburger stuff taken from  https://github.com/jonsuh/hamburgers*/
+    .hamburger .hamburger-inner {
+  transition: background-color 0s 0.13s linear;
+  }
+  .hamburger .hamburger-inner::before {
+   
+    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  .hamburger.hamburger-inner::after {
+    top: 20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+.hamburger.open .hamburger-inner {
+  transition-delay: 0.22s;
+  background-color: transparent !important; 
+  }
+  
+  .hamburger.open .hamburger-inner::before {
+    top: 0;
+    transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+    }
+  .hamburger.open .hamburger-inner::after {
+    top: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 10px, 0) rotate(-45deg); 
+    }
+
     
 }

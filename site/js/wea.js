@@ -34,8 +34,27 @@ function addEvents(){
     makeFootnotesResponsive();
     makeNamesResponsive();
     showHideTitles();
+    makeHamburgerClickable();
 }
 
+
+function makeHamburgerClickable(){
+    var ham = document.getElementById('hamburger');
+    ham.addEventListener('click', openCloseHam,true);
+}
+
+function openCloseHam(){
+    var ham = document.getElementById('hamburger');
+    var isOpen = ham.classList.contains('open');
+    if (isOpen){
+            ham.classList.remove('open');
+            ham.classList.add('closed');
+    } else {
+        ham.classList.remove('closed');
+        ham.classList.add('open');
+    }
+
+}
 function showHideTitles(){
     var spansToShow = document.querySelectorAll('.showTitle');
     spansToShow.forEach(function(n){
