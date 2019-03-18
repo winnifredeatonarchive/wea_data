@@ -30,6 +30,7 @@
            <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
            <xsl:with-param name="content">
                <body>
+                   <head>Index</head>
                    <div>
                        <table>
                            <row role="label">

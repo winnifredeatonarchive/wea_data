@@ -106,6 +106,7 @@
     </xd:doc>
     <xsl:template match="category" mode="sub">
         <body>
+            <head><xsl:value-of select="@n"/>: Subcategories</head>
             <div>
                 <!--Just copy out the stuff in the catDesc-->
                 <p><xsl:copy-of select="catDesc/node()"/></p>
@@ -137,6 +138,7 @@
     <xsl:template match="category" mode="full">
         <xsl:variable name="thisCat" select="@xml:id" as="xs:string"/>
         <body>
+            <head><xsl:value-of select="@n"/></head>
             <div>
                 <p><xsl:copy-of select="catDesc/node()"/></p>
                 <table type="edtList">
@@ -185,23 +187,24 @@
         <xsl:variable name="outDoc" select="concat($outDir,'xml/original/',$thisId,'.xml')"/>
         <xsl:variable name="title" select="if ($appendSub) then concat(catDesc,': Subcategories') else catDesc" as="xs:string"/>
         <xsl:variable name="categories">wdt:docBornDigitalCategory</xsl:variable>
-        
-       <xsl:call-template name="generateTeiPage">
-           <xsl:with-param name="outDoc" select="$outDoc"/>
-           <xsl:with-param name="thisId" select="$thisId"/>
-           <xsl:with-param name="title" select="$title"/>
-           <xsl:with-param name="categories" select="$categories"/>
-           <xsl:with-param name="content">
-               <xsl:choose>
-                   <xsl:when test="empty(wea:getCatDocs($thisCat/@xml:id))">
-                       <xsl:copy-of select="$noContent"/>
-                   </xsl:when>
-                   <xsl:otherwise>
-                       <xsl:copy-of select="$content"/>
-                   </xsl:otherwise>
-               </xsl:choose>
-           </xsl:with-param>
-       </xsl:call-template>
+       <xsl:if test="not(empty(wea:getCatDocs($thisCat/@xml:id)))">
+           <xsl:call-template name="generateTeiPage">
+               <xsl:with-param name="outDoc" select="$outDoc"/>
+               <xsl:with-param name="thisId" select="$thisId"/>
+               <xsl:with-param name="title" select="$title"/>
+               <xsl:with-param name="categories" select="$categories"/>
+               <xsl:with-param name="content">
+                   <xsl:choose>
+                       <xsl:when test="empty(wea:getCatDocs($thisCat/@xml:id))">
+                           <xsl:copy-of select="$noContent"/>
+                       </xsl:when>
+                       <xsl:otherwise>
+                           <xsl:copy-of select="$content"/>
+                       </xsl:otherwise>
+                   </xsl:choose>
+               </xsl:with-param>
+           </xsl:call-template>
+       </xsl:if>
     </xsl:template>
     
     <xd:doc>
@@ -215,5 +218,5 @@
         <xsl:sequence select="$sourceXml[descendant::catRef[starts-with(@target,concat('wdt:',$id))]]"/>
     </xsl:function>
     
-    
+
 </xsl:stylesheet>
