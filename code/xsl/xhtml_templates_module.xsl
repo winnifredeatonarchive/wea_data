@@ -533,7 +533,7 @@
         </xsl:choose>
         
         <!--Iterate through each @attribute and add it as a data-att-->
-        <xsl:for-each select="@*[not(local-name()=('xml:id','id','lang','xml:lang'))]">
+        <xsl:for-each select="@*[not(local-name()=('xml:id','id','lang','xml:lang','style','rendition','rend'))]">
             <xsl:attribute name="{concat('data-',local-name())}" select="."/>
         </xsl:for-each>
         
