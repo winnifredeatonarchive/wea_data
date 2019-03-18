@@ -63,8 +63,9 @@
                     <div class="nav-item">Career</div>
                     <div class="nav-item">Biography</div>
                     <div class="nav-item">Resources</div>
-                    <div class="nav-item">News</div>
+<!--                    <div class="nav-item">News</div>-->
                     <div class="nav-item">Contact</div>
+                    <div class="nav-item"><a href="search.html">Search</a></div>
                 </nav>
                
             </header>
@@ -90,23 +91,26 @@
     
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
-        <div id="info">
-            <div id="facsimile">
-                <xsl:if test="not(wea:bornDigital($root))">
-                    <xsl:call-template name="createFacs"/>
-                </xsl:if>
+        <xsl:if test="not(wea:bornDigital($root))">
+            <div id="info">
+                <div id="facsimile">
+                    <xsl:if test="not(wea:bornDigital($root))">
+                        <xsl:call-template name="createFacs"/>
+                    </xsl:if>
+                </div>
+                <div id="metadata">
+                    <xsl:copy-of select="wea:crumb($root)"/>
+                    <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
+                    <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
+                        <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
+                    </xsl:if>
+                </div>
+                <div id="relatedItems">
+                    <xsl:call-template name="createRelatedItems"/>
+                </div>
             </div>
-            <div id="metadata">
-                <xsl:copy-of select="wea:crumb($root)"/>
-                <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
-                <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
-                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
-                </xsl:if>
-            </div>
-            <div id="relatedItems">
-                <xsl:call-template name="createRelatedItems"/>
-            </div>
-        </div>
+        </xsl:if>
+        
     </xsl:template>
     
     <xsl:template name="createRelatedItems"/>
