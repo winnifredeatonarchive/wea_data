@@ -546,9 +546,9 @@
     <xsl:template name="createHeader">
         <link rel="stylesheet" type="text/css" href="css/wea.css"/>
         <link rel="icon" type="image/png" href="graphics/icon.png"/>
+        <script src="js/wea.js"/>
         <script src="js/porterStemmer.js"/>
         <script src="js/search.js"/>
-        <script src="js/wea.js"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
     </xsl:template>
