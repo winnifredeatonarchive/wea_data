@@ -16,6 +16,7 @@
     --wea-pink: #DF006E;
     --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
+    --wea-info-bg-color:rgb(242, 245, 243);
 }
 
 html{
@@ -34,20 +35,28 @@ body{
 }
 
 
-header > nav{
-    display:flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
+
+header{
     color:black;
-    padding:1rem 0 0 0;
+    padding:1rem 0;
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
     z-index:1000;
     background:white;
-
+    /* Decisions need to be made about whether or not to
+     * have a sticky header. */
+/*    position:fixed;
+    box-shadow: 0px 0px 1px 0px;*/
 }
+
+header > nav{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #hamburger{
     display:none;
@@ -128,7 +137,7 @@ a:hover,
 }
 
 #info{
-      background-color: rgb(242, 245, 243);
+      background-color: var(--wea-info-bg-color);
       overflow: auto;
       padding: 4rem;
       display:flex;
@@ -138,6 +147,8 @@ a:hover,
       }
 
 #mainBody{
+ /* We need to margin-top if we do a sticky header */
+ /* margin-top: 2.5rem;*/
   padding:5% 10%;
   flex:1;
 }
@@ -149,6 +160,32 @@ a:hover,
     
     
 }
+
+#searchBox{
+    margin:0 auto;
+    background-color: var(--wea-info-bg-color);
+    margin-top:2em;
+    padding:1.5em;
+    max-width:30em;
+    max-height:4em;
+    border-radius:1em;
+}
+
+input[type=text] {
+  width: 100%;
+  height:100%;
+  font-size:150%;
+  padding:.5rem;
+  
+  }
+  input[type=text],
+  input[type=text]:focus{
+  outline:none;
+   border-color: var(--wea-info-bg-color);
+  border-width:0;
+  border-radius:.25rem;
+  }
+  
 
 #facsimile{
     width:fit-content;
@@ -745,11 +782,6 @@ code.block{
 }
 
 
-/* Animated search */
-
-div#mainBody input[type=text] {
-  transition: width 0.4s ease-in-out;
-}
 
 .snippet{
     padding:.5rem;
@@ -764,9 +796,7 @@ div#mainBody input[type=text] {
 }
 
 /* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 100%;
-  }
+
 /* Eg stuff, taken from the TEI's CSS stylesheet:  */
 
 /* TEI COPYRIGHT NOTICE:
@@ -885,16 +915,13 @@ a[href].gi::after{
 }
 
 
-@media only screen and (max-width: 820px){
+@media only screen and (max-width: 900px){
     
     #mainBody{
         padding-left:5%;
         padding-right:5%;
     }
     
-    header{
-        position:fixed;
-    }
     
     header > nav{
         display:none;

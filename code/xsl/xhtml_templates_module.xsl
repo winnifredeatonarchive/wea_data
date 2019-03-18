@@ -75,8 +75,8 @@
                 <div id="text">
                     <xsl:call-template name="processAtts"/>
                     <xsl:apply-templates mode="#current"/>
+                    <xsl:call-template name="createSearchResults"/>
                 </div>
-                <xsl:call-template name="createSearchResults"/>
                 <xsl:call-template name="createAppendix"/>
             </div>
             <xsl:call-template name="createPopup"/>
@@ -409,7 +409,10 @@
     </xsl:template>
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">
-        <input type="text" name="search" placeholder="Search.."/>
+        <div id="searchBox">
+            <input type="text" name="search" placeholder="Search.."/>
+        </div>
+
     </xsl:template>
     
     
