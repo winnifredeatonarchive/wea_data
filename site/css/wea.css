@@ -7,6 +7,11 @@
     src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
+@font-face{
+    font-family: "Serif";
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
+}
+
 :root{
     --wea-pink: #DF006E;
 }
@@ -65,8 +70,8 @@ header a:hover{
 }
 
 .nav-item.home{
-    font-size:1.5rem;
-    font-family: "Georgia";
+    font-size:2rem;
+    font-family: "Serif";
     margin-right:2em;
 }
 .nav-item{
@@ -114,7 +119,7 @@ a:hover,
 }
 
 #text{
-    max-width:40rem;
+    max-width:50rem;
 }
 
 #info{
@@ -260,7 +265,7 @@ a:hover,
 }
 
 h1,h2,h3,h4,h5,h6{
-    font-family: "Georgia";
+    font-family: "Serif";
 
 }
 
