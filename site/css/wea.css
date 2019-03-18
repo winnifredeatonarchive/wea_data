@@ -384,6 +384,10 @@ span[data-el='pb'].first{
     content:']';
 }
 
+[data-el='supplied'][data-cert='low']::after{
+    content:'?]';
+}
+
 [data-el='gap']::after{
     content:'[...]';
 }
