@@ -58,7 +58,7 @@
         
     </xsl:function>
     
-    <xsl:function name="wea:getPNGHeight" as="xs:integer">
+    <xsl:function name="wea:getPNGHeight" as="xs:integer?">
         <xsl:param name="pngName"/>
         <xsl:if test="unparsed-text-available(concat($productsDir,'facsimiles/pngs.txt'))">
             <xsl:variable name="thisLine" select="for $p in $pngFileSizeDocLines return if (matches($p,concat('^.+/',$pngName,'.png:'))) then $p else ()" as="xs:string"/>

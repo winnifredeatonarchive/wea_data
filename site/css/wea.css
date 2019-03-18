@@ -382,6 +382,12 @@ span[data-el='pb']{
     border-width: 1px;
 }
 
+span[data-el="pb"][data-n]::after{
+    float:right;
+    margin-right:-2em;
+    content:"["attr(data-n)"]";
+}
+
 span[data-el='pb'].first{
     display:none;
 }
