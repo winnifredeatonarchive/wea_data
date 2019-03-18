@@ -120,12 +120,13 @@
         <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'graphics/cooking.png'"/>
         <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
         <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
+        <xsl:variable name="height" select="wea:getPNGHeight(substring-before(@facs,'.pdf'))"/>
         <figure class="facsThumb">
             <xsl:choose>
                 <xsl:when test="$facsAvailable">
                     <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
                         <img src="{$thisThumbnail}" alt="{$altText}"/>
-                        <div id="imageText">
+                        <div id="imageText" class="{if ($height gt 600) then 'landscape' else 'portrait'}">
                             <h4>View Facsimile</h4>
                             <div class="pdfSize"><xsl:value-of select="wea:getPDFSize(@facs)"/></div>
                         </div>
@@ -133,7 +134,7 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <img src="{$thisThumbnail}" alt="{$altText}"/>
-                    <div id="imageText">
+                    <div id="imageText" class="portrait">
                         <h4>No facsimile available</h4>
                     </div>
                 </xsl:otherwise>

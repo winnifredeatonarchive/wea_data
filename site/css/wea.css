@@ -214,7 +214,6 @@ input[type=text] {
     opacity: 0;
     left: 0;
     top: 0;
-    font-size:2em;
     transition: all 0.8s ease, font-size 0ms;
     height: 100%;
     width: 100%;
@@ -222,6 +221,13 @@ input[type=text] {
     overflow:hidden;
 }
 
+#imageText.portrait{
+    font-size:2rem;
+}
+
+#imageText.landscape{
+    font-size:1.4rem;
+}
 
 /*{
     height: 100%;
