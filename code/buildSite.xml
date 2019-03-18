@@ -67,10 +67,15 @@
         <echo message="Getting sizes of PDFs..."/>
         <echo message="${echo.separator}"/>
         <touch file="${siteTemp}facsimiles/files.txt"/>
-        <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/files.txt" append="true">
+        <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pdfs.txt" append="true">
             <arg line="-sh"/>
             <fileset dir="${siteTemp}/facsimiles">
                 <include name="**.pdf"/>
+            </fileset>
+        </apply>
+        <apply executable="file" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pngs.txt" append="true">
+            <fileset dir="${siteTemp}/facsimiles">
+                <include name="**.png"/>
             </fileset>
         </apply>
       

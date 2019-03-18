@@ -48,20 +48,20 @@
            
            <!--hort story, non-fiction, autobiography, film scenario, film treatment, poem, serialized novel plus some of the more visual “objects” like photograph, portrait, film clip, ) I’m wondering if we would like to complicate the non-fiction category, I.e. Autobiography, dedication, interview, introduction, ethnography-->
            <taxonomy xml:id="docClassTaxonomies">
-              <taxonomy xml:id="docType">
+              <taxonomy xml:id="docType" n="Document Types">
                  <bibl>Document Type</bibl>
-                 <category xml:id="docPrimarySource">
+                 <category xml:id="docPrimarySource" n="Primary Source">
                     <catDesc>Primary Source</catDesc>
-                    <category xml:id="docPrimarySourceMS">
+                    <category xml:id="docPrimarySourceMS" n="Manuscripts">
                        <catDesc>Primary Source in Manuscript</catDesc>
                     </category>
-                    <category xml:id="docPrimarySourcePublished">
+                    <category xml:id="docPrimarySourcePublished" n="Published Primary Sources">
                        <catDesc>Published Primary Source</catDesc>
                     </category>
                  </category>
-                 <category xml:id="docBornDigital">
+                 <category xml:id="docBornDigital" n="Born Digital Documents">
                     <catDesc>Born Digital document</catDesc>
-                    <category xml:id="docBornDigitalCategory">
+                    <category xml:id="docBornDigitalCategory" n="Generated Category Pages">
                        <catDesc>Generated category page.</catDesc>
                     </category>
                  </category>
@@ -69,18 +69,18 @@
               
               <taxonomy xml:id="genre">
                  <bibl>Genre</bibl>
-                 <category xml:id="genreShortStory">
+                 <category xml:id="genreShortStory" n="Short Stories">
                     <catDesc>Short Story</catDesc>
                  </category>
-                 <category xml:id="genreNF">
+                 <category xml:id="genreNF" n="Non-fiction">
                     <catDesc>Non-fiction</catDesc>
-                    <category xml:id="genreNFAuto">
+                    <category xml:id="genreNFAuto" n="Non-fiction: Autobiographies">
                        <catDesc>Non-fiction: Autobiography</catDesc>
                     </category>
-                    <category xml:id="genreNFDedication">
+                    <category xml:id="genreNFDedication" n="Non-fiction: Dedications">
                        <catDesc>Non-fiction: Dedication</catDesc>
                     </category>
-                    <category xml:id="genreNFInterview">
+                    <category xml:id="genreNFInterview" n="Non-fiction: Interviews">
                        <catDesc>Non-Fiction: Interview</catDesc>
                     </category>
                     <category xml:id="genreNFIntroduction" n="Non-fiction: Introduction">

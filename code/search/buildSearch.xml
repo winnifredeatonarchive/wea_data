@@ -21,7 +21,17 @@
         </java>
     </target>
     
-    <target name="all" depends="tokenize, createJSON"/>
+    <target name="createDocJSON">
+        <java fork="true" classname="net.sf.saxon.Transform"
+            classpath="../../lib/saxon9he.jar" failonerror="true">
+            <jvmarg value="-Xmx2048m"/>
+            <arg value="-s:xsl/doc_json_master.xsl"/>
+            <arg value="-xsl:xsl/doc_json_master.xsl"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
+    
+    <target name="all" depends="tokenize, createJSON, createDocJSON"/>
     
     
 </project>
