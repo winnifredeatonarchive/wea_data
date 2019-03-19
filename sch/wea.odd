@@ -702,7 +702,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl choice corr date divGen editor emph foreign gap graphic head hi item l lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+                          include="author bibl biblScope choice corr date divGen editor emph foreign gap graphic head hi item l lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -768,6 +768,27 @@
                      </constraint>
                   </constraintSpec>
     
+               </elementSpec>
+               
+               <elementSpec ident="biblScope" module="core" mode="change">
+                  <attList>
+                     <attDef ident="unit" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="volume" mode="add">
+                              <desc>volume</desc>
+                              <gloss>the element contains a volume number</gloss>
+                           </valItem>
+                           <valItem ident="issue" mode="add">
+                              <desc>issue</desc>
+                              <gloss>the element contains a issue number</gloss>
+                           </valItem>
+                           <valItem ident="page" mode="add">
+                              <desc>volume</desc>
+                              <gloss>the element contains a page number or page range</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
           
                <elementSpec ident="catRef" module="header" mode="change">
@@ -1227,7 +1248,7 @@
                           module="tei"
                           mode="delete"/>
                <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
-               <classSpec ident="att.citing" type="atts" module="tei" mode="delete"/>
+               <!--               <classSpec ident="att.citing" type="atts" module="tei" mode="delete"/>-->
                <classSpec ident="att.partials" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.personal" type="atts" module="tei" mode="change">
                   <attList>

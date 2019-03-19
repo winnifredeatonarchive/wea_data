@@ -62,6 +62,20 @@ header > nav{
     display:none;
 }
 
+#metadata{
+    display:flex;
+    max-height:25rem;
+    flex-flow:column wrap;
+    align-content:baseline;
+    
+}
+
+#metadata > div{
+    padding:1rem 2rem .5rem 0;
+    max-width:15rem;
+    min-width:0;
+}
+
 footer{
     background:var(--wea-footer-bg-color);
     color:white;
@@ -142,13 +156,20 @@ a:hover,
 
 #info{
       background-color: var(--wea-info-bg-color);
-      overflow: auto;
-      padding: 4rem;
-      display:flex;
+      overflow-x:hidden;
+      padding: 5% 8% 3% 8%;
       margin:0 auto;
-      flex-direction:row;
-      flex-wrap:wrap;
+      display:grid;
+      grid-template-areas:
+      "facsimile metadata_container metadata_container"
+      "facsimile metadata_container metadata_container"
+      "facsimile metadata_container metadata_container"
+      "additional_info additional_info additional_info";
+      
+      grid-template-columns: fit-content(18rem) auto auto;
+      grid-column-gap:3rem;
       }
+      
 
 #mainBody{
  /* We need to margin-top if we do a sticky header */
@@ -157,6 +178,21 @@ a:hover,
   flex:1;
 }
 
+#facsimile{
+    grid-area: facsimile;
+}
+
+#metadata_container{
+    grid-area: metadata_container;
+}
+
+#additional_info{
+    grid-area: additional_info;
+}
+#additional_info{
+    margin-top:3rem;
+    
+}
 #searchButtons{
     top: 5%;
     position:fixed;
@@ -195,8 +231,7 @@ input[type=text] {
     width:fit-content;
 }
 #info .facsThumb{
-    float:left;
-    margin: 0 3rem 1rem 0;
+    margin:0;
     position:relative; 
     display:inline-block;
 }
@@ -943,6 +978,36 @@ a[href].gi::after{
         padding-right:5%;
     }
     
+    
+    #info{
+        grid-template-areas:
+        "facsimile"
+        "metadata_container"
+        "additional_info";
+         grid-template-rows: max-content max-content max-content;
+         grid-column-gap:0;
+        
+    }
+    
+    #metadata_container, #facsimile, #additional_info{
+        width:auto;
+    }
+    
+    #metadata{
+    /* No more flex */
+        display:block;
+        height:100%;
+        flex-flow:unset;
+        max-height:unset;
+        
+    }
+    #metadata > div{
+        padding:.25rem;
+        
+    }
+    #facsimile{
+     margin: 0 auto;   
+    }
     
     header > nav{
         display:none;

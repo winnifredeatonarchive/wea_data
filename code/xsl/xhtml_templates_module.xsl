@@ -92,22 +92,39 @@
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <xsl:if test="not(wea:bornDigital($root))">
+            
             <div id="info">
                 <div id="facsimile">
-                    <xsl:if test="not(wea:bornDigital($root))">
-                        <xsl:call-template name="createFacs"/>
-                    </xsl:if>
+                    <xsl:call-template name="createFacs"/>
+                    
                 </div>
-                <div id="metadata">
+                <div id="metadata_container">
+                    
+                <div id="title">
                     <xsl:copy-of select="wea:crumb($root)"/>
                     <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
-                    <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
-                        <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
-                    </xsl:if>
+                </div>
+                <div id="metadata">
+                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
                 </div>
                 <div id="relatedItems">
                     <xsl:call-template name="createRelatedItems"/>
                 </div>
+                </div>
+<!--                <xsl:if test="$root//sourceDesc/bibl">-->
+                <div id="additional_info">
+                    <div class="metadataLabel">Additional Metadata</div>
+                    <div id="source_citation">
+                        <div class="metadataLabel">Source Citation</div>
+                        <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                    </div>
+                    <!--                        <div id="wea_citation">
+                            <div class="metadataLabel">Full Citation</div>
+                            <xsl:apply-templates select=""
+                        </div>-->
+                </div>
+                <!--</xsl:if>-->
+               
             </div>
         </xsl:if>
         
@@ -167,14 +184,66 @@
     
     
     <xsl:template match="teiHeader" mode="metadata">
-        <div>
             <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
+    <xsl:template match="sourceDesc/bibl" mode="metadata">
+        <xsl:apply-templates select="*" mode="#current"/>
+    </xsl:template>
+    
+     <xsl:template match="bibl/author" mode="metadata">
+         <div>
+             <xsl:call-template name="processAtts"/>
+             <div class="metadataLabel">Psuedonym</div>
+             <div><xsl:apply-templates mode="tei"/></div>
+         </div>
+     </xsl:template>
+    
+    <xsl:template match="bibl/biblScope[@unit='volume']" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <div class="metadataLabel">Volume</div>
+            <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
-   
-   <xsl:template match="sourceDesc" mode="metadata">
-       <!--Don't know what to do with this yet, so leave it-->
-   </xsl:template>
+    
+    <xsl:template match="bibl/title[@level='a']" mode="metadata"/>
+    
+    <xsl:template match="bibl/title[@level='j']" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <div class="metadataLabel">Journal</div>
+            <div>
+                <xsl:apply-templates mode="tei"/>
+            </div>
+        </div>
+    </xsl:template>
+    <xsl:template match="bibl/biblScope[@unit='issue']" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <div class="metadataLabel">Issue</div>
+            <div><xsl:apply-templates mode="tei"/></div>
+        </div>
+    </xsl:template>
+    <xsl:template match="bibl/biblScope[@unit='page']" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <div class="metadataLabel">Page Range</div>
+            <div><xsl:apply-templates mode="tei"/></div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="bibl/date" mode="metadata">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <div class="metadataLabel">Date</div>
+            <div>
+                <xsl:apply-templates mode="tei"/>
+            </div>
+        </div>
+    </xsl:template>
+
+  
     
     <xsl:template match="titleStmt/title | revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
     
