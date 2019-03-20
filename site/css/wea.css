@@ -161,6 +161,10 @@ a, a:visited{
 
 #facsimile{
     grid-area: facsimile;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #metadata_container{
@@ -242,9 +246,6 @@ input[type=text] {
   }
   
 
-#facsimile{
-    width:fit-content;
-}
 #info .facsThumb{
     margin:0;
     position:relative; 
