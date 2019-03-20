@@ -107,10 +107,11 @@
                 <div id="metadata">
                     <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
                 </div>
+                </div>
                 <div id="relatedItems">
                     <xsl:call-template name="createRelatedItems"/>
                 </div>
-                </div>
+
 <!--                <xsl:if test="$root//sourceDesc/bibl">-->
                 <div id="additional_info">
                     <div class="metadataLabel" id="additional_info_header">Additional Metadata</div>
@@ -133,7 +134,9 @@
         
     </xsl:template>
     
-    <xsl:template name="createRelatedItems"/>
+    <xsl:template name="createRelatedItems">
+        <xsl:comment>COMING SOON</xsl:comment>
+    </xsl:template>
     
     <xsl:template name="createFacs">
         <xsl:variable name="facsAvailable" select="exists(@facs)"/>
