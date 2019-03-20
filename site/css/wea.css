@@ -201,10 +201,6 @@ header a:hover{
 
 
 
-#additional_info_content{
-    display:inline-block;
-}
-
 .JS #additional_info.closed > #additional_info_content{
     display:none;
 }
@@ -213,7 +209,7 @@ header a:hover{
     display:block;
 }
 
-.JS #additional_info.closed  > #additional_info_header{
+.JS #additional_info_header{
     cursor:pointer;
     
 }
