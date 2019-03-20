@@ -113,11 +113,14 @@
                 </div>
 <!--                <xsl:if test="$root//sourceDesc/bibl">-->
                 <div id="additional_info">
-                    <div class="metadataLabel">Additional Metadata</div>
-                    <div id="source_citation">
-                        <div class="metadataLabel">Source Citation</div>
-                        <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                    <div class="metadataLabel" id="additional_info_header">Additional Metadata</div>
+                    <div id="additional_info_content">
+                        <div id="source_citation">
+                            <div class="metadataLabel">Source Citation</div>
+                            <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                        </div>
                     </div>
+                    
                     <!--                        <div id="wea_citation">
                             <div class="metadataLabel">Full Citation</div>
                             <xsl:apply-templates select=""

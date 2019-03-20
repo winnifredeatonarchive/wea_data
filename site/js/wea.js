@@ -35,6 +35,7 @@ function addEvents(){
     makeNamesResponsive();
     showHideTitles();
     makeHamburgerClickable();
+    makeAdditionalInfoArrowClickable();
 }
 
 
@@ -43,6 +44,24 @@ function makeHamburgerClickable(){
     ham.addEventListener('click', openCloseHam,true);
 }
 
+function makeAdditionalInfoArrowClickable(){
+    var aih = document.getElementById('additional_info_header');
+    var ai = document.getElementById('additional_info');
+    ai.classList.add('closed');
+    aih.addEventListener('click', openCloseAI, true);
+}
+
+function openCloseAI(){
+    var ai = document.getElementById('additional_info');
+     if (ai.classList.contains('closed')){
+         ai.classList.remove('closed');
+         ai.classList.add('open');
+     } else {
+         ai.classList.remove('open');
+         ai.classList.add('closed');
+     }
+        
+}
 function openCloseHam(){
     var ham = document.getElementById('hamburger');
     var isOpen = ham.classList.contains('open');

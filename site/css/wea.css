@@ -62,6 +62,7 @@ header > nav{
     display:none;
 }
 
+
 #metadata{
     display:flex;
     max-height:25rem;
@@ -71,9 +72,9 @@ header > nav{
 }
 
 #metadata > div{
-    padding:1rem 2rem .5rem 0;
     max-width:15rem;
     min-width:0;
+    flex-basis:content;
 }
 
 footer{
@@ -87,15 +88,6 @@ footer{
 }
 
 
-header a,
-header a:visited
-{
-    color:inherit;
-}
-
-header a:hover{
-    color:var(--wea-pink);
-}
 
 .nav-item.home{
     font-size:2rem;
@@ -108,11 +100,6 @@ header a:hover{
     
 }
 
-.breadcrumb > a,
-.breadcrumb > a:visited{
-    color:#DF006E;
-    transition: color 0.2s ease-in;
-}
 
 .breadcrumb > a:hover{
     color: #940049;
@@ -120,14 +107,6 @@ header a:hover{
 
 a, a:visited{
     color:#2A5DB0;
-}
-
-a:hover,
-.clicked,
-#popup_closer:hover,
-.JS .showTitle:hover{
-    color:#DF006E;
-    transition: color 0.2s ease-in-out;
 }
 
 
@@ -164,10 +143,11 @@ a:hover,
       "facsimile metadata_container metadata_container"
       "facsimile metadata_container metadata_container"
       "facsimile metadata_container metadata_container"
-      "additional_info additional_info additional_info";
+      "facsimile additional_info additional_info";
       
       grid-template-columns: fit-content(18rem) auto auto;
-      grid-column-gap:3rem;
+      grid-column-gap:1.5rem;
+      grid-row-gap:1.5rem;
       }
       
 
@@ -189,10 +169,7 @@ a:hover,
 #additional_info{
     grid-area: additional_info;
 }
-#additional_info{
-    margin-top:3rem;
-    
-}
+
 #searchButtons{
     top: 5%;
     position:fixed;
@@ -200,6 +177,47 @@ a:hover,
     
     
 }
+
+/**** LINKS ***** */
+
+header a,
+header a:visited
+{
+    color:inherit;
+}
+
+a:hover,
+.clicked,
+#popup_closer:hover,
+.JS .showTitle:hover,
+.breadcrumb > a,
+.breadcrumb > a:visited,
+.JS #additional_info_header:hover,
+header a:hover{
+    color:var(--wea-pink);
+    transition: color 0.2s ease-in-out;
+}
+
+
+
+#additional_info_content{
+    display:inline-block;
+}
+
+.JS #additional_info.closed > #additional_info_content{
+    display:none;
+}
+
+.JS #additional_info.open > #additional_info_content{
+    display:block;
+}
+
+.JS #additional_info.closed  > #additional_info_header{
+    cursor:pointer;
+    
+}
+
+
 
 #searchBox{
     margin:0 auto;
@@ -514,7 +532,7 @@ div.open > h3{
     cursor:pointer;
 }
 
-div.closed > div{
+div:not(#additional_info).closed > div{
     display:none;
 }
 
