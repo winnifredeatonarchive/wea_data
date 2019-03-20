@@ -35,7 +35,10 @@ function addEvents(){
     makeNamesResponsive();
     showHideTitles();
     makeHamburgerClickable();
-    makeAdditionalInfoArrowClickable();
+    if (document.getElementById('additional_info')){
+            makeAdditionalInfoArrowClickable();
+    }
+
 }
 
 
