@@ -197,7 +197,7 @@
      <xsl:template match="bibl/author" mode="metadata">
          <div>
              <xsl:call-template name="processAtts"/>
-             <div class="metadataLabel">Psuedonym</div>
+             <div class="metadataLabel">Pseudonym</div>
              <div><xsl:apply-templates mode="tei"/></div>
          </div>
      </xsl:template>
