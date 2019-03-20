@@ -75,6 +75,7 @@ header > nav{
     max-width:15rem;
     min-width:0;
     flex-basis:content;
+    padding:.5rem
 }
 
 footer{
@@ -407,10 +408,6 @@ div[data-el=body]>div[data-el=div]{
 div[data-el=p]{
     padding:.5em 0;
     text-align:justify;
-}
-
-[data-el='respStmt']{
-    padding-top:1rem;
 }
 
 .metadataLabel{
