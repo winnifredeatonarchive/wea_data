@@ -67,15 +67,18 @@ header > nav{
     display:flex;
     max-height:25rem;
     flex-flow:column wrap;
-    align-content:baseline;
     
 }
 
-#metadata > div{
-    max-width:15rem;
+#metadata > div,
+#additional_info_content > div{
     min-width:0;
     flex-basis:content;
     padding:.5rem
+}
+
+#metadata> > div{
+  max-width:15rem;
 }
 
 footer{
@@ -144,7 +147,7 @@ a, a:visited{
       "facsimile metadata_container metadata_container relatedItems"
       "facsimile metadata_container metadata_container relatedItems"
       "facsimile metadata_container metadata_container relatedItems"
-      ". additional_info additional_info relatedItems";
+      "additional_info additional_info additional_info additional_info";
       
       grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
       grid-column-gap:1.5rem;
@@ -176,6 +179,14 @@ a, a:visited{
 
 #additional_info{
     grid-area: additional_info;
+    background: #efefef;
+    padding: 1rem;
+}
+
+#additional_info_content{
+    display:flex;
+    flex-flow: column wrap;
+    align-content: baseline;
 }
 
 #searchButtons{
@@ -210,10 +221,6 @@ header a:hover{
 
 .JS #additional_info.closed > #additional_info_content{
     display:none;
-}
-
-.JS #additional_info.open > #additional_info_content{
-    display:block;
 }
 
 .JS #additional_info_header{

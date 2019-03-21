@@ -105,7 +105,7 @@
                     <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
                 </div>
                 <div id="metadata">
-                    <xsl:apply-templates select="ancestor::TEI/teiHeader" mode="metadata"/>
+                    <xsl:call-template name="makeMetadata"/>
                 </div>
                 </div>
                 <div id="relatedItems">
@@ -114,8 +114,9 @@
 
 <!--                <xsl:if test="$root//sourceDesc/bibl">-->
                 <div id="additional_info">
-                    <div class="metadataLabel" id="additional_info_header">Additional Metadata</div>
+                    <div class="metadataLabel" id="additional_info_header">Credits and Citations</div>
                     <div id="additional_info_content">
+                        <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
                         <div id="source_citation">
                             <div class="metadataLabel">Source Citation</div>
                             <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
@@ -133,6 +134,11 @@
         </xsl:if>
         
     </xsl:template>
+    
+    <xsl:template name="makeMetadata">
+        <!--First thing is to apply templates to the sourceDesc-->
+        <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
+     </xsl:template>
     
     <xsl:template name="createRelatedItems">
         <xsl:comment>COMING SOON</xsl:comment>
