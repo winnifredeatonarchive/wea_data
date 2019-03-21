@@ -4,40 +4,111 @@
 
 <!-- Priority: 
     Document bibliographic information in addition to specific descriptions of:
-    
     Where a particular item was transcribed from
     What alternative sources are available
     Reprint status.
 -->
 
 <!-- ALL RECORDED ELEMENTS (From Winnifred Eaton - Working Spreadsheet Document)
-    Author Name
-    Title
-    BIBL ID
-    TEI ID
-    Publication
-    Date
-    Volume
-    Issue
-    Pages
-    Genre
-    Reprints
-    Illustrator 
-    Source (Original) 
-    Recovered by:
-    -->
     
-<biblstruct>
+    IN SOURCEDESC [BIBL OR BIBLSTRUCT] 
+    Author Name - author
+    Title - title level a 
+    Publication - title level j 
+    Date - (<date when"
+    Volume - biblScope unit="volume"
+    Issue - biblScope unit="issue"
+    Pages - biblScope unit="page"
+    Reprints - 
+    Illustrator - 
+    Source (Original) -  
+    Associated items - bibl copy of = "bibl:___"
+    
+    IN HEADER 
+    Genre
+    BIBL ID - 
+    TEI ID - 
+    Recovered by: - 
+    
+    -->
+
+<!--SAMPLE START -  From Joey for Li Ching's Baby -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Li_Chings_Baby">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Li Ching’s Baby</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:WE1">Winnifred Eaton</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Transcriber</resp>
+                    <name ref="pers:KI1"/>
+                </respStmt>
+                <respStmt>
+                    <resp>Copy Editor</resp>
+                    <name ref="pers:SL1"/>
+                </respStmt>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name ref="pers:JT1"/>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>
+                    <author>Watanna, Onoto</author>. 
+                    <title level="a">Li Ching’s Baby</title>. 
+                    <title level="j">Carter’s Monthly</title> 
+                    <biblScope unit="volume">8</biblScope>.
+                    <biblScope unit="issue">4</biblScope>
+                    (<date when="1898-04">April 1898</date>): 
+                    <biblScope unit="page">401–403</biblScope>.
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docPrimarySourcePublished"/>
+                <catRef scheme="wdt:genre"
+                    target="wdt:genreShortStory"/>
+                <catRef scheme="wdt:category"
+                    target="wdt:EarlyExperiment"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change when="2019-02-18"
+                who="pers:JT1">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    
+ <!-- SAMPLE END --> 
+
+</TEI>
+<!-- TEMPLATE - BLANK--> 
+<sourceDesc>        
+
+    <!-- BIBLSTRUCT SAMPLE -->
+    <biblstruct>
         <monogr>
             <author>            </author>
-            
-            <title>                </title>
+            <title level="a">                </title>
             
             <imprint>            </imprint>
         </monogr>
     
-</biblstruct>
-
-<bibl>
+    </biblstruct>
     
-</bibl>
+    <!-- BIBL SAMPLE --> 
+    <bibl>
+    <author></author>
+    <title level="a">         </title>
+    <title level="j">          </title>
+    <
+    
+    </bibl>
+</sourceDesc>
