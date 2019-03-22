@@ -142,7 +142,15 @@
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
         <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
+        <xsl:apply-templates select="//text/(@next|@prev)" mode="metadata"/>
      </xsl:template>
+    
+    <xsl:template match="text/@next | text/@prev" mode="metadata">
+        <div>
+            <div class="metadataLabel"><xsl:value-of select="if (local-name()='next') then 'Next' else 'Previous'"/> Installment</div>
+            <div><a href="{wea:resolveTarget(.)}"><xsl:value-of select="wea:getTitle(substring-before(.,'.xml'))"/></a></div>
+        </div>
+    </xsl:template>
     
     <xsl:template name="createRelatedItems">
         <xsl:comment>COMING SOON</xsl:comment>

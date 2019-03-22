@@ -40,6 +40,11 @@
         </xsl:choose>
     </xsl:function>
     
+    <xsl:function name="wea:getTitle">
+        <xsl:param name="docId"/>
+        <xsl:sequence select="$standaloneXml[@xml:id=$docId]/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+    </xsl:function>
+    
     <xsl:function name="wea:bornDigital" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>

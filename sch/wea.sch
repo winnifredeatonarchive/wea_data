@@ -648,6 +648,25 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:text[@next or @prev]">
+                           <sch:let name="next" value="@next"/>
+                           <sch:let name="prev" value="@prev"/>
+                           <sch:let name="errors"
+                  value="for $r in (@next,@prev) return if (substring-after($r,'doc:')=$docId) then $r else ()"/>
+                           <sch:assert test="empty($errors)">
+                              ERROR: Next and prev should point to a different document (i.e. a different installment), but they contain the value(s) <sch:value-of select="string-join($errors,' ')"/>.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:name | tei:ref | tei:title | tei:l">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'^\s+|\s+$'))">
