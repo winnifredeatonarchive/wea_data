@@ -30,6 +30,7 @@ function init(){
 
 
 function addEvents(){
+    addHeaderSearch();
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
@@ -41,10 +42,37 @@ function addEvents(){
 
 }
 
+function addHeaderSearch(){
+    var searchLinks = document.querySelectorAll('.search_icon > a');
+     searchLinks.forEach(function(s){
+         s.addEventListener('click',toggleHeaderSearch)
+     });
+}
+
+function toggleHeaderSearch(){
+      var e=arguments[0];
+      var el = this;
+      /* Stop the onclick from bubbling */
+      e.stopPropagation();
+      /* And prevent default action for links with @href */
+      e.preventDefault();
+      var header = document.getElementsByTagName('header')[0];
+      var searchIsOpen = header.classList.contains('searchOpen');
+      if (searchIsOpen){
+          header.classList.remove('searchOpen');
+          header.classList.add('searchClosed');
+      } else {
+         header.classList.remove('searchClosed');
+          header.classList.add('searchOpen');
+
+      }
+}
+
 
 function makeHamburgerClickable(){
     var ham = document.getElementById('hamburger');
     ham.addEventListener('click', openCloseHam,true);
+    
 }
 
 function makeAdditionalInfoArrowClickable(){

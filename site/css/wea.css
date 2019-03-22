@@ -2,6 +2,15 @@
 /* Author: Joey Takeda */
 /* This is the basic CSS file for the WEA texts */
 
+
+/****************************************************************** FONTS ******/
+
+/*
+ * The collection of fonts used across the WEA site. We use serifs for the headings and
+ * sans serif for the body.
+ * 
+ */
+
 @font-face{
     font-family: "Sans";
     src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
@@ -11,6 +20,8 @@
     font-family: "Serif";
     src: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
 }
+
+/******************************************************************** ROOT ******/
 
 :root{
     --wea-pink: #DF006E;
@@ -22,10 +33,16 @@
     --anchor-offset: calc(var(--header-height) * 2.1);
 }
 
+
+/****************************************************************** BASIC STRUCTURE ******/
+
+/********* MAIN HTML ********/
 html{
     font-family: Sans;
     font-size:100%;
 }
+
+/********* BODY ********/
 
 body{
     line-height: 1.35;
@@ -37,7 +54,7 @@ body{
     flex-direction: column;  
 }
 
-
+/****************************************************************** HEADER ******/
 
 header{
     color:black;
@@ -45,7 +62,7 @@ header{
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
-    height:2.6rem;
+    max-height: var(--header-height);
     z-index:1000;
     background:white;
     /* Decisions need to be made about whether or not to
@@ -54,6 +71,11 @@ header{
     border-bottom: 1px solid #dedede;
 }
 
+header.searchOpen{
+    max-height:300rem;
+}
+
+/********* NAVIGATIONS ********/
 
 #nav_small{
     display:none;
@@ -77,13 +99,107 @@ header{
         transform: rotate(-45deg);
     }
     
-#titleSearch.closed,
-#titleSearch{
-    display:none;
+    
+.nav-item.home{
+    font-size:2rem;
+    font-family: "Serif";
+    margin-right:2em;
+}
+.nav-item{
+    margin:0 .75rem;
+    text-transform:uppercase;
+    
 }
 
 
 
+
+
+/****************************************************************** SEARCH (HEADER AND MAIN) ******/
+
+/* 
+ * 
+ * Searches and inputs used across the site. There are two main search
+ * components: the header search (which is a simple title index) and 
+ * the main text search, which investigates the entirety of the pre-
+ * indexed document collection (see search.js for further details on
+ * the JS search engine). Note that the search only functions when
+ * JS is turned on. 
+ * 
+ * */
+ 
+ 
+
+/********* BASIC TEXT INPUT ********/
+
+input[type='text']{
+      outline:none;
+      width: 100%;
+      height:100%;
+}
+
+ 
+
+/********* MAIN SEARCH PAGE ********/
+
+
+#searchBox{
+    margin:0 auto;
+    background-color: var(--wea-info-bg-color);
+    margin-top:2em;
+    padding:1.5em;
+    max-width:30em;
+    max-height:4em;
+    border-radius:1em;
+}
+
+#searchBox input[type=text] {
+  font-size:150%;
+  padding:.5rem;
+  
+}
+
+ #searchBox input[type=text],
+ #searchBox input[type=text]:focus{
+  border-color: var(--wea-info-bg-color);
+  border-width:0;
+  border-radius:.25rem;
+  }
+  
+
+/********* HEADER SEARCH ********/
+
+
+#headerSearch{
+    display:none;
+}
+
+header.searchOpen #headerSearch{
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    grid-template-areas:
+    ". headerSearchForm headerAdvancedSearchBtn"
+    ". headerSearchResults headerSearchResults";
+    grid-template-columns:1fr 2fr 1fr;
+}
+
+#headerSearchForm{
+    grid-area:headerSearchForm;
+    padding-bottom:
+}
+
+#headerAdvancedSearchBtn{
+    grid-area:headerAdvancedSearchBtn;
+}
+
+#headerSearchResults{
+    grid-area:headerSearchResults;
+}
+
+
+
+/****************************************************************** INFO/METADATA BLOCKS ******/
 
 #metadata{
     display:flex;
@@ -103,6 +219,15 @@ header{
   max-width:15rem;
 }
 
+
+    
+.breadcrumb > a:hover{
+    color: #940049;
+}
+
+
+/****************************************************************** FOOTER ******/
+
 footer{
     background:var(--wea-footer-bg-color);
     color:white;
@@ -115,21 +240,6 @@ footer{
 
 
 
-.nav-item.home{
-    font-size:2rem;
-    font-family: "Serif";
-    margin-right:2em;
-}
-.nav-item{
-    margin:0 .75rem;
-    text-transform:uppercase;
-    
-}
-
-
-.breadcrumb > a:hover{
-    color: #940049;
-}
 
 a, a:visited{
     color:#2A5DB0;
@@ -307,31 +417,6 @@ a:target:before{
 
 
 
-#searchBox{
-    margin:0 auto;
-    background-color: var(--wea-info-bg-color);
-    margin-top:2em;
-    padding:1.5em;
-    max-width:30em;
-    max-height:4em;
-    border-radius:1em;
-}
-
-input[type=text] {
-  width: 100%;
-  height:100%;
-  font-size:150%;
-  padding:.5rem;
-  
-  }
-  input[type=text],
-  input[type=text]:focus{
-  outline:none;
-   border-color: var(--wea-info-bg-color);
-  border-width:0;
-  border-radius:.25rem;
-  }
-  
 
 #info .facsThumb{
     margin:0;
