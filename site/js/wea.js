@@ -63,6 +63,7 @@ function toggleHeaderSearch(){
       if (searchIsOpen){
           header.classList.remove('searchOpen');
           header.classList.add('searchClosed');
+          clearTitleSearchResults();
       } else {
          header.classList.remove('searchClosed');
           header.classList.add('searchOpen');
@@ -71,12 +72,43 @@ function toggleHeaderSearch(){
 }
 
 function titleSearch(){
+    clearTitleSearchResults();
     var value = this.value;
+     if (/\S/.test(value)){
+    var regex = new RegExp(value);
     var siteMap = document.getElementById('siteMap');
-    var titles = siteMap.querySelectorAll('.item');
-    console.log(value);
+    var items = siteMap.querySelectorAll('.item');
+    var s = 0;
+    var match = 0;
+  /*  if (items.length > 0){
+        document.getElementById('siteMap').classList.add('hasResults');
+    }*/
+    for (s; s < items.length; s++){
+        var currItem = items[s];
+        console.log(s);
+
+        if (currItem.innerText.match(regex) !== null){
+             if (match < 5){
+                currItem.classList.add('result');
+
+             }
+           match++;
+        }
+    }
+    }     
+    
+    
+    
 }
 
+function clearTitleSearchResults(){
+    var results = document.querySelectorAll('.result');
+    for (r=0; r < results.length; r++){
+        console.log(results[r]);
+        results[r].classList.remove('result');
+    }
+   /* document.getElementById('siteMap').classList.remove('hasResults');*/
+}
 
 
 function makeHamburgerClickable(){

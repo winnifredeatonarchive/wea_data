@@ -7,6 +7,7 @@
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xh="http://www.w3.org/1999/xhtml"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -23,31 +24,27 @@
         <xsl:attribute name="target">_blank</xsl:attribute>
     </xsl:attribute-set>
     
-    <xsl:template name="createSiteMap">
-        <xsl:variable name="currId" select="ancestor::TEI/@xml:id"/>
-        <div id="siteMap">
-            <xsl:for-each select="$standaloneXml">
-                <div class="item">
-                    <xsl:if test="not(@xml:id=$currId)">
-                        <xsl:attribute name="id" select="@xml:id"/>
-                    </xsl:if>
-                    <a href="{@xml:id}.html">
-                        <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
-                    </a>
-                </div>
-            </xsl:for-each>
-        </div>
-    </xsl:template>
-    
     <xsl:variable name="siteMap">
         <div id="siteMap">
             <xsl:for-each select="$standaloneXml">
                 <div class="item">
-                    <a href="{@xml:id}.html"><xsl:apply-templates select="//teiHeader/fileDesc/titleStmt/title[1]/node()" mode="tei"/></a>
+                    <a href="{@xml:id}.html">
+                        <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
+                    </a>
+                    <div class="item_info">
+                        <xsl:variable name="categories">
+                            <xsl:apply-templates select="//catRef" mode="metadata"/>
+                        </xsl:variable>
+                        <xsl:for-each select="$categories/xh:div/xh:div[2]/xh:a">
+                            <span><xsl:copy-of select="node()"/></span>
+                        </xsl:for-each>
+                    </div>
                 </div>
             </xsl:for-each>
         </div>
     </xsl:variable>
+    
+  
     
 
     
@@ -108,8 +105,8 @@
                     <div id="headerAdvancedSearchBtn">
                         <a href="search.html">Go to full text search</a>
                     </div>
-                     <div id="headerSearchResults"/>
                 </div>
+                <xsl:copy-of select="$siteMap"/>
             </header>
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,':'),' ')"/>
@@ -125,7 +122,7 @@
             <footer>
                 <div id="lastUpdate">Last updated: <xsl:value-of select="$today"/></div>
                 <div id="gitRevision"><!--Get this--></div>
-                <xsl:call-template name="createSiteMap"/>
+               
             </footer>
         </body>
         
