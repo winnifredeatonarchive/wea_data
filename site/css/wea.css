@@ -1089,9 +1089,6 @@ a[href].gi::after{
      margin: 0 auto;   
     }
     
-    #nav_main{
-        display:none;
-    }
     
     #nav_small{
         display:grid;
@@ -1122,18 +1119,25 @@ a[href].gi::after{
     }
  
  
-    header  #nav_main{
-        display:none;
+    header  #nav_main,
+    header.closed #nav_main{
+       max-height:0;
+       overflow:hidden;
+        display:flex;
+       flex-direction:row;
+       align-items:baseline;
     }
     
     
     header.open #nav_main
     {
-        display:block;
+        max-height:100rem;
+        padding-top:1em;
     }
     
     #nav_main > div{
-        padding-top:1rem;
+        padding-top:.75rem;
+        padding-bottom:.75rem;
     }
     
     
