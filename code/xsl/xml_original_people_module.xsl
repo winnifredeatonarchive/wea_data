@@ -21,7 +21,7 @@
             <xsl:call-template name="generateTeiPage">
                 <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/person_',@xml:id,'.xml')"/>
                 <xsl:with-param name="thisId" select="concat('person_',@xml:id)"/>
-                <xsl:with-param name="categories" select="'wdt:BornDigital'"/>
+                <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
                 <xsl:with-param name="content">
                     <xsl:apply-templates select="." mode="people"/>

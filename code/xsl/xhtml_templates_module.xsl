@@ -123,7 +123,20 @@
                         <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
                         <div id="source_citation">
                             <div class="metadataLabel">Source Citation</div>
-                            <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                            <div class="citationItem">
+                                <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                            </div>
+
+                        </div>
+                        <div id="this_citation">
+                            <div class="metadataLabel">Cite this Page</div>
+                            <div class="citationItem">
+                                <xsl:variable name="thisCitation" as="node()+">
+                                    <xsl:sequence select="$root//sourceDesc/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
+                                </xsl:variable>
+                                <xsl:apply-templates select="$thisCitation" mode="tei"/>
+                            </div>
+                            
                         </div>
                         <div id="xmlVersions">
                             <div class="metadataLabel">Download XML</div>
@@ -241,17 +254,15 @@
     
      <xsl:template match="bibl/author" mode="metadata">
          <div>
-             <xsl:call-template name="processAtts"/>
              <div class="metadataLabel">Pseudonym</div>
-             <div><xsl:apply-templates select="." mode="tei"/></div>
+             <div><xsl:apply-templates mode="tei"/></div>
          </div>
      </xsl:template>
     
     <xsl:template match="bibl/biblScope[@unit='volume']" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Volume</div>
-            <div><xsl:apply-templates select="." mode="tei"/></div>
+            <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
     
@@ -259,34 +270,30 @@
     
     <xsl:template match="bibl/title[@level='j']" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Journal</div>
             <div>
-                <xsl:apply-templates select="." mode="tei"/>
+                <xsl:apply-templates mode="tei"/>
             </div>
         </div>
     </xsl:template>
     <xsl:template match="bibl/biblScope[@unit='issue']" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Issue</div>
-            <div><xsl:apply-templates select="." mode="tei"/></div>
+            <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
     <xsl:template match="bibl/biblScope[@unit='page']" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Page Range</div>
-            <div><xsl:apply-templates select="." mode="tei"/></div>
+            <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
     
     <xsl:template match="bibl/date" mode="metadata">
         <div>
-            <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Date</div>
             <div>
-                <xsl:apply-templates select="." mode="tei"/>
+                <xsl:apply-templates mode="tei"/>
             </div>
         </div>
     </xsl:template>
@@ -340,7 +347,7 @@
     </xsl:template>
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('a','m','j','s')]" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')]" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -373,7 +380,7 @@
     <!--QUOTATIONS-->
     
     
-    <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg | descendant::floatingText)]" mode="tei">
+    <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg | descendant::floatingText)] | title[@level='a']" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -395,7 +402,7 @@
 
 
     
-    <xsl:template match="text()[not(ancestor::q)][preceding::text()[1][ancestor::q]][matches(., '^[,\.]')]" mode="tei">
+    <xsl:template match="text()[not(ancestor::q)][preceding::text()[1][ancestor::q or ancestor::title[@level='a']]][matches(., '^[,\.]')]" mode="tei">
         <xsl:value-of select="substring(., 2)"/>
     </xsl:template>
     

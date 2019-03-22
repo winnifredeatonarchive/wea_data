@@ -685,20 +685,17 @@ span[data-el='foreign']{
     font-style:italic;
 }
 
-span[data-el='q']::before{
+span[data-el='q']::before,
+span[data-el='title'][data-level='a']::before{
     content:"“";
    
 }
 
-span[data-el='q']::after{
+span[data-el='q']::after,
+span[data-el='title'][data-level='a']::after{
     content:"”";
 }
 
-
-span[data-el='q']::before{
-    content:"“";
-   
-}
 
 div[data-el='lg']{
     padding: .5em 0;
@@ -710,6 +707,12 @@ span[data-el='q'] span[data-el='q']::before{
 
 span[data-el='q'] span[data-el='q']::after{
     content:"’";
+}
+
+.citationItem{
+    text-indent:-2rem;
+    padding-left:2rem;
+    
 }
 
 
