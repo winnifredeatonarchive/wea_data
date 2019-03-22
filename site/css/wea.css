@@ -80,6 +80,7 @@ header > *{
     justify-content: center;
     align-items: center;
     flex-wrap:wrap;
+    background: var(--wea-header-bg-color);
 }
 
 header.searchOpen{
@@ -1332,7 +1333,8 @@ a[href].gi::after{
     }
     
     
-    #nav_main > .nav-item.home{
+    #nav_main > .nav-item.home, 
+    #nav_main > .nav-item.search_icon{
         display:none;
     }
     

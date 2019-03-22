@@ -79,7 +79,7 @@ function titleSearch(){
     clearTitleSearchResults();
     var value = this.value;
      if (/\S/.test(value)){
-    var regex = new RegExp(value);
+    var regex = new RegExp(value,'i');
     var siteMap = document.getElementById('siteMap');
     var items = siteMap.querySelectorAll('.item');
     var s = 0;
@@ -91,7 +91,7 @@ function titleSearch(){
         var currItem = items[s];
         console.log(s);
 
-        if (currItem.innerText.match(regex) !== null){
+        if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
              if (match < 5){
                 currItem.classList.add('result');
 
