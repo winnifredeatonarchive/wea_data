@@ -18,6 +18,7 @@
     </xd:doc>
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xml_original_category_module.xsl"/>
+    <xsl:include href="xml_original_people_module.xsl"/>
     
     <xsl:template match="/">
         <xsl:for-each select="$sourceXml">
@@ -28,6 +29,7 @@
             </xsl:result-document>
         </xsl:for-each>
         <xsl:call-template name="createCategoryPages"/>
+        <xsl:call-template name="createPeoplePages"/>
     </xsl:template>
     
     
@@ -40,7 +42,9 @@
             <xsl:value-of select="$sourceXml[@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
         </xsl:copy>
     </xsl:template>
-    
+
+   
+
     <xsl:template match="@*|node()" mode="#all">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>

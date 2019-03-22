@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-22T02:10:19Z. .
+Schema generated from ODD source 2019-03-22T03:01:17Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2688,10 +2688,63 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:note[@type='bio']">
+                              <sch:assert test="parent::tei:person">
+                                 ERROR: Biographical notes should only be used for people in personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:note[@subtype]">
+                              <sch:assert test="@type='bio'">
+                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:person">
+                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
+                                 ERROR: Only one of each long and short bios are allowed in the personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
+                              <sch:let name="wc"
+                        value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
+                              <sch:assert test="$wc lt 76">
+                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.placement.attributes"/>
          <ref name="att.pointing.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -2701,6 +2754,19 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                   <value>authorial</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(an authorial note; currently only used with quotations where the author
                                  interrupts the dominant narrative voice by interjecting explanatory commentary.) authorial</a:documentation>
+                  <value>bio</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a biographical note, only to be used within the personography.) biographical</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="subtype">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>short</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a short biographical note for display in popups.) short bio</a:documentation>
+                  <value>long</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a long biographical note.) long bio</a:documentation>
                </choice>
             </attribute>
          </optional>
@@ -2979,7 +3045,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-assert-10">
+                  id="wea-relatedItem-targetorcontent1-constraint-assert-14">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3078,7 +3144,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-11">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-15">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -3988,7 +4054,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <value>wdt:genre</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Genre</a:documentation>
                <value>wdt:category</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Locations</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Category</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -5842,7 +5908,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-21">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-25">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -6040,8 +6106,6 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:text[@next or @prev]">
-                           <sch:let name="next" value="@next"/>
-                           <sch:let name="prev" value="@prev"/>
                            <sch:let name="errors"
                   value="for $r in (@next,@prev) return if (substring-after($r,'doc:')=$docId) then $r else ()"/>
                            <sch:assert test="empty($errors)">

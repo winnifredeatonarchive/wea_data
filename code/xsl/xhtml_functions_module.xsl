@@ -31,7 +31,7 @@
             <xsl:when test="starts-with($target,'http')">
                 <xsl:value-of select="$target"/>
             </xsl:when>
-            <xsl:when test="contains($target,'.xml')">
+            <xsl:when test="contains($target,'.xml') and not(matches($target,'xml/(original|standalone)'))">
                 <xsl:value-of select="replace($target,'\.xml','.html')"/>
             </xsl:when>
             <xsl:otherwise>
@@ -48,6 +48,13 @@
     <xsl:function name="wea:bornDigital" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:crumb">
+        <xsl:param name="doc"/>
+        <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
+        <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'#')]"/>
+        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/@n"/></a></div>
     </xsl:function>
     
     

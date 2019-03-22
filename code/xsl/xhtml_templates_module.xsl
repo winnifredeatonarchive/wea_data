@@ -125,6 +125,18 @@
                             <div class="metadataLabel">Source Citation</div>
                             <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
                         </div>
+                        <div id="xmlVersions">
+                            <div class="metadataLabel">Download XML</div>
+                            <xsl:variable name="tempList">
+                                <tei:list>
+                                    <tei:item><tei:ref target="xml/original/{//ancestor::TEI/@xml:id}.xml">Original XML</tei:ref></tei:item>
+                                    <tei:item><tei:ref target="xml/standalone/{//ancestor::TEI/@xml:id}.xml">Standalone XML</tei:ref></tei:item>
+                                </tei:list>
+                            </xsl:variable>
+                            <div>
+                                <xsl:apply-templates select="$tempList" mode="tei"/>
+                            </div>
+                        </div>
                     </div>
                     
                     <!--                        <div id="wea_citation">
@@ -139,9 +151,13 @@
         
     </xsl:template>
     
+    
+    
+    
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
         <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
+        <xsl:apply-templates select="//catRef" mode="metadata"/>
         <xsl:apply-templates select="//text/@next" mode="metadata"/>
         <!--I think we want the next before the prev in all cases-->
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
@@ -150,7 +166,18 @@
     <xsl:template match="text/@next | text/@prev" mode="metadata">
         <div>
             <div class="metadataLabel"><xsl:value-of select="if (local-name()='next') then 'Next' else 'Previous'"/> Installment</div>
-            <div><a href="{wea:resolveTarget(.)}"><xsl:value-of select="wea:getTitle(substring-before(.,'.xml'))"/></a></div>
+            <div><a href="{wea:resolveTarget(.)}"><xsl:apply-templates select="wea:getTitle(substring-before(.,'.xml'))" mode="tei"/></a></div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="catRef" mode="metadata">
+        <xsl:variable name="target" select="@target"/>
+        <xsl:variable name="scheme" select="@scheme"/>
+        <xsl:variable name="thisSchemeTitle" select="$standaloneXml//taxonomy[@xml:id=substring-after($scheme,'#')]/bibl/node()"/>
+        <xsl:variable name="thisTargetTitle" select="$standaloneXml//category[@xml:id=substring-after($target,'#')]/catDesc/node()"/>
+        <div>
+            <div class="metadataLabel"><xsl:apply-templates select="$thisSchemeTitle" mode="tei"/></div>
+            <div><a href="{substring-after($target,'#')}.html"><xsl:apply-templates select="$thisTargetTitle" mode="tei"/></a></div>
         </div>
     </xsl:template>
     
@@ -200,12 +227,7 @@
         </figure>
     </xsl:template>
     
-    <xsl:function name="wea:crumb">
-        <xsl:param name="doc"/>
-        <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
-        <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'wdt:')]"/>
-        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/@n"/></a></div>
-    </xsl:function>
+
     
     
     
@@ -221,7 +243,7 @@
          <div>
              <xsl:call-template name="processAtts"/>
              <div class="metadataLabel">Pseudonym</div>
-             <div><xsl:apply-templates mode="tei"/></div>
+             <div><xsl:apply-templates select="." mode="tei"/></div>
          </div>
      </xsl:template>
     
@@ -229,7 +251,7 @@
         <div>
             <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Volume</div>
-            <div><xsl:apply-templates mode="tei"/></div>
+            <div><xsl:apply-templates select="." mode="tei"/></div>
         </div>
     </xsl:template>
     
@@ -240,7 +262,7 @@
             <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Journal</div>
             <div>
-                <xsl:apply-templates mode="tei"/>
+                <xsl:apply-templates select="." mode="tei"/>
             </div>
         </div>
     </xsl:template>
@@ -248,14 +270,14 @@
         <div>
             <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Issue</div>
-            <div><xsl:apply-templates mode="tei"/></div>
+            <div><xsl:apply-templates select="." mode="tei"/></div>
         </div>
     </xsl:template>
     <xsl:template match="bibl/biblScope[@unit='page']" mode="metadata">
         <div>
             <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Page Range</div>
-            <div><xsl:apply-templates mode="tei"/></div>
+            <div><xsl:apply-templates select="." mode="tei"/></div>
         </div>
     </xsl:template>
     
@@ -264,7 +286,7 @@
             <xsl:call-template name="processAtts"/>
             <div class="metadataLabel">Date</div>
             <div>
-                <xsl:apply-templates mode="tei"/>
+                <xsl:apply-templates select="." mode="tei"/>
             </div>
         </div>
     </xsl:template>
@@ -301,7 +323,7 @@
     </xsl:template>
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -318,7 +340,7 @@
     </xsl:template>
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('a','m','j','s')]" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -369,6 +391,7 @@
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
+    
 
 
     
@@ -493,8 +516,8 @@
     <xsl:template match="person" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
-            <h3><xsl:apply-templates select="persName/reg" mode="#current"/></h3>
-            <xsl:apply-templates select="node()[not(self::persName)]" mode="#current"/>
+            <h3><a href="person_{@xml:id}.html"><xsl:apply-templates select="persName/reg" mode="#current"/></a></h3>
+            <xsl:apply-templates select="node()[not(self::persName)][not(self::note[@type='bio'][@subtype='long'])]" mode="#current"/>
         </div>
     </xsl:template>
     

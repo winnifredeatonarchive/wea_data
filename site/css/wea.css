@@ -498,6 +498,18 @@ span[data-el='pb'].first{
 }
 
 
+[data-el='title'][data-level='j'],
+[data-el='title'][data-level='m']{
+    font-style:italic;
+}
+
+[data-el='title'][data-level='j'] > [data-el='title'][data-level='j'],
+[data-el='title'][data-level='j'] > [data-el='title'][data-level='m'],
+[data-el='title'][data-level='m'] > [data-el='title'][data-level='j'],
+[data-el='title'][data-level='m'] > [data-el='title'][data-level='m']
+{
+    font-style:normal;   
+}
 
 
 

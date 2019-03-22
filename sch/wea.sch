@@ -255,6 +255,68 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:note[@type='bio']">
+                              <sch:assert test="parent::tei:person">
+                                 ERROR: Biographical notes should only be used for people in personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:note[@subtype]">
+                              <sch:assert test="@type='bio'">
+                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:person">
+                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
+                                 ERROR: Only one of each long and short bios are allowed in the personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
+                              <sch:let name="wc"
+                  value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
+                              <sch:assert test="$wc lt 76">
+                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -276,7 +338,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-assert-10">
+            id="wea-relatedItem-targetorcontent1-constraint-assert-14">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -308,7 +370,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-11">
+            id="wea-lg-atleast1oflggapl-constraint-assert-15">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -485,7 +547,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-21">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-25">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -649,8 +711,6 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:text[@next or @prev]">
-                           <sch:let name="next" value="@next"/>
-                           <sch:let name="prev" value="@prev"/>
                            <sch:let name="errors"
                   value="for $r in (@next,@prev) return if (substring-after($r,'doc:')=$docId) then $r else ()"/>
                            <sch:assert test="empty($errors)">

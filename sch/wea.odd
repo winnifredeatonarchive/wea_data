@@ -839,7 +839,7 @@
                               <desc>Genre</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:category">
-                              <desc>Locations</desc>
+                              <desc>Category</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1055,6 +1055,52 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='bio']">
+                              <sch:assert test="parent::tei:person">
+                                 ERROR: Biographical notes should only be used for people in personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.subtypeOnlyForBio">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@subtype]">
+                              <sch:assert test="@type='bio'">
+                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="bioNoteOneOfEach">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:person">
+                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
+                                 ERROR: Only one of each long and short bios are allowed in the personography.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="shortBiosShouldBeShort">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
+                              <sch:let name="wc"
+                                       value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
+                              <sch:assert test="$wc lt 76">
+                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="type" mode="replace">
                         <valList mode="add" type="closed">
@@ -1066,6 +1112,22 @@
                               <desc>authorial</desc>
                               <gloss>an authorial note; currently only used with quotations where the author
                                  interrupts the dominant narrative voice by interjecting explanatory commentary.</gloss>
+                           </valItem>
+                           <valItem ident="bio" mode="add">
+                              <desc>biographical</desc>
+                              <gloss>a biographical note, only to be used within the personography.</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="replace">
+                        <valList mode="add" type="closed">
+                           <valItem ident="short" mode="add">
+                              <desc>short bio</desc>
+                              <gloss>a short biographical note for display in popups.</gloss>
+                           </valItem>
+                           <valItem ident="long" mode="add">
+                              <desc>long bio</desc>
+                              <gloss>a long biographical note.</gloss>
                            </valItem>
                         </valList>
                      </attDef>

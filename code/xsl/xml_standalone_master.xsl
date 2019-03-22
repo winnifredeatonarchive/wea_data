@@ -34,7 +34,6 @@
     <xsl:variable name="prefixRegex" 
         select="concat('^(',string-join(for $n in $prefixes return concat('(',$n,')'),'|'),'):')" as="xs:string"/>
     
-    
     <xsl:template match="/">
         <xsl:for-each select="$originalXml">
             <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',@xml:id,'.xml')"/>
@@ -60,6 +59,7 @@
         </xsl:copy>
     </xsl:template>
     
+    
     <xsl:template match="tei:*/@active | tei:*/@adj | tei:*/@adjFrom | tei:*/@adjTo | tei:*/@ana |
         tei:*/@calendar | tei:*/@change | tei:*/@children | tei:*/@class |
         tei:*/@code | tei:*[not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
@@ -70,7 +70,7 @@
         tei:*/@origin | tei:*/@parent | tei:*/@parts | tei:*/@passive | tei:*/@perf | tei:*/@period | 
         tei:*/@prev | tei:*/@ref | tei:*/@rendition | tei:*/@require | tei:*/@resp | tei:*/@sameAs |
         tei:*/@scheme | tei:*/@scribeRef | tei:*/@scriptRef | tei:*/@select | tei:*/@since |
-        tei:*/@source | tei:*/@spanTo | tei:*/@start | tei:*/@start | tei:*/@synch | tei:*[not(self::catRef)]/@target |
+        tei:*/@source | tei:*/@spanTo | tei:*/@start | tei:*/@start | tei:*/@synch | tei:*/@target |
         tei:*/@targetEnd | tei:*/@to | tei:*/@uri | tei:*/@url | tei:*/@value | tei:*/@valueDatcat |
         tei:*/@where | tei:*/@who | tei:*/@wit" mode="pass1">
         
