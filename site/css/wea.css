@@ -1124,7 +1124,9 @@ a[href].gi::after{
        max-height:0;
        overflow:hidden;
         display:flex;
-       flex-direction:row;
+       /* We should keep these as columns in case we want drop down  menus in future. */
+       flex-direction:column;
+       
        align-items:baseline;
     }
     
