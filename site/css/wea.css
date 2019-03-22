@@ -196,12 +196,21 @@ a, a:visited{
 
 #additional_info_content{
     display:flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     align-content: baseline;
+    
 }
 
 .JS #additional_info.closed > #additional_info_content{
-    display:none;
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .2s ease-in-out;
+    display:block;
+}
+
+.JS #additional_info.open > #additional_info_content{
+    max-height:100rem;
+    transition: max-height .2s ease-in-out;
 }
 
 .JS #additional_info_header{
