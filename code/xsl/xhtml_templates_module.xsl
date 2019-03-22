@@ -142,7 +142,9 @@
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
         <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
-        <xsl:apply-templates select="//text/(@next|@prev)" mode="metadata"/>
+        <xsl:apply-templates select="//text/@next" mode="metadata"/>
+        <!--I think we want the next before the prev in all cases-->
+        <xsl:apply-templates select="//text/@prev" mode="metadata"/>
      </xsl:template>
     
     <xsl:template match="text/@next | text/@prev" mode="metadata">
