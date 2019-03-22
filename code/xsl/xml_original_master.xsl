@@ -23,7 +23,7 @@
         <xsl:for-each select="$sourceXml">
             <xsl:variable name="out" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
             <xsl:message>Processing <xsl:value-of select="document-uri(/)"/> to <xsl:value-of select="$out"/></xsl:message>
-            <xsl:result-document href="{$out}">
+            <xsl:result-document href="{$out}" indent="no" method="xml">
                 <xsl:apply-templates select="." mode="original"/>
             </xsl:result-document>
         </xsl:for-each>

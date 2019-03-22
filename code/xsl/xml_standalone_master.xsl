@@ -39,7 +39,7 @@
         <xsl:for-each select="$originalXml">
             <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',@xml:id,'.xml')"/>
             <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
-            <xsl:result-document href="{$outDir}">
+            <xsl:result-document href="{$outDir}"  indent="no" method="xml">
                 <xsl:variable name="pass1" as="element(TEI)">
                     <xsl:apply-templates select="." mode="pass1"/>
                 </xsl:variable>

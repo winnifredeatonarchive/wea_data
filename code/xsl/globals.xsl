@@ -77,7 +77,7 @@
         <xsl:param name="categories"/>
         <xsl:param name="content"/>
         <xsl:message>Generating <xsl:value-of select="$outDoc"/></xsl:message>
-        <xsl:result-document href="{$outDoc}" method="xml" indent="yes">
+        <xsl:result-document href="{$outDoc}" method="xml" indent="no">
             <TEI xml:id="{$thisId}" xmlns="http://www.tei-c.org/ns/1.0">
                 <teiHeader>
                     <fileDesc>
