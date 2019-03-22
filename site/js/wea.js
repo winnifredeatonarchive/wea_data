@@ -71,6 +71,10 @@ function toggleHeaderSearch(){
       }
 }
 
+/* This will certainly need to be finessed quite a bit;
+ * we'll maybe want to do some better investigation, probably by individual token
+ * and we might need a way to expand the search results or to shove you over to the
+ * main search page. */
 function titleSearch(){
     clearTitleSearchResults();
     var value = this.value;
