@@ -146,6 +146,38 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
       </report>
             </rule>
          </pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:foreign">
+                              <sch:let name="text" value="string-join(text(),'')"/>
+                              <sch:assert test="not(matches($text,'^\s+|\s+$'))">
+                                 ERROR: foreign elements should not begin or end with spaces.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:q">
+                              <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                              <sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else not(matches($text,'^\s+|\s+$'))">
+                                 ERROR: q elements should not begin or end with spaces.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -166,7 +198,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-list-gloss-list-must-have-labels-constraint-rule-8">
+            id="wea-list-gloss-list-must-have-labels-constraint-rule-10">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -244,7 +276,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-assert-8">
+            id="wea-relatedItem-targetorcontent1-constraint-assert-10">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -276,7 +308,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-9">
+            id="wea-lg-atleast1oflggapl-constraint-assert-11">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -453,7 +485,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-19">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-21">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

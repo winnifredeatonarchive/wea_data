@@ -1073,6 +1073,40 @@
                   
                </elementSpec>
                
+               <elementSpec ident="q" module="core" mode="change">
+                  <constraintSpec ident="q.dontStartEndSpaces" scheme="schematron">
+                     <desc>
+                        <gi>q</gi> elements shouldn't start or end with spaces.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:q">
+                              <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                              <sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else not(matches($text,'^\s+|\s+$'))">
+                                 ERROR: q elements should not begin or end with spaces.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
+               <elementSpec ident="foreign" module="core" mode="change">
+                  <constraintSpec ident="foreign.dontStartEndSpaces" scheme="schematron">
+                     <desc>
+                        <gi>foreign</gi> elements shouldn't start or end with spaces.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:foreign">
+                              <sch:let name="text" value="string-join(text(),'')"/>
+                              <sch:assert test="not(matches($text,'^\s+|\s+$'))">
+                                 ERROR: foreign elements should not begin or end with spaces.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
                
                <!--CLASS SPECS-->
                <!--
