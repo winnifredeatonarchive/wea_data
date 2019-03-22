@@ -27,10 +27,12 @@
     --wea-pink: #DF006E;
     --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
+    --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
     --header-height: 2.6rem;
     --body-margin-top: calc(var(--header-height) + 4rem);
     --anchor-offset: calc(var(--header-height) * 2.1);
+
 }
 
 
@@ -64,7 +66,7 @@ header{
     margin:0 auto 0 auto;
     max-height: var(--header-height);
     z-index:1000;
-    background:white;
+    background: var(--wea-header-bg-color);
     /* Decisions need to be made about whether or not to
      * have a sticky header. */
     position:fixed;
@@ -136,6 +138,7 @@ input[type='text']{
       outline:none;
       width: 100%;
       height:100%;
+      padding:.5rem;
 }
 
  
@@ -154,8 +157,8 @@ input[type='text']{
 }
 
 #searchBox input[type=text] {
-  font-size:150%;
-  padding:.5rem;
+      font-size:150%;
+      outline:none;
   
 }
 
@@ -179,24 +182,46 @@ header.searchOpen #headerSearch{
     justify-content:center;
     align-items:center;
     grid-template-areas:
-    ". headerSearchForm headerAdvancedSearchBtn"
+    ". headerSearchInput headerAdvancedSearchBtn"
     ". headerSearchResults headerSearchResults";
     grid-template-columns:1fr 2fr 1fr;
+    grid-gap:.1rem;
 }
 
-#headerSearchForm{
-    grid-area:headerSearchForm;
-    padding-bottom:
+#headerSearch > div{
+        padding: 1rem;
+        display:flex;
+        margin:0;
+        justify-self: center;
 }
+
+#headerSearch > #headerSearchResults{
+    padding:0;
+}
+
+
+#headerSearchInput{
+    grid-area:headerSearchInput;
+    font-size:120%;
+    width:100%;
+    border:none;
+}
+
 
 #headerAdvancedSearchBtn{
     grid-area:headerAdvancedSearchBtn;
+    font-size:80%;
+    display:inherit;
+    
+}
+#headerAdvancedSearchBtn > a{
+        width:auto;
+    padding:.25rem;
 }
 
 #headerSearchResults{
     grid-area:headerSearchResults;
 }
-
 
 
 /****************************************************************** INFO/METADATA BLOCKS ******/
@@ -238,6 +263,16 @@ footer{
     align-items:center;
 }
 
+#mainText #siteMap{
+    display:block;
+}
+.JS #siteMap{
+    display:none;
+}
+
+footer #siteMap{
+    display:none;
+}
 
 
 
@@ -1218,6 +1253,21 @@ a[href].gi::after{
         margin-left:.5rem;
         
     }
+ 
+ header.searchOpen #headerSearch{
+    grid-template-areas:
+    "headerSearchForm headerAdvancedSearchBtn"
+    "headerSearchResults headerSearchResults";
+    grid-template-columns:3fr 1fr;
+    grid-gap:.1rem;
+}
+
+
+ 
+#headerSearch #headerSearchInputButton{
+     display:none;
+ }
+ 
  
  
     header  #nav_main,

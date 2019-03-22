@@ -23,6 +23,32 @@
         <xsl:attribute name="target">_blank</xsl:attribute>
     </xsl:attribute-set>
     
+    <xsl:template name="createSiteMap">
+        <xsl:variable name="currId" select="ancestor::TEI/@xml:id"/>
+        <div id="siteMap">
+            <xsl:for-each select="$standaloneXml">
+                <div class="item">
+                    <xsl:if test="not(@xml:id=$currId)">
+                        <xsl:attribute name="id" select="@xml:id"/>
+                    </xsl:if>
+                    <a href="{@xml:id}.html">
+                        <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
+                    </a>
+                </div>
+            </xsl:for-each>
+        </div>
+    </xsl:template>
+    
+    <xsl:variable name="siteMap">
+        <div id="siteMap">
+            <xsl:for-each select="$standaloneXml">
+                <div class="item">
+                    <a href="{@xml:id}.html"><xsl:apply-templates select="//teiHeader/fileDesc/titleStmt/title[1]/node()" mode="tei"/></a>
+                </div>
+            </xsl:for-each>
+        </div>
+    </xsl:variable>
+    
 
     
     <xsl:template match="TEI" mode="tei">
@@ -73,9 +99,16 @@
                   
                 </nav>
                 <div id="headerSearch">
-                    <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
-                    <a id="headerAdvancedSearchBtn" href="search.html">Advanced Search</a>
-                    <div id="headerSearchResults"/>
+<!--                    <div id="headerSearchInputButton" class="search_icon">
+                        <a href="search.html">⚲</a>
+                    </div>-->
+                    <div id="headerSearchInput">
+                        <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
+                    </div>
+                    <div id="headerAdvancedSearchBtn">
+                        <a href="search.html">Go to full text search</a>
+                    </div>
+                     <div id="headerSearchResults"/>
                 </div>
             </header>
             <div id="mainBody">
@@ -92,6 +125,7 @@
             <footer>
                 <div id="lastUpdate">Last updated: <xsl:value-of select="$today"/></div>
                 <div id="gitRevision"><!--Get this--></div>
+                <xsl:call-template name="createSiteMap"/>
             </footer>
         </body>
         

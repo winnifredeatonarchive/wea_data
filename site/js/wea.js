@@ -47,6 +47,8 @@ function addHeaderSearch(){
      searchLinks.forEach(function(s){
          s.addEventListener('click',toggleHeaderSearch)
      });
+     var headerInput = document.getElementById('headerSearchForm');
+     headerInput.addEventListener('keyup',titleSearch);
 }
 
 function toggleHeaderSearch(){
@@ -67,6 +69,14 @@ function toggleHeaderSearch(){
 
       }
 }
+
+function titleSearch(){
+    var value = this.value;
+    var siteMap = document.getElementById('siteMap');
+    var titles = siteMap.querySelectorAll('.item');
+    console.log(value);
+}
+
 
 
 function makeHamburgerClickable(){
