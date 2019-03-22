@@ -66,14 +66,14 @@ function openCloseAI(){
         
 }
 function openCloseHam(){
-    var ham = document.getElementById('hamburger');
-    var isOpen = ham.classList.contains('open');
+    var header = document.getElementsByTagName('header')[0];
+    var isOpen = header.classList.contains('open');
     if (isOpen){
-            ham.classList.remove('open');
-            ham.classList.add('closed');
+            header.classList.remove('open');
+            header.classList.add('closed');
     } else {
-        ham.classList.remove('closed');
-        ham.classList.add('open');
+        header.classList.remove('closed');
+        header.classList.add('open');
     }
 
 }
@@ -363,12 +363,7 @@ xmlhttp.send(null);
         
         /* Scroll the first match into view */        
         var firstMatch = document.querySelectorAll('.highlight')[0];
-        firstMatch.scrollIntoView(
-        {behavior: "smooth",
-         block: "start",
-         inline: "nearest"
-         }
-        );
+        scrollIntoViewWithOffset(firstMatch, true);
         
         /* Add dehighlight button */
         addUnhighlightButton();
@@ -417,7 +412,7 @@ xmlhttp.send(null);
         }
         console.log('Going to ' + instance);
                
-        hits[instance].scrollIntoView(true)
+        scrollIntoViewWithOffset(hits[instance], false)
         buttonDiv.setAttribute('data-hit', instance + 1);
     }
     
@@ -433,8 +428,7 @@ xmlhttp.send(null);
         }
         
         console.log('Going to ' + instance);
-        hits[instance].scrollIntoView(
-        )
+       scrollIntoViewWithOffset( hits[instance], false)
         buttonDiv.setAttribute('data-hit', instance + 1);
     }
     
@@ -457,6 +451,15 @@ xmlhttp.send(null);
             this.classList.remove('unhighlighted');
             this.classList.add('highlighted');
         }
+    }
+    
+    function scrollIntoViewWithOffset(el, smooth){
+        var header = document.getElementsByTagName('header')[0];
+        var hh = header.getBoundingClientRect().height;
+        var scrollHeight = -hh + -10;
+        el.scrollIntoView();
+        window.scrollBy(0, scrollHeight);
+        
     }
 
     

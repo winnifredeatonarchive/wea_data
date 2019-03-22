@@ -51,12 +51,16 @@
       
         <body>
             <header>
-                <button id="hamburger" class="hamburger closed" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>  
-                <nav>
+                <nav id="nav_small">
+                    <div id="hamburger">
+                        <div id="ham_top"/>
+                        <div id="ham_middle"/>
+                        <div id="ham_bottom"/>
+                    </div>
+                    <div class="nav-item home"><a href="index.html">WEA</a></div>
+                    <div class="search_icon"><a href="search.html">⚲</a></div>
+                </nav>
+                <nav id="nav_main">
                     <div class="nav-item home"><a href="index.html">WEA</a></div>
                     <div class="nav-item">About</div>
                     <div class="nav-item">Archive</div>

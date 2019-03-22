@@ -17,11 +17,14 @@
     --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
     --wea-info-bg-color:rgb(242, 245, 243);
+    --header-height: 2.6rem;
+    --body-margin-top: calc(var(--header-height) + 4rem);
+    --anchor-offset: calc(var(--header-height) * 2.1);
 }
 
 html{
     font-family: Sans;
-    font-size:102%;
+    font-size:100%;
 }
 
 body{
@@ -38,29 +41,32 @@ body{
 
 header{
     color:black;
-    padding:1rem 0;
+    padding:.5rem 0;
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
+    height:2.6rem;
     z-index:1000;
     background:white;
     /* Decisions need to be made about whether or not to
      * have a sticky header. */
-/*    position:fixed;
-    box-shadow: 0px 0px 1px 0px;*/
+    position:fixed;
+    box-shadow: 0px 0px 1px 0px;
 }
 
-header > nav{
+
+#nav_small{
+    display:none;
+}
+
+#nav_main{
     display:flex;
     flex-direction:row;
     justify-content: center;
     align-items: center;
+    flex-wrap:wrap;
 }
 
-
-#hamburger{
-    display:none;
-}
 
 
 #metadata{
@@ -163,6 +169,7 @@ a, a:visited{
  /* margin-top: 2.5rem;*/
   padding:0 10% 5% 10%;
   flex:1;
+  margin-top: var(--body-margin-top);
 }
 
 #facsimile{
@@ -190,7 +197,7 @@ a, a:visited{
 }
 
 #searchButtons{
-    top: 5%;
+    top: 10%;
     position:fixed;
     float:left;
     
@@ -214,6 +221,31 @@ a:hover,
 .JS #additional_info_header:hover,
 header a:hover{
     color:var(--wea-pink);
+    transition: color 0.2s ease-in-out;
+}
+
+div:target:before{
+      content: '';
+      display: block;
+      position: relative; 
+      width: 0; 
+      height: var(--anchor-offset);
+      margin-top: calc(var(--anchor-offset) * -1);
+      visibility: hidden;
+      }
+
+/* FOR INLINE ELEMENTS */
+a:target:before{
+    content:"";    
+    display: inline-block;    
+    vertical-align: top;
+    position: relative;       
+    top: calc(var(--anchor-offset) * -1); 
+    visibility: hidden;
+}
+
+#hamburger:hover > div{
+    background-color:var(--wea-pink);
     transition: color 0.2s ease-in-out;
 }
 
@@ -511,24 +543,6 @@ div.ham{
     cursor:pointer;
 }
 
-aside a{
-    color:inherit;
-}
-div.ham>a{
-    color:inherit;
-    text-decoration:none;
-}
-
-aside.closed #aside_toggle::after{
-    content:"☰";
-}
-
-aside.showing #aside_toggle::after{
-    content:"X";
-    float:right;
-    margin-right:.5rem;
-}
-
 
 
 div.closed > h3,
@@ -536,13 +550,6 @@ div.open > h3{
     cursor:pointer;
 }
 
-div:not(#additional_info).closed > div{
-    display:none;
-}
-
-div.open > div{
-    display:block;
-}
 
 div.toc {
     text-align:justify;
@@ -793,6 +800,10 @@ td{
 div#status table{
     width:100%;
 }
+
+
+
+
 th {
 	border-width: 1px;
 	padding: 8px;
@@ -1012,6 +1023,11 @@ a[href].gi::after{
         width:auto;
     }
     
+    #additional_info{
+        padding-left:.25rem;
+        margin-left:-.25rem;
+    }
+    
     #metadata{
     /* No more flex */
         display:block;
@@ -1028,103 +1044,84 @@ a[href].gi::after{
      margin: 0 auto;   
     }
     
-    header > nav{
+    #nav_main{
         display:none;
     }
     
-    .JS #hamburger{
-    display:block
+    #nav_small{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width:100vw;
     }
     
-    .hamburger {
-  padding: 15px 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible; }
-  .hamburger:hover {
-    opacity: 0.7; }
-  .hamburger.is-active:hover {
-    opacity: 0.7; }
-  .hamburger.is-active .hamburger-inner,
-  .hamburger.is-active .hamburger-inner::before,
-  .hamburger.is-active .hamburger-inner::after {
-    background-color: #000; }
-
-.hamburger-box {
-  width: 40px;
-  height: 24px;
-  display: inline-block;
-  position: relative; }
-
-.hamburger-inner {
-
-  display: block;
-  top: 50%;
-  margin-top: -2px; 
-  }
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 40px;
-    height: 4px;
-    background-color: #000;
-    border-radius: 4px;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
-    }
-    
-  .hamburger-inner::before, .hamburger-inner::after {
-    content: "";
-    display: block; 
-    }
-  .hamburger-inner::before {
-  
-    top: -10px;
-    
-    }
-  .hamburger-inner::after {
-  
-    bottom: -10px; 
+    #hamburger{
+        display:block;
+        font-size:200%;
     }
     
     
-    /* Hamburger stuff taken from  https://github.com/jonsuh/hamburgers*/
-    .hamburger .hamburger-inner {
-  transition: background-color 0s 0.13s linear;
-  }
-  .hamburger .hamburger-inner::before {
-   
-    transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    header.open{
+        height:auto;
     }
-  .hamburger.hamburger-inner::after {
-    top: 20px;
-    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    
+    #nav_small > div {
+        margin-top: auto;
+        margin-bottom: auto;
     }
-
-.hamburger.open .hamburger-inner {
-  transition-delay: 0.22s;
-  background-color: transparent !important; 
-  }
-  
-  .hamburger.open .hamburger-inner::before {
-    top: 0;
-    transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translate3d(0, 10px, 0) rotate(45deg);
+    
+    #hamburger{
+        cursor:pointer;
+        display:inline-block;
+        margin-left:.5rem;
+        
     }
-  .hamburger.open .hamburger-inner::after {
-    top: 0;
-    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translate3d(0, 10px, 0) rotate(-45deg); 
+ 
+ 
+    header  #nav_main{
+        display:none;
     }
-
+    
+    
+    header.open #nav_main
+    {
+        display:block;
+    }
+    
+    #nav_main > div{
+        padding-top:1rem;
+    }
+    
+    
+    #nav_main > .nav-item.home{
+        display:none;
+    }
+    
+    
+    .nav-item.home, .search_icon{
+        font-size:1.75rem;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    
+    .search_icon > a{
+        display:inline-block;
+        transform: rotate(-45deg);
+    }
+    
+    
+    /* Shamelessly taken from W3Schools (I know, I know!)
+     * https://www.w3schools.com/howto/howto_css_menu_icon.asp */
+    #ham_top, #ham_middle, #ham_bottom{
+        width: 2.5rem;
+        height: .2rem;
+        margin:.3rem;
+        background-color: #333;
+        display:block;
+       
+    }
+    
+    #hamburger{
+        width:3.5rem
+    }
     
 }
