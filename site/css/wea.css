@@ -80,7 +80,7 @@ header{
 #additional_info_content > div{
     min-width:0;
     flex-basis:content;
-    padding:.5rem
+    padding:.5rem .5rem .5rem 0;
 }
 
 #metadata> > div{
@@ -184,17 +184,44 @@ a, a:visited{
     grid-area: metadata_container;
 }
 
+
+/* ***************************************************** ADDITIONAL INFO PANEL ********** */
 #additional_info{
     grid-area: additional_info;
     background: #efefef;
     padding: 1rem;
+   
 }
+
 
 #additional_info_content{
     display:flex;
     flex-flow: column wrap;
     align-content: baseline;
 }
+
+.JS #additional_info.closed > #additional_info_content{
+    display:none;
+}
+
+.JS #additional_info_header{
+    cursor:pointer;
+    
+}
+
+.JS #additional_info > #additional_info_header::after,
+.JS #additional_info.closed > #additional_info_header::after{
+    content: "\02795";
+    float:right;
+    font-size:80%;
+}
+
+.JS #additional_info.open > #additional_info_header::after{
+    content:"\2796";
+}
+
+
+
 
 #searchButtons{
     top: 10%;
@@ -219,6 +246,7 @@ a:hover,
 .breadcrumb > a,
 .breadcrumb > a:visited,
 .JS #additional_info_header:hover,
+.JS #additional_info_header:hover::after,
 header a:hover{
     color:var(--wea-pink);
     transition: color 0.2s ease-in-out;
@@ -251,14 +279,6 @@ a:target:before{
 
 
 
-.JS #additional_info.closed > #additional_info_content{
-    display:none;
-}
-
-.JS #additional_info_header{
-    cursor:pointer;
-    
-}
 
 
 
@@ -311,7 +331,7 @@ input[type=text] {
     opacity: 0;
     left: 0;
     top: 0;
-    transition: all 0.8s ease, font-size 0ms;
+    transition: all 0.8s ease;
     height: 100%;
     width: 100%;
     text-align:center;
@@ -848,6 +868,8 @@ th { font-weight: bold; text-align:center;}
         border:1px solid black;
         border-collapse: collapse;
         padding: 1px; 
+        white-space: pre-wrap;
+        word-break:break-word;
         }
         
 thead {
@@ -1051,7 +1073,7 @@ a[href].gi::after{
         
     }
     #metadata > div{
-        padding:.25rem;
+        padding:.25rem .25rem .25rem 0;
         
     }
     #facsimile{
