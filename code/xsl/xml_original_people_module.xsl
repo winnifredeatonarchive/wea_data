@@ -24,6 +24,7 @@
                 <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
                 <xsl:with-param name="content">
+                    
                     <xsl:apply-templates select="." mode="people"/>
                 </xsl:with-param>
             </xsl:call-template>
@@ -33,18 +34,21 @@
   
   
     <xsl:template match="person" mode="people">
-        <head><xsl:value-of select="persName/reg"/></head>
-        <div>
-            <head>Biography</head>
-            <xsl:apply-templates select="note" mode="#current"/>
-            <!--GENERATED STUFF HERE, I SUPPOSE-->
-        </div>
+        <body>
+            <head><xsl:value-of select="persName/reg"/></head>
+            <div>
+                <head>Biography</head>
+                <xsl:apply-templates select="note" mode="#current"/>
+                <!--GENERATED STUFF HERE, I SUPPOSE-->
+            </div>
+        </body>
+     
     </xsl:template>
     
     <!--Delete short bio-->
     <xsl:template match="person/note[@type='bio'][@subtype='short']" mode="people"/>
     
-    <xsl:template match="person/note[@type='bio']" mode="people">
+    <xsl:template match="person/note[@type='bio'][@subtype='long']" mode="people">
             <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
