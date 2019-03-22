@@ -69,9 +69,14 @@
                     <div class="nav-item">Resources</div>
 <!--                    <div class="nav-item">News</div>-->
                     <div class="nav-item">Contact</div>
-                    <div class="nav-item"><a href="search.html">Search</a></div>
+                    <div class="nav-item search_icon"><a href="search.html">⚲</a></div>
+                    <form id="titleSearch">
+                        <input type="text" value="Title Search"/>
+                        <div id="titleSearchResults"/>
+                        <a href="search.html">Advanced Search</a>
+                    </form>
                 </nav>
-               
+                
             </header>
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,':'),' ')"/>

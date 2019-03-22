@@ -67,6 +67,22 @@ header{
     flex-wrap:wrap;
 }
 
+.search_icon{
+     font-size:1.75rem;
+        margin-left:auto;
+        margin-right:auto;
+}
+ .search_icon > a{
+        display:inline-block;
+        transform: rotate(-45deg);
+    }
+    
+#titleSearch.closed,
+#titleSearch{
+    display:none;
+}
+
+
 
 
 #metadata{
@@ -1148,17 +1164,13 @@ a[href].gi::after{
     }
     
     
-    .nav-item.home, .search_icon{
+    .nav-item.home{
         font-size:1.75rem;
         margin-left:auto;
         margin-right:auto;
     }
     
-    .search_icon > a{
-        display:inline-block;
-        transform: rotate(-45deg);
-    }
-    
+ 
     
     /* Shamelessly taken from W3Schools (I know, I know!)
      * https://www.w3schools.com/howto/howto_css_menu_icon.asp */
