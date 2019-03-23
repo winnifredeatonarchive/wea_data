@@ -71,7 +71,7 @@ header{
     /* Decisions need to be made about whether or not to
      * have a sticky header. */
     position:fixed;
-    border-bottom: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
 }
 
 header > *{
@@ -81,6 +81,7 @@ header > *{
     align-items: center;
     flex-wrap:wrap;
     background: var(--wea-header-bg-color);
+
 }
 
 header.searchOpen{
@@ -149,6 +150,7 @@ input[type='text']{
       width: 100%;
       height:100%;
       padding:.5rem;
+      font:inherit;
 }
 
  
@@ -247,7 +249,8 @@ header #siteMap{
     
 }
 
-#siteMap > div.result:hover{
+#siteMap > div.result:hover,
+#siteMap > div.result:focus{
     border:1px solid var(--wea-pink);
 }
 
@@ -1320,11 +1323,14 @@ a[href].gi::after{
        align-items:baseline;
     }
     
-    
+    header.open.searchOpen #nav_main{
+        border-bottom:none;
+    }
     header.open #nav_main
     {
         max-height:100rem;
         padding-top:1em;
+                border-bottom: 1px solid #dedede;
     }
     
     #nav_main > div{
@@ -1344,7 +1350,10 @@ a[href].gi::after{
         margin-left:auto;
         margin-right:auto;
     }
-    
+   
+    #headerSearchInput{
+        width:100%;
+    }
  
     
     /* Shamelessly taken from W3Schools (I know, I know!)

@@ -48,8 +48,77 @@ function addHeaderSearch(){
          s.addEventListener('click',toggleHeaderSearch)
      });
      var headerInput = document.getElementById('headerSearchForm');
-     headerInput.addEventListener('keyup',titleSearch);
+     headerInput.addEventListener('input',titleSearch);
+     var results = document.querySelectorAll('#siteMap .item');
+     results.forEach(function(r){
+         r.addEventListener('focus', addFocusEvent)
+         });
+     headerInput.addEventListener('focus',addFocusEvent);
 }
+
+
+function addFocusEvent(){
+       this.addEventListener('keydown',scrollThru);
+}
+
+function scrollThru(){
+       var e=arguments[0];
+       var searchBox = document.getElementById('headerSearchForm');
+       var results = document.querySelectorAll('#siteMap .result');
+       var preSib, nextSib;
+       if (this.id == 'headerSearchForm'){
+           nextSib = results[0];
+           preSib = results[results.length -1];
+       } else {
+          var preSib = getPreSib(this);
+          var nextSib = getNextSib(this);
+       }
+
+       if (preSib == null){
+           preSib = searchBox;
+       }
+       if (nextSib == null){
+           nextSib = searchBox;
+       }
+       var key = e.key;
+       if (key == 'ArrowUp'|| key == 'ArrowDown'){
+           e.preventDefault();
+           if (key == 'ArrowUp'){
+               preSib.focus();
+           } else {
+             nextSib.focus();
+           }
+          this.blur();
+       } else if (key == 'Enter'){
+           window.location = this.firstChild.href;
+       }
+        
+}
+
+
+/* Taken, with thanks, from: 
+ * 
+ * https://gomakethings.com/finding-the-next-and-previous-sibling-elements-that-match-a-selector-with-vanilla-js/
+ *  */
+ 
+ 
+function getPreSib(el){
+    var pre = el.previousSibling;
+    
+    while (pre){
+           if (pre.classList.contains('result')) return pre;
+           pre = pre.previousSibling;
+    }
+}
+
+function getNextSib(el){
+        var next = el.nextSibling;
+    while (next){
+           if (next.classList.contains('result')) return next;
+           next = next.nextSibling;
+    }
+}
+
 
 function toggleHeaderSearch(){
       var e=arguments[0];
@@ -64,6 +133,7 @@ function toggleHeaderSearch(){
           header.classList.remove('searchOpen');
           header.classList.add('searchClosed');
           clearTitleSearchResults();
+          clearTabIndexes();
       } else {
          header.classList.remove('searchClosed');
           header.classList.add('searchOpen');
@@ -94,7 +164,7 @@ function titleSearch(){
         if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
              if (match < 5){
                 currItem.classList.add('result');
-
+                currItem.setAttribute('tabindex',0);
              }
            match++;
         }
@@ -110,6 +180,7 @@ function clearTitleSearchResults(){
     for (r=0; r < results.length; r++){
         console.log(results[r]);
         results[r].classList.remove('result');
+        results[r].removeAttribute('tabindex');
     }
    /* document.getElementById('siteMap').classList.remove('hasResults');*/
 }
