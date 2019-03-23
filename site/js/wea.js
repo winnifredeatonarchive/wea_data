@@ -43,37 +43,60 @@ function addEvents(){
 }
 
 function addHeaderSearch(){
+
+   /* These are the links to the search */
     var searchLinks = document.querySelectorAll('.search_icon > a');
      searchLinks.forEach(function(s){
+        /* For each of those, add the search toggle. */
          s.addEventListener('click',toggleHeaderSearch)
      });
+     
+     //
      var headerInput = document.getElementById('headerSearchForm');
+     
+     /* Add the main title search capacity */
      headerInput.addEventListener('input',titleSearch);
      var results = document.querySelectorAll('#siteMap .item');
+     
+     /* For every result item, add the addFocusEvent */
      results.forEach(function(r){
          r.addEventListener('focus', addFocusEvent)
          });
+     
+     /* And for the header input */
      headerInput.addEventListener('focus',addFocusEvent);
 }
 
 
+/* A small function to add the keydown press; it likely doesn't need
+ * to be a function, but we'll keep it like in case we need to remove it */
 function addFocusEvent(){
        this.addEventListener('keydown',scrollThru);
 }
 
+/* Function to scroll through the search results using the arrow keys */
 function scrollThru(){
        var e=arguments[0];
        var searchBox = document.getElementById('headerSearchForm');
        var results = document.querySelectorAll('#siteMap .result');
        var preSib, nextSib;
+       
+       /* If the focus is in the headerSEarchForm
+        * then we just get the first and last result and set those
+        * as the previous and next sibling */
        if (this.id == 'headerSearchForm'){
            nextSib = results[0];
            preSib = results[results.length -1];
        } else {
+         /* 
+          * Otherwise, actually use the right pre and next.
+          */
           var preSib = getPreSib(this);
           var nextSib = getNextSib(this);
        }
-
+       
+       /* If either pre or nextSib variables are null,
+        * then the previous/next choice is the search box */
        if (preSib == null){
            preSib = searchBox;
        }
@@ -81,16 +104,32 @@ function scrollThru(){
            nextSib = searchBox;
        }
        var key = e.key;
+       
+       /* Now do stuff on arrow up/down */
        if (key == 'ArrowUp'|| key == 'ArrowDown'){
+          /* Prevent the default action (i.e. window scrolling) */
            e.preventDefault();
+           
+           /* If they've pressed up, go up. */
            if (key == 'ArrowUp'){
                preSib.focus();
-           } else {
+           } 
+           /* Otherwise, go down. */
+           else {
              nextSib.focus();
            }
+           /* Now unfocus the first thing. */
           this.blur();
-       } else if (key == 'Enter'){
-           window.location = this.firstChild.href;
+       } else 
+       /* If they've pressed enter, then they want to go to that page (other than the search form, of course) */
+       if (key == 'Enter'){
+         if (this.id == 'headerSearchForm'){
+             return;
+         } else {
+             window.location = this.firstElementChild.href;  
+         }
+     
+           
        }
         
 }
