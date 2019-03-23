@@ -252,7 +252,9 @@ header #siteMap{
 #siteMap > div.result:hover,
 #siteMap > div.result:focus{
     border:1px solid var(--wea-pink);
+    outline:none;
 }
+
 
 div.result > .item_info {
     font-size:90%;
@@ -269,7 +271,8 @@ div.result > a{
     width:100%;
 }
 div.result:hover > a,
-div.result:hover > a:hover{
+div.result:hover > a:hover,
+div.result:focus > a{
     color: var(--wea-pink);
 }
 
