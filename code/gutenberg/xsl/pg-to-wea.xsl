@@ -48,13 +48,19 @@
     <xsl:template match="body">
         <text>
             <body>
-                <xsl:for-each-group select="*[not(self::pre)]" group-starting-with="h2 | div[@class='chapter']">
-                    <div type="chapter">
+                <xsl:for-each-group select="*[not(self::pre)]" group-starting-with="*[matches(local-name(),'^h\d+$')] | div[@class='chapter']">
+                    <div>
                         <xsl:apply-templates select="current-group()"/>
                     </div>
                 </xsl:for-each-group>
             </body>
         </text>
+    </xsl:template>
+    
+    <xsl:template match="h2 | h3 | h4 | h5 | h6">
+        <head>
+            <xsl:apply-templates/>
+        </head>
     </xsl:template>
     
     <xsl:template match="img">
@@ -150,13 +156,6 @@
     <xsl:template match="hr[contains(@class,'pb')]">
         <pb/>
     </xsl:template>
-    
-    
-    <xsl:template match="h2">
-        <head>
-            <xsl:apply-templates/>
-        </head>
-    </xsl:template>
-    
+
     
 </xsl:stylesheet>
