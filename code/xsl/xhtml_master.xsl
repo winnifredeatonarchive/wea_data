@@ -12,8 +12,7 @@
             <xd:p>Created on: January 5, 2018</xd:p>
             <xd:p>Author: Joey Takeda</xd:p>
             <xd:p>This stylesheet is the master stylesheet for the WEA project's conversion
-            from TEI P5 to XHTML5. It may load in other modules, if the complexity of the project
-            necessitiates it.</xd:p>
+            from TEI P5 to XHTML5. It loads in a number of additional modules; the most significant is the "templates" module, which contains all of the basic transformation templates for the site.</xd:p>
         </xd:desc>
     </xd:doc>
     <xsl:include href="globals.xsl"/>

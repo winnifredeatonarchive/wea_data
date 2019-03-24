@@ -12,9 +12,7 @@
         <xd:desc>
             <xd:p>Created on: January 5, 2018</xd:p>
             <xd:p>Author: Joey Takeda</xd:p>
-            <xd:p>This stylesheet is the master stylesheet for the WEA project's conversion
-                from TEI P5 to XHTML5. It may load in other modules, if the complexity of the project
-                necessitiates it.</xd:p>
+            <xd:p>This stylesheet contains all of the templates for creating the "appendix" content (bibliographies, editorial notes, lists of people, et cetera). Many of these templates end up calling the templates in mode="tei," which are in the main templates module.</xd:p>
         </xd:desc>
     </xd:doc>
     

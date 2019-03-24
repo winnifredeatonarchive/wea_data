@@ -12,9 +12,7 @@
         <xd:desc>
             <xd:p>Created on: January 5, 2018</xd:p>
             <xd:p>Author: Joey Takeda</xd:p>
-            <xd:p>This stylesheet is the master stylesheet for the WEA project's conversion
-                from TEI P5 to XHTML5. It may load in other modules, if the complexity of the project
-                necessitiates it.</xd:p>
+            <xd:p>This stylesheet contains the main functions for use across the XHTML5 stylesheet modules.</xd:p>
         </xd:desc>
     </xd:doc>
     

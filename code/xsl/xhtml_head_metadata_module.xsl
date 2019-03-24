@@ -11,11 +11,9 @@
     version="3.0">
     <xd:doc>
         <xd:desc>
-            <xd:p>Created on: January 5, 2018</xd:p>
+            <xd:p>Created on: March 24, 2019.</xd:p>
             <xd:p>Author: Joey Takeda</xd:p>
-            <xd:p>This stylesheet is the master stylesheet for the WEA project's conversion
-                from TEI P5 to XHTML5. It may load in other modules, if the complexity of the project
-                necessitiates it.</xd:p>
+            <xd:p>This stylesheet contains the templates for creating various metadata formats for the HTML head element. Metadata will include dubline core and like open-graph protocol metadata.</xd:p>
         </xd:desc>
     </xd:doc>
     
