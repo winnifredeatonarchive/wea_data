@@ -20,7 +20,7 @@
     
     <xsl:template name="createHeadMetadata">
         <head>
-            <title><xsl:value-of select="fileDesc/titleStmt/title[1]"/></title>
+            <title><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="icon" type="image/png" href="graphics/icon.png"/>
             <script src="js/wea.js"/>
