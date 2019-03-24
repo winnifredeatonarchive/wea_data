@@ -1021,6 +1021,14 @@
                
                <!--CORE-->
                
+               <!--Make respStmt content very strict-->
+               <elementSpec ident="respStmt" module="core" mode="change">
+                  <content>
+                     <elementRef key="resp"/>
+                     <elementRef key="name"/>
+                  </content>
+               </elementSpec>
+               
                <elementSpec ident="note" module="core" mode="change">
                   <constraintSpec scheme="schematron" ident="note.authorialInQOnly">
                      <desc>Use authorial notes only within <gi>q</gi> elements</desc>
