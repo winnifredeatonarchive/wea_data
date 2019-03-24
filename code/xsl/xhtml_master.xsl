@@ -20,6 +20,10 @@
     <xsl:include href="xhtml_templates_module.xsl"/>
     <xsl:include href="xhtml_appendix_module.xsl"/>
     <xsl:include href="xhtml_functions_module.xsl"/>
+    <xsl:include href="xhtml_metadata_module.xsl"/>
+    <xsl:include href="xhtml_nav_module.xsl"/>
+    <xsl:include href="xhtml_footer_module.xsl"/>
+    <xsl:include href="xhtml_head_metadata_module.xsl"/>
 
 
     
