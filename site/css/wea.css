@@ -128,6 +128,75 @@ header.searchOpen{
 
 
 
+aside{
+    top:0;
+    margin-left:0;
+    height:100%;
+    position: fixed;
+}
+
+aside.showing{
+    z-index:1000;
+    background:ghostwhite;
+    height:100%;
+    color: black;
+    min-width:20%;
+
+}
+
+aside.showing  #aside_toggle{
+    color:black;
+}
+
+aside:not(.showing) #aside_contents{
+    margin-left:-30rem;
+}
+
+aside.showing #aside_contents,
+aside:active #aside_contents{
+
+   margin-left:0;
+}
+
+#credits{
+    margin:1.5rem;
+}
+
+
+div.ham{
+    display:block;
+    font-size:200%;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+
+div.closed > h3,
+div.open > h3{
+    cursor:pointer;
+}
+
+
+div.toc {
+    text-align:justify;
+}
+div.toc > div > span{
+    padding:0 .3rem;
+    display:inline-block;
+}
+
+
+div.closed > h3::after{
+    content:" ▶";
+    }
+    
+
+
+div.open > h3::after{
+    content:" ▼";
+}
+
 /****************************************************************** SEARCH (HEADER AND MAIN) ******/
 
 /* 
@@ -499,7 +568,8 @@ div:target:before{
       }
 
 /* FOR INLINE ELEMENTS */
-a:target:before{
+a:target:before,
+[data-el='pb']:target:before{
     content:"";    
     display: inline-block;    
     vertical-align: top;
@@ -673,24 +743,29 @@ div[data-el='note'] > div[data-el='p']{
     text-align:center;
 }
 
+/******************************************************************* PAGE BREAKS **********/
 span[data-el='pb']{
     width:100%;
     margin:2.25em 0 2.25em 0;
-    display:block;
-    border-style: inset;
-    border-width: 1px;
+    display:grid;
+    border-top-style: inset;
+    border-top-width: 1px;
+    border-color:#757575;
+    color: #757575;
 }
 
-/*span[data-el="pb"][data-n]::after{
-    float:right;
-    margin-right:-2em;
+span[data-el="pb"][data-n]::after{
+    text-align:right;
+    margin-right:-10%;
     content:"["attr(data-n)"]";
-}*/
+}
 
 span[data-el='pb'].first{
-    display:none;
+    border:none;
+    margin:0;
 }
 
+/********************************************************************* INLINE ELEMENTS ******** */
 [data-el='supplied']::before{
     content:'[';
 }
@@ -723,75 +798,43 @@ span[data-el='pb'].first{
 
 
 
-aside{
-    top:0;
-    margin-left:0;
-    height:100%;
-    position: fixed;
-}
 
-aside.showing{
-    z-index:1000;
-    background:ghostwhite;
-    height:100%;
-    color: black;
-    min-width:20%;
-
-}
-
-aside.showing  #aside_toggle{
-    color:black;
-}
-
-aside:not(.showing) #aside_contents{
-    margin-left:-30rem;
-}
-
-aside.showing #aside_contents,
-aside:active #aside_contents{
-
-   margin-left:0;
-}
-
-#credits{
-    margin:1.5rem;
+div.blockquote{
+    margin: 1.5rem 5rem 1.5rem 1.5rem;
+    font-size:95%;
 }
 
 
-div.ham{
-    display:block;
-    font-size:200%;
-    font-weight:bold;
-    cursor:pointer;
+span[data-el='foreign']{
+    font-style:italic;
+}
+
+span[data-el='q']::before,
+span[data-el='title'][data-level='a']::before{
+    content:"“";
+   
+}
+
+span[data-el='q']::after,
+span[data-el='title'][data-level='a']::after{
+    content:"”";
 }
 
 
+div[data-el='lg']{
+    padding: .5em 0;
+}
 
-div.closed > h3,
-div.open > h3{
-    cursor:pointer;
+span[data-el='q'] span[data-el='q']::before{
+    content:"‘";
+}
+
+span[data-el='q'] span[data-el='q']::after{
+    content:"’";
 }
 
 
-div.toc {
-    text-align:justify;
-}
-div.toc > div > span{
-    padding:0 .3rem;
-    display:inline-block;
-}
-
-
-div.closed > h3::after{
-    content:" ▶";
-    }
-    
-
-
-div.open > h3::after{
-    content:" ▼";
-}
-
+/************************************************************************* NOTE MARKERS  */
 .noteMarker{
     vertical-align:super;
     font-size:.8em;
@@ -801,6 +844,8 @@ div.open > h3::after{
     outline: thin dotted;
 }
 
+
+/************************************************************************ POPUPS */
 #popup.hidden{
     display:none;
 }
@@ -821,6 +866,7 @@ div.open > h3::after{
 
 }
 
+/***************************************************************************** ANIMATIONS */
 @keyframes fade-in {
   from { 
     opacity: 0; 
@@ -869,12 +915,6 @@ div.open > h3::after{
  display:none;   
 }
 
-
-a{
-    text-decoration:none;
-}
-
-
 #popup_closer{
     float:right;
     top:5rem;
@@ -885,39 +925,13 @@ a{
 }
 
 
-div.blockquote{
-    margin: 1.5rem 5rem 1.5rem 1.5rem;
-    font-size:95%;
+a{
+    text-decoration:none;
 }
 
 
-span[data-el='foreign']{
-    font-style:italic;
-}
-
-span[data-el='q']::before,
-span[data-el='title'][data-level='a']::before{
-    content:"“";
-   
-}
-
-span[data-el='q']::after,
-span[data-el='title'][data-level='a']::after{
-    content:"”";
-}
 
 
-div[data-el='lg']{
-    padding: .5em 0;
-}
-
-span[data-el='q'] span[data-el='q']::before{
-    content:"‘";
-}
-
-span[data-el='q'] span[data-el='q']::after{
-    content:"’";
-}
 
 .citationItem{
     text-indent:-2rem;
@@ -973,6 +987,8 @@ div.facsButton> a:hover
     color:inherit;
     text-decoration:none;
 }
+
+/**************************************************************************** APPENDIX */
 #appendix div[data-el=note]{
     background: var(--wea-additional-info-bg-color);
     border:dotted 1px black;
@@ -991,7 +1007,7 @@ div[data-el=note] + div[data-el=note]{
 }
 
 
-/* Tables */
+/************************************************************************** TABLES */
 
 table {
     border-collapse: collapse;
@@ -1107,6 +1123,7 @@ code.block{
     background:inherit;
 }
 
+/******************************************************************** EG XML */
 /* When the input field gets focus, change its width to 100% */
 
 /* Eg stuff, taken from the TEI's CSS stylesheet:  */
@@ -1342,6 +1359,10 @@ a[href].gi::after{
         padding-bottom:.75rem;
     }
     
+    /* Smaller margin needed. */
+    span[data-el="pb"][data-n]::after{
+        margin-right:-6.5%;
+    }
     
     #nav_main > .nav-item.home, 
     #nav_main > .nav-item.search_icon{
