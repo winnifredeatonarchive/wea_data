@@ -45,10 +45,20 @@
                     <div class="metadataLabel" id="additional_info_header">Credits and Citations</div>
                     <div id="additional_info_content">
                         <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
+                        <xsl:if test="$root//sourceDesc/bibl[note]">
+                            <div>
+                                <div class="metadataLabel">Notes</div>
+                                <xsl:for-each select="$root//sourceDesc/bibl/note">
+                                    <div>
+                                        <xsl:apply-templates select="node()" mode="tei"/>
+                                    </div>
+                                </xsl:for-each>
+                            </div>
+                        </xsl:if>
                         <div id="source_citation">
                             <div class="metadataLabel">Source Citation</div>
                             <div class="citationItem">
-                                <xsl:apply-templates select="$root//sourceDesc/bibl/node()" mode="tei"/>
+                                <xsl:apply-templates select="$root//sourceDesc/bibl/node()[not(self::note)]" mode="tei"/>
                             </div>
                             
                         </div>
@@ -56,7 +66,7 @@
                             <div class="metadataLabel">Cite this Page</div>
                             <div class="citationItem">
                                 <xsl:variable name="thisCitation" as="node()+">
-                                    <xsl:sequence select="$root//sourceDesc/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
+                                    <xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
                                 </xsl:variable>
                                 <xsl:apply-templates select="$thisCitation" mode="tei"/>
                             </div>
@@ -99,6 +109,8 @@
         <!--I think we want the next before the prev in all cases-->
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
     </xsl:template>
+    
+    <xsl:template match="bibl/note" mode="metadata"/>
     
     <xsl:template match="text/@next | text/@prev" mode="metadata">
         <div>
@@ -178,7 +190,16 @@
     
     <xsl:template match="bibl/author" mode="metadata">
         <div>
-            <div class="metadataLabel">Pseudonym</div>
+            <div class="metadataLabel">
+                <xsl:choose>
+                    <xsl:when test="name/@ref='#WE1'">
+                        Pseudonym
+                    </xsl:when>
+                    <xsl:otherwise>
+                        Author
+                    </xsl:otherwise>
+                </xsl:choose>
+            </div>
             <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
@@ -211,6 +232,45 @@
             <div class="metadataLabel">Page Range</div>
             <div><xsl:apply-templates mode="tei"/></div>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="bibl/publisher" mode="metadata">
+        <div>
+            <div class="metadataLabel">Publisher</div>
+            <div><xsl:apply-templates mode="tei"/></div>
+        </div>
+    </xsl:template>
+    
+    
+    <!--We only have one template to match pubPlace but we want to capture all of them in one block.-->
+    <xsl:template match="bibl/pubPlace" mode="metadata">
+            <xsl:choose>
+                <xsl:when test="(parent::bibl[count(pubPlace) gt 1] and not(preceding-sibling::pubPlace)) or parent::bibl[count(pubPlace) =1]">
+                    <div>
+                        <div class="metadataLabel">Publication Place</div>
+                        <div>
+                            <xsl:value-of select="string-join(parent::bibl/pubPlace,', ')"/>
+                        </div>
+                    </div>
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="title[@level='m']" mode="metadata">
+        <xsl:choose>
+            <!--If there's no preceding title/@level='a', then this is the only title, which already appears above-->
+            <xsl:when test="not(preceding::title[@level='a'])"/>
+            <xsl:otherwise>
+                <div>
+                    <div class="metadataLabel">Monograph Title</div>
+                    <div>
+                        <xsl:apply-templates mode="tei"/>
+                    </div>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
     
     <xsl:template match="bibl/date" mode="metadata">
