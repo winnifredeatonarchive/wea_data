@@ -20,6 +20,8 @@
     
     <xsl:template name="createHeadMetadata">
         <head>
+            <!--Add the XMLNs-->
+            <xsl:call-template name="addNamespaces"/>
             <title><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
@@ -34,8 +36,10 @@
         </head>
     </xsl:template>
     
+    <xsl:template name="addNamespaces">
+        <xsl:namespace name="og" select="'http://ogp.me/ns#'"/>
+    </xsl:template>
     <xsl:template name="createOpenGraph">
-        <link rel="schema.og" href="http://ogp.me/ns#"/>
         <link rel="schema.wea" href="http://winnifredeatonarchive.com/taxonomies.html#"/>
         <meta property="og:title" content="{//teiHeader/fileDesc/titleStmt/title[1]}" />
         <xsl:call-template name="getOGTypes"/>
