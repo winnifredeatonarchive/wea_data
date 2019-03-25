@@ -1031,6 +1031,40 @@ table {
     table-layout:fixed;
 }
 
+.JS th{
+    cursor:pointer;
+}
+
+.JS th::after{
+    left: 3px;
+    content:"";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    margin: 4px 4px 0 3px;
+    background: transparent;
+    border-bottom: solid 7px #2A5DB0;
+    border-top-width: 0;
+}
+
+.JS th.down::after{
+    border-bottom:none;
+    border-top:solid 7px #2A5DB0
+}
+
+.JS th.selected::after,
+.JS th.up.selected::after{
+    border-bottom: solid 7px var(--wea-pink);
+}
+
+.JS th.down.selected::after{
+    border-bottom:none;
+    border-top:solid 7px var(--wea-pink);
+}
+
+
+
 table, th, td {
     border: 1px solid black;
     width:95%;

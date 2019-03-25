@@ -116,10 +116,37 @@
     
     <xsl:template match="table" mode="tei">
         <table>
-            <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates mode="#current"/>
+
+            <xsl:choose>
+                <xsl:when test="row[1][@role='label']">
+                    <xsl:call-template name="processAtts">
+                        <xsl:with-param name="classes" select="'sortable'"/>
+                    </xsl:call-template>
+                    <thead>
+                        <xsl:apply-templates select="row[1][@role='label']" mode="#current"/>
+                    </thead>
+                    <tbody>
+                        <xsl:apply-templates select="row[position() gt 1]" mode="#current"/>
+                    </tbody>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="processAtts"/>
+                    <tbody>
+                        <xsl:apply-templates select="row" mode="#current"/>
+                    </tbody>
+                </xsl:otherwise>
+            </xsl:choose>
         </table>
     </xsl:template>
+    
+    <xsl:template match="row[@role='label'][count(preceding-sibling::row) = 0]/cell" mode="tei">
+        <th>
+            <xsl:call-template name="processAtts"/>
+            <xsl:attribute name="data-colNum" select="count(preceding-sibling::cell)+1"/>
+            <xsl:apply-templates mode="#current"/>
+        </th>
+    </xsl:template>
+    
     
     <xsl:template match="row" mode="tei">
         <tr>
@@ -127,6 +154,49 @@
             <xsl:apply-templates mode="#current"/>
         </tr>
     </xsl:template>
+    
+    <xsl:template match="cell" mode="tei">
+        <td>
+            <xsl:call-template name="processAtts"/>
+            <xsl:call-template name="createSort"/>
+            <xsl:apply-templates mode="#current"/>
+        </td>
+    </xsl:template>
+    
+    <xsl:template name="createSort">
+        <xsl:variable name="table" select="ancestor::table"/>
+        <xsl:variable name="thisColNum" select="count(preceding-sibling::cell) + 1"/>
+        <xsl:variable name="vals" select="$table/row/cell[$thisColNum]/normalize-space(string-join(descendant::text()[not(ancestor::note)],''))" as="xs:string+"/>
+        <xsl:variable name="type">
+            <xsl:choose>
+                <xsl:when test="every $v in $vals satisfies matches($v,'^\d+(\.\d+)?$')">float</xsl:when>
+                <xsl:when test="every $v in $vals satisfies matches($v,'\d{4}(-\d{2}(-\d{2})?)')">date</xsl:when>
+                <xsl:otherwise>string</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:attribute name="data-colNum" select="$thisColNum"/>
+        <xsl:call-template name="makeSortKey">
+            <xsl:with-param name="type" select="$type"/>
+            <xsl:with-param name="thisColNum" select="$thisColNum"/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <xsl:template name="makeSortKey">
+        <xsl:param name="type"/>
+        <xsl:param name="thisColNum"/>
+        <xsl:variable name="map" as="map(xs:string, xs:integer)">
+            <xsl:map>
+                <xsl:for-each select="ancestor::table/row/cell[$thisColNum]">
+                    <xsl:sort select="normalize-space(string-join(descendant::text()[not(ancestor::note)]))"/>
+                    <!--We'll want a better sorting key mechanism here-->
+                    <xsl:variable name="pos" select="position()"/>
+                    <xsl:map-entry key="generate-id(.)" select="position()"/>
+                </xsl:for-each>
+            </xsl:map>
+        </xsl:variable>
+        <xsl:attribute name="data-sortNum" select="$map(generate-id(.))"/>
+    </xsl:template>
+    
     <!--QUOTATIONS-->
     
     
@@ -156,12 +226,7 @@
         <xsl:value-of select="substring(., 2)"/>
     </xsl:template>
     
-    <xsl:template match="cell" mode="tei">
-        <td>
-            <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates mode="#current"/>
-        </td>
-    </xsl:template>
+  
     
     <xsl:template match="supplied | gap" mode="tei">
         <xsl:variable name="leadingSentence">

@@ -39,8 +39,97 @@ function addEvents(){
     if (document.getElementById('additional_info')){
             makeAdditionalInfoArrowClickable();
     }
+    if (document.querySelectorAll('table')){
+        makeTablesSortable();
+    }
 
 }
+
+function makeTablesSortable(){
+    var th = document.querySelectorAll('th');
+    th.forEach(function(t){
+        t.addEventListener('click', sortTable, true)
+    });
+}
+
+/* This is a fairly crude table sorting function that relies on the 
+ * fact that our tables already have their sort key in place. Since each cell in a table
+ * gets its own respective sort integer (i.e. where it fits in a sequence), the sorting
+ * is trivial on the JS side. */
+ 
+function sortTable(){
+    /* this coliumn number */
+    var cn = this.getAttribute('data-colNum');
+    
+    /* The table (we assume no nested tables) */
+    var table = this.parentNode.parentNode.parentNode;
+    
+    /* The body of the table (there should be only 1) */
+    var tbody = table.getElementsByTagName('tbody')[0];
+    
+    /* All of the already selected elements */
+    var selected = table.getElementsByClassName('selected');
+    
+    /* Now iterate over the selected elements */
+    
+    for (var s=0; s < selected.length; s++){
+    /* And so long as the selected element isn't this, then get rid of everything */
+        if (!(selected[s] === this)){
+           selected[s].classList.remove('up');
+           selected[s].classList.remove('down');
+           selected[s].classList.remove('selected');
+        }
+    }
+    
+    /* If it hasn't been selected yet, then select it. */
+    if (!this.classList.contains('selected')){
+        this.classList.add('selected');
+     }
+     
+     /* Determine whether we should short ascending or descending */
+    var alreadyAsc = this.classList.contains('up');
+    var alreadyDesc = this.classList.contains('down');
+    var asc;
+    /* If it's neither up or down, then it should be sorted ascending */
+    if (alreadyAsc) {
+        asc = false;
+    } else {
+        asc = true;
+    }
+    
+    /* UP means its sorting ascending; down descending */
+    if (asc){
+        this.classList.remove('down');
+        this.classList.add('up');
+    } else {
+        this.classList.remove('up');
+        this.classList.add('down');
+    }
+    /* Get all the rows in the body of the table */
+    var rows = tbody.querySelectorAll('tr');
+    
+    /* Create an array from the rows */
+    var rowArray = Array.from(rows);
+    
+    /* Now sort it by comparing the column with the row  */
+    rowArray.sort(function(a,b){
+       return a.getElementsByTagName('td')[cn-1].getAttribute('data-sortnum') - b.getElementsByTagName('td')[cn-1].getAttribute('data-sortnum')
+       });
+       
+   /* Now figure out how to iterate */
+   
+   if (asc){
+     for (var i=0; i<rows.length; i++){
+        tbody.appendChild(rowArray[i]);
+     }
+   } else {
+       for (var i=rows.length -1; i>-1; i--){
+           tbody.appendChild(rowArray[i]);
+       }
+   }  
+
+    }
+    
 
 function addHeaderSearch(){
 
