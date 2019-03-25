@@ -124,7 +124,7 @@
     
     
     <xsl:template name="createTOC">
-        <xsl:variable name="toc">
+        <xsl:variable name="toc" as="element(tei:list)">
             <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
         </xsl:variable>
         <xsl:if test="exists($toc/item)">
