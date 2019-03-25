@@ -21,13 +21,33 @@
     <xsl:template name="createHeadMetadata">
         <head>
             <title><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></title>
+            <xsl:call-template name="createOpenGraph"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="icon" type="image/png" href="graphics/icon.png"/>
             <script src="js/wea.js"/>
-            <script src="js/porterStemmer.js"/>
-            <script src="js/search.js"/>
+            <xsl:if test="@xml:id='search'">
+                <script src="js/porterStemmer.js"/>
+                <script src="js/search.js"/>
+            </xsl:if>
+
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
         </head>
+    </xsl:template>
+    
+    <xsl:template name="createOpenGraph">
+        <link rel="schema.og" href="http://ogp.me/ns#"/>
+        <link rel="schema.wea" href="http://winnifredeatonarchive.com/taxonomies.html#"/>
+        <meta property="og:title" content="{//teiHeader/fileDesc/titleStmt/title[1]}" />
+        <xsl:call-template name="getOGTypes"/>
+        <meta property="og:url" content="http://winnifredeatonarchive.com/{@xml:id}.html" />
+        <meta property="og:image" content="{if (//text/@facs) then concat('http://winnifredeatonarchive.github.io/wea/',replace(//text/@facs,'.pdf','.png')) else 
+            'http://winnifredeatonarchive.github.io/wea/graphics/icon.png'}" />
+    </xsl:template>
+    
+    <xsl:template name="getOGTypes">
+        <xsl:for-each select="//catRef">
+            <meta property="og:type" content="wea:{substring-after(@target,'#')}"/>
+        </xsl:for-each>
     </xsl:template>
     
 </xsl:stylesheet>
