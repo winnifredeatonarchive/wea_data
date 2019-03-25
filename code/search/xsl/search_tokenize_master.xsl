@@ -82,7 +82,7 @@
             <xsl:for-each select="$distinctWords">
                 <xsl:variable name="entry" select="$tokenMap(.)"/>
                 <xsl:if test="$entry[3]">
-                    <xsl:message>Found foreign word to add to list! <xsl:value-of select="."/></xsl:message>
+                    <!--<xsl:message>Found foreign word to add to list! <xsl:value-of select="."/></xsl:message>-->
                     <xsl:value-of select="."/><xsl:text>&#xA;</xsl:text>
                 </xsl:if>
             </xsl:for-each>
