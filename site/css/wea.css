@@ -506,8 +506,9 @@ a, a:visited{
 }
 
 .JS #additional_info > div.open > .additionalInfoContent{
-    max-height:100rem;
+    max-height:30rem;
     transition: max-height .2s ease-in-out;
+    overflow-y:auto;
 }
 
 .JS .additionalInfoHeader{
@@ -1007,6 +1008,21 @@ div[data-el=note] + div[data-el=note]{
     padding-top:.3em;
 }
 
+
+
+/************************************************************************** LISTS */
+
+[data-el='list']{
+    padding:.25rem;
+}
+
+[data-el='list'] > [data-el='item']{
+    padding-left: .5rem;
+}
+
+[data-el='list'] > [data-el='item'] + [data-el='item']{
+    padding-top:.25rem;
+}
 
 /************************************************************************** TABLES */
 

@@ -78,6 +78,15 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="div[head][not(ancestor::floatingText)][not(@xml:id)]" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id" select="generate-id(.)"/>
+            </xsl:call-template>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
 
     
     <xsl:template match="head" mode="tei">

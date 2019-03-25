@@ -124,16 +124,79 @@
     
     
     <xsl:template name="createTOC">
-        <xsl:if test="false()">
+        <xsl:variable name="toc">
+            <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
+        </xsl:variable>
+        <xsl:if test="exists($toc/item)">
             <div id="toc" class="additionalInfo">
                 <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents</div>
                 <div class="additionalInfoContent">
+                    <xsl:sequence select="$toc"/>
                 </div>
             </div>
+            
         </xsl:if>
-     
-        <!--NOT DOING ANYTHING YET-->
     </xsl:template>
+    
+    <xsl:template match="TEI" mode="toc">
+            <tei:list>
+                <!--And apply templates to the text-->
+                <xsl:apply-templates select="text[not(@type='standoff')]" mode="#current"/>
+            </tei:list>
+    </xsl:template>
+    
+    
+    <xsl:template match="TEI/text[not(@type='standoff')]" mode="toc">
+        <xsl:for-each select="//div[head][not(ancestor::floatingText)][not(ancestor::div[head])]">
+            <xsl:apply-templates select="." mode="#current"/>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="div[head]" mode="toc">
+        <tei:item><tei:ref target="#{wea:getId(.)}"><xsl:apply-templates select="head[1]" mode="#current"/></tei:ref>
+            <xsl:if test="child::div[head]">
+                <tei:list>
+                    <xsl:apply-templates select="div[head]" mode="#current"/>
+                </tei:list>
+            </xsl:if>
+        </tei:item>
+    </xsl:template>
+    
+    <xd:doc>
+    <xd:desc>And just turn the head into text and process its contents through
+        the regular chain (ignoring attributes)</xd:desc>
+    </xd:doc>
+    <xsl:template match="div/head" mode="toc">
+        <xsl:apply-templates select="node()" mode="#current"/>
+    </xsl:template>
+    
+    <xd:doc>
+        <xd:desc>Elements to ignore in processing for the TOC.</xd:desc>
+    </xd:doc>
+    <xsl:template match="head/descendant::note | head/descendant::app | head/descendant::lb | head/descendant::gap | head/descendant::label | head/descendant::anchor" mode="toc"/>
+    
+    <xd:doc>
+        <xd:desc>Attributes to delete, since we don't want this styling in the TOC.</xd:desc>
+    </xd:doc>
+    <xsl:template match="@style | @rendition" mode="toc"/>
+    
+    
+    <xd:doc>
+        <xd:desc>We copy out any descendant node, unless otherwise specified.</xd:desc>
+    </xd:doc>
+    <xsl:template match="@*|node()" priority="-1" mode="toc">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="toc"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    
+    
+    
+    <xsl:function name="wea:getId">
+        <xsl:param name="el"/>
+        <xsl:value-of select="if ($el/@xml:id) then $el/@xml:id else generate-id($el)"/>
+    </xsl:function>
     
     
     
