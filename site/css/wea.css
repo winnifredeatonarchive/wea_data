@@ -158,9 +158,6 @@ aside:active #aside_contents{
    margin-left:0;
 }
 
-#credits{
-    margin:1.5rem;
-}
 
 
 div.ham{
@@ -380,7 +377,7 @@ div.result:focus > a{
 }
 
 #metadata > div,
-#additional_info_content > div{
+.additionalInfoContent > div{
     min-width:0;
     flex-basis:content;
     padding:.5rem .5rem .5rem 0;
@@ -484,44 +481,48 @@ a, a:visited{
 /* ***************************************************** ADDITIONAL INFO PANEL ********** */
 #additional_info{
     grid-area: additional_info;
-    background: var(--wea-additional-info-bg-color);
-    padding: 1rem;
+
    
 }
 
+#additional_info > div{
+    margin-top:1rem;
+    background: var(--wea-additional-info-bg-color);
+    padding: 1rem;
+}
 
-#additional_info_content{
+.additionalInfoContent{
     display:flex;
     flex-flow: column;
     align-content: baseline;
     
 }
 
-.JS #additional_info.closed > #additional_info_content{
+.JS #additional_info > div.closed > .additionalInfoContent{
     max-height:0;
     overflow:hidden;
     transition: max-height .2s ease-in-out;
     display:block;
 }
 
-.JS #additional_info.open > #additional_info_content{
+.JS #additional_info > div.open > .additionalInfoContent{
     max-height:100rem;
     transition: max-height .2s ease-in-out;
 }
 
-.JS #additional_info_header{
+.JS .additionalInfoHeader{
     cursor:pointer;
     
 }
 
-.JS #additional_info > #additional_info_header::after,
-.JS #additional_info.closed > #additional_info_header::after{
+.JS #additional_info > div  .additionalInfoHeader::after,
+.JS #additional_info > div.closed  .additionalInfoHeader::after{
     content: "\02795";
     float:right;
     font-size:80%;
 }
 
-.JS #additional_info.open > #additional_info_header::after{
+.JS #additional_info > div.open > .additionalInfoHeader::after{
     content:"\2796";
 }
 
@@ -550,8 +551,8 @@ a:hover,
 .JS .showTitle:hover,
 .breadcrumb > a,
 .breadcrumb > a:visited,
-.JS #additional_info_header:hover,
-.JS #additional_info_header:hover::after,
+.JS .additionalInfoHeader:hover,
+.JS .additionalInfoHeader:hover::after,
 header a:hover{
     color:var(--wea-pink);
     transition: color 0.2s ease-in-out;

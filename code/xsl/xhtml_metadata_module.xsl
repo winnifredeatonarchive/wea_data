@@ -36,61 +36,18 @@
                         <xsl:call-template name="makeMetadata"/>
                     </div>
                 </div>
-                <div id="relatedItems">
-                    <xsl:call-template name="createRelatedItems"/>
-                </div>
                 
                 <!--                <xsl:if test="$root//sourceDesc/bibl">-->
+                
+                
                 <div id="additional_info">
-                    <div class="metadataLabel" id="additional_info_header">Credits and Citations</div>
-                    <div id="additional_info_content">
-                        <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
-                        <xsl:if test="$root//sourceDesc/bibl[note]">
-                            <div>
-                                <div class="metadataLabel">Notes</div>
-                                <xsl:for-each select="$root//sourceDesc/bibl/note">
-                                    <div>
-                                        <xsl:apply-templates select="node()" mode="tei"/>
-                                    </div>
-                                </xsl:for-each>
-                            </div>
-                        </xsl:if>
-                        <div id="source_citation">
-                            <div class="metadataLabel">Source Citation</div>
-                            <div class="citationItem">
-                                <xsl:apply-templates select="$root//sourceDesc/bibl/node()[not(self::note)]" mode="tei"/>
-                            </div>
-                            
-                        </div>
-                        <div id="this_citation">
-                            <div class="metadataLabel">Cite this Page</div>
-                            <div class="citationItem">
-                                <xsl:variable name="thisCitation" as="node()+">
-                                    <xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
-                                </xsl:variable>
-                                <xsl:apply-templates select="$thisCitation" mode="tei"/>
-                            </div>
-                            
-                        </div>
-                        <div id="xmlVersions">
-                            <div class="metadataLabel">Download XML</div>
-                            <xsl:variable name="tempList">
-                                <tei:list>
-                                    <tei:item><tei:ref target="xml/original/{//ancestor::TEI/@xml:id}.xml">Original XML</tei:ref></tei:item>
-                                    <tei:item><tei:ref target="xml/standalone/{//ancestor::TEI/@xml:id}.xml">Standalone XML</tei:ref></tei:item>
-                                </tei:list>
-                            </xsl:variable>
-                            <div>
-                                <xsl:apply-templates select="$tempList" mode="tei"/>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!--                        <div id="wea_citation">
-                            <div class="metadataLabel">Full Citation</div>
-                            <xsl:apply-templates select=""
-                        </div>-->
+                    <xsl:call-template name="createCreditsAndCitations"/>
+                    <xsl:call-template name="createRelatedItems"/>
+                    <xsl:call-template name="createTOC"/>
                 </div>
+
+                
+                
                 <!--</xsl:if>-->
                 
             </div>
@@ -98,6 +55,85 @@
         
     </xsl:template>
     
+    
+    
+    <xsl:template name="createCreditsAndCitations">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <div id="credits" class="additionalInfo">
+            <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations</div>
+            <div id="credits_content" class="additionalInfoContent">
+                <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
+                <xsl:if test="$root//sourceDesc/bibl[note]">
+                    <div>
+                        <div class="metadataLabel">Notes</div>
+                        <xsl:for-each select="$root//sourceDesc/bibl/note">
+                            <div>
+                                <xsl:apply-templates select="node()" mode="tei"/>
+                            </div>
+                        </xsl:for-each>
+                    </div>
+                </xsl:if>
+                <div id="source_citation">
+                    <div class="metadataLabel">Source Citation</div>
+                    <div class="citationItem">
+                        <xsl:apply-templates select="$root//sourceDesc/bibl/node()[not(self::note)]" mode="tei"/>
+                    </div>
+                    
+                </div>
+                <div id="this_citation">
+                    <div class="metadataLabel">Cite this Page</div>
+                    <div class="citationItem">
+                        <xsl:variable name="thisCitation" as="node()+">
+                            <xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
+                        </xsl:variable>
+                        <xsl:apply-templates select="$thisCitation" mode="tei"/>
+                    </div>
+                    
+                </div>
+                <div id="xmlVersions">
+                    <div class="metadataLabel">Download XML</div>
+                    <xsl:variable name="tempList">
+                        <tei:list>
+                            <tei:item><tei:ref target="xml/original/{//ancestor::TEI/@xml:id}.xml">Original XML</tei:ref></tei:item>
+                            <tei:item><tei:ref target="xml/standalone/{//ancestor::TEI/@xml:id}.xml">Standalone XML</tei:ref></tei:item>
+                        </tei:list>
+                    </xsl:variable>
+                    <div>
+                        <xsl:apply-templates select="$tempList" mode="tei"/>
+                    </div>
+                </div>
+            </div>
+            
+            <!--                        <div id="wea_citation">
+                            <div class="metadataLabel">Full Citation</div>
+                            <xsl:apply-templates select=""
+                        </div>-->
+        </div>
+    </xsl:template>
+    
+    
+    <xsl:template name="createRelatedItems">
+        <xsl:if test="ancestor::TEI//relatedItems">
+            <div id="relatedItems" class="additionalInfo">
+                <div class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items</div>
+                <div class="additionalInfoContent">
+                </div>
+            </div>
+        </xsl:if>
+    </xsl:template>
+    
+    
+    <xsl:template name="createTOC">
+        <xsl:if test="false()">
+            <div id="toc" class="additionalInfo">
+                <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents</div>
+                <div class="additionalInfoContent">
+                </div>
+            </div>
+        </xsl:if>
+     
+        <!--NOT DOING ANYTHING YET-->
+    </xsl:template>
     
     
     
@@ -129,10 +165,7 @@
             <div><a href="{substring-after($target,'#')}.html"><xsl:apply-templates select="$thisTargetTitle" mode="tei"/></a></div>
         </div>
     </xsl:template>
-    
-    <xsl:template name="createRelatedItems">
-        <xsl:comment>COMING SOON</xsl:comment>
-    </xsl:template>
+  
     
     <xsl:template name="createFacs">
         <xsl:variable name="facsAvailable" select="exists(@facs)"/>

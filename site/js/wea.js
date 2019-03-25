@@ -232,20 +232,23 @@ function makeHamburgerClickable(){
 }
 
 function makeAdditionalInfoArrowClickable(){
-    var aih = document.getElementById('additional_info_header');
-    var ai = document.getElementById('additional_info');
-    ai.classList.add('closed');
-    aih.addEventListener('click', openCloseAI, true);
+
+    var addInfDiv = document.querySelectorAll('.additionalInfo');
+    addInfDiv.forEach(function(a){
+        a.classList.add('closed');
+        var head = a.querySelectorAll('.additionalInfoHeader')[0];
+        head.addEventListener('click', openCloseAI, true);
+    });
 }
 
 function openCloseAI(){
-    var ai = document.getElementById('additional_info');
-     if (ai.classList.contains('closed')){
-         ai.classList.remove('closed');
-         ai.classList.add('open');
+    var div = this.parentNode;
+     if (div.classList.contains('closed')){
+         div.classList.remove('closed');
+         div.classList.add('open');
      } else {
-         ai.classList.remove('open');
-         ai.classList.add('closed');
+         div.classList.remove('open');
+         div.classList.add('closed');
      }
         
 }
