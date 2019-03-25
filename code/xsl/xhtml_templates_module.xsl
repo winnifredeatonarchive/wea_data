@@ -33,6 +33,8 @@
             <html lang="en">
 
                 <xsl:call-template name="processAtts"/>
+                <!--Add the XMLNs-->
+                <xsl:call-template name="addNamespaces"/>
                 <xsl:call-template name="createHeadMetadata"/>
                 <xsl:apply-templates mode="#current"/>
             </html>
