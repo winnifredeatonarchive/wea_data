@@ -32,7 +32,7 @@
     --wea-additional-info-bg-color:#efefef;
     --header-height: 2.6rem;
     --body-margin-top: calc(var(--header-height) + 4rem);
-    --anchor-offset: calc(var(--header-height) * 2.1);
+    --anchor-offset: calc(var(--header-height) * 1.05);
 
 }
 
@@ -65,7 +65,7 @@ header{
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
-    max-height: var(--header-height);
+    height: var(--header-height);
     z-index:1000;
     background: var(--wea-header-bg-color);
     /* Decisions need to be made about whether or not to
