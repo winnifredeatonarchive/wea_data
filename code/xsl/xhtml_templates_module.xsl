@@ -126,7 +126,7 @@
                             <xsl:for-each-group select="row[not(@role='label')]/cell" group-by="count(preceding-sibling::cell)">
                                 <xsl:variable name="colNumber" select="current-grouping-key()+1"/>
                                 <xsl:for-each select="current-group()">
-                                    <xsl:sort select="normalize-space(string-join(descendant::text()[not(ancestor::note)]))"/>
+                                    <xsl:sort select="wea:makeTitleSortKey(normalize-space(string-join(descendant::text()[not(ancestor::note)])))"/>
                                     <!--We'll want a better sorting key mechanism here-->
                                     <xsl:variable name="pos" select="position()"/>
                                     <xsl:map-entry key="generate-id(.)" select="($colNumber, $pos)"/>

@@ -69,6 +69,13 @@
         
     </xsl:function>
     
+    <xsl:function name="wea:makeTitleSortKey" as="xs:string">
+        <xsl:param name="string"/>
+        <xsl:variable name="lower" select="lower-case($string)"/>
+        <xsl:variable name="first" select="replace($lower,'^(an?|the)\s','')"/>
+        <xsl:value-of select="$first"/>
+    </xsl:function>
+    
     <xsl:template name="generateTeiPage">
   
         <xsl:param name="outDoc"/>
