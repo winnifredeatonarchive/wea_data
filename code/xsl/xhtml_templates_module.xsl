@@ -115,10 +115,25 @@
     </xsl:template>
     
     <xsl:template match="table" mode="tei">
+        
+        
         <table>
 
             <xsl:choose>
                 <xsl:when test="row[1][@role='label']">
+                    <xsl:variable name="cellMap" as="map(xs:string, xs:integer+)">
+                        <xsl:map>
+                            <xsl:for-each-group select="row[not(@role='label')]/cell" group-by="count(preceding-sibling::cell)">
+                                <xsl:variable name="colNumber" select="current-grouping-key()+1"/>
+                                <xsl:for-each select="current-group()">
+                                    <xsl:sort select="normalize-space(string-join(descendant::text()[not(ancestor::note)]))"/>
+                                    <!--We'll want a better sorting key mechanism here-->
+                                    <xsl:variable name="pos" select="position()"/>
+                                    <xsl:map-entry key="generate-id(.)" select="($colNumber, $pos)"/>
+                                </xsl:for-each>
+                            </xsl:for-each-group>
+                        </xsl:map>
+                    </xsl:variable>
                     <xsl:call-template name="processAtts">
                         <xsl:with-param name="classes" select="'sortable'"/>
                     </xsl:call-template>
@@ -126,7 +141,12 @@
                         <xsl:apply-templates select="row[1][@role='label']" mode="#current"/>
                     </thead>
                     <tbody>
-                        <xsl:apply-templates select="row[position() gt 1]" mode="#current"/>
+                        <xsl:for-each select="row[position() gt 1]">
+                            <xsl:sort select="$cellMap(generate-id(cell[1]))[2]"/>
+                            <xsl:apply-templates select="." mode="#current">
+                                <xsl:with-param name="cellMap" select="$cellMap" tunnel="yes"/>
+                            </xsl:apply-templates>
+                        </xsl:for-each>
                     </tbody>
                 </xsl:when>
                 <xsl:otherwise>
@@ -142,7 +162,7 @@
     <xsl:template match="row[@role='label'][count(preceding-sibling::row) = 0]/cell" mode="tei">
         <th>
             <xsl:call-template name="processAtts"/>
-            <xsl:attribute name="data-colNum" select="count(preceding-sibling::cell)+1"/>
+            <xsl:attribute name="data-col" select="count(preceding-sibling::cell)+1"/>
             <xsl:apply-templates mode="#current"/>
         </th>
     </xsl:template>
@@ -156,14 +176,17 @@
     </xsl:template>
     
     <xsl:template match="cell" mode="tei">
+        <xsl:param name="cellMap" tunnel="yes"/>
+        <xsl:variable name="entry" select="$cellMap(generate-id(.))"/>
         <td>
             <xsl:call-template name="processAtts"/>
-            <xsl:call-template name="createSort"/>
+            <xsl:attribute name="data-col" select="$entry[1]"/>
+            <xsl:attribute name="data-sort" select="$entry[2]"/>
             <xsl:apply-templates mode="#current"/>
         </td>
     </xsl:template>
     
-    <xsl:template name="createSort">
+    <!--<xsl:template name="createSort">
         <xsl:variable name="table" select="ancestor::table"/>
         <xsl:variable name="thisColNum" select="count(preceding-sibling::cell) + 1"/>
         <xsl:variable name="vals" select="$table/row/cell[$thisColNum]/normalize-space(string-join(descendant::text()[not(ancestor::note)],''))" as="xs:string+"/>
@@ -184,19 +207,10 @@
     <xsl:template name="makeSortKey">
         <xsl:param name="type"/>
         <xsl:param name="thisColNum"/>
-        <xsl:variable name="map" as="map(xs:string, xs:integer)">
-            <xsl:map>
-                <xsl:for-each select="ancestor::table/row/cell[$thisColNum]">
-                    <xsl:sort select="normalize-space(string-join(descendant::text()[not(ancestor::note)]))"/>
-                    <!--We'll want a better sorting key mechanism here-->
-                    <xsl:variable name="pos" select="position()"/>
-                    <xsl:map-entry key="generate-id(.)" select="position()"/>
-                </xsl:for-each>
-            </xsl:map>
-        </xsl:variable>
+
         <xsl:attribute name="data-sortNum" select="$map(generate-id(.))"/>
     </xsl:template>
-    
+    -->
     <!--QUOTATIONS-->
     
     

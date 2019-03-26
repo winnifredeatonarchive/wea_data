@@ -59,7 +59,7 @@ function makeTablesSortable(){
  
 function sortTable(){
     /* this coliumn number */
-    var cn = this.getAttribute('data-colNum');
+    var cn = this.getAttribute('data-col');
     
     /* The table (we assume no nested tables) */
     var table = this.parentNode.parentNode.parentNode;
@@ -113,7 +113,7 @@ function sortTable(){
     
     /* Now sort it by comparing the column with the row  */
     rowArray.sort(function(a,b){
-       return a.getElementsByTagName('td')[cn-1].getAttribute('data-sortnum') - b.getElementsByTagName('td')[cn-1].getAttribute('data-sortnum')
+       return a.getElementsByTagName('td')[cn-1].getAttribute('data-sort') - b.getElementsByTagName('td')[cn-1].getAttribute('data-sort')
        });
        
    /* Now figure out how to iterate */
