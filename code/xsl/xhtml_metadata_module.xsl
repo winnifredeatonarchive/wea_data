@@ -131,7 +131,7 @@
             <div id="toc" class="additionalInfo">
                 <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents</div>
                 <div class="additionalInfoContent">
-                    <xsl:sequence select="$toc"/>
+                    <xsl:apply-templates select="$toc" mode="tei"/>
                 </div>
             </div>
             
