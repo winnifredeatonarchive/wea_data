@@ -103,7 +103,7 @@
     
     <target name="createIndex">
         <echo message="Creating index..."/>
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${data.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${data.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${siteTemp}"/>
@@ -112,7 +112,7 @@
     </target>
     
  <target name="createStandaloneXml">
-     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
          <arg value="-xsl:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="-s:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${siteTemp}"/>
@@ -134,7 +134,7 @@
 
   <target name="createXhtml">
       <echo message="Creating site..."/>
-      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
           <arg value="-xsl:${data.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="-s:${data.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${siteTemp}"/>
