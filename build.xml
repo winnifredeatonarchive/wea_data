@@ -23,4 +23,8 @@
         <ant antfile="code/buildSite.xml"  target="quick" inheritall="false"/>
     </target>
     
+    <target name="quickWithFacs">
+        <ant antfile="code/buildSite.xml" target="quickWithFacs" inheritall="false"/>
+     </target>
+    
 </project>
