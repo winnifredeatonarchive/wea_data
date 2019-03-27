@@ -1187,7 +1187,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:pb[@n]">
-                              <sch:assert test="matches(@n,'^\d+[a-z]?')">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
                            </sch:rule>
@@ -1206,6 +1206,10 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <attList>
+                     <attDef ident="n" mode="change" usage="req"/>                     
+                  </attList>
+                 
                </elementSpec>
                
                

@@ -327,7 +327,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:pb[@n]">
-                              <sch:assert test="matches(@n,'^\d+[a-z]?')">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
                            </sch:rule>
