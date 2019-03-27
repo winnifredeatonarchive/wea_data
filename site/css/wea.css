@@ -575,7 +575,7 @@ a:target:before{
     display: inline-block;    
     vertical-align: top;
     position: relative;       
-    top: calc(var(--anchor-offset) * -1); 
+    top: calc(var(--anchor-offset) * -1.6); 
     visibility: hidden;
 }
 
@@ -839,10 +839,16 @@ span[data-el='q'] span[data-el='q']::after{
 
 /************************************************************************* NOTE MARKERS  */
 .noteMarker{
-    vertical-align:super;
-    font-size:.8em;
+    padding-left: .1rem;
+    position: relative;
+    top: .1rem;
 }
 
+.noteMarker > sup{
+    vertical-align: baseline;
+    position: relative;
+    top: -.3rem;
+}
 .noteMarker:focus{
     outline: thin dotted;
 }

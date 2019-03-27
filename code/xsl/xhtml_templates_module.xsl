@@ -329,7 +329,9 @@
     <xsl:template match="note[@type='editorial']" mode="tei">
         <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
         <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
-        <a href="#{$noteId}"  id="noteMarker_{$noteNum}" class="noteMarker" title="{normalize-space(string-join(descendant::text(),''))}"><xsl:value-of select="$noteNum"/></a>
+        <a href="#{$noteId}"  id="noteMarker_{$noteNum}" class="noteMarker" title="{normalize-space(string-join(descendant::text(),''))}">
+            <sup><xsl:value-of select="$noteNum"/></sup>
+        </a>
     </xsl:template>
     
     <xsl:template match="floatingText" mode="tei">
