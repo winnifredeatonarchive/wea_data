@@ -33,6 +33,12 @@
     --header-height: 2.6rem;
     --body-margin-top: calc(var(--header-height) + 4rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
+    
+    /* PB MARGIN TOP BOTTOM */
+    --pb-margin-tb: 2.25rem;
+     /* Since pbs are just heightless border lines, they need slightly different margins
+      * to accomodate the offset jump thing. */
+    --pb-anchor-offset: calc(var(--anchor-offset) + var(--pb-margin-tb));
 
 }
 
@@ -558,8 +564,7 @@ header a:hover{
     transition: color 0.2s ease-in-out;
 }
 
-div:target:before,
-[data-el='pb']:target:before{
+div:target:before{
       content: '';
       display: block;
       position: relative; 
@@ -569,6 +574,16 @@ div:target:before,
       visibility: hidden;
       }
 
+
+[data-el='pb']:target:before{
+      content: '';
+      display: block;
+      position: relative; 
+      width: 0; 
+      height: var(--pb-anchor-offset);
+      margin-top: calc(var(--pb-anchor-offset) * -1);
+      visibility: hidden;
+}
 /* FOR INLINE ELEMENTS */
 a:target:before{
     content:"";    
@@ -578,6 +593,8 @@ a:target:before{
     top: calc(var(--anchor-offset) * -1.6); 
     visibility: hidden;
 }
+
+
 
 #hamburger:hover > div{
     background-color:var(--wea-pink);
@@ -749,18 +766,24 @@ div[data-el='note'] > div[data-el='p']{
 /******************************************************************* PAGE BREAKS **********/
 span[data-el='pb']{
     width:100%;
-    margin:2.25em 0 2.25em 0;
-    display:grid;
-    border-top-style: inset;
-    border-top-width: 1px;
+    margin:var(--pb-margin-tb) 0;
+    display:block;
+    border-bottom-style: inset;
+    border-bottom-width: 1px;
     border-color:#757575;
     color: #757575;
 }
 
-span[data-el="pb"][data-n]::after{
-    text-align:right;
+.pbNum{
+    float:right;
     margin-right:-10%;
-    content:"["attr(data-n)"]";
+}
+.pbNum::before{
+    content:"[";
+}
+
+.pbNum::after{
+    content:']';
 }
 
 span[data-el='pb'].first{
@@ -1418,7 +1441,7 @@ a[href].gi::after{
     }
     
     /* Smaller margin needed. */
-    span[data-el="pb"][data-n]::after{
+    .pbNum{
         margin-right:-6.5%;
     }
     

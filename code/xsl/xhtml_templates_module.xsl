@@ -296,6 +296,11 @@
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
             </xsl:call-template>
+            <xsl:if test="@n">
+                <span class="pbNum">
+                    <xsl:value-of select="@n"/>
+                </span>
+            </xsl:if>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
