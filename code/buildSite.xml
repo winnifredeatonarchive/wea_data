@@ -66,7 +66,11 @@
         <echo message="${echo.separator}"/>
         <echo message="Getting sizes of PDFs..."/>
         <echo message="${echo.separator}"/>
-        <touch file="${siteTemp}facsimiles/files.txt"/>
+        <delete>
+            <fileset dir="${siteTemp}/facsimiles">
+                <include name="**.txt"/>
+            </fileset>
+        </delete>
         <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pdfs.txt" append="true">
             <arg line="-sh"/>
             <fileset dir="${siteTemp}/facsimiles">
