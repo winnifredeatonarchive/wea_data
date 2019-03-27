@@ -1181,6 +1181,21 @@
                   </constraintSpec>
                </elementSpec>
                
+               <elementSpec ident="pb" module="core" mode="change">
+                  <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
+                     <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^\d+[a-z]?')">
+                                 ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
                
                <!--CLASS SPECS-->
                <!--
