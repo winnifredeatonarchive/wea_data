@@ -67,11 +67,10 @@ header{
     margin:0 auto 0 auto;
     height: var(--header-height);
     z-index:1000;
+    position:relative;
     background: var(--wea-header-bg-color);
-    /* Decisions need to be made about whether or not to
-     * have a sticky header. */
+    border-bottom: 1px solid #dedede;
     position:fixed;
-            border-bottom: 1px solid #dedede;
 }
 
 header > *{
@@ -559,7 +558,8 @@ header a:hover{
     transition: color 0.2s ease-in-out;
 }
 
-div:target:before{
+div:target:before,
+[data-el='pb']:target:before{
       content: '';
       display: block;
       position: relative; 
@@ -570,8 +570,7 @@ div:target:before{
       }
 
 /* FOR INLINE ELEMENTS */
-a:target:before,
-[data-el='pb']:target:before{
+a:target:before{
     content:"";    
     display: inline-block;    
     vertical-align: top;
@@ -722,8 +721,7 @@ h1{
 
 
 div[data-el=body]>div[data-el=div]{
-    padding:.5em;
-    margin:0 .5em;
+    margin:.5em;
 }
 
 div[data-el=p]{
