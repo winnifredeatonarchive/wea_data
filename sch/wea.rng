@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-27T20:17:21Z. .
+Schema generated from ODD source 2019-03-27T20:24:21Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2837,6 +2837,19 @@ Elements]</a:documentation>
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:text[descendant::tei:pb]">
+                              <sch:assert test="child::tei:*[1]/self::tei:pb">
+                                 ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is <sch:value-of select="descendant::tei:pb[@n][1]/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.breaking.attributes"/>
@@ -3033,7 +3046,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-assert-15">
+                  id="wea-relatedItem-targetorcontent1-constraint-assert-16">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3132,7 +3145,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-16">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-17">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -5896,7 +5909,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-26">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-27">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

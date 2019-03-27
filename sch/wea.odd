@@ -1194,6 +1194,18 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="text.thereShouldBeAnInitialPb" scheme="schematron">
+                     <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:text[descendant::tei:pb]">
+                              <sch:assert test="child::tei:*[1]/self::tei:pb">
+                                 ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is <sch:value-of select="descendant::tei:pb[@n][1]/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
                
                
