@@ -52,6 +52,7 @@
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile suffix="[0]"/>
             <arg line="+profile 'icc'"/>
+            <arg line="-background white -alpha remove -alpha off"/>
             <targetfile/>
             <fileset dir="${siteTemp}/facsimiles">
                 <include name="**.pdf"/>
