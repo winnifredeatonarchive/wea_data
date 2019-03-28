@@ -46,7 +46,7 @@ function addEvents(){
 }
 
 function makeTablesSortable(){
-    var th = document.querySelectorAll('th');
+    var th = document.querySelectorAll('th.sortable');
     th.forEach(function(t){
         t.addEventListener('click', sortTable, true)
     });

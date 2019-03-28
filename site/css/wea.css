@@ -24,12 +24,16 @@
 /******************************************************************** ROOT ******/
 
 :root{
+    /* BASIC COLOURS */
     --wea-pink: #DF006E;
+    --wea-grey: #efefef;
+    
+    
     --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
-    --wea-additional-info-bg-color:#efefef;
+    --wea-additional-info-bg-color: var(--wea-grey);
     --header-height: 2.6rem;
     --body-margin-top: calc(var(--header-height) + 4rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
@@ -275,6 +279,20 @@ div.results > div{
     transition: opacity .75s;
 }
 
+
+.snippet{
+    padding:.5rem;
+    border: 1px dotted black;
+}
+.highlight{
+    background: rgba(255,170,235,0.4);
+}
+
+.highlight.deselected{
+    background:inherit;
+}
+
+
 /********* HEADER SEARCH ********/
 
 
@@ -437,7 +455,7 @@ a, a:visited{
     margin: 0 auto;
 }
 
-#text{
+#mainBody:not(.docBornDigitalExhibit) > #text{
     max-width:50rem;
 }
 
@@ -1061,11 +1079,11 @@ table {
     table-layout:fixed;
 }
 
-.JS th{
+.JS th.sortable{
     cursor:pointer;
 }
 
-.JS th::after{
+.JS th.sortable::after{
     left: 3px;
     content:"";
     display: inline-block;
@@ -1078,108 +1096,59 @@ table {
     border-top-width: 0;
 }
 
-.JS th.down::after{
+.JS th.sortable.down::after{
     border-bottom:none;
     border-top:solid 7px #2A5DB0
 }
 
-.JS th.selected::after,
+.JS th.sortable.selected::after,
 .JS th.up.selected::after{
     border-bottom: solid 7px var(--wea-pink);
 }
 
-.JS th.down.selected::after{
+.JS th.sortable.down.selected::after{
     border-bottom:none;
     border-top:solid 7px var(--wea-pink);
 }
 
 
+/************************* EXHIBIT TABLES */
 
-table, th, td {
-    border: 1px solid black;
-    width:95%;
+table[data-type='exhibit'] tr{
+    height: 6rem;
+    border:1px dotted black;
 }
-td{
-    padding: .5rem 1rem;
+
+table[data-type='exhibit'] > thead > tr{
+    border:none;
 }
-    table {
-        display: table; 
-        box-sizing: border-box;
-        text-indent: initial;
-	    border-width: 1px;
-	    border-color: #666666;
-        border-collapse: collapse;
-    }
-    
-    col:first-child{
-    width:15%;
-    }
-    
-    tr {
-    display: table-row;
-    }
-    
-div#status table{
+
+table[data-type='exhibit'] td{
+    text-align:center;
+   
+}
+tr:nth-of-type(2n){
+    background:var(--wea-grey);
+}
+
+tr figure{
+    margin:0;
+    padding:1rem;
+}
+tr img{
+    max-height:4rem;
+}
+
+
+table[data-type='exhibit']{
     width:100%;
 }
 
 
 
+/* MUCH OF THE BELOW SHOULD MOST LIKELY GO INTO A NEW CSS FILE FOR DOCUMENTATION. */
 
-th {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
-}
-td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
-}
-
-[data-el='ul']{
-    display:block;
-    
-}
-
-[data-el='li']{
-    padding-left:1rem;
-}
-
-th { font-weight: bold; text-align:center;}
-    td, th{
-        display: table-cell;
-        border:1px solid black;
-        border-collapse: collapse;
-        padding: 1px; 
-        white-space: pre-wrap;
-        word-break:break-word;
-        }
-        
-thead {
-    display: table-header-group; 
-}
-tbody { 
-    display: table-row-group; 
-}
-tfoot { 
-    display: table-footer-group; 
-}
-
-td>ul{
-   list-style-type:none;
-   margin-left:0;
-   padding-left:0;
-}
-
-td>ul>li{
-    margin-left:0;
-    padding-left:0;
-}
+/******************************************************************** CODE */
 
 code.block{
     display:block;
@@ -1192,17 +1161,6 @@ code.block{
 
 
 
-.snippet{
-    padding:.5rem;
-    border: 1px dotted black;
-}
-.highlight{
-    background: rgba(255,170,235,0.4);
-}
-
-.highlight.deselected{
-    background:inherit;
-}
 
 /******************************************************************** EG XML */
 /* When the input field gets focus, change its width to 100% */
