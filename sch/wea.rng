@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-28T02:18:48Z. .
+Schema generated from ODD source 2019-03-28T03:20:36Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -3951,6 +3951,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <text/>
                <ref name="model.limitedPhrase"/>
                <ref name="model.catDescPart"/>
+               <ref name="note"/>
             </choice>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
@@ -4014,8 +4015,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
-                            ERROR: Missing category reference category.
+                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
+                            ERROR: Missing category reference exhibit.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -4045,7 +4046,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                           <sch:rule context="tei:catRef[@scheme='wdt:exhibit']">
                               <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
@@ -4059,17 +4060,17 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <oneOrMore>
                   <choice>
                      <value>wdt:docPrimarySource</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source </a:documentation>
                      <value>wdt:docPrimarySourceMS</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source in Manuscript</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Manuscripts </a:documentation>
                      <value>wdt:docPrimarySourcePublished</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Published Primary Source</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Published Primary Sources </a:documentation>
                      <value>wdt:docBornDigital</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Born Digital document</a:documentation>
                      <value>wdt:docBornDigitalExhibit</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibit page</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibit </a:documentation>
                      <value>wdt:genreShortStory</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Story</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Stories </a:documentation>
                      <value>wdt:genreNF</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Non-fiction</a:documentation>
                      <value>wdt:genreNFAuto</value>
@@ -4095,15 +4096,15 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                      <value>wdt:genreNovelSerial</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel: Serial</a:documentation>
                      <value>wdt:Japan</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:Alberta</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:Hollywood</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:EarlyExperiment</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:NewYork</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                   </choice>
                </oneOrMore>
             </list>
@@ -4115,8 +4116,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document Type</a:documentation>
                <value>wdt:genre</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Genre</a:documentation>
-               <value>wdt:category</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Category</a:documentation>
+               <value>wdt:exhibit</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibits</a:documentation>
             </choice>
          </attribute>
          <empty/>

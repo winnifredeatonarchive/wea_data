@@ -1428,15 +1428,15 @@ On <xsl:text/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:category']"/>
+         <xsl:when test="tei:catRef[@scheme='wdt:exhibit']"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:category']">
+                                test="tei:catRef[@scheme='wdt:exhibit']">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                            ERROR: Missing category reference category.
+                            ERROR: Missing category reference exhibit.
                         </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1508,11 +1508,11 @@ On <xsl:text/>
    </xsl:template>
 
 	  <!--RULE -->
-   <xsl:template match="tei:catRef[@scheme='wdt:category']"
+   <xsl:template match="tei:catRef[@scheme='wdt:exhibit']"
                  priority="1000"
                  mode="M33">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:catRef[@scheme='wdt:category']"/>
+                       context="tei:catRef[@scheme='wdt:exhibit']"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

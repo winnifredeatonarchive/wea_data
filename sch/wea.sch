@@ -498,8 +498,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
-                            ERROR: Missing category reference category.
+                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
+                            ERROR: Missing category reference exhibit.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -522,7 +522,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                           <sch:rule context="tei:catRef[@scheme='wdt:exhibit']">
                               <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
