@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="taxonomies">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Taxonomies</title>
@@ -17,101 +17,111 @@
             <p>Born digital.</p>
          </sourceDesc>
       </fileDesc>
-     <profileDesc>
-        
-        <textClass>
-           <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
-        </textClass>
-     </profileDesc>
-     <encodingDesc>
-        <editorialDecl>
-           <normalization>
-              <p>There has been no normalization.</p>
-           </normalization>
-           <quotation marks="none">
-              <p>We eliminate all quotations mark programatically using the Schematron/XSLT quickfixes contained in the ODD file. Every attempt has been made, in the proofing process, to convert all quotation marks to <gi>q</gi> elements. We do not retain the styling information about the forms of quotation marks nor necessarily the placement of such marks. See the documentation for more specific details on how we handle quotations, block quotations, and floating texts.</p>
-           </quotation>
-           <correction method="markup">
-              <p>We do not correct the text unless the error is obvious and somehow severely impedes the reading process. In the rare cases where there has been editorial correction, we use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements when correcting.</p>
-           </correction>
-           <hyphenation eol="none">
-              <p>All end-of-line hyphens have been removed; however, all other forms of hyphenation (compound words, et cetera) have been retained.</p>
-           </hyphenation>
-           <interpretation>
-              <p>There is little interpretative markup contained within the WEA project. We do tag entities mentioned in the text.</p>
-           </interpretation>
-           <punctuation placement="external">
-              <p>All original punctuation marks have been retained, other than quotation marks (as mentioned above). All trailing punctuation marks that are not necessarily part of the <gi>q</gi> element (i.e. periods or commas) have been moved outside of the <gi>q</gi> element; hard punctuation (like exclamation and question marks) have been retained within the <gi>q</gi>.</p>
-           </punctuation>
-        </editorialDecl>
-        <classDecl>
-           
-           <!--hort story, non-fiction, autobiography, film scenario, film treatment, poem, serialized novel plus some of the more visual “objects” like photograph, portrait, film clip, ) I’m wondering if we would like to complicate the non-fiction category, I.e. Autobiography, dedication, interview, introduction, ethnography-->
-           <taxonomy xml:id="docClassTaxonomies">
-              <taxonomy xml:id="docType" n="Document Types">
-                 <bibl>Document Type</bibl>
-                 <category xml:id="docPrimarySource" n="Primary Source">
-                    <catDesc>Primary Source</catDesc>
-                    <category xml:id="docPrimarySourceMS" n="Manuscripts">
-                       <catDesc>Primary Source in Manuscript</catDesc>
-                    </category>
-                    <category xml:id="docPrimarySourcePublished" n="Published Primary Sources">
-                       <catDesc>Published Primary Source</catDesc>
-                    </category>
-                 </category>
-                 <category xml:id="docBornDigital" n="Born Digital Documents">
-                    <catDesc>Born Digital document</catDesc>
-                    <category xml:id="docBornDigitalExhibit" n="Exhibit Pages">
-                       <catDesc>Exhibit page</catDesc>
-                    </category>
-                 </category>
-              </taxonomy>
-              
-              <taxonomy xml:id="genre">
-                 <bibl>Genre</bibl>
-                 <category xml:id="genreShortStory" n="Short Stories">
-                    <catDesc>Short Story</catDesc>
-                 </category>
-                 <category xml:id="genreNF" n="Non-fiction">
-                    <catDesc>Non-fiction</catDesc>
-                    <category xml:id="genreNFAuto" n="Non-fiction: Autobiographies">
-                       <catDesc>Non-fiction: Autobiography</catDesc>
-                    </category>
-                    <category xml:id="genreNFDedication" n="Non-fiction: Dedications">
-                       <catDesc>Non-fiction: Dedication</catDesc>
-                    </category>
-                    <category xml:id="genreNFInterview" n="Non-fiction: Interviews">
-                       <catDesc>Non-Fiction: Interview</catDesc>
-                    </category>
-                    <category xml:id="genreNFIntroduction" n="Non-fiction: Introduction">
-                       <catDesc>Non-fiction: Introduction</catDesc>
-                    </category>
-                    <category xml:id="genreNFEthnography" n="Non-fiction: Ethnography">
-                       <catDesc>Non-fiction: Ethnography</catDesc>
-                    </category>
-                 </category>
-                 <category xml:id="genreFilm" n="Films">
-                    <catDesc>Film</catDesc>
-                    <category xml:id="genreFilmScenario" n="Film Scenarios">
-                       <catDesc>Film: Scenario</catDesc>
-                    </category>
-                    <category xml:id="genreFilmTreatment" n="Film Treatments">
-                       <catDesc>Film: Treatment</catDesc>
-                    </category>
-                 </category>
-                 <category xml:id="genrePoem" n="Poems">
-                    <catDesc>Poem</catDesc>
-                 </category>
-                 <category xml:id="genreNovel" n="Novels">
-                    <catDesc>Novel</catDesc>
-                    <category xml:id="genreNovelSerial">
-                       <catDesc>Novel: Serial</catDesc>
-                    </category>
-                 </category>
-              </taxonomy>
-                 
-                 
-              <!--<taxonomy xml:id="object">
+      <profileDesc>
+         
+         <textClass>
+            <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
+         </textClass>
+      </profileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <normalization>
+               <p>There has been no normalization.</p>
+            </normalization>
+            <quotation marks="none">
+               <p>We eliminate all quotations mark programatically using the Schematron/XSLT quickfixes contained in the ODD file. Every attempt has been made, in the proofing process, to convert all quotation marks to <gi>q</gi> elements. We do not retain the styling information about the forms of quotation marks nor necessarily the placement of such marks. See the documentation for more specific details on how we handle quotations, block quotations, and floating texts.</p>
+            </quotation>
+            <correction method="markup">
+               <p>We do not correct the text unless the error is obvious and somehow severely impedes the reading process. In the rare cases where there has been editorial correction, we use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements when correcting.</p>
+            </correction>
+            <hyphenation eol="none">
+               <p>All end-of-line hyphens have been removed; however, all other forms of hyphenation (compound words, et cetera) have been retained.</p>
+            </hyphenation>
+            <interpretation>
+               <p>There is little interpretative markup contained within the WEA project. We do tag entities mentioned in the text.</p>
+            </interpretation>
+            <punctuation placement="external">
+               <p>All original punctuation marks have been retained, other than quotation marks (as mentioned above). All trailing punctuation marks that are not necessarily part of the <gi>q</gi> element (i.e. periods or commas) have been moved outside of the <gi>q</gi> element; hard punctuation (like exclamation and question marks) have been retained within the <gi>q</gi>.</p>
+            </punctuation>
+         </editorialDecl>
+         <classDecl>
+            
+            <!--hort story, non-fiction, autobiography, film scenario, film treatment, poem, serialized novel plus some of the more visual “objects” like photograph, portrait, film clip, ) I’m wondering if we would like to complicate the non-fiction category, I.e. Autobiography, dedication, interview, introduction, ethnography-->
+            <taxonomy xml:id="docClassTaxonomies">
+               <taxonomy xml:id="docType" n="Document Types">
+                  <bibl>Document Type</bibl>
+                  <category xml:id="docPrimarySource" n="Primary Source">
+                     <catDesc>
+                        <term>Primary Source</term>
+                     </catDesc>
+                     <category xml:id="docPrimarySourceMS" n="Manuscripts">
+                        <catDesc>
+                           <term>Manuscripts</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="docPrimarySourcePublished" n="Published Primary Sources">
+                        <catDesc>
+                           <term>Published Primary Sources</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="docBornDigital" n="Born Digital Documents">
+                     <catDesc><term>Born Digital document</term></catDesc>
+                     <category xml:id="docBornDigitalExhibit" n="Exhibit Pages">
+                        <catDesc>
+                           <term>Exhibit</term>
+                        </catDesc>
+                     </category>
+                  </category>
+               </taxonomy>
+               
+               <taxonomy xml:id="genre">
+                  <bibl>Genre</bibl>
+                  <category xml:id="genreShortStory" n="Short Stories">
+                     <catDesc>
+                        <term>Short Stories</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="genreNF" n="Non-fiction">
+                     <catDesc><term>Non-fiction</term></catDesc>
+                     <category xml:id="genreNFAuto" n="Non-fiction: Autobiographies">
+                        <catDesc><term>Non-fiction: Autobiography</term></catDesc>
+                     </category>
+                     <category xml:id="genreNFDedication" n="Non-fiction: Dedications">
+                        <catDesc><term>Non-fiction: Dedication</term></catDesc>
+                     </category>
+                     <category xml:id="genreNFInterview" n="Non-fiction: Interviews">
+                        <catDesc><term>Non-Fiction: Interview</term></catDesc>
+                     </category>
+                     <category xml:id="genreNFIntroduction" n="Non-fiction: Introduction">
+                        <catDesc><term>Non-fiction: Introduction</term></catDesc>
+                     </category>
+                     <category xml:id="genreNFEthnography" n="Non-fiction: Ethnography">
+                        <catDesc><term>Non-fiction: Ethnography</term></catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="genreFilm" n="Films">
+                     <catDesc><term>Film</term></catDesc>
+                     <category xml:id="genreFilmScenario" n="Film Scenarios">
+                        <catDesc><term>Film: Scenario</term></catDesc>
+                     </category>
+                     <category xml:id="genreFilmTreatment" n="Film Treatments">
+                        <catDesc><term>Film: Treatment</term></catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="genrePoem" n="Poems">
+                     <catDesc><term>Poem</term></catDesc>
+                  </category>
+                  <category xml:id="genreNovel" n="Novels">
+                     <catDesc><term>Novel</term></catDesc>
+                     <category xml:id="genreNovelSerial">
+                        <catDesc><term>Novel: Serial</term></catDesc>
+                     </category>
+                  </category>
+               </taxonomy>
+               
+               
+               <!--<taxonomy xml:id="object">
                  <bibl>Object</bibl>
                  <category xml:id="objectText">
                     <catDesc>Object: Text</catDesc>
@@ -127,44 +137,70 @@
                     <catDesc>Object: Poster</catDesc>
                  </category>
               </taxonomy>-->
-              
-              <taxonomy xml:id="category">
-                 <bibl>Category</bibl>
-                 <category xml:id="Japan" n="Japan">
-                    <catDesc>Japan</catDesc>
-                 </category>
-                 <category xml:id="Alberta" n="Alberta">
-                    <catDesc>Alberta</catDesc>
-                 </category>
-                 <category xml:id="Hollywood" n="Hollywood">
-                    <catDesc>Hollywood</catDesc>
-                 </category>
-                 <category xml:id="EarlyExperiment" n="Early Experiments">
-                    <catDesc>Early Experiments</catDesc>
-                 </category>
-                 <category xml:id="NewYork" n="New York">
-                    <catDesc>New York</catDesc>
-                 </category>
-              </taxonomy>
-              
-           </taxonomy>
-        </classDecl>
-        <listPrefixDef>
-           <prefixDef ident="facs" matchPattern="(.+)" replacementPattern="facsimiles/$1.pdf"/>
-           <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
-           <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
-           <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
-        </listPrefixDef>
-     </encodingDesc>
-     <revisionDesc>
-        <change when="2019-02-13"
-           who="pers:JT1">Created file.</change>
-     </revisionDesc>
-     
-  </teiHeader>
-  <text>
+               
+               <taxonomy xml:id="exhibit">
+                  <bibl>Exhibits</bibl>
+                  <category xml:id="Japan" n="Japan">
+                     <catDesc><term>Japan</term><note>
+                        <p>Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.</p>
+                        
+                        <p> Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.</p>
+                     </note></catDesc>
+                  </category>
+                  <category xml:id="Alberta" n="Alberta">
+                     <catDesc><term>Alberta</term><note>
+                        <p>Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.</p>
+                        
+                        <p> Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.</p>
+                     </note></catDesc>
+                  </category>
+                  <category xml:id="Hollywood" n="Hollywood">
+                     <catDesc><term>Hollywood</term><note>
+                        <p>Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.</p>
+                        
+                        <p> Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.</p>
+                     </note></catDesc>
+                  </category>
+                  <category xml:id="EarlyExperiment" n="Early Experiments">
+                     <catDesc>
+                        <term>Early Experiments</term>
+                        <note>
+                           <p>Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.</p>
+                           
+                           <p> Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.</p>
+                        </note>
+                     </catDesc>
+                  </category>
+                  <category xml:id="NewYork" n="New York">
+                     <catDesc>
+                        <term>New York</term>
+                        <note>
+                           <p>Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.</p>
+                           
+                           <p> Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.</p>
+                        </note>
+                     </catDesc>
+                  </category>
+               </taxonomy>
+               
+            </taxonomy>
+         </classDecl>
+         <listPrefixDef>
+            <prefixDef ident="facs" matchPattern="(.+)" replacementPattern="facsimiles/$1.pdf"/>
+            <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
+            <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
+            <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
+         </listPrefixDef>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2019-02-13"
+            who="pers:JT1">Created file.</change>
+      </revisionDesc>
+      
+   </teiHeader>
+   <text>
       <body>
          <p>Some text here.</p>
       </body>
-  </text>
+   </text>
 </TEI>
