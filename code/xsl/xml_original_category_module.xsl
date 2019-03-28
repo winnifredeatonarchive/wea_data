@@ -71,7 +71,7 @@
         
         <!--If there's a child category, then we'll want to make a 
             subcategory listing page for this category too-->
-        <xsl:if test="category">
+        <xsl:if test="category and (every $c in category satisfies (not(empty(wea:getCatDocs($c/@xml:id)))))">
             <xsl:call-template name="makePage">
                 <xsl:with-param name="content" as="element(body)">
                     <xsl:apply-templates select="$thisCat" mode="sub"/>
@@ -113,7 +113,9 @@
                 <list>
                     <!--For every child category, make an item-->
                     <xsl:for-each select="category">
-                        <item><ref target="doc:{@xml:id}"><xsl:value-of select="@n"/></ref></item>
+                        <xsl:if test="not(empty(wea:getCatDocs(@xml:id)))">
+                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="@n"/></ref></item>
+                        </xsl:if>
                     </xsl:for-each>
                 </list>
                 <!--TODO: Replace with boilerplate string-->
