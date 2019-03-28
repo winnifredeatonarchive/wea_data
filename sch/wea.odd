@@ -1127,6 +1127,28 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='bio']">
+                              <sch:assert test="tei:p">
+                                 ERROR: All biographical notes should have at least one paragraph.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
+                              <sch:assert test="count(tei:p) = 1">
+                                 ERROR: Short biographies should only contain a single paragraph.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <constraintSpec scheme="schematron" ident="note.subtypeOnlyForBio">
                      <constraint>
                         <sch:pattern>
