@@ -1252,6 +1252,21 @@
                   </constraintSpec>
                </elementSpec>
                
+               <elementSpec ident="bibl" module="core" mode="change">
+                  <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
+                     <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]">
+                              <sch:assert test="tei:title[@level='j']" role="warning">
+                                 WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
                <elementSpec ident="pb" module="core" mode="change">
                   <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
