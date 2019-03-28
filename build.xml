@@ -14,13 +14,30 @@
         <ant antfile="code/search/buildSearch.xml" inheritall="false"/>
     </target>
     
+    <target name="startLocalServer">
+        <exec executable="python" dir="products">
+            <arg line="-m SimpleHTTPServer 8080"/>
+        </exec>
+       
+    </target>
+    
     
     
     <target name="all" depends="validate, createSite, createSearch"/>
     
+    <target name="allServer" depends="all, startLocalServer"/>
     
     <target name="quick">
         <ant antfile="code/buildSite.xml"  target="quick" inheritall="false"/>
+    </target>
+    
+    <target name="quickWithFacs">
+        <ant antfile="code/buildSite.xml" target="quickWithFacs" inheritall="false"/>
+     </target>
+    
+   
+    <target name="copyAuxFiles">
+        <ant antfile="code/buildSite.xml" target="copyAuxFiles" inheritall="false"/>
     </target>
     
 </project>

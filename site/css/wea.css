@@ -24,15 +24,25 @@
 /******************************************************************** ROOT ******/
 
 :root{
+    /* BASIC COLOURS */
     --wea-pink: #DF006E;
+    --wea-grey: #efefef;
+    
+    
     --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
-    --wea-additional-info-bg-color:#efefef;
+    --wea-additional-info-bg-color: var(--wea-grey);
     --header-height: 2.6rem;
     --body-margin-top: calc(var(--header-height) + 4rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
+    
+    /* PB MARGIN TOP BOTTOM */
+    --pb-margin-tb: 2.25rem;
+     /* Since pbs are just heightless border lines, they need slightly different margins
+      * to accomodate the offset jump thing. */
+    --pb-anchor-offset: calc(var(--anchor-offset) + var(--pb-margin-tb));
 
 }
 
@@ -67,11 +77,10 @@ header{
     margin:0 auto 0 auto;
     height: var(--header-height);
     z-index:1000;
+    position:relative;
     background: var(--wea-header-bg-color);
-    /* Decisions need to be made about whether or not to
-     * have a sticky header. */
+    border-bottom: 1px solid #dedede;
     position:fixed;
-            border-bottom: 1px solid #dedede;
 }
 
 header > *{
@@ -85,9 +94,8 @@ header > *{
 }
 
 header.searchOpen{
-    max-height:300rem;
+    height:auto;
 }
-
 /********* NAVIGATIONS ********/
 
 #nav_small{
@@ -270,6 +278,20 @@ div.results > div{
     transition: opacity .75s;
 }
 
+
+.snippet{
+    padding:.5rem;
+    border: 1px dotted black;
+}
+.highlight{
+    background: rgba(255,170,235,0.4);
+}
+
+.highlight.deselected{
+    background:inherit;
+}
+
+
 /********* HEADER SEARCH ********/
 
 
@@ -432,7 +454,7 @@ a, a:visited{
     margin: 0 auto;
 }
 
-#text{
+#mainBody:not(.docBornDigitalExhibit) > #text{
     max-width:50rem;
 }
 
@@ -441,7 +463,10 @@ a, a:visited{
       overflow:hidden;
       padding: 5% 8% 3% 8%;
       margin:0 auto;
-      display:grid;
+      }
+
+#mainBody:not(.docBornDigitalExhibit) > #info{
+     display:grid;
       grid-template-areas:
       "facsimile metadata_container metadata_container relatedItems"
       "facsimile metadata_container metadata_container relatedItems"
@@ -451,8 +476,7 @@ a, a:visited{
       grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
       grid-column-gap:1.5rem;
       grid-row-gap:1.5rem;
-      }
-
+}
 #relatedItems{
     grid-area: relatedItems;
 }
@@ -569,16 +593,27 @@ div:target:before{
       visibility: hidden;
       }
 
-/* FOR INLINE ELEMENTS */
-a:target:before,
+
 [data-el='pb']:target:before{
+      content: '';
+      display: block;
+      position: relative; 
+      width: 0; 
+      height: var(--pb-anchor-offset);
+      margin-top: calc(var(--pb-anchor-offset) * -1);
+      visibility: hidden;
+}
+/* FOR INLINE ELEMENTS */
+a:target:before{
     content:"";    
     display: inline-block;    
     vertical-align: top;
     position: relative;       
-    top: calc(var(--anchor-offset) * -1); 
+    top: calc(var(--anchor-offset) * -1.6); 
     visibility: hidden;
 }
+
+
 
 #hamburger:hover > div{
     background-color:var(--wea-pink);
@@ -722,8 +757,10 @@ h1{
 
 
 div[data-el=body]>div[data-el=div]{
-    padding:.5em;
-    margin:0 .5em;
+    /* Divs CANNOT get padding if they are
+     * going to be targeted, since that
+     * interferes with the offset for the sticky header. */
+    margin:.5em;
 }
 
 div[data-el=p]{
@@ -748,18 +785,24 @@ div[data-el='note'] > div[data-el='p']{
 /******************************************************************* PAGE BREAKS **********/
 span[data-el='pb']{
     width:100%;
-    margin:2.25em 0 2.25em 0;
-    display:grid;
-    border-top-style: inset;
-    border-top-width: 1px;
+    margin:var(--pb-margin-tb) 0;
+    display:block;
+    border-bottom-style: inset;
+    border-bottom-width: 1px;
     border-color:#757575;
     color: #757575;
 }
 
-span[data-el="pb"][data-n]::after{
-    text-align:right;
+.pbNum{
+    float:right;
     margin-right:-10%;
-    content:"["attr(data-n)"]";
+}
+.pbNum::before{
+    content:"[";
+}
+
+.pbNum::after{
+    content:']';
 }
 
 span[data-el='pb'].first{
@@ -838,10 +881,16 @@ span[data-el='q'] span[data-el='q']::after{
 
 /************************************************************************* NOTE MARKERS  */
 .noteMarker{
-    vertical-align:super;
-    font-size:.8em;
+    padding-left: .1rem;
+    position: relative;
+    top: .1rem;
 }
 
+.noteMarker > sup{
+    vertical-align: baseline;
+    position: relative;
+    top: -.3rem;
+}
 .noteMarker:focus{
     outline: thin dotted;
 }
@@ -1029,13 +1078,14 @@ div[data-el=note] + div[data-el=note]{
 table {
     border-collapse: collapse;
     table-layout:fixed;
+    margin: 0 auto;
 }
 
-.JS th{
+.JS th.sortable{
     cursor:pointer;
 }
 
-.JS th::after{
+.JS th.sortable::after{
     left: 3px;
     content:"";
     display: inline-block;
@@ -1048,108 +1098,63 @@ table {
     border-top-width: 0;
 }
 
-.JS th.down::after{
+.JS th.sortable.down::after{
     border-bottom:none;
     border-top:solid 7px #2A5DB0
 }
 
-.JS th.selected::after,
+.JS th.sortable.selected::after,
 .JS th.up.selected::after{
     border-bottom: solid 7px var(--wea-pink);
 }
 
-.JS th.down.selected::after{
+.JS th.sortable.down.selected::after{
     border-bottom:none;
     border-top:solid 7px var(--wea-pink);
 }
 
 
+/************************* EXHIBIT TABLES */
 
-table, th, td {
-    border: 1px solid black;
-    width:95%;
+table[data-type='exhibit'] tr{
+    height: 6rem;
+    border-top:1px dotted black;
 }
-td{
-    padding: .5rem 1rem;
+
+table[data-type='exhibit'] tr:not(:last-child){
+        border-bottom:1px dotted black;
 }
-    table {
-        display: table; 
-        box-sizing: border-box;
-        text-indent: initial;
-	    border-width: 1px;
-	    border-color: #666666;
-        border-collapse: collapse;
-    }
-    
-    col:first-child{
-    width:15%;
-    }
-    
-    tr {
-    display: table-row;
-    }
-    
-div#status table{
+
+table[data-type='exhibit'] > thead > tr{
+    border:none;
+}
+
+table[data-type='exhibit'] td{
+    text-align:center;
+   
+}
+tr:nth-of-type(2n){
+    background:var(--wea-grey);
+}
+
+tr figure{
+    margin:0;
+    padding:1rem;
+}
+tr img{
+    max-height:4rem;
+}
+
+
+table[data-type='exhibit']{
     width:100%;
 }
 
 
 
+/* MUCH OF THE BELOW SHOULD MOST LIKELY GO INTO A NEW CSS FILE FOR DOCUMENTATION. */
 
-th {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
-}
-td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
-}
-
-[data-el='ul']{
-    display:block;
-    
-}
-
-[data-el='li']{
-    padding-left:1rem;
-}
-
-th { font-weight: bold; text-align:center;}
-    td, th{
-        display: table-cell;
-        border:1px solid black;
-        border-collapse: collapse;
-        padding: 1px; 
-        white-space: pre-wrap;
-        word-break:break-word;
-        }
-        
-thead {
-    display: table-header-group; 
-}
-tbody { 
-    display: table-row-group; 
-}
-tfoot { 
-    display: table-footer-group; 
-}
-
-td>ul{
-   list-style-type:none;
-   margin-left:0;
-   padding-left:0;
-}
-
-td>ul>li{
-    margin-left:0;
-    padding-left:0;
-}
+/******************************************************************** CODE */
 
 code.block{
     display:block;
@@ -1162,17 +1167,6 @@ code.block{
 
 
 
-.snippet{
-    padding:.5rem;
-    border: 1px dotted black;
-}
-.highlight{
-    background: rgba(255,170,235,0.4);
-}
-
-.highlight.deselected{
-    background:inherit;
-}
 
 /******************************************************************** EG XML */
 /* When the input field gets focus, change its width to 100% */
@@ -1411,7 +1405,7 @@ a[href].gi::after{
     }
     
     /* Smaller margin needed. */
-    span[data-el="pb"][data-n]::after{
+    .pbNum{
         margin-right:-6.5%;
     }
     

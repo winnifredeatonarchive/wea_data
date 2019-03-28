@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-24T22:26:50Z. .
+Schema generated from ODD source 2019-03-28T03:20:36Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1319,22 +1319,32 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </oneOrMore>
    </define>
    <define name="model.labelLike">
-      <notAllowed/>
+      <choice>
+         <ref name="desc"/>
+      </choice>
    </define>
    <define name="model.labelLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="desc"/>
+      </choice>
    </define>
    <define name="model.labelLike_sequence">
-      <empty/>
+      <ref name="desc"/>
    </define>
    <define name="model.labelLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="desc"/>
+      </optional>
    </define>
    <define name="model.labelLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="desc"/>
+      </zeroOrMore>
    </define>
    <define name="model.labelLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="desc"/>
+      </oneOrMore>
    </define>
    <define name="model.listLike">
       <choice>
@@ -1661,7 +1671,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <notAllowed/>
    </define>
    <define name="model.descLike">
-      <notAllowed/>
+      <choice>
+         <ref name="desc"/>
+      </choice>
    </define>
    <define name="model.glossLike">
       <notAllowed/>
@@ -2229,6 +2241,41 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <empty/>
       </element>
    </define>
+   <define name="desc">
+      <element name="desc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]</a:documentation>
+         <ref name="macro.limitedContent"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="wea-desc-deprecationInfo-only-in-deprecated-constraint-rule-10">
+            <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                      context="tei:desc[ @type eq 'deprecationInfo']">
+	              <sch:assert test="../@validUntil">Information about a
+	deprecation should only be present in a specification element
+	that is being deprecated: that is, only an element that has a
+	@validUntil attribute should have a child &lt;desc
+	type="deprecationInfo"&gt;.</sch:assert>
+            </sch:rule>
+         </pattern>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="term">
       <element name="term">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a single-word, multi-word, or symbolic designation which is regarded as a technical term. [3.3.4. Terms, Glosses, Equivalents, and Descriptions]</a:documentation>
@@ -2582,7 +2629,7 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
       
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-list-gloss-list-must-have-labels-constraint-rule-10">
+                  id="wea-list-gloss-list-must-have-labels-constraint-rule-11">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -2824,9 +2871,49 @@ Elements]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page beginning) marks the beginning of a new page in a paginated document. [3.10.3. Milestone
 Elements]</a:documentation>
          <empty/>
-         <ref name="att.global.attributes"/>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                                 ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:text[descendant::tei:pb]">
+                              <sch:assert test="child::tei:*[1]/self::tei:pb">
+                                 ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is <sch:value-of select="descendant::tei:pb[@n][1]/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <ref name="att.global.attribute.xmlid"/>
+         <ref name="att.global.attribute.xmllang"/>
+         <ref name="att.global.rendition.attribute.style"/>
+         <ref name="att.global.rendition.attribute.rendition"/>
+         <ref name="att.global.linking.attribute.next"/>
+         <ref name="att.global.linking.attribute.prev"/>
+         <ref name="att.global.facs.attribute.facs"/>
+         <ref name="att.global.change.attribute.change"/>
+         <ref name="att.global.responsibility.attribute.cert"/>
+         <ref name="att.global.responsibility.attribute.resp"/>
+         <ref name="att.global.source.attribute.source"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.breaking.attributes"/>
+         <attribute name="n">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
+            <data type="string"/>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -3020,7 +3107,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-assert-14">
+                  id="wea-relatedItem-targetorcontent1-constraint-assert-17">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3119,7 +3206,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-15">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-18">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -3864,6 +3951,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <text/>
                <ref name="model.limitedPhrase"/>
                <ref name="model.catDescPart"/>
+               <ref name="note"/>
             </choice>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
@@ -3927,8 +4015,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
-                            ERROR: Missing category reference category.
+                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
+                            ERROR: Missing category reference exhibit.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -3949,7 +4037,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalCategory))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -3958,7 +4046,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                           <sch:rule context="tei:catRef[@scheme='wdt:exhibit']">
                               <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
@@ -3972,17 +4060,17 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <oneOrMore>
                   <choice>
                      <value>wdt:docPrimarySource</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source </a:documentation>
                      <value>wdt:docPrimarySourceMS</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Primary Source in Manuscript</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Manuscripts </a:documentation>
                      <value>wdt:docPrimarySourcePublished</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Published Primary Source</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Published Primary Sources </a:documentation>
                      <value>wdt:docBornDigital</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Born Digital document</a:documentation>
-                     <value>wdt:docBornDigitalCategory</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Generated category page.</a:documentation>
+                     <value>wdt:docBornDigitalExhibit</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibit </a:documentation>
                      <value>wdt:genreShortStory</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Story</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Stories </a:documentation>
                      <value>wdt:genreNF</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Non-fiction</a:documentation>
                      <value>wdt:genreNFAuto</value>
@@ -4008,15 +4096,15 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                      <value>wdt:genreNovelSerial</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Novel: Serial</a:documentation>
                      <value>wdt:Japan</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Japan Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:Alberta</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Alberta Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:Hollywood</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hollywood Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:EarlyExperiment</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Early Experiments Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                      <value>wdt:NewYork</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York</a:documentation>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New York Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate. Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie. </a:documentation>
                   </choice>
                </oneOrMore>
             </list>
@@ -4028,8 +4116,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Document Type</a:documentation>
                <value>wdt:genre</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Genre</a:documentation>
-               <value>wdt:category</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Category</a:documentation>
+               <value>wdt:exhibit</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibits</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -5883,7 +5971,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-25">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-28">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

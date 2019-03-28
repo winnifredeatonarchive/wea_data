@@ -52,6 +52,7 @@
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile suffix="[0]"/>
             <arg line="+profile 'icc'"/>
+            <arg line="-background white -alpha remove -alpha off"/>
             <targetfile/>
             <fileset dir="${siteTemp}/facsimiles">
                 <include name="**.pdf"/>
@@ -60,13 +61,37 @@
                 <globmapper from="*.pdf" to="*.png"/>
             </mapper>
         </apply>
+      
+    </target>
+    
+    <target name="createTinyThumbnails">
+        <echo message="${echo.separator}"/>
+        <echo message="Creating even tinier thumbnails..."/>
+        <echo message="${echo.separator}"/>
+        <apply executable="convert" dest="${siteTemp}/facsimiles" force="true" failonerror="true">
+            <arg line="-density 150 -thumbnail x300"/>
+            <srcfile suffix="[0]"/>
+            <arg line="+profile 'icc'"/>
+            <arg line="-background white -alpha remove -alpha off"/>
+            <targetfile/>
+            <fileset dir="${siteTemp}/facsimiles">
+                <include name="**.pdf"/>
+            </fileset>
+            <mapper>
+                <globmapper from="*.pdf" to="*_tiny.png"/>
+            </mapper>
+        </apply>
     </target>
     
     <target name="getPDFSizes">
         <echo message="${echo.separator}"/>
         <echo message="Getting sizes of PDFs..."/>
         <echo message="${echo.separator}"/>
-        <touch file="${siteTemp}facsimiles/files.txt"/>
+        <delete>
+            <fileset dir="${siteTemp}/facsimiles">
+                <include name="**.txt"/>
+            </fileset>
+        </delete>
         <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pdfs.txt" append="true">
             <arg line="-sh"/>
             <fileset dir="${siteTemp}/facsimiles">
@@ -103,7 +128,7 @@
     
     <target name="createIndex">
         <echo message="Creating index..."/>
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${data.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${data.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${siteTemp}"/>
@@ -112,7 +137,7 @@
     </target>
     
  <target name="createStandaloneXml">
-     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
          <arg value="-xsl:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="-s:${data.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${siteTemp}"/>
@@ -134,7 +159,7 @@
 
   <target name="createXhtml">
       <echo message="Creating site..."/>
-      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
           <arg value="-xsl:${data.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="-s:${data.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${siteTemp}"/>
@@ -170,8 +195,9 @@
     
   
   <target name="quick" depends="copyAuxFiles, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
+    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, getPDFSizes, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
     
 </project>

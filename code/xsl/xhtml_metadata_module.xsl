@@ -19,42 +19,50 @@
     
     <xsl:template name="createInfo">
         <xsl:variable name="root" select="ancestor::TEI"/>
-        <xsl:if test="not(wea:bornDigital($root))">
-            
+        <xsl:if test="wea:isObject($root) or wea:isExhibit($root)">
             <div id="info">
-                <div id="facsimile">
-                    <xsl:call-template name="createFacs"/>
-                    
-                </div>
-                <div id="metadata_container">
-                    
-                    <div id="title">
-                        <xsl:copy-of select="wea:crumb($root)"/>
-                        <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
-                    </div>
-                    <div id="metadata">
-                        <xsl:call-template name="makeMetadata"/>
-                    </div>
-                </div>
-                
-                <!--                <xsl:if test="$root//sourceDesc/bibl">-->
-                
-                
-                <div id="additional_info">
-                    <xsl:call-template name="createCreditsAndCitations"/>
-                    <xsl:call-template name="createRelatedItems"/>
-                    <xsl:call-template name="createTOC"/>
-                </div>
-
-                
-                
-                <!--</xsl:if>-->
-                
+                <xsl:choose>
+                    <xsl:when test="wea:isObject($root)">
+                        <xsl:call-template name="createObjectInfo"/>
+                    </xsl:when>
+                    <xsl:when test="wea:isExhibit($root)">
+                        <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=$root/@xml:id]"/>
+                        <h2><xsl:apply-templates select="$thisCat/catDesc/term/node()" mode="tei"/></h2>
+                        <xsl:apply-templates select="$thisCat/catDesc/note/p" mode="tei"/>
+                    </xsl:when>
+                </xsl:choose>
             </div>
         </xsl:if>
         
     </xsl:template>
     
+    <xsl:template name="createObjectInfo">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <div id="facsimile">
+            <xsl:call-template name="createFacs"/>
+            
+        </div>
+        <div id="metadata_container">
+            
+            <div id="title">
+                <xsl:copy-of select="wea:crumb($root)"/>
+                <h2><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></h2>
+            </div>
+            <div id="metadata">
+                <xsl:call-template name="makeMetadata"/>
+            </div>
+        </div>
+        
+        <!--                <xsl:if test="$root//sourceDesc/bibl">-->
+        
+        
+        <div id="additional_info">
+            <xsl:call-template name="createCreditsAndCitations"/>
+            <xsl:call-template name="createRelatedItems"/>
+            <xsl:call-template name="createTOC"/>
+        </div>
+        
+    </xsl:template>
     
     
     <xsl:template name="createCreditsAndCitations">
@@ -222,7 +230,7 @@
         <xsl:variable name="target" select="@target"/>
         <xsl:variable name="scheme" select="@scheme"/>
         <xsl:variable name="thisSchemeTitle" select="$standaloneXml//taxonomy[@xml:id=substring-after($scheme,'#')]/bibl/node()"/>
-        <xsl:variable name="thisTargetTitle" select="$standaloneXml//category[@xml:id=substring-after($target,'#')]/catDesc/node()"/>
+        <xsl:variable name="thisTargetTitle" select="$standaloneXml//category[@xml:id=substring-after($target,'#')]/catDesc/term"/>
         <div>
             <div class="metadataLabel"><xsl:apply-templates select="$thisSchemeTitle" mode="tei"/></div>
             <div><a href="{substring-after($target,'#')}.html"><xsl:apply-templates select="$thisTargetTitle" mode="tei"/></a></div>

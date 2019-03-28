@@ -702,7 +702,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl biblScope choice corr date divGen editor emph foreign gap graphic head hi item l lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+                          include="author bibl biblScope choice corr date desc divGen editor emph foreign gap graphic head hi item l lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -723,6 +723,7 @@
                <!--MODULE: HEADER-->
           
                <elementSpec ident="teiHeader" module="header" mode="change">
+                  
             <!--Make all the bits we want of the teiHeader mandatory-->
                   <content>
                      <elementRef key="fileDesc"/>
@@ -760,8 +761,8 @@
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
-                            ERROR: Missing category reference category.
+                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
+                            ERROR: Missing category reference exhibit.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -798,7 +799,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalCategory))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -807,7 +808,7 @@
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                           <sch:rule context="tei:catRef[@scheme='wdt:exhibit']">
                               <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
@@ -838,30 +839,40 @@
                            <valItem mode="add" ident="wdt:genre">
                               <desc>Genre</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:category">
-                              <desc>Category</desc>
+                           <valItem mode="add" ident="wdt:exhibit">
+                              <desc>Exhibits</desc>
                            </valItem>
                         </valList>
                      </attDef>
                      <attDef ident="target" mode="change" usage="req">
                         <valList mode="add" type="closed">
                            <valItem mode="add" ident="wdt:docPrimarySource">
-                              <desc>Primary Source</desc>
+                              <desc>
+                        Primary Source
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docPrimarySourceMS">
-                              <desc>Primary Source in Manuscript</desc>
+                              <desc>
+                           Manuscripts
+                        </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docPrimarySourcePublished">
-                              <desc>Published Primary Source</desc>
+                              <desc>
+                           Published Primary Sources
+                        </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docBornDigital">
                               <desc>Born Digital document</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:docBornDigitalCategory">
-                              <desc>Generated category page.</desc>
+                           <valItem mode="add" ident="wdt:docBornDigitalExhibit">
+                              <desc>
+                           Exhibit
+                        </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreShortStory">
-                              <desc>Short Story</desc>
+                              <desc>
+                        Short Stories
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreNF">
                               <desc>Non-fiction</desc>
@@ -900,19 +911,45 @@
                               <desc>Novel: Serial</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Japan">
-                              <desc>Japan</desc>
+                              <desc>Japan
+                        Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.
+                        
+                         Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Alberta">
-                              <desc>Alberta</desc>
+                              <desc>Alberta
+                        Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.
+                        
+                         Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Hollywood">
-                              <desc>Hollywood</desc>
+                              <desc>Hollywood
+                        Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.
+                        
+                         Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:EarlyExperiment">
-                              <desc>Early Experiments</desc>
+                              <desc>
+                        Early Experiments
+                        
+                           Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.
+                           
+                            Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.
+                        
+                     </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:NewYork">
-                              <desc>New York</desc>
+                              <desc>
+                        New York
+                        
+                           Biscuit bear claw candy toffee danish carrot cake lollipop lemon drops. Chocolate brownie soufflé tootsie roll pastry donut jujubes powder. Macaroon topping topping tiramisu tart cupcake pie ice cream. Croissant gummi bears icing fruitcake lemon drops lollipop. Oat cake marshmallow chupa chups wafer cupcake wafer jujubes topping sesame snaps. Pastry lemon drops donut apple pie chocolate cake gingerbread. Jujubes sugar plum topping chocolate.
+                           
+                            Dragée dessert carrot cake candy canes oat cake tart tootsie roll lollipop soufflé. Apple pie sugar plum lemon drops. Carrot cake cake fruitcake toffee. Gummies cake apple pie sugar plum cotton candy pastry chocolate cake. Cupcake pie donut tart gummi bears icing cotton candy. Chocolate cake halvah tiramisu. Chocolate croissant jujubes chocolate bar chupa chups chocolate bar brownie sugar plum topping. Jelly beans apple pie macaroon soufflé cookie.
+                        
+                     </desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1026,6 +1063,18 @@
                   <content>
                      <elementRef key="resp"/>
                      <elementRef key="name"/>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="catDesc" module="core" mode="change">
+                  <content>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <textNode/>
+                        <classRef key="model.limitedPhrase"/>
+                        <classRef key="model.catDescPart"/>
+                        <!--CUSTOMIZATION: BREAKS TEI-->
+                        <elementRef key="note"/>
+                     </alternate>
                   </content>
                </elementSpec>
                
@@ -1179,6 +1228,37 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+               </elementSpec>
+               
+               <elementSpec ident="pb" module="core" mode="change">
+                  <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
+                     <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                                 ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec ident="text.thereShouldBeAnInitialPb" scheme="schematron">
+                     <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:text[descendant::tei:pb]">
+                              <sch:assert test="child::tei:*[1]/self::tei:pb">
+                                 ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is <sch:value-of select="descendant::tei:pb[@n][1]/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="n" mode="change" usage="req"/>                     
+                  </attList>
+                 
                </elementSpec>
                
                

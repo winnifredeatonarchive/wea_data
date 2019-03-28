@@ -99,7 +99,9 @@
         <istrue value="${useLiveTEI}"/>
     </condition>
     
-    <property name="tei_all.rng" value="${defaultTEIServer}${defaultTEIVersion}/xml/tei/custom/schema/relaxng/tei_all.rng"/>
+    <property name="tei_all.odd" value="${schema.dir}/tei_all.odd"/>
+    <property name="tei_all.odd.processed" value="${schema.dir}/tei_all.odd.processed"/>
+    <property name="tei_all.rng" value="${schema.dir}/tei_all.rng"/>
     
     
     <!--****************************************************************
@@ -187,9 +189,22 @@
         <echo message="${echo.separator}"/>
         <echo message="Getting latest TEI all schema..."/>
         <echo message="${echo.separator}"/>
-        <get src="${tei_all.rng}" dest="${schema.dir}/tei_all.rng"/>
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${tei_all.odd}"/>
+            <arg line="-o:${tei_all.odd.processed}"/>
+            <arg line="-xsl:'${odd2odd.xsl}'"/>
+            <arg line="defaultTEIServer=${defaultTEIServer}"/>
+            <arg line="defaultTEIVersion=${defaultTEIVersion}"/>
+        </java>
         <echo message="Extracting schematron from ${schema.dir}/tei_all.rng"/>
+        
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${tei_all.odd.processed}"/>
+            <arg line="-o:${tei_all.rng}"/>
+            <arg line="-xsl:'${odd2rng.xsl}'"/>
+        </java>
         <echo message="${echo.separator}"/>
+        
         <ant antfile="buildSchematron.xml" inheritall="false">
             <property name="in.rng" value="${schema.dir}/tei_all.rng"/>
             <property name="out.sch" value="${schema.dir}/tei_all.sch"/>
@@ -241,6 +256,7 @@
     <target name="clean">
         <delete file="${project.dir}/documentation/documentation_crude.html"/>
         <delete file="${wea.odd.processed}"/>
+        <delete file="${tei_all.odd.processed}"/>
     </target>
         
     

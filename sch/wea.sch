@@ -182,6 +182,25 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-desc-deprecationInfo-only-in-deprecated-constraint-rule-10">
+            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                context="tei:desc[ @type eq 'deprecationInfo']">
+	              <sch:assert test="../@validUntil">Information about a
+	deprecation should only be present in a specification element
+	that is being deprecated: that is, only an element that has a
+	@validUntil attribute should have a child &lt;desc
+	type="deprecationInfo"&gt;.</sch:assert>
+            </sch:rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
             id="wea-ref-refAtts-constraint-report-7">
             <rule context="tei:ref">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -198,7 +217,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-list-gloss-list-must-have-labels-constraint-rule-10">
+            id="wea-list-gloss-list-must-have-labels-constraint-rule-11">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -317,6 +336,36 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                                 ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:text[descendant::tei:pb]">
+                              <sch:assert test="child::tei:*[1]/self::tei:pb">
+                                 ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is <sch:value-of select="descendant::tei:pb[@n][1]/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -338,7 +387,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-assert-14">
+            id="wea-relatedItem-targetorcontent1-constraint-assert-17">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -370,7 +419,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-15">
+            id="wea-lg-atleast1oflggapl-constraint-assert-18">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -449,8 +498,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:category']">
-                            ERROR: Missing category reference category.
+                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
+                            ERROR: Missing category reference exhibit.
                         </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -464,7 +513,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalCategory))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -473,7 +522,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
-                           <sch:rule context="tei:catRef[@scheme='wdt:category']">
+                           <sch:rule context="tei:catRef[@scheme='wdt:exhibit']">
                               <sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
@@ -547,7 +596,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-25">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-28">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

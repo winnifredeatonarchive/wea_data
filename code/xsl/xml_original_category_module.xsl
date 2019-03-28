@@ -71,7 +71,7 @@
         
         <!--If there's a child category, then we'll want to make a 
             subcategory listing page for this category too-->
-        <xsl:if test="category">
+        <xsl:if test="category and (every $c in category satisfies (not(empty(wea:getCatDocs($c/@xml:id)))))">
             <xsl:call-template name="makePage">
                 <xsl:with-param name="content" as="element(body)">
                     <xsl:apply-templates select="$thisCat" mode="sub"/>
@@ -108,12 +108,13 @@
         <body>
             <head><xsl:value-of select="@n"/>: Subcategories</head>
             <div>
-                <!--Just copy out the stuff in the catDesc-->
-                <p><xsl:copy-of select="catDesc/node()"/></p>
+                <xsl:sequence select="catDesc/note/p"/>
                 <list>
                     <!--For every child category, make an item-->
                     <xsl:for-each select="category">
-                        <item><ref target="doc:{@xml:id}"><xsl:value-of select="@n"/></ref></item>
+                        <xsl:if test="not(empty(wea:getCatDocs(@xml:id)))">
+                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="@n"/></ref></item>
+                        </xsl:if>
                     </xsl:for-each>
                 </list>
                 <!--TODO: Replace with boilerplate string-->
@@ -137,14 +138,16 @@
     </xd:doc>
     <xsl:template match="category" mode="full">
         <xsl:variable name="thisCat" select="@xml:id" as="xs:string"/>
+        
+        
         <body>
-            <head><xsl:value-of select="@n"/></head>
-            <div>
-                <p><xsl:copy-of select="catDesc/node()"/></p>
-                <table type="edtList">
+            <div>                
+                <table type="exhibit">
                     <row role="label">
-                        <cell>Document</cell>
-                        
+                        <cell/>
+                        <cell>Title</cell>
+                        <cell>Date Published</cell>
+                        <cell>Transcription Available</cell>
                     </row>
                     <!--A small function to get the category docs for this category-->
                     <xsl:for-each select="wea:getCatDocs(@xml:id)">
@@ -153,12 +156,46 @@
                         
                         <row>
                             <cell>
+                                <xsl:choose>
+                                    <xsl:when test="$thisDoc//text[@facs]">
+                                        <figure>
+                                            <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.png">
+                                                <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                            </graphic>
+                                        </figure>
+                                    </xsl:when>
+                                </xsl:choose>
+                            </cell>
+                            
+                            <cell>
                                 <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                            </cell>
+                            <cell>
+                                <xsl:choose>
+                                    <xsl:when test="$thisDoc//sourceDesc/bibl[date]">
+                                        <xsl:copy-of select="$thisDoc//sourceDesc/bibl/date"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <date/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                
+                            </cell>
+                            <cell>
+                                <xsl:choose>
+                                    <xsl:when test="normalize-space(string-join($thisDoc//text,'')) ne ''">
+                                        <xsl:text>Yes</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>No</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
                             </cell>
                         </row>
                     </xsl:for-each>
                 </table>
             </div>
+            
         </body>
         
         
@@ -185,8 +222,8 @@
         <xsl:param name="appendSub"/>
         <xsl:variable name="thisId" select="if ($appendSub) then concat($thisCat/@xml:id,'_subcategories') else $thisCat/@xml:id"/>
         <xsl:variable name="outDoc" select="concat($outDir,'xml/original/',$thisId,'.xml')"/>
-        <xsl:variable name="title" select="if ($appendSub) then concat(catDesc,': Subcategories') else catDesc" as="xs:string"/>
-        <xsl:variable name="categories">wdt:docBornDigitalCategory</xsl:variable>
+        <xsl:variable name="title" select="if ($appendSub) then concat(catDesc/term,': Subcategories') else catDesc/term" as="xs:string"/>
+        <xsl:variable name="categories">wdt:docBornDigitalExhibit</xsl:variable>
        <xsl:if test="not(empty(wea:getCatDocs($thisCat/@xml:id)))">
            <xsl:call-template name="generateTeiPage">
                <xsl:with-param name="outDoc" select="$outDoc"/>

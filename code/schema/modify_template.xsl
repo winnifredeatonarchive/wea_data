@@ -18,7 +18,7 @@
     <xsl:variable name="docTypeVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='docType']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="objectVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='object']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     <xsl:variable name="genreVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='genre']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
-    <xsl:variable name="categoryVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='category']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
+    <xsl:variable name="categoryVar" select="concat('(',string-join(for $d in $taxonomies//taxonomy[@xml:id='exhibit']/descendant::category return concat($sq,$d/@xml:id,$sq,':',$sq,$d/catDesc,$sq),';'),')')"/>
     
     
         
@@ -46,7 +46,7 @@
         <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Genre',$genreVar,'genre'))"/>
     </xsl:template>
     <xsl:template match="catRef[@scheme='wdt:category']/@target">
-        <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Category',$categoryVar,'category'))"/>
+        <xsl:attribute name="target" select="concat('wdt:',jt:makeCombo('Exhibit',$categoryVar,'category'))"/>
     </xsl:template>
     
     
