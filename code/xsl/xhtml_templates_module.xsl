@@ -71,7 +71,7 @@
     
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -105,6 +105,7 @@
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
+   
     
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
