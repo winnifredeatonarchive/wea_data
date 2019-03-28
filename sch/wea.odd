@@ -798,7 +798,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalCategory))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -857,8 +857,8 @@
                            <valItem mode="add" ident="wdt:docBornDigital">
                               <desc>Born Digital document</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:docBornDigitalCategory">
-                              <desc>Generated category page.</desc>
+                           <valItem mode="add" ident="wdt:docBornDigitalExhibit">
+                              <desc>Exhibit page</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreShortStory">
                               <desc>Short Story</desc>
