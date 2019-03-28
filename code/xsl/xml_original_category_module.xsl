@@ -108,8 +108,7 @@
         <body>
             <head><xsl:value-of select="@n"/>: Subcategories</head>
             <div>
-                <!--Just copy out the stuff in the catDesc-->
-                <p><xsl:copy-of select="catDesc/node()"/></p>
+                <xsl:sequence select="catDesc/note/p"/>
                 <list>
                     <!--For every child category, make an item-->
                     <xsl:for-each select="category">
@@ -139,10 +138,10 @@
     </xd:doc>
     <xsl:template match="category" mode="full">
         <xsl:variable name="thisCat" select="@xml:id" as="xs:string"/>
+        
+        
         <body>
-            <head><xsl:value-of select="@n"/></head>
-            <div>
-                <p><xsl:copy-of select="catDesc/node()"/></p>
+            <div>                
                 <table type="exhibit">
                     <row role="label">
                         <cell/>
@@ -196,6 +195,7 @@
                     </xsl:for-each>
                 </table>
             </div>
+            
         </body>
         
         
@@ -222,7 +222,7 @@
         <xsl:param name="appendSub"/>
         <xsl:variable name="thisId" select="if ($appendSub) then concat($thisCat/@xml:id,'_subcategories') else $thisCat/@xml:id"/>
         <xsl:variable name="outDoc" select="concat($outDir,'xml/original/',$thisId,'.xml')"/>
-        <xsl:variable name="title" select="if ($appendSub) then concat(catDesc,': Subcategories') else catDesc" as="xs:string"/>
+        <xsl:variable name="title" select="if ($appendSub) then concat(catDesc/term,': Subcategories') else catDesc/term" as="xs:string"/>
         <xsl:variable name="categories">wdt:docBornDigitalExhibit</xsl:variable>
        <xsl:if test="not(empty(wea:getCatDocs($thisCat/@xml:id)))">
            <xsl:call-template name="generateTeiPage">

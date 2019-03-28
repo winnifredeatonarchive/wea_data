@@ -134,13 +134,11 @@
                                         <xsl:otherwise>string</xsl:otherwise>
                                     </xsl:choose>
                                 </xsl:variable>
-                                <xsl:message><xsl:value-of select="$type"/></xsl:message>
                                 <xsl:for-each select="current-group()">
                                     <xsl:sort select="
                                         if ($type='date') then date/@when (: If it's a date, use the @when :)
                                         else if ($type='float') then xs:float(.) (:If it's a float, use that :)
                                         else wea:makeTitleSortKey(normalize-space(string-join(descendant::text()[not(ancestor::note)]))) (:Otherwise, use the string:)
-                                        
                                         "/>
                                     <!--We'll want a better sorting key mechanism here-->
                                     <xsl:variable name="pos" select="position()"/>
@@ -156,8 +154,12 @@
                     <thead>
                         <xsl:apply-templates select="row[1][@role='label']" mode="#current"/>
                     </thead>
-                    <xsl:variable name="firstToSortBy" select="min(for $r in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) return count($r/preceding-sibling::cell) + 1)" as="xs:integer"/>
-                    <xsl:message>First to sort by: <xsl:value-of select="$firstToSortBy"/></xsl:message>
+                    <xsl:variable name="firstToSortBy"
+                        select="
+                        min(for $r 
+                            in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) 
+                            return count($r/preceding-sibling::cell) + 1)" 
+                        as="xs:integer"/>
                     <tbody>
                         <xsl:for-each select="row[position() gt 1]">
                             <xsl:sort select="$cellMap(generate-id(cell[$firstToSortBy]))[2]"/>

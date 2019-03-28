@@ -463,7 +463,10 @@ a, a:visited{
       overflow:hidden;
       padding: 5% 8% 3% 8%;
       margin:0 auto;
-      display:grid;
+      }
+
+#mainBody:not(.docBornDigitalExhibit) > #info{
+     display:grid;
       grid-template-areas:
       "facsimile metadata_container metadata_container relatedItems"
       "facsimile metadata_container metadata_container relatedItems"
@@ -473,8 +476,7 @@ a, a:visited{
       grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
       grid-column-gap:1.5rem;
       grid-row-gap:1.5rem;
-      }
-
+}
 #relatedItems{
     grid-area: relatedItems;
 }
@@ -1076,6 +1078,7 @@ div[data-el=note] + div[data-el=note]{
 table {
     border-collapse: collapse;
     table-layout:fixed;
+    margin: 0 auto;
 }
 
 .JS th.sortable{
@@ -1115,7 +1118,11 @@ table {
 
 table[data-type='exhibit'] tr{
     height: 6rem;
-    border:1px dotted black;
+    border-top:1px dotted black;
+}
+
+table[data-type='exhibit'] tr:not(:last-child){
+        border-bottom:1px dotted black;
 }
 
 table[data-type='exhibit'] > thead > tr{

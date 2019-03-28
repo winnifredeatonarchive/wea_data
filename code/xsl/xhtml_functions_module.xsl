@@ -43,6 +43,16 @@
         <xsl:sequence select="$standaloneXml[@xml:id=$docId]/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
     </xsl:function>
     
+    <xsl:function name="wea:isObject" as="xs:boolean">
+        <xsl:param name="doc"/>
+        <xsl:value-of select="not(wea:bornDigital($doc))"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:isExhibit" as="xs:boolean">
+        <xsl:param name="doc"/>
+        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigitalExhibit'))"/>
+    </xsl:function>
+    
     <xsl:function name="wea:bornDigital" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
@@ -52,7 +62,7 @@
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
         <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'#')]"/>
-        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/@n"/></a></div>
+        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/term"/></a></div>
     </xsl:function>
     
     
