@@ -269,8 +269,10 @@
     </xsl:template>
     
     <xsl:template match="graphic" mode="tei">
-        <img src="{@url}"/>
+        <img src="{@url}" alt="{normalize-space(string-join(desc))}"/>
     </xsl:template>
+    
+    <xsl:template match="graphic/desc" mode="tei"/>
   
     
     <xsl:template match="supplied | gap" mode="tei">
