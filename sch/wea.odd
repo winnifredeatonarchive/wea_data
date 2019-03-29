@@ -1325,8 +1325,8 @@
                
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
-                     <elementRef key="head"/>
-                     <elementRef key="figDesc"/>
+                     <elementRef key="head" minOccurs="0"/>
+                     <elementRef key="figDesc" minOccurs="0"/>
                      <elementRef key="bibl" minOccurs="0"/>
                      <elementRef key="listPerson" minOccurs="0"/>
                      <elementRef key="graphic"/>
@@ -1339,6 +1339,18 @@
                            <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
                               <sch:assert test="@type">
                                  ERROR: Every figure in the figure database must have an @type value.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec ident="figure.inListFigureMustHaveStructuredData" scheme="schematron">
+                     <desc>Every figure in the figure database should have structured data</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
+                              <sch:assert test="tei:head and tei:figDesc and tei:bibl">
+                                 ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
