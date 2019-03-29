@@ -36,9 +36,7 @@ function addEvents(){
     makeNamesResponsive();
     showHideTitles();
     makeNavClickable();
-    if (document.getElementById('additional_info')){
-            makeAdditionalInfoArrowClickable();
-    }
+    makeBarsExpandable();
     if (document.querySelectorAll('table')){
         makeTablesSortable();
     }
@@ -326,13 +324,12 @@ function clearTitleSearchResults(){
 
 
 
-function makeAdditionalInfoArrowClickable(){
+function makeBarsExpandable(){
 
-    var addInfDiv = document.querySelectorAll('.additionalInfo');
-    addInfDiv.forEach(function(a){
-        a.classList.add('closed');
-        var head = a.querySelectorAll('.additionalInfoHeader')[0];
-        head.addEventListener('click', openCloseAI, true);
+    var expandDiv = document.querySelectorAll('.expandable');
+    expandDiv.forEach(function(e){
+        e.classList.add('closed');
+        e.firstElementChild.addEventListener('click', openCloseAI, true);
     });
 }
 

@@ -67,9 +67,9 @@
     
     <xsl:template name="createCreditsAndCitations">
         <xsl:variable name="root" select="ancestor::TEI"/>
-        <div id="credits" class="additionalInfo">
+        <div id="credits" class="additionalInfo expandable">
             <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations</div>
-            <div id="credits_content" class="additionalInfoContent">
+            <div id="credits_content" class="content">
                 <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
                 <xsl:if test="$root//sourceDesc/bibl[note]">
                     <div>
@@ -122,9 +122,9 @@
     
     <xsl:template name="createRelatedItems">
         <xsl:if test="ancestor::TEI//relatedItems">
-            <div id="relatedItems" class="additionalInfo">
+            <div id="relatedItems" class="additionalInfo expandable">
                 <div class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items</div>
-                <div class="additionalInfoContent">
+                <div class="content">
                 </div>
             </div>
         </xsl:if>
@@ -136,9 +136,9 @@
             <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
         </xsl:variable>
         <xsl:if test="exists($toc/item)">
-            <div id="toc" class="additionalInfo">
+            <div id="toc" class="additionalInfo expandable">
                 <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents</div>
-                <div class="additionalInfoContent">
+                <div class="content">
                     <xsl:apply-templates select="$toc" mode="tei"/>
                 </div>
             </div>
@@ -244,12 +244,13 @@
         <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
         <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
         <xsl:variable name="height" select="wea:getPNGHeight(substring-before(@facs,'.pdf'))"/>
+        
         <figure class="facsThumb">
             <xsl:choose>
                 <xsl:when test="$facsAvailable">
                     <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
                         <img src="{$thisThumbnail}" alt="{$altText}"/>
-                        <div id="imageText" class="{if ($height gt 600) then 'landscape' else 'portrait'}">
+                        <div class="imageText {if ($height gt 600) then 'landscape' else 'portrait'}">
                             <h4>View Facsimile</h4>
                             <div class="pdfSize"><xsl:value-of select="wea:getPDFSize(@facs)"/></div>
                         </div>
@@ -257,7 +258,7 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <img src="{$thisThumbnail}" alt="{$altText}"/>
-                    <div id="imageText" class="portrait">
+                    <div class="imageText portrait">
                         <h4>No facsimile available</h4>
                     </div>
                 </xsl:otherwise>

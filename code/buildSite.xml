@@ -37,6 +37,11 @@
                 <include name="**"/>
             </fileset>
         </copy>
+        <copy todir="${siteTemp}/media">
+            <fileset dir="../data/media">
+                <include name="**"/>
+            </fileset>
+        </copy>
         <copy todir="${siteTemp}/facsimiles">
             <fileset dir="../data/facsimiles">
                 <include name="**"/>
@@ -79,6 +84,36 @@
             </fileset>
             <mapper>
                 <globmapper from="*.pdf" to="*_tiny.png"/>
+            </mapper>
+        </apply>
+    </target>
+    
+    <target name="createSmallerImages">
+        
+        <echo message="Creating smaller PNGs from PNGS"/>
+        <apply executable="convert" dest="${siteTemp}/media" force="true" failonerror="true" verbose="true">
+            <arg line="-density 150 -thumbnail x600"/>
+            <srcfile/>
+            <targetfile/>
+            <fileset dir="${siteTemp}/media">
+                <include name="**.png"/>
+            </fileset>
+            <mapper>
+                <globmapper from="*.png" to="*_sm.png"/>
+            </mapper>
+        </apply>
+        <echo message="Creating small PNGs from PDFs"/>
+        <apply executable="convert" dest="${siteTemp}/media" force="true" failonerror="true" verbose="true">
+            <arg line="-density 150 -thumbnail x600"/>
+            <srcfile suffix="[0]"/>
+            <arg line="+profile 'icc'"/>
+            <arg line="-background white -alpha remove -alpha off"/>
+            <targetfile/>
+            <fileset dir="${siteTemp}/media">
+                <include name="**.pdf"/>
+            </fileset>
+            <mapper>
+                <globmapper from="*.pdf" to="*_sm.png"/>
             </mapper>
         </apply>
     </target>

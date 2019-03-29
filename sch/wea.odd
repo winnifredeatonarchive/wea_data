@@ -1333,7 +1333,7 @@
                   </content>
                   <!--Need att list-->
                   <constraintSpec ident="figure.inListFigureMustHaveType" scheme="schematron">
-                     <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
+                     <desc>Every figure in the figure database should have a type value.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
@@ -1373,6 +1373,22 @@
                      </attDef>
                   </attList>
                   
+               </elementSpec>
+               
+               <elementSpec ident="graphic" module="core" mode="change">
+                  <constraintSpec ident="graphic.inListFigShouldHaveMimetype" scheme="schematron">
+                     <desc>All graphics in the listFigure should have a mimetype attribute.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:graphic[ancestor::tei:div[@type='listFigure']]">
+                              <sch:assert test="@mimeType">
+                                 ERROR: All media in the media database should use the @mimeType attribute to specify
+                                 the source mimetype.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
                
                
@@ -1544,6 +1560,23 @@
                   </attList>
                </classSpec>
                <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.internetMedia"
+                          module="tei"
+                          type="atts"
+                          mode="change">
+                  <attList>
+                     <attDef ident="mimeType" mode="change">
+                        <valList type="semi" mode="add">
+                           <valItem ident="image/png" mode="add">
+                              <gloss>PNG</gloss>
+                           </valItem>
+                           <valItem ident="application/pdf" mode="add">
+                              <gloss>PDF</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </classSpec>
                <classSpec ident="att.interpLike" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.measurement" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.naming" module="tei" type="atts" mode="delete"/>

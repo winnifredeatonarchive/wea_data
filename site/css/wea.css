@@ -420,7 +420,7 @@ div.result:focus > a{
 }
 
 #metadata > div,
-.additionalInfoContent > div{
+#additional_info .content> div{
     min-width:0;
     flex-basis:content;
     padding:.5rem .5rem .5rem 0;
@@ -523,6 +523,31 @@ a, a:visited{
 }
 
 
+/****************************************************************** MEDIA GALLERY ********/
+
+div[data-type='listFigure']{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    
+}
+
+div[data-type="listFigure"] > div{
+    width:8rem;
+    padding:5%;
+    margin:.5rem;
+    font-size:90%;
+    border:1px solid black;
+}
+
+
+
+div[data-type='listFigure'] img{
+    max-width:8rem;
+    height:auto;
+}
+
+
 /* ***************************************************** ADDITIONAL INFO PANEL ********** */
 #additional_info{
     grid-area: additional_info;
@@ -536,21 +561,21 @@ a, a:visited{
     padding: 1rem;
 }
 
-.additionalInfoContent{
+#additional_info .content{
     display:flex;
     flex-flow: column;
     align-content: baseline;
     
 }
 
-.JS #additional_info > div.closed > .additionalInfoContent{
+.JS .expandable.closed > .content{
     max-height:0;
     overflow:hidden;
     transition: max-height .2s ease-in-out;
     display:block;
 }
 
-.JS #additional_info > div.open > .additionalInfoContent{
+.JS .expandable.open > .content{
     max-height:30rem;
     transition: max-height .2s ease-in-out;
     overflow-y:auto;
@@ -647,7 +672,7 @@ a:target:before{
 
 
 
-#info .facsThumb{
+.thumb{
     margin:0;
     position:relative; 
     display:inline-block;
@@ -655,14 +680,14 @@ a:target:before{
 
 
 
-.facsThumb img{
+.thumb img{
     max-width:18rem;
     width:100%;
     height:100%;
     
 }
 
-#imageText{
+.imageText{
     position: absolute;
     z-index: 1;
     color: white;
@@ -699,13 +724,13 @@ a:target:before{
     
 }*/
 
-.facsThumb:hover #imageText{
+.thumb:hover .imageText{
     opacity: 1;
     background: rgba(0, 0, 0, 0.8);
     color:white;
 }
 
-#imageText *{
+.imageText *{
     color:white;
 }
 
@@ -935,6 +960,7 @@ span[data-el='q'] span[data-el='q']::after{
     animation: fade-in .5s;
     margin-left: .15rem;
     max-width:25rem;
+    z-index:20;
 
 }
 

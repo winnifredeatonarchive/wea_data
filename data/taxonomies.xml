@@ -190,6 +190,7 @@
             <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
             <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
             <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
+            <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1_sm.png"/>
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>

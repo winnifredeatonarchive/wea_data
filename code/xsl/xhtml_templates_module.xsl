@@ -98,6 +98,62 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="div[@type='listFigure']/figure" mode="tei">
+        <xsl:variable name="ext" select="tokenize(graphic/@mimeType,'/')[last()]"/>
+        <xsl:variable name="href" select="replace(graphic/@url,'_sm.png$',concat('.',$ext))"/>
+<!--        <div>-->
+
+            <div>
+                <xsl:call-template name="processAtts"/>
+                <xsl:apply-templates select="head" mode="tei"/>
+
+                <figure class="thumb">
+                    <a href="{$href}" xsl:use-attribute-sets="newTabLink">
+                        <img src="{graphic/@url}" alt="{ancestor::figure/figDesc}"/>
+                        <div class="imageText">
+                            <h4>View Image</h4>
+                        </div>
+                    </a>
+                </figure>
+                <xsl:variable name="tempP">
+                    <tei:p>
+                        <xsl:copy-of select="figDesc/node()"/>
+                    </tei:p>
+                </xsl:variable>
+                
+                <xsl:apply-templates select="$tempP" mode="#current"/>
+            </div>
+            <!--FIRST MAKE THE IMAGE-->
+            
+            
+           <!--<div class="expandable">
+               <div class="content">
+                  <!-\- <xsl:if test="listPerson">
+                       <div>
+                           <h3>Subjects</h3>
+                           <xsl:variable name="tempList">
+                               
+                               <tei:list>
+                                   <xsl:for-each select="listPerson/person">
+                                       <xsl:variable name="ptr" select="substring-after(@corresp,'#')"/>
+                                       <xsl:variable name="thisPerson" select="ancestor::TEI//person[@xml:id=$ptr]"/>
+                                       <tei:item>
+                                           <tei:name ref="{@corresp}"><xsl:copy-of select="$thisPerson/persName/reg/node()"/></tei:name>
+                                       </tei:item>
+                                   </xsl:for-each>
+                               </tei:list>
+                           </xsl:variable>
+                           
+                           <xsl:apply-templates select="$tempList" mode="#current"/>
+                       </div>
+                   </xsl:if>-\->
+               </div>
+                
+            </div>-->
+        <!--</div>-->
+    </xsl:template>
+    
+    
     <!--Generic inline-->
     <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')]" mode="tei">
         <span>
@@ -272,7 +328,7 @@
     </xsl:template>
     
     <xsl:template match="graphic" mode="tei">
-        <img src="{@url}" alt="{normalize-space(string-join(desc))}"/>
+        <img src="{@url}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
     </xsl:template>
     
     <xsl:template match="graphic/desc" mode="tei"/>
