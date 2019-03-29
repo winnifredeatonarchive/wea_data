@@ -230,9 +230,10 @@
     
   
   <target name="quick" depends="copyAuxFiles, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
-    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
+    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createSmallerImages, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
+    
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createSmallerImages, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
     
     
 </project>
