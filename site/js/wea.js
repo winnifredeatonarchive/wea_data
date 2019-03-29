@@ -167,7 +167,7 @@ function addHeaderSearch(){
 }
 
 function removeOtherOpenNavs(){
-    var openNavs = document.getElementsByTagName('header')[0].querySelectorAll('header .open');
+    var openNavs = document.querySelectorAll('header .open');
     for (var i=0; i < openNavs.length; i++){
         toggleOpenClose(openNavs[i]);
     }
