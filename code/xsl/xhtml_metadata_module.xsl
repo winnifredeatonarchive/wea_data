@@ -245,7 +245,7 @@
         <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
         <xsl:variable name="height" select="wea:getPNGHeight(substring-before(@facs,'.pdf'))"/>
         
-        <figure class="facsThumb">
+        <figure class="thumb">
             <xsl:choose>
                 <xsl:when test="$facsAvailable">
                     <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
