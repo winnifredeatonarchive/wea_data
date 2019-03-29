@@ -39,35 +39,35 @@
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
     
-    <xsl:variable name="pdfFileSizeDoc" select="unparsed-text(concat($productsDir,'facsimiles/pdfs.txt'))"/>
-    <xsl:variable name="pdfFileSizeDocLines" select="tokenize($pdfFileSizeDoc,'\n')"/>
+    <xsl:variable name="fileSizeDoc" select="unparsed-text(concat($productsDir,'info/sizes.txt'))"/>
+    <xsl:variable name="fileSizeDocLines" select="tokenize($fileSizeDoc,'\n')"/>
     
-    <xsl:variable name="pngFileSizeDoc" select="unparsed-text(concat($productsDir,'facsimiles/pngs.txt'))"/>
-    <xsl:variable name="pngFileSizeDocLines" select="tokenize($pngFileSizeDoc,'\n')"/>
+    <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($productsDir,'info/images.txt'))"/>
+    <xsl:variable name="imageSizeDocLines" select="tokenize($imageSizeDoc,'\n')"/>
     
-    <xsl:function name="wea:getPDFSize">
-        <xsl:param name="pdfName"/>
-        <xsl:if test="unparsed-text-available(concat($productsDir,'facsimiles/pdfs.txt'))">
-            <xsl:variable name="thisLine" select="for $p in $pdfFileSizeDocLines return if (ends-with($p,$pdfName)) then $p else ()" as="xs:string"/>
-            <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
-            <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
-            <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
-            <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
-            <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
-        </xsl:if>
+    
+    <xsl:function name="wea:getFileSize">
+        <xsl:param name="filename"/>
         
+        <xsl:variable name="thisLine" select="for $f in $fileSizeDocLines return if (ends-with($f, $filename)) then $f else ()" as="xs:string"/>
+        <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
+        <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
+        <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
+        <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
+        <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
     </xsl:function>
     
-    <xsl:function name="wea:getPNGHeight" as="xs:integer?">
+    
+    <xsl:function name="wea:getImageDimensions" as="xs:integer+">
         <xsl:param name="pngName"/>
-        <xsl:if test="unparsed-text-available(concat($productsDir,'facsimiles/pngs.txt'))">
-            <xsl:variable name="thisLine" select="for $p in $pngFileSizeDocLines return if (matches($p,concat('^.+/',$pngName,'.png:'))) then $p else ()" as="xs:string"/>
+            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',$pngName,'.png:'))) then $s else ()" as="xs:string"/>
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[2])"/>
             <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
+            <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
             <xsl:value-of select="xs:integer($height)"/>
-        </xsl:if>
-        
+            <xsl:value-of select="xs:integer($width)"/>
     </xsl:function>
+    
     
     <xsl:function name="wea:makeTitleSortKey" as="xs:string">
         <xsl:param name="string"/>

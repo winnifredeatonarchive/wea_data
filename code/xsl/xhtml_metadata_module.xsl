@@ -292,7 +292,7 @@
         <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'graphics/cooking.png'"/>
         <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
         <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
-        <xsl:variable name="height" select="wea:getPNGHeight(substring-before(@facs,'.pdf'))"/>
+        <xsl:variable name="height" select="wea:getImageDimensions(substring-before(@facs,'.pdf'))[1]"/>
         
         <figure class="thumb">
             <xsl:choose>
@@ -301,7 +301,7 @@
                         <img src="{$thisThumbnail}" alt="{$altText}"/>
                         <div class="imageText {if ($height gt 600) then 'landscape' else 'portrait'}">
                             <h4>View Facsimile</h4>
-                            <div class="pdfSize"><xsl:value-of select="wea:getPDFSize(@facs)"/></div>
+                            <div class="pdfSize"><xsl:value-of select="wea:getFileSize(@facs)"/></div>
                         </div>
                     </a>
                 </xsl:when>

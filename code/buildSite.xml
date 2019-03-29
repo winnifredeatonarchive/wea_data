@@ -49,6 +49,8 @@
         </copy>
     </target>
     
+  
+    
     <target name="createPDFThumbnails">
         <echo message="${echo.separator}"/>
         <echo message="Creating PDF thumbnails..."/>
@@ -66,7 +68,7 @@
                 <globmapper from="*.pdf" to="*.png"/>
             </mapper>
         </apply>
-      
+        
     </target>
     
     <target name="createTinyThumbnails">
@@ -118,28 +120,6 @@
         </apply>
     </target>
     
-    <target name="getPDFSizes">
-        <echo message="${echo.separator}"/>
-        <echo message="Getting sizes of PDFs..."/>
-        <echo message="${echo.separator}"/>
-        <delete>
-            <fileset dir="${siteTemp}/facsimiles">
-                <include name="**.txt"/>
-            </fileset>
-        </delete>
-        <apply executable="du" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pdfs.txt" append="true">
-            <arg line="-sh"/>
-            <fileset dir="${siteTemp}/facsimiles">
-                <include name="**.pdf"/>
-            </fileset>
-        </apply>
-        <apply executable="file" dir="${siteTemp}/facsimiles" output="${siteTemp}/facsimiles/pngs.txt" append="true">
-            <fileset dir="${siteTemp}/facsimiles">
-                <include name="**.png"/>
-            </fileset>
-        </apply>
-      
-    </target>
     
     
     
@@ -191,7 +171,30 @@
     
     
   
-
+  
+    <target name="weighSite">
+        <description>This target creates files that describe each and every output file (other than the HTML).</description>
+        <mkdir dir="${siteTemp}/info"/>
+        <apply executable="du" dir="${siteTemp}" output="${siteTemp}/info/sizes.txt" append="true">
+            <arg line="-sh"/>
+            <fileset dir="${siteTemp}">
+                <include name="**/**"/>
+            </fileset>
+        </apply>
+        <apply executable="file" dir="${siteTemp}" output="${siteTemp}/info/images.txt" append="true">
+            <fileset dir="${siteTemp}">
+                <include name="**/**.png"/>
+                <include name="**/**.pdf"/>
+                <include name="**/**.jpg"/>
+                <include name="**/**.jpeg"/>
+                <include name="**/**.tiff"/>
+                <include name="**/**.tif"/>
+            </fileset>
+        </apply>
+        
+    </target>
+    
+    
   <target name="createXhtml">
       <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
@@ -231,9 +234,9 @@
   
   <target name="quick" depends="copyAuxFiles, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createSmallerImages, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
+    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, createSmallerImages, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails, getPDFSizes, createSmallerImages, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
     
 </project>
