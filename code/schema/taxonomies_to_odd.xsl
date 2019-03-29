@@ -92,7 +92,7 @@
             <xsl:apply-templates select="@*"/>
             <xsl:for-each select="$taxonomies//taxonomy[@xml:id='docClassTaxonomies']//category[@xml:id]">
                 <valItem mode="add" ident="wdt:{@xml:id}">
-                    <desc><xsl:value-of select="catDesc"/></desc>
+                    <desc><xsl:value-of select="catDesc/term"/></desc>
                 </valItem>
             </xsl:for-each>
         </xsl:copy>
