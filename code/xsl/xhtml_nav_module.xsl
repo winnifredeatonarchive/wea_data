@@ -41,24 +41,31 @@
     <xsl:template name="createNav">
         <header>
             <nav id="nav_small">
-                <div id="hamburger">
-                    <div id="ham_top"/>
-                    <div id="ham_middle"/>
-                    <div id="ham_bottom"/>
+                <div class="nav-item">
+                    <a href="#nav_main" id="hamburger">
+                            <div id="ham_top"/>
+                            <div id="ham_middle"/>
+                            <div id="ham_bottom"/>
+                    </a>
                 </div>
                 <div class="nav-item home"><a href="index.html">WEA</a></div>
-                <div class="search_icon"><a href="search.html">⚲</a></div>
+                <div class="search_icon"><a href="#headerSearch">⚲</a></div>
             </nav>
             <nav id="nav_main">
-                <div class="nav-item home"><a href="index.html">WEA</a></div>
+                <div class="nav-item home" id="nav_home"><a href="index.html">WEA</a></div>
                 <div class="nav-item">About</div>
-                <div class="nav-item">Archive</div>
-                <div class="nav-item">Career</div>
-                <div class="nav-item">Biography</div>
-                <div class="nav-item">Resources</div>
+                <div class="nav-item">
+                    <a href="#nav_archive">Archive</a>
+                </div>
+                <div class="nav-item" id="nav_career">Career</div>
+                <div class="nav-item" id="nav_biography">Biography</div>
+                <div class="nav-item" id="nav_resources">Resources</div>
                 <!--                    <div class="nav-item">News</div>-->
-                <div class="nav-item">Contact</div>
-                <div class="nav-item search_icon"><a href="search.html">⚲</a></div>
+                <div class="nav-item" id="nav_contact">Contact</div>
+                <div class="nav-item search_icon" id="nav_search">
+                    <a href="#headerSearch">⚲</a>
+                    
+                </div>
                 
             </nav>
             <div id="headerSearch">
@@ -71,6 +78,11 @@
                 <div id="headerAdvancedSearchBtn">
                     <a href="search.html">Go to full text search</a>
                 </div>
+            </div>
+            <div id="nav_archive" class="nav_option">
+                <xsl:for-each select="$standaloneXml[@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
+                    <div class="nav-item"><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
+                </xsl:for-each>
             </div>
             <xsl:copy-of select="$siteMap"/>
         </header></xsl:template>
