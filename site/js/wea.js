@@ -35,7 +35,7 @@ function addEvents(){
     makeFootnotesResponsive();
     makeNamesResponsive();
     showHideTitles();
-    makeHamburgerClickable();
+    makeNavClickable();
     if (document.getElementById('additional_info')){
             makeAdditionalInfoArrowClickable();
     }
@@ -44,6 +44,24 @@ function addEvents(){
     }
 
 }
+
+function makeNavClickable(){
+    var navClicks = document.querySelectorAll("nav a[href^='#']");
+    navClicks.forEach(function(n){
+        n.addEventListener('click', toggleNav, true)
+       });
+    }
+    
+function toggleNav(){
+      var e=arguments[0];
+      /* Get rid of the #href functionality */
+      e.preventDefault();
+      var thisId = this.href.substring(this.href.lastIndexOf('#') + 1);
+      var thisEl = document.getElementById(thisId);
+      console.log(thisEl);
+      toggleOpenClose(thisEl, true);
+    
+}    
 
 function makeTablesSortable(){
     var th = document.querySelectorAll('th.sortable');
@@ -133,14 +151,6 @@ function sortTable(){
 
 function addHeaderSearch(){
 
-   /* These are the links to the search */
-    var searchLinks = document.querySelectorAll('.search_icon > a');
-     searchLinks.forEach(function(s){
-        /* For each of those, add the search toggle. */
-         s.addEventListener('click',toggleHeaderSearch)
-     });
-     
-     //
      var headerInput = document.getElementById('headerSearchForm');
      
      /* Add the main title search capacity */
@@ -154,6 +164,14 @@ function addHeaderSearch(){
      
      /* And for the header input */
      headerInput.addEventListener('focus',addFocusEvent);
+}
+
+function removeOtherOpenNavs(){
+    var openNavs = document.getElementsByTagName('header')[0].querySelectorAll('header .open');
+    for (var i=0; i < openNavs.length; i++){
+        toggleOpenClose(openNavs[i]);
+    }
+     clearTitleSearchResults();
 }
 
 
@@ -248,25 +266,18 @@ function getNextSib(el){
 }
 
 
-function toggleHeaderSearch(){
-      var e=arguments[0];
-      var el = this;
-      /* Stop the onclick from bubbling */
-      e.stopPropagation();
-      /* And prevent default action for links with @href */
-      e.preventDefault();
-      var header = document.getElementsByTagName('header')[0];
-      var searchIsOpen = header.classList.contains('searchOpen');
-      if (searchIsOpen){
-          header.classList.remove('searchOpen');
-          header.classList.add('searchClosed');
-          clearTitleSearchResults();
-          clearTabIndexes();
-      } else {
-         header.classList.remove('searchClosed');
-          header.classList.add('searchOpen');
-
-      }
+function toggleOpenClose(el, removeAllNavs){
+    if (el.classList.contains('open')){
+        el.classList.remove('open');
+        el.classList.add('closed');
+    } else {
+        el.classList.remove('closed');
+        if (removeAllNavs){
+        removeOtherOpenNavs();
+        
+        }
+        el.classList.add('open');
+    }
 }
 
 /* This will certainly need to be finessed quite a bit;
@@ -314,11 +325,6 @@ function clearTitleSearchResults(){
 }
 
 
-function makeHamburgerClickable(){
-    var ham = document.getElementById('hamburger');
-    ham.addEventListener('click', openCloseHam,true);
-    
-}
 
 function makeAdditionalInfoArrowClickable(){
 
@@ -332,27 +338,10 @@ function makeAdditionalInfoArrowClickable(){
 
 function openCloseAI(){
     var div = this.parentNode;
-     if (div.classList.contains('closed')){
-         div.classList.remove('closed');
-         div.classList.add('open');
-     } else {
-         div.classList.remove('open');
-         div.classList.add('closed');
-     }
+    toggleOpenClose(div);
         
 }
-function openCloseHam(){
-    var header = document.getElementsByTagName('header')[0];
-    var isOpen = header.classList.contains('open');
-    if (isOpen){
-            header.classList.remove('open');
-            header.classList.add('closed');
-    } else {
-        header.classList.remove('closed');
-        header.classList.add('open');
-    }
 
-}
 function showHideTitles(){
     var spansToShow = document.querySelectorAll('.showTitle');
     spansToShow.forEach(function(n){

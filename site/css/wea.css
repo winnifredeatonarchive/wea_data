@@ -75,7 +75,6 @@ header{
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
-    height: var(--header-height);
     z-index:1000;
     position:relative;
     background: var(--wea-header-bg-color);
@@ -93,9 +92,10 @@ header > *{
 
 }
 
-header.searchOpen{
+header{
     height:auto;
 }
+
 /********* NAVIGATIONS ********/
 
 #nav_small{
@@ -110,6 +110,19 @@ header.searchOpen{
     flex-wrap:wrap;
 }
 
+
+.nav_option {
+    display: none;
+}
+
+
+
+
+
+.nav_option > div{
+    padding-top: .5em;
+    padding-left: .2em;
+}
 .search_icon{
      font-size:1.75rem;
         margin-left:auto;
@@ -299,9 +312,11 @@ div.results > div{
     display:none;
 }
 
-header.searchOpen #headerSearch{
+#headerSearch.open,
+#headerSearch:target,
+.nav_option:target,
+.nav_option.open{
     display:flex;
-    
 }
 
 #headerSearch > div{
@@ -1378,8 +1393,8 @@ a[href].gi::after{
  
  
  
-    header  #nav_main,
-    header.closed #nav_main{
+    #nav_main.closed,
+    #nav_main{
        max-height:0;
        overflow:hidden;
         display:flex;
@@ -1389,10 +1404,9 @@ a[href].gi::after{
        align-items:baseline;
     }
     
-    header.open.searchOpen #nav_main{
-        border-bottom:none;
-    }
-    header.open #nav_main
+
+    #nav_main.open,
+    #nav_main:target
     {
         max-height:100rem;
         padding-top:1em;
