@@ -100,10 +100,12 @@
                 </div>
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
+                    <xsl:variable name="originalUri" select="concat('xml/original/',ancestor::TEI/@xml:id,'.xml')"/>
+                    <xsl:variable name="standaloneUri" select="concat('xml/standalone/',ancestor::TEI/@xml:id,'.xml')"/>
                     <xsl:variable name="tempList">
                         <tei:list>
-                            <tei:item><tei:ref target="xml/original/{//ancestor::TEI/@xml:id}.xml">Original XML</tei:ref></tei:item>
-                            <tei:item><tei:ref target="xml/standalone/{//ancestor::TEI/@xml:id}.xml">Standalone XML</tei:ref></tei:item>
+                            <tei:item><tei:ref target="{$originalUri}">Original XML</tei:ref> (<xsl:value-of select="wea:getFileSize($originalUri)"/>)</tei:item>
+                            <tei:item><tei:ref target="{$standaloneUri}">Standalone XML</tei:ref> (<xsl:value-of select="wea:getFileSize($standaloneUri)"/>)</tei:item>
                         </tei:list>
                     </xsl:variable>
                     <div>
