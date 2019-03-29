@@ -1297,7 +1297,7 @@ a[href].gi::after{
     }
     
     
-    #info{
+    #mainBody:not(.docBornDigitalExhibit) > #info{
         grid-template-areas:
         "facsimile"
         "metadata_container"
