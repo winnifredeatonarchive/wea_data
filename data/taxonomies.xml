@@ -191,6 +191,7 @@
             <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
             <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
             <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1_sm.png"/>
+            <prefixDef ident="fig" matchPattern="(.+)" replacementPattern="media.xml#$1"/>
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>

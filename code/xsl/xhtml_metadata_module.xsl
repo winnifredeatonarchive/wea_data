@@ -121,13 +121,62 @@
     
     
     <xsl:template name="createRelatedItems">
-        <xsl:if test="ancestor::TEI//relatedItems">
+        <xsl:if test="ancestor::TEI//relatedItem">
             <div id="relatedItems" class="additionalInfo expandable">
                 <div class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items</div>
                 <div class="content">
+                    <xsl:for-each select="ancestor::TEI//relatedItem">
+                        <xsl:variable name="targ" select="@target"/>
+                        <xsl:choose>
+                            <!--This is a media thing-->
+                            <xsl:when test="matches($targ,'^media.xml#')">
+                                <xsl:variable name="thisObject" select="$standaloneXml[@xml:id='media']//figure[@xml:id=substring-after($targ,'#')]"/>
+                                <xsl:call-template name="makeRelatedItemBox">
+                                    <xsl:with-param name="label" select="$thisObject/head/node()"/>
+                                    <xsl:with-param name="link" select="$targ"/>
+                                    <xsl:with-param name="imgSrc" select="$thisObject/graphic/@url"/>
+                                    <xsl:with-param name="imgAlt" select="$thisObject/figDesc"/>
+                                </xsl:call-template>
+                            </xsl:when>
+                            <!--This is a document-->
+                            <xsl:when test="matches($targ,'^.+\.xml$') and $standaloneXml[@xml:id=substring-before($targ,'.xml')]">
+                                <xsl:variable name="relatedDoc" select="$standaloneXml[@xml:id=substring-before($targ,'.xml')]"/>
+                                <xsl:call-template name="makeRelatedItemBox">
+                                    <xsl:with-param name="label" select="$relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+                                    <xsl:with-param name="link" select="$targ"/>
+                                    <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.png') else 'graphics/cooking.png'"/>
+                                    <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
+                                </xsl:call-template>
+                            </xsl:when>
+                            <xsl:otherwise/>
+                        </xsl:choose>
+                    </xsl:for-each>
+
                 </div>
             </div>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="makeRelatedItemBox">
+        <xsl:param name="label"/>
+        <xsl:param name="link"/>
+        <xsl:param name="imgSrc"/>
+        <xsl:param name="imgAlt"/>
+        <div>
+            <div class="metadataLabel"><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label"/></a></div>
+                <figure>
+                    <img src="{$imgSrc}" alt="{normalize-space(string-join($imgAlt,''))}"/>
+                </figure>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="figure" mode="metadata">
+        <div>
+            <div class="metadataLabel"><xsl:apply-templates select="head/node()" mode="tei"/></div>
+            <figure>
+                <img src="{graphic/@url}" alt="{../figDesc}"/>
+            </figure>
+        </div>
     </xsl:template>
     
     
@@ -263,21 +312,6 @@
                     </div>
                 </xsl:otherwise>
             </xsl:choose>
-            
-            
-            <!-- <figCaption>
-                <xsl:choose>
-                    <xsl:when test="$facsAvailable">
-                        <a href="{@facs}" xsl:use-attribute-sets="newTabLink">View Facsimile <span class="pdfSize">(<xsl:value-of select="wea:getPDFSize(@facs)"/>)</span></a>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <span class="noFacsAvailable">
-                            No facsimile available
-                        </span>
-                        
-                    </xsl:otherwise>
-                </xsl:choose>
-            </figCaption>-->
         </figure>
     </xsl:template>
     

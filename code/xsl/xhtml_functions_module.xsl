@@ -60,7 +60,7 @@
     
     <xsl:function name="wea:crumb">
         <xsl:param name="doc"/>
-        <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#category')]/@target"/>
+        <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#exhibit')]/@target"/>
         <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'#')]"/>
         <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/term"/></a></div>
     </xsl:function>

@@ -502,6 +502,28 @@ a, a:visited{
     grid-area: relatedItems;
 }
 
+#relatedItems .content{
+    flex-direction:row!important;
+}
+
+#relatedItems .content > div{
+    max-width:8rem;
+    margin:1em;
+    padding:1em;
+}
+
+#relatedItems .content > div > *{
+    margin:0 auto;
+}
+
+.metadataLabel{
+    padding-bottom: .25em;
+}
+
+.content img{
+    max-width:8rem;
+}
+
 #mainBody{
  /* We need to margin-top if we do a sticky header */
  /* margin-top: 2.5rem;*/
@@ -540,6 +562,9 @@ div[data-type="listFigure"] > div{
     border:1px solid black;
 }
 
+div[data-type="listFigure"] > div:target{
+    border: 1px solid var(--wea-pink);
+}
 
 
 div[data-type='listFigure'] img{
@@ -729,6 +754,7 @@ a:target:before{
     background: rgba(0, 0, 0, 0.8);
     color:white;
 }
+
 
 .imageText *{
     color:white;
