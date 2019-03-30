@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-29T21:12:01Z. .
+Schema generated from ODD source 2019-03-30T06:47:29Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -64,6 +64,27 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
             <ref name="model.global"/>
          </choice>
       </zeroOrMore>
+   </define>
+   <define name="anyElement-egXML">
+      <element>
+         <anyName>
+            <except>
+               <nsName ns="http://www.tei-c.org/ns/1.0"/>
+               <name ns="http://www.tei-c.org/ns/Examples">egXML</name>
+            </except>
+         </anyName>
+         <zeroOrMore>
+            <attribute>
+               <anyName/>
+            </attribute>
+         </zeroOrMore>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="anyElement-egXML"/>
+            </choice>
+         </zeroOrMore>
+      </element>
    </define>
    <define name="att.ascribed.attributes">
       <ref name="att.ascribed.attribute.who"/>
@@ -899,6 +920,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="term"/>
          <ref name="title"/>
          <ref name="code"/>
+         <ref name="ident"/>
       </choice>
    </define>
    <define name="model.emphLike_alternation">
@@ -908,6 +930,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          <ref name="term"/>
          <ref name="title"/>
          <ref name="code"/>
+         <ref name="ident"/>
       </choice>
    </define>
    <define name="model.emphLike_sequence">
@@ -916,6 +939,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <ref name="term"/>
       <ref name="title"/>
       <ref name="code"/>
+      <ref name="ident"/>
    </define>
    <define name="model.emphLike_sequenceOptional">
       <optional>
@@ -932,6 +956,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </optional>
       <optional>
          <ref name="code"/>
+      </optional>
+      <optional>
+         <ref name="ident"/>
       </optional>
    </define>
    <define name="model.emphLike_sequenceOptionalRepeatable">
@@ -950,6 +977,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <zeroOrMore>
          <ref name="code"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="ident"/>
+      </zeroOrMore>
    </define>
    <define name="model.emphLike_sequenceRepeatable">
       <oneOrMore>
@@ -966,6 +996,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </oneOrMore>
       <oneOrMore>
          <ref name="code"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="ident"/>
       </oneOrMore>
    </define>
    <define name="model.highlighted">
@@ -1031,22 +1064,32 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       </oneOrMore>
    </define>
    <define name="model.egLike">
-      <notAllowed/>
+      <choice>
+         <ref name="egXML"/>
+      </choice>
    </define>
    <define name="model.egLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="egXML"/>
+      </choice>
    </define>
    <define name="model.egLike_sequence">
-      <empty/>
+      <ref name="egXML"/>
    </define>
    <define name="model.egLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="egXML"/>
+      </optional>
    </define>
    <define name="model.egLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="egXML"/>
+      </zeroOrMore>
    </define>
    <define name="model.egLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="egXML"/>
+      </oneOrMore>
    </define>
    <define name="model.graphicLike">
       <choice>
@@ -1328,29 +1371,41 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
    <define name="model.labelLike">
       <choice>
          <ref name="desc"/>
+         <ref name="label"/>
       </choice>
    </define>
    <define name="model.labelLike_alternation">
       <choice>
          <ref name="desc"/>
+         <ref name="label"/>
       </choice>
    </define>
    <define name="model.labelLike_sequence">
       <ref name="desc"/>
+      <ref name="label"/>
    </define>
    <define name="model.labelLike_sequenceOptional">
       <optional>
          <ref name="desc"/>
+      </optional>
+      <optional>
+         <ref name="label"/>
       </optional>
    </define>
    <define name="model.labelLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="desc"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="label"/>
+      </zeroOrMore>
    </define>
    <define name="model.labelLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="desc"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="label"/>
       </oneOrMore>
    </define>
    <define name="model.listLike">
@@ -1544,6 +1599,9 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
    <define name="model.stageLike_sequenceRepeatable">
       <notAllowed/>
    </define>
+   <define name="model.entryPart">
+      <notAllowed/>
+   </define>
    <define name="model.eventLike">
       <choice>
          <ref name="event"/>
@@ -1688,29 +1746,41 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
    <define name="model.quoteLike">
       <choice>
          <ref name="quote"/>
+         <ref name="cit"/>
       </choice>
    </define>
    <define name="model.quoteLike_alternation">
       <choice>
          <ref name="quote"/>
+         <ref name="cit"/>
       </choice>
    </define>
    <define name="model.quoteLike_sequence">
       <ref name="quote"/>
+      <ref name="cit"/>
    </define>
    <define name="model.quoteLike_sequenceOptional">
       <optional>
          <ref name="quote"/>
+      </optional>
+      <optional>
+         <ref name="cit"/>
       </optional>
    </define>
    <define name="model.quoteLike_sequenceOptionalRepeatable">
       <zeroOrMore>
          <ref name="quote"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="cit"/>
+      </zeroOrMore>
    </define>
    <define name="model.quoteLike_sequenceRepeatable">
       <oneOrMore>
          <ref name="quote"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="cit"/>
       </oneOrMore>
    </define>
    <define name="model.qLike">
@@ -2248,6 +2318,24 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <empty/>
       </element>
    </define>
+   <define name="cit">
+      <element name="cit">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cited quotation) contains a quotation from some other document, together with a bibliographic reference to its source. In a dictionary it may contain an example text with at least one occurrence of the word form, used in the sense being described, or a translation of the headword, or an example. [3.3.3. Quotation 4.3.1. Grouped Texts 9.3.5.1. Examples]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="model.qLike"/>
+               <ref name="model.egLike"/>
+               <ref name="model.biblLike"/>
+               <ref name="model.ptrLike"/>
+               <ref name="model.global"/>
+               <ref name="model.entryPart"/>
+            </choice>
+         </oneOrMore>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="desc">
       <element name="desc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]</a:documentation>
@@ -2604,7 +2692,7 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</a
           
                   <oneOrMore>
                      <group>
-            
+                        <ref name="label"/>
             
                         <zeroOrMore>
                            <ref name="model.global"/>
@@ -2679,6 +2767,16 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one component of a list. [3.7. Lists 2.6. The Revision Description]</a:documentation>
          <ref name="macro.specialPara"/>
          <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="label">
+      <element name="label">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any label or heading used to identify part of a text, typically but not exclusively in a list or glossary. [3.7. Lists]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.placement.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4115,7 +4213,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit)|(wdt:docBornDigitalDocumentation))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -4147,6 +4245,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Born Digital document</a:documentation>
                      <value>wdt:docBornDigitalExhibit</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibit</a:documentation>
+                     <value>wdt:docBornDigitalDocumentation</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Documentation</a:documentation>
                      <value>wdt:genreShortStory</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Short Stories</a:documentation>
                      <value>wdt:genreNF</value>
@@ -5338,6 +5438,34 @@ Sample values include: 1] TEI (Text Encoding Initiative) ; 2] DBK (Docbook) ; 3]
          <empty/>
       </element>
    </define>
+   <define name="egXML">
+      <element name="egXML" ns="http://www.tei-c.org/ns/Examples">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(example of XML) a single XML fragment demonstrating the use of some XML, such as elements, attributes, or processing instructions, etc., in which the egXML element functions as the root element. [22.1.1. Phrase Level Terms]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="anyElement-egXML"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="att.global.attributes"/>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="valid"
+                       a:defaultValue="true">
+               <a:documentation>indicates the intended validity of the example with respect to a schema.</a:documentation>
+               <choice>
+                  <value>true</value>
+                  <a:documentation>the example is intended to be fully valid, assuming that its root element, or a provided root element, could have been used as a possible root element in the schema concerned.</a:documentation>
+                  <value>feasible</value>
+                  <a:documentation>the example could be transformed into a valid document by inserting any number of valid attributes and child elements anywhere within it; or it is valid against a version of the schema concerned in which the provision of character data, list, element, or attribute values has been made optional.</a:documentation>
+                  <value>false</value>
+                  <a:documentation>the example is not intended to be valid, and contains deliberate errors.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
    <define name="gi">
       <element name="gi">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(element name) contains the name (generic identifier) of an element. [22. Documentation Elements 22.5. Element Specifications]</a:documentation>
@@ -5354,6 +5482,15 @@ Sample values include: 1] TEI; 2] DBK (docbook) ; 3] XX (unknown) ; 4] Schematro
                </data>
             </attribute>
          </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="ident">
+      <element name="ident">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(identifier) contains an identifier or name for an object of some kind in a formal language. ident is used for tokens such as variable names, class names, type names, function names etc. in formal programming languages. [22.1.1. Phrase Level Terms]</a:documentation>
+         <text/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
          <empty/>
       </element>
    </define>
@@ -6210,7 +6347,8 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                         <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
                         <sch:let name="docTypes" value="//tei:catRef/@target"/>
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
-                        
+                        <sch:let name="isDocumentation"
+               value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -6322,7 +6460,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]">
                            <sch:let name="onlyOneQuote"
                   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
                            <sch:assert test="not($onlyOneQuote)">
@@ -6394,9 +6532,9 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=34])"
@@ -6432,9 +6570,9 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=39])"
@@ -6513,7 +6651,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:let name="containsCurlyQuotes"
                   value="matches($text,'“') and matches($text,'”')"/>

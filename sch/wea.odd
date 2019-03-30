@@ -25,6 +25,14 @@
             <p>Born digital.</p>
          </sourceDesc>
       </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef target="wdt:docBornDigitalDocumentation" scheme="wdt:docType"/>
+        </textClass>
+     </profileDesc>
+     <revisionDesc>
+        <change who="pers:JT1" when="2019-03-29">Created file.</change>
+     </revisionDesc>
   </teiHeader>
   <text>
       <body>
@@ -702,7 +710,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl biblScope choice corr date desc divGen editor emph foreign gap graphic head hi item l lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -711,7 +719,7 @@
                <moduleRef key="linking" include="ab seg anchor"/>
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
-               <moduleRef key="tagdocs" include="att code gi val"/>
+               <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
                <!--Include all TEI modules-->
                <moduleRef key="tei"/>
           
@@ -799,7 +807,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit)|(wdt:docBornDigitalDocumentation))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -860,6 +868,9 @@
                            </valItem>
                            <valItem mode="add" ident="wdt:docBornDigitalExhibit">
                               <desc>Exhibit</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:docBornDigitalDocumentation">
+                              <desc>Documentation</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreShortStory">
                               <desc>Short Stories</desc>
@@ -1647,7 +1658,8 @@
                         <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
                         <sch:let name="docTypes" value="//tei:catRef/@target"/>
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
-                        
+                        <sch:let name="isDocumentation"
+                                 value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -1762,7 +1774,7 @@
                <constraintSpec scheme="schematron" ident="misMatchedQuote">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]">
                            <sch:let name="onlyOneQuote"
                                     value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
                            <sch:assert test="not($onlyOneQuote)">
@@ -1835,9 +1847,9 @@
                <constraintSpec scheme="schematron" ident="noStraightQuote">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                                    value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                                    value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=34])"
@@ -1872,9 +1884,9 @@
                <constraintSpec scheme="schematron" ident="noStraightApos">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                                    value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                                    value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=39])"
@@ -1953,7 +1965,7 @@
                <constraintSpec scheme="schematron" ident="bodyQuotesShouldBeTagged">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:let name="containsCurlyQuotes"
                                     value="matches($text,'“') and matches($text,'”')"/>

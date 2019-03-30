@@ -1,0 +1,2749 @@
+<?xml version="1.0" encoding="utf-8"?><!--Processing instructions for the TEI ODDs rng--><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:math="http://www.w3.org/1998/Math/MathML"
+    xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+    xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>ODD Customization for the Winnifred Eaton Archive Project</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name>Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Open access?</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head>Introduction</head>
+                <p>The following are the Guidelines and schema specification for the Winnifred Eaton
+                    Archive project (WEA). The project uses a highly constrained version of the TEI
+                    Guidelines; the texts are lightly encoded with very little linked data.
+                    Primarily, the texts are meant to be easily ported into an existing Omeka
+                    framework; the details of this framework are still in development.</p>
+            </div>
+            <div>
+                <head>Requirements</head>
+                <p>To edit material for the site, you will need to use a computer with the following
+                    software: <list>
+                        <item>Git (to get data from and commit data to the repository). Most
+                            computers come with git automatically installed. To check this, open the
+                            Command Line (Windows) / Terminal (Mac/Linux) and type in <code
+                                rend="block">git --version</code>. If you get something like this in
+                            response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>,
+                            then you have Git installed. Otherwise, follow the instructions <ref
+                                target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+                                >here</ref>.</item>
+                        <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about
+                            licensing.)</item>
+                        <item>You must also set up a free Github account <ref
+                                target="https://github.com/">here</ref>. It will be connected to
+                            your email address; once the Github account is set up, let the
+                            repository owner (currently Joey Takeda) know the email address used so
+                            that they can grant you write access to the repository.</item>
+                    </list></p>
+            </div>
+            <div>
+                <head>Site build process</head>
+                <p>The WEA follows the Endings principles for digital humanities sustainability; all
+                    of the pages are "static," and the site itself has no external or server-side
+                    dependencies.</p>
+                <p>To build the site, you must have ant installed. In the root directory, run: <code
+                        rend="block">ant -lib lib</code></p>
+                <p>The site build happens in a number of steps: <list>
+                        <item>All of the source files are validated against the RelaxNG schema and
+                            the extracted schematron</item>
+                        <item>If all files are valid, then the site build (located in
+                                <code>/code/buildSite.xml</code>) is initiated. The crucial steps
+                            are as follows: <list>
+                                <item>Files </item>
+                                <item>All of the source XML is flattened into a single directory and
+                                    massaged slightly to create the "original" XML</item>
+                                <item>The standalone XML is created from the original XML; the
+                                    standalone XML includes all of the "standoff" materials, like
+                                    people, bibliographic items, and taxonomies referenced in the
+                                    document. The main point of each standalone file is to include
+                                    every data point necessary for the site to be taken out of the
+                                    context of the project and used elsewhere.</item>
+                                <item>The XHTML5 pages are created from the standalone XML and then
+                                    validated against the VNU validator</item>
+                            </list></item>
+                        <item>From the site products, we create a search engine, which runs purely
+                            using Javascript within the compiled HTML. Each file is tokenized, and
+                            each distinct token is stemmed using the Porter Stemmer algorithm. Each
+                            distinct stem is created into individual JSON files, which can then be
+                            read by the Javascript on the live site. (Note that the search engine is
+                            currently experimental and is largely inspired by Martin Holmes'
+                            implementation for The John Keats Project and The Robert Graves Diary
+                            Project.)</item>
+                    </list></p>
+                <div>
+                    <head>Current Implementation</head>
+                    <p>Currently, the site build process is associated with the Continuous
+                        Integration service Travis, which triggers the site build with every commit
+                        to the the wea_data repository. Travis runs all of the above steps, and then
+                            <term>deploys</term> the products to another repository owned by the
+                        Winnifred Eaton Archive, currently called "wea." This repository is
+                        associated with a Github pages scenario, which allows us to view all changes
+                        to the site within minutes of every commit.</p>
+                    <p>Once we are happy with the products on the "wea" site (also called the "beta"
+                        site), those products can then be deployed on another server (currently we
+                        use Github pages in another repository, but this will likely change in the
+                        future). To be sure, Travis and Github are <emph>not</emph> necessary for
+                        the site build, but purely conveniences for the time being and as an
+                        experiment to test the feasibility of creating an Endings compliant site
+                        with no need for external servers (and thus, theoretically, for free).
+                        Currently, the experiment is proving successful.</p>
+                </div>
+            </div>
+            <div xml:id="github">
+                <head>Using Github</head>
+                <p>All of the data for the project is kept in a Git repository that is hosted
+                    through Github. Git is a version control system, which means that one could
+                    "roll back" the site to any particular version, and retrieve any file at any
+                    state of editing. Note that Github is a public repository, so all of the data
+                    and commit messages you make are visible to anyone. Our Github repository URL is
+                        <ref target="https://github.com/winnifredeatonarchive/wea_data"
+                        >https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+                <p/>
+                <div xml:id="github_get">
+                    <head>Setting up the repository</head>
+                    <p>To get the data, you must first checkout a copy of the repository as
+                        follows:</p>
+                    <list>
+                        <item>Open the terminal</item>
+                        <item>Create a directory for working in: <code rend="block">mkdir
+                            wea</code></item>
+                        <item>Go into the directory: <code rend="block">cd wea</code></item>
+                        <item>Initialize the repository: <code rend="block">git init .</code></item>
+                        <figure>
+                            <graphic url="../graphics/git_checkout_1.gif"/>
+                        </figure>
+                        <item>Pull the repository: <code rend="block">git pull
+                                https://github.com/winnifredeatonarchive/wea_data</code></item>
+                        <figure>
+                            <graphic url="../graphics/git_checkout_2.gif"/>
+                        </figure>
+                    </list>
+                    <p>Note that you only need to do this the first time you start working in the
+                        Github repository.</p>
+                </div>
+                <div>
+                    <head>The Github Workflow</head>
+                    <p>The normal workflow for working in Github (and any version software) is as
+                        follows: <list>
+                            <item>Update your repository so that any changes made by others are
+                                pushed into your local system</item>
+                            <item>Commit the items to the repository</item>
+                            <item>Push those items to the Github interface</item>
+                        </list></p>
+                    <div>
+                        <head>Updating</head>
+                        <p>Make sure to update as often as possible; always update at the beginning
+                            of your working session. </p>
+                        <list>
+                            <item>Go into your working folder: <code rend="block">cd
+                                wea</code></item>
+                            <item>Pull the repository: <code rend="block">git pull</code></item>
+                            <figure>
+                                <graphic url="../graphics/git_pull_1.gif"/>
+                            </figure>
+                        </list>
+                    </div>
+                    <div>
+                        <head>Committing</head>
+                        <p>Unlike some versioning systems, Github requires three steps for
+                            committing/saving your work to the repository. <list>
+                                <item>First, check the status of your files to see what you have
+                                    changed since your last commit: <code rend="block">git
+                                        status</code> If there are no changes to the repository,
+                                    then you'll like see something like this: <code rend="block"> On
+                                        branch master nothing to commit, working tree clean</code>
+                                    If there are changes, you should see something like this: <code
+                                        rend="block"> On branch master Changes not staged for
+                                        commit: (use "git add &lt;file&gt;..." to update what will
+                                        be committed) (use "git checkout -- &lt;file&gt;..." to
+                                        discard changes in working directory) modified: README.md no
+                                        changes added to commit (use "git add" and/or "git commit
+                                        -a")</code></item>
+                                <figure>
+                                    <graphic url="../graphics/git_status_1.gif"/>
+                                </figure>
+                                <item>If there are changes, then add the files/folders that you want
+                                    to commit to the repository. <code rend="block">git add
+                                        data/texts/My_Title.xml</code></item>
+                                <figure>
+                                    <graphic url="../graphics/git_add_1.gif"/>
+                                </figure>
+                                <item>Third, commit the files to the repository, including a commit
+                                    message that explains what you did: <code rend="block">git
+                                        commit -m "Adding new file."</code></item>
+                                <figure>
+                                    <graphic url="../graphics/git_commit_1.gif"/>
+                                </figure>
+                                <item>Fourth, push the files to the repository: <code rend="block"
+                                        >git push</code>
+                                    <figure>
+                                        <graphic url="../graphics/git_push_first_1.gif"/>
+                                    </figure> Note that, if you are committing for the first time,
+                                    you'll like see something like this: <code rend="block"> Either
+                                        specify the URL from the command-line or configure a remote
+                                        repository using git remote add &lt;name&gt; &lt;url&gt; and
+                                        then push using the remote name git push &lt;name&gt;</code>
+                                    This means that you must set up your local copy to track the
+                                    changes in the global repository. To do that, simply follow the
+                                    above instructions like so: <code rend="block">git remote add
+                                        wea https://github.com/winnifredeatonarchive/wea_data</code>
+                                    <code rend="block">git push wea</code>
+                                    <figure>
+                                        <graphic url="../graphics/git_remote_add_1.gif"/>
+                                    </figure> You'll then like get another message, saying something
+                                    like: <code rend="block">fatal: The current branch master has no
+                                        upstream branch. To push the current branch and set the
+                                        remote as upstream, use git push --set-upstream wea
+                                        master</code> To resolve that, simply: <code rend="block">
+                                        git push --set-upstream wea master</code>
+                                    <figure>
+                                        <graphic url="../graphics/git_push_2.gif"/>
+                                    </figure> You may then be prompted for your username and
+                                    password; if this is your first commit, then it might give your
+                                    instructions on how to store those credentials in your local git
+                                    system so that you do not need to add your username and password
+                                    every time you commit.</item>
+                            </list></p>
+                    </div>
+                </div>
+                <div xml:id="github_summary">
+                    <head>Github Summary</head>
+                    <p>The basic steps for working with Github are: <list>
+                            <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar
+                                and type "Terminal" to find it)</item>
+                            <item>Go into your working directory (likely called "wea"): <code
+                                    rend="block">cd wea</code></item>
+                        </list> Before you start working: <list>
+                            <item>Pull the changes from the repository so that your repository is
+                                up-to-date: <code rend="block">git pull</code></item>
+                        </list> While you're working: <list>
+                            <item>Save your file (using command/ctrl + S like in MS Word)</item>
+                            <item>Validate by pressing the red checkmark button in the toolbar in
+                                oXygen</item>
+                        </list> Once your file is valid and you want to save the file to the
+                        repository: <list>
+                            <item>Stage your file to be committed: <code rend="block">git add
+                                    .</code></item>
+                            <item>Commit your changes: <code rend="block">git commit
+                                -m</code></item>
+                            <item>Push your changes to the repository: <code rend="block">git
+                                    push</code></item>
+                        </list></p>
+                </div>
+            </div>
+            <div>
+                <head>Creating a New Text in oXygen</head>
+                <p>To create a new text file, use the built in text template</p>
+                <list>
+                    <item>First, in the project view in oXygen, right click the data/texts folder
+                        and click "Add new file"</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_1.gif"/>
+                    </figure>
+                    <item>Select "wea_template.xml" and give your file a name. The name should be
+                        two or three words, separated with underscores.</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_2.gif"/>
+                    </figure>
+                    <item>Input the (modernized) title of the document</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_3.gif"/>
+                    </figure>
+                    <item>Select the transciber</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_4.gif"/>
+                    </figure>
+                    <item>Select the copy editor</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_5.gif"/>
+                    </figure>
+                    <item>Select the encoder (who is usually you)</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_6.gif"/>
+                    </figure>
+                    <item>Select the genre</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_7.gif"/>
+                    </figure>
+                    <item>Select the location (usually derived from the Google Drive folder
+                        structure)</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_8.gif"/>
+                    </figure>
+                    <item>Your new document should be created!</item>
+                    <figure>
+                        <graphic url="../graphics/create_new_file_9.gif"/>
+                    </figure>
+                    <item>Remember to commit the changes to the repository using the above
+                        instructions.</item>
+                </list>
+            </div>
+            <div>
+                <head>Encoding a Primary Source Document</head>
+                <p>Below are abbreviated discussions on how to encode various features of a text</p>
+                <div>
+                    <head>Structure</head>
+                    <p>All content of the texts goes into the <gi>body</gi> element. Surround all
+                        content with a <ref target="#TEI.div">&lt;div&gt;</ref> element like so:
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><body>
+                                <!--Front matter goes here-->
+                                <div><!--Content goes here--></div>
+                            </body></egXML></p>
+                    <p>Individual sections can be encoded using nested <ref target="#TEI.div"
+                            >&lt;div&gt;</ref> tags, if desired: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><body>
+                                <head>A Poor Devil</head>
+                                <opener>
+                                    <opener>
+                                        <byline>By <name ref="pers:WE">Winnie Eaton</name>,
+                                            Montreal.</byline>
+                                        <note>[Written for the Metropolitan.]</note>
+                                    </opener>
+                                </opener>
+                                <div>
+                                    <div>
+                                        <!--Section 1-->
+                                        <div><!--Section 1.1--></div>
+                                        <div><!--Section 1.2--></div>
+                                    </div>
+                                    <div><!--Section 2--></div>
+                                </div>
+                            </body></egXML></p>
+                </div>
+                <div>
+                    <head>Associating facsimiles</head>
+                    <p>All primary source documents should have a related facsimile associated with
+                        the document. To do so, simply ensure that the PDF has been added to the
+                            <code>data/facsimiles/</code> directory with a filename that follows the
+                        rules for filenaming discussed above (no spaces, underscores, et
+                        cetera).</p>
+                    <p>To associate the primary source document with the facsimile, use the <hi
+                            rend="att">facs</hi> attribute on the <gi>text</gi> element, with a
+                        pointer to the facsimile's file name using the private "facs:" URI scheme:
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><text
+                                facs="facs:Three_Loves_Puritan"
+                        ><!--Content here--></text></egXML></p>
+                </div>
+                <div>
+                    <head>Openers and Closers</head>
+                    <p>Most of the texts have some sort of header or closer with the author's name,
+                        date of publication, et cetera. Use the <gi>opener</gi> element if this
+                        occurs at the beginning of the text and the <gi>closer</gi> element if it is
+                        at the bottom.</p>
+                </div>
+                <div>
+                    <head>Bylines</head>
+                    <p>If there is an authorial statement of responsibility of some sort, enclose
+                        this in a <gi>byline</gi> element. Tag Winnifred Eaton's name (in whatever
+                        psuedonymic form it appears) with the <ref target="#TEI.name"
+                            >&lt;name&gt;</ref> tag with an <hi rend="att">ref</hi> value of <hi
+                            rend="val">pers:WE1</hi>.</p>
+                </div>
+                <div>
+                    <head>Gaps and omissions</head>
+                    <p>If the text cannot be transcribed for some reason (damage, etc), then use the
+                            <gi>gap</gi> element to signify that there is a gap in transcription:
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><gap reason="damaged"
+                            /></egXML></p>
+                    <p>If you can supply the damaged text, use the <gi>supplied</gi> element instead
+                        with an <hi rend="att">resp</hi> value pointing to your <hi rend="att"
+                            >xml:id</hi> (which is usually your initials): <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><supplied resp="pers:JT1"
+                                >ed</supplied></egXML></p>
+                    <p>You can encode how certain you are of your editorial addition by using the
+                            <hi rend="att">cert</hi> attribute on supplied with a value of "low"
+                        "medium" or "high". If no <hi rend="att">cert</hi> is supplied, it is
+                        assumed that it has a high value of certainty: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><supplied resp="pers:JT"
+                                cert="low">ed</supplied></egXML></p>
+                </div>
+                <div>
+                    <head>Quotations</head>
+                    <p>Currently, we do not distinguish between various types of quotations--direct
+                        speech, indirect speech, titles, et cetera. Instead, we simply use the <ref
+                            target="#TEI.q">&lt;q&gt;</ref> element: <list rend="specList">
+                            <item><hi rend="specList-elementSpec"><ref target="#TEI.q"
+                                >q</ref></hi><c xml:space="preserve"> </c></item>
+                        </list></p>
+                    <p>To encode quotations, first follow the quick fixes that are keyed to the body
+                        of your document. Right click the <gi>body</gi> element of your file, and
+                        you should see a red lightbulb. It should give you options to perform a set
+                        of automated fixes for your file.</p>
+                    <div>
+                        <head>Block quotations</head>
+                        <p>To tag block quotations, simply use the <ref target="#TEI.q"
+                                >&lt;q&gt;</ref> element with a <gi>p</gi> within it. If it's a
+                            block quotation that contains verse, for instance, use the <gi>lg</gi>
+                            element (or whatever is the most appropriate for the case): <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><q><lg><l>The summer days
+                                            are coming</l><l>The blossoms deck the bough,</l><l>The
+                                            bees are gaily humming</l><l>And the birds are singing
+                                            now.</l></lg></q></egXML></p>
+                    </div>
+                    <div>
+                        <head>Letters as Quotations and Other Interrupting Texts</head>
+                        <p>Often, especially in the novels, letters appear within the regular
+                            narrative flow of the text. To handle this, we use the
+                                <gi>floatingText</gi> element: <item>UNKNOWN ELEMENT
+                                floatingText</item> The <gi>floatingText</gi> element can contain
+                            everything a regular <gi>text</gi> element can, and so we can use the
+                            appropriate encoding to handle the interrupting texts.</p>
+                        <p>Most commonly, <gi>floatingText</gi> will be used in combination with
+                                <ref target="#TEI.q">&lt;q&gt;</ref> to handle letters. To encode
+                            the letters, we use the specific elements for encoding letters per the
+                            TEI: <item>UNKNOWN ELEMENT salute</item>
+                            <item>UNKNOWN ELEMENT signed</item></p>
+                        <p>To encode a letter, first wrap the letter in a <ref target="#TEI.q"
+                                >&lt;q&gt;</ref>, then a <gi>floatingText</gi> with an <hi
+                                rend="att">type</hi>=<hi rend="val">letter</hi>, and then a
+                                <gi>body</gi> element. <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><q><floatingText
+                                        type="letter"
+                                            ><body><!--Content of the letter goes here--></body></floatingText></q></egXML></p>
+                        <p>Most often, letters will contain opening and closing matter; often this
+                            is a salute (a salutation) or some signature. These are tagged using the
+                                <gi>salute</gi> and <gi>signed</gi> elements, wrapped in
+                                <gi>opener</gi> and <gi>closer</gi> tags. An example to illustrate:
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples"><q><floatingText
+                                        type="letter"><body>
+                                            <opener>
+                                                <salute>Darling Girlie:</salute>
+                                            </opener>
+                                            <p>I am counting the hours when I will be with you. I
+                                                tried to get up to see you last night, but it was
+                                                impossible. Lord Eaton’s son, young Albert, was on
+                                                the steamer coming over, and they are friends of the
+                                                governor’s and I simply had to be with them. You
+                                                see, darling, it means a good deal to me in the
+                                                future, to be in touch with these people. His
+                                                brother-in-law, whom I met last night, is head
+                                                cockalorum in the House of Parliament, and as I have
+                                                often told you, my ambition is to get into politics.
+                                                It’s the surest road to fame for a Barrister.</p>
+                                            <p>Now I hope my foolish little girl will understand and
+                                                believe me when I say that I am thinking for you as
+                                                much as for myself.</p>
+                                            <p>I am hungry for a kiss, and I feel I cannot wait till
+                                                tonight.</p>
+                                            <closer>
+                                                <salute>Your own,</salute>
+                                                <signed>Reggie.</signed>
+                                            </closer>
+                                        </body></floatingText></q></egXML></p>
+                        <p>Note that occassionally the letter is interrupted by authorial/narrative
+                            commentary; we do not respect the quotation mark boundaries, but rather
+                            encode these interruptions as authorial notes. To tag these, use the
+                                <ref target="#TEI.note">&lt;note&gt;</ref> element with an <hi
+                                rend="att">type</hi>=<hi rend="val">authorial</hi>
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><q><floatingText
+                                        type="letter"><body>
+                                            <opener>
+                                                <salute>Dear Miss Marion:</salute>
+                                            </opener>
+                                            <p>Will you and your charming sister take a little drive
+                                                with me and a friend this evening? If so, meet us at
+                                                eight o’clock, corner of St. James and St. Denis
+                                                streets. My friend has seen your sister in Judge
+                                                Laflamme’s office <note type="authorial">(Ellen
+                                                  worked there)</note> and he is very anxious to
+                                                know her. As for me, I am thinking only of when I
+                                                shall see my lovely rose again. I am counting the
+                                                hours!</p>
+                                            <closer>
+                                                <salute>Devotedly,</salute>
+                                                <signed>Fred Stevens.</signed>
+                                            </closer>
+                                        </body></floatingText></q></egXML></p>
+                    </div>
+                    <div>
+                        <head>Quotations across hierarchies</head>
+                        <p>Particularly in novels, quotations will appear across hierarchies; that
+                            is, a quotation will start on one page, be interrupted by content on
+                            another page, and then continue on the following page. Take, for
+                            instance, this example from <title level="m">Marion</title>: <code
+                                rend="block"> “It isn’t as if they are strangers, you know. One of
+                                them, Harry Bond, is my own fellow. You know who his folks are, and
+                                but for them we’d have been married long ago. Well, Harry’s friend,
+                                the one who wants to meet you, is a swell, too, and he hasn’t been
+                                out from England long. Harry says his folks are big nobs over there,
+                                and [Image unavailable.] Someone had passed up to me over the
+                                footlights, if you please, a real bouquet of flowers. he is studying
+                                law here. His folks send him a remittance and I guess it’s a pretty
+                                big one, for he’s living at the Windsor, and I guess he can treat us
+                                fine. So come along. You’ll not get such a chance again.”</code>
+                            Here, the quotation properly starts at in the first paragraphic block
+                            and is then interrupted by an image insert between the pages, and then
+                            continues afterwards. To deal with this overlapping hierarchy, there are
+                            two steps we must take: <list>
+                                <item>First, we must signal that the paragraph before the image
+                                    inserts is the same paragraph as the one after</item>
+                                <item>Second, we must signal that the continue continues across the
+                                    page hierarchy, but does not include the image (of course, the
+                                    image is not part of the quoted material).</item>
+                            </list></p>
+                        <p>To signal the paragraphs continuation, we use the <hi rend="att"
+                                >part</hi> attribute: <item>UNKNOWN ELEMENT p</item> We use the
+                            value <hi rend="val">I</hi> to signal the initial paragraph, <hi
+                                rend="val">M</hi> to signal any medial paragraphs, and <hi
+                                rend="val">F</hi> to signal the final paragraph. <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><p part="I">It isn’t as if
+                                    they are strangers, you know. One of them, Harry Bond, is my own
+                                    fellow. You know who his folks are, and but for them we’d have
+                                    been married long ago. Well, Harry’s friend, the one who wants
+                                    to meet you, is a swell, too, and he hasn’t been out from
+                                    England long. Harry says his folks are big nobs over there,
+                                    and</p><pb n="48.1" xml:id="page_48.1"/><figure>
+                                    <graphic url="images/i_061_sml.jpg"/>
+                                    <p>Someone had passed up to me over the footlights, if you
+                                        please, a real bouquet of flowers.</p>
+                                </figure><pb n="49" xml:id="page_49"/><p part="F">he is studying law
+                                    here. His folks send him a remittance and I guess it’s a pretty
+                                    big one, for he’s living at the Windsor, and I guess he can
+                                    treat us fine. So come along. You’ll not get such a chance
+                                    again.</p></egXML></p>
+                        <p>To handle the overlapping quotations, we use a similar approach using the
+                                <hi rend="att">next</hi> and <hi rend="att">prev</hi> attributes to
+                            signal explicitly the sequence of quotation elements: <item><hi
+                                    rend="specList-elementSpec"><ref target="#TEI.q"
+                                    >q</ref></hi><c xml:space="preserve"> </c><table rend="specDesc"
+                                /></item></p>
+                        <p>To do so, we must first give each <ref target="#TEI.q">&lt;q&gt;</ref> an
+                                <hi rend="att">xml:id</hi>; this can be whatever you want, but it
+                            usually makes most sense to prefix it with the file's name and use a
+                            sensible numbering system: <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><q xml:id="Marion_q1">It
+                                    isn’t as if they are strangers, you know. One of them, Harry
+                                    Bond, is my own fellow. You know who his folks are, and but for
+                                    them we’d have been married long ago. Well, Harry’s friend, the
+                                    one who wants to meet you, is a swell, too, and he hasn’t been
+                                    out from England long. Harry says his folks are big nobs over
+                                    there, and</q></egXML> We do the same thing for the second
+                            quotation element, giving it an <hi rend="att">xml:id</hi>: <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><q xml:id="Marion_q2"
+                                    prev="#Marion_q1">he is studying law here. His folks send him a
+                                    remittance and I guess it’s a pretty big one, for he’s living at
+                                    the Windsor, and I guess he can treat us fine. So come along.
+                                    You’ll not get such a chance again</q>. </egXML> We then use the
+                                <hi rend="att">next</hi> and <hi rend="att">prev</hi> attributes to
+                            point to each quotation in the sequence. <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><q xml:id="Marion_q1"
+                                    next="#Marion_q2">It isn’t as if they are strangers, you know.
+                                    One of them, Harry Bond, is my own fellow. You know who his
+                                    folks are, and but for them we’d have been married long ago.
+                                    Well, Harry’s friend, the one who wants to meet you, is a swell,
+                                    too, and he hasn’t been out from England long. Harry says his
+                                    folks are big nobs over there, and</q><!--Stuff--><q
+                                    xml:id="Marion_q2" prev="#Marion_q1">he is studying law here.
+                                    His folks send him a remittance and I guess it’s a pretty big
+                                    one, for he’s living at the Windsor, and I guess he can treat us
+                                    fine. So come along. You’ll not get such a chance again</q>.
+                            </egXML> So, putting it all together: <egXML
+                                xmlns="http://www.tei-c.org/ns/Examples"><p part="I"><q
+                                        xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are
+                                        strangers, you know. One of them, Harry Bond, is my own
+                                        fellow. You know who his folks are, and but for them we’d
+                                        have been married long ago. Well, Harry’s friend, the one
+                                        who wants to meet you, is a swell, too, and he hasn’t been
+                                        out from England long. Harry says his folks are big nobs
+                                        over there, and</q></p><pb n="48.1" xml:id="page_48.1"/><figure>
+                                    <graphic url="images/i_061_sml.jpg"/>
+                                    <p>Someone had passed up to me over the footlights, if you
+                                        please, a real bouquet of flowers.</p>
+                                </figure><pb n="49" xml:id="page_49"/><p part="F"><q
+                                        xml:id="Marion_q2" prev="#Marion_q1">he is studying law
+                                        here. His folks send him a remittance and I guess it’s a
+                                        pretty big one, for he’s living at the Windsor, and I guess
+                                        he can treat us fine. So come along. You’ll not get such a
+                                        chance again</q>.</p></egXML></p>
+                    </div>
+                </div>
+                <div xml:id="codeTemplates">
+                    <head>Code Templates (Shortcuts)</head>
+                    <p>The table below lists keyboard shortcuts for inserting common encoding
+                        features in a text. In most cases, the code template simply requires
+                        selecting (i.e. highlighting) the bit of text you want to encode and then
+                        typing in the keystroke; the exception currently is the gap element
+                        shortcut, which is simply inserted where your cursor is in the document.</p>
+                    <table>
+                        <row>
+                            <cell>M1</cell>
+                            <cell>Command key on MacOS X, Ctrl on other platforms.</cell>
+                        </row>
+                        <row>
+                            <cell>M2</cell>
+                            <cell>Shift</cell>
+                        </row>
+                        <row>
+                            <cell>M3</cell>
+                            <cell>Option on Mac OS X, Alt on other platforms</cell>
+                        </row>
+                    </table>
+                    <table xml:id="codeTemplates_table">
+                        <row role="label">
+                            <cell>Name</cell>
+                            <cell>Description</cell>
+                            <cell>Result</cell>
+                            <cell>Keystroke</cell>
+                        </row>
+                        <row>
+                            <cell>Insert left quotation mark</cell>
+                            <cell>Insert the the opening curly quotation mark</cell>
+                            <cell><code>“</code></cell>
+                            <cell>M1 M2 L</cell>
+                        </row>
+                        <row>
+                            <cell>Insert left single quote</cell>
+                            <cell>Inserts the opening single curly apostrophe</cell>
+                            <cell><code>‘</code></cell>
+                            <cell>M1 M2 A</cell>
+                        </row>
+                        <row>
+                            <cell>Insert right curly quote</cell>
+                            <cell>Inserts the closing curly quotation mark</cell>
+                            <cell><code>”</code></cell>
+                            <cell>M1 M2 R</cell>
+                        </row>
+                        <row>
+                            <cell>Tag foreign</cell>
+                            <cell>Tag a foreign selection</cell>
+                            <cell><code>&lt;foreign&gt;${selection}&lt;/foreign&gt;</code></cell>
+                            <cell>M1 M2 F</cell>
+                        </row>
+                        <row>
+                            <cell>Tag gap</cell>
+                            <cell>Insert a gap element</cell>
+                            <cell><code>&lt;gap reason="${caret}"/&gt;</code></cell>
+                            <cell>M1 M2 G</cell>
+                        </row>
+                        <row>
+                            <cell>Tag paragraph</cell>
+                            <cell>Tag a paragraph</cell>
+                            <cell><code>&lt;p&gt;${selection}&lt;/p&gt;</code></cell>
+                            <cell>M1 M2 P</cell>
+                        </row>
+                        <row>
+                            <cell>Tag Winnifred Eaton's name</cell>
+                            <cell>Tag a reference to Winnifred Eaton</cell>
+                            <cell><code>&lt;name
+                                ref="pers:WE1"&gt;${selection}&lt;/name&gt;</code></cell>
+                            <cell>M1 M2 W</cell>
+                        </row>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <head>Building the Schema</head>
+                <p>All constraints and documentation are contained within the ODD file, including
+                    the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+                <p>To regenerate the schema and the documentation follow these directions</p>
+                <p><emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and
+                    press the red "play" button.</p>
+                <p><emph>Command line</emph>: in the root project directory (<code>wea_data</code>),
+                    run: <code rend="block">ant -lib lib -f code/buildSchemas.xml</code> Note that
+                    you must have ant installed.</p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <div>
+                    <head>Elements</head>
+                    <div type="refdoc" xml:id="TEI.bibl">
+                        <head>&lt;bibl&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="bibl">&lt;bibl&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;bibl&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >figures: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.figure" rend="link_odd_elementSpec"
+                                                  >figure</ref></seg></ab><ab rend="specChild"><seg
+                                                  rend="specChildModule">header: </seg><seg
+                                                  rend="specChildElements"><ref
+                                                  target="#TEI.sourceDesc"
+                                                  rend="link_odd_elementSpec"
+                                                >sourceDesc</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>All <hi rend="att">n</hi> attributes
+                                        on <ref target="#TEI.pb">&lt;pb&gt;</ref> elements should be
+                                        numerical.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]"&gt;
+ &lt;sch:assert test="tei:title[@level='j']"
+  role="warning"&gt; WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.biblScope">
+                        <head>&lt;biblScope&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="biblScope">&lt;biblScope&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="unit">@unit</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;biblScope&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">unit</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"><hi
+                                                  rend="required">Required</hi></seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">volume</label>
+                                                  <item rend="odd_value">(<seg>the element contains
+                                                  a volume number</seg>) <seg>volume</seg></item>
+                                                  <label rend="odd_label">issue</label>
+                                                  <item rend="odd_value">(<seg>the element contains
+                                                  a issue number</seg>) <seg>issue</seg></item>
+                                                  <label rend="odd_label">page</label>
+                                                  <item rend="odd_value">(<seg>the element contains
+                                                  a page number or page range</seg>)
+                                                  <seg>volume</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.catDesc">
+                        <head>&lt;catDesc&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="catDesc">&lt;catDesc&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;catDesc&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">core:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.note" rend="link_odd_elementSpec"
+                                                  >note</ref></seg></ab><ab rend="specChild"
+                                            >character data</ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;alternate minOccurs="0"
+  maxOccurs="unbounded"&gt;
+  &lt;textNode/&gt;
+  &lt;classRef key="model.limitedPhrase"/&gt;
+  &lt;classRef key="model.catDescPart"/&gt;
+  &lt;elementRef key="note"/&gt;
+ &lt;/alternate&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element catDesc { ( text | <ref target="#TEI.model.limitedPhrase">model.limitedPhrase</ref> | <ref target="#TEI.model.catDescPart">model.catDescPart</ref> | <ref target="#TEI.note">note</ref> )* }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.catRef">
+                        <head>&lt;catRef&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="catRef">&lt;catRef&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="cert">@cert</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="change">@change</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="facs">@facs</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="rend">@rend</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="source">@source</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="xml:id">@xml:id</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="xml:lang">@xml:lang</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="corresp">@corresp</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="n">@n</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="rendition">@rendition</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="resp">@resp</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="style">@style</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="scheme">@scheme</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="target">@target</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;catRef&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">header</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">cert</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">change</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">facs</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">rend</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">source</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">xml:id</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">xml:lang</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">corresp</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">n</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">rendition</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">resp</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">style</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <!--Auto generated values-->
+                                        <row>
+                                            <cell rend="odd_label">scheme</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"><hi
+                                                  rend="required">Required</hi></seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">wdt:docType</label>
+                                                  <item rend="odd_value"><seg>Document
+                                                  Type</seg></item>
+                                                  <label rend="odd_label">wdt:genre</label>
+                                                  <item rend="odd_value"><seg>Genre</seg></item>
+                                                  <label rend="odd_label">wdt:exhibit</label>
+                                                  <item rend="odd_value"><seg>Exhibits</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">target</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"><hi
+                                                  rend="required">Required</hi></seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label"
+                                                  >wdt:docPrimarySource</label>
+                                                  <item rend="odd_value"><seg>Primary
+                                                  Source</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:docPrimarySourceMS</label>
+                                                  <item rend="odd_value"
+                                                  ><seg>Manuscripts</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:docPrimarySourcePublished</label>
+                                                  <item rend="odd_value"><seg>Published Primary
+                                                  Sources</seg></item>
+                                                  <label rend="odd_label">wdt:docBornDigital</label>
+                                                  <item rend="odd_value"><seg>Born Digital
+                                                  document</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:docBornDigitalExhibit</label>
+                                                  <item rend="odd_value"><seg>Exhibit</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreShortStory</label>
+                                                  <item rend="odd_value"><seg>Short
+                                                  Stories</seg></item>
+                                                  <label rend="odd_label">wdt:genreNF</label>
+                                                  <item rend="odd_value"
+                                                  ><seg>Non-fiction</seg></item>
+                                                  <label rend="odd_label">wdt:genreNFAuto</label>
+                                                  <item rend="odd_value"><seg>Non-fiction:
+                                                  Autobiography</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreNFDedication</label>
+                                                  <item rend="odd_value"><seg>Non-fiction:
+                                                  Dedication</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreNFInterview</label>
+                                                  <item rend="odd_value"><seg>Non-Fiction:
+                                                  Interview</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreNFIntroduction</label>
+                                                  <item rend="odd_value"><seg>Non-fiction:
+                                                  Introduction</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreNFEthnography</label>
+                                                  <item rend="odd_value"><seg>Non-fiction:
+                                                  Ethnography</seg></item>
+                                                  <label rend="odd_label">wdt:genreFilm</label>
+                                                  <item rend="odd_value"><seg>Film</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreFilmScenario</label>
+                                                  <item rend="odd_value"><seg>Film:
+                                                  Scenario</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreFilmTreatment</label>
+                                                  <item rend="odd_value"><seg>Film:
+                                                  Treatment</seg></item>
+                                                  <label rend="odd_label">wdt:genrePoem</label>
+                                                  <item rend="odd_value"><seg>Poem</seg></item>
+                                                  <label rend="odd_label">wdt:genreNovel</label>
+                                                  <item rend="odd_value"><seg>Novel</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:genreNovelSerial</label>
+                                                  <item rend="odd_value"><seg>Novel:
+                                                  Serial</seg></item>
+                                                  <label rend="odd_label">wdt:Japan</label>
+                                                  <item rend="odd_value"><seg>Japan</seg></item>
+                                                  <label rend="odd_label">wdt:Alberta</label>
+                                                  <item rend="odd_value"><seg>Alberta</seg></item>
+                                                  <label rend="odd_label">wdt:Hollywood</label>
+                                                  <item rend="odd_value"><seg>Hollywood</seg></item>
+                                                  <label rend="odd_label"
+                                                  >wdt:EarlyExperiment</label>
+                                                  <item rend="odd_value"><seg>Early
+                                                  Experiments</seg></item>
+                                                  <label rend="odd_label">wdt:NewYork</label>
+                                                  <item rend="odd_value"><seg>New York</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >header: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.textClass"
+                                                  rend="link_odd_elementSpec"
+                                                >textClass</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>An XsLT generated co-occurence
+                                        constraint</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:catRef[@scheme='wdt:docType']"&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;sch:rule context="tei:catRef[@scheme='wdt:genre']"&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;sch:rule context="tei:catRef[@scheme='wdt:exhibit']"&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:Japan)|(wdt:Alberta)|(wdt:Hollywood)|(wdt:EarlyExperiment)|(wdt:NewYork))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.div">
+                        <head>&lt;div&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="div">&lt;div&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;div&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">textstructure</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Figure list divs should only contain
+                                        figures or
+                                    itself.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:div[@type='listFigure']/tei:*"&gt;
+ &lt;sch:assert test="self::tei:div[@type='listFigure'] or self::tei:figure"&gt; ERROR: listFigure divs should only contain figures or itself.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.figure">
+                        <head>&lt;figure&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="figure">&lt;figure&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="type">@type</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;figure&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">figures</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">type</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">photograph</label>
+                                                  <item rend="odd_value">(<seg>Photograph</seg>)
+                                                  <seg>A photograph of some subject; note that this
+                                                  does NOT include photographs of facsimiles, et
+                                                  cetera.</seg></item>
+                                                  <label rend="odd_label">advertisement</label>
+                                                  <item rend="odd_value">(<seg>Advertisement</seg>)
+                                                  <seg>Advertisements for books, films, et cetera.
+                                                  This includes objects like posters.</seg></item>
+                                                  <label rend="odd_label">illustration</label>
+                                                  <item rend="odd_value">(<seg>Illustration</seg>)
+                                                  <seg>An illustration from a text. This includes
+                                                  ornamental letters and other pictorial content
+                                                  within a printed artifact.</seg></item>
+                                                  <label rend="odd_label">paratext</label>
+                                                  <item rend="odd_value">(<seg>Paratextual
+                                                  Materials</seg>) <seg>Materials that are related
+                                                  to a text, but are not necessarily part of the
+                                                  central text. This category includes objects like
+                                                  mastheads, covers, and other print cultural
+                                                  artifacts.</seg></item>
+                                                  <label rend="odd_label">ephemera</label>
+                                                  <item rend="odd_value">(<seg>Ephemera</seg>)
+                                                  <seg>Any other figure that does not fall into a
+                                                  more specific category.</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">core:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.bibl" rend="link_odd_elementSpec"
+                                                  >bibl</ref><c xml:space="preserve"> </c><ref
+                                                  target="#TEI.graphic" rend="link_odd_elementSpec"
+                                                  >graphic</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Every figure in the figure database
+                                        should have a type
+                                    value.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]"&gt;
+ &lt;sch:assert test="@type"&gt; ERROR: Every figure in the figure database must have an @type value.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Every figure in the figure database
+                                        should have structured
+                                    data</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]"&gt;
+ &lt;sch:assert test="tei:head and tei:figDesc and tei:bibl"&gt; ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="head" minOccurs="0"/&gt;
+ &lt;elementRef key="figDesc" minOccurs="0"/&gt;
+ &lt;elementRef key="bibl" minOccurs="0"/&gt;
+ &lt;elementRef key="listPerson" minOccurs="0"/&gt;
+ &lt;elementRef key="graphic"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element figure
+{
+   attribute type
+   {
+      "photograph" | "advertisement" | "illustration" | "paratext" | "ephemera"
+   }?,
+   <ref target="#TEI.head">head</ref>?,
+   <ref target="#TEI.figDesc">figDesc</ref>?,
+   <ref target="#TEI.bibl">bibl</ref>?,
+   <ref target="#TEI.listPerson">listPerson</ref>?,
+   <ref target="#TEI.graphic">graphic</ref>
+}</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.foreign">
+                        <head>&lt;foreign&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="foreign">&lt;foreign&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;foreign&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg><ref target="#TEI.foreign"
+                                            >&lt;foreign&gt;</ref> elements shouldn't start or end
+                                        with
+                                    spaces.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:foreign"&gt;
+ &lt;sch:let name="text"
+  value="string-join(text(),'')"/&gt;
+ &lt;sch:assert test="not(matches($text,'^\s+|\s+$'))"&gt; ERROR: foreign elements should not begin or end with spaces.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.graphic">
+                        <head>&lt;graphic&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="graphic">&lt;graphic&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;graphic&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >figures: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.figure" rend="link_odd_elementSpec"
+                                                  >figure</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>All graphics in the listFigure
+                                        should have a mimetype
+                                    attribute.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:graphic[ancestor::tei:div[@type='listFigure']]"&gt;
+ &lt;sch:assert test="@mimeType"&gt; ERROR: All media in the media database should use the @mimeType attribute to specify
+   the source mimetype.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.name">
+                        <head>&lt;name&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="name">&lt;name&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="ref">@ref</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;name&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">ref</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">pers:WE1</label>
+                                                  <item rend="odd_value">(<seg>Winnifred
+                                                  Eaton</seg>) <seg>WE1</seg></item>
+                                                  <label rend="odd_label">pers:SE1</label>
+                                                  <item rend="odd_value">(<seg>S. Ehrhart</seg>)
+                                                  <seg>SE1</seg></item>
+                                                  <label rend="odd_label">pers:AB1</label>
+                                                  <item rend="odd_value">(<seg>Albert
+                                                  Blashfield</seg>) <seg>AB1</seg></item>
+                                                  <label rend="odd_label">pers:SB1</label>
+                                                  <item rend="odd_value">(<seg>Sara Bosse</seg>)
+                                                  <seg>SB1</seg></item>
+                                                  <label rend="odd_label">pers:MC1</label>
+                                                  <item rend="odd_value">(<seg>Mary Chapman</seg>)
+                                                  <seg>MC1</seg></item>
+                                                  <label rend="odd_label">pers:JLC1</label>
+                                                  <item rend="odd_value">(<seg>Jean Lee Cole</seg>)
+                                                  <seg>JLC1</seg></item>
+                                                  <label rend="odd_label">pers:SL1</label>
+                                                  <item rend="odd_value">(<seg>Sydney Lines</seg>)
+                                                  <seg>SL1</seg></item>
+                                                  <label rend="odd_label">pers:KI1</label>
+                                                  <item rend="odd_value">(<seg>Ken Ip</seg>)
+                                                  <seg>KI1</seg></item>
+                                                  <label rend="odd_label">pers:JT1</label>
+                                                  <item rend="odd_value">(<seg>Joey Takeda</seg>)
+                                                  <seg>JT1</seg></item>
+                                                  <label rend="odd_label">pers:SP1</label>
+                                                  <item rend="odd_value">(<seg>Serina
+                                                  Patterson</seg>) <seg>SP1</seg></item>
+                                                  <label rend="odd_label">pers:HB1</label>
+                                                  <item rend="odd_value">(<seg>Hilary Ball</seg>)
+                                                  <seg>HB1</seg></item>
+                                                  <label rend="odd_label">pers:XY1</label>
+                                                  <item rend="odd_value">(<seg>Xine Yao</seg>)
+                                                  <seg>XY1</seg></item>
+                                                  <label rend="odd_label">pers:PP1</label>
+                                                  <item rend="odd_value">(<seg>Pavlina Pajot</seg>)
+                                                  <seg>PP1</seg></item>
+                                                  <label rend="odd_label">pers:LM1</label>
+                                                  <item rend="odd_value">(<seg>Lucia Maggio</seg>)
+                                                  <seg>LM1</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >core: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.respStmt" rend="link_odd_elementSpec"
+                                                  >respStmt</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.note">
+                        <head>&lt;note&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="note">&lt;note&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="type">@type</term>
+                            </index>
+                            <index indexName="ODDS">
+                                <term sortKey="subtype">@subtype</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;note&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">type</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">editorial</label>
+                                                  <item rend="odd_value">(<seg>an editorial note
+                                                  (i.e. supplied by an editor)</seg>)
+                                                  <seg>editorial</seg></item>
+                                                  <label rend="odd_label">authorial</label>
+                                                  <item rend="odd_value">(<seg>an authorial note;
+                                                  currently only used with quotations where the
+                                                  author interrupts the dominant narrative voice by
+                                                  interjecting explanatory commentary.</seg>)
+                                                  <seg>authorial</seg></item>
+                                                  <label rend="odd_label">bio</label>
+                                                  <item rend="odd_value">(<seg>a biographical note,
+                                                  only to be used within the personography.</seg>)
+                                                  <seg>biographical</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                        <row>
+                                            <cell rend="odd_label">subtype</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">short</label>
+                                                  <item rend="odd_value">(<seg>a short biographical
+                                                  note for display in popups.</seg>) <seg>short
+                                                  bio</seg></item>
+                                                  <label rend="odd_label">long</label>
+                                                  <item rend="odd_value">(<seg>a long biographical
+                                                  note.</seg>) <seg>long bio</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >core: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.catDesc" rend="link_odd_elementSpec"
+                                                  >catDesc</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Use authorial notes only within <ref
+                                            target="#TEI.q">&lt;q&gt;</ref>
+                                    elements</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='authorial']"&gt;
+ &lt;sch:assert test="ancestor::tei:q"&gt; ERROR: Authorial notes should only be used within the q element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>All notes within the <ref
+                                            target="#TEI.q">&lt;q&gt;</ref> element should have a
+                                        type.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[ancestor::tei:q]"&gt;
+ &lt;sch:assert test="@type"&gt; ERROR: Notes within the q element should have a type of either authorial
+   or editorial.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Editorial notes should always have
+                                        an <hi rend="att"
+                                    >resp</hi>.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='editorial']"&gt;
+ &lt;sch:assert test="@resp"&gt; ERROR: Editorial notes should have a @resp attribute pointing to the person who authored this note.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='bio']"&gt;
+ &lt;sch:assert test="parent::tei:person"&gt; ERROR: Biographical notes should only be used for people in personography.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='bio']"&gt;
+ &lt;sch:assert test="tei:p"&gt; ERROR: All biographical notes should have at least one paragraph.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='bio'][@subtype='short']"&gt;
+ &lt;sch:assert test="count(tei:p) = 1"&gt; ERROR: Short biographies should only contain a single paragraph.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@subtype]"&gt;
+ &lt;sch:assert test="@type='bio'"&gt; ERROR: @subtype is only allowed when used in concert with notes biographical.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:person"&gt;
+ &lt;sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) 
+ lt 2"&gt; ERROR: Only one of each long and short bios are allowed in the personography.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:note[@type='bio'][@subtype='short']"&gt;
+ &lt;sch:let name="wc"
+  value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/&gt;
+ &lt;sch:assert test="$wc lt 76"&gt; ERROR: This short biographical statement should be 75 words maximum. Current word count: &lt;sch:value-of select="$wc"/&gt;.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.pb">
+                        <head>&lt;pb&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="pb">&lt;pb&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="n">@n</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;pb&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">n</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"><hi
+                                                  rend="required">Required</hi></seg></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>All <hi rend="att">n</hi> attributes
+                                        on <ref target="#TEI.pb">&lt;pb&gt;</ref> elements should be
+                                        numerical.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:pb[@n]"&gt;
+ &lt;sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')"&gt; ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>Any text with <ref target="#TEI.pb"
+                                            >&lt;pb&gt;</ref> elements should have an initial
+                                        one.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:text[descendant::tei:pb]"&gt;
+ &lt;sch:assert test="child::tei:*[1]/self::tei:pb"&gt; ERROR: Every text with page beginnings should start with an initial pb element. The first page number encountered is &lt;sch:value-of select="descendant::tei:pb[@n][1]/@n"/&gt;.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.persName">
+                        <head>&lt;persName&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="persName">&lt;persName&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;persName&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">namesdates</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="reg" minOccurs="1"
+  maxOccurs="1"/&gt;
+ &lt;elementRef key="forename" minOccurs="1"
+  maxOccurs="unbounded"/&gt;
+ &lt;elementRef key="surname" minOccurs="1"
+  maxOccurs="unbounded"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element persName { <ref target="#TEI.reg">reg</ref>, <ref target="#TEI.forename">forename</ref>+, <ref target="#TEI.surname">surname</ref>+ }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.person">
+                        <head>&lt;person&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="person">&lt;person&gt;</term>
+                            <index indexName="ODDS">
+                                <term sortKey="role">@role</term>
+                            </index>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;person&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">namesdates</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Attributes</hi></cell>
+                                <cell rend="wovenodd-col2">Attributes<table rend="attList">
+                                        <row>
+                                            <cell rend="odd_label">role</cell>
+                                            <cell rend="odd_value"><table rend="attDef">
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Status</hi>
+                                                  </cell>
+                                                  <cell rend="odd_value"><seg xml:lang="en"
+                                                  >Optional</seg></cell>
+                                                  </row>
+                                                  <row>
+                                                  <cell rend="odd_label"><hi rend="label"
+                                                  xml:lang="en">Legal values are:</hi></cell>
+                                                  <cell rend="odd_value"><list rend="valList">
+                                                  <label rend="odd_label">subject</label>
+                                                  <item rend="odd_value">(<seg>Subject</seg>) <seg>A
+                                                  subject of a photograph; most often this will be
+                                                  Winnifred Eaton.</seg></item>
+                                                  <label rend="odd_label">subject</label>
+                                                  <item rend="odd_value">(<seg>Photographer</seg>)
+                                                  <seg>The photographer, if known.</seg></item>
+                                                  <label rend="odd_label">subject</label>
+                                                  <item rend="odd_value">(<seg>Illustrator</seg>)
+                                                  <seg>The illustrator of the
+                                                  illustration.</seg></item>
+                                                  </list></cell>
+                                                  </row>
+                                                </table></cell>
+                                        </row>
+                                    </table></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:person[ancestor::tei:figure]"&gt;
+ &lt;sch:assert test="@corresp and normalize-space(string-join(descendant::text())) =''"&gt; ERROR: People referenced in figures should only contain an @corresp to the person
+   in question and no content.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:person[@role]"&gt;
+ &lt;sch:assert test="ancestor::tei:figure"&gt; ERROR: The @role attribute is only allowed on person in the context of a figure.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:person[ancestor::tei:listPerson and ancestor::tei:figure]"&gt;
+ &lt;sch:assert test="@role"&gt; ERROR: All people in a listPerson in a figure should have a @role attribute.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.profileDesc">
+                        <head>&lt;profileDesc&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="profileDesc">&lt;profileDesc&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;profileDesc&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">header</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >header: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.teiHeader"
+                                                  rend="link_odd_elementSpec"
+                                                >teiHeader</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">header:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.textClass"
+                                                  rend="link_odd_elementSpec"
+                                            >textClass</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="textClass"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element profileDesc { <ref target="#TEI.textClass">textClass</ref> }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.q">
+                        <head>&lt;q&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="q">&lt;q&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label">&lt;q&gt;
+                                    </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><seg xml:lang="en">Empty
+                                    element</seg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg><ref target="#TEI.q">&lt;q&gt;</ref>
+                                        elements shouldn't start or end with
+                                    spaces.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:q"&gt;
+ &lt;sch:let name="text"
+  value="string-join(descendant::text(),'')"/&gt;
+ &lt;sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else 
+ not(matches($text,'^\s+|\s+$'))"&gt; ERROR: q elements should not begin or end with spaces.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.respStmt">
+                        <head>&lt;respStmt&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="respStmt">&lt;respStmt&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;respStmt&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">core</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">core:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.name" rend="link_odd_elementSpec"
+                                                  >name</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="resp"/&gt;
+ &lt;elementRef key="name"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element respStmt { <ref target="#TEI.resp">resp</ref>, <ref target="#TEI.name">name</ref> }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.sourceDesc">
+                        <head>&lt;sourceDesc&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="sourceDesc">&lt;sourceDesc&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;sourceDesc&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">header</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">core:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.bibl" rend="link_odd_elementSpec"
+                                                  >bibl</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>All primary sources must use a <ref
+                                            target="#TEI.bibl">&lt;bibl&gt;</ref> element in the
+                                            <ref target="#TEI.sourceDesc"
+                                        >&lt;sourceDesc&gt;</ref></seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:sourceDesc[not(tei:bibl)]"&gt;
+ &lt;sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')"&gt; ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
+   source descriptions.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;alternate&gt;
+  &lt;elementRef key="p"/&gt;
+  &lt;elementRef key="bibl"/&gt;
+ &lt;/alternate&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element sourceDesc { <ref target="#TEI.p">p</ref> | <ref target="#TEI.bibl">bibl</ref> }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.teiHeader">
+                        <head>&lt;teiHeader&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="teiHeader">&lt;teiHeader&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;teiHeader&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">header</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent">—</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">header:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.profileDesc"
+                                                  rend="link_odd_elementSpec"
+                                                >profileDesc</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="fileDesc"/&gt;
+ &lt;elementRef key="profileDesc"/&gt;
+ &lt;elementRef key="encodingDesc"
+  minOccurs="0" maxOccurs="1"/&gt;
+ &lt;elementRef key="revisionDesc"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element teiHeader { <ref target="#TEI.fileDesc">fileDesc</ref>, <ref target="#TEI.profileDesc">profileDesc</ref>, <ref target="#TEI.encodingDesc">encodingDesc</ref>?, <ref target="#TEI.revisionDesc">revisionDesc</ref> }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                    <div type="refdoc" xml:id="TEI.textClass">
+                        <head>&lt;textClass&gt;</head>
+                        <index indexName="ODDS">
+                            <term sortKey="textClass">&lt;textClass&gt;</term>
+                        </index>
+                        <table rend="wovenodd">
+                            <row>
+                                <cell cols="2" rend="wovenodd-col2"><hi rend="label"
+                                        >&lt;textClass&gt; </hi></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Module</hi></cell>
+                                <cell rend="wovenodd-col2">header</cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Contained
+                                        by</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="parent"><ab rend="specChildren"
+                                                ><ab rend="specChild"><seg rend="specChildModule"
+                                                  >header: </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.profileDesc"
+                                                  rend="link_odd_elementSpec"
+                                                  >profileDesc</ref></seg></ab></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">May
+                                        contain</hi></cell>
+                                <cell rend="wovenodd-col2"><ab rend="specChildren"><ab
+                                            rend="specChild"><seg rend="specChildModule">header:
+                                                </seg><seg rend="specChildElements"><ref
+                                                  target="#TEI.catRef" rend="link_odd_elementSpec"
+                                                  >catRef</ref></seg></ab></ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                        >Schematron</hi></cell>
+                                <cell rend="wovenodd-col2"><seg>An XSLT restraint for one of each
+                                        catRef</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:textClass"&gt;
+ &lt;sch:assert test="tei:catRef[@scheme='wdt:docType']"&gt; ERROR: Missing category reference docType.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;sch:rule context="tei:textClass"&gt;
+ &lt;sch:assert test="tei:catRef[@scheme='wdt:genre']"&gt; ERROR: Missing category reference genre.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;sch:rule context="tei:textClass"&gt;
+ &lt;sch:assert test="tei:catRef[@scheme='wdt:exhibit']"&gt; ERROR: Missing category reference exhibit.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Content
+                                        model</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg xml:space="preserve">
+&lt;content&gt;
+ &lt;elementRef key="catRef" minOccurs="1"
+  maxOccurs="unbounded"/&gt;
+&lt;/content&gt;
+    </eg></cell>
+                            </row>
+                            <row>
+                                <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en">Schema
+                                        Declaration</hi></cell>
+                                <cell rend="wovenodd-col2"
+                                    ><eg rend="eg_rnc" xml:space="preserve">
+element textClass { <ref target="#TEI.catRef">catRef</ref>+ }</eg></cell>
+                            </row>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <head>Attribute classes</head>
+                </div>
+                <div>
+                    <head>Constraints</head>
+                    <table rend="wovenodd">
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"><seg>All root elements must have an <hi
+                                        rend="att">xml:id</hi> that matches the document
+                                    filename.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"&gt;
+ &lt;sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"&gt; ERROR: Document
+   xml:id (&lt;sch:value-of select="$docId"/&gt;) does not match the document file
+   name (&lt;sch:value-of select="$docUri"/&gt;). &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:body | tei:div | tei:lg"&gt;
+ &lt;sch:let name="divs"
+  value="if (self::tei:body) then (descendant::tei:div) else ."/&gt;
+ &lt;sch:let name="noElContentDivs"
+  value="$divs[not(descendant::*)]"/&gt;
+ &lt;sch:let name="contentDivs"
+  value="$noElContentDivs[not(normalize-space(string-join(text(),''))='')]"/&gt;
+ &lt;sch:assert test="empty($contentDivs)"
+  sqf:fix="fixDivsHere fixDivsEverywhere"&gt; ERROR: QUICKFIX: Untagged text should likely be tagged. Use the Quickfix to do so.
+ &lt;/sch:assert&gt;
+ &lt;sqf:fixes&gt;
+  &lt;sqf:fix id="fixDivsHere"
+   use-when="not(self::tei:body)"&gt;
+   &lt;sqf:description&gt;
+    &lt;sqf:title&gt;LOCAL: Fix this &lt;sch:name/&gt;
+    &lt;/sqf:title&gt;
+   &lt;/sqf:description&gt;
+   &lt;sqf:replace match="node()"&gt;
+    &lt;xsl:call-template name="tagBlocks"&gt;
+     &lt;xsl:with-param name="verse"
+      select="if (parent::*/self::tei:lg) then true() else false()"/&gt;
+    &lt;/xsl:call-template&gt;
+   &lt;/sqf:replace&gt;
+  &lt;/sqf:fix&gt;
+  &lt;sqf:fix id="fixDivsEverywhere"
+   use-when="self::tei:body"&gt;
+   &lt;sqf:description&gt;
+    &lt;sqf:title&gt;GLOBAL: Tag all paragraphs within divs and lines within linegroups.&lt;/sqf:title&gt;
+   &lt;/sqf:description&gt;
+   &lt;sqf:replace match="//tei:div[not(descendant::*)][not(normalize-space(string-join(text(),''))='')]/node() 
+ | //tei:lg[not(descendant::*)][not(normalize-space(string-join(text(),''))='')]/node()"&gt;
+    &lt;xsl:call-template name="tagBlocks"&gt;
+     &lt;xsl:with-param name="verse"
+      select="if (parent::*/self::tei:lg) then true() else false()"/&gt;
+    &lt;/xsl:call-template&gt;
+   &lt;/sqf:replace&gt;
+  &lt;/sqf:fix&gt;
+ &lt;/sqf:fixes&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]"&gt;
+ &lt;sch:let name="text"
+  value="string-join(descendant::text(),'')"/&gt;
+ &lt;sch:let name="containsCurlyQuotes"
+  value="matches($text,'“') and matches($text,'”')"/&gt;
+ &lt;sch:assert test="not($containsCurlyQuotes)"
+  sqf:fix="fixQuotesHere fixQuotesEverywhere"&gt; ERROR: QUICKFIX: Do not use curly quotes; use the q element instead.
+ &lt;/sch:assert&gt;
+ &lt;sqf:fix id="fixQuotesHere"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt; LOCAL: Replace curly quotes with q elements in this &lt;sch:name/&gt; element.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="text()[contains(.,'“') and contains(.,'”')]"&gt;
+   &lt;xsl:call-template name="tagQuote"&gt;
+    &lt;xsl:with-param name="left"
+     select="'“'"/&gt;
+    &lt;xsl:with-param name="right"
+     select="'”'"/&gt;
+   &lt;/xsl:call-template&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+ &lt;sqf:fix id="fixQuotesEverywhere"
+  use-when="self::tei:body"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;GLOBAL: Replace curly quotes with q elements.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="//text()[contains(.,'“') and contains(.,'”')]"&gt;
+   &lt;xsl:call-template name="tagQuote"&gt;
+    &lt;xsl:with-param name="left"
+     select="'“'"/&gt;
+    &lt;xsl:with-param name="right"
+     select="'”'"/&gt;
+   &lt;/xsl:call-template&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:let name="spaceRegex"
+ value="'(^\s)|(\s$)'"/&gt;
+&lt;sch:let name="docId"
+ value="root(/)/tei:*/@xml:id"/&gt;
+&lt;sch:let name="docUri"
+ value="document-uri(/)"/&gt;
+&lt;sch:let name="docIds"
+ value="//tei:*[@xml:id]/@xml:id"/&gt;
+&lt;sch:let name="docTypes"
+ value="//tei:catRef/@target"/&gt;
+&lt;sch:let name="docStatus"
+ value="//tei:revisionDesc/@status"/&gt;
+&lt;sqf:fix id="globals"&gt;
+ &lt;sqf:description&gt;
+  &lt;sqf:title&gt;Global Templates&lt;/sqf:title&gt;
+ &lt;/sqf:description&gt;
+ 
+&lt;!--GLOBAL XSL VARIABLES--&gt;
+ &lt;xsl:variable name="apos"&gt;'&lt;/xsl:variable&gt;
+ &lt;xsl:variable name="dq"&gt;"&lt;/xsl:variable&gt;
+ 
+&lt;!--TAG BLOCKS TEMPLATE--&gt;
+ &lt;xsl:template name="tagBlocks"&gt;
+  &lt;xsl:param name="verse" select="false()"/&gt;
+  &lt;xsl:variable name="ancestors"
+   select="count(ancestor::tei:*)"/&gt;
+  &lt;xsl:variable name="tabCount"
+   select="$ancestors"/&gt;
+  &lt;xsl:variable name="newLine"&gt;
+   &lt;xsl:text/&gt;
+  &lt;/xsl:variable&gt;
+  &lt;xsl:variable name="tab"
+   select="string-join(for $n in (2 to $tabCount) return ' ','')"/&gt;
+  &lt;xsl:variable name="paras"
+   select="for $t in tokenize(.,'\n+') return normalize-space($t)"/&gt;
+  &lt;xsl:for-each select="$paras[not(.='')]"&gt;
+   &lt;xsl:value-of select="$newLine"/&gt;
+   &lt;xsl:value-of select="$tab"/&gt;
+   &lt;xsl:element name="{if ($verse) then 'l' else 'p'}"&gt;
+    &lt;xsl:value-of select="."/&gt;
+   &lt;/xsl:element&gt;
+  &lt;/xsl:for-each&gt;
+ &lt;/xsl:template&gt;
+ &lt;xsl:template name="replaceApos"&gt;
+  &lt;xsl:param name="useDq" select="false()"/&gt;
+  &lt;xsl:variable name="thisApos"
+   select="if ($useDq) then $dq else $apos"/&gt;
+  &lt;xsl:variable name="left"
+   select="if ($useDq) then '“' else '‘'"/&gt;
+  &lt;xsl:variable name="right"
+   select="if ($useDq) then '”' else '’'"/&gt;
+  &lt;xsl:analyze-string select="."
+   regex="{concat('(^|\s+)',$thisApos)}"&gt;
+   &lt;xsl:matching-substring&gt;
+    &lt;xsl:value-of select="regex-group(1)"/&gt;
+    &lt;xsl:value-of select="$left"/&gt;
+   &lt;/xsl:matching-substring&gt;
+   &lt;xsl:non-matching-substring&gt;
+    &lt;xsl:analyze-string select="."
+     regex="{concat('([a-zA-Z])',$thisApos)}"&gt;
+     &lt;xsl:matching-substring&gt;
+      &lt;xsl:value-of select="regex-group(1)"/&gt;
+      &lt;xsl:value-of select="$right"/&gt;
+     &lt;/xsl:matching-substring&gt;
+     &lt;xsl:non-matching-substring&gt;
+      &lt;xsl:analyze-string select="."
+       regex="{concat($thisApos,'(\s+|$)')}"&gt;
+       &lt;xsl:matching-substring&gt;
+        &lt;xsl:value-of select="$right"/&gt;
+        &lt;xsl:value-of select="regex-group(1)"/&gt;
+       &lt;/xsl:matching-substring&gt;
+       &lt;xsl:non-matching-substring&gt;
+        &lt;xsl:value-of select="."/&gt;
+       &lt;/xsl:non-matching-substring&gt;
+      &lt;/xsl:analyze-string&gt;
+     &lt;/xsl:non-matching-substring&gt;
+    &lt;/xsl:analyze-string&gt;
+   &lt;/xsl:non-matching-substring&gt;
+  &lt;/xsl:analyze-string&gt;
+ &lt;/xsl:template&gt;
+ &lt;xsl:template name="tagQuote"&gt;
+  &lt;xsl:param name="left"/&gt;
+  &lt;xsl:param name="right"/&gt;
+  &lt;xsl:variable name="rex1"
+   select="concat($left,'([^',$right,']+)([\.,])',$right)"/&gt;
+  &lt;xsl:variable name="rex2"
+   select="concat($left,'([^',$right,']+)',$right)"/&gt;
+  &lt;xsl:analyze-string select="."
+   regex="{$rex1}"&gt;
+   &lt;xsl:matching-substring&gt;
+    &lt;xsl:element name="q"&gt;
+     &lt;xsl:value-of select="regex-group(1)"/&gt;
+    &lt;/xsl:element&gt;
+    &lt;xsl:value-of select="regex-group(2)"/&gt;
+   &lt;/xsl:matching-substring&gt;
+   &lt;xsl:non-matching-substring&gt;
+    &lt;xsl:analyze-string select="."
+     regex="{$rex2}"&gt;
+     &lt;xsl:matching-substring&gt;
+      &lt;xsl:element name="q"&gt;
+       &lt;xsl:value-of select="regex-group(1)"/&gt;
+      &lt;/xsl:element&gt;
+     &lt;/xsl:matching-substring&gt;
+     &lt;xsl:non-matching-substring&gt;
+      &lt;xsl:value-of select="."/&gt;
+     &lt;/xsl:non-matching-substring&gt;
+    &lt;/xsl:analyze-string&gt;
+   &lt;/xsl:non-matching-substring&gt;
+  &lt;/xsl:analyze-string&gt;
+ &lt;/xsl:template&gt;
+&lt;/sqf:fix&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]"&gt;
+ &lt;sch:let name="onlyOneQuote"
+  value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/&gt;
+ &lt;sch:assert test="not($onlyOneQuote)"&gt; ERROR: Curly quotes that cannot be QuickFixed. Either add the curly quotation mark or change to the q element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"><seg>The attributes next/prev on a text
+                                    element shouldn't match the root
+                                id.</seg><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:text[@next or @prev]"&gt;
+ &lt;sch:let name="errors"
+  value="for $r in (@next,@prev) return if (substring-after($r,'doc:')=$docId) 
+ then $r else ()"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: Next and prev should point to a different document (i.e. a different installment), but they contain the value(s) &lt;sch:value-of select="string-join($errors,' ')"/&gt;.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:name | tei:ref | tei:title | tei:l"&gt;
+ &lt;sch:let name="text"
+  value="string-join(descendant::text(),'')"/&gt;
+ &lt;sch:assert test="not(matches($text,'^\s+|\s+$'))"&gt; ERROR: &lt;sch:name/&gt; should not begin or end with spaces.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne 
+ '']"&gt;
+ &lt;sch:let name="thisText"
+  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/&gt;
+ &lt;sch:let name="cp"
+  value="string-to-codepoints($thisText)"/&gt;
+ &lt;sch:let name="distinctCp"
+  value="distinct-values($cp)"/&gt;
+ &lt;sch:assert test="empty($distinctCp[.=39])"
+  sqf:fix="replaceAposHere replaceAposEverywhere"&gt; ERROR: QUICKFIX: Do not use straight apostrophes.
+ &lt;/sch:assert&gt;
+ &lt;sqf:fix id="replaceAposHere"
+  use-when="self::tei:body"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;GLOBAL: Replace straight apostrophe with curly apostrophe everywhere.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="//text()"&gt;
+   &lt;xsl:call-template name="replaceApos"/&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+ &lt;sqf:fix id="replaceAposEverywhere"
+  use-when="not(self::tei:body)"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;LOCAL: Replace straight apostrophe with curly apostrophe in this &lt;sch:name/&gt; element.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="text()"&gt;
+   &lt;xsl:call-template name="replaceApos"/&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne 
+ '']"&gt;
+ &lt;sch:let name="thisText"
+  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/&gt;
+ &lt;sch:let name="cp"
+  value="string-to-codepoints($thisText)"/&gt;
+ &lt;sch:let name="distinctCp"
+  value="distinct-values($cp)"/&gt;
+ &lt;sch:assert test="empty($distinctCp[.=34])"
+  sqf:fix="replaceStraightQuotesHere replaceStraightQuotesEverywhere"&gt; ERROR: QUICKFIX: Do not use straight quotation marks.
+ &lt;/sch:assert&gt;
+ &lt;sqf:fix id="replaceStraightQuotesHere"
+  use-when="self::tei:body"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;GLOBAL: Replace straight quotation mark with curly question marks everywhere.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="//text()"&gt;
+   &lt;xsl:call-template name="replaceApos"&gt;
+    &lt;xsl:with-param name="useDq"
+     select="true()"/&gt;
+   &lt;/xsl:call-template&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+ &lt;sqf:fix id="replaceStraightQuotesEverywhere"
+  use-when="not(self::tei:body)"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;LOCAL: Replace straight quotation marks with curly quotation marks in this &lt;sch:name/&gt; element.&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:replace match="text()"&gt;
+   &lt;xsl:call-template name="replaceApos"&gt;
+    &lt;xsl:with-param name="useDq"
+     select="true()"/&gt;
+   &lt;/xsl:call-template&gt;
+  &lt;/sqf:replace&gt;
+ &lt;/sqf:fix&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:name"&gt;
+ &lt;sch:let name="text"
+  value="string-join(descendant::text(),'')"/&gt;
+ &lt;sch:assert test="not(matches($text,'\.$'))"
+  role="warning"&gt; WARNING: &lt;sch:name/&gt; usually shouldn't end with periods.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                        <row>
+                            <cell rend="wovenodd-col1"><hi rend="label" xml:lang="en"
+                                    >Schematron</hi></cell>
+                            <cell rend="wovenodd-col2"
+                                ><ab xml:space="preserve" rend="pre">
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:q"&gt;
+ &lt;sch:let name="text"
+  value="string-join(descendant::text(),'')"/&gt;
+ &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuaton should go outside the &lt;sch:name/&gt; element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</ab></cell>
+                        </row>
+                    </table>
+                </div>
+            </div>
+        </back>
+    </text>
+</TEI>

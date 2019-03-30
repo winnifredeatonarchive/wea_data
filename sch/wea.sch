@@ -574,7 +574,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit)|(wdt:docBornDigitalDocumentation))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -778,7 +778,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         <sch:let name="docIds" value="//tei:*[@xml:id]/@xml:id"/>
                         <sch:let name="docTypes" value="//tei:catRef/@target"/>
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
-                        
+                        <sch:let name="isDocumentation"
+               value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -894,7 +895,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()]">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]">
                            <sch:let name="onlyOneQuote"
                   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
                            <sch:assert test="not($onlyOneQuote)">
@@ -976,9 +977,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=34])"
@@ -1016,9 +1017,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body | tei:*[text()][normalize-space(string-join(text(),'')) ne '']">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text(),'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=39])"
@@ -1101,7 +1102,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body | tei:*[text()][not(normalize-space(string-join(text(),''))='')]">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:let name="containsCurlyQuotes"
                   value="matches($text,'“') and matches($text,'”')"/>

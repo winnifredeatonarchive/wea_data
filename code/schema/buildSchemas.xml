@@ -213,6 +213,16 @@
         </ant>
     </target>
     
+    <target name="odd2Doc">
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${wea.odd.processed}"/>
+            <arg line="-o:${project.dir}/data/documentation/tei_documentation.xml"/>
+            <arg line="-xsl:${project.dir}/code/xsl/xml_original_documentation_master.xsl"/>
+            <arg line="-it:makeDocumentation"/>
+        </java>
+    </target>
+    
+    
     <target name="odd2html">
         <description>Create documentation from the ODD file.</description>
         <java jar="${saxon}" fork="true" failonerror="true">
@@ -255,13 +265,13 @@
     
     <target name="clean">
         <delete file="${project.dir}/documentation/documentation_crude.html"/>
-        <delete file="${wea.odd.processed}"/>
+   <!--     <delete file="${wea.odd.processed}"/>-->
         <delete file="${tei_all.odd.processed}"/>
     </target>
         
     
     
-    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, getTei, odd2html, clean">
+    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2Doc, getTei, odd2html, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     
