@@ -43,6 +43,6 @@
     </xd:doc>
     
     <xsl:variable name="contentDocs"
-        select="collection('../../../products/?select=*.html;recurse=no;on-error=ignore')"/>
+        select="collection('../../../products/site?select=*.html;recurse=no;on-error=ignore')"/>
     
 </xsl:stylesheet>

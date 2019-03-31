@@ -5,7 +5,8 @@
     
     
   <dirname property="data.dir" file="../README.md"/>
-  <property name="siteTemp" value="${data.dir}/products/site/"/>
+  <property name="productsDir" value="${data.dir}/products/"/>
+  <property name="siteTemp" value="${productsDir}site/"/>
   <property name="textsDir" value="${data.dir}/data/texts/"/>
   <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
     
@@ -17,7 +18,7 @@
   </fileset>
     
     <target name="init">
-        <delete dir="${siteTemp}"/>
+        <delete dir="${productsDir}"/>
         <mkdir dir="${siteTemp}"/>
     </target>
     
