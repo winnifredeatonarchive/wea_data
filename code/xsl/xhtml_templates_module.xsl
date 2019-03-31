@@ -8,6 +8,7 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xh="http://www.w3.org/1999/xhtml"
+    xmlns:teix="http://www.tei-c.org/ns/Examples"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -175,65 +176,73 @@
     
     <xsl:template match="table" mode="tei">
         
-        
-        <table>
-
-            <xsl:choose>
-                <xsl:when test="row[1][@role='label']">
-                    <xsl:variable name="cellMap" as="map(xs:string, xs:integer+)">
-                        <xsl:map>
-                            <xsl:for-each-group select="row[not(@role='label')]/cell" group-by="count(preceding-sibling::cell)">
-                                <xsl:variable name="colNumber" select="current-grouping-key()+1"/>
-                                <xsl:variable name="type">
-                                    <xsl:choose>
-                                        <xsl:when test="every $v in current-group() satisfies $v[date]">date</xsl:when>
-                                        <xsl:when test="every $v in current-group() satisfies matches(normalize-space(string-join($v,'')),'^\d+(.\d+)?$')">float</xsl:when>
-                                        <xsl:otherwise>string</xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:variable>
-                                <xsl:for-each select="current-group()">
-                                    <xsl:sort select="
-                                        if ($type='date') then date/@when (: If it's a date, use the @when :)
-                                        else if ($type='float') then xs:float(.) (:If it's a float, use that :)
-                                        else wea:makeTitleSortKey(normalize-space(string-join(descendant::text()[not(ancestor::note)]))) (:Otherwise, use the string:)
-                                        "/>
-                                    <!--We'll want a better sorting key mechanism here-->
-                                    <xsl:variable name="pos" select="position()"/>
-                                    <xsl:map-entry key="generate-id(.)" select="($colNumber, $pos)"/>
+        <xsl:choose>
+            <xsl:when test="ancestor::TEI[descendant::catRef/@target[contains(.,'Documentation')]] or count(row) = 1">
+                <table>
+                    <xsl:apply-templates mode="#current"/>
+                </table>
+            </xsl:when>
+            <xsl:otherwise>
+                <table>
+                    <xsl:choose>
+                        <xsl:when test="row[1][@role='label']">
+                            <xsl:variable name="cellMap" as="map(xs:string, xs:integer+)">
+                                <xsl:map>
+                                    <xsl:for-each-group select="row[not(@role='label')]/cell" group-by="count(preceding-sibling::cell)">
+                                        <xsl:variable name="colNumber" select="current-grouping-key()+1"/>
+                                        <xsl:variable name="type">
+                                            <xsl:choose>
+                                                <xsl:when test="every $v in current-group() satisfies $v[date]">date</xsl:when>
+                                                <xsl:when test="every $v in current-group() satisfies matches(normalize-space(string-join($v,'')),'^\d+(.\d+)?$')">float</xsl:when>
+                                                <xsl:otherwise>string</xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:variable>
+                                        <xsl:for-each select="current-group()">
+                                            <xsl:sort select="
+                                                if ($type='date') then date/@when (: If it's a date, use the @when :)
+                                                else if ($type='float') then xs:float(.) (:If it's a float, use that :)
+                                                else wea:makeTitleSortKey(normalize-space(string-join(descendant::text()[not(ancestor::note)]))) (:Otherwise, use the string:)
+                                                "/>
+                                            <!--We'll want a better sorting key mechanism here-->
+                                            <xsl:variable name="pos" select="position()"/>
+                                            <xsl:map-entry key="generate-id(.)" select="($colNumber, $pos)"/>
+                                        </xsl:for-each>
+                                    </xsl:for-each-group>
+                                </xsl:map>
+                            </xsl:variable>
+                            <xsl:call-template name="processAtts">
+                                <xsl:with-param name="classes" select="'sortable'"/>
+                            </xsl:call-template>
+                            <xsl:variable name="labelRow" select="row[1][@role='label']"/>
+                            <thead>
+                                <xsl:apply-templates select="row[1][@role='label']" mode="#current"/>
+                            </thead>
+                            <xsl:variable name="firstToSortBy"
+                                select="
+                                min(for $r 
+                                in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) 
+                                return count($r/preceding-sibling::cell) + 1)" 
+                                as="xs:integer"/>
+                            <tbody>
+                                <xsl:for-each select="row[position() gt 1]">
+                                    <xsl:sort select="$cellMap(generate-id(cell[$firstToSortBy]))[2]"/>
+                                    <xsl:apply-templates select="." mode="#current">
+                                        <xsl:with-param name="cellMap" select="$cellMap" tunnel="yes"/>
+                                    </xsl:apply-templates>
                                 </xsl:for-each>
-                            </xsl:for-each-group>
-                        </xsl:map>
-                    </xsl:variable>
-                    <xsl:call-template name="processAtts">
-                        <xsl:with-param name="classes" select="'sortable'"/>
-                    </xsl:call-template>
-                    <xsl:variable name="labelRow" select="row[1][@role='label']"/>
-                    <thead>
-                        <xsl:apply-templates select="row[1][@role='label']" mode="#current"/>
-                    </thead>
-                    <xsl:variable name="firstToSortBy"
-                        select="
-                        min(for $r 
-                            in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) 
-                            return count($r/preceding-sibling::cell) + 1)" 
-                        as="xs:integer"/>
-                    <tbody>
-                        <xsl:for-each select="row[position() gt 1]">
-                            <xsl:sort select="$cellMap(generate-id(cell[$firstToSortBy]))[2]"/>
-                            <xsl:apply-templates select="." mode="#current">
-                                <xsl:with-param name="cellMap" select="$cellMap" tunnel="yes"/>
-                            </xsl:apply-templates>
-                        </xsl:for-each>
-                    </tbody>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:call-template name="processAtts"/>
-                    <tbody>
-                        <xsl:apply-templates select="row" mode="#current"/>
-                    </tbody>
-                </xsl:otherwise>
-            </xsl:choose>
-        </table>
+                            </tbody>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:call-template name="processAtts"/>
+                            <tbody>
+                                <xsl:apply-templates select="row" mode="#current"/>
+                            </tbody>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </table>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
     
     
@@ -256,13 +265,18 @@
         </tr>
     </xsl:template>
     
+    
+    
     <xsl:template match="cell" mode="tei">
-        <xsl:param name="cellMap" tunnel="yes"/>
-        <xsl:variable name="entry" select="$cellMap(generate-id(.))"/>
+        <xsl:param name="cellMap" select="()" tunnel="yes"/>
+        <xsl:variable name="entry" select="if (not(empty($cellMap))) then $cellMap(generate-id(.)) else ()"/>
         <td>
             <xsl:call-template name="processAtts"/>
-            <xsl:attribute name="data-col" select="$entry[1]"/>
-            <xsl:attribute name="data-sort" select="$entry[2]"/>
+            <xsl:if test="not(empty($cellMap))">
+                <xsl:attribute name="data-col" select="$entry[1]"/>
+                <xsl:attribute name="data-sort" select="$entry[2]"/>
+            </xsl:if>
+
             <xsl:apply-templates mode="#current"/>
         </td>
     </xsl:template>

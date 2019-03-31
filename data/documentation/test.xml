@@ -6,7 +6,8 @@
      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
      xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-     xml:base="file:/Volumes/workspace/wea/wea_data/sch/wea.odd"><?TEIVERSION Version 3.5.0. Last updated on
+     xml:base="file:/Volumes/workspace/wea/wea_data/sch/wea.odd"
+     xml:id="wea"><?TEIVERSION Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4?> 
    <teiHeader>
       <fileDesc>
@@ -50,15 +51,15 @@
          </div>
          <div>
             <head>Site build process</head>
-            <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are "static," and the site itself has no external or server-side dependencies.</p>
+            <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
             <p>To build the site, you must have ant installed. In the root directory, run: <code rend="block">ant -lib lib</code>
             </p>
             <p>The site build happens in a number of steps: <list>
                   <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
                   <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows: <list>
                         <item>Files </item>
-                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the "original" XML</item>
-                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the "standoff" materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
+                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the <q>original</q> XML</item>
+                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the <q>standoff</q> materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
                         <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
                      </list>
                   </item>
@@ -67,13 +68,13 @@
             </p>
             <div>
                <head>Current Implementation</head>
-               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called "wea." This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
-               <p>Once we are happy with the products on the "wea" site (also called the "beta" site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
+               <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
             </div>
          </div>
          <div xml:id="github">
             <head>Using Github</head>
-            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could <q>roll back</q> the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
             <p/>
             <div xml:id="github_get">
                <head>Setting up the repository</head>
@@ -154,8 +155,8 @@
             <div xml:id="github_summary">
                <head>Github Summary</head>
                <p>The basic steps for working with Github are: <list>
-                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type "Terminal" to find it)</item>
-                     <item>Go into your working directory (likely called "wea"): <code rend="block">cd wea</code>
+                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type <q>Terminal</q> to find it)</item>
+                     <item>Go into your working directory (likely called <q>wea</q>): <code rend="block">cd wea</code>
                      </item>
                   </list> Before you start working: <list>
                      <item>Pull the changes from the repository so that your repository is up-to-date: <code rend="block">git pull</code>
@@ -178,11 +179,12 @@
             <head>Creating a New Text in oXygen</head>
             <p>To create a new text file, use the built in text template</p>
             <list>
-               <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
+               <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
+               </item>
                <figure>
                   <graphic url="../graphics/create_new_file_1.gif"/>
                </figure>
-               <item>Select "wea_template.xml" and give your file a name. The name should be two or three words, separated with underscores.</item>
+               <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
                <figure>
                   <graphic url="../graphics/create_new_file_2.gif"/>
                </figure>
@@ -251,7 +253,7 @@
             <div>
                <head>Associating facsimiles</head>
                <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
-               <p>To associate the primary source document with the facsimile, use the <hi rend="att">facs</hi> attribute on the <ref target="#TEI.text">&lt;text&gt;</ref> element, with a pointer to the facsimile's file name using the private "facs:" URI scheme: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>To associate the primary source document with the facsimile, use the <hi rend="att">facs</hi> attribute on the <ref target="#TEI.text">&lt;text&gt;</ref> element, with a pointer to the facsimile's file name using the private <q>facs:</q> URI scheme: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text facs="facs:Three_Loves_Puritan"><!--Content here--></text>
                   </egXML>
                </p>
@@ -274,7 +276,8 @@
                      <supplied resp="pers:JT1">ed</supplied>
                   </egXML>
                </p>
-               <p>You can encode how certain you are of your editorial addition by using the <hi rend="att">cert</hi> attribute on supplied with a value of "low" "medium" or "high". If no <hi rend="att">cert</hi> is supplied, it is assumed that it has a high value of certainty: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>You can encode how certain you are of your editorial addition by using the <hi rend="att">cert</hi> attribute on supplied with a value of <q>low</q> 
+                  <q>medium</q> or <q>high</q>. If no <hi rend="att">cert</hi> is supplied, it is assumed that it has a high value of certainty: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <supplied resp="pers:JT" cert="low">ed</supplied>
                   </egXML>
                </p>
@@ -582,7 +585,7 @@
             <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
             <p>To regenerate the schema and the documentation follow these directions</p>
             <p>
-               <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red "play" button.</p>
+               <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
             <p>
                <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code rend="block">ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
          </div>
@@ -51470,7 +51473,7 @@ teidata.xmlName = xsd:NCName</eg>
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
 &lt;sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"&gt;
- &lt;sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"&gt; ERROR: Document
+ &lt;sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"&gt; ERROR: Document
    xml:id (&lt;sch:value-of select="$docId"/&gt;) does not match the document file
    name (&lt;sch:value-of select="$docUri"/&gt;). &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
@@ -51533,9 +51536,10 @@ teidata.xmlName = xsd:NCName</eg>
                      <cell rend="wovenodd-col2">
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]"&gt;
+&lt;sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) 
+ or ($isDocumentation and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="text"
-  value="string-join(descendant::text(),'')"/&gt;
+  value="string-join(descendant::text()[not(ancestor::tei:code)],'')"/&gt;
  &lt;sch:let name="containsCurlyQuotes"
   value="matches($text,'“') and matches($text,'”')"/&gt;
  &lt;sch:assert test="not($containsCurlyQuotes)"
@@ -51698,7 +51702,8 @@ teidata.xmlName = xsd:NCName</eg>
                      <cell rend="wovenodd-col2">
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]"&gt;
+&lt;sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) 
+ or ($isDocumentation and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="onlyOneQuote"
   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/&gt;
  &lt;sch:assert test="not($onlyOneQuote)"&gt; ERROR: Curly quotes that cannot be QuickFixed. Either add the curly quotation mark or change to the q element.
@@ -51749,10 +51754,11 @@ teidata.xmlName = xsd:NCName</eg>
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) 
- ne ''][not($isDocumentation)]"&gt;
+ ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation 
+ and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="thisText"
   value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') 
- else string-join(text(),'')"/&gt;
+ else string-join(text()[not(ancestor::tei:code)],'')"/&gt;
  &lt;sch:let name="cp"
   value="string-to-codepoints($thisText)"/&gt;
  &lt;sch:let name="distinctCp"
@@ -51790,10 +51796,10 @@ teidata.xmlName = xsd:NCName</eg>
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) 
- ne ''][not($isDocumentation)]"&gt;
+ ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="thisText"
   value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') 
- else string-join(text(),'')"/&gt;
+ else string-join(text()[not(ancestor::tei:code)],'')"/&gt;
  &lt;sch:let name="cp"
   value="string-to-codepoints($thisText)"/&gt;
  &lt;sch:let name="distinctCp"
@@ -51853,10 +51859,10 @@ teidata.xmlName = xsd:NCName</eg>
                      <cell rend="wovenodd-col2">
                         <ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:q"&gt;
+&lt;sch:rule context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
- &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuaton should go outside the &lt;sch:name/&gt; element.
+ &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuation should go outside the &lt;sch:name/&gt; element.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</ab>

@@ -33,6 +33,8 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="TEI/@xml:id" mode="second"/>
+    
     <xsl:template match="tei:*/@rend | tei:*/@xml:base | tei:*/@xml:lang | eg:egXML/@xml:space" mode="second"/>
     
     <xsl:template match="index" mode="second"/>
@@ -53,6 +55,8 @@
         </att>
     </xsl:template>
     
+    <xsl:template match="processing-instruction('TEIVERSION')" mode="second"/>
+    
     
     <xsl:template match="row[cell[normalize-space(string-join(descendant::text(),''))='Example']][descendant::eg:egXML[descendant::eg:egXML]]" mode="second"/>
     
@@ -71,6 +75,7 @@
         </xsl:choose>
     </xsl:template>
     
+
     <xsl:template match="item[not(ancestor::list)]" mode="second">
         <list>
            <xsl:copy>
@@ -111,7 +116,7 @@
         </q>
     </xsl:template>
     
-    <xsl:template match="tei:ab[@xml:space='preserve'][contains(.,'&lt;')] " mode="second">
+    <xsl:template match="tei:ab[@xml:space='preserve'][contains(.,'&lt;')][not(ancestor::div[head/text()='Constraints'])] " mode="second">
         <code>
             <xsl:apply-templates mode="#current"/>
         </code>
@@ -124,23 +129,58 @@
     </xsl:template>
     
     <xsl:template match="ref/text()" mode="second">
-        <xsl:choose>
-            <xsl:when test="not(preceding-sibling::node()) and not(following-sibling::node())">
-                <xsl:value-of select="normalize-space(.)"/>
-            </xsl:when>
-            <xsl:when test="not(preceding-sibling::node()) and following-sibling::node()">
-                <xsl:value-of select="replace(.,'^\s+','')"/>
-            </xsl:when>
-            <xsl:when test="preceding-sibling::node() and not(following-sibling::node())">
-                <xsl:value-of select="replace(.,'\s$','')"/>
-            </xsl:when>
-            <xsl:otherwise>
+        <xsl:variable name="p1">
+            <xsl:choose>
+                <xsl:when test="not(preceding-sibling::node()) and not(following-sibling::node())">
+                    <xsl:value-of select="normalize-space(.)"/>
+                </xsl:when>
+                <xsl:when test="not(preceding-sibling::node()) and following-sibling::node()">
+                    <xsl:value-of select="replace(.,'^\s+','')"/>
+                </xsl:when>
+                <xsl:when test="preceding-sibling::node() and not(following-sibling::node())">
+                    <xsl:value-of select="replace(.,'\s$','')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+         
+        </xsl:variable>
+        <xsl:analyze-string select="$p1" regex="^&lt;(.+)&gt;$">
+            <xsl:matching-substring>
+                <gi><xsl:value-of select="regex-group(1)"/></gi>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
                 <xsl:value-of select="."/>
-            </xsl:otherwise>
-        </xsl:choose>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
     
-    <xsl:template match="q" mode="second">
+    <xsl:template match="div[table[row/cell/@cols='2']]" mode="second">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <xsl:apply-templates select="table/preceding-sibling::node()" mode="#current"/>
+            <p><xsl:apply-templates select="table/row/cell[@cols='2']/node()" mode="#current"/></p>
+            <xsl:apply-templates select="table|table/following-sibling::node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='label']" mode="second">
+        <label>
+            <xsl:apply-templates mode="#current"/>
+        </label>
+    </xsl:template>
+    
+    <xsl:template match="div/table/row[cell[@cols='2']]" mode="second"/>
+    
+    
+    <xsl:template match="ab[@xml:space='preserve'][@rend='pre'][ancestor::back][ancestor::div[normalize-space(string-join(head/text(),''))='Constraints']]" mode="second">
+        <eg:egXML>
+            <xsl:value-of select="replace(.,' ',' ')" disable-output-escaping="true"/>
+        </eg:egXML>
+    </xsl:template>
+    
+    <xsl:template match="q[ancestor::back]" mode="second">
         <xsl:text>"</xsl:text><xsl:apply-templates mode="#current"/><xsl:text>"</xsl:text>
     </xsl:template>
     

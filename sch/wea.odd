@@ -258,7 +258,8 @@
             <head>Creating a New Text in oXygen</head>
             <p>To create a new text file, use the built in text template</p>
             <list>
-               <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q></item>
+               <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
+               </item>
                <figure>
                   <graphic url="../graphics/create_new_file_1.gif"/>
                </figure>
@@ -379,7 +380,8 @@
                      <supplied resp="pers:JT1">ed</supplied>
                   </egXML>
                </p>
-               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of <q>low</q> <q>medium</q> or <q>high</q>. If no <att>cert</att> is supplied, it is assumed
+               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of <q>low</q> 
+                  <q>medium</q> or <q>high</q>. If no <att>cert</att> is supplied, it is assumed
                that it has a high value of certainty:
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <supplied resp="pers:JT" cert="low">ed</supplied>
