@@ -12,21 +12,21 @@ notifications:
     on_success: change 
     on_failure: always # Alert when the build fails
 deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN 
-  keep-history: false
-  local-dir: products/site
-  target-branch: master
-  repo: winnifredeatonarchive/wea
-  on:
-    branch: master
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: false
-  local-dir: products/docs
-  target-branch: master
-  repo: winnifredeatonarchive/docs
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GH_TOKEN 
+    keep-history: false
+    local-dir: products/site
+    target-branch: master
+    repo: winnifredeatonarchive/wea
+    on:
+        branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GH_TOKEN
+    keep-history: false
+    local-dir: products/docs
+    target-branch: master
+    repo: winnifredeatonarchive/docs
+    on:
+        branch: master
