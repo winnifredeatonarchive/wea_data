@@ -15,7 +15,7 @@
     <xsl:variable name="sourceDir" select="'../../data/'"/>
     
     
-    <xsl:variable name="productsDir" select="'../../products/'"/>
+    <xsl:variable name="productsDir" select="'../../products/site/'"/>
     
     <xsl:variable name="today" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
     
