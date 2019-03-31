@@ -206,8 +206,8 @@
         <echo message="${echo.separator}"/>
         <echo message="Validating XHTML..."/>
         <echo message="${echo.separator}"/>
-        <mkdir dir="${xhValidationDir}"/>
-        <copy todir="${xhValidationDir}">
+        <mkdir dir="${xh.validation.dir}"/>
+        <copy todir="${xh.validation.dir}">
             <fileset dir="${site.dir}">
                 <include name="*.html"/>
             </fileset>
@@ -216,9 +216,9 @@
             <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
             <arg value="--format text"/>
             <arg value="--skip-non-html"/>
-            <arg value="${xhValidationDir}/"/>
+            <arg value="${xh.validation.dir}/"/>
         </java>
-        <delete dir="${xhValidationDir}"/>
+        <delete dir="${xh.validation.dir}"/>
     </target>
     
    
