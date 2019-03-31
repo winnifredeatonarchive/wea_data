@@ -78,7 +78,7 @@
     
     
     <xsl:template name="createForeignWordList">
-        <xsl:result-document href="../../products/js/search/nonEnglishWordList.txt" method="text">
+        <xsl:result-document href="../../products/site/js/search/nonEnglishWordList.txt" method="text">
             <xsl:for-each select="$distinctWords">
                 <xsl:variable name="entry" select="$tokenMap(.)"/>
                 <xsl:if test="$entry[3]">

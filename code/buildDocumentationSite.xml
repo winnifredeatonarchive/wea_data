@@ -4,12 +4,12 @@
     <include file="../buildGlobals.xml"/>
   
   <target name="init">
-      <delete dir="${docSiteTemp}"/>
-      <mkdir dir="${docSiteTemp}"/>
+      <delete dir="${doc.site.dir}"/>
+      <mkdir dir="${doc.site.dir}"/>
   </target>
     
     <target name="createSite">
-        <copy file="${project.dir}/documentation/documentation.html" todir="${docSiteTemp}"/>
+        <copy file="${project.dir}/documentation/documentation.html" todir="${doc.site.dir}"/>
     </target>
   
   <target name="all" depends="init, createSite"/>
