@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildDocSite" default="all">
+    
+    <!--This build creates the documentation site for Winnifred Eaton Archive;
+        it might be a subdomain, but currenlty it's just another repo in the github-->
+    <dirname property="data.dir" file="../README.md"/>
+    <property name="siteTemp" value="${data.dir}/products/site"/>
+    <property name="docSiteTemp" value="${data.dir}/products/docs"/>
+    <property name="textsDir" value="${data.dir}/data/texts/"/>
+    <property name="xhValidationDir" value="${data.dir}/xhValidation/"/>
+    
+  
+  <target name="init">
+      <delete dir="${docSiteTemp}"/>
+      <mkdir dir="${docSiteTemp}"/>
+  </target>
+    
+    <target name="createSite">
+        <copy file="${data.dir}/documentation/documentation.html" todir="${docSiteTemp}"/>
+    </target>
+  
+  <target name="all" depends="init, createSite"/>
+  
+</project>

@@ -21,6 +21,10 @@
        
     </target>
     
+    <target name="createDocSite">
+        <ant antfile="code/buildDocumentationSite.xml"/>
+    </target>
+    
     
     
     <target name="all" depends="validate, createSite, createSearch"/>
