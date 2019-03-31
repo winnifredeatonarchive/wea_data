@@ -27,7 +27,7 @@
     
     
     
-    <target name="all" depends="validate, createSite, createSearch"/>
+    <target name="all" depends="validate, createSite, createSearch, createDocSite"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
