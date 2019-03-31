@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="globals">
+  
+  
+  
+    <property name="echo.separator">***********************************</property>
+    
+    
+    <dirname property="project.dir" file="${ant.file.globals}"/>
+    
+    
+    <!--NOTE: THIS WILL CHANGE IN FUTURE-->
+    <property name="data.dir" value="${project.dir}/data/"/>
+    
+    <property name="products.dir" value="${data.dir}/products"/>
+    
+    <property name="site.dir" value="${products.dir}/site/"/>
+    
+    <property name="original.xml.dir" value="${products.dir}xml/original"/>
+    <property name="standalone.xml.dir" value="${products.dir}xml/original"/>
+    
+    
+    <property name="texts.dir" value="${data.dir}/texts/"/>
+    
+    <property name="xh.validation.dir" value="${data.dir}/xhValidation/"/>
+    
+    
+    <!--The schema directory-->
+    <property name="sch.dir" value="${project.dir}/sch"/>
+    
+    <!--Lib directory-->
+    <property name="lib.dir" value="${project.dir}/lib"/>
+    
+
+    
+    <!--RNG file-->  
+    <property name="rng" value="${sch.dir}/wea.rng"/>
+    
+    <!--Schematron file-->
+    <property name="sch" value="${sch.dir}/wea.sch"/>
+    
+    <!--Schematron XSL file-->
+    <property name="sch.xsl" value="${sch.dir}/weaSchematron.xsl"/>
+ 
+    
+    <property name="tempSchematron.dir" value="${project.dir}/code/schema/tempSchematron"/>
+    
+    <!--FILESETS-->
+    
+    <!--Data fileset-->
+    <fileset id="dataXml" dir="${data.dir}">
+        <include name="**/**.xml"/>
+    </fileset>
+    
+    <fileset id="textsXml" dir="${texts.dir}">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <fileset id="originalXml" dir="${original.xml.dir}">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <fileset id="standaloneXml" dir="${standalone.xml.dir}">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <fileset id="siteHtml" dir="${site.dir}">
+        <include name="**.html"/>
+    </fileset>
+    
+    
+</project>

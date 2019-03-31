@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="build" default="all">
+    
+    <include file="buildGlobals.xml"/>
   
-  
+  <target name="diagnostics">
+      <ant antfile="code/buildDiagnostics.xml" inheritall="false"/>
+  </target>
+    
   <target name="validate">
       <ant antfile="code/buildValidate.xml" inheritall="false"/>
   </target>
