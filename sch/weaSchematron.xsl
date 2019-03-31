@@ -2078,10 +2078,10 @@ On <xsl:text/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"/>
+         <xsl:when test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))">
+                                test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -2106,11 +2106,11 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]"
+   <xsl:template match="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
                  mode="M51">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]"/>
+                       context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="onlyOneQuote"
                     select="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
 
@@ -2240,8 +2240,11 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:q" priority="1000" mode="M55">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:q"/>
+   <xsl:template match="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
+                 priority="1000"
+                 mode="M55">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
 		    <!--ASSERT -->
@@ -2254,7 +2257,7 @@ On <xsl:text/>
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                              ERROR: Trailing punctuaton should go outside the <xsl:text/>
+                              ERROR: Trailing punctuation should go outside the <xsl:text/>
                   <xsl:value-of select="name(.)"/>
                   <xsl:text/> element.
                            </svrl:text>
@@ -2272,13 +2275,13 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]"
+   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
                  mode="M56">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]"/>
+                       context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="thisText"
-                    select="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                    select="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
       <xsl:variable name="cp" select="string-to-codepoints($thisText)"/>
       <xsl:variable name="distinctCp" select="distinct-values($cp)"/>
 
@@ -2307,13 +2310,13 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]"
+   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
                  mode="M57">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]"/>
+                       context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="thisText"
-                    select="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                    select="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
       <xsl:variable name="cp" select="string-to-codepoints($thisText)"/>
       <xsl:variable name="distinctCp" select="distinct-values($cp)"/>
 
@@ -2376,12 +2379,13 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]"
+   <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
                  mode="M59">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]"/>
-      <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
+                       context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
+      <xsl:variable name="text"
+                    select="string-join(descendant::text()[not(ancestor::tei:code)],'')"/>
       <xsl:variable name="containsCurlyQuotes"
                     select="matches($text,'“') and matches($text,'”')"/>
 

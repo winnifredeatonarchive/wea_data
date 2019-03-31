@@ -881,7 +881,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
                         </sch:rule>
@@ -895,7 +895,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="onlyOneQuote"
                   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
                            <sch:assert test="not($onlyOneQuote)">
@@ -961,10 +961,10 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:q">
+                        <sch:rule context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'[\.,]$'))">
-                              ERROR: Trailing punctuaton should go outside the <sch:name/> element.
+                              ERROR: Trailing punctuation should go outside the <sch:name/> element.
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
@@ -977,9 +977,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=34])"
@@ -1017,9 +1017,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="thisText"
-                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                  value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=39])"
@@ -1102,8 +1102,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]">
-                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
+                           <sch:let name="text"
+                  value="string-join(descendant::text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="containsCurlyQuotes"
                   value="matches($text,'“') and matches($text,'”')"/>
                            <sch:assert test="not($containsCurlyQuotes)"

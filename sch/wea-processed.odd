@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:sqf="http://www.schematron-quickfix.com/validator/process" xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:base="file:/Volumes/workspace/wea/wea_data/sch/wea.odd"><?TEIVERSION Version 3.5.0. Last updated on
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:sqf="http://www.schematron-quickfix.com/validator/process" xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:base="file:/Volumes/workspace/wea/wea_data/sch/wea.odd" xml:id="wea"><?TEIVERSION Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4?>
   <teiHeader>
       <fileDesc>
@@ -56,8 +56,8 @@
                   <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows:
                <list>
                         <item>Files </item>
-                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the "original" XML</item>
-                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the "standoff" materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
+                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the “original” XML</item>
+                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the “standoff” materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
                         <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
                      </list>
                   
@@ -67,15 +67,15 @@
             </p>
             <div>
                <head>Current Implementation</head>
-               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called "wea." This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
-               <p>Once we are happy with the products on the "wea" site (also called the "beta" site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called “wea.” This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
+               <p>Once we are happy with the products on the “wea” site (also called the “beta” site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
             </div>
          </div>
          
 
          <div xml:id="github">
             <head>Using Github</head>
-            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could "roll back" the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could “roll back” the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
             <p/>
             <div xml:id="github_get">
                <head>Setting up the repository</head>
@@ -211,8 +211,8 @@
                <p>The basic steps for working with Github are:
                   
                   <list>
-                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type "Terminal" to find it)</item>
-                     <item>Go into your working directory (likely called "wea"):
+                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type “Terminal” to find it)</item>
+                     <item>Go into your working directory (likely called “wea”):
                         <code rend="block">cd wea</code>
                      </item>
                   </list>
@@ -247,7 +247,7 @@
             <head>Creating a New Text in oXygen</head>
             <p>To create a new text file, use the built in text template</p>
             <list>
-               <item>First, in the project view in oXygen, right click the data/texts folder and click "Add new file"</item>
+               <item>First, in the project view in oXygen, right click the data/texts folder and click “Add new file”</item>
                <figure>
                   <graphic url="../graphics/create_new_file_1.gif"/>
                </figure>
@@ -338,7 +338,7 @@
             <div>
                <head>Associating facsimiles</head>
                <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
-               <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <gi>text</gi> element, with a pointer to the facsimile's file name using the private "facs:" URI scheme:
+               <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <gi>text</gi> element, with a pointer to the facsimile's file name using the private “facs:” URI scheme:
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <text facs="facs:Three_Loves_Puritan">
@@ -368,7 +368,7 @@
                      <supplied resp="pers:JT1">ed</supplied>
                   </egXML>
                </p>
-               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of "low" "medium" or "high". If no <att>cert</att> is supplied, it is assumed
+               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of “low” “medium” or “high”. If no <att>cert</att> is supplied, it is assumed
                that it has a high value of certainty:
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <supplied resp="pers:JT" cert="low">ed</supplied>
@@ -20796,7 +20796,7 @@ element is appropriate for which circumstance.</p>
                   <constraint>
                      <sch:pattern>
                         <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.xm[l_]$'))"> ERROR: Document
+                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
                         </sch:rule>
@@ -20805,7 +20805,7 @@ element is appropriate for which circumstance.</p>
                </constraintSpec><constraintSpec scheme="schematron" ident="misMatchedQuote">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation)]">
+                        <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="onlyOneQuote" value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
                            <sch:assert test="not($onlyOneQuote)">
                               ERROR: Curly quotes that cannot be QuickFixed. Either add the curly quotation mark or change to the q element.
@@ -20850,10 +20850,10 @@ element is appropriate for which circumstance.</p>
                </constraintSpec><constraintSpec scheme="schematron" ident="noTrailingPunct">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:q">
+                        <sch:rule context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'[\.,]$'))">
-                              ERROR: Trailing punctuaton should go outside the <sch:name/> element.
+                              ERROR: Trailing punctuation should go outside the <sch:name/> element.
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
@@ -20861,8 +20861,8 @@ element is appropriate for which circumstance.</p>
                </constraintSpec><constraintSpec scheme="schematron" ident="noStraightQuote">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
-                           <sch:let name="thisText" value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
+                           <sch:let name="thisText" value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=34])" sqf:fix="replaceStraightQuotesHere replaceStraightQuotesEverywhere">
@@ -20894,8 +20894,8 @@ element is appropriate for which circumstance.</p>
                </constraintSpec><constraintSpec scheme="schematron" ident="noStraightApos">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)]">
-                           <sch:let name="thisText" value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text(),'')"/>
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
+                           <sch:let name="thisText" value="if (self::tei:body) then string-join(descendant::text()[not(ancestor::tei:code)],'') else string-join(text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="cp" value="string-to-codepoints($thisText)"/>
                            <sch:let name="distinctCp" value="distinct-values($cp)"/>
                            <sch:assert test="empty($distinctCp[.=39])" sqf:fix="replaceAposHere replaceAposEverywhere">
@@ -20963,8 +20963,8 @@ element is appropriate for which circumstance.</p>
                </constraintSpec><constraintSpec scheme="schematron" ident="bodyQuotesShouldBeTagged">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation)]">
-                           <sch:let name="text" value="string-join(descendant::text(),'')"/>
+                        <sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
+                           <sch:let name="text" value="string-join(descendant::text()[not(ancestor::tei:code)],'')"/>
                            <sch:let name="containsCurlyQuotes" value="matches($text,'“') and matches($text,'”')"/>
                            <sch:assert test="not($containsCurlyQuotes)" sqf:fix="fixQuotesHere fixQuotesEverywhere">
                               ERROR: QUICKFIX: Do not use curly quotes; use the q element instead.

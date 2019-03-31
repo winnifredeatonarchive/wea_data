@@ -103,10 +103,10 @@
                   <div data-el="ul">
                      <div data-el="li" class="item">Files </div>
                      <div data-el="li" class="item">All of the source XML is flattened into a single directory and massaged slightly to
-                        create the "original" XML
+                        create the “original” XML
                      </div>
                      <div data-el="li" class="item">The standalone XML is created from the original XML; the standalone XML includes all
-                        of the "standoff" materials, like people, bibliographic items, and taxonomies referenced
+                        of the “standoff” materials, like people, bibliographic items, and taxonomies referenced
                         in the document. The main point of each standalone file is to include every data point
                         necessary for the site to be taken out of the context of the project and used elsewhere.
                      </div>
@@ -128,10 +128,10 @@
                <p>Currently, the site build process is associated with the Continuous Integration service
                   Travis, which triggers the site build with every commit to the the wea_data repository.
                   Travis runs all of the above steps, and then <span class="term">deploys</span> the products to another repository owned by the Winnifred Eaton Archive, currently
-                  called "wea." This repository is associated with a Github pages scenario, which allows
+                  called “wea.” This repository is associated with a Github pages scenario, which allows
                   us to view all changes to the site within minutes of every commit.
                </p>
-               <p>Once we are happy with the products on the "wea" site (also called the "beta" site),
+               <p>Once we are happy with the products on the “wea” site (also called the “beta” site),
                   those products can then be deployed on another server (currently we use Github pages
                   in another repository, but this will likely change in the future). To be sure, Travis
                   and Github are <em>not</em> necessary for the site build, but purely conveniences for the time being and as an
@@ -146,7 +146,7 @@
                <h2><span class="head">Using Github</span></h2>
             </header>
             <p>All of the data for the project is kept in a Git repository that is hosted through
-               Github. Git is a version control system, which means that one could "roll back" the
+               Github. Git is a version control system, which means that one could “roll back” the
                site to any particular version, and retrieve any file at any state of editing. Note
                that Github is a public repository, so all of the data and commit messages you make
                are visible to anyone. Our Github repository URL is <a href="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</a>.
@@ -228,10 +228,10 @@
                <h3><span class="head">Github Summary</span></h3>
                <p>The basic steps for working with Github are: </p>
                <div data-el="ul">
-                  <div data-el="li" class="item">Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type "Terminal"
+                  <div data-el="li" class="item">Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type “Terminal”
                      to find it)
                   </div>
-                  <div data-el="li" class="item">Go into your working directory (likely called "wea"): <code class="block">cd wea</code></div>
+                  <div data-el="li" class="item">Go into your working directory (likely called “wea”): <code class="block">cd wea</code></div>
                </div>
                <p> Before you start working: </p>
                <div data-el="ul">
@@ -257,7 +257,7 @@
             <p>To create a new text file, use the built in text template</p>
             <div data-el="ul">
                <div data-el="li" class="item">First, in the project view in oXygen, right click the data/texts folder and click
-                  "Add new file"
+                  “Add new file”
                </div>
                <figure class="figure"><img src="graphics/create_new_file_1.gif" alt="" class="graphic"/></figure>
                <div data-el="li" class="item">Select "wea_template.xml" and give your file a name. The name should be two or three
@@ -302,7 +302,7 @@
                   To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no
                   spaces, underscores, et cetera).
                </p>
-               <div>To associate the primary source document with the facsimile, use the <span class="att">facs</span> attribute on the <a href="#text">text</a> element, with a pointer to the facsimile's file name using the private "facs:" URI
+               <div>To associate the primary source document with the facsimile, use the <span class="att">facs</span> attribute on the <a href="#text">text</a> element, with a pointer to the facsimile's file name using the private “facs:” URI
                   scheme: 
                   <div id="index.xml-egXML-d38e398" class="pre egXML_valid"><span class="element">&lt;text <span class="attribute">facs="</span><span class="attributevalue">facs:Three_Loves_Puritan</span>"&gt;
                         </span><br/><span class="comment">&lt;!--Content here--&gt;</span><br/><span class="element">&lt;/text&gt;</span></div>
@@ -330,7 +330,7 @@
                   <div id="index.xml-egXML-d38e452" class="pre egXML_valid"><span class="element">&lt;supplied <span class="attribute">resp="</span><span class="attributevalue">pers:JT1</span>"&gt;
                         </span>ed<span class="element">&lt;/supplied&gt;</span></div>
                </div>
-               <div>You can encode how certain you are of your editorial addition by using the <span class="att">cert</span> attribute on supplied with a value of "low" "medium" or "high". If no <span class="att">cert</span> is supplied, it is assumed that it has a high value of certainty: 
+               <div>You can encode how certain you are of your editorial addition by using the <span class="att">cert</span> attribute on supplied with a value of “low” “medium” or “high”. If no <span class="att">cert</span> is supplied, it is assumed that it has a high value of certainty: 
                   <div id="index.xml-egXML-d38e464" class="pre egXML_valid"><span class="element">&lt;supplied <span class="attribute">resp="</span><span class="attributevalue">pers:JT</span>" <span class="attribute">cert="</span><span class="attributevalue">low</span>"&gt;
                         </span>ed<span class="element">&lt;/supplied&gt;</span></div>
                </div>
