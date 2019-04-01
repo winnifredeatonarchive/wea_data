@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-03-31T01:46:20Z. .
+Schema generated from ODD source 2019-04-01T04:23:18Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -3103,10 +3103,174 @@ Elements]</a:documentation>
       <element name="title">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:title[@ref]">
+                              <sch:assert test="@level='j'">
+                                 ERROR: Only "j" level titles should use the @ref attribute.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
          <ref name="att.global.attributes"/>
-         <ref name="att.canonical.attributes"/>
+         <ref name="att.canonical.attribute.key"/>
          <ref name="att.typed.attribute.subtype"/>
          <ref name="att.datable.attributes"/>
+         <optional>
+            <attribute name="ref">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <choice>
+                  <value>bibl:Ainslee</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ainslee’s</a:documentation>
+                  <value>bibl:Albertan</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Albertan</a:documentation>
+                  <value>bibl:AmericanHome</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">American Home Journal</a:documentation>
+                  <value>bibl:AmericanYouth</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">American Youth</a:documentation>
+                  <value>bibl:Anderson</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Anderson [sc] Intelligencer</a:documentation>
+                  <value>bibl:Blue</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Blue Book</a:documentation>
+                  <value>bibl:Book</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Book News</a:documentation>
+                  <value>bibl:Bookman</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bookman</a:documentation>
+                  <value>bibl:Boston</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Boston Journal</a:documentation>
+                  <value>bibl:Calgary</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Calgary Daily Herald</a:documentation>
+                  <value>bibl:CartersMonthly</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Carter’s Monthly</a:documentation>
+                  <value>bibl:Chicago</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Chicago Magazine</a:documentation>
+                  <value>bibl:ChristianScience</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Christian-Science Monitor</a:documentation>
+                  <value>bibl:Cincinnati</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Cincinnati Commercial Tribune</a:documentation>
+                  <value>bibl:Columbian</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Columbian Magazine</a:documentation>
+                  <value>bibl:Conkey</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Conkey’s Home Journal</a:documentation>
+                  <value>bibl:Critic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Critic</a:documentation>
+                  <value>bibl:Current</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Current Literature</a:documentation>
+                  <value>bibl:Day</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Day Book</a:documentation>
+                  <value>bibl:Eclectic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Eclectic Magazine</a:documentation>
+                  <value>bibl:Farm</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Farm and Ranch Review</a:documentation>
+                  <value>bibl:Frank</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Frank Leslie’s Popular Monthly</a:documentation>
+                  <value>bibl:Galls</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Gall’s Daily News Letter</a:documentation>
+                  <value>bibl:Good</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Good Housekeeping</a:documentation>
+                  <value>bibl:Greenfield</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Greenfield Gazette and Courier</a:documentation>
+                  <value>bibl:HarpersMonthly</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper’s Monthly</a:documentation>
+                  <value>bibl:HarpersWeekly</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper’s Weekly</a:documentation>
+                  <value>bibl:Hearsts</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hearst’s</a:documentation>
+                  <value>bibl:Home</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Home and Flowers</a:documentation>
+                  <value>bibl:Hutchinson</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hutchinson’s</a:documentation>
+                  <value>bibl:I</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">I Confess</a:documentation>
+                  <value>bibl:Idler</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Idler</a:documentation>
+                  <value>bibl:Iroquois</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Iroquois</a:documentation>
+                  <value>bibl:LadiesHomeCompanion</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ladies’ Home Companion</a:documentation>
+                  <value>bibl:LadiesHomeJournal</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ladies’ Home Journal</a:documentation>
+                  <value>bibl:LadysMagazine</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lady’s Magazine</a:documentation>
+                  <value>bibl:Lippincott</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lippincott’s</a:documentation>
+                  <value>bibl:Lyttleton</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lyttleton [NZ] Times</a:documentation>
+                  <value>bibl:Macleans</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Maclean’s</a:documentation>
+                  <value>bibl:MetropolitanNY</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Metropolitan (New York)</a:documentation>
+                  <value>bibl:MetropolitanMag</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Metropolitan Magazine (Montreal)</a:documentation>
+                  <value>bibl:Montreal</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Montreal Daily Star</a:documentation>
+                  <value>bibl:MotionPictureClassic</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Motion Picture Classic Magazine</a:documentation>
+                  <value>bibl:MotionPictureMag</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Motion Picture Magazine</a:documentation>
+                  <value>bibl:Munsey</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Munsey’s</a:documentation>
+                  <value>bibl:NewMetro</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New Metropolitan Magazine</a:documentation>
+                  <value>bibl:Puritan</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Puritan</a:documentation>
+                  <value>bibl:Red</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Red Book</a:documentation>
+                  <value>bibl:SFCall</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">San Francisco Call</a:documentation>
+                  <value>bibl:Saturday</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Saturday Evening Post</a:documentation>
+                  <value>bibl:Screen</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Screen Secrets</a:documentation>
+                  <value>bibl:Smart</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Smart Set</a:documentation>
+                  <value>bibl:Smith</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Smith’s Magazine</a:documentation>
+                  <value>bibl:Sovereign</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sovereign Magazine</a:documentation>
+                  <value>bibl:Spanish</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spanish Fork Press</a:documentation>
+                  <value>bibl:Spokane</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spokane Press</a:documentation>
+                  <value>bibl:Canterbury</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The [Canterbury, NZ] Press</a:documentation>
+                  <value>bibl:Quill</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The Quill</a:documentation>
+                  <value>bibl:TrueStory</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">True Story Magazine</a:documentation>
+                  <value>bibl:Washington</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Washington Times</a:documentation>
+                  <value>bibl:WomansHomeCompanion</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s Home Companion</a:documentation>
+                  <value>bibl:WomansHomeJournal</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s Home Journal</a:documentation>
+                  <value>bibl:WomansWorld</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s World</a:documentation>
+                  <value>bibl:Blakely</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Blakely Press</a:documentation>
+                  <value>bibl:Century</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Century</a:documentation>
+                  <value>bibl:CenturyPress</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Century Press</a:documentation>
+                  <value>bibl:Dodd</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dodd, Mead</a:documentation>
+                  <value>bibl:Harper</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper and Brothers</a:documentation>
+                  <value>bibl:McClelland</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">McClelland and Stewart</a:documentation>
+                  <value>bibl:Macmillan</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Macmillan</a:documentation>
+                  <value>bibl:Rand</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Rand, McNally</a:documentation>
+                  <value>bibl:Watt</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">W. J. Watt</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">classifies the title according to some convenient typology.
@@ -3266,7 +3430,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-assert-21">
+                  id="wea-relatedItem-targetorcontent1-constraint-assert-22">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3365,7 +3529,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-22">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-23">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -6277,7 +6441,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-38">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-39">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

@@ -9317,32 +9317,239 @@ places, in particular where  multiple names are given.</p>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD22">2.2.2. The Edition Statement</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. The Series Statement</ref>
   </listRef>
-</elementSpec><elementSpec module="core" ident="title">
-  <gloss versionDate="2007-06-12" xml:lang="fr">titre</gloss>
-  <gloss versionDate="2017-06-04" xml:lang="de">Titel</gloss>
-  <desc versionDate="2008-10-25" xml:lang="en">contains a title for any kind of work.</desc>
-  <desc versionDate="2007-12-20" xml:lang="ko">다양한 종류의 작업에 대한 전체 제목을 제공한다.</desc>
-  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類作品的完整題名
-                    。</desc>
-  <desc versionDate="2008-04-05" xml:lang="ja">作品の完全なタイトルを示す．</desc>
-  <desc versionDate="2007-06-12" xml:lang="fr">contient le titre complet d'une oeuvre quelconque</desc>
-  <desc versionDate="2007-05-04" xml:lang="es">contiene el título completo de una obra de
-                    cualquier tipo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene il titolo completo di una qualsiaisi                    opera.</desc>
-  <desc versionDate="2017-06-04" xml:lang="de">beinhaltet einen Titel eines beliebigen Werks.</desc>
-  <classes>
-    <memberOf key="att.global"/>
-    <memberOf key="model.emphLike"/>
-    
-    <memberOf key="att.canonical"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="att.datable"/>
-  </classes>
-  <content>
-    <macroRef key="macro.paraContent"/>
-  </content>
-  <attList>
-    <attDef ident="level" usage="opt">
+</elementSpec><elementSpec rend="change" module="core" ident="title"><gloss versionDate="2007-06-12" xml:lang="fr">titre</gloss><gloss versionDate="2017-06-04" xml:lang="de">Titel</gloss><desc versionDate="2008-10-25" xml:lang="en">contains a title for any kind of work.</desc><desc versionDate="2007-12-20" xml:lang="ko">다양한 종류의 작업에 대한 전체 제목을 제공한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類作品的完整題名
+                    。</desc><desc versionDate="2008-04-05" xml:lang="ja">作品の完全なタイトルを示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient le titre complet d'une oeuvre quelconque</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el título completo de una obra de
+                    cualquier tipo.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il titolo completo di una qualsiaisi                    opera.</desc><desc versionDate="2017-06-04" xml:lang="de">beinhaltet einen Titel eines beliebigen Werks.</desc><classes><memberOf key="att.global"/><memberOf key="model.emphLike"/><memberOf key="att.canonical"/><memberOf key="att.typed"/><memberOf key="att.datable"/></classes><content><macroRef key="macro.paraContent"/></content><constraintSpec ident="text.onlyJLevelTitlesShouldHaveRef" scheme="schematron">
+                     <desc>Only journal titles should have @ref.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:title[@ref]">
+                              <sch:assert test="@level='j'">
+                                 ERROR: Only "j" level titles should use the @ref attribute.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec><attList><attDef ident="ref" mode="replace">
+                        <valList type="closed">
+                           <valItem mode="add" ident="bibl:Ainslee">
+                              <desc>Ainslee’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Albertan">
+                              <desc>Albertan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:AmericanHome">
+                              <desc>American Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:AmericanYouth">
+                              <desc>American Youth</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Anderson">
+                              <desc>Anderson [sc] Intelligencer</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Blue">
+                              <desc>Blue Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Book">
+                              <desc>Book News</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Bookman">
+                              <desc>Bookman</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Boston">
+                              <desc>Boston Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Calgary">
+                              <desc>Calgary Daily Herald</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:CartersMonthly">
+                              <desc>Carter’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Chicago">
+                              <desc>Chicago Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:ChristianScience">
+                              <desc>Christian-Science Monitor</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Cincinnati">
+                              <desc>Cincinnati Commercial Tribune</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Columbian">
+                              <desc>Columbian Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Conkey">
+                              <desc>Conkey’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Critic">
+                              <desc>Critic</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Current">
+                              <desc>Current Literature</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Day">
+                              <desc>Day Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Eclectic">
+                              <desc>Eclectic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Farm">
+                              <desc>Farm and Ranch Review</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Frank">
+                              <desc>Frank Leslie’s Popular Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Galls">
+                              <desc>Gall’s Daily News Letter</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Good">
+                              <desc>Good Housekeeping</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Greenfield">
+                              <desc>Greenfield Gazette and Courier</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:HarpersMonthly">
+                              <desc>Harper’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:HarpersWeekly">
+                              <desc>Harper’s Weekly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Hearsts">
+                              <desc>Hearst’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Home">
+                              <desc>Home and Flowers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Hutchinson">
+                              <desc>Hutchinson’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:I">
+                              <desc>I Confess</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Idler">
+                              <desc>Idler</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Iroquois">
+                              <desc>Iroquois</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadiesHomeCompanion">
+                              <desc>Ladies’ Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadiesHomeJournal">
+                              <desc>Ladies’ Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadysMagazine">
+                              <desc>Lady’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Lippincott">
+                              <desc>Lippincott’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Lyttleton">
+                              <desc>Lyttleton [NZ] Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Macleans">
+                              <desc>Maclean’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MetropolitanNY">
+                              <desc>Metropolitan (New York)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MetropolitanMag">
+                              <desc>Metropolitan Magazine (Montreal)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Montreal">
+                              <desc>Montreal Daily Star</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MotionPictureClassic">
+                              <desc>Motion Picture Classic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MotionPictureMag">
+                              <desc>Motion Picture Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Munsey">
+                              <desc>Munsey’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:NewMetro">
+                              <desc>New Metropolitan Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Puritan">
+                              <desc>Puritan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Red">
+                              <desc>Red Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:SFCall">
+                              <desc>San Francisco Call</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Saturday">
+                              <desc>Saturday Evening Post</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Screen">
+                              <desc>Screen Secrets</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Smart">
+                              <desc>Smart Set</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Smith">
+                              <desc>Smith’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Sovereign">
+                              <desc>Sovereign Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Spanish">
+                              <desc>Spanish Fork Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Spokane">
+                              <desc>Spokane Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Canterbury">
+                              <desc>The [Canterbury, NZ] Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Quill">
+                              <desc>The Quill</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:TrueStory">
+                              <desc>True Story Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Washington">
+                              <desc>Washington Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansHomeCompanion">
+                              <desc>Woman’s Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansHomeJournal">
+                              <desc>Woman’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansWorld">
+                              <desc>Woman’s World</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Blakely">
+                              <desc>Blakely Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Century">
+                              <desc>Century</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:CenturyPress">
+                              <desc>Century Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Dodd">
+                              <desc>Dodd, Mead</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Harper">
+                              <desc>Harper and Brothers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:McClelland">
+                              <desc>McClelland and Stewart</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Macmillan">
+                              <desc>Macmillan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Rand">
+                              <desc>Rand, McNally</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Watt">
+                              <desc>W. J. Watt</desc>
+                           </valItem>
+                        </valList>
+                     </attDef><attDef ident="level" usage="opt">
       <desc versionDate="2005-03-05" xml:lang="en">indicates the bibliographic level for a title, that is, whether
                                         it identifies an article, book, journal, series, or
                                         unpublished material.</desc>
@@ -9507,7 +9714,13 @@ places, in particular where  multiple names are given.</p>
 	in such contexts,
         its value should not contradict the value implied by its
 	parent element. 
-	
+	<!--, the <att>level</att>, if given, must
+        be<q>a</q>; if it appears directly enclosed within a
+        <gi>monogr</gi> element, <att>level</att> must be <q>m</q>,
+        <q>j</q>, or <q>u</q>; when <gi>title</gi> is directly
+        enclosed by ,<att>level</att> must be . If it appears within a
+        <gi>msItem</gi>, the <att>level</att> attribute should not be
+        supplied.-->
 	</p>
       </remarks>
       <remarks xml:lang="fr" versionDate="2007-06-12">
@@ -9544,8 +9757,7 @@ doit pas être utilisé.</p>
           Attributwert dem impliziten Wert des Eltern-Elements nicht widersprechen. 
         </p>
       </remarks>
-    </attDef>
-    <attDef ident="type" mode="change">
+    </attDef><attDef ident="type" mode="change">
       <desc versionDate="2005-01-14" xml:lang="en">classifies the title according to some convenient typology.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">어떤 편의적 유형에 따른 제목 분류</desc>
       <desc versionDate="2007-05-02" xml:lang="zh-TW">用合適的分類方法將題名分類。</desc>
@@ -9691,70 +9903,57 @@ inclus, peuvent être encodés dans un élément
           Untertitel und allfälligen parallelen Titeln, kann mit einem einzigen <gi>title</gi>-Element
           ausgezeichnet werden.</p>
       </remarks>
-    </attDef>
-  </attList>
-  <exemplum xml:lang="en">
+    </attDef></attList><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Information Technology and the Research Process: Proceedings of
                                         a conference held at Cranfield Institute of Technology, UK,
                                         18–21 July 1989</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>La vie mode d'emploi. Romans.</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Maingeneau_Analyser">
       <title>Analyser les textes de communication</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Mélanges de linguistique française et de philologie et littérature médiévales
           offerts à Monsieur Paul Imbs.</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Melanges_Imbs">
       <title>Les fleurs du Mal de Charles Baudelaire : une édition électronique</title>
     </egXML>
-  </exemplum>
-  <exemplum versionDate="2008-04-06" xml:lang="fr">
+  </exemplum><exemplum versionDate="2008-04-06" xml:lang="fr">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#fr-ex-Belloc_Neons">
       <p>quand il rentre de ses chantiers de maçonnerie il dit rien, il pose son cul sur une
           chaise, toujours au même endroit, et il lit <title>l'Humanité.</title>
          </p>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>毛語錄</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>嚐書：視界與舌尖之外</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title> 蒼天有淚—無語問蒼天，台北，1997年12月1日。</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="zh-TW">
+  </exemplum><exemplum xml:lang="zh-TW">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>大般若波羅蜜多經：OCR辨識版本</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="en">
+  </exemplum><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title>Hardy's Tess of the D'Urbervilles: a machine readable
                               edition</title>
     </egXML>
-  </exemplum>
-  <exemplum xml:lang="mul">
+  </exemplum><exemplum xml:lang="mul">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <title type="full">
         <title type="main">Synthèse</title>
@@ -9763,36 +9962,30 @@ epistemology, methodology and history of
                                         science</title>
       </title>
     </egXML>
-  </exemplum>
-  <remarks versionDate="2008-09-05" xml:lang="en">
+  </exemplum><remarks versionDate="2008-09-05" xml:lang="en">
     <p>The attributes <att>key</att> and <att>ref</att>, inherited from the class
                                         <ident type="class">att.canonical</ident> may be used to
                               indicate the canonical form for the title; the former, by supplying
                               (for example) the identifier of a record in some external library
                               system; the latter by pointing to an XML element somewhere containing
                               the canonical form of the title.</p>
-  </remarks>
-  <remarks versionDate="2008-12-09" xml:lang="fr">
+  </remarks><remarks versionDate="2008-12-09" xml:lang="fr">
     <p>Les attributs <att>key</att> et <att>ref</att>, hérités de la classe <ident type="class">att.canonical</ident> sont utilisés pour
                               indiquer la forme canonique du titre ; le premier donne (par exemple)
                               l’identifiant d’un enregistrement dans un système externe de
                               bibliothèque ; le second pointe vers un élément XML contenant la forme
                               canonique du titre.</p>
-  </remarks>
-  <remarks versionDate="2017-06-04" xml:lang="de">
+  </remarks><remarks versionDate="2017-06-04" xml:lang="de">
     <p>Die Attribute <att>key</att> und <att>ref</att>, die durch die Zugehörigkeit zur Klasse
       <ident type="class">att.canonical</ident> verfügbar sind, können dafür verwendet werden, den
       kanonischen Titel anzugeben: Ersteres indem (z. B.) die Kennung eines Datensatzes einer externen
       Bibliothek herangezogen wird; Letzteres durch den Verweis auf ein XML-Element, das den
       kanonischen Titel enthält.</p>
-  </remarks>
-  
-  <listRef>
+  </remarks><listRef>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR">3.11.2.2. Titles, Authors, and Editors</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21">2.2.1. The Title Statement</ref>
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. The Series Statement</ref>
-  </listRef>
-</elementSpec><elementSpec module="core" ident="publisher">
+  </listRef></elementSpec><elementSpec module="core" ident="publisher">
   <gloss versionDate="2009-01-06" xml:lang="fr">éditeur</gloss>
   <gloss versionDate="2017-06-13" xml:lang="de">Verlag</gloss>
   <desc versionDate="2005-01-14" xml:lang="en">provides the name of the organization responsible for the publication or distribution of a

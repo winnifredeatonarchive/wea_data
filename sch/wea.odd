@@ -1335,6 +1335,243 @@
                  
                </elementSpec>
                
+               <elementSpec ident="title" module="core" mode="change">
+                  <constraintSpec ident="text.onlyJLevelTitlesShouldHaveRef" scheme="schematron">
+                     <desc>Only journal titles should have @ref.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:title[@ref]">
+                              <sch:assert test="@level='j'">
+                                 ERROR: Only "j" level titles should use the @ref attribute.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="ref" mode="replace">
+                        <valList type="closed">
+                           <valItem mode="add" ident="bibl:Ainslee">
+                              <desc>Ainslee’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Albertan">
+                              <desc>Albertan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:AmericanHome">
+                              <desc>American Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:AmericanYouth">
+                              <desc>American Youth</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Anderson">
+                              <desc>Anderson [sc] Intelligencer</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Blue">
+                              <desc>Blue Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Book">
+                              <desc>Book News</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Bookman">
+                              <desc>Bookman</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Boston">
+                              <desc>Boston Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Calgary">
+                              <desc>Calgary Daily Herald</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:CartersMonthly">
+                              <desc>Carter’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Chicago">
+                              <desc>Chicago Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:ChristianScience">
+                              <desc>Christian-Science Monitor</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Cincinnati">
+                              <desc>Cincinnati Commercial Tribune</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Columbian">
+                              <desc>Columbian Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Conkey">
+                              <desc>Conkey’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Critic">
+                              <desc>Critic</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Current">
+                              <desc>Current Literature</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Day">
+                              <desc>Day Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Eclectic">
+                              <desc>Eclectic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Farm">
+                              <desc>Farm and Ranch Review</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Frank">
+                              <desc>Frank Leslie’s Popular Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Galls">
+                              <desc>Gall’s Daily News Letter</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Good">
+                              <desc>Good Housekeeping</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Greenfield">
+                              <desc>Greenfield Gazette and Courier</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:HarpersMonthly">
+                              <desc>Harper’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:HarpersWeekly">
+                              <desc>Harper’s Weekly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Hearsts">
+                              <desc>Hearst’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Home">
+                              <desc>Home and Flowers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Hutchinson">
+                              <desc>Hutchinson’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:I">
+                              <desc>I Confess</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Idler">
+                              <desc>Idler</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Iroquois">
+                              <desc>Iroquois</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadiesHomeCompanion">
+                              <desc>Ladies’ Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadiesHomeJournal">
+                              <desc>Ladies’ Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:LadysMagazine">
+                              <desc>Lady’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Lippincott">
+                              <desc>Lippincott’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Lyttleton">
+                              <desc>Lyttleton [NZ] Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Macleans">
+                              <desc>Maclean’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MetropolitanNY">
+                              <desc>Metropolitan (New York)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MetropolitanMag">
+                              <desc>Metropolitan Magazine (Montreal)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Montreal">
+                              <desc>Montreal Daily Star</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MotionPictureClassic">
+                              <desc>Motion Picture Classic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:MotionPictureMag">
+                              <desc>Motion Picture Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Munsey">
+                              <desc>Munsey’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:NewMetro">
+                              <desc>New Metropolitan Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Puritan">
+                              <desc>Puritan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Red">
+                              <desc>Red Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:SFCall">
+                              <desc>San Francisco Call</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Saturday">
+                              <desc>Saturday Evening Post</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Screen">
+                              <desc>Screen Secrets</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Smart">
+                              <desc>Smart Set</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Smith">
+                              <desc>Smith’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Sovereign">
+                              <desc>Sovereign Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Spanish">
+                              <desc>Spanish Fork Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Spokane">
+                              <desc>Spokane Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Canterbury">
+                              <desc>The [Canterbury, NZ] Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Quill">
+                              <desc>The Quill</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:TrueStory">
+                              <desc>True Story Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Washington">
+                              <desc>Washington Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansHomeCompanion">
+                              <desc>Woman’s Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansHomeJournal">
+                              <desc>Woman’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:WomansWorld">
+                              <desc>Woman’s World</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Blakely">
+                              <desc>Blakely Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Century">
+                              <desc>Century</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:CenturyPress">
+                              <desc>Century Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Dodd">
+                              <desc>Dodd, Mead</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Harper">
+                              <desc>Harper and Brothers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:McClelland">
+                              <desc>McClelland and Stewart</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Macmillan">
+                              <desc>Macmillan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Rand">
+                              <desc>Rand, McNally</desc>
+                           </valItem>
+                           <valItem mode="add" ident="bibl:Watt">
+                              <desc>W. J. Watt</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
                
                <!--MODULE:FIGURES-->
                
