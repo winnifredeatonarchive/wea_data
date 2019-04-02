@@ -721,6 +721,11 @@
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                
                <moduleRef key="linking" include="ab seg anchor"/>
+               
+               <moduleRef key="msdescription"
+                          include="collection institution msIdentifier repository"/>
+                  
+               
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>

@@ -666,6 +666,20 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
       </report>
             </rule>
          </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-msIdentifier-msId_minimal-constraint-report-14">
+            <rule context="tei:msIdentifier">
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="not(parent::tei:msPart) and (local-name(*[1])='idno' or local-name(*[1])='altIdentifier' or normalize-space(.)='')">An msIdentifier must contain either a repository or location.</report>
+            </rule>
+         </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -731,7 +745,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-l-constraint-report-14">
+            id="wea-div-abstractModel-structure-l-constraint-report-15">
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -747,7 +761,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-p-constraint-report-15">
+            id="wea-div-abstractModel-structure-p-constraint-report-16">
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
