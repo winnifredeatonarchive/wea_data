@@ -883,6 +883,16 @@ span[data-el='pb'].first{
     margin:0;
 }
 
+/********************************************************************* BIBLS ******** */
+
+.bibl{
+    text-indent:-2rem;
+    padding-left:2rem;
+}
+
+.bibl + .bibl{
+    padding-top:.5rem;
+}
 /********************************************************************* INLINE ELEMENTS ******** */
 [data-el='supplied']::before{
     content:'[';
@@ -1058,11 +1068,7 @@ a{
 
 
 
-.citationItem{
-    text-indent:-2rem;
-    padding-left:2rem;
-    
-}
+
 
 
 [data-el='opener'] > [data-el='salute'],

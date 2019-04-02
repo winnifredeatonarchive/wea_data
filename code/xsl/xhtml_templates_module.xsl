@@ -72,10 +72,19 @@
     
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | listBibl" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="bibl" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes" select="'bibl'"/>
+            </xsl:call-template>
+            <xsl:apply-templates mode='#current'/>
         </div>
     </xsl:template>
     

@@ -83,19 +83,15 @@
                 </xsl:if>
                 <div id="source_citation">
                     <div class="metadataLabel">Source Citation</div>
-                    <div class="citationItem">
-                        <xsl:apply-templates select="$root//sourceDesc/bibl/node()[not(self::note)]" mode="tei"/>
-                    </div>
-                    
+                    <xsl:apply-templates select="$root//sourceDesc/bibl" mode="tei"/>
                 </div>
                 <div id="this_citation">
                     <div class="metadataLabel">Cite this Page</div>
-                    <div class="citationItem">
-                        <xsl:variable name="thisCitation" as="node()+">
-                            <xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.
-                        </xsl:variable>
-                        <xsl:apply-templates select="$thisCitation" mode="tei"/>
-                    </div>
+                    <xsl:variable name="tempBibl" as="element(tei:bibl)">
+                        <tei:bibl><xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
+                    </xsl:variable>
+                        <xsl:apply-templates select="$tempBibl" mode="tei"/>
+                    
                     
                 </div>
                 <div id="xmlVersions">
