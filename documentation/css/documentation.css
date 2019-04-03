@@ -1,0 +1,45 @@
+/* Basic CSS for the documentation site */
+
+
+
+html, body{
+    height:100%;
+    overflow: hidden;
+    margin: 0;
+
+}
+
+header{
+    margin:0 auto;
+    text-align:center;
+    background:grey;
+    padding:0;
+}
+
+header > h1{
+    margin:0;
+}
+main{
+    display:grid;
+    grid-template-areas:
+    "nav article";
+    grid-column-gap:1rem;
+    grid-template-columns:1fr 2fr;
+    height:100%;
+    overflow:hidden;
+}
+
+nav, article{
+    overflow-y:scroll;
+    margin:0 1em;
+}
+
+nav{
+    grid-area: nav;
+}
+
+article{
+    grid-area: article;
+}
+
+

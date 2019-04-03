@@ -79,6 +79,9 @@
     <!--ODD 2 HTML XSLT -->
     <property name="odd2html.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/master/odds/odd2html.xsl"/>
     
+    <!--ODD 2 Lite XSLT-->
+    <property name="odd2Lite.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/dev/odds/odd2lite.xsl"/>
+    
     
     <!--Saxon-->
     <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
@@ -214,64 +217,35 @@
     </target>
     
     <target name="odd2Doc">
+        
+        <!--First, ODD 2 Lite-->
+        
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${wea.odd.processed}"/>
-            <arg line="-o:${project.dir}/data/documentation/tei_documentation.xml"/>
-            <arg line="-xsl:${project.dir}/code/xsl/xml_original_documentation_master.xsl"/>
+            <arg line="-o:${project.dir}/documentation/documentation_lite.xml"/>
+            <arg line="-xsl:${odd2Lite.xsl}"/>
+        </java>
+        
+        <!--Then turn it into something better-->
+        <java jar="${saxon}" fork="true" failonerror="true">
+            <arg line="-s:${project.dir}/documentation/documentation_lite.xml"/>
+            <arg line="-o:${project.dir}/documentation/documentation.xml"/>
+            <arg line="-xsl:${project.dir}/code/documentation/xml_original_documentation_master.xsl"/>
             <arg line="-it:makeDocumentation"/>
         </java>
     </target>
     
     
-    <target name="odd2html">
-        <description>Create documentation from the ODD file.</description>
-        <java jar="${saxon}" fork="true" failonerror="true">
-            <arg line="-s:${wea.odd.processed}"/>
-            <arg line="-o:${project.dir}/documentation/documentation_crude.html"/>
-            <arg line="-xsl:'${odd2html.xsl}'"/>
-        </java>
-        
-        <!--Fix up some of the legacy cruft in the TEI's stylesheets-->
-        <replaceregexp file="${project.dir}/documentation/documentation_crude.html"
-            match="&lt;!DOCTYPE html"
-            replace=""
-            byline="false"/>
-        <replaceregexp file="${project.dir}/documentation/documentation_crude.html"
-            match="SYSTEM .about:legacy-compat.&gt;"
-            replace=""
-            byline="false"/>
-    
-       
-
-        
-        <java jar="${saxon}" fork="true" failonerror="true">
-            <arg line="-s:${project.dir}/documentation/documentation_crude.html"/>
-            <arg line="-o:${project.dir}/documentation/documentation.html"/>
-            <arg line="-xsl:${project.dir}/code/schema/clean_documentation.xsl"/>
-        </java>
-        
-
-        
-        
-  <!--      <!-\-And now convert to markdown-\->
-        
-        <java jar="${saxon}" fork="true" failonerror="true">
-            <arg line="-s:${project.dir}/docs/oxygen_documentation.html"/>
-            <arg line="-o:${project.dir}/docs/github_documentation.md"/>
-            <arg line="-xsl:${project.dir}/code/schema/documentation_to_markdown.xsl"/>
-        </java>-->
-
-    </target>
-    
     <target name="clean">
         <delete file="${project.dir}/documentation/documentation_crude.html"/>
-   <!--     <delete file="${wea.odd.processed}"/>-->
+        <delete file="${wea.odd.processed}"/>
         <delete file="${tei_all.odd.processed}"/>
+        <delete file="${project.dir}/documentation/documentation_lite.xml"/>
     </target>
         
     
     
-    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2Doc, getTei, odd2html, clean">
+    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2Doc, getTei, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     

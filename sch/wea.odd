@@ -38,24 +38,598 @@
   </teiHeader>
   <text>
       <body>
+         <div xml:id="gettingStarted">
+            <div xml:id="introduction">
+               <head>Introduction</head>
+               <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
+                  uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
+                  the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
+            </div>
+            <div xml:id="requirements">
+               <head>Requirements</head>
+               <p>To edit material for the site, you will need to use a computer with the following software:
+                  <list>
+                     <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+                     <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
+                     <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
+                  </list>
+               </p>
+            </div>
+            <div xml:id="github">
+               <head>Using Github</head>
+               <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could <q>roll back</q> the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
+               <p/>
+               <div xml:id="github_get">
+                  <head>Setting up the repository</head>
+                  <p>To get the data, you must first checkout a copy of the repository as follows:</p>
+                  <list>
+                     <item>Open the terminal</item>
+                     <item>Create a directory for working in: <code rend="block">mkdir wea</code>
+                        
+                     </item>
+                     <item>Go into the directory: <code rend="block">cd wea</code>
+                     </item>
+                     <item>Initialize the repository: <code rend="block">git init .</code>
+                     </item>
+                     <figure>
+                        <graphic url="../graphics/git_checkout_1.gif"/>
+                     </figure>
+                     <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
+                     </item>
+                     <figure>
+                        <graphic url="../graphics/git_checkout_2.gif"/>
+                     </figure>
+                  </list>
+                  <p>Note that you only need to do this the first time you start working in the Github repository.</p>
+               </div>
+               
+               <div xml:id="github_workflow">
+                  <head>The Github Workflow</head>
+                  <p>The normal workflow for working in Github (and any version software) is as follows:
+                     <list>
+                        <item>Update your repository so that any changes made by others are pushed into your local system</item>
+                        <item>Commit the items to the repository</item>
+                        <item>Push those items to the Github interface</item>
+                     </list>
+                  </p>
+                  <div xml:id="github_updating">
+                     <head>Updating</head>
+                     <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
+                     <list>
+                        <item>Go into your working folder: 
+                           <code rend="block">cd wea</code>
+                        </item>
+                        <item>Pull the repository:
+                           <code rend="block">git pull</code>
+                        </item>
+                        <figure>
+                           <graphic url="../graphics/git_pull_1.gif"/>
+                        </figure>
+                     </list>
+                  </div>
+                  <div xml:id="github_committing">
+                     <head>Committing</head>
+                     <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository.
+                        <list>
+                           <item>First, check the status of your files to see what you have changed since your last commit:
+                              <code rend="block">git status</code>
+                              If there are no changes to the repository, then you'll like see something like this:
+                              <code rend="block">
+                                 On branch master
+                                 nothing to commit, working tree clean
+                              </code>
+                              If there are changes, you should see something like this:
+                              
+                              <code rend="block">
+                                 On branch master
+                                 Changes not staged for commit:
+                                 (use "git add &lt;file&gt;..." to update what will be committed)
+                                 (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+                                 
+                                 modified:   README.md
+                                 
+                                 no changes added to commit (use "git add" and/or "git commit -a")
+                              </code>
+                           </item>
+                           <figure>
+                              <graphic url="../graphics/git_status_1.gif"/>
+                           </figure>
+                           <item>If there are changes, then add the files/folders that you want to commit to the repository.
+                              <code rend="block">git add data/texts/My_Title.xml</code>
+                           </item>
+                           <figure>
+                              <graphic url="../graphics/git_add_1.gif"/>
+                           </figure>
+                           <item>Third, commit the files to the repository, including a commit message that explains what you did:
+                              <code rend="block">git commit -m "Adding new file."</code>
+                           </item>
+                           <figure>
+                              <graphic url="../graphics/git_commit_1.gif"/>
+                           </figure>
+                           <item>Fourth, push the files to the repository:
+                              <code rend="block">git push</code>
+                              <figure>
+                                 <graphic url="../graphics/git_push_first_1.gif"/>
+                              </figure>
+                              Note that, if you are committing for the first time, you'll like see something like this:
+                              <code rend="block">
+                                 Either specify the URL from the command-line or configure a remote repository using
+                                 
+                                 git remote add &lt;name&gt; &lt;url&gt;
+                                 
+                                 and then push using the remote name
+                                 
+                                 git push &lt;name&gt;
+                              </code>
+                              
+                              This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
+                              <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
+                              <code rend="block">git push wea</code>
+                              <figure>
+                                 <graphic url="../graphics/git_remote_add_1.gif"/>
+                              </figure>
+                              You'll then like get another message, saying something like:
+                              <code rend="block">fatal: The current branch master has no upstream branch.
+                                 To push the current branch and set the remote as upstream, use
+                                 
+                                 git push --set-upstream wea master
+                                 
+                              </code>
+                              To resolve that, simply:
+                              <code rend="block">
+                                 git push --set-upstream wea master
+                              </code>
+                              <figure>
+                                 <graphic url="../graphics/git_push_2.gif"/>
+                              </figure>
+                              You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
+                           </item>
+                        </list>
+                     </p>
+                  </div>
+               </div>
+               <div xml:id="github_summary">
+                  <head>Github Summary</head>
+                  <p>The basic steps for working with Github are:
+                     
+                     <list>
+                        <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type <q>Terminal</q> to find it)</item>
+                        <item>Go into your working directory (likely called <q>wea</q>):
+                           <code rend="block">cd wea</code>
+                        </item>
+                     </list>
+                     Before you start working:
+                     <list>
+                        <item>Pull the changes from the repository so that your repository is up-to-date:
+                           <code rend="block">git pull</code>
+                        </item>
+                     </list>
+                     While you're working:
+                     <list>
+                        <item>Save your file (using command/ctrl + S like in MS Word)</item>
+                        <item>Validate by pressing the red checkmark button in the toolbar in oXygen</item>
+                     </list>
+                     Once your file is valid and you want to save the file to the repository:
+                     <list>
+                        <item>Stage your file to be committed:
+                           <code rend="block">git add .</code>
+                        </item>
+                        <item>Commit your changes:
+                           <code rend="block">git commit -m</code>
+                        </item>
+                        <item>Push your changes to the repository:
+                           <code rend="block">git push</code>
+                        </item>
+                     </list>
+                  </p>
+               </div>
+            </div>
+            
+         </div>
+         
+         <div xml:id="encoding">
+            <head>Instructions for Encoders</head>
+            <div xml:id="encoding_primary">
+               <head>Encoding a Primary Source Document</head>
+               <p>Below are abbreviated discussions on how to encode various features of a text</p>
+               <div xml:id="encoding_primary_structure">
+                  <head>Structure</head>
+                  <p>All content of the texts goes into the <gi>body</gi> element. Surround all content with a <gi>div</gi> element like so:
+               
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     
+                     
+                        <body>
+                        <!--Front matter goes here-->
+                           <div>
+                           <!--Content goes here-->
+                        </div>
+                        </body>
+                     </egXML>
+                  </p>
+                  <p>Individual sections can be encoded using nested <gi>div</gi> tags, if desired:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <body>
+                           <head>A Poor Devil</head>
+                           <opener>
+                              <opener>
+                                 <byline>By <name ref="pers:WE">Winnie Eaton</name>, Montreal.</byline>
+                                 <note>[Written for the Metropolitan.]</note>
+                              </opener>
+                           </opener>
+                           <div>
+                          
+                              <div>
+                           <!--Section 1-->
+                                 <div>
+                              <!--Section 1.1-->
+                           </div>
+                                 <div>
+                              <!--Section 1.2-->
+                           </div>
+                              </div>
+                              <div>
+                           <!--Section 2-->
+                        </div>
+                           </div>
+                        </body>
+                     </egXML>
+                  </p>
+               </div>
+               <div xml:id="encoding_primary_facsimiles">
+                  <head>Associating facsimiles</head>
+                  <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
+                  <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <gi>text</gi> element, with a pointer to the facsimile's file name using the private <q>facs:</q> URI scheme:
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <text facs="facs:Three_Loves_Puritan">
+                     <!--Content here-->
+                  </text>
+                     </egXML>
+                  </p>
+               </div>
+               <div xml:id="encoding_primary_openerCloser">
+                  <head>Openers and Closers</head>
+                  <p>Most of the texts have some sort of header or closer with the author's name, date of publication, et cetera. Use the <gi>opener</gi> element if this occurs at the beginning of the text and the <gi>closer</gi> element if it is at the bottom.</p>
+               </div>
+               <div xml:id="encoding_primary_bylines">
+                  <head>Bylines</head>
+                  <p>If there is an authorial statement of responsibility of some sort, enclose this in a <gi>byline</gi> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <gi>name</gi> tag
+               with an <att>ref</att> value of <val>pers:WE1</val>.</p>
+               </div>
+               <div xml:id="encoding_primary_gaps">
+                  <head>Gaps and omissions</head>
+                  <p>If the text cannot be transcribed for some reason (damage, etc), then use the <gi>gap</gi> element to signify that there is a gap in transcription:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <gap reason="damaged"/>
+                     </egXML>
+                  </p>
+                  <p>If you can supply the damaged text, use the <gi>supplied</gi> element instead with an <att>resp</att> value pointing to your <att>xml:id</att> (which is usually your initials):
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <supplied resp="pers:JT1">ed</supplied>
+                     </egXML>
+                  </p>
+                  <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of <q>low</q> 
+                     <q>medium</q> or <q>high</q>. If no <att>cert</att> is supplied, it is assumed
+               that it has a high value of certainty:
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <supplied resp="pers:JT" cert="low">ed</supplied>
+                     </egXML>
+                  </p>
+               </div>
+            
+               <div xml:id="encoding_primary_quotations">
+                  <head>Quotations</head>
+                  <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <gi>q</gi> element:
+               <specList>
+                        <specDesc key="q"/>
+                     </specList>
+                  </p>
+                  <p>To encode quotations, first follow the quick fixes that are keyed to the body of your document. Right click the <gi>body</gi> element of your file, and you should see a red lightbulb. It should give you options to perform a set of automated fixes for your file.</p>
+               
+                  <div xml:id="encoding_primary_quotaions_block">
+                     <head>Block quotations</head>
+                     <p>To tag block quotations, simply use the <gi>q</gi> element with a <gi>p</gi> within it. If it's a block quotation that contains verse, for instance, use the <gi>lg</gi> element (or whatever is the most appropriate for the case):
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q>
+                              <lg>
+                                 <l>The summer days are coming</l>
+                                 <l>The blossoms deck the bough,</l>
+                                 <l>The bees are gaily humming</l>
+                                 <l>And the birds are singing now.</l>
+                              </lg>
+                           </q>
+                        </egXML>
+                     </p>
+                  </div>
+                  <div xml:id="encoding_primary_quotations_letters">
+                     <head>Letters as Quotations and Other Interrupting Texts</head>
+                     <p>Often, especially in the novels, letters appear within the regular narrative flow of the text. To handle this, we use the <gi>floatingText</gi> element:
+                  <specDesc key="floatingText"/>
+                 The <gi>floatingText</gi> element can contain everything a regular <gi>text</gi> element can, and so we can use the appropriate encoding to handle the interrupting texts.
+                  </p>
+                     <p>Most commonly, <gi>floatingText</gi> will be used in combination with <gi>q</gi> to handle letters. To encode the letters, we use the specific elements for encoding letters per the TEI:
+                  <specDesc key="salute"/>
+                        <specDesc key="signed"/>
+                     </p>
+                     <p>To encode a letter, first wrap the letter in a <gi>q</gi>, then a <gi>floatingText</gi> with an <att>type</att>=<val>letter</val>, and then a <gi>body</gi> element.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q>
+                              <floatingText type="letter">
+                                 <body>
+                                <!--Content of the letter goes here-->
+                              </body>
+                              </floatingText>
+                           </q>
+                        </egXML>
+                  
+                     </p>
+                     <p>Most often, letters will contain opening and closing matter; often this is a salute (a salutation) or some signature. These are tagged using the <gi>salute</gi> and <gi>signed</gi> elements, wrapped in <gi>opener</gi> and <gi>closer</gi> tags. An example to illustrate:
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q>
+                              <floatingText type="letter">
+                                 <body>
+                                    <opener>
+                                       <salute>Darling Girlie:</salute>
+                                    </opener>
+                                 
+                                    <p>I am counting the hours when I will be with you. I tried to get up
+                                    to see you last night, but it was impossible. Lord Eaton’s son,
+                                    young Albert, was on the steamer coming over, and they are friends
+                                    of the governor’s and I simply had to be with them. You see,
+                                    darling, it means a good deal to me in the future, to be in touch
+                                    with these people. His brother-in-law, whom I met last night, is
+                                    head cockalorum in the House of Parliament, and as I have often
+                                    told you, my ambition is to get into politics. It’s the surest road
+                                    to fame for a Barrister.</p>
+                                 
+                                    <p>Now I hope my foolish little girl will understand and believe me
+                                    when I say that I am thinking for you as much as for myself.</p>
+                                 
+                                    <p>I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
+                                 
+                                    <closer>
+                                       <salute>Your own,</salute>
+                                       <signed>Reggie.</signed>
+                                    </closer>
+                                 </body>
+                              </floatingText>
+                           </q>
+                        </egXML>
+                     
+                     </p>
+                     <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <gi>note</gi> element with an <att>type</att>=<val>authorial</val>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q>
+                              <floatingText type="letter">
+                                 <body>
+                                    <opener>
+                                       <salute>Dear Miss Marion:</salute>
+                                    </opener>
+                                
+                              
+                              
+                                    <p>Will you and your charming sister take a little drive with me and a
+                                 friend this evening? If so, meet us at eight o’clock, corner of St.
+                                 James and St. Denis streets. My friend has seen your sister in
+                                 Judge Laflamme’s office <note type="authorial">(Ellen worked there)</note> and he is very
+                                 anxious to know her. As for me, I am thinking only of when I shall
+                                 see my lovely rose again. I am counting the hours!</p>
+                              
+                                    <closer>
+                                       <salute>Devotedly,</salute>
+                                       <signed>Fred Stevens.</signed>
+                                    </closer>
+                                 </body>
+                           
+                              </floatingText>
+                           </q>
+                     
+                     
+                        </egXML>
+                  
+                     </p>
+                  </div>
+                  <div xml:id="encoding_primary_quotations_hierarchies">
+                     <head>Quotations across hierarchies</head>
+                     <p>Particularly in novels, quotations will appear across hierarchies; that is, a quotation will start on one page, be interrupted by content on another page, and then continue on the following page. Take, for instance, this example from <title level="m">Marion</title>:
+                 
+                 
+                 <code rend="block">
+                    “It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know who his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and
+                    
+                    [Image unavailable.]
+                    Someone had passed up to me over the footlights, if you please, a real bouquet of flowers.
 
-         <div>
-            <head>Introduction</head>
-            <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project
-        uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily,
-        the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
+                    he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again.”
+                 </code>
+                     
+                     Here, the quotation properly starts at in the first paragraphic block and is then interrupted by an image insert between the pages, and then continues afterwards. To deal with this overlapping hierarchy, there are two steps we must take:
+                     
+                     <list>
+                           <item>First, we must signal that the paragraph before the image inserts is the same paragraph as the one after</item>
+                           <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
+                        </list>
+                     </p>
+                  
+                     <p>To signal the paragraphs continuation, we use the <att>part</att> attribute:
+                  <specDesc key="p" atts="part"/>
+                  We use the value <val>I</val> to signal the initial paragraph, <val>M</val> to signal any medial paragraphs, and <val>F</val> to signal the final paragraph.
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p part="I">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</p>
+                           <pb n="48.1" xml:id="page_48.1"/>
+                           <figure>
+                              <graphic url="images/i_061_sml.jpg"/>
+                              <p>Someone had passed up to me over the footlights, if you
+                              please, a real bouquet of flowers.</p>
+                           </figure>
+                        
+                           <pb n="49" xml:id="page_49"/>
+                           <p part="F">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again.</p>
+                        </egXML>
+                     </p>
+                  
+                     <p>To handle the overlapping quotations, we use a similar approach using the <att>next</att> and <att>prev</att> attributes to signal explicitly the sequence of quotation elements:
+                  <specDesc key="q" atts="next prev"/>
+                     </p>
+                     <p>To do so, we must first give each <gi>q</gi> an <att>xml:id</att>; this can be whatever you want, but it usually makes most sense to prefix it with the file's name and use a sensible numbering system:
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <q xml:id="Marion_q1">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                        is my own fellow. You know who his folks are, and but for them we’d have
+                        been married long ago. Well, Harry’s friend, the one who wants to meet
+                        you, is a swell, too, and he hasn’t been out from England long. Harry
+                        says his folks are big nobs over there, and</q>
+
+                        </egXML>
+                     
+                     We do the same thing for the second quotation element, giving it an <att>xml:id</att>:
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.
+                     </egXML>
+                     
+                     We then use the <att>next</att> and <att>prev</att> attributes to point to each quotation in the sequence.
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</q>
+                           <!--Stuff-->
+                           <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.
+                     </egXML>
+                     
+                     So, putting it all together:
+                     
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p part="I">
+                              <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
+                           is my own fellow. You know who his folks are, and but for them we’d have
+                           been married long ago. Well, Harry’s friend, the one who wants to meet
+                           you, is a swell, too, and he hasn’t been out from England long. Harry
+                           says his folks are big nobs over there, and</q>
+                           </p>
+                           <pb n="48.1" xml:id="page_48.1"/>
+                           <figure>
+                              <graphic url="images/i_061_sml.jpg"/>
+                              <p>Someone had passed up to me over the footlights, if you
+                              please, a real bouquet of flowers.</p>
+                           </figure>
+                        
+                           <pb n="49" xml:id="page_49"/>
+                           <p part="F">
+                              <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
+                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
+                           can treat us fine. So come along. You’ll not get such a chance again</q>.</p>
+                        </egXML>
+                     </p>
+                  
+                 
+                  </div>
+               </div>
+               <div xml:id="codeTemplates">
+                  <head>Code Templates (Shortcuts)</head>
+                  <p>The table below lists keyboard shortcuts for inserting common encoding features in a text. In most cases, the code template simply requires selecting (i.e. highlighting) the bit of text you want to encode and then typing in the keystroke; the exception currently is the gap element shortcut, which is simply inserted where your cursor is in the document.</p>
+               
+                  <table>
+                     <row>
+                        <cell>M1</cell>
+                        <cell>Command key on MacOS X, Ctrl on other platforms.</cell>
+                     </row>
+                     <row>
+                        <cell>M2</cell>
+                        <cell>Shift</cell>
+                     </row>
+                     <row>
+                        <cell>M3</cell>
+                        <cell>Option on Mac OS X, Alt on other platforms</cell>
+                     </row>
+                  </table>
+                  <table xml:id="codeTemplates_table">
+                     <row role="label">
+                        <cell>Name</cell>
+                        <cell>Description</cell>
+                        <cell>Result</cell>
+                        <cell>Keystroke</cell>
+                     </row>
+                     <row>
+                        <cell>Insert left quotation mark</cell>
+                        <cell>Insert the the opening curly quotation mark</cell>
+                        <cell>
+                           <code>“</code>
+                        </cell>
+                        <cell>M1 M2 L</cell>
+                     </row>
+                     <row>
+                        <cell>Insert left single quote</cell>
+                        <cell>Inserts the opening single curly apostrophe</cell>
+                        <cell>
+                           <code>‘</code>
+                        </cell>
+                        <cell>M1 M2 A</cell>
+                     </row>
+                     <row>
+                        <cell>Insert right curly quote</cell>
+                        <cell>Inserts the closing curly quotation mark</cell>
+                        <cell>
+                           <code>”</code>
+                        </cell>
+                        <cell>M1 M2 R</cell>
+                     </row>
+                     <row>
+                        <cell>Tag foreign</cell>
+                        <cell>Tag a foreign selection</cell>
+                        <cell>
+                           <code>&lt;foreign&gt;${selection}&lt;/foreign&gt;</code>
+                        </cell>
+                        <cell>M1 M2 F</cell>
+                     </row>
+                     <row>
+                        <cell>Tag gap</cell>
+                        <cell>Insert a gap element</cell>
+                        <cell>
+                           <code>&lt;gap reason="${caret}"/&gt;</code>
+                        </cell>
+                        <cell>M1 M2 G</cell>
+                     </row>
+                     <row>
+                        <cell>Tag paragraph</cell>
+                        <cell>Tag a paragraph</cell>
+                        <cell>
+                           <code>&lt;p&gt;${selection}&lt;/p&gt;</code>
+                        </cell>
+                        <cell>M1 M2 P</cell>
+                     </row>
+                     <row>
+                        <cell>Tag Winnifred Eaton's name</cell>
+                        <cell>Tag a reference to Winnifred Eaton</cell>
+                        <cell>
+                           <code>&lt;name ref="pers:WE1"&gt;${selection}&lt;/name&gt;</code>
+                        </cell>
+                        <cell>M1 M2 W</cell>
+                     </row>
+                  </table>
+               
+               </div>
+            </div>
+            
          </div>
-         <div>
-            <head>Requirements</head>
-            <p>To edit material for the site, you will need to use a computer with the following software:
-        <list>
-                  <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
-                  <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
-                  <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
-               </list>
-            </p>
-         </div>
-         <div>
+         
+        
+         
+      
+         <div xml:id="build">
             <head>Site build process</head>
             <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
             <p>To build the site, you must have ant installed. In the root directory, run:
@@ -76,7 +650,7 @@
                   <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
                </list>
             </p>
-            <div>
+            <div xml:id="build_currentImplementation">
                <head>Current Implementation</head>
                <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
                <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
@@ -84,177 +658,9 @@
          </div>
          
 
-         <div xml:id="github">
-            <head>Using Github</head>
-            <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could <q>roll back</q> the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
-            <p/>
-            <div xml:id="github_get">
-               <head>Setting up the repository</head>
-               <p>To get the data, you must first checkout a copy of the repository as follows:</p>
-               <list>
-                  <item>Open the terminal</item>
-                  <item>Create a directory for working in: <code rend="block">mkdir wea</code>
-
-                  </item>
-                  <item>Go into the directory: <code rend="block">cd wea</code>
-                  </item>
-                  <item>Initialize the repository: <code rend="block">git init .</code>
-                  </item>
-                  <figure>
-                     <graphic url="../graphics/git_checkout_1.gif"/>
-                  </figure>
-                  <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
-                  </item>
-                  <figure>
-                     <graphic url="../graphics/git_checkout_2.gif"/>
-                  </figure>
-               </list>
-               <p>Note that you only need to do this the first time you start working in the Github repository.</p>
-            </div>
-        
-            <div>
-               <head>The Github Workflow</head>
-               <p>The normal workflow for working in Github (and any version software) is as follows:
-          <list>
-                     <item>Update your repository so that any changes made by others are pushed into your local system</item>
-                     <item>Commit the items to the repository</item>
-                     <item>Push those items to the Github interface</item>
-                  </list>
-               </p>
-               <div>
-                  <head>Updating</head>
-                  <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
-                  <list>
-                     <item>Go into your working folder: 
-                        <code rend="block">cd wea</code>
-                     </item>
-                     <item>Pull the repository:
-                        <code rend="block">git pull</code>
-                     </item>
-                     <figure>
-                        <graphic url="../graphics/git_pull_1.gif"/>
-                     </figure>
-                  </list>
-               </div>
-               <div>
-                  <head>Committing</head>
-                  <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository.
-            <list>
-                        <item>First, check the status of your files to see what you have changed since your last commit:
-              <code rend="block">git status</code>
-              If there are no changes to the repository, then you'll like see something like this:
-              <code rend="block">
-                On branch master
-                nothing to commit, working tree clean
-              </code>
-              If there are changes, you should see something like this:
-              
-              <code rend="block">
-                On branch master
-                Changes not staged for commit:
-                (use "git add &lt;file&gt;..." to update what will be committed)
-                (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-                
-                modified:   README.md
-                
-                no changes added to commit (use "git add" and/or "git commit -a")
-              </code>
-                        </item>
-                        <figure>
-                           <graphic url="../graphics/git_status_1.gif"/>
-                        </figure>
-                        <item>If there are changes, then add the files/folders that you want to commit to the repository.
-              <code rend="block">git add data/texts/My_Title.xml</code>
-                        </item>
-                        <figure>
-                           <graphic url="../graphics/git_add_1.gif"/>
-                        </figure>
-                        <item>Third, commit the files to the repository, including a commit message that explains what you did:
-              <code rend="block">git commit -m "Adding new file."</code>
-                        </item>
-                        <figure>
-                           <graphic url="../graphics/git_commit_1.gif"/>
-                        </figure>
-                        <item>Fourth, push the files to the repository:
-              <code rend="block">git push</code>
-                           <figure>
-                              <graphic url="../graphics/git_push_first_1.gif"/>
-                           </figure>
-              Note that, if you are committing for the first time, you'll like see something like this:
-              <code rend="block">
-                Either specify the URL from the command-line or configure a remote repository using
-                
-                git remote add &lt;name&gt; &lt;url&gt;
-                
-                and then push using the remote name
-                
-                git push &lt;name&gt;
-              </code>
-
-              This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so:
-                <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
-                           <code rend="block">git push wea</code>
-                           <figure>
-                              <graphic url="../graphics/git_remote_add_1.gif"/>
-                           </figure>
-                You'll then like get another message, saying something like:
-                <code rend="block">fatal: The current branch master has no upstream branch.
-                  To push the current branch and set the remote as upstream, use
-                  
-                  git push --set-upstream wea master
-                  
-                </code>
-                To resolve that, simply:
-                <code rend="block">
-                  git push --set-upstream wea master
-                </code>
-                           <figure>
-                              <graphic url="../graphics/git_push_2.gif"/>
-                           </figure>
-                You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
-              </item>
-                     </list>
-                  </p>
-               </div>
-            </div>
-            <div xml:id="github_summary">
-               <head>Github Summary</head>
-               <p>The basic steps for working with Github are:
-                  
-                  <list>
-                     <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type <q>Terminal</q> to find it)</item>
-                     <item>Go into your working directory (likely called <q>wea</q>):
-                        <code rend="block">cd wea</code>
-                     </item>
-                  </list>
-                  Before you start working:
-                  <list>
-                     <item>Pull the changes from the repository so that your repository is up-to-date:
-                        <code rend="block">git pull</code>
-                     </item>
-                  </list>
-                  While you're working:
-                  <list>
-                     <item>Save your file (using command/ctrl + S like in MS Word)</item>
-                     <item>Validate by pressing the red checkmark button in the toolbar in oXygen</item>
-                  </list>
-                  Once your file is valid and you want to save the file to the repository:
-                  <list>
-                     <item>Stage your file to be committed:
-                        <code rend="block">git add .</code>
-                     </item>
-                     <item>Commit your changes:
-                        <code rend="block">git commit -m</code>
-                     </item>
-                     <item>Push your changes to the repository:
-                        <code rend="block">git push</code>
-                     </item>
-                  </list>
-               </p>
-            </div>
-         </div>
+         
       
-         <div>
+         <div xml:id="creatingNewText">
             <head>Creating a New Text in oXygen</head>
             <p>To create a new text file, use the built in text template</p>
             <list>
@@ -300,401 +706,8 @@
         
          </div>
          
-         <div>
-            <head>Encoding a Primary Source Document</head>
-            <p>Below are abbreviated discussions on how to encode various features of a text</p>
-            <div>
-               <head>Structure</head>
-               <p>All content of the texts goes into the <gi>body</gi> element. Surround all content with a <gi>div</gi> element like so:
-               
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     
-                     
-                     <body>
-                        <!--Front matter goes here-->
-                        <div>
-                           <!--Content goes here-->
-                        </div>
-                     </body>
-                  </egXML>
-               </p>
-               <p>Individual sections can be encoded using nested <gi>div</gi> tags, if desired:
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <body>
-                        <head>A Poor Devil</head>
-                        <opener>
-                           <opener>
-                              <byline>By <name ref="pers:WE">Winnie Eaton</name>, Montreal.</byline>
-                              <note>[Written for the Metropolitan.]</note>
-                           </opener>
-                        </opener>
-                        <div>
-                          
-                           <div>
-                           <!--Section 1-->
-                              <div>
-                              <!--Section 1.1-->
-                           </div>
-                              <div>
-                              <!--Section 1.2-->
-                           </div>
-                           </div>
-                           <div>
-                           <!--Section 2-->
-                        </div>
-                        </div>
-                     </body>
-                  </egXML>
-               </p>
-            </div>
-            <div>
-               <head>Associating facsimiles</head>
-               <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
-               <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <gi>text</gi> element, with a pointer to the facsimile's file name using the private <q>facs:</q> URI scheme:
-               
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <text facs="facs:Three_Loves_Puritan">
-                     <!--Content here-->
-                  </text>
-                  </egXML>
-               </p>
-            </div>
-            <div>
-               <head>Openers and Closers</head>
-               <p>Most of the texts have some sort of header or closer with the author's name, date of publication, et cetera. Use the <gi>opener</gi> element if this occurs at the beginning of the text and the <gi>closer</gi> element if it is at the bottom.</p>
-            </div>
-            <div>
-               <head>Bylines</head>
-               <p>If there is an authorial statement of responsibility of some sort, enclose this in a <gi>byline</gi> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <gi>name</gi> tag
-               with an <att>ref</att> value of <val>pers:WE1</val>.</p>
-            </div>
-            <div>
-               <head>Gaps and omissions</head>
-               <p>If the text cannot be transcribed for some reason (damage, etc), then use the <gi>gap</gi> element to signify that there is a gap in transcription:
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <gap reason="damaged"/>
-                  </egXML>
-               </p>
-               <p>If you can supply the damaged text, use the <gi>supplied</gi> element instead with an <att>resp</att> value pointing to your <att>xml:id</att> (which is usually your initials):
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <supplied resp="pers:JT1">ed</supplied>
-                  </egXML>
-               </p>
-               <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of <q>low</q> 
-                  <q>medium</q> or <q>high</q>. If no <att>cert</att> is supplied, it is assumed
-               that it has a high value of certainty:
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <supplied resp="pers:JT" cert="low">ed</supplied>
-                  </egXML>
-               </p>
-            </div>
-            
-            <div>
-               <head>Quotations</head>
-               <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <gi>q</gi> element:
-               <specList>
-                     <specDesc key="q"/>
-                  </specList>
-               </p>
-               <p>To encode quotations, first follow the quick fixes that are keyed to the body of your document. Right click the <gi>body</gi> element of your file, and you should see a red lightbulb. It should give you options to perform a set of automated fixes for your file.</p>
-               
-               <div>
-                  <head>Block quotations</head>
-                  <p>To tag block quotations, simply use the <gi>q</gi> element with a <gi>p</gi> within it. If it's a block quotation that contains verse, for instance, use the <gi>lg</gi> element (or whatever is the most appropriate for the case):
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q>
-                           <lg>
-                              <l>The summer days are coming</l>
-                              <l>The blossoms deck the bough,</l>
-                              <l>The bees are gaily humming</l>
-                              <l>And the birds are singing now.</l>
-                           </lg>
-                        </q>
-                     </egXML>
-                  </p>
-               </div>
-               <div>
-                  <head>Letters as Quotations and Other Interrupting Texts</head>
-                  <p>Often, especially in the novels, letters appear within the regular narrative flow of the text. To handle this, we use the <gi>floatingText</gi> element:
-                  <specDesc key="floatingText"/>
-                 The <gi>floatingText</gi> element can contain everything a regular <gi>text</gi> element can, and so we can use the appropriate encoding to handle the interrupting texts.
-                  </p>
-                  <p>Most commonly, <gi>floatingText</gi> will be used in combination with <gi>q</gi> to handle letters. To encode the letters, we use the specific elements for encoding letters per the TEI:
-                  <specDesc key="salute"/>
-                     <specDesc key="signed"/>
-                  </p>
-                  <p>To encode a letter, first wrap the letter in a <gi>q</gi>, then a <gi>floatingText</gi> with an <att>type</att>=<val>letter</val>, and then a <gi>body</gi> element.
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q>
-                           <floatingText type="letter">
-                              <body>
-                                <!--Content of the letter goes here-->
-                              </body>
-                           </floatingText>
-                        </q>
-                     </egXML>
-                  
-                  </p>
-                  <p>Most often, letters will contain opening and closing matter; often this is a salute (a salutation) or some signature. These are tagged using the <gi>salute</gi> and <gi>signed</gi> elements, wrapped in <gi>opener</gi> and <gi>closer</gi> tags. An example to illustrate:
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q>
-                           <floatingText type="letter">
-                              <body>
-                                 <opener>
-                                    <salute>Darling Girlie:</salute>
-                                 </opener>
-                                 
-                                 <p>I am counting the hours when I will be with you. I tried to get up
-                                    to see you last night, but it was impossible. Lord Eaton’s son,
-                                    young Albert, was on the steamer coming over, and they are friends
-                                    of the governor’s and I simply had to be with them. You see,
-                                    darling, it means a good deal to me in the future, to be in touch
-                                    with these people. His brother-in-law, whom I met last night, is
-                                    head cockalorum in the House of Parliament, and as I have often
-                                    told you, my ambition is to get into politics. It’s the surest road
-                                    to fame for a Barrister.</p>
-                                 
-                                 <p>Now I hope my foolish little girl will understand and believe me
-                                    when I say that I am thinking for you as much as for myself.</p>
-                                 
-                                 <p>I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
-                                 
-                                 <closer>
-                                    <salute>Your own,</salute>
-                                    <signed>Reggie.</signed>
-                                 </closer>
-                              </body>
-                           </floatingText>
-                        </q>
-                     </egXML>
-                     
-                  </p>
-                  <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <gi>note</gi> element with an <att>type</att>=<val>authorial</val>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q>
-                           <floatingText type="letter">
-                              <body>
-                                 <opener>
-                                    <salute>Dear Miss Marion:</salute>
-                                 </opener>
-                                
-                              
-                              
-                                 <p>Will you and your charming sister take a little drive with me and a
-                                 friend this evening? If so, meet us at eight o’clock, corner of St.
-                                 James and St. Denis streets. My friend has seen your sister in
-                                 Judge Laflamme’s office <note type="authorial">(Ellen worked there)</note> and he is very
-                                 anxious to know her. As for me, I am thinking only of when I shall
-                                 see my lovely rose again. I am counting the hours!</p>
-                              
-                                 <closer>
-                                    <salute>Devotedly,</salute>
-                                    <signed>Fred Stevens.</signed>
-                                 </closer>
-                              </body>
-                           
-                           </floatingText>
-                        </q>
-                     
-                     
-                     </egXML>
-                  
-                  </p>
-               </div>
-               <div>
-                  <head>Quotations across hierarchies</head>
-                  <p>Particularly in novels, quotations will appear across hierarchies; that is, a quotation will start on one page, be interrupted by content on another page, and then continue on the following page. Take, for instance, this example from <title level="m">Marion</title>:
-                 
-                 
-                 <code rend="block">
-                    “It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know who his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and
-                    
-                    [Image unavailable.]
-                    Someone had passed up to me over the footlights, if you please, a real bouquet of flowers.
-
-                    he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again.”
-                 </code>
-                     
-                     Here, the quotation properly starts at in the first paragraphic block and is then interrupted by an image insert between the pages, and then continues afterwards. To deal with this overlapping hierarchy, there are two steps we must take:
-                     
-                     <list>
-                        <item>First, we must signal that the paragraph before the image inserts is the same paragraph as the one after</item>
-                        <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
-                     </list>
-                  </p>
-                  
-                  <p>To signal the paragraphs continuation, we use the <att>part</att> attribute:
-                  <specDesc key="p" atts="part"/>
-                  We use the value <val>I</val> to signal the initial paragraph, <val>M</val> to signal any medial paragraphs, and <val>F</val> to signal the final paragraph.
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p part="I">It isn’t as if they are strangers, you know. One of them, Harry Bond,
-                           is my own fellow. You know who his folks are, and but for them we’d have
-                           been married long ago. Well, Harry’s friend, the one who wants to meet
-                           you, is a swell, too, and he hasn’t been out from England long. Harry
-                           says his folks are big nobs over there, and</p>
-                        <pb n="48.1" xml:id="page_48.1"/>
-                        <figure>
-                           <graphic url="images/i_061_sml.jpg"/>
-                           <p>Someone had passed up to me over the footlights, if you
-                              please, a real bouquet of flowers.</p>
-                        </figure>
-                        
-                        <pb n="49" xml:id="page_49"/>
-                        <p part="F">he is studying law here. His folks send him a remittance and I guess
-                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
-                           can treat us fine. So come along. You’ll not get such a chance again.</p>
-                     </egXML>
-                  </p>
-                  
-                  <p>To handle the overlapping quotations, we use a similar approach using the <att>next</att> and <att>prev</att> attributes to signal explicitly the sequence of quotation elements:
-                  <specDesc key="q" atts="next prev"/>
-                  </p>
-                  <p>To do so, we must first give each <gi>q</gi> an <att>xml:id</att>; this can be whatever you want, but it usually makes most sense to prefix it with the file's name and use a sensible numbering system:
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <q xml:id="Marion_q1">It isn’t as if they are strangers, you know. One of them, Harry Bond,
-                        is my own fellow. You know who his folks are, and but for them we’d have
-                        been married long ago. Well, Harry’s friend, the one who wants to meet
-                        you, is a swell, too, and he hasn’t been out from England long. Harry
-                        says his folks are big nobs over there, and</q>
-
-                     </egXML>
-                     
-                     We do the same thing for the second quotation element, giving it an <att>xml:id</att>:
-                     
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
-                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
-                           can treat us fine. So come along. You’ll not get such a chance again</q>.
-                     </egXML>
-                     
-                     We then use the <att>next</att> and <att>prev</att> attributes to point to each quotation in the sequence.
-                     
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
-                           is my own fellow. You know who his folks are, and but for them we’d have
-                           been married long ago. Well, Harry’s friend, the one who wants to meet
-                           you, is a swell, too, and he hasn’t been out from England long. Harry
-                           says his folks are big nobs over there, and</q>
-                        <!--Stuff-->
-                       <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
-                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
-                           can treat us fine. So come along. You’ll not get such a chance again</q>.
-                     </egXML>
-                     
-                     So, putting it all together:
-                     
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p part="I">
-                           <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
-                           is my own fellow. You know who his folks are, and but for them we’d have
-                           been married long ago. Well, Harry’s friend, the one who wants to meet
-                           you, is a swell, too, and he hasn’t been out from England long. Harry
-                           says his folks are big nobs over there, and</q>
-                        </p>
-                        <pb n="48.1" xml:id="page_48.1"/>
-                        <figure>
-                           <graphic url="images/i_061_sml.jpg"/>
-                           <p>Someone had passed up to me over the footlights, if you
-                              please, a real bouquet of flowers.</p>
-                        </figure>
-                        
-                        <pb n="49" xml:id="page_49"/>
-                        <p part="F">
-                           <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
-                           it’s a pretty big one, for he’s living at the Windsor, and I guess he
-                           can treat us fine. So come along. You’ll not get such a chance again</q>.</p>
-                     </egXML>
-                  </p>
-                  
-                 
-               </div>
-            </div>
-            <div xml:id="codeTemplates">
-               <head>Code Templates (Shortcuts)</head>
-               <p>The table below lists keyboard shortcuts for inserting common encoding features in a text. In most cases, the code template simply requires selecting (i.e. highlighting) the bit of text you want to encode and then typing in the keystroke; the exception currently is the gap element shortcut, which is simply inserted where your cursor is in the document.</p>
-               
-               <table>
-                  <row>
-                     <cell>M1</cell>
-                     <cell>Command key on MacOS X, Ctrl on other platforms.</cell>
-                  </row>
-                  <row>
-                     <cell>M2</cell>
-                     <cell>Shift</cell>
-                  </row>
-                  <row>
-                     <cell>M3</cell>
-                     <cell>Option on Mac OS X, Alt on other platforms</cell>
-                  </row>
-               </table>
-               <table xml:id="codeTemplates_table">
-                  <row role="label">
-                     <cell>Name</cell>
-                     <cell>Description</cell>
-                     <cell>Result</cell>
-                     <cell>Keystroke</cell>
-                  </row>
-                  <row>
-                     <cell>Insert left quotation mark</cell>
-                     <cell>Insert the the opening curly quotation mark</cell>
-                     <cell>
-                        <code>“</code>
-                     </cell>
-                     <cell>M1 M2 L</cell>
-                  </row>
-                  <row>
-                     <cell>Insert left single quote</cell>
-                     <cell>Inserts the opening single curly apostrophe</cell>
-                     <cell>
-                        <code>‘</code>
-                     </cell>
-                     <cell>M1 M2 A</cell>
-                  </row>
-                  <row>
-                     <cell>Insert right curly quote</cell>
-                     <cell>Inserts the closing curly quotation mark</cell>
-                     <cell>
-                        <code>”</code>
-                     </cell>
-                     <cell>M1 M2 R</cell>
-                  </row>
-                  <row>
-                     <cell>Tag foreign</cell>
-                     <cell>Tag a foreign selection</cell>
-                     <cell>
-                        <code>&lt;foreign&gt;${selection}&lt;/foreign&gt;</code>
-                     </cell>
-                     <cell>M1 M2 F</cell>
-                  </row>
-                  <row>
-                     <cell>Tag gap</cell>
-                     <cell>Insert a gap element</cell>
-                     <cell>
-                        <code>&lt;gap reason="${caret}"/&gt;</code>
-                     </cell>
-                     <cell>M1 M2 G</cell>
-                  </row>
-                  <row>
-                     <cell>Tag paragraph</cell>
-                     <cell>Tag a paragraph</cell>
-                     <cell>
-                        <code>&lt;p&gt;${selection}&lt;/p&gt;</code>
-                     </cell>
-                     <cell>M1 M2 P</cell>
-                  </row>
-                  <row>
-                     <cell>Tag Winnifred Eaton's name</cell>
-                     <cell>Tag a reference to Winnifred Eaton</cell>
-                     <cell>
-                        <code>&lt;name ref="pers:WE1"&gt;${selection}&lt;/name&gt;</code>
-                     </cell>
-                     <cell>M1 M2 W</cell>
-                  </row>
-               </table>
-               
-            </div>
-         </div>
-         <div>
+         
+         <div xml:id="buildingSchema">
             <head>Building the Schema</head>
             <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
             <p>To regenerate the schema and the documentation follow these directions</p>
@@ -708,8 +721,10 @@
          </div>
 
       </body>
-      <back>
-         <div>
+      <back xml:id="appendix">
+         <head>Appendices</head>
+         <div xml:id="schema">
+            <head>Schema Specification</head>
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
           

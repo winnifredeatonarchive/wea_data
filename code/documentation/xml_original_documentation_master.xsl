@@ -7,35 +7,28 @@
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:eg="http://www.tei-c.org/ns/Examples"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
-    
-    <xsl:include href="https://raw.githubusercontent.com/TEIC/Stylesheets/dev/odds/odd2lite.xsl"/>
     <xsl:include href="../../sch/weaQuickFixTemplates.xsl"/>
     
     
     <xsl:template name="makeDocumentation">
-        <xsl:variable name="first">
-            <xsl:apply-templates/>
-        </xsl:variable>
-        <xsl:result-document href="test.xml">
-            <xsl:copy-of select="$first"/>
-        </xsl:result-document>
-        <xsl:apply-templates select="$first" mode="second"/>
+        <xsl:apply-templates mode="second"/>
     </xsl:template>
     
     <xsl:output indent="yes" suppress-indentation="ref"/>
     
     <xsl:template match="TEI" mode="second">
         <xsl:copy>
-            <xsl:attribute name="xml:id" select="'tei_documentation'"/>
+            <xsl:attribute name="xml:id" select="'documentation'"/>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
     
     <xsl:template match="TEI/@xml:id" mode="second"/>
     
-    <xsl:template match="tei:*/@rend | tei:*/@xml:base | tei:*/@xml:lang | eg:egXML/@xml:space" mode="second"/>
+    <xsl:template match="tei:*/@rend | tei:*/@xml:base | tei:*/@xml:lang | eg:egXML/@xml:space | tei:*/@xml:space" mode="second"/>
     
     <xsl:template match="index" mode="second"/>
     
@@ -85,9 +78,10 @@
     </xsl:template>
     
     
+    
     <xsl:template match="ab[not(ancestor::ab)][ab]" mode="second">
         <list>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </list>
     </xsl:template>
     
@@ -96,11 +90,11 @@
             <xsl:choose>
                 <xsl:when test="ab">
                     <list>
-                        <xsl:apply-templates mode="#current"/>
+                        <xsl:apply-templates select="@*|node()" mode="#current"/>
                     </list>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates mode="#current"/>
+                    <xsl:apply-templates select="node()" mode="#current"/>
                 </xsl:otherwise>
             </xsl:choose>
         </item>
@@ -112,19 +106,19 @@
     
     <xsl:template match="soCalled | mentioned" mode="second">
         <q>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </q>
     </xsl:template>
     
     <xsl:template match="tei:ab[@xml:space='preserve'][contains(.,'&lt;')][not(ancestor::div[head/text()='Constraints'])] " mode="second">
         <code>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </code>
     </xsl:template>
     
-    <xsl:template match="eg[@xml:space='preserve']" mode="second">
+    <xsl:template match="eg[@xml:space='preserve'][@rend='eg_rnc']" mode="second">
         <code>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </code>
     </xsl:template>
     
@@ -167,24 +161,26 @@
     
     <xsl:template match="hi[@rend='label']" mode="second">
         <label>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </label>
     </xsl:template>
     
     <xsl:template match="div/table/row[cell[@cols='2']]" mode="second"/>
     
     
-    <xsl:template match="ab[@xml:space='preserve'][@rend='pre'][ancestor::back][ancestor::div[normalize-space(string-join(head/text(),''))='Constraints']]" mode="second">
-        <eg:egXML>
-            <xsl:value-of select="replace(.,' ',' ')" disable-output-escaping="true"/>
-        </eg:egXML>
+    <xsl:template match="ab[@xml:space='preserve'][@rend='pre'][ancestor::back][ancestor::div[normalize-space(string-join(head/text(),''))='Constraints']] | eg[@xml:space='preserve'][not(@rend='eg_rnc')]" mode="second">
+        <code>
+            <xsl:value-of select="replace(.,' ',' ')"/>
+        </code>
     </xsl:template>
+    
+
     
     <xsl:template match="q[ancestor::back]" mode="second">
         <xsl:text>"</xsl:text><xsl:apply-templates mode="#current"/><xsl:text>"</xsl:text>
     </xsl:template>
     
-    <xsl:template match="@*|node()" mode="second" priority="-1">
+    <xsl:template match="@*|node()" mode="second addNs" priority="-1">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
