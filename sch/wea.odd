@@ -72,16 +72,16 @@
                      <item>Initialize the repository: <code rend="block">git init .</code>
                      </item>
                      <figure>
-                        <graphic url="../graphics/git_checkout_1.gif">
-                           <desc>Checkout the repo.</desc>
-                        </graphic>
+                        <figDesc>Checkout the repo.</figDesc>
+                        
+                        <graphic url="../graphics/git_checkout_1.gif"/>
                      </figure>
                      <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
                      </item>
                      <figure>
-                        <graphic url="../graphics/git_checkout_2.gif">
-                           <desc>Pull the repo</desc>
-                        </graphic>
+                        <figDesc>Pull the repo</figDesc>
+                        
+                        <graphic url="../graphics/git_checkout_2.gif"/>
                      </figure>
                   </list>
                   <p>Note that you only need to do this the first time you start working in the Github repository.</p>
@@ -107,9 +107,8 @@
                            <code rend="block">git pull</code>
                         </item>
                         <figure>
-                           <graphic url="../graphics/git_pull_1.gif">
-                              <desc>Pull the repo.</desc>
-                           </graphic>
+                           <figDesc>Pull the repo.</figDesc>
+                           <graphic url="../graphics/git_pull_1.gif"/>
                         </figure>
                      </list>
                   </div>
@@ -138,32 +137,28 @@
                               </code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_status_1.gif">
-                                 <desc>Check the status</desc>
-                              </graphic>
+                              <figDesc>Check the status</figDesc>
+                              <graphic url="../graphics/git_status_1.gif"/>
                            </figure>
                            <item>If there are changes, then add the files/folders that you want to commit to the repository.
                               <code rend="block">git add data/texts/My_Title.xml</code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_add_1.gif">
-                                 <desc>Add a file</desc>
-                              </graphic>
+                              <figDesc>Add a file</figDesc>
+                              <graphic url="../graphics/git_add_1.gif"/>
                            </figure>
                            <item>Third, commit the files to the repository, including a commit message that explains what you did:
                               <code rend="block">git commit -m "Adding new file."</code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_commit_1.gif">
-                                 <desc>Commit with a message.</desc>
-                              </graphic>
+                              <figDesc>Commit with a message.</figDesc>
+                              <graphic url="../graphics/git_commit_1.gif"/>
                            </figure>
                            <item>Fourth, push the files to the repository:
                               <code rend="block">git push</code>
                               <figure>
-                                 <graphic url="../graphics/git_push_first_1.gif">
-                                    <desc>Push the file.</desc>
-                                 </graphic>
+                                 <figDesc>Push the file.</figDesc>
+                                 <graphic url="../graphics/git_push_first_1.gif"/>
                               </figure>
                               Note that, if you are committing for the first time, you'll like see something like this:
                               <code rend="block">
@@ -180,9 +175,8 @@
                               <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code>
                               <code rend="block">git push wea</code>
                               <figure>
-                                 <graphic url="../graphics/git_remote_add_1.gif">
-                                    <desc>Remote add.</desc>
-                                 </graphic>
+                                 <figDesc>Remote add.</figDesc>
+                                 <graphic url="../graphics/git_remote_add_1.gif"/>
                               </figure>
                               You'll then like get another message, saying something like:
                               <code rend="block">fatal: The current branch master has no upstream branch.
@@ -196,9 +190,8 @@
                                  git push --set-upstream wea master
                               </code>
                               <figure>
-                                 <graphic url="../graphics/git_push_2.gif">
-                                    <desc>Push the repository.</desc>
-                                 </graphic>
+                                 <figDesc>Push the repository.</figDesc>
+                                 <graphic url="../graphics/git_push_2.gif"/>
                               </figure>
                               You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.
                            </item>
@@ -685,57 +678,48 @@
                <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
                </item>
                <figure>
-                  <graphic url="../graphics/create_new_file_1.gif">
-                     <desc>Add a new file.</desc>
-                  </graphic>
+                  <figDesc>Add a new file.</figDesc>
+                  <graphic url="../graphics/create_new_file_1.gif"/>
                </figure>
                <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_2.gif">
-                     <desc>Give it a name.</desc>
-                  </graphic>
+                  <figDesc>Give it a name.</figDesc>
+                  <graphic url="../graphics/create_new_file_2.gif"/>
                </figure>
                <item>Input the (modernized) title of the document</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_3.gif">
-                     <desc>Give it a title.</desc>
-                  </graphic>
+                  <figDesc>Give it a title.</figDesc>
+                  <graphic url="../graphics/create_new_file_3.gif"/>
                </figure>
                <item>Select the transciber</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_4.gif">
-                     <desc>Select the transcriber</desc>
-                  </graphic>
+                  <figDesc>Select the transcriber</figDesc>
+                  <graphic url="../graphics/create_new_file_4.gif"/>
                </figure>
                <item>Select the copy editor</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_5.gif">
-                     <desc>Select the copy editor.</desc>
-                  </graphic>
+                  <figDesc>Select the copy editor.</figDesc>
+                  <graphic url="../graphics/create_new_file_5.gif"/>
                </figure>
                <item>Select the encoder (who is usually you)</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_6.gif">
-                     <desc>Select the encoder</desc>
-                  </graphic>
+                  <figDesc>Select the encoder</figDesc>
+                  <graphic url="../graphics/create_new_file_6.gif"/>
                </figure>
                <item>Select the genre</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_7.gif">
-                     <desc>Select the genre.</desc>
-                  </graphic>
+                  <figDesc>Select the genre.</figDesc>
+                  <graphic url="../graphics/create_new_file_7.gif"/>
                </figure>
                <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_8.gif">
-                     <desc>Select the exhibit</desc>
-                  </graphic>
+                  <figDesc>Select the exhibit</figDesc>
+                  <graphic url="../graphics/create_new_file_8.gif"/>
                </figure>
                <item>Your new document should be created!</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_9.gif">
-                     <desc>Hooray! New document created.</desc>
-                  </graphic>
+                  <figDesc>Hooray! New document created.</figDesc>
+                  <graphic url="../graphics/create_new_file_9.gif"/>
                </figure>
                <item>Remember to commit the changes to the repository using the above instructions.</item>
             </list>

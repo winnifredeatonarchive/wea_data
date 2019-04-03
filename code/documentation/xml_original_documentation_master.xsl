@@ -57,6 +57,13 @@
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
+    <xsl:template match="back/div/div[not(@xmlid)][head]" mode="second">
+        <xsl:copy>
+            <xsl:attribute name="xml:id" select="lower-case(translate(normalize-space(string-join(head,'')),' ', '_'))"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="row" mode="second">
         <xsl:choose>
             <xsl:when test="normalize-space(string-join(cell[1]/descendant::text(),'')) = ('Schema Declaration', 'Declaration')"/>

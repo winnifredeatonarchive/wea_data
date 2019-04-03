@@ -114,12 +114,12 @@
     </xsl:template>
     <xsl:template match="graphic" mode="main">
         <img>
-            <xsl:attribute name="alt" select="normalize-space(desc)"/>
+            <xsl:attribute name="alt" select="normalize-space(../figDesc)"/>
             <xsl:apply-templates select="@url|node()" mode="#current"/>
         </img>
     </xsl:template>
     
-    <xsl:template match="graphic/desc" mode="main"/>
+    <xsl:template match="figDesc" mode="main"/>
     
     
     <!--Repoint the src in graphics-->
@@ -209,14 +209,17 @@
     <xsl:template match="teiHeader" mode="toc"/>
 
     <xsl:template match="div[head]" mode="toc">
-        <xsl:param name="divId"/>
+        <xsl:param name="divId" tunnel="yes"/>
         <li>
             <xsl:choose>
                 <xsl:when test="wea:getId(.) = $divId">
                     <span class="selected"><xsl:value-of select="head"/></span>
                 </xsl:when>
+                <xsl:when test="not(@xml:id)">
+                    <xsl:value-of select="head"/>
+                </xsl:when>
                 <xsl:otherwise>
-                    <a href="{wea:getId(.)}.html"><xsl:value-of select="head"/></a>
+                    <a href="{@xml:id}.html"><xsl:value-of select="head"/></a>
                 </xsl:otherwise>
             </xsl:choose>
            <xsl:if test="div[head]">
