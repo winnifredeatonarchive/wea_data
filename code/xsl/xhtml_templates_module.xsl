@@ -480,10 +480,7 @@
     </xsl:template>
     
     
-    <!--Repoint the src in graphics-->
-    <xsl:template match="img/@src" mode="tei">
-        <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
-    </xsl:template>
+
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">
         <div id="searchBox">

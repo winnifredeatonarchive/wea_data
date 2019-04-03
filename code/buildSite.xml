@@ -18,13 +18,8 @@
                 <include name="**/**"/>
             </fileset>
         </copy>
-        <copy todir="${site.dir}">
-            <fileset dir="../documentation">
-                <include name="**.html"/>
-            </fileset>
-        </copy>
-        <copy todir="${site.dir}/graphics">
-            <fileset dir="../graphics">
+        <copy todir="${site.dir}/images">
+            <fileset dir="../images">
                 <include name="**"/>
             </fileset>
         </copy>

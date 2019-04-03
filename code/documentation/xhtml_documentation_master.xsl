@@ -100,11 +100,16 @@
         </figure>
     </xsl:template>
     <xsl:template match="graphic" mode="main">
-        <img src="{@url}">
-            <xsl:apply-templates mode="#current"/>
+        <img>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </img>
     </xsl:template>
     
+    
+    <!--Repoint the src in graphics-->
+    <xsl:template match="img/@url" mode="main">
+        <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
+    </xsl:template>
 
     
     <xsl:template match="head" mode="main">
