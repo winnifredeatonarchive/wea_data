@@ -32,6 +32,7 @@
             </xsl:apply-templates>
         </xsl:result-document>
         <xsl:for-each select="//div[@xml:id]">
+            <xsl:message>Creating document <xsl:value-of select="@xml:id"/></xsl:message>
             <xsl:result-document href="{$outDir}/{@xml:id}.html">
                 <xsl:apply-templates select="$template" mode="xh">
                     <xsl:with-param name="thisDiv" tunnel="yes" select="."/>
