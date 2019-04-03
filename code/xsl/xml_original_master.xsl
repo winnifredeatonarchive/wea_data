@@ -21,8 +21,8 @@
     <xsl:include href="xml_original_people_module.xsl"/>
     
     <xsl:template match="/">
-        <xsl:for-each select="$sourceXml//TEI">
-            <xsl:variable name="out" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
+        <xsl:for-each select="wea:getWorkingDocs($sourceXml)">
+            <xsl:variable name="out" select="concat($outDir,'xml/original/',//TEI/@xml:id,'.xml')"/>
             <xsl:message>Processing <xsl:value-of select="document-uri(/)"/> to <xsl:value-of select="$out"/></xsl:message>
             <xsl:result-document href="{$out}" indent="no" method="xml">
                 <xsl:apply-templates select="." mode="original"/>

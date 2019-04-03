@@ -28,7 +28,7 @@
 
     
     <xsl:template match="/">
-        <xsl:for-each select="$standaloneXml//TEI">
+        <xsl:for-each select="wea:getWorkingDocs($standaloneXml)">
             <xsl:apply-templates select="." mode="tei"/>
         </xsl:for-each>
     </xsl:template>

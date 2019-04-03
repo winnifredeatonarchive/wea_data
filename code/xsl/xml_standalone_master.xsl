@@ -35,8 +35,8 @@
         select="concat('^(',string-join(for $n in $prefixes return concat('(',$n,')'),'|'),'):')" as="xs:string"/>
     
     <xsl:template match="/">
-        <xsl:for-each select="$originalXml//TEI">
-            <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',@xml:id,'.xml')"/>
+        <xsl:for-each select="wea:getWorkingDocs($originalXml)">
+            <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',//TEI/@xml:id,'.xml')"/>
             <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
             <xsl:result-document href="{$outDir}"  indent="no" method="xml">
                 <xsl:variable name="pass1" as="element(TEI)">
