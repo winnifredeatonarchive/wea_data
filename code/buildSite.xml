@@ -19,7 +19,7 @@
             </fileset>
         </copy>
         <copy todir="${site.dir}/images">
-            <fileset dir="../images">
+            <fileset dir="../data/images">
                 <include name="**"/>
             </fileset>
         </copy>

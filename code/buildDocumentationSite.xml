@@ -34,7 +34,30 @@
             <arg value="outDir=${doc.site.dir}"/>
         </java>
     </target>
+    
+    <target name="validateDocumentationSite">
+            <description>
+                This target validates the XHTML against the VNU validator.
+            </description>
+            <echo message="${echo.separator}"/>
+            <echo message="Validating XHTML..."/>
+            <echo message="${echo.separator}"/>
+            <mkdir dir="${xh.validation.dir}"/>
+            <copy todir="${xh.validation.dir}">
+                <fileset dir="${doc.site.dir}">
+                    <include name="*.html"/>
+                </fileset>
+            </copy>
+            <java jar="${project.dir}/lib/vnu/vnu.jar" failonerror="false" fork="true">
+                <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
+                <arg value="--format text"/>
+                <arg value="--skip-non-html"/>
+                <arg value="${xh.validation.dir}/"/>
+            </java>
+            <delete dir="${xh.validation.dir}"/>
+        
+    </target>
   
-  <target name="all" depends="init, copy, createDocSite"/>
+  <target name="all" depends="init, copy, createDocSite, validateDocumentationSite"/>
   
 </project>

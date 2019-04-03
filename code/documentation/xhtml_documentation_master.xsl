@@ -15,16 +15,28 @@
     <xsl:include href="../xsl/xhtml_eg_module.xsl"/>
     
 
-    
+    <!--We have to have output method='xhtml' and html-version='5.0' to produce
+    validate XHTML5 (xhtml with no version specified produces invalid results)-->
+    <xsl:output method="xhtml" encoding="UTF-8" indent="yes" normalization-form="NFC"
+        exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0"/>
     
     <xsl:template match="/">
         <xsl:variable name="text" select="//text"/>
+        
+        <xsl:result-document href="{$outDir}/index.html">
+            <xsl:apply-templates select="$template" mode="xh">
+                <xsl:with-param name="thisDiv" tunnel="yes" select="$text/front"/>
+                <xsl:with-param name="toc" tunnel="yes">
+                    <xsl:apply-templates select="$text/(body|back)" mode="toc"/>
+                </xsl:with-param>
+            </xsl:apply-templates>
+        </xsl:result-document>
         <xsl:for-each select="//div[@xml:id]">
             <xsl:result-document href="{$outDir}/{@xml:id}.html">
                 <xsl:apply-templates select="$template" mode="xh">
                     <xsl:with-param name="thisDiv" tunnel="yes" select="."/>
                     <xsl:with-param name="toc" tunnel="yes">
-                        <xsl:apply-templates select="$text" mode="toc">
+                        <xsl:apply-templates select="$text/(body|back)" mode="toc">
                             <xsl:with-param name="divId" tunnel="yes" select="@xml:id"/>
                         </xsl:apply-templates>
                     </xsl:with-param>
@@ -101,13 +113,16 @@
     </xsl:template>
     <xsl:template match="graphic" mode="main">
         <img>
-            <xsl:apply-templates select="@*|node()" mode="#current"/>
+            <xsl:attribute name="alt" select="normalize-space(desc)"/>
+            <xsl:apply-templates select="@url|node()" mode="#current"/>
         </img>
     </xsl:template>
     
+    <xsl:template match="graphic/desc" mode="main"/>
+    
     
     <!--Repoint the src in graphics-->
-    <xsl:template match="img/@url" mode="main">
+    <xsl:template match="graphic/@url" mode="main">
         <xsl:attribute name="src" select="concat('graphics/',tokenize(.,'/')[last()])"/>
     </xsl:template>
 
@@ -122,6 +137,10 @@
         <tr>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </tr>
+    </xsl:template>
+    
+    <xsl:template match="@role" mode="main">
+        <xsl:attribute name='data-role' select="."/>
     </xsl:template>
     
     <xsl:template match="cell" mode="main">
@@ -160,7 +179,7 @@
             <xsl:apply-templates select="$thisDiv/node()[not(self::div[@xml:id][head])]" mode="main"/>
             <xsl:if test="$thisDiv/div[@xml:id][head]">
                 <div>
-                    <head>Contents</head>
+                    <h3>Contents</h3>
                     <ul>
                         <xsl:for-each select="$thisDiv/div[@xml:id][head]">
                             <li><a href="{@xml:id}.html"><xsl:value-of select="head"/></a></li>

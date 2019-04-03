@@ -33,12 +33,14 @@
       </revisionDesc>
    </teiHeader> 
    <text>
+      <front>
+         <div>
+            <head>Introduction</head>
+            <p>These are the encoding and technical documentation and guidelines for the Winnifred Eaton Archive project. This site is meant to serve as both a record of how the project encoded the texts as well as instructions for building and deploying the final site.</p>
+         </div>
+      </front>
       <body>
          <div xml:id="gettingStarted">
-            <div xml:id="introduction">
-               <head>Introduction</head>
-               <p>The following are the Guidelines and schema specification for the Winnifred Eaton Archive project (WEA). The project uses a highly constrained version of the TEI Guidelines; the texts are lightly encoded with very little linked data. Primarily, the texts are meant to be easily ported into an existing Omeka framework; the details of this framework are still in development.</p>
-            </div>
             <div xml:id="requirements">
                <head>Requirements</head>
                <p>To edit material for the site, you will need to use a computer with the following software: <list>
@@ -64,12 +66,12 @@
                      <item>Initialize the repository: <code>git init .</code>
                      </item>
                      <figure>
-                        <graphic url="../graphics/git_checkout_1.gif"/>
+                        <graphic url="../graphics/git_checkout_1.gif">Checkout the repo.</graphic>
                      </figure>
                      <item>Pull the repository: <code>git pull https://github.com/winnifredeatonarchive/wea_data</code>
                      </item>
                      <figure>
-                        <graphic url="../graphics/git_checkout_2.gif"/>
+                        <graphic url="../graphics/git_checkout_2.gif">Pull the repo</graphic>
                      </figure>
                   </list>
                   <p>Note that you only need to do this the first time you start working in the Github repository.</p>
@@ -91,7 +93,7 @@
                         <item>Pull the repository: <code>git pull</code>
                         </item>
                         <figure>
-                           <graphic url="../graphics/git_pull_1.gif"/>
+                           <graphic url="../graphics/git_pull_1.gif">Pull the repo.</graphic>
                         </figure>
                      </list>
                   </div>
@@ -101,28 +103,28 @@
                            <item>First, check the status of your files to see what you have changed since your last commit: <code>git status</code> If there are no changes to the repository, then you'll like see something like this: <code> On branch master nothing to commit, working tree clean</code> If there are changes, you should see something like this: <code> On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) modified: README.md no changes added to commit (use "git add" and/or "git commit -a")</code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_status_1.gif"/>
+                              <graphic url="../graphics/git_status_1.gif">Check the status</graphic>
                            </figure>
                            <item>If there are changes, then add the files/folders that you want to commit to the repository. <code>git add data/texts/My_Title.xml</code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_add_1.gif"/>
+                              <graphic url="../graphics/git_add_1.gif">Add a file</graphic>
                            </figure>
                            <item>Third, commit the files to the repository, including a commit message that explains what you did: <code>git commit -m "Adding new file."</code>
                            </item>
                            <figure>
-                              <graphic url="../graphics/git_commit_1.gif"/>
+                              <graphic url="../graphics/git_commit_1.gif">Commit with a message.</graphic>
                            </figure>
                            <item>Fourth, push the files to the repository: <code>git push</code> 
                               <figure>
-                                 <graphic url="../graphics/git_push_first_1.gif"/>
+                                 <graphic url="../graphics/git_push_first_1.gif">Push the file.</graphic>
                               </figure> Note that, if you are committing for the first time, you'll like see something like this: <code> Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt;</code> This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: <code>git remote add wea https://github.com/winnifredeatonarchive/wea_data</code> 
                               <code>git push wea</code> 
                               <figure>
-                                 <graphic url="../graphics/git_remote_add_1.gif"/>
+                                 <graphic url="../graphics/git_remote_add_1.gif">Remote add.</graphic>
                               </figure> You'll then like get another message, saying something like: <code>fatal: The current branch master has no upstream branch. To push the current branch and set the remote as upstream, use git push --set-upstream wea master</code> To resolve that, simply: <code> git push --set-upstream wea master</code> 
                               <figure>
-                                 <graphic url="../graphics/git_push_2.gif"/>
+                                 <graphic url="../graphics/git_push_2.gif">Push the repository.</graphic>
                               </figure> You may then be prompted for your username and password; if this is your first commit, then it might give your instructions on how to store those credentials in your local git system so that you do not need to add your username and password every time you commit.</item>
                         </list>
                      </p>
@@ -519,39 +521,39 @@
                <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
                </item>
                <figure>
-                  <graphic url="../graphics/create_new_file_1.gif"/>
+                  <graphic url="../graphics/create_new_file_1.gif">Add a new file.</graphic>
                </figure>
                <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_2.gif"/>
+                  <graphic url="../graphics/create_new_file_2.gif">Give it a name.</graphic>
                </figure>
                <item>Input the (modernized) title of the document</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_3.gif"/>
+                  <graphic url="../graphics/create_new_file_3.gif">Give it a title.</graphic>
                </figure>
                <item>Select the transciber</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_4.gif"/>
+                  <graphic url="../graphics/create_new_file_4.gif">Select the transcriber</graphic>
                </figure>
                <item>Select the copy editor</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_5.gif"/>
+                  <graphic url="../graphics/create_new_file_5.gif">Select the copy editor.</graphic>
                </figure>
                <item>Select the encoder (who is usually you)</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_6.gif"/>
+                  <graphic url="../graphics/create_new_file_6.gif">Select the encoder</graphic>
                </figure>
                <item>Select the genre</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_7.gif"/>
+                  <graphic url="../graphics/create_new_file_7.gif">Select the genre.</graphic>
                </figure>
-               <item>Select the location (usually derived from the Google Drive folder structure)</item>
+               <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_8.gif"/>
+                  <graphic url="../graphics/create_new_file_8.gif">Select the exhibit</graphic>
                </figure>
                <item>Your new document should be created!</item>
                <figure>
-                  <graphic url="../graphics/create_new_file_9.gif"/>
+                  <graphic url="../graphics/create_new_file_9.gif">Hooray! New document created.</graphic>
                </figure>
                <item>Remember to commit the changes to the repository using the above instructions.</item>
             </list>

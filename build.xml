@@ -15,6 +15,10 @@
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
     
+    <target name="createDocSite">
+        <ant antfile="code/buildDocumentationSite.xml"/>
+    </target>
+    
     <target name="createSearch">
         <ant antfile="code/search/buildSearch.xml" inheritall="false"/>
     </target>
@@ -26,13 +30,11 @@
        
     </target>
     
-    <target name="createDocSite">
-        <ant antfile="code/buildDocumentationSite.xml"/>
-    </target>
+
     
     
     
-    <target name="all" depends="validate, createSite, createSearch"/>
+    <target name="all" depends="validate, createSite, createDocSite, createSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
