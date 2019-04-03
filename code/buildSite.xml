@@ -111,7 +111,17 @@
     </target>
     
     
-    
+ 
+ 
+ <target name="createSourceXml">
+     <echo message="Creating source XML..."/>
+     <copy todir="${source.xml.dir}">
+         <fileset dir="${data.dir}">
+             <include name="**/**.xml"/>
+             <exclude name="documentation/**.xml"/>
+         </fileset>
+     </copy>
+ </target>
     
     
     
@@ -228,11 +238,11 @@
    
     
   
-  <target name="quick" depends="copyAuxFiles, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
+  <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, createSmallerImages, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
+    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, createSmallerImages, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
     
 </project>

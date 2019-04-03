@@ -19,6 +19,7 @@
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xml_original_category_module.xsl"/>
     <xsl:include href="xml_original_people_module.xsl"/>
+    <xsl:include href="xml_original_templates_module.xsl"/>
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($sourceXml)">
@@ -32,23 +33,5 @@
         <xsl:call-template name="createPeoplePages"/>
     </xsl:template>
     
-    
-    
-    <!--Clean up empty names in the respStmts-->
-    <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
-        <xsl:variable name="thisRef" select="@ref"/>
-        <xsl:copy>
-            <xsl:copy-of select="@*"/>
-            <xsl:value-of select="$sourceXml[//TEI/@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
-        </xsl:copy>
-    </xsl:template>
 
-   
-
-    <xsl:template match="@*|node()" mode="#all">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()" mode="#current"/>
-        </xsl:copy>
-    </xsl:template>
-    
 </xsl:stylesheet>

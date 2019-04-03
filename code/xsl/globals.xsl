@@ -15,7 +15,7 @@
     
     <xsl:variable name="docsToBuildTokens" select="tokenize($docsToBuild,'\s*,\s*')" as="xs:string+"/>
     
-    <xsl:variable name="sourceDir" select="'../../data/'"/>
+
     
     
     <xsl:variable name="productsDir" select="'../../products/site/'"/>
@@ -23,7 +23,7 @@
     <xsl:variable name="today" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
     
     
-    
+    <xsl:variable name="sourceDir" select="concat($productsDir,'xml/source/')"/>
     <xsl:variable name="originalXmlDir" select="concat($productsDir,'xml/original/')"/>
     <xsl:variable name="standaloneXmlDir" select="concat($productsDir,'xml/standalone/')"/>
     

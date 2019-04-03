@@ -4,10 +4,8 @@
     exclude-result-prefixes="#all"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
-    xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns="http://www.tei-c.org/ns/1.0"
-
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -18,23 +16,23 @@
                 necessitiates it.</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:include href="globals.xsl"/>
-    <xsl:include href="xml_standalone_templates_module.xsl"/>
     
-
     
-    <xsl:template match="/">
-        <xsl:for-each select="wea:getWorkingDocs($originalXml)">
-            <xsl:variable name="outDir"
-                select="concat($outDir,'xml/standalone/',//TEI/@xml:id,'.xml')"/>
-            <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
-            <xsl:result-document href="{$outDir}"  indent="no" method="xml">
-                <xsl:call-template name="createStandalone"/>
-            </xsl:result-document>
-        </xsl:for-each>
+    <!--Clean up empty names in the respStmts-->
+    <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
+        <xsl:variable name="thisRef" select="@ref"/>
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:value-of select="$sourceXml[//TEI/@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
+        </xsl:copy>
     </xsl:template>
     
     
     
+    <xsl:template match="@*|node()" mode="#all">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
     
 </xsl:stylesheet>
