@@ -12,20 +12,17 @@
     <xsl:param name="docsToBuild"/>
     <xsl:param name="outDir"/>
     
+    <xsl:variable name="documentationOutDir" select="'../../products/docs'"/>
     
     <xsl:variable name="docsToBuildTokens" select="tokenize($docsToBuild,'\s*,\s*')" as="xs:string+"/>
-    
-
-    
-    
-    <xsl:variable name="productsDir" select="'../../products/site/'"/>
+  
     
     <xsl:variable name="today" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
     
-    
-    <xsl:variable name="sourceDir" select="concat($productsDir,'xml/source/')"/>
-    <xsl:variable name="originalXmlDir" select="concat($productsDir,'xml/original/')"/>
-    <xsl:variable name="standaloneXmlDir" select="concat($productsDir,'xml/standalone/')"/>
+    <xsl:variable name="documentationDocs" select="collection('../../data/documentation?select=*.xml;recurse=no')"/>
+    <xsl:variable name="sourceDir" select="concat($outDir,'xml/source/')"/>
+    <xsl:variable name="originalXmlDir" select="concat($outDir,'xml/original/')"/>
+    <xsl:variable name="standaloneXmlDir" select="concat($outDir,'xml/standalone/')"/>
     
     <!--NOTE TO SELF: These collections should be written without the trailing //TEI
          as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
@@ -42,10 +39,10 @@
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
     
-    <xsl:variable name="fileSizeDoc" select="unparsed-text(concat($productsDir,'info/sizes.txt'))"/>
+    <xsl:variable name="fileSizeDoc" select="unparsed-text(concat($outDir,'info/sizes.txt'))"/>
     <xsl:variable name="fileSizeDocLines" select="tokenize($fileSizeDoc,'\n')"/>
     
-    <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($productsDir,'info/images.txt'))"/>
+    <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($outDir,'info/images.txt'))"/>
     <xsl:variable name="imageSizeDocLines" select="tokenize($imageSizeDoc,'\n')"/>
     
     
@@ -87,6 +84,7 @@
     </xd:doc>
     <xsl:function name="wea:getWorkingDocs" as="document-node()+">
         <xsl:param name="docCollection" as="document-node()+"/>
+        <xsl:message><xsl:value-of select="count($docCollection)"/></xsl:message>
         <xsl:variable name="out" as="document-node()*">
             <xsl:choose>
                 <!--If it is unset, then build all documents-->

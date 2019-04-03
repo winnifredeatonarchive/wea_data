@@ -30,7 +30,7 @@
     
     <xsl:template match="TEI" mode="tei">
         <xsl:message>Processing <xsl:value-of select="@xml:id"/></xsl:message>
-        <xsl:result-document href="{concat($outDir,'/',@xml:id)}.html" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+ 
             <html lang="en">
 
                 <xsl:call-template name="processAtts"/>
@@ -39,7 +39,7 @@
                 <xsl:call-template name="createHeadMetadata"/>
                 <xsl:apply-templates mode="#current"/>
             </html>
-        </xsl:result-document>
+        
     </xsl:template>
     
   

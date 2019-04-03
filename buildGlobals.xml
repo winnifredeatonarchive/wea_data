@@ -19,8 +19,9 @@
     
     <property name="doc.site.dir" value="${products.dir}/docs"/>
     
-    <property name="original.xml.dir" value="${products.dir}xml/original"/>
-    <property name="standalone.xml.dir" value="${products.dir}xml/original"/>
+    <property name="source.xml.dir" value="${site.dir}/xml/source"/>
+    <property name="original.xml.dir" value="${site.dir}/xml/original"/>
+    <property name="standalone.xml.dir" value="${site.dir}/xml/original"/>
     
     
     <property name="texts.dir" value="${data.dir}/texts/"/>
@@ -53,6 +54,10 @@
     <!--Data fileset-->
     <fileset id="dataXml" dir="${data.dir}">
         <include name="**/**.xml"/>
+    </fileset>
+    
+    <fileset id="sourceXml" dir="${source.xml.dir}">
+        <include name="**.xml"/>
     </fileset>
     
     <fileset id="textsXml" dir="${texts.dir}">

@@ -6,12 +6,22 @@
   <target name="init">
       <delete dir="${doc.site.dir}"/>
       <mkdir dir="${doc.site.dir}"/>
+      <mkdir dir="${doc.site.dir}/xml/original"/>
+      <mkdir dir="${doc.site.dir}/xml/standalone"/>
+      
   </target>
     
-    <target name="createSite">
-        <copy file="${project.dir}/documentation/documentation.html" todir="${doc.site.dir}"/>
+    
+    <target name="createDocSite">
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+            <arg value="-xsl:${project.dir}/code/xsl/xml_documentation_master.xsl"/>
+            <arg value="-s:${project.dir}/code/xsl/xml_documentation_master.xsl"/>
+            <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
     </target>
   
-  <target name="all" depends="init, createSite"/>
+  <target name="all" depends="init, createDocSite"/>
   
 </project>

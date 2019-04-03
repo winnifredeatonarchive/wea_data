@@ -16,20 +16,14 @@
         </xd:desc>
     </xd:doc>
     <xsl:include href="globals.xsl"/>
-    <xsl:include href="xhtml_templates_module.xsl"/>
-    <xsl:include href="xhtml_appendix_module.xsl"/>
-    <xsl:include href="xhtml_functions_module.xsl"/>
-    <xsl:include href="xhtml_eg_module.xsl"/>
-    <xsl:include href="xhtml_metadata_module.xsl"/>
-    <xsl:include href="xhtml_nav_module.xsl"/>
-    <xsl:include href="xhtml_footer_module.xsl"/>
-    <xsl:include href="xhtml_head_metadata_module.xsl"/>
-
+    <xsl:include href="xhtml_modules_module.xsl"/>
 
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($standaloneXml)">
+            <xsl:result-document href="{concat($outDir,'/',//TEI/@xml:id)}.html" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
             <xsl:apply-templates select="." mode="tei"/>
+            </xsl:result-document>
         </xsl:for-each>
     </xsl:template>
     

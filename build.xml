@@ -32,7 +32,7 @@
     
     
     
-    <target name="all" depends="validate, createSite, createSearch, createDocSite"/>
+    <target name="all" depends="validate, createSite, createSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     

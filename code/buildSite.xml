@@ -4,7 +4,8 @@
   
   <include file="../buildGlobals.xml"/>
     
-
+    
+    
     
     <target name="init">
         <delete dir="${products.dir}"/>
@@ -243,6 +244,8 @@
     <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, createSmallerImages, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
     <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    
+    <target name="createDocumentationSite" depends="createOriginalXml, validateOriginalXml, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml"/>
     
     
 </project>

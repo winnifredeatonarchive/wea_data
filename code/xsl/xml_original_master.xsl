@@ -29,8 +29,10 @@
                 <xsl:apply-templates select="." mode="original"/>
             </xsl:result-document>
         </xsl:for-each>
-        <xsl:call-template name="createCategoryPages"/>
-        <xsl:call-template name="createPeoplePages"/>
+        <xsl:if test="not($docsToBuild='DOCUMENTATION')">
+            <xsl:call-template name="createCategoryPages"/>
+            <xsl:call-template name="createPeoplePages"/>
+        </xsl:if>
     </xsl:template>
     
 
