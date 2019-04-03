@@ -121,6 +121,7 @@
           <arg value="-xsl:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
+          <arg value="docsToBuild=${docsToBuild}"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>          
       </java>
   </target>  
@@ -137,6 +138,7 @@
             <arg value="-xsl:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>
         </java>
     </target>
@@ -146,6 +148,7 @@
          <arg value="-xsl:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="-s:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${site.dir}"/>
+         <arg value="docsToBuild=${docsToBuild}"/>
          <arg value="--suppressXsltNamespaceCheck:on"/>
      </java>
  </target>
@@ -191,6 +194,7 @@
           <arg value="-xsl:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
+          <arg value="docsToBuild=${docsToBuild}"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>
           
       </java>

@@ -8,6 +8,7 @@
     
     <dirname property="project.dir" file="${ant.file.globals}"/>
     
+    <property name="docsToBuild" value=""/>
     
     <!--NOTE: THIS WILL CHANGE IN FUTURE-->
     <property name="data.dir" value="${project.dir}/data/"/>
