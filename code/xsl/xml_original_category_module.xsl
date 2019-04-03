@@ -32,7 +32,7 @@
        *                                                            *
        **************************************************************-->
     
-    <xsl:variable name="sourceTax" select="$sourceXml[@xml:id='taxonomies']//taxonomy"/>
+    <xsl:variable name="sourceTax" select="$sourceXml[/TEI/@xml:id='taxonomies']//taxonomy"/>
     
     
     <xsl:variable name="noContent" as="element(body)">
@@ -252,7 +252,7 @@
     </xd:doc>
     <xsl:function name="wea:getCatDocs" as="element(TEI)*">
         <xsl:param name="id" as="xs:string"/>
-        <xsl:sequence select="$sourceXml[descendant::catRef[starts-with(@target,concat('wdt:',$id))]]"/>
+        <xsl:sequence select="$sourceXml//TEI[descendant::catRef[starts-with(@target,concat('wdt:',$id))]]"/>
     </xsl:function>
     
 

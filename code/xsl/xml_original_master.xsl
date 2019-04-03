@@ -21,7 +21,7 @@
     <xsl:include href="xml_original_people_module.xsl"/>
     
     <xsl:template match="/">
-        <xsl:for-each select="$sourceXml">
+        <xsl:for-each select="$sourceXml//TEI">
             <xsl:variable name="out" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
             <xsl:message>Processing <xsl:value-of select="document-uri(/)"/> to <xsl:value-of select="$out"/></xsl:message>
             <xsl:result-document href="{$out}" indent="no" method="xml">
@@ -39,7 +39,7 @@
         <xsl:variable name="thisRef" select="@ref"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xsl:value-of select="$sourceXml[@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
+            <xsl:value-of select="$sourceXml[//TEI/@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
         </xsl:copy>
     </xsl:template>
 

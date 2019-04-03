@@ -128,7 +128,7 @@
                         <xsl:choose>
                             <!--This is a media thing-->
                             <xsl:when test="matches($targ,'^media.xml#')">
-                                <xsl:variable name="thisObject" select="$standaloneXml[@xml:id='media']//figure[@xml:id=substring-after($targ,'#')]"/>
+                                <xsl:variable name="thisObject" select="$standaloneXml[/TEI/@xml:id='media']//figure[@xml:id=substring-after($targ,'#')]"/>
                                 <xsl:call-template name="makeRelatedItemBox">
                                     <xsl:with-param name="label" select="$thisObject/head/node()"/>
                                     <xsl:with-param name="link" select="$targ"/>
@@ -137,8 +137,8 @@
                                 </xsl:call-template>
                             </xsl:when>
                             <!--This is a document-->
-                            <xsl:when test="matches($targ,'^.+\.xml$') and $standaloneXml[@xml:id=substring-before($targ,'.xml')]">
-                                <xsl:variable name="relatedDoc" select="$standaloneXml[@xml:id=substring-before($targ,'.xml')]"/>
+                            <xsl:when test="matches($targ,'^.+\.xml$') and $standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]">
+                                <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]"/>
                                 <xsl:call-template name="makeRelatedItemBox">
                                     <xsl:with-param name="label" select="$relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
                                     <xsl:with-param name="link" select="$targ"/>

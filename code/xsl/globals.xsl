@@ -9,8 +9,11 @@
     version="3.0">
     
     <xsl:param name="verbose">false</xsl:param>
+    <xsl:param name="docsToBuild"/>
     <xsl:param name="outDir"/>
     
+    
+    <xsl:variable name="docsToBuildTokens" select="tokenize($docsToBuild,'\s*,\s*')" as="xs:string+"/>
     
     <xsl:variable name="sourceDir" select="'../../data/'"/>
     
@@ -27,15 +30,15 @@
     <!--NOTE TO SELF: These collections should be written without the trailing //TEI
          as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
     
-    <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=yes'))"/>
     
-    <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=yes'))"/>
     
-    <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=yes'))//TEI"/>
+    <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=yes'))"/>
     
-    <xsl:variable name="personography" select="$standaloneXml[@xml:id='people']" as="element(TEI)"/>
+    <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']" as="element(TEI)"/>
     
-    <xsl:variable name="taxonomies" select="$standaloneXml[@xml:id='taxonomies']" as="element(TEI)"/>
+    <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']" as="element(TEI)"/>
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
     
@@ -75,6 +78,44 @@
         <xsl:variable name="first" select="replace($lower,'^(an?|the)\s','')"/>
         <xsl:value-of select="$first"/>
     </xsl:function>
+    
+    <xd:doc scope="component">
+        <xd:desc><xd:ref name="wea:getWorkingDocs" type="function">wea:getWorkingDocs</xd:ref>
+            takes in a set of documents and returns the set of documents to be processed.</xd:desc>
+        <xd:param name="docCollection">A TEI document collection</xd:param>
+        <xd:return>A set of TEI documents</xd:return>
+    </xd:doc>
+    <xsl:function name="wea:getWorkingDocs" as="document-node()+">
+        <xsl:param name="docCollection" as="document-node()+"/>
+        <xsl:variable name="out" as="document-node()*">
+            <xsl:choose>
+                <!--If it is unset, then build all documents-->
+                <xsl:when test="$docsToBuild = ''">
+                    <xsl:sequence select="$docCollection[/tei:TEI | /tei:teiCorpus]"/>
+                </xsl:when>
+                <xsl:when test="$docsToBuild = 'DOCUMENTATION'">
+                    <xsl:sequence select="$docCollection[descendant::tei:catRef[contains(@target,'Documentation')]]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>Building docs: <xsl:value-of select="$docsToBuild"/></xsl:message>
+                    <xsl:for-each select="$docsToBuildTokens">
+                        <xsl:variable name="thisToken" select="." as="xs:string"/>
+                        <xsl:if test="$verbose='true'">
+                            <xsl:message>Processing this token: <xsl:value-of select="$thisToken"/></xsl:message>
+                        </xsl:if>
+                        <xsl:variable name="thisDoc" select="$docCollection[/tei:TEI[@xml:id=$thisToken]|/tei:teiCorpus[@xml:id=$thisToken]]" as="document-node()*"/>
+                        <!--Break if the document chosen doesn't exist-->
+                        <xsl:if test="empty($thisDoc)">
+                            <xsl:message terminate="yes">ERROR: Cannot find <xsl:value-of select="$thisToken"/></xsl:message>
+                        </xsl:if>
+                        <xsl:copy-of select="$thisDoc"/>
+                    </xsl:for-each>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:sequence select="$out"/>
+    </xsl:function>
+    
     
     <xsl:template name="generateTeiPage">
   

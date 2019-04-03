@@ -24,7 +24,7 @@
         <xd:desc><xd:ref name="prefixes" type="variable">$prefixes</xd:ref> is a sequence of all
             of the @ident attributes in the global prefixDef found in taxonomies.xml.</xd:desc>
     </xd:doc>
-    <xsl:variable name="prefixes" select="$originalXml[@xml:id='taxonomies']//prefixDef/@ident" as="attribute(ident)*"/>
+    <xsl:variable name="prefixes" select="$originalXml[//TEI/@xml:id='taxonomies']//prefixDef/@ident" as="attribute(ident)*"/>
     
     <xd:doc scope="component">
         <xd:desc><xd:ref name="prefixRegex" type="variable">$prefixRegex</xd:ref> is a Regular
@@ -35,7 +35,7 @@
         select="concat('^(',string-join(for $n in $prefixes return concat('(',$n,')'),'|'),'):')" as="xs:string"/>
     
     <xsl:template match="/">
-        <xsl:for-each select="$originalXml">
+        <xsl:for-each select="$originalXml//TEI">
             <xsl:variable name="outDir" select="concat($outDir,'xml/standalone/',@xml:id,'.xml')"/>
             <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
             <xsl:result-document href="{$outDir}"  indent="no" method="xml">
@@ -89,7 +89,7 @@
                     <listPerson>
                         <xsl:for-each select="$peoplePtrs">
                             <xsl:variable name="thisPtr" select="."/>
-                            <xsl:variable name="thisPerson" select="$originalXml[@xml:id='people']//person[@xml:id=$thisPtr]"/>
+                            <xsl:variable name="thisPerson" select="$originalXml[//TEI/@xml:id='people']//person[@xml:id=$thisPtr]"/>
                             <person>
                                 <xsl:copy-of select="$thisPerson/@*"/>
                                 <xsl:attribute name="copyOf" select="concat($thisPerson/ancestor::TEI/@xml:id,'.xml#',$thisPtr)"/>
@@ -207,7 +207,7 @@
                         <!--Prefix from delared prefixDef-->
                         <!--We may want to switch this so that it looks at the local header
                             and not the global taxonomies header-->
-                        <xsl:variable name="thisPrefixDef" select="$originalXml[@xml:id='taxonomies']//prefixDef[@ident=$thisPrefix]" as="element(prefixDef)*"/>
+                        <xsl:variable name="thisPrefixDef" select="$originalXml[//TEI/@xml:id='taxonomies']//prefixDef[@ident=$thisPrefix]" as="element(prefixDef)*"/>
                         <xsl:variable name="thisPointer" select="substring-after($token,concat($thisPrefix,':'))" as="xs:string"/>
                         <xsl:variable name="match" select="$thisPrefixDef[1]/@matchPattern" as="attribute(matchPattern)?"/>
                         <xsl:variable name="replacement" select="$thisPrefixDef[1]/@replacementPattern" as="attribute(replacementPattern)?"/>

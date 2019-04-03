@@ -40,7 +40,7 @@
     
     <xsl:function name="wea:getTitle">
         <xsl:param name="docId"/>
-        <xsl:sequence select="$standaloneXml[@xml:id=$docId]/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+        <xsl:sequence select="$standaloneXml[//TEI/@xml:id=$docId]/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
     </xsl:function>
     
     <xsl:function name="wea:isObject" as="xs:boolean">

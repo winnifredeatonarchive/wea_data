@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div id="nav_archive" class="nav_option">
-                <xsl:for-each select="$standaloneXml[@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
+                <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
                     <div class="nav-item"><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
                 </xsl:for-each>
             </div>
