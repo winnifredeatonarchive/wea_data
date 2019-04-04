@@ -14,7 +14,7 @@
                 <include name="**.css"/>
             </fileset>
         </copy>
-        <copy todir="${doc.site.dir}/fonts">
+        <copy todir="${doc.site.dir}/fonts" overwrite="true">
             <fileset dir="${project.dir}/documentation/fonts">
                 <include name="**/**"/>
             </fileset>

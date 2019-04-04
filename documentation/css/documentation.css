@@ -101,16 +101,7 @@ html, body{
     font-size:100%;
 }
 
-header{
-    margin:0 auto;
-    text-align:center;
-    background:grey;
-    padding:0;
-}
 
-header > h1{
-    margin:0;
-}
 main{
     display:grid;
     grid-template-areas:
@@ -123,16 +114,9 @@ main{
 
 nav, article{
     overflow-y:scroll;
-    margin:1em;
-    padding:1em;
-    
 }
 
-header,
-header a,
-header a:visited{
-    color:#ffffff;
-}
+
 
 a,
 a:visited{
@@ -149,8 +133,13 @@ a:hover{
 }
 nav{
     grid-area: nav;
-    font-size:90%;
-    border-right:1px solid black;
+    background-color:rgb(242, 245, 243);
+    padding:1em;
+}
+
+h2{
+    margin:0;
+    padding:0;
 }
 
 article{

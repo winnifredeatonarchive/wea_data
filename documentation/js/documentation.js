@@ -9,23 +9,22 @@ if (window.addEventListener) window.addEventListener('load', init, false)
 else if (window.attachEvent) window.attachEvent('onload', init);
 
 
- function init(){
-     addEvents();
+function init(){
+    addDocType();
  }
 
-
+function addDocType(){
+    document.getElementsByTagName('body')[0].classList.add('JS');
+}
 function addEvents(){
-    var tocs=document.querySelectorAll('div.toc.closed, div.toc.open');
-    console.log(tocs);
-    tocs.forEach(function(t){
-            var header = t.getElementsByTagName('h3')[0];
-               header.addEventListener('click',showHide)
-           });
+    var listHeads = document.querySelectorAll('.collapse > span, .collapse > a');
+    listHeads.forEach(function(l){
+        l.addEventListener('click', showHide,true)
+    });
 }
 
     function showHide(){
         var parent = this.parentNode;
-        console.log(parent);
         if (parent.classList.contains('open')){
             parent.classList.remove('open');
             parent.classList.add('closed');

@@ -198,8 +198,8 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="xh:link[@rel='stylesheet']/@href" mode="xh">
-        <xsl:attribute name="href">
+    <xsl:template match="xh:link[@rel='stylesheet']/@href | xh:script/@src" mode="xh">
+        <xsl:attribute name="{local-name()}">
             <xsl:value-of select="substring-after(.,'../')"/>
         </xsl:attribute>
     </xsl:template>
@@ -211,6 +211,17 @@
     <xsl:template match="div[head]" mode="toc">
         <xsl:param name="divId" tunnel="yes"/>
         <li>
+            <xsl:variable name="classes" as="xs:string*">
+                <xsl:if test="div[head]">
+                    <xsl:value-of select="'collapse'"/>
+                </xsl:if>
+                <xsl:if test="descendant-or-self::div[@xml:id = $divId]">
+                    <xsl:value-of select="'open'"/>
+                </xsl:if>
+            </xsl:variable>
+            <xsl:if test="not(empty($classes))">
+                <xsl:attribute name="class" select="string-join($classes,' ')"/>
+            </xsl:if>
             <xsl:choose>
                 <xsl:when test="wea:getId(.) = $divId">
                     <span class="selected"><xsl:value-of select="head"/></span>
