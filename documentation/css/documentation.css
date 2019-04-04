@@ -116,14 +116,23 @@ nav, article{
     overflow-y:scroll;
 }
 
+h1{
+    font-size:2rem;
+    text-align:center;
+}
 
+img{
+    max-width:75%;
+}
 
 a,
-a:visited{
+a:visited,
+span.toggle{
     color: #2A5DB0;
     text-decoration:none;
     }
-a:hover{
+a:hover,
+span.toggle{
     color:#5b1684;
     }
 
@@ -167,6 +176,28 @@ nav ul > li{
 nav ul > li:first-child{
     padding-top:.25em;
 }
+
+.JS span.toggle{
+    padding-right:.5rem;
+    margin-left:-.5rem;
+}
+.JS li.open > span.toggle::before{
+    content: "-";
+}
+
+.JS li.closed > span.toggle::before,
+.JS li.collapse > span.toggle::before{
+    content: "+";
+}
+
+.JS li.collapse > ul{
+    display:none;
+}
+
+.JS li.collapse.open > ul{
+    display:block;
+}
+
 
 h2{
     margin:0;

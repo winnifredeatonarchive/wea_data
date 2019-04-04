@@ -12,11 +12,59 @@ else if (window.attachEvent) window.attachEvent('onload', init);
 function init(){
     addDocType();
     makeSpecsHover();
+    makeTocCollapse();
+    scrollIntoView();
  }
+
+
+function makeTocCollapse(){
+    var toggles = document.querySelectorAll('.toggle');
+    toggles.forEach(function(t){
+        t.addEventListener('click', showHide, true);
+    });
+}
 
 function addDocType(){
     document.getElementsByTagName('body')[0].classList.add('JS');
 }
+
+function scrollIntoView(){
+    var docId = document.getElementsByTagName('html')[0].id;
+    console.log(docId);
+    var thisLink = docId + '.html';
+    var navLink = document.querySelectorAll("nav span.selected")[0];
+    console.log(navLink);
+    scrollParentToChild(document.getElementsByTagName('nav')[0],navLink);
+}
+
+/* Taken, with thanks, from: https://stackoverflow.com/questions/45408920/plain-javascript-scrollintoview-inside-div#answer-45411081 */
+function scrollParentToChild(parent, child) {
+
+  // Where is the parent on page
+  var parentRect = parent.getBoundingClientRect();
+  // What can you see?
+  var parentViewableArea = {
+    height: parent.clientHeight,
+    width: parent.clientWidth
+  };
+
+  // Where is the child
+  var childRect = child.getBoundingClientRect();
+  // Is the child viewable?
+  var isViewable = (childRect.top >= parentRect.top) && (childRect.top <= parentRect.top + parentViewableArea.height);
+
+  // if you can't see the child try to scroll parent
+  if (!isViewable) {
+    // scroll by offset relative to parent
+    
+    /* Modified slightly by JT to divide by 1.5, which makes the thing scroll into about the
+     * middle, which is better for context. */
+    parent.scrollTop = ((childRect.top + parent.scrollTop) - parentRect.top) / 1.25;
+  }
+
+
+}
+
 
 function makeSpecsHover(){
     var specs = document.querySelectorAll('a.spec');

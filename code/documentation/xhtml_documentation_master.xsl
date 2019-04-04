@@ -39,7 +39,7 @@
                     <xsl:with-param name="thisDiv" tunnel="yes" select="."/>
                     <xsl:with-param name="toc" tunnel="yes">
                         <xsl:apply-templates select="$text/(body|back)" mode="toc">
-                            <xsl:with-param name="divId" tunnel="yes" select="@xml:id"/>
+                            <xsl:with-param name="currDivId" tunnel="yes" select="@xml:id"/>
                         </xsl:apply-templates>
                     </xsl:with-param>
                 </xsl:apply-templates>
@@ -142,9 +142,11 @@
 
     
     <xsl:template match="head" mode="main">
-        <h3>
+        <xsl:param name="thisDiv" tunnel="yes"/>
+        <xsl:variable name="count" select="count(ancestor::div[ancestor::div[. is $thisDiv]])"/>
+        <xsl:element name="h{$count + 1}">
             <xsl:apply-templates mode="#current"/>
-        </h3>
+        </xsl:element>
     </xsl:template>
         
     <xsl:template match="row" mode="main">
@@ -204,6 +206,23 @@
         </xsl:copy>
     </xsl:template>
     
+    
+    <xsl:template match="xh:html/@id" mode="xh">
+   
+        <xsl:param name="thisDiv" tunnel="yes"/>
+        <xsl:attribute name="id">
+            <xsl:value-of select="$thisDiv/@xml:id"/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="xh:head/xh:title" mode="xh">
+        <xsl:param name="thisDiv" tunnel="yes"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            WEA Documentation: <xsl:value-of select="$thisDiv/head[1]"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="xh:article/xh:h2" mode="xh">
         <xsl:param name="thisDiv" tunnel="yes"/>
         <xsl:copy>
@@ -252,21 +271,19 @@
     <xsl:template match="teiHeader" mode="toc"/>
 
     <xsl:template match="div[head]" mode="toc">
-        <xsl:param name="divId" tunnel="yes"/>
+        <xsl:param name="currDivId" tunnel="yes"/>
+        <xsl:variable name="hasNestedDivs" select="exists(child::div[head])"/>
+        <xsl:variable name="hasSelectedDiv" select="exists(descendant-or-self::div[@xml:id=$currDivId])"/>
+        
         <li>
-            <xsl:variable name="classes" as="xs:string*">
-                <xsl:if test="div[head]">
-                    <xsl:value-of select="'collapse'"/>
-                </xsl:if>
-                <xsl:if test="descendant-or-self::div[@xml:id = $divId]">
-                    <xsl:value-of select="'open'"/>
-                </xsl:if>
-            </xsl:variable>
-            <xsl:if test="not(empty($classes))">
-                <xsl:attribute name="class" select="string-join($classes,' ')"/>
+            <xsl:if test="($hasNestedDivs or $hasSelectedDiv)">
+                <xsl:attribute name="class" select="string-join((if ($hasNestedDivs) then 'collapse' else (), if ($hasSelectedDiv) then 'open' else 'closed'),' ')"/>
+            </xsl:if>
+            <xsl:if test="$hasNestedDivs">
+                <span class="toggle"/>
             </xsl:if>
             <xsl:choose>
-                <xsl:when test="wea:getId(.) = $divId">
+                <xsl:when test="wea:getId(.) = $currDivId">
                     <span class="selected"><xsl:value-of select="head"/></span>
                 </xsl:when>
                 <xsl:when test="not(@xml:id)">
@@ -276,9 +293,9 @@
                     <a href="{@xml:id}.html"><xsl:value-of select="head"/></a>
                 </xsl:otherwise>
             </xsl:choose>
-           <xsl:if test="div[head]">
+           <xsl:if test="$hasNestedDivs">
                <ul>
-                   <xsl:apply-templates select="div[head]" mode="#current"/>
+                   <xsl:apply-templates select="child::div[head]" mode="#current"/>
                </ul>
            </xsl:if>
         </li>
