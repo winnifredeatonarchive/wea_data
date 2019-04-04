@@ -34,6 +34,7 @@ function addEvents(){
 
 function removePopup(){
     document.getElementById('popup').classList.remove('showing');
+    document.getElementById('popup').style = '';
     document.getElementById('popup').classList.add('hidden');
 }
 function showSpec(){
@@ -42,9 +43,11 @@ function showSpec(){
     var popup = document.getElementById('popup');
     var thisContent = document.getElementById('snippet_' + thisSpec).innerHTML;
     document.getElementById('popup_content').innerHTML = thisContent;
-    placeNote(this, popup);
     popup.classList.remove('hidden');
     popup.classList.add('showing');
+    placeNote(this, popup);
+
+
 
 }
 
@@ -63,7 +66,7 @@ function showSpec(){
     
 function placeNote(elem, note) {
 
-      var popupHeight = note.offsetHeight;
+/* Have to deal with left and right first */
       var coords = elem.getBoundingClientRect();
       var popupArrowBorderWidth = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
       var defaultValue = 7;
@@ -73,16 +76,14 @@ function placeNote(elem, note) {
           popupArrowWidth = defaultValue;
       }
       var middle = (coords.top + coords.bottom)/2;
-      var h = coords.bottom;
-      console.log(coords.top);
-      console.log(popupArrowWidth);
       var w = coords.left + elem.offsetWidth + popupArrowWidth;
-
       var x = window.pageXOffset + w + "px";
-      var y = window.pageYOffset + h + "px";
-
-
       note.style.left = x;
+      /* Now height */
+      var popupHeight = note.offsetHeight;
+      var h = middle - popupHeight/2;
+
+      var y =  window.pageYOffset + h + "px";
       note.style.top = y;
     }
     

@@ -484,7 +484,7 @@ function placeNote(elem, note) {
 
       var x = window.pageXOffset + w + "px";
       var y = window.pageYOffset + h + "px";
-            console.log(window.pageXOffset + "+" + w + "px" + "=" + x);
+      console.log(window.pageXOffset + "+" + w + "px" + "=" + x);
       console.log(y);
 
 

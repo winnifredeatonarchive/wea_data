@@ -225,10 +225,26 @@
             <xsl:for-each select="distinct-values($specLinks)">
                 <xsl:variable name="thisLink" select="."/>
                 <div id="snippet_{.}">
-                    <xsl:apply-templates select="$sourceDoc//div[@xml:id=$thisLink]/p[1]" mode="main"/>
+                    <xsl:apply-templates select="$sourceDoc//div[@xml:id=$thisLink]/p[1]" mode="appendix"/>
                 </div>
             </xsl:for-each>
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="p" mode="appendix">
+        <div class="p">
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="*" priority="-1" mode="appendix">
+        <xsl:apply-templates select="." mode="main"/>
+    </xsl:template>
+    
+    <xsl:template match="ref" mode="appendix"/>
+    
+    <xsl:template match="p/text()" mode="appendix">
+        <xsl:value-of select="replace(replace(.,'\[\s*$',''),'^\s*\]','')"/>
     </xsl:template>
     
     <!--TOC TEMPLATES-->
