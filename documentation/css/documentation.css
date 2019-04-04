@@ -123,18 +123,45 @@ a:visited{
     color: #2A5DB0;
     text-decoration:none;
     }
-    
 a:hover{
     color:#5b1684;
     }
 
+a.selected{
+    color:inherit;
+    font-size:96%;
+}
 .selected{
     font-weight:bold;
 }
+
+
 nav{
     grid-area: nav;
     background-color:rgb(242, 245, 243);
     padding:1em;
+    overflow-wrap: break-word;
+}
+
+
+nav ul,
+nav li{
+    display:block;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav li+li{
+    padding-top:.25em;
+}
+
+nav ul > li{
+    padding-left:1rem;
+}
+
+nav ul > li:first-child{
+    padding-top:.25em;
 }
 
 h2{
@@ -168,6 +195,10 @@ tr, td{
     padding:.5rem .75rem;
 }
 
+
+#appendix{
+    display:none;
+}
 /* MUCH OF THE BELOW SHOULD MOST LIKELY GO INTO A NEW CSS FILE FOR DOCUMENTATION. */
 
 /******************************************************************** CODE */
@@ -179,6 +210,93 @@ code.block{
     border:1px dotted black;
     font-size:90%;
     margin:1rem;
+}
+
+/************************************************************************ POPUPS */
+
+
+#popup.hidden{
+    display:none;
+}
+
+#popup.showing{
+    position:absolute;
+    word-wrap: break-word;
+    font-size:1.2rem;
+    background:white;
+    padding:.75em;
+    border: 1px solid #b9b9b9;
+    border-radius: 9px;
+    box-shadow: 1px 1px 1px #b9b9b9;
+    display:block;
+    animation: fade-in .5s;
+    margin-left: .15rem;
+    max-width:25rem;
+    z-index:20;
+
+}
+
+/***************************************************************************** ANIMATIONS */
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+#popup::after, #popup::before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+
+#popup::after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: white;
+		/* THIS IS WHAT CONTROLS THE ARROW SIZE */
+	border-width: 6px;
+	margin-top: -6px;
+}
+#popup::before {
+	border-color: rgba(185, 185, 185, 0);
+	border-right-color: #b9b9b9;
+    /* SHHOULD ALWAYS BE +BORERWIDTH */
+	border-width: 7.5px;
+	margin-top: -7.5px;
+}
+
+#popup.hidden{
+    display:none;
+   opacity:0;
+}
+
+
+#popup_content{
+    margin: .5em .25em .25em .25em;
+    font-size:75%;
+}
+
+#popup_content .returnToNote{
+ display:none;   
+}
+
+#popup_closer{
+    float:right;
+    top:5rem;
+    font-size:70%;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+a{
+    text-decoration:none;
 }
 
 
@@ -230,6 +348,7 @@ div.egXML{
     font-family: monospace;
     font-variant: normal;
     padding:1.25rem;
+    word-break: break-word;
 }
 
 div.egXML.true{

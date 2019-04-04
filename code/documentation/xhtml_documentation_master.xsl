@@ -19,6 +19,7 @@
     validate XHTML5 (xhtml with no version specified produces invalid results)-->
     <xsl:output method="xhtml" encoding="UTF-8" indent="yes" normalization-form="NFC"
         exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0"/>
+    <xsl:variable name="sourceDoc" select="TEI"/>
     
     <xsl:template match="/">
         <xsl:variable name="text" select="//text"/>
@@ -79,7 +80,19 @@
     
     <xsl:template match="ref" mode="main">
         <xsl:param name="thisDiv" tunnel="yes"/>
+        <xsl:variable name="resolvedTarget" select="wea:resolveRef(@target,$thisDiv)"/>
+        <xsl:variable name="classes" as="xs:string*">
+            <xsl:if test="matches($resolvedTarget,concat('^',$thisDiv/@xml:id,'.html$'))">
+                <xsl:value-of select="'selected'"/>
+            </xsl:if>
+            <xsl:if test="starts-with(@target,'#TEI.')">
+                <xsl:value-of select="'spec'"/>
+            </xsl:if>
+        </xsl:variable>
         <a href="{wea:resolveRef(@target, $thisDiv)}">
+             <xsl:if test="not(empty($classes))">
+                 <xsl:attribute name="class" select="string-join($classes,' ')"/>
+             </xsl:if>
             <xsl:apply-templates mode="#current"/>
         </a>
     </xsl:template>
@@ -202,6 +215,20 @@
         <xsl:attribute name="{local-name()}">
             <xsl:value-of select="substring-after(.,'../')"/>
         </xsl:attribute>
+    </xsl:template>
+    
+    <xsl:template match="xh:div[@id='appendix']" mode="xh">
+        <xsl:param name="thisDiv" tunnel="yes"/>
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:variable name="specLinks" select="$sourceDoc//ref[starts-with(@target,'#TEI.')]/@target/substring-after(.,'#')"/>
+            <xsl:for-each select="distinct-values($specLinks)">
+                <xsl:variable name="thisLink" select="."/>
+                <div id="snippet_{.}">
+                    <xsl:apply-templates select="$sourceDoc//div[@xml:id=$thisLink]/p[1]" mode="main"/>
+                </div>
+            </xsl:for-each>
+        </xsl:copy>
     </xsl:template>
     
     <!--TOC TEMPLATES-->
