@@ -14,6 +14,11 @@
                 <include name="**.css"/>
             </fileset>
         </copy>
+        <copy todir="${doc.site.dir}/fonts">
+            <fileset dir="${project.dir}/documentation/fonts">
+                <include name="**/**"/>
+            </fileset>
+        </copy>
         <copy todir="${doc.site.dir}/js">
             <fileset dir="${project.dir}/documentation/js">
                 <include name="**.js"/>
