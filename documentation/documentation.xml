@@ -184,7 +184,7 @@
                   <p>All people featured on the site should be added to the person database. The people in this database include primary people (like Winnifred Eaton, Sara Bosse, and others) as well as contributors (like Mary Chapman, Jean Lee Cole, and others).</p>
                   <div>
                      <head>Basic Rules for Encoding People</head>
-                     <p>The basic structure of the people database is a <ref target="#TEI.listPerson"><gi>listPerson</gi></ref> element with a sequence of nested <ref target="#TEI.person"><gi>person</gi></ref> elements. Each <ref target="#TEI.person"><gi>person</gi></ref> element much have an xml:id (usually their initials followed by a number) and a <ref target="#TEI.persName"><gi>persName</gi></ref> element. Each <ref target="#TEI.persName"><gi>persName</gi></ref> elements must include one of: <list>
+                     <p>The basic structure of the people database is a <ref target="#TEI.listPerson"><gi>listPerson</gi></ref> element with a sequence of nested <ref target="#TEI.person"><gi>person</gi></ref> elements. Each <ref target="#TEI.person"><gi>person</gi></ref> element much have an <att>xml:id</att> (usually their initials followed by a number) and a <ref target="#TEI.persName"><gi>persName</gi></ref> element. Each <ref target="#TEI.persName"><gi>persName</gi></ref> elements must include one of: <list>
                            <item>
                               <ref target="#TEI.forename"><gi>forename</gi></ref>: the forename of the person</item>
                            <item>
@@ -219,7 +219,7 @@
                            </note>
                         </egXML>
                      </p>
-                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the type value of bio, with a subtype of either short or long: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the <att>type</att> value of <val>bio</val>, with a subtype of either <val>short</val> or <val>long</val>: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <person xml:id="JS1">
                               <persName>
                                  <forename>John</forename>
@@ -270,7 +270,7 @@
                         <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
                         <div>
                            <head>Authors</head>
-                           <p>Tag authors using the <ref target="#TEI.author"><gi>author</gi></ref> tag and use the ref attribute to point to the person xml:id: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p>Tag authors using the <ref target="#TEI.author"><gi>author</gi></ref> tag and use the <att>ref</att> attribute to point to the person <att>xml:id</att>: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <author ref="pers:WE1">Watanna, Onoto</author>.
                            </egXML>
                            </p>
@@ -282,18 +282,20 @@
                         </div>
                         <div>
                            <head>Titles</head>
-                           <p>Tag all titles using the <ref target="#TEI.title"><gi>title</gi></ref> tag with the appropriate level attribute: <list rend="specList">
+                           <p>Tag all titles using the <ref target="#TEI.title"><gi>title</gi></ref> tag with the appropriate <att>level</att> attribute: <list>
                                  <item>
                                     <ref target="#TEI.title">title</ref> contains a title for any kind of work.<table rend="specDesc">
                                        <row>
-                                          <cell rend="Attribute">level</cell>
+                                          <cell rend="Attribute">
+                                             <att>level</att>
+                                          </cell>
                                           <cell>indicates the bibliographic level for a title, that is, whether it identifies an article, book, journal, series, or unpublished material.</cell>
                                        </row>
                                     </table>
                                  </item>
-                              </list> All monographic titles (i.e. books, etc) should use the level value m, all journals j, and all articles and other <q>analytic</q> items (poems, short stories, etc) using a.</p>
+                              </list> All monographic titles (i.e. books, etc) should use the <att>level</att> value <val>m</val>, all journals <val>j</val>, and all articles and other <q>analytic</q> items (poems, short stories, etc) using <val>a</val>.</p>
                            <p>
-                              <emph>Note</emph>: For works by Winnifred Eaton, ensure that you wrap each <ref target="#TEI.title"><gi>title</gi></ref>/level=j in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, with a ref value pointing to the organization described by that journal title. For instance, <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <emph>Note</emph>: For works by Winnifred Eaton, ensure that you wrap each <ref target="#TEI.title"><gi>title</gi></ref>/<att>level</att>=<val>j</val> in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, with a <att>ref</att> value pointing to the organization described by that journal title. For instance, <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <publisher ref="org:SmartSet">
                                     <title level="j">Smart Set</title>
                                  </publisher>
@@ -303,19 +305,21 @@
                         </div>
                         <div>
                            <head>Publishers</head>
-                           <p>Tag all publishers using the <ref target="#TEI.publisher"><gi>publisher</gi></ref> tag with the ref attribute pointing to the publisher's xml:id from the organizations database: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p>Tag all publishers using the <ref target="#TEI.publisher"><gi>publisher</gi></ref> tag with the <att>ref</att> attribute pointing to the publisher's <att>xml:id</att> from the organizations database: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <publisher ref="org:Harper">Harper and Brothers</publisher>
                               </egXML>
                            </p>
-                           <p>As stated above, wrap all <ref target="#TEI.title"><gi>title</gi></ref>/level=js in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
+                           <p>As stated above, wrap all <ref target="#TEI.title"><gi>title</gi></ref>/<att>level</att>=<val>j</val>s in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
                         </div>
                         <div>
                            <head>Volumes, Issues, and Page Ranges</head>
-                           <p>Tag all volumes, issues (also called numbers), and page ranges using the <ref target="#TEI.biblScope"><gi>biblScope</gi></ref> element with the appropriate unit: <list rend="specList">
+                           <p>Tag all volumes, issues (also called numbers), and page ranges using the <ref target="#TEI.biblScope"><gi>biblScope</gi></ref> element with the appropriate <att>unit</att>: <list>
                                  <item>
                                     <ref target="#TEI.biblScope">biblScope</ref> (scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work.<table rend="specDesc">
                                        <row>
-                                          <cell rend="Attribute">unit</cell>
+                                          <cell rend="Attribute">
+                                             <att>unit</att>
+                                          </cell>
                                           <cell/>
                                        </row>
                                     </table>
@@ -326,27 +330,37 @@
                         </div>
                         <div>
                            <head>Publication Dates</head>
-                           <p>Encode the date of publication using the <ref target="#TEI.date"><gi>date</gi></ref> element. The <ref target="#TEI.date"><gi>date</gi></ref> element is a special case where we <emph>do not</emph> include text in the <ref target="#TEI.date"><gi>date</gi></ref> element. Instead, use the dating attributes provided by the <ref target="#TEI.date"><gi>date</gi></ref> element: <list rend="specList">
+                           <p>Encode the date of publication using the <ref target="#TEI.date"><gi>date</gi></ref> element. The <ref target="#TEI.date"><gi>date</gi></ref> element is a special case where we <emph>do not</emph> include text in the <ref target="#TEI.date"><gi>date</gi></ref> element. Instead, use the dating attributes provided by the <ref target="#TEI.date"><gi>date</gi></ref> element: <list>
                                  <item>
                                     <ref target="#TEI.date">date</ref> contains a date in any format.<table rend="specDesc">
                                        <row>
-                                          <cell rend="Attribute">notBefore [att.datable.w3c]</cell>
+                                          <cell rend="Attribute">
+                                             <att>notBefore [att.datable.w3c]</att>
+                                          </cell>
                                           <cell>specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</cell>
                                        </row>
                                        <row>
-                                          <cell rend="Attribute">notAfter [att.datable.w3c]</cell>
+                                          <cell rend="Attribute">
+                                             <att>notAfter [att.datable.w3c]</att>
+                                          </cell>
                                           <cell>specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</cell>
                                        </row>
                                        <row>
-                                          <cell rend="Attribute">when [att.datable.w3c]</cell>
+                                          <cell rend="Attribute">
+                                             <att>when [att.datable.w3c]</att>
+                                          </cell>
                                           <cell>supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</cell>
                                        </row>
                                        <row>
-                                          <cell rend="Attribute">to [att.datable.w3c]</cell>
+                                          <cell rend="Attribute">
+                                             <att>to [att.datable.w3c]</att>
+                                          </cell>
                                           <cell>indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.</cell>
                                        </row>
                                        <row>
-                                          <cell rend="Attribute">from [att.datable.w3c]</cell>
+                                          <cell rend="Attribute">
+                                             <att>from [att.datable.w3c]</att>
+                                          </cell>
                                           <cell>indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.</cell>
                                        </row>
                                     </table>
@@ -362,17 +376,18 @@
                                  <item>21 March 1904</item>
                               </list>
                            </p>
-                           <p>In most cases, the when attribute with suffice for encoding the date of publication: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p>In most cases, the <att>when</att> attribute with suffice for encoding the date of publication: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <date when="1901-12-13"/>
                               </egXML> 
                               <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <date when="1901"/>
-                              </egXML> However, there are often cases where the date of publication is difficult to determine. In these cases use notBefore, notAfter, and, optionally, the cert</p>
+                              </egXML> However, there are often cases where the date of publication is difficult to determine. In these cases use <att>notBefore</att>, <att>notAfter</att>, and, optionally, the <att>cert</att>
+                           </p>
                            <p>For instance, the case of certain date ranges (i.e. I know that this had to be published between 1922-1924) would be encoded as follows: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <date notBefore="1922" notAfter="1924"/>
                               </egXML> If you know the decade in which something is published, then encode it as follows: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <date notBefore="1900" notAfter="1909"/>
-                              </egXML> If you are uncertain about the date range, then use the cert attribute with the values of either low or medium to denote your certainty about this date: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              </egXML> If you are uncertain about the date range, then use the <att>cert</att> attribute with the values of either <val>low</val> or <val>medium</val> to denote your certainty about this date: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <date notBefore="1902" notAfter="1911" cert="low"/>
                               </egXML>
                            </p>
@@ -478,7 +493,7 @@
                <div xml:id="encoding_primary_facsimiles">
                   <head>Associating facsimiles</head>
                   <p>All primary source documents should have a related facsimile associated with the document. To do so, simply ensure that the PDF has been added to the <code>data/facsimiles/</code> directory with a filename that follows the rules for filenaming discussed above (no spaces, underscores, et cetera).</p>
-                  <p>To associate the primary source document with the facsimile, use the facs attribute on the <ref target="#TEI.text"><gi>text</gi></ref> element, with a pointer to the facsimile's file name using the private <q>facs:</q> URI scheme: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>To associate the primary source document with the facsimile, use the <att>facs</att> attribute on the <ref target="#TEI.text"><gi>text</gi></ref> element, with a pointer to the facsimile's file name using the private <q>facs:</q> URI scheme: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <text facs="facs:Three_Loves_Puritan"><!--Content here--></text>
                      </egXML>
                   </p>
@@ -489,7 +504,7 @@
                </div>
                <div xml:id="encoding_primary_bylines">
                   <head>Bylines</head>
-                  <p>If there is an authorial statement of responsibility of some sort, enclose this in a <ref target="#TEI.byline"><gi>byline</gi></ref> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <ref target="#TEI.name"><gi>name</gi></ref> tag with an ref value of pers:WE1.</p>
+                  <p>If there is an authorial statement of responsibility of some sort, enclose this in a <ref target="#TEI.byline"><gi>byline</gi></ref> element. Tag Winnifred Eaton's name (in whatever psuedonymic form it appears) with the <ref target="#TEI.name"><gi>name</gi></ref> tag with an <att>ref</att> value of <val>pers:WE1</val>.</p>
                </div>
                <div xml:id="encoding_primary_gaps">
                   <head>Gaps and omissions</head>
@@ -497,19 +512,19 @@
                         <gap reason="damaged"/>
                      </egXML>
                   </p>
-                  <p>If you can supply the damaged text, use the <ref target="#TEI.supplied"><gi>supplied</gi></ref> element instead with an resp value pointing to your xml:id (which is usually your initials): <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>If you can supply the damaged text, use the <ref target="#TEI.supplied"><gi>supplied</gi></ref> element instead with an <att>resp</att> value pointing to your <att>xml:id</att> (which is usually your initials): <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <supplied resp="pers:JT1">ed</supplied>
                      </egXML>
                   </p>
-                  <p>You can encode how certain you are of your editorial addition by using the cert attribute on supplied with a value of <q>low</q> 
-                     <q>medium</q> or <q>high</q>. If no cert is supplied, it is assumed that it has a high value of certainty: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>You can encode how certain you are of your editorial addition by using the <att>cert</att> attribute on supplied with a value of <q>low</q> 
+                     <q>medium</q> or <q>high</q>. If no <att>cert</att> is supplied, it is assumed that it has a high value of certainty: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <supplied resp="pers:JT" cert="low">ed</supplied>
                      </egXML>
                   </p>
                </div>
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
-                  <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <ref target="#TEI.q"><gi>q</gi></ref> element: <list rend="specList">
+                  <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <ref target="#TEI.q"><gi>q</gi></ref> element: <list>
                         <item>
                            <ref target="#TEI.q">q</ref> (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used.</item>
                      </list>
@@ -544,7 +559,7 @@
                               <ref target="#TEI.signed">signed</ref> (signature) contains the closing salutation, etc., appended to a foreword, dedicatory epistle, or other division of a text.</item>
                         </list>
                      </p>
-                     <p>To encode a letter, first wrap the letter in a <ref target="#TEI.q"><gi>q</gi></ref>, then a <ref target="#TEI.floatingText"><gi>floatingText</gi></ref> with an type=letter, and then a <ref target="#TEI.body"><gi>body</gi></ref> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>To encode a letter, first wrap the letter in a <ref target="#TEI.q"><gi>q</gi></ref>, then a <ref target="#TEI.floatingText"><gi>floatingText</gi></ref> with an <att>type</att>=<val>letter</val>, and then a <ref target="#TEI.body"><gi>body</gi></ref> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q>
                               <floatingText type="letter">
                                  <body><!--Content of the letter goes here--></body>
@@ -580,7 +595,8 @@
                            </q>
                         </egXML>
                      </p>
-                     <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <ref target="#TEI.note"><gi>note</gi></ref> element with an type=authorial <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <ref target="#TEI.note"><gi>note</gi></ref> element with an <att>type</att>=<val>authorial</val> 
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q>
                               <floatingText type="letter">
                                  <body>
@@ -610,16 +626,18 @@
                            <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
                         </list>
                      </p>
-                     <p>To signal the paragraphs continuation, we use the part attribute: <list>
+                     <p>To signal the paragraphs continuation, we use the <att>part</att> attribute: <list>
                            <item>
                               <ref target="#TEI.p">p</ref> (paragraph) marks paragraphs in prose.<table rend="specDesc">
                                  <row>
-                                    <cell rend="Attribute">part [att.fragmentable]</cell>
+                                    <cell rend="Attribute">
+                                       <att>part [att.fragmentable]</att>
+                                    </cell>
                                     <cell>specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.</cell>
                                  </row>
                               </table>
                            </item>
-                        </list> We use the value I to signal the initial paragraph, M to signal any medial paragraphs, and F to signal the final paragraph. <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        </list> We use the value <val>I</val> to signal the initial paragraph, <val>M</val> to signal any medial paragraphs, and <val>F</val> to signal the final paragraph. <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <p part="I">It isn’t as if they are strangers, you know. One of them, Harry Bond,
                            is my own fellow. You know who his folks are, and but for them we’d have
                            been married long ago. Well, Harry’s friend, the one who wants to meet
@@ -637,32 +655,36 @@
                            can treat us fine. So come along. You’ll not get such a chance again.</p>
                         </egXML>
                      </p>
-                     <p>To handle the overlapping quotations, we use a similar approach using the next and prev attributes to signal explicitly the sequence of quotation elements: <list>
+                     <p>To handle the overlapping quotations, we use a similar approach using the <att>next</att> and <att>prev</att> attributes to signal explicitly the sequence of quotation elements: <list>
                            <item>
                               <ref target="#TEI.q">q</ref> (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used.<table rend="specDesc">
                                  <row>
-                                    <cell rend="Attribute">next [att.global.linking]</cell>
+                                    <cell rend="Attribute">
+                                       <att>next [att.global.linking]</att>
+                                    </cell>
                                     <cell>points to the next element of a virtual aggregate of which the current element is part.</cell>
                                  </row>
                                  <row>
-                                    <cell rend="Attribute">prev [att.global.linking]</cell>
+                                    <cell rend="Attribute">
+                                       <att>prev [att.global.linking]</att>
+                                    </cell>
                                     <cell>(previous) points to the previous element of a virtual aggregate of which the current element is part.</cell>
                                  </row>
                               </table>
                            </item>
                         </list>
                      </p>
-                     <p>To do so, we must first give each <ref target="#TEI.q"><gi>q</gi></ref> an xml:id; this can be whatever you want, but it usually makes most sense to prefix it with the file's name and use a sensible numbering system: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>To do so, we must first give each <ref target="#TEI.q"><gi>q</gi></ref> an <att>xml:id</att>; this can be whatever you want, but it usually makes most sense to prefix it with the file's name and use a sensible numbering system: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q xml:id="Marion_q1">It isn’t as if they are strangers, you know. One of them, Harry Bond,
                         is my own fellow. You know who his folks are, and but for them we’d have
                         been married long ago. Well, Harry’s friend, the one who wants to meet
                         you, is a swell, too, and he hasn’t been out from England long. Harry
                         says his folks are big nobs over there, and</q>
-                        </egXML> We do the same thing for the second quotation element, giving it an xml:id: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        </egXML> We do the same thing for the second quotation element, giving it an <att>xml:id</att>: <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q xml:id="Marion_q2" prev="#Marion_q1">he is studying law here. His folks send him a remittance and I guess
                            it’s a pretty big one, for he’s living at the Windsor, and I guess he
                            can treat us fine. So come along. You’ll not get such a chance again</q>.
-                     </egXML> We then use the next and prev attributes to point to each quotation in the sequence. <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     </egXML> We then use the <att>next</att> and <att>prev</att> attributes to point to each quotation in the sequence. <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q xml:id="Marion_q1" next="#Marion_q2">It isn’t as if they are strangers, you know. One of them, Harry Bond,
                            is my own fellow. You know who his folks are, and but for them we’d have
                            been married long ago. Well, Harry’s friend, the one who wants to meet
@@ -860,7 +882,7 @@
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Major editions of the Guidelines have long been informally referred to by a name made up of the letter P (for Proposal) followed by a digit. The current release is one of the many releases of the fifth major edition of the Guidelines, known as P5. This attribute may be used to associate a TEI document with a specific release of the P5 Guidelines, in the absence of a more precise association provided by the source attribute on the associated <gi>schemaSpec</gi>.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Major editions of the Guidelines have long been informally referred to by a name made up of the letter P (for Proposal) followed by a digit. The current release is one of the many releases of the fifth major edition of the Guidelines, known as P5. This attribute may be used to associate a TEI document with a specific release of the P5 Guidelines, in the absence of a more precise association provided by the <att>source</att> attribute on the associated <gi>schemaSpec</gi>.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -895,7 +917,7 @@
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This element is required. It is customary to specify the TEI namespace <code>http://www.tei-c.org/ns/1.0</code> on it, using the xmlns attribute.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This element is required. It is customary to specify the TEI namespace <code>http://www.tei-c.org/ns/1.0</code> on it, using the <att>xmlns</att> attribute.</p>
                         </cell>
                      </row>
                      <row>
@@ -1458,7 +1480,7 @@
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">On this element, the global xml:id attribute must be supplied to specify an identifier for the point at which this element occurs within a document. The value used may be chosen freely provided that it is unique within the document and is a syntactically valid name. There is no requirement for values containing numbers to be in sequence.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">On this element, the global <att>xml:id</att> attribute must be supplied to specify an identifier for the point at which this element occurs within a document. The value used may be chosen freely provided that it is unique within the document and is a syntactically valid name. There is no requirement for values containing numbers to be in sequence.</p>
                         </cell>
                      </row>
                      <row>
@@ -1655,7 +1677,7 @@
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">As an alternative to using the scheme attribute a namespace prefix may be used. Where both scheme and a prefix are used, the prefix takes precedence.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">As an alternative to using the <att>scheme</att> attribute a namespace prefix may be used. Where both <att>scheme</att> and a prefix are used, the prefix takes precedence.</p>
                         </cell>
                      </row>
                      <row>
@@ -1825,7 +1847,7 @@
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Particularly where cataloguing is likely to be based on the content of the header, it is advisable to use a generally recognized name authority file to supply the content for this element. The attributes key or ref may also be used to reference canonical information about the author(s) intended from any appropriate authority, such as a library catalogue or online resource.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Particularly where cataloguing is likely to be based on the content of the header, it is advisable to use a generally recognized name authority file to supply the content for this element. The attributes <att>key</att> or <att>ref</att> may also be used to reference canonical information about the author(s) intended from any appropriate authority, such as a library catalogue or online resource.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">In the case of a broadcast, use this element for the name of the company or network responsible for making the broadcast.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">Where an author is unknown or unspecified, this element may contain text such as <q>Unknown</q> or <q>Anonymous</q>. When the appropriate TEI modules are in use, it may also contain detailed tagging of the names used for people, organizations or places, in particular where multiple names are given.</p>
                         </cell>
@@ -2587,7 +2609,7 @@
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>All n attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
+                        <cell>All <att>n</att> attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]"&gt;
  &lt;sch:assert test="descendant::tei:title[@level='j']"
@@ -2936,7 +2958,7 @@
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">When a single page is being cited, use the from and to attributes with an identical value. When no clear endpoint is provided, the from attribute may be used without to; for example a citation such as "p. 3ff" might be encoded <code>&lt;biblScope from="3"&gt;p. 3ff&lt;biblScope&gt;</code>.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">When a single page is being cited, use the <att>from</att> and <att>to</att> attributes with an identical value. When no clear endpoint is provided, the <att>from</att> attribute may be used without <att>to</att>; for example a citation such as "p. 3ff" might be encoded <code>&lt;biblScope from="3"&gt;p. 3ff&lt;biblScope&gt;</code>.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">It is now considered good practice to supply this element as a sibling (rather than a child) of <gi>imprint</gi>, since it supplies information which does not constitute part of the imprint.</p>
                         </cell>
                      </row>
@@ -3854,7 +3876,7 @@ Of Clare-Hall in Cambridge.</byline>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">The scheme attribute needs to be supplied only if more than one taxonomy has been declared.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>scheme</att> attribute needs to be supplied only if more than one taxonomy has been declared.</p>
                         </cell>
                      </row>
                      <row>
@@ -4335,9 +4357,9 @@ Of Clare-Hall in Cambridge.</byline>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">The who attribute may be used to point to any other element, but will typically specify a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref> or <ref target="#TEI.person"><gi>person</gi></ref> element elsewhere in the header, identifying the person responsible for the change and their role in making it.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>who</att> attribute may be used to point to any other element, but will typically specify a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref> or <ref target="#TEI.person"><gi>person</gi></ref> element elsewhere in the header, identifying the person responsible for the change and their role in making it.</p>
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">It is recommended that changes be recorded with the most recent first. The status attribute may be used to indicate the status of a document following the change documented.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">It is recommended that changes be recorded with the most recent first. The <att>status</att> attribute may be used to indicate the status of a document following the change documented.</p>
                         </cell>
                      </row>
                      <row>
@@ -6636,7 +6658,7 @@ supplied to printer.</change>
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>A <ref target="#TEI.desc"><gi>desc</gi></ref> with a type of deprecationInfo should only occur when its parent element is being deprecated. Furthermore, it should always occur in an element that is being deprecated when <ref target="#TEI.desc"><gi>desc</gi></ref> is a valid child of that element.<code>
+                        <cell>A <ref target="#TEI.desc"><gi>desc</gi></ref> with a <att>type</att> of <val>deprecationInfo</val> should only occur when its parent element is being deprecated. Furthermore, it should always occur in an element that is being deprecated when <ref target="#TEI.desc"><gi>desc</gi></ref> is a valid child of that element.<code>
 &lt;sch:rule context="tei:desc[ @type eq 'deprecationInfo']"&gt;
 &lt;sch:assert test="../@validUntil"&gt;Information about a
  deprecation should only be present in a specification element
@@ -7136,7 +7158,7 @@ supplied to printer.</change>
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>One use for this element is to allow document preparation software to generate an index and insert it in the appropriate place in the output. The example below assumes that the indexName attribute on <gi>index</gi> elements in the text has been used to specify index entries for the two generated indexes, named NAMES and THINGS:<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>One use for this element is to allow document preparation software to generate an index and insert it in the appropriate place in the output. The example below assumes that the <att>indexName</att> attribute on <gi>index</gi> elements in the text has been used to specify index entries for the two generated indexes, named NAMES and THINGS:<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en">
                               <back>
@@ -7381,7 +7403,7 @@ and then a Captain of several Ships</byline>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">For simple dates, the when attribute should give the Gregorian or proleptic Gregorian date in one of the formats specified in <title ref="#XSD2">XML Schema Part 2: Datatypes Second Edition</title>.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">For simple dates, the <att>when</att> attribute should give the Gregorian or proleptic Gregorian date in one of the formats specified in <title ref="#XSD2">XML Schema Part 2: Datatypes Second Edition</title>.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -9614,8 +9636,8 @@ formatting or layout information preserved.</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The global xml:lang attribute should be supplied for this element to identify the language of the word or phrase marked. As elsewhere, its value should be a language tag as defined in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CH.html#CHSH">6.1. Language Identification</ref>.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This element is intended for use only where no other element is available to mark the phrase or words concerned. The global xml:lang attribute should be used in preference to this element where it is intended to mark the language of the whole of some text element.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The global <att>xml:lang</att> attribute should be supplied for this element to identify the language of the word or phrase marked. As elsewhere, its value should be a language tag as defined in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CH.html#CHSH">6.1. Language Identification</ref>.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This element is intended for use only where no other element is available to mark the phrase or words concerned. The global <att>xml:lang</att> attribute should be used in preference to this element where it is intended to mark the language of the whole of some text element.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <gi>distinct</gi> element may be used to identify phrases belonging to sublanguages or registers not generally regarded as true languages.</p>
                         </cell>
                      </row>
@@ -10555,7 +10577,7 @@ formatting or layout information preserved.</p>
                                   xml:lang="en">
                               <p>The <gi>xhtml:li</gi> element is roughly analogous to the <gi>item</gi> element, as is the
           <gi scheme="DBK">listItem</gi> element.</p>
-                           </egXML>This example shows the use of both a namespace prefix and the scheme attribute as alternative ways of indicating that the <ref target="#TEI.gi"><gi>gi</gi></ref> in question is not a TEI element name: in practice only one method should be adopted.</cell>
+                           </egXML>This example shows the use of both a namespace prefix and the <att>scheme</att> attribute as alternative ways of indicating that the <ref target="#TEI.gi"><gi>gi</gi></ref> in question is not a TEI element name: in practice only one method should be adopted.</cell>
                      </row>
                      <row>
                         <cell>
@@ -10693,7 +10715,7 @@ formatting or layout information preserved.</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The mimeType attribute should be used to supply the MIME media type of the image specified by the url attribute.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>mimeType</att> attribute should be used to supply the MIME media type of the image specified by the <att>url</att> attribute.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">Within the body of a text, a <ref target="#TEI.graphic"><gi>graphic</gi></ref> element indicates the presence of a graphic component in the source itself. Within the context of a <gi>facsimile</gi> or <gi>sourceDoc</gi> element, however, a <ref target="#TEI.graphic"><gi>graphic</gi></ref> element provides an additional digital representation of some part of the source being encoded.</p>
                         </cell>
                      </row>
@@ -10939,7 +10961,7 @@ formatting or layout information preserved.</p>
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>When headings are not inline with the running text (see e.g. <ref xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://diglib.hab.de/show_image.php?dir=drucke/ed000364&amp;pointer=34">the heading "Secunda conclusio"</ref>) they might however be encoded as if. The actual placement in the source document can be captured with the place attribute.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>When headings are not inline with the running text (see e.g. <ref xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://diglib.hab.de/show_image.php?dir=drucke/ed000364&amp;pointer=34">the heading "Secunda conclusio"</ref>) they might however be encoded as if. The actual placement in the source document can be captured with the <att>place</att> attribute.<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en"
                                   source="#Karstadt-Distinctiones-Thomistarum">
@@ -11682,7 +11704,7 @@ formatting or layout information preserved.</p>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
                               xmlns:teix="http://www.tei-c.org/ns/Examples">
-                              <ref target="#TEI.idno"><gi>idno</gi></ref> should be used for labels which identify an object or concept in a formal cataloguing system such as a database or an RDF store, or in a distributed system such as the World Wide Web. Some suggested values for type on <ref target="#TEI.idno"><gi>idno</gi></ref> are ISBN, ISSN, DOI, and URI.</p>
+                              <ref target="#TEI.idno"><gi>idno</gi></ref> should be used for labels which identify an object or concept in a formal cataloguing system such as a database or an RDF store, or in a distributed system such as the World Wide Web. Some suggested values for <att>type</att> on <ref target="#TEI.idno"><gi>idno</gi></ref> are <val>ISBN</val>, <val>ISSN</val>, <val>DOI</val>, and <val>URI</val>.</p>
                         </cell>
                      </row>
                      <row>
@@ -11999,7 +12021,7 @@ formatting or layout information preserved.</p>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">May contain simple prose or a sequence of chunks.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Whatever string of characters is used to label a list item in the copy text may be used as the value of the global n attribute, but it is not required that numbering be recorded explicitly. In ordered lists, the n attribute on the <ref target="#TEI.item"><gi>item</gi></ref> element is by definition synonymous with the use of the <ref target="#TEI.label"><gi>label</gi></ref> element to record the enumerator of the list item. In glossary lists, however, the term being defined should be given with the <ref target="#TEI.label"><gi>label</gi></ref> element, not n.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Whatever string of characters is used to label a list item in the copy text may be used as the value of the global <att>n</att> attribute, but it is not required that numbering be recorded explicitly. In ordered lists, the <att>n</att> attribute on the <ref target="#TEI.item"><gi>item</gi></ref> element is by definition synonymous with the use of the <ref target="#TEI.label"><gi>label</gi></ref> element to record the enumerator of the list item. In glossary lists, however, the term being defined should be given with the <ref target="#TEI.label"><gi>label</gi></ref> element, not <att>n</att>.</p>
                         </cell>
                      </row>
                      <row>
@@ -12386,7 +12408,7 @@ formatting or layout information preserved.</p>
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>Labels are commonly used for the headwords in glossary lists; note the use of the global xml:lang attribute to set the default language of the glossary list to Middle English, and identify the glosses and headings as modern English or Latin:<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>Labels are commonly used for the headwords in glossary lists; note the use of the global <att>xml:lang</att> attribute to set the default language of the glossary list to Middle English, and identify the glosses and headings as modern English or Latin:<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en">
                               <list type="gloss" xml:lang="enm">
@@ -12429,7 +12451,7 @@ formatting or layout information preserved.</p>
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>Labels may also be used to record explicitly the numbers or letters which mark list items in ordered lists, as in this extract from Gibbon's <title xmlns:teix="http://www.tei-c.org/ns/Examples">Autobiography</title>. In this usage the <ref target="#TEI.label"><gi>label</gi></ref> element is synonymous with the n attribute on the <ref target="#TEI.item"><gi>item</gi></ref> element:<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>Labels may also be used to record explicitly the numbers or letters which mark list items in ordered lists, as in this extract from Gibbon's <title xmlns:teix="http://www.tei-c.org/ns/Examples">Autobiography</title>. In this usage the <ref target="#TEI.label"><gi>label</gi></ref> element is synonymous with the <att>n</att> attribute on the <ref target="#TEI.item"><gi>item</gi></ref> element:<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en"
                                   source="#GibAut">I will add two facts, which have seldom occurred
@@ -12487,7 +12509,7 @@ entre les Romains.</label>
 <lb/> cas, la femme, qui a eſpouſé vn en-
 <lb/>fant de famille, eſt ſous la puiſſance
 [...]</p>
-                           </egXML>In this example the text of the label appears in the right hand margin of the original source, next to the paragraph it describes, but approximately in the middle of it. <!-- graphic url="Images/marginal-label.png"/-->If so desired the type attribute may be used to distinguish different categories of label.</cell>
+                           </egXML>In this example the text of the label appears in the right hand margin of the original source, next to the paragraph it describes, but approximately in the middle of it. <!-- graphic url="Images/marginal-label.png"/-->If so desired the <att>type</att> attribute may be used to distinguish different categories of label.</cell>
                      </row>
                      <row>
                         <cell>
@@ -12601,7 +12623,7 @@ entre les Romains.</label>
                         <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <table>
                               <row>
                                  <cell>ident</cell>
-                                 <cell>(identifier) Supplies a language code constructed as defined in <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://tools.ietf.org/html/bcp47">BCP 47</ref> which is used to identify the language documented by this element, and which is referenced by the global xml:lang attribute.<table>
+                                 <cell>(identifier) Supplies a language code constructed as defined in <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://tools.ietf.org/html/bcp47">BCP 47</ref> which is used to identify the language documented by this element, and which is referenced by the global <att>xml:lang</att> attribute.<table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -13075,7 +13097,7 @@ entre les Romains.</label>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">A <ref target="#TEI.licence"><gi>licence</gi></ref> element should be supplied for each licence agreement applicable to the text in question. The target attribute may be used to reference a full version of the licence. The when, notBefore, notAfter, from or to attributes may be used in combination to indicate the date or dates of applicability of the licence.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">A <ref target="#TEI.licence"><gi>licence</gi></ref> element should be supplied for each licence agreement applicable to the text in question. The <att>target</att> attribute may be used to reference a full version of the licence. The <att>when</att>, <att>notBefore</att>, <att>notAfter</att>, <att>from</att> or <att>to</att> attributes may be used in combination to indicate the date or dates of applicability of the licence.</p>
                         </cell>
                      </row>
                      <row>
@@ -13193,7 +13215,7 @@ entre les Romains.</label>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Previous versions of these Guidelines recommended the use of type on <ref target="#TEI.list"><gi>list</gi></ref> to encode the rendering or appearance of a list (whether it was bulleted, numbered, etc.). The current recommendation is to use the rend or style attributes for these aspects of a list, while using type for the more appropriate task of characterizing the nature of the content of a list.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Previous versions of these Guidelines recommended the use of <att>type</att> on <ref target="#TEI.list"><gi>list</gi></ref> to encode the rendering or appearance of a list (whether it was bulleted, numbered, etc.). The current recommendation is to use the <att>rend</att> or <att>style</att> attributes for these aspects of a list, while using <att>type</att> for the more appropriate task of characterizing the nature of the content of a list.</p>
                                           </cell>
                                        </row>
                                        <row>
@@ -15143,7 +15165,7 @@ raiders and saved the town from capture.</desc>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">For this element, the global n attribute indicates the new number or other value for the unit which changes at this milestone. The special value <q>unnumbered</q> should be used in passages which fall outside the normal numbering scheme, such as chapter or other headings, poem numbers or titles, etc.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">For this element, the global <att>n</att> attribute indicates the new number or other value for the unit which changes at this milestone. The special value <q>unnumbered</q> should be used in passages which fall outside the normal numbering scheme, such as chapter or other headings, poem numbers or titles, etc.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">The order in which <ref target="#TEI.milestone"><gi>milestone</gi></ref> elements are given at a given point is not normally significant.</p>
                         </cell>
                      </row>
@@ -15969,7 +15991,7 @@ raiders and saved the town from capture.</desc>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">In modern texts, notes are usually anchored by means of explicit footnote or endnote symbols. An explicit indication of the phrase or line annotated may however be used instead (e.g. "page 218, lines 3–4"). The anchored attribute indicates whether any explicit location is given, whether by symbol or by prose cross-reference. The value true indicates that such an explicit location is indicated in the copy text; the value false indicates that the copy text does not indicate a specific place of attachment for the note. If the specific symbols used in the copy text at the location the note is anchored are to be recorded, use the n attribute.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">In modern texts, notes are usually anchored by means of explicit footnote or endnote symbols. An explicit indication of the phrase or line annotated may however be used instead (e.g. "page 218, lines 3–4"). The <att>anchored</att> attribute indicates whether any explicit location is given, whether by symbol or by prose cross-reference. The value <val>true</val> indicates that such an explicit location is indicated in the copy text; the value <val>false</val> indicates that the copy text does not indicate a specific place of attachment for the note. If the specific symbols used in the copy text at the location the note is anchored are to be recorded, use the <att>n</att> attribute.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -16216,7 +16238,7 @@ psychological significance.
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>The global n attribute may be used to supply the symbol or number used to mark the note's point of attachment in the source text, as in the following example:<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>The global <att>n</att> attribute may be used to supply the symbol or number used to mark the note's point of attachment in the source text, as in the following example:<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en">Mevorakh b. Saadya's mother, the matriarch of the
         family during the second half of the eleventh century, <note n="126" anchored="true"> The
@@ -16255,7 +16277,7 @@ psychological significance.
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>Editorial notes should always have an resp.<code>
+                        <cell>Editorial notes should always have an <att>resp</att>.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:note[@type='editorial']"&gt;
  &lt;sch:assert test="@resp"&gt; ERROR: Editorial notes should have a @resp attribute pointing to the person who authored this note.
@@ -16828,7 +16850,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </row>
                               <row>
                                  <cell>code</cell>
-                                 <cell>identifies an occupation code defined within the classification system or taxonomy defined by the scheme attribute.<table>
+                                 <cell>identifies an occupation code defined within the classification system or taxonomy defined by the <att>scheme</att> attribute.<table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -17204,7 +17226,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as artist, employer, family group, or political party, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as <val>artist</val>, <val>employer</val>, <val>family group</val>, or <val>political party</val>, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -18145,8 +18167,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">A <ref target="#TEI.pb"><gi>pb</gi></ref> element should appear at the start of the page which it identifies. The global n attribute indicates the number or other value associated with this page. This will normally be the page number or signature printed on it, since the physical sequence number is implicit in the presence of the <ref target="#TEI.pb"><gi>pb</gi></ref> element itself.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The type attribute may be used to characterize the page break in any respect. The more specialized attributes break, ed, or edRef should be preferred when the intent is to indicate whether or not the page break is word-breaking, or to note the source from which it derives.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">A <ref target="#TEI.pb"><gi>pb</gi></ref> element should appear at the start of the page which it identifies. The global <att>n</att> attribute indicates the number or other value associated with this page. This will normally be the page number or signature printed on it, since the physical sequence number is implicit in the presence of the <ref target="#TEI.pb"><gi>pb</gi></ref> element itself.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>type</att> attribute may be used to characterize the page break in any respect. The more specialized attributes <att>break</att>, <att>ed</att>, or <att>edRef</att> should be preferred when the intent is to indicate whether or not the page break is word-breaking, or to note the source from which it derives.</p>
                         </cell>
                      </row>
                      <row>
@@ -18166,7 +18188,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>A page break may be associated with a facsimile image of the page it introduces by means of the facs attribute<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>A page break may be associated with a facsimile image of the page it introduces by means of the <att>facs</att> attribute<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en"
                                   source="#UND">
@@ -18186,7 +18208,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>All n attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
+                        <cell>All <att>n</att> attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:pb[@n]"&gt;
  &lt;sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')"&gt; ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
@@ -18679,7 +18701,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as artist, employer, author, relative, or servant, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as <val>artist</val>, <val>employer</val>, <val>author</val>, <val>relative</val>, or <val>servant</val>, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -18705,8 +18727,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, or may refer to an external standard, such as vCard's sex property <ref target="http://microformats.org/wiki/gender-formats">http://microformats.org/wiki/gender-formats</ref> (in which M indicates male, F female, O other, N none or not applicable, U unknown), or the often used ISO 5218:2004 <title>Representation of Human Sexes</title> 
-                                                <ref target="http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip">http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip</ref> (in which 0 indicates unknown; 1 male; 2 female; and 9 not applicable, although the ISO standard is widely considered inadequate); cf. CETH's <title>Recommendations for Inclusive Data Collection of Trans People</title> 
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, or may refer to an external standard, such as vCard's sex property <ref target="http://microformats.org/wiki/gender-formats">http://microformats.org/wiki/gender-formats</ref> (in which <val>M</val> indicates male, <val>F</val> female, <val>O</val> other, <val>N</val> none or not applicable, <val>U</val> unknown), or the often used ISO 5218:2004 <title>Representation of Human Sexes</title> 
+                                                <ref target="http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip">http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip</ref> (in which <val>0</val> indicates unknown; <val>1</val> male; <val>2</val> female; and <val>9</val> not applicable, although the ISO standard is widely considered inadequate); cf. CETH's <title>Recommendations for Inclusive Data Collection of Trans People</title> 
                                                 <ref target="http://transhealth.ucsf.edu/trans?page=lib-data-collection">http://transhealth.ucsf.edu/trans?page=lib-data-collection</ref>.</p>
                                           </cell>
                                        </row>
@@ -18735,7 +18757,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as infant, child, teen, adult, or senior, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as <val>infant</val>, <val>child</val>, <val>teen</val>, <val>adult</val>, or <val>senior</val>, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -19388,7 +19410,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">The abbreviated pointer may be dereferenced to produce either an absolute or a relative URI reference. In the latter case it is combined with the value of xml:base in force at the place where the pointing attribute occurs to form an absolute URI in the usual manner as prescribed by <ref target="http://www.w3.org/TR/xmlbase/">XML Base</ref>.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">The abbreviated pointer may be dereferenced to produce either an absolute or a relative URI reference. In the latter case it is combined with the value of <att>xml:base</att> in force at the place where the pointing attribute occurs to form an absolute URI in the usual manner as prescribed by <ref target="http://www.w3.org/TR/xmlbase/">XML Base</ref>.</p>
                         </cell>
                      </row>
                      <row>
@@ -20659,7 +20681,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">May be used to indicate that a passage is distinguished from the surrounding text for reasons concerning which no claim is made. When used in this manner, <ref target="#TEI.q"><gi>q</gi></ref> may be thought of as syntactic sugar for <ref target="#TEI.hi"><gi>hi</gi></ref> with a value of rend that indicates the use of such mechanisms as quotation marks.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">May be used to indicate that a passage is distinguished from the surrounding text for reasons concerning which no claim is made. When used in this manner, <ref target="#TEI.q"><gi>q</gi></ref> may be thought of as syntactic sugar for <ref target="#TEI.hi"><gi>hi</gi></ref> with a value of <att>rend</att> that indicates the use of such mechanisms as quotation marks.</p>
                         </cell>
                      </row>
                      <row>
@@ -21280,7 +21302,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The target and cRef attributes are mutually exclusive.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>target</att> and <att>cRef</att> attributes are mutually exclusive.</p>
                         </cell>
                      </row>
                      <row>
@@ -21651,7 +21673,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">If the target attribute is used to reference the related bibliographic item, the element must be empty.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">If the <att>target</att> attribute is used to reference the related bibliographic item, the element must be empty.</p>
                         </cell>
                      </row>
                      <row>
@@ -21782,7 +21804,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </row>
                               <row>
                                  <cell>selector</cell>
-                                 <cell>contains a selector or series of selectors specifying the elements to which the contained style description applies, expressed in the language specified in the scheme attribute.<table>
+                                 <cell>contains a selector or series of selectors specifying the elements to which the contained style description applies, expressed in the language specified in the <att>scheme</att> attribute.<table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -21827,7 +21849,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">Since the default value of the scheme attribute is assumed to be CSS, the default expectation for this attribute, in the absence of scheme, is that CSS selector syntax will be used.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">Since the default value of the <att>scheme</att> attribute is assumed to be CSS, the default expectation for this attribute, in the absence of <att>scheme</att>, is that CSS selector syntax will be used.</p>
                                           </cell>
                                        </row>
                                        <row>
@@ -21836,7 +21858,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">While rendition is used to point from an element in the transcribed source to a <ref target="#TEI.rendition"><gi>rendition</gi></ref> element in the header which describes how it appears, the selector attribute allows the encoder to point in the other direction: from a <ref target="#TEI.rendition"><gi>rendition</gi></ref> in the header to a collection of elements which all share the same renditional features. In both cases, the intention is to record the appearance of the source text, not to prescribe any particular output rendering.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">While <att>rendition</att> is used to point from an element in the transcribed source to a <ref target="#TEI.rendition"><gi>rendition</gi></ref> element in the header which describes how it appears, the <att>selector</att> attribute allows the encoder to point in the other direction: from a <ref target="#TEI.rendition"><gi>rendition</gi></ref> in the header to a collection of elements which all share the same renditional features. In both cases, the intention is to record the appearance of the source text, not to prescribe any particular output rendering.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -22095,7 +22117,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The attribute ref, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the kind of responsibility in a normalized form by referring directly to a standardized list of responsibility types, such as that maintained by a naming authority, for example the list maintained at <ref target="http://www.loc.gov/marc/relators/relacode.html">http://www.loc.gov/marc/relators/relacode.html</ref> for bibliographic usage.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The attribute <att>ref</att>, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the kind of responsibility in a normalized form by referring directly to a standardized list of responsibility types, such as that maintained by a naming authority, for example the list maintained at <ref target="http://www.loc.gov/marc/relators/relacode.html">http://www.loc.gov/marc/relators/relacode.html</ref> for bibliographic usage.</p>
                         </cell>
                      </row>
                      <row>
@@ -22286,7 +22308,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">If present on this element, the status attribute should indicate the current status of the document. The same attribute may appear on any <ref target="#TEI.change"><gi>change</gi></ref> to record the status at the time of that change. Conventionally <ref target="#TEI.change"><gi>change</gi></ref> elements should be given in reverse date order, with the most recent change at the start of the list.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">If present on this element, the <att>status</att> attribute should indicate the current status of the document. The same attribute may appear on any <ref target="#TEI.change"><gi>change</gi></ref> to record the status at the time of that change. Conventionally <ref target="#TEI.change"><gi>change</gi></ref> elements should be given in reverse date order, with the most recent change at the start of the list.</p>
                         </cell>
                      </row>
                      <row>
@@ -23957,7 +23979,7 @@ Sydney Smith</egXML>
                         </cell>
                         <cell><!-- -->
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">Contains an optional heading and a series of rows.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Any rendition information should be supplied using the global rend attribute, at the table, row, or cell level as appropriate.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">Any rendition information should be supplied using the global <att>rend</att> attribute, at the table, row, or cell level as appropriate.</p>
                         </cell>
                      </row>
                      <row>
@@ -24586,9 +24608,9 @@ Sydney Smith</egXML>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">When this element appears within an <gi>index</gi> element, it is understood to supply the form under which an index entry is to be made for that location. Elsewhere, it is understood simply to indicate that its content is to be regarded as a technical or specialised term. It may be associated with a <gi>gloss</gi> element by means of its ref attribute; alternatively a <gi>gloss</gi> element may point to a <ref target="#TEI.term"><gi>term</gi></ref> element by means of its target attribute.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">When this element appears within an <gi>index</gi> element, it is understood to supply the form under which an index entry is to be made for that location. Elsewhere, it is understood simply to indicate that its content is to be regarded as a technical or specialised term. It may be associated with a <gi>gloss</gi> element by means of its <att>ref</att> attribute; alternatively a <gi>gloss</gi> element may point to a <ref target="#TEI.term"><gi>term</gi></ref> element by means of its <att>target</att> attribute.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">In formal terminological work, there is frequently discussion over whether terms must be atomic or may include multi-word lexical items, symbolic designations, or phraseological units. The <ref target="#TEI.term"><gi>term</gi></ref> element may be used to mark any of these. No position is taken on the philosophical issue of what a term can be; the looser definition simply allows the <ref target="#TEI.term"><gi>term</gi></ref> element to be used by practitioners of any persuasion.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">As with other members of the <ident type="class">att.canonical</ident> class, instances of this element occuring in a text may be associated with a canonical definition, either by means of a URI (using the ref attribute), or by means of some system-specific code value (using the key attribute). Because the mutually exclusive target and cRef attributes overlap with the function of the ref attribute, they are deprecated and may be removed at a subsequent release.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">As with other members of the <ident type="class">att.canonical</ident> class, instances of this element occuring in a text may be associated with a canonical definition, either by means of a URI (using the <att>ref</att> attribute), or by means of some system-specific code value (using the <att>key</att> attribute). Because the mutually exclusive <att>target</att> and <att>cRef</att> attributes overlap with the function of the <att>ref</att> attribute, they are deprecated and may be removed at a subsequent release.</p>
                         </cell>
                      </row>
                      <row>
@@ -25030,7 +25052,7 @@ Sydney Smith</egXML>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The level of a title is sometimes implied by its context: for example, a title appearing directly within an <gi>analytic</gi> element is <foreign>ipso facto</foreign> of level "a", and one appearing within a <gi>series</gi> element of level "s". For this reason, the level attribute is not required in contexts where its value can be unambiguously inferred. Where it is supplied in such contexts, its value should not contradict the value implied by its parent element. <!--, the <att>level</att>, if given, must
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The level of a title is sometimes implied by its context: for example, a title appearing directly within an <gi>analytic</gi> element is <foreign>ipso facto</foreign> of level "a", and one appearing within a <gi>series</gi> element of level "s". For this reason, the <att>level</att> attribute is not required in contexts where its value can be unambiguously inferred. Where it is supplied in such contexts, its value should not contradict the value implied by its parent element. <!--, the <att>level</att>, if given, must
         be<q>a</q>; if it appears directly enclosed within a
         <gi>monogr</gi> element, <att>level</att> must be <q>m</q>,
         <q>j</q>, or <q>u</q>; when <gi>title</gi> is directly
@@ -25218,7 +25240,7 @@ Sydney Smith</egXML>
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The attributes key and ref, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the canonical form for the title; the former, by supplying (for example) the identifier of a record in some external library system; the latter by pointing to an XML element somewhere containing the canonical form of the title.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The attributes <att>key</att> and <att>ref</att>, inherited from the class <ident type="class">att.canonical</ident> may be used to indicate the canonical form for the title; the former, by supplying (for example) the identifier of a record in some external library system; the latter by pointing to an XML element somewhere containing the canonical form of the title.</p>
                         </cell>
                      </row>
                      <row>
@@ -26194,7 +26216,7 @@ epistemology, methodology and history of
                         <cell><!-- -->
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">The same element is used for all cases of uncertainty in the transcription of element content, whether for written or spoken material. For other aspects of certainty, uncertainty, and reliability of tagging and transcription, see chapter <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CE.html#CE">21. Certainty, Precision, and Responsibility</ref>.</p>
                            <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <gi>damage</gi>, <ref target="#TEI.gap"><gi>gap</gi></ref>, <gi>del</gi>, <ref target="#TEI.unclear"><gi>unclear</gi></ref> and <ref target="#TEI.supplied"><gi>supplied</gi></ref> elements may be closely allied in use. See section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHCOMB">11.3.3.2. Use of the gap, del, damage, unclear, and supplied Elements in Combination</ref> for discussion of which element is appropriate for which circumstance.</p>
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The hand attribute points to a definition of the hand concerned, as further discussed in section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDH">11.3.2.1. Document Hands</ref>.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>hand</att> attribute points to a definition of the hand concerned, as further discussed in section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHDH">11.3.2.1. Document Hands</ref>.</p>
                         </cell>
                      </row>
                      <row>
@@ -28853,7 +28875,7 @@ epistemology, methodology and history of
                                           <cell> 1–∞ occurrences of <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.pointer">teidata.pointer</tei:ref> separated by whitespace</cell>
                                        </row>
                                        <row>
-                                          <cell cols="2">In the following example from Hamlet, speeches (<gi>sp</gi>) in the body of the play are linked to <gi>castItem</gi> elements in the <gi>castList</gi> using the who attribute.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                          <cell cols="2">In the following example from Hamlet, speeches (<gi>sp</gi>) in the body of the play are linked to <gi>castItem</gi> elements in the <gi>castList</gi> using the <att>who</att> attribute.<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                                     xmlns:teix="http://www.tei-c.org/ns/Examples"
                                                     xml:lang="en"
                                                     valid="feasible"
@@ -28935,7 +28957,7 @@ epistemology, methodology and history of
                                           <cell> 1–∞ occurrences of <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.pointer">teidata.pointer</tei:ref> separated by whitespace</cell>
                                        </row>
                                        <row>
-                                          <cell cols="2">In the following example from Mary Pix's The False Friend, speeches (<gi>sp</gi>) in the body of the play are linked to <gi>castItem</gi> elements in the <gi>castList</gi> using the toWhom attribute, which is used to specify who the speech is directed to. Additionally, the <gi>stage</gi> includes toWhom to indicate the directionality of the action.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                          <cell cols="2">In the following example from Mary Pix's The False Friend, speeches (<gi>sp</gi>) in the body of the play are linked to <gi>castItem</gi> elements in the <gi>castList</gi> using the <att>toWhom</att> attribute, which is used to specify who the speech is directed to. Additionally, the <gi>stage</gi> includes <att>toWhom</att> to indicate the directionality of the action.<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                                     xmlns:teix="http://www.tei-c.org/ns/Examples"
                                                     xml:lang="en"
                                                     valid="feasible"
@@ -28968,7 +28990,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To indicate the recipient of written correspondence, use the elements used in section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD">2.4.6. Correspondence Description</ref>, rather than a toWhom attribute.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To indicate the recipient of written correspondence, use the elements used in section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD44CD">2.4.6. Correspondence Description</ref>, rather than a <att>toWhom</att> attribute.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -29138,7 +29160,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">The value may be a unique identifier from a database, or any other externally-defined string identifying the referent. </p>
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">No particular syntax is proposed for the values of the key attribute, since its form will depend entirely on practice within a given project. For the same reason, this attribute is not recommended in data interchange, since there is no way of ensuring that the values used by one project are distinct from those used by another. In such a situation, a preferable approach for magic tokens which follows standard practice on the Web is to use a ref attribute whose value is a tag URI as defined in <ref target="#RFC4151">RFC 4151</ref>.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">No particular syntax is proposed for the values of the <att>key</att> attribute, since its form will depend entirely on practice within a given project. For the same reason, this attribute is not recommended in data interchange, since there is no way of ensuring that the values used by one project are distinct from those used by another. In such a situation, a preferable approach for magic tokens which follows standard practice on the Web is to use a <att>ref</att> attribute whose value is a tag URI as defined in <ref target="#RFC4151">RFC 4151</ref>.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -29271,7 +29293,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">Note that the calendar attribute (unlike datingMethod defined in <ident type="class">att.datable.custom</ident>) defines the calendar system of the date in the original material defined by the parent element, <emph>not</emph> the calendar to which the date is normalized.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">Note that the <att>calendar</att> attribute (unlike <att>datingMethod</att> defined in <ident type="class">att.datable.custom</ident>) defines the calendar system of the date in the original material defined by the parent element, <emph>not</emph> the calendar to which the date is normalized.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -29361,7 +29383,7 @@ epistemology, methodology and history of
                                                 <p>Esidorus bixit in pace annos LXX plus minus sub
             <date when-custom="Ind:4-10-11">die XI mensis Octobris indictione IIII</date>
                                                 </p>
-                                             </egXML>Not all custom date formulations will have Gregorian equivalents.The when-custom attribute and other custom dating are not constrained to a datatype by the TEI, but individual projects are recommended to regularize and document their dating formats.</cell>
+                                             </egXML>Not all custom date formulations will have Gregorian equivalents.The <att>when-custom</att> attribute and other custom dating are not constrained to a datatype by the TEI, but individual projects are recommended to regularize and document their dating formats.</cell>
                                        </row>
                                     </table>
                                  </cell>
@@ -29499,7 +29521,7 @@ epistemology, methodology and history of
                                                     source="#STOW">Contayning the Originall, Antiquity, Increaſe, Moderne 
             eſtate, and deſcription of that Citie, written in the yeare 
             <date when-custom="1598" calendar="#julian" datingMethod="#julian">1598</date>. by Iohn Stow 
-            Citizen of London.</egXML>In this example, the calendar attribute points to a <gi>calendar</gi> element for the Julian calendar, specifying that the text content of the <ref target="#TEI.date"><gi>date</gi></ref> element is a Julian date, and the datingMethod attribute also points to the Julian calendar to indicate that the content of the when-custom attribute value is Julian too.</cell>
+            Citizen of London.</egXML>In this example, the <att>calendar</att> attribute points to a <gi>calendar</gi> element for the Julian calendar, specifying that the text content of the <ref target="#TEI.date"><gi>date</gi></ref> element is a Julian date, and the <att>datingMethod</att> attribute also points to the Julian calendar to indicate that the content of the <att>when-custom</att> attribute value is Julian too.</cell>
                                        </row>
                                        <row>
                                           <cell cols="2">
@@ -29511,14 +29533,14 @@ epistemology, methodology and history of
                                                       datingMethod="#creationOfWorld">
             μηνὶ Ἰουνίου εἰς <num>κ</num> ἔτους <num>ςωϞ</num>
                                                 </date>
-                                             </egXML>In this example, a date is given in a Mediaeval text measured "from the creation of the world", which is normalised (in when) to the Gregorian date, but is also normalized (in when-custom) to a machine-actionable, numeric version of the date from the Creation.</cell>
+                                             </egXML>In this example, a date is given in a Mediaeval text measured "from the creation of the world", which is normalised (in <att>when</att>) to the Gregorian date, but is also normalized (in <att>when-custom</att>) to a machine-actionable, numeric version of the date from the Creation.</cell>
                                        </row>
                                        <row>
                                           <cell>
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Note that the datingMethod attribute (unlike calendar defined in <ident type="class">att.datable</ident>) defines the calendar or dating system to which the date described by the parent element is normalized (i.e. in the when-custom or other X-custom attributes), <emph>not</emph> the calendar of the original date in the element.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Note that the <att>datingMethod</att> attribute (unlike <att>calendar</att> defined in <ident type="class">att.datable</ident>) defines the calendar or dating system to which the date described by the parent element is normalized (i.e. in the <att>when-custom</att> or other <att>X-custom</att> attributes), <emph>not</emph> the calendar of the original date in the element.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -29600,7 +29622,7 @@ epistemology, methodology and history of
                                                 <time when-iso="03:00">3 A.M.</time>
                                                 <time when-iso="14">around two</time>
                                                 <time when-iso="15,5">half past three</time>
-                                             </egXML>All of the examples of the when attribute in the <ident xmlns:teix="http://www.tei-c.org/ns/Examples" type="class">att.datable.w3c</ident> class are also valid with respect to this attribute.</cell>
+                                             </egXML>All of the examples of the <att>when</att> attribute in the <ident xmlns:teix="http://www.tei-c.org/ns/Examples" type="class">att.datable.w3c</ident> class are also valid with respect to this attribute.</cell>
                                        </row>
                                        <row>
                                           <cell cols="2">
@@ -29609,7 +29631,7 @@ epistemology, methodology and history of
                                                     xml:lang="en"
                                                     source="#UND">He likes to be punctual. I said <q>
                                                    <time when-iso="12">around noon</time>
-                                                </q>, and he showed up at <time when-iso="12:00:00">12 O'clock</time> on the dot.</egXML>The second occurence of <gi>time</gi> could have been encoded with the when attribute, as 12:00:00 is a valid time with respect to the W3C <title xmlns:teix="http://www.tei-c.org/ns/Examples" ref="#XSD2">XML Schema Part 2: Datatypes Second Edition</title> specification. The first occurence could not.</cell>
+                                                </q>, and he showed up at <time when-iso="12:00:00">12 O'clock</time> on the dot.</egXML>The second occurence of <gi>time</gi> could have been encoded with the <att>when</att> attribute, as <val>12:00:00</val> is a valid time with respect to the W3C <title xmlns:teix="http://www.tei-c.org/ns/Examples" ref="#XSD2">XML Schema Part 2: Datatypes Second Edition</title> specification. The first occurence could not.</cell>
                                        </row>
                                     </table>
                                  </cell>
@@ -29710,7 +29732,7 @@ epistemology, methodology and history of
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">If both when-iso and dur-iso are specified, the values should be interpreted as indicating a span of time by its starting time (or date) and duration. That is, <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#UND">
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">If both <att>when-iso</att> and <att>dur-iso</att> are specified, the values should be interpreted as indicating a span of time by its starting time (or date) and duration. That is, <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#UND">
                                  <date when-iso="2007-06-01" dur-iso="P8D"/>
                               </egXML> indicates the same time period as <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#UND">
                                  <date when-iso="2007-06-01/P8D"/>
@@ -29976,7 +29998,7 @@ epistemology, methodology and history of
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
                               xmlns:teix="http://www.tei-c.org/ns/Examples">The most commonly-encountered format for the date portion of a temporal attribute is <code>yyyy-mm-dd</code>, but <code>yyyy</code>, <code>--mm</code>, <code>---dd</code>, <code>yyyy-mm</code>, or <code>--mm-dd</code> may also be used. For the time part, the form <code>hh:mm:ss</code> is used.</p>
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">Note that this format does not currently permit use of the value 0000 to represent the year 1 BCE; instead the value -0001 should be used.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Note that this format does not currently permit use of the value <val>0000</val> to represent the year 1 BCE; instead the value <val>-0001</val> should be used.</p>
                         </cell>
                      </row>
                   </table>
@@ -30327,7 +30349,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The values I, M, or F should be used only where it is clear how the element may be be reconstituted.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The values <val>I</val>, <val>M</val>, or <val>F</val> should be used only where it is clear how the element may be be reconstituted.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -30522,7 +30544,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The xml:id attribute may be used to specify a canonical reference for an element; see section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS">3.10. Reference Systems</ref>.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>xml:id</att> attribute may be used to specify a canonical reference for an element; see section <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS">3.10. Reference Systems</ref>.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -30593,7 +30615,7 @@ epistemology, methodology and history of
                                           <cell><!-- -->
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">The xml:lang value will be inherited from the immediately enclosing element, or from its parent, and so on up the document hierarchy. It is generally good practice to specify xml:lang at the highest appropriate level, noticing that a different default may be needed for the teiHeader from that needed for the associated resource element or elements, and that a single TEI document may contain texts in many languages.</p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">The authoritative list of registered language subtags is maintained by IANA and is available at <ref target="http://www.iana.org/assignments/language-subtag-registry">http://www.iana.org/assignments/language-subtag-registry</ref>. For a good general overview of the construction of language tags, see <ref target="http://www.w3.org/International/articles/language-tags/">http://www.w3.org/International/articles/language-tags/</ref>, and for a practical step-by-step guide, see <ref target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php">https://www.w3.org/International/questions/qa-choosing-language-tags.en.php</ref>.</p>
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The value used must conform with BCP 47. If the value is a private use code (i.e., starts with x- or contains -x-), a <ref target="#TEI.language"><gi>language</gi></ref> element with a matching value for its ident attribute should be supplied in the TEI header to document this value. Such documentation may also optionally be supplied for non-private-use codes, though these must remain consistent with their Internet Engineering Task Force definitions.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The value used must conform with BCP 47. If the value is a private use code (i.e., starts with <val>x-</val> or contains <val>-x-</val>), a <ref target="#TEI.language"><gi>language</gi></ref> element with a matching value for its <att>ident</att> attribute should be supplied in the TEI header to document this value. Such documentation may also optionally be supplied for non-private-use codes, though these must remain consistent with their Internet Engineering Task Force definitions.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -30607,7 +30629,7 @@ epistemology, methodology and history of
                <div type="refdoc" xml:id="TEI.att.global.change">
                   <head>att.global.change</head>
                   <p>
-                     <label>att.global.change</label> supplies the change attribute, allowing its member elements to specify one or more states or revision campaigns with which they are associated.</p>
+                     <label>att.global.change</label> supplies the <att>change</att> attribute, allowing its member elements to specify one or more states or revision campaigns with which they are associated.</p>
                   <table>
                      <row>
                         <cell>
@@ -30974,7 +30996,7 @@ epistemology, methodology and history of
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>All facs attributes should start with facs<code>
+                        <cell>All <att>facs</att> attributes should start with facs<code>
 &lt;sch:rule context="tei:*[@facs]"&gt;
 &lt;sch:let name="tokens"
  value="tokenize(@facs,'\s+')"/&gt;
@@ -31186,7 +31208,7 @@ epistemology, methodology and history of
                                                       </body>
                                                    </text>
                                                 </group>
-                                             </egXML>In this example a <gi>group</gi> contains two <ref target="#TEI.text"><gi>text</gi></ref>s, each containing the same document in a different language. The correspondence is indicated using corresp. The language is indicated using xml:lang, whose value is inherited; both the tag with the corresp and the tag pointed to by the corresp inherit the value from their immediate parent.</cell>
+                                             </egXML>In this example a <gi>group</gi> contains two <ref target="#TEI.text"><gi>text</gi></ref>s, each containing the same document in a different language. The correspondence is indicated using <att>corresp</att>. The language is indicated using <att>xml:lang</att>, whose value is inherited; both the tag with the <att>corresp</att> and the tag pointed to by the <att>corresp</att> inherit the value from their immediate parent.</cell>
                                        </row>
                                        <row>
                                           <cell cols="2">
@@ -31473,9 +31495,9 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Unlike the attribute values of rend, which uses whitespace as a separator, the style attribute may contain whitespace. This attribute is intended for recording inline stylistic information concerning the source, not any particular output.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Unlike the attribute values of <att>rend</att>, which uses whitespace as a separator, the <att>style</att> attribute may contain whitespace. This attribute is intended for recording inline stylistic information concerning the source, not any particular output.</p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">The formal language in which values for this attribute are expressed may be specified using the <gi>styleDefDecl</gi> element in the TEI header.</p>
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If style and rendition are both present on an element, then style overrides or complements rendition. style should not be used in conjunction with rend, because the latter does not employ a formal style definition language.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If <att>style</att> and <att>rendition</att> are both present on an element, then <att>style</att> overrides or complements <att>rendition</att>. <att>style</att> should not be used in conjunction with <att>rend</att>, because the latter does not employ a formal style definition language.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -31517,9 +31539,9 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The rendition attribute is used in a very similar way to the class attribute defined for XHTML but with the important distinction that its function is to describe the appearance of the source text, not necessarily to determine how that text should be presented on screen or paper.</p>
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If rendition is used to refer to a style definition in a formal language like CSS, it is recommended that it not be used in conjunction with rend. Where both rendition and rend are supplied, the latter is understood to override or complement the former.</p>
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Each URI provided should indicate a <ref target="#TEI.rendition"><gi>rendition</gi></ref> element defining the intended rendition in terms of some appropriate style language, as indicated by the scheme attribute.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>rendition</att> attribute is used in a very similar way to the <att>class</att> attribute defined for XHTML but with the important distinction that its function is to describe the appearance of the source text, not necessarily to determine how that text should be presented on screen or paper.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If <att>rendition</att> is used to refer to a style definition in a formal language like CSS, it is recommended that it not be used in conjunction with <att>rend</att>. Where both <att>rendition</att> and <att>rend</att> are supplied, the latter is understood to override or complement the former.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Each URI provided should indicate a <ref target="#TEI.rendition"><gi>rendition</gi></ref> element defining the intended rendition in terms of some appropriate style language, as indicated by the <att>scheme</att> attribute.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -31772,7 +31794,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To reduce the ambiguity of a resp pointing directly to a person or organization, we recommend that resp be used to point not to an agent (<ref target="#TEI.person"><gi>person</gi></ref> or <ref target="#TEI.org"><gi>org</gi></ref>) but to a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>, <ref target="#TEI.author"><gi>author</gi></ref>, <ref target="#TEI.editor"><gi>editor</gi></ref> or similar element which clarifies the exact role played by the agent. Pointing to multiple <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>s allows the encoder to specify clearly each of the roles played in part of a TEI file (creating, transcribing, encoding, editing, proofing etc.).</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To reduce the ambiguity of a <att>resp</att> pointing directly to a person or organization, we recommend that <att>resp</att> be used to point not to an agent (<ref target="#TEI.person"><gi>person</gi></ref> or <ref target="#TEI.org"><gi>org</gi></ref>) but to a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>, <ref target="#TEI.author"><gi>author</gi></ref>, <ref target="#TEI.editor"><gi>editor</gi></ref> or similar element which clarifies the exact role played by the agent. Pointing to multiple <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>s allows the encoder to specify clearly each of the roles played in part of a TEI file (creating, transcribing, encoding, editing, proofing etc.).</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -32006,7 +32028,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The source attribute points to an external source. When used on elements describing schema components such as <gi>schemaSpec</gi> or <gi>moduleRef</gi> it identifies the source from which declarations for the components of the object being defined may be obtained.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>source</att> attribute points to an external source. When used on elements describing schema components such as <gi>schemaSpec</gi> or <gi>moduleRef</gi> it identifies the source from which declarations for the components of the object being defined may be obtained.</p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">On other elements it provides a pointer to the bibliographical source from which a quotation or citation is drawn. </p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">In either case, the location may be provided using any form of URI, for example an absolute URI, a relative URI, or private scheme URI that is expanded to an absolute URI as documented in a <ref target="#TEI.prefixDef"><gi>prefixDef</gi></ref>.</p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">If more than one location is specified, the default assumption is that the required source should be obtained by combining the resources indicated. </p>
@@ -32145,7 +32167,7 @@ epistemology, methodology and history of
                         <cell>
                            <label>Example</label>
                         </cell>
-                        <cell>In this example mimeType is used to indicate that the URL points to a TEI XML file encoded in UTF-8.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                        <cell>In this example <att>mimeType</att> is used to indicate that the URL points to a TEI XML file encoded in UTF-8.<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                   xmlns:teix="http://www.tei-c.org/ns/Examples"
                                   xml:lang="en"
                                   source="#UND">
@@ -32159,7 +32181,7 @@ epistemology, methodology and history of
                            <label>Note</label>
                         </cell>
                         <cell><!-- -->
-                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This attribute class provides an attribute for describing a computer resource, typically available over the internet, using a value taken from a standard taxonomy. At present only a single taxonomy is supported, the Multipurpose Internet Mail Extensions (MIME) Media Type system. This typology of media types is defined by the Internet Engineering Task Force in <ref target="http://www.ietf.org/rfc/rfc2046.txt">RFC 2046</ref>. The <ref target="http://www.iana.org/assignments/media-types/">list of types</ref> is maintained by the Internet Assigned Numbers Authority (IANA). The mimeType attribute must have a value taken from this list.</p>
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">This attribute class provides an attribute for describing a computer resource, typically available over the internet, using a value taken from a standard taxonomy. At present only a single taxonomy is supported, the Multipurpose Internet Mail Extensions (MIME) Media Type system. This typology of media types is defined by the Internet Engineering Task Force in <ref target="http://www.ietf.org/rfc/rfc2046.txt">RFC 2046</ref>. The <ref target="http://www.iana.org/assignments/media-types/">list of types</ref> is maintained by the Internet Assigned Numbers Authority (IANA). The <att>mimeType</att> attribute must have a value taken from this list.</p>
                         </cell>
                      </row>
                   </table>
@@ -32402,7 +32424,7 @@ epistemology, methodology and history of
                                           </cell>
                                        </row>
                                        <row>
-                                          <cell cols="2">The example below assumes that the lack of whitespace is marked redundantly, by using the appropriate values of join.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                          <cell cols="2">The example below assumes that the lack of whitespace is marked redundantly, by using the appropriate values of <att>join</att>.<egXML xmlns="http://www.tei-c.org/ns/Examples"
                                                     xmlns:teix="http://www.tei-c.org/ns/Examples"
                                                     xml:lang="en">
                                                 <s>
@@ -32630,7 +32652,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If the milestone marks the beginning of a piece of text not present in the reference edition, the special value <term>absent</term> may be used as the value of unit. The normal interpretation is that the reference edition does not contain the text which follows, until the next <ref target="#TEI.milestone"><gi>milestone</gi></ref> tag for the edition in question is encountered.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">If the milestone marks the beginning of a piece of text not present in the reference edition, the special value <term>absent</term> may be used as the value of <att>unit</att>. The normal interpretation is that the reference edition does not contain the text which follows, until the next <ref target="#TEI.milestone"><gi>milestone</gi></ref> tag for the edition in question is encountered.</p>
                                              <p xmlns:teix="http://www.tei-c.org/ns/Examples">In addition to the values suggested, other terms may be appropriate (e.g. <term>Stephanus</term> for the Stephanus numbers in Plato).</p>
                                           </cell>
                                        </row>
@@ -32802,7 +32824,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The syntax used should follow that defined by <ref target="http://www.w3.org/TR/xpath-functions/#regex-syntax">W3C XPath syntax</ref>. Note that parenthesized groups are used not only for establishing order of precedence and atoms for quantification, but also for creating subpatterns to be referenced by the replacementPattern attribute.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The syntax used should follow that defined by <ref target="http://www.w3.org/TR/xpath-functions/#regex-syntax">W3C XPath syntax</ref>. Note that parenthesized groups are used not only for establishing order of precedence and atoms for quantification, but also for creating subpatterns to be referenced by the <att>replacementPattern</att> attribute.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -32810,7 +32832,7 @@ epistemology, methodology and history of
                               </row>
                               <row>
                                  <cell>replacementPattern</cell>
-                                 <cell>specifies a <q>replacement pattern</q>, that is, the skeleton of a relative or absolute URI containing references to groups in the matchPattern which, once subpattern substitution has been performed, complete the URI.<table>
+                                 <cell>specifies a <q>replacement pattern</q>, that is, the skeleton of a relative or absolute URI containing references to groups in the <att>matchPattern</att> which, once subpattern substitution has been performed, complete the URI.<table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -32831,7 +32853,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The strings <q>$1</q>, <q>$2</q> etc. are references to the corresponding group in the regular expression specified by matchPattern (counting open parenthesis, left to right). Processors are expected to replace them with whatever matched the corresponding group in the regular expression.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The strings <q>$1</q>, <q>$2</q> etc. are references to the corresponding group in the regular expression specified by <att>matchPattern</att> (counting open parenthesis, left to right). Processors are expected to replace them with whatever matched the corresponding group in the regular expression.</p>
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
                                                 xmlns:teix="http://www.tei-c.org/ns/Examples">If a digit preceded by a dollar sign is needed in the actual replacement pattern (as opposed to being used as a back reference), the dollar sign must be written as <code>%24</code>.</p>
                                           </cell>
@@ -33162,7 +33184,7 @@ epistemology, methodology and history of
                               </row>
                               <row>
                                  <cell>schemeVersion</cell>
-                                 <cell>supplies a version number for the style language provided in scheme.<table>
+                                 <cell>supplies a version number for the style language provided in <att>scheme</att>.<table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -33195,7 +33217,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">If schemeVersion is used, then scheme should also appear, with a value other than free.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">If <att>schemeVersion</att> is used, then <att>scheme</att> should also appear, with a value other than <val>free</val>.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -33267,7 +33289,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">When this attribute is specified on a row, its value is the default for all cells in this row. When specified on a cell, its value overrides any default specified by the role attribute of the parent <ref target="#TEI.row"><gi>row</gi></ref> element.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">When this attribute is specified on a row, its value is the default for all cells in this row. When specified on a cell, its value overrides any default specified by the <att>role</att> attribute of the parent <ref target="#TEI.row"><gi>row</gi></ref> element.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -33476,7 +33498,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The type attribute is present on a number of elements, not all of which are members of <ident type="class">att.typed</ident>, usually because these elements restrict the possible values for the attribute in a specific way.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>type</att> attribute is present on a number of elements, not all of which are members of <ident type="class">att.typed</ident>, usually because these elements restrict the possible values for the attribute in a specific way.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -33505,7 +33527,7 @@ epistemology, methodology and history of
                                           </cell>
                                           <cell><!-- -->
                                              <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The subtype attribute may be used to provide any sub-classification for the element additional to that provided by its type attribute.</p>
+                                                xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>subtype</att> attribute may be used to provide any sub-classification for the element additional to that provided by its <att>type</att> attribute.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -33897,7 +33919,7 @@ epistemology, methodology and history of
                         <cell><!-- -->
                            <p xmlns:tei="http://www.tei-c.org/ns/1.0"
                               xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">Certainty may be expressed by one of the predefined symbolic values high, medium, or low. The value unknown should be used in cases where the encoder does not wish to assert an opinion about the matter.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Certainty may be expressed by one of the predefined symbolic values <val>high</val>, <val>medium</val>, or <val>low</val>. The value <val>unknown</val> should be used in cases where the encoder does not wish to assert an opinion about the matter.</p>
                         </cell>
                      </row>
   
@@ -34171,19 +34193,33 @@ epistemology, methodology and history of
                            <p xmlns:tei="http://www.tei-c.org/ns/1.0"
                               xmlns:rng="http://relaxng.org/ns/structure/1.0"
                               xmlns:teix="http://www.tei-c.org/ns/Examples">Examples include <list type="gloss">
-                                 <label>sn</label>
+                                 <label>
+                                    <val>sn</val>
+                                 </label>
                                  <item>Shona</item>
-                                 <label>zh-TW</label>
+                                 <label>
+                                    <val>zh-TW</val>
+                                 </label>
                                  <item>Taiwanese</item>
-                                 <label>zh-Hant-HK</label>
+                                 <label>
+                                    <val>zh-Hant-HK</val>
+                                 </label>
                                  <item>Chinese written in traditional script as used in Hong Kong</item>
-                                 <label>en-SL</label>
+                                 <label>
+                                    <val>en-SL</val>
+                                 </label>
                                  <item>English as spoken in Sierra Leone</item>
-                                 <label>pl</label>
+                                 <label>
+                                    <val>pl</val>
+                                 </label>
                                  <item>Polish</item>
-                                 <label>es-MX</label>
+                                 <label>
+                                    <val>es-MX</val>
+                                 </label>
                                  <item>Spanish as spoken in Mexico</item>
-                                 <label>es-419</label>
+                                 <label>
+                                    <val>es-419</val>
+                                 </label>
                                  <item>Spanish as spoken in Latin America</item>
                               </list>
                            </p>
@@ -34586,7 +34622,7 @@ epistemology, methodology and history of
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
                               xmlns:teix="http://www.tei-c.org/ns/Examples">A point is defined by two numeric values, which should be expressed as decimal numbers.</p>
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">Currently, this datatype permits either of the two numeric values to end in a decimal point. This practice is <emph style="color:red;font-style:normal;">deprecated</emph>, and as of <emph style="color:red;font-style:normal;">2019-02-25</emph> this datatype will no longer permit a <emph style="font-weight:bold;">number</emph> to <emph style="font-weight:bold;">end in a decimal</emph> point. E.g., both 0.0,84.2 and 0,84 are allowed, but 0.,84. will not be.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Currently, this datatype permits either of the two numeric values to end in a decimal point. This practice is <emph style="color:red;font-style:normal;">deprecated</emph>, and as of <emph style="color:red;font-style:normal;">2019-02-25</emph> this datatype will no longer permit a <emph style="font-weight:bold;">number</emph> to <emph style="font-weight:bold;">end in a decimal</emph> point. E.g., both <val>0.0,84.2</val> and <val>0,84</val> are allowed, but <val>0.,84.</val> will not be.</p>
                         </cell>
                      </row>
                   </table>
@@ -34895,8 +34931,8 @@ epistemology, methodology and history of
                         <cell><!-- -->
                            <p xmlns:tei="http://www.tei-c.org/ns/1.0"
                               xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">Values for attributes using this datatype may be locally defined by a project, or may refer to an external standard, such as vCard's sex property <ref target="http://microformats.org/wiki/gender-formats">http://microformats.org/wiki/gender-formats</ref> (in which M indicates male, F female, O other, N none or not applicable, U unknown), or the often used ISO 5218:2004 <title>Representation of Human Sexes</title> 
-                              <ref target="http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip">http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip</ref> (in which 0 indicates unknown; 1 male; 2 female; and 9 not applicable, although the ISO standard is widely considered inadequate); cf. CETH's <title>Recommendations for Inclusive Data Collection of Trans People</title> 
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Values for attributes using this datatype may be locally defined by a project, or may refer to an external standard, such as vCard's sex property <ref target="http://microformats.org/wiki/gender-formats">http://microformats.org/wiki/gender-formats</ref> (in which <val>M</val> indicates male, <val>F</val> female, <val>O</val> other, <val>N</val> none or not applicable, <val>U</val> unknown), or the often used ISO 5218:2004 <title>Representation of Human Sexes</title> 
+                              <ref target="http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip">http://standards.iso.org/ittf/PubliclyAvailableStandards/c036266_ISO_IEC_5218_2004(E_F).zip</ref> (in which <val>0</val> indicates unknown; <val>1</val> male; <val>2</val> female; and <val>9</val> not applicable, although the ISO standard is widely considered inadequate); cf. CETH's <title>Recommendations for Inclusive Data Collection of Trans People</title> 
                               <ref target="http://transhealth.ucsf.edu/trans?page=lib-data-collection">http://transhealth.ucsf.edu/trans?page=lib-data-collection</ref>.</p>
                         </cell>
                      </row>
@@ -35149,10 +35185,10 @@ epistemology, methodology and history of
                         <cell><!-- -->
                            <p xmlns:tei="http://www.tei-c.org/ns/1.0"
                               xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">The possible values of this datatype are 1 or true, or 0 or false.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">The possible values of this datatype are <val>1</val> or <val>true</val>, or <val>0</val> or <val>false</val>.</p>
                            <p xmlns:tei="http://www.tei-c.org/ns/1.0"
                               xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">This datatype applies only for cases where uncertainty is inappropriate; if the attribute concerned may have a value other than true or false, e.g. unknown, or inapplicable, it should have the extended version of this datatype: <ident type="datatype">data.xTruthValue</ident>.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">This datatype applies only for cases where uncertainty is inappropriate; if the attribute concerned may have a value other than true or false, e.g. <val>unknown</val>, or <val>inapplicable</val>, it should have the extended version of this datatype: <ident type="datatype">data.xTruthValue</ident>.</p>
                         </cell>
                      </row>
   
@@ -35427,7 +35463,7 @@ epistemology, methodology and history of
                      <cell>
                         <label>Schematron</label>
                      </cell>
-                     <cell>All root elements must have an xml:id that matches the document filename.<code>
+                     <cell>All root elements must have an <att>xml:id</att> that matches the document filename.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus"&gt;
  &lt;sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"&gt; ERROR: Document

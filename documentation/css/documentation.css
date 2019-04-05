@@ -175,9 +175,11 @@ pre{
 
 pre.block{
     display:block;
-    background:#efefef;
+    background:#dedfe0;
     padding:.5rem;
-    border: 1px dotted black;
+    border:1px dotted black;
+    font-size:90%;
+    margin:1rem;
 }
 .list .item{
     display:list-item;
@@ -261,22 +263,33 @@ tr, td{
 }
 
 
+.emph{
+    font-weight:700;
+}
+
 #appendix{
     display:none;
 }
-/* MUCH OF THE BELOW SHOULD MOST LIKELY GO INTO A NEW CSS FILE FOR DOCUMENTATION. */
 
-/******************************************************************** CODE */
 
-code.block{
-    display:block;
-    background:#dedfe0;
-    padding:.5rem;
-    border:1px dotted black;
-    font-size:90%;
-    margin:1rem;
+.title.m,
+.title.j{
+    font-style:italic;
 }
 
+.title.m > .title.m,
+.title.j > .title.m,
+.title.j > .title.j,
+.title.m > .title.j{
+    font-style:normal;
+}
+
+.title.a::before,
+.title.a::after,
+.q::before,
+.q::after{
+    content:'"';
+}
 /************************************************************************ POPUPS */
 
 
@@ -442,6 +455,14 @@ a[href].gi::after{
     content:">";
 }
 
+.val::before{
+    content:'"';
+}
+
+.val::after{
+    content:'"';
+}
+
 .xmlTag, .xmlAttName, .xmlAttVal{
     font-weight: 700;
 }
@@ -461,7 +482,7 @@ a[href].gi::after{
     content:"@";
 }
 
-.xmlAttVal {
+.xmlAttVal, .val {
     color: #993300;
 }
 

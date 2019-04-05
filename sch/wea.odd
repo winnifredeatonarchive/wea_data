@@ -377,9 +377,8 @@
                         <div>
                            <head>Titles</head>
                            <p>Tag all titles using the <gi>title</gi> tag with the appropriate <att>level</att> attribute:
-                              <specList>
                                  <specDesc key="title" atts="level"/>
-                              </specList>
+                              
                               
                               All monographic titles (i.e. books, etc) should use the <att>level</att> value <val>m</val>, all journals <val>j</val>, and all articles and other <q>analytic</q> items (poems, short stories, etc) using <val>a</val>.
                           </p>
@@ -406,9 +405,9 @@
                         <div>
                            <head>Volumes, Issues, and Page Ranges</head>
                            <p>Tag all volumes, issues (also called numbers), and page ranges using the <gi>biblScope</gi> element with the appropriate <att>unit</att>:
-                           <specList>
+
                                  <specDesc key="biblScope" atts="unit"/>
-                              </specList>
+                              
                             For instance:
                             
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -420,9 +419,9 @@
                         <div>
                            <head>Publication Dates</head>
                            <p>Encode the date of publication using the <gi>date</gi> element. The <gi>date</gi> element is a special case where we <emph>do not</emph> include text in the <gi>date</gi> element. Instead, use the dating attributes provided by the <gi>date</gi> element:
-                           <specList>
+                   
                                  <specDesc key="date" atts="notBefore notAfter when to from"/>
-                              </specList>
+                              
                               All of these dating attributes require a date in the format: YYYY[-MM[-DD]]. In other words, the following are <emph>acceptable</emph>:
                               <list>
                                  <item>1999</item>
@@ -625,9 +624,9 @@
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
                   <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <gi>q</gi> element:
-               <specList>
+           
                         <specDesc key="q"/>
-                     </specList>
+                     
                   </p>
                   <p>To encode quotations, first follow the quick fixes that are keyed to the body of your document. Right click the <gi>body</gi> element of your file, and you should see a red lightbulb. It should give you options to perform a set of automated fixes for your file.</p>
                

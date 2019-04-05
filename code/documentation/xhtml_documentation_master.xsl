@@ -60,8 +60,14 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="q | quote[not(ancestor::cit)] | emph | title | label | gi | att | val | ident | label | term | foreign" mode="main">
-        <span class="{local-name()}">
+    <xsl:template match="q | quote[not(ancestor::cit)] | title[not(@level)] | emph | label | gi | att | val | ident | label | term | foreign" mode="main">
+        <span class="{local-name()} ">
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="title[@level]" mode="main">
+        <span class="title {@level}">
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
@@ -77,6 +83,8 @@
             <xsl:apply-templates mode="#current"/>
         </pre>
     </xsl:template>
+    
+
     
     <xsl:template match="list[count(item) = 1 and item[list]]" mode="main">
         <xsl:apply-templates mode="#current"/>
@@ -168,6 +176,8 @@
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </tr>
     </xsl:template>
+    
+    <xsl:template match="cell/@rend | table/@rend" mode="main"/>
     
     <xsl:template match="@role" mode="main">
         <xsl:attribute name='data-role' select="."/>

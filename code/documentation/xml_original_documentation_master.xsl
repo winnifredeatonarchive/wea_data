@@ -48,8 +48,32 @@
         </att>
     </xsl:template>
     
+    <xsl:template match="hi[@rend='att']" mode="second">
+        <att>
+            <xsl:apply-templates mode="#current"/>
+        </att>
+    </xsl:template>
+    
+    <xsl:template match="hi[@rend='val']" mode="second">
+        <val>
+            <xsl:apply-templates mode="#current"/>
+        </val>
+    </xsl:template>
+    
     <xsl:template match="processing-instruction('TEIVERSION')" mode="second"/>
     
+    <xsl:template match="cell[@rend='Attribute']/att" mode="second">
+        <xsl:analyze-string select="text()" regex="'^(\w+)(\s+.+)$'">
+            <xsl:matching-substring>
+                <att><xsl:value-of select="regex-group(1)"/></att><xsl:value-of select="regex-group(2)"/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:copy>
+                    <xsl:value-of select="."/>
+                </xsl:copy>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
     
     <xsl:template match="row[cell[normalize-space(string-join(descendant::text(),''))='Example']][descendant::eg:egXML[descendant::eg:egXML]]" mode="second"/>
     
