@@ -21,7 +21,7 @@
         <div id="siteMap">
             <xsl:for-each select="$standaloneXml">
                 <div class="item">
-                    <a href="{@xml:id}.html">
+                    <a href="{//TEI/@xml:id}.html">
                         <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
                     </a>
                     <div class="item_info">
