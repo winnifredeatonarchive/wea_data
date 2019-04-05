@@ -160,6 +160,15 @@ nav{
     margin:.5rem .25rem;
 }
 
+td .list .item{
+    display:block;
+    margin-left:0;
+}
+
+td .list .item+.item{
+    padding-top:.1rem;
+}
+
 pre{
     display:inline;
 }

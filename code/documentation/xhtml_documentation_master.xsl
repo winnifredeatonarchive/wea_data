@@ -78,6 +78,14 @@
         </pre>
     </xsl:template>
     
+    <xsl:template match="list[count(item) = 1 and item[list]]" mode="main">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
+    <xsl:template match="item[list][parent::list[count(item) = 1]]" mode="main">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
     <xsl:template match="table" mode="main">
         <table>
             <xsl:apply-templates mode="#current"/>
