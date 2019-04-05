@@ -1399,9 +1399,10 @@ belongs, but this <xsl:text/>
 
 		    <!--ASSERT warning-->
       <xsl:choose>
-         <xsl:when test="tei:title[@level='j']"/>
+         <xsl:when test="descendant::tei:title[@level='j']"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="tei:title[@level='j']">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="descendant::tei:title[@level='j']">
                <xsl:attribute name="role">warning</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>

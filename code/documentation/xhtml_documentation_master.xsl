@@ -53,6 +53,9 @@
     
     <xsl:template match="p | div | ab | cit[quote] | cit/quote | list | item | list/label" mode="main">
         <div class="{local-name()}">
+            <xsl:if test="self::div and head and not(@xml:id)">
+                <xsl:attribute name="id" select="generate-id(.)"/>
+            </xsl:if>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </div>
     </xsl:template>
@@ -211,7 +214,7 @@
    
         <xsl:param name="thisDiv" tunnel="yes"/>
         <xsl:attribute name="id">
-            <xsl:value-of select="$thisDiv/@xml:id"/>
+            <xsl:value-of select="if ($thisDiv/self::front) then 'index' else $thisDiv/@xml:id"/>
         </xsl:attribute>
     </xsl:template>
     
@@ -287,7 +290,7 @@
                     <span class="selected"><xsl:value-of select="head"/></span>
                 </xsl:when>
                 <xsl:when test="not(@xml:id)">
-                    <xsl:value-of select="head"/>
+                    <a href="{ancestor::div[@xml:id][1]/@xml:id}.html#{generate-id(.)}"><xsl:value-of select="head"/></a>
                 </xsl:when>
                 <xsl:otherwise>
                     <a href="{@xml:id}.html"><xsl:value-of select="head"/></a>

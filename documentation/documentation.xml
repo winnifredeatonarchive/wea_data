@@ -165,6 +165,140 @@
          </div>
          <div xml:id="encoding">
             <head>Instructions for Encoders</head>
+            <p>The following instructions are meant to document our encoding practices and provide instruction for how to encode different types of documents. Currently, there are three types of documents: <list>
+                  <item>Databases</item>
+                  <item>Primary Sources</item>
+                  <item>Born Digital</item>
+               </list>
+            </p>
+            <div xml:id="encodingDatabases">
+               <head>Encoding Databases</head>
+               <p>The WEA project consists of three databases for linking entities across the site: <list>
+                     <item>Person database (<code>people.xml</code>)</item>
+                     <item>Organization datbases (<code>organizations.xml</code>)</item>
+                     <item>Bibliography (<code>bibliography.xml</code>)</item>
+                  </list>
+               </p>
+               <div xml:id="encodingDatabases_persons">
+                  <head>Encoding People</head>
+                  <p>All people featured on the site should be added to the person database. The people in this database include primary people (like Winnifred Eaton, Sara Bosse, and others) as well as contributors (like Mary Chapman, Jean Lee Cole, and others).</p>
+                  <div>
+                     <head>Basic Rules for Encoding People</head>
+                     <p>The basic structure of the people database is a <ref target="#TEI.listPerson"><gi>listPerson</gi></ref> element with a sequence of nested <ref target="#TEI.person"><gi>person</gi></ref> elements. Each <ref target="#TEI.person"><gi>person</gi></ref> element much have an xml:id (usually their initials followed by a number) and a <ref target="#TEI.persName"><gi>persName</gi></ref> element. Each <ref target="#TEI.persName"><gi>persName</gi></ref> elements must include one of: <list>
+                           <item>
+                              <ref target="#TEI.forename"><gi>forename</gi></ref>: the forename of the person</item>
+                           <item>
+                              <ref target="#TEI.surname"><gi>surname</gi></ref>: the surname of the person</item>
+                           <item>
+                              <ref target="#TEI.reg"><gi>reg</gi></ref>: the regularized name for that person</item>
+                        </list>
+                     </p>
+                     <p>For instance, to create a person named John Smith, you would do the following: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                        </egXML>
+                     </p>
+                  </div>
+                  <div>
+                     <head>Adding Biographical Details</head>
+                     <p>Most people should have some sort of biographical details to display both in the info popups as well as to display in each person's dedicated page. To encode biographical details, use the <ref target="#TEI.note"><gi>note</gi></ref> element as a child to the <ref target="#TEI.person"><gi>person</gi></ref> after the <ref target="#TEI.persName"><gi>persName</gi></ref>: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                           <note>
+                              <p><!--Content goes here--></p>
+                           </note>
+                        </egXML>
+                     </p>
+                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the type value of bio, with a subtype of either short or long: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                           <note type="bio" subtype="short">
+                              <p>John Smith is a professor of English at the University of British Columbia</p>
+                           </note>
+                           <note type="bio" subtype="long">
+                              <p>Receiving his doctorate from the University of Arkansas, John Smith has worked across many disciplines, including neuroscience, anthropology, and literary studies. His current work investigates<!--[...]-->.</p>
+                           </note>
+                        </egXML>
+                     </p>
+                  </div>
+               </div>
+               <div xml:id="encodingDatabases_organizations">
+                  <head>Encoding Organizations</head>
+                  <p>More content coming soon....</p>
+               </div>
+               <div xml:id="encodingDatabases_bibliography">
+                  <head>Encoding the Bibliography</head>
+                  <p>More content coming soon...</p>
+               </div>
+            </div>
+            <div xml:id="creatingNewText">
+               <head>Creating a New Text in oXygen</head>
+               <p>To create a new text file, use the built in text template</p>
+               <list>
+                  <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
+                  </item>
+                  <figure>
+                     <figDesc>Add a new file.</figDesc>
+                     <graphic url="../graphics/create_new_file_1.gif"/>
+                  </figure>
+                  <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
+                  <figure>
+                     <figDesc>Give it a name.</figDesc>
+                     <graphic url="../graphics/create_new_file_2.gif"/>
+                  </figure>
+                  <item>Input the (modernized) title of the document</item>
+                  <figure>
+                     <figDesc>Give it a title.</figDesc>
+                     <graphic url="../graphics/create_new_file_3.gif"/>
+                  </figure>
+                  <item>Select the transciber</item>
+                  <figure>
+                     <figDesc>Select the transcriber</figDesc>
+                     <graphic url="../graphics/create_new_file_4.gif"/>
+                  </figure>
+                  <item>Select the copy editor</item>
+                  <figure>
+                     <figDesc>Select the copy editor.</figDesc>
+                     <graphic url="../graphics/create_new_file_5.gif"/>
+                  </figure>
+                  <item>Select the encoder (who is usually you)</item>
+                  <figure>
+                     <figDesc>Select the encoder</figDesc>
+                     <graphic url="../graphics/create_new_file_6.gif"/>
+                  </figure>
+                  <item>Select the genre</item>
+                  <figure>
+                     <figDesc>Select the genre.</figDesc>
+                     <graphic url="../graphics/create_new_file_7.gif"/>
+                  </figure>
+                  <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
+                  <figure>
+                     <figDesc>Select the exhibit</figDesc>
+                     <graphic url="../graphics/create_new_file_8.gif"/>
+                  </figure>
+                  <item>Your new document should be created!</item>
+                  <figure>
+                     <figDesc>Hooray! New document created.</figDesc>
+                     <graphic url="../graphics/create_new_file_9.gif"/>
+                  </figure>
+                  <item>Remember to commit the changes to the repository using the above instructions.</item>
+               </list>
+            </div>
             <div xml:id="encoding_primary">
                <head>Encoding a Primary Source Document</head>
                <p>Below are abbreviated discussions on how to encode various features of a text</p>
@@ -500,90 +634,40 @@
                </div>
             </div>
          </div>
-         <div xml:id="build">
-            <head>Site build process</head>
-            <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
-            <p>To build the site, you must have ant installed. In the root directory, run: <code>ant -lib lib</code>
-            </p>
-            <p>The site build happens in a number of steps: <list>
-                  <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
-                  <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows: <list>
-                        <item>Files </item>
-                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the <q>original</q> XML</item>
-                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the <q>standoff</q> materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
-                        <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
-                     </list>
-                  </item>
-                  <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
-               </list>
-            </p>
-            <div xml:id="build_currentImplementation">
-               <head>Current Implementation</head>
-               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
-               <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+         <div xml:id="technical">
+            <head>Instructions for Developers/Programmers</head>
+            <div xml:id="build">
+               <head>Site build process</head>
+               <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
+               <p>To build the site, you must have ant installed. In the root directory, run: <code>ant -lib lib</code>
+               </p>
+               <p>The site build happens in a number of steps: <list>
+                     <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
+                     <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows: <list>
+                           <item>Files </item>
+                           <item>All of the source XML is flattened into a single directory and massaged slightly to create the <q>original</q> XML</item>
+                           <item>The standalone XML is created from the original XML; the standalone XML includes all of the <q>standoff</q> materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
+                           <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
+                        </list>
+                     </item>
+                     <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
+                  </list>
+               </p>
+               <div xml:id="build_currentImplementation">
+                  <head>Current Implementation</head>
+                  <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
+                  <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+               </div>
             </div>
-         </div>
-         <div xml:id="creatingNewText">
-            <head>Creating a New Text in oXygen</head>
-            <p>To create a new text file, use the built in text template</p>
-            <list>
-               <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
-               </item>
-               <figure>
-                  <figDesc>Add a new file.</figDesc>
-                  <graphic url="../graphics/create_new_file_1.gif"/>
-               </figure>
-               <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
-               <figure>
-                  <figDesc>Give it a name.</figDesc>
-                  <graphic url="../graphics/create_new_file_2.gif"/>
-               </figure>
-               <item>Input the (modernized) title of the document</item>
-               <figure>
-                  <figDesc>Give it a title.</figDesc>
-                  <graphic url="../graphics/create_new_file_3.gif"/>
-               </figure>
-               <item>Select the transciber</item>
-               <figure>
-                  <figDesc>Select the transcriber</figDesc>
-                  <graphic url="../graphics/create_new_file_4.gif"/>
-               </figure>
-               <item>Select the copy editor</item>
-               <figure>
-                  <figDesc>Select the copy editor.</figDesc>
-                  <graphic url="../graphics/create_new_file_5.gif"/>
-               </figure>
-               <item>Select the encoder (who is usually you)</item>
-               <figure>
-                  <figDesc>Select the encoder</figDesc>
-                  <graphic url="../graphics/create_new_file_6.gif"/>
-               </figure>
-               <item>Select the genre</item>
-               <figure>
-                  <figDesc>Select the genre.</figDesc>
-                  <graphic url="../graphics/create_new_file_7.gif"/>
-               </figure>
-               <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
-               <figure>
-                  <figDesc>Select the exhibit</figDesc>
-                  <graphic url="../graphics/create_new_file_8.gif"/>
-               </figure>
-               <item>Your new document should be created!</item>
-               <figure>
-                  <figDesc>Hooray! New document created.</figDesc>
-                  <graphic url="../graphics/create_new_file_9.gif"/>
-               </figure>
-               <item>Remember to commit the changes to the repository using the above instructions.</item>
-            </list>
-         </div>
-         <div xml:id="buildingSchema">
-            <head>Building the Schema</head>
-            <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
-            <p>To regenerate the schema and the documentation follow these directions</p>
-            <p>
-               <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
-            <p>
-               <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code>ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
+            <div xml:id="buildingSchema">
+               <head>Building the Schema</head>
+               <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+               <p>To regenerate the schema and the documentation follow these directions</p>
+               <p>
+                  <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
+               <p>
+                  <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code>ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
+            </div>
          </div>
       </body>
       <back xml:id="appendix">
@@ -838,6 +922,7 @@
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.listRelation">listRelation</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -1184,6 +1269,7 @@
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -1472,7 +1558,35 @@
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <table>
+                              <row>
+                                 <cell>type</cell>
+                                 <cell>
+                                    <table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>illustrator</label>
+                                                <item>(The illustrator of this document) illustrator</item>
+                                                <label>photographer</label>
+                                                <item>(The photographer within this document) photographer</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -2164,6 +2278,7 @@
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -2330,7 +2445,7 @@
                         <cell>All n attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]"&gt;
- &lt;sch:assert test="tei:title[@level='j']"
+ &lt;sch:assert test="descendant::tei:title[@level='j']"
   role="warning"&gt; WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
@@ -2436,6 +2551,7 @@
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -6276,6 +6392,7 @@ supplied to printer.</change>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.body">body</ref> 
@@ -8430,6 +8547,7 @@ formatting or layout information preserved.</p>
                                  <list>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.listEvent">listEvent</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -9488,6 +9606,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.persName">persName</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -10553,6 +10672,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.listPerson">listPerson</ref> 
                                        <ref target="#TEI.listPlace">listPlace</ref> 
                                        <ref target="#TEI.listRelation">listRelation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.back">back</ref> 
@@ -11373,6 +11493,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref> 
@@ -12038,6 +12159,7 @@ formatting or layout information preserved.</p>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.body">body</ref> 
@@ -13330,6 +13452,7 @@ entre les Romains.</label>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -13638,6 +13761,7 @@ probably at a later stage</change>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -13764,7 +13888,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.listLike">model.listLike</ref>
+                              <ref target="#TEI.model.listLike">model.listLike</ref> 
+                              <ref target="#TEI.model.orgPart">model.orgPart</ref>
                            </ab>
                         </cell>
                      </row>
@@ -13806,7 +13931,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.seg">seg</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.listOrg">listOrg</ref> 
-                                       <ref target="#TEI.occupation">occupation</ref>
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.back">back</ref> 
                                        <ref target="#TEI.body">body</ref> 
@@ -13833,7 +13959,8 @@ raiders and saved the town from capture.</desc>
                               <item>core: <ref target="#TEI.head">head</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listOrg">listOrg</ref> 
-                                 <ref target="#TEI.listRelation">listRelation</ref>
+                                 <ref target="#TEI.listRelation">listRelation</ref> 
+                                 <ref target="#TEI.org">org</ref>
                               </item>
                            </list>
                         </cell>
@@ -13933,7 +14060,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.listLike">model.listLike</ref>
+                              <ref target="#TEI.model.listLike">model.listLike</ref> 
+                              <ref target="#TEI.model.orgPart">model.orgPart</ref>
                            </ab>
                         </cell>
                      </row>
@@ -13976,7 +14104,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.seg">seg</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.listPerson">listPerson</ref> 
-                                       <ref target="#TEI.occupation">occupation</ref>
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.back">back</ref> 
                                        <ref target="#TEI.body">body</ref> 
@@ -14004,6 +14133,7 @@ raiders and saved the town from capture.</desc>
                               </item>
                               <item>namesdates: <ref target="#TEI.listPerson">listPerson</ref> 
                                  <ref target="#TEI.listRelation">listRelation</ref> 
+                                 <ref target="#TEI.org">org</ref> 
                                  <ref target="#TEI.person">person</ref>
                               </item>
                            </list>
@@ -14090,6 +14220,7 @@ raiders and saved the town from capture.</desc>
                         <cell>
                            <ab>
                               <ref target="#TEI.model.listLike">model.listLike</ref> 
+                              <ref target="#TEI.model.orgPart">model.orgPart</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -14132,6 +14263,7 @@ raiders and saved the town from capture.</desc>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.listPlace">listPlace</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
                                     <item>textstructure: <ref target="#TEI.back">back</ref> 
@@ -14608,6 +14740,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.place">place</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -14821,6 +14954,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -15156,6 +15290,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -15797,6 +15932,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref> 
@@ -16886,6 +17022,181 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                      </row>
                   </table>
                </div>
+               <div type="refdoc" xml:id="TEI.org">
+                  <head>&lt;org&gt;</head>
+                  <p>
+                     <label>&lt;org&gt; </label>(organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [<ref xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDORG">13.2.2. Organizational Names</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>namesdates — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (<att>type</att>, <att>subtype</att>) <table>
+                              <row>
+                                 <cell>role</cell>
+                                 <cell>specifies a primary role or classification for the organization.<table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Datatype</label> 
+                                          </cell>
+                                          <cell> 1–∞ occurrences of <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.word">teidata.word</tei:ref> separated by whitespace</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Note</label>
+                                          </cell>
+                                          <cell><!-- -->
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">Values for this attribute may be locally defined by a project, using arbitrary keywords such as artist, employer, family group, or political party, each of which should be associated with a definition. Such local definitions will typically be provided by a <gi>valList</gi> element in the project schema specification.</p>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.personLike">model.personLike</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>namesdates: <ref target="#TEI.listOrg">listOrg</ref> 
+                                       <ref target="#TEI.listPerson">listPerson</ref> 
+                                       <ref target="#TEI.org">org</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>core: <ref target="#TEI.bibl">bibl</ref> 
+                                 <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref> 
+                                 <ref target="#TEI.label">label</ref> 
+                                 <ref target="#TEI.listBibl">listBibl</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.p">p</ref> 
+                                 <ref target="#TEI.pb">pb</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
+                                 <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                 <ref target="#TEI.anchor">anchor</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.event">event</ref> 
+                                 <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.listEvent">listEvent</ref> 
+                                 <ref target="#TEI.listOrg">listOrg</ref> 
+                                 <ref target="#TEI.listPerson">listPerson</ref> 
+                                 <ref target="#TEI.listPlace">listPlace</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.org">org</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.person">person</ref> 
+                                 <ref target="#TEI.place">place</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <org xml:id="JAMs">
+                                 <orgName>Justified Ancients of Mummu</orgName>
+                                 <desc>An underground anarchist collective spearheaded by <persName>Hagbard
+                    Celine</persName>, who fight the Illuminati from a golden submarine, the
+                        <name>Leif Ericson</name>
+                                 </desc>
+                                 <bibl>
+                                    <author>Robert Shea</author>
+                                    <author>Robert Anton Wilson</author>
+                                    <title>The Illuminatus! Trilogy</title>
+                                 </bibl>
+                              </org>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;sequence&gt;
+  &lt;classRef key="model.headLike"
+   minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;alternate&gt;
+   &lt;classRef key="model.pLike"
+    minOccurs="0" maxOccurs="unbounded"/&gt;
+   &lt;alternate minOccurs="0"
+    maxOccurs="unbounded"&gt;
+    &lt;classRef key="model.labelLike"/&gt;
+    &lt;classRef key="model.nameLike"/&gt;
+    &lt;classRef key="model.placeLike"/&gt;
+    &lt;classRef key="model.orgPart"/&gt;
+    &lt;classRef key="model.milestoneLike"/&gt;
+   &lt;/alternate&gt;
+  &lt;/alternate&gt;
+  &lt;alternate minOccurs="0"
+   maxOccurs="unbounded"&gt;
+   &lt;classRef key="model.noteLike"/&gt;
+   &lt;classRef key="model.biblLike"/&gt;
+   &lt;elementRef key="linkGrp"/&gt;
+   &lt;elementRef key="link"/&gt;
+  &lt;/alternate&gt;
+  &lt;classRef key="model.personLike"
+   minOccurs="0" maxOccurs="unbounded"/&gt;
+ &lt;/sequence&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
                <div type="refdoc" xml:id="TEI.orgName">
                   <head>&lt;orgName&gt;</head>
                   <p>
@@ -16975,6 +17286,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
                                        <ref target="#TEI.surname">surname</ref>
@@ -17377,6 +17689,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.listRelation">listRelation</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
@@ -17643,6 +17956,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -18107,6 +18421,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.person">person</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -18302,7 +18617,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>namesdates: <ref target="#TEI.listPerson">listPerson</ref>
+                                    <item>namesdates: <ref target="#TEI.listPerson">listPerson</ref> 
+                                       <ref target="#TEI.org">org</ref>
                                     </item>
                                  </list>
                               </item>
@@ -18508,6 +18824,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>
                                  <list>
                                     <item>namesdates: <ref target="#TEI.listPlace">listPlace</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.place">place</ref>
                                     </item>
                                  </list>
@@ -18697,6 +19014,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.place">place</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -19455,7 +19773,199 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.canonical">att.canonical</ref> (<att>key</att>, <att>ref</att>) </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.canonical">att.canonical</ref> (ref, @key) <table>
+                              <row>
+                                 <cell>ref</cell>
+                                 <cell>
+                                    <table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>org:Ainslee</label>
+                                                <item>Ainslee’s</item>
+                                                <label>org:Albertan</label>
+                                                <item>Albertan</item>
+                                                <label>org:AmericanHome</label>
+                                                <item>American Home Journal</item>
+                                                <label>org:AmericanYouth</label>
+                                                <item>American Youth</item>
+                                                <label>org:Anderson</label>
+                                                <item>Anderson [sc] Intelligencer</item>
+                                                <label>org:Blue</label>
+                                                <item>Blue Book</item>
+                                                <label>org:Book</label>
+                                                <item>Book News</item>
+                                                <label>org:Bookman</label>
+                                                <item>Bookman</item>
+                                                <label>org:Boston</label>
+                                                <item>Boston Journal</item>
+                                                <label>org:Calgary</label>
+                                                <item>Calgary Daily Herald</item>
+                                                <label>org:CartersMonthly</label>
+                                                <item>Carter’s Monthly</item>
+                                                <label>org:Chicago</label>
+                                                <item>Chicago Magazine</item>
+                                                <label>org:ChristianScience</label>
+                                                <item>Christian-Science Monitor</item>
+                                                <label>org:Cincinnati</label>
+                                                <item>Cincinnati Commercial Tribune</item>
+                                                <label>org:Columbian</label>
+                                                <item>Columbian Magazine</item>
+                                                <label>org:Conkey</label>
+                                                <item>Conkey’s Home Journal</item>
+                                                <label>org:Critic</label>
+                                                <item>Critic</item>
+                                                <label>org:Current</label>
+                                                <item>Current Literature</item>
+                                                <label>org:Day</label>
+                                                <item>Day Book</item>
+                                                <label>org:Eclectic</label>
+                                                <item>Eclectic Magazine</item>
+                                                <label>org:Farm</label>
+                                                <item>Farm and Ranch Review</item>
+                                                <label>org:Frank</label>
+                                                <item>Frank Leslie’s Popular Monthly</item>
+                                                <label>org:Galls</label>
+                                                <item>Gall’s Daily News Letter</item>
+                                                <label>org:Good</label>
+                                                <item>Good Housekeeping</item>
+                                                <label>org:Greenfield</label>
+                                                <item>Greenfield Gazette and Courier</item>
+                                                <label>org:HarpersMonthly</label>
+                                                <item>Harper’s Monthly</item>
+                                                <label>org:HarpersWeekly</label>
+                                                <item>Harper’s Weekly</item>
+                                                <label>org:Hearsts</label>
+                                                <item>Hearst’s</item>
+                                                <label>org:Home</label>
+                                                <item>Home and Flowers</item>
+                                                <label>org:Hutchinson</label>
+                                                <item>Hutchinson’s</item>
+                                                <label>org:I</label>
+                                                <item>I Confess</item>
+                                                <label>org:Idler</label>
+                                                <item>Idler</item>
+                                                <label>org:Iroquois</label>
+                                                <item>Iroquois</item>
+                                                <label>org:LadiesHomeCompanion</label>
+                                                <item>Ladies’ Home Companion</item>
+                                                <label>org:LadiesHomeJournal</label>
+                                                <item>Ladies’ Home Journal</item>
+                                                <label>org:LadysMagazine</label>
+                                                <item>Lady’s Magazine</item>
+                                                <label>org:Lippincott</label>
+                                                <item>Lippincott’s</item>
+                                                <label>org:Lyttleton</label>
+                                                <item>Lyttleton [NZ] Times</item>
+                                                <label>org:Macleans</label>
+                                                <item>Maclean’s</item>
+                                                <label>org:MetropolitanNY</label>
+                                                <item>Metropolitan (New York)</item>
+                                                <label>org:MetropolitanMag</label>
+                                                <item>Metropolitan Magazine (Montreal)</item>
+                                                <label>org:Montreal</label>
+                                                <item>Montreal Daily Star</item>
+                                                <label>org:MotionPictureClassic</label>
+                                                <item>Motion Picture Classic Magazine</item>
+                                                <label>org:MotionPictureMag</label>
+                                                <item>Motion Picture Magazine</item>
+                                                <label>org:Munsey</label>
+                                                <item>Munsey’s</item>
+                                                <label>org:NewMetro</label>
+                                                <item>New Metropolitan Magazine</item>
+                                                <label>org:Puritan</label>
+                                                <item>Puritan</item>
+                                                <label>org:Red</label>
+                                                <item>Red Book</item>
+                                                <label>org:SFCall</label>
+                                                <item>San Francisco Call</item>
+                                                <label>org:Saturday</label>
+                                                <item>Saturday Evening Post</item>
+                                                <label>org:Screen</label>
+                                                <item>Screen Secrets</item>
+                                                <label>org:Smart</label>
+                                                <item>Smart Set</item>
+                                                <label>org:Smith</label>
+                                                <item>Smith’s Magazine</item>
+                                                <label>org:Sovereign</label>
+                                                <item>Sovereign Magazine</item>
+                                                <label>org:Spanish</label>
+                                                <item>Spanish Fork Press</item>
+                                                <label>org:Spokane</label>
+                                                <item>Spokane Press</item>
+                                                <label>org:Canterbury</label>
+                                                <item>The [Canterbury, NZ] Press</item>
+                                                <label>org:Quill</label>
+                                                <item>The Quill</item>
+                                                <label>org:TrueStory</label>
+                                                <item>True Story Magazine</item>
+                                                <label>org:Washington</label>
+                                                <item>Washington Times</item>
+                                                <label>org:WomansHomeCompanion</label>
+                                                <item>Woman’s Home Companion</item>
+                                                <label>org:WomansHomeJournal</label>
+                                                <item>Woman’s Home Journal</item>
+                                                <label>org:WomansWorld</label>
+                                                <item>Woman’s World</item>
+                                                <label>org:Blakely</label>
+                                                <item>Blakely Press</item>
+                                                <label>org:Century</label>
+                                                <item>Century</item>
+                                                <label>org:CenturyPress</label>
+                                                <item>Century Press</item>
+                                                <label>org:Dodd</label>
+                                                <item>Dodd, Mead</item>
+                                                <label>org:Harper</label>
+                                                <item>Harper and Brothers</item>
+                                                <label>org:McClelland</label>
+                                                <item>McClelland and Stewart</item>
+                                                <label>org:Macmillan</label>
+                                                <item>Macmillan</item>
+                                                <label>org:Rand</label>
+                                                <item>Rand, McNally</item>
+                                                <label>org:Watt</label>
+                                                <item>W. J. Watt</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                              <row>
+                                 <cell>type</cell>
+                                 <cell>
+                                    <table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>source</label>
+                                                <item>(source) The source database or holding repository for this item.</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -23012,6 +23522,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
                                        <ref target="#TEI.persName">persName</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
@@ -24277,173 +24788,7 @@ Sydney Smith</egXML>
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.datable">att.datable</ref> (<att>calendar</att>)  (<ref target="#TEI.att.datable.w3c">att.datable.w3c</ref> (<att>when</att>, <att>notBefore</att>, <att>notAfter</att>, <att>from</att>, <att>to</att>))  (<ref target="#TEI.att.datable.iso">att.datable.iso</ref> (<att>when-iso</att>, <att>notBefore-iso</att>, <att>notAfter-iso</att>, <att>from-iso</att>, <att>to-iso</att>))  (<ref target="#TEI.att.datable.custom">att.datable.custom</ref> (<att>when-custom</att>, <att>notBefore-custom</att>, <att>notAfter-custom</att>, <att>from-custom</att>, <att>to-custom</att>, <att>datingPoint</att>, <att>datingMethod</att>)) <ref target="#TEI.att.canonical">att.canonical</ref> (ref, @key) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
-                              <row>
-                                 <cell>ref</cell>
-                                 <cell>
-                                    <table>
-                                       <row>
-                                          <cell>
-                                             <label>Status</label> 
-                                          </cell>
-                                          <cell>Optional</cell>
-                                       </row>
-                                       <row>
-                                          <cell>
-                                             <label>Legal values are:</label>
-                                          </cell>
-                                          <cell>
-                                             <list>
-                                                <label>bibl:Ainslee</label>
-                                                <item>Ainslee’s</item>
-                                                <label>bibl:Albertan</label>
-                                                <item>Albertan</item>
-                                                <label>bibl:AmericanHome</label>
-                                                <item>American Home Journal</item>
-                                                <label>bibl:AmericanYouth</label>
-                                                <item>American Youth</item>
-                                                <label>bibl:Anderson</label>
-                                                <item>Anderson [sc] Intelligencer</item>
-                                                <label>bibl:Blue</label>
-                                                <item>Blue Book</item>
-                                                <label>bibl:Book</label>
-                                                <item>Book News</item>
-                                                <label>bibl:Bookman</label>
-                                                <item>Bookman</item>
-                                                <label>bibl:Boston</label>
-                                                <item>Boston Journal</item>
-                                                <label>bibl:Calgary</label>
-                                                <item>Calgary Daily Herald</item>
-                                                <label>bibl:CartersMonthly</label>
-                                                <item>Carter’s Monthly</item>
-                                                <label>bibl:Chicago</label>
-                                                <item>Chicago Magazine</item>
-                                                <label>bibl:ChristianScience</label>
-                                                <item>Christian-Science Monitor</item>
-                                                <label>bibl:Cincinnati</label>
-                                                <item>Cincinnati Commercial Tribune</item>
-                                                <label>bibl:Columbian</label>
-                                                <item>Columbian Magazine</item>
-                                                <label>bibl:Conkey</label>
-                                                <item>Conkey’s Home Journal</item>
-                                                <label>bibl:Critic</label>
-                                                <item>Critic</item>
-                                                <label>bibl:Current</label>
-                                                <item>Current Literature</item>
-                                                <label>bibl:Day</label>
-                                                <item>Day Book</item>
-                                                <label>bibl:Eclectic</label>
-                                                <item>Eclectic Magazine</item>
-                                                <label>bibl:Farm</label>
-                                                <item>Farm and Ranch Review</item>
-                                                <label>bibl:Frank</label>
-                                                <item>Frank Leslie’s Popular Monthly</item>
-                                                <label>bibl:Galls</label>
-                                                <item>Gall’s Daily News Letter</item>
-                                                <label>bibl:Good</label>
-                                                <item>Good Housekeeping</item>
-                                                <label>bibl:Greenfield</label>
-                                                <item>Greenfield Gazette and Courier</item>
-                                                <label>bibl:HarpersMonthly</label>
-                                                <item>Harper’s Monthly</item>
-                                                <label>bibl:HarpersWeekly</label>
-                                                <item>Harper’s Weekly</item>
-                                                <label>bibl:Hearsts</label>
-                                                <item>Hearst’s</item>
-                                                <label>bibl:Home</label>
-                                                <item>Home and Flowers</item>
-                                                <label>bibl:Hutchinson</label>
-                                                <item>Hutchinson’s</item>
-                                                <label>bibl:I</label>
-                                                <item>I Confess</item>
-                                                <label>bibl:Idler</label>
-                                                <item>Idler</item>
-                                                <label>bibl:Iroquois</label>
-                                                <item>Iroquois</item>
-                                                <label>bibl:LadiesHomeCompanion</label>
-                                                <item>Ladies’ Home Companion</item>
-                                                <label>bibl:LadiesHomeJournal</label>
-                                                <item>Ladies’ Home Journal</item>
-                                                <label>bibl:LadysMagazine</label>
-                                                <item>Lady’s Magazine</item>
-                                                <label>bibl:Lippincott</label>
-                                                <item>Lippincott’s</item>
-                                                <label>bibl:Lyttleton</label>
-                                                <item>Lyttleton [NZ] Times</item>
-                                                <label>bibl:Macleans</label>
-                                                <item>Maclean’s</item>
-                                                <label>bibl:MetropolitanNY</label>
-                                                <item>Metropolitan (New York)</item>
-                                                <label>bibl:MetropolitanMag</label>
-                                                <item>Metropolitan Magazine (Montreal)</item>
-                                                <label>bibl:Montreal</label>
-                                                <item>Montreal Daily Star</item>
-                                                <label>bibl:MotionPictureClassic</label>
-                                                <item>Motion Picture Classic Magazine</item>
-                                                <label>bibl:MotionPictureMag</label>
-                                                <item>Motion Picture Magazine</item>
-                                                <label>bibl:Munsey</label>
-                                                <item>Munsey’s</item>
-                                                <label>bibl:NewMetro</label>
-                                                <item>New Metropolitan Magazine</item>
-                                                <label>bibl:Puritan</label>
-                                                <item>Puritan</item>
-                                                <label>bibl:Red</label>
-                                                <item>Red Book</item>
-                                                <label>bibl:SFCall</label>
-                                                <item>San Francisco Call</item>
-                                                <label>bibl:Saturday</label>
-                                                <item>Saturday Evening Post</item>
-                                                <label>bibl:Screen</label>
-                                                <item>Screen Secrets</item>
-                                                <label>bibl:Smart</label>
-                                                <item>Smart Set</item>
-                                                <label>bibl:Smith</label>
-                                                <item>Smith’s Magazine</item>
-                                                <label>bibl:Sovereign</label>
-                                                <item>Sovereign Magazine</item>
-                                                <label>bibl:Spanish</label>
-                                                <item>Spanish Fork Press</item>
-                                                <label>bibl:Spokane</label>
-                                                <item>Spokane Press</item>
-                                                <label>bibl:Canterbury</label>
-                                                <item>The [Canterbury, NZ] Press</item>
-                                                <label>bibl:Quill</label>
-                                                <item>The Quill</item>
-                                                <label>bibl:TrueStory</label>
-                                                <item>True Story Magazine</item>
-                                                <label>bibl:Washington</label>
-                                                <item>Washington Times</item>
-                                                <label>bibl:WomansHomeCompanion</label>
-                                                <item>Woman’s Home Companion</item>
-                                                <label>bibl:WomansHomeJournal</label>
-                                                <item>Woman’s Home Journal</item>
-                                                <label>bibl:WomansWorld</label>
-                                                <item>Woman’s World</item>
-                                                <label>bibl:Blakely</label>
-                                                <item>Blakely Press</item>
-                                                <label>bibl:Century</label>
-                                                <item>Century</item>
-                                                <label>bibl:CenturyPress</label>
-                                                <item>Century Press</item>
-                                                <label>bibl:Dodd</label>
-                                                <item>Dodd, Mead</item>
-                                                <label>bibl:Harper</label>
-                                                <item>Harper and Brothers</item>
-                                                <label>bibl:McClelland</label>
-                                                <item>McClelland and Stewart</item>
-                                                <label>bibl:Macmillan</label>
-                                                <item>Macmillan</item>
-                                                <label>bibl:Rand</label>
-                                                <item>Rand, McNally</item>
-                                                <label>bibl:Watt</label>
-                                                <item>W. J. Watt</item>
-                                             </list>
-                                          </cell>
-                                       </row>
-                                    </table>
-                                 </cell>
-                              </row>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.canonical">att.canonical</ref> (<att>key</att>, <att>ref</att>) <ref target="#TEI.att.datable">att.datable</ref> (<att>calendar</att>)  (<ref target="#TEI.att.datable.w3c">att.datable.w3c</ref> (<att>when</att>, <att>notBefore</att>, <att>notAfter</att>, <att>from</att>, <att>to</att>))  (<ref target="#TEI.att.datable.iso">att.datable.iso</ref> (<att>when-iso</att>, <att>notBefore-iso</att>, <att>notAfter-iso</att>, <att>from-iso</att>, <att>to-iso</att>))  (<ref target="#TEI.att.datable.custom">att.datable.custom</ref> (<att>when-custom</att>, <att>notBefore-custom</att>, <att>notAfter-custom</att>, <att>from-custom</att>, <att>to-custom</att>, <att>datingPoint</att>, <att>datingMethod</att>)) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
                               <row>
                                  <cell>type</cell>
                                  <cell>classifies the title according to some convenient typology.<table>
@@ -25934,6 +26279,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.location">location</ref> 
                               <ref target="#TEI.model.inter">model.inter</ref> 
                               <ref target="#TEI.model.personPart">model.personPart</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.place">place</ref> 
                               <ref target="#TEI.relatedItem">relatedItem</ref> 
                               <ref target="#TEI.taxonomy">taxonomy</ref>
@@ -26615,6 +26961,7 @@ epistemology, methodology and history of
                         <cell>
                            <ab>
                               <ref target="#TEI.listEvent">listEvent</ref> 
+                              <ref target="#TEI.model.orgPart">model.orgPart</ref> 
                               <ref target="#TEI.model.personPart">model.personPart</ref> 
                               <ref target="#TEI.place">place</ref>
                            </ab>
@@ -26820,6 +27167,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.listPlace">listPlace</ref> 
                               <ref target="#TEI.listRelation">listRelation</ref> 
                               <ref target="#TEI.model.divTopPart">model.divTopPart</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.place">place</ref> 
                               <ref target="#TEI.table">table</ref>
                            </ab>
@@ -27048,6 +27396,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.lg">lg</ref> 
                               <ref target="#TEI.location">location</ref> 
                               <ref target="#TEI.model.inter">model.inter</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.place">place</ref>
                            </ab>
                         </cell>
@@ -27203,7 +27552,8 @@ epistemology, methodology and history of
                         <cell>
                            <ab>
                               <ref target="#TEI.listBibl">listBibl</ref> 
-                              <ref target="#TEI.model.global">model.global</ref>
+                              <ref target="#TEI.model.global">model.global</ref> 
+                              <ref target="#TEI.org">org</ref>
                            </ab>
                         </cell>
                      </row>
@@ -27237,7 +27587,8 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.pPart.data">model.pPart.data</ref>
+                              <ref target="#TEI.model.pPart.data">model.pPart.data</ref> 
+                              <ref target="#TEI.org">org</ref>
                            </ab>
                         </cell>
                      </row>
@@ -27327,6 +27678,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.location">location</ref> 
                               <ref target="#TEI.model.global">model.global</ref> 
                               <ref target="#TEI.notesStmt">notesStmt</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.place">place</ref>
                            </ab>
                         </cell>
@@ -27337,6 +27689,41 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ref target="#TEI.note">note</ref>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.model.orgPart">
+                  <head>model.orgPart</head>
+                  <p>
+                     <label>model.orgPart</label> groups elements which form part of the description of an organization.</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>tei — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Used by</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.org">org</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Members</label>
+                        </cell>
+                        <cell>
+                           <ref target="#TEI.model.eventLike">model.eventLike</ref> [<ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.listEvent">listEvent</ref>]  <ref target="#TEI.listOrg">listOrg</ref> 
+                           <ref target="#TEI.listPerson">listPerson</ref> 
+                           <ref target="#TEI.listPlace">listPlace</ref>
                         </cell>
                      </row>
                   </table>
@@ -27373,6 +27760,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.listRelation">listRelation</ref> 
                               <ref target="#TEI.model.divPart">model.divPart</ref> 
                               <ref target="#TEI.normalization">normalization</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.person">person</ref> 
                               <ref target="#TEI.place">place</ref> 
                               <ref target="#TEI.prefixDef">prefixDef</ref> 
@@ -27672,7 +28060,8 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.listPerson">listPerson</ref>
+                              <ref target="#TEI.listPerson">listPerson</ref> 
+                              <ref target="#TEI.org">org</ref>
                            </ab>
                         </cell>
                      </row>
@@ -27681,6 +28070,7 @@ epistemology, methodology and history of
                            <label>Members</label>
                         </cell>
                         <cell>
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.person">person</ref>
                         </cell>
                      </row>
@@ -27850,6 +28240,7 @@ epistemology, methodology and history of
                         <cell>
                            <ab>
                               <ref target="#TEI.listPlace">listPlace</ref> 
+                              <ref target="#TEI.org">org</ref> 
                               <ref target="#TEI.place">place</ref>
                            </ab>
                         </cell>
@@ -28544,10 +28935,10 @@ epistemology, methodology and history of
                            <ref target="#TEI.distributor">distributor</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
-                           <ref target="#TEI.publisher">publisher</ref> 
                            <ref target="#TEI.resp">resp</ref> 
                            <ref target="#TEI.respStmt">respStmt</ref> 
-                           <ref target="#TEI.term">term</ref>
+                           <ref target="#TEI.term">term</ref> 
+                           <ref target="#TEI.title">title</ref>
                         </cell>
                      </row>
                      <row>
@@ -29909,6 +30300,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -30174,6 +30566,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -30357,6 +30750,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -30555,6 +30949,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -30845,6 +31240,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -31100,6 +31496,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -31230,7 +31627,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To reduce the ambiguity of a resp pointing directly to a person or organization, we recommend that resp be used to point not to an agent (<ref target="#TEI.person"><gi>person</gi></ref> or <gi>org</gi>) but to a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>, <ref target="#TEI.author"><gi>author</gi></ref>, <ref target="#TEI.editor"><gi>editor</gi></ref> or similar element which clarifies the exact role played by the agent. Pointing to multiple <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>s allows the encoder to specify clearly each of the roles played in part of a TEI file (creating, transcribing, encoding, editing, proofing etc.).</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">To reduce the ambiguity of a resp pointing directly to a person or organization, we recommend that resp be used to point not to an agent (<ref target="#TEI.person"><gi>person</gi></ref> or <ref target="#TEI.org"><gi>org</gi></ref>) but to a <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>, <ref target="#TEI.author"><gi>author</gi></ref>, <ref target="#TEI.editor"><gi>editor</gi></ref> or similar element which clarifies the exact role played by the agent. Pointing to multiple <ref target="#TEI.respStmt"><gi>respStmt</gi></ref>s allows the encoder to specify clearly each of the roles played in part of a TEI file (creating, transcribing, encoding, editing, proofing etc.).</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -31390,6 +31787,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.num">num</ref> 
                            <ref target="#TEI.occupation">occupation</ref> 
                            <ref target="#TEI.opener">opener</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.orig">orig</ref> 
                            <ref target="#TEI.p">p</ref> 
@@ -32865,6 +33263,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.location">location</ref> 
                            <ref target="#TEI.milestone">milestone</ref> 
                            <ref target="#TEI.name">name</ref> 
+                           <ref target="#TEI.org">org</ref> 
                            <ref target="#TEI.orgName">orgName</ref> 
                            <ref target="#TEI.pb">pb</ref> 
                            <ref target="#TEI.pc">pc</ref> 
@@ -34726,6 +35125,8 @@ epistemology, methodology and history of
                               <ref target="#TEI.teidata.sex">teidata.sex</ref>Element: <list>
                                  <item>
                                     <ref target="#TEI.code">code</ref>/@lang</item>
+                                 <item>
+                                    <ref target="#TEI.org">org</ref>/@role</item>
                                  <item>
                                     <ref target="#TEI.supplied">supplied</ref>/@reason</item>
                               </list>

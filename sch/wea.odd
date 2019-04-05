@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Processing instructions for the TEI ODDs rng-->
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="wea.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:svg="http://www.w3.org/2000/svg"
@@ -240,6 +240,154 @@
          
          <div xml:id="encoding">
             <head>Instructions for Encoders</head>
+            <p>The following instructions are meant to document our encoding practices and provide instruction for how to encode different types of documents. Currently, there are three types of documents:
+            <list>
+                  <item>Databases</item>
+                  <item>Primary Sources</item>
+                  <item>Born Digital</item>
+
+               </list>
+            </p>
+            
+            <div xml:id="encodingDatabases">
+               <head>Encoding Databases</head>
+               <p>The WEA project consists of three databases for linking entities across the site:
+             <list>
+                     <item>Person database (<code>people.xml</code>)</item>
+                     <item>Organization datbases (<code>organizations.xml</code>)</item>
+                     <item>Bibliography (<code>bibliography.xml</code>)</item>
+                  </list>
+               </p>
+               <div xml:id="encodingDatabases_persons">
+                  <head>Encoding People</head>
+                  <p>All people featured on the site should be added to the person database. The people in this database include primary people (like Winnifred Eaton, Sara Bosse, and others) as well as contributors (like Mary Chapman, Jean Lee Cole, and others).</p>
+                  <div>
+                     <head>Basic Rules for Encoding People</head>
+                     <p>The basic structure of the people database is a <gi>listPerson</gi> element with a sequence of nested <gi>person</gi> elements. Each <gi>person</gi> element much have an <att>xml:id</att> (usually their initials followed by a number) and a <gi>persName</gi> element. Each <gi>persName</gi> elements must include one of:
+                   <list>
+                           <item>
+                              <gi>forename</gi>: the forename of the person</item>
+                           <item>
+                              <gi>surname</gi>: the surname of the person</item>
+                           <item>
+                              <gi>reg</gi>: the regularized name for that person</item>
+                        </list>
+                     </p>
+                     <p>For instance, to create a person named John Smith, you would do the following:
+                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                        </egXML>
+                     </p>
+                     
+                  </div>
+                  <div>
+                     <head>Adding Biographical Details</head>
+                     <p>Most people should have some sort of biographical details to display both in the info popups as well as to display in each person's dedicated page. To encode biographical details, use the <gi>note</gi> element as a child to the <gi>person</gi> after the <gi>persName</gi>:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                           <note>
+                              <p>
+                                 <!--Content goes here-->
+                              </p>
+                              
+                           </note>
+                        </egXML>
+                        
+                     </p>
+                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the <att>type</att> value of <val>bio</val>, with a subtype of either <val>short</val> or <val>long</val>:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <person xml:id="JS1">
+                              <persName>
+                                 <forename>John</forename>
+                                 <surname>Smith</surname>
+                                 <reg>John Smith</reg>
+                              </persName>
+                           </person>
+                           <note type="bio" subtype="short">
+                              <p>John Smith is a professor of English at the University of British Columbia</p>
+                           </note>
+                           <note type="bio" subtype="long">
+                              <p>Receiving his doctorate from the University of Arkansas, John Smith has worked across many disciplines, including neuroscience, anthropology, and literary studies. His current work investigates<!--[...]-->.</p>
+                           </note>
+                        </egXML>
+                     </p>
+                  </div>
+               </div>
+               <div xml:id="encodingDatabases_organizations">
+                  <head>Encoding Organizations</head>
+                  <p>More content coming soon....</p>
+               </div>
+               <div xml:id="encodingDatabases_bibliography">
+                  <head>Encoding the Bibliography</head>
+                  <p>More content coming soon...</p>
+               </div>
+            </div>
+            <div xml:id="creatingNewText">
+               <head>Creating a New Text in oXygen</head>
+               <p>To create a new text file, use the built in text template</p>
+               <list>
+                  <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
+                  </item>
+                  <figure>
+                     <figDesc>Add a new file.</figDesc>
+                     <graphic url="../graphics/create_new_file_1.gif"/>
+                  </figure>
+                  <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
+                  <figure>
+                     <figDesc>Give it a name.</figDesc>
+                     <graphic url="../graphics/create_new_file_2.gif"/>
+                  </figure>
+                  <item>Input the (modernized) title of the document</item>
+                  <figure>
+                     <figDesc>Give it a title.</figDesc>
+                     <graphic url="../graphics/create_new_file_3.gif"/>
+                  </figure>
+                  <item>Select the transciber</item>
+                  <figure>
+                     <figDesc>Select the transcriber</figDesc>
+                     <graphic url="../graphics/create_new_file_4.gif"/>
+                  </figure>
+                  <item>Select the copy editor</item>
+                  <figure>
+                     <figDesc>Select the copy editor.</figDesc>
+                     <graphic url="../graphics/create_new_file_5.gif"/>
+                  </figure>
+                  <item>Select the encoder (who is usually you)</item>
+                  <figure>
+                     <figDesc>Select the encoder</figDesc>
+                     <graphic url="../graphics/create_new_file_6.gif"/>
+                  </figure>
+                  <item>Select the genre</item>
+                  <figure>
+                     <figDesc>Select the genre.</figDesc>
+                     <graphic url="../graphics/create_new_file_7.gif"/>
+                  </figure>
+                  <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
+                  <figure>
+                     <figDesc>Select the exhibit</figDesc>
+                     <graphic url="../graphics/create_new_file_8.gif"/>
+                  </figure>
+                  <item>Your new document should be created!</item>
+                  <figure>
+                     <figDesc>Hooray! New document created.</figDesc>
+                     <graphic url="../graphics/create_new_file_9.gif"/>
+                  </figure>
+                  <item>Remember to commit the changes to the repository using the above instructions.</item>
+               </list>
+        
+            </div>
             <div xml:id="encoding_primary">
                <head>Encoding a Primary Source Document</head>
                <p>Below are abbreviated discussions on how to encode various features of a text</p>
@@ -635,110 +783,60 @@
                </div>
             </div>
             
+         
          </div>
          
-        
-         
-      
-         <div xml:id="build">
-            <head>Site build process</head>
-            <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
-            <p>To build the site, you must have ant installed. In the root directory, run:
+         <div xml:id="technical">
+            <head>Instructions for Developers/Programmers</head>
+            <div xml:id="build">
+               <head>Site build process</head>
+               <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
+               <p>To build the site, you must have ant installed. In the root directory, run:
             <code rend="block">ant -lib lib</code>
-            </p>
-            <p>The site build happens in a number of steps:
+               </p>
+               <p>The site build happens in a number of steps:
             <list>
-                  <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
-                  <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows:
+                     <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
+                     <item>If all files are valid, then the site build (located in <code>/code/buildSite.xml</code>) is initiated. The crucial steps are as follows:
                <list>
-                        <item>Files </item>
-                        <item>All of the source XML is flattened into a single directory and massaged slightly to create the <q>original</q> XML</item>
-                        <item>The standalone XML is created from the original XML; the standalone XML includes all of the <q>standoff</q> materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
-                        <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
-                     </list>
+                           <item>Files </item>
+                           <item>All of the source XML is flattened into a single directory and massaged slightly to create the <q>original</q> XML</item>
+                           <item>The standalone XML is created from the original XML; the standalone XML includes all of the <q>standoff</q> materials, like people, bibliographic items, and taxonomies referenced in the document. The main point of each standalone file is to include every data point necessary for the site to be taken out of the context of the project and used elsewhere.</item>
+                           <item>The XHTML5 pages are created from the standalone XML and then validated against the VNU validator</item>
+                        </list>
                   
-                  </item>
-                  <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
-               </list>
-            </p>
-            <div xml:id="build_currentImplementation">
-               <head>Current Implementation</head>
-               <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
-               <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+                     </item>
+                     <item>From the site products, we create a search engine, which runs purely using Javascript within the compiled HTML. Each file is tokenized, and each distinct token is stemmed using the Porter Stemmer algorithm. Each distinct stem is created into individual JSON files, which can then be read by the Javascript on the live site. (Note that the search engine is currently experimental and is largely inspired by Martin Holmes' implementation for The John Keats Project and The Robert Graves Diary Project.)</item>
+                  </list>
+               </p>
+               <div xml:id="build_currentImplementation">
+                  <head>Current Implementation</head>
+                  <p>Currently, the site build process is associated with the Continuous Integration service Travis, which triggers the site build with every commit to the the wea_data repository. Travis runs all of the above steps, and then <term>deploys</term> the products to another repository owned by the Winnifred Eaton Archive, currently called <q>wea</q>. This repository is associated with a Github pages scenario, which allows us to view all changes to the site within minutes of every commit.</p>
+                  <p>Once we are happy with the products on the <q>wea</q> site (also called the <q>beta</q> site), those products can then be deployed on another server (currently we use Github pages in another repository, but this will likely change in the future). To be sure, Travis and Github are <emph>not</emph> necessary for the site build, but purely conveniences for the time being and as an experiment to test the feasibility of creating an Endings compliant site with no need for external servers (and thus, theoretically, for free). Currently, the experiment is proving successful.</p>
+               </div>
             </div>
+            <div xml:id="buildingSchema">
+               <head>Building the Schema</head>
+               <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
+               <p>To regenerate the schema and the documentation follow these directions</p>
+               <p>
+                  <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
+               <p>
+                  <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
+               <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
+               Note that you must have ant installed.
+            </p>
+            </div>
+         
          </div>
          
 
          
       
-         <div xml:id="creatingNewText">
-            <head>Creating a New Text in oXygen</head>
-            <p>To create a new text file, use the built in text template</p>
-            <list>
-               <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
-               </item>
-               <figure>
-                  <figDesc>Add a new file.</figDesc>
-                  <graphic url="../graphics/create_new_file_1.gif"/>
-               </figure>
-               <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
-               <figure>
-                  <figDesc>Give it a name.</figDesc>
-                  <graphic url="../graphics/create_new_file_2.gif"/>
-               </figure>
-               <item>Input the (modernized) title of the document</item>
-               <figure>
-                  <figDesc>Give it a title.</figDesc>
-                  <graphic url="../graphics/create_new_file_3.gif"/>
-               </figure>
-               <item>Select the transciber</item>
-               <figure>
-                  <figDesc>Select the transcriber</figDesc>
-                  <graphic url="../graphics/create_new_file_4.gif"/>
-               </figure>
-               <item>Select the copy editor</item>
-               <figure>
-                  <figDesc>Select the copy editor.</figDesc>
-                  <graphic url="../graphics/create_new_file_5.gif"/>
-               </figure>
-               <item>Select the encoder (who is usually you)</item>
-               <figure>
-                  <figDesc>Select the encoder</figDesc>
-                  <graphic url="../graphics/create_new_file_6.gif"/>
-               </figure>
-               <item>Select the genre</item>
-               <figure>
-                  <figDesc>Select the genre.</figDesc>
-                  <graphic url="../graphics/create_new_file_7.gif"/>
-               </figure>
-               <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
-               <figure>
-                  <figDesc>Select the exhibit</figDesc>
-                  <graphic url="../graphics/create_new_file_8.gif"/>
-               </figure>
-               <item>Your new document should be created!</item>
-               <figure>
-                  <figDesc>Hooray! New document created.</figDesc>
-                  <graphic url="../graphics/create_new_file_9.gif"/>
-               </figure>
-               <item>Remember to commit the changes to the repository using the above instructions.</item>
-            </list>
-        
-         </div>
          
          
-         <div xml:id="buildingSchema">
-            <head>Building the Schema</head>
-            <p>All constraints and documentation are contained within the ODD file, including the RelaxNG schema, the schematron file, and the compiled schematron XSLT.</p>
-            <p>To regenerate the schema and the documentation follow these directions</p>
-            <p>
-               <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
-            <p>
-               <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run:
-               <code rend="block">ant -lib lib -f code/buildSchemas.xml</code>
-               Note that you must have ant installed.
-            </p>
-         </div>
+         
+         
 
       </body>
       <back xml:id="appendix">
@@ -761,7 +859,7 @@
                   
                
                <moduleRef key="namesdates"
-                          include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation orgName persName person place placeName surname"/>
+                          include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
                <!--Include all TEI modules-->
                <moduleRef key="tei"/>
@@ -1142,6 +1240,23 @@
                   </content>
                </elementSpec>
                
+               <elementSpec ident="author" module="core" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="replace">
+                        <valList type="closed" mode="add">
+                           <valItem mode="add" ident="illustrator">
+                              <desc>illustrator</desc>
+                              <gloss>The illustrator of this document</gloss>
+                           </valItem>
+                           <valItem ident="photographer">
+                              <desc>photographer</desc>
+                              <gloss>The photographer within this document</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
                <elementSpec ident="catDesc" module="core" mode="change">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
@@ -1328,13 +1443,248 @@
                   </constraintSpec>
                </elementSpec>
                
+               <elementSpec ident="publisher" module="core" mode="change">
+                  
+                  <attList>
+                     <attDef ident="type" mode="add">
+                        <valList type="closed">
+                           <valItem ident="source">
+                              <gloss>source</gloss>
+                              <desc>The source database or holding repository for this item.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ref" mode="replace">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="org:Ainslee">
+                              <desc>Ainslee’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Albertan">
+                              <desc>Albertan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:AmericanHome">
+                              <desc>American Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:AmericanYouth">
+                              <desc>American Youth</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Anderson">
+                              <desc>Anderson [sc] Intelligencer</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Blue">
+                              <desc>Blue Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Book">
+                              <desc>Book News</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Bookman">
+                              <desc>Bookman</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Boston">
+                              <desc>Boston Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Calgary">
+                              <desc>Calgary Daily Herald</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:CartersMonthly">
+                              <desc>Carter’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Chicago">
+                              <desc>Chicago Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:ChristianScience">
+                              <desc>Christian-Science Monitor</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Cincinnati">
+                              <desc>Cincinnati Commercial Tribune</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Columbian">
+                              <desc>Columbian Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Conkey">
+                              <desc>Conkey’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Critic">
+                              <desc>Critic</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Current">
+                              <desc>Current Literature</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Day">
+                              <desc>Day Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Eclectic">
+                              <desc>Eclectic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Farm">
+                              <desc>Farm and Ranch Review</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Frank">
+                              <desc>Frank Leslie’s Popular Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Galls">
+                              <desc>Gall’s Daily News Letter</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Good">
+                              <desc>Good Housekeeping</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Greenfield">
+                              <desc>Greenfield Gazette and Courier</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:HarpersMonthly">
+                              <desc>Harper’s Monthly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:HarpersWeekly">
+                              <desc>Harper’s Weekly</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Hearsts">
+                              <desc>Hearst’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Home">
+                              <desc>Home and Flowers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Hutchinson">
+                              <desc>Hutchinson’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:I">
+                              <desc>I Confess</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Idler">
+                              <desc>Idler</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Iroquois">
+                              <desc>Iroquois</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:LadiesHomeCompanion">
+                              <desc>Ladies’ Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:LadiesHomeJournal">
+                              <desc>Ladies’ Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:LadysMagazine">
+                              <desc>Lady’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Lippincott">
+                              <desc>Lippincott’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Lyttleton">
+                              <desc>Lyttleton [NZ] Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Macleans">
+                              <desc>Maclean’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:MetropolitanNY">
+                              <desc>Metropolitan (New York)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:MetropolitanMag">
+                              <desc>Metropolitan Magazine (Montreal)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Montreal">
+                              <desc>Montreal Daily Star</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:MotionPictureClassic">
+                              <desc>Motion Picture Classic Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:MotionPictureMag">
+                              <desc>Motion Picture Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Munsey">
+                              <desc>Munsey’s</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:NewMetro">
+                              <desc>New Metropolitan Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Puritan">
+                              <desc>Puritan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Red">
+                              <desc>Red Book</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:SFCall">
+                              <desc>San Francisco Call</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Saturday">
+                              <desc>Saturday Evening Post</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Screen">
+                              <desc>Screen Secrets</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Smart">
+                              <desc>Smart Set</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Smith">
+                              <desc>Smith’s Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Sovereign">
+                              <desc>Sovereign Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Spanish">
+                              <desc>Spanish Fork Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Spokane">
+                              <desc>Spokane Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Canterbury">
+                              <desc>The [Canterbury, NZ] Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Quill">
+                              <desc>The Quill</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:TrueStory">
+                              <desc>True Story Magazine</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Washington">
+                              <desc>Washington Times</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:WomansHomeCompanion">
+                              <desc>Woman’s Home Companion</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:WomansHomeJournal">
+                              <desc>Woman’s Home Journal</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:WomansWorld">
+                              <desc>Woman’s World</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Blakely">
+                              <desc>Blakely Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Century">
+                              <desc>Century</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:CenturyPress">
+                              <desc>Century Press</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Dodd">
+                              <desc>Dodd, Mead</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Harper">
+                              <desc>Harper and Brothers</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:McClelland">
+                              <desc>McClelland and Stewart</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Macmillan">
+                              <desc>Macmillan</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Rand">
+                              <desc>Rand, McNally</desc>
+                           </valItem>
+                           <valItem mode="add" ident="org:Watt">
+                              <desc>W. J. Watt</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+
+               </elementSpec>
+               
                <elementSpec ident="bibl" module="core" mode="change">
                   <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]">
-                              <sch:assert test="tei:title[@level='j']" role="warning">
+                              <sch:assert test="descendant::tei:title[@level='j']" role="warning">
                                  WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
                               </sch:assert>
                            </sch:rule>
@@ -1387,228 +1737,6 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <attList>
-                     <attDef ident="ref" mode="replace">
-                        <valList type="closed">
-                           <valItem mode="add" ident="bibl:Ainslee">
-                              <desc>Ainslee’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Albertan">
-                              <desc>Albertan</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:AmericanHome">
-                              <desc>American Home Journal</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:AmericanYouth">
-                              <desc>American Youth</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Anderson">
-                              <desc>Anderson [sc] Intelligencer</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Blue">
-                              <desc>Blue Book</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Book">
-                              <desc>Book News</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Bookman">
-                              <desc>Bookman</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Boston">
-                              <desc>Boston Journal</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Calgary">
-                              <desc>Calgary Daily Herald</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:CartersMonthly">
-                              <desc>Carter’s Monthly</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Chicago">
-                              <desc>Chicago Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:ChristianScience">
-                              <desc>Christian-Science Monitor</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Cincinnati">
-                              <desc>Cincinnati Commercial Tribune</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Columbian">
-                              <desc>Columbian Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Conkey">
-                              <desc>Conkey’s Home Journal</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Critic">
-                              <desc>Critic</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Current">
-                              <desc>Current Literature</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Day">
-                              <desc>Day Book</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Eclectic">
-                              <desc>Eclectic Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Farm">
-                              <desc>Farm and Ranch Review</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Frank">
-                              <desc>Frank Leslie’s Popular Monthly</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Galls">
-                              <desc>Gall’s Daily News Letter</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Good">
-                              <desc>Good Housekeeping</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Greenfield">
-                              <desc>Greenfield Gazette and Courier</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:HarpersMonthly">
-                              <desc>Harper’s Monthly</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:HarpersWeekly">
-                              <desc>Harper’s Weekly</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Hearsts">
-                              <desc>Hearst’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Home">
-                              <desc>Home and Flowers</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Hutchinson">
-                              <desc>Hutchinson’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:I">
-                              <desc>I Confess</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Idler">
-                              <desc>Idler</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Iroquois">
-                              <desc>Iroquois</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:LadiesHomeCompanion">
-                              <desc>Ladies’ Home Companion</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:LadiesHomeJournal">
-                              <desc>Ladies’ Home Journal</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:LadysMagazine">
-                              <desc>Lady’s Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Lippincott">
-                              <desc>Lippincott’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Lyttleton">
-                              <desc>Lyttleton [NZ] Times</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Macleans">
-                              <desc>Maclean’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:MetropolitanNY">
-                              <desc>Metropolitan (New York)</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:MetropolitanMag">
-                              <desc>Metropolitan Magazine (Montreal)</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Montreal">
-                              <desc>Montreal Daily Star</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:MotionPictureClassic">
-                              <desc>Motion Picture Classic Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:MotionPictureMag">
-                              <desc>Motion Picture Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Munsey">
-                              <desc>Munsey’s</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:NewMetro">
-                              <desc>New Metropolitan Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Puritan">
-                              <desc>Puritan</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Red">
-                              <desc>Red Book</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:SFCall">
-                              <desc>San Francisco Call</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Saturday">
-                              <desc>Saturday Evening Post</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Screen">
-                              <desc>Screen Secrets</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Smart">
-                              <desc>Smart Set</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Smith">
-                              <desc>Smith’s Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Sovereign">
-                              <desc>Sovereign Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Spanish">
-                              <desc>Spanish Fork Press</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Spokane">
-                              <desc>Spokane Press</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Canterbury">
-                              <desc>The [Canterbury, NZ] Press</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Quill">
-                              <desc>The Quill</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:TrueStory">
-                              <desc>True Story Magazine</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Washington">
-                              <desc>Washington Times</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:WomansHomeCompanion">
-                              <desc>Woman’s Home Companion</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:WomansHomeJournal">
-                              <desc>Woman’s Home Journal</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:WomansWorld">
-                              <desc>Woman’s World</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Blakely">
-                              <desc>Blakely Press</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Century">
-                              <desc>Century</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:CenturyPress">
-                              <desc>Century Press</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Dodd">
-                              <desc>Dodd, Mead</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Harper">
-                              <desc>Harper and Brothers</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:McClelland">
-                              <desc>McClelland and Stewart</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Macmillan">
-                              <desc>Macmillan</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Rand">
-                              <desc>Rand, McNally</desc>
-                           </valItem>
-                           <valItem mode="add" ident="bibl:Watt">
-                              <desc>W. J. Watt</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
                </elementSpec>
                
                

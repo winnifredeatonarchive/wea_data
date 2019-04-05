@@ -87,11 +87,11 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="elementSpec[@ident='title']/attList/attDef[@ident='ref']/valList">
+    <xsl:template match="elementSpec[@ident='publisher']/attList/attDef[@ident='ref']/valList">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:for-each select="document('../../data/bibliography.xml')//listBibl[@type='periodicals']/bibl[@xml:id]">
-                <valItem mode="add" ident="bibl:{@xml:id}">
+            <xsl:for-each select="document('../../data/organizations.xml')//listOrg/org[@xml:id]">
+                <valItem mode="add" ident="org:{@xml:id}">
                     <desc><xsl:value-of select="normalize-space(string-join(descendant::text()[not(ancestor::note)],''))"/></desc>
                 </valItem>
             </xsl:for-each>

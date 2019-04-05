@@ -437,7 +437,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]">
-                              <sch:assert test="tei:title[@level='j']" role="warning">
+                              <sch:assert test="descendant::tei:title[@level='j']" role="warning">
                                  WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
                               </sch:assert>
                            </sch:rule>
