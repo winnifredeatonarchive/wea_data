@@ -71,6 +71,9 @@
     
     <xsl:template match="code" mode="main">
         <pre>
+            <xsl:if test="@rend">
+                <xsl:attribute name="class" select="@rend"/>
+            </xsl:if>
             <xsl:apply-templates mode="#current"/>
         </pre>
     </xsl:template>

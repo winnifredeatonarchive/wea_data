@@ -331,7 +331,152 @@
                </div>
                <div xml:id="encodingDatabases_bibliography">
                   <head>Encoding the Bibliography</head>
-                  <p>More content coming soon...</p>
+                  <p>The WEA bibliography is a major component of the archive; it contains all of the bibliographic information for each text, with each component tagged and, if appropriate, linked to a centralized entity.</p>
+                  <p>The entirety of the bibliography is contained within a single large filed, called <code>bibliography.xml</code>. There are two major <gi>listBibl</gi> elements: the first contains the entire bibliography for works by Winnifred Eaton; the second <gi>listBibl</gi> contains all of the secondary sources used in the born digital documents (i.e. critical articles, scholarly monographs, et cetera). Note that these <gi>listBibl</gi>s are merely organization conveniences and do not have any impact, yet, on the site. This may change in the future, however.</p>
+                  
+                  <div xml:id="encodingDatabaes_bibliography_styleguide">
+                     <head>Bibliographic Style Guidelines</head>
+                     <p>The WEA project follows the MLA 8 Guidelines unless otherwise specified. Since we use the <gi>bibl</gi> tag, it is necessary that the proper punctuation and spacing is included within the <gi>bibl</gi>. A few important notes:
+                     <list>
+                           <item>Do not use <q>np</q> or <q>nd</q> to denote the absence of publishers (or pages) or the absence of dates.</item>
+                           <item>Use the abbrevations <q>vol</q>, <q>iss</q>, <q>no</q> to specify volumes, issues, and numbers, respectively.</item>
+                        </list>
+                     </p>
+                  </div>
+                  <div xml:id="encodingDatabases_bibliography_WE">
+                     <head>The Winnifred Eaton Bibliography</head>
+                     <p>The Winnifred Eaton bibliography is encoded using a series of nested <gi>listBibl</gi> elements, each containing a <gi>head</gi> element; these <gi>listBibl</gi>s signify the <term>work</term>. In each of these <gi>listBibl</gi>s are a sequence of <gi>bibl</gi> elements, each containing a manifestation of that work. For instance, <title level="m">Diary of Delia</title> was both serialized over a period of time as well as appears as a novel. Each instance of this work gets its own <gi>bibl</gi> nested within a <gi>listBibl</gi> like so (the content of these <gi>bibl</gi>s have been excluded, but will be explained in more detail below): 
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listBibl>
+                              <head>Diary of Delia</head>
+                              <bibl><!--Serial #1--></bibl>
+                              <bibl><!--Serial #2--></bibl>
+                              <bibl><!--Serial #3--></bibl>
+                              <bibl><!--Novel--></bibl>
+                           </listBibl>
+                        </egXML>
+                     </p>
+                     <div>
+                        <head>Components of a bibl</head>
+                        <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
+                        <div>
+                           <head>Authors</head>
+                           <p>Tag authors using the <gi>author</gi> tag and use the <att>ref</att> attribute to point to the person <att>xml:id</att>:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <author ref="pers:WE1">Watanna, Onoto</author>.
+                           </egXML>
+                           </p>
+                           <p>Do not include punctuation within the <gi>author</gi> tag and do not regularize the forms of their names.</p>
+                           <p>For multiple authors, separate each author with a comma and add a terminal <q>and</q> to the final author:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <author ref="pers:WE1">Watanna, Onoto</author>, and <author ref="pers:SB1">Sara Bosse</author>.
+                           </egXML>
+                           </p>
+                           
+                        </div>
+                        <div>
+                           <head>Titles</head>
+                           <p>Tag all titles using the <gi>title</gi> tag with the appropriate <att>level</att> attribute:
+                              <specList>
+                                 <specDesc key="title" atts="level"/>
+                              </specList>
+                              
+                              All monographic titles (i.e. books, etc) should use the <att>level</att> value <val>m</val>, all journals <val>j</val>, and all articles and other <q>analytic</q> items (poems, short stories, etc) using <val>a</val>.
+                          </p>
+                           <p>
+                              <emph>Note</emph>: For works by Winnifred Eaton, ensure that you wrap each <gi>title</gi>/<att>level</att>=<val>j</val> in the <gi>publisher</gi> element, with a <att>ref</att> value pointing to the organization described by that journal title. For instance,
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <publisher ref="org:SmartSet">
+                                    <title level="j">Smart Set</title>
+                                 </publisher>
+                              </egXML>
+                           </p>
+                           <p>Do not include trailing punctuation in either the <gi>title</gi> or the <gi>publisher</gi> element <emph>unless</emph> it is a necessary part of the title (for instance, a question mark).</p>
+                        </div>
+                        <div>
+                           <head>Publishers</head>
+                           <p>Tag all publishers using the <gi>publisher</gi> tag with the <att>ref</att> attribute pointing to the publisher's <att>xml:id</att> from the organizations database:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <publisher ref="org:Harper">Harper and Brothers</publisher>
+                              </egXML>
+                           </p>
+                           <p>As stated above, wrap all <gi>title</gi>/<att>level</att>=<val>j</val>s in the <gi>publisher</gi> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
+                        </div>
+                        
+                        <div>
+                           <head>Volumes, Issues, and Page Ranges</head>
+                           <p>Tag all volumes, issues (also called numbers), and page ranges using the <gi>biblScope</gi> element with the appropriate <att>unit</att>:
+                           <specList>
+                                 <specDesc key="biblScope" atts="unit"/>
+                              </specList>
+                            For instance:
+                            
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                               vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>
+                              </egXML>
+                              Do not denote the absence of volumes, issues, or page ranges by using <q>n.p</q> or an equivalent.
+                           </p>
+                        </div>
+                        <div>
+                           <head>Publication Dates</head>
+                           <p>Encode the date of publication using the <gi>date</gi> element. The <gi>date</gi> element is a special case where we <emph>do not</emph> include text in the <gi>date</gi> element. Instead, use the dating attributes provided by the <gi>date</gi> element:
+                           <specList>
+                                 <specDesc key="date" atts="notBefore notAfter when to from"/>
+                              </specList>
+                              All of these dating attributes require a date in the format: YYYY[-MM[-DD]]. In other words, the following are <emph>acceptable</emph>:
+                              <list>
+                                 <item>1999</item>
+                                 <item>1901-12</item>
+                                 <item>1903-11-04</item>
+                              </list>
+                              The following are <emph>unacceptable</emph>:
+                              <list>
+                                 <item>1999/12/01</item>
+                                 <item>1999-23</item>
+                                 <item>-21</item>
+                                 <item>21 March 1904</item>
+                              </list>
+                           </p>
+                           <p>In most cases, the <att>when</att> attribute with suffice for encoding the date of publication:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date when="1901-12-13"/>
+                              </egXML>
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date when="1901"/>
+                              </egXML>
+                              However, there are often cases where the date of publication is difficult to determine. In these cases use  <att>notBefore</att>, <att>notAfter</att>, and, optionally, the <att>cert</att>
+                           </p>
+                           <p>For instance, the case of certain date ranges (i.e. I know that this had to be published between 1922-1924) would be encoded as follows:
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1922" notAfter="1924"/>
+                              </egXML>
+                              If you know the decade in which something is published, then encode it as follows:
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1900" notAfter="1909"/>
+                              </egXML>
+                              If you are uncertain about the date range, then use the <att>cert</att> attribute with the values of either <val>low</val> or <val>medium</val> to denote your certainty about this date:
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1902" notAfter="1911" cert="low"/>
+                              </egXML>
+                           </p>
+                        </div>
+                        <div>
+                           <head>Manuscript Locations</head>
+                           <p>If an object exists only in manuscript, then record the location of the manuscript using the <gi>distributor</gi> element and, if applicable, the <gi>idno</gi> element. In most cases, this will be an entry in the Winnifred Eaton Reeve fonds at the University of Calgary.</p>
+                           <p>Use the <gi>distributor</gi> element to denote the archive in question:
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <distributor>Winnifred Eaton Reeve Fonds</distributor>
+                              </egXML>
+                           . Use the <gi>idno</gi> to encode any archival identification numbers:
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <idno>3.2.5</idno>
+                              </egXML>
+                           </p>
+                        </div>
+                        
+                     </div>
+                     
+                  </div>
                </div>
             </div>
             <div xml:id="creatingNewText">

@@ -44,7 +44,7 @@
             <div xml:id="requirements">
                <head>Requirements</head>
                <p>To edit material for the site, you will need to use a computer with the following software: <list>
-                     <item>Git (to get data from and commit data to the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code>git --version</code>. If you get something like this in response: <code>git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+                     <item>Git (to get data from and commit data to the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
                      <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
                      <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
                   </list>
@@ -59,17 +59,17 @@
                   <p>To get the data, you must first checkout a copy of the repository as follows:</p>
                   <list>
                      <item>Open the terminal</item>
-                     <item>Create a directory for working in: <code>mkdir wea</code>
+                     <item>Create a directory for working in: <code rend="block">mkdir wea</code>
                      </item>
-                     <item>Go into the directory: <code>cd wea</code>
+                     <item>Go into the directory: <code rend="block">cd wea</code>
                      </item>
-                     <item>Initialize the repository: <code>git init .</code>
+                     <item>Initialize the repository: <code rend="block">git init .</code>
                      </item>
                      <figure>
                         <figDesc>Checkout the repo.</figDesc>
                         <graphic url="../graphics/git_checkout_1.gif"/>
                      </figure>
-                     <item>Pull the repository: <code>git pull https://github.com/winnifredeatonarchive/wea_data</code>
+                     <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
                      </item>
                      <figure>
                         <figDesc>Pull the repo</figDesc>
@@ -90,9 +90,9 @@
                      <head>Updating</head>
                      <p>Make sure to update as often as possible; always update at the beginning of your working session. </p>
                      <list>
-                        <item>Go into your working folder: <code>cd wea</code>
+                        <item>Go into your working folder: <code rend="block">cd wea</code>
                         </item>
-                        <item>Pull the repository: <code>git pull</code>
+                        <item>Pull the repository: <code rend="block">git pull</code>
                         </item>
                         <figure>
                            <figDesc>Pull the repo.</figDesc>
@@ -103,34 +103,34 @@
                   <div xml:id="github_committing">
                      <head>Committing</head>
                      <p>Unlike some versioning systems, Github requires three steps for committing/saving your work to the repository. <list>
-                           <item>First, check the status of your files to see what you have changed since your last commit: <code>git status</code> If there are no changes to the repository, then you'll like see something like this: <code> On branch master nothing to commit, working tree clean</code> If there are changes, you should see something like this: <code> On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) modified: README.md no changes added to commit (use "git add" and/or "git commit -a")</code>
+                           <item>First, check the status of your files to see what you have changed since your last commit: <code rend="block">git status</code> If there are no changes to the repository, then you'll like see something like this: <code rend="block"> On branch master nothing to commit, working tree clean</code> If there are changes, you should see something like this: <code rend="block"> On branch master Changes not staged for commit: (use "git add &lt;file&gt;..." to update what will be committed) (use "git checkout -- &lt;file&gt;..." to discard changes in working directory) modified: README.md no changes added to commit (use "git add" and/or "git commit -a")</code>
                            </item>
                            <figure>
                               <figDesc>Check the status</figDesc>
                               <graphic url="../graphics/git_status_1.gif"/>
                            </figure>
-                           <item>If there are changes, then add the files/folders that you want to commit to the repository. <code>git add data/texts/My_Title.xml</code>
+                           <item>If there are changes, then add the files/folders that you want to commit to the repository. <code rend="block">git add data/texts/My_Title.xml</code>
                            </item>
                            <figure>
                               <figDesc>Add a file</figDesc>
                               <graphic url="../graphics/git_add_1.gif"/>
                            </figure>
-                           <item>Third, commit the files to the repository, including a commit message that explains what you did: <code>git commit -m "Adding new file."</code>
+                           <item>Third, commit the files to the repository, including a commit message that explains what you did: <code rend="block">git commit -m "Adding new file."</code>
                            </item>
                            <figure>
                               <figDesc>Commit with a message.</figDesc>
                               <graphic url="../graphics/git_commit_1.gif"/>
                            </figure>
-                           <item>Fourth, push the files to the repository: <code>git push</code> 
+                           <item>Fourth, push the files to the repository: <code rend="block">git push</code> 
                               <figure>
                                  <figDesc>Push the file.</figDesc>
                                  <graphic url="../graphics/git_push_first_1.gif"/>
-                              </figure> Note that, if you are committing for the first time, you'll like see something like this: <code> Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt;</code> This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: <code>git remote add wea https://github.com/winnifredeatonarchive/wea_data</code> 
-                              <code>git push wea</code> 
+                              </figure> Note that, if you are committing for the first time, you'll like see something like this: <code rend="block"> Either specify the URL from the command-line or configure a remote repository using git remote add &lt;name&gt; &lt;url&gt; and then push using the remote name git push &lt;name&gt;</code> This means that you must set up your local copy to track the changes in the global repository. To do that, simply follow the above instructions like so: <code rend="block">git remote add wea https://github.com/winnifredeatonarchive/wea_data</code> 
+                              <code rend="block">git push wea</code> 
                               <figure>
                                  <figDesc>Remote add.</figDesc>
                                  <graphic url="../graphics/git_remote_add_1.gif"/>
-                              </figure> You'll then like get another message, saying something like: <code>fatal: The current branch master has no upstream branch. To push the current branch and set the remote as upstream, use git push --set-upstream wea master</code> To resolve that, simply: <code> git push --set-upstream wea master</code> 
+                              </figure> You'll then like get another message, saying something like: <code rend="block">fatal: The current branch master has no upstream branch. To push the current branch and set the remote as upstream, use git push --set-upstream wea master</code> To resolve that, simply: <code rend="block"> git push --set-upstream wea master</code> 
                               <figure>
                                  <figDesc>Push the repository.</figDesc>
                                  <graphic url="../graphics/git_push_2.gif"/>
@@ -143,20 +143,20 @@
                   <head>Github Summary</head>
                   <p>The basic steps for working with Github are: <list>
                         <item>Open a the Terminal or Command Line (on Mac, use the ⌘ + spacebar and type <q>Terminal</q> to find it)</item>
-                        <item>Go into your working directory (likely called <q>wea</q>): <code>cd wea</code>
+                        <item>Go into your working directory (likely called <q>wea</q>): <code rend="block">cd wea</code>
                         </item>
                      </list> Before you start working: <list>
-                        <item>Pull the changes from the repository so that your repository is up-to-date: <code>git pull</code>
+                        <item>Pull the changes from the repository so that your repository is up-to-date: <code rend="block">git pull</code>
                         </item>
                      </list> While you're working: <list>
                         <item>Save your file (using command/ctrl + S like in MS Word)</item>
                         <item>Validate by pressing the red checkmark button in the toolbar in oXygen</item>
                      </list> Once your file is valid and you want to save the file to the repository: <list>
-                        <item>Stage your file to be committed: <code>git add .</code>
+                        <item>Stage your file to be committed: <code rend="block">git add .</code>
                         </item>
-                        <item>Commit your changes: <code>git commit -m</code>
+                        <item>Commit your changes: <code rend="block">git commit -m</code>
                         </item>
-                        <item>Push your changes to the repository: <code>git push</code>
+                        <item>Push your changes to the repository: <code rend="block">git push</code>
                         </item>
                      </list>
                   </p>
@@ -243,7 +243,152 @@
                </div>
                <div xml:id="encodingDatabases_bibliography">
                   <head>Encoding the Bibliography</head>
-                  <p>More content coming soon...</p>
+                  <p>The WEA bibliography is a major component of the archive; it contains all of the bibliographic information for each text, with each component tagged and, if appropriate, linked to a centralized entity.</p>
+                  <p>The entirety of the bibliography is contained within a single large filed, called <code>bibliography.xml</code>. There are two major <ref target="#TEI.listBibl"><gi>listBibl</gi></ref> elements: the first contains the entire bibliography for works by Winnifred Eaton; the second <ref target="#TEI.listBibl"><gi>listBibl</gi></ref> contains all of the secondary sources used in the born digital documents (i.e. critical articles, scholarly monographs, et cetera). Note that these <ref target="#TEI.listBibl"><gi>listBibl</gi></ref>s are merely organization conveniences and do not have any impact, yet, on the site. This may change in the future, however.</p>
+                  <div xml:id="encodingDatabaes_bibliography_styleguide">
+                     <head>Bibliographic Style Guidelines</head>
+                     <p>The WEA project follows the MLA 8 Guidelines unless otherwise specified. Since we use the <ref target="#TEI.bibl"><gi>bibl</gi></ref> tag, it is necessary that the proper punctuation and spacing is included within the <ref target="#TEI.bibl"><gi>bibl</gi></ref>. A few important notes: <list>
+                           <item>Do not use <q>np</q> or <q>nd</q> to denote the absence of publishers (or pages) or the absence of dates.</item>
+                           <item>Use the abbrevations <q>vol</q>, <q>iss</q>, <q>no</q> to specify volumes, issues, and numbers, respectively.</item>
+                        </list>
+                     </p>
+                  </div>
+                  <div xml:id="encodingDatabases_bibliography_WE">
+                     <head>The Winnifred Eaton Bibliography</head>
+                     <p>The Winnifred Eaton bibliography is encoded using a series of nested <ref target="#TEI.listBibl"><gi>listBibl</gi></ref> elements, each containing a <ref target="#TEI.head"><gi>head</gi></ref> element; these <ref target="#TEI.listBibl"><gi>listBibl</gi></ref>s signify the <term>work</term>. In each of these <ref target="#TEI.listBibl"><gi>listBibl</gi></ref>s are a sequence of <ref target="#TEI.bibl"><gi>bibl</gi></ref> elements, each containing a manifestation of that work. For instance, <title level="m">Diary of Delia</title> was both serialized over a period of time as well as appears as a novel. Each instance of this work gets its own <ref target="#TEI.bibl"><gi>bibl</gi></ref> nested within a <ref target="#TEI.listBibl"><gi>listBibl</gi></ref> like so (the content of these <ref target="#TEI.bibl"><gi>bibl</gi></ref>s have been excluded, but will be explained in more detail below): <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listBibl>
+                              <head>Diary of Delia</head>
+                              <bibl><!--Serial #1--></bibl>
+                              <bibl><!--Serial #2--></bibl>
+                              <bibl><!--Serial #3--></bibl>
+                              <bibl><!--Novel--></bibl>
+                           </listBibl>
+                        </egXML>
+                     </p>
+                     <div>
+                        <head>Components of a bibl</head>
+                        <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
+                        <div>
+                           <head>Authors</head>
+                           <p>Tag authors using the <ref target="#TEI.author"><gi>author</gi></ref> tag and use the ref attribute to point to the person xml:id: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <author ref="pers:WE1">Watanna, Onoto</author>.
+                           </egXML>
+                           </p>
+                           <p>Do not include punctuation within the <ref target="#TEI.author"><gi>author</gi></ref> tag and do not regularize the forms of their names.</p>
+                           <p>For multiple authors, separate each author with a comma and add a terminal <q>and</q> to the final author: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <author ref="pers:WE1">Watanna, Onoto</author>, and <author ref="pers:SB1">Sara Bosse</author>.
+                           </egXML>
+                           </p>
+                        </div>
+                        <div>
+                           <head>Titles</head>
+                           <p>Tag all titles using the <ref target="#TEI.title"><gi>title</gi></ref> tag with the appropriate level attribute: <list rend="specList">
+                                 <item>
+                                    <ref target="#TEI.title">title</ref> contains a title for any kind of work.<table rend="specDesc">
+                                       <row>
+                                          <cell rend="Attribute">level</cell>
+                                          <cell>indicates the bibliographic level for a title, that is, whether it identifies an article, book, journal, series, or unpublished material.</cell>
+                                       </row>
+                                    </table>
+                                 </item>
+                              </list> All monographic titles (i.e. books, etc) should use the level value m, all journals j, and all articles and other <q>analytic</q> items (poems, short stories, etc) using a.</p>
+                           <p>
+                              <emph>Note</emph>: For works by Winnifred Eaton, ensure that you wrap each <ref target="#TEI.title"><gi>title</gi></ref>/level=j in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, with a ref value pointing to the organization described by that journal title. For instance, <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <publisher ref="org:SmartSet">
+                                    <title level="j">Smart Set</title>
+                                 </publisher>
+                              </egXML>
+                           </p>
+                           <p>Do not include trailing punctuation in either the <ref target="#TEI.title"><gi>title</gi></ref> or the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element <emph>unless</emph> it is a necessary part of the title (for instance, a question mark).</p>
+                        </div>
+                        <div>
+                           <head>Publishers</head>
+                           <p>Tag all publishers using the <ref target="#TEI.publisher"><gi>publisher</gi></ref> tag with the ref attribute pointing to the publisher's xml:id from the organizations database: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <publisher ref="org:Harper">Harper and Brothers</publisher>
+                              </egXML>
+                           </p>
+                           <p>As stated above, wrap all <ref target="#TEI.title"><gi>title</gi></ref>/level=js in the <ref target="#TEI.publisher"><gi>publisher</gi></ref> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
+                        </div>
+                        <div>
+                           <head>Volumes, Issues, and Page Ranges</head>
+                           <p>Tag all volumes, issues (also called numbers), and page ranges using the <ref target="#TEI.biblScope"><gi>biblScope</gi></ref> element with the appropriate unit: <list rend="specList">
+                                 <item>
+                                    <ref target="#TEI.biblScope">biblScope</ref> (scope of bibliographic reference) defines the scope of a bibliographic reference, for example as a list of page numbers, or a named subdivision of a larger work.<table rend="specDesc">
+                                       <row>
+                                          <cell rend="Attribute">unit</cell>
+                                          <cell/>
+                                       </row>
+                                    </table>
+                                 </item>
+                              </list> For instance: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                               vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>
+                              </egXML> Do not denote the absence of volumes, issues, or page ranges by using <q>n.p</q> or an equivalent.</p>
+                        </div>
+                        <div>
+                           <head>Publication Dates</head>
+                           <p>Encode the date of publication using the <ref target="#TEI.date"><gi>date</gi></ref> element. The <ref target="#TEI.date"><gi>date</gi></ref> element is a special case where we <emph>do not</emph> include text in the <ref target="#TEI.date"><gi>date</gi></ref> element. Instead, use the dating attributes provided by the <ref target="#TEI.date"><gi>date</gi></ref> element: <list rend="specList">
+                                 <item>
+                                    <ref target="#TEI.date">date</ref> contains a date in any format.<table rend="specDesc">
+                                       <row>
+                                          <cell rend="Attribute">notBefore [att.datable.w3c]</cell>
+                                          <cell>specifies the earliest possible date for the event in standard form, e.g. yyyy-mm-dd.</cell>
+                                       </row>
+                                       <row>
+                                          <cell rend="Attribute">notAfter [att.datable.w3c]</cell>
+                                          <cell>specifies the latest possible date for the event in standard form, e.g. yyyy-mm-dd.</cell>
+                                       </row>
+                                       <row>
+                                          <cell rend="Attribute">when [att.datable.w3c]</cell>
+                                          <cell>supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.</cell>
+                                       </row>
+                                       <row>
+                                          <cell rend="Attribute">to [att.datable.w3c]</cell>
+                                          <cell>indicates the ending point of the period in standard form, e.g. yyyy-mm-dd.</cell>
+                                       </row>
+                                       <row>
+                                          <cell rend="Attribute">from [att.datable.w3c]</cell>
+                                          <cell>indicates the starting point of the period in standard form, e.g. yyyy-mm-dd.</cell>
+                                       </row>
+                                    </table>
+                                 </item>
+                              </list> All of these dating attributes require a date in the format: YYYY[-MM[-DD]]. In other words, the following are <emph>acceptable</emph>: <list>
+                                 <item>1999</item>
+                                 <item>1901-12</item>
+                                 <item>1903-11-04</item>
+                              </list> The following are <emph>unacceptable</emph>: <list>
+                                 <item>1999/12/01</item>
+                                 <item>1999-23</item>
+                                 <item>-21</item>
+                                 <item>21 March 1904</item>
+                              </list>
+                           </p>
+                           <p>In most cases, the when attribute with suffice for encoding the date of publication: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date when="1901-12-13"/>
+                              </egXML> 
+                              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date when="1901"/>
+                              </egXML> However, there are often cases where the date of publication is difficult to determine. In these cases use notBefore, notAfter, and, optionally, the cert</p>
+                           <p>For instance, the case of certain date ranges (i.e. I know that this had to be published between 1922-1924) would be encoded as follows: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1922" notAfter="1924"/>
+                              </egXML> If you know the decade in which something is published, then encode it as follows: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1900" notAfter="1909"/>
+                              </egXML> If you are uncertain about the date range, then use the cert attribute with the values of either low or medium to denote your certainty about this date: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <date notBefore="1902" notAfter="1911" cert="low"/>
+                              </egXML>
+                           </p>
+                        </div>
+                        <div>
+                           <head>Manuscript Locations</head>
+                           <p>If an object exists only in manuscript, then record the location of the manuscript using the <ref target="#TEI.distributor"><gi>distributor</gi></ref> element and, if applicable, the <ref target="#TEI.idno"><gi>idno</gi></ref> element. In most cases, this will be an entry in the Winnifred Eaton Reeve fonds at the University of Calgary.</p>
+                           <p>Use the <ref target="#TEI.distributor"><gi>distributor</gi></ref> element to denote the archive in question: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <distributor>Winnifred Eaton Reeve Fonds</distributor>
+                              </egXML> . Use the <ref target="#TEI.idno"><gi>idno</gi></ref> to encode any archival identification numbers: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                 <idno>3.2.5</idno>
+                              </egXML>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
             <div xml:id="creatingNewText">
@@ -364,7 +509,7 @@
                </div>
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
-                  <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <ref target="#TEI.q"><gi>q</gi></ref> element: <list>
+                  <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <ref target="#TEI.q"><gi>q</gi></ref> element: <list rend="specList">
                         <item>
                            <ref target="#TEI.q">q</ref> (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used.</item>
                      </list>
@@ -460,16 +605,16 @@
                   </div>
                   <div xml:id="encoding_primary_quotations_hierarchies">
                      <head>Quotations across hierarchies</head>
-                     <p>Particularly in novels, quotations will appear across hierarchies; that is, a quotation will start on one page, be interrupted by content on another page, and then continue on the following page. Take, for instance, this example from <title level="m">Marion</title>: <code> “It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know who his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and [Image unavailable.] Someone had passed up to me over the footlights, if you please, a real bouquet of flowers. he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again.”</code> Here, the quotation properly starts at in the first paragraphic block and is then interrupted by an image insert between the pages, and then continues afterwards. To deal with this overlapping hierarchy, there are two steps we must take: <list>
+                     <p>Particularly in novels, quotations will appear across hierarchies; that is, a quotation will start on one page, be interrupted by content on another page, and then continue on the following page. Take, for instance, this example from <title level="m">Marion</title>: <code rend="block"> “It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know who his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and [Image unavailable.] Someone had passed up to me over the footlights, if you please, a real bouquet of flowers. he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again.”</code> Here, the quotation properly starts at in the first paragraphic block and is then interrupted by an image insert between the pages, and then continues afterwards. To deal with this overlapping hierarchy, there are two steps we must take: <list>
                            <item>First, we must signal that the paragraph before the image inserts is the same paragraph as the one after</item>
                            <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
                         </list>
                      </p>
                      <p>To signal the paragraphs continuation, we use the part attribute: <list>
                            <item>
-                              <ref target="#TEI.p">p</ref> (paragraph) marks paragraphs in prose.<table>
+                              <ref target="#TEI.p">p</ref> (paragraph) marks paragraphs in prose.<table rend="specDesc">
                                  <row>
-                                    <cell>part [att.fragmentable]</cell>
+                                    <cell rend="Attribute">part [att.fragmentable]</cell>
                                     <cell>specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.</cell>
                                  </row>
                               </table>
@@ -494,13 +639,13 @@
                      </p>
                      <p>To handle the overlapping quotations, we use a similar approach using the next and prev attributes to signal explicitly the sequence of quotation elements: <list>
                            <item>
-                              <ref target="#TEI.q">q</ref> (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used.<table>
+                              <ref target="#TEI.q">q</ref> (quoted) contains material which is distinguished from the surrounding text using quotation marks or a similar method, for any one of a variety of reasons including, but not limited to: direct speech or thought, technical terms or jargon, authorial distance, quotations from elsewhere, and passages that are mentioned but not used.<table rend="specDesc">
                                  <row>
-                                    <cell>next [att.global.linking]</cell>
+                                    <cell rend="Attribute">next [att.global.linking]</cell>
                                     <cell>points to the next element of a virtual aggregate of which the current element is part.</cell>
                                  </row>
                                  <row>
-                                    <cell>prev [att.global.linking]</cell>
+                                    <cell rend="Attribute">prev [att.global.linking]</cell>
                                     <cell>(previous) points to the previous element of a virtual aggregate of which the current element is part.</cell>
                                  </row>
                               </table>
@@ -639,7 +784,7 @@
             <div xml:id="build">
                <head>Site build process</head>
                <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
-               <p>To build the site, you must have ant installed. In the root directory, run: <code>ant -lib lib</code>
+               <p>To build the site, you must have ant installed. In the root directory, run: <code rend="block">ant -lib lib</code>
                </p>
                <p>The site build happens in a number of steps: <list>
                      <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
@@ -666,7 +811,7 @@
                <p>
                   <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
                <p>
-                  <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code>ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
+                  <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code rend="block">ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
             </div>
          </div>
       </body>

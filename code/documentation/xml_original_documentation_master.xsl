@@ -28,7 +28,7 @@
     
     <xsl:template match="TEI/@xml:id" mode="second"/>
     
-    <xsl:template match="tei:*/@rend | tei:*/@xml:base | tei:*/@xml:lang | eg:egXML/@xml:space | tei:*/@xml:space" mode="second"/>
+    <xsl:template match="tei:*[ancestor::back]/@rend| tei:*/@xml:base | tei:*/@xml:lang | eg:egXML/@xml:space | tei:*/@xml:space" mode="second"/>
     
     <xsl:template match="index" mode="second"/>
     
