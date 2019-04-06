@@ -1,18 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    exclude-result-prefixes="xs"
-    version="2.0">
+    exclude-result-prefixes="#all"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:wea="https://github.com/wearchive/ns/1.0"
+    xmlns:eg="http://www.tei-c.org/ns/Examples"
+    xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+    xmlns="http://www.tei-c.org/ns/1.0"
+    version="3.0">
     
+    <xsl:variable name="orgs" select="document('../../data/organizations.xml')"/>
+    
+    <xsl:template match="bibl/title[@level='j'] | bibl/publisher[not(@ref)]">
+        <publisher>
+            <xsl:copy-of select="wea:makePubPointer(.)"/>
+            <xsl:choose>
+                <xsl:when test="self::title">
+                    <xsl:copy>
+                        <xsl:apply-templates select="@*|node()" mode="#current"/>
+                    </xsl:copy>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </publisher>
+    </xsl:template>
+    
+    
+    <xsl:function name="wea:makePubPointer">
+        <xsl:param name="el"/>
+        <xsl:variable name="text" select="normalize-space(string-join($el/descendant::text(),''))"/>
+        <xsl:variable name="match" select="$orgs//org[orgName[normalize-space(text()) = $text]]"/>
+        <xsl:if test="count($match) = 1">
+            <xsl:attribute name="ref" select="concat('org:',$match/@xml:id)"/>
+        </xsl:if>
+    </xsl:function>
     
     <xsl:template match="date[not(@*)]">
         <xsl:copy>
-            <xsl:call-template name="makeDateAtts"/>
+            <xsl:copy-of select="wea:makeDateAtts(text())"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template name="makeDateAtts">
-        
-        
+    <xsl:template match="@*|node()" priority="-1">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
     </xsl:template>
+    
+    
+    
+    <xsl:function name="wea:makeDateAtts">
+        <xsl:param name="text"/>
+            <xsl:analyze-string select="$text" regex="^(\d+) (\w+)\. (\d+)$">
+                <xsl:matching-substring>
+                    <xsl:attribute name="when" select="concat(regex-group(3),'-',wea:monthNum(regex-group(2)),'-', if (string-length(regex-group(1)) = 1) then concat('0',regex-group(1)) else regex-group(1))"/>
+                </xsl:matching-substring>
+                <xsl:non-matching-substring>
+                    <xsl:analyze-string select="$text" regex="^(\w+)\. (\d+)$">
+                        <xsl:matching-substring>
+                            <xsl:attribute name="when" select="concat(regex-group(2),'-',wea:monthNum(regex-group(1)))"/>
+                        </xsl:matching-substring>
+                        <xsl:non-matching-substring>
+                            <xsl:analyze-string select="$text" regex="(^\d\d\d\d$)">
+                                <xsl:matching-substring>
+                                    <xsl:attribute name="when" select="regex-group(1)"/>
+                                </xsl:matching-substring>
+                                <xsl:non-matching-substring>
+                                    <xsl:analyze-string select="$text" regex="^(\w+) (\d\d\d\d)$">
+                                        <xsl:matching-substring>
+                                            <xsl:attribute name="when" select="concat(regex-group(2),'-',wea:monthNum(regex-group(1)))"/>
+                                        </xsl:matching-substring>
+                                    </xsl:analyze-string>
+                                </xsl:non-matching-substring>
+                            </xsl:analyze-string>
+                        </xsl:non-matching-substring>
+                    </xsl:analyze-string>
+                </xsl:non-matching-substring>
+            </xsl:analyze-string>
+        
+    </xsl:function>
+    
+    <xsl:function name="wea:monthNum">
+        <xsl:param name="month"/>
+        <xsl:choose>
+            <xsl:when test="matches($month,'^Jan')">
+                <xsl:value-of select="'01'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Feb')">
+                <xsl:value-of select="'02'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Mar')">
+                <xsl:value-of select="'03'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Apr')">
+                <xsl:value-of select="'04'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^May')">
+                <xsl:value-of select="'05'"/>
+                
+            </xsl:when>
+            <xsl:when test="matches($month,'^Jun')">
+                <xsl:value-of select="'06'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Jul')">
+                <xsl:value-of select="'07'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Aug')">
+                <xsl:value-of select="'08'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Sept')">
+                <xsl:value-of select="'09'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Oct')">
+                <xsl:value-of select="'10'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Nov')">
+                <xsl:value-of select="'11'"/>
+            </xsl:when>
+            <xsl:when test="matches($month,'^Dec')">
+                <xsl:value-of select="'12'"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:function>
 </xsl:stylesheet>

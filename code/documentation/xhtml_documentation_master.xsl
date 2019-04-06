@@ -45,11 +45,25 @@
                 </xsl:apply-templates>
             </xsl:result-document>
         </xsl:for-each>
+        <xsl:result-document href="{$outDir}/full.html">
+            <xsl:apply-templates select="$template" mode="xh">
+                <xsl:with-param name="thisDiv" tunnel="yes" select="$sourceDoc"/>
+                <xsl:with-param name="toc" tunnel="yes">
+                    <xsl:apply-templates select="$text/(body|back)" mode="toc">
+                        <xsl:with-param name="currDivId" tunnel="yes" select="'full'"/>
+                    </xsl:apply-templates>
+                </xsl:with-param>
+            </xsl:apply-templates>
+        </xsl:result-document>
     </xsl:template>
     
     
     <!--MAIN TEMPLATES-->
-
+    
+    <xsl:template match="teiHeader | back" mode="main"/>
+    <xsl:template match="front | body | TEI | text" mode="main">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
     
     <xsl:template match="p | div | ab | cit[quote] | cit/quote | list | item | list/label" mode="main">
         <div class="{local-name()}">
@@ -207,8 +221,15 @@
     <!--XH TEMPLATES-->
     <xsl:template match="xh:nav/xh:ul" mode="xh">
         <xsl:param name="toc" tunnel="yes"/>
+        <xsl:param name="currDivId" tunnel="yes"/>
         <ul>
             <xsl:copy-of select="$toc"/>
+            <!--
+            <li><a href="full.html">
+                <xsl:if test="$currDivId = $sourceDoc/@xml:id">
+                    <xsl:attribute name="class" select="'selected'"/>
+                </xsl:if>
+                Read the entire documentation (large file)</a></li>-->
         </ul>
     </xsl:template>
     
@@ -235,7 +256,10 @@
    
         <xsl:param name="thisDiv" tunnel="yes"/>
         <xsl:attribute name="id">
-            <xsl:value-of select="if ($thisDiv/self::front) then 'index' else $thisDiv/@xml:id"/>
+            <xsl:value-of select="
+                if ($thisDiv/self::front) then 'index'
+                else if ($thisDiv/self::TEI) then 'full'
+                else $thisDiv/@xml:id"/>
         </xsl:attribute>
     </xsl:template>
     
