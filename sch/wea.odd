@@ -935,9 +935,35 @@
             <div xml:id="build">
                <head>Site build process</head>
                <p>The WEA follows the Endings principles for digital humanities sustainability; all of the pages are <q>static</q>, and the site itself has no external or server-side dependencies.</p>
-               <p>To build the site, you must have ant installed. In the root directory, run:
-            <code rend="block">ant -lib lib</code>
+               <p>To build the site, you must have installed:
+                  <list>
+                     <item>ant</item>
+                     <item>ImageMagick</item>
+                  </list>
+                  Note that ImageMagick is dependent on GhostScript (GS).</p>
+               <p>Installation of the above is simplest on Mac with Homebrew:
+               <list>
+                     <item>Install <ref target="https://brew.sh/">homebrew</ref>
+                     </item>
+                     <item>Then, install ant, ant-contrib (we currently don't use it, but may in the future), and imagemagick:
+                  <code rend="block">
+                     brew install ant
+                  </code>
+                        <code rend="block">
+                        brew install imagemagick
+                     </code>
+                        <code rend="block">
+                        brew install ant-contrib
+                     </code>
+                     </item>
+                  </list>
+               If the above are installed properly, then you can run the build at the command line:
+               
+               <code rend="block">
+                  ant -lib lib
+               </code>
                </p>
+               
                <p>The site build happens in a number of steps:
             <list>
                      <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
