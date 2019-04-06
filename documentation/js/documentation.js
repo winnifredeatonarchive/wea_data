@@ -121,6 +121,17 @@ function showSpec(){
     }
     
     
+
+/* This function is inspired by, but not a duplicate of, 
+ * popper.js; it is a very simplified version of the same idea:
+ * place the note beside the calling element and run some calculations
+ * to figure out the best placement.
+ * 
+ * 
+ * TODO: Make the function more intelligent to know whether or not the thing should
+ * be placed on the left, the right, the top, or the bottom. First, though,
+ * decisions will need to be made on the best default position for the click and
+ * hover overs. */
     
 function placeNote(elem, note) {
 
