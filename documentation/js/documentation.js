@@ -34,7 +34,17 @@ function scrollIntoView(){
     var thisLink = docId + '.html';
     var navLink = document.querySelectorAll("nav span.selected")[0];
     console.log(navLink);
-    scrollParentToChild(document.getElementsByTagName('nav')[0],navLink);
+    var navLi = navLink.parentNode;
+    var oneBefore = navLi.previousElementSibling;
+    var twoBefore = oneBefore.previousElementSibling;
+    var threeBefore = twoBefore.previousElementSibling;
+    if (threeBefore){
+        scrollLink = threeBefore;
+    } else {
+        scrollLink = navLink;
+    }
+    
+    scrollParentToChild(document.getElementsByTagName('nav')[0],scrollLink);
 }
 
 /* Taken, with thanks, from: https://stackoverflow.com/questions/45408920/plain-javascript-scrollintoview-inside-div#answer-45411081 */
@@ -59,7 +69,7 @@ function scrollParentToChild(parent, child) {
     
     /* Modified slightly by JT to divide by 1.5, which makes the thing scroll into about the
      * middle, which is better for context. */
-    parent.scrollTop = ((childRect.top + parent.scrollTop) - parentRect.top) / 1.25;
+    parent.scrollTop = (childRect.top + parent.scrollTop) - parentRect.top;
   }
 
 
