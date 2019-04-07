@@ -41,20 +41,29 @@
         <echo message="${echo.separator}"/>
         <echo message="Creating PDF thumbnails..."/>
         <echo message="${echo.separator}"/>
-        <apply executable="convert" dest="${site.dir}/facsimiles" force="true" failonerror="true">
+        <foreach target="convertPDF" parallel="true" param="pdf">
+            <path>
+                <fileset dir="${site.dir}/facsimiles">
+                    <include name="**.pdf"/>
+                </fileset>
+            </path>
+        </foreach>
+        
+    </target>
+    
+    <target name="convertPDF">
+
+        <propertyregex property="out" input="${pdf}" regexp="(.+)\.pdf" select="\1.png"/>
+        <echo message="${echo.separator}"/>
+        <echo message="Converting ${pdf} to ${out}..."/>
+        <echo message="${echo.separator}"/>
+        <exec executable="convert" failonerror="true">
             <arg line="-density 150 -thumbnail x600"/>
-            <srcfile suffix="[0]"/>
+            <arg line="${pdf}[0]"/>
             <arg line="+profile 'icc'"/>
             <arg line="-background white -alpha remove -alpha off"/>
-            <targetfile/>
-            <fileset dir="${site.dir}/facsimiles">
-                <include name="**.pdf"/>
-            </fileset>
-            <mapper>
-                <globmapper from="*.pdf" to="*.png"/>
-            </mapper>
-        </apply>
-        
+            <arg line="${out}"/>
+        </exec>
     </target>
     
     <target name="createTinyThumbnails">
