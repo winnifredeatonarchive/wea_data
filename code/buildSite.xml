@@ -63,15 +63,13 @@
         <echo message="${echo.separator}"/>
         <apply executable="convert" dest="${site.dir}/facsimiles" force="true" failonerror="true">
             <arg line="-density 150 -thumbnail x300"/>
-            <srcfile suffix="[0]"/>
-            <arg line="+profile 'icc'"/>
-            <arg line="-background white -alpha remove -alpha off"/>
+            <srcfile/>
             <targetfile/>
             <fileset dir="${site.dir}/facsimiles">
-                <include name="**.pdf"/>
+                <include name="**.png"/>
             </fileset>
             <mapper>
-                <globmapper from="*.pdf" to="*_tiny.png"/>
+                <globmapper from="*.png" to="*_tiny.png"/>
             </mapper>
         </apply>
     </target>
@@ -240,7 +238,6 @@
     
     <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
-    <target name="createDocumentationSite" depends="createOriginalXml, validateOriginalXml, createStandaloneXml, validateStandaloneXml, createXhtml, validateXhtml"/>
-    
+      
     
 </project>
