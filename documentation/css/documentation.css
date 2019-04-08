@@ -223,6 +223,16 @@ nav ul > li:first-child{
     content: "+";
 }
 
+.checked::before{
+    content:"✅"; /* Checkmark emoji */
+    padding-right:.5rem;
+}
+
+.error::before{
+    content: "❌"; /*Crossmark emoji  */
+    padding-right:.5rem;
+}
+
 .JS li.collapse > ul{
     display:none;
 }

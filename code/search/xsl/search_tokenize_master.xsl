@@ -107,6 +107,9 @@
                 <xsl:variable name="useStem" select="not($startsWithCap or $containsDigit or $isForeign)" as="xs:boolean"/>
                 <span>
                     <xsl:attribute name="data-stem" select="if ($useStem) then $stem else $word"/>
+                    <xsl:if test="$isForeign">
+                        <xsl:attribute name="data-foreign" select="'true'"/>
+                    </xsl:if>
                     <xsl:value-of select="."/>
                 </span>
             </xsl:otherwise>

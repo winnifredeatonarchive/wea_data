@@ -74,6 +74,10 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="div/@type" mode="main">
+        <xsl:attribute name="class" select="."/>
+    </xsl:template>
+    
     <xsl:template match="q | quote[not(ancestor::cit)] | title[not(@level)] | emph | label | gi | att | val | ident | label | term | foreign" mode="main">
         <span class="{local-name()} ">
             <xsl:apply-templates mode="#current"/>
@@ -181,8 +185,16 @@
         <xsl:param name="thisDiv" tunnel="yes"/>
         <xsl:variable name="count" select="count(ancestor::div[ancestor::div[. is $thisDiv]])"/>
         <xsl:element name="h{$count + 1}">
-            <xsl:apply-templates mode="#current"/>
+            <xsl:if test="@n">
+                <xsl:attribute name="class" select="if (xs:integer(@n) gt 0) then 'error' else 'checked'"/>
+            </xsl:if>
+ 
+            <xsl:apply-templates select="@n|node()" mode="#current"/>
         </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="head/@n" mode="main">
+        <xsl:attribute name="data-n" select="."/>
     </xsl:template>
         
     <xsl:template match="row" mode="main">
@@ -208,8 +220,7 @@
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
-    
-    
+ 
     <xsl:template match="@cols" mode="main">
         <xsl:attribute name="colspan" select="."/>
     </xsl:template>
@@ -322,8 +333,15 @@
         <xsl:param name="currDivId" tunnel="yes"/>
         <xsl:variable name="hasNestedDivs" select="exists(child::div[head])"/>
         <xsl:variable name="hasSelectedDiv" select="exists(descendant-or-self::div[@xml:id=$currDivId])"/>
+        <xsl:variable name="headAtts" as="attribute()*">
+            <xsl:if test="head[@n]">
+                <xsl:attribute name="data-n" select="head/@n"/>
+                <xsl:attribute name="class" select="if (head/@n/xs:integer(.) gt 0) then 'error' else 'checked'"/>
+            </xsl:if>
+        </xsl:variable>
         
         <li>
+            <xsl:copy-of select="$headAtts"/>
             <xsl:if test="($hasNestedDivs or $hasSelectedDiv)">
                 <xsl:attribute name="class" select="string-join((if ($hasNestedDivs) then 'collapse' else (), if ($hasSelectedDiv) then 'open' else 'closed'),' ')"/>
             </xsl:if>
@@ -332,7 +350,9 @@
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="wea:getId(.) = $currDivId">
-                    <span class="selected"><xsl:value-of select="head"/></span>
+                    <span class="selected">
+                                      <xsl:value-of select="head"/>
+                    </span>
                 </xsl:when>
                 <xsl:when test="not(@xml:id)">
                     <a href="{ancestor::div[@xml:id][1]/@xml:id}.html#{generate-id(.)}"><xsl:value-of select="head"/></a>
