@@ -11,7 +11,6 @@ var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 url = new URL(document.URL);
 searchParams = url.searchParams;
 
-
 function init(){
     addDocClass();
    if (searchParams.has("searchTokens")){
@@ -381,15 +380,19 @@ function makeNamesResponsive(){
       /* If this is an annotation and the annotation button is checked */
       /* Sometimes the annotation/collation buttons aren't there (if, for instance, there are no collations in the document)
        * and we have to have a switch for that */
-       
+      var place;
+            var popup = document.getElementById('popup');
       if (this.classList.contains('noteMarker')){
           id = this.getAttribute('href').substring(1);
+          popup.setAttribute('data-place','right');
       } 
      /* Else if this is a name element and it has an @href that is a local pointer */
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
+          popup.setAttribute('data-place','right');
       } else if (this.getAttribute('title') && !(this.getAttribute('href'))){
           useTitle = true;
+          popup.setAttribute('data-place','right');
       }
       /* Otherwise, return */
       else{
@@ -398,10 +401,10 @@ function makeNamesResponsive(){
       }
      
       
-      var popup = document.getElementById('popup');
+
       var popupContent = document.getElementById('popup_content');
       var showing = popup.getAttribute('data-showing');
-      
+
           
       if (popup.classList.contains('showing')){
           closePopup();
@@ -436,10 +439,11 @@ function makeNamesResponsive(){
         }
       
         //And set the display to block
-        popup.classList.remove('hidden');
-        popup.classList.add('showing');
-        placeNote(this,popup);
-        this.classList.add('clicked');
+      popup.classList.remove('hidden');
+      popup.classList.add('showing');
+     
+     placeNote(this,popup);
+     this.classList.add('clicked');
         if (removeEvent){
             this.removeEventListener('click',showPopup,true);
             this.classList.remove('showTitle');
@@ -464,33 +468,92 @@ function makeNamesResponsive(){
   }
   
 
+
+
 function placeNote(elem, note) {
 
-      var popupHeight = note.offsetHeight;
+/* PSUEDOCODE:
+ * 
+ * 1) Need to get height and width of rendered thing
+ * 2) Depending on what the preferred placement (vertical or horizontal), check to see whether it can fit on the preferred side (down, right)
+ * 3) Go through the hierarchy of preferences
+ * 4) If none of them work, just do the preferred one
+ *  */
+      params = new getParams(elem, note);
+      var popupHeight = params.height;
+      var popupWidth = params.width;
+      var place = note.getAttribute('data-place');
+      var placePos = params.placePos;
+      togglePopupPlaces(note, placePos);
       var header = document.getElementsByTagName('header')[0];
-      var headerHeight = header.getBoundingClientRect().top;
+      var headerHeight = window.getComputedStyle(header).getPropertyValue('height');
+      console.log('Header Height' + headerHeight);
       var coords = elem.getBoundingClientRect();
-      var popupArrowBorderWidth = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
+      
+      var popupArrowBorderWidth = window.getComputedStyle(note, 'after').getPropertyValue('border-width');
+      var popupArrowBorderHeight = window.getComputedStyle(note, 'before').getPropertyValue('border-width');
       var defaultValue = 7;
-      var popupArrowWidth = parseInt(popupArrowBorderWidth,10);
-      if (isNaN(popupArrowWidth)){
-          console.log('WARNING: popupArrowWidth NAN; setting default value of ' + defaultValue);
-          popupArrowWidth = defaultValue;
+      var popupArrowWidth = (parseInt(popupArrowBorderWidth,10) || 7);
+      var popupArrowHeight = (parseInt(popupArrowBorderHeight,10) || 7);
+
+      
+ 
+      if (placePos == 'bottom'){
+      
+            var elemXMiddle = (coords.left + coords.right)/2;
+            var elemBottom = coords.bottom;
+            var notePlace = window.scrollY + coords.bottom + popupArrowHeight;
+            console.log(notePlace);
+            note.style.top = notePlace + "px";
+            note.style.left = coords.left + "px";
+          
+      } else if (placePos == 'right'){
+          var middle = (coords.top + coords.bottom)/2;
+          var h = middle - popupHeight/2;
+          var w = coords.left + elem.offsetWidth + popupArrowWidth;
+          var x = window.pageXOffset + w + "px";
+          var y = window.pageYOffset + h + "px";
+          note.style.top = y;
+          note.style.left = x;
       }
-      var middle = (coords.top + coords.bottom)/2;
-      var h = middle - popupHeight/2;
-      console.log(popupArrowWidth);
-      var w = coords.left + elem.offsetWidth + popupArrowWidth;
-
-      var x = window.pageXOffset + w + "px";
-      var y = window.pageYOffset + h + "px";
-      console.log(window.pageXOffset + "+" + w + "px" + "=" + x);
-      console.log(y);
-
-
-      note.style.left = x;
-      note.style.top = y;
+      
+   
+      
     }
+
+function togglePopupPlaces(note, placePos){
+    note.classList.remove('left', 'right', 'top', 'bottom');
+    note.classList.add(placePos);
+}
+    
+function getParams(elem, note){
+      var bodyRight = document.getElementById('mainBody').getBoundingClientRect().right;
+      var elemCoords = elem.getBoundingClientRect();
+      var popupCoords = popup.getBoundingClientRect();
+      var popupHeight = note.offsetHeight;
+      var popupWidth = note.offsetWidth;
+      var vpw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      var vph = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      console.log('vpw: '+ vpw + "vph: " + vph);
+      var availableRight = (vpw - elemCoords.right) * 0.9;
+      var availableBottom = vph - elemCoords.bottom
+      console.log('availableRight' + availableRight);
+      var defaultPlace = note.getAttribute('data-place');
+      console.log(defaultPlace);
+      if (defaultPlace == 'right'){
+          if (availableRight > popupWidth){
+              placePos = 'right';
+          } else{
+              placePos = "bottom";
+          }
+      }
+      
+      this.height = popupHeight;
+      this.width = popupWidth;
+      this.placePos = placePos;
+      
+}
+
   
 /*  Taken from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/ */
 function inViewport (elem) {
@@ -543,7 +606,7 @@ function closePopup(){
     if (popup.classList.contains('showing')){
         console.log('Removing popup');
          popup.removeAttribute('style');
-         popup.classList.remove('showing');
+         popup.classList.remove('showing','top','bottom','left','right');
          popup.classList.add('hidden');
          popup.removeAttribute('data-showing');
          var popupContent = document.getElementById('popup_content');

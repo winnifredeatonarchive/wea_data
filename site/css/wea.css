@@ -65,6 +65,7 @@ body{
    display: flex;  /* use the flex model */
      min-height: 100vh;
     flex-direction: column;  
+    overflow-x:hidden;
 }
 
 /****************************************************************** HEADER ******/
@@ -984,6 +985,11 @@ span[data-el='q'] span[data-el='q']::after{
 
 
 /************************************************************************ POPUPS */
+
+#popup{
+    width:15rem;
+}
+
 #popup.hidden{
     display:none;
 }
@@ -1005,18 +1011,7 @@ span[data-el='q'] span[data-el='q']::after{
 
 }
 
-/***************************************************************************** ANIMATIONS */
-@keyframes fade-in {
-  from { 
-    opacity: 0; 
-  }
-  to { 
-    opacity: 1; 
-  }
-}
 #popup::after, #popup::before {
-	right: 100%;
-	top: 50%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -1024,20 +1019,113 @@ span[data-el='q'] span[data-el='q']::after{
 	position: absolute;
 }
 
-#popup::after {
-	border-color: rgba(255, 255, 255, 0);
+
+#popup::after{
+   	border-color: rgba(255, 255, 255, 0); 
+   	border-width: 6px;
+}
+
+#popup::before{
+    border-color: rgba(185, 185, 185, 0);
+    border-width: 7.5px;
+}
+
+
+/* POPUP ARROWS */
+#popup.right::after, #popup.right::before{
+    right: 100%;
+	top: 50%;
+}
+
+#popup.left::after, #popup.left::before{
+    left: 100%;
+	top: 50%;
+}
+
+#popup.top::after, #popup.top::before{
+    top: 100%;
+	left: 50%;
+}
+
+#popup.bottom::after, #popup.bottom::before{
+    bottom: 100%;
+	left: 25%;
+}
+
+
+
+/* RIGHT ARROW */
+#popup.right::after {
 	border-right-color: white;
 		/* THIS IS WHAT CONTROLS THE ARROW SIZE */
-	border-width: 6px;
 	margin-top: -6px;
 }
-#popup::before {
-	border-color: rgba(185, 185, 185, 0);
-	border-right-color: #b9b9b9;
+#popup.right::before {
+	border-right-color: transparent;;
     /* SHHOULD ALWAYS BE +BORERWIDTH */
-	border-width: 7.5px;
+
 	margin-top: -7.5px;
 }
+
+/* HORIZONTAL ARROWS */
+
+#popup.right::after, #popup.left::after{
+/* THIS IS WHAT CONTROLS THE ARROW SIZE */
+   margin-top: -6px;
+}
+
+#popup.right::before, #popup.left::before{
+margin-top: -7.5px;
+}
+
+/* VERTICAL ARROWS */
+
+#popup.top::after, #popup.bottom::after{
+    margin-left:-6px;
+}
+
+#popup.top::before, #popup.bottom::before{
+  margin-left:-7.5px;
+}
+
+
+/* LEFT ARROW (I.E POINTING RIGHT) */
+#popup.right::after {
+	border-right-color: white;
+
+}
+#popup.right::before {
+	border-right-color: #b9b9b9;
+}
+
+/* RIGHT */
+#popup.left::after {
+	border-left-color: white;
+
+}
+
+#popup.left::before {
+	border-left-color: #b9b9b9;
+}
+
+/* TOP */
+#popup.top::after {
+	border-top-color: white;
+
+}
+#popup.top::before {
+	border-top-color: #b9b9b9;
+}
+
+/* BOTTOM */
+#popup.bottom::after {
+	border-bottom-color: white;
+
+}
+#popup.bottom::before {
+	border-bottom-color: #b9b9b9;
+}
+
 
 #popup.hidden{
     display:none;
@@ -1062,6 +1150,18 @@ span[data-el='q'] span[data-el='q']::after{
     font-weight:bold;
     cursor:pointer;
 }
+
+
+/***************************************************************************** ANIMATIONS */
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
 
 
 a{
