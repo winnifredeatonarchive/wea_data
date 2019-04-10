@@ -37,10 +37,6 @@
                                <cell>Title</cell>
                                <cell>ID</cell>
                            </row>
-                           <row>
-                               <cell><ref target="documentation.html">Documentation</ref></cell>
-                               <cell>documentation</cell>
-                           </row>
                            <xsl:for-each select="$originalXml//TEI">
                                <row>
                                    <cell><ref target="{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
