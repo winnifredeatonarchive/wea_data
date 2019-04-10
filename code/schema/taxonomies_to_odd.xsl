@@ -43,7 +43,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="elementSpec[@ident='name']/attList/attDef[@ident='ref']/valList | classSpec[@ident='att.global.responsibility']/attList/attDef[@ident='resp']/valList">
+    <xsl:template match="elementSpec[@ident=('name','rs')]/attList/attDef[@ident='ref']/valList | classSpec[@ident='att.global.responsibility']/attList/attDef[@ident='resp']/valList">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:for-each select="$people//person[@xml:id]">

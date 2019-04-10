@@ -361,7 +361,7 @@
                         <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
                         <div>
                            <head>Authors</head>
-                           <p>Tag authors using the <gi>author</gi> tag and use the <att>ref</att> attribute to point to the person <att>xml:id</att>:
+                           <p>Tag authors using the <gi>author</gi> tag and use the <gi>name</gi> element with the <att>ref</att> attribute to point to the person <att>xml:id</att>:
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                  <author ref="pers:WE1">Watanna, Onoto</author>.
                            </egXML>
@@ -369,10 +369,40 @@
                            <p>Do not include punctuation within the <gi>author</gi> tag and do not regularize the forms of their names.</p>
                            <p>For multiple authors, separate each author with a comma and add a terminal <q>and</q> to the final author:
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                 <author ref="pers:WE1">Watanna, Onoto</author>, and <author ref="pers:SB1">Sara Bosse</author>.
+                                 <author>
+                                    <name ref="pers:WE1">Watanna, Onoto</name>
+                                 </author>, and <author>
+                                    <name ref="pers:SB1">Sara Bosse</name>
+                                 </author>.
                            </egXML>
                            </p>
-                           
+                           <div>
+                              <head>Relational Author Names</head>
+                              <p>There are cases where an author's name appears only in relation to some other work. For instance, in the case of novelized <title level="m">Marion</title>, the citation is as follows:
+                              <cit>
+                                    <quote>
+                                    The author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi> and the author of <hi style="font-style:italic">Me</hi>
+                                    </quote>
+                                 </cit>
+                                 From context, we can derive that the first bit (<q>TThe author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi>
+                                 </q>) refers to Winnifred Eaton and the latter bit refers to Sara Bosse. In this case, <emph>do not</emph> silently replace or otherwise regularize these names. Keep them as they appear, and tag them using the <gi>author</gi> tag. To associate the string to a person, use the <gi>rs</gi> tag:
+                                 <specDesc key="rs"/>
+                        Use this like you would the <gi>name</gi> tag, pointing to the person's <att>xml:id</att> using the <att>ref</att> attribute
+                                 
+                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <rs ref="pers:WE1"><!--Content here--></rs>
+                                 </egXML>
+                                 
+                                 For the above example, we will also want to encode that the italicized strings are titles; so, in the bibl entry, the encoding should look like so:
+                                 
+                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <author>
+                                       <rs ref="pers:WE1">The author of <title level="m">Me</title>, <title level="m">Marion: The Story of an Artist’s Model</title>, Herself</rs>
+                                    </author> and <rs ref="pers:SB1">the author of <title level="m">Me</title>
+                                    </rs>
+                                 </egXML>
+                              </p>
+                           </div>
                         </div>
                         <div>
                            <head>Titles</head>
@@ -1021,7 +1051,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt sic term title unclear"/>
+                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -1274,6 +1304,71 @@
                </elementSpec>
                
                <elementSpec ident="name" module="core" mode="change">
+                  <attList>
+                     <attDef ident="ref" mode="add">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="pers:WE1">
+                              <desc>WE1</desc>
+                              <gloss>Winnifred Eaton</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SE1">
+                              <desc>SE1</desc>
+                              <gloss>S. Ehrhart</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:AB1">
+                              <desc>AB1</desc>
+                              <gloss>Albert Blashfield</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SB1">
+                              <desc>SB1</desc>
+                              <gloss>Sara Bosse</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:MC1">
+                              <desc>MC1</desc>
+                              <gloss>Mary Chapman</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JLC1">
+                              <desc>JLC1</desc>
+                              <gloss>Jean Lee Cole</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SL1">
+                              <desc>SL1</desc>
+                              <gloss>Sydney Lines</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:KI1">
+                              <desc>KI1</desc>
+                              <gloss>Ken Ip</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:JT1">
+                              <desc>JT1</desc>
+                              <gloss>Joey Takeda</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SP1">
+                              <desc>SP1</desc>
+                              <gloss>Serina Patterson</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:HB1">
+                              <desc>HB1</desc>
+                              <gloss>Hilary Ball</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:XY1">
+                              <desc>XY1</desc>
+                              <gloss>Xine Yao</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:PP1">
+                              <desc>PP1</desc>
+                              <gloss>Pavlina Pajot</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:LM1">
+                              <desc>LM1</desc>
+                              <gloss>Lucia Maggio</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="rs" module="core" mode="change">
                   <attList>
                      <attDef ident="ref" mode="add">
                         <valList mode="add" type="closed">
@@ -2017,12 +2112,12 @@
                
                
                <!--CLASS SPECS-->
-               <!--
+               
                <classSpec type="atts" module="tei" ident="att.canonical" mode="change">
                   <attList>
                      <attDef ident="key" mode="delete"/>
                   </attList>
-               </classSpec>-->
+               </classSpec>
                <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
