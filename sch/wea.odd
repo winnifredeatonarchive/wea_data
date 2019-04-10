@@ -2422,6 +2422,32 @@
                   </constraint>
                </constraintSpec>
                
+               <constraintSpec scheme="schematron" ident="orgsShouldStartWithOrg">
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:org[@xml:id]">
+                         
+                           <sch:assert test="starts-with(@xml:id,'org_')">
+                              ERROR: All org @xml:ids should start with org_.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="biblShouldStartWithBibl">
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:bibl[@xml:id]">
+                           
+                           <sch:assert test="starts-with(@xml:id,'bibl_')">
+                              ERROR: All bibl @xml:ids should start with bibl_.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
                
                
                <!--CONSTRAINTS WITH QUICK FIXES-->

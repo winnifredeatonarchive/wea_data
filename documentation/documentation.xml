@@ -35496,6 +35496,20 @@ epistemology, methodology and history of
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
+&lt;sch:rule context="tei:bibl[@xml:id]"&gt;
+ &lt;sch:assert test="starts-with(@xml:id,'bibl_')"&gt; ERROR: All bibl @xml:ids should start with bibl_.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>
+                        <code>
+&lt;sch:pattern&gt;
 &lt;sch:rule context="tei:body | tei:div | tei:lg"&gt;
  &lt;sch:let name="divs"
   value="if (self::tei:body) then (descendant::tei:div) else ."/&gt;
@@ -35870,6 +35884,20 @@ epistemology, methodology and history of
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
  &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuation should go outside the &lt;sch:name/&gt; element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>
+                        <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:org[@xml:id]"&gt;
+ &lt;sch:assert test="starts-with(@xml:id,'org_')"&gt; ERROR: All org @xml:ids should start with org_.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

@@ -71,17 +71,31 @@
     <xd:doc>
         <xd:desc>Attempt to tag Winnifred Eaton's author name</xd:desc>
     </xd:doc>
-    <xsl:template match="author[not(@ref)]">
+    <xsl:template match="author">
         <xsl:variable name="text" select="text()"/>
         <xsl:variable name="names" select="string-join(('Winnifred', 'Reeve', 'Eaton', 'Watanna', 'Onoto'),'|')"/>
         <xsl:copy>
-            <xsl:if test="matches($text,$names)">
-                <xsl:attribute name="ref" select="'pers:WE1'"/>
-            </xsl:if>
-            <xsl:apply-templates select="@*|node()" mode="#current"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="@ref">
+                    <name ref="{@ref}">
+                        <xsl:apply-templates select="node()"/>
+                    </name>
+                </xsl:when>
+                
+                <xsl:when test="not(@ref) and matches($text,$names)">
+                    <name ref="pers:WE1">
+                        <xsl:apply-templates select="node()"/>
+                    </name>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="node()"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="author/@ref"/>
     
     
  

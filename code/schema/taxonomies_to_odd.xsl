@@ -91,7 +91,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:for-each select="document('../../data/organizations.xml')//listOrg/org[@xml:id]">
-                <valItem mode="add" ident="org:{@xml:id}">
+                <valItem mode="add" ident="org:{substring-after(@xml:id,'org_')}">
                     <desc><xsl:value-of select="normalize-space(string-join(descendant::text()[not(ancestor::note)],''))"/></desc>
                 </valItem>
             </xsl:for-each>
