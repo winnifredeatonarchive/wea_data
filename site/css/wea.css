@@ -987,8 +987,10 @@ span[data-el='q'] span[data-el='q']::after{
 /************************************************************************ POPUPS */
 
 #popup{
-    width:15rem;
+  min-width:0;
+    max-width:15rem;
 }
+
 
 #popup.hidden{
     display:none;
@@ -1006,7 +1008,6 @@ span[data-el='q'] span[data-el='q']::after{
     display:block;
     animation: fade-in .5s;
     margin-left: .15rem;
-    max-width:25rem;
     z-index:20;
 
 }
@@ -1044,13 +1045,18 @@ span[data-el='q'] span[data-el='q']::after{
 
 #popup.top::after, #popup.top::before{
     top: 100%;
-	left: 50%;
-}
-
-#popup.bottom::after, #popup.bottom::before{
-    bottom: 100%;
 	left: 25%;
 }
+#popup.bottom_right::after, #popup.bottom_right::before{
+    bottom: 100%;
+	left: 10%;
+}
+
+#popup.bottom_left::after, #popup.bottom_left::before{
+    bottom: 100%;
+	left: 85%;
+}
+
 
 
 
@@ -1080,11 +1086,11 @@ margin-top: -7.5px;
 
 /* VERTICAL ARROWS */
 
-#popup.top::after, #popup.bottom::after{
+#popup.top::after, #popup.bottom_left::after, #popup.bottom_right::after{
     margin-left:-6px;
 }
 
-#popup.top::before, #popup.bottom::before{
+#popup.top::before, #popup.bottom_left::before, #popup.bottom_right::before{
   margin-left:-7.5px;
 }
 
@@ -1118,11 +1124,13 @@ margin-top: -7.5px;
 }
 
 /* BOTTOM */
-#popup.bottom::after {
+#popup.bottom_left::after,
+#popup.bottom_right::after{
 	border-bottom-color: white;
 
 }
-#popup.bottom::before {
+#popup.bottom_left::before,
+#popup.bottom_right::before{
 	border-bottom-color: #b9b9b9;
 }
 

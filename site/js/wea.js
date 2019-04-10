@@ -498,14 +498,22 @@ function placeNote(elem, note) {
 
       
  
-      if (placePos == 'bottom'){
+      if (placePos.match('bottom')){
       
             var elemXMiddle = (coords.left + coords.right)/2;
             var elemBottom = coords.bottom;
             var notePlace = window.scrollY + coords.bottom + popupArrowHeight;
             console.log(notePlace);
             note.style.top = notePlace + "px";
-            note.style.left = coords.left + "px";
+            if (placePos == 'bottom_right'){
+               note.style.left = coords.left + "px";
+            } else {
+                console.log(coords.left + elem.offsetWidth);
+                 var left = 
+               note.style.left = Math.max(coords.right - popupWidth, 0) +  "px";
+            }
+
+
           
       } else if (placePos == 'right'){
           var middle = (coords.top + coords.bottom)/2;
@@ -522,7 +530,7 @@ function placeNote(elem, note) {
     }
 
 function togglePopupPlaces(note, placePos){
-    note.classList.remove('left', 'right', 'top', 'bottom');
+    note.classList.remove('left', 'right', 'top', 'bottom_left','bottom_right', 'long');
     note.classList.add(placePos);
 }
     
@@ -536,6 +544,7 @@ function getParams(elem, note){
       var vph = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       console.log('vpw: '+ vpw + "vph: " + vph);
       var availableRight = (vpw - elemCoords.right) * 0.9;
+      var availableFromLeft = (vpw - elemCoords.left);
       var availableBottom = vph - elemCoords.bottom
       console.log('availableRight' + availableRight);
       var defaultPlace = note.getAttribute('data-place');
@@ -543,8 +552,10 @@ function getParams(elem, note){
       if (defaultPlace == 'right'){
           if (availableRight > popupWidth){
               placePos = 'right';
-          } else{
-              placePos = "bottom";
+          } else if (availableFromLeft > popupWidth){
+              placePos = "bottom_right";
+          } else {
+              placePos = "bottom_left";
           }
       }
       
