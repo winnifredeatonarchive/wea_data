@@ -510,7 +510,7 @@ function placeNote(elem, note) {
             } else {
                 console.log(coords.left + elem.offsetWidth);
                  var left = 
-               note.style.left = Math.max(coords.right - popupWidth, 0) +  "px";
+               note.style.left = Math.max(coords.right - popupWidth, 0) + elem.offsetWidth +  "px";
             }
 
 
