@@ -171,7 +171,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:q">
+                           <sch:rule context="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]">
                               <sch:let name="text" value="string-join(descendant::text(),'')"/>
                               <sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else not(matches($text,'^\s+|\s+$'))">
                                  ERROR: q elements should not begin or end with spaces.
@@ -976,7 +976,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:name">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
-                           <sch:assert test="not(matches($text,'\.$'))" role="warning">
+                           <sch:assert test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))"
+                     role="warning">
                               WARNING: <sch:name/> usually shouldn't end with periods.
                            </sch:assert>
                         </sch:rule>

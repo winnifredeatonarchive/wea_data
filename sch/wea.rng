@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-04-10T20:30:37Z. .
+Schema generated from ODD source 2019-04-10T20:38:00Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2299,7 +2299,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:q">
+                           <sch:rule context="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]">
                               <sch:let name="text" value="string-join(descendant::text(),'')"/>
                               <sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else not(matches($text,'^\s+|\s+$'))">
                                  ERROR: q elements should not begin or end with spaces.
@@ -6912,7 +6912,8 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:name">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
-                           <sch:assert test="not(matches($text,'\.$'))" role="warning">
+                           <sch:assert test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))"
+                     role="warning">
                               WARNING: <sch:name/> usually shouldn't end with periods.
                            </sch:assert>
                         </sch:rule>

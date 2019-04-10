@@ -287,7 +287,7 @@
                               <head>Relational Author Names</head>
                               <p>There are cases where an author's name appears only in relation to some other work. For instance, in the case of novelized <title level="m">Marion</title>, the citation is as follows: <cit>
                                     <quote>The author of Me, Marion: The Story of an Artist’s Model, Herself and the author of Me</quote>
-                                 </cit> From context, we can derive that the first bit (<q>TThe author of Me, Marion: The Story of an Artist’s Model, Herself</q>) refers to Winnifred Eaton and the latter bit refers to Sara Bosse. In this case, <emph>do not</emph> silently replace or otherwise regularize these names. Keep them as they appear, and tag them using the <ref target="#TEI.author"><gi>author</gi></ref> tag. To associate the string to a person, use the <ref target="#TEI.rs"><gi>rs</gi></ref> tag: <list>
+                                 </cit> From context, we can derive that the first bit (<q>The author of Me, Marion: The Story of an Artist’s Model, Herself</q>) refers to Winnifred Eaton and the latter bit refers to Sara Bosse. In this case, <emph>do not</emph> silently replace or otherwise regularize these names. Keep them as they appear, and tag them using the <ref target="#TEI.author"><gi>author</gi></ref> tag. To associate the string to a person, use the <ref target="#TEI.rs"><gi>rs</gi></ref> tag: <list>
                                     <item>
                                        <ref target="#TEI.rs">rs</ref> (referencing string) contains a general purpose name or referring string.</item>
                                  </list> Use this like you would the <ref target="#TEI.name"><gi>name</gi></ref> tag, pointing to the person's <att>xml:id</att> using the <att>ref</att> attribute <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -20818,7 +20818,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <ref target="#TEI.q"><gi>q</gi></ref> elements shouldn't start or end with spaces.<code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:q"&gt;
+&lt;sch:rule context="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]"&gt;
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
  &lt;sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else 
@@ -36205,7 +36205,7 @@ epistemology, methodology and history of
 &lt;sch:rule context="tei:name"&gt;
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
- &lt;sch:assert test="not(matches($text,'\.$'))"
+ &lt;sch:assert test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))"
   role="warning"&gt; WARNING: &lt;sch:name/&gt; usually shouldn't end with periods.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;

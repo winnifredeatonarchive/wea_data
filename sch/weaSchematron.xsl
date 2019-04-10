@@ -900,8 +900,11 @@ belongs, but this <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:q" priority="1000" mode="M12">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:q"/>
+   <xsl:template match="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]"
+                 priority="1000"
+                 mode="M12">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
 		    <!--ASSERT -->
@@ -2296,10 +2299,10 @@ On <xsl:text/>
 
 		    <!--ASSERT warning-->
       <xsl:choose>
-         <xsl:when test="not(matches($text,'\.$'))"/>
+         <xsl:when test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="not(matches($text,'\.$'))">
+                                test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))">
                <xsl:attribute name="role">warning</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>

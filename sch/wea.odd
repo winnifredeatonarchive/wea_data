@@ -384,7 +384,7 @@
                                     The author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi> and the author of <hi style="font-style:italic">Me</hi>
                                     </quote>
                                  </cit>
-                                 From context, we can derive that the first bit (<q>TThe author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi>
+                                 From context, we can derive that the first bit (<q>The author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi>
                                  </q>) refers to Winnifred Eaton and the latter bit refers to Sara Bosse. In this case, <emph>do not</emph> silently replace or otherwise regularize these names. Keep them as they appear, and tag them using the <gi>author</gi> tag. To associate the string to a person, use the <gi>rs</gi> tag:
                                  <specDesc key="rs"/>
                         Use this like you would the <gi>name</gi> tag, pointing to the person's <att>xml:id</att> using the <att>ref</att> attribute
@@ -1366,8 +1366,7 @@
                         </valList>
                      </attDef>
                   </attList>
-               </elementSpec>
-               
+               </elementSpec>               
                <elementSpec ident="rs" module="core" mode="change">
                   <attList>
                      <attDef ident="ref" mode="add">
@@ -1685,7 +1684,7 @@
                         <gi>q</gi> elements shouldn't start or end with spaces.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:q">
+                           <sch:rule context="tei:q[not(ancestor::tei:TEI/@xml:id='wea')]">
                               <sch:let name="text" value="string-join(descendant::text(),'')"/>
                               <sch:assert test="if (normalize-space(string-join(child::text())) ='') then true() else not(matches($text,'^\s+|\s+$'))">
                                  ERROR: q elements should not begin or end with spaces.
@@ -2496,7 +2495,8 @@
                      <sch:pattern>
                         <sch:rule context="tei:name">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
-                           <sch:assert test="not(matches($text,'\.$'))" role="warning">
+                           <sch:assert test="if (matches($text,'^(\w\.)+$')) then true() else not(matches($text,'\.$'))"
+                                       role="warning">
                               WARNING: <sch:name/> usually shouldn't end with periods.
                            </sch:assert>
                         </sch:rule>
