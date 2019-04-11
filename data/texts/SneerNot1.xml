@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SneerNot1">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sneer Not</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name>Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Editor</resp>
+               <name>Jean Lee Cole</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name>Joey Takeda</name>
+            </respStmt>
+         </titleStmt>
+         
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         
+         <sourceDesc>
+            <bibl copyOf="bibl:126"/>
+         </sourceDesc>
+         
+      </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+           <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
+           <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
+        </textClass>
+     </profileDesc>
+     <revisionDesc>
+         <change who="pers:JT1" when="2019-04-11">Merged file, changed xml:id, and associated with bibliography entry bibl126 using XSLT.</change>
+        <change who="pers:JT1" when="2019-02-01">Created file.</change>
+     </revisionDesc>
+  </teiHeader>
+  <text facs="facs:Sneer_Not">
+      <body>
+         <head>Sneer not.</head>
+            <!--We could either use a <pb/> element to assiciate it with the facs,
+               or, for a more general thing, we couldjust put an @facs on the body-->
+            <!--Do we care that this is centered, bold, and ibgger?-->
+
+            <div>
+               <lg>
+                  <!--Do we note line breaks?-->
+                  <l>Sneer not, ye cynics, who to school once went</l>
+                  <l>And talked with knowledge at her many marts;</l>
+                  <l>Who through long days and longer nights have spent</l>
+                  <l>Your peace of soul to strengthen mental parts.</l>
+                  <l>The worth ye garnered is not self-con<!--Do we note the punctuation here?-->fined</l>
+                  <l>But spread in plenty like a trader’s show;</l>
+                  <l>Year in, year out, for all of human kind</l>
+                  <l>What you have learned, a countless number know;</l>
+                  <l>But rather court the grace that wisdom gives</l>
+                  <l>Which simply means—be fearful of thy might;</l>
+                  <l>He knows the most who learns and thereby lives</l>
+                  <l>To feel his weakness as he strengthens sight.</l>
+               </lg>
+            </div>
+            <!--Do we signal this is to the right and small caps?-->
+            <byline>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </byline>
+            
+
+         
+      </body>
+  </text>
+</TEI>
