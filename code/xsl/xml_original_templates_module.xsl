@@ -28,9 +28,13 @@
     </xsl:template>
     
     <!--Get the content from the copyOf bibl...-->
-    <xsl:template match="bibl[@copyOf]">
+    <xsl:template match="bibl[@copyOf]" mode="original">
+        <xsl:variable name="thisBiblPointer" select="substring-after(@copyOf,'bibl:')"/>
+        <xsl:variable name="thisBiblId" select="concat('bibl',$thisBiblPointer)"/>
         <xsl:copy>
-            <xsl:sequence select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[concat('bibl',@xml:id)=substring-after(@copyOf,'bibl:')]"/>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <xsl:variable name="thisBibl" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id=$thisBiblId]" as="item()+"/>
+            <xsl:sequence select="$thisBibl/node()"/>
         </xsl:copy>
     </xsl:template>
     

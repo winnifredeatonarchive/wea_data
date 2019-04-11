@@ -355,7 +355,11 @@
     </xsl:template>
     
     <xsl:template match="graphic/desc" mode="tei"/>
-  
+    
+    
+    <xsl:template match="gap[@reason='noTranscriptionAvailable']" mode="tei">
+        <div class="para">No transcription available at this time.</div>
+    </xsl:template>
     
     <xsl:template match="supplied | gap" mode="tei">
         <xsl:variable name="leadingSentence">
@@ -398,7 +402,7 @@
         <span><xsl:apply-templates mode="#current"/></span>
     </xsl:template>
     
-    <xsl:template match="name[@ref][not(ancestor::respStmt)]" mode="tei">
+    <xsl:template match="name[@ref][not(ancestor::respStmt)] | rs" mode="tei">
         <a href="{@ref}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -474,8 +478,17 @@
     <xsl:template match="person" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
-            <h3><a href="person_{@xml:id}.html"><xsl:apply-templates select="persName/reg" mode="#current"/></a></h3>
+            <h3><a href="{@xml:id}.html"><xsl:apply-templates select="persName/reg" mode="#current"/></a></h3>
             <xsl:apply-templates select="node()[not(self::persName)][not(self::note[@type='bio'][@subtype='long'])]" mode="#current"/>
+        </div>
+    </xsl:template>
+    
+    
+    <xsl:template match="org" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <h3><a href="{@xml:id}.html"><xsl:apply-templates select="orgName" mode="#current"/></a></h3>
+            <xsl:apply-templates select="node()[not(self::orgName)]" mode="#current"/>
         </div>
     </xsl:template>
     

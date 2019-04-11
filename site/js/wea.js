@@ -390,6 +390,9 @@ function makeNamesResponsive(){
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
+      } else if (this.getAttribute('data-el') == 'org' && this.getAttribute('href').startsWith('#')){
+          id = this.getAttribute('href').substring(1);
+          popup.setAttribute('data-place','right');
       } else if (this.getAttribute('title') && !(this.getAttribute('href'))){
           useTitle = true;
           popup.setAttribute('data-place','right');

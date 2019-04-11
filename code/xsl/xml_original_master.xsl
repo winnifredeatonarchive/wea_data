@@ -19,6 +19,7 @@
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xml_original_category_module.xsl"/>
     <xsl:include href="xml_original_people_module.xsl"/>
+    <xsl:include href="xml_original_organizations_module.xsl"/>
     <xsl:include href="xml_original_templates_module.xsl"/>
     
     <xsl:template match="/">
@@ -32,6 +33,7 @@
         <xsl:if test="not($docsToBuild='DOCUMENTATION')">
             <xsl:call-template name="createCategoryPages"/>
             <xsl:call-template name="createPeoplePages"/>
+            <xsl:call-template name="createOrgPages"/>
         </xsl:if>
     </xsl:template>
     

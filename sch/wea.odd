@@ -2529,18 +2529,7 @@
                   </constraint>
                </constraintSpec>
                
-               <constraintSpec scheme="schematron" ident="orgsShouldStartWithOrg">
-                  <constraint>
-                     <sch:pattern>
-                        <sch:rule context="tei:org[@xml:id]">
-                         
-                           <sch:assert test="starts-with(@xml:id,'org_')">
-                              ERROR: All org @xml:ids should start with org_.
-                           </sch:assert>
-                        </sch:rule>
-                     </sch:pattern>
-                  </constraint>
-               </constraintSpec>
+               
                
                <!--DOCUMENT STATUSES:
                   

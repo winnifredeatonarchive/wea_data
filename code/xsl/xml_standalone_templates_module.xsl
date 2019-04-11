@@ -52,10 +52,12 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="bibl/@copyOf" mode="pass1"/>
+    
     
     <xsl:template match="tei:*/@active | tei:*/@adj | tei:*/@adjFrom | tei:*/@adjTo | tei:*/@ana |
         tei:*/@calendar | tei:*/@change | tei:*/@children | tei:*/@class |
-        tei:*/@code | tei:*[not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
+        tei:*/@code | tei:*[not(self::bibl[ancestor::sourceDesc])][not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
         tei:*/@datingPoint | tei:*/@decls | tei:*/@domains | tei:*/@edRef | tei:*/@end |
         tei:*/@exclude | tei:*/@facs | tei:*/@feats | tei:*/@filter | tei:*/@follow | 
         tei:*/@from | tei:*/@fVal | tei:*/@given | tei:*/@hand | tei:*/@inst | tei:*/@lemmaRef |
@@ -75,21 +77,43 @@
     <xsl:template name="createStandoff">
         <!--We only have people right now, but this can be added to-->
         <xsl:variable name="potentialPeoplePtrs" select="distinct-values(for $t in (for $p in (//tei:*/@*[contains(.,'pers:')]) return tokenize($p,'\s+')) return if (starts-with($t,'pers:')) then substring-after($t,'pers:') else ())"/>
+        
         <xsl:variable name="peoplePtrs" select="for $p in $potentialPeoplePtrs return if (ancestor::TEI[descendant::tei:*[@xml:id=$p]]) then () else $p"/>
-        <xsl:if test="not(empty($peoplePtrs))">
+        
+        <xsl:variable name="potentialOrgPtrs" select="distinct-values(for $t in (for $p in (//tei:*/@*[contains(.,'org:')]) return tokenize($p,'\s+')) return if (starts-with($t,'org:')) then substring-after($t,'org:') else ())"/>
+        
+        <xsl:variable name="orgPtrs" select="for $p in $potentialOrgPtrs return if (ancestor::TEI[descendant::tei:*[@xml:id=$p]]) then () else $p"/>
+        
+        
+        <xsl:if test="not(empty(($peoplePtrs,$orgPtrs)))">
             <text type="standoff">
                 <body>
-                    <listPerson>
-                        <xsl:for-each select="$peoplePtrs">
-                            <xsl:variable name="thisPtr" select="."/>
-                            <xsl:variable name="thisPerson" select="$originalXml[//TEI/@xml:id='people']//person[@xml:id=$thisPtr]"/>
-                            <person>
-                                <xsl:copy-of select="$thisPerson/@*"/>
-                                <xsl:attribute name="copyOf" select="concat($thisPerson/ancestor::TEI/@xml:id,'.xml#',$thisPtr)"/>
-                                <xsl:copy-of select="$thisPerson/node()"/>
-                            </person>
-                        </xsl:for-each>
-                    </listPerson>
+                    <xsl:if test="not(empty($peoplePtrs))">
+                        <listPerson>
+                            <xsl:for-each select="$peoplePtrs">
+                                <xsl:variable name="thisPtr" select="."/>
+                                <xsl:variable name="thisPerson" select="$originalXml[//TEI/@xml:id='people']//person[@xml:id=$thisPtr]"/>
+                                <person>
+                                    <xsl:copy-of select="$thisPerson/@*"/>
+                                    <xsl:attribute name="copyOf" select="concat($thisPerson/ancestor::TEI/@xml:id,'.xml#',$thisPtr)"/>
+                                    <xsl:copy-of select="$thisPerson/node()"/>
+                                </person>
+                            </xsl:for-each>
+                        </listPerson>
+                    </xsl:if>
+                    <xsl:if test="not(empty($orgPtrs))">
+                        <listOrg>
+                            <xsl:for-each select="$orgPtrs">
+                                <xsl:variable name="thisPtr" select="."/>
+                                <xsl:variable name="thisOrg" select="$originalXml[//TEI/@xml:id='organizations']//org[@xml:id=$thisPtr]"/>
+                                <org>
+                                    <xsl:copy-of select="$thisOrg/@*"/>
+                                    <xsl:attribute name="copyOf" select="concat($thisOrg/ancestor::TEI/@xml:id,'.xml#',$thisPtr)"/>
+                                    <xsl:copy-of select="$thisOrg/node()"/>
+                                </org>
+                            </xsl:for-each>
+                        </listOrg>
+                    </xsl:if>
                 </body>
                 
             </text>

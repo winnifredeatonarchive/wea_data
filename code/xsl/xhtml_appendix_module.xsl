@@ -46,6 +46,16 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="listOrg" mode="appendix">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id" select="'organizations'"/>
+            </xsl:call-template>
+            <h3>Organizations Mentioned</h3>
+            <xsl:apply-templates select="org" mode="tei"/>
+        </div>
+    </xsl:template>
+    
     <xsl:template name="createNotes">
         <xsl:if test="//note[@type='editorial']">
             <div id="notes">

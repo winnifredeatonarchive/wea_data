@@ -326,20 +326,37 @@
     </xsl:template>
     
     <xsl:template match="bibl/author" mode="metadata">
-        <div>
-            <div class="metadataLabel">
-                <xsl:choose>
-                    <xsl:when test="name/@ref='#WE1'">
-                        Pseudonym
-                    </xsl:when>
-                    <xsl:otherwise>
-                        Author
-                    </xsl:otherwise>
-                </xsl:choose>
+        <xsl:if test="not(preceding-sibling::author)">
+            <div>
+                <div class="metadataLabel">Author<xsl:if test="following-sibling::author">s</xsl:if></div>
+                <div>
+                    <xsl:apply-templates select="(node(),following-sibling::author/node())" mode="#current"/>
+                </div>
             </div>
-            <div><xsl:apply-templates mode="tei"/></div>
+        </xsl:if>
+    </xsl:template>
+    
+    
+    <xsl:template match="bibl/author/name" mode="metadata">
+        <xsl:variable name="nameEl" as="element(name)">
+            <xsl:copy>
+                <xsl:copy-of select="@*"/>
+                <xsl:analyze-string select="text()" regex="^(.+),(.+)$">
+                    <xsl:matching-substring>
+                        <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:value-of select="."/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:copy>
+        </xsl:variable>
+        <div>
+            <xsl:apply-templates select="$nameEl" mode="tei"/>
         </div>
     </xsl:template>
+    
+    
     
     <xsl:template match="bibl/biblScope[@unit='volume']" mode="metadata">
         <div>
@@ -374,7 +391,28 @@
     <xsl:template match="bibl/publisher" mode="metadata">
         <div>
             <div class="metadataLabel">Publisher</div>
-            <div><xsl:apply-templates mode="tei"/></div>
+            <div>
+                <xsl:choose>
+                    <xsl:when test="@ref">
+                        <xsl:variable name="tempEl" as="element(name)">
+                            <tei:name ref="{@ref}">
+                                <xsl:choose>
+                                    <xsl:when test="title">
+                                        <xsl:sequence select="title/node()"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:sequence select="node()"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </tei:name>
+                        </xsl:variable>
+                        <xsl:apply-templates select="$tempEl" mode="tei"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="if (title) then title/node() else node()" mode="tei"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </div>
         </div>
     </xsl:template>
     

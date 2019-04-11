@@ -36256,20 +36256,6 @@ epistemology, methodology and history of
 &lt;/sch:pattern&gt;</code>
                      </cell>
                   </row>
-                  <row>
-                     <cell>
-                        <label>Schematron</label>
-                     </cell>
-                     <cell>
-                        <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:org[@xml:id]"&gt;
- &lt;sch:assert test="starts-with(@xml:id,'org_')"&gt; ERROR: All org @xml:ids should start with org_.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                     </cell>
-                  </row>
                </table>
             </div>
          </div>

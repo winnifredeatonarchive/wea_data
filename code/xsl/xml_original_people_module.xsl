@@ -19,8 +19,8 @@
     <xsl:template name="createPeoplePages">
         <xsl:for-each select="$sourceXml[//TEI/@xml:id='people']//person[@xml:id]">
             <xsl:call-template name="generateTeiPage">
-                <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/person_',@xml:id,'.xml')"/>
-                <xsl:with-param name="thisId" select="concat('person_',@xml:id)"/>
+                <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
+                <xsl:with-param name="thisId" select="@xml:id"/>
                 <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
                 <xsl:with-param name="content">
