@@ -49,9 +49,9 @@
     </xd:doc>
     <xsl:template match="listBibl[@xml:id]/bibl">
         <xsl:variable name="parentId" select="parent::listBibl/@xml:id"/>
-        <xsl:variable name="preCount" select="count(preceding-sibling::bibl) + 1"/>
+        <xsl:variable name="preCount" select="count(preceding::bibl) + 1"/>
         <xsl:copy>
-            <xsl:attribute name="xml:id" select="concat($parentId,$preCount)"/>
+            <xsl:attribute name="xml:id" select="concat('bibl',$preCount)"/>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
@@ -67,35 +67,6 @@
         </xsl:copy>
     </xsl:template>
     
-    
-    <xd:doc>
-        <xd:desc>Attempt to tag Winnifred Eaton's author name</xd:desc>
-    </xd:doc>
-    <xsl:template match="author">
-        <xsl:variable name="text" select="text()"/>
-        <xsl:variable name="names" select="string-join(('Winnifred', 'Reeve', 'Eaton', 'Watanna', 'Onoto'),'|')"/>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:choose>
-                <xsl:when test="@ref">
-                    <name ref="{@ref}">
-                        <xsl:apply-templates select="node()"/>
-                    </name>
-                </xsl:when>
-                
-                <xsl:when test="not(@ref) and matches($text,$names)">
-                    <name ref="pers:WE1">
-                        <xsl:apply-templates select="node()"/>
-                    </name>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="node()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="author/@ref"/>
     
     
  
@@ -119,7 +90,7 @@
         <xsl:variable name="text" select="normalize-space(string-join($el/descendant::text(),''))"/>
         <xsl:variable name="match" select="$orgs//org[orgName[normalize-space(text()) = $text]]"/>
         <xsl:if test="count($match) = 1">
-            <xsl:attribute name="ref" select="concat('org:',$match/@xml:id)"/>
+            <xsl:attribute name="ref" select="concat('org:',substring-after($match/@xml:id,'org_'))"/>
         </xsl:if>
     </xsl:function>
     

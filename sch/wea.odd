@@ -2530,19 +2530,16 @@
                   </constraint>
                </constraintSpec>
                
-               <constraintSpec scheme="schematron" ident="biblShouldStartWithBibl">
-                  <constraint>
-                     <sch:pattern>
-                        <sch:rule context="tei:bibl[@xml:id]">
-                           
-                           <sch:assert test="starts-with(@xml:id,'bibl_')">
-                              ERROR: All bibl @xml:ids should start with bibl_.
-                           </sch:assert>
-                        </sch:rule>
-                     </sch:pattern>
-                  </constraint>
-               </constraintSpec>
+<!--DOCUMENT STATUSES:
+                  
+                  * empty
+                  * inProgress
+                  * readyForProof
+                  * published
+                  
+                  -->
                
+
                
                
                <!--CONSTRAINTS WITH QUICK FIXES-->
