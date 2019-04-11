@@ -71,10 +71,10 @@
             <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations</div>
             <div id="credits_content" class="content">
                 <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
-                <xsl:if test="$root//sourceDesc/bibl[note]">
+                <xsl:if test="$root//notesStmt/note">
                     <div>
                         <div class="metadataLabel">Notes</div>
-                        <xsl:for-each select="$root//sourceDesc/bibl/note">
+                        <xsl:for-each select="$root//notesStmt/note">
                             <div>
                                 <xsl:apply-templates select="node()" mode="tei"/>
                             </div>

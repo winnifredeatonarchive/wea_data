@@ -27,6 +27,13 @@
         </xsl:copy>
     </xsl:template>
     
+    <!--Get the content from the copyOf bibl...-->
+    <xsl:template match="bibl[@copyOf]">
+        <xsl:copy>
+            <xsl:sequence select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[concat('bibl',@xml:id)=substring-after(@copyOf,'bibl:')]"/>
+        </xsl:copy>
+    </xsl:template>
+    
     
     
     <xsl:template match="@*|node()" mode="#all">

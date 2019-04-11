@@ -1948,13 +1948,26 @@
                </elementSpec>
                
                <elementSpec ident="bibl" module="core" mode="change">
-                  <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
-                     <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
+                  <constraintSpec ident="bibl.noJournalTitle" scheme="schematron">
+                     <desc>If you have issues and numbers, you should have a journal title.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:bibl[tei:biblScope[@unit=('issue','volume')]]">
                               <sch:assert test="descendant::tei:title[@level='j']" role="warning">
                                  WARNING: You have encoded issues and volumes, but no journal title. Are you sure this is correct?
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec ident="bibl.sourceDescShouldUseCopyOf" scheme="schematron">
+                     <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:sourceDesc/tei:bibl">
+                              <sch:assert test="@copyOf and starts-with(@copyOf,'bibl:')">
+                                 ERROR: All bibls should have an @copyOf that points to the bibl
+                                 id number of the bibliographic item in question (i.e. copyOf="bibl:77").
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -2253,7 +2266,6 @@
                           mode="change">
                   <attList>
                      <attDef ident="synch" mode="delete"/>
-                     <attDef ident="copyOf" mode="delete"/>
                      <attDef ident="sameAs" mode="delete"/>
                      <attDef ident="select" mode="delete"/>
                      <attDef ident="exclude" mode="delete"/>
@@ -2530,7 +2542,7 @@
                   </constraint>
                </constraintSpec>
                
-<!--DOCUMENT STATUSES:
+               <!--DOCUMENT STATUSES:
                   
                   * empty
                   * inProgress
