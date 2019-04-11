@@ -96,6 +96,7 @@
     
     <xsl:template name="go">
         <xsl:for-each select="$bibls">
+            <xsl:sort select="xs:integer(substring-after(@xml:id,'bibl'))" order="ascending"/>
             <xsl:variable name="thisBibl" select="."/>
             <xsl:variable name="thisId" select="@xml:id"/>
             <xsl:message>Processing <xsl:value-of select="$thisId"/></xsl:message>
@@ -133,7 +134,7 @@
                 <xsl:variable name="workId" select="$work/@xml:id"/>
                 <xsl:variable name="mapNum" select="count(for $n in $work/bibl return if (map:contains($map,$n/@xml:id)) then $n else ())"/>
                 <xsl:variable name="startingNum" select="$mapNum + 1"/>
-                <xsl:value-of select="concat($workId,(count($bibl/preceding-sibling::bibl) + $startingNum))"/>
+                <xsl:value-of select="concat($workId,(count($bibl/preceding-sibling::bibl[not(map:contains($map,@xml:id))]) + $startingNum))"/>
             </xsl:otherwise>
         </xsl:choose>
         
