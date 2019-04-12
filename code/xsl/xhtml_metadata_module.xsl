@@ -351,7 +351,7 @@
     
     <xsl:template match="bibl/author/name | bibl/author/rs" mode="metadata">
         <xsl:variable name="nameEl" as="element(name)">
-            <xsl:copy>
+            <tei:name>
                 <xsl:copy-of select="@*"/>
                 <xsl:choose>
                     <xsl:when test="self::name">
@@ -369,7 +369,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 
-            </xsl:copy>
+            </tei:name>
         </xsl:variable>
         <div>
             <xsl:apply-templates select="$nameEl" mode="tei"/>
