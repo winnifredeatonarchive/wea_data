@@ -355,7 +355,7 @@
                 <xsl:copy-of select="@*"/>
                 <xsl:choose>
                     <xsl:when test="self::name">
-                        <xsl:analyze-string select="text()" regex="^(.+),(.+)$">
+                        <xsl:analyze-string select="text()" regex="^(.+),\s(.+)$">
                             <xsl:matching-substring>
                                 <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
                             </xsl:matching-substring>
