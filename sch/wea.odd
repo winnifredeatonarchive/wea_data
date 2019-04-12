@@ -1153,7 +1153,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:catRef[@scheme='wdt:docType']">
-                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit)|(wdt:docBornDigitalDocumentation))$')">
+                              <sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalListing)|(wdt:docBornDigitalDocumentation))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -1212,8 +1212,8 @@
                            <valItem mode="add" ident="wdt:docBornDigital">
                               <desc>Born Digital document</desc>
                            </valItem>
-                           <valItem mode="add" ident="wdt:docBornDigitalExhibit">
-                              <desc>Exhibit</desc>
+                           <valItem mode="add" ident="wdt:docBornDigitalListing">
+                              <desc>Listing Pages</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docBornDigitalDocumentation">
                               <desc>Documentation</desc>
@@ -1815,7 +1815,7 @@
                            <valItem mode="add" ident="org:Hutchinson">
                               <desc>Hutchinson’s</desc>
                            </valItem>
-                           <valItem mode="add" ident="org:I">
+                           <valItem mode="add" ident="org:IConfess">
                               <desc>I Confess</desc>
                            </valItem>
                            <valItem mode="add" ident="org:Idler">

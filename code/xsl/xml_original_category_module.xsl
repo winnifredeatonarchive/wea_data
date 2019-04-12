@@ -223,7 +223,7 @@
         <xsl:variable name="thisId" select="if ($appendSub) then concat($thisCat/@xml:id,'_subcategories') else $thisCat/@xml:id"/>
         <xsl:variable name="outDoc" select="concat($outDir,'xml/original/',$thisId,'.xml')"/>
         <xsl:variable name="title" select="if ($appendSub) then concat(catDesc/term,': Subcategories') else catDesc/term" as="xs:string"/>
-        <xsl:variable name="categories">wdt:docBornDigitalExhibit</xsl:variable>
+        <xsl:variable name="categories">wdt:docBornDigitalListing</xsl:variable>
        <xsl:if test="not(empty(wea:getCatDocs($thisCat/@xml:id)))">
            <xsl:call-template name="generateTeiPage">
                <xsl:with-param name="outDoc" select="$outDoc"/>

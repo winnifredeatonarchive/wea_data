@@ -21,6 +21,7 @@
     <xsl:include href="xml_original_people_module.xsl"/>
     <xsl:include href="xml_original_organizations_module.xsl"/>
     <xsl:include href="xml_original_templates_module.xsl"/>
+    <xsl:include href="xml_original_work_module.xsl"/>
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($sourceXml)">
@@ -30,11 +31,11 @@
                 <xsl:apply-templates select="." mode="original"/>
             </xsl:result-document>
         </xsl:for-each>
-        <xsl:if test="not($docsToBuild='DOCUMENTATION')">
             <xsl:call-template name="createCategoryPages"/>
+            <xsl:call-template name="createWorkPages"/>
             <xsl:call-template name="createPeoplePages"/>
             <xsl:call-template name="createOrgPages"/>
-        </xsl:if>
+        
     </xsl:template>
     
 

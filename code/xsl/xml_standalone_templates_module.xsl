@@ -52,12 +52,11 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="bibl/@copyOf" mode="pass1"/>
     
     
     <xsl:template match="tei:*/@active | tei:*/@adj | tei:*/@adjFrom | tei:*/@adjTo | tei:*/@ana |
         tei:*/@calendar | tei:*/@change | tei:*/@children | tei:*/@class |
-        tei:*/@code | tei:*[not(self::bibl[ancestor::sourceDesc])][not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
+        tei:*/@code | tei:*[not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
         tei:*/@datingPoint | tei:*/@decls | tei:*/@domains | tei:*/@edRef | tei:*/@end |
         tei:*/@exclude | tei:*/@facs | tei:*/@feats | tei:*/@filter | tei:*/@follow | 
         tei:*/@from | tei:*/@fVal | tei:*/@given | tei:*/@hand | tei:*/@inst | tei:*/@lemmaRef |
@@ -131,7 +130,7 @@
     </xd:doc>
     <xsl:template match="tei:*/@active | tei:*/@adj | tei:*/@adjFrom | tei:*/@adjTo | tei:*/@ana |
         tei:*/@calendar | tei:*/@change | tei:*/@children | tei:*/@class |
-        tei:*/@code | tei:*[not(ancestor::text[@type='standoff'])][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
+        tei:*/@code | tei:*[not(ancestor::text[@type='standoff'])][not(self::bibl/ancestor::sourceDesc)][not(ancestor-or-self::taxonomy)][not(ancestor-or-self::charDecl)]/@copyOf | tei:*/@corresp | tei:*/@datcat | tei:*/@datingMethod |
         tei:*/@datingPoint | tei:*/@decls | tei:*/@domains | tei:*/@edRef | tei:*/@end |
         tei:*/@exclude | tei:*/@facs | tei:*/@feats | tei:*/@filter | tei:*/@follow | 
         tei:*/@from | tei:*/@fVal | tei:*/@given | tei:*/@hand | tei:*/@inst | tei:*/@lemmaRef |
@@ -200,8 +199,6 @@
         <xsl:attribute name="{$attName}" select="string-join($out,' ')"/>      
     </xsl:template>
     
-    <!--Now delete that copyOf-->
-    <xsl:template match="@copyOf" mode="pass2"/>
     
     
     

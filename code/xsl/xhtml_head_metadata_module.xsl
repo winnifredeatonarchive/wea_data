@@ -21,7 +21,7 @@
     <xsl:template name="createHeadMetadata">
         <head>
 
-            <title><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></title>
+            <title><xsl:value-of select="teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="icon" type="image/png" href="images/icon.png"/>

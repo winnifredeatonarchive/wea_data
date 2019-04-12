@@ -67,9 +67,10 @@
                   </category>
                   <category xml:id="docBornDigital" n="Born Digital Documents">
                      <catDesc><term>Born Digital document</term></catDesc>
-                     <category xml:id="docBornDigitalExhibit" n="Exhibit Pages">
+                     <category xml:id="docBornDigitalListing" n="Listing Pages">
                         <catDesc>
-                           <term>Exhibit</term>
+                           <term>Listing Pages</term>
+                           
                         </catDesc>
                      </category>
                      <category xml:id="docBornDigitalDocumentation" n="Documentation">
@@ -198,6 +199,7 @@
             <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1_sm.png"/>
             <prefixDef ident="fig" matchPattern="(.+)" replacementPattern="media.xml#$1"/>
             <prefixDef ident="org" matchPattern="(.+)" replacementPattern="organizations.xml#$1"/>
+            <prefixDef ident="bibl" matchPattern="(.+)" replacementPattern="bibliography.xml#bibl$1"/>
          </listPrefixDef>
       </encodingDesc>
       <revisionDesc>

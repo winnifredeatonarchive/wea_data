@@ -40,7 +40,8 @@
     
     <xsl:function name="wea:getTitle">
         <xsl:param name="docId"/>
-        <xsl:sequence select="$standaloneXml[//TEI/@xml:id=$docId]/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+        
+        <xsl:sequence select="$standaloneXml[//TEI/@xml:id=$docId]//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
     </xsl:function>
     
     <xsl:function name="wea:isObject" as="xs:boolean">
@@ -50,7 +51,7 @@
     
     <xsl:function name="wea:isExhibit" as="xs:boolean">
         <xsl:param name="doc"/>
-        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigitalExhibit'))"/>
+        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'bornDigitalListing'))"/>
     </xsl:function>
     
     <xsl:function name="wea:bornDigital" as="xs:boolean">

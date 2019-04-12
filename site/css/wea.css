@@ -417,6 +417,7 @@ div.result:focus > a{
     display:flex;
     max-height:25rem;
     flex-flow:column wrap;
+    max-width:40rem;
     
 }
 
@@ -425,6 +426,7 @@ div.result:focus > a{
     min-width:0;
     flex-basis:content;
     padding:.5rem .5rem .5rem 0;
+    max-width:14rem;
 }
 
 #metadata> > div{
@@ -476,7 +478,7 @@ a, a:visited{
     margin: 0 auto;
 }
 
-#mainBody:not(.docBornDigitalExhibit) > #text{
+#mainBody:not(.docBornDigitalListing) > #text{
     max-width:50rem;
 }
 
@@ -490,9 +492,9 @@ a, a:visited{
 #mainBody:not(.docBornDigitalExhibit) > #info{
      display:grid;
       grid-template-areas:
-      "facsimile metadata_container metadata_container relatedItems"
-      "facsimile metadata_container metadata_container relatedItems"
-      "facsimile metadata_container metadata_container relatedItems"
+      "facsimile metadata_container metadata_container metadata_container"
+      "facsimile metadata_container metadata_container metadata_container"
+      "facsimile metadata_container metadata_container metadata_container"
       "additional_info additional_info additional_info additional_info";
       
       grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
@@ -1383,6 +1385,7 @@ table[data-type='exhibit']{
     }
     #metadata > div{
         padding:.25rem .25rem .25rem 0;
+        max-width:unset;
         
     }
     #facsimile{

@@ -1094,7 +1094,7 @@ element catDesc { ( text | <ref target="#TEI.model.limitedPhrase">model.limitedP
                                                   <item rend="odd_value"><seg>Born Digital
                                                   document</seg></item>
                                                   <label rend="odd_label"
-                                                  >wdt:docBornDigitalExhibit</label>
+                                                  >wdt:docbornDigitalListing</label>
                                                   <item rend="odd_value"><seg>Exhibit</seg></item>
                                                   <label rend="odd_label"
                                                   >wdt:genreShortStory</label>
@@ -1181,7 +1181,7 @@ element catDesc { ( text | <ref target="#TEI.model.limitedPhrase">model.limitedP
                                         constraint</seg><ab xml:space="preserve" rend="pre">
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:docType']"&gt;
- &lt;sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docbornDigitalListing))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:genre']"&gt;

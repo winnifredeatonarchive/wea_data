@@ -262,6 +262,18 @@
         <xsl:apply-templates select="//text/@next" mode="metadata"/>
         <!--I think we want the next before the prev in all cases-->
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
+        <xsl:call-template name="getWork"/>
+
+    </xsl:template>
+    
+    <xsl:template name="getWork">
+        <xsl:variable name="thisBibl" select="//sourceDesc/bibl/substring-after(@copyOf,'bibliography.xml#')"/>
+        <xsl:variable name="thisWork" select="$standaloneXml[//TEI[@xml:id='bibliography']]//listBibl[bibl[@xml:id=$thisBibl]]"/>
+        <div>
+            <div class="metadataLabel">Work</div>
+            <div><a href="{$thisWork/@xml:id}.html"><xsl:apply-templates select="$thisWork/head/node()" mode="tei"/></a>
+            </div>
+        </div>
     </xsl:template>
     
     <xsl:template match="bibl/note" mode="metadata"/>

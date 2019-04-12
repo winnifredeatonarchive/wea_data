@@ -3826,8 +3826,8 @@ Of Clare-Hall in Cambridge.</byline>
                                                 <item>Published Primary Sources</item>
                                                 <label>wdt:docBornDigital</label>
                                                 <item>Born Digital document</item>
-                                                <label>wdt:docBornDigitalExhibit</label>
-                                                <item>Exhibit</item>
+                                                <label>wdt:docBornDigitalListing</label>
+                                                <item>Listing Pages</item>
                                                 <label>wdt:docBornDigitalDocumentation</label>
                                                 <item>Documentation</item>
                                                 <label>wdt:genreShortStory</label>
@@ -3972,7 +3972,7 @@ Of Clare-Hall in Cambridge.</byline>
                         <cell>An XsLT generated co-occurence constraint<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:docType']"&gt;
- &lt;sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalExhibit)|(wdt:docBornDigitalDocumentation))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:docPrimarySource)|(wdt:docPrimarySourceMS)|(wdt:docPrimarySourcePublished)|(wdt:docBornDigital)|(wdt:docBornDigitalListing)|(wdt:docBornDigitalDocumentation))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:genre']"&gt;
@@ -20142,7 +20142,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                                 <item>Home and Flowers</item>
                                                 <label>org:Hutchinson</label>
                                                 <item>Hutchinson’s</item>
-                                                <label>org:I</label>
+                                                <label>org:IConfess</label>
                                                 <item>I Confess</item>
                                                 <label>org:Idler</label>
                                                 <item>Idler</item>
