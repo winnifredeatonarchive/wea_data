@@ -59,6 +59,7 @@
                                                     <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
                                                 </graphic>
                                             </figure>
+
                                         </xsl:when>
                                     </xsl:choose>
                                 </cell>
