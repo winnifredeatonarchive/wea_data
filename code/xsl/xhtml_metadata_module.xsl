@@ -371,9 +371,9 @@
                 
             </tei:name>
         </xsl:variable>
-        <div>
+
             <xsl:apply-templates select="$nameEl" mode="tei"/>
-        </div>
+
     </xsl:template>
     
     
