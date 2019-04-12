@@ -349,18 +349,26 @@
     </xsl:template>
     
     
-    <xsl:template match="bibl/author/name" mode="metadata">
+    <xsl:template match="bibl/author/name | bibl/author/rs" mode="metadata">
         <xsl:variable name="nameEl" as="element(name)">
             <xsl:copy>
                 <xsl:copy-of select="@*"/>
-                <xsl:analyze-string select="text()" regex="^(.+),(.+)$">
-                    <xsl:matching-substring>
-                        <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
-                    </xsl:matching-substring>
-                    <xsl:non-matching-substring>
-                        <xsl:value-of select="."/>
-                    </xsl:non-matching-substring>
-                </xsl:analyze-string>
+                <xsl:choose>
+                    <xsl:when test="self::name">
+                        <xsl:analyze-string select="text()" regex="^(.+),(.+)$">
+                            <xsl:matching-substring>
+                                <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
+                            </xsl:matching-substring>
+                            <xsl:non-matching-substring>
+                                <xsl:value-of select="."/>
+                            </xsl:non-matching-substring>
+                        </xsl:analyze-string>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:sequence select="node()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
             </xsl:copy>
         </xsl:variable>
         <div>
