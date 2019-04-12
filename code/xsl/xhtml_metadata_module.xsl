@@ -81,19 +81,10 @@
                         </xsl:for-each>
                     </div>
                 </xsl:if>
-                <div id="source_citation">
-                    <div class="metadataLabel">Source Citation</div>
-                    <xsl:apply-templates select="$root//sourceDesc/bibl" mode="tei"/>
-                </div>
-                <div id="this_citation">
-                    <div class="metadataLabel">Cite this Page</div>
-                    <xsl:variable name="tempBibl" as="element(tei:bibl)">
-                        <tei:bibl><xsl:sequence select="$root//sourceDesc/bibl/node()[not(self::note)]"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
-                    </xsl:variable>
-                        <xsl:apply-templates select="$tempBibl" mode="tei"/>
-                    
-                    
-                </div>
+                
+                <xsl:call-template name="createCitations"/>
+
+
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
                     <xsl:variable name="originalUri" select="concat('xml/original/',ancestor::TEI/@xml:id,'.xml')"/>
@@ -117,6 +108,35 @@
         </div>
     </xsl:template>
     
+    
+    <xsl:template name="createCitations">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="tempCitation">
+            <xsl:apply-templates select="$root//sourceDesc/bibl" mode="citation"/>
+        </xsl:variable>
+        <div id="source_citation">
+            <div class="metadataLabel">Source Citation</div>
+            <xsl:apply-templates select="$tempCitation" mode="tei"/>
+        </div>
+        <div id="this_citation">
+            <div class="metadataLabel">Cite this Page</div>
+            <xsl:variable name="tempBibl" as="element(tei:bibl)">
+                <tei:bibl><xsl:sequence select="$tempCitation/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
+            </xsl:variable>
+            <xsl:apply-templates select="$tempBibl" mode="tei"/>
+        </div>
+    </xsl:template>
+    
+    
+    <xsl:template match="bibl/author/name | bibl/author/rs | bibl/publisher" mode="citation">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
+    <xsl:template match="@*|node()" priority="-1" mode="citation">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template name="createRelatedItems">
         <xsl:if test="ancestor::TEI//relatedItem">
