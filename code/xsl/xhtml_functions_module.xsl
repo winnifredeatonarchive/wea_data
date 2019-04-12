@@ -51,7 +51,8 @@
     
     <xsl:function name="wea:isExhibit" as="xs:boolean">
         <xsl:param name="doc"/>
-        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'bornDigitalListing'))"/>
+        <xsl:variable name="category" select="$standaloneXml//TEI[@xml:id='taxonomies']/descendant::taxonomy[@xml:id='exhibit']/category[@xml:id=$doc/@xml:id]"/>
+        <xsl:value-of select="not(empty($category))"/>
     </xsl:function>
     
     <xsl:function name="wea:bornDigital" as="xs:boolean">

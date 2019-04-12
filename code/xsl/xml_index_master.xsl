@@ -31,20 +31,97 @@
            <xsl:with-param name="content">
                <body>
                    <head>Index</head>
-                   <div>
-                       <table>
-                           <row role="label">
-                               <cell>Title</cell>
-                               <cell>ID</cell>
-                           </row>
-                           <xsl:for-each select="$originalXml//TEI">
-                               <row>
-                                   <cell><ref target="{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
-                                   <cell><xsl:value-of select="//TEI/@xml:id"/></cell>
-                               </row>
-                           </xsl:for-each>
-                       </table>
-                   </div>
+                   <xsl:for-each-group select="$originalXml//TEI" group-by="some $r in //catRef/@target satisfies matches($r,'PrimarySource')">
+                       <xsl:sort select="current-grouping-key()" order="descending"/>
+                       <div>
+                          <head>
+                              <xsl:choose>
+                                  <xsl:when test="current-grouping-key()">Primary Sources</xsl:when>
+                                  <xsl:otherwise>Other Pages</xsl:otherwise>
+                              </xsl:choose>
+                          </head>
+                              <div>
+                                  <xsl:choose>
+                                      <xsl:when test="current-grouping-key()">
+                                          <table type="exhibit">
+                                              <row role="label">
+                                                  <cell/>
+                                                  <cell>Title</cell>
+                                                  <cell>Date Published</cell>
+                                                  <cell>Transcription Available</cell>
+                                              </row>
+                                              <!--A small function to get the category docs for this category-->
+                                              <xsl:for-each select="current-group()">
+                                                  <xsl:variable name="thisDoc" select="." as="element()"/>
+                                                  <xsl:variable name="docId" select="$thisDoc/@xml:id" as="xs:string"/>
+                                                  
+                                                  <row>
+                                                      <cell>
+                                                          <xsl:choose>
+                                                              <xsl:when test="$thisDoc//text[@facs]">
+                                                                  <figure>
+                                                                      <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.png">
+                                                                          <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                                      </graphic>
+                                                                  </figure>
+                                                              </xsl:when>
+                                                          </xsl:choose>
+                                                      </cell>
+                                                      
+                                                      <cell>
+                                                          <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                                      </cell>
+                                                      <cell>
+                                                          <xsl:choose>
+                                                              <xsl:when test="$thisDoc//sourceDesc/bibl[@copyOf]">
+                                                                  <xsl:choose>
+                                                                      <xsl:when test="not(empty($thisDoc//sourceDesc/bibl/date))">
+                                                                          <xsl:copy-of select="$thisDoc//sourceDesc/bibl/date"/>
+                                                                      </xsl:when>
+                                                                      <xsl:otherwise>
+                                                                          <date/>
+                                                                      </xsl:otherwise>
+                                                                  </xsl:choose>
+                                                              </xsl:when>
+                                                              <xsl:otherwise>
+                                                                  <date/>
+                                                              </xsl:otherwise>
+                                                          </xsl:choose>
+                                                          
+                                                      </cell>
+                                                      <cell>
+                                                          <xsl:choose>
+                                                              <xsl:when test="normalize-space(string-join($thisDoc//text,'')) ne ''">
+                                                                  <xsl:text>Yes</xsl:text>
+                                                              </xsl:when>
+                                                              <xsl:otherwise>
+                                                                  <xsl:text>No</xsl:text>
+                                                              </xsl:otherwise>
+                                                          </xsl:choose>
+                                                      </cell>
+                                                  </row>
+                                              </xsl:for-each>
+                                          </table>
+                                      </xsl:when>
+                                      <xsl:otherwise>
+                                          <table>
+                                              <row role="label">
+                                                  <cell>Title</cell>
+                                                  <cell>Document ID</cell>
+                                              </row>
+                                              <xsl:for-each select="current-group()">
+                                                  <row>
+                                                      <cell><ref target="doc:{@xml:id}"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></cell>
+                                                      <cell><xsl:value-of select="@xml:id"/></cell>
+                                                  </row>
+                                              </xsl:for-each>
+                                          </table>
+                                      </xsl:otherwise>
+                                  </xsl:choose>
+                                  
+                              </div>
+                       </div>
+                   </xsl:for-each-group>
                </body>
            </xsl:with-param>
        </xsl:call-template>

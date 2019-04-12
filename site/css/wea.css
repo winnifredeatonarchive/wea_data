@@ -478,7 +478,7 @@ a, a:visited{
     margin: 0 auto;
 }
 
-#mainBody:not(.docBornDigitalListing) > #text{
+#mainBody[class*="docPrimarySource"] > #text{
     max-width:50rem;
 }
 
@@ -489,7 +489,7 @@ a, a:visited{
       margin:0 auto;
       }
 
-#mainBody:not(.docBornDigitalExhibit) > #info{
+#mainBody[class*="docPrimarySource"] > #info{
      display:grid;
       grid-template-areas:
       "facsimile metadata_container metadata_container metadata_container"
@@ -1355,7 +1355,7 @@ table[data-type='exhibit']{
     }
     
     
-    #mainBody:not(.docBornDigitalExhibit) > #info{
+    #mainBody[class*="docPrimarySource"] > #info{
         grid-template-areas:
         "facsimile"
         "metadata_container"
