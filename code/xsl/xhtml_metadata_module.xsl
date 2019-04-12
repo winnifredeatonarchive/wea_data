@@ -361,9 +361,12 @@
         <xsl:if test="not(preceding-sibling::author)">
             <div>
                 <div class="metadataLabel">Author<xsl:if test="following-sibling::author">s</xsl:if></div>
-                <div>
-                    <xsl:apply-templates select="(node(),following-sibling::author/node())" mode="#current"/>
-                </div>
+                <xsl:for-each select="(node(),following-sibling::author/node())">
+                    <div>
+                        <xsl:apply-templates select="." mode="#current"/>
+                    </div>
+                </xsl:for-each>
+
             </div>
         </xsl:if>
     </xsl:template>
@@ -398,7 +401,7 @@
     
     
     
-    <xsl:template match="bibl/biblScope[@unit='volume']" mode="metadata">
+    <xsl:template match="biblScope[@unit='volume']" mode="metadata">
         <div>
             <div class="metadataLabel">Volume</div>
             <div><xsl:apply-templates mode="tei"/></div>
@@ -415,20 +418,20 @@
             </div>
         </div>
     </xsl:template>
-    <xsl:template match="bibl/biblScope[@unit='issue']" mode="metadata">
+    <xsl:template match="biblScope[@unit='issue']" mode="metadata">
         <div>
             <div class="metadataLabel">Issue</div>
             <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
-    <xsl:template match="bibl/biblScope[@unit='page']" mode="metadata">
+    <xsl:template match="biblScope[@unit='page']" mode="metadata">
         <div>
             <div class="metadataLabel">Page Range</div>
             <div><xsl:apply-templates mode="tei"/></div>
         </div>
     </xsl:template>
     
-    <xsl:template match="bibl/publisher" mode="metadata">
+    <xsl:template match="publisher" mode="metadata">
         <div>
             <div class="metadataLabel">Publisher</div>
             <div>
@@ -452,6 +455,24 @@
                         <xsl:apply-templates select="if (title) then title/node() else node()" mode="tei"/>
                     </xsl:otherwise>
                 </xsl:choose>
+            </div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="distributor" mode="metadata">
+        <div>
+            <div class="metadataLabel">Distributor</div>
+            <div>
+                <xsl:apply-templates mode="tei"/>
+            </div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="idno[preceding-sibling::distributor]" mode="metadata">
+        <div>
+            <div class="metadataLabel">Identification Number</div>
+            <div>
+                <xsl:apply-templates mode="tei"/>
             </div>
         </div>
     </xsl:template>
