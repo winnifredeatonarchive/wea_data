@@ -35,9 +35,26 @@
         </copy>
     </target>
     
-  
     
-    <target name="createPDFThumbnails">
+    <target name="createThumbnails">
+        <echo message="Creating x600 thumbnails from facsimiles..."/>
+        <exec executable="/bin/bash" dir="${site.dir}/facsimiles">
+            <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0]"/>
+        </exec>
+        <echo message="Creating x300 thumbnails from facsimiles..."/>
+        <exec executable="/bin/bash" dir="${site.dir}/facsimiles">
+            <arg line="${project.dir}/code/thumbnail.sh pdf 300 [page=0] _tiny"/>
+        </exec>
+        <echo message="Creating x600 thumbnails from pngs..."/>
+        <exec executable="/bin/bash" dir="${site.dir}/media">
+            <arg line="${project.dir}/code/thumbnail.sh png 600 '' _sm "/>
+        </exec>
+        <exec executable="/bin/bash" dir="${site.dir}/media">
+            <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0] _sm "/>
+        </exec>
+    </target>
+    
+    <!--<target name="createPDFThumbnails">
         <echo message="${echo.separator}"/>
         <echo message="Creating PDF thumbnails..."/>
         <echo message="${echo.separator}"/>
@@ -112,7 +129,7 @@
             </mapper>
         </apply>
     </target>
-    
+    -->
     
  
  
@@ -243,9 +260,9 @@
   
   <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="quickWithFacs" depends="copyAuxFiles, createPDFThumbnails, createTinyThumbnails, createSmallerImages, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
+    <target name="quickWithFacs" depends="copyAuxFiles, createThumbnails, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createPDFThumbnails, createTinyThumbnails,  createSmallerImages, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, createThumbnails, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
       
     

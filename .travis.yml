@@ -3,7 +3,7 @@ language: java
 addons:
     apt:
         packages:
-        - ghostscript
+        - libvips
 script: ant all
 notifications:
   email:
