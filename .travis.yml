@@ -1,31 +1,12 @@
+os: osx
 
 language: java
 
 addons:
-  apt:
+  homebrew:
     packages:
-      - libexpat1-dev
-      - gettext
-      - libglib2.0-dev
-      - liborc-0.4-dev
-      - libfftw3-dev
-      - liblcms2-dev
-      - libmagickwand-dev
-      - libopenexr-dev
-      - libcfitsio3-dev
-      - libgif-dev
-      - libgsf-1-dev
-      - libmatio-dev
-      - libopenslide-dev
-      - libpango1.0-dev
-      - libpoppler-glib-dev
-      - librsvg2-dev
-      - libwebp-dev
-
-before_install:
-    - sudo apt-get install libvips libvips-dev
-    - sudo apt-get install libvips-tools
-
+    - vips
+    
 script: ant all
 notifications:
   email:
