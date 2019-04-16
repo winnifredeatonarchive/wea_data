@@ -1,9 +1,15 @@
 
 language: java
 
+addons:
+    apt:
+        packages:
+        - ghostscript
+
 before_install:
     - sudo apt-get install libvips libvips-dev
     - sudo apt-get install libvips-tools
+    
 script: ant all
 notifications:
   email:
