@@ -63,8 +63,8 @@
         <xsl:param name="pngName"/>
             <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.png:'))) then $s else ()" as="xs:string"/>
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[2])"/>
-            <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
-            <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
+        <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
+        <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
             <xsl:value-of select="xs:integer($height)"/>
             <xsl:value-of select="xs:integer($width)"/>
     </xsl:function>

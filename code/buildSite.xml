@@ -204,6 +204,7 @@
                 <include name="**/**"/>
             </fileset>
         </apply>
+
         <apply executable="file" dir="${site.dir}" output="${site.dir}/info/images.txt" append="true">
             <fileset dir="${site.dir}">
                 <include name="**/**.png"/>
@@ -214,6 +215,8 @@
                 <include name="**/**.tif"/>
             </fileset>
         </apply>
+        <loadfile srcfile="${site.dir}/info/images.txt" property="images"/>
+        <echo message="${images}"/>
         
     </target>
     
