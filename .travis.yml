@@ -3,11 +3,13 @@ os: osx
 language: java
 
 cache:
+  ccache: true
   directories:
     - $HOME/Library/Caches/Homebrew
 
 before_cache:
   - brew cleanup
+  - brew install ccache
   
 addons:
   homebrew:
