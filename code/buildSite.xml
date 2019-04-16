@@ -205,6 +205,7 @@
             </fileset>
         </apply>
 
+
         <apply executable="file" dir="${site.dir}" output="${site.dir}/info/images.txt" append="true">
             <fileset dir="${site.dir}">
                 <include name="**/**.png"/>
