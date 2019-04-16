@@ -6,6 +6,7 @@
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:functx="http://www.functx.com"
     version="3.0">
     
     <xsl:param name="verbose">false</xsl:param>
@@ -60,7 +61,7 @@
     
     <xsl:function name="wea:getImageDimensions" as="xs:integer+">
         <xsl:param name="pngName"/>
-            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',$pngName,'.png:'))) then $s else ()" as="xs:string"/>
+            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.png:'))) then $s else ()" as="xs:string"/>
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[2])"/>
             <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
             <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
@@ -74,6 +75,20 @@
         <xsl:variable name="lower" select="lower-case($string)"/>
         <xsl:variable name="first" select="replace($lower,'^(an?|the)\s','')"/>
         <xsl:value-of select="$first"/>
+    </xsl:function>
+    
+    
+    <xd:doc>
+        <xd:desc>Taken from http://www.xsltfunctions.com/xsl/functx_escape-for-regex.html</xd:desc>
+    </xd:doc>
+    <xsl:function name="functx:escape-for-regex" as="xs:string">
+        <xsl:param name="arg" as="xs:string?"/>
+        
+        <xsl:sequence select="
+            replace($arg,
+            '(\.|\[|\]|\\|\||\-|\^|\$|\?|\*|\+|\{|\}|\(|\))','\\$1')
+            "/>
+        
     </xsl:function>
     
     <xd:doc scope="component">
