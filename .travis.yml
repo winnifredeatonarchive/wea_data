@@ -2,7 +2,7 @@
 language: java
 #Have to add ghostscript as an add on for PDF conversion to work properly
 before_install:
-    bash install-vips.sh
+    bash lib/install-vips.sh
 script: ant all
 notifications:
   email:
