@@ -2,7 +2,8 @@
 language: java
 
 before_install:
-    - sudo apt-get install libvips libvips-dev libvips-tools
+    - sudo apt-get install libvips libvips-dev
+    - sudo apt-get install libvips-tools
 script: ant all
 notifications:
   email:
