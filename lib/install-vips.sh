@@ -7,5 +7,5 @@
 cd lib;
 tar xf vips-8.7.4.tar.gz
 cd vips-8.7.4
-#CXXFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 ./configure --prefix=$HOME/vips $*
-#make && make install
+CXXFLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 ./configure --prefix=$HOME/vips $*
+make && make install
