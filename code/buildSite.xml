@@ -38,18 +38,18 @@
     
     <target name="createThumbnails">
         <echo message="Creating x600 thumbnails from facsimiles..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/facsimiles">
+        <exec executable="/bin/bash" dir="${site.dir}/facsimiles" failonerror="true">
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0]"/>
         </exec>
         <echo message="Creating x300 thumbnails from facsimiles..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/facsimiles">
+        <exec executable="/bin/bash" dir="${site.dir}/facsimiles"  failonerror="true">
             <arg line="${project.dir}/code/thumbnail.sh pdf 300 [page=0] _tiny"/>
         </exec>
         <echo message="Creating x600 thumbnails from pngs..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/media">
+        <exec executable="/bin/bash" dir="${site.dir}/media"  failonerror="true">
             <arg line="${project.dir}/code/thumbnail.sh png 600 '' _sm "/>
         </exec>
-        <exec executable="/bin/bash" dir="${site.dir}/media">
+        <exec executable="/bin/bash" dir="${site.dir}/media" failonerror="true">
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0] _sm "/>
         </exec>
     </target>

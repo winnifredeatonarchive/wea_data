@@ -1,9 +1,8 @@
+os: osx
 language: java
 #Have to add ghostscript as an add on for PDF conversion to work properly
-addons:
-    apt:
-        packages:
-        - libvips
+before_install:
+    - brew install libvips
 script: ant all
 notifications:
   email:
