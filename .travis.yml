@@ -1,34 +1,8 @@
 
 language: java
 
-addons:
-  apt:
-    packages:
-      - libexpat1-dev
-      - gettext
-      - libglib2.0-dev
-      - liborc-0.4-dev
-      - libfftw3-dev
-      - liblcms2-dev
-      - libmagickwand-dev
-      - libopenexr-dev
-      - libcfitsio3-dev
-      - libgif-dev
-      - libgsf-1-dev
-      - libmatio-dev
-      - libopenslide-dev
-      - libpango1.0-dev
-      - libpoppler-glib-dev
-      - librsvg2-dev
-      - libwebp-dev
-
-cache:
-  bundler: true
-  directories:
-    - $HOME/vips
-
 before_install:
-    bash lib/install-vips.sh
+    - sudo apt install libvips libvips-dev libvips-tools
 script: ant all
 notifications:
   email:

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 # Taken from the ruby vips repo
 # https://github.com/libvips/ruby-vips/blob/master/.travis.yml
 
