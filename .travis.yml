@@ -2,6 +2,13 @@ os: osx
 
 language: java
 
+cache:
+  directories:
+    - $HOME/Library/Caches/Homebrew
+
+before_cache:
+  - brew cleanup
+  
 addons:
   homebrew:
     packages:
