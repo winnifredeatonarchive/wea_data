@@ -38,7 +38,7 @@
     
     <target name="createThumbnails">
         <echo message="Creating x600 thumbnails from facsimiles..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/facsimiles" failonerror="true">
+        <exec executable="/bin/bash" dir="${site.dir}/facsimiles" failonerror="true" >
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0]"/>
         </exec>
         <echo message="Creating x300 thumbnails from facsimiles..."/>
@@ -53,6 +53,56 @@
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0] _sm "/>
         </exec>
     </target>
+    
+    
+    <target name="processImages">
+        <delete dir="${site.dir}/facsimiles"/>
+        <antcall target="copyAuxFiles"/>
+        
+        <foreach target="processPDF" param="pdf">
+            <path>
+                <fileset dir="${site.dir}/facsimiles">
+                    <include name="**.pdf"/>
+                </fileset>
+            </path>
+        </foreach>
+        <!--SO for each PDF: 
+            
+             * Split PDF into multiple page PDFS
+             * Convert those PDFs into PNGs
+             * Convert the first PNG into thumbnials
+             * Convert those PNGs into tiles
+             * Delete the small PDFs
+        -->
+    </target>
+    
+    <target name="processPDF">
+        <basename property="base" file="${pdf}" suffix=".pdf"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}/pdfs"/>
+        <exec executable="pdfseparate">
+            <arg line="${pdf} ${site.dir}/facsimiles/${base}/pdfs/${base}_%d.pdf"/>
+        </exec>
+        <foreach target="pdfsToPngs" param="img">
+            <path>
+                <fileset dir="${site.dir}/facsimiles/${base}/pdfs">
+                    <include name="**.pdf"/>
+                </fileset>
+            </path>
+        </foreach>
+    </target>
+    
+    
+    <target name="pdfsToPngs">
+        <basename property="fn" file="${img}" suffix=".pdf"/>
+        <dirname property="dir" file="${img}"/>
+        <dirname property="parent.dir" file="${dir}"/>
+        <mkdir dir="${site.dir}/tiles/${fn}"/>
+        <exec executable="vips">
+            <arg line="dzsave ${img}[dpi=1200] ${site.dir}/tiles/${fn}/"/>
+        </exec>
+    </target>
+    
     
     <!--<target name="createPDFThumbnails">
         <echo message="${echo.separator}"/>

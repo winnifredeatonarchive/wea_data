@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #foo, #bar{
+          height:50rem;
+          width:auto;
+          background:black;
+          color:white;
+          }
+    </style>
+    </head>
+    <body>
+        <div id="foo"></div>
+        <div id="bar"/>
+        <script src="openseadragon.min.js"></script>
+        <script>
+      var viewer = OpenSeadragon({
+        id:            'foo',
+        tileSources: "../products/site/tiles/A_Father_1/A_Father_1.dzi"
+      });
+    </script>
+    </body>
+</html>
