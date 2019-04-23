@@ -34,7 +34,6 @@ function addEvents(){
     makeFootnotesResponsive();
     makeNamesResponsive();
     showHideTitles();
-    makeNavClickable();
     makeBarsExpandable();
     if (document.querySelectorAll('table')){
         makeTablesSortable();

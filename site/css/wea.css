@@ -72,7 +72,6 @@ body{
 
 header{
     color:black;
-    padding:.5rem 0;
     font-size:105%;
     width:100%;
     margin:0 auto 0 auto;
@@ -109,6 +108,7 @@ header{
     justify-content: center;
     align-items: center;
     flex-wrap:wrap;
+    margin:.5rem 0;
 }
 
 
@@ -140,15 +140,41 @@ header{
     font-family: "Serif";
     margin-right:2em;
 }
+
 .nav-item{
-    margin:0 .75rem;
-    text-transform:uppercase;
-    
+   text-transform:uppercase; 
+   margin:0 .75rem;
+}
+
+.nav-item.menu{
+    padding: .75rem .25rem;
+    margin-bottom:-.5rem;
+    border-bottom:.25rem solid transparent;
+    cursor: pointer;
+}
+
+.nav-item > div{
+    display:none;
 }
 
 
+/* ******* ON HOVER  */
+.nav-item.menu:hover{
+   border-bottom-color: var(--wea-pink);
+}
 
 
+.nav-item.menu:hover > div {
+    display: block;
+    position: absolute;
+    margin-top: 1.1rem;
+    padding: .5rem;
+    background: #efefef;
+}
+
+.nav-item.menu > div > div{
+    padding:.25rem 0;
+}
 
 aside{
     top:0;
@@ -1397,6 +1423,7 @@ table[data-type='exhibit']{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         width:100vw;
+        margin: .5rem 0;
     }
     
     #hamburger{

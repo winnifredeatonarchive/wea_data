@@ -53,15 +53,19 @@
             </nav>
             <nav id="nav_main">
                 <div class="nav-item home" id="nav_home"><a href="index.html">WEA</a></div>
-                <div class="nav-item">About</div>
-                <div class="nav-item">
-                    <a href="#nav_archive">Archive</a>
+                <div class="nav-item menu">About</div>
+                <div class="nav-item menu">Archive
+                    <div>
+                        <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
+                            <div class="nav-item"><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
+                        </xsl:for-each>
+                    </div>
                 </div>
-                <div class="nav-item" id="nav_career">Career</div>
-                <div class="nav-item" id="nav_biography">Biography</div>
-                <div class="nav-item" id="nav_resources">Resources</div>
+                <div class="nav-item menu" id="nav_career">Career</div>
+                <div class="nav-item menu" id="nav_biography">Biography</div>
+                <div class="nav-item menu" id="nav_resources">Resources</div>
                 <!--                    <div class="nav-item">News</div>-->
-                <div class="nav-item" id="nav_contact">Contact</div>
+                <div class="nav-item menu" id="nav_contact">Contact</div>
                 <div class="nav-item search_icon" id="nav_search">
                     <a href="#headerSearch">⚲</a>
                     
@@ -80,9 +84,7 @@
                 </div>
             </div>
             <div id="nav_archive" class="nav_option">
-                <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
-                    <div class="nav-item"><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
-                </xsl:for-each>
+                
             </div>
             <xsl:copy-of select="$siteMap"/>
         </header></xsl:template>
