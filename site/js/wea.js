@@ -33,8 +33,8 @@ function addEvents(){
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
-    showHideTitles();
     makeNavClickable();
+    showHideTitles();
     makeBarsExpandable();
     if (document.querySelectorAll('table')){
         makeTablesSortable();
@@ -42,17 +42,36 @@ function addEvents(){
 
 }
 
+
 function makeNavClickable(){
     var ham = document.getElementById('hamburger');
     ham.addEventListener('click', toggleNav, true);
-    }
-    
+    var navCloser = document.getElementById('navCloser');
+    navCloser.addEventListener('click', toggleNav, true);
+    var searchButtons = document.querySelectorAll("nav a[href='#headerSearch']");
+    console.log(searchButtons);
+    searchButtons.forEach(function(s){
+        s.addEventListener('click',toggleSearch,true);
+    });
+}
+ 
+ function toggleSearch(){
+     var e=arguments[0];
+     e.preventDefault();
+
+     toggleOpenClose(document.getElementById('headerSearch'), true);
+     toggleOpenClose(document.getElementsByTagName('header')[0], false);
+
+ }
+ 
 function toggleNav(){
       var e=arguments[0];
       /* Get rid of the #href functionality */
       e.preventDefault();
       
       toggleOpenClose(document.getElementById('nav_main'), true);
+      
+      
     
 }    
 
@@ -165,6 +184,9 @@ function removeOtherOpenNavs(){
         toggleOpenClose(openNavs[i]);
     }
      clearTitleSearchResults();
+    document.getElementsByTagName('header')[0].classList.remove('closed');
+    document.getElementsByTagName('header')[0].classList.remove('open');
+    document.getElementsByTagName('header')[0].classList.add('closed');
 }
 
 
@@ -263,13 +285,17 @@ function toggleOpenClose(el, removeAllNavs){
     if (el.classList.contains('open')){
         el.classList.remove('open');
         el.classList.add('closed');
-    } else {
+        if (el.id == 'headerSearch'){
+            clearTitleSearchResults();
+        }
+    } else if (el.classList.contains('closed')){
         el.classList.remove('closed');
         if (removeAllNavs){
         removeOtherOpenNavs();
-        
         }
         el.classList.add('open');
+    } else {
+        el.classList.add('closed');
     }
 }
 
@@ -323,7 +349,6 @@ function makeBarsExpandable(){
 
     var expandDiv = document.querySelectorAll('.expandable');
     expandDiv.forEach(function(e){
-        e.classList.add('closed');
         e.firstElementChild.addEventListener('click', openCloseAI, true);
     });
 }
@@ -578,8 +603,19 @@ function inViewport (elem) {
 
 
 function addDocClass(){
+       /* Add classes to the body */
        var body = document.getElementsByTagName('body')[0];
        body.classList.add('JS');
+      
+      /* Now added classes everywhere else */
+      document.getElementById('headerSearch').classList.add('closed');
+     document.getElementsByTagName('header')[0].classList.add('closed');
+       document.getElementById('nav_main').classList.add('closed');
+       var expandDiv = document.querySelectorAll('.expandable');
+    for (i=0; i < expandDiv.length; i++){
+        expandDiv[i].classList.add('closed');   
+    }
+       
 }
 function addSearch(){
      searcher = new mdh.LocalSearch('js/search/', 'searchResults');

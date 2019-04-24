@@ -48,6 +48,7 @@
                 <div class="search_icon"><a class="mi" href="#headerSearch">search</a></div>
             </nav>
             <nav id="nav_main">
+                <div class="mi closer"><a href="#" id="navCloser">close</a></div>
                 <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
                 <div>About</div>
                 <div>Archive
