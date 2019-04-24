@@ -34,6 +34,7 @@ function addEvents(){
     makeFootnotesResponsive();
     makeNamesResponsive();
     showHideTitles();
+    makeNavClickable();
     makeBarsExpandable();
     if (document.querySelectorAll('table')){
         makeTablesSortable();
@@ -42,20 +43,16 @@ function addEvents(){
 }
 
 function makeNavClickable(){
-    var navClicks = document.querySelectorAll("nav a[href^='#']");
-    navClicks.forEach(function(n){
-        n.addEventListener('click', toggleNav, true)
-       });
+    var ham = document.getElementById('hamburger');
+    ham.addEventListener('click', toggleNav, true);
     }
     
 function toggleNav(){
       var e=arguments[0];
       /* Get rid of the #href functionality */
       e.preventDefault();
-      var thisId = this.href.substring(this.href.lastIndexOf('#') + 1);
-      var thisEl = document.getElementById(thisId);
-      console.log(thisEl);
-      toggleOpenClose(thisEl, true);
+      
+      toggleOpenClose(document.getElementById('nav_main'), true);
     
 }    
 

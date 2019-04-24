@@ -42,35 +42,30 @@
         <header>
             <nav id="nav_small">
                 <div class="nav-item">
-                    <a href="#nav_main" id="hamburger">
-                            <div id="ham_top"/>
-                            <div id="ham_middle"/>
-                            <div id="ham_bottom"/>
-                    </a>
+                    <a href="#nav_main" class="mi" id="hamburger">menu</a>
                 </div>
-                <div class="nav-item home"><a href="index.html">WEA</a></div>
-                <div class="search_icon"><a href="#headerSearch">⚲</a></div>
+                <div class="home"><a href="index.html">WEA</a></div>
+                <div class="search_icon"><a class="mi" href="#headerSearch">search</a></div>
             </nav>
             <nav id="nav_main">
-                <div class="nav-item home" id="nav_home"><a href="index.html">WEA</a></div>
-                <div class="nav-item menu">About</div>
-                <div class="nav-item menu">Archive
+                <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
+                <div>About</div>
+                <div>Archive
                     <div>
                         <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
-                            <div class="nav-item"><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
+                            <div><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
                         </xsl:for-each>
                     </div>
                 </div>
-                <div class="nav-item menu" id="nav_career">Career</div>
-                <div class="nav-item menu" id="nav_biography">Biography</div>
-                <div class="nav-item menu" id="nav_resources">Resources</div>
+                <div>Career</div>
+                <div>Biography</div>
+                <div>Resources</div>
                 <!--                    <div class="nav-item">News</div>-->
-                <div class="nav-item menu" id="nav_contact">Contact</div>
-                <div class="nav-item search_icon" id="nav_search">
-                    <a href="#headerSearch">⚲</a>
-                    
+                <div>Contact</div>
+                <div class="search_icon" id="nav_search">
+                  <a class="mi" href="#headerSearch">search</a>
                 </div>
-                
+
             </nav>
             <div id="headerSearch">
                 <!--                    <div id="headerSearchInputButton" class="search_icon">
