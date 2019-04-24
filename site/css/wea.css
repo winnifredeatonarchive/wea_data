@@ -84,8 +84,8 @@
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
     --wea-additional-info-bg-color: var(--wea-grey);
-    --header-height: 2.6rem;
-    --body-margin-top: calc(var(--header-height) + 4rem);
+    --header-height: 4rem;
+    --body-margin-top: calc(var(--header-height) + 2rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
     
     /* PB MARGIN TOP BOTTOM */
@@ -134,20 +134,13 @@ header{
     height: var(--header-height);
 }
 
-header > *{
-        display:flex;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap:wrap;
-    background: var(--wea-header-bg-color);
 
-}
 
 /********* NAVIGATIONS ********/
 
 nav{
-        border-bottom:1px solid #efefef;
+height:100%;
+        
 }
 
 #nav_small{
@@ -160,7 +153,9 @@ nav{
     justify-content: center;
     align-items: center;
     flex-wrap:wrap;
-    padding-bottom:.25rem;
+      padding-bottom: 1rem;
+    height: 100%;
+
 }
 
 
@@ -179,14 +174,7 @@ nav{
 .search_icon > a{
         display:inline-block;
 }
-    
-.home{
-    font-family: "Serif";
-            -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-        font-size: 2.1rem;
-            margin-top: -.3rem;
-}
+
     
 #nav_main > .home{
     font-size: 2.1rem;
@@ -200,8 +188,8 @@ nav{
 
 #nav_main > div{
     padding: .75rem .25rem;
-    margin: 0 .75rem -.5rem .75rem;
-    border-bottom:.25rem solid transparent;
+    margin: 0 .75rem -1rem .75rem;
+    border-bottom: .125rem solid transparent;
     cursor: pointer;
 }
 
@@ -209,6 +197,18 @@ nav > div > div{
     display:none;
 }
 
+.home{
+        font-family: "Serif";
+            -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+        font-size: 2.1rem;
+}
+
+
+#nav_main > div.home{
+
+            margin-top: -.75rem;
+}
 
 
 /* ******* ON HOVER  */
