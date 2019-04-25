@@ -97,6 +97,10 @@
 
 }
 
+*{
+    margin:0;
+    padding:0;
+}
 
 /****************************************************************** BASIC STRUCTURE ******/
 
@@ -587,8 +591,17 @@ footer{
     cursor:pointer;
 }
 
+h2{
+    margin:.75rem 0;
+}
 .breadcrumb + h2 {
     margin-top:.2rem;
+    
+}
+
+h1{
+    margin:2rem 0;
+    padding:1rem 0 .5rem 0;
 }
 
 
