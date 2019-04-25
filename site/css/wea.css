@@ -450,6 +450,7 @@ div.results > div{
 
 
 header #siteMap{
+    display:none;
     flex-direction:column;
     font-size:90%;
     max-height:100vh;
@@ -457,6 +458,11 @@ header #siteMap{
 
 #siteMap > div{
     display:none;
+}
+
+
+#headerSearch.open ~ #siteMap{
+    display:flex;
 }
 
 #siteMap > div.result{

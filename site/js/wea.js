@@ -363,6 +363,7 @@ function showHideTitles(){
     var spansToShow = document.querySelectorAll('.showTitle');
     spansToShow.forEach(function(n){
         n.addEventListener('click', showPopup, true);
+        n.classList.add('popup');
     });
 }
 
@@ -377,6 +378,7 @@ function makeNamesResponsive(){
     var names = document.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
         n.addEventListener('click', showPopup, true);
+        n.classList.add('popup');
     });
 }
 
