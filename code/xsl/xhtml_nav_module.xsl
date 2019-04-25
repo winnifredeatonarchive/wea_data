@@ -50,7 +50,13 @@
             <nav id="nav_main">
                 <div class="mi closer"><a href="#" id="navCloser">close</a></div>
                 <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
-                <div>About</div>
+                <div>About
+                    <div>
+                        <div><a href="#">About Subpage</a></div>
+                        <div><a href="#">About Subpage</a></div>
+                        <div><a href="#">About Subpage</a></div>
+                    </div>
+                </div>
                 <div>Archive
                     <div>
                         <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
@@ -58,11 +64,32 @@
                         </xsl:for-each>
                     </div>
                 </div>
-                <div>Career</div>
-                <div>Biography</div>
-                <div>Resources</div>
+                <div>Career
+                    <div>
+                        <div><a href="#">Career Subpage</a></div>
+                        <div><a href="#">Career Subpage</a></div>
+                        <div><a href="#">Career Subpage</a></div>
+                    </div>
+                
+                </div>
+                <div>Biography
+                    <div>
+                        <div><a href="#">Bio Subpage</a></div>
+                        <div><a href="#">Bio Subpage</a></div>
+                        <div><a href="#">Bio Subpage</a></div>
+                    </div>
+                    
+                
+                </div>
+                <div>Resources
+                        <div>
+                            <div><a href="#">Resource Subpage</a></div>
+                            <div><a href="#">Resource Subpage</a></div>
+                            <div><a href="#">Resource Subpage</a></div>
+                        </div>
+                </div>
                 <!--                    <div class="nav-item">News</div>-->
-                <div>Contact</div>
+                <div><a href="#">Contact</a></div>
                 <div class="search_icon" id="nav_search">
                   <a class="mi" href="#headerSearch">search</a>
                 </div>

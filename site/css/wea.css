@@ -1549,9 +1549,7 @@ table[data-type='exhibit']{
     }
     
     
-    .JS header > #nav_main.open{
-         margin-top: calc(-1 * var(--header-height));
-        }
+
     
     #nav_small{
         padding:0;
@@ -1561,9 +1559,7 @@ table[data-type='exhibit']{
         margin-top:.65rem;
     }
     
-    #nav_main{
-      background: var(--wea-header-bg-color);
-    }
+  
     #nav_small > div {
         margin-top: auto;
         margin-bottom: auto;
@@ -1590,70 +1586,96 @@ table[data-type='exhibit']{
  }
  
  
- 
+/* NAV MAIN SIDE BAR */ 
     #nav_main.closed,
     #nav_main{
        display:none;
        
     }
     
-
-    #nav_main.open,
-    #mainBody:not(.JS) #nav_main:target
-    {
-           overflow:hidden;
-       display:block;
-       /* We should keep these as columns in case we want drop down  menus in future. */
-       width:40%;
-        height:100vh;
-        padding-top:1em;
-        position:absolute;
-        border-right:1px solid #dedede;
-        background-color:#fffcfe;
-
-    }
-    
-    
-    #nav_main{
-    /* Use true black here */
-        color:#000000;
-    }
-    
-    #nav_main .closer{
-    display:block;
-    float:right;
-}
-
-    #nav_main > div {
-        margin-left:1rem;
-    }
-    
-    #nav_main.open > div > div,
-    #nav_main:target > div > div{
-    display:block;
-    }
-    
-    #nav_main > div > div{
-        padding: .25rem 0 .25rem .5rem;
-    }
-
-   
-
-    #nav_main > div{
-        padding-top:.75rem;
-        padding-bottom:.75rem;
-    }
-    
-    /* Smaller margin needed. */
-    .pbNum{
-        margin-right:-6.5%;
-    }
     
     #nav_main > .home,
     #nav_main > .search_icon{
         display:none;   
     }
 
+  
+    
+    
+    
+
+    #nav_main.open,
+    #mainBody:not(.JS) #nav_main:target
+    {
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    display: block;
+    /* width: 40%; */
+    min-height: 100vh;
+    padding: 1rem 1rem 0 0;
+    position: absolute;
+    border-right: 1px solid #dedede;
+    background-color: #ffffff;
+    color: #757575;
+    font-size: 90%;
+    margin-bottom:2rem;
+    margin-top: calc(-1 * var(--header-height));
+    background: var(--wea-header-bg-color);
+    }
+    
+ 
+   #nav_main  a{
+       color: #000000;
+   }
+   
+   #nav_main a:hover{
+       color:var(--wea-pink);
+   }
+   
+   
+   
+   #nav_main > div:not(.closer){
+       border-bottom: 1px solid #757575;
+       padding-top:.75rem;
+       padding-bottom:.75rem;
+       margin:.5rem;
+   }
+    
+    
+   #nav_main > div > div{
+        padding: .25rem;
+    }  
+     
+     
+    #nav_main > div:nth-last-child(2){
+        padding-bottom:2rem;
+        border-bottom:none;
+    }
+    
+    
+    #nav_main .closer{
+    display:block;
+    float:right;
+    margin-top: -1rem;
+}
+    
+    #nav_main.open > div > div,
+    #nav_main:target > div > div{
+    display:block;
+    }
+    
+ 
+
+   
+
+ 
+    
+    /* Smaller margin needed. */
+    .pbNum{
+        margin-right:-6.5%;
+    }
+    
+  
     #headerSearchInput{
         width:100%;
     }
