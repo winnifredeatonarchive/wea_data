@@ -600,8 +600,8 @@ h2{
 }
 
 h1{
-    margin:2rem 0;
-    padding:1rem 0 .5rem 0;
+   margin: 2rem 0 1rem 0;
+    text-align:center;
 }
 
 
@@ -981,8 +981,7 @@ h1,h2,h3,h4,h5,h5,
 
 
 
-div[data-el=body] > div[data-el=div] > h2,
-h1{
+div[data-el=body] > div[data-el=div] > h2{
     text-align:center;
 }
 
