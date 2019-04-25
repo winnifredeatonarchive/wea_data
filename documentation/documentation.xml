@@ -171,6 +171,85 @@
                   <item>Born Digital</item>
                </list>
             </p>
+            <div xml:id="encodingIntroduction">
+               <head>Introduction to the WEA Project</head>
+               <div>
+                  <head>File Structure</head>
+                  <p>The file structure for the WEA project is as follows: <list style="font-family:monospace">
+                        <item>code/</item>
+                        <item>data/</item>
+                        <item>documentation/</item>
+                        <item>lib/</item>
+                        <item>notes/</item>
+                        <item>sch/</item>
+                        <item>site/</item>
+                        <item>template/</item>
+                        <item>build.xml</item>
+                        <item>buildGlobals.xml</item>
+                        <item>README.md</item>
+                     </list> For most encoders, almost all of the work you happen in the <code>data/</code> directory.</p>
+                  <p>The data directory contains all of the TEI files and images that comprise the main dataset for the WEA project. The folder structure may change over time, but currently it is as follows: <list style="font-family: monospace;">
+                        <item>facsimiles/</item>
+                        <item>images/</item>
+                        <item>info/</item>
+                        <item>media/</item>
+                        <item>texts/</item>
+                        <item>bibliography.xml</item>
+                        <item>media.xml</item>
+                        <item>organizations.xml</item>
+                        <item>people.xml</item>
+                        <item>taxonomies.xml</item>
+                     </list>
+                  </p>
+                  <div>
+                     <head>
+                        <code>facsimiles/</code>
+                     </head>
+                     <p>The facsimiles directory contains all of the source facsimile images. Currently, we only handle PDFs, but this will likely change in the future.</p>
+                     <p>Facsimiles are currently named using underscores separating each word; these names are not necessarily important, but they should be kept consistent for ease of use later.</p>
+                  </div>
+                  <div>
+                     <head>
+                        <code>images/</code>
+                     </head>
+                     <p>The images directory contains the images that are used throughout the site, but are neither a facsimile or a media item (that is, an object described within media.xml). This means that the images directory only contains items that will be used for the site itself and do not constitute a primary object of analysis. </p>
+                  </div>
+                  <div>
+                     <head>
+                        <code>info/</code>
+                     </head>
+                     <p>The info directory contains all of the <q>born-digital</q> documents for the site. This includes biographies, timelines, legal information, et cetera.</p>
+                  </div>
+                  <div>
+                     <head>
+                        <code>media/</code>
+                     </head>
+                     <p>The media directory contains all of the <q>media</q> items, which are not facsimiles of primary sources written by WE, but are included in the media database so that they can be used across the site as related items.</p>
+                  </div>
+                  <div>
+                     <head>
+                        <code>texts/</code>
+                     </head>
+                     <p>The texts directory contains all of the primary source texts, sometimes called <q>objects</q> in this documentation, that comprise the majority of the WEA project.</p>
+                  </div>
+                  <div>
+                     <head>Database files</head>
+                     <p>The files that are at the root of this directory (bibliography.xml et cetera) are database files. See the instructions on <ref target="#encodingDatabases">Encoding Databases</ref> for more information.</p>
+                  </div>
+               </div>
+            </div>
+            <div xml:id="encodingWorkflow">
+               <head>Workflow</head>
+               <p>This document describes the basic workflow for encoding a text for the WEA project. In this section, you will find all of the necessary instructions or pointers to instructions for working with a WEA text. These instructions assume that you have already followed the <ref target="#gettingStarted">Getting Started</ref> instructions for setting up your Github repository locally.</p>
+               <div>
+                  <head>Step 1: Setting up your document</head>
+                  <p>Most documents already have a <q>shell</q> document in the /text/ repository; however, if you are adding a new document that was not previously listed in the main bibliography, then you will need to <ref target="#encodingDatabases_bibliography_WE">create a new bibliography entry</ref> and create a new file.</p>
+               </div>
+               <div>
+                  <head>Step 2: Metadata</head>
+                  <p/>
+               </div>
+            </div>
             <div xml:id="encodingDatabases">
                <head>Encoding Databases</head>
                <p>The WEA project consists of three databases for linking entities across the site: <list>
