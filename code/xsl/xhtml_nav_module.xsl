@@ -64,14 +64,7 @@
                         </xsl:for-each>
                     </div>
                 </div>
-                <div>Career
-                    <div>
-                        <div><a href="#">Career Subpage</a></div>
-                        <div><a href="#">Career Subpage</a></div>
-                        <div><a href="#">Career Subpage</a></div>
-                    </div>
                 
-                </div>
                 <div>Biography
                     <div>
                         <div><a href="#">Bio Subpage</a></div>
