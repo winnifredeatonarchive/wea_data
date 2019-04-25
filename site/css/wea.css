@@ -87,6 +87,7 @@
     --header-height: 4.25rem;
     --body-margin-top: calc(var(--header-height) + 2rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
+    --link-color: #2A5DB0;
     
     /* PB MARGIN TOP BOTTOM */
     --pb-margin-tb: 2.25rem;
@@ -570,9 +571,6 @@ footer{
 
 
 
-a, a:visited{
-    color:#2A5DB0;
-}
 
 
 
@@ -759,10 +757,21 @@ div[data-type='listFigure'] img{
 
 /**** LINKS ***** */
 
+
+
+a, a:visited{
+    color:var(--link-color);
+}
+
 header a,
 header a:visited
 {
     color:inherit;
+}
+
+a.popup{
+    color: var(--wea-text-color);
+    border-bottom: 1px dashed var(--link-color);
 }
 
 a:hover,
@@ -773,10 +782,17 @@ a:hover,
 .breadcrumb > a:visited,
 .JS .additionalInfoHeader:hover,
 .JS .additionalInfoHeader:hover::after,
-header a:hover{
+header a:hover,
+a.popup:hover{
     color:var(--wea-pink);
     transition: color 0.2s ease-in-out;
 }
+
+a.popup:hover{
+    border-bottom: 1px dashed var(--wea-pink);
+}
+
+
 
 div:target:before{
       content: '';
