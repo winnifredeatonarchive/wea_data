@@ -21,6 +21,13 @@
     src: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
 }
 
+@font-face{
+    font-family: "Serif";
+    src: url(../fonts/Playfair_Display/PlayfairDisplay-Bold.ttf);
+    font-weight: bold;
+}
+
+
 /********************************
  * 
  * The following block is taken from the Google Material Design
@@ -79,7 +86,7 @@
     --wea-grey: #efefef;
     
     
-    --wea-text-color: #292929;
+    --wea-text-color: #161616;
     --wea-footer-bg-color: #282d2e;
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
@@ -772,6 +779,11 @@ div[data-type='listFigure'] img{
 .JS .additionalInfoHeader{
     cursor:pointer;
     padding:1rem;
+    -webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
     
 }
 
@@ -1000,26 +1012,30 @@ h1,h2,h3,h4,h5,h6{
     font-family: "Serif";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-weight:400;
 
+}
+
+h1, h2{
+    font-weight:500;
 }
 
 
 h1,h2,h3,h4,h5,h5,
 .metadataLabel{
-        color: #33383D;
+        color: #111111;
 }
 
 h3{
     margin:1.5rem 0;
-    font-weight:700;
-    font-size:150%;
+    font-size:175%;
 }
 
 
 
-
-
-
+#info h2{
+    font-size:200%;
+}
 
 div[data-el=body] > div[data-el=div] > h2{
     text-align:center;
@@ -1041,6 +1057,8 @@ div[data-el=p]{
 .metadataLabel{
     text-transform:lowercase;
     font-variant:small-caps;
+    font-size:110%;
+    margin-bottom:.175rem;
 }
 
 div[data-el='note'] > div[data-el='p']{
@@ -1249,6 +1267,11 @@ span[data-el='q'] span[data-el='q']::after{
 	left: 85%;
 }
 
+
+#popup h3{
+    font-size:125%;
+    font-weight:bold;
+}
 
 
 
@@ -1497,6 +1520,10 @@ table {
 
 tbody{
         word-break: break-word;
+}
+
+th{
+    font-weight:normal;
 }
 
 
