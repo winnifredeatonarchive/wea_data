@@ -1009,6 +1009,12 @@ h1,h2,h3,h4,h5,h5,
         color: #33383D;
 }
 
+h3{
+    margin:1.5rem 0;
+    font-weight:700;
+    font-size:150%;
+}
+
 
 
 
@@ -1432,22 +1438,31 @@ div.facsButton> a:hover
     margin-top: 2rem;
 }
 
-#appendix div[data-el=note]{
-    display:flex;
-    }
+
+
 
 
 .returnToNote{
-    padding-right:1rem;
 }
 .returnToNote::after{
     content:".";
 }
 
+#appendix div[data-el='note']{
+    display:flex;
+    text-align:justify;
+}
+
+#appendix div[data-el='note'] > div{
+    display:inline;
+    padding-left: 1rem;
+    padding-right:2rem;
+    
+}
 
     
 div[data-el=note] + div[data-el=note]{
-    padding-top:.3em;
+    margin-top:.75rem;
 }
 
 #appendix h2{

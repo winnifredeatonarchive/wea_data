@@ -25,7 +25,9 @@
                 <xsl:with-param name="id" select="$noteId"/>
             </xsl:call-template>
             <a class="returnToNote" href="#noteMarker_{$noteNum}" title="Return to note {$noteNum}."><xsl:value-of select="$noteNum"/></a>
-            <xsl:apply-templates mode="tei"/>
+            <div>
+                <xsl:apply-templates mode="tei"/>
+            </div>
         </div>
     </xsl:template>
     
