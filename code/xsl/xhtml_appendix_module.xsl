@@ -19,12 +19,13 @@
     <xsl:template match="note[@type='editorial']" mode="appendix">
         <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
         <xsl:variable name="noteNum" select="tokenize($noteId,'_')[last()]"/>
-        <div data-notenum="{$noteNum}">
+        <div>
+
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="id" select="$noteId"/>
             </xsl:call-template>
+            <a class="returnToNote" href="#noteMarker_{$noteNum}" title="Return to note {$noteNum}."><xsl:value-of select="$noteNum"/></a>
             <xsl:apply-templates mode="tei"/>
-            <a class="returnToNote" href="#noteMarker_{$noteNum}">↑</a>
         </div>
     </xsl:template>
     
@@ -41,7 +42,7 @@
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="id" select="'personography'"/>
             </xsl:call-template>
-            <h3>People Mentioned</h3>
+            <h2>People Mentioned</h2>
             <xsl:apply-templates select="person" mode="tei"/>
         </div>
     </xsl:template>
@@ -51,7 +52,7 @@
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="id" select="'organizations'"/>
             </xsl:call-template>
-            <h3>Organizations Mentioned</h3>
+            <h2>Organizations Mentioned</h2>
             <xsl:apply-templates select="org" mode="tei"/>
         </div>
     </xsl:template>
@@ -59,7 +60,7 @@
     <xsl:template name="createNotes">
         <xsl:if test="//note[@type='editorial']">
             <div id="notes">
-                <h3>Notes</h3>
+                <h2>Notes</h2>
                 <xsl:apply-templates select="//note[@type='editorial']" mode="appendix"/>
             </div>
         </xsl:if>

@@ -52,34 +52,34 @@
                 <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
                 <div>About
                     <div>
-                        <div><a href="#">About Subpage</a></div>
-                        <div><a href="#">About Subpage</a></div>
-                        <div><a href="#">About Subpage</a></div>
+                        <a href="#">About Subpage</a>
+                        <a href="#">About Subpage</a>
+                        <a href="#">About Subpage</a>
                     </div>
                 </div>
                 <div>Archive
                     <div>
                         <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
-                            <div><a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a></div>
+                            <a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a>
                         </xsl:for-each>
                     </div>
                 </div>
                 
                 <div>Biography
                     <div>
-                        <div><a href="#">Bio Subpage</a></div>
-                        <div><a href="#">Bio Subpage</a></div>
-                        <div><a href="#">Bio Subpage</a></div>
+                        <a href="#">Bio Subpage</a>
+                        <a href="#">Bio Subpage</a>
+                        <a href="#">Bio Subpage</a>
                     </div>
                     
                 
                 </div>
                 <div>Resources
-                        <div>
-                            <div><a href="#">Resource Subpage</a></div>
-                            <div><a href="#">Resource Subpage</a></div>
-                            <div><a href="#">Resource Subpage</a></div>
-                        </div>
+                    <div>
+                        <a href="#">Resource Subpage</a>
+                        <a href="#">Resource Subpage</a>
+                        <a href="#">Resource Subpage</a>
+                    </div>
                 </div>
                 <!--                    <div class="nav-item">News</div>-->
                 <div><a href="#">Contact</a></div>

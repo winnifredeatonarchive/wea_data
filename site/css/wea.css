@@ -94,7 +94,8 @@
      /* Since pbs are just heightless border lines, they need slightly different margins
       * to accomodate the offset jump thing. */
     --pb-anchor-offset: calc(var(--anchor-offset) + var(--pb-margin-tb));
-
+    
+    --max-text-width: 50rem;
 }
 
 *{
@@ -175,6 +176,17 @@ height:100%;
     flex-wrap:wrap;
       padding-bottom: 1rem;
     height: 100%;
+    
+    /* These margins, where the left margin
+     * and the right margin cancel each other out
+     * are sort of a hack
+     * but they are there so that, if a user
+     * resizes the window, they do not get the odd
+     * CSS transition on resize. Since the left margin and 
+     *  */
+     
+    margin-left:-18rem;
+    margin-right:-18rem;
 
 }
 
@@ -196,7 +208,8 @@ height:100%;
 
 #nav_main > div#nav_search{
     margin-top: .1rem;
-    padding: 0;
+    padding-top:0;
+    padding-bottom:0;
 }
 
 .nav_option > div{
@@ -227,8 +240,8 @@ nav > div > div{
 }
 
 #nav_main > div{
-    padding: .85rem .25rem;
-    margin: 0 .75rem -1rem .75rem;
+    padding: .85rem 1rem;
+    margin-bottom: -1rem;
     border-bottom: .125rem solid transparent;
     cursor: pointer;
 }
@@ -258,24 +271,39 @@ nav > div > div{
 
 #nav_main > div:not(.search_icon):not(.home):hover{
    border-bottom-color: var(--wea-pink);
+   transition: border-bottom-color .2s;
 }
 
-#nav_main > div:not(.search_icon):not(.home):hover > div{
-        position: absolute;
-        display:block;
-    margin-top: 1.1rem;
-    padding: .5rem;
-    background: #efefef;
+#nav_main > div:hover > div{
+    position: absolute;
+    display: block;
+    margin-top: 1rem;
+    background: rgb(255, 255, 255);
+    margin-left: -1rem;
+    width: 15rem;
+    box-shadow: 1px 1px 1px 1px #efefef;
 }
+
+#nav_main > div > div > a:hover{
+        background:#efefef;
+        transition: background .2s;
+}
+     
 
 }
 
 /* END MEDIA QUERY */
 
-nav > div > div > div{
-    padding:.25rem 0;
+nav > div > div > a{
+    display:block;
+   padding: .8rem .5rem;
+   border-bottom: 1px solid #efefef;
+
 }
 
+nav > div > div > a:last-child{
+    border-bottom:none;
+}
 aside{
     top:0;
     margin-left:0;
@@ -317,12 +345,6 @@ div.ham{
 
 
 
-div.closed > h3,
-div.open > h3{
-    cursor:pointer;
-}
-
-
 div.toc {
     text-align:justify;
 }
@@ -332,15 +354,6 @@ div.toc > div > span{
 }
 
 
-div.closed > h3::after{
-    content:" ▶";
-    }
-    
-
-
-div.open > h3::after{
-    content:" ▼";
-}
 
 /****************************************************************** SEARCH (HEADER AND MAIN) ******/
 
@@ -617,7 +630,7 @@ h1{
 }
 
 #mainBody[class*="docPrimarySource"] > #text{
-    max-width:50rem;
+    max-width: var(--max-text-width);
 }
 
 #info{
@@ -821,7 +834,7 @@ a:hover,
 header a:hover,
 a.popup:hover{
     color:var(--wea-pink);
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s;
 }
 
 a.popup:hover{
@@ -864,7 +877,7 @@ a:target:before{
 
 #hamburger:hover > div{
     background-color:var(--wea-pink);
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s;
 }
 
 
@@ -985,7 +998,7 @@ a:target:before{
 
 h1,h2,h3,h4,h5,h6{
     font-family: "Serif";
-            -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 
 }
@@ -995,6 +1008,8 @@ h1,h2,h3,h4,h5,h5,
 .metadataLabel{
         color: #33383D;
 }
+
+
 
 
 
@@ -1404,21 +1419,39 @@ div.facsButton> a:hover
 }
 
 /**************************************************************************** APPENDIX */
+
+
+#appendix{
+    max-width: calc(var(--max-text-width) * 1.5);
+    margin: 0 auto;
+}
+
+#appendix > div:first-child{
+    border-top: 2px solid #d8d5d5; 
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
 #appendix div[data-el=note]{
-    background: var(--wea-additional-info-bg-color);
-    border:dotted 1px black;
-    padding:.5em;
-    font-size:95%;
+    display:flex;
     }
 
-#appendix div[data-el='note']:before{
-    content: attr(data-notenum)".";
-    float:left;
-    margin-right:.5rem;
+
+.returnToNote{
+    padding-right:1rem;
 }
+.returnToNote::after{
+    content:".";
+}
+
+
     
 div[data-el=note] + div[data-el=note]{
     padding-top:.3em;
+}
+
+#appendix h2{
+    margin-bottom:2rem;
 }
 
 
@@ -1443,8 +1476,18 @@ table {
     border-collapse: collapse;
     table-layout:fixed;
     margin: 0 auto;
+    width: 100%;
+
 }
 
+tbody{
+        word-break: break-word;
+}
+
+
+td{
+    padding:1rem;
+}
 .JS th.sortable{
     cursor:pointer;
 }
@@ -1510,10 +1553,6 @@ tr img{
 }
 
 
-table[data-type='exhibit']{
-    width:100%;
-}
-
 
 
 @media only screen and (max-width: 900px){
@@ -1564,7 +1603,7 @@ table[data-type='exhibit']{
     
     #nav_small{
         display:grid;
-        grid-template-columns: .25fr 2fr .25fr;
+        grid-template-columns: .75fr 2fr .75fr;
         width:100vw;
     }
     
@@ -1645,13 +1684,23 @@ table[data-type='exhibit']{
     #nav_main.closed{
       margin-left:-18rem;
     }
+
+
+#nav_main.closed{
+    transition:margin-left .5s;
+}
+    
     
     #nav_main > .home,
     #nav_main > .search_icon{
         display:none;   
     }
 
-  
+
+ table[data-type="exhibit"] td:first-child,
+ table[data-type="exhibit"] th:first-child{
+     display:none;
+ }
     
     
     
@@ -1659,10 +1708,8 @@ table[data-type='exhibit']{
     #nav_main.open,
     #mainBody:not(.JS) #nav_main:target
     {
-    /* overflow: hidden; */
-   
     margin-left:0;
-    transition: margin-left .5s ease-in-out;
+    transition: margin-left .5s;
     }
     
 
@@ -1689,7 +1736,11 @@ table[data-type='exhibit']{
         padding: .25rem;
     }  
      
-     
+   #nav_main > div > div > a{
+       padding:.6rem 0;
+   }
+   
+
     #nav_main > div:nth-last-child(2){
         padding-bottom:2rem;
         border-bottom:none;

@@ -294,6 +294,8 @@ function toggleOpenClose(el, removeAllNavs){
         removeOtherOpenNavs();
         }
         el.classList.add('open');
+    } else if (el.getAttribute('id') == 'nav_main') {
+        el.classList.add('open');
     } else {
         el.classList.add('closed');
     }
@@ -612,7 +614,6 @@ function addDocClass(){
       /* Now added classes everywhere else */
       document.getElementById('headerSearch').classList.add('closed');
      document.getElementsByTagName('header')[0].classList.add('closed');
-       document.getElementById('nav_main').classList.add('closed');
        var expandDiv = document.querySelectorAll('.expandable');
     for (i=0; i < expandDiv.length; i++){
         expandDiv[i].classList.add('closed');   
