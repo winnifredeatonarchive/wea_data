@@ -86,7 +86,7 @@
     --wea-grey: #efefef;
     
     
-    --wea-text-color: #161616;
+    --wea-text-color: #292929;
     --wea-footer-bg-color: #282d2e;
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
@@ -1013,6 +1013,7 @@ h1,h2,h3,h4,h5,h6{
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-weight:400;
+     color: #111111;
 
 }
 
@@ -1021,10 +1022,6 @@ h1, h2{
 }
 
 
-h1,h2,h3,h4,h5,h5,
-.metadataLabel{
-        color: #111111;
-}
 
 h3{
     margin:1.5rem 0;
@@ -1059,6 +1056,7 @@ div[data-el=p]{
     font-variant:small-caps;
     font-size:110%;
     margin-bottom:.175rem;
+    color: #33383D;
 }
 
 div[data-el='note'] > div[data-el='p']{
