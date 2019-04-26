@@ -102,6 +102,7 @@
     padding:0;
 }
 
+
 /****************************************************************** BASIC STRUCTURE ******/
 
 /********* MAIN HTML ********/
@@ -718,13 +719,13 @@ div[data-type='listFigure'] img{
 #additional_info > div{
     margin-top:1rem;
     background: var(--wea-additional-info-bg-color);
-    padding: 1rem;
 }
 
 #additional_info .content{
     display:flex;
     flex-flow: column;
     align-content: baseline;
+    padding-left: 2rem;
     
 }
 
@@ -747,22 +748,30 @@ div[data-type='listFigure'] img{
 
 .JS .additionalInfoHeader{
     cursor:pointer;
+    padding:1rem;
     
 }
 
-.JS #additional_info > div  .additionalInfoHeader::after,
-.JS #additional_info > div.closed  .additionalInfoHeader::after{
-    content: "\02795";
+.additionalInfoHeader > span.mi{
+    display:none;
+    font-variant:none;
+}
+
+.JS .additionalInfoHeader > span.mi{
+    display:inline-block;
     float:right;
-    font-size:80%;
 }
 
-.JS #additional_info > div.open > .additionalInfoHeader::after{
-    content:"\2796";
+#additional_info > div.open span.mi{
+    transform: rotate(90deg);
+    transition: transform  .5s;
 }
 
 
-
+#additional_info > div.closed span.mi{
+    transform: rotate(0deg);
+    transition: transform .5s;
+}
 
 #searchButtons{
     top: 10%;
@@ -798,7 +807,7 @@ a:hover,
 .breadcrumb > a,
 .breadcrumb > a:visited,
 .JS .additionalInfoHeader:hover,
-.JS .additionalInfoHeader:hover::after,
+.JS .additionalInfoHeader:hover:after,
 header a:hover,
 a.popup:hover{
     color:var(--wea-pink);
@@ -1602,13 +1611,30 @@ table[data-type='exhibit']{
  }
  
  
-/* NAV MAIN SIDE BAR */ 
-    #nav_main.closed,
+/* NAV MAIN SIDE BAR */
     #nav_main{
-       display:none;
-       
+ 
+    overflow-y: scroll;
+    display: block;
+    /* width: 40%; */
+    min-height: 100vh;
+    padding: 1rem 1rem 0 0;
+    position: absolute;
+     border-right: 1px solid #dedede;
+    background-color: #ffffff;
+    color: #757575;
+    font-size: 90%;
+    margin-left:0;
+    margin-bottom:2rem;
+    margin-top: calc(-1 * var(--header-height));
+    background: var(--wea-header-bg-color);
+    width:17rem;
     }
     
+    #nav_main,
+    #nav_main.closed{
+      margin-left:-18rem;
+    }
     
     #nav_main > .home,
     #nav_main > .search_icon{
@@ -1624,21 +1650,12 @@ table[data-type='exhibit']{
     #mainBody:not(.JS) #nav_main:target
     {
     /* overflow: hidden; */
-    overflow-y: scroll;
-    display: block;
-    /* width: 40%; */
-    min-height: 100vh;
-    padding: 1rem 1rem 0 0;
-    position: absolute;
-    border-right: 1px solid #dedede;
-    background-color: #ffffff;
-    color: #757575;
-    font-size: 90%;
-    margin-bottom:2rem;
-    margin-top: calc(-1 * var(--header-height));
-    background: var(--wea-header-bg-color);
+   
+    margin-left:0;
+    transition: margin-left .5s ease-in-out;
     }
     
+
  
    #nav_main  a{
        color: #000000;
@@ -1675,9 +1692,8 @@ table[data-type='exhibit']{
     margin-top: -1rem;
 }
     
-    #nav_main.open > div > div,
-    #nav_main:target > div > div{
-    display:block;
+    #nav_main> div > div{
+        display:block;
     }
     
  
@@ -1701,6 +1717,10 @@ table[data-type='exhibit']{
     
     #hamburger{
         font-size: 2.5rem;
+    }
+    
+    .search_icon{
+        font-size:2rem;
     }
     
 }

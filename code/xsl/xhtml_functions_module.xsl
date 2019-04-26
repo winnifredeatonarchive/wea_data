@@ -5,6 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:svg="http://www.w3.org/2000/svg"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="3.0">
@@ -16,6 +17,8 @@
         </xd:desc>
     </xd:doc>
     
+    
+    <xsl:variable name="svgs" select="doc('../../site/fonts/material-icons.svg')"/>
     <!--FUNCTIONS-->
     
     <xsl:function name="wea:getNoteId">
@@ -67,6 +70,22 @@
         <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/catDesc/term"/></a></div>
     </xsl:function>
     
+    
+    <xsl:function name="wea:getSvg">
+        <xsl:param name="svgId"/>
+        <xsl:variable name="id" select="normalize-space(if (starts-with($svgId,'ic_')) then $svgId else concat('ic_',$svgId))"/>
+        <xsl:variable name="svg" select="$svgs//svg:symbol[@id=$id]"/>
+        <xsl:choose>
+            <xsl:when test="not(empty($svg))">
+                <svg:svg>
+                    <xsl:sequence select="$svg/@*[not(local-name()='id')] | $svg/*"/>
+                </svg:svg>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message terminate="yes">ERROR: Cannot find SVG: <xsl:value-of select="$svgId"/></xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
     
     
 </xsl:stylesheet>
