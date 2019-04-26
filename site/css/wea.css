@@ -275,7 +275,7 @@ nav > div > div{
 /* ******* ON HOVER  */
 
 /* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
-@media only screen and (min-width: 901px){
+@media only screen and (min-width: 1025px){
 
 #nav_main > div:not(.search_icon):not(.home):hover{
    border-bottom-color: var(--wea-pink);
@@ -1601,55 +1601,11 @@ tr img{
     max-height:4rem;
 }
 
+/* iPad Pros are 1024 px in width, so we'll start there
+ * as the place where the header needs to switch */
 
-
-
-@media only screen and (max-width: 776px){
-    
-    #mainBody{
-        padding-left:5%;
-        padding-right:5%;
-    }
-    
-    
-    #mainBody[class*="docPrimarySource"] > #info{
-        grid-template-areas:
-        "facsimile"
-        "metadata_container"
-        "additional_info";
-         grid-template-columns:1fr;
-         grid-template-rows: max-content max-content max-content;
-         grid-column-gap:0;
-        
-    }
-    
-    #metadata_container, #facsimile, #additional_info{
-        width:auto;
-    }
-    
-    #additional_info{
-        padding-left:.25rem;
-        margin-left:-.25rem;
-    }
-    
-    #metadata{
-    /* No more flex */
-        display:block;
-        height:100%;
-        flex-flow:unset;
-        max-height:unset;
-        
-    }
-    #metadata > div{
-        padding:.25rem .25rem .25rem 0;
-        max-width:unset;
-        
-    }
-    #facsimile{
-     margin: 0 auto;   
-    }
-    
-    
+@media only screen and (max-width: 1024px){
+       
     #nav_small{
         display:grid;
         grid-template-columns: .75fr 2fr .75fr;
@@ -1661,8 +1617,10 @@ tr img{
     }
     
     #hamburger{
-        display:block;
-        font-size:200%;
+         font-size: 2.5rem;
+                cursor:pointer;
+        margin-left:.5rem;
+        
     }
     
     
@@ -1688,11 +1646,16 @@ tr img{
         margin-bottom: auto;
     }
     
-    #hamburger{
-        cursor:pointer;
-        display:inline-block;
-        margin-left:.5rem;
-        
+
+   
+    #headerSearchInput{
+        width:100%;
+    }
+ 
+
+    
+    .search_icon{
+        font-size:2rem;
     }
  header.searchOpen #headerSearch{
     grid-template-areas:
@@ -1746,13 +1709,6 @@ tr img{
     }
 
 
- table[data-type="exhibit"] td:first-child,
- table[data-type="exhibit"] th:first-child{
-     display:none;
- }
-    
-    
-    
 
     #nav_main.open,
     #mainBody:not(.JS) #nav_main:target
@@ -1806,10 +1762,69 @@ tr img{
         display:block;
     }
     
+    
+}
+
+
+@media only screen and (max-width: 776px){
+    
+    #mainBody{
+        padding-left:5%;
+        padding-right:5%;
+    }
+    
+    
+    #mainBody[class*="docPrimarySource"] > #info{
+        grid-template-areas:
+        "facsimile"
+        "metadata_container"
+        "additional_info";
+         grid-template-columns:1fr;
+         grid-template-rows: max-content max-content max-content;
+         grid-column-gap:0;
+        
+    }
+    
+    #metadata_container, #facsimile, #additional_info{
+        width:auto;
+    }
+    
+    #additional_info{
+        padding-left:.25rem;
+        margin-left:-.25rem;
+    }
+    
+    #metadata{
+    /* No more flex */
+        display:block;
+        height:100%;
+        flex-flow:unset;
+        max-height:unset;
+        
+    }
+    #metadata > div{
+        padding:.25rem .25rem .25rem 0;
+        max-width:unset;
+        
+    }
+    #facsimile{
+     margin: 0 auto;   
+    }
+    
+ 
  
 
-   
 
+
+ table[data-type="exhibit"] td:first-child,
+ table[data-type="exhibit"] th:first-child{
+     display:none;
+ }
+    
+    
+    
+
+    
  
     
     /* Smaller margin needed. */
@@ -1818,19 +1833,7 @@ tr img{
     }
     
   
-    #headerSearchInput{
-        width:100%;
-    }
- 
     
 
-    
-    #hamburger{
-        font-size: 2.5rem;
-    }
-    
-    .search_icon{
-        font-size:2rem;
-    }
-    
+
 }
