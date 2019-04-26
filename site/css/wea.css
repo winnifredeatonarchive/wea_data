@@ -719,6 +719,8 @@ div[data-type='listFigure'] img{
 #additional_info > div{
     margin-top:1rem;
     background: var(--wea-additional-info-bg-color);
+    box-shadow: 1px 1px 1px 1px #dcdcdc;
+    
 }
 
 #additional_info .content{
@@ -732,6 +734,8 @@ div[data-type='listFigure'] img{
 #relatedItems .content{
     flex-wrap:wrap;
 }
+
+
 
 .JS .expandable.closed > .content{
     max-height:0;
