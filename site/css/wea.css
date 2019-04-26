@@ -117,6 +117,7 @@
 html{
     font-family: Sans;
     font-size:100%;
+    font-size:16px; 
 
 }
 
@@ -570,7 +571,7 @@ div.result:focus > a{
     max-height:25rem;
     flex-flow:column wrap;
     max-width:40rem;
-    
+    font-size: 0.95rem;
 }
 
 #metadata > div,
@@ -581,11 +582,17 @@ div.result:focus > a{
 }
 
 
+#title{
+    margin-top: -.25rem;
+}
+
 #metadata> div{
     max-width:14rem;
 }
 
-
+.metadataLabel.breadcrumb{
+    font-size:1rem;
+}
     
 .breadcrumb > a:hover{
     color: #940049;
@@ -692,14 +699,15 @@ h1{
   padding:0 10% 5% 10%;
   flex:1;
   margin-top: var(--body-margin-top);
+  line-height:1.4;
 }
 
 #facsimile{
     grid-area: facsimile;
     width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+     display: flex; 
+     align-items: center; 
+     justify-content: center; 
 }
 
 #metadata_container{
@@ -738,6 +746,7 @@ div[data-type='listFigure'] img{
 /* ***************************************************** ADDITIONAL INFO PANEL ********** */
 #additional_info{
     grid-area: additional_info;
+    padding-bottom: 1rem;
 
    
 }
@@ -1031,7 +1040,8 @@ h3{
 
 
 #info h2{
-    font-size:200%;
+    font-size:190%;
+    margin-top:-.15rem;
 }
 
 div[data-el=body] > div[data-el=div] > h2{
@@ -1054,8 +1064,7 @@ div[data-el=p]{
 .metadataLabel{
     text-transform:lowercase;
     font-variant:small-caps;
-    font-size:110%;
-    margin-bottom:.175rem;
+    font-size:1.05rem;
     color: #33383D;
 }
 
@@ -1595,7 +1604,7 @@ tr img{
 
 
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 776px){
     
     #mainBody{
         padding-left:5%;
