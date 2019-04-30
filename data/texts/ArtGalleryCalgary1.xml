@@ -4,25 +4,43 @@
       <fileDesc>
          <titleStmt>
             <title>An Art Gallery for Calgary</title>
+         <respStmt>
+            <resp>Transcriber</resp>
+            <name ref="pers:KI1">Ken Ip</name>
+         </respStmt>
+         <respStmt>
+            <resp>Proofreader</resp>
+            <name ref="pers:SL1">Sydney Lines</name>
+         </respStmt>
+         <respStmt>
+            <resp>Encoder</resp>
+            <name ref="pers:KI1">Ken Ip</name>
+         </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+          <note>Facsimile retrieved from Microfilm held at UBC, Koerner Library</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:28"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
          <change who="pers:JT1" when="2019-04-11">Created file from bibliography entry bibl28 using XSLT.</change>
          <change who="pers:KI1" when="2019-04-18">Added transcription to file</change>
+         <change who="pers:KI1" when="2019-04-30">Updated file to match new workflow</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:ArtGalleryCalgary1">
       <body>
          <head>
             AN ART GALLERY FOR CALGARY
