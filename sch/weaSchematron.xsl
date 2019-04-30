@@ -1317,10 +1317,10 @@ belongs, but this <xsl:text/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')"/>
+         <xsl:when test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                                test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

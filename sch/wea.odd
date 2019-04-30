@@ -1178,7 +1178,36 @@
                      <elementRef key="revisionDesc"/>
                   </content>
                </elementSpec>
-          
+               
+              <!-- <elementSpec ident="revisionDesc" module="header" mode="change">
+                  
+                  <!-\-MOVE THIS TO THE CLASS SPEC FOR att.docStatus-\->
+                  <attList>
+                     <attDef mode="change" ident="status">
+                        <valList mode="replace" type="closed">
+                           <valItem ident="empty">
+                              <desc>empty</desc>
+                              <gloss>Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.</gloss>
+                           </valItem>
+                           <valItem ident="inProgress">
+                              <desc>In Progress</desc>
+                              <gloss>A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.</gloss>
+                           </valItem>
+                           <valItem ident="readyForProof">
+                              <desc>Ready for Proofing</desc>
+                              <gloss>A document that is ready to be proofed by the project director.</gloss>
+                           </valItem>
+                           <valItem ident="published">
+                              <desc>Published</desc>
+                              <gloss>A published document.</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <!-\-ADD A SHCEMATRon RULE THAT ENFORCES THAT YOU MUST ADD A @STATUS
+                     TO YOUR DOCUMENT IF THE STATUS IS NOT EMPTY and THE LATEST REVISION DESC MUST MATCH THE @STATUS-\->
+               </elementSpec>
+          -->
                <!--Make profileDesc/textClass mandatory-->
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
@@ -2072,7 +2101,7 @@
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:pb[@n]">
-                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
                            </sch:rule>

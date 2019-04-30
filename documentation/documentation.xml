@@ -18410,7 +18410,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>All <att>n</att> attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:pb[@n]"&gt;
- &lt;sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')"&gt; ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
+ &lt;sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')"&gt; ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

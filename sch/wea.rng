@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-04-25T09:07:00Z. .
+Schema generated from ODD source 2019-04-30T20:50:18Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -3090,7 +3090,7 @@ Elements]</a:documentation>
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:pb[@n]">
-                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|([xiv]+))$')">
+                              <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
                            </sch:rule>
