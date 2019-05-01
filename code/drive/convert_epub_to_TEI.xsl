@@ -24,14 +24,15 @@
     
     <xsl:variable name="xhDocs" select="collection(concat('../../temp/',$documentId,'_files/GoogleDoc/?select=*.xhtml'))"/>
     <xsl:variable name="xhtmlDoc" select="for $x in $xhDocs return if (not(matches(document-uri($x),'/nav.xhtml'))) then $x else ()" as="document-node()+"/>
-    <xsl:variable name="teiDoc" select="document(concat('../../data/texts/',$documentId,'.xml'))"/>
-    <xsl:variable name="people" select="document('../../data/people.xml')"/>
-    <xsl:variable name="tax" select="document('../../data/taxonomies.xml')"/>
+    <xsl:variable name="teiDoc" select="document(concat('../../data/texts/',$documentId,'.xml'))" as="document-node()*"/>
+    <xsl:variable name="people" select="document('../../data/people.xml')" as="document-node()"/>
+    <xsl:variable name="tax" select="document('../../data/taxonomies.xml')" as="document-node()"/>
     
     <xsl:output indent="yes" suppress-indentation="p hi seg q"/>
     
     <xsl:template name="createDoc">
         <xsl:message>Creating <xsl:value-of select="resolve-uri(concat('../../temp/',$documentId,'.xml'))"/></xsl:message>
+        <xsl:call-template name="check"/>
         <xsl:variable name="pass1">
             <xsl:apply-templates select="$teiDoc" mode="tei"/>
         </xsl:variable>
@@ -39,6 +40,40 @@
            <xsl:apply-templates mode="pass2" select="$pass1"/>
         </xsl:result-document>
      
+    </xsl:template>
+    
+    
+    <!--This template is for checking that everything actually is input the correct way-->
+    <xsl:template name="check">
+        <!--First, let's chect that the documents exist-->
+        
+        <xsl:if test="empty($xhtmlDoc)">
+            <xsl:message terminate="yes">ERROR: Google Doc not available. Check the URL and make sure the document is sharable.</xsl:message>
+        </xsl:if>
+        
+        <xsl:if test="empty($teiDoc)">
+            <xsl:message terminate="yes">ERROR: TEI document not avaiable. Make sure you've typed the @xml:id correctly.</xsl:message>
+        </xsl:if>
+        
+        
+        <xsl:if test="normalize-space(string-join($teiDoc//body,''))">
+            <xsl:message terminate="yes">ERROR: <xsl:value-of select="$documentId"/> has content that would be overwritten. Check to make sure that this is the document you want.</xsl:message>
+        </xsl:if>
+        
+        <xsl:for-each select="distinct-values(($yourId,$encoderId,$proofreaderId,$transcriberId))">
+            <xsl:variable name="currId" select="."/>
+            <xsl:if test="empty($people//person[@xml:id=$currId])">
+                <xsl:message terminate="yes">ERROR: Person <xsl:value-of select="$currId"/> does not exist.</xsl:message>
+            </xsl:if>
+        </xsl:for-each>
+
+        
+        <xsl:for-each select="distinct-values(($genreId, $exhibitId, $docTypeId))">
+            <xsl:variable name="currVal" select="."/>
+            <xsl:if test="empty($tax//category[@xml:id=$currVal])">
+                <xsl:message terminate="yes">ERROR: Document type category <xsl:value-of select="$currVal"/> does not exist.</xsl:message>
+            </xsl:if>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="TEI" mode="pass2">
