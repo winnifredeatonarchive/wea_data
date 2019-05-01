@@ -1,0 +1,133 @@
+/* CSS FILE FOR ANT */
+
+   @namespace oxy "http://www.oxygenxml.com/extensions/author";
+   @namespace "";
+   
+           oxy|processing-instruction, oxy|comment {
+                display:none !important;
+            }
+            
+            
+            *|project{
+                -oxy-editable: false;
+                max-width:40rem;
+                margin:0 20%;
+                padding:2% 10%;
+                font-size:16px;
+            }
+            
+            *|description{
+              display:block;
+              background-color: #efefef;
+            }
+            
+            *|description:first-child{
+                margin:0 auto;
+                border:1px dotted black;
+                width:100%;
+                font-weight:400;
+                font-size:90%;
+                padding:1rem;
+                background-color:#ffd1ec;
+                margin-left:-10rem;
+            }
+            
+            *|description:nth-of-type(n+1){
+                font-weight:bold;
+                padding:.5rem;
+                margin-top:-.4rem;
+                
+            }
+            
+            *|description:last-of-type{
+              background-color:#ffd1ec;
+              font-size:110%;
+              border:1px solid black;
+            }
+            
+            oxy|processing-instruction, oxy|comment {
+                display:none !important;
+            }
+            
+            *{
+                -oxy-display-tags: none;
+            }
+            
+           *|property{
+               display:block;
+               -oxy-editable:true;
+               border-bottom:1px solid black;
+               width:100%;
+               background-color:white;
+      
+           } 
+           
+           
+           *|description + *|property{
+               margin-bottom:2rem;
+           }
+           *|property::before{
+              font-weight:bold;
+              padding-right:2rem;
+           }
+           
+           
+            *|property[name="driveId"]::before{
+            content:"Document ID from Google Drive:";
+   
+
+
+
+}
+    *|property[name="documentId"]::before{
+    content:"TEI Document @xml:id:";
+
+
+}
+    *|property[name="yourId"]::before{
+  content:"Your @xml:id:";
+
+
+
+
+}
+    *|property[name="encoderId"]::before{
+      content:"Encoder @xml:id:";
+ 
+
+
+
+}
+    *|property[name="proofreaderId"]::before{
+      content:"Proofreader @xml:id:";
+ 
+
+
+}
+    *|property[name="transcriberId"]::before{
+  content:"Transcriber @xml:id:";
+
+
+}
+    *|property[name="genreId"]::before{
+  content:"Genre @xml:id:";
+
+
+}
+
+    *|property[name="exhibitId"]::before{
+  content:"Exhibit @xml:id:";
+
+
+}
+
+    *|property[name="docTypeId"]::before{
+  content:"Document Type @xml:id:";
+
+}
+
+
+
+*|target{
+    display:none;
+}

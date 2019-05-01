@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="code/drive/ant.css"?>
+<project basedir="." name="AddText" default="all">
+    <description>This build creates a TEI document from the Google Drive.
+        To use this build, replace the current values (if filled in) in the form below for your document. 
+        See the documentation (https://winnifredeatonarchive.github.io/docs/) for more information 
+        on the input values and how to run this build.</description>
+    
+    
+   
+    <description>Drive Id: The ID from the Google Drive URL: https://docs.google.com/document/d/[[STUFF IN HERE]]/edit</description>
+    <property name="driveId">1wJXaUFIyXqBYt3ANylfjCd7C-__0aBKMGQTTBuwUwNQ</property>
+    
+    
+    <description>Document Id: the TEI document @xml:id in the data/texts folder</description>
+    <property name="documentId">GeishaGirl2</property>
+    
+    
+    <description>Your Id: Your @xml:id</description>
+    <property name="yourId">JT1</property>
+    
+    <description>Encoder Id: The encoder's @xml:id</description>
+    <property name="encoderId">KI1</property>
+    
+    <description>Proofreader Id: The proofreader's @xml:id</description>
+    <property name="proofreaderId">JT1</property>
+    
+    
+    <description>Transcriber Id: The transcriber's @xml:id</description>
+    <property name="transcriberId">SL1</property>
+    
+    <description>Genre Id: The genre id (i.e. poetry/prose/etc)</description>
+    <property name="genreId">POEM|PROSE|NOVEL</property>
+    
+    <description>Exhibit id: Exhibit id</description>
+    <property name="exhibitId">Japan|EarlyExperiments|Hollywood|Alberta</property>
+    
+    <description>Document Type id: The document type id (PrimarySourcePublished or PrimarySourceMS)</description>
+    <property name="docTypeId">PrimarySourcePublished|PrimarySourceMS</property>
+   
+   
+   <description>Once all values have been filled in, press the red play button at the top of the screen. Your file should open automatically in the browser;
+   make sure to validate it, correct any metadata, add the facsimile, et cetera.</description>
+   
+   <target name="init">
+       <delete dir="temp"/>
+       <mkdir dir="temp"/>
+   </target>
+    
+    <target name="download">
+        <get src="https://docs.google.com/document/d/${driveId}/export?format=epub" dest="temp/${documentId}.epub"/>
+        <unzip src="temp/${documentId}.epub" dest="temp/${documentId}_files"/>
+        
+    </target>
+    
+    <target name="convert">
+        <java classpath="lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+            <arg value="-xsl:code/drive/convert_epub_to_TEI.xsl"/>
+            <arg value="-it:createDoc"/>
+            <arg value="documentId=${documentId}"/>
+            <arg value="yourId=${yourId}"/>
+            <arg value="encoderId=${encoderId}"/>
+            <arg value="proofreaderId=${proofreaderId}"/>
+            <arg value="transcriberId=${transcriberId}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>          
+        </java>
+        
+        
+    </target>
+    
+    
+    <target name="clean"></target>
+    
+    <target name="all" depends="init, download, convert, clean"/>
+</project>
