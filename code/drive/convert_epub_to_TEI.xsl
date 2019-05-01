@@ -17,24 +17,26 @@
     <xsl:param name="encoderId"/>
     <xsl:param name="proofreaderId"/>
     <xsl:param name="transcriberId"/>
-    
+    <xsl:param name="genreId"/>
+    <xsl:param name="exhibitId"/>
+    <xsl:param name="docTypeId"/>
+
     
     <xsl:variable name="xhDocs" select="collection(concat('../../temp/',$documentId,'_files/GoogleDoc/?select=*.xhtml'))"/>
     <xsl:variable name="xhtmlDoc" select="for $x in $xhDocs return if (not(matches(document-uri($x),'/nav.xhtml'))) then $x else ()" as="document-node()+"/>
     <xsl:variable name="teiDoc" select="document(concat('../../data/texts/',$documentId,'.xml'))"/>
     <xsl:variable name="people" select="document('../../data/people.xml')"/>
+    <xsl:variable name="tax" select="document('../../data/taxonomies.xml')"/>
     
     <xsl:output indent="yes" suppress-indentation="p hi seg q"/>
     
     <xsl:template name="createDoc">
-        <xsl:message>NOTHING YET EXCEPT <xsl:value-of select="document-uri($xhtmlDoc)"/> and <xsl:value-of select="document-uri($teiDoc)"/></xsl:message>
         <xsl:message>Creating <xsl:value-of select="resolve-uri(concat('../../temp/',$documentId,'.xml'))"/></xsl:message>
         <xsl:variable name="pass1">
             <xsl:apply-templates select="$teiDoc" mode="tei"/>
         </xsl:variable>
         <xsl:result-document href="{concat('temp/',$documentId,'.xml')}">
            <xsl:apply-templates mode="pass2" select="$pass1"/>
-
         </xsl:result-document>
      
     </xsl:template>
@@ -140,6 +142,20 @@
     <xsl:template match="revisionDesc/@status" mode="tei">
         <xsl:attribute name="status" select="'inProgress'"/>
     </xsl:template>
+    
+    <xsl:template match="textClass" mode="tei">
+        <xsl:copy>
+            <catRef scheme="wdt:genre" target="wdt:{$genreId}"/>
+            <catRef scheme="wdt:exhibit" target="wdt:{$exhibitId}"/>
+            <catRef scheme="wdt:docType" target="wdt:{$docTypeId}"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:function name="wea:getClass">
+        <xsl:param name="id"/>
+        <xsl:variable name="thisCat" select="$tax//category[@xml:id=$id]"/>
+        <catRef target="wdt:{$id}" scheme="wdt:{$thisCat/ancestor::taxonomy/@xml:id}"/>
+    </xsl:function>
     
     <xsl:function name="wea:getName">
         <xsl:param name="id"/>

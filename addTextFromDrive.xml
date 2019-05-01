@@ -30,31 +30,48 @@
     <property name="transcriberId">SL1</property>
     
     <description>Genre Id: The genre id (i.e. poetry/prose/etc)</description>
-    <property name="genreId">POEM|PROSE|NOVEL</property>
+    <property name="genreId">genreShortStory</property>
     
     <description>Exhibit id: Exhibit id</description>
-    <property name="exhibitId">Japan|EarlyExperiments|Hollywood|Alberta</property>
+    <property name="exhibitId">Japan</property>
     
     <description>Document Type id: The document type id (PrimarySourcePublished or PrimarySourceMS)</description>
-    <property name="docTypeId">PrimarySourcePublished|PrimarySourceMS</property>
+    <property name="docTypeId">docPrimarySourcePublished</property>
+    
+    <condition property="isWindows" value="true">
+        <os family="windows"/>
+    </condition>
+    
+    <condition property="isUnix">
+        <os family="unix" />
+    </condition>
    
    
    <description>Once all values have been filled in, press the red play button at the top of the screen. Your file should open automatically in the browser;
    make sure to validate it, correct any metadata, add the facsimile, et cetera.</description>
    
    <target name="init">
+       <echo message="**********************************************************"/>
+       <echo message="Setting up...."/>
+       <echo message="**********************************************************"/>
        <delete dir="temp"/>
        <mkdir dir="temp"/>
    </target>
     
     <target name="download">
+        <echo message="**********************************************************"/>
+        <echo message="Downloading document from Google Drive"/>
+        <echo message="**********************************************************"/>
         <get src="https://docs.google.com/document/d/${driveId}/export?format=epub" dest="temp/${documentId}.epub"/>
         <unzip src="temp/${documentId}.epub" dest="temp/${documentId}_files"/>
         
     </target>
     
     <target name="convert">
-        <java classpath="lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+        <echo message="**********************************************************"/>
+        <echo message="Converting document..."/>
+        <echo message="**********************************************************"/>
+        <java classpath="lib/saxon9he.jar" classname="net.sf.saxon.Transform" failOnError="true">
             <arg value="-xsl:code/drive/convert_epub_to_TEI.xsl"/>
             <arg value="-it:createDoc"/>
             <arg value="documentId=${documentId}"/>
@@ -62,14 +79,59 @@
             <arg value="encoderId=${encoderId}"/>
             <arg value="proofreaderId=${proofreaderId}"/>
             <arg value="transcriberId=${transcriberId}"/>
+            <arg value="genreId=${genreId}"/>
+            <arg value="exhibitId=${exhibitId}"/>
+            <arg value="docTypeId=${docTypeId}"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>          
         </java>
-        
-        
     </target>
     
     
-    <target name="clean"></target>
+    <target name="clean">
+        <echo message="**********************************************************"/>
+        <echo message="Moving file. This will overwrite the local file."/>
+        <echo message="**********************************************************"/>
+        <move file="temp/${documentId}.xml" todir="data/texts/" overwrite="yes"/>
+        <echo message="**********************************************************"/>
+        <echo message="Deleting temporary directory."/>
+        <echo message="**********************************************************"/>
+        <delete dir="temp"/>
+        <echo message="**********************************************************"/>
+        <echo message="Done!"/>
+        <echo message="**********************************************************"/>
+    </target>
     
-    <target name="all" depends="init, download, convert, clean"/>
+    
+    <scriptdef name="open" language="javascript">
+        <attribute name="file" />
+        <![CDATA[
+        var location = "file://"+attributes.get("file").toString().replaceAll("\\\\","/");
+        location = java.net.URLEncoder.encode(location, "UTF-8");
+        location = location.toString().replaceAll("%3A",":");
+        location = location.toString().replaceAll("%2F","/");
+        var uriLocation = java.net.URI.create(location);
+        var desktop = java.awt.Desktop.getDesktop();
+        desktop.browse(uriLocation);
+    ]]>
+    </scriptdef>
+    
+    
+    
+    <target name="open" depends="open.if.windows, open.if.unix">
+        
+        <open file="${outFile}"/>
+    </target>
+    
+    <target name="open.if.windows" if="${isWindows}">
+        
+        <property name="diagnosticsFile" value="${basedir}\data\texts\${documentId}.xml"/>
+        <echo message="Opening ${outFile}"/>
+    </target>
+    
+    <target name="open.if.unix" if="${isUnix}">
+        <property name="outFile" value="${basedir}/data/texts/${documentId}.xml"/>
+        <echo message="Opening ${outFile}"/>
+    </target>
+    
+    <target name="all" depends="init, download, convert, clean, open"/>
 </project>
