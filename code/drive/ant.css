@@ -10,15 +10,17 @@
             
             *|project{
                 -oxy-editable: false;
-                max-width:40rem;
-                margin:0 20%;
-                padding:2% 10%;
                 font-size:16px;
+                padding: 0 10rem;
+                max-width:40rem;
+            }
+            
+            *|project > *{
+                margin:0 auto;
             }
             
             *|description{
               display:block;
-              background-color: #efefef;
             }
             
             *|description:first-child{
@@ -29,20 +31,27 @@
                 font-size:90%;
                 padding:1rem;
                 background-color:#ffd1ec;
-                margin-left:-10rem;
+                width:30rem;
+                color: black;
+                font-weight:bold;
             }
             
-            *|description:nth-of-type(n+1){
+            *|description:nth-of-type(n+2){
                 font-weight:bold;
                 padding:.5rem;
                 margin-top:-.4rem;
-                
+                background-color: #efefef;
+                color:#616263;
+                border:1px dotted black;
+                opacity:.9;
             }
             
             *|description:last-of-type{
               background-color:#ffd1ec;
               font-size:110%;
               border:1px solid black;
+              opacity:1;
+              color:black;
             }
             
             oxy|processing-instruction, oxy|comment {
@@ -59,6 +68,8 @@
                border-bottom:1px solid black;
                width:100%;
                background-color:white;
+               font-size:110%;
+               font-weight:bold;
       
            } 
            
@@ -69,6 +80,8 @@
            *|property::before{
               font-weight:bold;
               padding-right:2rem;
+               color:#616263;
+               font-size:90%;
            }
            
            
