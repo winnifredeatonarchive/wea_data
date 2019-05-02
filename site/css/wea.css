@@ -1096,6 +1096,14 @@ div[data-el='note'] > div[data-el='p']{
 
 /******************************************************************* PAGE BREAKS **********/
 
+span[data-el='pb']{
+    
+    position: relative;
+    display:block;
+    margin: var(--pb-margin-tb) 0;
+    font-size:95%;
+}
+
 span[data-el='pb'].first{
     border:none;
     margin:.5rem 0 0 0;
@@ -1110,19 +1118,14 @@ span[data-el='pb'].first{
 
 }
 
-span[data-el='pb']{
-    
-    position: relative;
-    display:block;
-    margin: var(--pb-margin-tb) 0;
-}
+
 
 span[data-el='pb']::before{
      border-top: 1px solid #757575;
      content:"";
      margin: 0 auto; /* this centers the line to the full width specified */
      position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-     top: 35%;
+     top: 37.5%;
      left: 0;
      right: 0; 
      bottom: 0;
@@ -1134,6 +1137,7 @@ span[data-el='pb']::before{
 .pbNum{
     margin-left:105%;
     background:white;
+    color:#757575;
     padding: .5rem .25rem 0 .25rem;
 }
 
