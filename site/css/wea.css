@@ -1067,9 +1067,15 @@ div[data-el=p]{
  * in the transcrition */
  
  [data-el='note'][data-place='bottom']{
+     margin-top: var(--pb-margin-tb);
      margin-bottom: calc(-.75 * var(--pb-margin-tb));
      font-size:90%;
      border:1px dotted black;
+ }
+ 
+ [data-el='note'][data-place='bottom'] > [data-el='p']{
+     padding:.5rem;
+     display:block;
  }
 
 .metadataLabel{
@@ -1089,32 +1095,48 @@ div[data-el='note'] > div[data-el='p']{
 }
 
 /******************************************************************* PAGE BREAKS **********/
-span[data-el='pb']{
-    width:100%;
-    margin:var(--pb-margin-tb) 0;
-    display:block;
-    border-bottom-style: inset;
-    border-bottom-width: 1px;
-    border-color:#757575;
-    color: #757575;
-}
-
-.pbNum{
-    float:right;
-    margin-right:-10%;
-}
-.pbNum::before{
-    content:"[";
-}
-
-.pbNum::after{
-    content:']';
-}
 
 span[data-el='pb'].first{
     border:none;
-    margin:0;
+    margin:.5rem 0 0 0;
+    margin-bottom: calc(-1 * var(--pb-margin-tb));
 }
+
+[data-el='pb'].first::before{
+    content:"";
+    width:7.5%;
+    top:40%;
+    margin-left:102.5%;
+
+}
+
+span[data-el='pb']{
+    
+    position: relative;
+    display:block;
+    margin: var(--pb-margin-tb) 0;
+}
+
+span[data-el='pb']::before{
+     border-top: 1px solid #757575;
+     content:"";
+     margin: 0 auto; /* this centers the line to the full width specified */
+     position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+     top: 35%;
+     left: 0;
+     right: 0; 
+     bottom: 0;
+     width: 115%;
+     z-index: -1;
+     margin-left:-5%;
+}
+
+.pbNum{
+    margin-left:105%;
+    background:white;
+    padding: .5rem .25rem 0 .25rem;
+}
+
 
 /********************************************************************* BIBLS ******** */
 
@@ -1784,6 +1806,23 @@ tr img{
         padding-right:5%;
     }
     
+    span[data-el='pb']:before{
+        content:"";
+        width:105%;
+        margin-left:-2.5%;
+    }
+    
+    span[data-el='pb'].first:before{
+        content:"";
+        margin-left:87.5%;
+        
+    }
+    
+    
+    .pbNum{
+        margin-left:90%;
+    }
+    
     
     #mainBody[class*="docPrimarySource"] > #info{
         grid-template-areas:
@@ -1837,12 +1876,7 @@ tr img{
 
     
  
-    
-    /* Smaller margin needed. */
-    .pbNum{
-        margin-right:-6.5%;
-    }
-    
+
   
     
 
