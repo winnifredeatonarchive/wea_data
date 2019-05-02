@@ -72,7 +72,7 @@
     
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | listBibl" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | note[p] | listBibl" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>

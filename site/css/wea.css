@@ -1061,6 +1061,17 @@ div[data-el=p]{
     text-align:justify;
 }
 
+
+/* ******* INLINE NOTES  */
+/* These are notes that are at the bottom of a page
+ * in the transcrition */
+ 
+ [data-el='note'][data-place='bottom']{
+     margin-bottom: calc(-.75 * var(--pb-margin-tb));
+     font-size:90%;
+     border:1px dotted black;
+ }
+
 .metadataLabel{
     text-transform:lowercase;
     font-variant:small-caps;
