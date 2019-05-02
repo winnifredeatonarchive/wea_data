@@ -79,63 +79,62 @@
            }
            *|property::before{
               font-weight:bold;
-              padding-right:2rem;
                color:#616263;
                font-size:90%;
            }
            
            
             *|property[name="driveId"]::before{
-            content:"Document ID from Google Drive:";
+            content:"Document ID from Google Drive:\A";
    
 
 
 
 }
     *|property[name="documentId"]::before{
-    content:"TEI Document @xml:id:";
+    content:"TEI Document @xml:id:\A";
 
 
 }
     *|property[name="yourId"]::before{
-  content:"Your @xml:id:";
+  content:"Your @xml:id:\A";
 
 
 
 
 }
     *|property[name="encoderId"]::before{
-      content:"Encoder @xml:id:";
+      content:"Encoder @xml:id:\A";
  
 
 
 
 }
     *|property[name="proofreaderId"]::before{
-      content:"Proofreader @xml:id:";
+      content:"Proofreader @xml:id:\A";
  
 
 
 }
     *|property[name="transcriberId"]::before{
-  content:"Transcriber @xml:id:";
+  content:"Transcriber @xml:id:\A";
 
 
 }
     *|property[name="genreId"]::before{
-  content:"Genre @xml:id:";
+  content:"Genre @xml:id:\A";
 
 
 }
 
     *|property[name="exhibitId"]::before{
-  content:"Exhibit @xml:id:";
+  content:"Exhibit @xml:id:\A";
 
 
 }
 
     *|property[name="docTypeId"]::before{
-  content:"Document Type @xml:id:";
+  content:"Document Type @xml:id:\A";
 
 }
 
