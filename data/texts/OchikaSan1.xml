@@ -1,30 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="OchikaSan1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="OchikaSan1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Ochika-San</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile received from Yale University.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:102"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" when="2019-05-03" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" when="2019-04-11">Created file from bibliography entry bibl102 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Ochika-San">
       <body>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>Ochika’s father had returned suddenly from Tokyo. Outside in the hall, her small pink ear laid against the paper screen, Ochika-san had listened. What she could not hear she imagined. This was about eleven in the morning. At the noon hour the parental conference came to an end.</p>
+            <p>Ochika was missed at dinner. Ume, the attending waitress, said with a sly smile that Ochika was gathering pussy-willows. Madame Asakura looked alarmed and frightened. Her husband, however—absent much from home—was unsuspicious. The home-cooked meal was good. Of that alone he thought.</p>
+            <p>For he was a comfortable man, this Asakura, and too long absolute monarch of his household to dream the slightest infraction of his wishes remotely possible.</p>
+            <p>Meanwhile the small, fleet feet of Ochika-san carried her into the most secluded part of her father’s woods. There, almost as if awaiting her, was a good-looking youth, sitting on a fallen tree.</p>
+            <p><q>Why, good morning</q>, said he, very much surprised. <q>This is an unexpected pleasure. I never thought to see your honorable face again</q>.</p>
+            <p>With her nose aloft, Ochika made formal inquiry regarding his honorable relatives, none of whom she knew at all. Having performed these expected courtesies she said:</p>
+            <p><q>Excuse me. I have just received a letter. I would like to read it</q>.</p>
+            <p>Thereupon she took from her sleeve a very pretty letter. It was in a long dove-colored envelope, lined with pink tissue paper, and did not appear to be a business communication. Before Ochika had read half a dozen words, the boy knew it for a love letter. Also, he noted that the envelope was already broken, and from the condition of the letter, it was plain it had already been perused more than once. However, Ochika read it through in a little sing-song voice which he was not supposed to hear. By and by she folded it carefully and returned it to her sleeve.</p>
+            <p><q>Oh</q>, said she, <q>I forgot that you were here. I trust you did not hear the words I read?</q></p>
+            <p><q>I confess my ears are large</q> admitted the boy. Then, very nonchalantly, <q>Who is the foolish one?</q></p>
+            <p><q>Well, Ume found it in her sleeve, and—</q></p>
+            <p><q>Ah, some lover of your maid’s?</q></p>
+            <p><q>Not at all</q>, denied Ochika quickly, <q>for it was addressed to me. No one</q>, she hastened to add virtuously, <q>would dare address me personally. So it was slipped into the sleeve of Ume</q>.</p>
+            <p><q>Hm! Very interesting indeed. And you are not acquainted with the writer’s name?</q></p>
+            <p><q>He signs the name of Omi</q>, said Ochika. <q>I thought perhaps you might be acquainted with him. That is why I came to-day</q>.</p>
+            <p><q>What! I acquainted with the writer? It is a common name</q>.</p>
+            <p><q>Yours?</q> questioned little Ochika-san quite naively.</p>
+            <p>A smiling bow was the response. Ochika went a step or two nearer to him.</p>
+            <p><q>Did you—did you—</q> she began, when her unfinished question set the boy laughing.</p>
+            <p><q>You thought I might be the writer?</q></p>
+            <p>Ochika was blushing and stammering. <q>Well—well— to tell the truth—yes, I did—that is I hoped—</q></p>
+            <p><q>You hoped!</q></p>
+            <p><q>But if you are going to laugh at me, I will not speak to you at all. Sayonara. Now I will return to my home</q>.</p>
+            <p>But when she moved to execute her words, she found it was impossible. The boy held her by the sleeve. She would not look again at his face, for fear she might find him laughing still. That, she felt, she could not bear at all. Her words came breathlessly:</p>
+            <p><q>My father has returned from Tokyo. I listened at the shoji, and I am to have a husband. Oh yes, it is really so. And so I thought that—that—well if you did really write the letter and meant—</q></p>
+            <p>Her blushing face uplifted now, she met his glance. The banter of his smile was gone.</p>
+            <p><q>Omi-chan</q>, she hurriedly spoke, <q>ask your honorable father to speak quickly to mine. That is all</q>.</p>
+            <p><q>What!</q> exclaimed the boy incredulously, <q>You would accept me—a stranger?</q></p>
+            <p><q>I did not say so</q>, she said crossly. <q>It is certainly rude of you to speak to me at all or to—to—trespass in our woods just—just—to laugh at me. And then— then you write a silly letter, and afterward you say that we are strangers! Then it is true, and I will go away</q>.</p>
+            <p>She had freed herself from his grasp, and now as she finished speaking, she moved away forlornly. He did not follow her at once, and she, looking backward over her shoulder, saw that he was laughing. This lent wings to her feet. She fled now down the path fleet as a shy affrighted doc. Too late he followed her. Far ahead of him he saw only the flash of her little fluttering sleeves, the sunlight on them. He confounded himself for a stupid blunderbuss. Still he was happy, and still he laughed.</p>
+            <p>Three little taps on the paper shoji made with the tips of the fingers.</p>
+            <p><q>Oh, miss!</q> called the tapping one, <q>I apologize for disturbing you, but here is— What is that you say, miss?</q></p>
+            <p><q>I said, Go away, go away, go away. If you don’t obey me, I will tear your heart out</q>.</p>
+            <p>The maid seemed not at all affrighted by this most terrible of threats. Indeed she was smiling, as she applied her lips to the crack between its dividing screens.</p>
+            <p><q>But, miss—here is something for you</q>.</p>
+            <p><q>I want nothing. Take it away</q>.</p>
+            <p><q>It’s a letter, Ochika-sama. Let me bring it you</q>.</p>
+            <p><q>No. Tear it to pieces and toss it to the winds. I wish I were dead! Oh! Oh!</q></p>
+            <p>Sounds of tempestuous sobbing. Then again the maid ventured:</p>
+            <p><q>Miss, I am very sure you will want to read this letter. It—well you know the perfume very well. How sweet it smells of Umegaku and—</q></p>
+            <p>A sound heard inside—the rustle of silk trailed across the matted floor. Then the shoji parted a crack or two, and through this tiny opening a small hand thrust itself. Into it Ume, the maiden, put the scented missive.</p>
+            <p>Inside the room, little Ochika-san tore the letter eagerly open, devoured its contents three times over.</p>
+            <p>Then crushing it to her lips, she took to her bed again, sobbing even more piteously now.</p>
+            <p>Meanwhile the treacherous Ume had descended to the lower regions of the house.</p>
+            <p><q>Where have you been?</q> questioned her mistress, suspiciously. <q>Why are you smiling, may I ask?</q></p>
+            <p><q>Well, mistress, I have been upstairs. Miss—I had a letter for Ochika-sama</q>.</p>
+            <p><q>What! You wretched girl, you took your young mistress a letter without consulting me?</q></p>
+            <p><q>Yes, Okusama</q>.</p>
+            <p>Ume fled across the room, and from this distance merrily defied her mistress.</p>
+            <p><q>What would your augustness do with a love letter? To tell you the truth, I was afraid of my own fate if I gave you the letter first. Now if I do not help the lovers, the gods will vent on me their anger. Never could I expect a lover for myself</q>.</p>
+            <p><q>You miserable worm. You shall return to your mother the end of the week</q>, said Madame Asakura, and swept from the room as majestically as a fat and vulgar person might.</p>
+            <p>Ascending to her daughter’s room, she pushed the sliding doors noisily open. Ochika-san was lying on a silken bed. Her face was turned to the wall. At the entrance of her mother she covered it quickly with her sleeve. This Madame Asakura seized at once, and from its depths extracted and then read the letter lately received. Ochika, uncovering her face a moment, saw the letter in her mother’s hands, and fought for its possession. The lady, however, had read sufficient of its flowery phrases, and relinquished it contemptuously.</p>
+            <p><q>Come now, Ochika-san</q>, said she briskly, <q>be reasonable. If you lie abed, brooding over the matter, it is bound to appear far worse to you than it actually is</q>.</p>
+            <p>From the shelter of her quilt, in which she had buried her face, the muffled voice of the young girl came:</p>
+            <p><q>How cruel you are to me, Mother!</q></p>
+            <p>Madame Asakura melted. <q>I!</q> she exclaimed. <q>My dear little girl, do not blame your mother for a minute. You know your father is both master and mistress here. I am nothing but a figure-head</q>.</p>
+            <p><q>So I will be</q>, said Ochika-san, sitting up and holding back her long black hair which tumbled about her face. <q>That is the exact position I shall occupy</q>.</p>
+            <p><q>Nonsense!</q> said her mother. <q>You know things are not the same with you as they were with me. Now I was of entirely common origin. My ancestors had been tradespeople or worse. After the Restoration, when my father made his fortune, there was more than one exalted family willing to ally itself with ours. Your father’s ancestry was better than that of any of my other suitors. Hence he was accepted. To do him justice, he was not too proud to enter into trade, and now as the head of the house my father founded he is a powerful man in Japan. Moreover, in these sensible days, a tradesman is esteemed. However, he wishes his daughter to make a great alliance</q>.</p>
+            <p>Said Ochika-san, clasping her little hands nervously together: <q>Well I don’t consider it at all a great alliance. The family are literally beggars, are they not?</q></p>
+            <p><q>No. They are very poor, it is true, but also very proud. The boy is attending the Imperial University. After he graduates in June, your father wishes the wedding to take place. As the Viscountess Shiga you will be received in the highest society. What more could a girl ask? Indeed, I myself, would have been quite insane with joy had I made so exalted a match. As it was, your father’s position elevated me much</q>.</p>
+            <p><q>I don’t want that sort of elevation</q>, declared Ochika-san crossly. <q>When father is in the house you do not dare to speak above a whisper. Yet you admit he is not of the high rank of this Viscount Shiga. Then think what my position will be. A slave to wash his haughty mother’s feet. I will not do it—no, no!</q></p>
+            <p>She threw herself back upon the bed, with her sulky, petulant young face turned from her mother.</p>
+            <p><q>Do get up</q>, pleaded her mother; <q>I don’t like to see you give yourself to tears like this. If your father sees you, he is sure to connect your tears in some way with your poor mother’s common origin</q>.</p>
+            <p><q>Very well then</q>, said Ochika, springing up suddenly and beginning to dress herself in feverish haste. <q>Let me go out into the woods. It is quiet there. You will be glad to be rid of me no doubt—such a troublesome girl as I am</q>.</p>
+            <p><q>Now Ochika</q>, said her mother, <q>if you go out into the woods, someone must accompany you. That foolish youth is bound to be awaiting you somewhere. It is not right, and I am sure you would not want to disgrace your parents</q>.</p>
+            <p><q>Well, well, well</q>, said Ochika, slipping on her feet her little high-heeled outdoor sandals, <q>it seems you will not grant me peace. Now 1 am going out alone. I will not be accompanied. I’ll run away if you persist in interfering. Oh, by the way, did father tell you how he—how the Viscount took the sentence to marry me?</q></p>
+            <p>Madame Asakura hushed angrily, and sought to elude the glance of her daughter. The latter, however, seized her almost gayly by the shoulders.</p>
+            <p><q>Ah</q>, said she, <q>so my young lord took it badly? What did he say, tell me?</q></p>
+            <p><q>Well, the usual things Ochika. But, Ochika-san, he has not seen you. He jumped to wrong conclusions. He thought you would prove like—like your mother</q>.</p>
+            <p>Ochika laughed, showing a row of spiteful little teeth.</p>
+            <p><q>That is one consolation</q>, she said. <q>He, too, will suffer</q>.</p>
+            <p><q>Not after he has seen you Ochika-san</q>, said her mother, fondly. <q>There is to be a look-at meeting in the near future. Meanwhile the Viscount takes a short vacation, to think the matter over</q>. She sighed. <q>These are strange times</q>, she added, <q>when a youth must consider the matter of his marriage for himself. Why in my time—</q></p>
+            <p><q>Yes, yes, yes—mother—but your time has blown away to dust. We—the Viscount Shiga and I—live to-day, thank Shaka!</q></p>
+            <p><q>Aye</q>, retorted the mother, wisely shaking her head, <q>you both live, and will live to learn what it means to have wilful sons and daughters!</q></p>
+            <p>For which thrust little Ochika had no parry, but she tossed her head disdainfully as she ran from the room.</p>
+            <p>The Asakura house was in the country, where the family lived the year around. Of good ancestry himself, Asakura in inheriting his father-in-law’s great business had none of the tradesman’s ambition to enter society, though had he made such an effort its portals would have swung wide to him. But Asakura was a proud man. In marrying Ohano he had sacrificed all social affiliations. He preferred to ignore the people of his class, rather than mingle with them and occasion the laugh in the sleeve which would inevitably follow, when the palpably plebeian Ohano was introduced. The daughter had inherited, fortunately, none of her mother’s features. She was as delicately beautiful as a flower. There was but one thing her father criticized. She had inherited—from her mother’s side of course—a most impetuous temperament; she was wilful. In her father’s opinion she should have bowed like a lily breathed upon by a gentle wind, before the command of her parent. Instead she let loose a veritable torrent of tears—the resort of uncivilized women. It was too bad. Asakura devoutly hoped she would never reveal these watery symbols of grief before her exalted husband. He threw up his hands at the prospect. The proud, fiery-eyed, contemptuous young patrician! Well, certainly he was an excellent instrument to tame the wilful spirit of Ochika. How the boy had indignantly protested—and right before his face, too. He did not wish to be hampered with a wife! Never would he enter trade! He would roam the world in rags, a miserable mendicant, sooner than ally himself with this new rich family. All this before Asakura’s face. When assured by his father of the good birth of Asakura, the boy shrugged an angry shoulder, cast one contemptuous, sneering look upon his future father-in-law and flatly refused to accept him. Asakura laughed upon thought of it. The boy had spirit. But what times were these for Japan, when a son defied parental command and insulted a prospective father-in-law! Yet Asakura from his own experience could see into the dark mind of the boy. He, too. had hated with a deadly hate the man of mere riches who sought him for a son-in-law.</p>
+            <p>So the negotiations went on between the two fathers, the boy’s refusal ignored. Finally the young Viscount had made a reasonable request. He wished for a brief vacation from his studies. In that time he would retire to some secluded place and think the matter over.</p>
+            <p>Ochika-san, the sleeves of her pretty plum-colored kimona rolled to the elbow, revealing her charming young arms, sat on one side of a narrow little brook, which, tumbling down gayly from somewhere in the hills beyond, ran in a merry little strip through the Asakura woods. Ochika had taken off her tiny sandals, and now she was cooling her little pink feet in the gurgling water of the brook. As it rippled over her toes, the face of the girl suddenly became suffused with color. She did not raise her eyes, though perfectly conscious that someone had come to the other side of the brook. Also Ochika knew very well who that someone was.</p>
+            <p><q>Ohayo, Ochika-sama!</q></p>
+            <p>In a panic the little feet were drawn quickly in and covered over guiltily by the sheltering skirts of the kimona. Ochika bowed as best she could in this doubled up position.</p>
+            <p>The boy across the stream bowed deeply too, but chiefly to hide the smile which had come to his face. Ochika’s little chin was loftily uplifted. She looked beyond not at the intruder—horrid trespasser! Unfurling her fan she swayed it languidly back and forth. After a moment she condescended to question.</p>
+            <p><q>Pray how did you learn my miserable name?</q></p>
+            <p>Again the smile broke upon the otherwise severe features of the boy.</p>
+            <p><q>How? I crawled on my knees to the shrine of Benten [Goddess of Love] and begged her to enlighten me</q>.</p>
+            <p><q>Ah, now you are laughing at me again. I will not bear it</q>, said Ochika.</p>
+            <p>She arose, little bare feet quite forgotten now—made a slight obeisance to the impertinent one, and started to move away.</p>
+            <p><q>I beg pardon</q>, called the now really anxious voice, remembering the flight of the previous day. <q>Please don’t go. Well, if you must know the truth, Benten was your maid, homely Ume-san</q>.</p>
+            <p>Little hypocritical Ochika-san disappeared behind the shelter of some foliage. There she put her sandals on, and regained her frosty dignity. By this time the boy had leaped across the laughing brook and was hastening breathlessly toward her. He found her there, standing against a lilac bush, apparently distressed because her paper parasol refused to open. He meant to take the parasol, but instead enclosed Ochika’s hands. From holding her hands, he now passed his arm about her. Their young faces came in contact, both eager and rosy, willing enough to meet. The boy’s words tumbled over each other.</p>
+            <p><q>Now you know the truth Ochika-san! You naughty child, how could you doubt me? Will you ever run away from me again?</q></p>
+            <p>She pushed him from her, but her little hands none the less clung to his shoulders. Her eyes were tearful.</p>
+            <p><q>Go away! You must!</q> she said.</p>
+            <p>He made a mock movement to obey her, when the color fled from her pretty childish face, and in a moment her head was pillowed on his breast. From there she spoke, through her tears.</p>
+            <p><q>Well—but you see how it is. My father is very powerful. Oh, yes, indeed he is, and you—you—are so—so poor and humble, as you have told me, and he might—yes, I’m quite sure he would never forgive me. Then I am to marry—There! I knew it would come out. And now I’ve told you, and you will not even look at me. Omi-chan?</q></p>
+            <p><q>Whom are you to marry?</q> asked the boy, very quietly.</p>
+            <p>They had drawn apart, and the boy’s face was averted. He refused to notice the piteous pleading of her eyes. She had said she was about to marry—someone!</p>
+            <p><q>What is his honorable name? Condescend to speak it</q>, he requested.</p>
+            <p><q>I will never, never marry him</q>, protested little Ochika-san, in tears. <q>Dearest Omi, please believe me. Why, if you will only ask me to I—I—will go away with you</q>.</p>
+            <p>The boy turned slowly, looked at her, a moment only. Then without a word, he opened his arms and drew her back where she belonged.</p>
+            <p>About a week later, Asakura-sama again returned from Tokyo. Ohano was in the kitchen, scolding the troublesome maids as usual. She followed her lord into the ozashiki, making behind his back a warning gesture to Ume not to follow likewise.</p>
+            <p><q>Well, how are you, Ohano?</q> inquired Asakura. <q>Where is Ochika-san?</q></p>
+            <p><q>I am very well. Ochika-san was here only a moment since. Well, Asakura, I am glad to be alone with you a moment. You are sure your guests will not hear us speak?</q></p>
+            <p><q>They are on the roof floor. Speak, Ohano—but— er—do not shout, please</q>.</p>
+            <p><q>Well, Asakura, the truth is, I feel very badly about this marriage. Now Ochika-san does not take to it at all. It is a shame to force her into such a union</q>.</p>
+            <p><q>You talk like a child</q>, said Asakura, himself shouting. <q>Shall I permit my insignificant daughter to choose her own husband? What are we coming to that a mother sides with her daughter against the supreme authority of the house? I have ordered it—that is enough!</q></p>
+            <p>The harshness of his words, the severity of his tone, and above all the coldness of his glance had the usual effect upon Ohano. She bowed before it. Then continued Asakura:</p>
+            <p><q>Here is a pretty affair I must say. Both children arrogant and defiant. The boy is worse even than the girl. He has disappeared—has not been heard from since he left the college to think the matter over. Well, probably he will be here to-night. I trust to his ancestral courtesy not grievously to insult my house</q>.</p>
+            <p>But at eight of the even, the hour set for the dinner and the look-at meeting of the young couple, the prospective bridegroom had not appeared. Asakura, who had, with the boy’s male relatives, been spending the afternoon on the roof in smoking and sake sipping descended to the lower floor to inquire for his daughter.</p>
+            <p>On her account he felt solicitous. Opening the sliding door of her chamber, he discovered his wife on Ochika’s bed, surrounded by a fluttering bevy of maids. They were throwing fragrant water over her hands and face and a dozen little fans were furnishing her with air.</p>
+            <p><q>Well, now, now, now! What does all this mean? Eh, Ohano—my girl—you are not ill?</q></p>
+            <p>After all Asakura was fond of his Ohano. To see her corpulent form lying thus listless, awoke in him great wells of alarm and compunction. Presently she opened her eyes, saw her lord and instantly burst into tears.</p>
+            <p><q>What is it, Ohano? Speak to your gentle lord? There! Let me hold your head</q>.</p>
+            <p>As her daughter on another day had wept upon the bosom of her lover, so poor Ohano found a comforting place within her husband’s arms. But not for long. The moment she had revealed to her explosive lord the truth —the disappearance of Ochika—he thrust her from him.</p>
+            <p>The maids flew before the thunder of his voice. He swore, he raved, he stamped and shook the very house.</p>
+            <p>But Ochika-san was already far enough away, and though her father’s voice was loud, it could not reach her.</p>
+            <p>The most alluring hour of the day is twilight. That is when the sun drops down in the west, leaving the golden skies all freighted with glory. Shadow’s spin their mystic webs over the land, deepening as the witching night descends. A thousand little voices waken into whispering speech in the early stillness. Sometimes it is the piping of young frogs, sometimes it is the chirping of the hylas in the tree tops, sometimes it is the chorus of crickets chirring like a chime of distant sleigh-bells, sometimes it is the soft, melancholy cry of a flitting night-bird. Hitherto well-known paths, masked in fantastic shadows, become unfamiliar by-ways leading —who knows where? Why not to Fairyland?</p>
+            <p>Little Ochika-san, timorous and fearful, small black eyes wide as they might stretch, little rosy lips apart, tiny hands clenched tightly in her sleeves, stole from the house a-tip-toe. A lingering sunbeam singled out her golden obi, shone upon her little sparkling head crowned with its gaudy poppy flowers and ornaments.</p>
+            <p>In all the enchanting woods there was no sight more appealing to her lover than little Ochika-san stealing out to meet him. They might miss the barbarous train. Even so. He would, yes, he would indeed, hold her in his arms a little while.</p>
+            <p><q>Oh, but Omi-chan! I am fearfully afraid. Put your hands upon my heart. There! you can hear it beat</q>.</p>
+            <p><q>Well, but my own little run-away Ochika-san, I will put my arms about you. Then you will not be afraid. What, you still tremble. Tears!</q></p>
+            <p><q>Y-yes—alas! Do please, please let us hurry. My father—Oh, he is so very, very headstrong</q>.</p>
+            <p><q>So am I. But listen, do you hear something Ochika- san?</q></p>
+            <p>Flickerings of lanterns and torches played in and out among the trees like vagrant fireflies. There were crashings of branches, sounds of blundering feet astray in the dusk, a hum of excited whispers, and above all the voice of an exceedingly wrathful man commanding and adjuring others, as they valued their worthless lives, to make haste!</p>
+            <p>Ochika clung to her lover in fright, and gladly enough his arms found excuse to hold her the closer.</p>
+            <p>Thus the searchers came upon them in the woods. In the light of the uplifted takahiras, they stood revealed—the boy and girl.</p>
+            <p>Presently came the voice of Asakura-sama <q>Gods and devils</q> said he, <q>what have we here?</q></p>
+            <p>Then only did the boy release the girl, took her by the hand and led her, shrinking and trembling as she was to her father. His words had that curious tone of ironic banter which Asakura-sama had appreciated when first they met.</p>
+            <p><q>Condescend, Asakura-sama, to bless us. Look upon my face, courteous sir. I am Viscount Shiga Omi.</q></p>
+            <p>Little Ochika turned from her father’s outstretched arms, looked at her lover’s face a moment, and then with a cry, <q>Oh, is it truly so?</q> plunged toward him.</p>
          </div>
       </body>
    </text>
