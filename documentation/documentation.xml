@@ -18431,6 +18431,19 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                      </row>
                      <row>
                         <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>Any text with <ref target="#TEI.pb"><gi>pb</gi></ref> elements should have an initial one.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:pb"&gt;
+ &lt;sch:assert test="empty(preceding::tei:pb[@n = current()/@n])"&gt; ERROR: All pb/@n should be unique within a document: &lt;sch:value-of select="current()/@n"/&gt;.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
                            <label>Content model</label>
                         </cell>
                         <cell>

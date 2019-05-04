@@ -2116,6 +2116,18 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="pb.unique" scheme="schematron">
+                     <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:pb">
+                              <sch:assert test="empty(preceding::tei:pb[@n = current()/@n])">
+                                 ERROR: All pb/@n should be unique within a document: <sch:value-of select="current()/@n"/>.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <attList>
                      <attDef ident="n" mode="change" usage="req"/>                     
                   </attList>
