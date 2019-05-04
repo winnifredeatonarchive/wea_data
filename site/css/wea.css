@@ -1141,6 +1141,19 @@ span[data-el='pb']::before{
     padding: .5rem .25rem 0 .25rem;
 }
 
+/********************************************************************* MILESTONES *****/
+
+
+[data-el='milestone'][data-unit='sectionBreak']:after{
+    content:"❧ ❧ ❧";
+    display:block;
+    margin:.5rem auto;
+    font-size:1.5rem;
+    text-align:center;
+    color:#7f727f;
+    
+}
+
 
 /********************************************************************* BIBLS ******** */
 

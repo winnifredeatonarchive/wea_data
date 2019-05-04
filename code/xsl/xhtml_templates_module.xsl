@@ -165,7 +165,7 @@
     
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')]" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak']" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
