@@ -120,7 +120,6 @@
     
     <target name="open">
         <property name="outFile" value="${basedir}/data/texts/${documentId}.xml"/>
-        <echo>${outFile}</echo>
         <open file="${outFile}"/>
     </target>
     
