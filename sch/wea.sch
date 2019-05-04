@@ -629,6 +629,23 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:revisionDesc[@status]">
+                              <sch:let name="thisStatus" value="@status"/>
+                              <sch:let name="firstChange" value="tei:change[@status][1]"/>
+                              <sch:assert test="$firstChange/@status = $thisStatus">
+                                 ERROR: The status attribute must match the @status of the latest change element.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
                               <sch:assert test="@type">
                                  ERROR: Every figure in the figure database must have an @type value.
@@ -793,7 +810,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-40">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-41">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

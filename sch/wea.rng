@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-04-30T20:50:18Z. .
+Schema generated from ODD source 2019-05-04T04:59:52Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -426,16 +426,18 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
    </define>
    <define name="att.docStatus.attribute.status">
       <optional>
-         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                    name="status"
-                    a:defaultValue="draft">
-            <a:documentation>describes the status of a document either currently or, when associated with a dated element, at the time indicated.
-Sample values include: 1] draft(This document is currently being edited. It is not ready for
-                                 publication or peer-review.) ; 2] published(This document is ready to be published.) ; 3] deprecated(This document is no longer relevant, but is being preserved for
-                                 archival purposes.) </a:documentation>
-            <data type="token">
-               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-            </data>
+         <attribute name="status">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>empty</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
+               <value>inProgress</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</a:documentation>
+               <value>readyForProof</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) Ready for Proofing</a:documentation>
+               <value>published</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) Published</a:documentation>
+            </choice>
          </attribute>
       </optional>
    </define>
@@ -4572,14 +4574,40 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <choice>
             <ref name="list"/>
             <ref name="listChange"/>
-      
             <oneOrMore>
                <ref name="change"/>
             </oneOrMore>
-      
          </choice>
+         <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                      xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:revisionDesc[@status]">
+                              <sch:let name="thisStatus" value="@status"/>
+                              <sch:let name="firstChange" value="tei:change[@status][1]"/>
+                              <sch:assert test="$firstChange/@status = $thisStatus">
+                                 ERROR: The status attribute must match the @status of the latest change element.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
          <ref name="att.global.attributes"/>
-         <ref name="att.docStatus.attributes"/>
+         <attribute name="status">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            <choice>
+               <value>empty</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
+               <value>inProgress</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</a:documentation>
+               <value>readyForProof</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) Ready for Proofing</a:documentation>
+               <value>published</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) Published</a:documentation>
+            </choice>
+         </attribute>
          <empty/>
       </element>
    </define>
@@ -6708,7 +6736,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-40">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-41">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

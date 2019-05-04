@@ -22486,7 +22486,47 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.docStatus">att.docStatus</ref> (<att>status</att>) </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <table>
+                              <row>
+                                 <cell>status</cell>
+                                 <cell>
+                                    <table>
+                                       <row>
+                                          <cell>
+                                             <label>Derived from</label>
+                                          </cell>
+                                          <cell>
+                                             <ref target="#TEI.att.docStatus">att.docStatus</ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Required</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>empty</label>
+                                                <item>(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
+                                                <label>inProgress</label>
+                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</item>
+                                                <label>readyForProof</label>
+                                                <item>(A document that is ready to be proofed by the project director.) Ready for Proofing</item>
+                                                <label>published</label>
+                                                <item>(A published document.) Published</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -22543,12 +22583,28 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                      </row>
                      <row>
                         <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>The first change element with a status must match the status of the revisionDesc.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:revisionDesc[@status]"&gt;
+ &lt;sch:let name="thisStatus" value="@status"/&gt;
+ &lt;sch:let name="firstChange"
+  value="tei:change[@status][1]"/&gt;
+ &lt;sch:assert test="$firstChange/@status = $thisStatus"&gt; ERROR: The status attribute must match the @status of the latest change element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
                            <label>Content model</label>
                         </cell>
                         <cell>
                            <code>
 &lt;content&gt;
- &lt;alternate&gt;
+ &lt;alternate minOccurs="1" maxOccurs="1"&gt;
   &lt;elementRef key="list"/&gt;
   &lt;elementRef key="listChange"/&gt;
   &lt;elementRef key="change" minOccurs="1"
@@ -30650,8 +30706,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.bibl">bibl</ref> 
                            <ref target="#TEI.biblFull">biblFull</ref> 
-                           <ref target="#TEI.change">change</ref> 
-                           <ref target="#TEI.revisionDesc">revisionDesc</ref>
+                           <ref target="#TEI.change">change</ref>
                         </cell>
                      </row>
                      <row>
@@ -30661,7 +30716,8 @@ epistemology, methodology and history of
                         <cell>Attributes<table>
                               <row>
                                  <cell>status</cell>
-                                 <cell>describes the status of a document either currently or, when associated with a dated element, at the time indicated.<table>
+                                 <cell>
+                                    <table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -30670,26 +30726,18 @@ epistemology, methodology and history of
                                        </row>
                                        <row>
                                           <cell>
-                                             <label>Datatype</label> 
-                                          </cell>
-                                          <cell>
-                                             <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref>
-                                          </cell>
-                                       </row>
-                                       <row>
-                                          <cell>
-                                             <label>Sample values include:</label>
+                                             <label>Legal values are:</label>
                                           </cell>
                                           <cell>
                                              <list>
-                                                <label>draft</label>
-                                                <item>(This document is currently being edited. It is not ready for
-                                 publication or peer-review.)  [Default] </item>
+                                                <label>empty</label>
+                                                <item>(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
+                                                <label>inProgress</label>
+                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</item>
+                                                <label>readyForProof</label>
+                                                <item>(A document that is ready to be proofed by the project director.) Ready for Proofing</item>
                                                 <label>published</label>
-                                                <item>(This document is ready to be published.) </item>
-                                                <label>deprecated</label>
-                                                <item>(This document is no longer relevant, but is being preserved for
-                                 archival purposes.) </item>
+                                                <item>(A published document.) Published</item>
                                              </list>
                                           </cell>
                                        </row>
