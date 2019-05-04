@@ -458,17 +458,20 @@
     
     <xsl:template match="pb" mode="tei">
        <!--This can't really be an hr anymore, since it can't go in <q> (where it appears a lot).-->
-        <span>
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
-            </xsl:call-template>
-            <xsl:if test="@n">
-                <span class="pbNum">
-                    <xsl:value-of select="@n"/>
-                </span>
-            </xsl:if>
-            <xsl:apply-templates mode="#current"/>
-        </span>
+        <a href="#{ancestor::TEI/@xml:id}_pg_{@n}">
+            <span>
+                <xsl:call-template name="processAtts">
+                    <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
+                </xsl:call-template>
+                <xsl:if test="@n">
+                    <span class="pbNum" id="{ancestor::TEI/@xml:id}_pg_{@n}">
+                        <xsl:value-of select="@n"/>
+                    </span>
+                </xsl:if>
+                <xsl:apply-templates mode="#current"/>
+            </span> 
+        </a>
+        
     </xsl:template>
     
     <xsl:template match="lb" mode="tei">

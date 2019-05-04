@@ -886,11 +886,18 @@ div:target:before{
 }
 /* FOR INLINE ELEMENTS */
 a:target:before{
-    content:"";    
-    display: inline-block;    
+    content:"";      
     vertical-align: top;
     position: relative;       
     top: calc(var(--anchor-offset) * -1.6); 
+    visibility: hidden;
+}
+
+span:target:before{
+        content:"";      
+    vertical-align: top;
+    position: relative;       
+    top: calc(var(--anchor-offset) * -1); 
     visibility: hidden;
 }
 
@@ -1102,6 +1109,7 @@ span[data-el='pb']{
     display:block;
     margin: var(--pb-margin-tb) 0;
     font-size:95%;
+    z-index:20;
 }
 
 span[data-el='pb'].first{
@@ -1112,13 +1120,24 @@ span[data-el='pb'].first{
 
 [data-el='pb'].first::before{
     content:"";
-    width:7.5%;
-    top:40%;
-    margin-left:102.5%;
+    border-top:1px solid transparent;
 
 }
 
 
+span[data-el="pb"]:hover:before{
+    border-top: 1px solid var(--wea-pink);
+}
+
+span[data-el='pb']:hover .pbNum{
+    color:var(--wea-pink);
+}
+
+span[data-el='pb']:hover .pbNum::after{
+    content:"#";
+    padding-left:.5rem;
+   
+}
 
 span[data-el='pb']::before{
      border-top: 1px solid #757575;
@@ -1129,17 +1148,19 @@ span[data-el='pb']::before{
      left: 0;
      right: 0; 
      bottom: 0;
-     width: 115%;
+     width: 120%;
      z-index: -1;
-     margin-left:-5%;
+     margin-left:-10%;
 }
 
 .pbNum{
-    margin-left:105%;
+    margin-left:107.5%;
     background:white;
     color:#757575;
-    padding: .5rem .25rem 0 .25rem;
+    padding: .5rem .25rem .25rem .25rem;
 }
+
+
 
 /********************************************************************* MILESTONES *****/
 
