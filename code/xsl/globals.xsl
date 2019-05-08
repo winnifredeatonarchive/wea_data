@@ -161,8 +161,8 @@
                             </xsl:for-each>
                         </textClass>
                     </profileDesc>
-                    <revisionDesc>
-                        <change when="{$today}">Generated page.</change>
+                    <revisionDesc status="published">
+                        <change who="pers:JT1" when="{$today}" status="published">Generated page.</change>
                     </revisionDesc>
                 </teiHeader>
                 <text>

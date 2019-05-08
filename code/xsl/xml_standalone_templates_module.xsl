@@ -77,11 +77,11 @@
         <!--We only have people right now, but this can be added to-->
         <xsl:variable name="potentialPeoplePtrs" select="distinct-values(for $t in (for $p in (//tei:*/@*[contains(.,'pers:')]) return tokenize($p,'\s+')) return if (starts-with($t,'pers:')) then substring-after($t,'pers:') else ())"/>
         
-        <xsl:variable name="peoplePtrs" select="for $p in $potentialPeoplePtrs return if (ancestor::TEI[descendant::tei:*[@xml:id=$p]]) then () else $p"/>
+        <xsl:variable name="peoplePtrs" select="for $p in $potentialPeoplePtrs return if (ancestor::TEI[descendant-or-self::tei:*[@xml:id=$p]]) then () else $p"/>
         
         <xsl:variable name="potentialOrgPtrs" select="distinct-values(for $t in (for $p in (//tei:*/@*[contains(.,'org:')]) return tokenize($p,'\s+')) return if (starts-with($t,'org:')) then substring-after($t,'org:') else ())"/>
         
-        <xsl:variable name="orgPtrs" select="for $p in $potentialOrgPtrs return if (ancestor::TEI[descendant::tei:*[@xml:id=$p]]) then () else $p"/>
+        <xsl:variable name="orgPtrs" select="for $p in $potentialOrgPtrs return if (ancestor::TEI[descendant-or-self::tei:*[@xml:id=$p]]) then () else $p"/>
         
         
         <xsl:if test="not(empty(($peoplePtrs,$orgPtrs)))">

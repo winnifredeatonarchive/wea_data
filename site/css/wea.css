@@ -886,11 +886,18 @@ div:target:before{
 }
 /* FOR INLINE ELEMENTS */
 a:target:before{
-    content:"";    
-    display: inline-block;    
+    content:"";      
     vertical-align: top;
     position: relative;       
     top: calc(var(--anchor-offset) * -1.6); 
+    visibility: hidden;
+}
+
+span:target:before{
+        content:"";      
+    vertical-align: top;
+    position: relative;       
+    top: calc(var(--anchor-offset) * -1); 
     visibility: hidden;
 }
 
@@ -1061,6 +1068,23 @@ div[data-el=p]{
     text-align:justify;
 }
 
+
+/* ******* INLINE NOTES  */
+/* These are notes that are at the bottom of a page
+ * in the transcrition */
+ 
+ [data-el='note'][data-place='bottom']{
+     margin-top: var(--pb-margin-tb);
+     margin-bottom: calc(-.75 * var(--pb-margin-tb));
+     font-size:90%;
+     border:1px dotted black;
+ }
+ 
+ [data-el='note'][data-place='bottom'] > [data-el='p']{
+     padding:.5rem;
+     display:block;
+ }
+
 .metadataLabel{
     text-transform:lowercase;
     font-variant:small-caps;
@@ -1078,32 +1102,100 @@ div[data-el='note'] > div[data-el='p']{
 }
 
 /******************************************************************* PAGE BREAKS **********/
+
 span[data-el='pb']{
-    width:100%;
-    margin:var(--pb-margin-tb) 0;
+    
+    position: relative;
     display:block;
-    border-bottom-style: inset;
-    border-bottom-width: 1px;
-    border-color:#757575;
-    color: #757575;
-}
-
-.pbNum{
-    float:right;
-    margin-right:-10%;
-}
-.pbNum::before{
-    content:"[";
-}
-
-.pbNum::after{
-    content:']';
+    margin: var(--pb-margin-tb) 0;
+    font-size:95%;
+    z-index:20;
 }
 
 span[data-el='pb'].first{
     border:none;
-    margin:0;
+    margin:.5rem 0 0 0;
+    margin-bottom: calc(-1 * var(--pb-margin-tb));
 }
+
+[data-el='pb'].first::before{
+    content:"";
+    border-top:1px solid transparent;
+
+}
+
+
+span[data-el="pb"]:hover:before{
+    border-top: 1px solid var(--wea-pink);
+}
+
+span[data-el='pb']:hover .pbNum{
+    color:var(--wea-pink);
+}
+
+span[data-el='pb']:hover .pbNum::after{
+    content:"link";
+    padding-left:.5rem;
+    font-family: "Material Icons";
+   font-weight: normal;
+  font-style: normal;
+  display: inline;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+   
+}
+
+span[data-el='pb']::before{
+     border-top: 1px solid #757575;
+     content:"";
+     margin: 0 auto; /* this centers the line to the full width specified */
+     position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+     top: 37.5%;
+     left: 0;
+     right: 0; 
+     bottom: 0;
+     width: 120%;
+     z-index: -1;
+     margin-left:-10%;
+}
+
+.pbNum{
+    margin-left:107.5%;
+    background:white;
+    color:#757575;
+    padding: .5rem .25rem .25rem .25rem;
+}
+
+
+
+/********************************************************************* MILESTONES *****/
+
+
+[data-el='milestone'][data-unit='sectionBreak']:after{
+    content:"❧ ❧ ❧";
+    display:block;
+    margin:.5rem auto;
+    font-size:1.5rem;
+    text-align:center;
+    color:#7f727f;
+    
+}
+
 
 /********************************************************************* BIBLS ******** */
 
@@ -1773,6 +1865,23 @@ tr img{
         padding-right:5%;
     }
     
+    span[data-el='pb']:before{
+        content:"";
+        width:105%;
+        margin-left:-2.5%;
+    }
+    
+    span[data-el='pb'].first:before{
+        content:"";
+        margin-left:87.5%;
+        
+    }
+    
+    
+    .pbNum{
+        margin-left:90%;
+    }
+    
     
     #mainBody[class*="docPrimarySource"] > #info{
         grid-template-areas:
@@ -1826,12 +1935,7 @@ tr img{
 
     
  
-    
-    /* Smaller margin needed. */
-    .pbNum{
-        margin-right:-6.5%;
-    }
-    
+
   
     
 
