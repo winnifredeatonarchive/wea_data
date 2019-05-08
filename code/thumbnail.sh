@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for n in *.$1; do vips thumbnail $n$3 %s$4.png $2; done;
+for n in *.$1; do vipsthumbnail $n$3 -o %s$4.png --size x$2; done;
 
 
 
