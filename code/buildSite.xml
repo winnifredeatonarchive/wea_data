@@ -37,7 +37,12 @@
     
     
     <target name="createThumbnails">
-        <echo message="Creating x600 thumbnails from facsimiles..."/>
+        <antcall target="createPDFThumbnails"/>
+        <antcall target="createTinyThumbnails"/>
+        <antcall target="createSmallerImages"/>
+  
+        
+<!--        <echo message="Creating x600 thumbnails from facsimiles..."/>
         <exec executable="/bin/bash" dir="${site.dir}/facsimiles" failonerror="true" >
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0]"/>
         </exec>
@@ -51,11 +56,11 @@
         </exec>
         <exec executable="/bin/bash" dir="${site.dir}/media" failonerror="true">
             <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0] _sm "/>
-        </exec>
+        </exec>-->
     </target>
+
     
-    
-    <target name="processImages">
+    <!--<target name="processImages">
         <delete dir="${site.dir}/facsimiles"/>
         <antcall target="copyAuxFiles"/>
         
@@ -66,17 +71,17 @@
                 </fileset>
             </path>
         </foreach>
-        <!--SO for each PDF: 
+        <!-\-SO for each PDF: 
             
              * Split PDF into multiple page PDFS
              * Convert those PDFs into PNGs
              * Convert the first PNG into thumbnials
              * Convert those PNGs into tiles
              * Delete the small PDFs
-        -->
-    </target>
+        -\->
+    </target>-->
     
-    <target name="processPDF">
+<!--    <target name="processPDF">
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <mkdir dir="${site.dir}/facsimiles/${base}"/>
         <mkdir dir="${site.dir}/facsimiles/${base}/pdfs"/>
@@ -102,9 +107,9 @@
             <arg line="dzsave ${img}[dpi=1200] ${site.dir}/tiles/${fn}/"/>
         </exec>
     </target>
+    -->
     
-    
-    <!--<target name="createPDFThumbnails">
+    <target name="createPDFThumbnails">
         <echo message="${echo.separator}"/>
         <echo message="Creating PDF thumbnails..."/>
         <echo message="${echo.separator}"/>
@@ -119,7 +124,6 @@
     </target>
     
     <target name="convertPDF">
-
         <propertyregex property="out" input="${pdf}" regexp="(.+)\.pdf" select="\1.png"/>
         <echo message="${echo.separator}"/>
         <echo message="Converting ${pdf} to ${out}..."/>
@@ -179,7 +183,7 @@
             </mapper>
         </apply>
     </target>
-    -->
+    
     
  
  
