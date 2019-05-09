@@ -10,11 +10,15 @@
             </respStmt>
             <respStmt>
                <resp>Editor</resp>
-               <name>Jean Lee Cole</name>
+               <name ref="pers:JLC1">Jean Lee Cole</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name>Joey Takeda</name>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          
@@ -34,7 +38,8 @@
            <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
         </textClass>
      </profileDesc>
-     <revisionDesc status="inProgress">
+     <revisionDesc status="readyForProof">
+        <change who="pers:SL1" when="2019-05-09" status="readyForProof"> Updated transcriber, encoder, and made text edits; changed status to readyForProof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl126 using XSLT.</change>
         <change who="pers:JT1" when="2019-02-01">Created file.</change>
      </revisionDesc>
@@ -42,18 +47,14 @@
   <text facs="facs:Sneer_Not">
       <body>
          <head>Sneer not.</head>
-            <!--We could either use a <pb/> element to assiciate it with the facs,
-               or, for a more general thing, we couldjust put an @facs on the body-->
-            <!--Do we care that this is centered, bold, and ibgger?-->
 
             <div>
                <lg>
-                  <!--Do we note line breaks?-->
                   <l>Sneer not, ye cynics, who to school once went</l>
                   <l>And talked with knowledge at her many marts;</l>
                   <l>Who through long days and longer nights have spent</l>
                   <l>Your peace of soul to strengthen mental parts.</l>
-                  <l>The worth ye garnered is not self-con<!--Do we note the punctuation here?-->fined</l>
+                  <l>The worth ye garnered is not self-confined</l>
                   <l>But spread in plenty like a trader’s show;</l>
                   <l>Year in, year out, for all of human kind</l>
                   <l>What you have learned, a countless number know;</l>
@@ -63,13 +64,10 @@
                   <l>To feel his weakness as he strengthens sight.</l>
                </lg>
             </div>
-            <!--Do we signal this is to the right and small caps?-->
-            <byline>
+            <closer>
                <name ref="pers:WE1">Winnifred Eaton</name>
-            </byline>
+            </closer>
             
-
-         
       </body>
   </text>
 </TEI>
