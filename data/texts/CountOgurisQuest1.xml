@@ -14,6 +14,14 @@
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:JT1">Joey Takeda</name>
+            </respStmt>
+            <respStmt>
                <resp notAfter="2019"/>
                <name>Eaton, Winnifred, 1879-1954</name>
             </respStmt>
@@ -45,8 +53,9 @@ Publicly accessible
  uva-lib:475912 
 -->
          </publicationStmt>
-
-
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://babel.hathitrust.org/cgi/pt?id=njp.32101076426145;view=1up;seq=641">https://babel.hathitrust.org/cgi/pt?id=njp.32101076426145;view=1up;seq=641</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:37"/>
          </sourceDesc>
@@ -55,10 +64,12 @@ Publicly accessible
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-05-09" status="readyForProof">Added genre, facsimile source note, and readied for proofing.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl37 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatCoun. Old filename: Count_Oguris_Quest.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -76,11 +87,7 @@ Publicly accessible
          <opener>
             <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
          </opener>
-         
          <div>
-           
-
-
             <p>Despite his course at an American college, Count Oguri was a temperamental pariah. While he desired keenly to live upon terms of social intimacy with many persons, and while, not infrequently, he himself had made advances, there was that in his manner tending to the ultimate overthrow of all such ambitions. There was a diffidence in his mental attitude that led, not only to an embarrassed manner, but gave, as well, the appearance and qualities of a marplot. Oguri had lain awake long to plan, in detail, some interview or meeting that was to bring him the friendship of Cullen, the full-back, or Wright, <q>the star debater</q>, and, having settled the minutiae of proper familiarity with his associates, had gone down to breakfast, only to ask for the salt in a tone of voice that instantly attracted to himself the full gaze of the tableful.</p>
             <p>He could not analyze the situation lucidly enough to determine just why they stared; they themselves could not have told, but he and they both realized that there was a strained something in his voice to confound him and to startle them. Then, for days, he would refrain from asking for anything, the experience of the one occasion vitiating the resolution of a fortnight.</p>
             <p>When Count Oguri had again fought himself up to the proper pitch of pitiful daring, he would attempt the interviews. But, at the slightest evidence in the individual of that collective stare over the salt incident, his courage would evaporate into mere nervous giddiness. The incident would be reported duly by the sought-for one, and would take its place in the archives of accusation against the good- fellowship of Count Oguri.</p>
