@@ -741,6 +741,21 @@
                      </egXML>
                   </p>
                </div>
+               <div xml:id="encoding_editorial_fixes">
+                  <head>Encoding Editorial Fixes</head>
+                  <p>Occassionally, a word or phrase will be obviously incorrect and should be changed for readability's sake. In these instances, use the <gi>choice</gi> element with <gi>sic</gi> and <gi>corr</gi>, like so (example taken from Poor Devil):
+                     
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p><!--[...]--> who does the book-keeping, assists the typewriter, <choice>
+                              <sic>goes</sic>
+                              <corr>does</corr>
+                           </choice> messages, and after giving ten years of his precious life to one firm actually receives the magnificent sum of $10 per week!</p>
+                     </egXML>
+                  </p>
+                  
+                  <p>Note that you must supply <emph>both</emph> 
+                     <gi>sic</gi> and <gi>corr</gi> in that order; usually these emendations will be supplied by the Project Director.</p>
+               </div>
             
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
@@ -1142,7 +1157,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num orig p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
+                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -1651,6 +1666,15 @@
                         <!--CUSTOMIZATION: BREAKS TEI-->
                         <elementRef key="note"/>
                      </alternate>
+                  </content>
+               </elementSpec>
+               
+               <elementSpec ident="choice" module="core" mode="change">
+                  <content>
+                     <sequence>
+                        <elementRef key="sic"/>
+                        <elementRef key="corr"/>
+                     </sequence>
                   </content>
                </elementSpec>
                
@@ -2605,6 +2629,8 @@
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               
+              
                
                <constraintSpec scheme="schematron" ident="nextPrevShouldntBeTheRoot">
                   <desc>The attributes next/prev on a text element shouldn't match the root id.</desc>

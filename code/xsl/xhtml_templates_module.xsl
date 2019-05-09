@@ -482,8 +482,8 @@
     
     <!--Now janus elements-->
     
-    <xsl:template match="choice" mode="tei">
-        <span title="{normalize-space(orig)}">
+    <xsl:template match="choice[orig and reg] | choice[sic and corr]" mode="tei">
+        <span title="{normalize-space(if (orig) then orig else sic)} in original">
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes">showTitle</xsl:with-param>
             </xsl:call-template>
@@ -491,9 +491,9 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="choice/orig" mode="tei"/>
+    <xsl:template match="choice/orig | choice/sic" mode="tei"/>
     
-    <xsl:template match="choice/reg" mode="tei">
+    <xsl:template match="choice/reg | choice/corr" mode="tei">
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
