@@ -67,7 +67,7 @@
     <target name="processMedia">
         
         <echo message="Creating smaller PNGs from PNGS"/>
-        <apply executable="convert" dest="${site.dir}/media" force="true" failonerror="true" verbose="true">
+        <!--<apply executable="convert" dest="${site.dir}/media" force="true" failonerror="true" verbose="true">
             <arg line="-density 150 -thumbnail x600"/>
             <srcfile/>
             <targetfile/>
@@ -91,7 +91,7 @@
             <mapper>
                 <globmapper from="*.pdf" to="*_sm.png"/>
             </mapper>
-        </apply>
+        </apply>-->
     </target>
 
  
