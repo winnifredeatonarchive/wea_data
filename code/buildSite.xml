@@ -37,7 +37,7 @@
     
     
     <target name="processPDFs">
-        <foreach target="convertPdf" param="pdf" parallel="true">
+        <foreach target="convertPDF" param="pdf" parallel="true">
             <path>
                 <fileset dir="${site.dir}/facsimiles">
                     <include name="**.pdf"/>
@@ -50,19 +50,13 @@
         <!--First split into multiple PDFs-->
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <mkdir dir="${site.dir}/facsimiles/${base}"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}/pdfs"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}/pngs"/>
         <mkdir dir="${site.dir}/facsimiles/${base}/thumbnails"/>
-        <exec executable="pdftoppm">
-            <arg line="${pdf} ${site.dir}/facsimiles/${base}/pngs/${base} -png -r 300"/>
-        </exec>
-        
         <!--Now create the thumbnails-->
-        <exec executable="convert">
-            <arg line="${site.dir}/facsimiles/${base}/pngs/${base}-1.png -resize x600 ${site.dir}/facsimiles/${base}/thumbnails/${base}.png"/>
+        <exec executable="pdftoppm">
+            <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 600"/>
         </exec>
-        <exec executable="convert">
-            <arg line="${site.dir}/facsimiles/${base}/pngs/${base}-1.png -resize x300 ${site.dir}/facsimiles/${base}/thumbnails/${base}_tiny.png"/>
+        <exec executable="pdftoppm">
+            <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 300"/>
         </exec>
     </target>
    
