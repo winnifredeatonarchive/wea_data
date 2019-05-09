@@ -10,15 +10,19 @@
             </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:MC1"/>
+               <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
             <respStmt>
                <resp>Copy Editor</resp>
-               <name ref="pers:MC1"/>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:MC1"/>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -36,7 +40,8 @@
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:sl1" when="2019-05-09" status="readyForProof">Edited trasncriber, copy editor, proofreader and encoder; updated status to readyForProof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl11 using XSLT.</change>
          <change when="2019-02-28" who="pers:MC">Created file.</change>
       </revisionDesc>
