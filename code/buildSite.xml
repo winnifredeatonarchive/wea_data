@@ -49,15 +49,19 @@
     <target name="convertPDF">
         <!--First split into multiple PDFs-->
         <basename property="base" file="${pdf}" suffix=".pdf"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}/thumbnails"/>
         <!--Now create the thumbnails-->
-        <exec executable="pdftoppm">
+        <exec executable="vipsthumbnail">
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.png --size 10000x600"/>
+        </exec>
+        <exec executable="vipsthumbnail">
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.png --size 10000x300"/>
+        </exec>
+        <!--<exec executable="pdftoppm">
             <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 600"/>
         </exec>
         <exec executable="pdftoppm">
             <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 300"/>
-        </exec>
+        </exec>-->
     </target>
    
     <target name="processMedia">
