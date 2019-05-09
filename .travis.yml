@@ -19,7 +19,7 @@ addons:
     - vips
     - ant
     
-script: ant all
+script: ant -lib lib all
 notifications:
   email:
     recepients:
