@@ -50,11 +50,11 @@
         <!--First split into multiple PDFs-->
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <!--Now create the thumbnails-->
-        <exec executable="vips">
-            <arg line="thumbnail ${pdf} ${site.dir}/${base}.png 600"/>
+        <exec executable="vipsthumbnail">
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.png --size x600"/>
         </exec>
-        <exec executable="vips">
-            <arg line="thumbnail ${pdf} ${site.dir}/${base}_tiny.png 300"/>
+        <exec executable="vipsthumbnail">
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.png --size x300"/>
         </exec>
         <!--<exec executable="pdftoppm">
             <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 600"/>
