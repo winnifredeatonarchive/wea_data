@@ -36,121 +36,37 @@
     </target>
     
     
-    <target name="createThumbnails">
-        <echo message="Creating x600 thumbnails from facsimiles..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/facsimiles" failonerror="true" >
-            <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0]"/>
-        </exec>
-        <echo message="Creating x300 thumbnails from facsimiles..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/facsimiles"  failonerror="true">
-            <arg line="${project.dir}/code/thumbnail.sh pdf 300 [page=0] _tiny"/>
-        </exec>
-        <echo message="Creating x600 thumbnails from pngs..."/>
-        <exec executable="/bin/bash" dir="${site.dir}/media"  failonerror="true">
-            <arg line="${project.dir}/code/thumbnail.sh png 600 '' _sm "/>
-        </exec>
-        <exec executable="/bin/bash" dir="${site.dir}/media" failonerror="true">
-            <arg line="${project.dir}/code/thumbnail.sh pdf 600 [page=0] _sm "/>
-        </exec>
-    </target>
-    
-    
-    <target name="processImages">
-        <delete dir="${site.dir}/facsimiles"/>
-        <antcall target="copyAuxFiles"/>
-        
-        <foreach target="processPDF" param="pdf">
+    <target name="processPDFs">
+        <foreach target="convertPdf" param="pdf" parallel="true">
             <path>
                 <fileset dir="${site.dir}/facsimiles">
                     <include name="**.pdf"/>
                 </fileset>
             </path>
         </foreach>
-        <!--SO for each PDF: 
-            
-             * Split PDF into multiple page PDFS
-             * Convert those PDFs into PNGs
-             * Convert the first PNG into thumbnials
-             * Convert those PNGs into tiles
-             * Delete the small PDFs
-        -->
-    </target>
-    
-    <target name="processPDF">
-        <basename property="base" file="${pdf}" suffix=".pdf"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}"/>
-        <mkdir dir="${site.dir}/facsimiles/${base}/pdfs"/>
-        <exec executable="pdfseparate">
-            <arg line="${pdf} ${site.dir}/facsimiles/${base}/pdfs/${base}_%d.pdf"/>
-        </exec>
-        <foreach target="pdfsToPngs" param="img">
-            <path>
-                <fileset dir="${site.dir}/facsimiles/${base}/pdfs">
-                    <include name="**.pdf"/>
-                </fileset>
-            </path>
-        </foreach>
-    </target>
-    
-    
-    <target name="pdfsToPngs">
-        <basename property="fn" file="${img}" suffix=".pdf"/>
-        <dirname property="dir" file="${img}"/>
-        <dirname property="parent.dir" file="${dir}"/>
-        <mkdir dir="${site.dir}/tiles/${fn}"/>
-        <exec executable="vips">
-            <arg line="dzsave ${img}[dpi=1200] ${site.dir}/tiles/${fn}/"/>
-        </exec>
-    </target>
-    
-    
-    <!--<target name="createPDFThumbnails">
-        <echo message="${echo.separator}"/>
-        <echo message="Creating PDF thumbnails..."/>
-        <echo message="${echo.separator}"/>
-        <foreach target="convertPDF" parallel="true" param="pdf">
-            <path>
-                <fileset dir="${site.dir}/facsimiles">
-                    <include name="**.pdf"/>
-                </fileset>
-            </path>
-        </foreach>
-        
     </target>
     
     <target name="convertPDF">
-
-        <propertyregex property="out" input="${pdf}" regexp="(.+)\.pdf" select="\1.png"/>
-        <echo message="${echo.separator}"/>
-        <echo message="Converting ${pdf} to ${out}..."/>
-        <echo message="${echo.separator}"/>
-        <exec executable="convert" failonerror="true">
-            <arg line="-density 150 -thumbnail x600"/>
-            <arg line="${pdf}[0]"/>
-            <arg line="+profile 'icc'"/>
-            <arg line="-background white -alpha remove -alpha off"/>
-            <arg line="${out}"/>
+        <!--First split into multiple PDFs-->
+        <basename property="base" file="${pdf}" suffix=".pdf"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}/pdfs"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}/pngs"/>
+        <mkdir dir="${site.dir}/facsimiles/${base}/thumbnails"/>
+        <exec executable="pdftoppm">
+            <arg line="${pdf} ${site.dir}/facsimiles/${base}/pngs/${base} -png -r 300"/>
+        </exec>
+        
+        <!--Now create the thumbnails-->
+        <exec executable="convert">
+            <arg line="${site.dir}/facsimiles/${base}/pngs/${base}-1.png -resize x600 ${site.dir}/facsimiles/${base}/thumbnails/${base}.png"/>
+        </exec>
+        <exec executable="convert">
+            <arg line="${site.dir}/facsimiles/${base}/pngs/${base}-1.png -resize x300 ${site.dir}/facsimiles/${base}/thumbnails/${base}_tiny.png"/>
         </exec>
     </target>
-    
-    <target name="createTinyThumbnails">
-        <echo message="${echo.separator}"/>
-        <echo message="Creating even tinier thumbnails..."/>
-        <echo message="${echo.separator}"/>
-        <apply executable="convert" dest="${site.dir}/facsimiles" force="true" failonerror="true">
-            <arg line="-density 150 -thumbnail x300"/>
-            <srcfile/>
-            <targetfile/>
-            <fileset dir="${site.dir}/facsimiles">
-                <include name="**.png"/>
-            </fileset>
-            <mapper>
-                <globmapper from="*.png" to="*_tiny.png"/>
-            </mapper>
-        </apply>
-    </target>
-    
-    <target name="createSmallerImages">
+   
+    <target name="processMedia">
         
         <echo message="Creating smaller PNGs from PNGS"/>
         <apply executable="convert" dest="${site.dir}/media" force="true" failonerror="true" verbose="true">
@@ -179,8 +95,7 @@
             </mapper>
         </apply>
     </target>
-    -->
-    
+
  
  
  <target name="createSourceXml">
@@ -314,9 +229,9 @@
   
   <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
-    <target name="quickWithFacs" depends="copyAuxFiles, createThumbnails, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
+    <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, createThumbnails, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
       
     
