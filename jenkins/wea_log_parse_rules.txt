@@ -1,0 +1,11 @@
+# Rules file for WEA build on Jenkins. This suppresses errors we know about and can't fix
+# or errors in files that aren't intended to be validated with our schema. 
+
+# We're okay with the parseCssErrors filename
+ok /clock of the subversion server appears to be out of sync/
+
+# Regular errors
+error /[Ee]rror/
+warning /[Ww]arning/
+warning /WARNING/
+error /ERROR/
