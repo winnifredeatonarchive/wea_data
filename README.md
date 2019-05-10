@@ -5,9 +5,6 @@
 This is the data repository for the Winnifred Eaton Archive project, which will contain all of the source data (primarily TEI files) and the associated schemas.
 
 
-
-
-
 # Documentation
 
 [See the full documentation](https://winnifredeatonarchive.github.io/wea/documentation.html)
