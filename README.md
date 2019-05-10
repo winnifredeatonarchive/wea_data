@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/winnifredeatonarchive/wea_data.svg?branch=master)](https://travis-ci.com/winnifredeatonarchive/wea_data)
+
 
 # Data Repository
 
