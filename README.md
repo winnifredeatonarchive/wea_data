@@ -2,8 +2,7 @@
 
 # Data Repository
 
-This is the data repository for the Winnifred Eaton Archive project, which will contain all of the source data (primarily TEI files) and the associated schemas.
-
+This is the data repository for the Winnifred Eaton Archive project, which will contain all of the source data (primarily TEI files) and the associated schemas. 
 
 # Documentation
 
