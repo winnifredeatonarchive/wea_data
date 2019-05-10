@@ -1704,6 +1704,24 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="persPointersShouldBeCaps">
+                     <desc>All notes within the <gi>q</gi> element should have a type.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]">
+                              <sch:let name="atts"
+                                       value="for $a in @* return if (contains($a,'pers:')) then tokenize($a,'\s+') else ()"/>
+                              <sch:let name="vals"
+                                       value="for $a in $atts return if (starts-with($a,'pers:')) then $a else ()"/>
+                              <sch:let name="errors"
+                                       value="for $v in $vals return if (matches($v,'^pers:[A-Z]+\d+$')) then () else $v"/>
+                              <sch:assert test="empty($errors)">
+                                 ERROR: All pers pointers (i.e. the string after 'pers:') must be a sequence of capital letters and a digit (bad val: <sch:value-of select="string-join($errors,' ')"/>)
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <constraintSpec scheme="schematron" ident="note.editorialShouldHaveResp">
                      <desc>Editorial notes should always have an <att>resp</att>.</desc>
                      <constraint>

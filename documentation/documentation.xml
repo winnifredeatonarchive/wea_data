@@ -16400,6 +16400,27 @@ psychological significance.
                         <cell>
                            <label>Schematron</label>
                         </cell>
+                        <cell>All notes within the <ref target="#TEI.q"><gi>q</gi></ref> element should have a type.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]"&gt;
+ &lt;sch:let name="atts"
+  value="for $a in @* return if (contains($a,'pers:')) then tokenize($a,'\s+') 
+ else ()"/&gt;
+ &lt;sch:let name="vals"
+  value="for $a in $atts return if (starts-with($a,'pers:')) then $a else ()"/&gt;
+ &lt;sch:let name="errors"
+  value="for $v in $vals return if (matches($v,'^pers:[A-Z]+\d+$')) then () 
+ else $v"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: All pers pointers (i.e. the string after 'pers:') must be a sequence of capital letters and a digit (bad val: &lt;sch:value-of select="string-join($errors,' ')"/&gt;)
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
                         <cell>Editorial notes should always have an <att>resp</att>.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:note[@type='editorial']"&gt;

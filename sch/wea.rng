@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-05-09T18:51:23Z. .
+Schema generated from ODD source 2019-05-10T04:44:56Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2872,6 +2872,25 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]">
+                              <sch:let name="atts"
+                        value="for $a in @* return if (contains($a,'pers:')) then tokenize($a,'\s+') else ()"/>
+                              <sch:let name="vals"
+                        value="for $a in $atts return if (starts-with($a,'pers:')) then $a else ()"/>
+                              <sch:let name="errors"
+                        value="for $v in $vals return if (matches($v,'^pers:[A-Z]+\d+$')) then () else $v"/>
+                              <sch:assert test="empty($errors)">
+                                 ERROR: All pers pointers (i.e. the string after 'pers:') must be a sequence of capital letters and a digit (bad val: <sch:value-of select="string-join($errors,' ')"/>)
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                            <sch:rule context="tei:note[@type='editorial']">
                               <sch:assert test="@resp">
                                  ERROR: Editorial notes should have a @resp attribute pointing to the person who authored this note.
@@ -3511,7 +3530,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-assert-24">
+                  id="wea-relatedItem-targetorcontent1-constraint-assert-25">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -3610,7 +3629,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-25">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-26">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -6715,7 +6734,7 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-42">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
