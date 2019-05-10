@@ -93,6 +93,12 @@
   
     
     
+    <xsl:template match="code[ancestor::head]" mode="main">
+        <span class="code{if (@rend) then concat(' ', @rend) else ()}">
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
     <xsl:template match="code" mode="main">
         <pre>
             <xsl:if test="@rend">
