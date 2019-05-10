@@ -49,7 +49,9 @@
     </xsl:template>
     
     <xsl:template name="createChecks">
+        <xsl:call-template name="documentsAwaitingMC"/>
         <xsl:call-template name="documentsWithoutFacs"/>
+
     </xsl:template>
     
     
