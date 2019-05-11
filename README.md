@@ -2,14 +2,9 @@
 
 # Data Repository
 
-This is the data repository for the Winnifred Eaton Archive project, which will contain all of the source data (primarily TEI files) and the associated schemas. 
+This is the data repository for the Winnifred Eaton Archive project. The repository contains all of the source data for the project, including all texts, schemas, and documentation.
 
-# Documentation
-
-[See the full documentation](https://winnifredeatonarchive.github.io/wea/documentation.html)
-
-All documentation is encoded in the [TEI ODD file](sch/wea.odd); the above is compiled from the ODD using the processes contained the [code directory](code);
-   
+The site is not yet released, but will be available live in summer 2019.
    
 
   
