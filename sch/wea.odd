@@ -1704,6 +1704,20 @@
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  
+                  <constraintSpec scheme="schematron" ident="note.editorialOnesShouldFollowTrailingPunct">
+                     <desc>Editorial notes should following trailing punctuation.</desc>
+                     
+                     <constraint>
+                        <sch:rule context="tei:note[@type='editorial']">
+                           <sch:let name="folText" value="following-sibling::text()[1]"/>
+                           <sch:assert test="not(matches($folText, '^[\.,\?:;]'))">
+                              ERROR: Editorial notes should be placed after the trailing punctuation.
+                           </sch:assert>
+                        </sch:rule>
+                     </constraint>
+                  </constraintSpec>
+                  
                   <constraintSpec scheme="schematron" ident="persPointersShouldBeCaps">
                      <desc>All notes within the <gi>q</gi> element should have a type.</desc>
                      <constraint>

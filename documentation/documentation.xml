@@ -16400,6 +16400,19 @@ psychological significance.
                         <cell>
                            <label>Schematron</label>
                         </cell>
+                        <cell>Editorial notes should following trailing punctuation.<code>
+&lt;sch:rule context="tei:note[@type='editorial']"&gt;
+&lt;sch:let name="folText"
+ value="following-sibling::text()[1]"/&gt;
+&lt;sch:assert test="not(matches($folText, '^[\.,\?:;]'))"&gt; ERROR: Editorial notes should be placed after the trailing punctuation.
+&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
                         <cell>All notes within the <ref target="#TEI.q"><gi>q</gi></ref> element should have a type.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]"&gt;
