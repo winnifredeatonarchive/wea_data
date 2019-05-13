@@ -1697,6 +1697,12 @@ tr img{
  * as the place where the header needs to switch */
 
 @media only screen and (max-width: 1024px){
+
+:root{
+    --header-height: 3rem;
+}
+
+
        
     #nav_small{
         display:grid;
@@ -1704,15 +1710,23 @@ tr img{
         width:100vw;
     }
     
+
     #nav_small > div{
-        margin:auto;
+        margin-left: auto;
+         margin-right: auto;
     }
     
+    
     #hamburger{
-         font-size: 2.5rem;
+         font-size: 2.2rem;
                 cursor:pointer;
         margin-left:.5rem;
         
+    }
+    
+    .home{ 
+    font-size: 1.9rem;
+    margin-top:-.5rem;
     }
     
     
@@ -1733,10 +1747,6 @@ tr img{
     }
     
   
-    #nav_small > div {
-        margin-top: auto;
-        margin-bottom: auto;
-    }
     
 
    
@@ -1747,7 +1757,7 @@ tr img{
 
     
     .search_icon{
-        font-size:2rem;
+        font-size:1.8rem;
     }
  header.searchOpen #headerSearch{
     grid-template-areas:
@@ -1783,6 +1793,7 @@ tr img{
     background: var(--wea-header-bg-color);
     width:17rem;
     }
+    
     
     #nav_main,
     #nav_main.closed{
