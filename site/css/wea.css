@@ -1817,15 +1817,38 @@ tr img{
     #mainBody:not(.JS) #nav_main:target
     {
     margin-left:0;
-    transition: margin-left .5s;
+    transition: margin-left .4s;
+    z-index:200;
     }
     
+    
+    #nav_main:after{
+        content:"";
+        position:fixed;
+        left: -100%;
+        width:100%;
+        top:0;
+        background:black;
+        opacity:0;
+        transition: opacity 0.1s 0.25s;
+    }
+    
+    #nav_main.open:after{
+        content:"";
+        opacity:0.7;
+        left:18rem;
+        height:100%;
+        width:100%;
+        z-index:0;
+    }
 
  
    #nav_main  a{
        color: #000000;
    }
    
+   
+  
    #nav_main a:hover{
        color:var(--wea-pink);
    }
