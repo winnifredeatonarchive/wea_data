@@ -18,6 +18,14 @@
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
                <resp notAfter="2019"/>
                <name>Eaton, Winnifred, 1879-1954</name>
             </respStmt>
@@ -60,10 +68,12 @@ Publicly accessible
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-05-15" status="readyForProof">Added milestones, genre, and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl48 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatInte. Old filename: His_Interpreter.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -86,8 +96,8 @@ Publicly accessible
          <div>
           
             <head>Part I</head>
-            <div>
-               <p>The American sat at his desk, intently studying some plans and sketches that were spread before him. His fine, fair face was drawn with his intense absorption in his task, and the heavy lines on his forehead showed he was puzzled over something regarding it. Often he would turn from his plans to a large book, and run his hand down a list of figures, frowning heavily as if<note type="editorial" resp="pers:JLC1"><q>as their volume</q> in original.</note> their volume annoyed him. After a time, he pushed the book and maps from him, and running his hand wearily through his hair, leaned back in his chair, with half-closed eyes and irresolute mouth and chin.</p>
+            
+               <p>The American sat at his desk, intently studying some plans and sketches that were spread before him. His fine, fair face was drawn with his intense absorption in his task, and the heavy lines on his forehead showed he was puzzled over something regarding it. Often he would turn from his plans to a large book, and run his hand down a list of figures, frowning heavily as their volume annoyed him. After a time, he pushed the book and maps from him, and running his hand wearily through his hair, leaned back in his chair, with half-closed eyes and irresolute mouth and chin.</p>
                <p>A polite Japanese looked in at him from an adjoining office with the calm, half wondering, wholly unreadable countenance peculiar to the better class of Japanese.</p>
                <p>The American observed him at the door, and called to him:</p>
                <p><q>Ah, Inouye! Just a minute!</q></p>
@@ -98,22 +108,15 @@ Publicly accessible
                <p><q>Is there greater profit in the work, Mr. Arthurs, should the American syndicate take the contract?</q></p>
                <p>The American shifted in his seat, nervously turning over the sides of his blotter.</p>
                <p><q>Well, a more general profit, Inouye. The syndicate has controlled all my work thus far. I am anxious to get other contracts on top of this one, and I would more likely be able to get them if I carried out this one with the assistance of the syndicate. Couldn’t afford to do it alone. This, if properly carried out, means only the beginning of an immense lot of work—the cars, the miles of rail I have calculated building in the future, could only be accomplished with the aid of the syndicate. The question is whether I shall merely carry out this contract and make immediate profits for myself and Takamine, or let the syndicate put up the big cash, buy American material, and— well, make a fortune for the syndicate, too. You understand in America these syndicates are immensely wealthy. With the mere permit of the Japanese government the rest comes easily enough. If the contract passes into the hands of the syndicate it means a good position, and in time a good fortune, for myself; but in that event it passes out of Takamine’s hands altogether, he being merely one of a good many stockholders</q>.</p>
-            </div>
-
-
-                         
-            <div>
-
-
-
+           
+            <milestone unit="sectionBreak"/>
+            
                <p>The Japanese walked to the door and looked out across the blue fields. He was not thinking of the American’s plans. His mind was absorbed in the image of a young maiden, the daughter of Takamine. At one time he had been almost as a son to Takamine, whose hospitable doors were constantly open to receive him. With the over-hasty conceit and impetuosity of a young man, his friend’s kindness to him made him overbold, so that he had asked the father for the daughter in marriage. Takamine was a wealthy man, though perhaps of not such high birth as Inouye. Nevertheless he was indignant that his generosity and interest as a benefactor to the young man, and which had procured him the position he presently occupied with the American, should be apparently imposed upon, for it seemed to Takamine, who had something of the arrogance of the wealthy Japanese, that no one but a man in his own position should aspire to his daughter’s hand.</p>
-               <p>Before the great reformation of the government system, such an offer from Inouye, even in his impoverished state, would have been considered a high compliment, as he belonged to that class of people called the Shizoku (nobles), while Takamine would have been recognized merely as a citizen or rich merchant. But since the reformation all classes of people became recognized equally, and there was no line of distinction drawn whatever, save that which nobility and high position, aided by wealth, could carry out, although the nobles secretly resented the change and instinctively felt their superiority in spite of fallen fortunes.</p>
+            <p>Before the great reformation of the government system, such an offer from Inouye, even in his impoverished state, would have been considered a high compliment, as he belonged to that class of people called the <foreign>Shizoku</foreign> (nobles), while Takamine would have been recognized merely as a citizen or rich merchant. But since the reformation all classes of people became recognized equally, and there was no line of distinction drawn whatever, save that which nobility and high position, aided by wealth, could carry out, although the nobles secretly resented the change and instinctively felt their superiority in spite of fallen fortunes.</p>
                <p>So Inouye bitterly thought of the refusal he had received, and with all the stubbornness of his class rebelled against it. Moreover, his heart was quite set on the girl Haru for a bride, and it was with bitter jealousy he imagined her the bride of another, for Haru was the embodiment of everything that was sweet, beautiful, dainty, and noble.</p>
-
-
-
-                         </div>
-            <div>
+           
+            <milestone unit="sectionBreak"/>
+            
                <p><q>Well, Inouye, what would you do about it?</q> the American’s voice broke in on him.</p>
                <p>Inouye had made himself, as confidential secretary and interpreter, almost indispensable to the American, and because of the coolness and wisdom he had shown in all things, the more careless man was used to relying a great deal on his opinion. Inouye’s face was rather pale.</p>
                <p><q>If the syndicate pushes the work you will in the long run make as much, if not more, profit. Is it not so?</q> he asked.</p>
@@ -133,34 +136,20 @@ Publicly accessible
                <p>The American had taken a larger suite of offices, and there were a couple of new Japanese clerks sitting in the outer offices of <q>The American Oriental Railroad Co</q>.</p>
                <p>Inouye’s desk had been moved into the same office as the American’s, and the pushing of the work forward depended as much on him as on the promoter himself.</p>
                <p>Arthurs was a queer mixture of shrewdness and weakness. With the keenness of a veteran promoter he planned out a work so extensive that it threatened to absorb all smaller railways then existing in Japan. In spite of this he depended almost entirely on Inouye for the execution of his plans, and because of his confidence in him had appointed him assistant manager of the company. The American soon found it almost impossible to take a step without the assistance of Inouye, and indeed it was Inouye who gave the orders and saw they were carried out. There was scarcely a suggestion that Inouye made which was not agreed to by Arthurs, and in this way practically the entire management lay in the hands of the Japanese.</p>
+                         
+            <milestone unit="sectionBreak"/>
 
-
-
-                         </div>
-            <div>
-
-
-
-               <p>Everything went smoothly with the company, and the American, having put the responsibility on the shoulders of Inouye, found leisure to see something of the country itself and take interest in the people. Like most foreigners, he soon succumbed to the dolce far niente of the atmosphere, and took his pleasures in a leisurely fashion. Indeed, there are few foreigners visiting Japan who look upon the country otherwise than as almost a pleasure resort; and though they arrive with all the ambition and vigor of the West, they soon slip off their commercial coats to don those of quiet peace, restfulness, and sunshine. The ease and luxury which pervade the life of the higher class of Japanese is contagious, perhaps, to the foreigner, and the same listlessness soon makes itself manifest among them after a short residence there and when business cares press not too heavily. Of course, the merchant-class people are ever alert with a constant, keen eye for business, but this class of Japanese are seldom as attractive to the foreigner as the remnant of the old Samourai class. To pleasures they are addicted. Local fêtes, flowers of every season, snow and the full moon, all these give the better classes pretexts for forming convivial parties which meet in picturesque tea- houses and drink the tiny cups of hot saké, waited upon by the dazzling, tripping waitresses, and constantly cheered and entertained by the gaiety and accomplishments of the ever-present geisha.</p>
+            <p>Everything went smoothly with the company, and the American, having put the responsibility on the shoulders of Inouye, found leisure to see something of the country itself and take interest in the people. Like most foreigners, he soon succumbed to the dolce far niente of the atmosphere, and took his pleasures in a leisurely fashion. Indeed, there are few foreigners visiting Japan who look upon the country otherwise than as almost a pleasure resort; and though they arrive with all the ambition and vigor of the West, they soon slip off their commercial coats to don those of quiet peace, restfulness, and sunshine. The ease and luxury which pervade the life of the higher class of Japanese is contagious, perhaps, to the foreigner, and the same listlessness soon makes itself manifest among them after a short residence there and when business cares press not too heavily. Of course, the merchant-class people are ever alert with a constant, keen eye for business, but this class of Japanese are seldom as attractive to the foreigner as the remnant of the old Samourai class. To pleasures they are addicted. Local <foreign>fêtes</foreign>, flowers of every season, snow and the full moon, all these give the better classes pretexts for forming convivial parties which meet in picturesque tea- houses and drink the tiny cups of hot saké, waited upon by the dazzling, tripping waitresses, and constantly cheered and entertained by the gaiety and accomplishments of the ever-present geisha.</p>
                <p>With the usual abandon and extravagance of an American, Arthurs plunged into this novel and strangely fascinating life of gaiety and dissipation, which, though fully as attractive as that of his own country, yet nevertheless was seldom unhealthful, because seldom carried to excess. In fact, he grew happier and stronger under its influence. He was never bored, seldom melancholy. The geisha-girls kept him on a constant strain of mirth and sentiment, and the beauty of the scenery was restful enough for even the most weary man of the world.</p>
                <p>Like most foreigners, the only native women he came in contact with were merely the geisha or dancing girls, and his ideas of Japanese women were entirely founded on the life of these girls, believing them typical of the Japanese woman. And with the usual susceptibility of a young man he fell in love with a fresh face, a newer grace, a brighter eye or redder lips each day.</p>
-
-
-
-                         </div>
-            <div>
-
-
+               
+            <milestone unit="sectionBreak"/>
 
                <p>It was two years later. Takamine, who had as yet had little or scarcely any return for his invested money, grew more nervous each day. He had put the greater part of his wealth in the railroad, hoping to realize a profit from it very soon. To live in the extravagant style he had always done, and give his sons and daughter fitting educations, was a constant drain on his purse, already so badly depleted by his investment. Three of his sons were abroad, being educated in foreign lands, and there remained with him only his youngest child, Haru, who was motherless. She was the sunshine of the old man’s life, and he made great plans for her future. His influence with the government had not been as great of late. He had been worsted in a recent election for governor of the province. He felt he would have gained this position had he been able to spend his money more lavishly, but with so much of it tied up in stocks and bonds of the railroad he did not feel encouraged to do so.</p>
                <p>In the meanwhile, Arthurs’ position had grown in prominence; his salary was increased threefold, and he himself was one of the largest stockholders of the company. The railroad had progressed rapidly, and already included many miles of rail.</p>
                <p>Yet in spite of the evident prosperity of the road, and the fact that it had already begun paying a small quarterly dividend to its stockholders, Takamine’s financial affairs became more straitened. He had speculated heavily, and was gambling away the remnants of his fortune. His last and only resource was his investment with the railroad, and he vainly tried to sell the bonds. The Japanese are not, as a rule, a speculative people. Had he been in America he doubtless could have sold his bonds at even more than their face value; but in Japan it was different. The people, though vastly interested in the progress of the road, were yet niggardly in putting out any of their money, and when they did, it was only in small sums. In fact, the stockholders of the road were almost entirely English and Americans, and although Takamine had put nearly forty thousand dollars into the concern (and this is a fortune in Japan), he was anything but the largest stockholder of the company; for whereas he had paid in hard cash for all his stock, many of the stockholders had either been presented with or were supposed to have worked for a good part.</p>
-
-
-
-                         </div>
-            <div>
-
+                 
+            <milestone unit="sectionBreak"/>
 
                <p>One morning when the American sauntered into the office in his white flannels, looking anything but business-like, he found Inouye at a desk writing out a long contract, and sitting on the edge of the secretary’s table, he inquired as to its contents.</p>
                <p>The young Japanese flushed a trifle, but answered quite readily that it was a legal betrothal contract.</p>
@@ -181,13 +170,8 @@ Publicly accessible
                <p>The American leaned back in his chair and mused, and the interpreter continued writing his contract in fine Japanese figures.</p>
                <p><q>When is it coming off?</q> the American interrupted.</p>
                <p><q>It will depend if her father agrees</q>, the other replied; and added, with a touch of satisfaction in his voice, <q>I think he now will</q>.</p>
-
-
-
-                         </div>
-            <div>
-
-
+                         
+            <milestone unit="sectionBreak"/>
 
                <p>He raised his head from his work and looked at the American, smiling pleasantly. <q>Her name is Haru</q>, he said, and a soft light shone for a moment in his eyes.</p>
                <p><q>Haru</q>, repeated the American, softly. <q>What a pretty name! It means ‘spring,’ does it not?</q></p>
@@ -202,17 +186,7 @@ Publicly accessible
 
 
 
-            </div>
-
          </div>
-
-
-
-
-
-
-
-
 
 
 
