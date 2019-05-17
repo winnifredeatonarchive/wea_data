@@ -76,6 +76,12 @@
         </div>
     </xsl:template>
     
+    <!--A simple template to create an empty div that is
+        the overlay-->
+    <xsl:template name="createOverlay">
+        <div id="overlay" class="hidden"/>
+    </xsl:template>
+    
     
     
 </xsl:stylesheet>

@@ -106,14 +106,14 @@
     </xd:doc>
     <xsl:template match="category" mode="sub">
         <body>
-            <head><xsl:value-of select="@n"/>: Subcategories</head>
+            <head><xsl:value-of select="catDesc/term"/>: Subcategories</head>
             <div>
                 <xsl:sequence select="catDesc/note/p"/>
                 <list>
                     <!--For every child category, make an item-->
                     <xsl:for-each select="category">
                         <xsl:if test="not(empty(wea:getCatDocs(@xml:id)))">
-                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="@n"/></ref></item>
+                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="catDesc/term"/></ref></item>
                         </xsl:if>
                     </xsl:for-each>
                 </list>

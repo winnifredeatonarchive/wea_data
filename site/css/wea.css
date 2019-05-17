@@ -150,6 +150,29 @@ header{
 }
 
 
+/* Now when there is an overlay, this has to happen with the header */
+
+
+
+header::after{
+    content:"";
+    top:0;
+    left:0;
+    opacity:0;
+     transition: opacity 0.4s;
+}
+
+.overlay header::after{
+    content:"";
+    background:black;
+    opacity:0.7;
+    width:100%;
+    height:101%;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
 .JS header.open{
     height:auto;
 }
@@ -279,7 +302,7 @@ nav > div > div{
 
 #nav_main > div:not(.search_icon):not(.home):hover{
    border-bottom-color: var(--wea-pink);
-   transition: border-bottom-color .2s;
+   transition: border-bottom-color .4s;
 }
 
 #nav_main > div:hover > div{
@@ -1321,6 +1344,9 @@ span[data-el='q'] span[data-el='q']::after{
 
 }
 
+
+
+
 #popup::after, #popup::before {
 	border: solid transparent;
 	content: " ";
@@ -1697,6 +1723,12 @@ tr img{
  * as the place where the header needs to switch */
 
 @media only screen and (max-width: 1024px){
+
+:root{
+    --header-height: 3rem;
+}
+
+
        
     #nav_small{
         display:grid;
@@ -1704,15 +1736,23 @@ tr img{
         width:100vw;
     }
     
+
     #nav_small > div{
-        margin:auto;
+        margin-left: auto;
+         margin-right: auto;
     }
     
+    
     #hamburger{
-         font-size: 2.5rem;
+         font-size: 2.2rem;
                 cursor:pointer;
         margin-left:.5rem;
         
+    }
+    
+    .home{ 
+    font-size: 1.9rem;
+    margin-top:-.5rem;
     }
     
     
@@ -1733,10 +1773,6 @@ tr img{
     }
     
   
-    #nav_small > div {
-        margin-top: auto;
-        margin-bottom: auto;
-    }
     
 
    
@@ -1747,7 +1783,7 @@ tr img{
 
     
     .search_icon{
-        font-size:2rem;
+        font-size:1.8rem;
     }
  header.searchOpen #headerSearch{
     grid-template-areas:
@@ -1784,6 +1820,7 @@ tr img{
     width:17rem;
     }
     
+    
     #nav_main,
     #nav_main.closed{
       margin-left:-18rem;
@@ -1806,15 +1843,19 @@ tr img{
     #mainBody:not(.JS) #nav_main:target
     {
     margin-left:0;
-    transition: margin-left .5s;
+    transition: margin-left .4s;
+    z-index:200;
     }
     
-
+    
+   
  
    #nav_main  a{
        color: #000000;
    }
    
+   
+  
    #nav_main a:hover{
        color:var(--wea-pink);
    }

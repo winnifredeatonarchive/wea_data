@@ -60,6 +60,7 @@
                 <div>Archive
                     <div>
                         <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
+                            <xsl:sort select="@n" order="ascending"/>
                             <a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a>
                         </xsl:for-each>
                     </div>

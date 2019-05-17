@@ -1,5 +1,3 @@
-
-
 # Data Repository
 
 This is the data repository for the Winnifred Eaton Archive project. The repository contains all of the source data for the project, including all texts, schemas, and documentation.

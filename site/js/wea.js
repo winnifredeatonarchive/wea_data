@@ -70,10 +70,12 @@ function toggleNav(){
       e.preventDefault();
       
       toggleOpenClose(document.getElementById('nav_main'), true);
-      
-      
-    
+      toggleOverlay();
 }    
+
+function toggleOverlay(){
+    document.getElementsByTagName('body')[0].classList.toggle("overlay");
+}
 
 function makeTablesSortable(){
     var th = document.querySelectorAll('th.sortable');
