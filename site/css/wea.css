@@ -1274,6 +1274,10 @@ span[data-el='foreign']{
     font-style:italic;
 }
 
+span[data-el='emph']{
+    font-style:italic;
+}
+
 span[data-el='q']::before,
 span[data-el='title'][data-level='a']::before{
     content:"“";
