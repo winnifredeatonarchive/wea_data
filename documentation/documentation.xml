@@ -9247,6 +9247,20 @@ formatting or layout information preserved.</p>
                         <cell>
                            <label>Schematron</label>
                         </cell>
+                        <cell>
+                           <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:figure"&gt;
+ &lt;sch:assert test="tei:*"&gt; ERROR: All figures should have at least one element in it.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
                         <cell>Every figure in the figure database should have a type value.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]"&gt;
@@ -9280,7 +9294,7 @@ formatting or layout information preserved.</p>
  &lt;elementRef key="figDesc" minOccurs="0"/&gt;
  &lt;elementRef key="bibl" minOccurs="0"/&gt;
  &lt;elementRef key="listPerson" minOccurs="0"/&gt;
- &lt;elementRef key="graphic"/&gt;
+ &lt;elementRef key="graphic" minOccurs="0"/&gt;
 &lt;/content&gt;
     </code>
                         </cell>

@@ -2214,9 +2214,21 @@
                      <elementRef key="figDesc" minOccurs="0"/>
                      <elementRef key="bibl" minOccurs="0"/>
                      <elementRef key="listPerson" minOccurs="0"/>
-                     <elementRef key="graphic"/>
+                     <elementRef key="graphic" minOccurs="0"/>
                   </content>
-                  <!--Need att list-->
+                  <constraintSpec ident="figure.needsSomething" scheme="schematron">
+                     <!--This constraint could certainly be done in pure ODD and not
+                        schematron-->
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:figure">
+                              <sch:assert test="tei:*">
+                                 ERROR: All figures should have at least one element in it.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>                     
+                  </constraintSpec>
                   <constraintSpec ident="figure.inListFigureMustHaveType" scheme="schematron">
                      <desc>Every figure in the figure database should have a type value.</desc>
                      <constraint>
