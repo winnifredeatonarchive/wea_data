@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="code/drive/ant.css"?>
+<?xml-stylesheet type="text/css" href="addTextFromDrive/ant.css"?>
 <project basedir="." name="addTextFromDrive" default="all">
     <description>This build creates a TEI document from the Google Drive.
         To use this build, replace the current values (if filled in) in the form below for your document. 
@@ -70,7 +70,7 @@
         <echo message="**********************************************************"/>
         <echo message="Converting document..."/>
         <echo message="**********************************************************"/>
-        <java classpath="lib/saxon9he.jar" classname="net.sf.saxon.Transform" failOnError="true">
+        <java classpath="saxon9he.jar" classname="net.sf.saxon.Transform" failOnError="true">
             <arg value="-xsl:code/drive/convert_epub_to_TEI.xsl"/>
             <arg value="-it:createDoc"/>
             <arg value="documentId=${documentId}"/>
@@ -90,7 +90,7 @@
         <echo message="**********************************************************"/>
         <echo message="Moving file. This will overwrite the local file."/>
         <echo message="**********************************************************"/>
-        <move file="temp/${documentId}.xml" todir="data/texts/" overwrite="yes"/>
+        <move file="temp/${documentId}.xml" todir="texts/" overwrite="yes"/>
         <echo message="**********************************************************"/>
         <echo message="Deleting temporary directory."/>
         <echo message="**********************************************************"/>
@@ -119,7 +119,7 @@
     
     
     <target name="open">
-        <property name="outFile" value="${basedir}/data/texts/${documentId}.xml"/>
+        <property name="outFile" value="${basedir}/texts/${documentId}.xml"/>
         <open file="${outFile}"/>
     </target>
     
