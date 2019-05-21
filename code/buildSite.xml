@@ -101,6 +101,8 @@
          <fileset dir="${data.dir}">
              <include name="**/**.xml"/>
              <exclude name="documentation/**.xml"/>
+             <exclude name="addTextFromDrive.xml"/>
+             <exclude name="**/addTextFromDrive.xml"/>
          </fileset>
      </copy>
  </target>

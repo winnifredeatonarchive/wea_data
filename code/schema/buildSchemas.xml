@@ -18,7 +18,7 @@
     
     <!--The project directory as supplied by oXygen; if run at the
   command line, using -Dproject.dir=../../ -->
-    <dirname property="project.dir" file="../../wea_data.xpr"/>
+    <dirname property="project.dir" file="../../wea_all.xpr"/>
     
     <!--Schema building dir; equivalent to ${basedir}.-->
     <property name="schemaBuild.dir" value="${project.dir}/code/schema"/>
@@ -30,7 +30,7 @@
     <property name="data.dir" value="${project.dir}/data"/>
     
     <!--The directory for the schemas-->
-    <property name="schema.dir" value="${project.dir}/sch"/>
+    <property name="schema.dir" value="${data.dir}/sch"/>
     
     <!--Library dir-->
     <property name="lib.dir" value="${project.dir}/lib"/>

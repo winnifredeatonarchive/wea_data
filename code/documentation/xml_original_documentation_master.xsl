@@ -10,7 +10,7 @@
     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
-    <xsl:include href="../../sch/weaQuickFixTemplates.xsl"/>
+    <xsl:include href="../../data/sch/weaQuickFixTemplates.xsl"/>
     
     
     <xsl:template name="makeDocumentation">

@@ -121,7 +121,7 @@
                 <cell>Result</cell>
                 <cell>Keystroke</cell>
             </row>
-            <xsl:for-each select="document('../../wea_data.xpr')//*:codeTemplateItem[matches(*:field[@name='renderString'], 'WEA:')]">
+            <xsl:for-each select="document('../../data/wea_data.xpr')//*:codeTemplateItem[matches(*:field[@name='renderString'], 'WEA:')]">
                 <xsl:sort select="lower-case(normalize-space(*:field[@name='renderString']))"/>
                 <row>
                     <cell><xsl:value-of select="substring-after(normalize-space(*:field[@name='renderString']), 'WEA: ')"/></cell>
