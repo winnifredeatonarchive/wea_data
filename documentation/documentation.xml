@@ -44,11 +44,59 @@
             <div xml:id="requirements">
                <head>Requirements</head>
                <p>To edit material for the site, you will need to use a computer with the following software: <list>
-                     <item>Git (to get data from and commit data to the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+                     <item>Git OR SVN (to get data from and commit data to the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
+                     <item>Most computers usually come with SVN. See <ref target="http://mapoflondon.uvic.ca/subversion.htm">The Map of Early Modern London</ref>'s documentation on subversion for more information on how to download.</item>
                      <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
                      <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
                   </list>
                </p>
+            </div>
+            <div xml:id="svn">
+               <head>Using Subversion (for most encoders)</head>
+               <p>Most encoders will prefer to use Subversion as the versioning software to interact with the repository. One of the major benefits of using subversion (besides its fairly simple syntax) is the ability to checkout only part of the repository.</p>
+               <p>Most encoders (those who are not actively contributing facsimiles to the project) will want to checkout just the data directory. To do so: </p>
+               <list>
+                  <item>Open the terminal</item>
+                  <item>Create a directory for working in: <code rend="block">mkdir wea</code> 
+                     <emph>Note: If you already have the github repository checked out, you will need to delete the Github verison first.</emph>
+                  </item>
+                  <item>Go into the directory: <code rend="block">cd wea</code>
+                  </item>
+                  <item>Checkout the repo:</item>
+                  <item>For <emph>encoders</emph> who do not need the entire directory: <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/data .</code>
+                  </item>
+                  <item>For <emph>developers</emph> who do need the entire directory: <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/ .</code>
+                  </item>
+                  <item>In both cases <emph>note the trailing period</emph>!</item>
+               </list>
+               <div>
+                  <head>Updating the repository</head>
+                  <p>At the beginning of your work day (and as often as you remember), you should <q>up</q> the repository: <list>
+                        <item>Go into the wea directory: <code rend="block">cd wea</code>
+                        </item>
+                        <item>Then do an svn up: <code rend="block">svn up</code>
+                        </item>
+                     </list>
+                  </p>
+               </div>
+               <div>
+                  <head>Commiting to the repository</head>
+                  <p>To commit to the repository, do an <code>svn commit</code> with a message signified by -m and a message contained in quotation marks: <code>svn commit -m "Downloading and encoding SneerNot1.xml"</code>
+                  </p>
+               </div>
+               <div>
+                  <head>Guides</head>
+                  <p>
+                     <list>
+                        <item>
+                           <ref target="https://mapoflondon.uvic.ca/subversion.htm#subversion_commands">The MoEML Cheatsheet for Subversion</ref> by Martin Holmes. This table lists the most frequently used commands in subversion.</item>
+                     </list> 
+                     <list>
+                        <item>
+                           <ref target="http://svnbook.red-bean.com/">SVN Book</ref> by Ben Collins-Sussman, Brian W. Fitzpatrick, and C. Michael Pilato. This is an authorative manual for subversion that is very helpful, but extensive.</item>
+                     </list>
+                  </p>
+               </div>
             </div>
             <div xml:id="github">
                <head>Using Github</head>
