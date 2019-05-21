@@ -150,9 +150,9 @@
     <target name="validateStandaloneXml">
         <ant antfile="buildValidate.xml" inheritall="no">
             <property name="data.dir" value="${site.dir}/xml/standalone"/>
-            <property name="rng" value="${project.dir}/sch/tei_all.rng"/>
-            <property name="sch" value="${project.dir}/sch/tei_all.sch"/>
-            <property name="sch.xsl" value="${project.dir}/sch/tei_all.xsl"/>
+            <property name="rng" value="${sch.dir}/tei_all.rng"/>
+            <property name="sch" value="${sch.dir}/tei_all.sch"/>
+            <property name="sch.xsl" value="${sch.dir}/tei_all.xsl"/>
         </ant>
     </target>
     
