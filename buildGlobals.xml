@@ -30,7 +30,7 @@
     
     
     <!--The schema directory-->
-    <property name="sch.dir" value="${project.dir}/sch"/>
+    <property name="sch.dir" value="${project.dir}/data/sch"/>
     
     <!--Lib directory-->
     <property name="lib.dir" value="${project.dir}/lib"/>
@@ -54,6 +54,7 @@
     <!--Data fileset-->
     <fileset id="dataXml" dir="${data.dir}">
         <include name="**/**.xml"/>
+        <exclude name="**/addTextFromDrive.xml"/>
     </fileset>
     
     <fileset id="sourceXml" dir="${source.xml.dir}">
