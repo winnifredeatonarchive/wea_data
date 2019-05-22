@@ -300,6 +300,14 @@ nav > div > div{
 /* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
 @media only screen and (min-width: 1025px){
 
+
+
+
+
+#nav_main > div.selected{
+    border-bottom-color: var(--wea-pink);
+}
+
 #nav_main > div:not(.search_icon):not(.home):hover{
    border-bottom-color: var(--wea-pink);
    transition: border-bottom-color .4s;
@@ -315,7 +323,8 @@ nav > div > div{
     box-shadow: 1px 1px 1px 1px #efefef;
 }
 
-#nav_main > div > div > a:hover{
+#nav_main > div > div > a:hover,
+#nav_main > div > div >a.selected{
         background:#efefef;
         transition: background .2s;
 }

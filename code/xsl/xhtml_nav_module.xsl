@@ -39,70 +39,115 @@
     
     
     <xsl:template name="createNav">
-        <header>
-            <nav id="nav_small">
-                <div class="nav-item">
-                    <a href="#nav_main" class="mi" id="hamburger">menu</a>
-                </div>
-                <div class="home"><a href="index.html">WEA</a></div>
-                <div class="search_icon"><a class="mi" href="#headerSearch">search</a></div>
-            </nav>
-            <nav id="nav_main">
-                <div class="mi closer"><a href="#" id="navCloser">close</a></div>
-                <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
-                <div>About
-                    <div>
-                        <a href="#">About Subpage</a>
-                        <a href="#">About Subpage</a>
-                        <a href="#">About Subpage</a>
+        <xsl:variable name="temp">
+            <header>
+                <nav id="nav_small">
+                    <div class="nav-item">
+                        <a href="#nav_main" class="mi" id="hamburger">menu</a>
                     </div>
-                </div>
-                <div>Archive
-                    <div>
-                        <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
-                            <xsl:sort select="@n" order="ascending"/>
-                            <a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a>
-                        </xsl:for-each>
+                    <div class="home"><a href="index.html">WEA</a></div>
+                    <div class="search_icon"><a class="mi" href="#headerSearch">search</a></div>
+                </nav>
+                <nav id="nav_main">
+                    <div class="mi closer"><a href="#" id="navCloser">close</a></div>
+                    <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
+                    <div>About
+                        <div>
+                            <a href="#">About Subpage</a>
+                            <a href="#">About Subpage</a>
+                            <a href="#">About Subpage</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div>Biography
-                    <div>
-                        <a href="#">Bio Subpage</a>
-                        <a href="#">Bio Subpage</a>
-                        <a href="#">Bio Subpage</a>
+                    <div>Archive
+                        <div>
+                            <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
+                                <xsl:sort select="@n" order="ascending"/>
+                                <a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a>
+                            </xsl:for-each>
+                        </div>
                     </div>
                     
-                
-                </div>
-                <div>Resources
-                    <div>
-                        <a href="#">Resource Subpage</a>
-                        <a href="#">Resource Subpage</a>
-                        <a href="#">Resource Subpage</a>
+                    <div>Biography
+                        <div>
+                            <a href="#">Bio Subpage</a>
+                            <a href="#">Bio Subpage</a>
+                            <a href="#">Bio Subpage</a>
+                        </div>
+                        
+                        
                     </div>
-                </div>
-                <!--                    <div class="nav-item">News</div>-->
-                <div><a href="#">Contact</a></div>
-                <div class="search_icon" id="nav_search">
-                  <a class="mi" href="#headerSearch">search</a>
-                </div>
-
-            </nav>
-            <div id="headerSearch">
-                <!--                    <div id="headerSearchInputButton" class="search_icon">
+                    <div>Resources
+                        <div>
+                            <a href="#">Resource Subpage</a>
+                            <a href="#">Resource Subpage</a>
+                            <a href="#">Resource Subpage</a>
+                        </div>
+                    </div>
+                    <!--                    <div class="nav-item">News</div>-->
+                    <div><a href="#">Contact</a></div>
+                    <div class="search_icon" id="nav_search">
+                        <a class="mi" href="#headerSearch">search</a>
+                    </div>
+                    
+                </nav>
+                <div id="headerSearch">
+                    <!--                    <div id="headerSearchInputButton" class="search_icon">
                         <a href="search.html">⚲</a>
                     </div>-->
-                <div id="headerSearchInput">
-                    <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
+                    <div id="headerSearchInput">
+                        <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
+                    </div>
+                    <div id="headerAdvancedSearchBtn">
+                        <a href="search.html">Go to full text search</a>
+                    </div>
                 </div>
-                <div id="headerAdvancedSearchBtn">
-                    <a href="search.html">Go to full text search</a>
+                <div id="nav_archive" class="nav_option">
+                    
                 </div>
-            </div>
-            <div id="nav_archive" class="nav_option">
-                
-            </div>
-            <xsl:copy-of select="$siteMap"/>
-        </header></xsl:template>
+                <xsl:copy-of select="$siteMap"/>
+            </header>
+        </xsl:variable>
+        <xsl:apply-templates select="$temp" mode="nav">
+            <xsl:with-param name="sourceDoc" select="ancestor::TEI" tunnel="yes"/>
+        </xsl:apply-templates>
+    </xsl:template>
+    
+    <xsl:template match="xh:nav[@id='nav_main']/xh:div" mode="nav">
+        <xsl:param name="sourceDoc" tunnel="yes"/>
+        <xsl:variable name="thisId" select="$sourceDoc/@xml:id"/>
+        <xsl:message>LINKS <xsl:sequence select="descendant::xh:a[@href]"/></xsl:message>
+        <xsl:variable name="sublinkIds" select="descendant::xh:a[not(starts-with(@href,'#'))]/substring-before(@href,'.htm')" as="xs:string*"/>
+        <xsl:message>Subling ids <xsl:sequence select="$sublinkIds"/></xsl:message>
+        <xsl:variable name="containsMe" select="$sublinkIds[.=$thisId]" as="xs:string*"/>
+        <xsl:message>Contains me <xsl:sequence select="$containsMe"/></xsl:message>
+        <xsl:variable name="categories" select="$sourceDoc//catRef[contains(@scheme,'#exhibit')]/@target/substring-after(.,'#')"/>
+       <xsl:message>categories <xsl:sequence select="$categories"/></xsl:message>
+        <xsl:variable name="containsMyParent" select="$sublinkIds[.=$categories]" as="xs:string*"/>
+        <xsl:message>Contains my [arent <xsl:sequence select="$containsMyParent"/></xsl:message>
+        <xsl:copy>
+            <xsl:if test="not(empty($containsMe)) or not(empty($containsMyParent))">
+                <xsl:attribute name="class" select="'selected'"/>
+            </xsl:if>
+            <xsl:apply-templates select="@*|node()" mode="#current">
+                <xsl:with-param name="selectedLinks" select="($containsMe, $containsMyParent)" as="xs:string*" tunnel="yes"/>
+            </xsl:apply-templates>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="xh:a[not(starts-with(@href,'#'))]" mode="nav">
+        <xsl:param name="selectedLinks" tunnel="yes"/>
+        <xsl:variable name="thisHref" select="substring-before(@href, '.htm')"/>
+        <xsl:copy>
+            <xsl:if test="$thisHref = $selectedLinks">
+                <xsl:attribute name="class" select="'selected'"/>
+            </xsl:if>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="@*|node()" mode="nav" priority="-1">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
