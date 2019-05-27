@@ -55,8 +55,10 @@
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,'#'),' ')"/>
                 <xsl:call-template name="createInfo"/>
+         <!--       <xsl:call-template name="createToolbar"/>-->
                 <div id="text">
                     <xsl:call-template name="processAtts"/>
+
                     <xsl:apply-templates mode="#current"/>
                     <xsl:call-template name="createSearchResults"/>
                 </div>
@@ -70,6 +72,14 @@
         
     </xsl:template>
     
+    
+    <xsl:template name="createToolbar">
+        <div id="tools">
+            <div>Tool1</div>
+            <div>Tool2</div>
+            <div>Tool3</div>
+        </div>
+    </xsl:template>
     
     
     <!--Generic block level element templates-->

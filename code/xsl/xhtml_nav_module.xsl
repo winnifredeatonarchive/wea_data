@@ -115,15 +115,12 @@
     <xsl:template match="xh:nav[@id='nav_main']/xh:div" mode="nav">
         <xsl:param name="sourceDoc" tunnel="yes"/>
         <xsl:variable name="thisId" select="$sourceDoc/@xml:id"/>
-        <xsl:message>LINKS <xsl:sequence select="descendant::xh:a[@href]"/></xsl:message>
+    
         <xsl:variable name="sublinkIds" select="descendant::xh:a[not(starts-with(@href,'#'))]/substring-before(@href,'.htm')" as="xs:string*"/>
-        <xsl:message>Subling ids <xsl:sequence select="$sublinkIds"/></xsl:message>
+       
         <xsl:variable name="containsMe" select="$sublinkIds[.=$thisId]" as="xs:string*"/>
-        <xsl:message>Contains me <xsl:sequence select="$containsMe"/></xsl:message>
         <xsl:variable name="categories" select="$sourceDoc//catRef[contains(@scheme,'#exhibit')]/@target/substring-after(.,'#')"/>
-       <xsl:message>categories <xsl:sequence select="$categories"/></xsl:message>
         <xsl:variable name="containsMyParent" select="$sublinkIds[.=$categories]" as="xs:string*"/>
-        <xsl:message>Contains my [arent <xsl:sequence select="$containsMyParent"/></xsl:message>
         <xsl:copy>
             <xsl:if test="not(empty($containsMe)) or not(empty($containsMyParent))">
                 <xsl:attribute name="class" select="'selected'"/>

@@ -133,7 +133,6 @@ body{
    display: flex;  /* use the flex model */
      min-height: 100vh;
     flex-direction: column;  
-    overflow-x:hidden;
 }
 
 /****************************************************************** HEADER ******/
@@ -346,37 +345,16 @@ nav > div > div > a{
 nav > div > div > a:last-child{
     border-bottom:none;
 }
-aside{
-    top:0;
-    margin-left:0;
-    height:100%;
-    position: fixed;
+
+#tools{
+  position: -webkit-sticky;
+  position: sticky;
+  display:inline-block;
+  padding-right: 1rem;
+  top: calc(var(--header-height) * 2);
+  opacity:0.7;
+  border-right: 1px solid #ccc;
 }
-
-aside.showing{
-    z-index:1000;
-    background:ghostwhite;
-    height:100%;
-    color: black;
-    min-width:20%;
-
-}
-
-aside.showing  #aside_toggle{
-    color:black;
-}
-
-aside:not(.showing) #aside_contents{
-    margin-left:-30rem;
-}
-
-aside.showing #aside_contents,
-aside:active #aside_contents{
-
-   margin-left:0;
-}
-
-
 
 div.ham{
     display:block;
@@ -1203,9 +1181,9 @@ span[data-el='pb']::before{
      left: 0;
      right: 0; 
      bottom: 0;
-     width: 120%;
+     width: 107.5%;
      z-index: -1;
-     margin-left:-10%;
+     margin-left:-2.5%;
 }
 
 .pbNum{
