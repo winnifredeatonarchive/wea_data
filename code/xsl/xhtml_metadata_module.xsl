@@ -82,8 +82,8 @@
                     </div>
                 </xsl:if>
                 
-                <xsl:call-template name="createCitations"/>
-
+                <!--<xsl:call-template name="createCitations"/>
+-->
 
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
