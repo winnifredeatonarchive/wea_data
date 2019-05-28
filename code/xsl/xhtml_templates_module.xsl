@@ -75,43 +75,67 @@
     
     
     <xsl:template name="createToolbar">
-        <div id="tools">
-            <div id="tools_toc" title="Table of Contents">
-                <div class="label">
-                    <div class="mi">list</div>
-                    <div class="label">Contents</div>
-                </div>
-    
+        <div id="tools_content">
+            
+            <div id="tools_toc_content">
+                
                 <xsl:variable name="toc" as="element(tei:list)">
                     <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
                 </xsl:variable>
-                <div class="contents">
-                    <xsl:apply-templates select="$toc" mode="tei"/>
+                
+                <xsl:apply-templates select="$toc" mode="tei"/>
+                
+                
+                
+            </div>
+            
+            <div id="tools_cite_content">
+                
+                <xsl:call-template name="createCitations"/>
+                
+                
+            </div>
+            
+            <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
+                <div id="tools_facsimiles_content">
+                    
                 </div>
+            </xsl:if>
+            
+        </div>
+        <div id="tools">
+            
+            
+            <div id="tools_toc" title="Table of Contents">
+
+                    <a href="#tools_toc_content">
+                        <div class="mi">list</div>
+                        <div class="label">Contents</div>
+                    </a>
+     
+                
 
             </div>
             
             
             <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
                 <div id="tools_facsimiles">
-                    <div class="label">
+                    <a href="#tools_facsimiles_content">
                         <div class="mi">photo_library</div>
                         <div class="label">Facsimiles</div>
-                    </div>
+                    </a>
+           
                 </div>  
             </xsl:if>
             <div id="tools_cite">
-                <div class="label">
+                <a href="#tools_cite_content">
                     <div class="mi">bookmark</div>
-                    <div class="label">Cite</div>
-                </div>
-       
-                <div class="contents">
-                    <xsl:call-template name="createCitations"/>
-                </div>
-            
+                    <div class="label">Cite</div>  
+                </a>
             </div>
+           
         </div>
+
     </xsl:template>
     
     
