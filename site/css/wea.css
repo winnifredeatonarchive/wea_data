@@ -93,7 +93,7 @@
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
     --wea-additional-info-bg-color: var(--wea-grey);
-    --header-height: 4.25rem;
+    --header-height: 3.25rem;
     --body-margin-top: calc(var(--header-height) + 2rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
     --link-color: #2A5DB0;
@@ -105,6 +105,7 @@
     --pb-anchor-offset: calc(var(--anchor-offset) + var(--pb-margin-tb));
     
     --max-text-width: 50rem;
+    --main-padding-left: 10%;
 }
 
 *{
@@ -139,7 +140,7 @@ body{
 
 header{
     color:black;
-    font-size:105%;
+    font-size:90%;
     width:100%;
     margin:0 auto 0 auto;
     z-index:1000;
@@ -272,7 +273,7 @@ nav > div > div{
 }
 
 #nav_main > div{
-    padding: .85rem 1rem;
+    padding: .5rem 1rem;
     margin-bottom: -1rem;
     border-bottom: .125rem solid transparent;
     cursor: pointer;
@@ -306,7 +307,7 @@ nav > div > div{
 
 
 #nav_main > div.selected{
-    border-bottom-color: var(--wea-pink);
+/*    border-bottom-color: var(--wea-pink);*/
 }
 
 #nav_main > div:not(.search_icon):not(.home):hover{
@@ -347,13 +348,65 @@ nav > div > div > a:last-child{
 }
 
 #tools{
+    display:none;
+}
+
+.JS #tools{
   position: -webkit-sticky;
   position: sticky;
   display:inline-block;
-  padding-right: 1rem;
+  padding-right: .6rem;
   top: calc(var(--header-height) * 2);
-  opacity:0.7;
-  border-right: 1px solid #ccc;
+  margin-left: calc(-1.15 * var(--main-padding-left));
+
+
+}
+
+#tools,
+#tools div{
+    text-align:center;
+}
+
+#tools > div{
+    padding:.5rem;
+    padding-left:0;
+    border-bottom: 1px solid #ccc;
+    margin:0 auto;
+    opacity:0.7;
+    cursor:pointer;
+    
+    font-size:.6rem;
+   transition: opacity 0.25s ease-in-out;
+}
+
+#tools > div.label{
+    text-align:center;
+}
+
+#tools div.mi{
+    font-size:1.8rem;
+}
+
+
+#tools > div:hover{
+    opacity:1;
+
+}
+
+#tools > div:last-child{
+    border-bottom:none;
+}
+
+#tools > div > div.contents {
+    display:none;
+}
+
+
+
+
+#tools > div{
+    padding-left:0;
+    padding-right:0;
 }
 
 div.ham{
@@ -655,6 +708,14 @@ h1{
     margin: 0 auto;
 }
 
+.JS #text{
+    margin-top: -7.5rem;
+}
+
+.JS #text[data-facs]{
+    margin-top:-11rem;
+}
+
 #mainBody[class*="docPrimarySource"] > #text{
     max-width: var(--max-text-width);
 }
@@ -708,7 +769,10 @@ h1{
 #mainBody{
  /* We need to margin-top if we do a sticky header */
  /* margin-top: 2.5rem;*/
-  padding:0 10% 5% 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-left: var(--main-padding-left);
+  padding-top: 0;
   flex:1;
   margin-top: var(--body-margin-top);
   line-height:1.4;
@@ -1722,6 +1786,11 @@ tr img{
 }
 
 
+       #tools  div.mi + div.label{
+           display:none;
+       }
+       
+       
        
     #nav_small{
         display:grid;
@@ -1894,9 +1963,12 @@ tr img{
 
 @media only screen and (max-width: 776px){
     
-    #mainBody{
-        padding-left:5%;
-        padding-right:5%;
+    :root{
+        font-size:1rem;
+    }
+    
+    .JS #tools{
+        display:none;
     }
     
     span[data-el='pb']:before{
@@ -1956,7 +2028,9 @@ tr img{
     
  
  
-
+.JS #text{
+    margin-top:0;
+}
 
 
  table[data-type="exhibit"] td:first-child,

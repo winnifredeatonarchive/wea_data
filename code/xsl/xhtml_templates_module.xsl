@@ -55,7 +55,7 @@
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,'#'),' ')"/>
                 <xsl:call-template name="createInfo"/>
-         <!--       <xsl:call-template name="createToolbar"/>-->
+                <xsl:call-template name="createToolbar"/>
                 <div id="text">
                     <xsl:call-template name="processAtts"/>
 
@@ -73,11 +73,44 @@
     </xsl:template>
     
     
+    
     <xsl:template name="createToolbar">
         <div id="tools">
-            <div>Tool1</div>
-            <div>Tool2</div>
-            <div>Tool3</div>
+            <div id="tools_toc" title="Table of Contents">
+                <div class="label">
+                    <div class="mi">list</div>
+                    <div class="label">Contents</div>
+                </div>
+    
+                <xsl:variable name="toc" as="element(tei:list)">
+                    <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
+                </xsl:variable>
+                <div class="contents">
+                    <xsl:apply-templates select="$toc" mode="tei"/>
+                </div>
+
+            </div>
+            
+            
+            <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
+                <div id="tools_facsimiles">
+                    <div class="label">
+                        <div class="mi">photo_library</div>
+                        <div class="label">Facsimiles</div>
+                    </div>
+                </div>  
+            </xsl:if>
+            <div id="tools_cite">
+                <div class="label">
+                    <div class="mi">bookmark</div>
+                    <div class="label">Cite</div>
+                </div>
+       
+                <div class="contents">
+                    <xsl:call-template name="createCitations"/>
+                </div>
+            
+            </div>
         </div>
     </xsl:template>
     
