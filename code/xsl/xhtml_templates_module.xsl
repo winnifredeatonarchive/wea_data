@@ -108,7 +108,7 @@
             
             <div id="tools_toc" title="Table of Contents">
 
-                    <a href="#tools_toc_content">
+                <a class="toolbar_item" href="#tools_toc_content">
                         <div class="mi">list</div>
                         <div class="label">Contents</div>
                     </a>
@@ -120,7 +120,7 @@
             
             <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
                 <div id="tools_facsimiles">
-                    <a href="#tools_facsimiles_content">
+                    <a class="toolbar_item" href="#tools_facsimiles_content">
                         <div class="mi">photo_library</div>
                         <div class="label">Facsimiles</div>
                     </a>
@@ -128,7 +128,7 @@
                 </div>  
             </xsl:if>
             <div id="tools_cite">
-                <a href="#tools_cite_content">
+                <a class="toolbar_item" href="#tools_cite_content">
                     <div class="mi">bookmark</div>
                     <div class="label">Cite</div>  
                 </a>

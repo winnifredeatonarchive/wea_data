@@ -1408,6 +1408,9 @@ span[data-el='q'] span[data-el='q']::after{
 #popup{
   min-width:0;
     max-width:15rem;
+    min-height:0;
+    max-height:8rem;
+    overflow-y:scroll;
 }
 
 
@@ -1431,6 +1434,11 @@ span[data-el='q'] span[data-el='q']::after{
 
 }
 
+
+#popup.showing.toolbar{
+    max-width:30rem;
+    
+}
 
 
 

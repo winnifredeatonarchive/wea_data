@@ -39,8 +39,12 @@ function addEvents(){
     if (document.querySelectorAll('table')){
         makeTablesSortable();
     }
+    if (document.getElementById('tools')){
+        makeToolbarResponsive();
+    }
 
 }
+
 
 
 function makeNavClickable(){
@@ -378,6 +382,14 @@ function makeFootnotesResponsive(){
     });
 }
 
+function makeToolbarResponsive(){
+    var toolbarItems = document.querySelectorAll('.toolbar_item');
+    toolbarItems.forEach(function(t){
+        t.addEventListener('click', showPopup, true);
+        
+    });
+}
+
 function makeNamesResponsive(){
     var names = document.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
@@ -412,7 +424,11 @@ function makeNamesResponsive(){
       if (this.classList.contains('noteMarker')){
           id = this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
-      } 
+      } if (this.classList.contains('toolbar_item')){
+          id = this.getAttribute('href').substring(1);
+          popup.setAttribute('data-place','right');
+          popup.classList.add('toolbar');
+      }
      /* Else if this is a name element and it has an @href that is a local pointer */
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
@@ -438,8 +454,8 @@ function makeNamesResponsive(){
           
       if (popup.classList.contains('showing')){
           closePopup();
-          
-      }
+          console.log('I should close...'); 
+       }
       var content;
       if (useTitle){
           var dummyDiv = document.createElement('div');
@@ -456,14 +472,17 @@ function makeNamesResponsive(){
           dummyDiv.innerHTML = 'This popup is not available.';
           content = dummyDiv;
       }
-   
+      
       
       popupContent.appendChild(content);
             //Set the popup @data-showing to the ids
         windowResize = function(){
             resize(el, popup);
         }
-        window.addEventListener('resize',windowResize, false);
+        
+        window.addEventListener('resize', closePopup, false);
+        window.addEventListener('scroll', closePopup, false);
+/*        window.addEventListener('resize',windowResize, false);*/
         if (!(useTitle)){
               popup.setAttribute('data-showing',id);
         }
@@ -471,8 +490,8 @@ function makeNamesResponsive(){
         //And set the display to block
       popup.classList.remove('hidden');
       popup.classList.add('showing');
-     
-     placeNote(this,popup);
+      placeNote(this,popup);
+
      this.classList.add('clicked');
         if (removeEvent){
             this.removeEventListener('click',showPopup,true);
@@ -486,17 +505,19 @@ function makeNamesResponsive(){
   var resizeTimeout;
   var windowResize;
 
-  function resize(el, popup) {
-
+  function resize(el, popup, ev) {
+    closePopup();
     // ignore resize events as long as an actualResizeHandler execution is in the queue
-    if ( !resizeTimeout ) {
+   /* if ( !resizeTimeout ) {
       resizeTimeout = setTimeout(function() {
         resizeTimeout = null;
         placeNote(el, popup);
        }, 9);
-    }
+    }*/
   }
   
+
+
 
 
 
@@ -516,7 +537,7 @@ function placeNote(elem, note) {
       var placePos = params.placePos;
       togglePopupPlaces(note, placePos);
       var header = document.getElementsByTagName('header')[0];
-      var headerHeight = window.getComputedStyle(header).getPropertyValue('height');
+      var headerHeight = parseInt(window.getComputedStyle(header).getPropertyValue('height'),10);
       console.log('Header Height' + headerHeight);
       var coords = elem.getBoundingClientRect();
       
@@ -527,7 +548,7 @@ function placeNote(elem, note) {
       var popupArrowHeight = (parseInt(popupArrowBorderHeight,10) || 7);
 
       
- 
+      console.log(params.longNote);
       if (placePos.match('bottom')){
       
             var elemXMiddle = (coords.left + coords.right)/2;
@@ -539,7 +560,6 @@ function placeNote(elem, note) {
                note.style.left = coords.left + "px";
             } else {
                 console.log(coords.left + elem.offsetWidth);
-                 var left = 
                note.style.left = Math.max(coords.right - popupWidth, 0) + elem.offsetWidth +  "px";
             }
 
@@ -555,6 +575,8 @@ function placeNote(elem, note) {
           note.style.left = x;
       }
       
+      
+     
    
       
     }
@@ -576,6 +598,7 @@ function getParams(elem, note){
       var availableRight = (vpw - elemCoords.right) * 0.9;
       var availableFromLeft = (vpw - elemCoords.left);
       var availableBottom = vph - elemCoords.bottom
+      var availableTop = vph - elemCoords.top;
       console.log('availableRight' + availableRight);
       var defaultPlace = note.getAttribute('data-place');
       console.log(defaultPlace);
@@ -592,10 +615,14 @@ function getParams(elem, note){
       this.height = popupHeight;
       this.width = popupWidth;
       this.placePos = placePos;
+      this.longNote = availableTop > 0;
       
 }
 
-  
+
+/* TO DO: Add function to scroll to the most recent div's pointer in the TOC in the popup */
+/* And make the facsimile thing do the same */
+
 /*  Taken from https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/ */
 function inViewport (elem) {
     var bounding = elem.getBoundingClientRect();
