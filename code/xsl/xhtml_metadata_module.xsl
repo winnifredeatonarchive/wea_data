@@ -110,6 +110,7 @@
         <xsl:variable name="tempCitation">
             <xsl:apply-templates select="$root//sourceDesc/bibl" mode="citation"/>
         </xsl:variable>
+        <xsl:variable name="uri" select="wea:getURL($root)"/>
         <div id="source_citation">
             <div class="metadataLabel">Source Citation</div>
             <xsl:apply-templates select="$tempCitation" mode="tei"/>
@@ -117,7 +118,7 @@
         <div id="this_citation">
             <div class="metadataLabel">Cite this Page</div>
             <xsl:variable name="tempBibl" as="element(tei:bibl)">
-                <tei:bibl xml:id="{$root/@xml:id}_citation"><xsl:sequence select="$tempCitation/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
+                <tei:bibl xml:id="{$root/@xml:id}_citation"><xsl:sequence select="$tempCitation/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia. <tei:ref target="{$uri}"><xsl:value-of select="$uri"/></tei:ref>.</tei:bibl>
             </xsl:variable>
             <xsl:apply-templates select="$tempBibl" mode="tei"/>
         </div>

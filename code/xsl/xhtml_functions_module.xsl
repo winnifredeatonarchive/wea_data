@@ -70,6 +70,11 @@
         <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:value-of select="$thisCat/catDesc/term"/></a></div>
     </xsl:function>
     
+    <xsl:function name="wea:getURL" as="xs:string">
+        <xsl:param name="el"/>
+        <xsl:variable name="root" select="$el/ancestor-or-self::TEI"/>
+        <xsl:value-of select="concat('https://winnifredeatonarchive.com/',$root/@xml:id,'.html')"/>
+    </xsl:function>
     
     <xsl:function name="wea:getSvg">
         <xsl:param name="svgId"/>
