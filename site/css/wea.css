@@ -1170,6 +1170,12 @@ div[data-el=body] > div[data-el=div] > h2{
 }
 
 
+
+div[data-el='div'] + div[data-el='div']{
+    margin-top:1.5rem;
+}
+
+
 div[data-el=body]>div[data-el=div]{
     /* Divs CANNOT get padding if they are
      * going to be targeted, since that
@@ -1178,7 +1184,7 @@ div[data-el=body]>div[data-el=div]{
 }
 
 div[data-el=p]{
-    padding:.5em 0;
+    margin:.5rem 0;
     text-align:justify;
 }
 
@@ -1355,7 +1361,8 @@ span[data-el='pb']::before{
 
 
 
-div.blockquote{
+div.blockquote,
+div[data-el='floatingText']{
     margin: 1.5rem 5rem 1.5rem 1.5rem;
     font-size:95%;
 }

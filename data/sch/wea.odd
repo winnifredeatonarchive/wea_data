@@ -2790,6 +2790,20 @@
                   </constraint>
                </constraintSpec>
                
+               <constraintSpec scheme="schematron" ident="noSpaceInRefs">
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:*[not(*)][text()]">
+                           <sch:let name="text" value="string-join(text(),'')"/>
+                           <sch:assert test="not(matches($text,'[\[\]]'))">
+                              ERROR: Do not use square brackets to denote supplied texts. Use the 
+                              supplied element if necessary.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
                <constraintSpec scheme="schematron" ident="noTrailingPeriod.warning">
                   <constraint>
                      <sch:pattern>
