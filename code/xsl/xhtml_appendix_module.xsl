@@ -34,10 +34,9 @@
     <xsl:template name="createAppendix">
         <div id="appendix">
             <xsl:call-template name="createNotes"/>
-            <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>   
+            <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>
         </div>
     </xsl:template>
-   
     
     <xsl:template match="listPerson" mode="appendix">
         <div>

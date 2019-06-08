@@ -766,6 +766,7 @@ xmlhttp.send(null);
         
         /* Scroll the first match into view */        
         var firstMatch = document.querySelectorAll('.highlight')[0];
+        firstMatch.classList.add('focused');
         scrollIntoViewWithOffset(firstMatch, true);
         
         /* Add dehighlight button */
@@ -775,64 +776,87 @@ xmlhttp.send(null);
     }
     
     function addUnhighlightButton(){
-        var buttonsDiv = document.createElement('div');
-        buttonsDiv.setAttribute('id','searchButtons');
-        buttonsDiv.setAttribute('data-hit', '1');
-       
-        var button = document.createElement('div');
+        var toolsDiv = document.getElementById('tools');
+        toolsDiv.setAttribute('data-hit', '1');
         
-        
+        var highlightBtn = document.getElementById('unhighlightButton');
+        highlightBtn.classList.add('show');
+        highlightBtn.classList.add('highlighted');
+                
+        highlightBtn.addEventListener('click', toggleHighlight);
+        var total = document.querySelectorAll('span.highlight').length;
+
+/*         
         button.setAttribute('id','unhighlightButton');
         button.setAttribute('class','highlighted');
-        button.setAttribute('data-count', document.querySelectorAll('span.highlight').length);
-        button.addEventListener('click', toggleHighlight);
-        var prevButton = document.createElement('div');
-        prevButton.setAttribute('id', 'goToPrevSearch');
-        var nextButton = document.createElement('div');
-        nextButton.setAttribute('id', 'goToNextSearch');
-        buttonsDiv.appendChild(button);
-        nextButton.addEventListener('click', goToNextHit);
-        prevButton.addEventListener('click', goToPrevHit);
+        button.setAttribute('data-count', document.querySelectorAll('span.highlight').length);*/
+        
+        var prevButton = document.getElementById('goToPrevSearch');
+        var nextButton = document.getElementById('goToNextSearch');
+
         if (document.querySelectorAll('span.highlight').length > 1){
-                    buttonsDiv.appendChild(prevButton);
-                    buttonsDiv.appendChild(nextButton);
+                nextButton.addEventListener('click', goToNextHit);
+                prevButton.addEventListener('click', goToPrevHit);
+                nextButton.classList.add('show');
+                prevButton.classList.add('show');
         }
-        var header = document.getElementsByTagName('header')[0];
-        header.parentNode.insertBefore(buttonsDiv, header.nextSibling);
+        highlightBtn.setAttribute('data-count', total);
+        prevButton.querySelectorAll('div.label')[0].setAttribute('data-count', total);
+        nextButton.querySelectorAll('div.label')[0].setAttribute('data-count', total);
+        resetHit(1, document.querySelectorAll('span.highlight').length);
     }
     
     
     function goToNextHit(){
-        var buttonDiv = document.getElementById('searchButtons');
+        var nextNum = this.querySelectorAll('div.label')[0].getAttribute('data-hit');
         var hits = document.querySelectorAll('span.highlight');
-        var currHit = parseInt(buttonDiv.getAttribute('data-hit'),10);
-        var instance; 
-        console.log(hits.length);
-        if (hits.length == (currHit)){
-            instance = 0;
-        } else {
-            instance = currHit;
-        }
-        console.log('Going to ' + instance);
-               
-        scrollIntoViewWithOffset(hits[instance], false)
-        buttonDiv.setAttribute('data-hit', instance + 1);
+        var nextHit = hits[nextNum-1];
+        scrollIntoViewWithOffset(nextHit, false);
+        removeFocus()
+        nextHit.classList.add('focused');
+        
+        resetHit(nextNum, hits.length);
     }
     
      function goToPrevHit(){
-        var buttonDiv = document.getElementById('searchButtons');
+        var prevNum = this.querySelectorAll('div.label')[0].getAttribute('data-hit');
         var hits = document.querySelectorAll('span.highlight');
-        var currHit = parseInt(buttonDiv.getAttribute('data-hit'),10);
-        var instance; 
-        if (currHit == 1){
-            instance = hits.length - 1;
+        var prevHit = hits[prevNum-1];
+        scrollIntoViewWithOffset(prevHit, false);
+        removeFocus()
+        prevHit.classList.add('focused');
+        resetHit(prevNum, hits.length);
+    }
+    
+    function resetHit(instance, hits){
+        var prev, next;
+        instance = parseInt(instance);
+        hits = parseInt(hits);
+        console.log('THIS INSTANCE ' + instance);
+        console.log('THESE HITS:' + hits);
+        if (instance == 1){
+            prev = hits;
         } else {
-            instance = currHit - 2;
+            prev = instance - 1;
+        }
+        if (instance == hits){
+            next = 1;
+        } else {
+            next = instance + 1;
         }
         
-        console.log('Going to ' + instance);
-       scrollIntoViewWithOffset( hits[instance], false)
-        buttonDiv.setAttribute('data-hit', instance + 1);
+        /*  Now set the prev */
+        document.getElementById('goToPrevSearch').querySelectorAll('div.label')[0].setAttribute('data-hit', prev);
+        
+        /* And set next */
+        document.getElementById('goToNextSearch').querySelectorAll('div.label')[0].setAttribute('data-hit',next);
+    }
+    
+    function removeFocus(){
+       var focused = document.getElementsByClassName('focused');
+       while (focused[0]){
+           focused[0].classList.remove('focused');
+       }
     }
     
     function toggleHighlight(){
@@ -850,6 +874,7 @@ xmlhttp.send(null);
         if (isHighlighted){
             this.classList.remove('highlighted');
             this.classList.add('unhighlighted');
+           
         } else {
             this.classList.remove('unhighlighted');
             this.classList.add('highlighted');
@@ -860,9 +885,11 @@ xmlhttp.send(null);
         var header = document.getElementsByTagName('header')[0];
         var hh = header.getBoundingClientRect().height;
         var scrollHeight = -hh + -10;
+        if (!isElementInViewport(el)){
         el.scrollIntoView();
         window.scrollBy(0, scrollHeight);
-        
+        }
+
     }
 
     
@@ -870,6 +897,20 @@ xmlhttp.send(null);
     function returnDoc(obj){
         return obj.docId == docId;
     }
+    
+    
+    /* Taken with thanks from: https://stackoverflow.com/a/7557433/5628 */
+    function isElementInViewport (el) {
+    
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
+}
    
     //* Now get the JSONs for each of these... */
     

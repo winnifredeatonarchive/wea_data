@@ -347,25 +347,31 @@ nav > div > div > a:last-child{
     border-bottom:none;
 }
 
-#tools{
+#text_container{
+    position:relative;
+}
+#tools_container{
     display:none;
 }
 
-.JS #tools{
+.JS #tools_container{
+    display:block;
+    position:absolute;
+      height:100%;
+}
+
+
+#tools{
   position: -webkit-sticky;
   position: sticky;
   display:inline-block;
   padding-right: .6rem;
   top: calc(var(--header-height) * 2);
-  margin-left: calc(-1.15 * var(--main-padding-left));
   color: var(--wea-text-color);
 
 
 }
 
-#tools_content{
-    display:none;
-}
 
 /*#tools_content{
     position: fixed;
@@ -387,6 +393,10 @@ nav > div > div > a:last-child{
     transition: transform 0.25s ease-in-out;
 }*/
 
+#tools{
+    width:3.25rem;
+}
+
 #tools,
 #tools div{
     text-align:center;
@@ -395,7 +405,7 @@ nav > div > div > a:last-child{
 #tools > div{
     padding:.5rem;
     padding-left:0;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     margin:0 auto;
 
     cursor:pointer;
@@ -423,8 +433,8 @@ nav > div > div > a:last-child{
 
 }
 
-#tools > div:last-child{
-    border-bottom:none;
+#tools > div:first-child{
+    border-top:none;
 }
 
 #tools > div > div.contents {
@@ -432,6 +442,37 @@ nav > div > div > a:last-child{
 }
 
 
+/* SEARCH HIGHLiGHTINg STUFF, WHICH IS ONLY TRIGGERED AT PARTICULAR POINTS */
+
+#unhighlightButton .toggle-highlight{
+    display:none;
+}
+
+#unhighlightButton.unhighlighted .toggle-unhighlight{
+    display:none;
+}
+
+#unhighlightButton.unhighlighted .toggle-highlight{
+    display:block;
+}
+
+#unhighlightButton.unhighlighted ~ div.tool_search{
+    display:none;
+}
+
+.highlight{
+    outline: 1px solid transparent;
+    transition: outline 0.25s ease-in-out;
+}
+
+span.highlight.focused{
+    outline: 1px solid #ccc;
+}
+
+#goToPrevSearch  div.label::after,
+#goToNextSearch  div.label::after{
+    content: "("  attr(data-hit)  "/" attr(data-count) ")";
+}
 
 
 #tools > div{
@@ -738,16 +779,11 @@ h1{
     margin: 0 auto;
 }
 
-.JS #tools ~ #text{
-    margin-top: -7.5rem;
-}
 
-.JS #tools ~ #text[data-facs]{
-    margin-top:-11rem;
-}
-
-#mainBody[class*="docPrimarySource"] > #text{
+#mainBody[class*="docPrimarySource"]  #text{
     max-width: var(--max-text-width);
+
+
 }
 
 #info{
@@ -806,6 +842,7 @@ h1{
   flex:1;
   margin-top: var(--body-margin-top);
   line-height:1.4;
+        position:relative;
 }
 
 #facsimile{
@@ -1088,45 +1125,13 @@ span:target:before{
     display:inline-block;
 }
 
-#unhighlightButton,
-#goToNextSearch,
-#goToPrevSearch{
-    background-color: #dedede;
-    max-width: 6em;
-    margin-top: .5rem;
-    color: black;
-    font-size: 90%;
-    text-align: center;
-    cursor: pointer;
-    min-height: 4rem;
-}
 
-
-#unhighlightButton.unhighlighted ~ div{
+.tool_search{
     display:none;
 }
 
-#unhighlightButton:hover,
-#goToNextSearch:hover,
-#goToPrevSearch:hover{
-    background-color: #c7c7c7;
-}
-
-#unhighlightButton.unhighlighted::after{
-    content: "Highlight search matches ("attr(data-count)")";
-}
-
-#unhighlightButton.highlighted::after{
-    content: "Unhighlight search matches ("attr(data-count)")";
-}
-
-#goToNextSearch::after{
-    content: "Go to next match";
-}
-
-#goToPrevSearch::after{
-    content: "Go to previous match";
-    
+.tool_search.show{
+    display:block;
 }
 
 
@@ -1814,6 +1819,12 @@ tr img{
     max-height:4rem;
 }
 
+@media only screen and (max-width:1205px){
+    #tools_container{
+        margin-left: -10%;
+    }
+}
+
 /* iPad Pros are 1024 px in width, so we'll start there
  * as the place where the header needs to switch */
 
@@ -1824,11 +1835,10 @@ tr img{
 }
 
 
-       #tools  div.mi + div.label{
-           display:none;
-       }
        
-       
+#tools div.mi{
+    font-size:225%
+}
        
     #nav_small{
         display:grid;
@@ -1999,16 +2009,16 @@ tr img{
 }
 
 
-@media only screen and (max-width: 776px){
+@media only screen and (max-width: 767px){
     
     :root{
         font-size:1rem;
     }
     
-    .JS #tools{
+
+    .JS #tools_container{
         display:none;
     }
-    
     span[data-el='pb']:before{
         content:"";
         width:105%;
@@ -2066,10 +2076,6 @@ tr img{
     
  
  
-.JS #tools ~ #text,
-.JS #tools ~ #text[data-facs]{
-    margin-top:0;
-}
 
 
 

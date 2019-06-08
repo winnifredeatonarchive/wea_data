@@ -55,12 +55,14 @@
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,'#'),' ')"/>
                 <xsl:call-template name="createInfo"/>
-                <xsl:call-template name="createToolbar"/>
-                <div id="text">
-                    <xsl:call-template name="processAtts"/>
-
-                    <xsl:apply-templates mode="#current"/>
-                    <xsl:call-template name="createSearchResults"/>
+                <div id="text_container">
+                    <xsl:call-template name="createToolbar"/>
+                    <div id="text">
+                        <xsl:call-template name="processAtts"/>
+                        
+                        <xsl:apply-templates mode="#current"/>
+                        <xsl:call-template name="createSearchResults"/>
+                    </div>
                 </div>
                 <xsl:call-template name="createAppendix"/>
             </div>
@@ -76,69 +78,74 @@
     
     <xsl:template name="createToolbar">
         <xsl:if test="wea:isObject(ancestor::TEI)">
-            <div id="tools_content">
-                
-                <div id="tools_toc_content">
+            <div id="tools_container">
+                <div id="tools">
+                    <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
+                        <div id="tools_toc" title="Table of Contents">
+                            
+                            <a class="toolbar_item" href="">
+                                <div class="mi">list</div>
+                                <div class="label">Contents</div>
+                            </a>
+                        </div>
+                        
+                        
+                    </xsl:if>
+                    <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
+                        <div id="tools_facsimiles">
+                            <a class="toolbar_item" href="#tools_facsimiles_content">
+                                <div class="mi">photo_library</div>
+                                <div class="label">Facsimiles</div>
+                            </a>
+                            
+                        </div>  
+                    </xsl:if>
                     
-                    <xsl:variable name="toc" as="element(tei:list)">
-                        <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
-                    </xsl:variable>
+                    <div id="tools_cite">
+                        <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation">
+                            <div class="mi">bookmark</div>
+                            <div class="label">Cite</div>  
+                        </a>
+                    </div>
                     
-                    <xsl:apply-templates select="$toc" mode="tei"/>
+                    <div id="unhighlightButton" class="tool_search">
+                        <a>
+                            <div class="mi">
+                                <span class="toggle-unhighlight">highlight_off</span>
+                                <span class="toggle-highlight">highlight</span>
+                            </div>
+                            <div class="label">
+                                <span class="toggle-unhighlight">Unhighlight matches</span>
+                                <span class="toggle-highlight">Highlight matches</span></div>  
+                        </a>
+                            
+                        
+
+                    </div>
                     
+                    <div id="goToPrevSearch" class="tool_search">
+                        <a>
+                            <div class="mi">keyboard_arrow_left</div>
+                            <div class="label">Previous match</div>
+                        </a>
+
+                        
+        
+                    </div>
                     
-                    
-                </div>
-                
-                <div id="tools_cite_content">
-                    
-                    <xsl:call-template name="createCitations"/>
-                    
-                    
-                </div>
-                
-                <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
-                    <div id="tools_facsimiles_content">
+                    <div id="goToNextSearch" class="tool_search">
+                        <a>
+                            <div class="mi">keyboard_arrow_right</div>
+                            <div class="label">Next match</div>
+                        </a>
+        
                         
                     </div>
-                </xsl:if>
-                
-            </div>
-            <div id="tools">
-                
-                
-                <div id="tools_toc" title="Table of Contents">
-                    
-                    <a class="toolbar_item" href="#tools_toc_content">
-                        <div class="mi">list</div>
-                        <div class="label">Contents</div>
-                    </a>
-                    
-                    
                     
                 </div>
-                
-                
-                <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
-                    <div id="tools_facsimiles">
-                        <a class="toolbar_item" href="#tools_facsimiles_content">
-                            <div class="mi">photo_library</div>
-                            <div class="label">Facsimiles</div>
-                        </a>
-                        
-                    </div>  
-                </xsl:if>
-                <div id="tools_cite">
-                    <a class="toolbar_item" href="#tools_cite_content">
-                        <div class="mi">bookmark</div>
-                        <div class="label">Cite</div>  
-                    </a>
-                </div>
-                
             </div>
+            
         </xsl:if>
-        
-
     </xsl:template>
     
     

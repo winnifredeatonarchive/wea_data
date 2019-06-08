@@ -82,8 +82,8 @@
                     </div>
                 </xsl:if>
                 
-                <!--<xsl:call-template name="createCitations"/>
--->
+                <xsl:call-template name="createCitations"/>
+
 
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
@@ -101,10 +101,6 @@
                 </div>
             </div>
             
-            <!--                        <div id="wea_citation">
-                            <div class="metadataLabel">Full Citation</div>
-                            <xsl:apply-templates select=""
-                        </div>-->
         </div>
     </xsl:template>
     
@@ -121,7 +117,7 @@
         <div id="this_citation">
             <div class="metadataLabel">Cite this Page</div>
             <xsl:variable name="tempBibl" as="element(tei:bibl)">
-                <tei:bibl><xsl:sequence select="$tempCitation/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
+                <tei:bibl xml:id="{$root/@xml:id}_citation"><xsl:sequence select="$tempCitation/bibl/node()"/><xsl:text> </xsl:text><tei:title level="m">The Winnifred Eaton Archive</tei:title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia.</tei:bibl>
             </xsl:variable>
             <xsl:apply-templates select="$tempBibl" mode="tei"/>
         </div>
