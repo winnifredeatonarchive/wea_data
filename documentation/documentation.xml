@@ -25237,16 +25237,8 @@ Sydney Smith</egXML>
                         </cell>
                         <cell>An XSLT restraint for one of each catRef<code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:textClass"&gt;
- &lt;sch:assert test="tei:catRef[@scheme='wdt:docType']"&gt; ERROR: Missing category reference docType.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;sch:rule context="tei:textClass"&gt;
- &lt;sch:assert test="tei:catRef[@scheme='wdt:genre']"&gt; ERROR: Missing category reference genre.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;sch:rule context="tei:textClass"&gt;
- &lt;sch:assert test="tei:catRef[@scheme='wdt:exhibit']"&gt; ERROR: Missing category reference exhibit.
+&lt;sch:rule context="tei:textClass[tei:catRef[@scheme='wdt:docType'][contains(@target,'Primary')]][ancestor::tei:TEI/descendant::tei:revisionDesc[@status=('readyForProof','published')]]"&gt;
+ &lt;sch:assert test="tei:catRef[@scheme='wdt:genre'] and tei:catRef[@scheme='wdt:exhibit']"&gt; ERROR: All primary soruce documents that are ready for proofing or published MUST have a genre and exhibit.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

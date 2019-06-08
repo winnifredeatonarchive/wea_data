@@ -1289,20 +1289,10 @@
                      <desc>An XSLT restraint for one of each catRef</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:docType']">
-                            ERROR: Missing category reference docType.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:genre']">
-                            ERROR: Missing category reference genre.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
-                            ERROR: Missing category reference exhibit.
-                        </sch:assert>
+                           <sch:rule context="tei:textClass[tei:catRef[@scheme='wdt:docType'][contains(@target,'Primary')]][ancestor::tei:TEI/descendant::tei:revisionDesc[@status=('readyForProof','published')]]">
+                              <sch:assert test="tei:catRef[@scheme='wdt:genre'] and tei:catRef[@scheme='wdt:exhibit']">
+                                 ERROR: All primary soruce documents that are ready for proofing or published MUST have a genre and exhibit.
+                              </sch:assert>
                            </sch:rule>
                         </sch:pattern>
                      </constraint>

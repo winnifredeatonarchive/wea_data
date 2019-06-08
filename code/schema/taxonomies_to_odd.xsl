@@ -55,7 +55,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="constraintSpec[@ident='textClass.oneofEach']/constraint">
+   <!-- <xsl:template match="constraintSpec[@ident='textClass.oneofEach']/constraint">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <sch:pattern>
@@ -69,7 +69,7 @@
                 </xsl:for-each>
             </sch:pattern>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:function name="jt:makeRegex">
         <xsl:param name="seq"/>

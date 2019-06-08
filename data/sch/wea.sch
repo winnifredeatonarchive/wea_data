@@ -627,20 +627,10 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:docType']">
-                            ERROR: Missing category reference docType.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:genre']">
-                            ERROR: Missing category reference genre.
-                        </sch:assert>
-                           </sch:rule>
-                           <sch:rule context="tei:textClass">
-                              <sch:assert test="tei:catRef[@scheme='wdt:exhibit']">
-                            ERROR: Missing category reference exhibit.
-                        </sch:assert>
+                           <sch:rule context="tei:textClass[tei:catRef[@scheme='wdt:docType'][contains(@target,'Primary')]][ancestor::tei:TEI/descendant::tei:revisionDesc[@status=('readyForProof','published')]]">
+                              <sch:assert test="tei:catRef[@scheme='wdt:genre'] and tei:catRef[@scheme='wdt:exhibit']">
+                                 ERROR: All primary soruce documents that are ready for proofing or published MUST have a genre and exhibit.
+                              </sch:assert>
                            </sch:rule>
                         </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -873,7 +863,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

@@ -596,8 +596,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45</xsl:attribute>
-            <xsl:attribute name="name">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45</xsl:attribute>
+            <xsl:attribute name="id">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43</xsl:attribute>
+            <xsl:attribute name="name">wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M56"/>
@@ -1796,65 +1796,24 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1002" mode="M41">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
+   <xsl:template match="tei:textClass[tei:catRef[@scheme='wdt:docType'][contains(@target,'Primary')]][ancestor::tei:TEI/descendant::tei:revisionDesc[@status=('readyForProof','published')]]"
+                 priority="1000"
+                 mode="M41">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:textClass[tei:catRef[@scheme='wdt:docType'][contains(@target,'Primary')]][ancestor::tei:TEI/descendant::tei:revisionDesc[@status=('readyForProof','published')]]"/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:docType']"/>
+         <xsl:when test="tei:catRef[@scheme='wdt:genre'] and tei:catRef[@scheme='wdt:exhibit']"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:docType']">
+                                test="tei:catRef[@scheme='wdt:genre'] and tei:catRef[@scheme='wdt:exhibit']">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                            ERROR: Missing category reference docType.
-                        </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M41"/>
-   </xsl:template>
-
-	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1001" mode="M41">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:genre']"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:genre']">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                            ERROR: Missing category reference genre.
-                        </svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*" mode="M41"/>
-   </xsl:template>
-
-	  <!--RULE -->
-   <xsl:template match="tei:textClass" priority="1000" mode="M41">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:textClass"/>
-
-		    <!--ASSERT -->
-      <xsl:choose>
-         <xsl:when test="tei:catRef[@scheme='wdt:exhibit']"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="tei:catRef[@scheme='wdt:exhibit']">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>
-                            ERROR: Missing category reference exhibit.
-                        </svrl:text>
+                                 ERROR: All primary soruce documents that are ready for proofing or published MUST have a genre and exhibit.
+                              </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2329,7 +2288,7 @@ On <xsl:text/>
       <xsl:apply-templates select="*" mode="M55"/>
    </xsl:template>
 
-   <!--PATTERN wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45-->
+   <!--PATTERN wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43-->
 
 
 	  <!--RULE -->
