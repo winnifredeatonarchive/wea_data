@@ -353,11 +353,11 @@
         <xsl:apply-templates select="*" mode="#current"/>
     </xsl:template>
     
-    <xsl:template match="bibl/author" mode="metadata">
-        <xsl:if test="not(preceding-sibling::author)">
+    <xsl:template match="bibl/author[not(@role)]" mode="metadata">
+        <xsl:if test="not(preceding-sibling::author[not(@role)])">
             <div>
-                <div class="metadataLabel">Author<xsl:if test="following-sibling::author">s</xsl:if></div>
-                <xsl:for-each select="(node(),following-sibling::author/node())">
+                <div class="metadataLabel">Author<xsl:if test="following-sibling::author[not(@role)]">s</xsl:if></div>
+                <xsl:for-each select="(node(),following-sibling::author[not(@role)]/node())">
                     <div>
                         <xsl:apply-templates select="." mode="#current"/>
                     </div>
@@ -365,6 +365,15 @@
 
             </div>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="bibl/author[@role='illustrator']" mode="metadata">
+        <div>
+            <div class="metadataLabel">Illustrator</div>
+            <div>
+                <xsl:apply-templates select="node()" mode="#current"/>
+            </div>
+        </div>
     </xsl:template>
     
     
@@ -549,7 +558,7 @@
     
     
     <xsl:template name="createToolbar">
-        <xsl:if test="wea:isObject(ancestor::TEI)">
+        <xsl:if test="wea:isObject(ancestor::TEI) and not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable'])">
             <div id="tools_container">
                 <div id="tools">
                     <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">

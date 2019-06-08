@@ -1508,6 +1508,10 @@
                               <desc>SB1</desc>
                               <gloss>Sara Bosse</gloss>
                            </valItem>
+                           <valItem mode="add" ident="pers:CH1">
+                              <desc>CH1</desc>
+                              <gloss>Charles Horell</gloss>
+                           </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
                               <gloss>Mary Chapman</gloss>
@@ -1571,6 +1575,10 @@
                            <valItem mode="add" ident="pers:SB1">
                               <desc>SB1</desc>
                               <gloss>Sara Bosse</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:CH1">
+                              <desc>CH1</desc>
+                              <gloss>Charles Horell</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>
@@ -1707,6 +1715,13 @@
                               <gloss>The photographer within this document</gloss>
                            </valItem>
                         </valList>
+                     </attDef>
+                     <attDef ident="role" usage="opt" mode="add">
+                        <desc versionDate="2009-10-12" xml:lang="en">may be used to specify further information about the entity referenced by
+                           this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.</desc>
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.enumerated"/>
+                        </datatype>
                      </attDef>
                   </attList>
                </elementSpec>
@@ -2439,6 +2454,10 @@
                            <valItem mode="add" ident="pers:SB1">
                               <desc>SB1</desc>
                               <gloss>Sara Bosse</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:CH1">
+                              <desc>CH1</desc>
+                              <gloss>Charles Horell</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:MC1">
                               <desc>MC1</desc>

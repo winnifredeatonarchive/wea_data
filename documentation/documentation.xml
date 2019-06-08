@@ -1903,6 +1903,24 @@
                         </cell>
                         <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <table>
                               <row>
+                                 <cell>role</cell>
+                                 <cell>may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place.<table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Datatype</label> 
+                                          </cell>
+                                          <cell> 1–∞ occurrences of <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref> separated by whitespace</cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                              <row>
                                  <cell>type</cell>
                                  <cell>
                                     <table>
@@ -15541,6 +15559,8 @@ raiders and saved the town from capture.</desc>
                                                 <item>(Albert Blashfield) AB1</item>
                                                 <label>pers:SB1</label>
                                                 <item>(Sara Bosse) SB1</item>
+                                                <label>pers:CH1</label>
+                                                <item>(Charles Horell) CH1</item>
                                                 <label>pers:MC1</label>
                                                 <item>(Mary Chapman) MC1</item>
                                                 <label>pers:JLC1</label>
@@ -22519,6 +22539,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                                 <item>(Albert Blashfield) AB1</item>
                                                 <label>pers:SB1</label>
                                                 <item>(Sara Bosse) SB1</item>
+                                                <label>pers:CH1</label>
+                                                <item>(Charles Horell) CH1</item>
                                                 <label>pers:MC1</label>
                                                 <item>(Mary Chapman) MC1</item>
                                                 <label>pers:JLC1</label>
@@ -31998,6 +32020,8 @@ epistemology, methodology and history of
                                                 <item>(Albert Blashfield) AB1</item>
                                                 <label>pers:SB1</label>
                                                 <item>(Sara Bosse) SB1</item>
+                                                <label>pers:CH1</label>
+                                                <item>(Charles Horell) CH1</item>
                                                 <label>pers:MC1</label>
                                                 <item>(Mary Chapman) MC1</item>
                                                 <label>pers:JLC1</label>
@@ -34238,6 +34262,8 @@ epistemology, methodology and history of
                            <ab>Element: <list>
                                  <item>
                                     <ref target="#TEI.att">att</ref>/@scheme</item>
+                                 <item>
+                                    <ref target="#TEI.author">author</ref>/@role</item>
                                  <item>
                                     <ref target="#TEI.availability">availability</ref>/@status</item>
                                  <item>
