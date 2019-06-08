@@ -36009,23 +36009,6 @@ epistemology, methodology and history of
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:*[not(*)][text()]"&gt;
- &lt;sch:let name="text"
-  value="string-join(text(),'')"/&gt;
- &lt;sch:assert test="not(matches($text,'[\[\]]'))"&gt; ERROR: Do not use square brackets to denote supplied texts. Use the
-   supplied element if necessary.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                     </cell>
-                  </row>
-                  <row>
-                     <cell>
-                        <label>Schematron</label>
-                     </cell>
-                     <cell>
-                        <code>
-&lt;sch:pattern&gt;
 &lt;sch:rule context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) 
  ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation 
  and not(ancestor::tei:back))]"&gt;

@@ -2789,7 +2789,10 @@
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               <!--The square bracket rule won't work, since there 
+                  are a few instances where WE uses square brackets-->
                
+               <!--     
                <constraintSpec scheme="schematron" ident="noSpaceInRefs">
                   <constraint>
                      <sch:pattern>
@@ -2802,7 +2805,7 @@
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->
                
                <constraintSpec scheme="schematron" ident="noTrailingPeriod.warning">
                   <constraint>
