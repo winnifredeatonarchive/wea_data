@@ -8,6 +8,10 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <relatedItem target="doc:NatsuSanTeaHouseGirl1"/>
+            <note>This document describes a reprinted version of the poem; we cannot find the original.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:99"/>
          </sourceDesc>
@@ -15,16 +19,59 @@
       <profileDesc>
          <textClass>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="readyForProof">
+         <change who="pers:JT1" when="2019-06-08" status="readyForProof">Readied for proof.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl99 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <body>
+         <head>Natsu-San</head>
+         <opener>
+            <byline>By <name ref="pers:JT1">Onoto Watanna</name></byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <lg>
+               <l>When Natsu lived the fields were all alive</l>
+               <l>And perfumed, sweet with cherry blossoms wild;</l>
+               <l>And overhead the redbird made their nests</l>
+               <l>And sang in concert with the half-caste child.</l></lg>
+            
+            <lg>
+               <l>When Natsu died the sun, all blazing red,</l>
+               <l>Sank suddenly behind a blue-gray cloud;</l>
+               <l>The blowing, restless pine trees scarcely stirred;</l>
+               <l>Each mourned for her within its snowy shroud.</l>
+            </lg>
+            
+            <lg>
+               <l>When Natsu lived the flashing sunshine smiled</l>
+               <l>And played in rapture on her midnight hair;</l>
+               <l>It loitered glad in her deep purple eyes,</l>
+               <l>And kissed the russet cheeks and lips so rare.</l>
+            </lg>
+            
+            <lg>
+               <l>When Natsu died the passion’s bloom had fled,</l>
+               <l>And white and cold and pure and still she lay;</l>
+               <l>The sweet lips dumb, the speaking eyes now closed;</l>
+               <l>The wistful questioning gone, alas! for aye.</l></lg>
+            
+            <lg>
+               <l>Past rice fields, whence the summer’s grace had flown,</l>
+               <l>Where wintry wind-wraiths chanted dirges wild,</l>
+               <l>They bore her gently - they who ne’er had known</l>
+               <l>The red barbarian’s child.</l>
+            </lg>
+            
+            
+            <closer>- Boston Journal.</closer>
+            
+            
          </div>
       </body>
    </text>
