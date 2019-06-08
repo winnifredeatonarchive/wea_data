@@ -465,9 +465,11 @@ nav > div > div > a:last-child{
     transition: outline 0.25s ease-in-out;
 }
 
-span.highlight.focused{
+span.highlight.focused:not(.deselected){
     outline: 1px solid #ccc;
 }
+
+
 
 #goToPrevSearch  div.label::after,
 #goToNextSearch  div.label::after{
@@ -582,6 +584,7 @@ div.results > div{
 }
 .highlight{
     background: rgba(255,170,235,0.4);
+    transition: background 0.25s ease-in-out;
 }
 
 .highlight.deselected{
