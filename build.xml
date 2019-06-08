@@ -21,7 +21,7 @@
     </target>
     
     <target name="startLocalServer">
-        <exec executable="python" dir="products">
+        <exec executable="python" dir="products/site">
             <arg line="-m SimpleHTTPServer 8080"/>
         </exec>
        
