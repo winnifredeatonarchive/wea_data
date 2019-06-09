@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="technical">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Technical Information</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-02-19"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Technical Information</head>
+            <div>
+                <head>Encoding</head>
+                <p>All of our documents are encoded according to TEI P5 standards.</p>
+            </div>
+            <div>
+                <head>Processing</head>
+                <p>All of our processing relies on open-source and open-access technologies. We follow the <ref target="https://projectendings.github.io/principles/">Endings Principles for Digital Longeveity</ref>,
+                   and thus all of our pages are built <q>statically</q>, which means that there is no dependence on server side processing.</p>
+            </div>
+            <div>
+                <head>Search</head>
+                <p>The search functionality is a prototype, which stems from ongoing work by Martin Holmes and Joey Takeda. This is a fully functional, Javascript-only search engine, built using pre-built
+                indexes of all of the documents. We use the Porter Stemmer (1980) algorithm for word stemming; our indexes are created via a custom XSLT (which can be found <ref target="https://github.com/joeytakeda/xslt-stemmer">on Github</ref>) and all input tokens are stemmed using a small Javascript library written by [[GET NAME HERE]].</p>
+            </div>
+            <div>
+                <head>Documentation</head>
+                <p>All of the encoding documentation for the WEA can be found <ref target="docs/index.html">here</ref>.</p>
+            </div>
+            <div>
+                <p>The <title level="m">Winnifred Eaton Archive</title> is comprised entirely of Text Encoding Initiative (TEI) P5 conformant XML documents.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

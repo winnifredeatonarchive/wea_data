@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="about">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>About</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-02-19"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>About</head>
+            <div>
+               <p>Here is some stuff for an about page.</p>
+            </div>
+        </body>
+    </text>
+</TEI>
