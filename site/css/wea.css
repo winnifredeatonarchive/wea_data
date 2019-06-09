@@ -299,40 +299,6 @@ nav > div > div{
 
 /* ******* ON HOVER  */
 
-/* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
-@media only screen and (min-width: 1025px){
-
-
-
-
-
-#nav_main > div.selected{
-/*    border-bottom-color: var(--wea-pink);*/
-}
-
-#nav_main > div:not(.search_icon):not(.home):hover{
-   border-bottom-color: var(--wea-pink);
-   transition: border-bottom-color .4s;
-}
-
-#nav_main > div:hover > div{
-    position: absolute;
-    display: block;
-    margin-top: .75em;
-    background: rgb(255, 255, 255);
-    margin-left: -1rem;
-    width: 15rem;
-    box-shadow: 1px 1px 1px 1px #efefef;
-}
-
-#nav_main > div > div > a:hover,
-#nav_main > div > div >a.selected{
-        background:#efefef;
-        transition: background .2s;
-}
-     
-
-}
 
 /* END MEDIA QUERY */
 
@@ -1833,10 +1799,48 @@ tr img{
     max-height:4rem;
 }
 
-@media only screen and (max-width:1205px){
-    #tools_container{
+
+
+
+
+/* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
+@media only screen and (min-width: 1025px){
+
+#nav_main > div.selected{
+/*    border-bottom-color: var(--wea-pink);*/
+}
+
+#nav_main > div:not(.search_icon):not(.home):hover{
+   border-bottom-color: var(--wea-pink);
+   transition: border-bottom-color .4s;
+}
+
+#nav_main > div:hover > div{
+    position: absolute;
+    display: block;
+    margin-top: .75em;
+    background: rgb(255, 255, 255);
+    margin-left: -1rem;
+    width: 15rem;
+    box-shadow: 1px 1px 1px 1px #efefef;
+}
+
+#nav_main > div > div > a:hover,
+#nav_main > div > div >a.selected{
+        background:#efefef;
+        transition: background .2s;
+}
+     
+
+}
+
+
+
+@media only screen and (max-width: 1205px){
+
+#tools_container{
         margin-left: -10%;
-    }
+        }
 }
 
 /* iPad Pros are 1024 px in width, so we'll start there
@@ -2019,9 +2023,12 @@ tr img{
         display:block;
     }
     
-    
 }
+    
+    
 
+
+/* 767 MEDIA QUERY */
 
 @media only screen and (max-width: 767px){
     
@@ -2099,14 +2106,4 @@ tr img{
      display:none;
  }
     
-    
-    
-
-    
- 
-
-  
-    
-
-
 }
