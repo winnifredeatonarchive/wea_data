@@ -24,6 +24,7 @@
             <title><xsl:value-of select="teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
+            <link rel="stylesheet" type="text/css" href="css/media.css"/>
             <link rel="icon" type="image/png" href="images/icon.png"/>
             <script src="js/wea.js"/>
             <xsl:if test="@xml:id='search'">
