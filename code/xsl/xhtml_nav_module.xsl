@@ -53,9 +53,9 @@
                     <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
                     <div>About
                         <div>
+                            <a href="about.html">About</a>
                             <a href="#">About Subpage</a>
-                            <a href="#">About Subpage</a>
-                            <a href="#">About Subpage</a>
+                            <a href="technical.html">Technical</a>
                         </div>
                     </div>
                     <div>Archive

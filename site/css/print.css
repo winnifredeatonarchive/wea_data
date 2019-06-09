@@ -1,7 +1,21 @@
 @media print{
     
+    
+    :root{
+        font-size: 13px;
+    }
+    
+    
+    #mainBody{
+        padding:0;
+        margin: 1in;
+    }
     #tools_container, #tools, header{
         display:none;
+    }
+    
+    #mainBody[class*="docPrimarySource"] #text{
+        max-width: unset;
     }
     
     
