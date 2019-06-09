@@ -34,7 +34,8 @@
 @media screen and (max-width: 1205px){
 
 .JS #tools_container{
-        margin-left:-9.5%;
+        margin-left:-11%;
+        font-size:85%;
         }
 }
 
@@ -46,11 +47,25 @@
 
 
 .JS #tools_container{
-    display:none;
+    margin-left:-7%;
+    width:2rem;
+
 }
+
+
+.JS #tools_container > #tools > div{
+        border-top:none;
+}
+
        
 #tools div.mi{
     font-size:225%
+}
+
+
+
+#tools div.label{
+    display:none;
 }
        
     #nav_small{
