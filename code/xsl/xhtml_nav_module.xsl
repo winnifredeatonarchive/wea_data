@@ -19,7 +19,7 @@
     
     <xsl:variable name="siteMap">
         <div id="siteMap">
-            <xsl:for-each select="$standaloneXml">
+            <xsl:for-each select="$standaloneXml[not(//catRef[contains(@target,'Listing')])]">
                 <div class="item">
                     <a href="{//TEI/@xml:id}.html">
                         <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>

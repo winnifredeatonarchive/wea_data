@@ -582,6 +582,15 @@
                             
                         </div>  
                     </xsl:if>
+     <!--               
+                    <xsl:if test="//pb">
+                        <div id="tools_pagebreaks">
+                            <a class="toolbar_item" href="#tools_facsimiles_togglePb">
+                                <div class="mi">vertical_align_center</div>
+                                <div class="label">Remove page breaks</div>
+                            </a>
+                        </div>
+                    </xsl:if>-->
                     
                     <div id="tools_cite">
                         <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation">
@@ -589,6 +598,8 @@
                             <div class="label">Cite</div>  
                         </a>
                     </div>
+                    
+                  
                     
                     <div id="unhighlightButton" class="tool_search">
                         <a>
