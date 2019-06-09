@@ -17,6 +17,12 @@
 }
 
 @font-face{
+    font-family: "Sans";
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face{
     font-family: "Serif";
     src: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
     font-display:swap;
@@ -237,6 +243,8 @@ height:100%;
 .nav_option {
     display: none;
 }
+
+
 
 
 #nav_main > div#nav_search{
@@ -934,13 +942,7 @@ user-select: none;
     transition: transform .5s;
 }
 
-#searchButtons{
-    top: 10%;
-    position:fixed;
-    float:left;
-    
-    
-}
+
 
 /**** LINKS ***** */
 

@@ -33,11 +33,14 @@
 
 @media screen and (max-width: 1205px){
 
+
 .JS #tools_container{
         margin-left:-11%;
         font-size:85%;
         }
 }
+
+
 
 /* iPad Pros are 1024 px in width, so we'll start there
  * as the place where the header needs to switch */
@@ -80,6 +83,10 @@
          margin-right: auto;
     }
     
+    
+    #nav_main > div > div > a.selected{
+    color: #757575;
+}
     
     #hamburger{
          font-size: 2.2rem;
@@ -310,11 +317,10 @@
         margin-left:90%;
     }
     
-    
+   #nav_main{
+       font-size:1rem;
+   }
    
- 
- 
-
 
 
 

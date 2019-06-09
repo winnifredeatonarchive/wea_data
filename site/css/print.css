@@ -1,0 +1,56 @@
+@media print{
+    
+    #tools_container, #tools, header{
+        display:none;
+    }
+    
+    
+    #info{
+        page-break-after: always;
+    }
+    
+    #facsimile{
+        display:none;
+    }
+    
+    
+    #mainBody[class*="docPrimarySource"] > #info{
+      grid-template-areas:
+      "metadata_container metadata_container metadata_container metadata_container"
+      "metadata_container metadata_container metadata_container metadata_container"
+      "metadata_container metadata_container metadata_container metadata_container"
+      "additional_info additional_info additional_info additional_info";
+      background-color: transparent;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    #additional_info > div{
+        box-shadow:none;
+        background:transparent;
+        margin-top:0;
+        padding:0;
+    }
+    
+    #credits{
+        background-color:transparent;
+        max-height:30rem;
+    }
+    
+    .JS .expandable.closed > .content,
+    .JS .expanded.open > .content{
+        max-height:30rem;
+    }
+    
+    .additionalInfoHeader .mi{
+        display:none;
+    }
+    #toc{
+        display:none;
+    }
+    
+    
+    #relatedItems{
+        display:none;
+    }
+    
+}
