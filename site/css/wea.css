@@ -1210,13 +1210,11 @@ span[data-el='pb'].first{
 }
 
 [data-el='pb'].first::before{
-    content:"";
-    border-top:1px solid transparent;
-
+content:unset;
 }
 
 
-span[data-el="pb"]:hover:before{
+span[data-el="pb"]:not(.first):hover:before{
     border-top: 1px solid var(--wea-pink);
 }
 
@@ -1251,7 +1249,7 @@ span[data-el='pb']:hover .pbNum::after{
    
 }
 
-span[data-el='pb']::before{
+span[data-el='pb']:not(.first)::before{
      border-top: 1px solid #757575;
      content:"";
      margin: 0 auto; /* this centers the line to the full width specified */
