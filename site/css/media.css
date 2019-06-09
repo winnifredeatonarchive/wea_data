@@ -45,7 +45,9 @@
 
 
 
-
+#tools_container{
+    margin-left:-5%;
+}
        
 #tools div.mi{
     font-size:225%
@@ -216,47 +218,7 @@
         display:block;
     }
     
-}
-    
-    
-
-
-/* 767 MEDIA QUERY */
-
-@media screen and (max-width: 767px){
-    
-    :root{
-        font-size:1rem;
-    }
-    
-    #mainBody{
-        padding-left:5%;
-        padding-right:5%;
-    }
-
-    .JS #tools_container,
-    .JS #tools_container *{
-        display:none;
-    }
-    span[data-el='pb']:before{
-        content:"";
-        width:105%;
-        margin-left:-2.5%;
-    }
-    
-    span[data-el='pb'].first:before{
-        content:"";
-        margin-left:87.5%;
-        
-    }
-    
-    
-    .pbNum{
-        margin-left:90%;
-    }
-    
-    
-    #mainBody[class*="docPrimarySource"] > #info{
+     #mainBody[class*="docPrimarySource"] > #info{
         grid-template-areas:
         "facsimile"
         "metadata_container"
@@ -293,7 +255,49 @@
      margin: 0 auto;
      min-width:0;
     }
+       #mainBody{
+        padding-left:5%;
+        padding-right:5%;
+    } 
     
+}
+    
+    
+
+
+/* 767 MEDIA QUERY */
+
+@media screen and (max-width: 767px){
+    
+    :root{
+        font-size:1rem;
+    }
+    
+
+
+    .JS #tools_container,
+    .JS #tools_container *{
+        display:none;
+    }
+    span[data-el='pb']:before{
+        content:"";
+        width:105%;
+        margin-left:-2.5%;
+    }
+    
+    span[data-el='pb'].first:before{
+        content:"";
+        margin-left:87.5%;
+        
+    }
+    
+    
+    .pbNum{
+        margin-left:90%;
+    }
+    
+    
+   
  
  
 
