@@ -127,7 +127,7 @@ html{
 /********* BODY ********/
 
 body{
-    line-height: 1.35;
+    line-height: 1.425;
     /* This is slightly darker than in Serina's designs. */
     color: var(--wea-text-color);
     margin:0;
@@ -1154,8 +1154,8 @@ div[data-el=body]>div[data-el=div]{
     margin:.5em;
 }
 
-div[data-el=p]{
-    margin:.5rem 0;
+div[data-el="p"]{
+    margin:0.85rem 0;
     text-align:justify;
 }
 
