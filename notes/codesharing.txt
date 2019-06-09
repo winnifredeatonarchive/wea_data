@@ -1,0 +1,13 @@
+Initial codesharing plan ideas:
+
+* Generate a TEI page for every element that lists all of its examples as egXMLs (with unique @xml:ids)
+* Also create an index of that parent and its <egXML>s (i.e <ptr type="parents" target="file.xml#a file.xml#b file2.xml#c/>)
+* And then create these XHTML page fragments (i.e. abbr.html, add.html)
+* If you've clicked show me these things, then just grab the content of the file (or the first ten, say) and put them into
+  the document
+* If you've clicked show me these things, but wrap them in their parent, do a bit more work:
+  ** Tokenize the list of target and files
+  ** From 1 to n, take each target and get those examples and put them into the page
+  ** And then highlight the element, of course.
+  ** [Do we have a list of "stop-elements"? I.e. if 
+  

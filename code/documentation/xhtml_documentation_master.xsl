@@ -235,10 +235,13 @@
         <xsl:apply-templates select="." mode="tei"/>
     </xsl:template>
     
+
+    
     <!--XH TEMPLATES-->
     <xsl:template match="xh:nav/xh:ul" mode="xh">
         <xsl:param name="toc" tunnel="yes"/>
         <xsl:param name="currDivId" tunnel="yes"/>
+
         <ul>
             <xsl:copy-of select="$toc"/>
             <!--
