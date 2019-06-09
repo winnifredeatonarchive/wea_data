@@ -202,7 +202,7 @@
         <xsl:if test="exists($toc/item)">
             <div id="toc" class="additionalInfo expandable">
                 <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents<span class="mi">chevron_right</span></div>
-                <div class="content">
+                <div class="content" id="toc_content">
                     <xsl:apply-templates select="$toc" mode="tei"/>
                 </div>
             </div>
@@ -565,7 +565,7 @@
                     <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
                         <div id="tools_toc" title="Table of Contents">
                             
-                            <a class="toolbar_item" href="">
+                            <a class="toolbar_item" href="#toc_content">
                                 <div class="mi">list</div>
                                 <div class="label">Contents</div>
                             </a>
