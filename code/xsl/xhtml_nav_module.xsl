@@ -97,9 +97,9 @@
                     <div id="headerSearchInput">
                         <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
                     </div>
-                    <div id="headerAdvancedSearchBtn">
-                        <a href="search.html">Go to full text search</a>
-                    </div>
+
+                        <a href="search.html" id="headerAdvancedSearchBtn">Search the Archive</a>
+                    
                 </div>
                 <div id="nav_archive" class="nav_option">
                     

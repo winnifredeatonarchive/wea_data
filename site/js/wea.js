@@ -33,6 +33,7 @@ function init(){
 }
 
 
+
 function doSearch(){
     var searchInput = document.getElementById('searchInput');
     var searchString = decodeURIComponent(searchParams.get("searchString"));
@@ -42,6 +43,7 @@ function doSearch(){
 
 function addEvents(){
     addHeaderSearch();
+    addHeaderSearchSubmit();
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
@@ -54,9 +56,15 @@ function addEvents(){
     if (document.getElementById('tools')){
         makeToolbarResponsive();
     }
-
 }
 
+
+function addHeaderSearchSubmit(){
+    
+    var searchBtn = document.getElementById('headerAdvancedSearchBtn');
+    console.log(searchBtn);
+    searchBtn.addEventListener('click', submitSearch, true);
+}
 
 
 function makeNavClickable(){
@@ -199,10 +207,15 @@ function addHeaderSearch(){
 
 function submitSearch(){
     var e=arguments[0];
-    if (e.key === 'Enter'){
-        window.location.href = 'search.html?searchString=' + encodeURIComponent(this.value)
+    var searchInput = document.getElementById('headerSearchForm');
+    console.log(this.tagName);
+    if (this.tagName == 'A' || e.key == 'Enter'){
+        if (this.tagName == 'A'){
+            e.preventDefault();
+        }
+        window.location.href = 'search.html?searchString=' + encodeURIComponent(searchInput.value);
     }
-    
+     
 }
 
 function removeOtherOpenNavs(){

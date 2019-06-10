@@ -663,15 +663,15 @@ div.result:focus > a{
 
 #headerAdvancedSearchBtn{
     grid-area:headerAdvancedSearchBtn;
-    font-size:80%;
+    font-size:100%;
     display:inherit;
-   
-    
+    display:block;
+    border:1px solid #ccc;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    padding:1rem .5rem;
+
 }
-#headerAdvancedSearchBtn > a{
-        width:auto;
-    padding:.25rem;
-}
+
 
 #headerSearchResults{
     grid-area:headerSearchResults;
