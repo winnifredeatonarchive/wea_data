@@ -16,10 +16,15 @@ function init(){
    if (searchParams.has("searchTokens")){
     highlightSearchMatches();
     } else {
-        addEvents()
+        addEvents();
     }
-    if (docId == 'search' || document.getElementById('searchResults') !== null){
-            addSearch();
+    
+    if (docId == 'search'){
+        addSearch();
+        if (searchParams.has("searchString")){
+            doSearch();
+        }
+        
     }
 
 /*    makeAsideResponsive();*/
@@ -27,6 +32,13 @@ function init(){
 
 }
 
+
+function doSearch(){
+    var searchInput = document.getElementById('searchInput');
+    var searchString = decodeURIComponent(searchParams.get("searchString"));
+    searchInput.setAttribute('value',searchString);
+    searcher.search(searchInput.value);
+}
 
 function addEvents(){
     addHeaderSearch();
@@ -182,6 +194,15 @@ function addHeaderSearch(){
      
      /* And for the header input */
      headerInput.addEventListener('focus',addFocusEvent);
+     headerInput.addEventListener('keydown',submitSearch);
+}
+
+function submitSearch(){
+    var e=arguments[0];
+    if (e.key === 'Enter'){
+        window.location.href = 'search.html?searchString=' + encodeURIComponent(this.value)
+    }
+    
 }
 
 function removeOtherOpenNavs(){

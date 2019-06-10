@@ -552,7 +552,7 @@
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">
         <div id="searchBox">
-            <input type="text" name="search" placeholder="Search.."/>
+            <input type="text" name="search" placeholder="Search..." id="searchInput"/>
         </div>
 
     </xsl:template>
