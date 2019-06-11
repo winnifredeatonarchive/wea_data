@@ -59,6 +59,24 @@
         </xsl:attribute>
     </xsl:template>
     
+    
+    <xsl:template match="@rend" mode="pass1">
+        <xsl:choose>
+            <xsl:when test=".='italic'">
+                <xsl:attribute name="style" select="'font-style:italic;'"/>
+            </xsl:when>
+            <xsl:when test=".='inline'"/>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="milestone[@rend='blank-line']" mode="pass1"/>
+        
+    <!--This is an odd practice they engaged in: adding a <pb/> that had an @n
+        to signify the new chapter beginning. That ought to have been a milestone
+        in the first place, but we'll delete it here-->
+    
+    <xsl:template match="pb[@n][following-sibling::*[1]/self::div[@type='chapter']]" mode="pass1"/>
+
     <!--Remove the front matter-->
     <xsl:template match="front" mode="pass1"/>
     

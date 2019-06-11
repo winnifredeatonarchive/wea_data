@@ -2879,7 +2879,7 @@
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.biblLike">model.biblLike</ref>
+                              <ref target="#TEI.model.biblLike">model.biblLike</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -2917,6 +2917,7 @@
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref> 
+                                       <ref target="#TEI.sourceDesc">sourceDesc</ref> 
                                        <ref target="#TEI.taxonomy">taxonomy</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -23618,6 +23619,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>core: <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.p">p</ref>
                               </item>
+                              <item>header: <ref target="#TEI.biblFull">biblFull</ref>
+                              </item>
                            </list>
                         </cell>
                      </row>
@@ -23679,7 +23682,11 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
 &lt;content&gt;
  &lt;alternate minOccurs="1" maxOccurs="1"&gt;
   &lt;elementRef key="p"/&gt;
-  &lt;elementRef key="bibl"/&gt;
+  &lt;alternate minOccurs="1"
+   maxOccurs="unbounded"&gt;
+   &lt;elementRef key="bibl"/&gt;
+   &lt;elementRef key="biblFull"/&gt;
+  &lt;/alternate&gt;
  &lt;/alternate&gt;
 &lt;/content&gt;
     </code>
