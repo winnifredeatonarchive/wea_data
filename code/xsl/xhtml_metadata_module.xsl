@@ -108,7 +108,7 @@
     <xsl:template name="createCitations">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <xsl:variable name="tempCitation">
-            <xsl:apply-templates select="$root//sourceDesc/bibl" mode="citation"/>
+            <xsl:apply-templates select="$root//sourceDesc[not(ancestor::sourceDesc)]/bibl" mode="citation"/>
         </xsl:variable>
         <xsl:variable name="uri" select="wea:getURL($root)"/>
         <div id="source_citation">
@@ -123,6 +123,8 @@
             <xsl:apply-templates select="$tempBibl" mode="tei"/>
         </div>
     </xsl:template>
+    
+    <xsl:template match="biblFull" mode="citation"/>
     
     
     <xsl:template match="bibl/author/name | bibl/author/rs | bibl/publisher" mode="citation">
@@ -294,6 +296,8 @@
     </xsl:template>
     
     <xsl:template match="bibl/note" mode="metadata"/>
+    <xsl:template match="sourceDesc/biblFull" mode="metadata"/>
+    
     
     <xsl:template match="text/@next | text/@prev" mode="metadata">
         <div>

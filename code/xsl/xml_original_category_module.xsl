@@ -168,7 +168,7 @@
                             </cell>
                             
                             <cell>
-                                <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
                             </cell>
                             <cell>
                                 <xsl:choose>
