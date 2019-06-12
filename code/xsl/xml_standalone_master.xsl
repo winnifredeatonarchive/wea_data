@@ -24,7 +24,7 @@
 
     
     <xsl:template match="/">
-        <xsl:for-each select="wea:getWorkingDocs($originalXml)">
+        <xsl:for-each select="wea:getWorkingDocs($originalXml)//TEI">
             <xsl:variable name="outDir"
                 select="concat($outDir,'xml/standalone/',//TEI/@xml:id,'.xml')"/>
             <xsl:message>Creating <xsl:value-of select="$outDir"/></xsl:message>
