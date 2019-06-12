@@ -7,6 +7,8 @@
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
+    
+    <xsl:output indent="yes" suppress-indentation="text body div p hi"/>
     <xsl:include href="../../data/sch/weaQuickFixTemplates.xsl"/>
     
     <xsl:variable name="heart" select="doc('../../data/texts/HeartOfHyacinth1.xml')"/>
@@ -29,7 +31,7 @@
     <xsl:template name="convert">
         <xsl:param name="weaDoc" as="document-node()"/>
         <xsl:param name="oldDoc" as="document-node()"/>
-        <xsl:result-document href="out/{$weaDoc//TEI/@xml:id}.xml">
+        <xsl:result-document href="../out/{$weaDoc//TEI/@xml:id}.xml">
             <xsl:variable name="convertedDoc">
                 <xsl:apply-templates select="$oldDoc" mode="pass1"/>
             </xsl:variable>
@@ -69,6 +71,31 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="figure/p" mode="pass1">
+        <head><xsl:apply-templates mode="#current"/></head>
+    </xsl:template>
+    
+    <!--Empty authorsdon't mean anything at all-->
+    <xsl:template match="author[normalize-space(string-join(descendant::text(),''))='']" mode="pass1"/>
+    
+    <xsl:template match="author[ancestor::titleStmt][name/choice]" mode="pass1">
+        <author><xsl:value-of select="name/choice/reg"/></author>
+    </xsl:template>
+    
+    <!--Split up the respStmt into two; semantically identical-->
+    <xsl:template match="seriesStmt/respStmt" mode="pass1">
+        <xsl:for-each select="name">
+            <respStmt>
+                <xsl:copy-of select="../resp"/>
+                <xsl:copy-of select="."/>
+            </respStmt>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="q[q[floatingText]]" mode="pass1">
+        <xsl:apply-templates select="q/floatingText" mode="#current"/>
+    </xsl:template>
+    
     <xsl:template match="milestone[@rend='blank-line']" mode="pass1"/>
         
     <!--This is an odd practice they engaged in: adding a <pb/> that had an @n
@@ -106,9 +133,26 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="p/text()" mode="fix">
+    
+    <!--Templates in "fix" are simply ones that the run the text through
+        our standardized process for quickfixing.-->
+    <xsl:template match="p/text() | figure/head/text()" mode="fix">
         <xsl:variable name="norm">
-            <xsl:value-of select="replace(.,'(^\s+|\s+$)','')"/>
+            <xsl:choose>
+                <xsl:when test="not(preceding-sibling::text()) and not(following-sibling::text())">
+                    <xsl:value-of select="replace(.,'(^\s+|\s+$)','')"/>
+                </xsl:when>
+                <xsl:when test="not(preceding-sibling::text()) and following-sibling::text()">
+                    <xsl:value-of select="replace(.,'^\s+','')"/>
+                </xsl:when>
+                <xsl:when test="preceding-sibling::text() and not(following-sibling::text())">
+                    <xsl:value-of select="replace(.,'\s+$','')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+
         </xsl:variable>
         
         <xsl:variable name="doubleQuotes" as="xs:string">
