@@ -1211,7 +1211,7 @@
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
+                          include="address addrLine author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -2297,10 +2297,10 @@
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
                      <elementRef key="head" minOccurs="0"/>
+                     <elementRef key="graphic" minOccurs="0"/>
                      <elementRef key="figDesc" minOccurs="0"/>
                      <elementRef key="bibl" minOccurs="0"/>
                      <elementRef key="listPerson" minOccurs="0"/>
-                     <elementRef key="graphic" minOccurs="0"/>
                   </content>
                   <constraintSpec ident="figure.needsSomething" scheme="schematron">
                      <!--This constraint could certainly be done in pure ODD and not
