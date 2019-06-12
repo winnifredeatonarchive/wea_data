@@ -1260,7 +1260,8 @@
                                        <ref target="#TEI.projectDesc">projectDesc</ref> 
                                        <ref target="#TEI.publicationStmt">publicationStmt</ref> 
                                        <ref target="#TEI.punctuation">punctuation</ref> 
-                                       <ref target="#TEI.quotation">quotation</ref>
+                                       <ref target="#TEI.quotation">quotation</ref> 
+                                       <ref target="#TEI.seriesStmt">seriesStmt</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.listRelation">listRelation</ref> 
@@ -1601,6 +1602,7 @@
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
@@ -1808,6 +1810,7 @@
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -2699,6 +2702,7 @@
                               <item>header: <ref target="#TEI.availability">availability</ref> 
                                  <ref target="#TEI.distributor">distributor</ref> 
                                  <ref target="#TEI.edition">edition</ref> 
+                                 <ref target="#TEI.extent">extent</ref> 
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
@@ -2819,7 +2823,7 @@
                         </cell>
                         <cell>All <att>n</att> attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:sourceDesc/tei:bibl"&gt;
+&lt;sch:rule context="tei:sourceDesc[not(ancestor::tei:sourceDesc)]/tei:bibl"&gt;
  &lt;sch:assert test="@copyOf and starts-with(@copyOf,'bibl:')"&gt; ERROR: All bibls should have an @copyOf that points to the bibl
    id number of the bibliographic item in question (i.e. copyOf="bibl:77").
  &lt;/sch:assert&gt;
@@ -2951,10 +2955,12 @@
                         </cell>
                         <cell>
                            <list>
-                              <item>header: <ref target="#TEI.fileDesc">fileDesc</ref> 
+                              <item>header: <ref target="#TEI.extent">extent</ref> 
+                                 <ref target="#TEI.fileDesc">fileDesc</ref> 
                                  <ref target="#TEI.notesStmt">notesStmt</ref> 
                                  <ref target="#TEI.profileDesc">profileDesc</ref> 
                                  <ref target="#TEI.publicationStmt">publicationStmt</ref> 
+                                 <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                                  <ref target="#TEI.sourceDesc">sourceDesc</ref> 
                                  <ref target="#TEI.titleStmt">titleStmt</ref>
                               </item>
@@ -3082,7 +3088,7 @@
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.imprintPart">model.imprintPart</ref>
+                              <ref target="#TEI.model.imprintPart">model.imprintPart</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -3095,6 +3101,8 @@
                               <item>
                                  <list>
                                     <item>core: <ref target="#TEI.bibl">bibl</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.seriesStmt">seriesStmt</ref>
                                     </item>
                                  </list>
                               </item>
@@ -4713,6 +4721,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -4881,6 +4890,7 @@ supplied to printer.</change>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
                                     </item>
@@ -5373,6 +5383,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -5590,6 +5601,7 @@ supplied to printer.</change>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -6115,6 +6127,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.publicationStmt">publicationStmt</ref> 
@@ -8004,7 +8017,7 @@ and then a Captain of several Ships</byline>
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.respLike">model.respLike</ref>
+                              <ref target="#TEI.model.respLike">model.respLike</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -8018,7 +8031,8 @@ and then a Captain of several Ships</byline>
                                  <list>
                                     <item>core: <ref target="#TEI.bibl">bibl</ref>
                                     </item>
-                                    <item>header: <ref target="#TEI.titleStmt">titleStmt</ref>
+                                    <item>header: <ref target="#TEI.seriesStmt">seriesStmt</ref> 
+                                       <ref target="#TEI.titleStmt">titleStmt</ref>
                                     </item>
                                  </list>
                               </item>
@@ -8476,6 +8490,7 @@ and then a Captain of several Ships</byline>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -8995,6 +9010,174 @@ formatting or layout information preserved.</p>
                      </row>
                   </table>
                </div>
+               <div type="refdoc" xml:id="TEI.extent">
+                  <head>&lt;extent&gt;</head>
+                  <p>
+                     <label>&lt;extent&gt; </label>describes the approximate size of a text stored on some carrier medium or of some other object, digital or non-digital, specified in any convenient units. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD23">2.2.3. Type and Extent of File</ref> 
+                     <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. The File Description</ref> 
+                     <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. Imprint, Size of a Document, and Reprint Information</ref> 
+                     <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msph1">10.7.1. Object Description</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>header — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.biblPart">model.biblPart</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>core: <ref target="#TEI.bibl">bibl</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
+                                       <ref target="#TEI.fileDesc">fileDesc</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>analysis: <ref target="#TEI.pc">pc</ref>
+                              </item>
+                              <item>core: <ref target="#TEI.choice">choice</ref> 
+                                 <ref target="#TEI.cit">cit</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.date">date</ref> 
+                                 <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.foreign">foreign</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
+                                 <ref target="#TEI.graphic">graphic</ref> 
+                                 <ref target="#TEI.hi">hi</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.num">num</ref> 
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.q">q</ref> 
+                                 <ref target="#TEI.quote">quote</ref> 
+                                 <ref target="#TEI.ref">ref</ref> 
+                                 <ref target="#TEI.reg">reg</ref> 
+                                 <ref target="#TEI.rs">rs</ref> 
+                                 <ref target="#TEI.sic">sic</ref> 
+                                 <ref target="#TEI.term">term</ref> 
+                                 <ref target="#TEI.title">title</ref> 
+                                 <ref target="#TEI.unclear">unclear</ref>
+                              </item>
+                              <item>figures: <ref target="#TEI.figure">figure</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.seg">seg</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>tagdocs: <ref target="#TEI.att">att</ref> 
+                                 <ref target="#TEI.code">code</ref> 
+                                 <ref target="#TEI.gi">gi</ref> 
+                                 <ref target="#TEI.ident">ident</ref> 
+                                 <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              </item>
+                              <item>character data</item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <extent>3200 sentences</extent>
+                              <extent>between 10 and 20 Mb</extent>
+                              <extent>ten 3.5 inch high density diskettes</extent>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>The <gi>measure</gi> element may be used to supply normalised or machine tractable versions of the size or sizes concerned.<egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <extent>
+                                 <measure unit="MiB" quantity="4.2">About four megabytes</measure>
+                                 <measure unit="pages" quantity="245">245 pages of source
+material</measure>
+                              </extent>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>We allow extent ONLY for legacy purposes.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:extent"&gt;
+ &lt;sch:assert test="ancestor::tei:biblFull[ancestor::tei:sourceDesc]"&gt; ERROR: Do not use the extent element; it is to be used in the context
+   of a biblFull in a source description.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;macroRef key="macro.phraseSeq"/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
                <div type="refdoc" xml:id="TEI.figDesc">
                   <head>&lt;figDesc&gt;</head>
                   <p>
@@ -9233,6 +9416,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
@@ -9409,8 +9593,10 @@ formatting or layout information preserved.</p>
                         </cell>
                         <cell>
                            <list>
-                              <item>header: <ref target="#TEI.notesStmt">notesStmt</ref> 
+                              <item>header: <ref target="#TEI.extent">extent</ref> 
+                                 <ref target="#TEI.notesStmt">notesStmt</ref> 
                                  <ref target="#TEI.publicationStmt">publicationStmt</ref> 
+                                 <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                                  <ref target="#TEI.sourceDesc">sourceDesc</ref> 
                                  <ref target="#TEI.titleStmt">titleStmt</ref>
                               </item>
@@ -9548,6 +9734,7 @@ formatting or layout information preserved.</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
                                     </item>
@@ -9750,6 +9937,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -9974,6 +10162,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -10488,6 +10677,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
@@ -10740,6 +10930,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -10879,6 +11070,7 @@ formatting or layout information preserved.</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -11310,6 +11502,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -11649,6 +11842,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -11857,11 +12051,13 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.idno">idno</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.publicationStmt">publicationStmt</ref> 
-                                       <ref target="#TEI.rendition">rendition</ref>
+                                       <ref target="#TEI.rendition">rendition</ref> 
+                                       <ref target="#TEI.seriesStmt">seriesStmt</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
                                        <ref target="#TEI.seg">seg</ref>
@@ -15099,6 +15295,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -15314,6 +15511,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
@@ -15653,6 +15851,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -16293,6 +16492,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.notesStmt">notesStmt</ref>
@@ -16876,6 +17076,7 @@ psychological significance.
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -17684,6 +17885,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -17864,6 +18066,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.publicationStmt">publicationStmt</ref> 
                                        <ref target="#TEI.punctuation">punctuation</ref> 
                                        <ref target="#TEI.quotation">quotation</ref> 
+                                       <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                                        <ref target="#TEI.sourceDesc">sourceDesc</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
@@ -18125,6 +18328,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
@@ -18418,6 +18622,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -18601,6 +18806,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -19191,6 +19397,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -20592,6 +20799,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
                                     </item>
@@ -20986,6 +21194,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
                                     </item>
@@ -21212,6 +21421,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.publicationStmt">publicationStmt</ref> 
@@ -21451,6 +21661,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -22201,7 +22412,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.respLike">model.respLike</ref>
+                              <ref target="#TEI.model.respLike">model.respLike</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -22215,7 +22426,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <list>
                                     <item>core: <ref target="#TEI.bibl">bibl</ref>
                                     </item>
-                                    <item>header: <ref target="#TEI.titleStmt">titleStmt</ref>
+                                    <item>header: <ref target="#TEI.seriesStmt">seriesStmt</ref> 
+                                       <ref target="#TEI.titleStmt">titleStmt</ref>
                                     </item>
                                  </list>
                               </item>
@@ -22633,6 +22845,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -22982,6 +23195,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -23153,6 +23367,112 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                      </row>
                   </table>
                </div>
+               <div type="refdoc" xml:id="TEI.seriesStmt">
+                  <head>&lt;seriesStmt&gt;</head>
+                  <p>
+                     <label>&lt;seriesStmt&gt; </label>(series statement) groups information about the series, if any, to which a publication belongs. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. The Series Statement</ref> 
+                     <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD2">2.2. The File Description</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>header — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
+                                       <ref target="#TEI.fileDesc">fileDesc</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>core: <ref target="#TEI.biblScope">biblScope</ref> 
+                                 <ref target="#TEI.editor">editor</ref> 
+                                 <ref target="#TEI.p">p</ref> 
+                                 <ref target="#TEI.respStmt">respStmt</ref> 
+                                 <ref target="#TEI.title">title</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.ab">ab</ref>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <seriesStmt>
+                                 <title>Machine-Readable Texts for the Study of Indian Literature</title>
+                                 <respStmt>
+                                    <resp>ed. by</resp>
+                                    <name>Jan Gonda</name>
+                                 </respStmt>
+                                 <biblScope unit="volume">1.2</biblScope>
+                                 <idno type="ISSN">0 345 6789</idno>
+                              </seriesStmt>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;alternate&gt;
+  &lt;classRef key="model.pLike" minOccurs="1"
+   maxOccurs="unbounded"/&gt;
+  &lt;sequence&gt;
+   &lt;elementRef key="title" minOccurs="1"
+    maxOccurs="unbounded"/&gt;
+   &lt;alternate minOccurs="0"
+    maxOccurs="unbounded"&gt;
+    &lt;elementRef key="editor"/&gt;
+    &lt;elementRef key="respStmt"/&gt;
+   &lt;/alternate&gt;
+   &lt;alternate minOccurs="0"
+    maxOccurs="unbounded"&gt;
+    &lt;elementRef key="idno"/&gt;
+    &lt;elementRef key="biblScope"/&gt;
+   &lt;/alternate&gt;
+  &lt;/sequence&gt;
+ &lt;/alternate&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
                <div type="refdoc" xml:id="TEI.sic">
                   <head>&lt;sic&gt;</head>
                   <p>
@@ -23226,6 +23546,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -23786,6 +24107,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -24015,6 +24337,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -24846,6 +25169,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -25454,9 +25778,11 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref> 
+                                       <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                                        <ref target="#TEI.titleStmt">titleStmt</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -26429,6 +26755,7 @@ epistemology, methodology and history of
                                     <item>header: <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.licence">licence</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
@@ -26648,6 +26975,7 @@ epistemology, methodology and history of
                                        <ref target="#TEI.creation">creation</ref> 
                                        <ref target="#TEI.distributor">distributor</ref> 
                                        <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
                                        <ref target="#TEI.language">language</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
                                        <ref target="#TEI.rendition">rendition</ref>
@@ -26827,6 +27155,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.respStmt">respStmt</ref>]  <ref target="#TEI.availability">availability</ref> 
                            <ref target="#TEI.bibl">bibl</ref> 
                            <ref target="#TEI.edition">edition</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.listRelation">listRelation</ref> 
                            <ref target="#TEI.msIdentifier">msIdentifier</ref> 
                            <ref target="#TEI.relatedItem">relatedItem</ref>
@@ -28225,7 +28554,8 @@ epistemology, methodology and history of
                               <ref target="#TEI.projectDesc">projectDesc</ref> 
                               <ref target="#TEI.publicationStmt">publicationStmt</ref> 
                               <ref target="#TEI.punctuation">punctuation</ref> 
-                              <ref target="#TEI.quotation">quotation</ref>
+                              <ref target="#TEI.quotation">quotation</ref> 
+                              <ref target="#TEI.seriesStmt">seriesStmt</ref>
                            </ab>
                         </cell>
                      </row>
@@ -30652,6 +30982,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -30726,6 +31057,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -30918,6 +31250,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -30992,6 +31325,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -31102,6 +31436,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -31176,6 +31511,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -31301,6 +31637,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -31375,6 +31712,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -31620,6 +31958,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -31694,6 +32033,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -31876,6 +32216,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -31950,6 +32291,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -32171,6 +32513,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.fileDesc">fileDesc</ref> 
@@ -32245,6 +32588,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.rs">rs</ref> 
                            <ref target="#TEI.salute">salute</ref> 
                            <ref target="#TEI.seg">seg</ref> 
+                           <ref target="#TEI.seriesStmt">seriesStmt</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.signed">signed</ref> 
                            <ref target="#TEI.sourceDesc">sourceDesc</ref> 
@@ -33952,6 +34296,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.docDate">docDate</ref> 
                               <ref target="#TEI.edition">edition</ref> 
                               <ref target="#TEI.editor">editor</ref> 
+                              <ref target="#TEI.extent">extent</ref> 
                               <ref target="#TEI.foreign">foreign</ref> 
                               <ref target="#TEI.forename">forename</ref> 
                               <ref target="#TEI.label">label</ref> 

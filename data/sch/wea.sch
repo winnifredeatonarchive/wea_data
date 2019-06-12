@@ -499,7 +499,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:sourceDesc/tei:bibl">
+                           <sch:rule context="tei:sourceDesc[not(ancestor::tei:sourceDesc)]/tei:bibl">
                               <sch:assert test="@copyOf and starts-with(@copyOf,'bibl:')">
                                  ERROR: All bibls should have an @copyOf that points to the bibl
                                  id number of the bibliographic item in question (i.e. copyOf="bibl:77").
@@ -587,6 +587,22 @@ relatedItem element must be empty</sch:report>
       </report>
             </rule>
          </pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:extent">
+                              <sch:assert test="ancestor::tei:biblFull[ancestor::tei:sourceDesc]">
+                                 ERROR: Do not use the extent element; it is to be used in the context
+                                 of a biblFull in a source description.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -863,7 +879,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-44">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

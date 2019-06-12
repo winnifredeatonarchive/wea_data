@@ -1213,7 +1213,7 @@
                <moduleRef key="core"
                           include="author bibl biblScope choice cit corr date desc divGen editor emph foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic term title unclear"/>
                <moduleRef key="header"
-                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc sourceDesc taxonomy teiHeader textClass titleStmt"/>
+                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                
@@ -1319,6 +1319,22 @@
                         </valList>
                      </attDef>
                   </attList>
+               </elementSpec>
+               
+               <elementSpec ident="extent" module="header" mode="change">
+                  <constraintSpec scheme="schematron" ident="extent.legacy">
+                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:extent">
+                              <sch:assert test="ancestor::tei:biblFull[ancestor::tei:sourceDesc]">
+                                 ERROR: Do not use the extent element; it is to be used in the context
+                                 of a biblFull in a source description.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
           
                <elementSpec ident="catRef" module="header" mode="change">
@@ -2206,7 +2222,7 @@
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:sourceDesc/tei:bibl">
+                           <sch:rule context="tei:sourceDesc[not(ancestor::tei:sourceDesc)]/tei:bibl">
                               <sch:assert test="@copyOf and starts-with(@copyOf,'bibl:')">
                                  ERROR: All bibls should have an @copyOf that points to the bibl
                                  id number of the bibliographic item in question (i.e. copyOf="bibl:77").
