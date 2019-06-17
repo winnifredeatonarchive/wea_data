@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseWomanNotSlave1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseWomanNotSlave1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Japanese Woman Not a Slave</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile provided by University of Minnesota Anderson Library.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:62"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl62 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-17" status="readyForProof">Readied for proof.</change>
+         <change who="pers:SL1" when="2019-06-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl62 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Japanese_Woman_Not_A_Slave">
       <body>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <head>The Japanese Woman</head>
+            <head type="subtitle">Not a Slave, but the Autocrat and Idol of the Home</head>
+            <p><q>No race can rise higher than its mothers</q>. Japanese women are essentially a race of mothers, and the care and rearing of their children occupy so much of their time and thought that they are unable to have that extensive social life their western sisters enjoy, even were it not for the etiquette which makes it actually fashionable for them to find their pleasures in their homes.</p>
+            <p>Many have imputed to Japanese women in consequence a lack of knowledge and undue meekness, regarding them as little more than servants of their families and husbands. Such criticism is purely superficial and far from being accurate. Indeed, it is very inaccurate.</p>
+            <p>The position of a Japanese woman is a high one. She is addressed as <q><foreign>okusama</foreign></q>, the honorable lady of the house, and she is treated with the greatest consideration and respect by her husband and her family. Far from being a meek, slavish creature of the household, she is more of the mentor, the autocrat and idol of the home. In domestic affairs she has full control. Her duties are onerous, but never repugnant to her. They consist of managing the household, practicing economy, making her home pleasant both in appearance and by her cheerfulness of disposition, and the education and instruction of her children, for even after the children have entered school they are still under her tutelage.</p>
+            <p>As her home is therefore her world, it is only natural that it has become the inherent instinct of the Japanese women to lavish the greatest love and tenderness upon their homes and to expend much time and thought in endeavoring to make them as attractive and ns pleasant as possible.</p>
+            <p>Her house is the acme of purity. To a western eye the aspect of the interior of a Japanese house may at first seem bare and cheerless. In truth, the Japanese abhor decoration of any kind and consider it not only inartistic, but extremely vulgar. I was once shown a so called <q>Japanese room</q> in the house of a Chicago millionaire, and I am quite sure that the average Japanese housewife would have thought herself in the room of some insane person or else in some curiosity shop. Such a profusion of articles scattered broadcast about the room! Such a frightful display of mixed up ornaments hanging to the wall!</p>
+            <p>—Onoto Watanna in Home and Flowers.</p>
          </div>
       </body>
    </text>
