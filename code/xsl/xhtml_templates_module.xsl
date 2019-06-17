@@ -496,6 +496,15 @@
         </span>
     </xsl:template>
     
+    <xsl:template match="choice[abbr and expan]" mode="tei">
+        <span title="{normalize-space(string-join(expan,''))}">
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="classes">showTitle</xsl:with-param>
+            </xsl:call-template>
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
     <xsl:template match="choice/orig | choice/sic" mode="tei"/>
     
     <xsl:template match="choice/reg | choice/corr" mode="tei">
