@@ -1154,7 +1154,8 @@ div[data-el=body]>div[data-el=div]{
     /* Divs CANNOT get padding if they are
      * going to be targeted, since that
      * interferes with the offset for the sticky header. */
-    margin:.5em;
+    margin-left:0.5rem;
+    margin-right:0.5rem;
 }
 
 div[data-el="p"]{
