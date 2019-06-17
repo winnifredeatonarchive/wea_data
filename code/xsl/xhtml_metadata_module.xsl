@@ -563,19 +563,16 @@
     
     
     <xsl:template name="createToolbar">
-        <xsl:if test="wea:isObject(ancestor::TEI) and not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable'])">
+        <xsl:if test="not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable'])">
             <div id="tools_container">
                 <div id="tools">
                     <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
                         <div id="tools_toc" title="Table of Contents">
-                            
                             <a class="toolbar_item" href="#toc_content">
                                 <div class="mi">list</div>
                                 <div class="label">Contents</div>
                             </a>
                         </div>
-                        
-                        
                     </xsl:if>
                     <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
                         <div id="tools_facsimiles">

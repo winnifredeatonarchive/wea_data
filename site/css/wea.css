@@ -753,7 +753,7 @@ h2{
 
 h1{
    margin: 2rem 0 1rem 0;
-    text-align:center;
+  text-align:center;
 }
 
 
@@ -762,7 +762,7 @@ h1{
 }
 
 
-#mainBody[class*="docPrimarySource"]  #text{
+#mainBody:not(.docBornDigitalListing) #text{
     max-width: var(--max-text-width);
 
 
@@ -822,9 +822,14 @@ h1{
   padding-left: var(--main-padding-left);
   padding-top: 0;
   flex:1;
-  margin-top: var(--body-margin-top);
+  margin-top: calc(var(--body-margin-top) * 0.55);
   line-height:1.4;
-        position:relative;
+  position:relative;
+}
+
+#mainBody[class*='PrimarySource'],
+#mainBody[class*='Listing']{
+    margin-top: var(--body-margin-top);
 }
 
 #facsimile{
@@ -1121,16 +1126,26 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+h1{
+    font-size: 2.441rem;
+}
+
+h2{
+    font-size: 1.953rem;
+}
+
+h3{
+    font-size: 1.563rem;
+}
+
+h4, h5, h6{
+    font-size: 1.25rem;
+}
+
 h1, h2{
     font-weight:500;
 }
 
-
-
-h3{
-    margin:1.5rem 0;
-    font-size:175%;
-}
 
 
 
@@ -1139,13 +1154,13 @@ h3{
     margin-top:-.15rem;
 }
 
-div[data-el=body] > div[data-el=div] > h2{
+[class*=docPrimarySource] div[data-el='body'] > div[data-el='div'] > h2{
     text-align:center;
 }
 
 
 
-div[data-el='div'] + div[data-el='div']{
+[class*=docPrimarySource] div[data-el='div'] + div[data-el='div']{
     margin-top: 3rem;
 }
 

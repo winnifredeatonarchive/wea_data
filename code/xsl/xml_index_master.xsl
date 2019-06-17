@@ -27,7 +27,7 @@
            <xsl:with-param name="thisId" select="'index'"/>
            <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/index.xml')"/>
            <xsl:with-param name="title">Index</xsl:with-param>
-           <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
+           <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
            <xsl:with-param name="content">
                <body>
                    <head>Index</head>
