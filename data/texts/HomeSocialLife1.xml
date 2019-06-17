@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeSocialLife1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeSocialLife1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Home and Social Life of the Japanese</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,17 +28,66 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl53 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:KI1" when="2019-06-17" status="readyForProof">Reviewed file as per encoding standards</change>
+         <change who="pers:KI1" when="2019-06-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl53 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Home_Social_Life_of_Japanese">
+              <pb n="3"></pb>
       <body>
+         <head>HOME AND SOCIAL LIFE OF THE JAPANESE</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>In a poem entitled <q>To a Japanese Lady of High Rank</q>, by an American, she is described thus:</p>
+            <p><q>Fragile waxen type of woman,Mute, inscrutable, unhuman</q>.</p>
+            <p>A little deeper insight into the character, and a better knowledge of the life of the lady of rank in Japan, might have stayed the poet’s pen, for above all things she is human. Furthermore, she is essentially domestic, womanly and motherly. Obedient to the etiquette of her class, however, she is mindful of the strict convention which demands the repression of her emotions, and which regards any betrayal of her real feelings, particularly in public, as vulgar and unrefined. Hence, the Japanese lady wears a placid, even smiling, mask perhaps at a time when she is undergoing both mental and physical suffering. But she is not <q>unhuman</q>, nor is she any the worse for this repression, for together with it is cultivated self-abnegation, unselfishness, meekness and obedience; and at times these qualities have been put to a test that has provoked acts of positive heroism on the part of this <q>fragile waxen type of woman</q>.</p>
+            <p>Even the highest-class Japanese women have their household duties to perform, and no matter how rich the family, Japanese girls are brought up to be able to sew, cook and attend to their homes. With the usual perversity of things Japanese, the household is managed with a view to the comfort of the husband. The first thought of the wife, whether she be rich or poor, is ever to make the happiness of her husband.</p>
+            <p>Now, <q>duty</q> is a pretty hard word for some of us to spell, but to a Japanese it is almost an equivalent for pleasure; and so no duty or task in the home is performed but that it is done with a light and cheerful heart. The Japanese woman is altogether contented to look after domestic affairs, to love and encourage her husband in his daily avocation or interests. She spurs him on in his pursuits, soothes him in his troubles, laughs with him in his carefree moments, with scarce a thought of higher aspirations.</p>
+            <milestone unit="sectionBreak"/>
+            <p>For the woman of the higher class the day begins in the early morning with a stroll about the gardens before breakfast, during which she tends her plants, waters flowers, and perhaps here and there snips off a little branch from some petted tree, in the training of which her ancestors may have labored for years. This garden may be a space only ten feet square and still be a source of infinite gratification to a family of taste.</p>
+            <p>After the stroll in the garden comes the cheerful breakfast, at which all the members of the family are present. It consists chiefly of rice, cooked as only a Japanese can cook it, every kernel separate and entire. After the breakfast the master goes to his office, the children to school, and the mistress attends to her domestic duties. Veneration for age is a national trait, so the Japanese woman’s first pleasure (duty) is to see her own or her husband’s father and mother, who are usually domiciled in another wing of the home. She brings to them the cheer of her presence and lovingly attends to their wants. They are called the <q>Go-inkyo-sama</q> (Honorable Mr. and Mrs. Retired Persons).</p>
+            <p>Much loving care is then bestowed on the younger children by the mother, and although she seldom or never kisses them, she has thoughtful, quiet little caresses to lavish upon them.</p>
+            <p>In Japan the higher-class ladies never go to market; the market comes to them. That is, the dealers call and offer wares for sale at their customers’ doors. The fish- merchant brings his stock, and if any is sold prepares it for cooking. The green-grocer, the sake-dealer, and nowadays the meat-man, all go to their patrons’ houses.</p>
+            <p>In the morning the ladies are frequently engaged in the characteristic occupation of doing harimona; that is, in starching old clothes and spreading them on large boards to dry in the sunshine. This is the first step to making over old garments, and is done in the open air. Nearly all Japanese women make their own clothes; at all events, even the very richest embroider their garments themselves. They are very economical little dressmakers, and do much planning, cutting, basting and making over.</p>
+            <p>The midday meal is a bright one, despite the fact that the husband is generally absent. The richer Japanese, especially the merchant class, while having extensive businesses in the cities, generally live in the suburbs, and are unable to return to their homes for the noon meal. Nowadays it is the fashion for the sons of the nobility to be employed in some occupation, whether it be in politics, merchandising or some profession. Idleness is considered sinful.</p>
+            <p>After the noonday meal the ladies go out in beautiful jinrikishas of black lacquer, with the family crest in gold on the back. At about three in the afternoon all the litter of sewing or of the children’s playing is carefully put away, and the house and verandas are again swept and wiped with a damp cloth. When all the members of the family have returned home they take a hot bath, and, if it is summer, don fresh, starched clothes.</p>
+            <p>The evening meal is served at, or a little before, dusk the year round. A small table, about one foot square and eight inches high, is set before each person. On this is a lacquer tray, with space for four or five dishes, each four or five inches in diameter. There are definite places for each little bowl and dish. The rice-bowl is on the left, the soup-bowl in the middle. One’s appetite is measured according to the number of bowls of rice one eats. A maid is at hand with a large box of rice to replenish the bowls. If a few grains are left in the bottom of the bowl she is aware that those eating have had sufficient; but should one empty his bowl she will once more fill it.</p>
+            <p>Great nicety and artistic taste are used in the preparation of the dinner. Foods are served in the daintiest fashion, and if guests are present the meal develops into an affair of ceremony. The most exquisite designs are used by the cook; such, for instance, as serving an omelet in the shape of a chrysanthemum, fish shredded to look like snow, and chicken fashioned in all sorts of odd shapes.</p>
+            <milestone unit="sectionBreak"/>
+            <p>After dinner, when the weather permits, the family stroll out into the open air, the children playing in the meadows or gardens or else accompanying the older ones for little pleasure trips on the water. The Japanese are fair exemplars of the old proverb<q>. Early to bed and early to rise</q>, as they usually are up with the sun, and retire while the pink and yellow sunset as yet brightens the west. Of course, the older members of the family very often attend banquets and moonlight excursions, and these sometimes last late into the night.</p>
+            <p>The Japanese are a social people, and do much visiting among their friends and relatives. Social calls generally are made by the entire family at once; that is, the honorable grandfather and grandmother, husband, wife and the older children, and usually a number of aunts and cousins and nephews and nieces, make their round of visits together.</p>
+            <p>Another social custom that prevails among those who belong to the higher class is to start out in the early afternoon in jinrikishas and make a large number of calls on various friends. They do not alight from their vehicles at all, but have cards left at their friends’ doors, usually accompanied with some graceful words of salutation and good wishes. During the New-Year’s season particularly this custom is put into practice by nearly every one who can afford a jinrikisha.</p>
+            <pb n="4"></pb>
+            <p>The zashishi, or guest-room, of the rich and noble Japanese is furnished elegantly and with the most perfect taste. In one end ancestral relics are kept. At another end of the room is the family altar, usually with an image of Amida, the Buddhist Queen of Heaven, or Kwannon, the Goddess of Mercy. On this altar is written, or carved, in gold letters on a black-lacquered background, the names of the host’s grandfathers. Beneath the main altar is an image of Buddha on a lotus-flower, and beneath this image are the <q>bell and candle</q> used in daily worship. In a porcelain bowl of ashes stand glowing bundles of fragrant wood, irreverently called <q>joss-sticks</q> by the infidel; and from these are wafted little clouds of incense before great Buddha. In a cabinet are autograph-albums, with the handwriting of emperors and shoguns, the poetry of Japan, words of wisdom from the sages, swords of wonderful workmanship and design, perfumed boxes, girdles and writing-boxes presented by imperial hands; all these have a place in the cabinet, and are there to be seen by any one sufficiently interested to examine them.</p>
+            <milestone unit="sectionBreak"/>
+            <p>Little dinner-parties, family excursions and tea-house parties are very much favored. To these parties are invited all the relatives of the family, whether near or distantly connected, besides some very near and dear friends. Formal banquets and dinners are given in honor of acquaintances and friends; and quite often, especially among families in the diplomatic service, the particular guests are foreigners or entire strangers to the host, but who come to him highly recommended by some mutual friend. These banquets are the essence of formality, and are almost painfully conventional. Nowadays, however, the Japanese relax and are a little more familiar with the <q>foreigner</q>, giving him a better opportunity to observe them as they really are, for of course it is hardly possible to judge of the Japanese home-life from one of these dinners or banquets. Despite the constraint and formality of these dinners, however, a great many of them are not without their attraction. Very often a rich Japanese will give a banquet in some exquisite old tea-garden, say in honor of the<q>full moon</q>, and to be invited to this is a pleasure and a great honor.</p>
+            <p>At a house dinner-party quaint little cushions are placed along the sides of the room for each guest. Between each pair of guests a hibachi, or a tobacco-lighter, is deposited. The seat of honor is by the tokonona of the room. At feasts the order of things differs slightly from that of an ordinary meal. When the guests take their seats a square tray, usually of black ebony or lacquer, and of exquisite workmanship, with a tiny bowl of soup, and a still more tiny cup, is placed before them. The number of dishes increases, and as it comes to pass that there is not room for them all on the tray, a portion of them are set daintily on the mat in front of the guest.</p>
+            <p>The menu itself is usually varied to suit the occasion, and there are always numerous courses which include many fruits and flowers not recognized as food in the American dietary. For instance, sunflower-seeds are eaten raw with salt; chrysanthemum-blossoms are made into a salad, boiled and eaten with salt, and both burdock roots and leaves are considered a great delicacy.</p>
+            <milestone unit="sectionBreak"/>
+            <p>Women always serve at such feasts, and are usually dressed very gorgeously, to match the grandeur of the occasion. Before anything is touched a number of waitresses appear, each with a small porcelain bottle of warmed sake, a drink which looks very much like sherry and is brewed from rice. Every guest has his cup filled, and the first drink is taken in unison. The cups into which the sake is poured are very small and of the finest china. They have no handles, and the proper way to hold them is with the fingers around the bottom. Usually the Japanese appear very graceful while bearing a sake-cup to the lips, a certain bend of the arm and hand being hard to equal for natural grace. After this first cup of sake the dishes begin to arrive at intervals, but no dish not empty will be removed.</p>
+            <p>A guest may leave his seat to exchange cups with a friend. The host exchanges cups with every guest, but as this involves a great deal of drinking, a merciful provision is made for those who cannot endure it. Here and there are placed bowls of water in which one washes a cup before handing it to a friend, and those who cannot drink much are at liberty to pour off the sake into them. Of course, this <q>washing</q> consists merely in dipping the tiny cup into the water-bowl and rinsing it. When any guest calls for rice it is a signal that he is through drinking and wants to finish his fish. The host will make some such polite remark as, <q>Oh, it is indeed too honorably early for you to eat rice!</q> but is never insistent. If ladies are present they are usually ranged along one side of the room, which forms what is called poetically<q>the dream gallery</q>. They are never pressed to drink, and begin their rice very early. A lady—unless, of course, she be the hostess—never leaves her seat to go to a friend. It is always the gentlemen who go to her and ask if she will not give them a cup. After a guest has finished, the dishes which he has not touched will be placed in a lacquer box,and this he will find in his jinrikisha when he gets home.</p>
+            <p>At such a feast special entertainments are in order, of which dancing, legerdemain, little comedies or recitals and music are features. An accomplished geisha—sometimes a number of them—is usually hired for the evening to entertain the guests during and after the feast. Following the dinner the guests spread out their broad trousers, or hakamas, pull out their fans and ply them vigorously. Pipes are filled and refilled. A pretty little girl of about thirteen, dressed in a gay robe, with a crimson girdle around her waist, and her hair dressed upon a ring or pad of crinkled blue crepe, trips in with a gold- lacquered fire-box, and, kneeling, bows her head until it touches her hands laid palm downward upon the floor. Then she springs nimbly up, hurries from the room, and reappears a minute later with baby cups of tea, and a little stand containing candies laid on pure white paper.</p>
+            <milestone unit="sectionBreak"/>
+            <p>At the breaking up of such feasts the most strained politeness prevails, the guests and host each striving to outdo the other in their extremes of suavity and compliment. It is related that on one occasion a conversation somewhat as follows ensued between guest and host:</p>
+            <p>THE GUEST. I can, of course, never repay you for the extreme pleasure I have had in visiting your honorable excellency.</p>
+            <p>THE HOST. It is impossible to lose sight of the honor you have bestowed on my unworthy house by coming.</p>
+            <p>THE GUEST. I can only pray that your excellency will deign to visit at my augustly insignificant house.</p>
+            <p>THE HOST. It is the desire of my heart to see much of your highness, and for that reason I trust you will very often accept my meager hospitality.</p>
+            <p>THE GUEST. I beseech your honor to visit at a speedy date, and deign to accept what little entertainment my house can afford.</p>
+            <p>THE HOST. On all occasions my house is yours.</p>
+            <p>THE GUEST. And mine yours.</p>
+            <p>THE HOST. Consider my house as your own.</p>
+            <p>THE GUEST. And mine yours.</p>
+            <p>After this a number of profound prostrations followed, in which each managed to touch the ground with his head, and the guest took his departure.</p>
          </div>
       </body>
    </text>
