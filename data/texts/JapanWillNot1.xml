@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapanWillNot1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapanWillNot1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Japan Will Not Go To War</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,17 +28,31 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl60 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:KI1" when="2019-06-17" status="readyForProof">Reviewed encoding. Minor issue with q element in opener byline</change>
+         <change who="pers:KI1" when="2019-06-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl60 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Japan_Will_Not_Go_to_War">
+      <pb n="14"></pb>
       <body>
+         <head>BY <name ref="pers:WE1">ONOTO WATANNA</name></head>
+            <opener>
+               <byline>Japanese-American Author of “A Japanese Nightingale”, Etc.</byline>
+            </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>Japan will not go to war unless well prepared. Her past history proves that the alien land law should be repealed because it is unjust and affronts a friendly and proud nation.</p>
+            <p>Onoto Watanna.</p>
+            <p>New York, Jan. 29</p>
+    
+      
+    
          </div>
       </body>
    </text>
