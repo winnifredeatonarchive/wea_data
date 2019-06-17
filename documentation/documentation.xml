@@ -682,6 +682,19 @@
                   <p>Note that you must supply <emph>both</emph> 
                      <ref target="#TEI.sic"><gi>sic</gi></ref> and <ref target="#TEI.corr"><gi>corr</gi></ref> in that order; usually these emendations will be supplied by the Project Director.</p>
                </div>
+               <div xml:id="encoding_abbrevations">
+                  <head>Abbreviations and Expansions</head>
+                  <p>To aid reading, we expand common abbreviations using the <ref target="#TEI.choice"><gi>choice</gi></ref> element in combination with <ref target="#TEI.abbr"><gi>abbr</gi></ref> and <ref target="#TEI.expan"><gi>expan</gi></ref>. Use the <ref target="#TEI.abbr"><gi>abbr</gi></ref> element to tag the abbreviation, and the <ref target="#TEI.expan"><gi>expan</gi></ref> element for the expansion: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>[. . .] I was a smart set, however, for my father was a <choice>
+                              <abbr>Q. C.</abbr>
+                              <expan>Queens Councel</expan>
+                           </choice> and <choice>
+                              <abbr>M. P.</abbr>
+                              <expan>Member of Parliament</expan>
+                           </choice>
+                        </p>
+                     </egXML> Note that we <emph>do not</emph> tag expansions that could be abbreviated; only tag instances in the primary source where an abbreviation could be helpful expanded into a full sequence of words.</p>
+               </div>
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
                   <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <ref target="#TEI.q"><gi>q</gi></ref> element: <list>
@@ -1289,7 +1302,8 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -1297,6 +1311,7 @@
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -1418,6 +1433,306 @@
                            <code>
 &lt;content&gt;
  &lt;macroRef key="macro.paraContent"/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.abbr">
+                  <head>&lt;abbr&gt;</head>
+                  <p>
+                     <label>&lt;abbr&gt; </label>(abbreviation) contains an abbreviation of any sort. [<ref xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAB">3.5.5. Abbreviations and Their Expansions</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>core — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
+                              <row>
+                                 <cell>type</cell>
+                                 <cell>allows the encoder to classify the abbreviation according to some convenient typology.<table>
+                                       <row>
+                                          <cell>
+                                             <label>Derived from</label>
+                                          </cell>
+                                          <cell>
+                                             <ref target="#TEI.att.typed">att.typed</ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Datatype</label> 
+                                          </cell>
+                                          <cell>
+                                             <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Sample values include:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>suspension</label>
+                                                <item>the abbreviation provides the first letter(s) of the word or phrase, omitting the remainder.</item>
+                                                <label>contraction</label>
+                                                <item>the abbreviation omits some letter(s) in the middle.</item>
+                                                <label>brevigraph</label>
+                                                <item>the abbreviation comprises a special symbol or mark.</item>
+                                                <label>superscription</label>
+                                                <item>the abbreviation includes writing above the line.</item>
+                                                <label>acronym</label>
+                                                <item>the abbreviation comprises the initial letters of the words of a phrase.</item>
+                                                <label>title</label>
+                                                <item>the abbreviation is for a title of address (Dr, Ms, Mr, …)</item>
+                                                <label>organization</label>
+                                                <item>the abbreviation is for the name of an organization.</item>
+                                                <label>geographic</label>
+                                                <item>the abbreviation is for a geographic name.</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Note</label>
+                                          </cell>
+                                          <cell><!-- -->
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The <att>type</att> attribute is provided for the sake of those who wish to classify abbreviations at their point of occurrence; this may be useful in some circumstances, though usually the same abbreviation will have the same type in all occurrences. As the sample values make clear, abbreviations may be classified by the method used to construct them, the method of writing them, or the referent of the term abbreviated; the typology used is up to the encoder and should be carefully planned to meet the needs of the expected use. For a typology of Middle English abbreviations, see <ref target="#PETTY">#PETTY</ref>
+                                             </p>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>analysis: <ref target="#TEI.pc">pc</ref>
+                                    </item>
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
+                                       <ref target="#TEI.author">author</ref> 
+                                       <ref target="#TEI.bibl">bibl</ref> 
+                                       <ref target="#TEI.biblScope">biblScope</ref> 
+                                       <ref target="#TEI.choice">choice</ref> 
+                                       <ref target="#TEI.corr">corr</ref> 
+                                       <ref target="#TEI.date">date</ref> 
+                                       <ref target="#TEI.desc">desc</ref> 
+                                       <ref target="#TEI.editor">editor</ref> 
+                                       <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
+                                       <ref target="#TEI.foreign">foreign</ref> 
+                                       <ref target="#TEI.head">head</ref> 
+                                       <ref target="#TEI.hi">hi</ref> 
+                                       <ref target="#TEI.item">item</ref> 
+                                       <ref target="#TEI.l">l</ref> 
+                                       <ref target="#TEI.label">label</ref> 
+                                       <ref target="#TEI.name">name</ref> 
+                                       <ref target="#TEI.note">note</ref> 
+                                       <ref target="#TEI.num">num</ref> 
+                                       <ref target="#TEI.p">p</ref> 
+                                       <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                       <ref target="#TEI.publisher">publisher</ref> 
+                                       <ref target="#TEI.q">q</ref> 
+                                       <ref target="#TEI.quote">quote</ref> 
+                                       <ref target="#TEI.ref">ref</ref> 
+                                       <ref target="#TEI.reg">reg</ref> 
+                                       <ref target="#TEI.resp">resp</ref> 
+                                       <ref target="#TEI.rs">rs</ref> 
+                                       <ref target="#TEI.sic">sic</ref> 
+                                       <ref target="#TEI.term">term</ref> 
+                                       <ref target="#TEI.title">title</ref> 
+                                       <ref target="#TEI.unclear">unclear</ref>
+                                    </item>
+                                    <item>figures: <ref target="#TEI.cell">cell</ref> 
+                                       <ref target="#TEI.figDesc">figDesc</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.authority">authority</ref> 
+                                       <ref target="#TEI.catDesc">catDesc</ref> 
+                                       <ref target="#TEI.change">change</ref> 
+                                       <ref target="#TEI.creation">creation</ref> 
+                                       <ref target="#TEI.distributor">distributor</ref> 
+                                       <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
+                                       <ref target="#TEI.language">language</ref> 
+                                       <ref target="#TEI.licence">licence</ref> 
+                                       <ref target="#TEI.rendition">rendition</ref>
+                                    </item>
+                                    <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.seg">seg</ref>
+                                    </item>
+                                    <item>namesdates: <ref target="#TEI.birth">birth</ref> 
+                                       <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.forename">forename</ref> 
+                                       <ref target="#TEI.nationality">nationality</ref> 
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.placeName">placeName</ref> 
+                                       <ref target="#TEI.surname">surname</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.byline">byline</ref> 
+                                       <ref target="#TEI.closer">closer</ref> 
+                                       <ref target="#TEI.dateline">dateline</ref> 
+                                       <ref target="#TEI.docAuthor">docAuthor</ref> 
+                                       <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.opener">opener</ref> 
+                                       <ref target="#TEI.salute">salute</ref> 
+                                       <ref target="#TEI.signed">signed</ref> 
+                                       <ref target="#TEI.titlePart">titlePart</ref> 
+                                       <ref target="#TEI.trailer">trailer</ref>
+                                    </item>
+                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>analysis: <ref target="#TEI.pc">pc</ref>
+                              </item>
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
+                                 <ref target="#TEI.choice">choice</ref> 
+                                 <ref target="#TEI.cit">cit</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.date">date</ref> 
+                                 <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
+                                 <ref target="#TEI.foreign">foreign</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
+                                 <ref target="#TEI.graphic">graphic</ref> 
+                                 <ref target="#TEI.hi">hi</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.num">num</ref> 
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.q">q</ref> 
+                                 <ref target="#TEI.quote">quote</ref> 
+                                 <ref target="#TEI.ref">ref</ref> 
+                                 <ref target="#TEI.reg">reg</ref> 
+                                 <ref target="#TEI.rs">rs</ref> 
+                                 <ref target="#TEI.sic">sic</ref> 
+                                 <ref target="#TEI.term">term</ref> 
+                                 <ref target="#TEI.title">title</ref> 
+                                 <ref target="#TEI.unclear">unclear</ref>
+                              </item>
+                              <item>figures: <ref target="#TEI.figure">figure</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.seg">seg</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>tagdocs: <ref target="#TEI.att">att</ref> 
+                                 <ref target="#TEI.code">code</ref> 
+                                 <ref target="#TEI.gi">gi</ref> 
+                                 <ref target="#TEI.ident">ident</ref> 
+                                 <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              </item>
+                              <item>character data</item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">If abbreviations are expanded silently, this practice should be documented in the <ref target="#TEI.editorialDecl"><gi>editorialDecl</gi></ref>, either with a <ref target="#TEI.normalization"><gi>normalization</gi></ref> element or a <ref target="#TEI.p"><gi>p</gi></ref>.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="mul"
+                                  source="#NONE">
+                              <choice>
+                                 <expan>North Atlantic Treaty Organization</expan>
+                                 <abbr cert="low">NorATO</abbr>
+                                 <abbr cert="high">NATO</abbr>
+                                 <abbr cert="high" xml:lang="fr">OTAN</abbr>
+                              </choice>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="la"
+                                  source="#NONE">
+                              <choice>
+                                 <abbr>SPQR</abbr>
+                                 <expan>senatus populusque romanorum</expan>
+                              </choice>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;macroRef key="macro.phraseSeq"/&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -1578,12 +1893,14 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -1725,7 +2042,8 @@
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -1734,6 +2052,7 @@
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -1974,7 +2293,8 @@
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -1984,6 +2304,7 @@
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -2186,7 +2507,8 @@
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.corr">corr</ref> 
@@ -2194,6 +2516,7 @@
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -2403,12 +2726,14 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -2552,10 +2877,12 @@
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
@@ -3087,7 +3414,8 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.author">author</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.biblScope">biblScope</ref> 
@@ -3096,6 +3424,7 @@
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.editor">editor</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
@@ -3536,12 +3865,14 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -3729,12 +4060,14 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -4087,11 +4420,13 @@
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -4260,10 +4595,12 @@ Of Clare-Hall in Cambridge.</byline>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
                                  <ref target="#TEI.name">name</ref> 
@@ -4758,7 +5095,8 @@ Of Clare-Hall in Cambridge.</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -4766,6 +5104,7 @@ Of Clare-Hall in Cambridge.</byline>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -4923,7 +5262,8 @@ Of Clare-Hall in Cambridge.</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -4931,6 +5271,7 @@ Of Clare-Hall in Cambridge.</byline>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -5106,7 +5447,8 @@ supplied to printer.</change>
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -5115,6 +5457,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -5188,7 +5531,9 @@ supplied to printer.</change>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.corr">corr</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.sic">sic</ref>
                               </item>
                            </list>
@@ -5233,10 +5578,16 @@ supplied to printer.</change>
                         <cell>
                            <code>
 &lt;content&gt;
- &lt;sequence minOccurs="1" maxOccurs="1"&gt;
-  &lt;elementRef key="sic"/&gt;
-  &lt;elementRef key="corr"/&gt;
- &lt;/sequence&gt;
+ &lt;alternate minOccurs="1" maxOccurs="1"&gt;
+  &lt;sequence minOccurs="1" maxOccurs="1"&gt;
+   &lt;elementRef key="sic"/&gt;
+   &lt;elementRef key="corr"/&gt;
+  &lt;/sequence&gt;
+  &lt;sequence minOccurs="1" maxOccurs="1"&gt;
+   &lt;elementRef key="abbr"/&gt;
+   &lt;elementRef key="expan"/&gt;
+  &lt;/sequence&gt;
+ &lt;/alternate&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -5281,7 +5632,8 @@ supplied to printer.</change>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.cit">cit</ref> 
@@ -5289,6 +5641,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -5599,11 +5952,13 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -5771,7 +6126,8 @@ supplied to printer.</change>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -5780,6 +6136,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -5995,7 +6352,8 @@ supplied to printer.</change>
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -6004,6 +6362,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -6072,7 +6431,8 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -6080,6 +6440,7 @@ supplied to printer.</change>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -6384,10 +6745,12 @@ supplied to printer.</change>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
                                  <ref target="#TEI.name">name</ref> 
@@ -6519,7 +6882,8 @@ supplied to printer.</change>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -6528,6 +6892,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -6604,11 +6969,13 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -6769,11 +7136,13 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -6989,12 +7358,14 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -7230,13 +7601,15 @@ supplied to printer.</change>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
                                  <ref target="#TEI.label">label</ref> 
@@ -7385,12 +7758,14 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -7920,12 +8295,14 @@ supplied to printer.</change>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -8108,12 +8485,14 @@ and then a Captain of several Ships</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -8352,12 +8731,14 @@ and then a Captain of several Ships</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -8488,12 +8869,14 @@ and then a Captain of several Ships</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -8892,7 +9275,8 @@ and then a Captain of several Ships</byline>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -8901,6 +9285,7 @@ and then a Captain of several Ships</byline>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -8976,7 +9361,8 @@ and then a Captain of several Ships</byline>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -8984,6 +9370,7 @@ and then a Captain of several Ships</byline>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -9454,6 +9841,247 @@ formatting or layout information preserved.</p>
                      </row>
                   </table>
                </div>
+               <div type="refdoc" xml:id="TEI.expan">
+                  <head>&lt;expan&gt;</head>
+                  <p>
+                     <label>&lt;expan&gt; </label>(expansion) contains the expansion of an abbreviation. [<ref xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONAAB">3.5.5. Abbreviations and Their Expansions</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>core — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>analysis: <ref target="#TEI.pc">pc</ref>
+                                    </item>
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
+                                       <ref target="#TEI.author">author</ref> 
+                                       <ref target="#TEI.bibl">bibl</ref> 
+                                       <ref target="#TEI.biblScope">biblScope</ref> 
+                                       <ref target="#TEI.choice">choice</ref> 
+                                       <ref target="#TEI.corr">corr</ref> 
+                                       <ref target="#TEI.date">date</ref> 
+                                       <ref target="#TEI.desc">desc</ref> 
+                                       <ref target="#TEI.editor">editor</ref> 
+                                       <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
+                                       <ref target="#TEI.foreign">foreign</ref> 
+                                       <ref target="#TEI.head">head</ref> 
+                                       <ref target="#TEI.hi">hi</ref> 
+                                       <ref target="#TEI.item">item</ref> 
+                                       <ref target="#TEI.l">l</ref> 
+                                       <ref target="#TEI.label">label</ref> 
+                                       <ref target="#TEI.name">name</ref> 
+                                       <ref target="#TEI.note">note</ref> 
+                                       <ref target="#TEI.num">num</ref> 
+                                       <ref target="#TEI.p">p</ref> 
+                                       <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                       <ref target="#TEI.publisher">publisher</ref> 
+                                       <ref target="#TEI.q">q</ref> 
+                                       <ref target="#TEI.quote">quote</ref> 
+                                       <ref target="#TEI.ref">ref</ref> 
+                                       <ref target="#TEI.reg">reg</ref> 
+                                       <ref target="#TEI.resp">resp</ref> 
+                                       <ref target="#TEI.rs">rs</ref> 
+                                       <ref target="#TEI.sic">sic</ref> 
+                                       <ref target="#TEI.term">term</ref> 
+                                       <ref target="#TEI.title">title</ref> 
+                                       <ref target="#TEI.unclear">unclear</ref>
+                                    </item>
+                                    <item>figures: <ref target="#TEI.cell">cell</ref> 
+                                       <ref target="#TEI.figDesc">figDesc</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.authority">authority</ref> 
+                                       <ref target="#TEI.catDesc">catDesc</ref> 
+                                       <ref target="#TEI.change">change</ref> 
+                                       <ref target="#TEI.creation">creation</ref> 
+                                       <ref target="#TEI.distributor">distributor</ref> 
+                                       <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
+                                       <ref target="#TEI.language">language</ref> 
+                                       <ref target="#TEI.licence">licence</ref> 
+                                       <ref target="#TEI.rendition">rendition</ref>
+                                    </item>
+                                    <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.seg">seg</ref>
+                                    </item>
+                                    <item>namesdates: <ref target="#TEI.birth">birth</ref> 
+                                       <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.forename">forename</ref> 
+                                       <ref target="#TEI.nationality">nationality</ref> 
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.placeName">placeName</ref> 
+                                       <ref target="#TEI.surname">surname</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.byline">byline</ref> 
+                                       <ref target="#TEI.closer">closer</ref> 
+                                       <ref target="#TEI.dateline">dateline</ref> 
+                                       <ref target="#TEI.docAuthor">docAuthor</ref> 
+                                       <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.opener">opener</ref> 
+                                       <ref target="#TEI.salute">salute</ref> 
+                                       <ref target="#TEI.signed">signed</ref> 
+                                       <ref target="#TEI.titlePart">titlePart</ref> 
+                                       <ref target="#TEI.trailer">trailer</ref>
+                                    </item>
+                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>analysis: <ref target="#TEI.pc">pc</ref>
+                              </item>
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
+                                 <ref target="#TEI.choice">choice</ref> 
+                                 <ref target="#TEI.cit">cit</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.date">date</ref> 
+                                 <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
+                                 <ref target="#TEI.foreign">foreign</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
+                                 <ref target="#TEI.graphic">graphic</ref> 
+                                 <ref target="#TEI.hi">hi</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.num">num</ref> 
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.q">q</ref> 
+                                 <ref target="#TEI.quote">quote</ref> 
+                                 <ref target="#TEI.ref">ref</ref> 
+                                 <ref target="#TEI.reg">reg</ref> 
+                                 <ref target="#TEI.rs">rs</ref> 
+                                 <ref target="#TEI.sic">sic</ref> 
+                                 <ref target="#TEI.term">term</ref> 
+                                 <ref target="#TEI.title">title</ref> 
+                                 <ref target="#TEI.unclear">unclear</ref>
+                              </item>
+                              <item>figures: <ref target="#TEI.figure">figure</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.seg">seg</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>tagdocs: <ref target="#TEI.att">att</ref> 
+                                 <ref target="#TEI.code">code</ref> 
+                                 <ref target="#TEI.gi">gi</ref> 
+                                 <ref target="#TEI.ident">ident</ref> 
+                                 <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              </item>
+                              <item>character data</item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">The content of this element should be the expanded abbreviation, usually (but not always) a complete word or phrase. The <gi>ex</gi> element provided by the <ident type="module">transcr</ident> module may be used to mark up sequences of letters supplied within such an expansion.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:teix="http://www.tei-c.org/ns/Examples">If abbreviations are expanded silently, this practice should be documented in the <ref target="#TEI.editorialDecl"><gi>editorialDecl</gi></ref>, either with a <ref target="#TEI.normalization"><gi>normalization</gi></ref> element or a <ref target="#TEI.p"><gi>p</gi></ref>.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">The address is Southmoor 
+        <choice>
+                                 <expan>Road</expan>
+                                 <abbr>Rd</abbr>
+                              </choice>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="la">
+                              <choice xml:lang="la">
+                                 <abbr>Imp</abbr>
+                                 <expan>Imp<ex>erator</ex>
+                                 </expan>
+                              </choice>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;macroRef key="macro.phraseSeq"/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
                <div type="refdoc" xml:id="TEI.extent">
                   <head>&lt;extent&gt;</head>
                   <p>
@@ -9511,12 +10139,14 @@ formatting or layout information preserved.</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -9662,13 +10292,15 @@ material</measure>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
                                  <ref target="#TEI.label">label</ref> 
@@ -9822,7 +10454,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -9832,6 +10465,7 @@ material</measure>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -10147,7 +10781,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.cit">cit</ref> 
@@ -10155,6 +10790,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -10346,7 +10982,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -10355,6 +10992,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -10430,12 +11068,14 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -10573,7 +11213,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -10583,6 +11224,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -10660,12 +11302,14 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -11091,7 +11735,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -11101,6 +11746,7 @@ material</measure>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -11347,7 +11993,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.corr">corr</ref> 
@@ -11355,6 +12002,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -11492,13 +12140,15 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.corr">corr</ref> 
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -11723,7 +12373,8 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -11731,6 +12382,7 @@ material</measure>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -11921,7 +12573,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -11930,6 +12583,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -12005,7 +12659,8 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -12013,6 +12668,7 @@ material</measure>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -12263,7 +12919,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -12272,6 +12929,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -12473,7 +13131,8 @@ material</measure>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -12483,6 +13142,7 @@ material</measure>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -12819,7 +13479,8 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -12827,6 +13488,7 @@ material</measure>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -13021,7 +13683,8 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -13029,6 +13692,7 @@ material</measure>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -13225,12 +13889,14 @@ material</measure>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -13559,10 +14225,12 @@ entre les Romains.</label>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
@@ -13897,7 +14565,8 @@ entre les Romains.</label>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -13905,6 +14574,7 @@ entre les Romains.</label>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -15724,7 +16394,8 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -15734,6 +16405,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -15942,7 +16614,8 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -15952,6 +16625,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -16284,7 +16958,8 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -16294,6 +16969,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -16372,12 +17048,14 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -16559,12 +17237,14 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -16929,7 +17609,8 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -16939,6 +17620,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -17029,7 +17711,8 @@ raiders and saved the town from capture.</desc>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -17037,6 +17720,7 @@ raiders and saved the town from capture.</desc>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -17517,7 +18201,8 @@ psychological significance.
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -17526,6 +18211,7 @@ psychological significance.
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -17602,12 +18288,14 @@ psychological significance.
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -17830,7 +18518,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -17838,6 +18527,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -18001,11 +18691,13 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -18330,7 +19022,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -18340,6 +19033,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -18416,12 +19110,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -18583,7 +19279,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -18591,6 +19288,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -18776,7 +19474,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -18786,6 +19485,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -19079,7 +19779,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -19087,6 +19788,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -19153,8 +19855,10 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.choice">choice</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.reg">reg</ref> 
                                  <ref target="#TEI.sic">sic</ref> 
                                  <ref target="#TEI.unclear">unclear</ref>
@@ -19258,7 +19962,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -19268,6 +19973,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -19851,7 +20557,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -19861,6 +20568,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -19941,12 +20649,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -20423,12 +21133,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -20901,12 +21613,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -21264,7 +21978,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.cit">cit</ref> 
@@ -21272,6 +21987,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -21341,7 +22057,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -21349,6 +22066,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -21661,7 +22379,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.cit">cit</ref> 
@@ -21669,6 +22388,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -21738,7 +22458,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -21746,6 +22467,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -21883,7 +22605,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -21893,6 +22616,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -21970,7 +22694,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -21978,6 +22703,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -22133,7 +22859,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -22141,6 +22868,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -22210,7 +22938,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -22218,6 +22947,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -22623,13 +23353,15 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
                                  <ref target="#TEI.label">label</ref> 
@@ -22818,10 +23550,12 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.hi">hi</ref> 
@@ -23315,7 +24049,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -23325,6 +24060,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -23401,12 +24137,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -23542,7 +24280,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -23550,6 +24289,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -23675,7 +24415,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -23683,6 +24424,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -23751,7 +24493,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -23759,6 +24502,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -24027,7 +24771,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -24036,6 +24781,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -24104,7 +24850,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -24112,6 +24859,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -24300,7 +25048,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -24308,6 +25057,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -24592,7 +25342,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -24600,6 +25351,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -24668,7 +25420,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -24676,6 +25429,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -24818,7 +25572,8 @@ Sydney Smith</egXML>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.address">address</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
@@ -24828,6 +25583,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -24905,12 +25661,14 @@ Sydney Smith</egXML>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -25653,7 +26411,8 @@ Sydney Smith</egXML>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -25662,6 +26421,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -25737,12 +26497,14 @@ Sydney Smith</egXML>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
                                  <ref target="#TEI.corr">corr</ref> 
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -26264,7 +27026,8 @@ Sydney Smith</egXML>
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -26273,6 +27036,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -26350,7 +27114,8 @@ Sydney Smith</egXML>
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -26358,6 +27123,7 @@ Sydney Smith</egXML>
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -26744,7 +27510,8 @@ epistemology, methodology and history of
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -26752,6 +27519,7 @@ epistemology, methodology and history of
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -26999,7 +27767,8 @@ epistemology, methodology and history of
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -27007,6 +27776,7 @@ epistemology, methodology and history of
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -27251,7 +28021,8 @@ epistemology, methodology and history of
                                  <list>
                                     <item>analysis: <ref target="#TEI.pc">pc</ref>
                                     </item>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.bibl">bibl</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
@@ -27259,6 +28030,7 @@ epistemology, methodology and history of
                                        <ref target="#TEI.date">date</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -27327,7 +28099,8 @@ epistemology, methodology and history of
                            <list>
                               <item>analysis: <ref target="#TEI.pc">pc</ref>
                               </item>
-                              <item>core: <ref target="#TEI.address">address</ref> 
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
                                  <ref target="#TEI.bibl">bibl</ref> 
                                  <ref target="#TEI.choice">choice</ref> 
                                  <ref target="#TEI.cit">cit</ref> 
@@ -27335,6 +28108,7 @@ epistemology, methodology and history of
                                  <ref target="#TEI.date">date</ref> 
                                  <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
                                  <ref target="#TEI.foreign">foreign</ref> 
                                  <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.graphic">graphic</ref> 
@@ -27468,7 +28242,8 @@ epistemology, methodology and history of
                            <list>
                               <item>
                                  <list>
-                                    <item>core: <ref target="#TEI.addrLine">addrLine</ref> 
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
                                        <ref target="#TEI.author">author</ref> 
                                        <ref target="#TEI.biblScope">biblScope</ref> 
                                        <ref target="#TEI.corr">corr</ref> 
@@ -27476,6 +28251,7 @@ epistemology, methodology and history of
                                        <ref target="#TEI.desc">desc</ref> 
                                        <ref target="#TEI.editor">editor</ref> 
                                        <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
                                        <ref target="#TEI.foreign">foreign</ref> 
                                        <ref target="#TEI.head">head</ref> 
                                        <ref target="#TEI.hi">hi</ref> 
@@ -28841,7 +29617,9 @@ epistemology, methodology and history of
                            <ref target="#TEI.persName">persName</ref>]  <ref target="#TEI.model.offsetLike">model.offsetLike</ref> 
                            <ref target="#TEI.model.persNamePart">model.persNamePart</ref> [<ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.surname">surname</ref>]  <ref target="#TEI.model.placeStateLike">model.placeStateLike</ref> [<ref target="#TEI.model.placeNamePart">model.placeNamePart</ref> [<ref target="#TEI.placeName">placeName</ref>]  <ref target="#TEI.location">location</ref>]  <ref target="#TEI.idno">idno</ref> 
-                           <ref target="#TEI.rs">rs</ref>] ]  <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.choice">choice</ref>]  <ref target="#TEI.model.pPart.msdesc">model.pPart.msdesc</ref> 
+                           <ref target="#TEI.rs">rs</ref>] ]  <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.abbr">abbr</ref> 
+                           <ref target="#TEI.choice">choice</ref> 
+                           <ref target="#TEI.expan">expan</ref>]  <ref target="#TEI.model.pPart.msdesc">model.pPart.msdesc</ref> 
                            <ref target="#TEI.model.phrase.xml">model.phrase.xml</ref> [<ref target="#TEI.att">att</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.val">val</ref>]  <ref target="#TEI.model.ptrLike">model.ptrLike</ref> [<ref target="#TEI.ref">ref</ref>] </cell>
@@ -29280,7 +30058,9 @@ epistemology, methodology and history of
                            <label>Members</label>
                         </cell>
                         <cell>
-                           <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.choice">choice</ref>]  <ref target="#TEI.model.pPart.transcriptional">model.pPart.transcriptional</ref> [<ref target="#TEI.corr">corr</ref> 
+                           <ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.abbr">abbr</ref> 
+                           <ref target="#TEI.choice">choice</ref> 
+                           <ref target="#TEI.expan">expan</ref>]  <ref target="#TEI.model.pPart.transcriptional">model.pPart.transcriptional</ref> [<ref target="#TEI.corr">corr</ref> 
                            <ref target="#TEI.reg">reg</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.supplied">supplied</ref> 
@@ -29316,7 +30096,9 @@ epistemology, methodology and history of
                            <label>Members</label>
                         </cell>
                         <cell>
-                           <ref target="#TEI.choice">choice</ref>
+                           <ref target="#TEI.abbr">abbr</ref> 
+                           <ref target="#TEI.choice">choice</ref> 
+                           <ref target="#TEI.expan">expan</ref>
                         </cell>
                      </row>
                   </table>
@@ -29554,7 +30336,9 @@ epistemology, methodology and history of
                            <ref target="#TEI.persName">persName</ref>]  <ref target="#TEI.model.offsetLike">model.offsetLike</ref> 
                            <ref target="#TEI.model.persNamePart">model.persNamePart</ref> [<ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.surname">surname</ref>]  <ref target="#TEI.model.placeStateLike">model.placeStateLike</ref> [<ref target="#TEI.model.placeNamePart">model.placeNamePart</ref> [<ref target="#TEI.placeName">placeName</ref>]  <ref target="#TEI.location">location</ref>]  <ref target="#TEI.idno">idno</ref> 
-                           <ref target="#TEI.rs">rs</ref>] ]  <ref target="#TEI.model.pPart.edit">model.pPart.edit</ref> [<ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.choice">choice</ref>]  <ref target="#TEI.model.pPart.transcriptional">model.pPart.transcriptional</ref> [<ref target="#TEI.corr">corr</ref> 
+                           <ref target="#TEI.rs">rs</ref>] ]  <ref target="#TEI.model.pPart.edit">model.pPart.edit</ref> [<ref target="#TEI.model.pPart.editorial">model.pPart.editorial</ref> [<ref target="#TEI.abbr">abbr</ref> 
+                           <ref target="#TEI.choice">choice</ref> 
+                           <ref target="#TEI.expan">expan</ref>]  <ref target="#TEI.model.pPart.transcriptional">model.pPart.transcriptional</ref> [<ref target="#TEI.corr">corr</ref> 
                            <ref target="#TEI.reg">reg</ref> 
                            <ref target="#TEI.sic">sic</ref> 
                            <ref target="#TEI.supplied">supplied</ref> 
@@ -31541,6 +32325,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -31587,6 +32372,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -31811,6 +32597,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -31857,6 +32644,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -31999,6 +32787,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -32045,6 +32834,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -32202,6 +32992,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -32248,6 +33039,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -32525,6 +33317,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -32571,6 +33364,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -32785,6 +33579,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -32831,6 +33626,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -33084,6 +33880,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.att.global">att.global</ref> [<ref target="#TEI.TEI">TEI</ref> 
                            <ref target="#TEI.ab">ab</ref> 
+                           <ref target="#TEI.abbr">abbr</ref> 
                            <ref target="#TEI.abstract">abstract</ref> 
                            <ref target="#TEI.addrLine">addrLine</ref> 
                            <ref target="#TEI.address">address</ref> 
@@ -33130,6 +33927,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.encodingDesc">encodingDesc</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.event">event</ref> 
+                           <ref target="#TEI.expan">expan</ref> 
                            <ref target="#TEI.extent">extent</ref> 
                            <ref target="#TEI.figDesc">figDesc</ref> 
                            <ref target="#TEI.figure">figure</ref> 
@@ -34904,6 +35702,7 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ab>
+                              <ref target="#TEI.abbr">abbr</ref> 
                               <ref target="#TEI.addrLine">addrLine</ref> 
                               <ref target="#TEI.author">author</ref> 
                               <ref target="#TEI.biblScope">biblScope</ref> 
@@ -34914,6 +35713,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.docDate">docDate</ref> 
                               <ref target="#TEI.edition">edition</ref> 
                               <ref target="#TEI.editor">editor</ref> 
+                              <ref target="#TEI.expan">expan</ref> 
                               <ref target="#TEI.extent">extent</ref> 
                               <ref target="#TEI.foreign">foreign</ref> 
                               <ref target="#TEI.forename">forename</ref> 
@@ -35228,6 +36028,8 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ab>Element: <list>
+                                 <item>
+                                    <ref target="#TEI.abbr">abbr</ref>/@type</item>
                                  <item>
                                     <ref target="#TEI.att">att</ref>/@scheme</item>
                                  <item>
