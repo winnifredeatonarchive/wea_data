@@ -505,9 +505,11 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="choice/orig | choice/sic" mode="tei"/>
     
-    <xsl:template match="choice/reg | choice/corr" mode="tei">
+    
+    <xsl:template match="choice/orig | choice/sic | choice/expan" mode="tei"/>
+    
+    <xsl:template match="choice/reg | choice/corr | choice/abbr" mode="tei">
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
