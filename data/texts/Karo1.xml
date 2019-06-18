@@ -15,10 +15,6 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable version</resp>
                <name>Jean Lee Cole, Loyola College</name>
@@ -30,6 +26,14 @@
             <respStmt>
                <resp>Conversion to P5 conformant markup:</resp>
                <name>Joey Takeda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
 
@@ -47,7 +51,9 @@ Publicly accessible
  uva-lib:475924 
 -->
          </publicationStmt>
-
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress.</note>
+         </notesStmt>
 
          <sourceDesc>
             <bibl copyOf="bibl:67"/>
@@ -56,11 +62,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-18" status="readyForProof">Added milestones, subheadings, and illustrator info; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl67 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatKaro. Old filename: Karo.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -74,12 +82,12 @@ Publicly accessible
    <text facs="facs:Karo">
       <pb n="4"/>
       <body>
-         <head>
-            <!--<hi rend="italic">Conkey’s Home Journal</hi> 3.2 (May-->
-            1898): 4-7.
-            Karo
-            A Story of Japanese Honor
-            by Onoto Watanna</head>
+         <head>Karo</head>
+         <head type="subtitle">A Story of Japanese Honor</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by Mark Hayne and James McCracken</byline>
+         </opener>
 
             <div>
                <head>I.</head>
@@ -95,6 +103,9 @@ Publicly accessible
                <p><q>In five years, my son, and you shall have all manner of learning there which cannot be acquired here in Kyoto or in Kyushu, and the manner of thy learning shall be different from that taught anywhere in Japan. Thou shalt have a foreign education, as well as what thou hast learned here in thy home. Thou must prepare at once, my son. I desire it</q>.</p>
                <p>Karo bowed gracefully and thanked his father, declaring it was the chief desire of his life to obey the will of his parents in all things.</p>
                <p>Okazi Yedo was a very peculiar child. Unlike most Japanese maidens, she was impetuous and wayward. Her mother had died when she was born, and she had never had any one to guide or direct her, so that she had grown up in a careless, happy fashion, worshiped by her father’s servants, but depending entirely upon Karo for all her small joys. Karo was her only companion and friend, and she believed blindly in him. She told him all her little troubles, and he in turn tried to teach her many things. He would reprove her when naughty, and endeavor to restrain her hasty temper, almost as her mother would have done.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p>That afternoon, Yedo waited long for Karo to come, but the boy had gone out across the valley, and was wandering aimlessly among the hills trying to make up his mind to go to Yedo and tell her that in less than a week he must leave her for five long years. The next day a great storm broke over Kyoto, so that Yedo was unable to stir out or go to school, and she thought Karo would come, as he always did, but he came not, and she complained bitterly to her father. Then Okazi Omi, forgetting all else save the great future in store for his prospective son-in-law, told her all. And Yedo listened, not as Karo had done, when they told him, with a quiet, calm face; hers was stormy and fearful, and she sprang to her father’s side and caught his hands sharply in her little ones, crying out passionately: <q>No, no, my father, do not send Karo away</q>.</p>
                <p>Omi was shocked at this display of unmaidenly conduct and arose in a dignified fashion, ordering his daughter to leave him, and Yedo crept out, too stunned to say more. About an hour after that, </p>
 
@@ -114,6 +125,9 @@ Publicly accessible
                <p>Edith was tall, with a figure magnificently formed. She had an abundance of soft brown hair, large and dreamy eyes, and a beautiful complexion. When she spoke or laughed the rich color in her cheeks deepened to a bright scarlet and spread over her forehead and neck, even to her little ears.</p>
                <p>Edith saw life out of a pair of very thoughtful and rather sad eyes. She studied all whom she met, and it was no uncommon thing to see her eyes fixed long and seriously on some face while that strange, wistful, yet searching look crept into them, as though she knew you, and would fain have you otherwise. She was an idealist.</p>
                <p>Since her return, Howard had been continually speaking of his Japanese college chum, Mr. Watanabe Karo. One day he told Edith of Karo’s little sweetheart in Japan, and of the flowery little love letters she wrote to him and of how sacred she seemed to him.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p><q>He read some of her letters to me</q>, he said, laughing, <q>and she kept begging for his picture, until at last I lost patience and took a snap shot at him myself. I made an awful muddle of it, and as I thought little Yedo would be disappointed, I slipped my own in the envelope instead, and Karo never noticed it. I wonder what her ladyship thinks of me, anyhow</q>, and he chuckled with delight at his trick.</p>
                <p>Edith flushed hotly. <q>I don’t think that was either funny or clever</q>, she said. <q>Have you told Mr. Watanabe?</q></p>
                <p><q>Well, no</q>, said Howard, a trifle uneasily; <q>you see, he takes things so seriously</q>.</p>
@@ -145,9 +159,8 @@ Publicly accessible
                <p>A sudden white pallor seemed to wither his face. He put his hands out, and their long fingers tapering toward her seemed almost to speak.</p>
                <p><q>Honor, honor—to my friend Howard, who loves you, to myself, to you, to my father, my mother, my house, to—Yedo!</q></p>
                <p>It was an outburst of feeling at last. It was a cry, an appeal, a command, a prayer to her for help to save him from becoming an object of contempt; from being pointed out in Japan as the man who disobeyed the will of his parents, bought by the smile of a barbarian, who broke his betrothal vows, betrayed his friend, and yet dared to live. But she only fancied she heard love reverberate in his voice, and she laughed joyously, for she could not control herself. Then she heard the front door close on him and knew he was gone, but she only laughed again, for she told herself that Karo loved her, or he would not have feared her.</p>
-
-               </div>
-         <div>
+         
+               <milestone unit="sectionBreak"/>
 
                <p>Karo had been gone about three hours. Howard smoked moodily on, and walked restlessly up and down the room. Once he wandered to the table and sank his head in his arms and groaned. After a while he heard Karo’s foot on the stairs. It struck him that it was not quite so firm as usual. Then the door opened. Karo’s face was ashy white, his hands were tremulous, he almost staggered. Howard poured him out a glass of wine, but be refused it.</p>
                <p><q>I shall leave tomorrow</q>.</p>
@@ -183,8 +196,7 @@ Publicly accessible
                <p>Yedo raised her head.</p>
                <p><q>I love not you</q>, she said, rising to her feet and lifting her soft round arms out of the great wings. <q>I love not you—the America—him I love!</q></p>
 
-               </div>
-         <div>
+               <milestone unit="sectionBreak"/>
 
                <p>Karo went to Howard, who was packing his trunk.</p>
                <p><q>My betrothed loves you</q>, he said, <q>as your betrothed did love me. As I did act by you, wilt thou by me? I cannot kill you as becometh my honor, for you are my guest, and the guest also of my father</q>.</p>
@@ -196,8 +208,7 @@ Publicly accessible
                <p><q>You say that now</q>, said Karo coldly. <q>Would you have said the same then?</q></p>
                <p><q>Yes, I would</q>, said Howard, doggedly.</p>
 
-               </div>
-         <div>
+               <milestone unit="sectionBreak"/>
 
                <p>Night was falling in Kyoto. Slowly, tenderly, the darkness swept away the exquisite rays of red and yellow that the departing sun had left behind it. The streets were deserted, and stillness reigned over the city. Two figures came softly along. They passed through the silent streets, crossed the valley till they came to the hills, and there they sat down to rest, for it had been a tiring journey to climb to the height they had reached. They were man and woman, and the woman rested against the man’s breast, and ever and anon he kissed her lips, the first kisses she had ever known. And scarce five rods behind them was a tall, slim figure, clad in a long, dark dress, with white headgear.</p>
                <p><q>My little Yedo, my darling!</q> said the man passionately, <q>I will take you away, dear, to where no one shall force you to do what you do not wish; where every one is free, and all will love you</q>.</p>
