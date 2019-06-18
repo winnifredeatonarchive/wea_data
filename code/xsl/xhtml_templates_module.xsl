@@ -109,6 +109,7 @@
     <xsl:template match="head" mode="tei">
         <xsl:variable name="nestLevel" select="count(ancestor::div)+1"/>
         <xsl:element name="{concat('h',$nestLevel)}">
+            <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
