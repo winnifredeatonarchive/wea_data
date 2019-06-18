@@ -1,0 +1,327 @@
+/* General Styling */
+body {
+  padding-top: 56px;
+}
+
+h1, h2 {
+ font-family:'Playfair Display', serif;
+}
+
+h1 {
+  font-size: 4.5em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3, h4, h5, h6 {
+  font-family:'Lato', sans-serif;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 0.5px;
+}
+
+h4 {
+  color: #e54781;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+h5 {
+ 
+}
+
+h6 {
+  
+}
+
+a {
+  font-family:'Lato', sans-serif;
+}
+
+a:hover {
+  color: #e54781;
+  text-decoration: none;
+}
+
+p {
+  font-family:'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* Navigation */
+.navbar-brand {
+  font-family:'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #3f3e3e;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* Search */
+.navbar .input-group {
+  width: 50%;
+}
+
+@media (min-width: 992px) {
+.navbar .input-group {
+  float: right;
+}
+}
+
+/* Homepage Styling */
+.carousel-item {
+  height: 85vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-left: 35px solid #fff;
+  border-right: 35px solid #fff;
+}
+
+
+.hero-caption {
+  position: relative;
+  top: 240px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+.hero-caption {
+  position: relative;
+top: 440px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}
+}
+
+.hero-caption h1 {
+  letter-spacing: 4.5px;
+}
+
+.sub-intro {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.8px;
+}
+
+.homepage-intro {
+  margin-top: 40px;
+}
+
+.homepage-intro h3 {
+  padding-bottom: 20px;
+}
+
+.career-home {
+  padding: 0 50px;
+  background: #f4f4f1;
+  z-index: 99;
+  position: relative;
+}
+
+
+.career-home a {
+  text-decoration:none;
+  color: #fefefe;
+  display: block;
+  width: 100%;
+  height: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  font-size: 24px;
+  padding: 70px 40px;
+}
+
+.career-home-item {
+  padding: 30px 0;
+}
+
+.career-img {
+  width: 386px;
+  height: 242px;
+  font-family: 'Lato';
+  text-align: center;
+  color: #fefefe;
+  line-height: 50px;
+  vertical-align: middle;
+  margin-top: 1%;
+  margin: 20px 0;
+}
+
+.career-home .early_experiments-home {
+  background: url("../images/Early_Experiments.png") no-repeat;
+  background-position: center center;
+}
+
+.career-home .playing_japanese-home {
+  background: url("../images/Playing_Japanese.png") no-repeat;
+  background-position: center center;
+}
+
+.career-home .new_york-home {
+  background: url("../images/New_York.png") no-repeat;
+  background-position: center center;
+}
+
+.career-home .alberta-home {
+  background: url("../images/Alberta.png") no-repeat;
+  background-position: center center;
+}
+
+.career-home .hollywood-home {
+  background: url("../images/Hollywood.png") no-repeat;
+  background-position: center center;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+.career-img {
+  width: auto;
+  height: auto;
+}
+
+.career-home a {
+  padding: 70px 140px;
+}
+}
+
+@media (min-width: 992px) {
+.career-home {
+  margin-top: -270px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.career-home {
+  padding: 0 10px;
+}
+
+.career-home-item {
+  padding: 0;
+}
+}
+
+/* Featured Item Homepage */
+.featured-home {
+  margin-top: 40px;
+  background: #f4f4f1;
+}
+
+.featured-home .featured-item {
+  padding: 60px 25px;
+}
+
+.featured-home .featured-item {
+  margin-bottom: 20px;
+}
+
+.featured-home .featured-item h4 {
+  margin-bottom: 20px;
+}
+
+.featured-home .featured-item h2 {
+  font-size: 2em;
+  margin: 25px 0 15px 0;
+}
+
+/* About Section Homepage */
+.about-home {
+  background: #eeb6b7;
+  margin-top: 50px;
+}
+
+.about-home-text {
+  padding: 80px 0;
+}
+
+.about-home-text-first {
+  font-style: italic;
+}
+
+.about-home-text p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-home-text-first p {
+  line-height: 2;
+  color: #403251;
+  font-size: 18px;
+}
+
+/* Read More Link */
+.read-more {
+  text-transform: uppercase;
+  color: #3f3e3e;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.read-more:hover {
+  color: #e54781;
+  text-decoration: none;
+}
+
+/* Footer Styling */
+.footer-logos {
+  margin-bottom: 40px;
+}
+
+.footer-logos ul {
+  list-style-type: none;
+  //padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logos ul li {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+}
+
+.footer-logos ul li img {
+  margin: 0 auto;
+}
+
+footer a {
+  color: #e54781;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
