@@ -92,6 +92,7 @@
                             <cell>Documents</cell>
                         </row>
                         <xsl:for-each select="$errors">
+                            <xsl:sort select="normalize-space(*:item[1]/text())"/>
                             <row>
                                 <cell><xsl:value-of select="normalize-space(*:item[1]/text())"/></cell>
                                 <cell><xsl:copy-of select="*:item[1]/*:list[1]"/></cell>
@@ -127,6 +128,7 @@
                             </cell>
                         </row>
                         <xsl:for-each select="$waitingDocs">
+                            <xsl:sort select="@xml:id"/>
                             <row>
                                 <cell><xsl:value-of select="@xml:id"/></cell>
                                 <cell><ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
@@ -159,6 +161,7 @@
                             </cell>
                         </row>
                         <xsl:for-each select="$errors">
+                            <xsl:sort select="@xml:id"/>
                             <row>
                                 <cell><xsl:value-of select="@xml:id"/></cell>
                                 <cell><ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
@@ -196,6 +199,7 @@
                             </cell>
                         </row>
                         <xsl:for-each select="$errors">
+                            <xsl:sort select="@xml:id"/>
                             <row>
                                 <cell><xsl:value-of select="@xml:id"/></cell>
                                 <cell><ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
@@ -233,6 +237,7 @@
                             </cell>
                         </row>
                         <xsl:for-each select="$errors">
+                            <xsl:sort select="@xml:id"/>
                             <row>
                                 <cell><xsl:value-of select="@xml:id"/></cell>
                                 <cell><ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
