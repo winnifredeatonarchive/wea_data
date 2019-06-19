@@ -50,9 +50,10 @@
     </xsl:template>
     
     <xsl:template name="createChecks">
-        <xsl:call-template name="duplicateIds"/>
+
 <!--        <xsl:call-template name="badPtrs"/>-->
         <xsl:call-template name="documentsAwaitingMC"/>
+        <xsl:call-template name="duplicateIds"/>
         <xsl:call-template name="documentsWithoutFacs"/>
         <xsl:call-template name="documentsWithoutGenre"/>
         <xsl:call-template name="documentsWithoutExhibit"/>
