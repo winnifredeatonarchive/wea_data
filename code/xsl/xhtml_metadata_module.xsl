@@ -563,7 +563,7 @@
     
     
     <xsl:template name="createToolbar">
-        <xsl:if test="not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable'])">
+        <xsl:if test="not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable']) and wea:isObject(ancestor::TEI)">
             <div id="tools_container">
                 <div id="tools">
                     <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
