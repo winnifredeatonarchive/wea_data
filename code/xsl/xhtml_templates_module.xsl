@@ -77,7 +77,7 @@
 
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | note[p] | listBibl" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | note[p] | listBibl | sp" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -171,7 +171,7 @@
     
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | speaker" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>

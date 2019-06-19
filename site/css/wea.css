@@ -1299,6 +1299,22 @@ span[data-el='pb']:not(.first)::before{
 
 
 
+
+/********************************************************************** SPEECHES  */
+
+/* There are a few intances of the document where dramatic dialogue is used */
+
+[data-el='sp']{
+    margin: .5rem;
+}
+
+[data-el='speaker']{
+    margin-right: .75rem;
+}
+
+[data-el='speaker'] + [data-el='p']{
+    display:inline;
+}
 /********************************************************************* MILESTONES *****/
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeSocialLife1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeSocialLife1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -40,17 +40,23 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl53 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-           <text facs="facs:Home_Social_Life_of_Japanese">
-              <pb n="3"></pb>
+   <text facs="facs:Home_Social_Life_of_Japanese">
+      <pb n="3"></pb>
       <body>
          <head>HOME AND SOCIAL LIFE OF THE JAPANESE</head>
          <opener>
             <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
          </opener>
          <div>
-            <p>In a poem entitled <q>To a Japanese Lady of High Rank</q>, by an American, she is described thus:</p>
-            <l>Fragile waxen type of woman,</l>
-            <l>Mute, inscrutable, unhuman.</l>
+            <p>In a poem entitled <q>To a Japanese Lady of High Rank</q>, by an American, she is described thus:
+               
+               <q>
+                  <lg>
+                     <l>Fragile waxen type of woman,</l>
+                     <l>Mute, inscrutable, unhuman.</l>
+                  </lg>
+               </q>
+            </p>
             <p>A little deeper insight into the character, and a better knowledge of the life of the lady of rank in Japan, might have stayed the poet’s pen, for above all things she is human. Furthermore, she is essentially domestic, womanly and motherly. Obedient to the etiquette of her class, however, she is mindful of the strict convention which demands the repression of her emotions, and which regards any betrayal of her real feelings, particularly in public, as vulgar and unrefined. Hence, the Japanese lady wears a placid, even smiling, mask perhaps at a time when she is undergoing both mental and physical suffering. But she is not <q>unhuman</q>, nor is she any the worse for this repression, for together with it is cultivated self-abnegation, unselfishness, meekness and obedience; and at times these qualities have been put to a test that has provoked acts of positive heroism on the part of this <q>fragile waxen type of woman</q>.</p>
             <p>Even the highest-class Japanese women have their household duties to perform, and no matter how rich the family, Japanese girls are brought up to be able to sew, cook and attend to their homes. With the usual perversity of things Japanese, the household is managed with a view to the comfort of the husband. The first thought of the wife, whether she be rich or poor, is ever to make the happiness of her husband.</p>
             <p>Now, <q>duty</q> is a pretty hard word for some of us to spell, but to a Japanese it is almost an equivalent for pleasure; and so no duty or task in the home is performed but that it is done with a light and cheerful heart. The Japanese woman is altogether contented to look after domestic affairs, to love and encourage her husband in his daily avocation or interests. She spurs him on in his pursuits, soothes him in his troubles, laughs with him in his carefree moments, with scarce a thought of higher aspirations.</p>
@@ -79,16 +85,52 @@
             <p>A guest may leave his seat to exchange cups with a friend. The host exchanges cups with every guest, but as this involves a great deal of drinking, a merciful provision is made for those who cannot endure it. Here and there are placed bowls of water in which one washes a cup before handing it to a friend, and those who cannot drink much are at liberty to pour off the <foreign xml:lang="ja">sake</foreign> into them. Of course, this <q>washing</q> consists merely in dipping the tiny cup into the water-bowl and rinsing it. When any guest calls for rice it is a signal that he is through drinking and wants to finish his fish. The host will make some such polite remark as, <q>Oh, it is indeed too honorably early for you to eat rice!</q> but is never insistent. If ladies are present they are usually ranged along one side of the room, which forms what is called poetically<q>the dream gallery</q>. They are never pressed to drink, and begin their rice very early. A lady—-unless, of course, she be the hostess—-never leaves her seat to go to a friend. It is always the gentlemen who go to her and ask if she will not give them a cup. After a guest has finished, the dishes which he has not touched will be placed in a lacquer box,and this he will find in his <foreign xml:lang="ja">jinrikisha</foreign> when he gets home.</p>
             <p>At such a feast special entertainments are in order, of which dancing, legerdemain, little comedies or recitals and music are features. An accomplished <foreign xml:lang="ja">geisha</foreign>-—sometimes a number of them—-is usually hired for the evening to entertain the guests during and after the feast. Following the dinner the guests spread out their broad trousers, or <foreign xml:lang="ja">hakamas</foreign>, pull out their fans and ply them vigorously. Pipes are filled and refilled. A pretty little girl of about thirteen, dressed in a gay robe, with a crimson girdle around her waist, and her hair dressed upon a ring or pad of crinkled blue crepe, trips in with a gold-lacquered fire-box, and, kneeling, bows her head until it touches her hands laid palm downward upon the floor. Then she springs nimbly up, hurries from the room, and reappears a minute later with baby cups of tea, and a little stand containing candies laid on pure white paper.</p>
             <milestone unit="sectionBreak"/>
-            <p>At the breaking up of such feasts the most strained politeness prevails, the guests and host each striving to outdo the other in their extremes of suavity and compliment. It is related that on one occasion a conversation somewhat as follows ensued between guest and host:</p>
-            <p>THE GUEST. I can, of course, never repay you for the extreme pleasure I have had in visiting your honorable excellency.</p>
-            <p>THE HOST. It is impossible to lose sight of the honor you have bestowed on my unworthy house by coming.</p>
-            <p>THE GUEST. I can only pray that your excellency will deign to visit at my augustly insignificant house.</p>
-            <p>THE HOST. It is the desire of my heart to see much of your highness, and for that reason I trust you will very often accept my meager hospitality.</p>
-            <p>THE GUEST. I beseech your honor to visit at a speedy date, and deign to accept what little entertainment my house can afford.</p>
-            <p>THE HOST. On all occasions my house is yours.</p>
-            <p>THE GUEST. And mine yours.</p>
-            <p>THE HOST. Consider my house as your own.</p>
-            <p>THE GUEST. And mine yours.</p>
+            <p>At the breaking up of such feasts the most strained politeness prevails, the guests and host each striving to outdo the other in their extremes of suavity and compliment. It is related that on one occasion a conversation somewhat as follows ensued between guest and host:
+               <floatingText>
+                  <body>
+                     <sp>
+                        <speaker>THE GUEST.</speaker>
+                        <p>I can, of course, never repay you for the extreme pleasure I have had in visiting your honorable excellency.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE HOST.</speaker>
+                        <p>It is impossible to lose sight of the honor you have bestowed on my unworthy house by coming.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE GUEST.</speaker>
+                        <p>I can only pray that your excellency will deign to visit at my augustly insignificant house.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE HOST.</speaker>
+                        <p>It is the desire of my heart to see much of your highness, and for that reason I trust you will very often accept my meager hospitality.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE GUEST.</speaker>
+                        <p>I beseech your honor to visit at a speedy date, and deign to accept what little entertainment my house can afford.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE HOST.</speaker>
+                        <p>On all occasions my house is yours.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE GUEST.</speaker>
+                        <p>And mine yours.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE HOST.</speaker>
+                        <p>Consider my house as your own.</p>
+                     </sp>
+                     <sp>
+                        <speaker>THE GUEST.</speaker>
+                        <p>And mine yours.</p>
+                     </sp> 
+                  </body>
+               </floatingText>
+               
+               
+               
+            </p>
+            
             <p>After this a number of profound prostrations followed, in which each managed to touch the ground with his head, and the guest took his departure.</p>
          </div>
       </body>
