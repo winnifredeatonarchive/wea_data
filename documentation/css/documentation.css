@@ -241,6 +241,10 @@ nav ul > li:first-child{
     display:block;
 }
 
+.error[data-n]::after{
+    content: " (" attr(data-n) ")";
+}
+
 
 h2{
     margin:0;
