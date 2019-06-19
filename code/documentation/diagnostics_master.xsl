@@ -178,7 +178,7 @@
     </xsl:template>
     
     <xsl:template name="documentsWithoutGenre">
-        <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')][not(descendant::catRef[@scheme='wdt:genre'])]]"/>
+        <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')]][not(descendant::catRef[@scheme='wdt:genre'])]"/>
         <div type="diagnostic">
             <head n="{count($errors)}">Documents without genre <gi>catRef</gi></head>
             <p>All primary source documents should have a <gi>catRef</gi> element with a genre:
@@ -216,7 +216,7 @@
     </xsl:template>
     
     <xsl:template name="documentsWithoutExhibit">
-        <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')][not(descendant::catRef[@scheme='wdt:exhibit'])]]"/>
+        <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')]][not(descendant::catRef[@scheme='wdt:exhibit'])]"/>
         <div type="diagnostic">
             <head n="{count($errors)}">Documents without exhibit <gi>catRef</gi></head>
             <p>All primary source documents should have a <gi>catRef</gi> element with an exhibit:
