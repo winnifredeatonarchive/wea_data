@@ -19,14 +19,14 @@
     
     <xsl:variable name="siteMap">
         <div id="siteMap">
+            <div id="siteMap_input">
+                <a href="search.html" id="siteMap_input_link">
+                    Search the archive for <span id="siteMap_input_fill">string</span>
+                </a>
+            </div>
             <xsl:for-each-group select="$standaloneXml" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
                 <xsl:sort select="current-grouping-key()" order="descending"/>
                 <xsl:variable name="isPrimary" select="current-grouping-key()"/>
-                <div id="siteMap_input">
-                    <a href="search.html" id="siteMap_input_link">
-                        Search the archive for <span id="siteMap_input_fill">string</span>
-                    </a>
-                </div>
                 <div>
                     <h3>
                         <xsl:choose>
@@ -67,6 +67,7 @@
                     <xsl:apply-templates select="$processed" mode="nav">
                         <xsl:with-param name="sourceDoc" select="ancestor::TEI" tunnel="yes"/>
                     </xsl:apply-templates>
+                    
                     <div id="nav_search">
                         <label for="nav_search_input" class="hidden">Search the Archive</label>
                         <input id="nav_search_input" type="text" placeholder="Search..."/>
@@ -79,73 +80,6 @@
                     <a id="header_overlay" href="#"/>
                 </nav>
             </header>
-            <!--<header>
-                <nav id="nav_small">
-                    <div class="nav-item">
-                        <a href="#nav_main" class="mi" id="hamburger">menu</a>
-                    </div>
-                    <div class="home"><a href="index.html">WEA</a></div>
-                    <div class="search_icon"><a class="mi" href="#headerSearch">search</a></div>
-                </nav>
-                <nav id="nav_main">
-                    <div class="mi closer"><a href="#" id="navCloser">close</a></div>
-                    <div class="home" id="nav_home"><a href="index.html">WEA</a></div>
-                    <div>About
-                        <div>
-                            <a href="about.html">About</a>
-                            <a href="#">About Subpage</a>
-                            <a href="technical.html">Technical</a>
-                        </div>
-                    </div>
-                    <div>Archive
-                        <div>
-                            <xsl:for-each select="$standaloneXml[/TEI/@xml:id='taxonomies']//category[ancestor::taxonomy[@xml:id='exhibit']]">
-                                <xsl:sort select="@n" order="ascending"/>
-                                <a href="{@xml:id}.html"><xsl:value-of select="catDesc/term"/></a>
-                            </xsl:for-each>
-                        </div>
-                    </div>
-                    
-                    <div>Biography
-                        <div>
-                            <a href="#">Bio Subpage</a>
-                            <a href="#">Bio Subpage</a>
-                            <a href="#">Bio Subpage</a>
-                        </div>
-                        
-                        
-                    </div>
-                    <div>Resources
-                        <div>
-                            <a href="#">Resource Subpage</a>
-                            <a href="#">Resource Subpage</a>
-                            <a href="#">Resource Subpage</a>
-                        </div>
-                    </div>
-                    <!-\-                    <div class="nav-item">News</div>-\->
-                    <div><a href="#">Contact</a></div>
-                    <div class="search_icon" id="nav_search">
-                        <a class="mi" href="#headerSearch">search</a>
-                    </div>
-                    
-                </nav>
-                <div id="headerSearch">
-                    <!-\-                    <div id="headerSearchInputButton" class="search_icon">
-                        <a href="search.html">⚲</a>
-                    </div>-\->
-                    <div id="headerSearchInput">
-                        <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
-                    </div>
-
-                        <a href="search.html" id="headerAdvancedSearchBtn">Search the Archive</a>
-                    
-                </div>
-                <div id="nav_archive" class="nav_option">
-                    
-                </div>
-                <xsl:copy-of select="$siteMap"/>
-            </header>-->
-
     </xsl:template>
     
     <xsl:template match="xh:ul[@id='menu_main']" mode="nav">

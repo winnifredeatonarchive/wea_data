@@ -39,22 +39,22 @@
             PAGE.</p>
             
             <list xml:id="menu_main">
-                
+                <item xml:id="menu_main_search"><ref target="doc:search">Search</ref></item>
                 <item>About
                     <list>
-                        <item>About the WEA</item>
-                        <item>Technical Details</item>
-                        <item>Contributors and Acknowledgements</item>
+                        <item><ref target="doc:about">About the WEA</ref></item>
+                        <item><ref target="doc:technical">Technical Details</ref></item>
+                        <item><ref target="doc:acknowledgements">Contributors and Acknowledgements</ref></item>
                     </list>
                 </item>
                 
                 <item>Archive
                     <list>
-                        <item>Early Experiments (1890s–1901)</item>
-                        <item>Playing Japanese (1897–1922)</item>
-                        <item>New York Years (1902–1916)</item>
-                        <item>Alberta Years (1919–1933)</item>
-                        <item>Hollywood Years (1921–1935)</item>
+                        <item><ref target="doc:EarlyExperiments">Early Experiments (1890s–1901)</ref></item>
+                        <item><ref target="doc:Japan">Playing Japanese (1897–1922)</ref></item>
+                        <item><ref target="doc:NewYork">New York Years (1902–1916)</ref></item>
+                        <item><ref target="doc:Alberta">Alberta Years (1919–1933)</ref></item>
+                        <item><ref target="doc:Hollywood">Hollywood Years (1921–1935)</ref></item>
                     </list>
                 </item>
                 
@@ -80,7 +80,7 @@
                 
                 <item>Contact</item>
                 
-                <item xml:id="menu_main_search"><ref target="doc:search">Search</ref></item>
+                
             </list>
         </body>
     </text>
