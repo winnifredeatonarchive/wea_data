@@ -19,21 +19,38 @@
     
     <xsl:variable name="siteMap">
         <div id="siteMap">
-            <xsl:for-each select="$standaloneXml[not(//catRef[contains(@target,'Listing')])]">
-                <div class="item">
-                    <a href="{//TEI/@xml:id}.html">
-                        <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
+            <xsl:for-each-group select="$standaloneXml" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
+                <xsl:sort select="current-grouping-key()" order="descending"/>
+                <xsl:variable name="isPrimary" select="current-grouping-key()"/>
+                <div id="siteMap_input">
+                    <a href="search.html" id="siteMap_input_link">
+                        Search the archive for <span id="siteMap_input_fill">string</span>
                     </a>
-                    <div class="item_info">
-                        <xsl:variable name="categories">
-                            <xsl:apply-templates select="//catRef" mode="metadata"/>
-                        </xsl:variable>
-                        <xsl:for-each select="$categories/xh:div/xh:div[2]/xh:a">
-                            <span><xsl:copy-of select="node()"/></span>
-                        </xsl:for-each>
-                    </div>
                 </div>
-            </xsl:for-each>
+                <div>
+                    <h3>
+                        <xsl:choose>
+                            <xsl:when test="$isPrimary">Primary Sources</xsl:when>
+                            <xsl:otherwise>Born Digital</xsl:otherwise>
+                        </xsl:choose>
+                    </h3>
+                    <xsl:for-each select="current-group()">
+                        <div class="item">
+                            <a href="{//TEI/@xml:id}.html">
+                                <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
+                            </a>
+                            <div class="item_info">
+                                <xsl:variable name="categories">
+                                    <xsl:apply-templates select="//catRef" mode="metadata"/>
+                                </xsl:variable>
+                                <xsl:for-each select="$categories/xh:div/xh:div[2]/xh:a">
+                                    <span><xsl:copy-of select="node()"/></span>
+                                </xsl:for-each>
+                            </div>
+                        </div>
+                    </xsl:for-each>
+                </div>
+            </xsl:for-each-group>
         </div>
     </xsl:variable>
     
@@ -56,8 +73,9 @@
                         <button type="button" id="nav_search_button">
                             <span class="mi" aria-hidden="true">search</span>
                         </button>
+                        <xsl:copy-of select="$siteMap"/>
                     </div>
-                    <xsl:copy-of select="$siteMap"/>
+
                     <a id="header_overlay" href="#"/>
                 </nav>
             </header>

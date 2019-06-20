@@ -181,7 +181,7 @@ function addHeaderSearch(){
      var headerInput = document.getElementById('nav_search_input');
      
      /* Add the main title search capacity */
-     headerInput.addEventListener('headerInput',titleSearch);
+     headerInput.addEventListener('input',titleSearch);
      var results = document.querySelectorAll('#siteMap .item');
      
      /* For every result item, add the addFocusEvent */
@@ -196,7 +196,7 @@ function addHeaderSearch(){
 
 function submitSearch(){
     var e=arguments[0];
-    var searchInput = document.getElementById('headerSearchForm');
+    var searchInput = document.getElementById('nav_search_input');
     console.log(this.tagName);
     if (this.tagName == 'A' || e.key == 'Enter'){
         if (this.tagName == 'A'){
@@ -222,32 +222,71 @@ function removeOtherOpenNavs(){
 /* A small function to add the keydown press; it likely doesn't need
  * to be a function, but we'll keep it like in case we need to remove it */
 function addFocusEvent(){
-       this.addEventListener('keydown',scrollThru);
+      // this.addEventListener('keydown',scrollThruNew);
 }
 
-/* Function to scroll through the search results using the arrow keys */
+/*
+function scrollThruNew(){
+     var e=arguments[0];
+     var searchBox = document.getElementById('nav_search');
+     var results = document.querySelector('#siteMap .item.showing');
+     console.log(results);
+    
+}
+
+
+function prevInput (inputArray, currentInput, inputClass){
+    for (i=0; i < inputArray.length - 1; i ++){
+        if (currentInput == inputArray[1]){
+            for (j = 1; j < inputArray.length - 1; j++){
+                if (inputArray[i + j] && input[i +j].className == inputClass){
+                    return inputArray[i-j];
+                    break;
+                }
+            }
+        }
+    }
+    
+}
+
+function nextInput(inputArray, currentInput, inputClass) {
+    for (i = 0; i < inputArray.length - 1; i++) {
+        if(currentInput == inputArray[i]) {
+            for (j = 1; j < inputArray.length - i; j++) {
+                //Check if the next element exists and if it has the desired class
+                if(inputArray[i + j] && (inputArray[i + j].className == inputClass)) {
+                    return inputArray[i + j];
+                    break;
+                }
+            }
+        }
+    }   
+}
+
+
+/\* Function to scroll through the search results using the arrow keys *\/
 function scrollThru(){
        var e=arguments[0];
        var searchBox = document.getElementById('headerSearchForm');
-       var results = document.querySelectorAll('#siteMap .result');
+       var results = document.querySelectorAll('#siteMap > div > .showing');
        var preSib, nextSib;
        
-       /* If the focus is in the headerSEarchForm
+       /\* If the focus is in the headerSEarchForm
         * then we just get the first and last result and set those
-        * as the previous and next sibling */
+        * as the previous and next sibling *\/
        if (this.id == 'headerSearchForm'){
            nextSib = results[0];
            preSib = results[results.length -1];
        } else {
-         /* 
+         /\* 
           * Otherwise, actually use the right pre and next.
-          */
+          *\/
           var preSib = getPreSib(this);
           var nextSib = getNextSib(this);
        }
        
-       /* If either pre or nextSib variables are null,
-        * then the previous/next choice is the search box */
+       /\* If either pre or nextSib variables are null,
+        * then the previous/next choice is the search box *\/
        if (preSib == null){
            preSib = searchBox;
        }
@@ -256,23 +295,23 @@ function scrollThru(){
        }
        var key = e.key;
        
-       /* Now do stuff on arrow up/down */
+       /\* Now do stuff on arrow up/down *\/
        if (key == 'ArrowUp'|| key == 'ArrowDown'){
-          /* Prevent the default action (i.e. window scrolling) */
+          /\* Prevent the default action (i.e. window scrolling) *\/
            e.preventDefault();
            
-           /* If they've pressed up, go up. */
+           /\* If they've pressed up, go up. *\/
            if (key == 'ArrowUp'){
                preSib.focus();
            } 
-           /* Otherwise, go down. */
+           /\* Otherwise, go down. *\/
            else {
              nextSib.focus();
            }
-           /* Now unfocus the first thing. */
+           /\* Now unfocus the first thing. *\/
           this.blur();
        } else 
-       /* If they've pressed enter, then they want to go to that page (other than the search form, of course) */
+       /\* If they've pressed enter, then they want to go to that page (other than the search form, of course) *\/
        if (key == 'Enter'){
          if (this.id == 'headerSearchForm'){
              return;
@@ -286,10 +325,10 @@ function scrollThru(){
 }
 
 
-/* Taken, with thanks, from: 
+/\* Taken, with thanks, from: 
  * 
  * https://gomakethings.com/finding-the-next-and-previous-sibling-elements-that-match-a-selector-with-vanilla-js/
- *  */
+ *  *\/
  
  
 function getPreSib(el){
@@ -307,7 +346,7 @@ function getNextSib(el){
            if (next.classList.contains('result')) return next;
            next = next.nextSibling;
     }
-}
+}*/
 
 
 function toggleOpenClose(el, removeAllNavs){
@@ -335,40 +374,67 @@ function toggleOpenClose(el, removeAllNavs){
  * and we might need a way to expand the search results or to shove you over to the
  * main search page. */
 function titleSearch(){
-    clearTitleSearchResults();
-    var value = this.value;
-     if (/\S/.test(value)){
-    var regex = new RegExp(value,'i');
     var siteMap = document.getElementById('siteMap');
-    var items = siteMap.querySelectorAll('.item');
-    var s = 0;
-    var match = 0;
+    clearTitleSearchResults();
+    var inputValue = this.value;
+    
+    /* Quick check to see if there's content
+     * in the search field */
+    if (inputValue.length > 0){
+        siteMap.classList.add('showing');
+    } else if (siteMap.classList.contains('showing')) {
+        siteMap.classList.remove('showing');
+    }
+    
+    inputValue = inputValue.replace("'","’");
+    console.log(inputValue);
+    
+    /* IF the string matches, then proceed */
+    if (/\S/.test(inputValue)){
+        var regex = new RegExp(inputValue,'i');
+        var items = siteMap.querySelectorAll('.item');
+        var s = 0;
+        var match = 0;
+        var basicInput = document.getElementById('siteMap_input');
+        basicInput.classList.add('item');
+        basicInput.classList.add('showing');
+        basicInput.setAttribute('tabindex', 0);
+        var searchLink = document.getElementById('siteMap_input_link');
+        var searchString = "search.html?searchString=" + encodeURIComponent(inputValue);
+        searchLink.setAttribute('href',searchString);
+        var searchInputFill = document.getElementById('siteMap_input_fill');
+        searchInputFill.innerHTML = inputValue;
   /*  if (items.length > 0){
         document.getElementById('siteMap').classList.add('hasResults');
     }*/
-    for (s; s < items.length; s++){
-        var currItem = items[s];
-        console.log(s);
+    
+            for (s; s < items.length; s++){
+                var currItem = items[s];
 
-        if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
-             if (match < 5){
-                currItem.classList.add('result');
-                currItem.setAttribute('tabindex',0);
+                if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
+                    if (match < 5){
+                        currItem.classList.add('showing');
+                        currItem.setAttribute('tabindex',0);
+                        var parent = currItem.parentNode;
+                        if (!parent.classList.contains('showing')){
+                            parent.classList.add('showing');
+                        } 
+                    }
+                match++; 
              }
-           match++;
+
         }
     }
-    }     
+ }
     
     
-    
-}
+
 
 function clearTitleSearchResults(){
-    var results = document.querySelectorAll('.result');
+    var results = document.querySelectorAll('#nav_search .showing');
     for (r=0; r < results.length; r++){
         console.log(results[r]);
-        results[r].classList.remove('result');
+        results[r].classList.remove('showing');
         results[r].removeAttribute('tabindex');
     }
    /* document.getElementById('siteMap').classList.remove('hasResults');*/
