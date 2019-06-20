@@ -57,10 +57,9 @@
                             <span class="mi" aria-hidden="true">search</span>
                         </button>
                     </div>
+                    <xsl:copy-of select="$siteMap"/>
                     <a id="header_overlay" href="#"/>
-       
                 </nav>
-                <xsl:copy-of select="$siteMap"/>
             </header>
             <!--<header>
                 <nav id="nav_small">
