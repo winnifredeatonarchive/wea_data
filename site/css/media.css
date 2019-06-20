@@ -5,7 +5,7 @@
         --main-padding-left: 5%;
         --main-padding-right: 5%;
     }
-    div#search input{
+    div#nav_search input{
         width:10rem;
     }
     
@@ -138,7 +138,7 @@ nav > a#nav_toggle:focus{
        
  }
  
- nav div#search{
+ nav div#nav_search{
      display:none;
  }
  
@@ -149,10 +149,23 @@ nav > a#nav_toggle:focus{
 
  
  
- body.JS nav.menuOpen,
+ body.JS ul#menu_main.open,
   ul#menu_main:target{
      transform: translateX(-25rem);
  }
+ 
+ .JS.overlay #header_overlay,
+#menu_main:target ~ #header_overlay
+{
+    background:black;
+    opacity:0.7;
+    width:100%;
+    height:101%;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
 
 
 /*        

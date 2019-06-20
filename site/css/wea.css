@@ -154,16 +154,6 @@ header::after{
      transition: opacity 0.4s;
 }
 
-.overlay header::after{
-    content:"";
-    background:black;
-    opacity:0.7;
-    width:100%;
-    height:101%;
-    position:fixed;
-    top:0;
-    left:0;
-}
 
 
 
@@ -230,7 +220,7 @@ li.closer{
     display:none;
 }
 
-nav > div#search {
+nav > div#nav_search {
     width: 100%;
     text-align: right;
     margin: auto 0;
@@ -240,7 +230,6 @@ nav > div#search {
 
 
 label.hidden{
-    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
@@ -253,7 +242,7 @@ label.hidden{
 
 /* SEARCH PART OF THE NAV */
 
-div#search input{
+div#nav_search input{
     box-sizing:border-box;
     font-family:inherit;
     font-size:1rem;
@@ -264,14 +253,14 @@ div#search input{
     padding:.25rem;
 }
 
-div#search button,
-div#search input{
+div#nav_search button,
+div#nav_search input{
         border: 1px solid #dee2e6;
 }
 
 
 
-div#search button{
+div#nav_search button{
     background-color:transparent;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -283,7 +272,7 @@ width: 2.1rem;
 cursor:pointer;
 }
 
-div#search button:hover{
+div#nav_search button:hover{
     background:#ccc;
 }
 /*

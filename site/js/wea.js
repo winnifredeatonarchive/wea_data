@@ -61,39 +61,28 @@ function addEvents(){
 
 function addHeaderSearchSubmit(){
     
-    var searchBtn = document.getElementById('headerAdvancedSearchBtn');
+    var searchBtn = document.getElementById('nav_search_button');
     console.log(searchBtn);
     searchBtn.addEventListener('click', submitSearch, true);
 }
 
 
 function makeNavClickable(){
-    var ham = document.getElementById('nav_toggle');
-    ham.addEventListener('click', toggleNav, true);
+    var nav_toggle = document.getElementById('nav_toggle');
+    nav_toggle.addEventListener('click', toggleNav, true);
     var navCloser = document.getElementById('nav_closer');
     navCloser.addEventListener('click', toggleNav, true);
-    var searchButtons = document.querySelectorAll("nav a[href='#headerSearch']");
-    console.log(searchButtons);
-    searchButtons.forEach(function(s){
-        s.addEventListener('click',toggleSearch,true);
-    });
+    var overlayCloser = document.getElementById('header_overlay');
+    overlayCloser.addEventListener('click',toggleNav,true);
 }
  
- function toggleSearch(){
-     var e=arguments[0];
-     e.preventDefault();
-
-     toggleOpenClose(document.getElementById('headerSearch'), true);
-     toggleOpenClose(document.getElementsByTagName('header')[0], false);
-
- }
  
 function toggleNav(){
       var e=arguments[0];
       /* Get rid of the #href functionality */
       e.preventDefault();
       
-      toggleOpenClose(document.getElementById('nav_main'), true);
+      toggleOpenClose(document.getElementById('menu_main'), true);
       toggleOverlay();
 }    
 
@@ -189,10 +178,10 @@ function sortTable(){
 
 function addHeaderSearch(){
 
-     var headerInput = document.querySelectorAll('#search > input')[0];
+     var headerInput = document.getElementById('nav_search_input');
      
      /* Add the main title search capacity */
-     headerInput.addEventListener('input',titleSearch);
+     headerInput.addEventListener('headerInput',titleSearch);
      var results = document.querySelectorAll('#siteMap .item');
      
      /* For every result item, add the addFocusEvent */
@@ -671,10 +660,11 @@ function inViewport (elem) {
 
 function addDocClass(){
        /* Add classes to the body */
-       var body = document.getElementsByTagName('body')[0];
-       body.classList.add('JS');
+     var body = document.getElementsByTagName('body')[0];
+     body.classList.add('JS');
       
      document.getElementsByTagName('header')[0].classList.add('closed');
+     document.getElementById('menu_main').classList.add('closed');
        var expandDiv = document.querySelectorAll('.expandable');
     for (i=0; i < expandDiv.length; i++){
         expandDiv[i].classList.add('closed');   

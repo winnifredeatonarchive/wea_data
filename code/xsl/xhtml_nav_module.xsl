@@ -50,13 +50,14 @@
                     <xsl:apply-templates select="$processed" mode="nav">
                         <xsl:with-param name="sourceDoc" select="ancestor::TEI" tunnel="yes"/>
                     </xsl:apply-templates>
-                    <div id="search">
+                    <div id="nav_search">
                         <label for="nav_search_input" class="hidden">Search the Archive</label>
                         <input id="nav_search_input" type="text" placeholder="Search..."/>
-                        <button type="button" id="searchButton">
+                        <button type="button" id="nav_search_button">
                             <span class="mi" aria-hidden="true">search</span>
                         </button>
                     </div>
+                    <a id="header_overlay" href="#"/>
        
                 </nav>
                 <xsl:copy-of select="$siteMap"/>
