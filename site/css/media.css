@@ -23,11 +23,9 @@
    cursor:pointer;
 }
 
-#nav_main > div:not(.search_icon):not(.home):hover{
 
-}
 
-#nav_main > div:hover > div{
+#nav_main > li:hover > ul{
     position: absolute;
     display: block;
     margin-top: .665em;
