@@ -73,7 +73,8 @@ Publicly accessible
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-19" status="readyForProof">Added facsimile; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl170 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatOkik. Old filename: Marriage_of_Okiku-San.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -84,7 +85,7 @@ Publicly accessible
    </teiHeader>
 
 
-   <text>
+   <text facs="facs:Marriage_of_Okiku_San">
       <pb n="254"/>
       <body>
          <head>The Marriage of Okiku-San</head>
