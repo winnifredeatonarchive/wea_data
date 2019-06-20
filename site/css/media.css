@@ -25,7 +25,7 @@
 
 
 
-#nav_main > li:hover > ul{
+#menu_main > li:hover > ul{
     position: absolute;
     display: block;
     margin-top: .665em;
@@ -35,8 +35,8 @@
     box-shadow: 1px 1px 1px 1px #efefef;
 }
 
-#nav_main > div > div > a:hover,
-#nav_main > div > div >a.selected{
+#menu_main > li > ul > li > a:hover,
+#menu_main > li > ul > li > a.selected{
         background:#efefef;
         transition: background .2s;
 }
