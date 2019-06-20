@@ -12,13 +12,21 @@
                <name ref="pers:WE1">Winnifred Eaton</name>
             </respStmt>
             <respStmt>
+               <resp>Illustrator</resp>
+               <name>Louis Betts</name>
+            </respStmt>
+            <respStmt>
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable version</resp>
                <name>Jean Lee Cole</name>
@@ -56,11 +64,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-19" status="readyForProof">Added milestones and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl122 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatShiz. Old filename: Shizus_New_Years_Present.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -86,6 +96,9 @@ Publicly accessible
          
             <p>It was New Year’s Eve. A gentle snow was falling everywhere and it was quite cold outdoors. Nevertheless, the people were laughing and chatting happily everywhere, and the fading sunset lingered lovingly about their happy, smiling faces. The treasure vendor came proudly along on his cart, calling his wares aloud, and stopping every once in a while to make a sale. A gay party of geisha girls, with arms linked happily about each other, passed down the main street, chatting and whispering and laughing together.</p>
             <p>They were planning what they were going to do with the presents they had purchased, for they were just returning from a shopping tour. One of the girls hung somewhat behind the others, and there was a constrained, sad look about her face, which contrasted with the happiness visible in the others.</p>
+            
+            <milestone unit="sectionBreak"/>
+            
             <p><q>Well, Shizu-san</q>, said one girl, turning on her sharply, <q>you have not purchased so much as a piece of candy. How could you be so stingy!</q></p>
             <p>The girl did not answer. Her face had flushed a hurt, painful red. The girls continued whispering spiteful little things to each other, as girls often do.</p>
             <p>When they reached the tea garden, Shizu ran off by herself, and rushing to her little room, sat down on the mats, burying her face in her hands.</p>
@@ -101,7 +114,10 @@ wooden frames with opaque paper panels.</note> and know they will hear us</q>.</
             <p>Now the Lennards had lived in Japan so many years that many people regarded them almost as citizens. Therefore it was not at all extraordinary that instead of celebrating Christmas, as they would have done in America, they kept instead the New Year holiday with the Japanese. So it happened that they spent a great deal of money in decorating the house with bamboo and pine and in making presents to their friends and servants.</p>
             <p>On New Year’s morning Mrs. Lennard got up very early, in order to see that all the presents for the children were in their right places and that no vagrant had been around to disturb them. After going carefully over them in the dining-room, she passed into the adjoining room where her servants were in the habit of placing their various little gifts for herself and family, for a Japanese servant never fails to present his master or mistress with a present at New Year’s.</p>
             <p>The American lady’s sweet face softened as she looked at the various gifts which were laid on the floor, some of them addressed to her personally, some to her husband and most to the children. The room was in semi-darkness, as the blind was down. As she crossed the room to lift it, her foot came in contact with something that made her pause for a moment in fright, for it did not feel like any ordinary toy. She stopped in the darkness and touched it with her hand. Then she rose, shivering, and pulled the blind high up.</p>
-            <p>Lying sound asleep in the midst of the presents was a little figure. She was dressed in a rose colored kimono, and there were imitation flowers and ornaments in her hair. Mrs. Lennard could see that she had taken especial pains to dress her hair well and look as nice as possible. At first she did not recognize her. Then she went close, and saw it was Shizu. She did not wake her, but stepping on tip-toe crept back to her own room.</p>
+            <p>Lying sound asleep in the midst of the presents was a little figure. She was dressed in a rose colored <choice><sic>kimona</sic><corr>kimono</corr></choice>, and there were imitation flowers and ornaments in her hair. Mrs. Lennard could see that she had taken especial pains to dress her hair well and look as nice as possible. At first she did not recognize her. Then she went close, and saw it was Shizu. She did not wake her, but stepping on tip-toe crept back to her own room.</p>
+            
+            <milestone unit="sectionBreak"/>
+            
             <p><q>Walter</q>, she said, shaking her husband, and then as he opened injured, sleepy eyes at her, she continued: <q>What do you think! I could not sleep toward morning and so crept down to look at the presents. Shizu-san is lying sound asleep among them</q>.</p>
             <p><q>She has been stealing, I suppose</q>, her husband said with an angry look of suspicion. <q>That’s all the thanks you get for helping those beggars</q>.</p>
             <p><q>Don’t, Walter, I can’t believe it</q>.</p>
@@ -116,9 +132,12 @@ wooden frames with opaque paper panels.</note> and know they will hear us</q>.</
             <p>Now Walter Lennard was just as hard and cranky as his wife was tender and kind.</p>
             <p><q>We didn’t expect you to admit it</q>, he said, coldly. <q>However</q>,—he pushed the fusuma apart,—<q>as it is New Year’s you may go, but mind you, if we catch you again, off you go to prison</q>.</p>
             <p>Walter Lennard felt very righteous in his indignation, for had not both he and his wife helped the girl’s family in diverse ways, in spite of being warned against her father by many who said he was a good-for- nought?</p>
+            
+            <milestone unit="sectionBreak"/>
+            
             <p>Shizu-san<note type="editorial" resp="pers:JLC1"><q>Shizu-san</q> in original.</note> was shivering now. She crossed obediently to the door. Then she paused for a moment, her little heart breaking.</p>
             <p><q>What is it, Shizu-san?</q> Mrs. Lennard asked gently, thinking her husband had been too hard on the girl.</p>
-            <p><q>Thad you kind to me</q>, the girl began wildly, <q>I thing’ all the time what kin I do. So I spik’ with Mimosa- san an’ we thing’ tha’s best’ I mek’ you present, but if I have no munney, what kin I do? Tha’s vaery sad nod have aeny munney. Tha’s account I have no present for give you. Then I thing’ I cum here, thinging tha’s bes’ I give you ME! jus’ me! for present. You lig’ me?</q> She paused a moment and smiled again, for she had forgotten the man’s unkindness, and remembered only her mission. Then she continued, haltingly, <q>P’raps you thing’ I nod good for vaery much? Yaes? You thinging thad? I worg’ for you all day an’ all nide, be true—good—foraever an’ aever</q>.</p>
+            <p><q>Thad you kind to me</q>, the girl began wildly, <q>I thing’ all the time what <emph>kin</emph> I do. So I spik’ with Mimosa- san an’ we thing’ tha’s best’ I mek’ you present, but <emph>if</emph> I have no munney, what kin I do? Tha’s vaery sad nod have aeny munney. Tha’s account I have no present for give you. Then I thing’ I cum here, thinging tha’s bes’ I give you ME! jus’ me! for present. You lig’ me?</q> She paused a moment and smiled again, for she had forgotten the man’s unkindness, and remembered only her mission. Then she continued, haltingly, <q>P’raps you thing’ I nod good for vaery much? Yaes? You thinging thad? I worg’ for you all day an’ all nide, be true—good—foraever an’ aever</q>.</p>
             <p>The American lady’s eyes were full of tears now. They were turned on her husband in dreadful reproach. He was looking out of the window, his hands in his pockets, but his indifference was too studied, and his wife knew he was ashamed of himself.</p>
             <p>She turned very gently to the girl. <q>And is that why you are all dressed up to-day, dear?</q></p>
             <p><q>Yaes</q>.</p>
