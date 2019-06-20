@@ -99,7 +99,7 @@
     --wea-header-bg-color: white;
     --wea-info-bg-color:rgb(242, 245, 243);
     --wea-additional-info-bg-color: var(--wea-grey);
-    --header-height: 3.25rem;
+    --header-height: 3.5rem;
     --body-margin-top: calc(var(--header-height) + 2rem);
     --anchor-offset: calc(var(--header-height) * 1.05);
     --link-color: #2A5DB0;
@@ -112,6 +112,7 @@
     
     --max-text-width: 50rem;
     --main-padding-left: 10%;
+    --main-padding-right: 10%;
 }
 
 *{
@@ -142,24 +143,7 @@ body{
     flex-direction: column;  
 }
 
-/****************************************************************** HEADER ******/
-
-header{
-    color:black;
-    font-size:90%;
-    width:100%;
-    margin:0 auto 0 auto;
-    z-index:1000;
-    position:relative;
-    background: var(--wea-header-bg-color);
-    border-bottom: 1px solid #dedede;
-    position:fixed;
-    height: var(--header-height);
-}
-
-
-/* Now when there is an overlay, this has to happen with the header */
-
+/*  OVERLAY (MAY COME IN HANDY IN OTHER CONTEXTS) */
 
 
 header::after{
@@ -181,6 +165,151 @@ header::after{
     left:0;
 }
 
+
+
+/* HEADER */
+
+header{
+    background-color: #f8f9fa;
+    position:fixed;
+    z-index:8000;
+    width:100vw;
+    height: var(--header-height);
+}
+
+nav{
+    display:flex;
+    margin-left: var(--main-padding-left);
+    margin-right:var(--main-padding-right);
+    height:100%;
+}
+
+nav .home{
+    display:block;
+    font-size: 2.1rem;
+    margin-right: 2rem;
+    padding: 0;
+    font-family: "Serif";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    
+}
+
+a#nav_toggle{
+    display:none;
+}
+
+ul#menu_main ul,
+ul#menu_main li{
+    list-style:none;
+}
+ul#menu_main{
+    display:flex;
+      align-items: center;
+  justify-content: center;
+      text-transform:uppercase;
+}
+
+ul#menu_main > li{
+    padding:0 1rem;
+    border-bottom:2px solid transparent;
+    padding-bottom:.7rem;
+    margin-top:1.1rem;
+    box-sizing:border-box;
+    
+}
+
+
+
+ul#menu_main > li > ul{
+    display:none;
+}
+
+li#menu_main_search,
+li.closer{
+    display:none;
+}
+
+nav > div#search {
+    width: 100%;
+    text-align: right;
+    margin: auto 0;
+    
+}
+
+
+
+label.hidden{
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; /* added line */
+  width: 1px;
+}
+
+
+
+/* SEARCH PART OF THE NAV */
+
+div#search input{
+    box-sizing:border-box;
+    font-family:inherit;
+    font-size:1rem;
+    height: 2.1rem;
+    width:15rem;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    padding:.25rem;
+}
+
+div#search button,
+div#search input{
+        border: 1px solid #dee2e6;
+}
+
+
+
+div#search button{
+    background-color:transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+position:absolute;
+height:2.1rem;
+width: 2.1rem;
+cursor:pointer;
+}
+
+div#search button:hover{
+    background:#ccc;
+}
+/*
+
+/\****************************************************************** HEADER ******\/
+
+header{
+    color:black;
+    font-size:90%;
+    width:100%;
+    margin:0 auto 0 auto;
+    z-index:1000;
+    position:relative;
+    background: var(--wea-header-bg-color);
+    border-bottom: 1px solid #dedede;
+    position:fixed;
+    height: var(--header-height);
+}
+
+
+/\* Now when there is an overlay, this has to happen with the header *\/
+
+
+
+
+
 .JS header.open{
     height:auto;
 }
@@ -196,7 +325,7 @@ header > *{
 }
 
 
-/********* NAVIGATIONS ********/
+/\********* NAVIGATIONS ********\/
 
 nav{
 height:100%;
@@ -216,13 +345,13 @@ height:100%;
       padding-bottom: 1rem;
     height: 100%;
     
-    /* These margins, where the left margin
+    /\* These margins, where the left margin
      * and the right margin cancel each other out
      * are sort of a hack
      * but they are there so that, if a user
      * resizes the window, they do not get the odd
      * CSS transition on resize. Since the left margin and 
-     *  */
+     *  *\/
      
     margin-left:-18rem;
     margin-right:-18rem;
@@ -303,7 +432,7 @@ nav > div > div{
 
             margin-top: -.75rem;
 }
-
+*/
 
 /* ******* ON HOVER  */
 
@@ -492,14 +621,6 @@ div.toc > div > span{
  
 
 /********* BASIC TEXT INPUT ********/
-
-input[type='text']{
-      outline:none;
-      width: 100%;
-      height:100%;
-      padding:.5rem;
-      font:inherit;
-}
 
  
 
@@ -814,9 +935,9 @@ h1{
 #mainBody{
  /* We need to margin-top if we do a sticky header */
  /* margin-top: 2.5rem;*/
-  padding-right: 10%;
   padding-bottom: 5%;
   padding-left: var(--main-padding-left);
+  padding-right: var(--main-padding-right);
   padding-top: 0;
   flex:1;
   margin-top: calc(var(--body-margin-top) * 0.55);
@@ -975,7 +1096,8 @@ a:hover,
 .JS .additionalInfoHeader:hover,
 .JS .additionalInfoHeader:hover:after,
 header a:hover,
-a.popup:hover{
+a.popup:hover,
+a#nav_toggle:hover{
     color:var(--wea-pink);
     transition: color 0.2s;
 }
@@ -983,7 +1105,6 @@ a.popup:hover{
 a.popup:hover{
     border-bottom: 1px dashed var(--wea-pink);
 }
-
 
 
 div:target:before{

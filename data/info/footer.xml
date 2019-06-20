@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="footer">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Site Footer</title>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-02-19"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Site Menu</head>
+            <p>This page is provides the list that becomes the footer 
+                in the Winnifred Eaton Archive project. The below div (with xml:id of footer_main) is the
+                main footer for the site. EDIT CAREFULLY AS THE CONTENTS OF THIS LIST WILL APPEAR ON EVERY
+                PAGE.</p>
+            
+            <!--EDIT BELOW HERE, CAREFULLY-->
+            <div xml:id="footer_main">
+                <p>Any leading content here.</p>
+                <list>
+                    <item>
+                        <!--Add a figure here-->
+                    </item>
+                </list>
+                <p>Copyright Winnifred Eaton Archive <seg type="currentDate">2019</seg>. Revision <seg type="currentRevision"></seg>. Web design by <ref target="https://sprigtlyinnovations.com/">Serina Patterson</ref>.</p>
+            </div>            
+        </body>
+    </text>
+</TEI>

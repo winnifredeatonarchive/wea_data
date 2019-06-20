@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="index">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>The Winnifred Eaton Archive</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-02-19"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>The Winnifred Eaton Archive</head>
+            <head type="subtitle">Romancer — Journalist — Screenwriter</head>
+            <div xml:id="index_info">
+                <head>The wild and wonderful career of a pioneer Asian American writer</head>
+                <p>
+                    <!--MARY TO WRITE PART HERE-->
+                  <!--  <ptr type="readMore" target="doc:about"/>-->
+                </p>
+            </div>
+            <div xml:id="index_archive">
+                <list>
+                    <item>
+                        <graphic url=""/>
+                    </item>
+                </list>
+            </div>
+            
+            <div xml:id="index_featuredItems">
+                <head>Featured Item</head>
+                <list type="featuredItems">
+                    <!--These will be the items that are featured-->
+                    <item></item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

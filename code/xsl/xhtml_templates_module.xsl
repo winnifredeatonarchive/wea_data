@@ -73,15 +73,28 @@
         
         
     </xsl:template>
-    
-
+  
     
     <!--Generic block level element templates-->
-    <xsl:template match="body | div | p | lg | l | byline | opener | closer | list | item | person/note | note[p] | listBibl | sp" mode="tei">
+    <xsl:template match="body | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="list" mode="tei">
+        <ul>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </ul>
+    </xsl:template>
+    
+    <xsl:template match="list/item" mode="tei">
+        <li>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </li>
     </xsl:template>
     
     <xsl:template match="bibl" mode="tei">

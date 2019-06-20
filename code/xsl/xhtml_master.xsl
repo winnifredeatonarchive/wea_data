@@ -17,13 +17,20 @@
     </xd:doc>
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xhtml_modules_module.xsl"/>
+    
+    
+    <xsl:variable name="menu" select="$standaloneXml//TEI[@xml:id='menu']"/>
+    <xsl:variable name="footer" select="$standaloneXml//TEI[@xml:id='footer']"/>
 
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($standaloneXml)">
-            <xsl:result-document href="{concat($outDir,'/',//TEI/@xml:id)}.html" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
-            <xsl:apply-templates select="." mode="tei"/>
-            </xsl:result-document>
+            <!--EXCLUDE INDEX FOR NOW, BUT NOT FOR LONG-->
+            <xsl:if test="not(//TEI/@xml:id=('menu','footer'))">
+                <xsl:result-document href="{concat($outDir,'/',//TEI/@xml:id)}.html" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+                    <xsl:apply-templates select="." mode="tei"/>
+                </xsl:result-document>
+            </xsl:if>
         </xsl:for-each>
     </xsl:template>
     

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="menu">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Site Menu</title>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-02-19"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Site Menu</head>
+            <p>This page is provides the menu that becomes the top navigation bar
+            in the Winnifred Eaton Archive project. The below list (with xml:id of menu_main) is the
+            main menu for the site. EDIT CAREFULLY AS THE CONTENTS OF THIS LIST WILL APPEAR ON EVERY
+            PAGE.</p>
+            
+            <list xml:id="menu_main">
+                
+                <item>About
+                    <list>
+                        <item>About the WEA</item>
+                        <item>Technical Details</item>
+                        <item>Contributors and Acknowledgements</item>
+                    </list>
+                </item>
+                
+                <item>Archive
+                    <list>
+                        <item>Early Experiments (1890s–1901)</item>
+                        <item>Playing Japanese (1897–1922)</item>
+                        <item>New York Years (1902–1916)</item>
+                        <item>Alberta Years (1919–1933)</item>
+                        <item>Hollywood Years (1921–1935)</item>
+                    </list>
+                </item>
+                
+                <item>Biography
+                    <list>
+                        <item>Biography</item>
+                        <item>Biographical Resources</item>
+                        <item>Timeline</item>
+                    </list>
+                </item>
+                
+                
+                <item>Resources
+                    <list>
+                        <item>Chronological Bibliography</item>
+                        <item>Scholarship on Winnifred Eaton</item>
+                       <item>Further Reading</item>
+                    </list>
+                    
+                </item>
+                
+               
+                
+                <item>Contact</item>
+                
+                <item xml:id="menu_main_search"><ref target="doc:search">Search</ref></item>
+            </list>
+        </body>
+    </text>
+</TEI>

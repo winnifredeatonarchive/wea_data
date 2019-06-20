@@ -38,9 +38,30 @@
     </xsl:variable>
     
     
-    <xsl:template name="createNav">
-        <xsl:variable name="temp">
+    <xsl:template name="createNav">            
             <header>
+                <nav>
+                    <a class="home" href="index.html">WEA</a>
+                    <a id="nav_toggle" class="hamburger mi" href="#menu_main">menu</a>
+      
+                    <xsl:variable name="processed">
+                        <xsl:apply-templates select="$menu//list[@xml:id='menu_main']" mode="tei"/>
+                    </xsl:variable>
+                    <xsl:apply-templates select="$processed" mode="nav">
+                        <xsl:with-param name="sourceDoc" select="ancestor::TEI" tunnel="yes"/>
+                    </xsl:apply-templates>
+                    <div id="search">
+                        <label for="nav_search_input" class="hidden">Search the Archive</label>
+                        <input id="nav_search_input" type="text" placeholder="Search..."/>
+                        <button type="button" id="searchButton">
+                            <span class="mi" aria-hidden="true">search</span>
+                        </button>
+                    </div>
+       
+                </nav>
+                <xsl:copy-of select="$siteMap"/>
+            </header>
+            <!--<header>
                 <nav id="nav_small">
                     <div class="nav-item">
                         <a href="#nav_main" class="mi" id="hamburger">menu</a>
@@ -83,7 +104,7 @@
                             <a href="#">Resource Subpage</a>
                         </div>
                     </div>
-                    <!--                    <div class="nav-item">News</div>-->
+                    <!-\-                    <div class="nav-item">News</div>-\->
                     <div><a href="#">Contact</a></div>
                     <div class="search_icon" id="nav_search">
                         <a class="mi" href="#headerSearch">search</a>
@@ -91,9 +112,9 @@
                     
                 </nav>
                 <div id="headerSearch">
-                    <!--                    <div id="headerSearchInputButton" class="search_icon">
+                    <!-\-                    <div id="headerSearchInputButton" class="search_icon">
                         <a href="search.html">⚲</a>
-                    </div>-->
+                    </div>-\->
                     <div id="headerSearchInput">
                         <input type="text" id="headerSearchForm" placeholder="Title Search..."/>
                     </div>
@@ -105,14 +126,21 @@
                     
                 </div>
                 <xsl:copy-of select="$siteMap"/>
-            </header>
-        </xsl:variable>
-        <xsl:apply-templates select="$temp" mode="nav">
-            <xsl:with-param name="sourceDoc" select="ancestor::TEI" tunnel="yes"/>
-        </xsl:apply-templates>
+            </header>-->
+
     </xsl:template>
     
-    <xsl:template match="xh:nav[@id='nav_main']/xh:div" mode="nav">
+    <xsl:template match="xh:ul[@id='menu_main']" mode="nav">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <li class="closer">
+                <a href="#" class="closer mi" id="nav_closer">close</a>
+            </li>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="xh:ul[@id='menu_main']/xh:li" mode="nav">
         <xsl:param name="sourceDoc" tunnel="yes"/>
         <xsl:variable name="thisId" select="$sourceDoc/@xml:id"/>
     

@@ -68,9 +68,9 @@ function addHeaderSearchSubmit(){
 
 
 function makeNavClickable(){
-    var ham = document.getElementById('hamburger');
+    var ham = document.getElementById('nav_toggle');
     ham.addEventListener('click', toggleNav, true);
-    var navCloser = document.getElementById('navCloser');
+    var navCloser = document.getElementById('nav_closer');
     navCloser.addEventListener('click', toggleNav, true);
     var searchButtons = document.querySelectorAll("nav a[href='#headerSearch']");
     console.log(searchButtons);
@@ -189,7 +189,7 @@ function sortTable(){
 
 function addHeaderSearch(){
 
-     var headerInput = document.getElementById('headerSearchForm');
+     var headerInput = document.querySelectorAll('#search > input')[0];
      
      /* Add the main title search capacity */
      headerInput.addEventListener('input',titleSearch);
@@ -674,8 +674,6 @@ function addDocClass(){
        var body = document.getElementsByTagName('body')[0];
        body.classList.add('JS');
       
-      /* Now added classes everywhere else */
-      document.getElementById('headerSearch').classList.add('closed');
      document.getElementsByTagName('header')[0].classList.add('closed');
        var expandDiv = document.querySelectorAll('.expandable');
     for (i=0; i < expandDiv.length; i++){

@@ -1,14 +1,30 @@
 
 /* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
+@media screen and (max-width: 1205px){
+    :root{
+        --main-padding-left: 5%;
+        --main-padding-right: 5%;
+    }
+    div#search input{
+        width:10rem;
+    }
+    
+}
+
 @media screen and (min-width: 1025px){
 
 #nav_main > div.selected{
 /*    border-bottom-color: var(--wea-pink);*/
 }
 
-#nav_main > div:not(.search_icon):not(.home):hover{
+#menu_main > li:hover{
    border-bottom-color: var(--wea-pink);
    transition: border-bottom-color .4s;
+   cursor:pointer;
+}
+
+#nav_main > div:not(.search_icon):not(.home):hover{
+
 }
 
 #nav_main > div:hover > div{
@@ -70,7 +86,76 @@
 #tools div.label{
     display:none;
 }
+
+
+nav{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  justify-items: center;
+  margin-left:0;
+  margin-right:0;
+  color:black;
+}
+
+nav > a.home{
+    grid-column-start: 2;
+    margin-right:0;
+}
+nav > a#nav_toggle{
+    grid-column-start: 3;
+    background-color: transparent;
+    display:block;
+    font-size:2.1rem;
+    line-height:inherit;
+    color:black;
+    
+}
+
+nav > a#nav_toggle:focus{
+    outline: 1px solid #ccc;
+}
+
+ ul#menu_main{
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    display: block;
+    height: 100vh;
+    background: white;
+    width: 25rem;
+    /* margin-left: -1000px; */
+    z-index: 9000;
+    transition: transform 0.75s ease-in;
+    overflow-y: scroll;
+ }
+ 
+ ul#menu_main > li {
+      border-bottom: 1px solid #757575;
+       padding-top:.75rem;
+       padding-bottom:.75rem;
+       margin:.5rem;
        
+ }
+ 
+ nav div#search{
+     display:none;
+ }
+ 
+ li#menu_main_search,
+ li.closer{
+     display:inherit;
+ }
+
+ 
+ 
+ body.JS nav.menuOpen,
+  ul#menu_main:target{
+     transform: translateX(-25rem);
+ }
+
+
+/*        
     #nav_small{
         display:grid;
         grid-template-columns: .75fr 2fr .75fr;
@@ -95,10 +180,7 @@
         
     }
     
-    .home{ 
-    font-size: 1.9rem;
-    margin-top:-.5rem;
-    }
+
     
     
     .JS header,
@@ -108,7 +190,7 @@
     
     
 
-    
+   
     #nav_small{
         padding:0;
     }
@@ -145,12 +227,12 @@
  }
  
  
-/* NAV MAIN SIDE BAR */
+/\* NAV MAIN SIDE BAR *\/
     #nav_main{
  
     overflow-y: scroll;
     display: block;
-    /* width: 40%; */
+    /\* width: 40%; *\/
     min-height: 100vh;
     padding: 1rem 1rem 0 0;
     position: absolute;
@@ -238,7 +320,7 @@
     
     #nav_main> div > div{
         display:block;
-    }
+    }*/
     
      #mainBody[class*="docPrimarySource"] > #info{
         grid-template-areas:
@@ -277,10 +359,6 @@
      margin: 0 auto;
      min-width:0;
     }
-       #mainBody{
-        padding-left:5%;
-        padding-right:5%;
-    } 
     
 }
     
