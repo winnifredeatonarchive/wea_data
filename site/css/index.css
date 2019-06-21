@@ -347,6 +347,11 @@ background-position: center;
 }
 
 @media screen and (max-width: 767px){
+
+ :root{
+     --main-padding-left: 0;
+     --main-padding-right:0;
+ }
  .row{
      display:block;
  }
@@ -379,8 +384,34 @@ background-position: center;
     font-size:1.25rem;
 }
 
+
+#index_header > div{
+    padding-left:1rem;
+}
+
+
+.container{
+    padding:0;
+}
+
+.row > .left,
+.row > #index_archive{
+    max-width:85%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+}
+
+@media screen and (max-width: 480px){
+    
+#index_featuredItems img{
+    max-width:12rem;
+}
+
 #index_header h3 {
-    font-size: 3.815rem;
+    font-size: 3.052rem;
     max-width:25rem;
 }
 
