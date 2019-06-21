@@ -143,7 +143,7 @@ body{
     color: var(--wea-text-color);
     margin:0;
    display: flex;  /* use the flex model */
-     min-height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     overflow-x:hidden;
 }
@@ -903,18 +903,63 @@ footer{
     flex-direction:row;
     justify-content:center;
     align-items:center;
+    padding-top: 1.5rem;
+    padding-bottom:1.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+footer > div{
+    padding: 0 10%;
+    margin:0 auto;
+}
+
+footer div[data-el='p']{
+text-align: center;
+font-weight: 300;
+font-size: 1.1rem;
+
+}
+
+footer ul > li > a{
+    display:block;
+    height:5rem;
+    max-height:8rem;
 }
 
 footer img{
-    width:5rem;
-    height:auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 footer ul{
     display:flex;
+       flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+        align-items: center;
+    justify-content: center;
 }
 
+footer ul li{
+    padding:1rem 0;
+    text-align:center;
+}
 
+footer li{
+    width:33%;
+}
+
+footer li:last-child{
+    width:100%;
+}
+
+footer li:last-child > a{
+        height: 2rem;
+}
+footer li:last-child img{
+    max-height:100%;
+}
 
 
 
@@ -1003,7 +1048,7 @@ h1{
 #mainBody{
  /* We need to margin-top if we do a sticky header */
  /* margin-top: 2.5rem;*/
-  padding-bottom: 5%;
+  padding-bottom: 10%;
   padding-left: var(--main-padding-left);
   padding-right: var(--main-padding-right);
   padding-top: 0;
