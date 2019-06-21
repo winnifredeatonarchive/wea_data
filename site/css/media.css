@@ -137,7 +137,7 @@ height: 100vh;
 background: white;
 margin-left: -1000px;
 z-index: 9000;
-transition: margin-right 0.5s;
+transition: right 0.5s;
 overflow-y: scroll;
 font-size: .9rem;
 width: 60%;
@@ -179,7 +179,7 @@ ul#menu_main > li > ul{
  
  body.JS ul#menu_main.open,
   ul#menu_main:target{
-     margin-right:0;
+     right: 60%;
  }
  
  .JS.overlay #header_overlay,
