@@ -99,8 +99,8 @@
     
     
     --wea-text-color: #292929;
-    --wea-footer-bg-color: #282d2e;
-    --wea-header-bg-color: white;
+    --wea-footer-bg-color: #f8f9fa;
+    --wea-header-bg-color:#f8f9fa;
     --wea-info-bg-color:rgb(242, 245, 243);
     --wea-additional-info-bg-color: var(--wea-grey);
     --header-height: 3.5rem;
@@ -165,7 +165,7 @@ header::after{
 /* HEADER */
 
 header{
-    background-color: #f8f9fa;
+    background-color: var(--wea-header-bg-color);
     position:fixed;
     z-index:8000;
     width:100vw;
@@ -898,12 +898,20 @@ div.result:focus > a{
 
 footer{
     background:var(--wea-footer-bg-color);
-    color:white;
     min-height:5rem;
     display:flex;
     flex-direction:row;
     justify-content:center;
     align-items:center;
+}
+
+footer img{
+    width:5rem;
+    height:auto;
+}
+
+footer ul{
+    display:flex;
 }
 
 
@@ -1916,15 +1924,22 @@ div[data-el=note] + div[data-el=note]{
 
 /************************************************************************** LISTS */
 
-[data-el='list']{
+
+/* SIMPLE STUFF */
+ul,li{
+    list-style:none;
+}
+
+
+[data-el='list'][data-type='toc']{
     padding:.25rem;
 }
 
-[data-el='list'] > [data-el='item']{
+[data-el='list'][data-type='toc'] > [data-el='item']{
     padding-left: .5rem;
 }
 
-[data-el='list'] > [data-el='item'] + [data-el='item']{
+[data-el='list'][data-type='toc'] > [data-el='item'] + [data-el='item']{
     padding-top:.25rem;
 }
 

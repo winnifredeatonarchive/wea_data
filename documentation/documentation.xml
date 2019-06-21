@@ -38153,7 +38153,7 @@ epistemology, methodology and history of
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:name | tei:ref | tei:title | tei:l"&gt;
+&lt;sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l"&gt;
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
  &lt;sch:assert test="not(matches($text,'^\s+|\s+$'))"&gt; ERROR: &lt;sch:name/&gt; should not begin or end with spaces.

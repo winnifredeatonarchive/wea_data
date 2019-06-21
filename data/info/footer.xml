@@ -40,13 +40,44 @@
             
             <!--EDIT BELOW HERE, CAREFULLY-->
             <div xml:id="footer_main">
-                <p>Any leading content here.</p>
                 <list>
                     <item>
-                        <!--Add a figure here-->
+                        <ref target="https://www.ubc.ca/">
+                            <graphic url="img:ubc.png">
+                                <desc>University of British Columbia Crest</desc>
+                            </graphic>
+                        </ref>
+                    </item>
+                    <item>
+                        <ref target="https://www.luc.edu/">
+                            <graphic url="img:loyola.png">
+                                <desc>Loyola University Chicago</desc>
+                            </graphic>
+                        </ref>
+                    </item>
+                    <item>
+                        <ref target="https://www.ucalgary.ca/">
+                            <graphic url="img:calgary.png">
+                                <desc>University of Calgary</desc>
+                            </graphic>
+                        </ref>
+                    </item>
+                    <item>
+                        <ref target="https://tei-c.org/">
+                            <graphic url="img:TEI.png">
+                                <desc>Text Encoding Initiative</desc>
+                            </graphic>
+                        </ref>
+                    </item>
+                    <item>
+                        <ref target="http://www.sshrc-crsh.gc.ca/home-accueil-eng.aspx">
+                            <graphic url="img:sshrc.png">
+                                <desc>Social Sciences and Humanities Research Council</desc>
+                            </graphic>
+                        </ref>
                     </item>
                 </list>
-                <p>Copyright Winnifred Eaton Archive <seg type="currentDate">2019</seg>. Revision <seg type="currentRevision"></seg>. Web design by <ref target="https://sprigtlyinnovations.com/">Serina Patterson</ref>.</p>
+                <p>Copyright Winnifred Eaton Archive. Last updated <seg type="currentDate"/>. Web design by <ref target="https://sprightlyinnovations.com/">Serina Patterson</ref>.</p>
             </div>            
         </body>
     </text>

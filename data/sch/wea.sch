@@ -1060,7 +1060,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:name | tei:ref | tei:title | tei:l">
+                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'^\s+|\s+$'))">
                               ERROR: <sch:name/> should not begin or end with spaces.

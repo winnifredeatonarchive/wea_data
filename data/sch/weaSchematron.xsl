@@ -2478,11 +2478,11 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:name | tei:ref | tei:title | tei:l"
+   <xsl:template match="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l"
                  priority="1000"
                  mode="M62">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:name | tei:ref | tei:title | tei:l"/>
+                       context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
 		    <!--ASSERT -->

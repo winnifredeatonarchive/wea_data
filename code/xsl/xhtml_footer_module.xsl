@@ -21,8 +21,7 @@
     
     <xsl:template name="createFooter">
         <footer>
-            <div id="lastUpdate">Last updated: <xsl:value-of select="$today"/></div>
-            <div id="gitRevision"><!--Get this--></div>
+            <xsl:apply-templates select="$standaloneXml//TEI[@xml:id='footer']//div[@xml:id='footer_main']" mode="tei"/>
             
         </footer>
     </xsl:template>

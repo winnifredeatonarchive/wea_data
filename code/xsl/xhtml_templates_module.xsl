@@ -204,6 +204,14 @@
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
+    
+    <xsl:template match="seg[@type='currentDate']" mode="tei">
+        <span><xsl:value-of select="format-date(current-date(),'[D01] [MNn], [Y0001]')"/></span>
+    </xsl:template>
+    
+    <xsl:template match="seg[@type='currentRevision']" mode="tei">
+        
+    </xsl:template>
         
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>

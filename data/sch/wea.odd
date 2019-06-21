@@ -2816,7 +2816,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <constraintSpec scheme="schematron" ident="noSpaceInRefs">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:name | tei:ref | tei:title | tei:l">
+                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'^\s+|\s+$'))">
                               ERROR: <sch:name/> should not begin or end with spaces.
