@@ -1543,6 +1543,22 @@ span[data-el='pb']:not(.first)::before{
     font-style:italic;
 }
 
+#info h2 [data-el='date'],
+#info .breadcrumb [data-el='date']{
+    font-size:.95em;
+}
+
+#info h2 [data-el='date']::before,
+#info .breadcrumb [data-el='date']::before{
+    content: "(";
+}
+
+
+#info h2 [data-el='date']::after,
+#info .breadcrumb [data-el='date']::after{
+    content: ")";
+}
+
 [data-el='title'][data-level='j'] > [data-el='title'][data-level='j'],
 [data-el='title'][data-level='j'] > [data-el='title'][data-level='m'],
 [data-el='title'][data-level='m'] > [data-el='title'][data-level='j'],

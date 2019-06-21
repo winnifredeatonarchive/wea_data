@@ -106,7 +106,7 @@
     </xd:doc>
     <xsl:template match="category" mode="sub">
         <body>
-            <head><xsl:value-of select="normalize-space(catDesc/term/text()[1])"/>: Subcategories</head>
+            <head><xsl:sequence select="catDesc/term/node()"/>: Subcategories</head>
             <div>
                 <xsl:sequence select="catDesc/note/p"/>
                 <list>
@@ -141,7 +141,10 @@
         
         
         <body>
-            <div>                
+            <div>
+                <xsl:if test="not(ancestor::taxonomy[@xml:id='exhibit'])">
+                    <head><xsl:sequence select="catDesc/term/node()"/></head>   
+                </xsl:if>
                 <table type="exhibit">
                     <row role="label">
                         <cell/>
