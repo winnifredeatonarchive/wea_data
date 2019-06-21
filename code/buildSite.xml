@@ -127,14 +127,15 @@
     </target>
     
     <target name="createIndex">
-        <echo message="Creating index..."/>
+        <echo message="DOING NOTHING"/>
+        <!--<echo message="Creating index..."/>
         <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${site.dir}"/>
             <arg value="docsToBuild=${docsToBuild}"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-        </java>
+            <arg value="-\-suppressXsltNamespaceCheck:on"/>
+        </java>-->
     </target>
     
  <target name="createStandaloneXml">

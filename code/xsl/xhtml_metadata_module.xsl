@@ -27,7 +27,7 @@
                     </xsl:when>
                     <xsl:when test="wea:isExhibit($root)">
                         <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=$root/@xml:id]"/>
-                        <h2><xsl:apply-templates select="$thisCat/catDesc/term/node()" mode="tei"/></h2>
+                        <h2><xsl:apply-templates select="normalize-space($thisCat/catDesc/term/text()[1])" mode="tei"/></h2>
                         <xsl:apply-templates select="$thisCat/catDesc/note/p" mode="tei"/>
                     </xsl:when>
                 </xsl:choose>

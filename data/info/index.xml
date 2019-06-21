@@ -32,30 +32,39 @@
     </teiHeader>
     <text>
         <body>
-            <head>The Winnifred Eaton Archive</head>
-            <head type="subtitle">Romancer — Journalist — Screenwriter</head>
-            <div xml:id="index_info">
-                <head>The wild and wonderful career of a pioneer Asian American writer</head>
-                <p>
-                    <!--MARY TO WRITE PART HERE-->
-                  <!--  <ptr type="readMore" target="doc:about"/>-->
-                </p>
+            <div xml:id="index_header">
+                <div>
+                    <head>The Winnifred Eaton Archive</head>
+                    <head type="subtitle">Romancer — Journalist — Screenwriter</head>  
+                </div>
             </div>
-            <div xml:id="index_archive">
-                <list>
-                    <item>
-                        <graphic url=""/>
-                    </item>
-                </list>
-            </div>
-            
-            <div xml:id="index_featuredItems">
-                <head>Featured Item</head>
-                <list type="featuredItems">
-                    <!--These will be the items that are featured-->
-                    <item></item>
-                </list>
-            </div>
+                <div xml:id="index_info">
+                    <head>The wild and wonderful career of a pioneer Asian American writer</head>
+                    <p>Here is where Mary will write some content that gives a very brief introduction to the site.
+                        There will also be a link to some other document, which we will do with a TEI ptr tag (JT TO DO: 
+                        ADD A PTR TAG to the schema.) There will be a link that says READ MORE that will take someone
+                        to that document.
+                    </p>
+                </div>
+                <div xml:id="index_archive">
+                    <list>
+                        <item corresp="wdt:EarlyExperiment"/>
+                        <item corresp="wdt:Japan"/>
+                        <item corresp="wdt:NewYork"/>
+                        <item corresp="wdt:Alberta"/>
+                        <item corresp="wdt:Hollywood"/>
+                    </list>
+                </div>
+                <div xml:id="index_featuredItems">
+                    <head>Featured Item</head>
+                    <list type="featuredItems">
+                        <!--These will be the items that are featured-->
+                        <item corresp="doc:LiChingsBaby1">Here is some copy text for Li Ching’s Baby, which we might want as a feature text. Isn’t it a good?</item>
+                        <item corresp="doc:ChineseJapaneseCookbook1">The Cookbook is also a neat object. You should go read it (but the recipes aren’t all that great, apparently!).
+                        </item>
+                        <item corresp="doc:HerJapaneseLover1">This one has nice illustrations.</item>
+                    </list>
+                </div>
         </body>
     </text>
 </TEI>

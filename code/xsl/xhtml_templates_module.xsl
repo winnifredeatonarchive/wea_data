@@ -54,25 +54,29 @@
             <xsl:call-template name="createNav"/>
             <div id="mainBody">
                 <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,'#'),' ')"/>
-                <xsl:call-template name="createInfo"/>
-                <div id="text_container">
-                    <xsl:call-template name="createToolbar"/>
-                    <div id="text">
-                        <xsl:call-template name="processAtts"/>
-                        
-                        <xsl:apply-templates mode="#current"/>
-                        <xsl:call-template name="createSearchResults"/>
-                    </div>
-                </div>
+                <xsl:choose>
+                    <xsl:when test="ancestor::TEI/@xml:id='index'">
+                        <xsl:call-template name="createIndexPage"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="createInfo"/>
+                        <div id="text_container">
+                            <xsl:call-template name="createToolbar"/>
+                            <div id="text">
+                                <xsl:call-template name="processAtts"/>
+                                <xsl:apply-templates mode="#current"/>
+                                <xsl:call-template name="createSearchResults"/>
+                            </div>
+                        </div>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="createAppendix"/>
             </div>
             <xsl:call-template name="createPopup"/>
- 
            <xsl:call-template name="createFooter"/>
         </body>
-        
-        
     </xsl:template>
+    
   
     
     <!--Generic block level element templates-->
@@ -113,6 +117,13 @@
             </xsl:call-template>
             <xsl:apply-templates mode="#current"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="list[@xml:id='menu_main']/item[@corresp]">
+        <li>
+            <xsl:call-template name="processAtts"/>
+            <a href="{replace(@corresp,'.xml','.html')}"><xsl:apply-templates select="$standaloneXml//category[@xml:id=substring-before(@corresp,'.xml')]/catDesc/term/node()" mode="#current"/></a>
+        </li>
     </xsl:template>
     
     
@@ -184,14 +195,13 @@
     
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | speaker" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
-   
-    
+        
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
            <xsl:call-template name="processAtts">
@@ -417,7 +427,19 @@
     </xsl:template>
     
     <xsl:template match="graphic" mode="tei">
-        <img src="{@url}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
+        <xsl:variable name="url" select="@url"/>
+        <xsl:variable name="urlNorm" select="if (ends-with($url,'pdf')) then replace($url,'.pdf','.png') else $url"/>
+        <xsl:choose>
+            <xsl:when test="ancestor::list[@xml:id='featuredItems']">
+                <a href="{replace(parent::item/@corresp,'.xml','.html')}">
+                    <img src="{$urlNorm}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/> 
+                </a>
+            </xsl:when>
+            <xsl:otherwise>
+                <img src="{$urlNorm}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
+            </xsl:otherwise>
+        </xsl:choose>
+       
     </xsl:template>
     
     <xsl:template match="graphic/desc" mode="tei"/>

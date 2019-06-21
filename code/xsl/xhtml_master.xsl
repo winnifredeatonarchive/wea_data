@@ -17,6 +17,8 @@
     </xd:doc>
     <xsl:include href="globals.xsl"/>
     <xsl:include href="xhtml_modules_module.xsl"/>
+    <xsl:include href="xhtml_index_module.xsl"/>
+   
     
     
     <xsl:variable name="menu" select="$standaloneXml//TEI[@xml:id='menu']"/>

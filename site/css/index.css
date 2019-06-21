@@ -1,0 +1,313 @@
+/*  This is a special CSS file just for the index page */
+
+#mainBody{
+    --main-padding-left: 5%;
+    --main-padding-right: 5%;
+}
+
+/**************************************** IN TEXT THINGS */
+
+/* SIMPLE STUFF */
+ul,li{
+    list-style:none;
+}
+
+
+
+/**************************************** INDEX STRUCTURE */
+
+.container{
+    width: 100%;
+    padding-right: .125rem;
+    padding-left: .125rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -0.125rem;
+    margin-left: -0.125rem;
+}
+
+.left{
+    position: relative;
+    width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 5%;
+}
+
+.middle-spacer{
+    position: relative;
+    width:100%;
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+
+.left > div{
+    max-width: 50rem;
+}
+
+
+
+/*************************************************** INDEX HEADER */
+
+
+#index_header{
+    grid-area: header;
+    background-image: url(../images/WEA-hero-img.png);
+    height: 85vh;
+    min-height: 300px;
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+      -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#index_header > div{
+    color:white;
+    bottom:0;
+    position:absolute;
+    padding-left:5%;
+    padding-bottom:2.5%;
+    line-height:1.2;
+    z-index:10;   
+}
+
+#index_header h3{
+    color:#fff;
+}
+
+#index_header h3 {
+    font-size:4.5rem;
+    font-weight:500;
+    max-width:35rem;
+    letter-spacing: 4.5px;
+}
+
+
+#index_header h3 + h3{
+    font-size:1.25rem;
+    font-family: "Sans";
+    max-width:unset;
+    text-transform:uppercase;
+    padding-top:1.5rem;
+    font-weight:400;
+}
+
+
+/********************************************************** INDEX INFO  */
+
+#index_info{
+   margin-top:2rem;
+}
+
+#index_info [data-el='p']{
+    text-align:left;
+}
+#index_info h2{
+    font-family: "Sans";
+    font-weight: 300;
+    font-size:2rem;
+    
+    
+}
+
+
+/********************************************************** INDEX ARCHIVE */
+
+#index_archive{
+    flex: 0 0 25rem;
+    max-width: 25rem;
+    background-color: var(--wea-info-bg-color);
+    z-index: 99;
+    position: relative;
+    margin-top:-20rem;
+}
+
+#index_archive ul{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#index_archive li{
+    width:20rem;
+    height:15rem;
+}
+
+
+
+#index_archive li{
+    margin-top: 3rem;
+    vertical-align:middle;
+    text-align:center;
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
+      border:2px solid transparent;
+          transition: border .5s ease-in;
+  
+}
+
+#index_archive li:last-child{
+    margin-bottom:3rem;
+}
+
+#index_archive li > a{
+    display:inline-block;
+    text-decoration: none;
+    color: #fefefe;
+    padding-top:25%;
+    height: 100%;
+    width:100%;
+    text-transform: uppercase;
+    font-size:2rem;
+    letter-spacing:2.5px;
+    margin-top:-.75rem;
+
+
+}
+
+#index_archive li:hover{
+    border-color: var(--wea-pink);
+}
+
+#index_archive [data-el='date']{
+    display:block;
+    font-size:1.85rem;
+    text-transform:none;
+
+}
+#index_archive li[data-corresp *='EarlyExperiment']{
+        background: url(../images/Early_Experiments.png) no-repeat;
+    background-position: center center;
+}
+
+#index_archive li[data-corresp *='Japan']{
+            background: url(../images/Japan.png) no-repeat;
+    background-position: center center;
+}
+
+#index_archive li[data-corresp *='NewYork']{
+                background: url(../images/NewYork.png) no-repeat;
+    background-position: center center;
+}
+
+
+#index_archive li[data-corresp *='Hollywood']{
+                background: url(../images/Hollywood.png) no-repeat;
+    background-position: center center;
+}
+
+
+#index_archive li[data-corresp*='Alberta']{
+            background: url(../images/Alberta.png) no-repeat;
+    background-position: center center;    
+}
+
+
+/******************************************************* FEATURED ITEMS */
+
+
+
+
+
+#index_featuredItems{
+    background-color: var(--wea-info-bg-color);
+    margin-top:3.5rem;
+}
+ 
+#index_featuredItems ul {
+    display:flex;
+    flex-direction:column;
+}
+
+#index_featuredItems li{
+    width:40rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#index_featuredItems li > *{
+    padding:0 5%;
+}
+
+
+#index_featuredItems img{
+    max-width:30rem;
+    margin:0 auto;
+}
+
+#index_featuredItems h2{
+    font-size:1rem;
+    padding-left:2rem;
+    padding-top:2rem;
+    color: var(--wea-pink);
+    font-weight:900;
+    font-family: "Sans";
+    text-transform:uppercase;
+}
+
+#index_featuredItems ul > li:nth-child(n+2){
+    display:none;
+}
+
+#index_featuredItems li > [data-el='note']{
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+
+#index_featuredItems [data-el='label']{
+    display:block;
+    font-weight:500;
+    font-size: 1.953rem;
+    font-family: "Serif";
+    color:inherit;
+    margin-top:1rem;
+    margin-bottom: .65rem;
+    
+    /* TREAT THIS LIKE A HEADING */
+    
+}
+
+
+
+#index_featuredItems [data-el='label'] > a{
+    color:inherit;
+}
+
+/*
+:root{
+    --max-text-width: 100vw;
+    
+}
+
+*{
+        box-sizing: border-box;
+}
+
+
+
+
+#mainBody{
+  padding:0;
+  margin:0;
+}
+
+
+
+
+#index_info {
+
+    max-width:42.5rem;
+}
+

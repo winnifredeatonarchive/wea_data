@@ -106,14 +106,14 @@
     </xd:doc>
     <xsl:template match="category" mode="sub">
         <body>
-            <head><xsl:value-of select="catDesc/term"/>: Subcategories</head>
+            <head><xsl:value-of select="normalize-space(catDesc/term/text()[1])"/>: Subcategories</head>
             <div>
                 <xsl:sequence select="catDesc/note/p"/>
                 <list>
                     <!--For every child category, make an item-->
                     <xsl:for-each select="category">
                         <xsl:if test="not(empty(wea:getCatDocs(@xml:id)))">
-                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="catDesc/term"/></ref></item>
+                            <item><ref target="doc:{@xml:id}"><xsl:value-of select="normalize-space(catDesc/term/text()[1])"/></ref></item>
                         </xsl:if>
                     </xsl:for-each>
                 </list>
@@ -232,7 +232,7 @@
         <xsl:param name="appendSub"/>
         <xsl:variable name="thisId" select="if ($appendSub) then concat($thisCat/@xml:id,'_subcategories') else $thisCat/@xml:id"/>
         <xsl:variable name="outDoc" select="concat($outDir,'xml/original/',$thisId,'.xml')"/>
-        <xsl:variable name="title" select="if ($appendSub) then concat(catDesc/term,': Subcategories') else catDesc/term" as="xs:string"/>
+        <xsl:variable name="title" select="if ($appendSub) then concat(normalize-space(catDesc/term/text()[1]),': Subcategories') else normalize-space(catDesc/term/text()[1])" as="xs:string"/>
         <xsl:variable name="categories">wdt:docBornDigitalListing</xsl:variable>
        <xsl:if test="not(empty(wea:getCatDocs($thisCat/@xml:id)))">
            <xsl:call-template name="generateTeiPage">

@@ -38,6 +38,30 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="item[@corresp]" mode="original">
+        <xsl:variable name="thisCorresp" select="@corresp"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="original"/>
+            <xsl:choose>
+                <!--We're pointing to a category reference-->
+                <xsl:when test="starts-with($thisCorresp,'wdt:')">
+                    <xsl:variable name="catId" select="substring-after($thisCorresp,'wdt:')"/>
+                    <ref target="{$catId}.xml"><xsl:sequence select="$sourceXml//category[@xml:id=$catId]/catDesc/term/node()"/></ref>
+                </xsl:when>
+                <xsl:when test="starts-with($thisCorresp,'doc:')">
+                    <xsl:variable name="docId" select="substring-after($thisCorresp,'doc:')"/>
+                    <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id=$docId]"/>
+
+                    <graphic url="{$sourceXml//TEI[@xml:id=$docId]//text/@facs}"/>
+                    <label><ref target="{$thisCorresp}"><xsl:sequence select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></label>
+                    <note>
+                        <xsl:apply-templates select="node()"/>
+                    </note>
+                </xsl:when>
+            </xsl:choose>
+            
+        </xsl:copy>
+    </xsl:template>
     
     
     <xsl:template match="@*|node()" mode="#all">
