@@ -24,13 +24,13 @@
     
    <xsl:template name="createIndexPage">
        <xsl:call-template name="generateTeiPage">
-           <xsl:with-param name="thisId" select="'index'"/>
-           <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/index.xml')"/>
-           <xsl:with-param name="title">Index</xsl:with-param>
+           <xsl:with-param name="thisId" select="'azindex'"/>
+           <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/azindex.xml')"/>
+           <xsl:with-param name="title">A–Z Index</xsl:with-param>
            <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
            <xsl:with-param name="content">
                <body>
-                   <head>Index</head>
+                   <head>A-Z Index</head>
                    <xsl:for-each-group select="$originalXml//TEI" group-by="some $r in //catRef/@target satisfies matches($r,'PrimarySource')">
                        <xsl:sort select="current-grouping-key()" order="descending"/>
                        <div>
