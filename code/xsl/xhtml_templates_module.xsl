@@ -136,6 +136,9 @@
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
+        <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject(ancestor::TEI)) and not(ancestor::TEI/descendant::catRef[contains(@target,'Listing')])">
+            <xsl:call-template name="createCreditsAndCitations"/>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="div[@type='listFigure']/figure" mode="tei">
