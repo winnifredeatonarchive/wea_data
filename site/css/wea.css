@@ -876,6 +876,10 @@ div.result:focus > a{
     padding:.5rem .5rem .5rem 0;
 }
 
+#metadata span[data-el='date']{
+    display:block;
+    font-size:0.85rem;
+}
 
 #title{
     margin-top: -.25rem;
@@ -1590,6 +1594,9 @@ span[data-el='pb']:not(.first)::before{
     content:'[...]';
 }
 
+[data-el='date']{
+        text-transform:none;
+}
 
 [data-el='title'][data-level='j'],
 [data-el='title'][data-level='m']{
