@@ -226,17 +226,22 @@ background-position: center;
 #index_featuredItems{
     background-color: var(--wea-info-bg-color);
     margin-top:3.5rem;
+        overflow-x: scroll;
 }
  
 #index_featuredItems ul {
     display:flex;
-    flex-direction:column;
+    flex-direction: row;
+    position: relative;
 }
 
 #index_featuredItems li{
     max-width:40rem;
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 #index_featuredItems li > *{
@@ -254,15 +259,13 @@ background-position: center;
     font-size:1rem;
     padding-left:2rem;
     padding-top:1rem;
+    padding-bottom:2rem;
     color: var(--wea-pink);
     font-weight:900;
     font-family: "Sans";
     text-transform:uppercase;
 }
 
-#index_featuredItems ul > li:nth-child(n+2){
-    display:none;
-}
 
 #index_featuredItems li > [data-el='note']{
     margin-bottom: 1rem;
