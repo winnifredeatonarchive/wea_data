@@ -186,6 +186,7 @@ background-position: center;
     font-size:1.25rem;
 
 }
+
 #index_archive li[data-corresp *='EarlyExperiment']{
         background: url(../images/Early_Experiments.png) no-repeat;
     background-position: center center;
@@ -216,6 +217,12 @@ background-position: center;
 
 /******************************************************* FEATURED ITEMS */
 
+#index_featuredItemsWrapper{
+        max-width:80%;
+        margin:0 auto;
+        display:flex;
+}
+
 #index_featuredItems{
     background-color: var(--wea-info-bg-color);
     margin-top:3.5rem;
@@ -238,7 +245,7 @@ background-position: center;
 
 
 #index_featuredItems img{
-    max-width:30rem;
+    max-width:80%;
     margin:0 auto;
     height:auto;
 }
@@ -283,6 +290,8 @@ background-position: center;
 
 /* Media queries for the index page */
 @media screen and (max-width: 1186px){
+
+
     #index_archive{
         max-width: 18rem;
         margin-left:8%;
@@ -305,6 +314,9 @@ background-position: center;
     #index_archive li:last-child{
         margin-bottom:1.5rem;
     }
+    #index_featuredItemsWrapper{
+    max-width:100%;
+}
 }
 
 
@@ -320,11 +332,11 @@ background-position: center;
     height:8rem;
     }
     
-    
+
+
  
 
 #index_featuredItems img{
-    max-width:18rem;
     margin:0 auto;
     height:auto;
 }
@@ -405,9 +417,6 @@ background-position: center;
 
 @media screen and (max-width: 480px){
     
-#index_featuredItems img{
-    max-width:12rem;
-}
 
 #index_header h3 {
     font-size: 3.052rem;

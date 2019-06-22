@@ -27,7 +27,10 @@
             <div class="row">
                 <div class="left">
                     <xsl:apply-templates select="//div[@xml:id='index_info']" mode="tei"/>
-                    <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
+                    <div id="index_featuredItemsWrapper">
+                        <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
+                    </div>
+
                 </div>
                 <div class="middle-spacer"/>
                 <xsl:apply-templates select="//div[@xml:id='index_archive']" mode="tei"/>
