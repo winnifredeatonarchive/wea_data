@@ -29,6 +29,16 @@
                     <xsl:apply-templates select="//div[@xml:id='index_info']" mode="tei"/>
                     <div id="index_featuredItemsWrapper">
                         <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
+                        <div id="index_featuredItemsNav">
+                            <ul>
+                                <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
+                                    <li>
+                                        <a href="#index_featuredItems_{position()}"><xsl:value-of select="position()"/></a>
+                                    </li>
+                                </xsl:for-each>
+                            </ul>
+                      
+                        </div>
                     </div>
 
                 </div>
