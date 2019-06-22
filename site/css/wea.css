@@ -1596,18 +1596,35 @@ span[data-el='pb']:not(.first)::before{
     font-style:italic;
 }
 
-#info h2 [data-el='date'],
-#info .breadcrumb [data-el='date']{
-    font-size:.95em;
+nav span[data-el='date'],
+info h2 span[data-el='date']{
+    display:block;
+    opacity: 0.9;
 }
 
-#info h2 [data-el='date']::before,
+.docBornDigitalListing #info div[data-el='p']{
+    max-width: 40rem;
+}
+
+#info h2 span[data-el='date']{
+    display:block;
+    color: #4a4a4a;
+    font-size:.75em;
+    margin-top: -.1rem;
+    margin-bottom:2rem;
+}
+
+#info h2 [data-el='date'],
+#info .breadcrumb [data-el='date'],
+nav span[data-el='date']{
+    font-size: 0.85em;
+}
+
 #info .breadcrumb [data-el='date']::before{
     content: "(";
 }
 
 
-#info h2 [data-el='date']::after,
 #info .breadcrumb [data-el='date']::after{
     content: ")";
 }
