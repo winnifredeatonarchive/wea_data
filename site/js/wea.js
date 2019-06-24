@@ -56,6 +56,9 @@ function addEvents(){
     if (document.getElementById('tools')){
         makeToolbarResponsive();
     }
+    if (docId == 'index'){
+        initIndex();
+    }
 }
 
 
@@ -65,6 +68,8 @@ function addHeaderSearchSubmit(){
     console.log(searchBtn);
     searchBtn.addEventListener('click', submitSearch, true);
 }
+
+
 
 
 function makeNavClickable(){

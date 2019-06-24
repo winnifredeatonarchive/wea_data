@@ -279,8 +279,8 @@ li{
    border-radius:1rem;
    transition: all 0.2s ease-in-out;
 }
-
-#index_featuredItems > a:target,
+body:not(.JS) #index_featuredItems > a:target,
+body.JS #index_featuredItems > a.selected,
 #index_featuredItems > a:hover{
     background-color:#717171;
     color:#717171;

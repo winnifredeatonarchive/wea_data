@@ -283,6 +283,12 @@ div#nav_search input{
         border: 1px solid #dee2e6;
 }
 
+div#nav_search input:focus{
+    outline:none;
+    box-shadow: inset 0px 0px 1px .25px var(--wea-pink);
+    transition: box-shadow .15s ease-in-out;
+}
+
 
 
 div#nav_search button{
