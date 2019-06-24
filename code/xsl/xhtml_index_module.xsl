@@ -28,17 +28,23 @@
                 <div class="left">
                     <xsl:apply-templates select="//div[@xml:id='index_info']" mode="tei"/>
                     <div id="index_featuredItemsWrapper">
-                        <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
-                        <div id="index_featuredItemsNav">
-                            <ul>
+                            <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
+                                <input name="featuredItemChooser" id="index_featuredItems_{position()}" type="radio">
+                                    <xsl:if test="position()=1">
+                                        <xsl:attribute name="checked" select="'checked'"/>
+                                    </xsl:if>
+                                </input>
+                            </xsl:for-each>
+
+                           <!-- <ul>
                                 <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
                                     <li>
                                         <a href="#index_featuredItems_{position()}"><xsl:value-of select="position()"/></a>
                                     </li>
                                 </xsl:for-each>
-                            </ul>
-                      
-                        </div>
+                            </ul>                 -->           
+                        
+                        <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
                     </div>
 
                 </div>
