@@ -34,6 +34,7 @@
                                         <xsl:attribute name="checked" select="'checked'"/>
                                     </xsl:if>
                                 </input>
+                                <label for="index_featuredItems_{position()}">Go to <xsl:value-of select="position()"/></label>
                             </xsl:for-each>
 
                            <!-- <ul>
