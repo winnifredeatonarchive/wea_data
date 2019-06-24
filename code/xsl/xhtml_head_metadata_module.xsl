@@ -45,7 +45,7 @@
                             <xsl:variable name="pos" select="position()" as="xs:integer"/>
                             <xsl:for-each select="1 to $pos">
                                 <xsl:variable name="i" select="."/>
-                                #index_featuredItems_<xsl:value-of select="$pos"/>:checked ~ div ul li:nth-child(<xsl:value-of select="$i"/>)<xsl:if test="not($i = $pos)">,</xsl:if>
+                                #index_featuredItems_<xsl:value-of select="$pos"/>:target ~ ul li:nth-child(<xsl:value-of select="$i"/>)<xsl:if test="not($i = $pos)">,</xsl:if>
                             </xsl:for-each>
                             { transform: translateX(-<xsl:value-of select="100 * ($pos - 1)"/>%);}
                         </xsl:if>

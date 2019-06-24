@@ -224,6 +224,7 @@ background-position: center;
         background-color: var(--wea-info-bg-color);
 }
 
+
 #index_featuredItems{
     overflow-x: hidden;
 }
@@ -265,12 +266,35 @@ li{
 
 
 
+#index_featuredItems > a{
+   display:inline-block;
+   margin-bottom:1rem;
+   margin-left:2rem;
+   margin-top:-.75rem;
+   height:.75rem;
+   width:.75rem;
+   background-color:#ccc;
+   font-size:1px;
+   color:#ccc;
+   border-radius:1rem;
+   transition: all 0.2s ease-in-out;
+}
+
+#index_featuredItems > a:target,
+#index_featuredItems > a:hover{
+    background-color:#717171;
+    color:#717171;
+}
+
+#index_featuredItems > a:first-of-type{
+    margin-left:42%;
+}
 
 #index_featuredItems h2{
     font-size:1rem;
     padding-left:2rem;
+    margin-bottom:0;
     padding-top:1rem;
-    padding-bottom:2rem;
     color: var(--wea-pink);
     font-weight:900;
     font-family: "Sans";
@@ -451,6 +475,10 @@ li{
     max-width:25rem;
 }
 
+
+#index_featuredItems > a:first-of-type{
+    margin-left:32%;
+}
 
 #index_header h3 + h3{
     font-size:1rem;

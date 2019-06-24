@@ -1224,7 +1224,8 @@ a.popup:hover{
 }
 
 
-div:target:before{
+div:target:before,
+#index_featuredItems > a:target:before{
       content: '';
       display: block;
       position: relative; 

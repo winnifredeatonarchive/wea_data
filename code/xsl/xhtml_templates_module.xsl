@@ -96,9 +96,7 @@
     
     <xsl:template match="list/item" mode="tei">
         <li>
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="id" select="if (ancestor::div[@xml:id='index_featuredItems']) then concat('index_featuredItems_', count(preceding-sibling::item) + 1) else ()"/>
-            </xsl:call-template>
+            <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </li>
     </xsl:template>

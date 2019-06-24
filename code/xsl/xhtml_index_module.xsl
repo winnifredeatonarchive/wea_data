@@ -28,23 +28,6 @@
                 <div class="left">
                     <xsl:apply-templates select="//div[@xml:id='index_info']" mode="tei"/>
                     <div id="index_featuredItemsWrapper">
-                            <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
-                                <input name="featuredItemChooser" id="index_featuredItems_{position()}" type="radio">
-                                    <xsl:if test="position()=1">
-                                        <xsl:attribute name="checked" select="'checked'"/>
-                                    </xsl:if>
-                                </input>
-                                <label for="index_featuredItems_{position()}">Go to <xsl:value-of select="position()"/></label>
-                            </xsl:for-each>
-
-                           <!-- <ul>
-                                <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
-                                    <li>
-                                        <a href="#index_featuredItems_{position()}"><xsl:value-of select="position()"/></a>
-                                    </li>
-                                </xsl:for-each>
-                            </ul>                 -->           
-                        
                         <xsl:apply-templates select="//div[@xml:id='index_featuredItems']" mode="tei"/>
                     </div>
 
@@ -52,6 +35,19 @@
                 <div class="middle-spacer"/>
                 <xsl:apply-templates select="//div[@xml:id='index_archive']" mode="tei"/>
             </div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="div[@xml:id='index_featuredItems']" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="head" mode="#current"/>
+            <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
+                <a  href="#index_featuredItems_{position()}" id="index_featuredItems_{position()}">
+                    <xsl:value-of select="position()"/>
+                </a>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()[not(self::head)]" mode="#current"/>
         </div>
     </xsl:template>
     
