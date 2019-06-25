@@ -44,6 +44,9 @@
             <xsl:apply-templates select="head" mode="#current"/>
             <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
                 <a  href="#index_featuredItems_{position()}" id="index_featuredItems_{position()}">
+                    <xsl:if test="position() = 1">
+                        <xsl:attribute name="class" select="'selected'"/>
+                    </xsl:if>
                     <xsl:value-of select="position()"/>
                 </a>
             </xsl:for-each>

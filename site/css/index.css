@@ -223,12 +223,13 @@ background-position: center;
         max-width:100%;
         padding:0 10%;
         margin:0 auto;
-        background-color: var(--wea-info-bg-color);
+
 }
 
 
 #index_featuredItems{
     overflow-x: hidden;
+    background-color: var(--wea-info-bg-color);
 }
  
 #index_featuredItems ul {
@@ -319,6 +320,7 @@ body.JS #index_featuredItems > a.selected,
 
 #index_featuredItems li > [data-el='note']{
     margin-bottom: 1rem;
+    padding: 0.75rem 1.5rem;
 }
 
 

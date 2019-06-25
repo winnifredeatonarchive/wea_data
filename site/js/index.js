@@ -14,10 +14,6 @@ function makeFeaturedItemsLinks(){
     if (featuredItemRegex.test(hash)){
         document.getElementById(hash).classList.add('selected');
         document.getElementById('index_featuredItemsWrapper').scrollIntoView();
-    } else {
-        /* If there is no hash link, then add the class selected to the first
-         * featuredItem */
-        document.getElementById('index_featuredItems_1').classList.add('selected');
     }
     fILinks.forEach(function(f){
         f.addEventListener('click',goToFeaturedItem);
