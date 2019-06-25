@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea2">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea2">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Love of Azalea (20 Sept. 1904)</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -14,20 +26,332 @@
             <bibl copyOf="bibl:164"/>
          </sourceDesc>
       </fileDesc>
-      <profileDesc>
-         <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+         <profileDesc>
+               <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
-      </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl164 using XSLT.</change>
-      </revisionDesc>
+         </profileDesc>
+         <revisionDesc status="inProgress">
+         <change who="pers:SL1" when="2019-06-25" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+               <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl165 using XSLT.</change>
+         </revisionDesc>
    </teiHeader>
-   <text>
-      <body>
+           <text facs="facs:LoveOfAzalea2" prev="doc:LoveOfAzalea1" next="doc:LoveOfAzalea3">
+             <body>
+                <div>
+                   <head>The Love of Azalea</head>
+                   <opener>
+                      <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+                      <note>In Three Parts—Part II</note>
+                   </opener>
+                </div>
+      
+   <div>
+
+            <p>She ran all the way home. She wanted her step-mother’s consent as quickly as possible, so that she might hasten back to the minister.</p>
+            <p>Her breathless words astounded Madame Yamada.</p>
+            <p><q>That barbarous, beautiful priest wishes to marry me</q>, she announced in one breath.</p>
+            <p>Madame Yamada’s lips fell apart.</p>
+            <p><q>What do you mean?</q> she inquired roughly.</p>
+            <p><q>That’s right—right!</q> cried the girl, clasping her hands excitedly. <q>Oh, I am the happiest girl in all Japan!</q></p>
+            <p>Her step-mother extended a long finger and struck it at the girl’s breast.</p>
+            <p><q>What! The foreign devil wants to marry you?</q></p>
+            <p>Madame Yamada was excited, agitated, above all delighted. The gods were favouring her. Here was a solution to all their difficulties.</p>
+            <p><q>Breathe not a word to anyone of this, my daughter</q>, she said, <q>but hasten back with the speed of wings to the house of the barbarian. Bring him here, and we will go at once to the next town and have a private ceremony there. The Nakoda Okido must not suspect</q>.</p>
+            <p>Azalea swung her sleeves coquettishly.</p>
+            <p><q>Oh</q>, she said, airily, <q>we will not make Japanese marriage, step-mother</q>. She clasped her hands behind her and raised her head with childish dignity and pride.</p>
+            <p><q>I am to be an American lady. Therefore we will marry in American fashion</q>.</p>
+            <p><q>How is that?</q> asked Madame Yamada, mystified.</p>
+            <p><q>Oh, you don’t understand</q>, said Azalea pityingly, <q>but I do. He told me once how they marry. Just pray, bend head like this, and knees like this, hold hands tight—so, mother-in-law and then the priest prays on top of the heads and the bride is given a ring—big and shining—very fine. That’s the way they marry</q>.</p>
+            <p><q>They do not exchange the marriage cup?</q> questioned her mother, horrified.</p>
+            <p><q>No—there are no marriage cups. Also to marry that foreign way, I have got to be Kirishitan</q>.</p>
+            <p><q>Ah-h I see. You will turn convert?</q></p>
+            <p><q>I am already. I wish already to be so</q>, said the girl simply.</p>
+            <p>An idea flashed swiftly across the mind of Madame Yamada—a brilliant idea.</p>
+            <p><q>Good!</q> she said. <q>It is well for a maiden to be of the same religion as the man she marries. But do not let it be known till the ceremony is over. Then throw away your ancestral tablets. You will have no further use for them</q>.</p>
+            <p>Azalea paled a trifle. She was not ignorant of the effect of such an action. One who renounces the tablets of his ancestor she knew is in popular opinion forever lowered. One might attend the church meetings of the Kirishitans, one might even affiliate with the foreigners; but it is only when one has openly declared oneself for the new religion and, in defiance of the old, destroyed the sacred symbols, the ancestral tablets, that one becomes an outcast. Yet it was necessary, surely. It was not possible without hypocrisy to acknowledge the new God, and still in secret cherish the tablets of the old.</p>
+            <p>Well, what were the tablets to her now ?</p>
+            <p>Her husband’s love, the new God’s strength, would stand between her and shield her from her enemies. Azalea smiled bravely at her step-mother.</p>
+            <p><q>Yes</q>, she said, <q>if my honourable husband requires it, I will throw away the tablets</q>.</p>
+            <p>They were married in the little mission church on the hill. An old and venerable missionary officiated.</p>
+            <p>The church was quite crowded, for Madame Yamada had spread the news about the town, in anticipation of its effect upon the community. She herself wept unceasingly throughout the ceremony, never once uncovering her shamed face buried in the sleeve of her kimona. Truly, thought her neighbours, the good Madame Yamada was distressed by this action of her step-daughter.</p>
+            <p>When, after it was all over, Azalea’s friends turned their heads from her or looked askance at her, the girl simply lifted her eyes to her husband. The look of wistful apprehension that a moment before had clouded them vanished. Her face became radiant. She clung to his sleeve like a child, proudly, gayly. But when, after proceeding a few steps in the direction of her new home, she realized that they were being followed, a feeling of recklessness and defiance assailed her. She stopped suddenly and dipped her hand down into the long sleeve of her marriage gown. She hardly looked at what she had drawn out, but raising her hand suddenly she threw the tablets in the direction of the little river in the valley below. The noise of their fall upon the rocks frightened her. She covered her ears with her hands and stood trembling in the sunny light. Then she became conscious of the fact that those who had followed her had suddenly, and it seemed, silently, disappeared. She stood alone with the man, her husband. For a moment he seemed a stranger. That momentary blind impulse, she knew, cut her off forever from her kind. Publicly she had insulted her ancestors. She had chosen between them and this tall white stranger whom she scarcely dared to look at now. The silent departure of those who had followed her told more eloquently than any outcry could have done the resentment of her people.</p>
+            <p>Azalea looked about her dazedly. Suppose, after all, her friends spoke truly? Suppose this new God was in reality an evil spirit? Had she not felt its subtle influence upon her? When in memory could she recall the time that her whole being had thrilled and glowed with emotions and feelings so strange and new to her? Was it not the influence of this spirit which had forced her to throw away the tablets—had forced her to marry one of its priests?</p>
+            <p>Her husband stood looking at her tenderly, yearningly. He was thinking of her future, and of the trusting soul that had come to his keeping.</p>
+            <p><q>Well, they are all gone now</q>, he said, <q>and what was that you threw away?</q></p>
+            <p>She shook her head piteously. He waited for her answer, and marvelled that she, who had gone through the marriage ceremony in such a brave and happy spirit, was now so white and trembling. Surely, she had not begun to fear him? Poor little frightened bride!</p>
+            <p><q>l din nod mean to throw it away</q>, she said brokenly. <q>I coon nod help me</q>.</p>
+            <p><q>Oh, you are trembling about what you threw away? Well, let me go after it. Such a little mite of a hand cannot fling very far</q>.</p>
+            <p><q>No, no</q>, she said, catching at his sleeve, <q>do not touch it. The gods may you also</q>.</p>
+            <p>He enclosed her hands in his, and looked at her very seriously.</p>
+            <p><q>You must not talk of ‘the gods,’ my wife. It sounds pagan, and I am going to cure you of the habit</q>.</p>
+            <p><q>Yes, yes</q>, she said, and now she was almost sobbing; <q>pray you do so, ple-ase. I am most ignorant girl in all the whole worl’. I like know about those gods. Pray tell me truth, will you not?</q></p>
+            <p>He could not understand the meaning of her beseeching voice. How could he suppose that she still dreaded the thought that he was a priest of a possible evil spirit? She wanted to be reassured. He only saw that she was very white and trembling, now that the ceremony was over, and he dimly realised that in marrying him she had sacrificed much.</p>
+            <p><q>When you look and speak like that</q>, he said, <q>I feel as if I had done some act. Come, be my happy, joyful sweetheart again. Why, marriage is not a tragedy; not when there is love. Now, let us look about us just a moment, and then we will go home—to our own home together. Just see how sunny and beautiful everything is here. Was ever a sky more lovely? And the fields! What colour can we call them?</q></p>
+            <p>His arm was about her and she had recovered somewhat of her confidence.</p>
+            <p><q>It is a purple world</q>, she said, <q>all purple and green to-day, Excellency</q>.</p>
+            <p><q>Why, yes, it does seem so</q>, he said. <q>The skies are more purple than blue, and their very reflection seems to rest upon the fields to-day. Just look down there in the valley</q>.</p>
+            <p><q>It is the purple iris and wistaria</q>, she said. <q>I so love them. Do they grow like that in America?</q></p>
+            <p><q>No, unfortunately</q>.</p>
+            <p><q>And are not the skies purple there?</q> she asked.</p>
+            <p><q>No-o. That is, not often</q>.</p>
+            <p><q>Oh</q>, she said, with a sudden, unexpected vehemence, <q>I never want to go to that America. I love these fields so purple and so green—and those skies! Excellency, you will not take me away, will you?</q></p>
+            <p>He was touched to the heart of him. <q>No, no</q>, he said. <q>l will not. I will not</q>.</p>
+    
+   </div>
+                
+   <div>
+            <head>CHAPTER VII.</head>
+ 
+            <p>Azalea had been married during a brief absence of Matsuda Isami in Tokyo. He had gone there especially at Madame Yamada’s suggestion, to purchase city gifts with which to help him in his suit. The townspeople had never been on sufficiently familiar terms with Matsuda to talk with him even upon his return from an absence. Hence he learned nothing of the marriage until Madame Yamada herself broke the news to him. She appeared to be suffering from intense mortification and anguish of mind because of what she termed the unnatural defiance of her step-daughter, who had married a barbarian beast against all the wishes of her people. As if this shame were not sufficient, she had turned Kirishitan and destroyed the tablets of her ancestors. Madame Yamada declared vehemently that though she, from motives of pity, must sometimes see the abandoned girl, yet she never would allow her pure and virtuous daughters to be con- taminated with her society.</p>
+            <p>The woman had not foreseen the real effects of such news upon Matsuda. For a moment he stood as if turned to stone. Then his long white teeth gleamed out between his thick, coarse lips like the tusks of a savage animal. In his eyes there was unchained rage. Suddenly he laughed hideously. That laughter alone would have unstrung the nerves of one less cowardly than Madame Yamada. She prostrated herself to the very round and touched his feet with her head.</p>
+            <p><q>Most Exalted</q>, she said, <q>the humble one craves your august pardon and abjectly beseeches you to perceive her distress. That this wretched girl has abandoned you for a vile and horrible barbarian is not the fault of the humblest one, who sought with all her power to bring about her union with you</q>.</p>
+            <p>There was an odd quality in the responding voice of Matsuda.</p>
+            <p><q>Who spoke of fault?</q> said he. <q>Has my mouth uttered blame upon you, Madame Yamada?</q></p>
+            <p>Her courage returned and she arose.</p>
+            <p><q>I should have known</q>, she said, <q>that Your Excellency is too noble to have blamed the unfortunate. And now that you have deigned to pardon me, will you not permit my daughters to wait upon you?</q></p>
+            <p>The gray face of Matsuda had resumed its impassive expression, but his eyes were almost closed. He refused Madame Yamada’s invitation with a gesture and without words. When she did not attempt to press him, he moved toward the door.</p>
+            <p><q>What was the effect of this marriage upon the community he asked, turning to the woman</q>.</p>
+            <p><q>They were righteously insulted, and pity me</q>.</p>
+            <p><q>Was there any demonstration when she threw away the tablets?</q></p>
+            <p><q>Yes. Her friends and neighbours turned from her as if she were evil, as she has truly become</q>.</p>
+            <p><q>She is, then, forsaken?</q></p>
+            <p><q>Punished, Excellency. She believes herself happy at present, but who envies the lot of an outcast? She is entirely friendless</q>.</p>
+            <p>Matsuda’s eyes turned inward, as for a space he meditated.</p>
+            <p><q>Not friendless entirely</q>, he said, finally, tapping his own chest significantly. <q>She still has Matsuda Isami for friend</q>.</p>
+            <p><q>You!</q> repeated Madame Yamada faintly.</p>
+            <p><q>But</q>, she gasped, <q>she has deceived you more than any one else. Exalted Matsuda, she has forced you to break the oath you made to possess her. She is married fbrever to the foreign devil</q>.</p>
+            <p><q>It is news</q>, said Matsuda coldly, <q>that the foreign devils marry Japanese girls forever</q>. He went a step nearer to the woman and brought his eyes on a level with hers. <q>She is not married to him, Madame Yamada. He will leave her soon—remember my words. After that—there is time then for the fulfilment of my oath</q>.</p>
+            <p>Madame Yamada, left alone, grew repulsive in aspect. Her powdered face was white and long drawn. She had thrust her hands mechanically through her hair and it stood up from her head in stiff disorder. In the hope of securing Matsuda for her own daughter she had herself assisted in putting the girl she hated beyond her reach. Now she realized how utterly vain was this last hope. Her very action but brought upon her head the implacable enmity of the man himself, who she knew was not deceived in her. The gods alone knew to what extent he would carry his malicious vengeance upon her.</p>
+    
+      </div>
+       
+      <div>
+    
+            <head>CHAPTER VIII.</head>
+            
+            <p>Meanwhile Matsuda sent the articles he had purchased in Tokyo as marriage gifts to the most respected and honourable foreigner, Mr. Verley. The latter was actually pleased and touched. He laughed at Azalea’s first impulse of fear when the presents had arrived and reminded her that these were the only wedding gifts they had received. She, after her temporary fear, fell to admiring the beauty of the gifts. By the time Matsuda came to pay his personal respects to the couple, only the remotest suspicion of design on his part remained in her mind. No one could have been more respectful and humble in attitude than the rich Matsuda to the foreign minister, no one more solicitous for their comfort and happiness. The little mission house and its pastor found a sudden, unexepected patron, for Sunday after Sunday the chief man of Sanyu attended the services. Matsuda becarne a <q>pillar of the church</q>. First he won the confidence of the minister, and later made the acquaintance of other and more powerful foreigners in the larger cities of Japan.</p>
+            <p>The recall of the missionary came like a shock in the midst of their happiness. Azalea, by this time, had learned and seemingly understood the religion of her husband. She had accepted it even before she understood it with a meek faith almost sublime. Yet, in spite of her seeming conversion, and her almost idolatrous love for her husband, there had curiously enough remained always with Azalea that small stubborn feeling of terror of the far-away <q>land of the barbarians</q> which constituted the home of her husband. All the joyful searching with her husband as teacher in the books of his people had failed to cure her of this innate sense of fear of the foreigner, a fear inculcated since childhood, when she had listened to the weird and horrible tales of an old grandfather who had once lived in one of the open ports and whose imagination was livelier than his memory. These vivid tales of horror, added to an occasional visit to the town of foreign sailor men, whose shore conduct was not that of superior beings, and the further assurance of the temple priests that these barbarians were evil—all these impressions were deely enough implanted in the nature of Azalea, who had never wholly outgrown her child-nature. Just as a Caucasian child might shrink in fear at the thought of suddenly being taken from his safe little cot and transplanted among the savage tribes of Africa, so the little Japanese girl dreaded the thought of life in the questionable and unknown land of America. And now, when she had come to the years of womanhood, a thrill of that early fear still remained with her. Hence when her husband told her of his recall Azalea was quite stupefied.</p>
+            <p><q>You are going to leave me!</q> she gasped, her eyes wide with terror.</p>
+            <p><q>Leave you!</q> he repeated. <q>Why, what put such an idea as that into your head? You are going with me</q>.</p>
+            <p>She shook her head. <q>No, no! I kinnod go</q>, she said. <q>Cannot! What a word to use to me. Certainly you will go</q>.</p>
+            <p>She caught at his hands and held them spasmodically.</p>
+            <p><q>You promise me on that day you marry wiz me that you never goin’ take me away across those oceans. Yes, you promise</q>.</p>
+            <p><q>But, Azalea, I am recalled. I must go. Now, be reasonable. These people who sent for me are my employers</q>.</p>
+            <p>She slipped to the floor and sat with her hands clasped about her huddled knees.</p>
+            <p><q>Velly well</q>, she said after a moment. <q>You go. I will wait here for you</q>.</p>
+            <p>He sat down on the mat beside her and put his arm about her.</p>
+            <p><q>No, no, we must go together</q>.</p>
+            <p>With her head against his shoulder she cried hysterically.</p>
+            <p><q>l do not want to go—no, I do not want l</q> she kept repeating.</p>
+            <p>Thinking her eccentric stubbornness due to her condition, he said in the tenderest voice:</p>
+            <p><q>l could not leave you alone now. Why, what would a little girl like you do all alone with a wee baby and no husband to care for both of you?</q></p>
+            <p>She struck her hands passionately together. <q>Tha’s why!</q> she said. <q>Jus’ why I doan want go. I am ‘fraid for that liddle bit bebby</q>.</p>
+            <p>Argument and persuasion seemed useless at this time, for Azalea could neither understand the one, nor would she yield to the other. Even when Richard Verley returned from Tokyo, where he had found money cabled for two passages by his missionary society, Azalea would not consider the journey. A less conscientious man than the young minister would have used the price of the second passage in providing for the comfort of his wife, during his absence, but Verley repelled the idea, even though he knew that once in America he could easily find funds. So in obedience to his Massachusetts conscience, Azalea’s share of the cabled funds was sent back.</p>
+            <p>Then it was that Azalea would hysterically consent to journey with her husband, only to refuse in the end.</p>
+            <p>Verley’s recall was imperative. Yet at times he thought of refusing to return. His many gifts and benevolences among the people had eaten away the last installment of his small salary. He could not leave his wife supplied with funds sufficient for the entire period of her illness; yet once in America he would be able to send small sums regularly. The society had mentioned something vaguely of a desire to have him lecture in the United States and after that it was intimated that he might be sent to China. In any event he would return to Azalea after the birth of her child.</p>
+            <p>All these confused thoughts and reasonings played through the mind and conscience of Verley. Yet so finely balanced were the moral and emotional traits of this young man that for a time he could come to no decision. He prayed, and then the precepts of his religion conquered. Since Azalea would not accompany him, he must go alone. Parting was inevitable, but absence was not for long.</p>
+            <p>Once again he sought Azalea. Failing to move her by the most passionate entreaty, Verley tried to make her see his reasons for his decision, which he now felt more than ever must be final.</p>
+            <p>Azalea looked up at him with an apathetic, yet tender, expression:</p>
+            <p><q>Yaes, yaes</q>, she said wearily, <q>I understand. I kinnod go. Your God— yaes, my God also—he calling you—not me. You go! I stay!</q></p>
+            <p>Verley now mutely enough accepted the cruelty of circumstances and sought to cheer the drooping spirits of his wife. She at this time was beset by feelings of the most intense depression, induced as much by her frail condition of health as her childish terror of the seas which lay between and separated her husband’s America from her Japan.</p>
+            <p>During the last weeks of his stay in Japan, Richard Verley spent his time in attempts to earn sufficient money so that, at least, Azalea, until he could communicate with her from America, should not want for anything. He wrote articles for a Tokyo weekly paper. Even the native journalists of Japan dream not of making a living at this profession, unless they own an interest in the paper to which they contribute. The amount the young American missionary received for his contributions could be said to add nothing to the meagre sum he had been enabled to lay by from his salary. This, he calculated, would keep Azalea in comparative comfort for possibly two months. He sighed as he thought of her childish ignorance of the value of money, and he hardly dared to think of the possibility of the premature birth of his child.</p>
+            <p>But upon the eve of his going fortune quite suddenly reversed its frowning face. His financial worries found an unexpected alleviation. Matsuda Isami, the friend of his church and a professed convert, had come to him and offered a certain sum of money. Of course the American had protested at accepting any money for personal use from the Japanese, but Matsuda insisted that he knew of the minister’s embarrassment, and being himself possessed of much, wished to share at least a small part of it with his friend. He felt sure Mr. Verley would sail from Japan in an easier frame of mind if he could be assured that his wife was well protected from want. The amount offered by Matsuda was insignificant, but seventy-five <foreign xml:lang="ja">yen</foreign> goes far toward living in Japan. She would be independent for six months to come, at least. And while the minister hesitated over the temptation, the wily Matsuda suggested that if the minister felt any backwardness about accepting it as a gift, to at least accept it as a loan, giving Matsuda a lien upon the contents of his house. This need only be perfunctory, a formal salve to his pride, for Matsuda was confident the minister would pay the loan in no time. It is needless to say that the man of trade triumphed over the man of dreams. Richard Verley mortgaged the furniture of his house, without explaining this part to his wife, who was already disheartened at his protracted departure. He was enabled to put into her hand, the day before he sailed, a sum of money larger than she had ever seen before.</p>
+            <p>The parting was heart-wrenching. It took place in the little house, for he did not wish to have her go to the big city to see the actual sailing of the boat, and she at the last moment had decided against going even to the railroad station of the town with him. She wished, she said, to see him leave the house, just as if he were going on a visit in the neighbourhood, to the church, to an afflicted beggar, or one dying and deserted. He told her she was the bravest woman in the world because she would not let him see her face save with a smile upon the lips. Her eyes kept back their tears. Only at the last moment she clung about his neck and, from kissing his face fell to kissing his breast, his arms and hands, and then slipped to the floor, then to kiss, in a fashion that shocked him, his very feet.</p>
+            <p>When he was gone she closed every <foreign xml:lang="ja">shoji</foreign> of the house and shut herself up alone. That night she slept underneath his desk in the little study where he had worked, his large black bible the pillow for her head.</p>
+      </div>
+                
+       <div>
+          
+            <p>CHAPTER IX.</p>
+    
+            <p>When the fields had turned from purple to gold and yellow, and Summer was hot in the land, Azalea for the first time in two months crept from her chamber and sat at the door of the cottage, her baby on her back. She had been very ill and now she was as thin and fragile as a spirit. Weak as she was Azalea had come to the door during the absence of Natsu, to watch for the mail carrier. During her long illness, and almost from the first day, she had been wont to turn her face always toward the Street <foreign xml:lang="ja">shoji</foreign>, there to watch and wait with undying patience for the coming of that carrier who should bring her word from her husband. But every day, from the rising of the sun to its setting, she waited in hungry vainness. She hindered the progress of her health and became feverish and then delirious. Even in her delirium she would seize the hands of the hard-faced Natsu and pitifully beseech her to bring her a letter from her husband. Now July had come. Spring had gone and the Spring baby had come. Still no word from the father to bless and cheer them in their solitude. Azalea had been too ill in those days to wonder why the woman Natsu attended her with such faithfulness. But as she grew stronger she used to watch mutely the sullen-faced servant, moving about her chamber, keeping it cleanly and even sweet with the flowers she brought from the woods. Azalea would have wished to be on friendly terms with her, but when she attempted speech with her Natsu remained grimly silent, seldom even answering the timid questions of her mistress. On this day when Azalea, by clinging with her hands to the dividing walls of <foreign xml:lang="ja">shoji</foreign>, had made her weak way to the door step, Natsu was absent from the house. She had gone to the house of Matsuda Isami.</p>
+            <p>The sun was warm and very good to feel. The baby, in its little bag on her back, was no heavier a weight than the discarded Obi. Azalea, though weak, felt happier and more restful than she had in days. How good it was to be out in the open air once more, to look up at the wide blue sky, the abode of the great white God; to feel the touch of the soft breezes and to hear the little babbling noise of the moving trees, the wee creatures in the grass and the singing of the birds in the camphor trees.</p>
+            <p>With chin resting upon her hands she sat there, absently dreaming. Her position brought the sleeping baby’s head close against her neck. The warmth of its contact comforted and thrilled her, just as the touch of the child’s father had done. Ah, it was true she had waited long for word from him, but he would not fail them! That small, soft head pressed at her neck seemed to reassure her of this. She would grow strong again, strong and happy as she had been. To Matsuda she gave no thought. The one God was good and he would not permit this evil one to intrude again upon her.</p>
+            <p>Some one spoke her name, and she lifted her head. Before her, in the path, stood the bowing Okido. Mechanically, and without speaking, she returned his salutation. She was too weak and listless to feel interest in his unexpected call upon her, and did not question him.</p>
+            <p>Madame Azalea was recovered?</p>
+            <p>She nodded listlessly.</p>
+            <p><q>Good!</q></p>
+            <p>He shuffled his feet, waiting for an invitation to enter the house. The indifferent silence of the girl was not encouraging, and the summer sun was very hot and uncomfortable upon his back. However, he was not to be conquered by a woman’s unnatural silence and the heat of the Lord of Day.</p>
+            <p><q>I perceive, Madame Azalea</q>, he continued, <q>that the gods have been good to you. You have a child</q>.</p>
+            <p>She smiled faintly. <q>Yes</q>, she said, and for the first time he perceived the faintness and weariness of her voice. He inquired with some anxiety:</p>
+            <p><q>You are still ill?</q></p>
+            <p>She shook her head.</p>
+            <p><q>Quite well</q>, she said, <q>but when one has lain long upon the honourable back, then one’s speech sometimes becomes exhausted</q>.</p>
+            <p><q>Ah!</q></p>
+            <p>This response, he took it, might be an intimation that she was not strong enough for conversation. On the other hand, it was longer than her previous monosyllabic answers, and therefore more encouraging. Well, he would speak to her of the child. This subject must surely interest her.</p>
+            <p><q>Permit me to inquire</q>, he continued, with bland interest, <q>the sex of your honourable offspring?</q></p>
+            <p><q>Male</q>, she answered simply.</p>
+            <p><q>Ah! you are indeed fortunate</q>. He went a step nearer to her, looking solicitously at the child’s head. The projecting gable above mother and child was a sufficient shade for the upturned face of the sleeping child; but the mother must be moved from her apathetic listlessness in some way. So the Nakoda exclaimed in alarm:</p>
+            <p><q>Do you not fear the sun upon your child’s young eyes will blind them?</q></p>
+            <p>His words had the desired effect. She started and put back her hands behind her head. Then, somewhat unsteadily, she arose.</p>
+            <p><q>You will pardon us, if you please</q>, she said. <q>We must go into the interior</q>.</p>
+            <p>Okido had hoped to be invited to enter, but her answer did not disconcert him. He went up the little steps, and stretched out his hands as if to assist her. Madame was too weak to walk alone; would she not permit his most respectful assistance? She clung for support to the front of the sliding door.</p>
+            <p><q>Yes</q>, she said, <q>I am still augustly weak. So pray you, good-bye, kind visitor</q>.</p>
+            <p>He bowed deeply to her, and then:</p>
+            <p><q>Madame Azalea, permit me first to leave in your house a little gift for your man child</q>.</p>
+            <p>She let him put into her hands a child’s tiny toy.</p>
+            <p><q>You are very good</q>, she said.</p>
+            <p><q>It is not I who am so well disposed toward your child</q>, he said, <q>but one whose interest in it is such that he would give all his possessions to it—if you would permit it</q>.</p>
+            <p>She raised her face, white and startled in expression now. Her hands crept out from the sleeves.</p>
+            <p><q>Ah</q>, she said, <q>of whom do you speak, good Okido?</q></p>
+            <p>He did not answer her query, and her breath came excitedly.</p>
+            <p><q>You speak of my husband? You have heard from him?</q></p>
+            <p><q>Not your husband, Madame Alazea [sic]</q>, he said, <q>but one who would become so</q>.</p>
+            <p>She passed her hand bewilderedly over her brow.</p>
+            <p><q>I do not understand</q>, she said.</p>
+            <p>Her strength had been already too much taxed. She turned from the Nakoda and opened the <foreign xml:lang="ja">shoji</foreign> behind her. Then noiselessly she slipped into her chamber, feeling her way through the room with her hands outstretched like one gone blind. When she found the couch she tottered, rather than lay, face down upon it in that instinctive fashion Of the Japanese woman to protect the child upon her back. Soon she slept the sleep of the exhausted.</p>
+            <p>Some one sent fresh flowers in the early mornings to the house of Azalea. They were sweet always with the sparkling dews upon them and they filled the house with fragrance. Azalea delighted in them. They were symbolic of the truth that there was sweetness in life in spite of its melancholy. And so, in those days, she would sit before the flowers, her little head bent above her sewing, and would attempt to fashion the garments of her baby in imitation of the flowers themselves.</p>
+            <p>The baby grew in strength and beauty, a solemn-faced, large-eyed morsel of humanity, with skin like a peach bloom in colour, soft and fat and delightful to the touch of the caressing mother.</p>
+            <p>If it had not been for that ceaseless, tireless waiting and watching for the promised letters from the father of the child, and of his own personal absence from the house, Azalea might have found complete happiness in her child. But always by day she sat with her face turned toward the West, and at night she trimmed and burned the light and set it at the West <foreign xml:lang="ja">shoji</foreign>, that any time he might come would find her waiting.</p>
+            <p>Often the man Okido would loiter by her house and stop a moment to chat with her and to praise the child. Sometimes he brought a little gift, and once he inquired very solicitously whether Madame Azalea was in need of money. She had answered with careless pride:</p>
+            <p> <q>No, I have sufficient until his return</q>.</p>
+            <p>But the Nakoda’s question nevertheless worried her after his departure. She went indoors and took down the little lacquer box in which she had kept the money left her by her husband. It had been so full in the beginning that she had laughed over its weight. Now the box was light as though empty. There were only a few bits left. She shivered as she closed the lid over them.</p>
+            <p><q>Yet</q>, she said, with trembling lip, <q>it is not all gone. He will come when but one bit remains</q>. She burned more oil that night in the waiting room for him. Through the night the bright red light twinkled against his coming. But he came not.</p>
+    
+       </div>
+                
+       <div>
+    
+            <head>CHAPTER X.</head>
+    
+            <p>She was sewing by a half-opened <foreign xml:lang="ja">shoji</foreign>. The garment upon which Azalea was working was very tiny. It seemed almost ridiculous to conceive of the amount of labour she was expending upon an article so trivial. Nevertheless, she worked unceasingly upon it. The little garment was gorgeous with the embroidery wrought by her nimble fingers, embroidery so fine and exquisite that even a connoisseur in Tokyo would have been delighted to see it. From early morning till the darkening night, Azalea worked upon this one garment. Upon it she had expended all her passion, her love. This labour was a balm, a salve, a comfort for her ever-aching loneliness of spirit, for it was the garment in which the child was to be dressed when his father should return.</p>
+            <p>Azalea, alone in the little cottage, ostracised by her former friends and with- out the presence of her husband, found a nameless comfort in working upon the garments of her baby. She said:</p>
+            <p><q>My baby came in Springtime. If it had been a girl, she should be called Sakurasan, after the cherry blossoms that he so loved. But his great God was kinder. He blessed us with a man-child, and it shall bear the name of Sachi. Now I shall fashion a little garment which shall hold all the tints of the Spring, and, like my baby, will be a thing of joy</q>.</p>
+            <p>As she sat on this day, with her head bent above her sewing, she became conscious of the fact that some one had entered her garden and was looking in at her. But when she peered out through her <foreign xml:lang="ja">shoji</foreign> she could see no one. Feeling uneasy, she folded her work and, leaving it, stepped out into the garden. Then she saw at once Matsuda Isami. He had evidently been talking to the maid Natsu, for the latter had disappeared into her kitchen. Azalea went forward to meet the visitor. He was very cheerful, though at first constrained by her sudden appearance. He inquired solicitously after her honourable health and insisted that she was pale and heavy-eyed from much sewing. She smiled faintly as she shook her head and assured him that she was most honourably well.</p>
+            <p><q>And your august husband? His health also is good?</q></p>
+            <p><q>My husband—</q> her voice faltered, but she finished with pride: <q>Yes, his health is good</q>.</p>
+            <p><q>Ah! Then you have heard from him?</q></p>
+            <p>She flushed. Did Matsuda guess the truth, that since the going of her husband, nearly two months before, no letter from him had reached her hands? She did not answer the question and he repeated it.</p>
+            <p><q>You have a letter from your honourable husband?</q></p>
+            <p>She bowed her head without speaking. It was the simplest way of lying. He had taught her it was an evil thing to prevaricate with the lips.</p>
+            <p>Matsuda appeared somewhat taken aback.</p>
+            <p><q>And when do you expect his return?</q></p>
+            <p>She looked away from her interlocutor. Her eyes were wide and wistful.</p>
+            <p><q>I look for him to come at any time— any day—any hour</q>, she said. <q>Always by day I look to the West for his coming, and all night long I burn the light, with its flame to the West. He is always expected</q>.</p>
+            <p><q>You are a most estimable wife</q>, said Matsuda sneeringly. <q>Yet has it never occurred to you that your faithfulness is old-fashioned and fit only for a Japanese woman? You, the wife of a foreigner, should not entertain such feeling</q>.</p>
+            <p><q>Is not faithfulness esteemed by all nations?</q> she asked quickly.</p>
+            <p><q>No. The Westerners make light of its qualities. Have you not heard how many of these foreigners who marry in Japan leave their wives never to return?</q></p>
+            <p><q>My husband is different</q>, she said. <q>So they all say—while they wait</q>, said Matsuda.</p>
+            <p>Half unconsciously her hand went to her heart. She looked as if she were in some sudden pain as she spoke.</p>
+            <p><q>You do not understand. He was a priest of the great God. He could not lie. Ah! he was different from all other men</q>.</p>
+            <p><q>The eyes of a foolish wife are blind</q>, said Matsuda. <q>What a pity that yours could not sooner perceive the baseness of the barbarian</q>.</p>
+            <p><q>Baseness</q>, she repeated. <q>I do not understand</q>.</p>
+            <p><q>You think your husband will return to you?</q></p>
+            <p><q>I am sure of it</q>.</p>
+            <p><q>And against his coming you embroider rich garments for his child</q>.</p>
+            <p>The blood rose slowly to her temples. Her fingers twitched and then she closed them tightly.</p>
+            <p><q>Yes</q>, she said; <q>it is true</q>.</p>
+            <p>Matsuda laughed harshly. ‘</p>
+            <p><q>Yet</q>, said he, <q>it is not your husband who pays for these garments of your child</q>.</p>
+            <p>She stared at him incredulously.</p>
+            <p><q>You are insane to speak so</q>, she finally said. <q>My husband gave me money with which to purchase the articles upon which I work</q>.</p>
+            <p>He bent his lean, evil face to hers.</p>
+            <p><q>That money he accepted from me</q>, he said.</p>
+            <p>She shrunk back a step.</p>
+            <p><q>From you! I do not believe you</q>.</p>
+            <p>He fumbled in the bosom of his hakama.</p>
+            <p><q>Behold this</q>, he said, shaking before her eyes a piece of paper. <q>This is his receipt</q>.</p>
+            <p>She pushed the paper from her.</p>
+            <p><q>l will not look at it</q>, she said.</p>
+            <p><q>You are afraid</q>.</p>
+            <p><q>No!</q></p>
+            <p>She seized the paper and read, her eyes dilating with horror as she did so. It was a receipt for a loan of 75 <foreign xml:lang="ja">yen</foreign>. Her hand fell limply to her side. The paper fluttered to the ground.</p>
+            <p>What! Was the money of this Matsuda paying for the sacred garments of her child! Ah, how terribly blind must have been her husband to accept help from such a source. Her pride scorched her. She suddenly turned and walked swiftly into the house. In a moment, however, she returned, a lacquer box and the tiny garment upon which she had worked in her arms. She set the box at Matsuda’s feet.</p>
+            <p><q>There</q>, she said, <q>is what is left of your evil money. Some of it I have already spent upon this garment. I would not let it touch my child</q>. She tore it across and threw the pieces upon the box.</p>
+            <p><q>Go now!</q> She pointed to the gate. <q>You contaminate his august home. I have always hated you, Matsuda Isami, now more than ever. My father spoke true words. You are a dog!</q></p>
+            <p>Laughing softly, he stooped and lifted the box, then slowly counted its contents.</p>
+            <p><q>Seventy-five <foreign xml:lang="ja">yen</foreign></q>, he said, <q>was the amount of the loan. There are but twenty-five here</q>.</p>
+            <p><q>My husband’s letter will come in the next foreign mail</q>, she replied proudly. <q>You will wait until then</q>.</p>
+            <p>He changed his tone.</p>
+            <p><q>Madame Azalea, it is well known that you are deserted by the barbarian. No one pities you, because it is alleged you insulted your ancestors for the sake of this beast. Now you have become an outcast. Even the beggars will not ask you for charity. Yet I—I, Matsuda Isami, whom you have named ‘dog,’ have compassion upon you</q>.</p>
+            <p>He paused to note the effect of his words. She was staring coldly and stonily before her. Her thoughts were bitter. Matsuda went a step nearer to her.</p>
+            <p><q>You do not believe in my pity for you?</q> he asked.</p>
+            <p>She raised her head proudly.</p>
+            <p><q>I do not need it</q>, she said.</p>
+            <p><q>Hah! Your words are proud. You will learn soon to frame your lips to meeker words</q>.</p>
+            <p>She turned as if to re-enter the house, but he sprang lithely before her and stood in her path, his hideous face thrust before the range of her vision.</p>
+            <p><q>Listen once again. You have come to beggary, Madame Azalea, for in my sleeve this minute rests the last of your <foreign xml:lang="ja">yen</foreign>. What will you do now?</q></p>
+            <p><q>Yes, Matsuda Isami</q>, she said, <q>you hold the last of the money, but there are things I can sell, and the house is yet mine. Let me pass</q>.</p>
+            <p>He laughed in her face so that his breath struck her.</p>
+            <p><q>Every article within the house belongs to me—me!</q> he said, touching his breast with his fingers. She stared at him with horrified eyes. Inside the house the wail of her baby, awakened from its sleep, floated out to them, and the sound silenced both for a moment. Then she pushed by him, and still he barred her passage.</p>
+            <p><q>Where would you go?</q> he taunted. She slipped desperately under his arm and snapped the <foreign xml:lang="ja">shoji</foreign> between them. He could have pushed it aside without the smallest difficulty, but he stood on the steps like one already having possession, and laughed softly to himself.</p>
+       </div>
+                
+        <div>
+           
+            <head>CHAPTER XI.</head>
+         
+            <p>He heard her soothing the child within and the sound of its subdued cries. Finally, comforted, it must have slept, for there was no further sound within.</p>
+            <p>Matsuda pushed open the <foreign xml:lang="ja">shoji</foreign> door. The house and furniture were his. He would enter when he pleased.</p>
+            <p>She was standing behind the <foreign xml:lang="ja">shoji</foreign>, as though awaiting his coming. Her baby was strapped to her back and she held something clasped close to her heart. It was a large black book. Matsuda recognized it. She spoke in unfaltering accents.</p>
+            <p><q>Pray you walk in, Matsuda Isami. The furniture is waiting to be taken. Truly an empty house will be of more comfort than one dressed in what belongs to you</q>.</p>
+            <p><q>An empty house ?</q> he repeated. <q>But I do not propose to empty my house. The house, too, is mine, since I bought it within the month</q>.</p>
+            <p><q>Ah</q>, she said, <q>I suspected as much. Very well, take also the house, most honourable Matsuda Isami. We will leave it at once</q>.</p>
+            <p>He followed her down the path for a space. When he seized her sleeve, she shook it from his grasp.</p>
+            <p><q>Do not make claim upon us, also, Matsuda Isami</q>, she scornfully mocked. <q>It is not possible you purchased us, too?</q></p>
+            <p><q>No, but I shall do so, Madame Azalea</q>.</p>
+            <p><q>Oh, no, that is not possible</q>.</p>
+            <p>Her proud and stubborn demeanour caused him to change his tone.</p>
+            <p><q>Listen</q>, he said. <q>By the law you are no longer the wife of the barbarian. He has deserted you and hence you are divorced. Become wife with me. My house awaits your coming, and I have sworn to possess you</q>.</p>
+            <p><q>I would rather wed with Death</q>, was her answer.</p>
+            <p>He turned in savage exasperation and ran toward the house. She, standing still now, watched him enter. A moment later she heard his hoarse laughter and the crashing of articles within. Sick despair crept through her being, freezing her faculties. She could not move, but stood like one fascinated, watching the trembling of the house itself. It shivered, swayed and shook from side to side, as though a very tempest were sweeping it within. Then suddenly there was an upheaval, a splintering crash, and the little house upon the hill was a mass of broken débris. Matsuda, his passion unsatisfied with the destruction of the furniture, had seized the main pole of the house—the support of the frail structure —and had shaken it with such violence that the house itself had collapsed. A providence which seems by some irony of fate to watch over the fortunes of the evil, had saved the man himself from so much as a scratch. He was snorting and puffng like a bull as he sped down the hill past the trembling, shrinking Azalea. A sound escaped her lips. It could not be called a cry. She made a little rush toward the fallen house, then stopped and covered her eyes with her sleeves. She was homeless, without means, and upon her back her warm, sleeping babe hung heavy and helpless.</p>
+            <p>Dazedly, almost blindly, Azalea made her way down the hill slope, across the little bridge that spanned the narrow river in the valley below, up another hill, and on through the fields. She had come to the house of her stepmother. At least she had never been denied a roof there.</p>
+            <p>Her knock was timid and faint. As though expecting her, Madame Yamada hastened to the door. Azalea spoke in the weariest, the faintest of accents.</p>
+            <p><q>Excellent mother-in-law, my house has fallen and I am without money and very tired. I wish to come into my father’s house a little while</q>.</p>
+            <p>Madame Yamada laughed shrilly. <q>The doors of your father’s house</q>, she said, <q>are closed to the one who has dishonoured them</q>.</p>
+            <p>Azalea stood in silence. Even in her misery, her pride withheld her from pleading. She bowed her head in apathetic politeness.</p>
+            <p><q>Say no more, then</q>, she said. <q>We will go elsewhere</q>.</p>
+            <p>That night she slept under the open skies. The shadows of the night were her only covering, and the soft, mossy grass her mattress. She slept well, as the exhausted often do, and felt nor knew the discomfort of her unusual bed, for she was close to the ruin of her home that had been, and near, too, to the little mission house. Her last thought ere she slept was a vague and almost childish remembrance of an argument she had once had with her husband. She had protested against the locking of the mission house, declaring that locks were unknown and unneeded in Japan. He had insisted that thieves might enter the place and despoil the little church of its few possessions. Now Azalea thought with a strange feeling of bitter triumph that she had proved herself right. Oh, if the little church were but open, what a haven of refuge it would prove now for her and for their child. Who had better right to its protection than the wife and offspring of the priest of the church?</p>
+    
+        </div>
+                
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            
+            <head>CHAPTER XII.</head>
+    
+            <p>The summer slipped by on sleepy wings. Autumn’s mellow, balmy touch was upon the land. By day all Nature was beautiful, but at night the starry skies were cold and chilling. The earth, too, lost its warmth and shivered as if in anticipation of the coming winter.</p>
+            <p>On a certain night in the month of October, a woman, with a baby on her back, made her weary way through the village of Sanyo. One could see even in the dim light that she was haggard and hollow-eyed. Her small hands, which ever and anon crept nervously toward the little head against her neck, were tragically thin. For almost two months Azalea, the wife of the white priest, had been a common mendicant. She had wandered about from place to place, seeking at first employment and later reduced to the begging of alms. The small inland towns of Japan have few industries offering employment to women. Azalea was further hampered by the white child she bore upon her back and the ignominy of her religion, for in some way her history had followed her from town to town. Neither her beauty nor her youth were of avail to her now to earn the pity of those who feared the gods too much to refuse alms to a beggar. The wife of the foreign devil was an outcast of the gods, a pariah, a thing accursed. What respectable Japanese would lend aid to one who had wilfully destroyed the tablets of her ancestors? And so in this land where beggars oft-times grow fat on charity the pariah starved. Sometimes a peasant or farmer, knowing nothing of her history, would give her shelter and food at night, but when the morning light revealed the blue-eyed babe upon her back, they turned her superstitiously away. She hardly knew whither her feet carried her, so many, many had been the days since her wanderings began. Only Nature was compassionate in that the summer months kept her at least from the chill of exposure. But even Nature has limits to her patience, and autumn had come. During the first few weeks of her wanderings, the baby had appeared strong and well. The out-door life in the country but strengthened its little frame. The starving of the mother was a gradual process, something which at first did not affect the baby. But as the days and weeks went by and the mother grew weaker, the contagion of her weariness affected the babe. He became peevish and ailing. The round, cunning, gurgling baby, to whom the mother had passionately clung as though for strength, grew thin and cried constantly. Its little face fell into the odd lines of one aged, thin, pinched and anxious; for what nourishment is there in the breast of a starving woman?</p>
+            <p>After a night of vain effort to keep the baby warm in her arms in the open country, Azalea turned frantically back toward her native village.</p>
+            <p>She had a vague notion of going once more to the home of her step-mother, this time to beg with her head at the august woman’s feet for shelter and charity. When the latter had turned her from the door, stubborn pride had buoyed the girl up and given her that almost feverish strength which had sustained her this long. Now the last strain of pride in her breast was dead. Hope had long lingered, hope and faith in the dimly remembered words of the White God, that he would protect her always —yet now even hope was gone.</p>
+            <p>And thus it was, then, half clad and almost starving, that Azalea returned to Sanyo. It was night and the streets of the town were almost deserted. But the little houses, like fairy lanterns, glowed in the darkness with light and warmth, and as she passed along she could hear the babble and soft, happy murmur of the contented and housed families. Her hunger gripped at her throat, parching it. The baby was mercifully silent, but its weight was so heavy that she walked unsteadily and stooped beneath it.</p>
+            <p>Who would have recognised in this shadow of a woman the exquisitely lovely and dainty girl who, despite her shabby clothes, had bravely held her head so high in the town ? Would the white priest himself have recognised her? She had ceased to think of him in these days. She had told herself that he had been but a beautiful spirit whom the gods had sent to bless her for a little time only. Now he was gone. Azalea had forgotten the language he had taught her; had forgotten the God he had told her would comfort. Her own wanderings and the cries of her baby had occupied her mind to the exclusion of all else. Only sometimes when she slept she dreamed of his great, tender brown eyes watching over and guarding her, and in her sleep she sighed his name.</p>
+            <p>Now before the door of her step-mother’s home she stood once more. Madame Yamada came and looked at her. With her came to the doorstep her two daughters. Azalea bent so low and humbly that with the weight upon her back she nigh fell to the ground. Her voice was almost too faint to hear.</p>
+            <p><q>One night of shelter, good, dear, kindest of mothers—and a little food!</q></p>
+            <p>Madame Yamada’s voice was as hard as her face. <q>So you have returned!</q> she said. <q>You are without shame, it seems. This is the house of respectable people. The Kirishitan cannot enter</q>.</p>
+            <p><q>Kirishitan—Kirishitan!</q> Azalea repeated the word vaguely, dazedly. <q>l am not Kirishitan</q>, she said. <q>The gods—</q></p>
+            <p>Madame Yamada’s shrill laugh interrupted her.</p>
+            <p><q>What! And you carry the evil book in the front of your obi!</q></p>
+            <p><q>That!</q> Azalea dragged the book from her obi. She held it up with both hands, then with a sudden, wild vehemence dashed it to the ground and put her foot upon it.</p>
+            <p><q>It has brought me evil. Good step-mother, I have cast it from me. Give me shelter</q>, and she stretched her hands out in piteous appeal. But only the blank wall of <foreign xml:lang="ja">shoji</foreign> faced her now. Madame Yamada and her daughters had closed the doors upon her, even as she renounced her religion.</p>
+            <p>In a frenzy she beat with her thin hands upon the panelling, and her moan- ing voice reached those within.</p>
+            <p><q>Oh, hearts of stone, take then the child within. It is dying! dying!</q></p>
+            <p>Her step-mother thrust her fist through the paper <foreign xml:lang="ja">shoji</foreign>. One baleful eye was placed at the opening. But she did not speak.</p>
+            <p>The burst of passion subsided. Azalea’s hands fell to her side; she slowly stiffened and straightened herself. She stood in giddy hesitation a moment, then slowly moved away.</p>
+            <p>Through half the length of the night she wandered about the hill country and town of Sanyo. Once she came to some water and its murmuring song evoked a momentary response in her. She began to laugh in a soft, mad way as she stepped into it; but the water came only to her ankles and the baby upon her back moved and moaned in its sleep. Something burned within her head. Words, words—words—spoken in that deep voice she had loved. To take life was an evil and unpardonable thing in the sight of the One God! She stepped upon the bank of the brook in shivering terror. Suddenly she ran from it as though from a great temptation. She sped on from the dark allurement of the country to where the light of the city told her of the warmth and happiness of others. Through street and street she wandered, her feet dragging, her head drooped forward. She lost her sandals, and her feet, in the worn and old linen, bled from the touch of the pavement. She had now lost all sense of locality. Only she knew that thrice she paraded one particular street—an avenue shaded by dark, drooping bamboos, under whose shade houses of exquisite structure and light gleamed out upon the night.</p>
+            <p>Azalea stopped before one of them—the largest of all. Her hand rested heavily upon the bamboo gate; but she did not attempt to push it open. Now she stood still with a nameless quiet and terror in her heart. Suddenly, as she wavered, the babe upon her back twisted in its wrappings, and weirdly, piercingly cried aloud. A moment later one appeared at the door of the house with a lighted candle in his hand. He came with hasty steps down to the bamboo gate, and there in the dim light of the lifted <foreign xml:lang="ja">andon</foreign> he saw the woman Azalea. He seized her by the arm and drew her up the path and into the house.</p>
          </div>
-      </body>
-   </text>
-</TEI>
+                
+          <div>
+             
+            <head>CHAPTER XIII.</head>
+
+             <p>For nine days she remained in the house of Matsuda Isami. He put her into the great sleeping chamber above the <foreign xml:lang="ja">ozashishi</foreign>, removed the paper <foreign xml:lang="ja">shoji</foreign> from the house and slid into its place the winter wooden sliding walls and doors. Thus they were safe from spying intruders, and she might not leave the house, since the wooden street doors were fast. Outside her room the woman Natsu-san remained. Matsuda himself moved into the <foreign xml:lang="ja">ozashiki</foreign>, and from there he kept guard over the woman in the chamber above.</p>
+             <p>When first the serving-woman Natsu-san entered the chamber to serve her, she found the girl crouched off in the farthest corner of the room, whither she had crept after Matsuda Isami had set her in the room. She was numb with cold, hunger and fear. Her feverish mind could not follow the tangled sequence of events that had passed over her that night. She dimly recalled that sudden flash of <foreign xml:lang="ja">andon</foreign> light at the end of her wanderings, the touch of arms of seeming supernatural strength which had crushed her aching body as they carried her up and into this room of fears. The room had no light save what sifted into it from a <foreign xml:lang="ja">takahiri</foreign> (lantern) in the hall, which the servant had set by the dividing doors.</p>
+            <p><q>I have brought food</q>, she said briefly, and set the tray on the floor by the famished Azalea. She reached out a trembling hand and cautiously, fearfully touched and felt of the food. Reassured of what she touched, her hands seized upon the contents of the tray. She found the milk, warm and sweet, and in a moment she had slipped the child out of its bag, laid its limp and listless little body at her feet and thrust the nipple of the bottle between the tiny, parted lips.</p>
+            <p>Someone in the night put a slumber robe upon her. Her weakness and exhaustion gave way. She slept. But in the early morning, turning in her sleep instinctively to reach out for her child, she missed it, and started with a cry of fright and anguish that rang out wildly through the silent house.</p>
+            <p>It was five days before they put the child back into her arms. At the end of that period she put her head at the feet of Matsuda Isami, swore by the eight million gods of heaven that she was his humblest and meekest of slaves, and promised to do whatever he should command if he would but return to her her [sic] child. After that she was like a mechanical puppet. The woman Natsu-san dressed her in softest silken crepe, loaded down her little fingers with rich jewels, and drew the hair, fallen so wildly about her face, back into smooth mode. She moved about like one in a dream, a nightmare from which she could not wake nor extricate her. She was but a passive doll in the hands of the woman, and did not even move her hands to assist the servant in attiring her. But when they brought the child, she rushed upon the woman, siezed [sic] it with savage force from her arms, and then fell to weeping over it in such a way that the one she was hereafter to name <q>master</q> feared for her reason, and left her for the nonce alone. Thus a respite of a few days was given her.</p>
+            <p>Physical strength crept back into her wasted body, bringing health, too, to her bewildered mind. Memory—burning, invincible, accusing—awoke, told her that she was about to become a thing more outcast than ever, because she would be guilty of that sin the most unpardonable of any a woman of his (her husband’s) people could commit. She could not delude herself with the fancy that she would be the wife of Matsuda Isami, whatever the law might be, for she had pledged an eternal faith to her true husband and the child was the connecting link between them. Now as from day to day she waited in fear for the time to come when Matsuda Isami should claim her promise, a promise she dared not break if she would keep her child, there flooded back upon her the teachings of her husband. Now at last she knew she believed in the faith of the Kirishitan, and before that faith she stood convicted. She did not attempt to justify her actions by her sufferings. There was no justification in the creed of his religion. His last words to her had been: <q>Have faith always. Be true to me, my love, and to yourself. I will return</q>. Yet how had he kept his word to her. There had not come to her one word or sign since his departure. If he had sent word to her the great waters that divided them must have swallowed it up. There was nothing left to her now save the child, and for his sake she would sell herself and become wife to Matsuda Isami.</p>
+            
+             </div>
+              
+              <div>
+                 
+              <note>(To be concluded)</note>
+    
+         </div>
+             </body>
+         </text>
+     </TEI>
