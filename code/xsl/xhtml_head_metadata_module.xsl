@@ -41,20 +41,10 @@
 
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <xsl:if test="@xml:id='index'">
-                <!--We add a special style for the index, which is generated from the count of the XSLT-->
-                <style>
-                    <xsl:for-each select="//div[@xml:id='index_featuredItems']/list/item">
-                        <xsl:if test="position() gt 1">
-                            <xsl:variable name="pos" select="position()" as="xs:integer"/>
-                            <xsl:for-each select="1 to $pos">
-                                <xsl:variable name="i" select="."/>
-                                #index_featuredItems_<xsl:value-of select="$pos"/>:target ~ ul li:nth-child(<xsl:value-of select="$i"/>),
-                                #index_featuredItems_<xsl:value-of select="$pos"/>.selected ~ ul li:nth-child(<xsl:value-of select="$i"/>)<xsl:if test="not($i = $pos)">,</xsl:if>
-                            </xsl:for-each>
-                            { transform: translateX(-<xsl:value-of select="100 * ($pos - 1)"/>%);}
-                        </xsl:if>
-                    </xsl:for-each>
-                </style>
+                <!--We add a special style for the index, which is generated from the count of the XSLT:
+                    template located in the index module.
+                -->
+                <xsl:call-template name="createIndexStyles"/>
             </xsl:if>
         </head>
     </xsl:template>

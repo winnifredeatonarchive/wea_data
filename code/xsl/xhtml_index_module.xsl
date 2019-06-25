@@ -54,4 +54,22 @@
         </div>
     </xsl:template>
     
+    <xsl:template name="createIndexStyles">
+        <style>
+            <xsl:variable name="items" select="//div[@xml:id='index_featuredItems']/list/item"/>
+            <xsl:variable name="itemCount" select="count($items)"/>
+                <xsl:for-each select="$items">
+                    <xsl:if test="position() gt 1">
+                        <xsl:variable name="pos" select="position()" as="xs:integer"/>
+                        <xsl:for-each select="1 to $itemCount">
+                            <xsl:variable name="i" select="."/>
+                            #index_featuredItems_<xsl:value-of select="$pos"/>:target ~ ul li:nth-child(<xsl:value-of select="$i"/>),
+                            #index_featuredItems_<xsl:value-of select="$pos"/>.selected ~ ul li:nth-child(<xsl:value-of select="$i"/>)<xsl:if test="not($i = $itemCount)">,</xsl:if>
+                        </xsl:for-each>
+                        { transform: translateX(-<xsl:value-of select="100 * ($pos - 1)"/>%);}
+                    </xsl:if>
+                </xsl:for-each>
+        </style>
+    </xsl:template>
+    
 </xsl:stylesheet>
