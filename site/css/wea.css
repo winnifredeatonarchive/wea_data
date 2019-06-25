@@ -1233,6 +1233,14 @@ a.popup:hover{
     border-bottom: 1px dashed var(--wea-pink);
 }
 
+a:hover img{
+    box-shadow: 0px 0px 0px 1px var(--wea-pink);
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+#info a:hover img{
+    box-shadow:none;
+}
 
 div:target:before,
 #index_featuredItems > a:target:before{

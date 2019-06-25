@@ -256,15 +256,28 @@ background-position: center;
 }
 
 
+
+#index_featuredItems ul > li > a{
+    display:block;
+}
 #index_featuredItems img{
     max-width:80%;
     height:auto;
+    display:block;
+    margin:0 auto;
+    margin-top:1px;
 }
 
+
+#index_featuredItems [data-el='label'] > a:hover{
+    color:var(--wea-pink);
+    transition: color 0.25s ease-in-out;
+}
 
 li{
     transition: transform 1s ease-in-out;
 }
+
 
 
 

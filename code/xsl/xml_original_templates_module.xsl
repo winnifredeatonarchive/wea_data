@@ -51,8 +51,10 @@
                 <xsl:when test="starts-with($thisCorresp,'doc:')">
                     <xsl:variable name="docId" select="substring-after($thisCorresp,'doc:')"/>
                     <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id=$docId]"/>
+                    <ref target="doc:{$docId}">
+                        <graphic url="{$sourceXml//TEI[@xml:id=$docId]//text/@facs}"/>
+                    </ref>
 
-                    <graphic url="{$sourceXml//TEI[@xml:id=$docId]//text/@facs}"/>
                     <label><ref target="{$thisCorresp}"><xsl:sequence select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></label>
                     <note>
                         <xsl:apply-templates select="node()"/>
