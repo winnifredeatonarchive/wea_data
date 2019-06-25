@@ -220,11 +220,21 @@ background-position: center;
 /******************************************************* FEATURED ITEMS */
 
 #index_featuredItemsWrapper{
-        max-width:100%;
-        padding:0 10%;
-        margin:0 auto;
 
 }
+
+
+/* Add a little horizontal rule above the featured items */
+div#index_featuredItemsWrapper::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #ccc;
+    margin: 3rem auto;
+}
+
+
 
 
 #index_featuredItems{
@@ -320,7 +330,9 @@ body.JS #index_featuredItems > a.selected,
 
 #index_featuredItems li > [data-el='note']{
     margin-bottom: 1rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.5rem 1.5rem 1.5rem;
+    max-width:40rem;
+    text-align:justify;
 }
 
 
@@ -332,6 +344,7 @@ body.JS #index_featuredItems > a.selected,
     color:inherit;
     margin-top:2rem;
     margin-bottom: 1rem;
+    padding: 0 1.5rem;
     
     /* TREAT THIS LIKE A HEADING */
     
@@ -451,9 +464,13 @@ body.JS #index_featuredItems > a.selected,
      max-width:80%;
  }
  
+ #index_archive ul{
+         border-radius:0;
+ }
  #index_archive li{
     width:16rem;
     height:12rem;
+
  }
  
  #index_archive li > a{
@@ -494,7 +511,7 @@ body.JS #index_featuredItems > a.selected,
 
 
 #index_featuredItems > a:first-of-type{
-    margin-left:32%;
+    margin-left:30%;
 }
 
 #index_header h3 + h3{
