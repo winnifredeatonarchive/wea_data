@@ -20,8 +20,6 @@
     
     <xsl:template name="createJson">
         <xsl:variable name="stems" select="$tokenizedDocs//span[@data-stem]" as="element(span)*"/>
-        <xsl:variable name="distinctStems" select="distinct-values(for $r in (for $n in $stems return normalize-space($n)) return if ($r ne '') then $r else ())"/>
-        <xsl:variable name="distinctCount" select="count($distinctStems)"/>
         <xsl:call-template name="createMap">
             <xsl:with-param name="stems" select="$stems"/>   
         </xsl:call-template>
@@ -29,9 +27,10 @@
     
     <xsl:template name="createMap">
         <xsl:param name="stems"/>
-        <xsl:for-each-group select="$stems" group-by="@data-stem">
+        <xsl:for-each-group select="$stems" group-by="tokenize(@data-stem,'\s+')">
+            <xsl:sort select="current-grouping-key()" case-order="upper-first"/>
             <xsl:variable name="token" select="current-grouping-key()"/>
-           <!-- <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>-->
+            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>
             <xsl:variable name="map" as="element()">
                 <xsl:call-template name="makeMap">
                     <xsl:with-param name="term" select="$token"/>

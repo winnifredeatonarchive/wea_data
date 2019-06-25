@@ -11,17 +11,6 @@
     <xsl:include href="search_globals_module.xsl"/>
     
     
-    <!--This is a slight optimization hack; the fastest and simplest to check index the 
-        English words list, after much experimentation with keys, regular expressions, and the like
-        is to store these things in a map. Then, use map:contains() in the function below-->
-    <xsl:variable name="englishWordsMap" as="map(xs:string,xs:string?)">
-        <xsl:map>
-            <xsl:for-each select="$englishWords">
-                <xsl:map-entry key="."/>
-            </xsl:for-each>
-        </xsl:map>
-    </xsl:variable>
-    
     <xsl:function name="wea:makeRegex" as="xs:string">
         <xsl:param name="seq"/>
         <xsl:variable name="ordered" as="xs:string+">
@@ -103,13 +92,8 @@
             <xsl:otherwise>
                 <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
                 <xsl:variable name="containsDigit" select="matches($word,'\d+')" as="xs:boolean"/>
-                <xsl:variable name="isForeign" select="$context/ancestor::span[@data-el='foreign'] or map:contains($englishWordsMap, $word)" as="xs:boolean"/>
-                <xsl:variable name="useStem" select="not($startsWithCap or $containsDigit or $isForeign)" as="xs:boolean"/>
                 <span>
-                    <xsl:attribute name="data-stem" select="if ($useStem) then $stem else $word"/>
-                    <xsl:if test="$isForeign">
-                        <xsl:attribute name="data-foreign" select="'true'"/>
-                    </xsl:if>
+                    <xsl:attribute name="data-stem" select="if ($containsDigit) then $word else string-join(($stem,if ($startsWithCap) then $word else ()),' ')"/>
                     <xsl:value-of select="."/>
                 </span>
             </xsl:otherwise>
