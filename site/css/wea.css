@@ -649,26 +649,28 @@ div.toc > div > span{
 
 #searchBox{
     margin:0 auto;
-    background-color: var(--wea-info-bg-color);
-    margin-top:2em;
-    padding:1.5em;
-    max-width:30em;
-    max-height:4em;
-    border-radius:1em;
+    margin-top:2rem;
+    padding-top: 2rem;
 }
 
 #searchBox input[type=text] {
-      font-size:150%;
-      outline:none;
-  
+font-size:150%;
+font-family: inherit;
+border-bottom: 2px solid #ccc;
+outline: none;
+border-top: none;
+border-left: none;
+border-right: none;
+width: 100%;
+padding-bottom:0.25rem;
+padding-left: 0.15rem;
+transition: border-bottom-color 0.15s ease-in-out;
 }
 
- #searchBox input[type=text],
- #searchBox input[type=text]:focus{
-  border-color: var(--wea-info-bg-color);
-  border-width:0;
-  border-radius:.25rem;
-  }
+#searchBox input[type="text"]:focus{
+    border-bottom-color: #4b4b4b;
+    
+}
   
   div.results{
     margin-top:1.5rem;
