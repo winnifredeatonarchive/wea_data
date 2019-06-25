@@ -30,7 +30,7 @@
         <xsl:for-each-group select="$stems" group-by="tokenize(@data-stem,'\s+')">
             <xsl:sort select="current-grouping-key()" case-order="upper-first"/>
             <xsl:variable name="token" select="current-grouping-key()"/>
-            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>
+<!--            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>-->
             <xsl:variable name="map" as="element()">
                 <xsl:call-template name="makeMap">
                     <xsl:with-param name="term" select="$token"/>
