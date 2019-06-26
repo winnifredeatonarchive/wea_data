@@ -27,10 +27,10 @@
     
     <xsl:template name="createMap">
         <xsl:param name="stems"/>
-        <xsl:for-each-group select="$stems" group-by="tokenize(@data-stem,'\s+')">
+        <xsl:for-each-group select="$stems" group-by="@data-stem">
             <xsl:sort select="current-grouping-key()" case-order="upper-first"/>
             <xsl:variable name="token" select="current-grouping-key()"/>
-<!--            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>-->
+            <xsl:message>Processing <xsl:value-of select="$token"/></xsl:message>
             <xsl:variable name="map" as="element()">
                 <xsl:call-template name="makeMap">
                     <xsl:with-param name="term" select="$token"/>
@@ -46,6 +46,7 @@
 
     <xsl:template name="makeMap">
         <xsl:param name="term"/>
+        <xsl:variable name="termRegex" select="concat('(^|\s)',$term,'(\s|$)')"/>
             <map xmlns="http://www.w3.org/2005/xpath-functions">
                 <string key="token">
                     <xsl:value-of select="$term"/>
@@ -60,7 +61,7 @@
                             <xsl:sort select="count(current-group()[1]/ancestor::html/descendant::span[@data-stem=$term])" order="descending"/>
                             <xsl:variable name="docId" select="current-grouping-key()"/>
                             <xsl:variable name="thisDoc" select="current-group()[1]/ancestor::html"/>
-                            <xsl:variable name="spans" as="element(span)+" select="$thisDoc//span[@data-stem=$term]"/>
+                            <xsl:variable name="spans" as="element(span)+" select="$thisDoc//span[@data-stem][@data-stem=$term]"/>
                             <xsl:variable name="docTitle" select="$thisDoc/head/title[1]"/>
                             
                            

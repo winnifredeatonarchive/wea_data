@@ -52,7 +52,7 @@
     <xd:doc scope="component">
         <xd:desc>The meat: tokenizing text nodes.</xd:desc>
     </xd:doc>
-    <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])][not(ancestor::div[@id='metadata'])]" mode="tokenize">
+    <xsl:template match="text()[not(matches(.,'^\s+$'))][ancestor::div[@id='mainBody']][not(ancestor::div[@id='appendix'])][not(ancestor::div[@id='metadata'])][not(ancestor::*[contains(@class,'mi')])][not(ancestor::div[@id='tools'])]" mode="tokenize">
         <xsl:variable name="currNode" select="."/>
         <xsl:analyze-string select="normalize-space(.)" regex="[A-Za-z\d]+">
             <xsl:matching-substring>
@@ -78,26 +78,26 @@
     <xsl:template name="performStem">
         <xsl:param name="context"/>
         <xsl:variable name="word" select="."/>
-        <xsl:variable name="stem" select="xs:string(jt:stem($word))"/>
-        <xsl:variable name="same" select="$stem = $word" as="xs:boolean"/>
-        <xsl:variable name="start" select="lower-case(substring($word,1,1))"/>
-        <xsl:choose>
-            <xsl:when test="$same">
-                <span>
-                    <xsl:attribute name="data-stem" select="$stem"/>
-                    <xsl:value-of select="."/>
-                </span>
-            </xsl:when>
-           
-            <xsl:otherwise>
-                <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
-                <xsl:variable name="containsDigit" select="matches($word,'\d+')" as="xs:boolean"/>
-                <span>
-                    <xsl:attribute name="data-stem" select="if ($containsDigit) then $word else string-join(($stem,if ($startsWithCap) then $word else ()),' ')"/>
-                    <xsl:value-of select="."/>
-                </span>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:variable name="lcWord" select="lower-case($word)"/>
+        
+        <xsl:variable name="startsWithCap" select="matches($word,'^[A-Z]')" as="xs:boolean"/>
+        <xsl:variable name="isAllCaps" select="matches($word,'^[A-Z]+$')" as="xs:boolean"/>
+        <xsl:variable name="containsDigit" select="matches($word,'\d+')" as="xs:boolean"/>
+        <xsl:variable name="stemVal" as="xs:string">
+                <xsl:choose>
+                    <xsl:when test="$containsDigit">
+                        <xsl:value-of select="$word"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="jt:stem($lcWord)"/>
+                    </xsl:otherwise>
+                </xsl:choose>            
+        </xsl:variable>
+        <span>
+            <xsl:attribute name="data-stem" 
+                select="$stemVal"/>
+            <xsl:value-of select="."/>
+        </span>
     </xsl:template>
     
     

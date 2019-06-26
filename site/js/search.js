@@ -179,14 +179,6 @@ mdh.LocalSearch.prototype.search = function(str){
         tokensToFind.push(this.stemmedTokens[i]);
       }
     }
-    if (!exact){
-        for (var k=this.currTokens.length; k < this.currTokens.length*2; k++){
-        this.stemmedTokens[k] = this.currTokens[k - this.currTokens.length]
-        if (!this.index.hasOwnProperty(this.stemmedTokens[k])){
-            tokensToFind.push(this.stemmedTokens[k]);
-        }
-    }
-    }
     
     
     
