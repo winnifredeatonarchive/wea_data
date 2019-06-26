@@ -1091,13 +1091,29 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
         margin-top:5%;
 }
 
-#mainBody[class*="BornDigital"] #credits{
-    padding:.25em .5em;
+#mainBody[class*="BornDigital"] #info{
+    background-color:inherit;
+}
+
+#mainBody[class*="BornDigital"] #info{
+    padding:.25em 0;
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
     font-size: 0.85rem;
     width:95%;
     margin:0 auto;
+}
+
+#mainBody[class*="BornDigital"] #info > div{
+    padding-left:0.5em;
+    margin-right:1em;
+}
+#mainBody[class*="BornDigital"] #info > div{
+    width:100%;
+}
+
+#mainBody[class*="BornDigital"] #info > div + div{
+    border-top: 1px solid #ccc;
 }
 
 #mainBody[class*="BornDigital"] .additionalInfoHeader{
@@ -1108,7 +1124,7 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
 #mainBody[class*="BornDigital"] .metadataLabel{
     font-size:1em;
 }
-#mainBody[class*="BornDigital"] #credits .content *{
+#mainBody[class*="BornDigital"] #info .content *{
 }
 
 #mainBody[class*="BornDigital"] div[data-el='respStmt'] > div{
@@ -1124,13 +1140,15 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
     padding-right: .5em;
 }
 
-#mainBody[class*="BornDigital"] #credits .content > div + div{
+#mainBody[class*="BornDigital"] #info .content > div + div{
     padding-top:1em;
 }
 
-#mainBody[class*="BornDigital"] #credits .mi {
-    font-size: 20px;
+#mainBody[class*="BornDigital"] #info .mi {
+    font-size: 1.35em;
     color: inherit;
+    position:relative;
+    right: 1.25em;
 }
 
 #mainBody[class*="BornDigital"] #credits .bibl{

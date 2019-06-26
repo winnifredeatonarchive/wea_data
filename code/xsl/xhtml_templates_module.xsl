@@ -138,7 +138,11 @@
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
         <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject(ancestor::TEI)) and not(ancestor::TEI/descendant::catRef[contains(@target,'Listing')])">
-            <xsl:call-template name="createCreditsAndCitations"/>
+            <div id="info">
+                <xsl:call-template name="createTOC"/>
+                <xsl:call-template name="createCreditsAndCitations"/>
+            </div>
+            
         </xsl:if>
     </xsl:template>
     
