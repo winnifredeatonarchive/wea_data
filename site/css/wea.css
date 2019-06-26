@@ -1091,11 +1091,11 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
         margin-top:5%;
 }
 
-#mainBody[class*="BornDigital"] #info{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info{
     background-color:inherit;
 }
 
-#mainBody[class*="BornDigital"] #info{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info{
     padding:.25em 0;
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
@@ -1104,54 +1104,54 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
     margin:0 auto;
 }
 
-#mainBody[class*="BornDigital"] #info > div{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div{
     padding-left:0.5em;
     margin-right:1em;
 }
-#mainBody[class*="BornDigital"] #info > div{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div{
     width:100%;
 }
 
-#mainBody[class*="BornDigital"] #info > div + div{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div + div{
     border-top: 1px solid #ccc;
 }
 
-#mainBody[class*="BornDigital"] .additionalInfoHeader{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) .additionalInfoHeader{
     padding-left:0;
     padding-right:0;
 }
 
-#mainBody[class*="BornDigital"] .metadataLabel{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) .metadataLabel{
     font-size:1em;
 }
-#mainBody[class*="BornDigital"] #info .content *{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content *{
 }
 
-#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div{
     display:inline;
 }
 
-#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div[data-el='resp']{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div[data-el='resp']{
 
 }
 
-#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div[data-el='resp']::after{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div[data-el='resp']::after{
     content:":";
     padding-right: .5em;
 }
 
-#mainBody[class*="BornDigital"] #info .content > div + div{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content > div + div{
     padding-top:1em;
 }
 
-#mainBody[class*="BornDigital"] #info .mi {
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .mi {
     font-size: 1.35em;
     color: inherit;
     position:relative;
     right: 1.25em;
 }
 
-#mainBody[class*="BornDigital"] #credits .bibl{
+#mainBody[class*="BornDigital"]:not([class*='Listing']) #credits .bibl{
     text-indent:0;
     padding-left:0;
 }
