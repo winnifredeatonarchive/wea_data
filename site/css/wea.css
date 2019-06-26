@@ -1079,6 +1079,16 @@ h1{
     margin-top: var(--body-margin-top);
 }
 
+#mainBody[class*="BornDigital"]:not([class*='Listing']){
+    background-image: url(/images/CherryTree/CherryBranchFlipped.png), url(/images/BirdBanner/BirdBottomNoSand.png);
+    background-repeat: no-repeat;
+    background-position: top 1rem left 0, bottom right;
+    background-origin: border-box;
+    background-size: 20%, 40%;
+}
+
+
+
 #facsimile{
     grid-area: facsimile;
     width: fit-content;
@@ -1988,14 +1998,20 @@ div.facsButton> a:hover
 
 
 #appendix{
-    max-width: calc(var(--max-text-width) * 1.5);
+    max-width: var(--max-text-width);
     margin: 0 auto;
 }
 
 #appendix > div:first-child{
-    border-top: 2px solid #d8d5d5; 
     padding-top: 1rem;
     margin-top: 2rem;
+}
+
+#appendix > div:first-child::before{
+    content: "";
+    display:block;
+    border-top:1px solid #ccc;
+    width:75%;
 }
 
 
