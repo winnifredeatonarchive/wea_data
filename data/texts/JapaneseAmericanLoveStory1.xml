@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseAmericanLoveStory1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseAmericanLoveStory1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>A Japanese American Love Story</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,17 +28,153 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl9 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:KI1" when="2019-06-25" status="readyForProof">Proofed XML document.</change>
+         <change who="pers:KI1" when="2019-06-25" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl9 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Japanese_American_Love_Story">
+              <pb n="13"></pb>
       <body>
+         <head>A Japanese-American Love Story</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name>, author of <title>A Japanese Nightingale</title>, etc.</byline>
+            <byline>Illustrated by Clare Angell</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p><q>You see, Koto, it is altogether different in America. Girls don’t—that is, nice girls don’t—do or say things like that. Men only make fun of them if they do</q>. Mabel Drake turned the leaves of her book slowly, carelessly, as she spoke; but her words were very deliberate, and they sounded hard and cruel even to her own ears. She had flattered herself that she was not speaking from any personal motive, but for what she considered the girl’s own good.</p>
+            <p>Koto sat in a blaze of sunlight, close by the window-seat, her face turned from her friend. She had been sitting very quietly in one position ever since Mabel had begun speaking. Her unusual silence surprised, and perhaps annoyed, the other girl, and had made her even more stern than she had meant to be. She had thought it would be an easy matter to give Koto a few <q>pointers</q>, and she even imagined how the girl would take them—thanking her in her pretty fashion and promising to take her advice. But instead of this Koto’s face was enigmatical; she would not reply. Mabel closed her book with a sharp snap, and crossed the room.</p>
+            <p><q>Well, Koto</q>, she said, <q>don’t you think I am right?</q></p>
+            <p><q>Thad’s whad I dunno</q>.</p>
+            <p><q>You don’t know!</q> the other repeated, slowly.</p>
+            <p><q>No</q>. Koto’s eyes flashed a trifle. She paused a moment, and then added, very sweetly, <q>How- aever, I beggin’ thousan’ pardons eef I am rude—an’ I thangin’ you for so kin’ advize</q>.</p>
+            <p>Mabel did not know her in this formal mood. She thought the girl was affecting now, and it irritated her.</p>
+            <p><q>Well, you—you will not say such foolish, silly things again to any man, will you, Koto?</q></p>
+            <p><q>Whad foolish, silly things?</q></p>
+            <p><q>Why, that—that you like them</q>.</p>
+            <p><q>Bud eef I lig’</q>.</p>
+            <p><q>Keep it to yourself</q>.</p>
+            <p>Koto shook her head mournfully.</p>
+            <p><q>Thad’s mos’ hard thing ter do I aever heerd—keepin’ aevery- thing to self mek so sad. I lig’ tell aeverything</q>. She went a little nearer to the other girl, and her voice had resumed some of its old confidence. <q>Sa-ay, I tellin’ you somethin’</q>.</p>
+            <p>She was irresistible. Mabel took her hands, and smiled.</p>
+            <p><q>Sa-ay, thad’s nize now—nize thad you smilin’, jus’ lig’ sunbeam in dark room. But I tellin’ you somethin’. W’en I feel lig’ I ligin’ somebody I cannod keep thad to myself—jus’ to me to know thad. I thing I mus’ tell or I goin’ to bre’k thad heart all daed. You ’member thad I tellin’ you thad I lig’ you. My! how nize you lig’ thad w’en I tell you</q>>.</p>
+            <p><q>Yes; but I’m a girl. You can tell me, but not a man. It’s all different, you see</q>.</p>
+            <p>Koto shrugged her shoulders.</p>
+            <p><q>But I lig’ mans, too</q>, she said, slyly. She put her little head on one side and looked bewitchingly pensive for a moment. <q>Mebbe I lig’ mans more than womans</q>.</p>
+            <p>There was a mischievous gleam of defiance in her eyes now.</p>
+            <p>The American girl rose to her feet sharply, and left the room.</p>
+            <p>Koto rested her little chin between her hands. She was smiling to herself. Then her face sobered down and she began to think over the advice of the American girl.</p>
+            <p><q>Well, Koto, day-dreaming?</q></p>
+            <p>She lifted her head from her hands, to look up at the intruder. He was a man of about thirty-five, with a keen, clever face and fine athletic figure. He drew a chair forward and sat down in front of the little figure in the sunlight, and watched her with quiet pleasure. Koto slid down from the big chair, and sat at his feet.</p>
+            <p><q>Sa-ay—I goin’ to tell you somethin’</q>, she said.</p>
+            <p><q>Go ahead, Madam Sunbeam</q>. He was used to her confidences, and enjoyed them always.</p>
+            <p><q>Whad you thing? You lig’ me be lig’ Americazan girl ?</q></p>
+            <p><q>Good gracious! No! You couldn’t be. What put that in your head?</q></p>
+            <p><q>Thad nize Mees Drake. She tellin’ me I mus’ nod talk lig’—lig’ this in America. Thad’s nod nize. Thad’s nod doin’ same es Roman do es Roman do</q>.</p>
+            <p>She brought the proverb out triumphantly, making a pretty wry face over it.</p>
+            <p><q>I don’t to onderstan’ jus’ whad thad is, bud—I thing I onderstan’ liddle bid. Sa-ay, I egspeg Mees Drake nod lig’ thad—thad I be nod perlide so much wid her brudder. Whad you thing? Egspeg she thing I too joyful</q>.</p>
+            <p><q>Hum! Guess that’s about the size of it. Koto</q>.</p>
+            <p><q>Well, hereafter I goin’ ter be mos’ vaery perlite to thad brudder, Meester Jag—no ! no! Meester John Leslie Drake</q>.</p>
+            <p>Dudley Stacy agreed with her very gravely, and volunteered the advice that he expected Mabel didn’t altogether approve of Koto’s pronounced familiarity with her brother Jack. <q>You’ve just got to freeze him out</q>, he added.</p>
+            <p><q>Freeze?</q> repeated Koto, wonderinglv.</p>
+            <p><q>Yes; appear not to care for him, and all that</q>.</p>
+            <p>The girl looked very solemn and a trifle depressed. <q>Thad’s vaery sad</q>, she said, sighing.</p>
+            <p><q>What is?</q></p>
+            <p><q>To—to freeze poor—big Meester Jag—no! Meester John Leslie Drake</q>.</p>
+            <p><q>Best advice I can give you, my dear. If you don’t, well, Miss Drake will freeze you. So there you are</q>.</p>
+            <p><q>I jus’ gotter freeze</q>, Koto agreed, mournfully, <q>or Mees Drake freezin’ me. an’ then you goin’ ter freezin’ me, too</q>.</p>
+            <p><q>I? No, I wouldn’t, nor couldn’t, freeze you, Koto</q>.</p>
+            <p><q>Ah! thad’s nize; bud I egspeg you mus’ do so eef Mees Drake do so, too</q>.</p>
+            <p><q>That don’t follow</q>. He was laughing now. He had not given her credit for such shrewdness, yet he perceived she had already guessed of his feelings for Miss Drake.</p>
+            <p><q>My! how nize you are</q>, she said, admiringly.<q>How good ter me. Lissen to all my grade big trubbles</q>.</p>
+            <p>The words sounded very tender and almost loving to the American girl as she crossed the room gracefully, a flush on her face and the cold glint of pride and dislike in her eyes. Koto smiled engagingly at her, and then suddenly remembered that she was sitting perilously near Dudley Stacy, and that the American girl was looking with eyes of deep, undisguised contempt and disgust at the pretty, slender hand that the man had taken in his.</p>
+            <p><q>Koto has been telling me of some of the moral maxims you have been preaching to her, Mabel</q>, he said, looking at the girl’s flushed face with keen, appreciative eyes. He let Koto’s hand fall from his. <q>You don’t want to make a little prig out of her</q>.</p>
+            <p>The girl was too angry to answer him. She held her head high. The man had not perceived the cause of her anger, and fancied it was only that she was offended with him for interfering. That was one of the delights of his friendship with her—the fact that she so often resented his advising or even dictating to her at times. He enjoyed arguing with her and proving the point. She had a fine, strong, self-reliant nature which scarcely could tolerate dictation, and yet which when it would recognize its master would glory in being governed.</p>
+            <p><q>Koto is such a child, only a little girl, you know</q>, the man continued, <q>and—well, it’s a shame; I wouldn’t spoil her individuality. It is charming. Let her talk if she wants to. She declares it is not a Japanese failing, but a personal failing—charm I call it</q>.</p>
+            <p>Koto was not listening to him. Her attention had been attracted by a new arrival in the room—a tall, fair young man, with a frank, boyish face. He was looking at Koto with fascinated eyes, and although that young woman knew it, she very deliberately turned her head from him.</p>
+            <p>Mabel ignored Dudley Stacy’s remarks altogether.</p>
+            <p><q>Koto, I wouldn’t sit on the floor if I were you. There are lots of chairs</q>.</p>
+            <p><q>Ah, yaes. I did sit on chairs. Thad’s nod comf’ble. Me? I lig’ sittin’ ad Meester Stacy’s feed</q>.</p>
+            <p><q>No doubt</q>, the other girl said, icily; <q>but it is a—not pleasant to see people sitting on the floor</q>.</p>
+            <p><q>Let me fetch you your little stool, Miss Koto?</q> asked Jack, eagerly.</p>
+            <p>Koto rose to her feet. <q>I thang you</q>, she said, very politely. <q>I prefer nod to have thad liddle stool, Meester Jag—no ! no ! Meester John Leslie Drake</q>.</p>
+            <p>Jack was so much astonished at the girl’s sudden coldness that he spoke outright. <q>Why, what’s the matter, Koto</q>.</p>
+            <p><q>Madder!</q> Koto repeated, feigning the most extravagrant [sic] surprise at the question.</p>
+            <p><q>Yes; you speak as if—as if you were angry with me</q>.</p>
+            <p><q>Oh, no!</q> she said, with extreme exasperation that she could not be <q>polite</q> without being suspected. <q>Now, whad you thing? I only freezin’ you. Thad’s ride in America. Thad’s Roman do es Roman do</q>.</p>
+            <p>She smiled at Stacy, and he laughed outright, but the other two had not yet fully understood.</p>
+            <p><q>What on earth does she mean, Stacy?</q></p>
+            <p>Koto answered, with grave dignity, frowning disapprovingly at Jack’s disrespectful allusion to her speech, <q>Eef you please, Meester John Leslie Drake</q> —this time she spoke it slowly and impressively— <q>thad’s a secret between jus’ Meester Stacy an’ me</q>.</p>
+            <p>Stacy shut his mouth in mock approval, as if to say they could not wring it from him. <q>Yes, sir</q>, he said. <q>That’s a secret between just Koto and myself</q>.</p>
+    
+      
+    
+            <p>About a week later Jack Drake joined his sister in her little sitting-room, and throwing himself down on a lounge looked before him with moody, dissatisfied eyes.</p>
+            <p>The girl sat before a bright grate fire. She had 
+               <pb n="14" break="no"></pb>some embroidery in her hands that she had been working on spasmodically, taking it up energetically one moment and then letting it drop in her lap as her mind wandered from it back to what she was trying so hard to forget. She did not speak for some time after her brother had come in.</p>
+            <p><q>Mabel, for heaven’s sake put that stuff down!</q> the boy said, irritably.</p>
+            <p><q>What’s the matter, dear?</q> She threw the embroidery aside almost with relief, and crossed over to him. Perhaps she guessed the truth from the boy’s drawn, miserable face, and for a moment forgot her own woes.</p>
+            <p><q>Let me make you some tea</q>, she said, quietly, <q>and then we can talk</q>.</p>
+            <p>When they were sipping the tea together the girl said, very gently, <q>Tell me all about it, dear</q>.</p>
+            <p><q>I guess you about know all there is to tell</q>, he answered, shortly. <q>You know that—that—</q></p>
+            <p><q>Yes, dear, that you love Koto</q>.</p>
+            <p>He nodded miserably.</p>
+            <p><q>She don’t deserve it!</q> Mabel exclaimed, her eyes flashing.</p>
+            <p><q>She does—that is, she did till—till—</q> again he left his sentence to be finished by his sister.</p>
+    
+      
+    
+    
+      
+    
+            <p><q>YOU mean till Mr. Dudley Stacy came between you</q>, she added, bitterly.</p>
+            <p><q>Yes; before that—I used to think she really did care for me. I loved her from the first; I couldn’t help myself. You know I was always crazy over Japanese things. I used to read your letters from Japan over and over, and when you came back and I saw her—you had told me so much already, I seemed to have cared for her before I saw her, even. And then—well, it was all up with me</q>.</p>
+            <p>Mabel’s eyes were misty. The young man continued,<q>At first she seemed to—care for me—never tried to hide it, even. But somehow lately I don’t know what’s the matter with her. She will scarcely speak to me, and when she does, and I ask her what’s up, she fires all that stuff about ‘freezing’ and ‘Romans’ and ‘secrets with Stacy</q>. </p>
+            <p><q>I wouldn’t bother about her, Jack</q>, his sister said, consolingly.</p>
+            <p>Jack was in an irritable state of mind. <q>Of course you wouldn’t. You don’t understand these things, Mabel—never did. It’s easy enough for you to advise me not to bother, because you yourself don’t know what it is to care for any one. You always were a queer sort of girl</q>. He looked at her curiously. <q>You never seemed to care for any fellow. I once thought you cared—</q></p>
+            <p><q>Don’t, Jack!</q> The girl’s voice was passionate with pain, and her eyes were blinded with tears. Her brother sat up on the lounge, watching her. <q>It’s you who are stupid—that don’t understand, or you would have seen—known—that—that I did care—that I loved him !</q></p>
+            <p><q>Sis, who?</q></p>
+            <p><q>Dudley Stacy!</q></p>
+            <p>The two looked at each other with tragic eyes in silence. Then the girl put her head down on the arm of her chair and began to sob in a hopeless, pitiful fashion; but the brother was too surprised and overcome to comfort her.</p>
+            <p>About half an hour later Dudley Stacy was announced, and soon he had joined them, coming into the little sitting-room with the careless familiarity that always characterized his movements when in their house.</p>
+            <p><q>Where’s Koto?</q></p>
+            <p>It was the first thing he said, and to the two who had just unburdened their hearts to each other it sounded doubly cruel. Jack gritted his teeth together fiercely, and felt a sudden insane longing to punch Dudley’s cool, unconcerned face, as he stood carelessly by the fireplace lighting his cigar. Mabel, however, answered, quite calmly, <q>She is in her room. Shall I send for her?</q></p>
+            <p><q>Ye-es—that is—well, no, wait a bit</q>.</p>
+            <p>He drew his favorite chair forward, and sat down.</p>
+            <p>A silence that was constrained and painful to both brother and sister was now between them. Only once the girl lifted her head and looked straight into the man’s eyes. His were full of the old, tender solicitude and love which she had fancied had not been there of late. Hers unconsciously were dewy, and held a nameless reproach which must have startled him.</p>
+            <p>He went over to her side, and leaned over the chair. Then he took the embroidery from the busy hands and held them close in his own. <q>Why, little girl, you have been crying!</q> he said.</p>
+    
+      
+    
+            <p>Jack watched him with wrathful eyes, and sprang savagely to his feet. <q>What the—</q> He had snatched his sister’s hands from Dudley’s, and now challenged him for an explanation. The girl was very white, but Dudley Stacy was smiling that strange, enigmatical smile that his friends found so irresistible and fascinating, and, yes, often dreaded. For fully a minute the two men looked at each other in silence, the one with questioning tinged with good-natured humor, the other savagely and angrily. <q>What do you mean?</q> the boy asked, passionately.</p>
+            <p><q>That’s—er—mine and your sister’s business</q>. <q>Mabel, you don’t permit—you—</q></p>
+            <p><q>Look here</q>, Dudley Stacy interrupted, good- naturedly. <q>You must have guessed long before this that—well, that I loved Mabel. She knew it—and</q>—he looked tenderly at the girl—<q>I had hoped—had believed she returned it. I told her of it a year ago. I was to have had my answer to-day. Perhaps she had forgotten that fact. I had not. </q> His face and voice were full of assurance, and he still held one of the girl’s hands in his despite her brother.</p>
+            <p><q>Of course, I didn’t intend speaking out before you, young man, and—er—you’re a trifle fresh, but I like you—I honestly do, and if it’s any balm to your vanity</q>—he turned gaily to Mabel—<q>why, we’ll ask your consent</q>.</p>
+            <p>The girl was standing very still. Her face was white and cold, and she was holding her head with the sweet, rebellious pride that Stacy loved so well.</p>
+            <p><q>I am sure I am honored!</q> She was trying to speak cuttingly, but her voice faltered pitifully in spite of her efforts to control it.</p>
+            <p>Dudley Stacy had grown very pale now. <q>You don’t mean</q>, he said, slowly, <q>that—that you did not mean anything—that you were fooling with me? I won’t believe that of you</q>.</p>
+            <p><q>But you</q>, Jack put in, witheringly, <q>what of you and your outrageous flirtation with—with Koto?</q></p>
+    
+      
+    
+            <p><q>KOTO!</q> Dudley Stacy began to laugh immoderately. <q>Oh! come now; that’s too rich. Why, you young idiot, I was helping Mabel teach her not to be too familiar with you!</q></p>
+            <p><q>With Jack!</q> the girl repeated, blankly.</p>
+            <p><q>Yes; I told her to freeze him, that she must act in America like an American girl. ‘In Rome you must do as the Romans do,’ of course</q>.</p>
+            <p><q>Then—then you don’t care for her?</q> she said faintly.</p>
+            <p><q>Then—then she don’t care for you?</q> her brother echoed, stupidly.</p>
+            <p>Stacy answered the girl. <q>Why, little girl, of course not. You didn’t think that!</q> He had hcr hands in his again now, and was caressing them unrestrainedly.</p>
+            <p><q>I thought</q>, she said, <q>that Koto—that Koto—</q></p>
+            <p>She was crying against his shoulder now.</p>
+            <p><q>Koto is ‘in luf,’ as she calls it, with your brother Jack</q>.</p>
+            <p><q>What?</q> said that gentleman.</p>
+            <p><q>I said that Miss Watanabe Koto is waiting to be amused by you in her Japo-American drawing-room —and the secret between—</q> But Jack did not wait to hear the last words. He had bolted precipitately from the room.</p>
+            <p>Stacy finished the last words in Mabel’s ear. <q>The secret was we both confided in each other our—er—eternal adoration for certain other persons</q>.</p>
          </div>
       </body>
    </text>
