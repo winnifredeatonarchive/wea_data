@@ -1008,6 +1008,13 @@ h1{
     margin: 0 auto;
 }
 
+li > ul,
+li + li{
+    padding-top:.25em;
+}
+li{
+    padding-left:1.5em;
+}
 
 #mainBody:not(.docBornDigitalListing) #text{
     max-width: var(--max-text-width);
