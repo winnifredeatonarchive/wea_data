@@ -1087,6 +1087,56 @@ h1{
     background-size: 20%, 40%;
 }
 
+html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
+        margin-top:5%;
+}
+
+#mainBody[class*="BornDigital"] #credits{
+    padding:.25em .5em;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    font-size: 0.85rem;
+    width:95%;
+    margin:0 auto;
+}
+
+#mainBody[class*="BornDigital"] .additionalInfoHeader{
+    padding-left:0;
+    padding-right:0;
+}
+
+#mainBody[class*="BornDigital"] .metadataLabel{
+    font-size:1em;
+}
+#mainBody[class*="BornDigital"] #credits .content *{
+}
+
+#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div{
+    display:inline;
+}
+
+#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div[data-el='resp']{
+
+}
+
+#mainBody[class*="BornDigital"] div[data-el='respStmt'] > div[data-el='resp']::after{
+    content:":";
+    padding-right: .5em;
+}
+
+#mainBody[class*="BornDigital"] #credits .content > div + div{
+    padding-top:1em;
+}
+
+#mainBody[class*="BornDigital"] #credits .mi {
+    font-size: 20px;
+    color:#ccc;
+}
+
+#mainBody[class*="BornDigital"] #credits .bibl{
+    text-indent:0;
+    padding-left:0;
+}
 
 
 #facsimile{
@@ -1171,6 +1221,7 @@ div[data-type='listFigure'] img{
     max-height:30rem;
     transition: max-height .2s ease-in-out;
     overflow-y:auto;
+        padding-bottom: .5em
 }
 
 .JS .additionalInfoHeader{
@@ -1194,13 +1245,13 @@ user-select: none;
     float:right;
 }
 
-#additional_info > div.open span.mi{
+div.expandable.open span.mi{
     transform: rotate(90deg);
     transition: transform  .5s;
 }
 
 
-#additional_info > div.closed span.mi{
+div.expandable.closed span.mi{
     transform: rotate(0deg);
     transition: transform .5s;
 }
@@ -1607,7 +1658,9 @@ span[data-el='pb']:not(.first)::before{
 .bibl{
     text-indent:-2rem;
     padding-left:2rem;
+    word-break: break-word;
 }
+
 
 .bibl + .bibl{
     padding-top:.5rem;
