@@ -994,6 +994,10 @@ h2{
 }
 
 
+#mainBody[class*="BornDigital"] [data-el='body'] > h1{
+    margin-bottom:2rem;
+}
+
 h1{
    margin: 2rem 0 1rem 0;
   text-align:center;
@@ -1226,6 +1230,9 @@ div[data-type='listFigure'] img{
     flex-wrap:wrap;
 }
 
+.expandable .content{
+    padding-bottom:.25rem;
+}
 
 
 .JS .expandable.closed > .content{
@@ -1239,7 +1246,7 @@ div[data-type='listFigure'] img{
     max-height:30rem;
     transition: max-height .2s ease-in-out;
     overflow-y:auto;
-        padding-bottom: .5em
+
 }
 
 .JS .additionalInfoHeader{
