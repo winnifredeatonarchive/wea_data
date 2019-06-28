@@ -12,20 +12,23 @@
             </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:KI1"/>
+               <name ref="pers:KI1">Ken Ip</name>
             </respStmt>
             <respStmt>
-               <resp>Copy Editor</resp>
-               <name ref="pers:JT1"/>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:JT1"/>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065173">https://hdl.handle.net/2027/uc1.b3065173</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:72"/>
          </sourceDesc>
@@ -37,7 +40,8 @@
            <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
         </textClass>
      </profileDesc>
-     <revisionDesc status="inProgress">
+     <revisionDesc status="readyForProof">
+        <change who="pers:SL1" when="2019-06-27" status="readyForProof">Readied for proof.</change>
         <change who="pers:SL1" when="2019-06-26" status="inProgress">Added facs and illustrator info.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl72 using XSLT.</change>
         <change when="2019-03-27" who="pers:JT1">Created file.</change>
