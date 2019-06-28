@@ -415,7 +415,6 @@ ul#menu_main > li > ul{
     
     
 #mainBody[class*="BornDigital"]:not([class*='Listing']){
-    background-image: url('../images/CherryTree/CherryBranchFlipped.png');
     background-repeat: no-repeat;
     background-position: top 1rem left 0;
     background-origin: border-box;
@@ -461,16 +460,15 @@ ul#menu_main > li > ul{
    }
    
    #info_left{
-       max-width:90%;
    }
    
    #info_right{
-       max-width:10%;
-       font-size:0.9em;
+       font-size:1em;
+       margin-left: 1em;
    }
    
    #info_right li+li{
-       padding-top:.25em;
+       padding-top:.75em;
    }
    
    #info_right [data-el='date']{
