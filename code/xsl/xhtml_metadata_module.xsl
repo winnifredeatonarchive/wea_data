@@ -27,8 +27,24 @@
                     </xsl:when>
                     <xsl:when test="wea:isExhibit($root)">
                         <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=$root/@xml:id]"/>
-                        <h2><xsl:apply-templates select="$thisCat/catDesc/term/node()" mode="tei"/></h2>
-                        <xsl:apply-templates select="$thisCat/catDesc/note/p" mode="tei"/>
+                        <div id="info_left">
+                            <h2><xsl:apply-templates select="$thisCat/catDesc/term/node()" mode="tei"/></h2>
+                            <xsl:apply-templates select="$thisCat/catDesc/note/p" mode="tei"/>
+                        </div>
+                        <div id="info_right">
+                            <ul>
+                                <xsl:for-each select="$thisCat/parent::*/category">
+                                    <xsl:sort select="xs:integer(@n)"/>
+                                    <li><a href="{@xml:id}.html">
+                                        <xsl:if test="@xml:id=$thisCat/@xml:id">
+                                            <xsl:attribute name="class" select="'current'"/>
+                                        </xsl:if>
+                                        <xsl:apply-templates select="catDesc/term/node()" mode="tei"/>
+                                    </a>
+                                    </li>
+                                </xsl:for-each>
+                            </ul>
+                        </div>
                     </xsl:when>
                 </xsl:choose>
             </div>

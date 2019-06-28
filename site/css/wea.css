@@ -1725,7 +1725,8 @@ span[data-el='pb']:not(.first)::before{
 
 nav span[data-el='date'],
 #info h2 span[data-el='date'],
-#info .breadcrumb span[data-el='date']{
+#info .breadcrumb span[data-el='date'],
+#info #info_right [data-el='date']{
     display:block;
     font-size: 0.85em;
 }
@@ -1744,6 +1745,28 @@ nav span[data-el='date'],
 
 .docBornDigitalListing #info div[data-el='p']{
     max-width: 40rem;
+}
+
+.docBornDigitalListing #info{
+    display:flex;
+    flex-direction:row;
+    font-size:0.8em;
+}.docBornDigitalListing #info [data-el='date']{
+    
+}
+
+a.current{
+    font-weight:bold;    
+}
+
+.docBornDigitalListing #info_left{
+    max-width:70%;
+}
+
+.docBornDigitalListing #info_right{
+    border-left: 1px solid #ccc;
+    margin-left:2em;
+    align-self:center;
 }
 
 

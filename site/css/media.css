@@ -460,7 +460,22 @@ ul#menu_main > li > ul{
        font-size: .9rem;
    }
    
-
+   #info_left{
+       max-width:90%;
+   }
+   
+   #info_right{
+       max-width:10%;
+       font-size:0.9em;
+   }
+   
+   #info_right li+li{
+       padding-top:.25em;
+   }
+   
+   #info_right [data-el='date']{
+       display:none!important;
+   }
 
 
  table[data-type="exhibit"] td:first-child,
