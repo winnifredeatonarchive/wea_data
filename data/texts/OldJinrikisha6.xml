@@ -15,10 +15,14 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable
 version</resp>
@@ -59,11 +63,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-28" status="readyForProof">Added catRef and facs; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl217 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -81,35 +87,21 @@ file and added TEI header.</change>
    </teiHeader>
 
 
-   <text prev="doc:OldJinrikisha5" next="doc:OldJinrikisha7">
+   <text facs="facs:OldJinrikisha6" prev="doc:OldJinrikisha5" next="doc:OldJinrikisha7">
       <pb n="4"/>
       <body>
-         
-         
-         
-         
-
-         
-
-      <!--   <head>Conkey’s
-            Home Journal 7.4 (July 1900): 4,
-            12.
-            The Old Jinrikisha [6th
-            installment]
-            By Onoto Watanna
-         </head>
--->
-         
-
-
-         
-
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by John C. Gilbert</byline>
+            <note>Continued from the June number.</note>
+            <note>This charming serial by Miss Watanna is the latest production of that versatile young writer. <q>The Old Jinrikisha</q> tells of the comedies and tragedies it has been a silent witness of during its earthly career. The February number contained the opening chapter, or rather the prologue; the story really began in the March issue, which related the adventure of an American girl who hires the <q>Old Jinrikisha</q> for a long ride. With the independence characteristic of her countrywomen, she decides to ho alone to a tea garden in Okubo, the western suburb of the city. Here she is accosted by an Englishman, who, knowing the unprincipled customs of the jinrikisha runners, offers to accompany her home. She, however, mistaking his intentions, will not allow him to do so. When they reach a dense forest, the jinrikisha man attempts to rob her, but she is rescued by the Englishman who has followed the <q>old jinrikisha</q> and its fair occupant. A few months after the adventure, Beryl Evans and the Honorable Frank Arthur Montrose are affianced sweethearts. Elinore Montrose has come to Japan to join her brother and to meet Ernest Crowder to whom she has been betrothed for three years. Beryl and Elinore become very intimate and make frequent excursions into the country. Upon one of these occasions they discover Crowder making love to a Japanese girl and Beryl happens to get a snap shot with her kodak. The Japanese girl asserts that Crowder is her husband, but the man denies it. Elinore dies of a broken heart, and driven to desperation by Crowder’s contemptuous disdain, his Japanese wife commits suicide after the manner of her race. Beryl’s brother, Philip, has taken a fancy to Crowder’s little daughter, and knowing the isolated life led by half-castes, offers to take the child to America. The relatives consent, and soon after Beryl’s marriage to Montrose they sail for America. Fifteen years later, Komatsu, the young owner of the <q>Old Jinrikisha</q>, determines to ascertain if there are any living descendants of Lady Natsu and finds that her granddaughter Natsu married twice; first, to a merchant named Nosse, by whom she had one child also named Natsu, and later and Englishman named Crowder, whose daughter Koto had been adopted by English people. Komatsu gives a banquet in which he invites Natsu and her relatives. He is captivated by her beauty and soon afterward they are betrothed. Her sister Koto, who is studying in England, decides to visit her half-sister, and on the same steamer with her comes Jack Carruthers. Koto takes up her abode with her sister, where Carruthers meets and falls in love with Natsu.</note>
+         </opener>
 
          <div>
   
             <div n="7b">
 
-               <p>Then through the parted shoji the most wonderful little figure Jack had ever seen issued. At first he noticed only the strange dazzling of bright colors, dashes of red, yellow, green, blue; and he noticed that there were bright poppies in her hair, held in place by shining kanzhashi.<note type="editorial" resp="pers:JLC1">kanzhashi: two-pronged hair comb.</note> Half way across the room, she made her prostration; this before he had time to even look at her face, and then for a long time Jack saw nothing but a delightful little bobbing head and the lightning glance of the brightest eyes.</p>
+               <p>Then through the parted <foreign xml:lang="ja">shoji</foreign> the most wonderful little figure Jack had ever seen issued. At first he noticed only the strange dazzling of bright colors, dashes of red, yellow, green, blue; and he noticed that there were bright poppies in her hair, held in place by shining kanzhashi.<note type="editorial" resp="pers:JLC1">kanzhashi: two-pronged hair comb.</note> Half way across the room, she made her prostration; this before he had time to even look at her face, and then for a long time Jack saw nothing but a delightful little bobbing head and the lightning glance of the brightest eyes.</p>
                <p>He put his two hands in his pockets and stared with all his eyes. Then he turned for enlightenment to Koto. She was smiling, and was regarding the pretty picture with as much pleasure as he.</p>
                <p><q>Oh, he isn’t an <q>august excellency</q>, Natsu. You waste your courtesies on him—he is only—</q> she smiled provokingly at him, and Natsu stopped bowing and rose promptly to her feet, very much flushed and shy, her little head drooping in the most charming manner imaginable.</p>
                <p><q>Come over here and meet Mr. Carruthers, Natsu, the Honorable Jack Carruthers. Can you say that?</q></p>
@@ -188,8 +180,7 @@ file and added TEI header.</change>
                <p>All the next day Komatsu stayed away from the house. Natsu was nervous and fretful. She talked constantly of her <q>august betrothed</q>, but she was impatient and angry with him for not coming.</p>
                <p>Toward sunset Jack Carruthers came up the hill and coaxed her into going out with him for a little row on the bay. As they left the house and passed slowly down the river road together, Komatsu Taro knocked on the little door, and asked of her honorable relatives permission to see Natsu. They told him she had gone out on the bay with the foreign barbarian friend of her sister.</p>
                <p>And could he see the sister?</p>
-               <p>Yes, she was within. Would he deign to enter their miserable unworthy hovel?<note type="editorial" resp="pers:JLC1">This paragraph and the
-previous one were originally in quotes.</note></p>
+               <p>Yes, she was within. Would he deign to enter their miserable unworthy hovel?<note type="editorial" resp="pers:JLC1">This paragraph and the previous one were originally in quotes.</note></p>
                <p>Komatsu addressed Koto entirely in English, in which language he conversed excellently, with the merest accent.</p>
                <p><q>Yesterday</q>, he said, <q>I had conversation with your sister</q>. He paused in order for her to acknowledge this. The girl stirred uneasily, wondering what it was he could have to say to her.</p>
                <p><q>Will you tell me why you do not wish her to marry with me, Miss Koto?</q></p>
@@ -232,12 +223,7 @@ previous one were originally in quotes.</note></p>
             </div>
          </div>
 
-
-         
-
-
-         
-
+<note>To be continued.</note>
          
       </body>
    </text>

@@ -15,10 +15,14 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable
 version</resp>
@@ -59,11 +63,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-28" status="readyForProof">Added catRef and facs; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl178 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -81,26 +87,15 @@ file and added TEI header.</change>
    </teiHeader>
 
 
-   <text prev="doc:OldJinrikisha4" next="doc:OldJinrikisha6">
+   <text facs="facs:OldJinrikisha5" prev="doc:OldJinrikisha4" next="doc:OldJinrikisha6">
       <pb n="12"/>
       <body>
-         
-         
-         
-         
-
-         
- <!--        <head>Conkey’s
-            Home Journal 7.3 (June 1900): 12-
-            13.
-            The Old Jinrikisha [5th
-            installment]
-            By Onoto Watanna
-         </head>
-         -->
-
-         
-
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by John C. Gilbert</byline>
+            <note>Continued from the May number.</note>
+            <note>This charming serial by Miss Watanna is the latest production of that versatile young writer. <q>The Old Jinrikisha</q> tells of the comedies and tragedies it has been a silent witness of during its earthly career. The February number contained the opening chapter, or rather the prologue; the story really began in the March issue, which related the adventure of an American girl who hires the <q>Old Jinrikisha</q> for a long ride. With the independence characteristic of her countrywomen, she decides to ho alone to a tea garden in Okubo, the western suburb of the city. Here she is accosted by an Englishman, who, knowing the unprincipled customs of the jinrikisha runners, offers to accompany her home. She, however, mistaking his intentions, will not allow him to do so. When they reach a dense forest, the jinrikisha man attempts to rob her, but she is rescued by the Englishman who has followed the <q>old jinrikisha</q> and its fair occupant. A few months after the adventure, Beryl Evans and the Honorable Frank Arthur Montrose are affianced sweethearts. Elinore Montrose has come to Japan to join her brother and to meet Ernest Crowder to whom she has been betrothed for three years. Beryl and Elinore become very intimate and make frequent excursions into the country. Upon one of these occasions they discover Crowder making love to a Japanese girl and Beryl happens to get a snap shot with her kodak. The Japanese girl asserts that Crowder is her husband, but the man denies it. Elinore dies of a broken heart, and driven to desperation by Crowder’s contemptuous disdain, his Japanese wife commits suicide after the manner of her race. Beryl’s brother, Philip, has taken a fancy to Crowder’s little daughter, and knowing the isolated life led by half-castes, offers to take the child to America.</note>
+         </opener>
 
          <div>
     
@@ -144,8 +139,7 @@ file and added TEI header.</change>
 
                <p>Ah, me! it is so pleasant even for an old jinrikisha to be loved. Many a time have I sighed for the days when the Lady Natsu had loved me for myself, and yes, even for the American girl, Beryl Evans. It was fifteen years since she had left Japan. How old, how very, very old I was getting! Well, well, I wonder why it is that while old people are supposed to be treated with so much care and respect, old things are cast aside and despised. Oh, you human beings, some of you prating about kindness that ought to be shown to this and that dumb animal, wild animals, birds, and even fishes and insects, I wonder if there ever were any of you who paused to realize that inanimate things, such as chairs and tables and old jinrikishas, etc., have feelings also and love to be loved. Take my case: I am extremely sensitive, and I never have forgotten any one in my life who has been kind to me, and I’ll add to this, I have never forgotten any one who has been unkind. I am only an old jinrikisha, but my memory, it is white and black and bruised with the ill treatment I have received at the unscrupulous hands of the ignorant jinrikisha man who owned me for a number of years before that blessed earthquake, of which I have already told you, threw me before my new and most loved master of all. I’ll only say this, that just previous to that I grew fretty and cranky, and began to feel and show my age so badly that even the children ceased to care to play in me.</p>
                <p><q>Bah!</q> said one impudent little fellow one day as he kicked me (that kick remains on me to-day), <q>the old thing’s all broken down. Let’s go and play somewhere else</q>; and off they went like the wind, fickle little jades, only to return the next day.</p>
-               <p>Soon after finding me, my master, who was somewhat of a lover of antiquities,<note type="editorial" resp="pers:JLC1">Original
-<q>antiquaries</q>.</note> began hunting up the records of my original family. He became very much <pb n="13"/> absorbed and interested in his task, tracing the family back one generation after another, back of even my dear master, Shomu Jokichi; and I am proud to tell you that the family record showed one long unbroken line of nobles, noted for their kindness, generosity, bravery, and goodness. My new master collected old family relics and heirlooms, and exhibited them very proudly as being once the property of the great Shomu family.</p>
+               <p>Soon after finding me, my master, who was somewhat of a lover of antiquities,<note type="editorial" resp="pers:JLC1">Original <q>antiquaries</q>.</note> began hunting up the records of my original family. He became very much <pb n="13"/> absorbed and interested in his task, tracing the family back one generation after another, back of even my dear master, Shomu Jokichi; and I am proud to tell you that the family record showed one long unbroken line of nobles, noted for their kindness, generosity, bravery, and goodness. My new master collected old family relics and heirlooms, and exhibited them very proudly as being once the property of the great Shomu family.</p>
                <p>But the crowning act of interest in the family and their fallen fortunes was to search diligently in order to find if any member of the family were still alive. To this end, he employed the most expert lawyers and even detectives.</p>
                <p>At the end of each week they would report to him. At the end of a couple of months the record consisted as follows—I mean dating from the Lady Natsu—as those who had gone before her I was not interested specially in, and doubtless you are not either:</p>
                <p><q>First: The Lady Natsu, a geisha girl—afterward married to a poor, but noble, young man in Kyoto, named Inouye; offspring from this issue, one child, also named Natsu</q>.</p>
@@ -190,22 +184,13 @@ file and added TEI header.</change>
                <p>When Koto moved all her belongings into the little house where her sister lived with an old uncle and aunt, and announced that she proposed living in Japanese style while she was in Japan, Jack had looked dubious, and expressed it as his opinion that she never would get used to living like the Japanese, after her long residence among <q>God’s chosen people</q>. His advice to her was, <q>Stay at the American hotel by all means, and enjoy Japan through colored glasses</q>. I believe some old globe-trotter had given Jack this same advice before he had started out on his trip to Japan. But Koto was unalterable in her resolve.</p>
                <p><q>No, sir; I’m going to live with Natsu for—hm! The rest of her maiden days</q>, she said emphatically.</p>
                <p>Jack Carruthers moped around the hotel for a few days after she left, feeling desperately lonely and blue, and then with a grim sort of feeling that was divorced from the better part of himself, he set out to hunt up the little house where Koto now lived, and which Jack thought was a <q>doosid</q> long way from the <q>doosid</q> hotel.</p>
-               <p>Arrived there, he was met at the door by Koto herself, and being a stranger to Japan and things Japanese, he fell an easy victim. The first impression a stranger has on entering a Japanese house is that the dainty, pretty, and altogether charming little house reminds him of some vague picture in a fairyland scene, or an Elysian dream. Then just as he has<note type="editorial" resp="pers:JLC1">Original
-<q>they have</q></note> arrived at this conclusion, some little doll of a Japanese girl (generally happening to be especially pretty at this time, too) will arrive on the scene, and the harshest critic immediately becomes an ardent admirer. So it was with Carruthers.</p>
+               <p>Arrived there, he was met at the door by Koto herself, and being a stranger to Japan and things Japanese, he fell an easy victim. The first impression a stranger has on entering a Japanese house is that the dainty, pretty, and altogether charming little house reminds him of some vague picture in a fairyland scene, or an Elysian dream. Then just as he has<note type="editorial" resp="pers:JLC1">Original <q>they have</q></note> arrived at this conclusion, some little doll of a Japanese girl (generally happening to be especially pretty at this time, too) will arrive on the scene, and the harshest critic immediately becomes an ardent admirer. So it was with Carruthers.</p>
                <p><q>Well—ah—upon my word, Miss Crowder, this is a—er— most chawming little place; delightful—ah—er—</q> he stopped short, and stared with fascinated eyes toward the fusuma which was slowly sliding apart.</p>
 
 
             </div>
          </div>
-
-
-         
-
-
-         
-
-
-         
+<note>To be continued</note>
 
          
       </body>

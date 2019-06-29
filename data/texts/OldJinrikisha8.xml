@@ -15,10 +15,14 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable
 version</resp>
@@ -59,11 +63,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-28" status="readyForProof">Added catRef and facs; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl180 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -81,59 +87,38 @@ file and added TEI header.</change>
    </teiHeader>
 
 
-   <text prev="doc:OldJinrikisha7" next="doc:OldJinrikisha9">
+   <text facs="facs:OldJinrikisha8" prev="doc:OldJinrikisha7" next="doc:OldJinrikisha9">
       <pb n="7"/>
       <body>
-         
-         
-         
-         
-
-         
-
-         
-
-         
-
-    <!--     <head>Conkey’s
-Home Journal 7.6 (Sept. 1900): 7-
-8.
-The Old Jinrikisha [8th
-installment]
-By Onoto Watanna
-[Illustrations by Charles A.
-Cox]
-</head>-->
-         
-
-
-         
-
-
-         
-
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by Charles A. Cox</byline>
+            <note>Continued from the August number.</note>
+         </opener>  
 
          <div>
           
             <div n="9b">
 
-               <p><q>To think I didn’t know you!</q> she began, reproaching herself breathlessly. <q>You aren’t changed a bit. You are exactly the same. No—now, take your hat off. Oh, yes, you are changed, too, Uncle Phil. There’s some gray on the temples, but it is so nice. Oh, you dear, dear, dear old thing</q>. She slipped her arm through his, and squeezed it ecstatically.</p>
+               <p><q>To <emph>think I didn’t know you!</emph></q> she began, reproaching herself breathlessly. <q>You aren’t changed a bit. You are exactly the same. No—now, take your hat off. Oh, yes, you are changed, too, Uncle Phil. There’s some gray on the temples, but it is <emph>so nice</emph>. Oh, you dear, dear, dear old thing</q>. She slipped her arm through his, and squeezed it ecstatically.</p>
                <p><q>No</q>, said Phil, comically. <q>The last five years has been doing its changing business on you, instead of me. I’m ‘bout the same, but you?</q> He looked at her critically. <q>I would never have known you</q>.</p>
                <p><q>Oh, Uncle Phil!</q> she reproached.</p>
                <p>She introduced him triumphantly to them all, just as a young girl might a parent.</p>
                <p>As he shook hands with each one separately, he looked at them keenly in that quick, sizing-up way of his.</p>
                <p>Koto began to coax him to live with them, but he laughed at the idea, lazily declaring that he was so comfortably fixed at the hotel he couldn’t bother moving. He added that she’d better begin packing her little traps, as he wanted her with him just as soon as ever Natsu was married.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p><q>We lig’ thad she lif with us</q>, Natsu began timidly.</p>
                <p><q>Can’t help it</q>, said Philip Evans, smiling at the shy little figure; <q>I’ve a prior claim</q>.</p>
                <p>And the day after the wedding he carried the girl off with him sure enough. The two sisters cried at parting, for they had grown to love each other very dearly.</p>
                <p><q>I’ll come and see you every day</q>, promised Koto extravagantly, for Komatsu Taro’s castle was quite a distance off from Tokyo. Jack Carruthers proffered his escort to her whenever she wished to visit them.</p>
                <p>And Koto kept her word, and visited her sister each day. Always young Carruthers accompanied her. Once in a while Phil Evans also was with them, but not very often. I understood he had a good deal of business to attend to in Tokyo. I believe he had secured the contract for an immense electric railroad to be constructed. Phil had stepped into his father’s shoes as president of an immensely rich American syndicate, controlling railroads and mines all over the world.</p>
-               <p>Koto and Jack always walked on these trips to the castle. They would arrive there—she with her arms laden with flowers, smiling and mischievous, for I believe she teased him constantly. He was either desperately blue, or insanely happy, according to how she had treated him.<note type="editorial" resp="pers:JLC1">Original
-<q>her</q>.</note></p>
+               <p>Koto and Jack always walked on these trips to the castle. They would arrive there—she with her arms laden with flowers, smiling and mischievous, for I believe she teased him constantly. He was either desperately blue, or insanely happy, according to how she had treated him.<note type="editorial" resp="pers:JLC1">Original <q>her</q>.</note></p>
                <p>He was awfully in love with her. I used to wonder how she could resist the unspeakable glances of his eyes. They were so large and soft, the kind most girls like, but she laughed and chatted and coquetted with him, till he didn’t know where he stood with her, whether he had cause for hope or despair. Although she had only just reached her eighteenth year, Koto, after a fashion, was a finished coquette. It was as natural to her as living.</p>
                <p>One day he burst out and made her listen to him, for I believe she had cleverly held him off from speaking.</p>
                <p>They were standing right near me, and I could see their faces and hear all that passed. He was white, and his lips were dry—his eyes looked unusually large, with dark shadows under them, as though he had not slept lately. I felt sorry for him. She had her head held rather proudly, and there was the most provoking little smile twinkling about her eyes and dimpling her mouth.</p>
-               <p><q>You shall listen to me. Koto, don’t you know I love you?</q></p>
+               <p><q>You shall listen to me. Koto, don’t you know I <emph>love</emph> you?</q></p>
                <p>The words were spoken so quickly and earnestly that the drawl that somewhat spoiled his speech was entirely absent.</p>
                <p>She was not looking at him. Her eyes were looking out of the window, and feigned to be intensely interested in something she saw.</p>
 
@@ -154,17 +139,20 @@ Cox]
                <p><q>It was awfully good of you, Jack</q>.</p>
                <p><q>Koto, you will have me—be my wife?</q></p>
                <p><q>It would be nice, I think, to get married—and—</q> she began slowly.</p>
-               <p><q>Yes, yes, it would be, Koto. We are both young, and I have plenty. We could go wherever we pleased—do whatever we wanted, and—I love you so</q>.</p>
-               <p><q>And I?</q>—she drew her hands from his—<q>Jack, I don’t know whether I love you. I’m not sure of it. I—I think perhaps I do, but—now supposing I’m mistaken? That would be dreadful!</q></p>
-               <p><q>No, no—don’t suppose that</q>, he begged eagerly.</p>
-               <p><q>But we must, Jack. Now I did not suffer one bit when I thought you were in love with Natsu. Seems to me I really was pleased, and if I had loved you, I ought to have been perfectly miserable</q>.</p>
+               <p><q>Yes, yes, it would be, Koto. We are both young, and I have plenty. We could go wherever we pleased—do whatever we wanted, and—I <emph>love you</emph> so</q>.</p>
+               <p><q>And I?</q>—she drew her hands from his—<q>Jack, I don’t know whether <emph>I</emph> love you. I’m not sure of it. I—I think perhaps I do, but—now supposing I’m mistaken? That would be <emph>dreadful!</emph></q></p>
+               <p><q>No, no—<emph>don’t</emph> suppose that</q>, he begged eagerly.</p>
+               <p><q>But we <emph>must</emph>, Jack. Now I did not suffer one bit when I thought you were in love with Natsu. Seems to me I really was pleased, and if I had loved you, I ought to have been perfectly miserable</q>.</p>
                <p><q>Oh, you knew it didn’t amount to anything—only an infatuation</q>.</p>
                <p><q>It was a pretty serious thing to poor little Natsu</q>, she said coldly.</p>
                <p><q>She seemed just a child, and—</q></p>
                <p><q>If she’s a child, I must be a baby, for I’m two years younger</q>, said Koto girlishly.</p>
                <p><q>Oh, but you look—you seem so much older</q>.</p>
                <p><q>Oh, thank you, Mr. Carruthers</q>. This with a little toss of her head.</p>
-               <p><q>Now, don’t get offended. I—ah—am such a da—I beg pardon—I do—I really do—but—Koto, don’t lets wander from the question—the great one—Will you have me?</q></p>
+               
+               <milestone unit="sectionBreak"/>
+               
+               <p><q>Now, don’t get offended. I—ah—am such a da—I beg pardon—I do—I really do—but—Koto, <emph>don’t</emph> lets wander from the question—the great one—Will you have me?</q></p>
                <p>Koto considered a moment, her head on one side. None of her girl friends, that was sure, had such a nice looking sweetheart. She could go back amongst them and exhibit him with great pride. Still, she was pretty sure of him and in no hurry.</p>
                <p><q>Well, I tell you—I—think—I will—but wait</q>—as he tried to put his arm about her waist joyously—<q>I must get Uncle Phil’s consent first</q>.</p>
                <p><q>Oh, he’ll give it, of course he will</q>. Jack laughed confidently. <q>We may as well consider it settled now</q>.</p>
@@ -185,6 +173,9 @@ Cox]
                <p>There was a peculiar expression on his face—hers was hurt, and she looked as though she were going to cry.</p>
                <p><q>Come and sit over here</q>, he said quietly, drawing a bench under a large tree. <q>Now, what is it? You want something, eh? Is that what all your palaver means?</q> He was talking lightly.</p>
                <p>His bantering words silenced the girl for a moment, and she sat on the bench, her eyes cast down, her hands nervously twisting her little handkerchief into knots.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p>He was standing up, one foot on the bench, and he was looking at her keenly, in the critical way that always made the girl nervous and afraid of him.</p>
                <p><q>Well, little girl</q>, his voice was tender, gentle and encouraging now.</p>
                <p><q>Ja—Jack—Mr. Carruthers—wants to marry me</q>.</p>
@@ -213,6 +204,9 @@ Cox]
                <p><q>Oh no, don’t say that</q>.</p>
                <p><q>But it must be true, or—or—you would not be so cruel</q>— the angry tears filled her eyes now, and she was trembling.</p>
                <p>Phil Evans threw the unsmoked cigar away, and took a step nearer to her. All the indifference, the critical scrutiny of the girl was gone now.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p><q>Shall I tell you why I will not give my consent, not merely to your having this Jack, but to any one, in fact?</q></p>
                <p><q>Yes, tell me</q>, and then something in his face frightened her, and she contradicted herself, shrinking back from him. <q>No, no, don’t tell me</q>.</p>
                <p><q>Yes, I will. It’s because I want you for myself. Because I love you—do you understand?</q></p>
@@ -241,14 +235,20 @@ Cox]
                <p><q>You confessed to your love—for—</q></p>
                <p><q>No, did I? If I did so, I mistook my own heart. I haven’t confessed to my love for any one yet. I will now. Uncle Philip—no, Phil, will—will you take me in your arms again, and kiss me as you did this afternoon?</q></p>
 
-               </div>
-            <div>
+               <milestone unit="sectionBreak"/>
 
                <p>His sister Beryl and her husband wrote them long letters urging against the folly of their marrying, because of the girl’s extreme youth. Even Komatsu Taro urged them to wait a while, but Natsu was wildly delighted at it all, and her little romantic soul was full.</p>
                <p><q>I am going back to school for one year</q>, Koto told her, <q>I am eighteen now. He—he wants me to go, and, oh, Natsu, he will come to see me lots, and live near me, and, it’s to please his sister, you know, but I don’t believe we’ll really be able to wait out the year, will we?</q> she turned to Phil, blushing so beautifully.</p>
                <p><q>No</q>, he said, catching his breath.</p>
 
             </div>
+         </div>
+         
+         <note>Concluded in October issue</note>
+         
+         <div>
+            <note>Synopsis of Previous Installments</note>
+            <note>This charming serial by Miss Watanna is the latest production of that versatile young writer. <q>The Old Jinrikisha</q> tells of the comedies and tragedies it has been a silent witness of during its earthly career. The February number contained the opening chapter, or rather the prologue; the story really began in the March issue, which related the adventure of an American girl who hires the <q>Old Jinrikisha</q> for a long ride. With the independence characteristic of her countrywomen, she decides to ho alone to a tea garden in Okubo, the western suburb of the city. Here she is accosted by an Englishman, who, knowing the unprincipled customs of the jinrikisha runners, offers to accompany her home. She, however, mistaking his intentions, will not allow him to do so. When they reach a dense forest, the jinrikisha man attempts to rob her, but she is rescued by the Englishman who has followed the <q>old jinrikisha</q> and its fair occupant. A few months after the adventure, Beryl Evans and the Honorable Frank Arthur Montrose are affianced sweethearts. Elinore Montrose has come to Japan to join her brother and to meet Ernest Crowder to whom she has been betrothed for three years. Beryl and Elinore become very intimate and make frequent excursions into the country. Upon one of these occasions they discover Crowder making love to a Japanese girl and Beryl happens to get a snap shot with her kodak. The Japanese girl asserts that Crowder is her husband, but the man denies it. Elinore dies of a broken heart, and driven to desperation by Crowder’s contemptuous disdain, his Japanese wife commits suicide after the manner of her race. Beryl’s brother, Philip, has taken a fancy to Crowder’s little daughter, and knowing the isolated life led by half-castes, offers to take the child to America. The relatives consent, and soon after Beryl’s marriage to Montrose they sail for America. Fifteen years later, Komatsu, the young owner of the <q>Old Jinrikisha</q>, determines to ascertain if there are any living descendants of Lady Natsu and finds that her granddaughter Natsu married twice; first, to a merchant named Nosse, by whom she had one child also named Natsu, and later and Englishman named Crowder, whose daughter Koto had been adopted by English people. Komatsu gives a banquet in which he invites Natsu and her relatives. He is captivated by her beauty and soon afterward they are betrothed. Her sister Koto, who is studying in England, decides to visit her half-sister, and on the same steamer with her comes Jack Carruthers. Koto takes up her abode with her sister, where Carruthers meets and falls in love with Natsu. Koto advises Komatsu to make love to Natsu in Western fashion, as Jack has been doing; she asks the latter if he loves Natsu; his reply proves his insincerity and Natsu learns that her heart really belongs to Komatsu, whose cause her sister has always advocated. Komatsu and Natsu are married and Phil Evans arrives upon the scene and finds his ward grown into a beautiful young woman.</note>
          </div>
 
          

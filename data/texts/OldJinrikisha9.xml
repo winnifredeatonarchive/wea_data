@@ -15,10 +15,14 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable
 version</resp>
@@ -59,11 +63,13 @@ Publicly accessible
 
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:SL1" when="2019-06-28" status="inProgress">Added catRef and facs.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl181 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -81,22 +87,14 @@ file and added TEI header.</change>
    </teiHeader>
 
 
-   <text prev="doc:OldJinrikisha8">
+   <text facs="facs:OldJinrikisha9" prev="doc:OldJinrikisha8">
       <pb n="8"/>
       <body>
-
-
-<!--
-         <head>Conkey’s
-            Home Journal 8.1 (Oct. 1900): 8-
-            9.
-            The Old Jinrikisha [9th
-            installment]
-            By Onoto Watanna
-            [Illustration by Charles A.
-            Cox]</head>
-
-         <div>-->
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by Charles A. Cox</byline>
+            <note>Concluded in this issue</note>
+         </opener>  
 
 
             <div n="12">
@@ -106,6 +104,9 @@ file and added TEI header.</change>
                <p><q>Well</q>, she said, finally, <q>whad kin you do? You jus’ gotter tell him. I onderstan’ thad you nod lig’. Me? I nod lig’ needer, bud whad kin we do?</q></p>
                <p>Koto didn’t see any more than Natsu that there was anything for them to do but face it out.</p>
                <p><q>He’ll feel dreadfully, I know</q>, she said, moodily.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p><q>Yaes—tha’s true. Sa-ay, don’ you thing’ I feelin’ thad dreadfully tarrible also, when thad Omble Jag Cuthers tellin’ me he don’ luf me. Whad you thing? Well, sa-ay I thing’ thad Jag he gotter git over thad tarrible pain and mis-er-able-ness jus’ lig’ me—I gittin’ over. He bedder go git nudder gell ter luf with, jus’ lig’ me—I goin’ git my august hosban’ to luf with me, tha’s same thing</q>.</p>
                <p>Koto laughed, a trifle provoked. Natsu certainly was a poor consoler.</p>
                <p><q>Well, I suppose I’ll have to tell him</q>, she admitted with great distaste. <q>He’s coming at four o’clock</q>.</p>
@@ -128,7 +129,7 @@ file and added TEI header.</change>
                <p><q>Oh, pshaw!</q> He lost patience, wondering savagely whether she intended to ask after the health of all his individual friends and acquaintances. Maybe after that she would inquire solicitously after the health of her august majesty, the Queen of England, and so on down the whole royal family. Jack wished Koto would come down.</p>
                <p><q>I thing you lig’ something to dring’ an’ eat, mebbe?</q> suggested Natsu, very politely.</p>
                <p><q>Er—what’s that? Ah, yes, very well</q>. He threw his hat and gloves down on a small table, and strode over resignedly to a window, his hands deep in his trousers pockets. He was feeling nervous, and Koto’s non- appearance made him more so.</p>
-               <p>Natsu clapped her hands briskly, and one of her maidens came through the shoji.</p>
+               <p>Natsu clapped her hands briskly, and one of her maidens came through the <foreign xml:lang="ja">shoji</foreign>.</p>
                <p><q>Bring tea for the honorable guest</q>, said Natsu.   Then she walked over to him.</p>
                <p><q>Excellency</q>, she said, just a trifle timidly, <q>I lig’ speag’ at you</q>.</p>
                <p>Jack turned about and faced her, half good-naturedly, half irritably. He was still sulking over Koto’s prolonged absence, for had she not promised to be in the zashishi at four, and it was nearly five now?</p>
@@ -145,6 +146,9 @@ file and added TEI header.</change>
                <p><q>What do you mean?</q></p>
                <p><q>She tellin’ me thad</q>.</p>
                <p><q>She—what do you mean?</q> he repeated stupidly.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
                <p><q>Jus’ same thing you tellin’ me ‘bout nod luf with me account you luf elsewhere</q>.</p>
                <p>I had never given Natsu credit for any maliciousness in her make-up. She had always seemed too artless and innocent for that. But it is the nature of the Japanese women beneath all their submissive sweetness, when actually hurt, to retaliate with all their might whenever opportunity presents; indeed, they will seek such opportunity relentlessly.</p>
                <p>I hated to think that Natsu, the gentle, loving, sweet little girl I loved so well, could be capable of absolute cruelty in deliberately taking this opportunity to retaliate against Jack Carruthers for any pain he may have caused her.</p>
@@ -159,15 +163,14 @@ file and added TEI header.</change>
                <p><q>Ah-h, yaes, alas, you onderstan’. Tha’s breagin’ your heart all daed</q>.</p>
                <p><q>Oh, I’m all right</q>, he pushed his fingers wearily through his hair, <q>I don’t know what else I expected</q>, he groaned and walked across the room with a slow, uncertain stride. Natsu trotted after him, wringing her hands with sympathy and distress.</p>
 
-               </div>
-            <div>
+               <milestone unit="sectionBreak"/>
 
                <p><q>Sa-ay, Omble Jag—Mister Jag—excellency—sa-ay I goin’ tell you something—lo, I—I kin comfort with you</q>.</p>
                <p>He smiled through his misery at her concern.</p>
                <p><q>Sa-ay—suppose you gitting nudder nize beautifullest ladies to luf with you. My seester</q>, she threw a disparaging note into her voice now, <q>she nod vaery nize—nod vaery— jus’ liddle bit. No—nod liddle bit whicheven—mos’ augustly homely womans in all the whole worl’. Now I egspeg some nize beautifullest ladies goin’ to lig’ with you if you letting. No, don’ shake your honorable heads, you thing nod? Well me? I thing’ nod also thad times you—whad is thad? Ah, yaes— jilting with me. Well me? I git my august hosban to luf with me jus’ same way, an’ lo, I am jus’ same habby also</q>. She ended triumphantly.</p>
                <p>Jack picked his hat, stick and gloves up, and held them in one hand as he took Natsu’s little ones, which were both outstretched in the other.</p>
                <p><q>Good-bye, Natsu—tell her that—that you delivered her message, and ah—I said—</q> he broke down here, and went out with the sentence unfinished.</p>
-               <p>Koto came through the shoji, shivering. She flung herself down on a couch and burst into tears, sobbing bitterly.</p>
+               <p>Koto came through the <foreign xml:lang="ja">shoji</foreign>, shivering. She flung herself down on a couch and burst into tears, sobbing bitterly.</p>
                <p><q>Oh, oh, I heard it all. It was cruel. I—Natsu, how could you do it? How—</q></p>
                <p><q>Thad is cruel</q>, said Natsu, gravely, <q>bud whad could I do? You ask me to telling, an’ I telling. Tha’s all</q>. There was a guilty tremor to her voice, however.</p>
                <p><q>But—but your voice—you seemed cold and unfeeling</q>.</p>
@@ -181,8 +184,7 @@ file and added TEI header.</change>
                <p><q>Natsu!</q></p>
                <p><q>Yes, I hadn’t the courage</q>.</p>
 
-               </div>
-            <div>
+               <milestone unit="sectionBreak"/>
 
                <p>Phil Evans made no comment, and after a moment the girl continued, her voice breaking, <q>Oh, Phil, I feel so conscience-stricken and wicked about it all. I almost wish I had seen him myself, though it might not have mended matters</q>.</p>
                <p><q>No</q>, said Phil slowly, <q>it would not have altered things. I only wonder he did not insist on seeing you</q>.</p>
@@ -195,13 +197,13 @@ file and added TEI header.</change>
             </div>
 
             <div n="13">
-               <head>XIII. L’Envoi.</head>
+               <head>XIII.</head> 
+               <head type="subtitle">L’Envoi.</head>
                <div>
                   <p>And now I have told you all there is to tell of those dear ones, whom I have loved in my day. Maybe when I started out to prattle and gossip of the fleeting memories of the past, I intended to tell you of others besides those who came nearest to my own heart, but like most old people my mind will run constantly to those I love most, and whose lives I have played a larger part in. Others have come and gone before me—many a love story, tragedy and comedy, of one chapter only, have I been the silent witness of, among those who flashed but once into my life and then passed out. Of the ones I have told you, I picked up the threads of their careers and because they were dear to my heart, how could I forget them?</p>
                   <p>I am old, so very, very old now, and slowly but surely I am going to pieces. You see, my master overrated my strength and that ride Koto took in me all the way to Tokyo and back with her lover, practically ruined my health for the rest of my days. There is nought in my life to-day that I can cry out against. The gods have seen fit to indeed bestow all good blessings on me in my old age. I am surrounded by those I love most on earth. I serve the descendents of my beloved master of the past. Furthermore, I know that when my bones (pardon an old jinrikisha’s conceit in referring to his parts thuswise) shall fall apart, they will not be vulgarly scattered, but gathered together with great reverence and care, for am I not beloved by my dear master and his gentle wife? They always hold that I am partially responsible for their happiness, as it was through me they first met.</p>
 
-               </div>
-               <div>
+                  <milestone unit="sectionBreak"/>
                
                   <p>They are very happy, these two. The gods have smiled on them also, and blessed them with a truly wonderful man- child. This is the greatest of the gods’ gifts—a little child. The child bears an odd name, that is, odd for a Japanese child. <q>Philip</q> is its first name, after its new uncle. The child in no way looks American; when it shall grow to years of understanding it will question the honorable meaning of its name, as all Japanese children do, and its parents will answer, <q>The name means all that is good and true</q>, for so are they pleased to regard their august brother-in-law.</p>
                   <p>The child pleases me much, and I fain<note type="editorial" resp="pers:JLC1">Original
@@ -213,7 +215,6 @@ file and added TEI header.</change>
                
                </div>
             </div>
-         <!--</div>-->
       </body>
    </text>
 </TEI>
