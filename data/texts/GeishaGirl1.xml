@@ -33,15 +33,17 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-06-30" status="readyForProof">Added facs.</change>
          <change who="pers:JT1" when="2019-05-15" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl149 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+           <text facs="facs:Geisha_Girl2"> 
       <body>
          <div>
             <!--THIS IS THE REPRINTED VERSION, GEISHAGIRL2 is the ONE WITH THE TRANSCRIPTION-->
+            <!--Check this source. It seems to be a summary of Geisha Girl that quotes the Woman's Home Companion piece.-->
             <gap reason="noTranscriptionAvailable"/>
          </div>
       </body>
