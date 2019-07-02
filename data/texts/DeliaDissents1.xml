@@ -6,6 +6,7 @@
       <fileDesc>
          <titleStmt>
             <title>Delia Dissents</title>
+            <title type="sub">Her Diary Records the End of a Great Endeavor</title>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -18,13 +19,15 @@
          <textClass>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef target="wdt:genreShortStory" scheme="wdt:genre"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" status="inProgress"  when="2019-07-02">Updated subtitle and added facs.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl39 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:DeliaDissents">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
