@@ -10,6 +10,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065174">https://hdl.handle.net/2027/uc1.b3065174</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:2"/>
          </sourceDesc>
@@ -21,11 +24,12 @@
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" status="inProgress"  when="2019-07-02">Added facs and notes stmt.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl2 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:Contract">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
