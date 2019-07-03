@@ -5,11 +5,14 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>The Wooing of Wistaria (15 Jan. 1906)</title>
+            <title>The Wooing of Wistaria (Part 5)</title>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:190"/>
          </sourceDesc>
@@ -17,13 +20,16 @@
       <profileDesc>
          <textClass>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef target="wdt:genreNovelSerial" scheme="wdt:genre"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" status="inProgress"  when="2019-07-02">Added facs, notes stmt, and cat refs.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl190 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:WooingofWistaria5" prev="doc:WooingofWistaria4" next="doc:WooingofWistaria6">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
