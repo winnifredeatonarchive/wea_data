@@ -26,6 +26,10 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <relatedItem target="doc:NatsuSan1"/>
+            <note>Facsimile provided by University of Wisconsin-Madison.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:98"/>
          </sourceDesc>
@@ -37,19 +41,19 @@
            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
         </textClass>
      </profileDesc>
-     <revisionDesc status="inProgress">
+     <revisionDesc status="readyForProof">
+        <change who="pers:SL1" when="2019-07-04" status="readyForProof">added facs and readied for proof.</change>
         <change who="pers:MC1" when="2019-07-02" status="inProgress">tried to do some proofing.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl98 using XSLT.</change>
         <change when="2019-02-28" who="pers:KI1">Created file.</change>
      </revisionDesc>
   </teiHeader>
-  <text>
+   <text facs="facs:NatsuSan2">
       <body>
-         <head>NATSU-SAN</head>
+         <head>Natsu-San</head>
          <opener>By <name ref="pers:WE1">Onoto Watanna</name>
-         </opener> 
-         <!-- Italicize? -->
-         <!-- Distinct/dialect text has not been tagged in this document --> 
+            <byline>Illustrated by Frederick McCormick</byline>
+         </opener>
          <div>
 					       <p>She was in a reminiscent mood. She was sitting in one of the American’s big chairs, and because she was so very small her feet reached only half way to the floor, and the chair seemed to envelop her altogether. She looked at the American out of a pair of very sharp little eyes, and there was just the least touch of pique in her voice.</p>
 
@@ -75,19 +79,19 @@
 
 					       <p>Then, too, his vanity was immensely flattered that she had not forgotten him, and that she had been the first to meet him at the boat. She evidently considered he had stood up in position plenty long enough for him to see her, and suddenly subsided to the floor, her little feet under her, looking, if possible, even more bewitching than before.</p>
 
-            <p><q>Now tell me <emph>all</emph> about yourself</q>. she said, coaxingly.</p>
+                      <p><q>Now tell me <emph>all</emph> about yourself</q>. she said, coaxingly.</p>
 
 					       <p><q>Nothing to tell, Natsu-san, that you would understand. Besides, I’d rather hear you talk</q>.</p>
 
-            <p><q><emph>Now</emph> you are selfeesh again</q>, she said, reproachfully, but proceeded to recite to him a few of the little incidents that had occurred in Tokyo since he had left.</p>
+                      <p><q><emph>Now</emph> you are selfeesh again</q>, she said, reproachfully, but proceeded to recite to him a few of the little incidents that had occurred in Tokyo since he had left.</p>
 
-         	  <p>Now, Tom Eyster had left Japan with the fixed intention of getting over his infatuation for Natsu-san. She was the youngest and prettiest geisha-girl in a tea-house that Tom had always found particularly attractive because, perhaps of the picturesqueness of its situation, being on the highway between Yedo and Kyoto, and within sight of Fuji-Yama. He had known hundreds of geisha girls, but none of them had ever seemed to him as charming as Natsu-san, to whom he had attached himself almost from the first day when she had knelt at his feet holding the tray while he drank his <foreign xml:lang="ja">saké</foreign> hot. After that day he had been almost constantly at the tea-house, and a friendship had sprung up between them. A friendship? Well, perhaps something more than that, for the last time Tom had seen her he had taken her bodily into his arms, in true American fashion, and had kissed her very ardently.</p>
+         	          <p>Now, Tom Eyster had left Japan with the fixed intention of getting over his infatuation for Natsu-san. She was the youngest and prettiest geisha-girl in a tea-house that Tom had always found particularly attractive because, perhaps of the picturesqueness of its situation, being on the highway between Yedo and Kyoto, and within sight of Fuji-Yama. He had known hundreds of geisha girls, but none of them had ever seemed to him as charming as Natsu-san, to whom he had attached himself almost from the first day when she had knelt at his feet holding the tray while he drank his <foreign xml:lang="ja">saké</foreign> hot. After that day he had been almost constantly at the tea-house, and a friendship had sprung up between them. A friendship? Well, perhaps something more than that, for the last time Tom had seen her he had taken her bodily into his arms, in true American fashion, and had kissed her very ardently.</p>
 
 					       <p><q>I am coming back soon, Natsu-san</q>, he had said to the doleful little figure; but as the ship began to move down the bay he shut his lips together very grimly, as he said, <q>Don’t expect ever to see her again. Hope not, for obvious reasons</q>.</p>
 
 					       <p>That was two years ago. Tom had succeeded very nicely in forgetting Natsu-san, and, in fact, had taken a dose of the best medicine for love; that is, he had fallen in love with another. Now he was taking another trip through Japan before returning to America, there to settle down with the new love, who, by the way, was a fair American girl. Tom felt quite capable of meeting Natsu-san now, what with the added two years to his former twenty years and the assurance of his American girl that she trusted him utterly. It really was not Tom’s fault that he was frightfully susceptible. In fact, he would have told you it was Natsu’s fault. She had no business to grow so pretty and charming. Tom was more helplessly smitten than ever this time.</p>
 
-            <p><q>You change <emph>vaery</emph> much</q>, the girl told him, looking at him very critically.</p>
+                       <p><q>You change <emph>vaery</emph> much</q>, the girl told him, looking at him very critically.</p>
 
 					       <p><q>In what way. Natsu-san?</q></p>
 
@@ -103,7 +107,10 @@
 
 					       <p>That settled it. By this time she had risen to her feet again and was standing before him in the most inviting manner in the world. There is no need to tell how Tom answered her. Besides, that was one of the American tricks he had taught her long ago.</p>
 
-					       <p>It was about a month later. Tom had prolonged his visit in Japan. His original intention had been only to stay there a few weeks, certainty not more than a few days or a week in any one city. One morning, as Natsu-san sat very comfortably at his feet trying to make him laugh and chase away the gloom that had suddenly possessed him, he said to her as firmly as he could:</p>
+         </div>
+         <div>	       
+            
+                       <p>It was about a month later. Tom had prolonged his visit in Japan. His original intention had been only to stay there a few weeks, certainty not more than a few days or a week in any one city. One morning, as Natsu-san sat very comfortably at his feet trying to make him laugh and chase away the gloom that had suddenly possessed him, he said to her as firmly as he could:</p>
 
 					       <p><q>Now, Natsu-san, I want you to listen to me!</q> <q>Yaes?</q> the girl interrogated. <q>I listenin’, Mr. Solemn Angery-patch</q>. She meant <q>Crosspatch</q>.</p>
 
@@ -117,13 +124,13 @@
 
 					       <p>It was a photograph of a young American girl. She was dressed in fashionable clothes, with a large hat on her head trimmed with birds, flowers and imitation cherries.</p>
 
-            <p><q><emph>What</emph> a ugly girl!</q> said Natsu-san, spitefully, making a face. <q>She all so fonny! See all the ugly things on her haed! Wha’ you call that—-a hat? Ugh! I not lig’ a hat lig’ that—all fool of ve-veget-ables an’ birds an’—-an’—-</q></p>
+                     <p><q><emph>What</emph> a ugly girl!</q> said Natsu-san, spitefully, making a face. <q>She all so fonny! See all the ugly things on her haed! Wha’ you call that—-a hat? Ugh! I not lig’ a hat lig’ that—all fool of ve-veget-ables an’ birds an’—-an’—-</q></p>
 
 					       <p><q>But look at the face, Natsu-san</q>.</p>
 
 					       <p>The young man was getting red. Natsu regarded the face very critically.</p>
 
-            <p><q><emph>How</emph> tha’ is fonny! See, she roll her eyes, so!</q> and she turned her own little eyes in irresistible mimicry of the American girl’s, which were turned heavenward.</p>
+                      <p><q><emph>How</emph> tha’ is fonny! See, she roll her eyes, so!</q> and she turned her own little eyes in irresistible mimicry of the American girl’s, which were turned heavenward.</p>
 
 					       <p><q>Do you know who this is?</q> Tom asked, sternly.</p>
 
@@ -137,7 +144,7 @@
 
 					       <p>The pallor of her face was scarcely noticeable, and her voice did not tremble in the slightest; in fact, there was extreme mockery in it.</p>
 
-            <p><q><emph>How</emph> nize that is!</q> she said, <q><emph>How</emph> you mus’ lofe her!</q></p>
+                       <p><q><emph>How</emph> nize that is!</q> she said, <q><emph>How</emph> you mus’ lofe her!</q></p>
 
 					       <p>She did not come to see him all the next day, and with a restlessness he could not conquer he went over to seek her in the tea-garden.</p>
 
@@ -152,7 +159,7 @@
 					       <p>He was conscious of a feeling of unreasonable jealousy. Why had she told him nothing of this before?</p>
 
 					       <p><q>When?</q> be began, and could get no further. <q>When —when?</q> he repeated, stupidly.</p>
-
+            
 					       <p><q>Oa</q>, the girl answered, coolly, <q>I bin <q>engaged</q>, you call it, long time now. I egspeg to marrv nex’ mont</q>.</p>
 
 					       <p><q>Then you were just fooling with me?</q></p>
