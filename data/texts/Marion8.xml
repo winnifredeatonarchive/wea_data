@@ -7,10 +7,25 @@
          <titleStmt>
             <title>Marion (Part 7)</title>
             <title type="sub">The Story of an Artist’s Model</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:80"/>
          </sourceDesc>
@@ -18,14 +33,16 @@
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" status="readyForProof"  when="2019-07-04">Added facs and readied for proof.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl80 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:Marion7" prev="doc:Marion7" next="doc:Marion9">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
