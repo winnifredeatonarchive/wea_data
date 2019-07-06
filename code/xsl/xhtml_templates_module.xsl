@@ -502,6 +502,13 @@
         </a>
     </xsl:template>
     
+    <xsl:template match="ptr[@type='readMore']" mode="tei">
+        <a href="{wea:resolveTarget(@target)}">
+         <xsl:call-template name="processAtts"/>
+            Read More
+        </a>
+    </xsl:template>
+    
     <xsl:template match="name[not(@ref)][not(ancestor::respStmt)]" mode="tei">
         <span><xsl:apply-templates mode="#current"/></span>
     </xsl:template>

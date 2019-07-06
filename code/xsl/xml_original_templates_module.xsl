@@ -58,6 +58,7 @@
                     <label><ref target="{$thisCorresp}"><xsl:sequence select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></label>
                     <note>
                         <xsl:apply-templates select="node()"/>
+                        <ptr type="readMore" target="{$thisCorresp}"/>
                     </note>
                 </xsl:when>
             </xsl:choose>

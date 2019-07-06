@@ -1228,7 +1228,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -1365,6 +1365,48 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+               </elementSpec>
+               
+               <elementSpec ident="ptr" module="core" mode="change">
+                  <constraintSpec scheme="schematron" ident="ptr.readMore">
+                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:ptr">
+                              <sch:assert test="ancestor::tei:TEI/@xml:id='index'">
+                                 ERROR: Only use the ptr element in the index page,
+                                 and it must have type='readMore'.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="ptr.readMore">
+                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:ptr">
+                              <sch:assert test="matches(@target,'^doc:')">
+                                 ERROR: All ptr elements must have a @target attribute
+                                 that points to a document using the doc: prefix.
+                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="readMore" mode="add">
+                              <desc>Read More</desc>
+                              <gloss>A "read more" link used on the Index page</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="req"/>
+                  </attList>
+                  
                </elementSpec>
           
                <elementSpec ident="catRef" module="header" mode="change">

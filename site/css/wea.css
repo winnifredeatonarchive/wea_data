@@ -1319,7 +1319,10 @@ a:hover,
 .JS .additionalInfoHeader:hover:after,
 header a:hover,
 a.popup:hover,
-a#nav_toggle:hover{
+a#nav_toggle:hover,
+a[data-el='ptr'][data-type='readMore']:hover,
+a[data-el='ptr'][data-type='readMore']:hover:after
+{
     color:var(--wea-pink);
     transition: color 0.2s;
 }

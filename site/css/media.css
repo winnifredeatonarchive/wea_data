@@ -459,17 +459,41 @@ ul#menu_main > li > ul{
        font-size: .9rem;
    }
    
+   .docBornDigitalListing #info{
+       flex-direction:column;
+   }
+   
    #info_left{
+       order:2;
+       max-width:100%;
    }
    
    #info_right{
-       font-size:1em;
-       margin-left: 1em;
+       order:1;
+       margin-left: 0;
+       border-left:none;
+   }
+   
+   #info_right > ul{
+       display:flex;
+       flex-wrap:wrap;
+       align-items: baseline;
+       margin-bottom: 1rem;
+       border-bottom: 1px solid #ccc;
+       padding-bottom: .75rem;
+       font-size:0.85em;
    }
    
    #info_right li+li{
-       padding-top:.75em;
+       padding-top:0;
    }
+   
+   #info_right li{
+       padding-left:1em;
+       padding-bottom:.5em;
+   }
+   
+
    
    #info_right [data-el='date']{
        display:none!important;

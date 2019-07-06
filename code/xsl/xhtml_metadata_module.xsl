@@ -590,7 +590,7 @@
                             </a>
                         </div>
                     </xsl:if>
-                    <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
+                   <!-- <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
                         <div id="tools_facsimiles">
                             <a class="toolbar_item" href="#tools_facsimiles_content">
                                 <div class="mi">photo_library</div>
@@ -598,7 +598,7 @@
                             </a>
                             
                         </div>  
-                    </xsl:if>
+                    </xsl:if>-->
      <!--               
                     <xsl:if test="//pb">
                         <div id="tools_pagebreaks">
