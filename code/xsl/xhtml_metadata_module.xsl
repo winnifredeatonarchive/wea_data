@@ -293,10 +293,15 @@
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
         <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
+        
+        <!--Now process the category references-->
         <xsl:apply-templates select="//catRef" mode="metadata"/>
-        <xsl:apply-templates select="//text/@next" mode="metadata"/>
-        <!--I think we want the next before the prev in all cases-->
+        
+        <!--And then if there are installments, add those too-->
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
+        <xsl:apply-templates select="//text/@next" mode="metadata"/>
+        
+        <!--And get some information from the work from which it derives-->
         <xsl:call-template name="getWork"/>
 
     </xsl:template>
@@ -621,7 +626,7 @@
                         <xsl:variable name="body">[If you are reporting a bug or other technical issue, please provide as much detail as possible.]</xsl:variable>
                         <a class="toolbar_item" href="mailto:mary.chapman@ubc.ca,joey.takeda@gmail.com?subject={encode-for-uri($subject)}&amp;body={encode-for-uri($body)}">
                             <div class="mi">feedback</div>
-                            <div>Feedback</div>
+                            <div class="label">Feedback</div>
                         </a>
                     </div>
                     

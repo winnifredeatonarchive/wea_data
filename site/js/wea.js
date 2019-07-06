@@ -479,8 +479,9 @@ function makeFootnotesResponsive(){
 function makeToolbarResponsive(){
     var toolbarItems = document.querySelectorAll('.toolbar_item');
     toolbarItems.forEach(function(t){
-        t.addEventListener('click', showPopup, true);
-        
+        if (t.getAttribute('href').startsWith('#')){
+            t.addEventListener('click', showPopup, true);
+        } 
     });
 }
 
