@@ -6,24 +6,42 @@
       <fileDesc>
          <titleStmt>
             <title>The Japanese Drama and the Actor</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/chi.18979538">https://hdl.handle.net/2027/chi.18979538</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:155"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" status="readyForProof"  when="2019-07-05">Added facs and readied for proof.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl155 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:JapaneseDrama">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
