@@ -4786,7 +4786,7 @@ Of Clare-Hall in Cambridge.</byline>
                                                 <label>wdt:Alberta</label>
                                                 <item>Alberta </item>
                                                 <label>wdt:Hollywood</label>
-                                                <item>Hollywood Years </item>
+                                                <item>In Hollywood </item>
                                                 <label>wdt:EarlyExperiment</label>
                                                 <item>Early Experiments </item>
                                                 <label>wdt:NewYork</label>
@@ -23926,6 +23926,19 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
  &lt;sch:let name="firstChange"
   value="tei:change[@status][1]"/&gt;
  &lt;sch:assert test="$firstChange/@status = $thisStatus"&gt; ERROR: The status attribute must match the @status of the latest change element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>Status cannot be set to anything but empty if there's nothing in the document.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:revisionDesc[not(@status='empty')]"&gt;
+ &lt;sch:assert test="not(exists(//tei:text/descendant::tei:gap[@reason='noTranscriptionAvailable']))"&gt; ERROR: Only "empty" is allowed as a status for documents without transcriptions.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

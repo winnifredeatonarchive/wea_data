@@ -1281,7 +1281,20 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
+                  </constraintSpec>     
+                  <constraintSpec scheme="schematron" ident="revisionDesc.onlyEmptyWhenEmpty">
+                     <desc>Status cannot be set to anything but empty if there's nothing in the document.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:revisionDesc[not(@status='empty')]">
+                              <sch:assert test="not(exists(//tei:text/descendant::tei:gap[@reason='noTranscriptionAvailable']))">
+                                 ERROR: Only "empty" is allowed as a status for documents without transcriptions.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
                   </constraintSpec>
+                  
                   
                   <attList>
                      <!--Make status mandatory-->
@@ -1475,7 +1488,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>Alberta </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:Hollywood">
-                              <desc>Hollywood Years </desc>
+                              <desc>In Hollywood </desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:EarlyExperiment">
                               <desc>Early Experiments </desc>
