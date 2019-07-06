@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MissLily1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MissLily1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Miss Lily and Miss Chrysanthemum</title>
             <title type="sub">The Love Story of Two Japanese Girls in Chicago</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -20,20 +36,154 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-            <catRef target="wdt:genreShortStory" scheme="wdt:genre"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-02">Added notes stmt, cat ref info, and added facs.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl89 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-07-06" status="readyForProof">Readied for proof.</change>
+         <change who="pers:SL1" when="2019-07-06" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-02">Added notes stmt, cat ref info, and added facs.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl89 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:MissLilyMissCrysanthemum">
+      <pb n="11"/>
       <body>
+         <head>Miss Lily and Miss Chrysanthemum</head>
+         <head type="subtitle">The Love Story of Two Japanese Girls in Chicago</head>
+            <opener>
+               <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+               <note>Author of <q>A Japanese Nightingale</q>, <q>The Wooing of Wistaria</q>, etc.</note>
+               <byline>Illustrated by Harry E. Townsend</byline>
+            </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>Yuri (which is <q>Lily</q> in English) and Kiku (which is <q>Chrysanthemum</q>) met in one of the noisy and crowded railway stations in Chicago. They were sisters, half Japanese and half English ; but neither could understand one word the other spoke, for Yuri had been taken by her English father, who had been long since dead, from Japan when a little bit of a girl, and had lived most of her life in England and afterward in America, so that she had forgotten her mother tongue ; while Kiku had stayed with the little mother in Japan, whose recent death had left her so lonely that she had come all the way to America to join her sister, of whom she had only the dimmest memory. For in this double orphanage, thousands and thousands of miles apart, the two had felt strangely drawn to each other.</p>
+            <p>They were very much alike in appearance, only Yuri looked older and perhaps sadder than Kiku, who really was the younger by two years, and who was fairly beaming with excitement. She chatted away in Japanese to Yuri, forgetting that Yuri would not understand her, and turning half apologetically to be interpreted by the kind English lady who had known her very well in Japan and had brought her to her sister.</p>
+            <p><q>Your sister is pleased to be with you</q>, she said to Yuri.</p>
+            <p>The girl flushed with pleasure and put her arm affectionately about Kiku. <q>And I am so glad to have her with me</q>. Then she added, <q>But I would rather have gone home to her</q>.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>Six months passed rapidly, and Kiku had learned to speak English brokenly. The two little strangers boarded together on the South Side. They had an east room which overlooked Lake Michigan. Each morning as Yuri rose softly from the bed, so as not to awaken Kiku, she would throw open the green shutters, and resting her elbows on the sill, look dreamily out across the lake, letting the cool breeze fan her, and watching with eager eyes the sun rise. In those early hours, before Kiku had awakened, Yuri would make great plans for their future. She thought of how much she could save out of her salary (for she was employed as a teacher in one of the public schools in Chicago), so that she and Kiku might return together to Japan. She knew it would take some years before she would have sufficient to take them both back, for Kiku’s pretended cheeriness had not deceived her, and the pitiful quivering of the girl’s lips told of her homesickness.</p>
+            <p>Yuri had looked forward for years to the time when she should have enough to take her to Japan. Perhaps she loved even more dearly than Kiku the home that she could not remember. She had almost lived on the hope of going there; but now a new difficulty stood in her way Kiku had had only enough money wherewith to bring her to America, and was entirely dependent now on her sister, whose salary had only recently been sufficient to lay any aside. Moreover, Kiku was pining for her home, and Yuri knew that when the little fund in the bank should have grown large enough to permit of the trip, it must be Kiku, and not she, who would go. Kiku was nineteen years old; Yuri, though only two years older, felt as a mother to her little foreign sister. A love wonderful in its strength, devotion and unselfishness had sprung up between these two. Kiku loved Yuri with a pride in her that was pathetic in its confidence, but Yuri’s love partook of the supreme and tender love of a good mother.</p>
+            <p><q>Oh, Kiku</q>, she would say, before starting out in the morning, <q>you must be careful when you go out not to go far, for I don’t want my little Yap to lose herself</q>, and Kiku would say with her pretty English lisp, <q>Ess, liddle mozzer</q>.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>Walter Palmer was a young lawyer who boarded in the same house as Yuri and Kiku. He had been in love with Yuri-San for many days, but the girl had known nothing of this. Her life had been a hard one, and the struggle she had had in order to put herself through college and support herself at the same time had occupied all her thought, so that she had paid but little attention to the amusements and distractions that occupy the minds of most girls of that age. She was an extremely pretty girl, with dark, shy eyes, shiny black hair, and sweet, tender mouth. She had never mixed with companions of her age, on account of the strange antipathy the English had shown to her in her childhood, because of her nationality; which prejudice, however, they had long outgrown. Yet it had had a rude effect on her life, making her supersensitive. It was not that she distrusted and doubted the sincerity of all whom she met, but she sought to save herself the little cuts and pains which had seemed but her birthright. From the time when the little schoolmates at the public school had called her <q>nigger</q>, <q>Chinee</q>, and other names, which to the Western mind at that time meant the essence of opprobrium: Yuri had distrusted, not them, but herself. That she was inferior to them she never for one moment thought, but that she was different from them, and one whom it would be impossible for them to understand, she firmly believed; hence her strange love for the home she had never known. Holding herself aloof from all whom she met, she had lived a lonely, isolated life ever since her father’s death.</p>
+            <p>So Walter Palmer found little opportunity to speak to her, and it was only in the mornings or evenings as she went to and from work and passed him in the hall, on the stairway or on the doorstep, that the young man had the chance to see her and get a shy glance of recognition, and the girl little knew that he would loiter sometimes around the halls and places where he knew she must pass, for half an hour at a time, simply for the sake of seeing her. He was much in love, and often as he sat in the dreary law office, with his work piled high around him, there would rise before him a picture of a young girl, with a strange, half-foreign proud face, and he would forget the musty law-books, and the confessions or accusations of his numerous clients.</p>
+            <p>Although scarcely past his thirtieth year he had already made quite a name for himself, so that his practice was extensive, and he had become recognized as one of the first young lawyers of Chicago. He had known Yuri for six months, and during all that time had been unable to speak to her because of the girl’s reticence and reserve.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>Then Kiku had arrived. She was a wonder to all the other lodgers in the house. She was more Oriental-looking than her’ sister, but perhaps her chief beauty lay in her animation and bright spirits. She would dress in a style peculiarly her own, half Japanese and half American, and there was something fascinating in the manner in which she would twist a sash about her waist and tie it in a large fantastic bow at the back, as though in imitation of the Japanese obi. And because she was lonely all day while Yuri was at the school Kiku roved about the house and soon made the acquaintance of all the other lodgers, none of whom Yuri had known during all her stay at the house. So it happened one day when Yuri returned home that she found the little room deserted and Kiku nowhere in sight.</p>
+            <pb n="12"/>
+            <p>Yuri was uneasy, as it was after four o’clock, and Kiku had promised her not to venture out alone after that hour. While she sat wondering in distress what had become of Kiku, the sound of laughing voices floated up from the lower hall, mingled with which were the familiar, half-halting lisps of her sister’s. She opened her door, and walking to the head of the stairs looked down at the gay group below. A pitiful tremor flickered across her face as she realized that these people had suddenly come between her and her sister, and that Kiku should not find her sufficient; for Yuri had all the subdued half-jealous passion of a Japanese girl, even if subdued by enforced unselfishness. As Kiku saw her at the top of the stairs she only jerked her little chin saucily and motioned her to descend. At the same time, a young man who had laughingly placed his hand on Kiku’s shoulder raised his head, and saw Yuri with the pained embarrassment and surprise on her face. In a flash his hand had dropped and he was seconding her sister’s invitation to her to join them, and with half-unwilling, half-hesitating step Yuri descended.</p>
+            <p>The next morning when Yuri went to the school Walter Palmer walked with her, and the next morning, and each morning after that, he waited for the girl. Mostly they talked of Kiku, and of her future, because it was on this subject that Yuri was most intensely interested, and Palmer would have praised her sister if but for the sake of seeing Yuri’s eyes shine with pleasure.</p>
+            <p><q>It would do her a world of good</q>, he said one day, <q>to take her out on the lake. Can we not go some evening?</q></p>
+            <p>The girl looked at him half hesitatingly. Then she said impetuously: <q>Yes; I believe I can trust her with you;</q> adding deprecatingly, <q>she is such a little thing, and a stranger to your ways ; please be careful with her</q>.</p>
+            <p><q>But you will come, too</q>, said the young man eagerly.</p>
+            <p><q>Oh, no</q>, she answered, smiling; <q>I cannot spare the time. There is so much to do when I return in the evening; and besides, I am studying the Japanese language, and I shall make no headway if I do not persevere</q>.</p>
+            <p>Palmer swallowed a huge lump of disappointment.</p>
+            
+            <milestone unit="sectionBreak"/>
+            
+            <p>It was a beautiful moonlight night when he took Kiku on the lake, and perhaps its stillness and beauty set the girl thinking; for as they pushed out from the shore she raised her little brown face to him and said in her strangely frank and confiding manner: <q>What is this ‘lofe’ of which they speak in America?</q></p>
+            <p>Palmer started sharply, and looked at the girl’s innocent, questioning face without replying for some time. Then he said: <q>That is a leading question, Kiku-San. There are many of us here in America who ask the same question. ‘What is this — love?’</q> He smiled half tenderly at the girl’s wondering eyes.</p>
+            <p><q>Ess?</q> she answered, her voice raised questioningly, <q>but we do not ‘lofe’ like that in Japan</q>, speaking as though he had explained to her the meaning of the word. It seemed to please her, and she repeated softly, <q>Lofe —lofe — it is very queer, but we have no meaning for the liddle word in my home. Tell me the meaning</q>, she persisted.</p>
+            <p>Palmer turned his eyes reluctantly from hers, which were fastened on his face. He stopped rowing and leaned on his oars.</p>
+            <p><q>I must be stupid, Kiku-San, but I cannot analyze the word any more than you can, though — I— I think I know what it is</q>.</p>
+            <p>Kiku stirred restlessly. He could not fathom what was going on in her little head, or what had caused her to put the question to him. He had been thrown a great deal in her company of late, and often in the evenings Yuri had left them together while she prosecuted her studies, and Palmer knew that Kiku had more than a common liking for him.</p>
+            <p>They were both silent for a time; then Kiku said softly: <q>If you do not know what this lofe means, how then can you be ‘in lofe’ with me?</q></p>
+            <p>Palmer was mute, and his face had grown an ashy gray in the moonlight.</p>
+            <p><q>I</q>, he said, <q>I love you?</q> And then, <q>How can you know — how can you think that?</q></p>
+            <p><q>They tell me</q>, said the girl calmly; and she added shyly, <q>They tell me — that you — that you — lofe me</q>, and her voice lingered softly on the last words.</p>
+            <p><q>Who told you that?</q> asked the man harshly, his voice sounding strange even to his own ears.</p>
+            <p><q>The pritty American ladies at the house</q>, she said. <q>Is it true?</q> There was a certain stubbornness in her voice, mingled with wonder and half-pleased vanity.</p>
+            
+            <milestone unit="sectionBreak"/>
+            
+            <p><q>You must not ask such questions</q>, he said evasively.</p>
+            <p>The girl’s persistency fascinated him, and there was something tender and winning in her innocence. He could see her face distinctly in the pale light, and the moon’s soft rays touched it gently, and seemed to spread a halo around the shiny, dark little head. Her eyes were luminous, and in spite of her innocence there was a hesitancy and pitiful faltering in them and about the soft little mouth. Her face in its mixed beauty intoxicated the man. He could not remove his eyes from it. He forgot Yuri. He thought only of the girl sitting opposite to him, with the sweet face softened with the questioning that her innocent soul could not solve. With a sudden fierceness he reached over and caught her little soft hands in his, whispering huskily:</p>
+            <p><q>What makes you look like that, Kiku-San?</q> (San is the equivalent in Japanese for Miss, and is sometimes used as an endearing expression.)</p>
+            <p>Kiku did not attempt to withdraw her hands from his, but let them rest there in silent contentment. And thus they sat hand in hand, the boat drifting with the tide, and the moonbeams deepening, and enwrapping them with a silence and mystery that was replete with delight.</p>
+            <p>Then her soft little voice broke the silence that had fallen between them, and her eyes fell on their clasped hands. <q>And is <emph>this</emph> lofe?</q> she asked softly.</p>
+            <p>Palmer looked at her with eyes that took note of every outline of her face and form, and he was silent. Suddenly the girl raised her head and pointed toward the city.</p>
+            <p><q>See</q>, she said, <q>how far are we—so far! This must be lofe. We have no fear, though so far away from all life</q>. Then she seemed to recall herself.</p>
+            <p><q>My sister, Yuri-San, she will expect us. Surely had we better return</q>.</p>
+            <p>As she spoke her sister’s name the man suddenly shivered, and a cloud of agony flickered across his face. He seemed as one who had been asleep and but rudely awakened. His hands dropped hastily from hers, and he seized the oars in silence.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>It was past one when they reached the house. Yuri was sitting up waiting for Kiku. The room was in darkness, and she sat at the window looking out across the lake with her head on her arms.</p>
+            <p><q>Is it you, Kiku?</q></p>
+            <p><q>Ess, liddle mozzer</q>, said the other, and put her arms softly about her sister, sinking on the window-sill beside her.</p>
+            <p><q>You are tired</q>, said Yuri with concern; <q>we must not sit up any longer, little sis</q>. She began helping her undress, but Kiku stayed the busy hands, and, holding them tightly in her own, clung with a sudden tenderness and almost with terror to her sister.</p>
+            <p><q>Is <emph>this</emph> lofe?</q> she said wistfully.</p>
+            <p><q>Love, love?</q> asked Yuri, shivering a trifle. <q>Why, little sis, what a great big question that is! Of course it is love, and such love as never was perhaps between two sisters</q>.</p>
+            <p>Her voice was quite hushed as she kissed the upturned, questioning face. Kiku’s restlessness puzzled her.</p>
+            <p><q>I fear you have been out too long</q>, she said gravely; <q>come, sister will undress you</q>.</p>
+            <p>Kiku shook her head. <q>No!</q> she said almost fretfully, <q>Kiku does not wish to go to bed yet. Kiku wants to hear about this—lofe</q>.</p>
+            <p>Yuri laughed, the easy, good-natured laugh of an American-bred girl.</p>
+            <p><q>Why, you absurd little goosie; what can I tell you, save that this is ‘lofe,’ as you call it?</q> And she bent down and kissed Kiku on the lips.</p>
+            <p>Kiku shook her head impatiently.</p>
+            <p><q>But <emph>he</emph> did not do that</q>, she said with puzzled eyes.</p>
+            <p><q><emph>He!</emph> What do you mean?</q> said Yuri with a sudden fear at her heart. <q>Who did not do that? —and what—what—oh, Kiku — what is it, little sis?</q></p>
+            <p>Her quick questioning excited Kiku.</p>
+            <p><q><emph>He</emph></q> she said with a sudden scorn at Yuri for not knowing who <q>He</q> should mean. <q>Why, the pritty American gentleman. See, he <emph>lofe</emph> me, and he do <emph>only</emph> this</q> — and once more she caught Yuri’s hands in hers and pressed them with a strange passion.</p>
+            <p><q>He—he—did—that?</q> Yuri said with slow indignation. And then both were silent.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>When Yuri started out the next morning she was alone. It was the first time since she had known Palmer that he had failed to accompany her. The girl’s face was troubled, and there were shadows under her eyes which bespoke the sleepless night she had passed.</p>
+            <p>She was thinking of Kiku. She realized with a sad tenderness that Kiku, being such a stranger to Western ways, must ever be misunderstood by those about her. Her great love for her sister made her sensitive on her account, and it was with apprehension and a good deal of bitterness that she thought of Palmer.</p>
+            <p>She had never admitted, even to herself, that she loved him; yet, as she felt the sudden wave of helpless agony that swept over her whenever she thought of him, and of how stunned she had been at Kiku’s half confession, its truth came home to her with a brutal pain. All her life she had been forced to battle for herself; was she strong enough now, she asked herself, to take up her sister’s burdens also? That Kiku was as dear as, if not dearer than, the other to her she told herself repeatedly, calling up a pitiful resentment against the man.</p>
+            <p>She left the school early that day. Although ignorant of her mother tongue, yet she had many friends among the Japanese. She could not have told what impelled her to go to them, but feeling helpless in this new pain that had come to her she sought them out, and tried in their unfamiliar companionship to forget her own unhappy associates. When she returned home that evening a young chemist of great wealth, named Nishimura, accompanied her.</p>
+            <p>As they came to the front of the house two figures sitting together on the front steps rose. One ran down to meet them. It was Kiku-San, with shy, shiny eyes, and the one who stood back and looked at Yuri, with a sudden blinding agony before his eyes, was Walter Palmer.</p>
+            <p>Yuri was smiling bravely. She introduced Nishimura to Palmer, and then turning to Kiku made some gay remarks about her ruffled hair. Though she spoke to Palmer she did not once look him in the face. With arms entwined about each other the two girls mounted the stairs to their room.</p>
+            <p>Then Kiku began to speak breathlessly: <q>And I know what this lofe is</q>, she said triumphantly. Yuri turned her face away, and Kiku continued. <q>I — lofe—him</q>, she said slowly. <q>I lofe the pritty American gentleman. I dream of him in the night, I think of him all day, and I am very sad. Then he comes home very early, and he speaks to me about this lofe. He say it is nothing. That it is foolish to talk about it—that it is not good. Then I laugh at him, and I say: ‘No, then I not believe, for I know this lofe—for I lofe you — and you lofe me, and because of this we would be contradict’</q>. She laughed happily as she ended.</p>
+            <p><q>What did he say then, Kiku?</q> said Yuri quietly.</p>
+            <p><q>He laughed and he frowned, but he say nothing</q>.</p>
+            <p><q>And what else did you tell him, Kiku?</q></p>
+            <p><q>Oh! I talk much</q>, said Kiku saucily. <q>For this lofe is so strange. I talk, talk, talk, and he keep still and listen. I tell him I want to be with him largely</q>.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>Two months later Palmer joined Yuri as she walked to her work. It was the first time in many, many days. There was a large vacant field that Yuri would cross to make a shorter cut to the school, and it was generally here that they would separate, he taking the cars for the downtown part of the city. But this morning he started to cross the field with her, though a silence, eloquent in its sadness, had been between them from the start.</p>
+            <p>Palmer’s eyes had been on the girl’s face almost from the beginning, but she turned from him, and her abruptness amounted to rudeness, and was meant to be noticed.</p>
+            <p>Palmer stopped in the middle of the field and broke the strained silence.</p>
+            <p><q>I cannot stand it</q>, he said brokenly.</p>
+            <p>Yuri turned on him with a wild swiftness.</p>
+            <p><q><emph>You</emph> cannot stand it</q>, she said witheringly. <q><emph>You</emph>—you. What have you to say about it? Can’t you see, don’t you know — it will <emph>kill</emph> her if—if you are not kinder to her. And then—you tell <emph>me</emph> you cannot stand it. What is it you cannot stand? What has she done to you?</q> She stopped, her indignation choking her.</p>
+            <p>This was the first time the subject had been broached between them.</p>
+            <p>The young man’s shoulders drooped.</p>
+            <p><q>Don’t look like that, Yuri</q>, he said, thinking more of the girl herself than what she had said. <q>Don’t hate me. I tell you I don’t deserve it. What can I do? What have I done? I could not help it</q>.</p>
+    
+            <milestone unit="sectionBreak"/>
+    
+            <p>Her anger had died out. Her eyes softened a trifle.</p>
+            <p><q>Then you will make it all right, won’t you?</q> she said wistfully. <q>You will tell her—you will tell her — poor little Kiku, that you are not offended with her, and you <emph>won’t</emph> try to keep away from her. She is such a little thing, and she does not understand people like we are. It is cruel not to be kind to her</q>.</p>
+            <p><q>What can I do?</q> he asked, his teeth grating against each other with pain. <q>Surely <emph>you</emph> ought to understand? You know how it all came about, and you cannot blame me altogether. She was such a child, and I tried to discourage her, but I couldn’t bear to hurt her</q>.</p>
+            <p><q>You —couldn’t—bear—to hurt her</q>, said Yuri slowly. <q>Am I to understand from that that you never really loved, never really cared for my little sister?</q></p>
+            <p>The man was mute.</p>
+            <p><q>And you let her believe it!</q>— her voice rose in its pain—<q>you let her believe that, and then you come to me — you come to me, and pretend you are sorry — that you cannot understand — that—that  Oh! I hate you — you are contemptible — a brute—a — a coward</q>.</p>
+            <p>She turned to leave him, but he stood in front of her and burst out passionately: <q>You <emph>shall</emph> not leave me like this, Yuri. Yuri, turn your face to me. Let me look into your eyes. They accuse me so—and I — I have no words for myself. I do not know what to say — but, Yuri — I would not lose—your—your — regard for anything in the world. You will understand and perhaps you will forgive when I tell you, Yuri, dear little Yuri—it is <emph>you</emph> I love — I love <emph>you!</emph> How then could I care for any one else in the world? Can you understand now why I have had to evade even <emph>your</emph> little sister, whom I — I—cared for only because she was your little sister?</q></p>
+            <p>The girl’s face was white and drawn.</p>
+            <p>With a sudden agony she turned and ran blindly from him, scarcely knowing where she went, but wishing to get farther and farther away from him: to forget everything— the hideous pain of living, and the feeling almost of exultation that the knowledge of his love gave her.</p>
+            <p>Kiku was in a high fever when Yuri returned. She called constantly for her sister, and pitifully begged to be taken home to Japan. Yuri could not understand her well, for in her illness she spoke always in the soft accents of her mother tongue. But she knew what the girl was crying for and would whisper back softly, <q>Yes, I know; yes, I know, little sis, you want to go home, and you shall go home</q>.</p>
+            
+            <milestone unit="sectionBreak"/>
+            
+            <p>Two more months, and Kiku, clad in a soft, clinging kimono, was on her way home. The girl’s face was sadder and more subdued than when, hardly a year before, she had come to America. Her heart bounded with gladness as she thought of Nippon, and because she was scarcely more than a child her thoughts were more with her destination than with the man who had taught her the meaning of the Western <q>lofe</q>.</p>
+            <p>And alone in the little room Yuri was crying over the little Japanese relics and remembrances that her sister had left behind, and almost wondering whether the one year so full of laughter and tears in which Kiku-San had been with her were not all a strange dream. Of Palmer she would not think. His white face haunted her constantly, and she hated herself because the bitterness she had conjured up against him was slowly passing away, to be replaced with a feeling of pain and yearning and longing that the girl could not comprehend. She tried to assure herself that she would have all her heart could desire when, after her marriage to Nishimura, she was once more in the sunny land which she had dreamed of since her childhood’s days, and on which all her hopes for the future had been built. She knew Palmer had been sick. When she met him she dared not look at him for fear of finding him changed.</p>
+            <p>Once as the winter months advanced, and Yuri’s little cold hand tried in vain to turn the latchkey in the door, a firm hand closed over hers, and taking the key from her, deftly turned the lock. Then as they stood in the little porch alone together, he said with such piercing tenderness in his voice that the girl’s defiant eyes filled with tears:</p>
+            <p><q>Yuri, dear, cruel little Yuri</q>.</p>
+            <p>She did not answer him for a moment; then she raised her head and looked at him. He was smiling, and it angered her. <q>You must not laugh at me</q>, she said as childishly as Kiku might have done. Suddenly she thought of Nishimura, and she tried to steady her voice.</p>
+            <p><q>See</q>, she said, <q>I am to be married next month to — Mr. Nishimura</q>.</p>
+            <p>The man’s face suddenly changed, and its ashy misery appealed to her. With a sudden passion she pulled the little ring from her finger and forced it into his hand.</p>
+            <p><q>No, no!</q> she said frantically as he turned from her, <q>I won’t! I can’t—I — I</q> But Palmer’s hand had closed tightly over hers and the little ring, and he was drawing her into his arms with a glory over his face that only <q>lofe</q> could have reflected.</p>
          </div>
       </body>
    </text>
