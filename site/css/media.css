@@ -414,12 +414,12 @@ ul#menu_main > li > ul{
     }
     
     
-#mainBody[class*="BornDigital"]:not([class*='Listing']){
+/*#mainBody[class*="BornDigital"]:not([class*='Listing']){
     background-repeat: no-repeat;
     background-position: top 1rem left 0;
     background-origin: border-box;
     background-size: 20%;
-}
+}*/
 
 
     .JS #tools_container,
@@ -464,12 +464,10 @@ ul#menu_main > li > ul{
    }
    
    #info_left{
-       order:2;
        max-width:100%;
    }
    
    #info_right{
-       order:1;
        margin-left: 0;
        border-left:none;
    }
@@ -478,19 +476,21 @@ ul#menu_main > li > ul{
        display:flex;
        flex-wrap:wrap;
        align-items: baseline;
-       margin-bottom: 1rem;
-       border-bottom: 1px solid #ccc;
-       padding-bottom: .75rem;
+       margin-top: 1rem;
+       border-top: 1px solid #ccc;
+       padding-top: .75rem;
        font-size:0.85em;
+       justify-content: space-around;
    }
    
    #info_right li+li{
        padding-top:0;
+       padding-left:.5em;
    }
    
    #info_right li{
-       padding-left:1em;
        padding-bottom:.5em;
+       padding-left:0;
    }
    
 

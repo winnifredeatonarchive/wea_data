@@ -616,6 +616,15 @@
                         </a>
                     </div>
                     
+                    <div id="tools_feedback">
+                        <xsl:variable name="subject">WEA Feedback: <xsl:value-of select="string-join(ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]/descendant::text(),'')"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
+                        <xsl:variable name="body">[If you are reporting a bug or other technical issue, please provide as much detail as possible.]</xsl:variable>
+                        <a class="toolbar_item" href="mailto:mary.chapman@ubc.ca,joey.takeda@gmail.com?subject={encode-for-uri($subject)}&amp;body={encode-for-uri($body)}">
+                            <div class="mi">feedback</div>
+                            <div>Feedback</div>
+                        </a>
+                    </div>
+                    
                   
                     
                     <div id="unhighlightButton" class="tool_search">
