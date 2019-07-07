@@ -17,6 +17,10 @@
         </xd:desc>
     </xd:doc>
     
+    <xsl:template match="divGen[@xml:id='pseudonyms_table']" mode="original">
+        <xsl:call-template name="createPseudonymsTable"/>
+    </xsl:template>
+    
     
     <!--Clean up empty names in the respStmts-->
     <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">

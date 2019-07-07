@@ -22,6 +22,7 @@
     <xsl:include href="xml_original_organizations_module.xsl"/>
     <xsl:include href="xml_original_templates_module.xsl"/>
     <xsl:include href="xml_original_work_module.xsl"/>
+    <xsl:include href="xml_original_pseudonym_module.xsl"/>
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($sourceXml)">

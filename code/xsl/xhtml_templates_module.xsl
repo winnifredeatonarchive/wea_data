@@ -231,7 +231,7 @@
     <xsl:template match="table" mode="tei">
         
         <xsl:choose>
-            <xsl:when test="ancestor::TEI[descendant::catRef/@target[contains(.,'Documentation')]] or count(row) = 1">
+            <xsl:when test="ancestor::TEI[descendant::catRef/@target[contains(.,'Documentation')]] or count(row) = 1 or not(@type='exhibit')">
                 <table>
                     <xsl:apply-templates mode="#current"/>
                 </table>
@@ -292,22 +292,8 @@
                             <xsl:variable name="firstDateCol" 
                                 select="for $r in (1 to $maxCols) return if ($colMap($r) ='date') then $r else ()"/>
                             
-                            <xsl:variable name="firstToSortBy" as="xs:integer">
-                                <xsl:choose>
-                                    <xsl:when test="not(empty($firstDateCol))">
-                                        <xsl:value-of select="$firstDateCol"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of
-                                            select="
-                                            min(for $r 
-                                            in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) 
-                                            return count($r/preceding-sibling::cell) + 1)" 
-                                            />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:variable>
-          
+                            <xsl:variable name="firstToSortBy" select="count($labelRow/cell[@role='sortkey'][1]/preceding-sibling::cell) + 1"  as="xs:integer"/>
+  
           
                             <thead>
                                 <xsl:apply-templates select="row[1][@role='label']" mode="#current">
@@ -345,7 +331,7 @@
                 <xsl:if test="normalize-space(string-join(descendant::text(),'')) ne ''">
                     <xsl:value-of>sortable</xsl:value-of>
                 </xsl:if>
-                <xsl:if test="not(empty($firstToSortBy)) and (count(preceding-sibling::cell) + 1 = $firstToSortBy)">
+                <xsl:if test="not(empty($firstToSortBy)) and (count(preceding-sibling::cell) + 1 = $firstToSortBy) or (@type='sortkey')">
                     <xsl:value-of>selected</xsl:value-of>
                     <xsl:value-of>up</xsl:value-of>
                 </xsl:if>

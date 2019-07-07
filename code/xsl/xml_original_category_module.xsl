@@ -149,7 +149,7 @@
                     <row role="label">
                         <cell/>
                         <cell>Title</cell>
-                        <cell>Date Published</cell>
+                        <cell role="sortkey">Date Published</cell>
                         <cell>Transcription Available</cell>
                     </row>
                     <!--A small function to get the category docs for this category-->
