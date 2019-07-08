@@ -5,25 +5,43 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>The Marriage of Okiku-San (16 Apr. 1911)</title>
+            <title>The Marriage of Okiku-San (Reprint)</title>
+            <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85066387/issues/1911/">https://chroniclingamerica.loc.gov/lccn/sn85066387/issues/1911/</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:171"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:SL1" status="empty"  when="2019-07-08">added facs, notes stmt and cat refs.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl171 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:Marriage_Of_Okiku_San2">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
