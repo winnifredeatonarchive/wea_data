@@ -6,18 +6,26 @@
       <fileDesc>
          <titleStmt>
             <title>The Pot of Paint</title>
-
             <respStmt>
                <resp>Author</resp>
                <name ref="pers:WE1">Winnifred Eaton</name>
             </respStmt>
             <respStmt>
+               <resp>Illustrator</resp>
+               <name>Genjiro Yeto</name>
+            </respStmt>
+            <respStmt>
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
 
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable version</resp>
@@ -47,9 +55,9 @@ Publicly accessible
  uva-lib:475932 
 -->
          </publicationStmt>
-
-
-
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065173">https://hdl.handle.net/2027/uc1.b3065173</ref>.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:182"/>
          </sourceDesc>
@@ -58,10 +66,12 @@ Publicly accessible
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:SL1" when="2019-07-08" status="readyForProof">Added genre, notes stmt, and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl182 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatPotp. Old filename: Pot_of_Paint.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -73,12 +83,12 @@ Publicly accessible
 
 
    <text facs="facs:PotOfPaint">
-      <pb n="415"/>
+      <pb n="414"/>
       <body>
-         <head>
-            <!--<hi rend="italic">Frank Leslie’s Popular Monthly</hi> 53.4 (February 1902) -->
-            The Pot of Paint
-            By Onoto Watanna</head>
+         <head>The Pot of Paint</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
          <div>
 	          
             <p>To a Portuguese great-grandfather the face of Moonshine owed its peculiar beauty. Moonshine had heard of this ancestor; a blot he was to her upon the proud Japanese genealogy of her family, despite the fact that he had been one of those remarkable Portuguese who brought to Japan the first knowledge of Western science. When her Japanese friends remarked that her eyes were yellow instead of black and her hair waved barbarously, she would apologize very humbly. But to the few foreigners whom she chanced to meet in Nagasaki, Moonshine traded on her nationality in order to win their favor.</p>
@@ -100,7 +110,7 @@ Publicly accessible
             <p>At first, when she came to the door of the church, they did not recognize her in her changed attire, until she announced in a queer little subtle voice, as she tried to make graceful obeisance, despite the horrible corsets that caused her agony:</p>
             <p><q>Dear my augustnesses, I come!</q></p>
             <p>Dudley started violently and paled all over. His lips quivered fearfully as he went quickly down the aisle of the little mission church to meet her.</p>
-            <p><q>God bless you!</q> he said brokenly to her. <q>It is<note type="editorial" resp="pers:JLC1"><q>was</q> in original.</note> all quite wrong—the clothes—but you did it for me!</q></p>
+            <p><q>God bless you!</q> he said brokenly to her. <q>It is<note type="editorial" resp="pers:JLC1"><q>was</q> in original.</note> all quite wrong—the clothes—but you did it for <emph>me!</emph></q></p>
             <p>After the first ejaculation of amazement at her changed appearance, the two witnesses composed themselves, though Tomlinson said in an audible whisper:</p>
             <p><q>Good Lord! She has come all alone!</q></p>
             <p>She replied to Dudley in a timid un- <pb n="418"/> der tone that had a tremor in it:</p>
@@ -111,7 +121,7 @@ Publicly accessible
             <p><q>What’s the use? He can’t see he’s living in a fool’s paradise</q>.</p>
             <p><q>Why?</q> Helen would demand somewhat impatiently, <q>she is all and more than we could have hoped</q>.</p>
             <p><q>Wait!</q> said Tomlinson, the raven, <q>I have lived long in the East. The pagan must out!</q></p>
-            <p>Although he disapproved of his wife’s habit of rising with the sun, Dudley awoke one morning very early. The glorious sunshine of Japan had forced its way in a golden stream through the closed shutters into the room. At an open shoji<note type="editorial" resp="pers:JLC1">shoji: paper screen.</note> he saw his wife almost before he was fully awake. She was sitting, with her back to him, on the floor. Before her was a little black lacquer box, its wide-open lid showing the shining surface of inlaid mirror. Over it her head was bending and her hands were very busy.</p>
+            <p>Although he disapproved of his wife’s habit of rising with the sun, Dudley awoke one morning very early. The glorious sunshine of Japan had forced its way in a golden stream through the closed shutters into the room. At an open <foreign xml:lang="ja"><emph>shoji</emph></foreign><note type="editorial" resp="pers:JLC1">shoji: paper screen.</note> he saw his wife almost before he was fully awake. She was sitting, with her back to him, on the floor. Before her was a little black lacquer box, its wide-open lid showing the shining surface of inlaid mirror. Over it her head was bending and her hands were very busy.</p>
             <p>Dudley got out of bed noiselessly, thinking to startle her by coming on her of a sudden and catching her in his arms. But as he came closer to her he became at first interested, then mystified, and finally horrified at her strange occupation. She was smearing big blotches of red paint on her cheeks and lips. That done, she penciled her eyebrows in the finest lines. Finally she began doing something to her teeth.</p>
             <p>Watching her in almost a fascinated silence, Dudley remained transfixed. When she had finished, the keenest eye could hardly have detected the make-up, he thought, so artfully had she laid it on.</p>
             <p><q>Moonshine!</q> he called to her sharply.</p>
@@ -134,7 +144,7 @@ Publicly accessible
             <p><q>You doan desire</q>, she began slowly, still past understanding.</p>
             <p>Dudley began to have a conception of her viewpoint. To this she had doubtless been educated and accus- <pb n="419"/> tomed all her life. He must effect the cure, gently but firmly.</p>
             <p><q>Moonshine, I ask you to take all that stain off your teeth</q>.</p>
-            <p><q>Yeas—yeas</q>, she agreed, <q>I doan keer put thad on—no, I doan keer thad I married leddy or nod; only all my honorable ancestors—</q></p>
+            <p><q>Yeas—yeas</q>, she agreed, <q>I doan keer put <emph>thad</emph> on—no, I doan keer thad I married leddy or nod; only all my honorable ancestors—</q></p>
             <p><q>I know</q>, he said, <q>it is a custom of your race. But you are married now to an American, remember. Women of my country don’t disfigure themselves in that way. Come—off with it</q>. He led her to the wash-basin.</p>
             <p>She removed the stain from her teeth readily and willingly enough, and she rubbed with a little sponge the black lines above her eyes; but she stopped at taking off the paint, begging and coaxing to be excused from such humiliation. She could not bear to have him see her without what seemed to her one of the chief perquisites of her beauty.</p>
             <p>But he was inexorable, and stood over her peremptorily, as with trembling hands and tearful eyes she rubbed her cheeks.</p>
@@ -148,7 +158,7 @@ Publicly accessible
             <p><q>Eef</q>, said she, argumentatively, <q>you, my lord, an’ me your honorable insignificant wife go out on street togedder, will you also kees me there whicheven?</q></p>
             <p><q>Of course not. American men don’t do such things in public, much as they may revel in it in private</q>.</p>
             <p>He was using the military brushes to his smooth brown hair, smiling at her tenderly the while.</p>
-            <p><q>Then</q>, she said, <q>therefore I only puttin’ thad honorable paint on my honorable face wen I goin’ out on street. Then you ‘scuse yourself to nod kees me, account thad augustly unpoliteness for American gendleman. I doan keer then. You kinnod do. Therefore I wear thad honorable paint</q>, she explained triumphantly.</p>
+            <p><q>Then</q>, she said, <q>therefore I only puttin’ thad honorable paint on my honorable face <emph>wen</emph> I goin’ out on street. Then you ‘scuse yourself to nod kees me, account thad augustly unpoliteness for American gendleman. I doan keer then. You kinnod do. Therefore I wear thad honorable paint</q>, she explained triumphantly.</p>
             <p><q>What!</q> said her husband, one hand pausing with a brush halfway to his head. <q>You mean you’d put that paint on when we go out?</q></p>
             <p><q>And take it off, my lord, wen you desire kees me</q>, she finished for him.</p>
             <p>Dudley threw his brushes down on the bed and burst out laughing. She was really irresistible, he thought. But, of course, she must be converted. He sat down beside her on the floor.</p>
@@ -179,11 +189,11 @@ Publicly accessible
             <p><q>Of course</q>, thought her husband patiently, <q>it is natural for the poor little thing to feel badly about it at first, but she will get used to it. She must</q>.</p>
             <p>Moonshine brooded over her unhappiness. Despite the fact that she really loved the stranger she had married with all the force of her passionate nature, nevertheless the customs of her people were strongly implanted in her nature. She could not feel at home among the people with whom she now associated and who were almost altogether of her husband’s nationality. They were kindly and beautiful, she admitted, but she resented their good-natured and humorous encouragement of her efforts to dress and act like them.</p>
             <p><q>Why</q>, she would argue inwardly, <q>should she continue this struggle when all her efforts made her seem only the more a stranger among them, a guest as it were? And why should she be placed under this restraint and denied that which a Japanese husband <pb n="422"/>would have purchased for her?</q><note type="editorial" resp="pers:JT1">The original does not signal the end of this inner thought using any terminal quotation marks.</note> It was all very hard and bitter. She tortured herself with the thought that with the loss of her pot of paint her beauty departed also. She could not imagine Japanese feminine beauty without the lurking presence of a magic toilet box. Of course her honorable husband would continue to praise her face, but that was only natural. He did not wish to pain her by letting her know the truth. In this she judged him from a purely Japanese standpoint. A Japanese husband, she knew, would continue to assure his wife that she was beautiful, even long after she had become an ancestor (grandmother).</p>
-            <p>Then Moonshine conceived a plot by which she would put her beauty to the test. Gowning herself in an exquisite dove- colored kimono, tied about with a lavender obi, with a little purple parasol shading her bare head, the hair of which was dressed after the prevailing Japanese fashion, and being careful to put no paint or powder whatever on her face, she went down to that quarter of Nagasaki where she had previously lived, hoping to encounter some of her old friends, who would surely enlighten her as to the truth.</p>
+            <p>Then Moonshine conceived a plot by which she would put her beauty to the test. Gowning herself in an exquisite dove- colored <foreign xml:lang="ja">kimono</foreign>, tied about with a lavender <foreign xml:lang="ja">obi</foreign>, with a little purple parasol shading her bare head, the hair of which was dressed after the prevailing Japanese fashion, and being careful to put no paint or powder whatever on her face, she went down to that quarter of Nagasaki where she had previously lived, hoping to encounter some of her old friends, who would surely enlighten her as to the truth.</p>
             <p>She had excused herself from accompanying her husband on a little business trip by wrapping her head up in wet linen in the morning and pleading a violent headache.</p>
             <p>At first, when Moonshine left the hotel, her guilty heart beat rapidly with the excitement and fear of her proposed scheme. She felt like a naughty child running away from home. But gradually, as the flying feet of her runner put a great distance between her and the hotel the fear vanished from her; she even forgot the fact that she had come out in Japanese attire and with her face untouched by any beauty save that of nature. A sense of delight possessed her as they neared the old familiar quarter of the town where she had spent nearly her entire life. She smiled with delight over her stolen holiday.</p>
             <p>In a little street, gay with painted signboards and posters and quaint goods displayed in front of shops, Moonshine alighted from her jinrikisha,<note type="editorial" resp="pers:JLC1">jinrikisha: a rickshaw; a carriage pulled by a human
-runner.</note> and bidding her man not to lose sight of her, she started down the street, stopping at several stores to make small purchases for herself. She was bending over a silk merchant’s counter, examining the quality of a rich obi,<note type="editorial" resp="pers:JLC1">obi: sash worn with a kimono.</note> when the titter of familiar, silvery laughter caused her to look up.</p>
+               runner.</note> and bidding her man not to lose sight of her, she started down the street, stopping at several stores to make small purchases for herself. She was bending over a silk merchant’s counter, examining the quality of a rich <foreign xml:lang="ja">obi</foreign>,<note type="editorial" resp="pers:JLC1">obi: sash worn with a kimono.</note> when the titter of familiar, silvery laughter caused her to look up.</p>
             <p>Two young Japanese girls were standing near her, their little almond eyes sparking with fun over the tops of their fans, and undisguisedly and openly laughing at the pale Moonshine.</p>
             <p>The girl took a couple of little steps toward them, opening her own little fan with a whirl.</p>
             <p><q>Ah, good morning, Perfume and Spring</q>, she said in soft Japanese. <q>Pray, is your honorable health good?</q></p>
@@ -193,9 +203,9 @@ runner.</note> and bidding her man not to lose sight of her, she started down th
             <p><q>Oh, Moonshine—he-he-he-he</q>, said Perfume, <q>you do look so honorably ridiculous</q>.</p>
             <p>Moonshine grew paler.</p>
             <p><q>He-he-he—</q> giggled Spring. <q>Oh, Moonshine, has some honorably wicked fiend or demon struck your august face?</q></p>
-            <p><q>My face!</q> faltered Moonshine, unconsciously putting up her little trembling hands to it, and then all in a moment understanding. <q>Ah-h!</q> she breathed, <q>you think me—a little bit ugly, maybe?</q></p>
+            <p><q>My face!</q> faltered Moonshine, unconsciously putting up her little trembling hands to it, and then all in a moment understanding. <q>Ah-h!</q> she breathed, <q>you <emph>think</emph> me—a little bit ugly, maybe?</q></p>
             <p><q>Honorably hideous</q>, said Perfume, spitefully, and Spring’s laughter rang shrill.</p>
-            <p>Moonshine looked at them a moment without speaking. One of her packages fell from her hand to the <pb n="423"/> floor. She stooped and picked it up mechanically, placing it in the sleeve of her kimono. Then she turned about slowly. In a half-dazed fashion she held her hand up to her runner, who had followed her obediently with the vehicle.</p>
+            <p>Moonshine looked at them a moment without speaking. One of her packages fell from her hand to the <pb n="423"/> floor. She stooped and picked it up mechanically, placing it in the sleeve of her <foreign xml:lang="ja">kimono</foreign>. Then she turned about slowly. In a half-dazed fashion she held her hand up to her runner, who had followed her obediently with the vehicle.</p>
             <p>The girls laughed vehemently now.</p>
             <p><q>Ah bah! (good bye) honorable ghost!</q> they called after her.</p>
             <p>That night when her husband returned, he found her sitting in the dark waiting for him. A great wan moon had stolen high in the heavens and one sheer, silvery beam came into the open window and loitered upon the white face of his wife. It was ghastly in its pallor, for she had been suffering many hours.</p>
@@ -215,7 +225,7 @@ runner.</note> and bidding her man not to lose sight of her, she started down th
             <p>Autumn had crept upon the land with stealing step. A melancholy sweetness pervaded hill and dale. The flowers were turning to the hue of the golden brown leaves, which in their turn reflected the colors of the dying sunset, when Moonshine awakened in the night and piercingly called for her mother. The old nurse that attended her refused to leave her side, and Dudley started out in the night, shaken with a great premonition of disaster and a vain hope to gratify the wish of the sick girl to have her mother once more with her.</p>
             <p>On his way back, sick with the fruit- <pb n="424"/> lessness of his mission, for her people had been politely obdurate, his Japanese valet, who had come to meet him, flung himself at his feet, and after bitter tears and lamentations told him of the death of his wife hardly an hour after his departure, and of the birth of an honorable man-child.</p>
             <p>Crazed and distracted with the horror of the tragedy that had come upon him, Dudley rushed to the hotel where they had previously lived, and where still abided a few of his friends. There, like one bereft of all hope on earth, he flung himself into Tomlinson’s apartments. Tomlinson promptly sent for Helen Martin. After vainly trying to comfort the bereft man, they finally succeeded in prevailing on him to return to the little house which had so lately held his happiness.</p>
-            <p>The place was dimly lighted by dull andons<note type="editorial" resp="pers:JLC1">andon: lantern.</note> and horribly silent when they reached it. Their own footsteps rang out hollow and ghostly as they crossed the zashishi<note type="editorial" resp="pers:JLC1">zashishi: threshold.</note> and ascended the thin little stairway.</p>
+            <p>The place was dimly lighted by dull <foreign xml:lang="ja"><emph>andons</emph></foreign><note type="editorial" resp="pers:JLC1">andon: lantern.</note> and horribly silent when they reached it. Their own footsteps rang out hollow and ghostly as they crossed the <foreign xml:lang="ja">zashishi</foreign><note type="editorial" resp="pers:JLC1">zashishi: threshold.</note> and ascended the thin little stairway.</p>
             <p>Her nurse had dressed Moonshine in all the white deathrobes of a Japanese girl. Trembling like one afflicted with ague, the husband bent over her still form, great beads of perspiration standing out on his own brow. Slowly, and with shaking hand, he took the white cloth from Moonshine’s face.</p>
             <p>Miss Martin started back with an exclamation of horror.</p>
             <p><q>Oh-h!</q> she said, <q>we must wash all that hideous paint off. She must be buried as a Christian</q>.</p>
