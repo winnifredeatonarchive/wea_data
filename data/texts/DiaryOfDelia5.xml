@@ -18,9 +18,11 @@
          <textClass>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNovel"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl146 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
