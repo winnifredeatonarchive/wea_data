@@ -196,6 +196,11 @@ background-position: center;
   
 }
 
+#index_archive li{
+
+}
+
+
 #index_archive li:last-child{
     margin-bottom:3rem;
 }
@@ -215,9 +220,6 @@ background-position: center;
 
 }
 
-#index_archive li:hover{
-    border-color: var(--wea-pink);
-}
 
 #index_archive [data-el='date']{
     display:block;
@@ -228,28 +230,49 @@ background-position: center;
 #index_archive li[data-corresp *='EarlyExperiment']{
         background: url(../images/Early_Experiments.png) no-repeat;
     background-position: center center;
+        background-size:150%;
+
 }
 
 #index_archive li[data-corresp *='Japan']{
             background: url(../images/Japan.png) no-repeat;
     background-position: center center;
+        background-size:150%;
+ 
 }
 
 #index_archive li[data-corresp *='NewYork']{
                 background: url(../images/NewYork.png) no-repeat;
     background-position: center center;
+        background-size:150%;
+
 }
 
 
 #index_archive li[data-corresp *='Hollywood']{
                 background: url(../images/Hollywood.png) no-repeat;
     background-position: center center;
+        background-size:150%;
+
 }
 
 
 #index_archive li[data-corresp*='Alberta']{
             background: url(../images/Alberta.png) no-repeat;
     background-position: center center;    
+        background-size:150%;
+
+}
+
+#index_archive li[data-corresp]{
+                transition:background-size .25s linear,
+                           border-color 0.25s linear;
+}
+
+#index_archive li[data-corresp]:hover{
+    border-color: var(--wea-pink);
+    background-size:160%;
+
 }
 
 
