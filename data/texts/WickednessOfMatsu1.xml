@@ -6,7 +6,6 @@
       <fileDesc>
          <titleStmt>
             <title>The Wickedness of Matsu</title>
-
             <respStmt>
                <resp>Author</resp>
                <name ref="pers:WE1">Winnifred Eaton</name>
@@ -15,10 +14,6 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
             <respStmt>
                <resp notAfter="2019">Creation of machine-readable version</resp>
                <name>Jean Lee Cole, Loyola College</name>
@@ -57,10 +52,12 @@ Publicly accessible
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl184 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatMats. Old filename: Wickedness_of_Matsu.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>

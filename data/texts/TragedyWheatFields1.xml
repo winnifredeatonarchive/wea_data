@@ -16,10 +16,13 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef target="wdt:docPrimarySourceMS" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl25 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
