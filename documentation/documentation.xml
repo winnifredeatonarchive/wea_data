@@ -12519,15 +12519,8 @@ material</measure>
                         <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.placement">att.placement</ref> (<att>place</att>) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
                               <row>
                                  <cell>type</cell>
-                                 <cell>characterizes the element in some sense, using any convenient classification scheme or typology.<table>
-                                       <row>
-                                          <cell>
-                                             <label>Derived from</label>
-                                          </cell>
-                                          <cell>
-                                             <ref target="#TEI.att.typed">att.typed</ref>
-                                          </cell>
-                                       </row>
+                                 <cell>
+                                    <table>
                                        <row>
                                           <cell>
                                              <label>Status</label> 
@@ -12536,10 +12529,13 @@ material</measure>
                                        </row>
                                        <row>
                                           <cell>
-                                             <label>Datatype</label> 
+                                             <label>Legal values are:</label>
                                           </cell>
                                           <cell>
-                                             <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref>
+                                             <list>
+                                                <label>subtitle</label>
+                                                <item>(subtitle) a subtitle or header.</item>
+                                             </list>
                                           </cell>
                                        </row>
                                     </table>
@@ -36958,8 +36954,6 @@ epistemology, methodology and history of
                                     <ref target="#TEI.gap">gap</ref>/@agent</item>
                                  <item>
                                     <ref target="#TEI.gi">gi</ref>/@scheme</item>
-                                 <item>
-                                    <ref target="#TEI.head">head</ref>/@type</item>
                                  <item>
                                     <ref target="#TEI.hyphenation">hyphenation</ref>/@eol</item>
                                  <item>
