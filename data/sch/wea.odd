@@ -1468,6 +1468,19 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <elementRef key="textClass"/>
                   </content>
                </elementSpec>
+               
+               <elementSpec ident="head" module="core" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="change" usage="opt">
+                        <valList type="closed">
+                           <valItem ident="subtitle">
+                              <desc>subtitle</desc>
+                              <gloss>a subtitle or header.</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
           
                <!--And make at least one catRef mandatory-->
                <elementSpec ident="textClass" module="header" mode="change">

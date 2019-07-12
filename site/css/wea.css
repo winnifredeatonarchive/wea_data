@@ -1799,6 +1799,16 @@ a.current{
     align-self:center;
 }
 
+#info_right ul li{
+    padding-bottom:.4rem;
+    border-bottom:1px solid #ccc;
+    
+}
+
+#info_right ul li:last-child{
+    border-bottom:none;
+}
+
 
 [data-el='title'][data-level='j'] > [data-el='title'][data-level='j'],
 [data-el='title'][data-level='j'] > [data-el='title'][data-level='m'],
