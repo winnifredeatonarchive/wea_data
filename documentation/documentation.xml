@@ -973,6 +973,137 @@
                   </table>
                </div>
             </div>
+            <div xml:id="encoding_bornDigital">
+               <head>Encoding Born Digital Documents</head>
+               <p>Born digital documents are ones that have no <q>source</q>: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
+               <div>
+                  <head>Editing the Home Page</head>
+                  <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within xhtml_index_module.xsl.</p>
+                  <div>
+                     <head>Editing the <q>Hero Image</q> Text</head>
+                     <p>The text that overlays the <q>hero image</q> (the big banner image of Winnifred Eaton) is encoded in the <code>div/@xml:id='index_header'</code>. It currently looks like this: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div xml:id="index_header">
+                              <div>
+                                 <head>The Winnifred Eaton Archive</head>
+                                 <head type="subtitle">Romancer — Journalist — Screenwriter</head>
+                              </div>
+                           </div>
+                        </egXML> The first head creates the larger main site title; the second head element (the one with <att>type</att>=<val>subtitle</val>) creates the smaller text at the bottom of the image. But edit with caution: the CSS is created to handle this precise text, so you may have to fiddle with the CSS in site/css/index.css to get your desired results.</p>
+                  </div>
+                  <div>
+                     <head>Editing the <q>About</q> text</head>
+                     <p>The About text (the small block of text that begins the home page) is found within the <code>div/@xml:id='index_info'</code>. It currently looks something like this: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div xml:id="index_info">
+                              <head>The wild and wonderful career of a pioneer Asian American writer</head>
+                              <p><!--Content here...-->
+                                 <ptr type="readMore" target="doc:about"/>
+                              </p>
+                           </div>
+                        </egXML> The text in the <ref target="#TEI.head"><gi>head</gi></ref> determines the heading content for that block; the text in the paragraph is the paragraph below. The <ref target="#TEI.ptr"><gi>ptr</gi></ref> is what produces the <q>READ MORE</q> text; more information about READ MORE links below.</p>
+                  </div>
+                  <div>
+                     <head>Editing the <q>Archive Film Strip</q>
+                     </head>
+                     <p>The Archive strip that runs vertically along the right hand side (in desktop view) is currently encoded as a <ref target="#TEI.list"><gi>list</gi></ref> with <att>corresp</att> attributes like so: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div xml:id="index_archive">
+                              <list>
+                                 <item corresp="wdt:EarlyExperiment"/>
+                                 <item corresp="wdt:Japan"/>
+                                 <item corresp="wdt:NewYork"/>
+                                 <item corresp="wdt:Alberta"/>
+                                 <item corresp="wdt:Hollywood"/>
+                              </list>
+                           </div>
+                        </egXML> The <att>corresp</att> attribute points to the category listing that should be used in the archive strip block. The actual content for those listings is found in <code>taxonomies.xml</code>. More on the taxonomies below.</p>
+                  </div>
+                  <div>
+                     <head>Adding Featured Items</head>
+                     <p>The featured items carousel is encoded as a list in the index page (currently with boilerplate text): <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div xml:id="index_featuredItems">
+                              <head>Featured Items</head>
+                              <list type="featuredItems"><!--These will be the items that are featured-->
+                                 <item corresp="doc:LiChingsBaby1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
+                                 <item corresp="doc:ChineseJapaneseCookbook1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.
+                                </item>
+                                 <item corresp="doc:HerJapaneseLover1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
+                                 <item corresp="doc:Karo1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
+                                 <item corresp="doc:RhapsodyOnJapan1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.
+                                </item>
+                                 <item corresp="doc:AHalfCaste1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
+                              </list>
+                           </div>
+                        </egXML> Each <ref target="#TEI.item"><gi>item</gi></ref> uses a <att>corresp</att> attribute to point to the document that should be featured using the <val>doc:</val> prefix scheme (i.e. use <val>doc:LiChingsBaby1</val> to point to the document with <att>xml:id</att> of <val>LiChingsBaby1</val>, which should also be named <code>LiChingsBaby1.xml</code> in the data folder). The content within those lists is the blurb in the featured item block.</p>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <head>Editing the Taxonomies File</head>
+               <p>The taxonomy file (<code>taxonomies.xml</code>) contains all of the data for the taxonomies for the WEA project. These taxonomies include: <list>
+                     <item>Genre</item>
+                     <item>Document type</item>
+                     <item>Exhibit</item>
+                  </list>
+               </p>
+               <div>
+                  <head>Editing individual taxonomies</head>
+                  <p>Each taxonomy is encoded as a <ref target="#TEI.taxonomy"><gi>taxonomy</gi></ref> element with nested <ref target="#TEI.category"><gi>category</gi></ref> elements, like so: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <taxonomy xml:id="genre">
+                           <bibl>Genre</bibl>
+                           <category xml:id="genreShortStory">
+                              <catDesc>
+                                 <term>Short Stories</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="genreNF">
+                              <catDesc>
+                                 <term>Non-fiction</term>
+                              </catDesc>
+                              <category xml:id="genreNFAuto">
+                                 <catDesc>
+                                    <term>Non-fiction: Autobiography</term>
+                                 </catDesc>
+                              </category>
+                              <category xml:id="genreNFDedication">
+                                 <catDesc>
+                                    <term>Non-fiction: Dedication</term>
+                                 </catDesc>
+                              </category>
+                              <category xml:id="genreNFInterview">
+                                 <catDesc>
+                                    <term>Non-Fiction: Interview</term>
+                                 </catDesc>
+                              </category>
+                              <category xml:id="genreNFIntroduction">
+                                 <catDesc>
+                                    <term>Non-fiction: Introduction</term>
+                                 </catDesc>
+                              </category>
+                              <category xml:id="genreNFEthnography">
+                                 <catDesc>
+                                    <term>Non-fiction: Ethnography</term>
+                                 </catDesc>
+                              </category>
+                           </category>
+                           <!--And so on-->
+                        </taxonomy>
+                     </egXML> The title for the taxonomy (as it appears on the corresponding taxonomy pages) is contained with the <ref target="#TEI.catDesc"><gi>catDesc</gi></ref>/<ref target="#TEI.term"><gi>term</gi></ref>.</p>
+                  <p>The Exhibit taxonomies are a special case that contain more information about each category within that taxonomy: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <category xml:id="Japan" n="2">
+                           <catDesc>
+                              <term>Playing Japanese <date>1897–1922</date>
+                              </term>
+                              <note>
+                                 <p>In 1897, when she was working as a stenographer either in Cincinnati or Chicago, Winnifred Eaton assumed the identity of <q>
+                                       <name ref="pers:WE1">Kitishima Tackehasche</name>
+                                    </q>, a young Yokohama-born Japanese writer who published under the pseudonym <q>
+                                       <name ref="pers:WE1">Onoto Watanna</name>
+                                    </q>. Eaton’s earliest Japanese stories, <title level="a">A Japanese Girl</title> purportedly published in Cincinnati’s <title level="m">Commercial Tribune</title> and <title level="a">A Japanese Love Story</title> in <title level="m">American Youth Magazine</title>, have not been located, but most of Eaton’s located Japanese-themed short stories, novels, poetry, and ethnographic journalism are collected here. From 1897 to 1922, Eaton published 12 Japanese novels, scores of short stories and ethnographic pieces, poetry, and even <ref target="doc:ChineseJapaneseCookbook1">a co-authored cookbook</ref>.</p>
+                              </note>
+                           </catDesc>
+                        </category>
+                     </egXML> Here, the <ref target="#TEI.catDesc"><gi>catDesc</gi></ref> element contains an additional <ref target="#TEI.note"><gi>note</gi></ref> element; that <ref target="#TEI.note"><gi>note</gi></ref> contains a <ref target="#TEI.p"><gi>p</gi></ref>, which details information about that category. In the current interface, this information appears in the green <q>info</q> box at the top of the page.</p>
+               </div>
+            </div>
          </div>
          <div xml:id="technical">
             <head>Instructions for Developers/Programmers</head>
@@ -1018,6 +1149,12 @@
                   <emph>In oXygen</emph>: Simply open the ODD file in the oXygen project file and press the red <q>play</q> button.</p>
                <p>
                   <emph>Command line</emph>: in the root project directory (<code>wea_data</code>), run: <code rend="block">ant -lib lib -f code/buildSchemas.xml</code> Note that you must have ant installed.</p>
+            </div>
+            <div xml:id="technical_basicCodeStructure">
+               <head>Basic Code Structure</head>
+               <p>All code is contained with the <code>code/</code> directory; of most importance is the <code>/xsl/</code> directory, which contains all of the XSLT stylesheets necessary for creating the static site.</p>
+               <p>Each XSLT <q>master</q> file includes a number of <q>module</q> files; <q>modules</q> should never contain other <q>modules</q>. Of course, there's one exception: the XHTML master file loads in a module named <q>xhtml_modules_module.xsl</q>, which contains all of the modules for creating the XHTML. The reason that there is a <q>modules module</q> is so that this documentation can be created using the standard WEA stylesheets so that it can be easily integrated into the regular site build process.</p>
+               <p>Each module is documented using the <q>xd:doc</q> elements, which are oXygen specific elements for documenting XSL stylesheets.</p>
             </div>
          </div>
          <div xml:id="diagnostics">
@@ -21399,7 +21536,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>We allow extent ONLY for legacy purposes.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:ptr"&gt;
- &lt;sch:assert test="starts-with(@target,'doc:')"&gt; ERROR: All ptr elements must have a @target attribute
+ &lt;sch:assert test="matches(@target,'^doc:')"&gt; ERROR: All ptr elements must have a @target attribute
    that points to a document using the doc: prefix.
    (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
  &lt;/sch:assert&gt;

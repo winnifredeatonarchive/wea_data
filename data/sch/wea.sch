@@ -223,7 +223,7 @@ belongs, but this <sch:name/> element has no textual content.</sch:assert>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:ptr">
-                              <sch:assert test="starts-with(@target,'doc:')">
+                              <sch:assert test="matches(@target,'^doc:')">
                                  ERROR: All ptr elements must have a @target attribute
                                  that points to a document using the doc: prefix.
                                  (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
