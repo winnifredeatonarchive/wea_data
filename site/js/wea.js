@@ -47,6 +47,7 @@ function addEvents(){
     addPopupClose();
     makeFootnotesResponsive();
     makeNamesResponsive();
+    makeCitationsResponsive();
     makeNavClickable();
     showHideTitles();
     makeBarsExpandable();
@@ -493,6 +494,14 @@ function makeNamesResponsive(){
     });
 }
 
+function makeCitationsResponsive(){
+    var citations = document.querySelectorAll("a[data-el='ref'][data-type='bibl']");
+    citations.forEach(function(c){
+        c.addEventListener('click', showPopup, true);
+        c.classList.add('popup');
+    });
+}
+
  /** 
    * Makes the specified popups (which can be a list of ids) popup
    * The list of ids must be space separated (id1 id2 etc)
@@ -528,7 +537,11 @@ function makeNamesResponsive(){
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
-      } else if (this.getAttribute('data-el') == 'org' && this.getAttribute('href').startsWith('#')){
+      } else if (this.getAttribute('data-el') == 'ref' && this.getAttribute('data-type') == 'bibl' && this.getAttribute('href').startsWith('#')){
+          id=this.getAttribute('href').substring(1);
+          popup.setAttribute('data-place', 'right');
+      }
+      else if (this.getAttribute('data-el') == 'org' && this.getAttribute('href').startsWith('#')){
           id = this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
       } else if (this.getAttribute('title') && !(this.getAttribute('href'))){

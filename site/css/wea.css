@@ -1900,8 +1900,8 @@ span[data-el='q'] span[data-el='q']::after{
 /************************************************************************ POPUPS */
 
 #popup{
-  min-width:0;
-    max-width:15rem;
+    min-width:0;
+    max-width:30rem;
     min-height:0;
     max-height:8rem;
     overflow-y:scroll;
@@ -2174,7 +2174,7 @@ div.facsButton> a:hover
     margin-top: 2rem;
 }
 
-#appendix > div:first-child::before{
+#appendix > div:before{
     content: "";
     display:block;
     border-top:1px solid #ccc;

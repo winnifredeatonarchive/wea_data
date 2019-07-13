@@ -514,6 +514,13 @@
         </a>
     </xsl:template>
     
+    <xsl:template match="ref[@type='bibl'][@target]" mode="tei">
+        <a href="{@target}">
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </a>
+    </xsl:template>
+    
     <xsl:template match="pb" mode="tei">
        <!--This can't really be an hr anymore, since it can't go in <q> (where it appears a lot).-->
         <a href="#{ancestor::TEI/@xml:id}_pg_{@n}">

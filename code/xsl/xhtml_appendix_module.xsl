@@ -38,6 +38,16 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="listBibl" mode="appendix">
+        <div>
+            <xsl:call-template name="processAtts">
+                <xsl:with-param name="id" select="'works_cited'"/>
+            </xsl:call-template>
+            <h2>Works Cited</h2>
+            <xsl:apply-templates select="bibl" mode="tei"/>
+        </div>
+    </xsl:template>
+    
     <xsl:template match="listPerson" mode="appendix">
         <div>
             <xsl:call-template name="processAtts">
@@ -57,6 +67,8 @@
             <xsl:apply-templates select="org" mode="tei"/>
         </div>
     </xsl:template>
+    
+    
     
     <xsl:template name="createNotes">
         <xsl:if test="//note[@type='editorial']">

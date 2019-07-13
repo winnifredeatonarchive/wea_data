@@ -83,6 +83,8 @@
         
         <xsl:variable name="orgPtrs" select="for $p in $potentialOrgPtrs return if (ancestor::TEI[descendant-or-self::tei:*[@xml:id=$p]]) then () else $p"/>
         
+        <xsl:variable name="citationPtrs" select="//ref[@type='bibl'][contains(@target,'cite:')]/substring-after(@target,'cite:')" as="xs:string*"/>
+        
         
         <xsl:if test="not(empty(($peoplePtrs,$orgPtrs)))">
             <text type="standoff">
@@ -112,6 +114,19 @@
                                 </org>
                             </xsl:for-each>
                         </listOrg>
+                    </xsl:if>
+                    <xsl:if test="not(empty($citationPtrs))">
+                        <listBibl>
+                            <xsl:for-each select="$citationPtrs">
+                                <xsl:variable name="thisPtr" select="."/>
+                                <xsl:variable name="thisBibl" select="$originalXml[/TEI[@xml:id='bibliography']]//bibl[@xml:id=$thisPtr]"/>
+                                <bibl>
+                                    <xsl:copy-of select="$thisBibl/@*"/>
+                                    <xsl:attribute name="copyOf" select="concat($thisBibl/ancestor::TEI/@xml:id,'.xml#',$thisPtr)"/>
+                                    <xsl:copy-of select="$thisBibl/node()"/>
+                                </bibl>
+                            </xsl:for-each>
+                        </listBibl>
                     </xsl:if>
                 </body>
                 
