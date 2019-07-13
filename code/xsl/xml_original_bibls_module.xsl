@@ -50,7 +50,7 @@
     
     <xsl:template name="createWorkBibl">
         <div xml:id="{$weWorkBiblId}" type="biblio_list">
-            <head>Bibliography by Work<note type="editorial">By work, we refer here to groupings of texts based off of their relationship to one another. Reprints, serialized versions of novels, and other texts that are related in some capacity are grouped here as a single <q>work</q>.</note></head>
+            <head>Bibliography by Work<!--<note type="editorial">By work, we refer here to groupings of texts based off of their relationship to one another. Reprints, serialized versions of novels, and other texts that are related in some capacity are grouped here as a single <q>work</q>.</note>--></head>
             
             <xsl:for-each select="$biblDoc//div[@xml:id='bibliography_we']/listBibl/listBibl">
                 <div xml:id="{$weWorkBiblId}_{@xml:id}">
