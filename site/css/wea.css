@@ -254,6 +254,23 @@ nav > div#nav_search {
 
 
 
+/* Special list for navigating the bibls */
+
+ul[data-type='bibl_nav']{
+    display:inline-block;
+    
+}
+
+ul[data-type='bibl_nav'] > li{
+    display:inline-block;
+    padding:0 .5rem;
+}
+
+ul[data-type='bibl_nav'] > li:not(:last-child){
+    border-right: 1px solid #ccc;
+}
+
+
 label.hidden{
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -489,7 +506,7 @@ nav > div > div > a:last-child{
   position: sticky;
   display:inline-block;
   padding-right: .6rem;
-  top: calc(var(--header-height) * 1.34);
+  top: calc(var(--header-height) * 2);
   margin-top: 0.75rem;
   color: var(--wea-text-color);
 
@@ -1189,6 +1206,18 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
     grid-area: metadata_container;
 }
 
+
+[data-el='listBibl']{
+    margin-top:1rem;
+}
+
+[data-el='listBibl'] > :first-child{
+    margin-bottom:0.75rem;
+}
+
+div[data-type='biblio_list']{
+    margin-top:1rem;
+}
 
 /****************************************************************** MEDIA GALLERY ********/
 

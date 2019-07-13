@@ -20,27 +20,28 @@
         <xsl:variable name="tempDivs" as="element(div)*">
             <xsl:for-each-group select="$sourceXml[//catRef[contains(@target,'docPrimarySource')]][//sourceDesc/bibl[@copyOf]]//text" group-by="wea:getYearFromBibl(.)">
                 <xsl:sort select="current-grouping-key()" order="ascending"/>
-                <div>
-                    <head><xsl:value-of select="current-grouping-key()"/></head>
-                    <xsl:variable name="year" select="current-grouping-key()"/>
-                    <list>
-                        <xsl:for-each-group select="current-group()//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-                            <xsl:if test="not(empty(current-grouping-key()))">
-                                <item>
-                                    <xsl:value-of select="wea:namecase(current-grouping-key())"/> (<xsl:value-of select="count(current-group())"/>)
-                                    <list>
-                                        <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                                            <xsl:sort select="count(current-group())"/>
-                                            <item><ref target="doc:{current-grouping-key()}"><xsl:value-of select="current-grouping-key()"/></ref></item>
-                                        </xsl:for-each-group>
-                                    </list>
-                                </item>
-                            </xsl:if>
-                           
-                        </xsl:for-each-group>
-                    </list>
-                    
-                </div>
+                    <div>
+                        <head><xsl:value-of select="if (current-grouping-key() ne '') then current-grouping-key() else 'Undated'"/></head>
+                        <xsl:variable name="year" select="current-grouping-key()"/>
+                        <list>
+                            <xsl:for-each-group select="current-group()//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
+                                <xsl:if test="not(empty(current-grouping-key()))">
+                                    <item>
+                                        <xsl:value-of select="wea:namecase(current-grouping-key())"/> (<xsl:value-of select="count(current-group())"/>)
+                                        <list>
+                                            <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
+                                                <xsl:sort select="count(current-group())"/>
+                                                <item><ref target="doc:{current-grouping-key()}"><xsl:value-of select="current-grouping-key()"/></ref></item>
+                                            </xsl:for-each-group>
+                                        </list>
+                                    </item>
+                                </xsl:if>
+                                
+                            </xsl:for-each-group>
+                        </list>
+                        
+                    </div>
+                
             </xsl:for-each-group>
         </xsl:variable>
         <xsl:sequence select="$tempDivs/self::div[descendant::item]"/>

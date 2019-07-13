@@ -162,6 +162,7 @@
   
     <target name="weighSite">
         <description>This target creates files that describe each and every output file (other than the HTML).</description>
+        <delete dir="${site.dir}/info"/>
         <mkdir dir="${site.dir}/info"/>
         <apply executable="du" dir="${site.dir}" output="${site.dir}/info/sizes.txt" append="true">
             <arg line="-sh"/>
@@ -181,8 +182,7 @@
                 <include name="**/**.tif"/>
             </fileset>
         </apply>
-        <loadfile srcfile="${site.dir}/info/images.txt" property="images"/>
-        <echo message="${images}"/>
+
         
     </target>
     

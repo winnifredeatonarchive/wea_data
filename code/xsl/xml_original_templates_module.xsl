@@ -21,6 +21,14 @@
         <xsl:call-template name="createPseudonymsTable"/>
     </xsl:template>
     
+    <xsl:template match="divGen[@xml:id='we_bibliography_content']" mode="original">
+        <xsl:call-template name="createWEBibl"/>
+    </xsl:template>
+    
+    <xsl:template match="divGen[@xml:id='resources_content']" mode="original">
+        <xsl:call-template name="createResourcesBibl"/>
+    </xsl:template>
+    
     
     <!--Clean up empty names in the respStmts-->
     <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
