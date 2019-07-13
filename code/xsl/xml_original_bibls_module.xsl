@@ -38,7 +38,7 @@
 
                     <listBibl>
                         <head><xsl:value-of select="current-grouping-key()"/></head>
-                        <xsl:apply-templates select="current-group()" mode="original">
+                        <xsl:apply-templates select="current-group()" mode="removeId">
                             <xsl:sort select="date"/>
                         </xsl:apply-templates>
                     </listBibl>
@@ -54,7 +54,7 @@
             
             <xsl:for-each select="$biblDoc//div[@xml:id='bibliography_we']/listBibl/listBibl">
                 <div xml:id="{$weWorkBiblId}_{@xml:id}">
-                    <xsl:apply-templates select="." mode="original"/>
+                    <xsl:apply-templates select="." mode="removeId"/>
                 </div>
             </xsl:for-each>
         </div>
@@ -66,8 +66,15 @@
     
     <xsl:template name="createResourcesBibl">
         <div type="biblio_list">
-             <xsl:apply-templates select="$biblDoc//div[@xml:id='bibliography_resources']/listBibl" mode="original"/>
+             <xsl:apply-templates select="$biblDoc//div[@xml:id='bibliography_resources']/listBibl" mode="removeId"/>
          </div>
+    </xsl:template>
+    
+    
+    <xsl:template match="bibl/@xml:id" mode="removeId"/>
+    
+    <xsl:template match="@*|node()" priority="-1" mode="removeId">
+        <xsl:apply-templates select="." mode="original"/>
     </xsl:template>
     
     <xsl:function name="wea:returnDate">
