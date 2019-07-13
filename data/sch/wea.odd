@@ -1289,6 +1289,19 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </p>
                </div>
             </div>
+         
+            <div xml:id="encoding_citing">
+               <head>How to Cite Things</head>
+               <p>To cite an article or essay (by WE or by others), use the <gi>ref</gi> element with a <att>type</att>/<val>bibl</val> and the <att>target</att> pointing to the bibl <att>xml:id</att> using the <val>cite:</val> prefix. For instance:
+             <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>See <ref type="bibl" target="cite:BIRC1">Birchall</ref> for more information.</p>
+                     <p>
+                        <title level="m">Li Ching's Baby</title> begins by stating that the couple were <q>married by proxy</q> (<ref type="bibl" target="cite:bibl71">401</ref>).</p>
+                  </egXML>
+           Notice that we have two different <att>xml:id</att> mechanisms: for works by Winnifred Eaton, we use an enumerated system and for secondary, critical work we use an alphanumeric system. In both cases, we use the <val>cite:</val> prefix with the <emph>full <att>xml:id</att> value</emph> to establish the link.
+             </p>
+            </div>
+         
          </div>
          
          <div xml:id="technical">

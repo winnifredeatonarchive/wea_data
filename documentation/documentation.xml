@@ -1104,6 +1104,14 @@
                      </egXML> Here, the <ref target="#TEI.catDesc"><gi>catDesc</gi></ref> element contains an additional <ref target="#TEI.note"><gi>note</gi></ref> element; that <ref target="#TEI.note"><gi>note</gi></ref> contains a <ref target="#TEI.p"><gi>p</gi></ref>, which details information about that category. In the current interface, this information appears in the green <q>info</q> box at the top of the page.</p>
                </div>
             </div>
+            <div xml:id="encoding_citing">
+               <head>How to Cite Things</head>
+               <p>To cite an article or essay (by WE or by others), use the <ref target="#TEI.ref"><gi>ref</gi></ref> element with a <att>type</att>/<val>bibl</val> and the <att>target</att> pointing to the bibl <att>xml:id</att> using the <val>cite:</val> prefix. For instance: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>See <ref type="bibl" target="cite:BIRC1">Birchall</ref> for more information.</p>
+                     <p>
+                        <title level="m">Li Ching's Baby</title> begins by stating that the couple were <q>married by proxy</q> (<ref type="bibl" target="cite:bibl71">401</ref>).</p>
+                  </egXML> Notice that we have two different <att>xml:id</att> mechanisms: for works by Winnifred Eaton, we use an enumerated system and for secondary, critical work we use an alphanumeric system. In both cases, we use the <val>cite:</val> prefix with the <emph>full <att>xml:id</att> value</emph> to establish the link.</p>
+            </div>
          </div>
          <div xml:id="technical">
             <head>Instructions for Developers/Programmers</head>
