@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="timeline">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Biographical Timeline</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:MC1">Mary Chapman</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JLC1">Jean Lee Cole</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Encoder</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2019-07-13" who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Biographical Timeline</head>
+            <div xml:id="timeline_content">
+                <listEvent>
+                    <event when="1839">
+                        <p>Eaton’s father, Edward Eaton, born in Macclesfield, Cheshire,
+                            England.</p>
+                    </event>
+
+                    <event when="1846">
+                        <p>Eaton’s mother, Achuen Amoy, born in China, perhaps in/near Shanghai. As
+                            a young child, she is sold to Chinese acrobat and knife-thrower Tuck Quy
+                            (Teh-Kwei) and tours China, the United States, France, England,
+                            Scotland, and Ireland with the <q>Chinese Magicians</q> (also known as
+                                <q>Chinese Jugglers</q>), beginning in 1851.</p>
+                    </event>
+
+                    <event when="1855">
+                        <p>Achuen Amoy is rescued from her knife-throwing owner in London’s East End
+                            by Christian missionaries just before Tuck Quy and his wife sail for
+                            China. </p>
+                    </event>
+
+                    <event when="1861">
+                        <p>Achuen Amoy is baptized <q>Grace</q> and travels to China to work as a
+                            missionary.</p>
+                    </event>
+
+                    <event when="1863">
+                        <p>In Shanghai, Edward Eaton marries Achuen Amoy after being married on
+                            board ship.</p>
+                    </event>
+
+                    <event when="1864">
+                        <p>Winnifred’s brother Edward Charles born in China. Eatons return to
+                            England soon afterward, settling in Macclesfield. </p>
+                    </event>
+
+                    <event when="1865">
+                        <p>Sister Edith Maude (who writes under the pseudonym <q>Sui Sin Far</q>)
+                            born on 15 March in Macclesfield. Edward sails for New York in May. His
+                            wife Grace and the two children sail to New York from Liverpool in June
+                            aboard the <q>City of London</q>. Family settles in Jersey City and
+                            Edward opens a drug and dye wholesale outfit on Pine Street in New
+                            York.</p>
+                    </event>
+
+                    <event when="1867">
+                        <p>Sister Grace Helen born in Jersey City.</p>
+                    </event>
+
+                    <event when="1868">
+                        <p>Eatons sail back to England in February on the <q>Denmark</q> and settle
+                            in Bow/Poplar area of London. Sister Sarah born in London.</p>
+                    </event>
+
+                    <event when="1869">
+                        <p>Brother Ernest George born.</p>
+                    </event>
+
+                    <event when="1871">
+                        <p>Sister Christiana Mary Agnes born.</p>
+                    </event>
+
+                    <event when="1872">
+                        <p>Eatons sail from England to New York. Family settle in Montreal. Edward
+                            listed in City Directory as commission merchant, based at 16 St.
+                            Sacrament (a centrally located building that includes offices of
+                            brokers, mining companies, merchants, and notaries).</p>
+                    </event>
+
+                    <event when="1873">
+                        <p>Sister May Darling born in Montreal.</p>
+                    </event>
+
+                    <event when="1874">
+                        <p>Edward listed in Lovell’s Directory as a clerk with the Grand Trunk
+                            Railway. The growing Eaton family settle in working-class French
+                            neighbourhood of Hochelaga in row housing provided for Hudon mill
+                            workers, at rue du Iberville. Brother Ernest George dies in February,
+                            perhaps of smallpox.</p>
+                    </event>
+
+                    <event when="1875">
+                        <p>Winifred Lily born August 21, the eighth of fourteen children, two of
+                            whom die in childhood. Baptized, with sisters Christiana Mary
+                                <q>Agnes</q> and May Darling, at Montreal’s American Presbyterian
+                            Church as <q>Lillie Winifred</q>, although she soon drops the
+                                <q>Lillie</q> and adds a second ‘n’ to Winifred (Birchall 5). </p>
+                    </event>
+
+                    <event when="1876">
+                        <p>Family live at 101 Iberville. Edward a clerk. Family shares home with
+                            baker. </p>
+                    </event>
+
+                    <event when="1877">
+                        <p>Brother George born.</p>
+                    </event>
+
+                    <event when="1879">
+                        <p>Brother Lawrence born.</p>
+                    </event>
+
+                    <event when="1880">
+                        <p>Sister Rose born. Eatons living at 42 Seaver, company housing for Hudon
+                            Mills.</p>
+                    </event>
+
+                    <event when="1882">
+                        <p>US Chinese Exclusion Act passed. Father stops working as clerk, allegedly
+                            to devote himself to art career. Family live at 97 Iberville at St.
+                            Catherine. </p>
+                    </event>
+
+                    <event when="1884">
+                        <p>Winnifred’s brother Lawrence dies at age two, possibly in the smallpox
+                            epidemic. Buried at Mount Royal Cemetery in Montreal. Sister Florence
+                            born. Sister Edith working in composing room of the Montreal Star.</p>
+                    </event>
+
+                    <event when="1883">
+                        <p>Edward, Artist, listed in Lovell’s as living at 104 Drolet at Roy.</p>
+                    </event>
+
+                    <event when="1885">
+                        <p>Canada passes the Chinese Immigration Act, levying a $50 head tax on each
+                            Chinese labourer entering the country. </p>
+                    </event>
+
+                    <event when="1887">
+                        <p>Family listed as living at 488 St. Lawrence. Sister Beryl born.</p>
+                    </event>
+
+                    <event when="1889">
+                        <p>Family living at 610 St. Lawrence. Sister Grace working as stenographer
+                            and typewriter at 157 St. James. Winnifred claims to have published her
+                            first story, <q>A Poor Devil</q> in Metropolitan Magazine around this
+                            time. </p>
+                    </event>
+
+                    <event when="1890">
+                        <p>Winnifred stays in school until age fifteen, at which age she is sent to
+                            work (possibly as an apprentice dressmaker. Family living at 180
+                            Cadieux.</p>
+                    </event>
+
+                    <event when="1891">
+                        <p>Family living at 619 St. Urbain. Sister Grace Helen marries
+                            journalist-editor Walter Blackburn Harte in Montreal and moves to
+                            Boston. Cousin Alfred Eaton arrested in San Francisco for bribing a
+                            Customs Officer. Uncle Isaac Eaton returns to Macclesfield after living
+                            for several decades in Japan.</p>
+                    </event>
+
+                    <event when="1894">
+                        <p>Family living at 828 St. Lawrence. Sister Edith opens own stenography
+                            office. Sister Sarah working as an artist in Montreal.</p>
+                    </event>
+
+                    <event when="1895">
+                        <p>Family living at 83 Arcade. Winnifred goes to Jamaica as general writer
+                            and reporter, covering legislative council meetings, stenography; her
+                            fare is paid by the Gall’s Daily News Letter, and her salary includes
+                            free board and lodging at Myrtle Bank hotel (owned by Gall). Winnifred
+                            stays in Jamaica for about five months.</p>
+                    </event>
+
+                    <event when="1896">
+                        <p>A poem <q>Sneer Not</q>, by Winnifred Eaton, published in Gall’s Daily
+                            News Letter, in March. Winnifred leaves Jamaica, goes to Boston, via the
+                                <q>Barnstable</q>. Moves to Cincinnati. Claims to have been the
+                            chief stenographer in Cincinnati during the presidential campaign.
+                            Father is arrested in New York State and put in Plattsburgh, NY, prison
+                            for smuggling Chinese into US in June; he escapes and returns to
+                            Montreal in August. Winnifred’s sister Edith takes her Galls Newsletter
+                            job in Jamaica beginning in December.</p>
+                    </event>
+                    <event when="1897">
+                        <p>Winnifred settles in Chicago. Does stenographic work and writes. Assumes
+                            Japanese persona as <q>Kitishima Taka Hasche</q>, or <q>Kitishina</q>,
+                            or <q>Tacki Hashi</q> a Yokohama-born girl whose pen name is <q>Onoto
+                                Watanna</q>. In September, she claims to be heading to Alaska with
+                            the Woman’s Alaska Gold Club, a group with 150 members, to pan for gold.
+                        </p>
+                    </event>
+                    <event when="1898">
+                        <p>Attracts attention in numerous literary publications including Ev’ry
+                            Month. Chicago Daily Tribune. As Onoto Watanna, she writes the
+                            introduction to a book of poems by her friend Chicago journalist Frank
+                            Putnam. Publishes stories in Chicago magazines such as American Home
+                            Journal, Conkey’s Home Journal, and Carter’s Monthly, and New York
+                            magazines such as Frank Leslie’s Popular Monthly. Nephew Horace
+                            Blackburn Harte is born to Winnifred’s sister Grace. Winnifred’s sister
+                            May moves to San Francisco.</p>
+                    </event>
+                    <event when="1899">
+                        <p>Publishes short stories in Chicago Magazine, Puritan Magazine, Conkey’s
+                            Home Journal, Woman’s Home Companion, and Ladies’ Home Journal, and
+                            non-fiction in Book News, and poetry in the Christian-Science Monitor.
+                            Claims to have published in Japanese magazines Kokumin-no-Tomi and
+                            Hansei Zasshi. Publishes novel Miss Numè of Japan (Rand &amp; McNally),
+                            a controversial story of interracial romance. This publication makes her
+                            the first person of Asian descent to publish a novel in the U.S. Sister
+                            Grace’s husband Walter Blackburn Harte dies in New York.</p>
+                    </event>
+                    <event when="1900">
+                        <p>Winnifred boarding at 3105 Groveland Avenue in Chicago, a house owned by
+                            Helen R. Kellogg. Meets and becomes close friends with Japanese poet
+                            Yone Noguchi. Publishes stories and non-fiction in Frank Leslie’s,
+                            Conkey’s, and Smart Set, and serializes a novel (The Old Jinrikisha) in
+                            Conkey’s. </p>
+                    </event>
+                    <event when="1901">
+                        <p>Moves to New York. While working at the Brooklyn Eagle, she meets
+                            Bertrand Whitcomb Babcock, whom she marries July 16, 1901 in New York.
+                            Publishes stories and non-fiction in Woman’s Home Companion, Harper’s
+                            Monthly, Idler, and Frank Leslie’s, also releasing novel A Japanese
+                            Nightingale (Harper and Brothers).</p>
+                    </event>
+                    <event when="1902">
+                        <p>Publishes another novel, The Wooing of Wistaria (Macmillan) as well as
+                            various stories and non-fiction articles in Frank Leslie’s, Smart Set,
+                            Metropolitan Magazine, Harper’s Monthly, Woman’s Home Companion, and
+                            Critic. Accuses playwright David Belasco of plagiarizing her work in his
+                            new Japanese play The Darling of the Gods. Belasco sues her for libel.
+                            Winnifred is arrested and then quickly released on bail (Birchall 79).
+                            Winnifred’s brother Hubert drowns.</p>
+                    </event>
+                    <event when="1903">
+                        <p>Winnifred and Babcock’s first child, Perry, is born June 23. Winnifred
+                            publishes in Century Magazine, Smart Set, Ladies’ Home Journal, New
+                            Metropolitan Magazine, and Current Literature. She also publishes a
+                            novel, The Heart of Hyacinth (Harper and Brothers). Adaptation of The
+                            Japanese Nightingale opens on Broadway to scathing reviews. The play
+                            runs for only forty-four performances. </p>
+                    </event>
+                    <event when="1904">
+                        <p>Is accused of plagiarism by Professor John Van Cleve, who claims
+                            Winnifred reproduced a sonnet by him in A Japanese Nightingale without
+                            attributing it to him. Winnifred denies the accusation, claiming sole
+                            authorship of the sonnet, and Van Cleve eventually drops the case.
+                            Winnifred and Babcock’s second child, Bertie, is born September 29.
+                            Russo-Japanese War creates further demand for Winnifred’s writings on
+                            various aspects of Japanese culture. She publishes stories and
+                            non-fiction in Woman’s Home Journal, New Metropolitan Magazine, and
+                            Ladies’ Home Journal, as well as two novels: Daughters of Nijo
+                            (MacMillan) and The Love of Azalea (Dodd, Mead, &amp; Co). Reviews,
+                            beginning with a review of Daughters of Nijo in Baltimore Sun, begin to
+                            suggest that she is not Japanese.</p>
+                    </event>
+                    <event when="1906">
+                        <p>Winnifred and Babcock’s third child, Doris, born. Publishes A Japanese
+                            Blossom (Harper Brothers).</p>
+                    </event>
+                    <event when="1907">
+                        <p>Winnifred begins to try to publish works pseudonymously that are not on a
+                            Japanese theme. Publishes an Irish comedy, The Diary of Delia
+                            (Doubleday, Page and Company). Fourth child, Charley, is born. Profiles
+                            begin to claim that Onoto Watanna’s mother is part Chinese and part
+                            Japanese.</p>
+                    </event>
+                    <event when="1908">
+                        <p>Buys Oriental Point house from Mrs. Guy Bates Post. Son Bertie dies,
+                            weeks before his fourth birthday from convulsions and heart failure
+                            caused by encephalitis. </p>
+                    </event>
+                    <event when="1911">
+                        <p>Winnifred’s eldest brother, Edward Charles, dies of accidental gunshot
+                            wound in Montreal.</p>
+                    </event>
+                    <event when="1912">
+                        <p>Winnifred publishes The Honorable Miss Moonlight (Harper Brothers).
+                            Sister Edith, under pen name <q>Sui Sin Far</q>, publishes Mrs. Spring
+                            Fragrance.</p>
+                    </event>
+                    <event when="1914">
+                        <p>Sister Edith dies April 7 of heart disease in Montreal. Winnifred
+                            co-authors A Chinese-Japanese American Cookbook with her sister Sara
+                            Eaton Bosse. Winnifred’s works begin to be optioned by filmmakers such
+                            as Selig Polyscope Company in Chicago.</p>
+                    </event>
+                    <event when="1915">
+                        <p>Winnifred’s father Edward dies of cancer. Winnifred anonymously publishes
+                            Me: A Book of Remembrance (Century), a fictionalized memoir, first in
+                            monthly installments in Century, and then as a book. After completing
+                            Me, Winnifred writes first two chapters of silent film Gloria’s
+                            Romance.</p>
+                    </event>
+                    <event when="1916">
+                        <p>In eight monthly installments, Hearst’s Magazine serializes Marion: The
+                            Story of an Artist’s Model, based on Sister Sara’s biography. It is
+                            published anonymously by <q>Herself and the author of Me</q>. Winnifred
+                            goes to Reno and divorces Babcock. Unable to write afterward.</p>
+                    </event>
+                    <event when="1917">
+                        <p>Winnifred’s divorce decree granted. She gains full custody of her
+                            children and marries Frank Reeve, an American businessman who owns a New
+                            York tugboat firm, in Greenwich, Connecticut in March. They move to
+                            Calgary, Alberta. </p>
+                    </event>
+                    <event when="1921">
+                        <p>Adapts Wilbur Daniel Steel’s play Ropes for the silent feature film False
+                            Kisses (Universal Pictures) and receives her first screenplay credit.
+                            Works as screenwriter, title writer, literary advisor, and scenario
+                            editor for Universal and Metro-Goldwyn-Mayer between 1921 and 1930.
+                            Lives in Los Angeles</p>
+                    </event>
+                    <event when="1922">
+                        <p>Winnifred’s mother Grace dies in New York. Winnifred writes Sunny-San,
+                            her first Japanese novel in ten years. She lives with husband on
+                            4000-hectare Bow View Ranch. Children attend boarding school in Calgary.
+                            Winnifred rents house in Calgary to write in. Active in Calgary Little
+                            Theatre. Founding Member of Calgary chapter of Canadian Authors
+                            Association. </p>
+                    </event>
+                    <event when="1924">
+                        <p>Winnifred publishes Cattle (W. J. Watt) under her married name: Winifred
+                            Eaton Reeve. New tariff law causes cattle business to be less
+                            profitable. Reeve loses money with ranch and tries real estate in
+                            Calgary. Winnifred moves back to New York in December to run Universal
+                            Pictures’ East Coast scenario department and be the new story editor
+                            (Birchall 155). Universal’s Carl Laemmle Sr. wants her to encourage her
+                            network of literary contacts to write for Universal. Winnifred takes all
+                            three children with her, leaving husband Frank behind in Calgary.
+                            Daughter Doris elopes. </p>
+                    </event>
+                    <event when="1925">
+                        <p>Dedicates His Royal Nibs (W. J. Watt), which she publishes as Winifred
+                            Eaton Reeve to Carl Laemmle Sr.. Over the next seven years, she turns
+                            her energies to screenplay writing. Universal Studios hires her as West
+                            Coast story/scenario editor and transfers her to Los Angeles in late
+                            1925. Works as Universal’s <q>Editor-in-chief and literary advisor</q>.
+                            Daughter Doris has son, Paul George Rooney (<q>Tim</q>), then separates
+                            from her husband and returns to live with Winnifred in California.</p>
+                    </event>
+                    <event when="1926">
+                        <p>Winnifred quits job at Universal in December due to lack of creative
+                            license. Son Perry develops severe mental illness, perhaps schizophrenia
+                            and is hospitalized. Winnifred moves to Metro-Goldwyn Meyer where she is
+                            given an opportunity to write original screenplays as well as do
+                            adaptations.</p>
+                    </event>
+                    <event when="1927">
+                        <p>Does ghostwriting.</p>
+                    </event>
+                    <event when="1928">
+                        <p>Returns to Universal Studios as a screenwriter rather than as a story
+                            editor. Works on both sound and silent films. Begins writing for movie
+                            magazines.</p>
+                    </event>
+                    <event when="1929">
+                        <p>Loses all her savings in stock market crash. First Hollywood picture for
+                            which she is credited with writing the dialogue--The Mississippi
+                            Gambler--is released. Also credited for writing Shanghai Lady. </p>
+                    </event>
+                    <event when="1930">
+                        <p>Winnifred living in Los Angeles with daughter Doris and grandson. Writes
+                            Undertow, Young Desire, and East is West (Universal). Universal lays her
+                            off. Winnifred learns husband Frank has a mistress (Mrs. Hill) and wants
+                            a divorce. </p>
+                    </event>
+                    <event when="1931">
+                        <p>Reunites with Frank Reeve. They spend a romantic week at Lake Tahoe.
+                            Frank returns to Calgary to end relations with his mistress. Winnifred
+                            returns to Calgary. </p>
+                    </event>
+                    <event when="1944">
+                        <p>Winnifred’s son Charley, a writer, now going by the pen name Paul Eaton
+                            Reeve, marries Helen Finkelstein.</p>
+                    </event>
+                    <event when="1945">
+                        <p>Winnifred’s only granddaughter, Diana, born. Winnifred expressed regret
+                            for posing as Japanese. Writes plays for the Calgary Little Theatre
+                            community and serves as president of Canadian Author Association.</p>
+                    </event>
+                    <event when="1947">
+                        <p>Ex-husband Bertrand Babcock dies of diabetes and alcoholism.</p>
+                    </event>
+                    <event when="1954">
+                        <p>Winnifred dies of heart attack in Butte, Montana, en route to Calgary
+                            from California.</p>
+                    </event>
+
+
+
+
+                </listEvent>
+            </div>
+        </body>
+    </text>
+</TEI>

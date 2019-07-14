@@ -87,6 +87,24 @@
         </div>
     </xsl:template>
     
+    <!--Special template for handling events-->
+    <xsl:template match="listEvent" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="event" mode="#current">
+                <xsl:sort select="@when" order="ascending"/>
+            </xsl:apply-templates>
+        </div>
+    </xsl:template>
+    
+
+    <xsl:template match="event[@when]" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
+    
     <xsl:template match="list" mode="tei">
         <ul>
             <xsl:call-template name="processAtts"/>

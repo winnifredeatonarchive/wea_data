@@ -78,6 +78,16 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="event[@when and not(label or head)]" mode="original">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <xsl:if test="not(@xml:id)">
+                <xsl:attribute name="xml:id" select="ancestor::TEI/@xml:id || '_' || tokenize(@when,'-')[1]"/>
+            </xsl:if>
+            <label><xsl:value-of select="@when"/></label>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template match="@*|node()" mode="#all">
         <xsl:copy>
