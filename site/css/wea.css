@@ -781,7 +781,8 @@ header #siteMap{
 
 #siteMap,
 #siteMap > div,
-#siteMap > div > div{
+#siteMap > div > div,
+#siteMap [data-el='date']{
     display:none;
 }
 
@@ -1250,7 +1251,7 @@ div[data-type='listFigure'] img{
 
 
 [data-el="listEvent"]{
-  margin-top:0;
+      margin-top:1.56rem;
   margin-bottom:0;
   display:flex;
   flex-direction:column;
