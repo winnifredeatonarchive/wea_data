@@ -101,6 +101,10 @@
     <xsl:template match="event[@when]" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
+            <!--Annoyingly, we have to hack the processing so that
+                it looks like we have a label *and* a paragraph, which
+                isn't TEI compliant, but doesn't matter in the HTML-->
+            <div data-el="label"><xsl:value-of select="@when"/></div>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
