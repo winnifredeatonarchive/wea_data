@@ -249,11 +249,10 @@
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
-    
     <xsl:template match="table" mode="tei">
         
         <xsl:choose>
-            <xsl:when test="ancestor::TEI[descendant::catRef/@target[contains(.,'Documentation')]] or count(row) = 1 or not(@type='exhibit')">
+            <xsl:when test="ancestor::TEI[descendant::catRef/@target[contains(.,'Documentation')]] or count(row) = 1">
                 <table>
                     <xsl:apply-templates mode="#current"/>
                 </table>
@@ -309,20 +308,37 @@
                             
                             <xsl:variable name="labelRow" select="row[1][@role='label']"/>
                             
-                 
+                            
                             
                             <xsl:variable name="firstDateCol" 
                                 select="for $r in (1 to $maxCols) return if ($colMap($r) ='date') then $r else ()"/>
                             
-                            <xsl:variable name="firstToSortBy" select="count($labelRow/cell[@role='sortkey'][1]/preceding-sibling::cell) + 1"  as="xs:integer"/>
-  
-          
+                            <xsl:variable name="firstToSortBy" as="xs:integer">
+                                <xsl:choose>
+                                    <xsl:when test="row[@role='label']/cell[@role='sortkey']">
+                                        <xsl:value-of select="count(row[@role='label']/cell[@role='sortkey'][1]/preceding-sibling::cell) + 1"/>
+                                    </xsl:when>
+                                    <xsl:when test="not(empty($firstDateCol))">
+                                        <xsl:value-of select="$firstDateCol"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of
+                                            select="
+                                            min(for $r 
+                                            in (row[1][@role='label']/cell[normalize-space(string-join(descendant::text(),'')) ne '']) 
+                                            return count($r/preceding-sibling::cell) + 1)" 
+                                        />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:variable>
+                            
+                            
                             <thead>
                                 <xsl:apply-templates select="row[1][@role='label']" mode="#current">
                                     <xsl:with-param name="firstToSortBy" select="$firstToSortBy" tunnel="yes"/>
                                 </xsl:apply-templates>
                             </thead>
-               
+                            
                             <tbody>
                                 <xsl:for-each select="row[position() gt 1]">
                                     <xsl:sort select="$cellMap(generate-id(cell[$firstToSortBy]))[2]"/>
@@ -353,7 +369,7 @@
                 <xsl:if test="normalize-space(string-join(descendant::text(),'')) ne ''">
                     <xsl:value-of>sortable</xsl:value-of>
                 </xsl:if>
-                <xsl:if test="not(empty($firstToSortBy)) and (count(preceding-sibling::cell) + 1 = $firstToSortBy) or (@type='sortkey')">
+                <xsl:if test="not(empty($firstToSortBy)) and (count(preceding-sibling::cell) + 1 = $firstToSortBy)">
                     <xsl:value-of>selected</xsl:value-of>
                     <xsl:value-of>up</xsl:value-of>
                 </xsl:if>
@@ -385,36 +401,12 @@
                 <xsl:attribute name="data-col" select="$entry[1]"/>
                 <xsl:attribute name="data-sort" select="$entry[2]"/>
             </xsl:if>
-
+            
             <xsl:apply-templates mode="#current"/>
         </td>
     </xsl:template>
     
-    <!--<xsl:template name="createSort">
-        <xsl:variable name="table" select="ancestor::table"/>
-        <xsl:variable name="thisColNum" select="count(preceding-sibling::cell) + 1"/>
-        <xsl:variable name="vals" select="$table/row/cell[$thisColNum]/normalize-space(string-join(descendant::text()[not(ancestor::note)],''))" as="xs:string+"/>
-        <xsl:variable name="type">
-            <xsl:choose>
-                <xsl:when test="every $v in $vals satisfies matches($v,'^\d+(\.\d+)?$')">float</xsl:when>
-                <xsl:when test="every $v in $vals satisfies matches($v,'\d{4}(-\d{2}(-\d{2})?)')">date</xsl:when>
-                <xsl:otherwise>string</xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:attribute name="data-colNum" select="$thisColNum"/>
-        <xsl:call-template name="makeSortKey">
-            <xsl:with-param name="type" select="$type"/>
-            <xsl:with-param name="thisColNum" select="$thisColNum"/>
-        </xsl:call-template>
-    </xsl:template>
-    
-    <xsl:template name="makeSortKey">
-        <xsl:param name="type"/>
-        <xsl:param name="thisColNum"/>
 
-        <xsl:attribute name="data-sortNum" select="$map(generate-id(.))"/>
-    </xsl:template>
-    -->
     <!--QUOTATIONS-->
     
     

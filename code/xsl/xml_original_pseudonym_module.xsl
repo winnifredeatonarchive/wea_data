@@ -17,77 +17,18 @@
     
     
     <xsl:template name="createPseudonymsTable">
-        <xsl:variable name="tempDivs" as="element(div)*">
-            <xsl:for-each-group select="$sourceXml[//catRef[contains(@target,'docPrimarySource')]][//sourceDesc/bibl[@copyOf]]//text" group-by="wea:getYearFromBibl(.)">
-                <xsl:sort select="current-grouping-key()" order="ascending"/>
-                    <div>
-                        <head><xsl:value-of select="if (current-grouping-key() ne '') then current-grouping-key() else 'Undated'"/></head>
-                        <xsl:variable name="year" select="current-grouping-key()"/>
-                        <list>
-                            <xsl:for-each-group select="current-group()//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-                                <xsl:if test="not(empty(current-grouping-key()))">
-                                    <item>
-                                        <xsl:value-of select="wea:namecase(current-grouping-key())"/> (<xsl:value-of select="count(current-group())"/>)
-                                        <list>
-                                            <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                                                <xsl:sort select="count(current-group())"/>
-                                                <item><ref target="doc:{current-grouping-key()}"><xsl:value-of select="current-grouping-key()"/></ref></item>
-                                            </xsl:for-each-group>
-                                        </list>
-                                    </item>
-                                </xsl:if>
-                                
-                            </xsl:for-each-group>
-                        </list>
-                        
-                    </div>
-                
-            </xsl:for-each-group>
-        </xsl:variable>
-        <xsl:sequence select="$tempDivs/self::div[descendant::item]"/>
+
         
-        
-        
-        <!--<xsl:for-each-group select="" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-            <xsl:sort select="count(current-group())" order="descending"/>
-            <div>
-                <cell><xsl:value-of select="wea:namecase(current-grouping-key())"/></cell>
-                <cell><xsl:value-of select="count(current-group())"/></cell>
-                <cell>
-                    <list>
-                        <xsl:for-each-group select="current-group()" 
-                            group-by="wea:getYearFromBibl(.)">
-                            <xsl:sort select="exists(wea:getYearFromBibl(.))" order="descending"/>
-                            <xsl:sort select="wea:getYearFromBibl(.)" order="ascending"/>
-                            
-                            <item>
-                                <xsl:value-of select="if (current-grouping-key() castable as xs:integer) then current-grouping-key() else 'Undated'"/> (<xsl:value-of select="count(current-group())"/>)
-                                <list>
-                                    <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                                        <item>
-                                            <ref target="doc:{current-grouping-key()}"><xsl:sequence select="current-group()[1]/ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
-                                        </item>
-                                    </xsl:for-each-group>
-                                </list>
-                                
-                            </item>
-                        </xsl:for-each-group> 
-                    </list>
-                    
-                </cell>
-            </div>
-        </xsl:for-each-group>
-        -->
-        <!--<div>
+  
+        <div>
             <table>
                 <row role="label">
                     <cell>Pseudonym</cell>
                     <cell role="sortkey">Uses</cell>
                     <cell>Documents by Date</cell>
-                <!-\-    <cell>Documents by Exhibit</cell>-\->
                 </row>
                 <xsl:for-each-group select="$sourceXml[//catRef[contains(@target,'docPrimarySource')]]//text//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-                    <xsl:sort select="count(current-group())" order="descending"/>
+                    <xsl:sort select="count(current-group())" order="ascending"/>
                     <row>
                         <cell><xsl:value-of select="wea:namecase(current-grouping-key())"/></cell>
                         <cell><xsl:value-of select="count(current-group())"/></cell>
@@ -111,32 +52,12 @@
                                     </item>
                                 </xsl:for-each-group> 
                             </list>
-                           
                         </cell>
-                        <!-\-Probably don't need by exhibit, since that's arbitrary anyway-\->
-  <!-\-                      <cell>
-                            <list>
-                                <xsl:for-each-group select="current-group()" group-by="ancestor::TEI//catRef[@scheme='wdt:exhibit']/@target/substring-after(.,'wdt:')">
-                                    <xsl:sort select="$sourceXml//category[@xml:id=current-grouping-key()]/@n"/>
-                                    <xsl:variable name="thisCat" select="$sourceXml//category[@xml:id=current-grouping-key()]"/>
-                                    <item>
-                                        <ref target="doc:{current-grouping-key()}"><xsl:sequence select="$thisCat/catDesc/term/node()"/></ref>
-                                         <list>
-                                             <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                                                 <xsl:variable name="thisDocTitle" select="$sourceXml[//TEI/@xml:id=current-grouping-key()]/TEI/teiHeader/fileDesc/titleStmt/title[1]"/>
-                                                 <item><ref target="doc:{current-grouping-key()}"><xsl:sequence select="$thisDocTitle/node()"/></ref></item>
-                                             </xsl:for-each-group>
-                                         </list>
-                                    </item>
-                
-                                </xsl:for-each-group>
-                            </list>
-                        </cell>-\->
                     </row>
                 </xsl:for-each-group>
             </table>
            
-        </div>-->
+        </div>
     </xsl:template>
     
     <xsl:function name="wea:getYearFromBibl" as="xs:string?">
