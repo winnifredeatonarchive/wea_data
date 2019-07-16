@@ -215,17 +215,6 @@
     </xsl:template>
     
     
-    <!--Templates to add bibliographic citations-->
-    
-    <xsl:template match="sourceDesc[not(ancestor::sourceDesc)]" mode="pass2">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:if test="bibl"></xsl:if>
-        </xsl:copy>
-        
-        
-    </xsl:template>
-    
     
     
     <xd:doc>
