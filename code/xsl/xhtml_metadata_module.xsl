@@ -127,10 +127,13 @@
             <xsl:apply-templates select="$root//sourceDesc[not(ancestor::sourceDesc)]/bibl" mode="citation"/>
         </xsl:variable>
         <xsl:variable name="uri" select="wea:getURL($root)"/>
-        <div id="source_citation">
-            <div class="metadataLabel">Source Citation</div>
-            <xsl:apply-templates select="$tempCitation" mode="tei"/>
-        </div>
+
+            <div id="source_citation">
+                <div class="metadataLabel">Source Citation</div>
+                <xsl:apply-templates select="$tempCitation" mode="tei"/>
+            </div>
+        
+   
         <div id="this_citation">
             <div class="metadataLabel">Cite this Page</div>
             <xsl:variable name="tempBibl" as="element(tei:bibl)">
