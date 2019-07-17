@@ -23,14 +23,14 @@
     <xsl:variable name="dataDocs" select="collection('../../data/?select=*.xml;recurse=yes')"/>
     
     
-    <xsl:template match="/">
-        <xsl:variable name="errors" as="element(item)+">
+    <xsl:template name="check">
+        <xsl:variable name="errors" as="element(item)*">
             <xsl:for-each-group select="$dataDocs//@facs" group-by="xs:string(.)">
                 <xsl:variable name="thisFacs" select="current-grouping-key()" as="xs:string"/>
                 <xsl:if test="not($facsIds[.=concat(substring-after($thisFacs,'facs:'),'.pdf')])">
                     <xsl:variable name="badDocs" as="xs:string+">
                         <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                            <xsl:value-of select="."/>
+                            <xsl:value-of select="current-grouping-key()"/>
                         </xsl:for-each-group>
                     </xsl:variable>
                     <item>ERROR: Reference to document <xsl:value-of select="$thisFacs"/> cannot be found in the facsimile document. Check for spelling. Error occurs in the following documents: <xsl:value-of select="$badDocs" separator=", "/>.</item>
