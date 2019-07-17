@@ -90,7 +90,7 @@ mdh.LocalSearch = function(jsonDirectory, outputDivId){
 mdh.LocalSearch.prototype.tokenizeSearch = function(str){
   var rePunc, i, imax;
   rePunc = /\[\]'";:!\.,-/g;
-  str = str.replace(rePunc, '').normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  str = str.replace(rePunc, '').normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
   var tokens = str.split(/\s+/);
   var unstoppedTokens = [];
   for (i=0, imax=tokens.length; i<imax; i++){
