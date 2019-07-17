@@ -286,7 +286,7 @@
                                             <xsl:sort/>
                                             <xsl:variable name="doc" select="current-group()[1]/ancestor::TEI"/>
                                             <xsl:variable name="currPos" select="position()"/>
-                                            <ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="$doc//teiHeader/fileDesc/titleStmt/title[1]"/></ref><xsl:if test="$currPos ne last()"> | </xsl:if>
+                                            <ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{current-grouping-key()}.html"><xsl:value-of select="$doc//teiHeader/fileDesc/titleStmt/title[1]"/></ref><xsl:if test="$currPos ne last()"> | </xsl:if>
                                             
                                         </xsl:for-each-group>
                                     </cell>
