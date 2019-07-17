@@ -8,6 +8,16 @@
       <ant antfile="code/buildValidate.xml" inheritall="false"/>
   </target>
     
+  <target name="checkFacs">
+      <exec executable="ls" dir="${basedir}/data/facsimiles" output="temp/facs.txt"/>
+      <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+          <arg value="-xsl:${project.dir}/code/documentation/check_facs.xsl"/>
+          <arg value="-s:${project.dir}/code/documentation/check_facs.xsl"/>
+          <arg value="facsList=${basedir}/temp/facs.txt"/>
+          <arg value="--suppressXsltNamespaceCheck:on"/>
+      </java>
+  </target>
+    
     <target name="createSite">
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
@@ -31,7 +41,7 @@
     
     
     
-    <target name="all" depends="validate, createSite, createDocSite, createSearch"/>
+    <target name="all" depends="validate, checkFacs, createSite, createDocSite, createSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
