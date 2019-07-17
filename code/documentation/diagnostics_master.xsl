@@ -53,10 +53,13 @@
 
 <!--        <xsl:call-template name="badPtrs"/>-->
         <xsl:call-template name="documentsAwaitingMC"/>
-        <xsl:call-template name="duplicateIds"/>
+
         <xsl:call-template name="documentsWithoutFacs"/>
         <xsl:call-template name="documentsWithoutGenre"/>
         <xsl:call-template name="documentsWithoutExhibit"/>
+        <xsl:call-template name="japaneseWordsWithoutTerm"/>
+        <xsl:call-template name="duplicateIds"/>
+
     </xsl:template>
     
     
@@ -252,6 +255,52 @@
             </xsl:choose>
             
         </div>
+    </xsl:template>
+    
+    <xsl:template name="japaneseWordsWithoutTerm">
+        <xsl:variable name="errors" select="$dataDocs//foreign[@xml:lang='ja'][not(ancestor::term[@ref])]" as="element(foreign)*"/>
+
+            <div type="diagnostic">
+                <head n="{count($errors)}">Japanese terms without a glossary entry</head>
+                <p>All Japanese terms (i.e. terms tagged with <gi>foreign</gi>/<att>xml:lang</att>=<val>ja</val>) should be associated with a 
+                    term in the glossary.
+                </p>
+                <p>Note that this diagnostic is meant to evaluate the list of terms we will need for the glossary IN FUTURE. We do not currently have the mechanism set up to tag these terms.</p>
+                <xsl:choose>
+                    <xsl:when test="not(empty($errors))">
+                        <table>
+                            <row role="label">
+                                <cell role="label">
+                                    Term
+                                </cell>
+                                <cell role="label">
+                                    Documents
+                                </cell>
+                            </row>
+                            <xsl:for-each-group select="$errors" group-by="text()">
+                                <xsl:sort select="lower-case(current-grouping-key())"/>
+                                <row>
+                                    <cell><xsl:value-of select="current-grouping-key()"/></cell>
+                                    <cell>
+                                        <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
+                                            <xsl:sort/>
+                                            <xsl:variable name="doc" select="current-group()[1]/ancestor::TEI"/>
+                                            <xsl:variable name="currPos" select="position()"/>
+                                            <ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="$doc//teiHeader/fileDesc/titleStmt/title[1]"/></ref><xsl:if test="$currPos ne last()"> | </xsl:if>
+                                            
+                                        </xsl:for-each-group>
+                                    </cell>
+                                </row>
+                            </xsl:for-each-group>
+                        </table>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <p>None found! </p>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
+            </div>
+        
     </xsl:template>
     
     <xsl:template match="@*|node()" priority="-1">
