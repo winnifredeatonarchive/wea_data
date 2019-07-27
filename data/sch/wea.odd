@@ -3035,6 +3035,20 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraint>
                </constraintSpec>
                
+               <constraintSpec scheme="schematron" ident="poemsShouldHaveLinegroups">
+                  <desc>If a document is classified as a poem, then it should have linegroup elements.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:TEI[descendant::tei:catRef[contains(@target,'Poem')]][not(descendant::tei:revisionDesc/@status='empty')]">
+                           <sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l]">
+                              ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
+                              Ensure that you do not use paragraph tags if it is a poem. 
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
               
                
                <constraintSpec scheme="schematron" ident="nextPrevShouldntBeTheRoot">
@@ -3241,6 +3255,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               
+               
                
                
                

@@ -7733,6 +7733,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.item">item</ref> 
                                        <ref target="#TEI.l">l</ref> 
                                        <ref target="#TEI.lg">lg</ref> 
+                                       <ref target="#TEI.list">list</ref> 
+                                       <ref target="#TEI.listBibl">listBibl</ref> 
                                        <ref target="#TEI.note">note</ref> 
                                        <ref target="#TEI.p">p</ref> 
                                        <ref target="#TEI.q">q</ref> 
@@ -7749,6 +7751,8 @@ supplied to printer.</change>
                                     <item>header: <ref target="#TEI.category">category</ref> 
                                        <ref target="#TEI.change">change</ref> 
                                        <ref target="#TEI.licence">licence</ref> 
+                                       <ref target="#TEI.listChange">listChange</ref> 
+                                       <ref target="#TEI.listPrefixDef">listPrefixDef</ref> 
                                        <ref target="#TEI.rendition">rendition</ref> 
                                        <ref target="#TEI.taxonomy">taxonomy</ref>
                                     </item>
@@ -7756,6 +7760,11 @@ supplied to printer.</change>
                                        <ref target="#TEI.seg">seg</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
+                                       <ref target="#TEI.listEvent">listEvent</ref> 
+                                       <ref target="#TEI.listOrg">listOrg</ref> 
+                                       <ref target="#TEI.listPerson">listPerson</ref> 
+                                       <ref target="#TEI.listPlace">listPlace</ref> 
+                                       <ref target="#TEI.listRelation">listRelation</ref> 
                                        <ref target="#TEI.location">location</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
                                        <ref target="#TEI.org">org</ref> 
@@ -9970,9 +9979,11 @@ formatting or layout information preserved.</p>
                                  <ref target="#TEI.label">label</ref> 
                                  <ref target="#TEI.listBibl">listBibl</ref> 
                                  <ref target="#TEI.note">note</ref> 
-                                 <ref target="#TEI.p">p</ref>
+                                 <ref target="#TEI.p">p</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref>
                               </item>
-                              <item>header: <ref target="#TEI.biblFull">biblFull</ref>
+                              <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
+                                 <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref>
                               </item>
@@ -10008,6 +10019,8 @@ formatting or layout information preserved.</p>
                            <code>
 &lt;content&gt;
  &lt;sequence&gt;
+  &lt;elementRef key="idno" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
   &lt;alternate&gt;
@@ -10022,6 +10035,8 @@ formatting or layout information preserved.</p>
    &lt;classRef key="model.biblLike"/&gt;
    &lt;elementRef key="linkGrp"/&gt;
    &lt;elementRef key="link"/&gt;
+   &lt;elementRef key="idno"/&gt;
+   &lt;elementRef key="ptr"/&gt;
   &lt;/alternate&gt;
   &lt;elementRef key="event" minOccurs="0"
    maxOccurs="unbounded"/&gt;
@@ -13277,7 +13292,8 @@ material</measure>
                <div type="refdoc" xml:id="TEI.idno">
                   <head>&lt;idno&gt;</head>
                   <p>
-                     <label>&lt;idno&gt; </label>(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. Publication, Distribution, Licensing, etc.</ref> 
+                     <label>&lt;idno&gt; </label>(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSbp">13.3.1. Basic Principles</ref> 
+                     <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24">2.2.4. Publication, Distribution, Licensing, etc.</ref> 
                      <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD26">2.2.5. The Series Statement</ref> 
                      <ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOI">3.11.2.4. Imprint, Size of a Document, and Reprint Information</ref>]</p>
                   <table>
@@ -13428,6 +13444,7 @@ material</measure>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.birth">birth</ref> 
                                        <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
@@ -14706,7 +14723,7 @@ entre les Romains.</label>
                            <code>
 &lt;sch:assert test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 
  0"&gt;An lg element
- must contain at least one child l, lg or gap element.&lt;/sch:assert&gt;</code>
+ must contain at least one child l, lg, or gap element.&lt;/sch:assert&gt;</code>
                         </cell>
                      </row>
                      <row>
@@ -15097,7 +15114,8 @@ entre les Romains.</label>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.gap">gap</ref> 
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
                                  <ref target="#TEI.head">head</ref> 
                                  <ref target="#TEI.item">item</ref> 
                                  <ref target="#TEI.label">label</ref> 
@@ -15301,6 +15319,8 @@ entre les Romains.</label>
    maxOccurs="unbounded"&gt;
    &lt;classRef key="model.divTop"/&gt;
    &lt;classRef key="model.global"/&gt;
+   &lt;elementRef key="desc" minOccurs="0"
+    maxOccurs="unbounded"/&gt;
   &lt;/alternate&gt;
   &lt;alternate&gt;
    &lt;sequence minOccurs="1"
@@ -15439,6 +15459,7 @@ entre les Romains.</label>
                         <cell>
                            <list>
                               <item>core: <ref target="#TEI.bibl">bibl</ref> 
+                                 <ref target="#TEI.desc">desc</ref> 
                                  <ref target="#TEI.head">head</ref> 
                                  <ref target="#TEI.listBibl">listBibl</ref> 
                                  <ref target="#TEI.milestone">milestone</ref> 
@@ -15493,6 +15514,8 @@ entre les Romains.</label>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;alternate minOccurs="1"
    maxOccurs="unbounded"&gt;
    &lt;classRef key="model.biblLike"/&gt;
@@ -15580,6 +15603,8 @@ entre les Romains.</label>
                         </cell>
                         <cell>
                            <list>
+                              <item>core: <ref target="#TEI.desc">desc</ref>
+                              </item>
                               <item>header: <ref target="#TEI.change">change</ref> 
                                  <ref target="#TEI.listChange">listChange</ref>
                               </item>
@@ -15641,11 +15666,15 @@ probably at a later stage</change>
                         <cell>
                            <code>
 &lt;content&gt;
- &lt;alternate minOccurs="1"
-  maxOccurs="unbounded"&gt;
-  &lt;elementRef key="listChange"/&gt;
-  &lt;elementRef key="change"/&gt;
- &lt;/alternate&gt;
+ &lt;sequence&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
+  &lt;alternate minOccurs="1"
+   maxOccurs="unbounded"&gt;
+   &lt;elementRef key="listChange"/&gt;
+   &lt;elementRef key="change"/&gt;
+  &lt;/alternate&gt;
+ &lt;/sequence&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -15746,7 +15775,8 @@ probably at a later stage</change>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.head">head</ref>
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.event">event</ref> 
                                  <ref target="#TEI.listEvent">listEvent</ref> 
@@ -15809,6 +15839,8 @@ raiders and saved the town from capture.</desc>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;classRef key="model.eventLike"
    minOccurs="1" maxOccurs="unbounded"/&gt;
   &lt;alternate minOccurs="0"
@@ -15915,7 +15947,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.head">head</ref>
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listOrg">listOrg</ref> 
                                  <ref target="#TEI.listRelation">listRelation</ref> 
@@ -15975,6 +16008,8 @@ raiders and saved the town from capture.</desc>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;alternate minOccurs="1"
    maxOccurs="unbounded"&gt;
    &lt;elementRef key="org"/&gt;
@@ -16088,7 +16123,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.head">head</ref>
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listPerson">listPerson</ref> 
                                  <ref target="#TEI.listRelation">listRelation</ref> 
@@ -16136,6 +16172,8 @@ raiders and saved the town from capture.</desc>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;alternate minOccurs="1"
    maxOccurs="unbounded"&gt;
    &lt;classRef key="model.personLike"/&gt;
@@ -16247,7 +16285,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.head">head</ref>
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listPlace">listPlace</ref> 
                                  <ref target="#TEI.listRelation">listRelation</ref> 
@@ -16285,6 +16324,8 @@ raiders and saved the town from capture.</desc>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;alternate minOccurs="1"
    maxOccurs="unbounded"&gt;
    &lt;classRef key="model.placeLike"/&gt;
@@ -16354,6 +16395,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <list>
+                              <item>core: <ref target="#TEI.desc">desc</ref>
+                              </item>
                               <item>header: <ref target="#TEI.listPrefixDef">listPrefixDef</ref> 
                                  <ref target="#TEI.prefixDef">prefixDef</ref>
                               </item>
@@ -16400,11 +16443,15 @@ raiders and saved the town from capture.</desc>
                         <cell>
                            <code>
 &lt;content&gt;
- &lt;alternate minOccurs="1"
-  maxOccurs="unbounded"&gt;
-  &lt;elementRef key="prefixDef"/&gt;
-  &lt;elementRef key="listPrefixDef"/&gt;
- &lt;/alternate&gt;
+ &lt;sequence&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
+  &lt;alternate minOccurs="1"
+   maxOccurs="unbounded"&gt;
+   &lt;elementRef key="prefixDef"/&gt;
+   &lt;elementRef key="listPrefixDef"/&gt;
+  &lt;/alternate&gt;
+ &lt;/sequence&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -16508,7 +16555,8 @@ raiders and saved the town from capture.</desc>
                         </cell>
                         <cell>
                            <list>
-                              <item>core: <ref target="#TEI.head">head</ref> 
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.head">head</ref> 
                                  <ref target="#TEI.p">p</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref>
@@ -16596,6 +16644,8 @@ raiders and saved the town from capture.</desc>
  &lt;sequence&gt;
   &lt;classRef key="model.headLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;elementRef key="desc" minOccurs="0"
+   maxOccurs="unbounded"/&gt;
   &lt;alternate&gt;
    &lt;classRef key="model.pLike"/&gt;
    &lt;alternate minOccurs="1"
@@ -19166,6 +19216,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.note">note</ref> 
                                  <ref target="#TEI.p">p</ref> 
                                  <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref> 
                                  <ref target="#TEI.rs">rs</ref>
                               </item>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
@@ -19243,6 +19294,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
    &lt;classRef key="model.biblLike"/&gt;
    &lt;elementRef key="linkGrp"/&gt;
    &lt;elementRef key="link"/&gt;
+   &lt;elementRef key="ptr"/&gt;
   &lt;/alternate&gt;
   &lt;classRef key="model.personLike"
    minOccurs="0" maxOccurs="unbounded"/&gt;
@@ -20512,7 +20564,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.name">name</ref> 
                                  <ref target="#TEI.note">note</ref> 
                                  <ref target="#TEI.p">p</ref> 
-                                 <ref target="#TEI.pb">pb</ref>
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
@@ -20653,6 +20706,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
    maxOccurs="unbounded"&gt;
    &lt;classRef key="model.personPart"/&gt;
    &lt;classRef key="model.global"/&gt;
+   &lt;elementRef key="ptr"/&gt;
   &lt;/alternate&gt;
  &lt;/alternate&gt;
 &lt;/content&gt;
@@ -20718,7 +20772,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.label">label</ref> 
                                  <ref target="#TEI.listBibl">listBibl</ref> 
                                  <ref target="#TEI.note">note</ref> 
-                                 <ref target="#TEI.p">p</ref>
+                                 <ref target="#TEI.p">p</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref>
                               </item>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
                                  <ref target="#TEI.idno">idno</ref>
@@ -20781,6 +20836,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
    &lt;classRef key="model.noteLike"/&gt;
    &lt;classRef key="model.biblLike"/&gt;
    &lt;elementRef key="idno"/&gt;
+   &lt;elementRef key="ptr"/&gt;
    &lt;elementRef key="linkGrp"/&gt;
    &lt;elementRef key="link"/&gt;
   &lt;/alternate&gt;
@@ -21434,7 +21490,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         </cell>
                         <cell>
                            <ab>
-                              <ref target="#TEI.model.ptrLike">model.ptrLike</ref>
+                              <ref target="#TEI.model.ptrLike">model.ptrLike</ref> 
                            </ab>
                         </cell>
                      </row>
@@ -21503,10 +21559,14 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.birth">birth</ref> 
                                        <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.event">event</ref> 
                                        <ref target="#TEI.forename">forename</ref> 
                                        <ref target="#TEI.nationality">nationality</ref> 
                                        <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
                                        <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.person">person</ref> 
+                                       <ref target="#TEI.place">place</ref> 
                                        <ref target="#TEI.placeName">placeName</ref> 
                                        <ref target="#TEI.surname">surname</ref>
                                     </item>
@@ -28591,7 +28651,7 @@ epistemology, methodology and history of
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (<att>type</att>, <att>subtype</att>) </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (<att>type</att>, <att>subtype</att>) <ref target="#TEI.att.placement">att.placement</ref> (<att>place</att>) </cell>
                      </row>
                      <row>
                         <cell>
@@ -32111,8 +32171,9 @@ epistemology, methodology and history of
                                           <cell>
                                              <code>
 &lt;sch:rule context="tei:*[@calendar]"&gt;
-&lt;sch:assert test="string-length(.) gt 0"&gt;@calendar indicates the system or calendar to which the date represented by the content of this element
- belongs, but this &lt;sch:name/&gt; element has no textual content.&lt;/sch:assert&gt;
+&lt;sch:assert test="string-length(.) gt 0"&gt; @calendar indicates the system or calendar to
+ which the date represented by the content of this element belongs, but this
+&lt;sch:name/&gt; element has no textual content.&lt;/sch:assert&gt;
 &lt;/sch:rule&gt;</code>
                                           </cell>
                                        </row>
@@ -32121,8 +32182,8 @@ epistemology, methodology and history of
                                              <egXML xmlns="http://www.tei-c.org/ns/Examples"
                                                     xmlns:rng="http://relaxng.org/ns/structure/1.0"
                                                     xmlns:teix="http://www.tei-c.org/ns/Examples"
-                                                    xml:lang="en">He was born on <date calendar="#gregorian">Feb. 22, 1732</date> 
-          (<date calendar="#julian" when="1732-02-22"> Feb. 11, 1731/32, O.S.</date>).</egXML>
+                                                    xml:lang="en">He was born on <date calendar="#gregorian">Feb. 22, 1732</date> (<date calendar="#julian" when="1732-02-22"> Feb. 11, 1731/32,
+            O.S.</date>).</egXML>
                                           </cell>
                                        </row>
                                        <row>
@@ -32900,9 +32961,9 @@ epistemology, methodology and history of
                                                 <item>(millimetres) </item>
                                                 <label>in</label>
                                                 <item>(inches) </item>
-                                                <label>lines</label>
+                                                <label>line</label>
                                                 <item>lines of text</item>
-                                                <label>chars</label>
+                                                <label>char</label>
                                                 <item>(characters) characters of text</item>
                                              </list>
                                           </cell>
@@ -33179,7 +33240,7 @@ epistemology, methodology and history of
                                              <label>Note</label>
                                           </cell>
                                           <cell><!-- -->
-                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The values <val>I</val>, <val>M</val>, or <val>F</val> should be used only where it is clear how the element may be be reconstituted.</p>
+                                             <p xmlns:teix="http://www.tei-c.org/ns/Examples">The values <val>I</val>, <val>M</val>, or <val>F</val> should be used only where it is clear how the element may be reconstituted.</p>
                                           </cell>
                                        </row>
                                     </table>
@@ -35846,7 +35907,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.head">head</ref> 
                            <ref target="#TEI.label">label</ref> 
-                           <ref target="#TEI.note">note</ref>
+                           <ref target="#TEI.note">note</ref> 
+                           <ref target="#TEI.trailer">trailer</ref>
                         </cell>
                      </row>
                      <row>
@@ -37512,21 +37574,9 @@ epistemology, methodology and history of
                            <code>
 &lt;content&gt;
  &lt;dataRef name="token"
-  restriction="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/&gt;
+  restriction="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/&gt;
 &lt;/content&gt;
     </code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>Several standards bodies, including NIST in the USA, strongly recommend against ending the representation of a number with a decimal point. So instead of "3." use either "3" or "3.0".<code>
-&lt;sch:rule context="*[@points]"&gt;
-&lt;sch:report test="matches( @points, '\.[, ]|\.$')"&gt;It is considered poor
- practice to end a number with a decimal point; as of 2019-02-25 TEI will
- consider this @points attribute of &lt;sch:name/&gt; invalid&lt;/sch:report&gt;
-&lt;/sch:rule&gt;</code>
                         </cell>
                      </row>
                      <row>
@@ -37555,9 +37605,7 @@ epistemology, methodology and history of
                         </cell>
                         <cell><!-- -->
                            <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">A point is defined by two numeric values, which should be expressed as decimal numbers.</p>
-                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                              xmlns:teix="http://www.tei-c.org/ns/Examples">Currently, this datatype permits either of the two numeric values to end in a decimal point. This practice is <emph style="color:red;font-style:normal;">deprecated</emph>, and as of <emph style="color:red;font-style:normal;">2019-02-25</emph> this datatype will no longer permit a <emph style="font-weight:bold;">number</emph> to <emph style="font-weight:bold;">end in a decimal</emph> point. E.g., both <val>0.0,84.2</val> and <val>0,84</val> are allowed, but <val>0.,84.</val> will not be.</p>
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">A point is defined by two numeric values, which should be expressed as decimal numbers. Neither number can end in a decimal point. E.g., both <val>0.0,84.2</val> and <val>0,84</val> are allowed, but <val>0.,84.</val> is not.</p>
                         </cell>
                      </row>
                   </table>
@@ -38392,6 +38440,54 @@ epistemology, methodology and history of
                      </row>
                   </table>
                </div>
+               <div type="refdoc" xml:id="TEI.teidata.xpath">
+                  <head>teidata.xpath</head>
+                  <p>
+                     <label>teidata.xpath</label> defines attribute values which contain an XPath expression.</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>tei — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Used by</label>
+                        </cell>
+                        <cell>
+                           <ab/>
+                        </cell>
+                     </row>
+
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;textNode/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:tei="http://www.tei-c.org/ns/1.0"
+                              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Any XPath expression using the syntax defined in <ref target="#XSLT2">#XSLT2</ref>.</p>
+                           <p xmlns:tei="http://www.tei-c.org/ns/1.0"
+                              xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">When writing programs that evaluate XPath expressions, programmers should be mindful of the possibility of malicious code injection attacks. For further information about XPath injection attacks, see the <ref target="https://www.owasp.org/index.php/XPATH_Injection">article at OWASP</ref>.</p>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
             </div>
             <div xml:id="constraints">
                <head>Constraints</head>
@@ -38791,6 +38887,20 @@ epistemology, methodology and history of
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
  &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuation should go outside the &lt;sch:name/&gt; element.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>If a document is classified as a poem, then it should have linegroup elements.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:TEI[descendant::tei:catRef[contains(@target,'Poem')]][not(descendant::tei:revisionDesc/@status='empty')]"&gt;
+ &lt;sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l]"&gt; ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
+   Ensure that you do not use paragraph tags if it is a poem.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
