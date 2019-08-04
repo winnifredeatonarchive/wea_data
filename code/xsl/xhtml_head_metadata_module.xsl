@@ -23,6 +23,7 @@
 
             <title><xsl:value-of select="teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
+            <xsl:call-template name="createDCMetadata"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="stylesheet" type="text/css" href="css/media.css"/>
             <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
@@ -40,6 +41,7 @@
             </xsl:if>
 
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   
             <xsl:if test="@xml:id='index'">
                 <!--We add a special style for the index, which is generated from the count of the XSLT:
                     template located in the index module.
@@ -47,6 +49,29 @@
                 <xsl:call-template name="createIndexStyles"/>
             </xsl:if>
         </head>
+    </xsl:template>
+    
+    <xsl:template name="createDCMetadata">
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+        <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+        <meta name="DC.title" content="{teiHeader/fileDesc/titleStmt/title[1]}"/>
+        <xsl:for-each select="//sourceDesc/bibl/author/name">
+            <meta name="DC.creator" content="{.}"/>
+        </xsl:for-each>
+        <xsl:for-each select="//sourceDesc/bibl/date">
+            <xsl:for-each select="@when | @notBefore |@notAfter |@to | @from">
+                <meta name="DC.date" content="{.}"/>
+            </xsl:for-each>
+        </xsl:for-each>
+ 
+        <meta name="DC.contributor" content="Mary Chapman"/>
+        <meta name="DC.contributor" content="Jean Lee Cole"/>
+        <meta name="DC.date" content="{current-date()}" />
+        <meta name="DC.publisher" content="The Winnifred Eaton Archive"/>
+        <meta name="DC.source" content="The Winnifred Eaton Archive"/>
+        <meta name="DC.type" content="Text"/>
+        <meta name="DC.format" content="text/html"/>
+        <meta name="DC.identifier" scheme="DCTERMS.URI" content="https://winnifredeatonarchive.com/{@xml:id}.html" />
     </xsl:template>
     
 
