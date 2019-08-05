@@ -86,11 +86,11 @@
         <div id="credits" class="additionalInfo expandable">
             <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations<span class="mi">chevron_right</span></div>
             <div id="credits_content" class="content">
-                <xsl:apply-templates select="$root//respStmt" mode="metadata"/>
-                <xsl:if test="$root//notesStmt/note">
+                <xsl:apply-templates select="$root//respStmt[not(ancestor::biblFull)]" mode="metadata"/>
+                <xsl:if test="$root//notesStmt[not(ancestor::biblFull)]/note">
                     <div>
                         <div class="metadataLabel">Notes</div>
-                        <xsl:for-each select="$root//notesStmt/note">
+                        <xsl:for-each select="$root//notesStmt[not(ancestor::biblFull)]/note">
                             <div>
                                 <xsl:apply-templates select="node()" mode="tei"/>
                             </div>
@@ -292,10 +292,10 @@
     
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
-        <xsl:apply-templates select="//sourceDesc/bibl/*" mode="metadata"/>
+        <xsl:apply-templates select="//sourceDesc[not(ancestor::biblFull)]/bibl/*" mode="metadata"/>
         
         <!--Now process the category references-->
-        <xsl:apply-templates select="//catRef" mode="metadata"/>
+        <xsl:apply-templates select="//catRef[not(ancestor::biblFull)]" mode="metadata"/>
         
         <!--And then if there are installments, add those too-->
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
@@ -307,7 +307,7 @@
     </xsl:template>
     
     <xsl:template name="getWork">
-        <xsl:variable name="thisBibl" select="//sourceDesc/bibl/substring-after(@copyOf,'bibliography.xml#')"/>
+        <xsl:variable name="thisBibl" select="//sourceDesc[not(ancestor::biblFull)]/bibl/substring-after(@copyOf,'bibliography.xml#')"/>
         <xsl:variable name="thisWork" select="$standaloneXml[//TEI[@xml:id='bibliography']]//listBibl[bibl[@xml:id=$thisBibl]]"/>
         <div>
             <div class="metadataLabel">Work</div>
