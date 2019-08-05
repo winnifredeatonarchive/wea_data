@@ -78,7 +78,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="notesStmt" mode="original">
+    <xsl:template match="notesStmt[not(ancestor::biblFull)]" mode="original">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
             <xsl:if test="ancestor::TEI/descendant::sourceDesc[biblFull]">
@@ -87,7 +87,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="publicationStmt[not(following-sibling::notesStmt)]" mode="original">
+    <xsl:template match="publicationStmt[not(ancestor::biblFull)][not(following-sibling::notesStmt)]" mode="original">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
