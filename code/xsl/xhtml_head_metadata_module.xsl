@@ -52,31 +52,29 @@
     </xsl:template>
     
     <xsl:template name="createDCMetadata">
-        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
-        <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
-        <meta name="DC.title" content="{teiHeader/fileDesc/titleStmt/title[1]}"/>
+        <meta property="dc.title" content="{teiHeader/fileDesc/titleStmt/title[1]}"/>
         <xsl:for-each select="//sourceDesc/bibl/author/name">
-            <meta name="DC.creator" content="{.}"/>
+            <meta property="dc.creator" content="{.}"/>
         </xsl:for-each>
         <xsl:for-each select="//sourceDesc/bibl/date">
             <xsl:for-each select="@when | @notBefore |@notAfter |@to | @from">
-                <meta name="DC.date" content="{.}"/>
+                <meta property="dc.date" content="{.}"/>
             </xsl:for-each>
         </xsl:for-each>
  
-        <meta name="DC.contributor" content="Mary Chapman"/>
-        <meta name="DC.contributor" content="Jean Lee Cole"/>
-        <meta name="DC.date" content="{current-date()}" />
-        <meta name="DC.publisher" content="The Winnifred Eaton Archive"/>
-        <meta name="DC.source" content="The Winnifred Eaton Archive"/>
-        <meta name="DC.type" content="Text"/>
-        <meta name="DC.format" content="text/html"/>
-        <meta name="DC.identifier" scheme="DCTERMS.URI" content="https://winnifredeatonarchive.com/{@xml:id}.html" />
+        <meta property="dc.contributor" content="Mary Chapman"/>
+        <meta property="dc.contributor" content="Jean Lee Cole"/>
+        <meta property="dc.date" content="{current-date()}" />
+        <meta property="dc.publisher" content="The Winnifred Eaton Archive"/>
+        <meta property="dc.source" content="The Winnifred Eaton Archive"/>
+        <meta property="dc.type" content="Text"/>
+        <meta property="dc.format" content="text/html"/>
+        <meta property="dc.identifier" content="https://winnifredeatonarchive.com/{@xml:id}.html" />
     </xsl:template>
     
 
     <xsl:template name="addNamespaces">
-        <xsl:attribute name="prefix" select="'og: http://ogp.me/ns# wea: http://winnifredeatonarchive.com/taxonomies.html#'"/>   
+        <xsl:attribute name="prefix" select="'og: http://ogp.me/ns# wea: http://winnifredeatonarchive.com/taxonomies.html# dcterms: http://purl.org/dc/terms/ dc: http://purl.org/dc/elements/1.1/'"/>   
     </xsl:template>
     
     <xsl:template name="createOpenGraph">
