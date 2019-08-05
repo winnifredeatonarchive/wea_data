@@ -528,7 +528,7 @@ function makeCitationsResponsive(){
       if (this.classList.contains('noteMarker')){
           id = this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
-      } if (this.classList.contains('toolbar_item')){
+      } else if (this.classList.contains('toolbar_item')){
           id = this.getAttribute('href').substring(1);
           popup.setAttribute('data-place','right');
           popup.classList.add('toolbar');
