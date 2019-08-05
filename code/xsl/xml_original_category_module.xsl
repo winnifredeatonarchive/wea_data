@@ -141,10 +141,18 @@
         
         
         <body>
+            <xsl:if test="ancestor::taxonomy[@xml:id='exhibit']">
+                <div type="exhibitInfo">
+                    <xsl:copy-of select="catDesc/note/node()"/>
+                </div>
+            </xsl:if>
             <div>
                 <xsl:if test="not(ancestor::taxonomy[@xml:id='exhibit'])">
                     <head><xsl:sequence select="catDesc/term/node()"/></head>   
                 </xsl:if>
+            
+             
+                
                 <table type="exhibit">
                     <row role="label">
                         <cell/>

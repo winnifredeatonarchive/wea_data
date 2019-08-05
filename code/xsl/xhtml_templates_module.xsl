@@ -87,6 +87,9 @@
         </div>
     </xsl:template>
     
+    <!--We delete the exhibit info div, since it gets processed out of the regular flow-->
+    <xsl:template match="div[@type='exhibitInfo']" mode="tei"/>
+    
     <!--Special template for handling events-->
     <xsl:template match="listEvent" mode="tei">
         <div>
