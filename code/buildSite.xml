@@ -233,6 +233,8 @@
     
     <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
+    <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
+    
       
     
 </project>
