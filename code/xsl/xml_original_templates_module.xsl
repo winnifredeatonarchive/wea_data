@@ -100,7 +100,7 @@
     </xsl:template>
     
     <xsl:template name="addSourceDescNote">
-        <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>
+        <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="xml/original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>
         
     </xsl:template>
     
