@@ -81,7 +81,9 @@
     <xsl:template match="notesStmt" mode="original">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
-            <xsl:call-template name="addSourceDescNote"/>
+            <xsl:if test="ancestor::TEI/descendant::sourceDesc[biblFull]">
+                <xsl:call-template name="addSourceDescNote"/>
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
     
@@ -89,13 +91,17 @@
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
-        <xsl:call-template name="addSourceDescNote"/>
+        <xsl:if test="ancestor::TEI/descendant::sourceDesc[biblFull]">
+            <notesStmt>
+                <xsl:call-template name="addSourceDescNote"/>
+            </notesStmt>
+        </xsl:if>
+
     </xsl:template>
     
     <xsl:template name="addSourceDescNote">
-        <xsl:if test="ancestor::TEI/descendant::sourceDesc[biblFull]">
-            <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>
-        </xsl:if>
+        <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>
+        
     </xsl:template>
     
     <xsl:template match="@*|node()" mode="#all">
