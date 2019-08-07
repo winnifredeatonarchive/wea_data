@@ -2910,6 +2910,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
                         <sch:let name="isDocumentation"
                                  value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+                        <sch:let name="thisUri" value="document-uri(/)"/>
+                        <sch:let name="thisProjectDir" value="replace($thisUri,'/data/.+', '/data/')"/>
+                        <sch:let name="theseDocs"
+                                 value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+                        <sch:let name="allDocIds" value="$theseDocs//tei:TEI/@xml:id"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -3063,6 +3068,22 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="documentRefsShouldBeGood">
+                  <desc>Checks to make sure any doc: ref is actually in the collection</desc>
+                  <constraint>
+                     <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
+                        <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
+                        <sch:let name="tokens"
+                                 value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+                        <sch:let name="errors"
+                                 value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
+                        <sch:assert test="count($errors) = 0">
+                           ERROR: Document reference(s) <sch:value-of select="string-join($errors,', ')"/> not found.
+                        </sch:assert>
+                     </sch:rule>
                   </constraint>
                </constraintSpec>
                

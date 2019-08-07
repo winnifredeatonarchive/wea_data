@@ -677,6 +677,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
+            <xsl:attribute name="id">wea-documentRefsShouldBeGood-constraint-rule-51</xsl:attribute>
+            <xsl:attribute name="name">wea-documentRefsShouldBeGood-constraint-rule-51</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M67"/>
@@ -722,6 +724,13 @@
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M73"/>
+         <svrl:active-pattern>
+            <xsl:attribute name="document">
+               <xsl:value-of select="document-uri(/)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+         </svrl:active-pattern>
+         <xsl:apply-templates select="/" mode="M74"/>
       </svrl:schematron-output>
    </xsl:template>
 
@@ -2522,6 +2531,11 @@ On <xsl:text/>
    <xsl:variable name="docStatus" select="//tei:revisionDesc/@status"/>
    <xsl:variable name="isDocumentation"
                  select="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+   <xsl:variable name="thisUri" select="document-uri(/)"/>
+   <xsl:variable name="thisProjectDir" select="replace($thisUri,'/data/.+', '/data/')"/>
+   <xsl:variable name="theseDocs"
+                 select="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+   <xsl:variable name="allDocIds" select="$theseDocs//tei:TEI/@xml:id"/>
    <xsl:template match="text()" priority="-1" mode="M62"/>
    <xsl:template match="@*|node()" priority="-2" mode="M62">
       <xsl:apply-templates select="*" mode="M62"/>
@@ -2662,13 +2676,51 @@ On <xsl:text/>
       <xsl:apply-templates select="*" mode="M66"/>
    </xsl:template>
 
+   <!--PATTERN wea-documentRefsShouldBeGood-constraint-rule-51-->
+
+
+	  <!--RULE -->
+   <xsl:template match="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]"
+                 priority="1000"
+                 mode="M67">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]"/>
+      <xsl:variable name="atts" select="@*[matches(.,'^|\s+')]"/>
+      <xsl:variable name="tokens"
+                    select="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+      <xsl:variable name="errors"
+                    select="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="count($errors) = 0"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="count($errors) = 0">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>
+                           ERROR: Document reference(s) <xsl:text/>
+                  <xsl:value-of select="string-join($errors,', ')"/>
+                  <xsl:text/> not found.
+                        </svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*" mode="M67"/>
+   </xsl:template>
+   <xsl:template match="text()" priority="-1" mode="M67"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M67">
+      <xsl:apply-templates select="*" mode="M67"/>
+   </xsl:template>
+
    <!--PATTERN -->
 
 
 	  <!--RULE -->
    <xsl:template match="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l"
                  priority="1000"
-                 mode="M67">
+                 mode="M68">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
@@ -2690,18 +2742,18 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M67"/>
+      <xsl:apply-templates select="*" mode="M68"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M67"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M67">
-      <xsl:apply-templates select="*" mode="M67"/>
+   <xsl:template match="text()" priority="-1" mode="M68"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M68">
+      <xsl:apply-templates select="*" mode="M68"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:name" priority="1000" mode="M68">
+   <xsl:template match="tei:name" priority="1000" mode="M69">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:name"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
 
@@ -2723,11 +2775,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M68"/>
+      <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M68"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M68">
-      <xsl:apply-templates select="*" mode="M68"/>
+   <xsl:template match="text()" priority="-1" mode="M69"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M69">
+      <xsl:apply-templates select="*" mode="M69"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -2736,7 +2788,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
-                 mode="M69">
+                 mode="M70">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
@@ -2758,11 +2810,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M69"/>
+      <xsl:apply-templates select="*" mode="M70"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M69"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M69">
-      <xsl:apply-templates select="*" mode="M69"/>
+   <xsl:template match="text()" priority="-1" mode="M70"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M70">
+      <xsl:apply-templates select="*" mode="M70"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -2771,7 +2823,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
-                 mode="M70">
+                 mode="M71">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[not($isDocumentation)] | tei:*[not(self::tei:code)][text()][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="thisText"
@@ -2793,11 +2845,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M70"/>
+      <xsl:apply-templates select="*" mode="M71"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M70"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M70">
-      <xsl:apply-templates select="*" mode="M70"/>
+   <xsl:template match="text()" priority="-1" mode="M71"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M71">
+      <xsl:apply-templates select="*" mode="M71"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -2806,7 +2858,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
-                 mode="M71">
+                 mode="M72">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[not($isDocumentation)] | tei:*[text()][not(self::tei:code)][normalize-space(string-join(text(),'')) ne ''][not($isDocumentation)][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="thisText"
@@ -2828,18 +2880,18 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M71"/>
+      <xsl:apply-templates select="*" mode="M72"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M71"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M71">
-      <xsl:apply-templates select="*" mode="M71"/>
+   <xsl:template match="text()" priority="-1" mode="M72"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M72">
+      <xsl:apply-templates select="*" mode="M72"/>
    </xsl:template>
 
    <!--PATTERN -->
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M72">
+   <xsl:template match="tei:body | tei:div | tei:lg" priority="1000" mode="M73">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body | tei:div | tei:lg"/>
       <xsl:variable name="divs"
@@ -2862,11 +2914,11 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M72"/>
+      <xsl:apply-templates select="*" mode="M73"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M72"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M72">
-      <xsl:apply-templates select="*" mode="M72"/>
+   <xsl:template match="text()" priority="-1" mode="M73"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M73">
+      <xsl:apply-templates select="*" mode="M73"/>
    </xsl:template>
 
    <!--PATTERN -->
@@ -2875,7 +2927,7 @@ On <xsl:text/>
 	  <!--RULE -->
    <xsl:template match="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
-                 mode="M73">
+                 mode="M74">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="tei:body[not($isDocumentation)] | tei:*[text()][not(normalize-space(string-join(text(),''))='')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="text"
@@ -2898,10 +2950,10 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M73"/>
+      <xsl:apply-templates select="*" mode="M74"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M73"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M73">
-      <xsl:apply-templates select="*" mode="M73"/>
+   <xsl:template match="text()" priority="-1" mode="M74"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M74">
+      <xsl:apply-templates select="*" mode="M74"/>
    </xsl:template>
 </xsl:stylesheet>
