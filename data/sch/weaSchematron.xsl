@@ -2532,7 +2532,8 @@ On <xsl:text/>
    <xsl:variable name="isDocumentation"
                  select="some $r in $docTypes satisfies matches($r,'Documentation')"/>
    <xsl:variable name="thisUri" select="document-uri(/)"/>
-   <xsl:variable name="thisProjectDir" select="replace($thisUri,'/data/.+', '/data/')"/>
+   <xsl:variable name="thisProjectDir"
+                 select="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
    <xsl:variable name="theseDocs"
                  select="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
    <xsl:variable name="allDocIds" select="$theseDocs//tei:TEI/@xml:id"/>

@@ -2911,7 +2911,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:let name="isDocumentation"
                                  value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
-                        <sch:let name="thisProjectDir" value="replace($thisUri,'/data/.+', '/data/')"/>
+                        <sch:let name="thisProjectDir"
+                                 value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
                         <sch:let name="theseDocs"
                                  value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
                         <sch:let name="allDocIds" value="$theseDocs//tei:TEI/@xml:id"/>
