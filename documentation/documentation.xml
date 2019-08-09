@@ -38606,6 +38606,24 @@ epistemology, methodology and history of
                      <cell>
                         <label>Schematron</label>
                      </cell>
+                     <cell>Checks to make sure any doc: ref is actually in the collection<code>
+&lt;sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]"&gt;
+&lt;sch:let name="atts"
+ value="@*[matches(.,'^|\s+')]"/&gt;
+&lt;sch:let name="tokens"
+ value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/&gt;
+&lt;sch:let name="errors"
+ value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) 
+ then () else $t"/&gt;
+&lt;sch:assert test="count($errors) = 0"&gt; ERROR: Document reference(s) &lt;sch:value-of select="string-join($errors,', ')"/&gt; not found.
+&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
@@ -38623,6 +38641,15 @@ epistemology, methodology and history of
  value="//tei:revisionDesc/@status"/&gt;
 &lt;sch:let name="isDocumentation"
  value="some $r in $docTypes satisfies matches($r,'Documentation')"/&gt;
+&lt;sch:let name="thisUri"
+ value="document-uri(/)"/&gt;
+&lt;sch:let name="thisProjectDir"
+ value=" if (matches($thisUri,'/data/[^/]+/.+\.xml$')) then replace($thisUri,'/data/.+', 
+ '/data/') else replace($thisUri,'[^/]+$','')"/&gt;
+&lt;sch:let name="theseDocs"
+ value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/&gt;
+&lt;sch:let name="allDocIds"
+ value="$theseDocs//tei:TEI/@xml:id"/&gt;
 &lt;sqf:fix id="globals"&gt;
  &lt;sqf:description&gt;
   &lt;sqf:title&gt;Global Templates&lt;/sqf:title&gt;

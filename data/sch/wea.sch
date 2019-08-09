@@ -974,6 +974,12 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
                         <sch:let name="isDocumentation"
                value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+                        <sch:let name="thisUri" value="document-uri(/)"/>
+                        <sch:let name="thisProjectDir"
+               value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
+                        <sch:let name="theseDocs"
+               value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+                        <sch:let name="allDocIds" value="$theseDocs//tei:TEI/@xml:id"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -1130,6 +1136,22 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-documentRefsShouldBeGood-constraint-rule-51">
+      <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
+                        <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
+                        <sch:let name="tokens"
+                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+                        <sch:let name="errors"
+                  value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
+                        <sch:assert test="count($errors) = 0">
+                           ERROR: Document reference(s) <sch:value-of select="string-join($errors,', ')"/> not found.
+                        </sch:assert>
+                     </sch:rule>
+   </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
