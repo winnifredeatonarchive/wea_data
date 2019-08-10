@@ -36,7 +36,7 @@
                     <xsl:with-param name="term" select="$token"/>
                 </xsl:call-template>
             </xsl:variable>
-<!--            <xsl:message>Creating <xsl:value-of select="$token"/>.json</xsl:message>-->
+            <xsl:message>Creating <xsl:value-of select="$token"/>.json</xsl:message>
             <xsl:result-document href="../../products/site/js/search/{if (matches($token,'^[A-Z]')) then 'upper' else 'lower'}/{$token}.json" method="text">
                 <xsl:value-of select="xml-to-json($map, map{'indent': true()})"/>
             </xsl:result-document>
@@ -61,7 +61,7 @@
                             <xsl:sort select="count(current-group()[1]/ancestor::html/descendant::span[@data-stem=$term])" order="descending"/>
                             <xsl:variable name="docId" select="current-grouping-key()"/>
                             <xsl:variable name="thisDoc" select="current-group()[1]/ancestor::html"/>
-                            <xsl:variable name="spans" as="element(span)+" select="$thisDoc//span[@data-stem][@data-stem=$term]"/>
+                            <xsl:variable name="spans" as="element(span)+" select="current-group()"/>
                             <xsl:variable name="docTitle" select="$thisDoc/head/title[1]"/>
                             
                            
