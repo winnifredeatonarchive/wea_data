@@ -1346,7 +1346,8 @@ div[data-type='listFigure'] img{
 .JS .expandable.closed > .content{
     max-height:0;
     overflow:hidden;
-    transition: max-height .2s ease-in-out;
+    transition: max-height .2s ease-in-out, opacity 0s ease-in-out 0.2s;
+    opacity: 0;
     display:block;
 }
 
