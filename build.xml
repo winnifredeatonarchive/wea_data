@@ -19,7 +19,13 @@
       </java>
   </target>
     
-    <target name="createSite">
+    <target name="getGithubRev">
+        <echo message="Getting Github revision..."/>
+        <mkdir dir="${site.dir}/info/"/>
+        <get useragent="joeytakeda" src="https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master" dest="${site.dir}/info/github.json"/>
+    </target>
+    
+    <target name="createSite" depends="getGithubRev">
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
     
