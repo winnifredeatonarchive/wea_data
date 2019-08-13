@@ -74,7 +74,7 @@
     
     
     <xsl:function name="wea:getGitSHA" as="xs:string">
-        <xsl:variable name="jsonXml" select="unparsed-text(concat($outDir,'/info/github.json')) =>  json-to-xml()"/>
+        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master') =>  json-to-xml()"/>
         <xsl:variable name="sha" select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
         <xsl:value-of select="$sha"/>
     </xsl:function>

@@ -10,13 +10,7 @@
         <delete dir="${products.dir}"/>
         <mkdir dir="${site.dir}"/>
     </target>
-    
-    
-    <target name="getGithubRev">
-        <echo message="Getting Github revision..."/>
-        <mkdir dir="${site.dir}/info/"/>
-        <get useragent="joeytakeda" src="https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master" dest="${site.dir}/info/github.json"/>
-    </target>
+  
     
     <target name="copyAuxFiles">
         <copy todir="${site.dir}">
@@ -240,7 +234,7 @@
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, getGithubRev, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
     
     <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
     
