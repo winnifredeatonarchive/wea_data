@@ -20,7 +20,7 @@
   </target>
  
     
-    <target name="createSite" depends="getGithubRev">
+    <target name="createSite">
         <ant antfile="code/buildSite.xml" inheritall="false"/>
     </target>
     
