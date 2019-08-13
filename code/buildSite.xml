@@ -186,8 +186,12 @@
         
     </target>
     
+    <target name="getGithubRev">
+        <get useragent="joeytakeda" src="https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master" dest="${site.dir}/info/github.json"/>
+    </target>
     
-  <target name="createXhtml">
+    
+  <target name="createXhtml" depends="getGithubRev">
       <echo message="Creating site..."/>
       <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
           <arg value="-xsl:${project.dir}/code/xsl/xhtml_master.xsl"/>

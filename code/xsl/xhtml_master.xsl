@@ -5,6 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:map="http://www.w3.org/2005/xpath-functions"
     xmlns="http://www.w3.org/1999/xhtml"
     version="3.0">
     <xd:doc>

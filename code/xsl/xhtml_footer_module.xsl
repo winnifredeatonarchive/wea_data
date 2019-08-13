@@ -22,8 +22,17 @@
     <xsl:template name="createFooter">
         <footer>
             <xsl:apply-templates select="$standaloneXml//TEI[@xml:id='footer']//div[@xml:id='footer_main']" mode="tei"/>
-            
         </footer>
+    </xsl:template>
+    
+    <!--A few templates to add here-->
+    <xsl:template match="seg[@type='currentDate']" mode="tei">
+        <span><xsl:value-of select="format-date(current-date(),'[D01] [MNn], [Y0001]')"/></span>
+    </xsl:template>
+    
+    <xsl:template match="seg[@type='revision']" mode="tei">
+        <!--$sha is declared in the globals-->
+        <a href="https://github.com/winnifredeatonarchive/wea_data/tree/{$sha}"><xsl:value-of select="substring($sha,1,7)"/></a>
     </xsl:template>
     
 </xsl:stylesheet>

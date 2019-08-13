@@ -5,6 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
+    xmlns:map="http://www.w3.org/2005/xpath-functions"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:functx="http://www.functx.com"
     version="3.0">
@@ -46,6 +47,8 @@
     <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($outDir,'info/images.txt'))"/>
     <xsl:variable name="imageSizeDocLines" select="tokenize($imageSizeDoc,'\n')"/>
     
+    <xsl:variable name="sha" select="wea:getGitSHA()"/>
+    
     
     <xsl:function name="wea:getFileSize">
         <xsl:param name="filename"/>
@@ -69,6 +72,12 @@
             <xsl:value-of select="xs:integer($width)"/>
     </xsl:function>
     
+    
+    <xsl:function name="wea:getGitSHA" as="xs:string">
+        <xsl:variable name="jsonXml" select="unparsed-text(concat($outDir,'/info/github.json')) =>  json-to-xml()"/>
+        <xsl:variable name="sha" select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
+        <xsl:value-of select="$sha"/>
+    </xsl:function>
     
     
     

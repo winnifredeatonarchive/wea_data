@@ -10,7 +10,7 @@
         and converts them to P5. We also process the files to clean
         them up and make the encoding a bit more sensible-->
     
-    <xsl:include href="../../sch/weaQuickFixTemplates.xsl"/>
+    <xsl:include href="../../data/sch/weaQuickFixTemplates.xsl"/>
     
     <xsl:variable name="uri" select="document-uri(.)"/>
     <xsl:variable name="oldId" select="//TEI.2/@id"/>
@@ -54,9 +54,7 @@
         </xsl:copy>
     </xsl:template>
     
-    
-    <xsl:template match="notesStmt" mode="pass1"/>
-    
+   
     <xsl:template match="text()" mode="pass2">
         <xsl:variable name="curlyApos">
             <xsl:call-template name="replaceApos"/> 
@@ -176,40 +174,17 @@
     
     <xsl:template match="sourceDesc" mode="pass1">
         <sourceDesc>
-            <bibl/>
-            <xsl:comment>
                 <xsl:apply-templates mode="#current"/>
-            </xsl:comment>
         </sourceDesc>
     </xsl:template>
     
     
-    <!--Delete for now-->
-    <xsl:template match="encodingDesc" mode="pass1" />
-    
-    <xsl:template match="publicationStmt" mode="pass1">
-        <publicationStmt>
-            <p>Publication information</p>
-            <xsl:comment>
-                <xsl:copy-of select="node()"/>
-            </xsl:comment>
-        </publicationStmt>
-    </xsl:template>
+
     
     
     <xsl:template match="*[matches(local-name(),'div\d+')]/@type" mode="pass1"/>
     
-    <xsl:template match="profileDesc" mode="pass1">
-       <profileDesc>
-           <textClass>
-               <!--Now create the catRefs-->
-               <catRef scheme="wdt:docType"
-                   target="wdt:docPrimarySourcePublished"/>
-               <catRef scheme="wdt:category"
-                   target="wdt:cat{translate(wea:cleanLoc(tokenize(substring-after($uri,'p4Temp/'),'/')[1]),' ','')}"/>
-           </textClass>
-       </profileDesc>
-    </xsl:template>
+
     
     
     <!--Delete series statement-->
@@ -260,8 +235,7 @@
     <!--Get rid of unnecessary sorting title-->
     <xsl:template match="title[@type='sort']" mode="pass1"/>
     
-    <!--No longer need extent-->
-    <xsl:template match="extent" mode="pass1" />
+
     
     <!--We won't deal with bad spacing this way just yet; we'll likely have another clean up transformation-->
     

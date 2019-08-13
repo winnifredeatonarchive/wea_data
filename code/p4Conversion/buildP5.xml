@@ -8,11 +8,11 @@
     
     <!--First step, copy over into the Github repo-->
     
-    <property name="driveDir" value="${user.home}/Drive/WEaton Anew/"/>
+    <property name="driveDir" value="${user.home}/Drive/work/WEaton Anew/"/>
     
     <property name="gitDir" value="../../"/>
     
-    <property name="textsDir" value="${gitDir}/data/texts/"/>
+    <property name="textsDir" value="${gitDir}/data/p4Texts/"/>
     <property name="p4Temp" value="${gitDir}/data/p4Temp/"/>
     <property name="p5Temp" value="${gitDir}/data/p5Temp/"/>
     
@@ -77,7 +77,7 @@
         
         <apply executable="java" parallel="true" failonerror="true">
             <arg line="-jar  ../../lib/jing.jar"/>
-            <arg value="../../sch/tei_all.rng"/>
+            <arg value="../../data/sch/tei_all.rng"/>
             <fileset dir="${p5Temp}">
                 <include name="**.xml"/>
             </fileset>
