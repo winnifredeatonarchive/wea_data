@@ -1479,7 +1479,50 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
                      <elementRef key="textClass"/>
+                     <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
                   </content>
+               </elementSpec>
+               
+               <elementSpec ident="abstract" module="header" mode="change">
+                  <content>
+                     <!--Constrain the abstract to a single paragraph-->
+                     <elementRef key="p"/>
+                  </content>
+                  <attList>
+                     <attDef ident="resp" usage="req" mode="replace">
+                        <!--Taken from the TEI-->
+                        <gloss versionDate="2009-11-02" xml:lang="en">responsible party</gloss>
+                        <gloss versionDate="2007-12-20" xml:lang="ko">책임 당사자</gloss>
+                        <gloss versionDate="2008-04-06" xml:lang="es">parte responsable</gloss>
+                        <gloss versionDate="2008-03-30" xml:lang="fr">responsable</gloss>
+                        <gloss versionDate="2007-11-06" xml:lang="it">responsabile</gloss>
+                        <desc versionDate="2009-11-02" xml:lang="en">indicates the agency responsible for the intervention or interpretation, for example an
+                           editor or transcriber.</desc>
+                        <desc versionDate="2007-12-20" xml:lang="ko">편집자 또는 전사자와 같이 또는 해석에 대한 책임이 있는 대리인을 나타낸다.</desc>
+                        <desc versionDate="2007-05-02" xml:lang="zh-TW">指出負責該更動或詮釋的代理者，例如編輯或轉錄者。</desc>
+                        <desc versionDate="2008-04-05" xml:lang="ja">当該解釈や調整の責任者を示す．例えば，編集者，翻訳者など．</desc>
+                        <desc versionDate="2007-06-12" xml:lang="fr">indique l'agent responsable de l'intervention ou de
+                           l'interprétation, par exemple un éditeur ou un transcripteur.</desc>
+                        <desc versionDate="2007-05-04" xml:lang="es">indica el agente responsable de la intervención o la
+                           interpretación, p.ej. un editor o un transcriptor.</desc>
+                        <desc versionDate="2007-01-21" xml:lang="it">indica il responsabile dell'intervento o
+                           interpretazione, per esempio un curatore o trascrittore</desc>
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.pointer"/>
+                        </datatype>
+                        <remarks versionDate="2014-12-10" xml:lang="en">
+                           <p>To reduce the ambiguity of a <att>resp</att> pointing directly to a person or 
+                              organization, we 
+                              recommend that <att>resp</att> be used to point not to an agent 
+                              (<gi>person</gi> or <gi>org</gi>) but to a <gi>respStmt</gi>, 
+                              <gi>author</gi>, <gi>editor</gi> or similar 
+                              element which clarifies the exact role played by the agent. 
+                              Pointing to multiple <gi>respStmt</gi>s allows the encoder to specify 
+                              clearly each of the roles played in part of a TEI file (creating, 
+                              transcribing, encoding, editing, proofing etc.).</p>
+                        </remarks>
+                     </attDef>
+                  </attList>
                </elementSpec>
                
                <elementSpec ident="head" module="core" mode="change">

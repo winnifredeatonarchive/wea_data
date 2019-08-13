@@ -33,9 +33,10 @@
     <!--Clean up empty names in the respStmts-->
     <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
         <xsl:variable name="thisRef" select="@ref"/>
+        <xsl:variable name="thisPerson" select="wea:getPerson($thisRef)"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xsl:value-of select="$sourceXml[//TEI/@xml:id='people']//person[@xml:id=substring-after($thisRef,'pers:')]/persName/reg"/>
+            <xsl:value-of select="$thisPerson/persName/reg"/>
         </xsl:copy>
     </xsl:template>
     
@@ -64,13 +65,18 @@
                     <xsl:variable name="docId" select="substring-after($thisCorresp,'doc:')"/>
                     <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id=$docId]"/>
                     <ref target="doc:{$docId}">
-                        <graphic url="{$sourceXml//TEI[@xml:id=$docId]//text/@facs}"/>
+                        <graphic url="{$thisDoc//text/@facs}"/>
                     </ref>
 
                     <label><ref target="{$thisCorresp}"><xsl:sequence select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></label>
                     <note>
-                        <xsl:apply-templates select="node()"/>
-                        <ptr type="readMore" target="{$thisCorresp}"/>
+                        <xsl:if test="$thisDoc//abstract">
+                            <xsl:apply-templates select="$thisDoc//abstract/p/node()"/>
+                            <ptr type="readMore" target="{$thisCorresp}"/>
+                            <!--Now add the abstract respbyline-->
+                            <xsl:copy-of select="wea:returnHeadnoteByline($thisDoc//abstract)"/>
+                        </xsl:if>
+                      
                     </note>
                 </xsl:when>
             </xsl:choose>
@@ -99,10 +105,51 @@
 
     </xsl:template>
     
+    
     <xsl:template name="addSourceDescNote">
         <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="xml/original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>
         
     </xsl:template>
+    
+    
+    <!--Now some additional hadnling for respStmts-->
+    
+    <xsl:template match="titleStmt[ancestor::TEI/descendant::abstract[@resp]]" mode="original">
+        <xsl:variable name="abstract" select="ancestor::TEI/descendant::abstract" as="element(abstract)"/>
+        <xsl:variable name="respPtrs" select="$abstract/@resp => tokenize('\s+') => distinct-values()" as="xs:string+"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+            <xsl:for-each select="$respPtrs">
+                <xsl:variable name="thisPtr" select="."/>
+                <xsl:variable name="thisPerson" select="wea:getPerson(.)"/>
+                <respStmt>
+                    <xsl:attribute name="xml:id" select="$abstract/ancestor::TEI/@xml:id || '_abstractResp_' || substring-after($thisPtr,'pers:')"/>
+                    <resp>Author of Abstract</resp>
+                    <name ref="{.}"><xsl:value-of select="$thisPerson/persName/reg"/></name>
+                </respStmt>
+            </xsl:for-each>
+          
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="abstract/@resp" mode="original">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="ptrs" select="tokenize(.,'\s+') => distinct-values()"/>
+        <xsl:attribute name="resp" 
+            select="
+            for $p
+            in $ptrs 
+            return concat('#',$root/@xml:id,'_abstractResp_',substring-after($p,'pers:')) 
+            => string-join(' ')"/>
+    </xsl:template>
+    
+    <!--This function gets a person from the personography from our encoding-->
+    <xsl:function name="wea:getPerson">
+        <xsl:param name="ptr"/>
+        <xsl:variable name="id" select="replace($ptr,'^pers:','')" as="xs:string"/>
+        <xsl:sequence select="$sourceXml//TEI[@xml:id='people']/descendant::person[@xml:id=$id]"/>
+    </xsl:function>
+    
     
     <xsl:template match="@*|node()" mode="#all">
         <xsl:copy>

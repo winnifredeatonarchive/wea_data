@@ -34,13 +34,33 @@
   
   
     <xsl:template match="person" mode="people">
+        <xsl:variable name="thisId" select="@xml:id"/>
         <body>
             <head><xsl:value-of select="persName/reg"/></head>
             <div>
                 <head>Biography</head>
                 <xsl:apply-templates select="note" mode="#current"/>
-                <!--GENERATED STUFF HERE, I SUPPOSE-->
             </div>
+            <xsl:variable name="respStmts" select="$sourceXml//TEI/descendant::respStmt[name[@ref=concat('pers:',$thisId)]]" as="element(respStmt)*"/>
+            <xsl:if test="not(empty($respStmts))">
+                <div>
+                    <head>Credits</head>
+                    <xsl:for-each-group select="$respStmts" group-by="resp">
+                        <div>
+                            <head><xsl:value-of select="current-grouping-key()"/></head>
+                            <xsl:for-each-group select="current-group()" group-by="ancestor::TEI">
+                                <xsl:variable name="root" select="current-group()[1]/ancestor::TEI"/>
+                                <list>
+                                    <xsl:for-each select="current-group()">
+                                        <item><ref target="doc:{$root/@xml:id}"><xsl:sequence select="$root/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></item>
+                                    </xsl:for-each>
+                                </list>
+                            </xsl:for-each-group>
+                        </div>
+                    </xsl:for-each-group>
+                </div>
+            </xsl:if>
+            
         </body>
      
     </xsl:template>

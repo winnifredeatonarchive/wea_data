@@ -74,11 +74,15 @@
         
         <div id="additional_info">
             <xsl:call-template name="createCreditsAndCitations"/>
+            <xsl:call-template name="createAbstract"/>
             <xsl:call-template name="createRelatedItems"/>
             <xsl:call-template name="createTOC"/>
+            
         </div>
         
     </xsl:template>
+   
+    
     
     
     <xsl:template name="createCreditsAndCitations">
@@ -304,6 +308,24 @@
         <!--And get some information from the work from which it derives-->
         <xsl:call-template name="getWork"/>
 
+    </xsl:template>
+    
+    
+    <xsl:template name="createAbstract">
+        <xsl:apply-templates select="//abstract" mode="metadata"/>
+    </xsl:template>
+    
+    <xsl:template match="abstract" mode="metadata">
+        <xsl:variable name="curr" select="."/>
+        <div id="headnote" class="additionalInfo expandable">
+            <div class="metadataLabel additionalInfoHeader" id="headnote_header">Headnote<span class="mi">chevron_right</span></div>
+            <div class="content" id="headnote_content">
+                <xsl:apply-templates select="node()" mode="tei"/>         
+                <div class="headnoteResp">
+                    <xsl:apply-templates select="wea:returnHeadnoteByline($curr)" mode="tei"/>
+                </div>
+            </div>
+        </div>
     </xsl:template>
     
     <xsl:template name="getWork">

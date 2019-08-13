@@ -102,6 +102,31 @@
         
     </xsl:function>
     
+    <xsl:function name="wea:returnHeadnoteByline" as="element(ab)">
+        <xsl:param name="abstract"/>
+        <xsl:variable name="root" select="$abstract/ancestor::tei:TEI"/>
+        <tei:ab type="headnote_byline">
+            <xsl:text>Written by </xsl:text>
+            <xsl:for-each select="tokenize($abstract/@resp,'\s+')">
+                <xsl:variable name="token" select="."/>
+                <xsl:variable name="persName" select="
+                    if (starts-with($token,'#')) 
+                    then $root/descendant::respStmt[@xml:id=substring-after($token,'#')]/name
+                    else $sourceXml//TEI[@xml:id='people']/descendant::person[@xml:id=substring-after($token,'pers:')]/persName/reg"/>
+                <xsl:choose>
+                    <xsl:when test="$persName/self::name">
+                        <xsl:copy-of select="$persName"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <tei:name ref="{$token}"><xsl:sequence select="$persName/node()"/></tei:name>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:if test="not(position() = last())"><xsl:text>, </xsl:text></xsl:if>
+            </xsl:for-each>
+        </tei:ab>
+       
+    </xsl:function>
+    
     <xd:doc scope="component">
         <xd:desc><xd:ref name="wea:getWorkingDocs" type="function">wea:getWorkingDocs</xd:ref>
             takes in a set of documents and returns the set of documents to be processed.</xd:desc>
