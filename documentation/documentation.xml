@@ -1022,17 +1022,31 @@
                            <div xml:id="index_featuredItems">
                               <head>Featured Items</head>
                               <list type="featuredItems"><!--These will be the items that are featured-->
-                                 <item corresp="doc:LiChingsBaby1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
-                                 <item corresp="doc:ChineseJapaneseCookbook1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.
-                                </item>
-                                 <item corresp="doc:HerJapaneseLover1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
-                                 <item corresp="doc:Karo1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
-                                 <item corresp="doc:RhapsodyOnJapan1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.
-                                </item>
-                                 <item corresp="doc:AHalfCaste1">Pri erat ponderum ne. Homero petentium cu sed. Agam liber partiendo vel ei, eius ornatus nostrum quo ex. Mel ad utinam noster, duo at inani tantas sadipscing. Ut feugiat quaerendum eum, no recteque accommodare complectitur ius, ne sit agam summo. Duo at cibo indoctum, vim odio summo elitr ne, quo eu labore pertinax dignissim.</item>
+                                 <item corresp="doc:LiChingsBaby1"/>
+                                 <item corresp="doc:ChineseJapaneseCookbook1"/>
+                                 <item corresp="doc:ButcheringBrains1"/>
+                                 <item corresp="doc:Marion5"/>
+                                 <item corresp="doc:JohnnysCalf1"/>
+                                 <item corresp="doc:JapaneseLoveStory1"/>
                               </list>
                            </div>
-                        </egXML> Each <ref target="#TEI.item"><gi>item</gi></ref> uses a <att>corresp</att> attribute to point to the document that should be featured using the <val>doc:</val> prefix scheme (i.e. use <val>doc:LiChingsBaby1</val> to point to the document with <att>xml:id</att> of <val>LiChingsBaby1</val>, which should also be named <code>LiChingsBaby1.xml</code> in the data folder). The content within those lists is the blurb in the featured item block.</p>
+                        </egXML> Each <ref target="#TEI.item"><gi>item</gi></ref> uses a <att>corresp</att> attribute to point to the document that should be featured using the <val>doc:</val> prefix scheme (i.e. use <val>doc:LiChingsBaby1</val> to point to the document with <att>xml:id</att> of <val>LiChingsBaby1</val>, which should also be named <code>LiChingsBaby1.xml</code> in the data folder).</p>
+                     <p>To populate the content of those featured items (i.e. to provide a blurb for them), you must add a <ref target="#TEI.abstract"><gi>abstract</gi></ref> to the featured document. This allows us to re-use abstracts as we see fit.</p>
+                     <p>Place the <ref target="#TEI.abstract"><gi>abstract</gi></ref> element after the <ref target="#TEI.catRef"><gi>catRef</gi></ref> elements in the <ref target="#TEI.profileDesc"><gi>profileDesc</gi></ref>, like so: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <profileDesc>
+                              <textClass>
+                                 <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+                                 <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+                                 <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
+                              </textClass>
+                              <abstract resp="pers:MC1">
+                                 <p>
+                                    <title level="a">Li Ching’s Baby</title>, although one of the earliest texts signed <q>Onoto Watanna</q>, is set in a Canadian Chinatown and features characters and themes typically associated with the works of Winnifred Eaton’s sister, Edith Eaton (Sui Sin Far). When his Chinese bride gives birth to a stillborn, a Chinese businessman and smuggler pays his former French-Canadian lover to replace it, while his wife is sleeping, with a baby stolen from her white employer.</p>
+                              </abstract>
+                           </profileDesc>
+                        </egXML> There are a few important things to note here: first, you <emph>must</emph> provide an <att>resp</att> that points to the person who is responsible for authoring the abstract (in this case, <val>pers:MC1</val>). If there is more than one author, space separate the resp pointers: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <abstract resp="pers:MC1 pers:JLC1"><!--Content here--></abstract>
+                        </egXML> Second, you must also include <emph>one</emph> paragraph in the <ref target="#TEI.abstract"><gi>abstract</gi></ref>, which will contain all of the content for the abstract/<q>headnote</q>. This will also be displayed on the object pages as a collapsible box in the metadata info.</p>
                   </div>
                </div>
             </div>
@@ -17250,6 +17264,10 @@ raiders and saved the town from capture.</desc>
                                                 <item>(Pavlina Pajot) PP1</item>
                                                 <label>pers:LM1</label>
                                                 <item>(Lucia Maggio) LM1</item>
+                                                <label>pers:DB1</label>
+                                                <item>(Diana Birchall) DB1</item>
+                                                <label>pers:KS1</label>
+                                                <item>(Karen Skinazi) KS1</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -24653,6 +24671,10 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                                 <item>(Pavlina Pajot) PP1</item>
                                                 <label>pers:LM1</label>
                                                 <item>(Lucia Maggio) LM1</item>
+                                                <label>pers:DB1</label>
+                                                <item>(Diana Birchall) DB1</item>
+                                                <label>pers:KS1</label>
+                                                <item>(Karen Skinazi) KS1</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -34771,6 +34793,10 @@ epistemology, methodology and history of
                                                 <item>(Pavlina Pajot) PP1</item>
                                                 <label>pers:LM1</label>
                                                 <item>(Lucia Maggio) LM1</item>
+                                                <label>pers:DB1</label>
+                                                <item>(Diana Birchall) DB1</item>
+                                                <label>pers:KS1</label>
+                                                <item>(Karen Skinazi) KS1</item>
                                              </list>
                                           </cell>
                                        </row>
