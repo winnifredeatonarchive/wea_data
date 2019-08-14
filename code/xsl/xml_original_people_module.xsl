@@ -48,14 +48,18 @@
                     <xsl:for-each-group select="$respStmts" group-by="resp">
                         <div>
                             <head><xsl:value-of select="current-grouping-key()"/></head>
-                            <xsl:for-each-group select="current-group()" group-by="ancestor::TEI">
-                                <xsl:variable name="root" select="current-group()[1]/ancestor::TEI"/>
+                            <p>
                                 <list>
-                                    <xsl:for-each select="current-group()">
-                                        <item><ref target="doc:{$root/@xml:id}"><xsl:sequence select="$root/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></item>
-                                    </xsl:for-each>
-                                </list>
-                            </xsl:for-each-group>
+                                    <xsl:for-each-group select="current-group()" group-by="ancestor::TEI">
+                                        <xsl:variable name="root" select="current-group()[1]/ancestor::TEI"/>
+                                        
+                                        <xsl:for-each select="current-group()">
+                                            <item><ref target="doc:{$root/@xml:id}"><xsl:sequence select="$root/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></item>
+                                        </xsl:for-each>
+                                        
+                                    </xsl:for-each-group>
+                                </list>   
+                            </p>
                         </div>
                     </xsl:for-each-group>
                 </div>

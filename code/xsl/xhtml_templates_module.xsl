@@ -87,6 +87,14 @@
         </div>
     </xsl:template>
     
+    <!--Special handling for ab[@type-'headnote_byline'] since it occurs in a span-->
+    <xsl:template match="ab[@type='headnote_byline']" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
     <!--We delete the exhibit info div, since it gets processed out of the regular flow-->
     <xsl:template match="div[@type='exhibitInfo']" mode="tei"/>
     
