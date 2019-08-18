@@ -46,6 +46,7 @@
                                           <table type="exhibit">
                                               <row role="label">
                                                   <cell/>
+                                                  <cell>Id</cell>
                                                   <cell>Title</cell>
                                                   <cell role="sortkey">Date Published</cell>
                                                   <cell>Transcription Available</cell>
@@ -67,7 +68,9 @@
                                                               </xsl:when>
                                                           </xsl:choose>
                                                       </cell>
-                                                      
+                                                      <cell>
+                                                          <ref target="doc:{$docId}"><xsl:value-of select="$docId"/></ref>
+                                                      </cell>
                                                       <cell>
                                                           <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
                                                       </cell>
