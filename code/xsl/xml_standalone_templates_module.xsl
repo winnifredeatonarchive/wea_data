@@ -134,6 +134,102 @@
         </xsl:if>
     </xsl:template>
     
+    
+    <xsl:template match="publicationStmt[not(ancestor::sourceDesc)]" mode="pass1">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+            <xsl:call-template name="createCitations"/>
+        </xsl:copy>
+    </xsl:template>
+    
+   
+    
+    <xsl:template name="createCitations">
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="bornDigital" select="$root/descendant::catRef[matches(@target,'BornDigital')]"/>
+        <xsl:variable name="citationBibls">
+            <listBibl>
+                <xsl:choose>
+                    <xsl:when test="$bornDigital">
+                        <xsl:variable name="names" select="$root/descendant::respStmt[not(ancestor::sourceDesc)][resp/text()='Author']/name"/>
+                        <xsl:variable name="authors" as="element(author)*">
+                            <xsl:for-each select="$names">
+                                <xsl:variable name="currName" select="."/>
+                                <xsl:variable name="thisAuthor" select="$originalXml[//TEI/@xml:id='people']/descendant::person[@xml:id=$currName/@ref/substring-after(.,'pers:')]" as="element(person)"/>
+                                <xsl:variable name="pos" select="position()"/>
+                                <author>
+                                    <xsl:copy>
+                                        <xsl:copy-of select="@ref"/>
+                                        <xsl:choose>
+                                            <xsl:when test="$pos = 1">
+                                                <xsl:value-of select="$thisAuthor/persName/surname || ', ' || $thisAuthor/persName/forename"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$thisAuthor/persName/forename || ' ' || $thisAuthor/persName/surname"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:copy>
+                                </author>
+                            </xsl:for-each>
+                        </xsl:variable>
+                        <xsl:variable name="authString" as="item()*">
+                            <xsl:for-each select="$authors">
+                                <xsl:variable name="pos" select="position()"/>
+                                <xsl:message>This Pos: <xsl:value-of select="$pos"/></xsl:message>
+                                <xsl:choose>
+                                    <xsl:when test="$pos = 1"/>
+                                    <xsl:when test="$pos gt 1">
+                                        <xsl:text>, </xsl:text>
+                                        <xsl:if test="$pos = count($authors)">
+                                            <xsl:text>and </xsl:text>
+                                        </xsl:if>
+                                    </xsl:when>
+                                </xsl:choose>
+                                <xsl:copy-of select="."/>
+                                <xsl:if test="$pos = last()">
+                                    <xsl:text>. </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:variable>
+                        <bibl type="mla" n="MLA">
+                            <xsl:sequence select="$authString"/>
+                            <title level="a"><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></title><xsl:text>.</xsl:text>
+                            <xsl:sequence select="wea:appendMLA($root)"/>
+                        </bibl>
+                    </xsl:when>
+                    
+                    <xsl:otherwise>
+                        <bibl type="mla">
+                            <xsl:copy-of select="$root/descendant::sourceDesc/bibl[1]/node()"/>
+                            <xsl:sequence select="wea:appendMLA($root)"/>
+                        </bibl>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </listBibl>
+        </xsl:variable>
+         <xsl:choose>
+             <xsl:when test="p | ab">
+                 <ab type="citations">
+                     <xsl:copy-of select="$citationBibls"/>
+                 </ab>
+             </xsl:when>
+             <xsl:otherwise>
+                 <availability status="unknown">
+                     <ab type="citations">
+                         <xsl:copy-of select="$citationBibls"/>
+                     </ab>
+                 </availability>
+             </xsl:otherwise>
+         </xsl:choose>
+        
+    </xsl:template>
+    
+    <xsl:function name="wea:appendMLA" as="item()+">
+        <xsl:param name="doc"/>
+        <xsl:variable name="uri" select="'https://winnifredeatonarchive.com/'||$doc/@xml:id || '.html'"/>
+        <xsl:text> </xsl:text><title level="m">The Winnifred Eaton Archive</title>, edited by Mary Chapman and Jean Lee Cole, U of British Columbia. <ref target="{$uri}"><xsl:value-of select="$uri"/></ref><xsl:text>.</xsl:text>
+    </xsl:function>
+    
     <xd:doc>
         <xd:desc>Matches all pointer attributes that could now be made into local links; the localRegex
             determines whether or not this id exists in the document, and, if it does, then makes it local;

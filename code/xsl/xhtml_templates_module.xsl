@@ -526,11 +526,11 @@
         </a>
     </xsl:template>
     
-    <xsl:template match="name[not(@ref)][not(ancestor::respStmt)]" mode="tei">
+    <xsl:template match="name[not(@ref)][not(ancestor::respStmt)] | name[ancestor::ab[@type='citations']]" mode="tei">
         <span><xsl:apply-templates mode="#current"/></span>
     </xsl:template>
     
-    <xsl:template match="name[@ref][not(ancestor::respStmt)] | rs" mode="tei">
+    <xsl:template match="name[@ref][not(ancestor::respStmt)][not(ancestor::ab[@type='citations'])] | rs" mode="tei">
         <a href="{@ref}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
