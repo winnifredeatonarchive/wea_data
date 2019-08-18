@@ -66,9 +66,13 @@ Publicly accessible
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
          </textClass>
+         <abstract resp="pers:DB1">
+            <p>While researching the biography of my grandmother Onoto Watanna, I was particularly struck by this vivid account of famous writers being imported into Hollywood. How little attitudes and practices have changed! <title level="a">Butchering Brains</title> is a vital and sometimes hilarious window into the past, all the more for being laced with the corroding professional resentments engendered by such an atmosphere.</p>
+         </abstract>
       </profileDesc>
-      <revisionDesc status="inProgress">
-         <change who="pers:KI1" when="2019-06-30" status="inProgress">Added and associated facsimile file.</change>
+     
+         <revisionDesc status="published">
+            <change who="pers:MC1" when="2019-08-14" status="published">Added Diana blurb.</change><change who="pers:KI1" when="2019-06-30" status="inProgress">Added and associated facsimile file.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl35 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatButc. Old filename: Butchering_Brains.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -83,7 +87,7 @@ Publicly accessible
    <text facs="facs:Butchering_Brains">
       <pb n="28"/>
       <body>
-         <head><q>Butchering Brains</q>.</head>
+         <head>Butchering Brains</head>
          <head type="subtitle">An Author in Hollywood Is as a Lamb in an Abbatoir</head>
          <opener>
             <byline>By <name ref="pers:WE1">Winnifred Eaton Reeve</name> (<name ref="pers:WE1">Onoto Watanna</name>)</byline>
