@@ -75,7 +75,7 @@
         <div id="additional_info">
             <xsl:call-template name="createCreditsAndCitations"/>
             <xsl:call-template name="createAbstract"/>
-            <xsl:call-template name="createRelatedItems"/>
+  <!--          <xsl:call-template name="createRelatedItems"/>-->
             <xsl:call-template name="createTOC"/>
             
         </div>
@@ -405,14 +405,18 @@
         <xsl:if test="not(preceding-sibling::author[not(@role)])">
             <div>
                 <div class="metadataLabel">Author<xsl:if test="following-sibling::author[not(@role)]">s</xsl:if></div>
-                <xsl:for-each select="(node(),following-sibling::author[not(@role)]/node())">
-                    <div>
-                        <xsl:apply-templates select="." mode="#current"/>
-                    </div>
-                </xsl:for-each>
-
+                <xsl:call-template name="makeAuthorBits"/>
             </div>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="makeAuthorBits">
+        <div class="author">
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </div>
+        <xsl:for-each select="following-sibling::author[not(@role)]">
+            <xsl:call-template name="makeAuthorBits"/>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="bibl/author[@role='illustrator']" mode="metadata">
@@ -447,8 +451,10 @@
                 
             </tei:name>
         </xsl:variable>
-
+        <span class="authorName">
             <xsl:apply-templates select="$nameEl" mode="tei"/>
+        </span>
+  
 
     </xsl:template>
     
