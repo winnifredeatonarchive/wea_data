@@ -191,7 +191,7 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:variable>
-                        <bibl type="mla" n="MLA">
+                        <bibl type="mla" n="MLA" xml:id="{$root/@xml:id || '_' || 'citation_MLA'}">
                             <xsl:sequence select="$authString"/>
                             <title level="a"><xsl:value-of select="$root/teiHeader/fileDesc/titleStmt/title[1]"/></title><xsl:text>.</xsl:text>
                             <xsl:sequence select="wea:appendMLA($root)"/>
@@ -199,7 +199,7 @@
                     </xsl:when>
                     
                     <xsl:otherwise>
-                        <bibl type="mla">
+                        <bibl type="mla" n="MLA" xml:id="{$root/@xml:id || '_' || 'citation_MLA'}">
                             <xsl:copy-of select="$root/descendant::sourceDesc/bibl[1]/node()"/>
                             <xsl:sequence select="wea:appendMLA($root)"/>
                         </bibl>

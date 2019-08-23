@@ -640,7 +640,7 @@
                     </xsl:if>-->
                     
                     <div id="tools_cite">
-                        <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation">
+                        <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation_MLA">
                             <div class="mi">bookmark</div>
                             <div class="label">Cite</div>  
                         </a>
