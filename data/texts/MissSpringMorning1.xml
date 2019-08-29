@@ -57,7 +57,8 @@ Publicly accessible
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="published">
+         <change who="pers:MC1" when="2019-08-29" status="published">Directed to facs.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl93 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatSpmo. Old filename: Miss_Spring_Morning.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -66,8 +67,7 @@ Publicly accessible
          <change when="2004-06">Jolie Sheffer, Electronic Text Center: corrector. Added TEI header and tags.</change>
       </revisionDesc>
    </teiHeader>
-
-   <text>
+      <text facs="facs:Miss_Spring_Morning">
       <pb n="666"/>
       <body>
          <head>Miss Spring Morning</head>
@@ -101,9 +101,9 @@ Publicly accessible
             <p><q>The night of his wedding! Extraordinary!</q></p>
             <p><q>Not at all. He is a good boy. The marriage has my personal sanction, in fact. His people besought me to attend it, but that’s impossible on this busy night. Besides, I wish to spend my last hours with you, my very good friend</q>.</p>
             <p><q>Tell me something about the young people over there. I’m extraordinarily interested in them</q>.</p>
-            <p><q>Well, there’s little to tell. Theirs is a common story. Affianced by their parents in infancy, they have grown up together, almost as brother and sister. They are both very poor, though not illiterate. Indeed, their fathers served as ashigaru (sword-men) before the Restoration, and were in the service of my father, the prince of this province. But, of course, conditions changed for them, as for us; the kugé (nobles), and the ashigaru were obliged to go into trade or do menial labor. Omi lost his father a couple of years ago, and within a month the father of O-Haru- no followed his old comrade. Since then, Omi has been obliged to support himself as well as his mother. It was his ambition to be a teacher, but, unfortunately, he was not able to pursue his studies, and was obliged to take up his father’s employment of rice picker. Out of his poor earnings he has been able to save nothing. Now his country demands his service. Some one must take his place and care for his mother. That is the chief reason why he marries to-night</q>.</p>
+            <p><q>Well, there’s little to tell. Theirs is a common story. Affianced by their parents in infancy, they have grown up together, almost as brother and sister. They are both very poor, though not illiterate. Indeed, their fathers served as <foreign>ashigaru</foreign> (sword-men) before the Restoration, and were in the service of my father, the prince of this province. But, of course, conditions changed for them, as for us; the kugé (nobles), and the ashigaru were obliged to go into trade or do menial labor. Omi lost his father a couple of years ago, and within a month the father of O-Haru- no followed his old comrade. Since then, Omi has been obliged to support himself as well as his mother. It was his ambition to be a teacher, but, unfortunately, he was not able to pursue his studies, and was obliged to take up his father’s employment of rice picker. Out of his poor earnings he has been able to save nothing. Now his country demands his service. Some one must take his place and care for his mother. That is the chief reason why he marries to-night</q>.</p>
             <p><q>I should think a wife would be but another burden to him</q>, said Tyrrell, mystified.</p>
-            <p><q>Not at all</q>, said the Japanese, softly smoothing his silky little mustache, his little bright eyes unusually hard and unreadable. <q>O-Haru-no is very young and healthy-- moreover, charmingly attractive</q>.</p>
+            <p><q>Not at all</q>, said the Japanese, softly smoothing his silky little mustache, his little bright eyes unusually hard and unreadable. <q>O-Haru-no is very young and healthy--moreover, charmingly attractive</q>.</p>
             <p><q>You mean, she will work to support her mother-in-law?</q></p>
             <p><q>Work--yes, if she can. As I have said, however, she is very pretty. She may be sent to--Tokyo--or perhaps Yokohama</q>.</p>
             <p>Captain Taganouchi frowned a trifle, as though he did not like the subject, but his friend pursued it eagerly.</p>
