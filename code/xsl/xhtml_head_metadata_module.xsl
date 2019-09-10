@@ -80,7 +80,7 @@
             <xsl:variable name="refId" select="substring-after(@target,'#')" as="xs:string"/>
             <xsl:variable name="thisTax" select="$taxo/descendant::taxonomy[@xml:id=$schemeId]" as="element(taxonomy)"/>
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
-            <meta name="{$thisTax/bibl}" class="staticSearch.filter" value="{$thisCat/catDesc/term}"/>
+            <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
             
         </xsl:for-each>
        
