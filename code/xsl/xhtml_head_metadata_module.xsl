@@ -24,6 +24,7 @@
             <title><xsl:value-of select="teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
             <xsl:call-template name="createDCMetadata"/>
+            <xsl:call-template name="createStaticSearchMetadata"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="stylesheet" type="text/css" href="css/media.css"/>
             <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
@@ -72,6 +73,18 @@
         <meta property="dc.identifier" content="https://winnifredeatonarchive.com/{@xml:id}.html" />
     </xsl:template>
     
+    <xsl:template name="createStaticSearchMetadata">
+        <xsl:variable name="taxo" select="$standaloneXml//TEI[@xml:id='taxonomies']" as="element(TEI)"/>
+        <xsl:for-each select="descendant::catRef">
+            <xsl:variable name="schemeId" select="substring-after(@scheme,'#')" as="xs:string"/>
+            <xsl:variable name="refId" select="substring-after(@target,'#')" as="xs:string"/>
+            <xsl:variable name="thisTax" select="$taxo/descendant::taxonomy[@xml:id=$schemeId]" as="element(taxonomy)"/>
+            <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
+            <meta name="{$thisTax/bibl}" class="staticSearch.filter" value="{$thisCat/catDesc/term}"/>
+            
+        </xsl:for-each>
+       
+    </xsl:template>
 
     <xsl:template name="addNamespaces">
         <xsl:attribute name="prefix" select="'og: http://ogp.me/ns# wea: http://winnifredeatonarchive.com/taxonomies.html# dcterms: http://purl.org/dc/terms/ dc: http://purl.org/dc/elements/1.1/'"/>   
