@@ -3,6 +3,13 @@
     
     <include file="buildGlobals.xml"/>
   
+  <target name="getStaticSearch">
+     <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
+      <delete dir="${ss.codeDir}"/>
+     <exec executable="git">
+         <arg line="clone https://github.com/projectEndings/staticSearch/ ${ss.codeDir}"/>
+     </exec>
+  </target>
     
   <target name="validate">
       <ant antfile="code/buildValidate.xml" inheritall="false"/>
@@ -43,7 +50,7 @@
     
     
     
-    <target name="all" depends="validate, checkFacs, createSite, createDocSite, createSearch"/>
+    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     

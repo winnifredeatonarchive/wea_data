@@ -35,6 +35,21 @@
                 </xsl:result-document>
             </xsl:if>
         </xsl:for-each>
+        <xsl:call-template name="createStaticSearchPage"/>
+    </xsl:template>
+    
+    <xsl:template name="createStaticSearchPage">
+        <xsl:result-document href="{concat($outDir,'/ssSearch.html')}" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+            <html id="ssSearch" lang="en">
+                <head><title>Static Search Document</title></head>
+                <body>
+                    <div>
+                        <h2>Static Search Document</h2>
+                        <div id="staticSearch"/>
+                    </div>
+                </body>
+            </html>
+        </xsl:result-document>
     </xsl:template>
     
     
