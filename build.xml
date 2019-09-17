@@ -40,7 +40,7 @@
     </target>
     
     <target name="createStaticSearch">
-        <ant antfile="code/staticSearch/code/build.xml" inheritall="false">
+        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="basic">
             <property name="config" value="../config.xml"/>
         </ant>
         <move file="${basedir}/products/site/ssTemp_statSearch.html" tofile="${basedir}/products/site/statSearch.html"/>
