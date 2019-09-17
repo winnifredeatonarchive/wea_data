@@ -646,7 +646,7 @@
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">
         <xsl:choose>
-            <xsl:when test="ancestor::TEI/@xml:id='staticSearch'">
+            <xsl:when test="ancestor::TEI/@xml:id='statSearch'">
                 <div id="staticSearch"/>
             </xsl:when>
             <xsl:otherwise>
