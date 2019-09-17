@@ -39,6 +39,12 @@
         <ant antfile="code/search/buildSearch.xml" inheritall="false"/>
     </target>
     
+    <target name="createStaticSearch">
+        <ant antfile="code/staticSearch/code/build.xml" inheritall="false">
+            <property name="config" value="../config.xml"/>
+        </ant>
+    </target>
+    
     <target name="startLocalServer">
         <exec executable="python" dir="products/site">
             <arg line="-m SimpleHTTPServer 8080"/>
@@ -50,7 +56,7 @@
     
     
     
-    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createSearch"/>
+    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createSearch, createStaticSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
