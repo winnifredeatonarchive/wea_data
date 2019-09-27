@@ -712,6 +712,7 @@ fieldset{
 
 legend{
     margin-bottom:0.45rem;
+    font-weight:bold;
 }
 
 ul.checkboxList li{
@@ -1501,7 +1502,8 @@ a:hover img{
     transition: box-shadow 0.25s ease-in-out;
 }
 
-#info a:hover img{
+#info a:hover img,
+footer a:hover img{
     box-shadow:none;
 }
 
