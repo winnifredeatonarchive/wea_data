@@ -664,13 +664,14 @@ div.toc > div > span{
 /********* MAIN SEARCH PAGE ********/
 
 
-#searchBox{
+#searchBox, #staticSearch{
     margin:0 auto;
     margin-top:2rem;
     padding-top: 2rem;
 }
 
-#searchBox input[type=text] {
+#searchBox input[type=text], 
+#staticSearch input[type='text']{
 font-size:150%;
 font-family: inherit;
 border-bottom: 2px solid #ccc;
@@ -684,23 +685,66 @@ padding-left: 0.15rem;
 transition: border-bottom-color 0.15s ease-in-out;
 }
 
-#searchBox input[type="text"]:focus{
+#searchBox input[type="text"]:focus,
+#staticSearch input[type='text']:focus{
     border-bottom-color: #4b4b4b;
     
 }
-  
-  div.results{
-    margin-top:1.5rem;
-    animation: fadein 2s;
-    animation-delay: 2s;
+
+#ssFieldSets{
+    margin-top:0.85rem;
 }
 
-div.results > div{
+#staticSearch button{
+    display:none;
+}
+
+#staticSearch .fields{
+    display:flex;
+    margin-top:.75rem;
+}
+
+fieldset{
+    border:none;
+    padding:0.5rem 1rem;
+    font-size:0.95rem;
+}
+
+legend{
+    margin-bottom:0.45rem;
+}
+
+ul.checkboxList li{
+    padding-left:0;
+}
+
+  div.results,
+  div.ssResults{
+    margin-top:1.5rem;
+    animation: fadein 2s;
+}
+
+fieldset input[type='checkbox']{
+margin-right:.25rem;
+
+}
+div.results > div,
+div.ssResults > div{
     margin-top:1em;
 }
 
-#searchResults{
+#searchResults,
+#ssResults{
     margin-top:2em;
+}
+
+fieldset{
+    border-right: 1px solid #ccc;
+    
+}
+
+fieldset:last-child{
+    border-right:none;
 }
 
 #searchResults.closed{
@@ -713,11 +757,13 @@ div.results > div{
 }
 
 
-.snippet{
+.snippet,
+#searchResults li{
     padding:.5rem;
     border: 1px dotted black;
 }
-.highlight{
+.highlight,
+mark{
     background: rgba(255,170,235,0.4);
     transition: background 0.25s ease-in-out;
 }
