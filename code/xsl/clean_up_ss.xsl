@@ -22,8 +22,8 @@
     <xsl:template match="form[@id='ssForm']">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()[not(self::fieldset)]"/>
-            <div id="ssFieldSets">
-                <div class="additionalInfoHeader expandable">Advanced Search</div>
+            <div id="ssFieldSets" class="expandable">
+                <div class="additionalInfoHeader">Advanced Search</div>
                 <div class="fields content">
                     <xsl:copy-of select="fieldset"/>
                 </div>
