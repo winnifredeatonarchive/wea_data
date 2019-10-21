@@ -206,4 +206,9 @@
         </xsl:result-document>
     </xsl:template>
     
+    <xsl:function name="wea:namecase">
+        <xsl:param name="name"/>
+        <xsl:value-of select="for $r in tokenize($name,'\s+') return concat(upper-case(substring($r,1,1)),substring($r,2))" separator=" "/>
+    </xsl:function>
+    
 </xsl:stylesheet>

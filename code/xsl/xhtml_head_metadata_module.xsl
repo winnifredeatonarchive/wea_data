@@ -83,6 +83,11 @@
             <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
             
         </xsl:for-each>
+        <xsl:if test="wea:isObject(.)">
+            <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
+                <meta name="Pseudonym" class="staticSearch.filter" content="{wea:namecase(current-grouping-key())}"/>
+            </xsl:for-each-group>
+        </xsl:if>
        
     </xsl:template>
 
