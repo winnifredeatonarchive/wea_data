@@ -50,26 +50,32 @@
     <xsl:variable name="sha" select="wea:getGitSHA()"/>
     
     
-    <xsl:function name="wea:getFileSize">
+    <xsl:function name="wea:getFileSize" as="xs:string?">
         <xsl:param name="filename"/>
         
-        <xsl:variable name="thisLine" select="for $f in $fileSizeDocLines return if (ends-with($f, $filename)) then $f else ()" as="xs:string"/>
-        <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
-        <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
-        <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
-        <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
-        <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
+        <xsl:variable name="thisLine" select="for $f in $fileSizeDocLines return if (ends-with($f, $filename)) then $f else ()" as="xs:string?"/>
+        <xsl:if test="not(empty($thisLine))">
+            <xsl:variable name="size" select="normalize-space(tokenize($thisLine,'\t')[1])"/>
+            <xsl:variable name="regex">^\s*([\d\.]+)([A-Z]+)$</xsl:variable>
+            <xsl:variable name="integer" select="replace($size,$regex,'$1')"/>
+            <xsl:variable name="unit" select="replace($size,$regex,'$2')"/>
+            <xsl:value-of select="concat($integer, ' ', replace($unit,'K','k'),'B')"/>
+        </xsl:if>
+
     </xsl:function>
     
     
-    <xsl:function name="wea:getImageDimensions" as="xs:integer+">
+    <xsl:function name="wea:getImageDimensions" as="xs:integer*">
         <xsl:param name="pngName"/>
-            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.png:'))) then $s else ()" as="xs:string"/>
+            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.png:'))) then $s else ()" as="xs:string?"/>
+        <xsl:if test="not(empty($thisLine))">
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[2])"/>
-        <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
-        <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
+            <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
+            <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
             <xsl:value-of select="xs:integer($height)"/>
             <xsl:value-of select="xs:integer($width)"/>
+        </xsl:if>
+            
     </xsl:function>
     
     

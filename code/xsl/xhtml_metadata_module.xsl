@@ -109,10 +109,22 @@
                     <div class="metadataLabel">Download XML</div>
                     <xsl:variable name="originalUri" select="concat('xml/original/',ancestor::TEI/@xml:id,'.xml')"/>
                     <xsl:variable name="standaloneUri" select="concat('xml/standalone/',ancestor::TEI/@xml:id,'.xml')"/>
+                    <xsl:variable name="originalSize" select="wea:getFileSize($originalUri)"/>
+                    <xsl:variable name="standaloneSize" select="wea:getFileSize($standaloneUri)"/>
                     <xsl:variable name="tempList">
                         <tei:list>
-                            <tei:item><tei:ref target="{$originalUri}">Original XML</tei:ref> (<xsl:value-of select="wea:getFileSize($originalUri)"/>)</tei:item>
-                            <tei:item><tei:ref target="{$standaloneUri}">Standalone XML</tei:ref> (<xsl:value-of select="wea:getFileSize($standaloneUri)"/>)</tei:item>
+                            <tei:item>
+                                <tei:ref target="{$originalUri}">Original XML</tei:ref>
+                                <xsl:if test="not(empty($originalSize))">
+                                    <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
+                                </xsl:if>
+                            </tei:item>
+                            <tei:item>
+                                <tei:ref target="{$standaloneUri}">Standalone XML</tei:ref>
+                                <xsl:if test="not(empty($originalSize))">
+                                    <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
+                                </xsl:if>
+                            </tei:item>
                         </tei:list>
                     </xsl:variable>
                     <div>
@@ -370,7 +382,7 @@
                 <xsl:when test="$facsAvailable">
                     <a href="{@facs}" xsl:use-attribute-sets="newTabLink">
                         <img src="{$thisThumbnail}" alt="{$altText}"/>
-                        <div class="imageText {if ($height gt 600) then 'landscape' else 'portrait'}">
+                        <div class="imageText {if ($height gt 600 or empty($height)) then 'landscape' else 'portrait'}">
                             <h4>View Facsimile</h4>
                             <div class="pdfSize"><xsl:value-of select="wea:getFileSize(@facs)"/></div>
                         </div>
