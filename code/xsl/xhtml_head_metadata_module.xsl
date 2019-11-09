@@ -81,12 +81,15 @@
             <xsl:variable name="thisTax" select="$taxo/descendant::taxonomy[@xml:id=$schemeId]" as="element(taxonomy)"/>
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
             <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
-            
+            <meta name="{$thisTax/bibl}" class="staticSearch.desc" content="{$thisCat/catDesc/term}"/>
         </xsl:for-each>
         <xsl:if test="wea:isObject(.)">
             <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
                 <meta name="Pseudonym" class="staticSearch.filter" content="{wea:namecase(current-grouping-key())}"/>
+                <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
             </xsl:for-each-group>
+           <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>
+           <meta name="Publication Date" class="staticSearch.date" content="{descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date/(@when|@notBefore)[1]}"/>
         </xsl:if>
        
     </xsl:template>

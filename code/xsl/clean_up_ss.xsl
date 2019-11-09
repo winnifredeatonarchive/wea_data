@@ -21,13 +21,12 @@
     
     <xsl:template match="form[@id='ssForm']">
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()[not(self::fieldset)]"/>
+            <xsl:apply-templates select="@* | node()[not(self::div)]"/>
             <div id="ssFieldSets" class="expandable">
-                <div class="additionalInfoHeader">Advanced Search</div>
-                <div class="fields content">
-                    <xsl:copy-of select="fieldset"/>
+                <div class="additionalInfoHeader">Advanced Search</div>  
+                <div class="content">
+                    <xsl:apply-templates select="div/*"/>
                 </div>
-              
             </div>
         </xsl:copy>
     </xsl:template>
@@ -37,6 +36,14 @@
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="placeholder">Search...</xsl:attribute>
             <xsl:apply-templates select="node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="button[@id='ssDoSearch']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="class" select="'mi'"/>
+            <xsl:text>search</xsl:text>
         </xsl:copy>
     </xsl:template>
     

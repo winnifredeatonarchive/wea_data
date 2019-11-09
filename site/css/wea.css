@@ -695,19 +695,31 @@ transition: border-bottom-color 0.15s ease-in-out;
     margin-top:0.85rem;
 }
 
-#staticSearch button{
-    display:none;
+#staticSearch .open .content{
+    max-height:40rem!important;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#staticSearch .fields{
-    display:flex;
-    margin-top:.75rem;
+
+#ssDoSearch{
+    position:relative;
+    right:2.5rem;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0 .5rem;
 }
 
+#ssDoSearch:hover{
+    background:#ccc;
+    
+}
 fieldset{
     border:none;
     padding:0.5rem 1rem;
     font-size:0.95rem;
+    width:45%;
 }
 
 legend{
