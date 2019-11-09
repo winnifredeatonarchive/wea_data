@@ -7,6 +7,7 @@ window.addEventListener('load',enhanceStaticSearch(),true);
 function enhanceStaticSearch(){
     makeItemsResponsive();
     makeFieldsetsCollapsible();
+    document.getElementById('doSearch').addEventListener('click', hideFields, true);
 }
 
 function makeItemsResponsive(){
@@ -14,6 +15,14 @@ function makeItemsResponsive(){
     items.forEach(function(item){
         item.addEventListener('change', toggleClass, true);
     });
+}
+
+function hideFields(){
+    var canClose = document.querySelectorAll("fieldset:not(.hasSelection)");
+    for (c=0; c < canClose; c++){
+        canClose[c].classList.remove('open');
+        canClose[c].classList.add('closed');
+    }
 }
 
 function makeFieldsetsCollapsible(){
