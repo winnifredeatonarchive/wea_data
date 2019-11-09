@@ -19,7 +19,15 @@
     
     <xsl:mode on-no-match="shallow-copy"/>
     
-    <xsl:template match="form[@id='ssForm']">
+    <xsl:template match="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+            <script src="js/enhance_staticSearch.js"/>
+        </xsl:copy>
+   
+    </xsl:template>
+    
+  <!--  <xsl:template match="form[@id='ssForm']">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()[not(self::div)]"/>
             <div id="ssFieldSets" class="expandable">
@@ -29,7 +37,7 @@
                 </div>
             </div>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="input[@type='text'][not(@placeholder)]">
         <xsl:copy>

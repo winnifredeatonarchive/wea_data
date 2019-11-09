@@ -694,6 +694,9 @@ transition: border-bottom-color 0.15s ease-in-out;
 #ssFieldSets{
     margin-top:0.85rem;
 }
+.ssFieldSet{
+        font-size:0.85rem;
+}
 
 #staticSearch .open .content{
     max-height:40rem!important;
@@ -701,6 +704,34 @@ transition: border-bottom-color 0.15s ease-in-out;
     flex-wrap: wrap;
 }
 
+
+#staticSearch ul.ssDescCheckboxList{
+    list-style-type: none;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#staticSearch ul.ssDescCheckboxList li{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    margin: 0.25rem;
+    /* width: 5rem; */
+    background: #efefef;
+    border-radius: .25rem;
+}
+
+#staticSearch .ssDescCheckboxList li.checked{
+    background:#ccc
+}
+
+ul.ssDescCheckboxList label{
+    cursor:pointer;
+}
 
 #ssDoSearch{
     position:relative;
@@ -716,15 +747,21 @@ transition: border-bottom-color 0.15s ease-in-out;
     
 }
 fieldset{
-    border:none;
-    padding:0.5rem 1rem;
-    font-size:0.95rem;
-    width:45%;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
 }
 
 legend{
     margin-bottom:0.45rem;
+    padding-bottom:0.21rem;
     font-weight:bold;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+ul.checkboxList li{
+    
 }
 
 ul.checkboxList li{
@@ -751,14 +788,7 @@ div.ssResults > div{
     margin-top:2em;
 }
 
-fieldset{
-    border-right: 1px solid #ccc;
-    
-}
 
-fieldset:last-child{
-    border-right:none;
-}
 
 #searchResults.closed{
     opacity:0;
