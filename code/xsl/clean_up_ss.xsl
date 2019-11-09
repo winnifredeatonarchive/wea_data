@@ -39,6 +39,7 @@
         </xsl:copy>
     </xsl:template>-->
     
+
     <xsl:template match="input[@type='text'][not(@placeholder)]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

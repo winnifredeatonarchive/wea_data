@@ -698,14 +698,8 @@ transition: border-bottom-color 0.15s ease-in-out;
         font-size:0.85rem;
 }
 
-#staticSearch .open .content{
-    max-height:40rem!important;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-
-#staticSearch ul.ssDescCheckboxList{
+ul.ssDescCheckboxList{
     list-style-type: none;
     overflow-y: auto;
     display: flex;
@@ -713,7 +707,7 @@ transition: border-bottom-color 0.15s ease-in-out;
 
 }
 
-#staticSearch ul.ssDescCheckboxList li{
+ul.ssDescCheckboxList li{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -725,7 +719,7 @@ transition: border-bottom-color 0.15s ease-in-out;
     border-radius: .25rem;
 }
 
-#staticSearch .ssDescCheckboxList li.checked{
+.ssDescCheckboxList li.checked{
     background:#ccc
 }
 
@@ -742,22 +736,38 @@ ul.ssDescCheckboxList label{
     padding:0 .5rem;
 }
 
+div[class*='ssDesc']{
+  margin-top:1rem;
+}
+
 #ssDoSearch:hover{
     background:#ccc;
     
 }
 fieldset{
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
     font-size: 0.95rem;
 }
 
+fieldset.closed > *{
+    display:none
+}
+
+fieldset.closed{
+    width:100%;
+}
+
+fieldset.closed > legend{
+    display:block!important;
+}
 legend{
     margin-bottom:0.45rem;
     padding-bottom:0.21rem;
     font-weight:bold;
-    border-bottom: 1px solid black;
-    width: 100%;
+    border-bottom: 1px solid #2f2f2f;
+    width: 90%;
+    cursor:pointer;
 }
 
 ul.checkboxList li{
