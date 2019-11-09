@@ -691,6 +691,11 @@ transition: border-bottom-color 0.15s ease-in-out;
     
 }
 
+#staticSearch.docOnly #ssResults ul{
+    columns: 2;
+    column-rule: 1px dotted #ccc;
+}
+
 #ssFieldSets{
     margin-top:0.85rem;
 }
@@ -811,10 +816,18 @@ div.ssResults > div{
 
 
 .snippet,
-#searchResults li{
+#searchResults li,
+.kwic li
+{
     padding:.5rem;
     border: 1px dotted black;
 }
+
+.kwic{
+    margin:.5rem
+    
+}
+
 .highlight,
 mark{
     background: rgba(255,170,235,0.4);

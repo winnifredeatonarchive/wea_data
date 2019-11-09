@@ -24,7 +24,18 @@
             <xsl:apply-templates select="@*|node()"/>
             <script src="js/enhance_staticSearch.js"/>
         </xsl:copy>
-   
+    </xsl:template>
+    
+    <xsl:template match="body/script[@src='js/enhance_staticSearch.js']"/>
+    
+    <xsl:template match="div[@class='ssBoolFilters']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <fieldset class="ssFilters">
+                <legend>Document Features</legend>
+                <xsl:apply-templates select="node()"/>
+            </fieldset>
+        </xsl:copy>
     </xsl:template>
     
   <!--  <xsl:template match="form[@id='ssForm']">

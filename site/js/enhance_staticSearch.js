@@ -2,12 +2,16 @@
 
 
 
-window.addEventListener('load',enhanceStaticSearch(),true);
+window.addEventListener('load',enhanceStaticSearch,true);
+
+
 
 function enhanceStaticSearch(){
     makeItemsResponsive();
     makeFieldsetsCollapsible();
-    document.getElementById('doSearch').addEventListener('click', hideFields, true);
+    var searchButton = document.getElementById('ssDoSearch');
+    searchButton.addEventListener('click', hideFields, true);
+    searchButton.addEventListener('click', checkIfDocOnly, true);
 }
 
 function makeItemsResponsive(){
@@ -17,11 +21,25 @@ function makeItemsResponsive(){
     });
 }
 
+function checkIfDocOnly(){ 
+    var query = document.getElementById('ssQuery');
+    var mainDiv = document.getElementById('staticSearch');
+    mainDiv.classList.remove('docOnly');
+    console.log(query.value);
+    console.log((query.value == "" || query.value == null))
+    if (query.value == "" || query.value == null){
+        mainDiv.classList.add('docOnly');
+    }
+}
+
 function hideFields(){
     var canClose = document.querySelectorAll("fieldset:not(.hasSelection)");
-    for (c=0; c < canClose; c++){
-        canClose[c].classList.remove('open');
-        canClose[c].classList.add('closed');
+    for (c=0; c < canClose.length; c++){
+        if (canClose[c].getElementsByTagName('legend').length > 0){
+            canClose[c].classList.remove('open');
+            canClose[c].classList.add('closed');
+        }
+     
     }
 }
 
