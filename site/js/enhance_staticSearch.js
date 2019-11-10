@@ -10,7 +10,7 @@ function enhanceStaticSearch(){
     makeItemsResponsive();
     makeFieldsetsCollapsible();
     var searchButton = document.getElementById('ssDoSearch');
-    searchButton.addEventListener('click', hideFields, true);
+ /*   searchButton.addEventListener('click', hideFields, true);*/
     searchButton.addEventListener('click', checkIfDocOnly, true);
 }
 
