@@ -19,14 +19,14 @@
     
     <xsl:mode on-no-match="shallow-copy"/>
     
-    <xsl:template match="body">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-            <script src="js/enhance_staticSearch.js"/>
-        </xsl:copy>
+    <!--Add the script first-->
+    <xsl:template match="head/script[matches(@src,'wea\.js')]">
+        <xsl:copy-of select="."/>
+        <script src="js/enhance_staticSearch.js"/>
     </xsl:template>
-    
-    <xsl:template match="body/script[@src='js/enhance_staticSearch.js']"/>
+
+    <!--And get rid of any old instance sof it -->
+    <xsl:template match="script[@src='js/enhance_staticSearch.js']"/>
     
     <xsl:template match="div[@class='ssBoolFilters']">
         <xsl:copy>
