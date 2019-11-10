@@ -33,13 +33,16 @@ function checkIfDocOnly(){
 }
 
 function hideFields(){
-    var canClose = document.querySelectorAll("fieldset:not(.hasSelection)");
-    for (c=0; c < canClose.length; c++){
-        if (canClose[c].getElementsByTagName('legend').length > 0){
-            canClose[c].classList.remove('open');
-            canClose[c].classList.add('closed');
+    var fieldsets = document.querySelectorAll("fieldset");
+    for (c=0; c < fieldsets.length; c++){
+        var currF = fieldsets[c];
+        if (currF.classList.contains('hasSelection')){
+            currF.classList.remove('closed');
+            currF.classList.add('open');
+        } else {
+            currF.classList.remove('open');
+            currF.classList.add('closed');
         }
-     
     }
 }
 
@@ -63,7 +66,7 @@ function toggleClass(){
      
      var parentFieldset = this.closest('fieldset');
      var theseChecks = parentFieldset.querySelectorAll(".checked");
-     
+     /* TO DO: Fix these for input dates etc */
      if (theseChecks.length !== 0){
          parentFieldset.classList.add('hasSelection');
      } else {
