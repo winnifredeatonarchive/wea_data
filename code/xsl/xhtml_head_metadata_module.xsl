@@ -89,7 +89,13 @@
                 <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
             </xsl:for-each-group>
            <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>
-           <meta name="Publication Date" class="staticSearch.date" content="{descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date/(@when|@notBefore)[1]}"/>
+            <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
+            <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>
+            <xsl:variable name="dateString" select="if ($isRange) then concat($date/(@notBefore|@from)[1],'/', $date/(@notAfter|@to)[1]) else $date/@when" as="xs:string?"/>
+            <xsl:if test="not(empty($date))">
+                <meta name="Publication Date" class="staticSearch.date" content="{$dateString}"/>
+            </xsl:if>
+
         </xsl:if>
        
     </xsl:template>

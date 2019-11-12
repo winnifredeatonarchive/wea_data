@@ -10,8 +10,9 @@ function enhanceStaticSearch(){
     makeItemsResponsive();
     makeFieldsetsCollapsible();
     var searchButton = document.getElementById('ssDoSearch');
- /*   searchButton.addEventListener('click', hideFields, true);*/
+    searchButton.addEventListener('click', hideFields, true);
     searchButton.addEventListener('click', checkIfDocOnly, true);
+    document.getElementById('ssClear').addEventListener('click',clearSelections,true);
 }
 
 function makeItemsResponsive(){
@@ -19,6 +20,17 @@ function makeItemsResponsive(){
     items.forEach(function(item){
         item.addEventListener('change', toggleClass, true);
     });
+}
+
+function clearSelections(){
+    var selectedFieldsets = document.querySelectorAll(".hasSelection");
+    var selections = document.querySelectorAll('li.checked');
+    for (var i = 0; i < selections.length; i++){
+        selections[i].classList.remove('checked');
+    }
+    for (var j =0; j < selectedFieldsets.length; j++){
+        selectedFieldsets[j].classList.remove('hasSelection');
+    }
 }
 
 function checkIfDocOnly(){ 
