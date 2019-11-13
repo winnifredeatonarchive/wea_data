@@ -696,6 +696,17 @@ transition: border-bottom-color 0.15s ease-in-out;
     column-rule: 1px dotted #ccc;
 }
 
+#ssClear{
+    border: 1px solid #efefef;
+    /* outline: none; */
+    padding: .25rem .5rem;
+    background: none;
+}
+
+#ssClear:hover{
+    background:#ccc;
+}
+
 #ssFieldSets{
     margin-top:0.85rem;
 }
