@@ -3,7 +3,7 @@
     
     <include file="buildGlobals.xml"/>
   
-  <property name="staticSearchBranch" value="dev"/>
+  <property name="staticSearchBranch" value="master"/>
   
   <target name="getStaticSearch">
      <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
@@ -42,7 +42,7 @@
     </target>
     
     <target name="createStaticSearch">
-        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="basic">
+        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="all">
             <property name="config" value="../config.xml"/>
         </ant>
     </target>
