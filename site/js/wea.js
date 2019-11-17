@@ -18,14 +18,6 @@ function init(){
     } else {
         addEvents();
     }
-    
-    if (docId == 'search'){
-        addSearch();
-        if (searchParams.has("searchString")){
-            doSearch();
-        }
-        
-    }
 
 /*    makeAsideResponsive();*/
 
@@ -208,7 +200,7 @@ function submitSearch(){
         if (this.tagName == 'A'){
             e.preventDefault();
         }
-        window.location.href = 'search.html?searchString=' + encodeURIComponent(searchInput.value);
+        window.location.href = 'search.html?q=' + encodeURIComponent(searchInput.value);
     }
      
 }

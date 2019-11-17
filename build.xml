@@ -37,9 +37,9 @@
         <ant antfile="code/buildDocumentationSite.xml"/>
     </target>
     
-    <target name="createSearch">
+<!--    <target name="createSearch">
         <ant antfile="code/search/buildSearch.xml" inheritall="false"/>
-    </target>
+    </target>-->
     
     <target name="createStaticSearch">
         <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="all">
@@ -55,7 +55,7 @@
             <arg value="-o:${basedir}/products/site/statSearch_clean.html"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>
         </java>
-        <move file="${basedir}/products/site/statSearch_clean.html" tofile="${basedir}/products/site/statSearch.html"/>
+        <move file="${basedir}/products/site/search_clean.html" tofile="${basedir}/products/site/search.html"/>
     </target>
     
     <target name="startLocalServer">
@@ -69,7 +69,7 @@
     
     
     
-    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createSearch, createStaticSearch, cleanUpStaticSearch"/>
+    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createStaticSearch, cleanUpStaticSearch"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
