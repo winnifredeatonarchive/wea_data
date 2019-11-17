@@ -51,8 +51,8 @@
     <target name="cleanUpStaticSearch">
         <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/xsl/clean_up_ss.xsl"/>
-            <arg value="-s:${basedir}/products/site/statSearch.html"/>
-            <arg value="-o:${basedir}/products/site/statSearch_clean.html"/>
+            <arg value="-s:${basedir}/products/site/search.html"/>
+            <arg value="-o:${basedir}/products/site/search_clean.html"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>
         </java>
         <move file="${basedir}/products/site/search_clean.html" tofile="${basedir}/products/site/search.html"/>
