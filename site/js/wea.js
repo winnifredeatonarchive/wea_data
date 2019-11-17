@@ -26,13 +26,6 @@ function init(){
 
 
 
-function doSearch(){
-    var searchInput = document.getElementById('searchInput');
-    var searchString = decodeURIComponent(searchParams.get("searchString"));
-    searchInput.setAttribute('value',searchString);
-    searcher.search(searchInput.value);
-}
-
 function addEvents(){
     addHeaderSearch();
     addHeaderSearchSubmit();
@@ -398,7 +391,7 @@ function titleSearch(){
         basicInput.classList.add('showing');
         basicInput.setAttribute('tabindex', 0);
         var searchLink = document.getElementById('siteMap_input_link');
-        var searchString = "search.html?searchString=" + encodeURIComponent(inputValue);
+        var searchString = "search.html?q=" + encodeURIComponent(inputValue);
         searchLink.setAttribute('href',searchString);
         var searchInputFill = document.getElementById('siteMap_input_fill');
         searchInputFill.innerHTML = inputValue;
