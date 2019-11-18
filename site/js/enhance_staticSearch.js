@@ -39,8 +39,6 @@ function checkIfDocOnly(){
     var query = document.getElementById('ssQuery');
     var mainDiv = document.getElementById('staticSearch');
     mainDiv.classList.remove('docOnly');
-    console.log(searchParams.has('q'));
-    
     if (!searchParams.has('q')){
         console.log('doesnt have q');
         console.log(query.value == '' || query.value == null);
