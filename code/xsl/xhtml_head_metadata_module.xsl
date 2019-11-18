@@ -80,8 +80,11 @@
             <xsl:variable name="refId" select="substring-after(@target,'#')" as="xs:string"/>
             <xsl:variable name="thisTax" select="$taxo/descendant::taxonomy[@xml:id=$schemeId]" as="element(taxonomy)"/>
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
-            <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
-            <meta name="{$thisTax/bibl}" class="staticSearch.desc" content="{$thisCat/catDesc/term}"/>
+            <!--Exclude primary source from being its own category in the SS search-->
+            <xsl:if test="not($refId = 'docPrimarySource')">
+                <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
+                <meta name="{$thisTax/bibl}" class="staticSearch.desc" content="{$thisCat/catDesc/term}"/>
+            </xsl:if>
         </xsl:for-each>
         <xsl:if test="wea:isObject(.)">
             <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
