@@ -5,11 +5,12 @@
 window.addEventListener('load',enhanceStaticSearch,true);
 
 
-
 function enhanceStaticSearch(){
     makeItemsResponsive();
     makeFieldsetsCollapsible();
     var searchButton = document.getElementById('ssDoSearch');
+    var searchParams = new URLSearchParams(document.location.search);
+    checkIfDocOnly();
     searchButton.addEventListener('click', hideFields, true);
     searchButton.addEventListener('click', checkIfDocOnly, true);
     document.getElementById('ssClear').addEventListener('click',clearSelections,true);
@@ -34,12 +35,20 @@ function clearSelections(){
 }
 
 function checkIfDocOnly(){ 
+    var searchParams = new URLSearchParams(document.location.search);
     var query = document.getElementById('ssQuery');
     var mainDiv = document.getElementById('staticSearch');
     mainDiv.classList.remove('docOnly');
-    if (query.value == "" || query.value == null){
-        mainDiv.classList.add('docOnly');
+    console.log(searchParams.has('q'));
+    
+    if (!searchParams.has('q')){
+        console.log('doesnt have q');
+        console.log(query.value == '' || query.value == null);
+        if (query.value == "" || query.value == null){
+            mainDiv.classList.add('docOnly');
+        }
     }
+
 }
 
 function hideFields(){
