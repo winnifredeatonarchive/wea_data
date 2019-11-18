@@ -37,8 +37,6 @@ function checkIfDocOnly(){
     var query = document.getElementById('ssQuery');
     var mainDiv = document.getElementById('staticSearch');
     mainDiv.classList.remove('docOnly');
-    console.log(query.value);
-    console.log((query.value == "" || query.value == null))
     if (query.value == "" || query.value == null){
         mainDiv.classList.add('docOnly');
     }
