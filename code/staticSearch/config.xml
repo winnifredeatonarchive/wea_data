@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/projectEndings/staticSearch/dev/schema/staticSearch.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <config xmlns="http://hcmc.uvic.ca/ns/staticSearch">
     <params>
         <searchFile>../../products/site/search.html</searchFile>
         <recurse>false</recurse>
         <phrasalSearch>true</phrasalSearch>
         <createContexts>true</createContexts>
-        <!--NOTE: If phrasalSearch is set to TRUE, then
-        maxContexts prop will be ignored-->
-        <maxContexts>3</maxContexts>
         <totalKwicLength>15</totalKwicLength>
         <kwicTruncateString>...</kwicTruncateString>
         <verbose>false</verbose>
