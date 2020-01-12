@@ -6,6 +6,9 @@
         <recurse>false</recurse>
         <phrasalSearch>true</phrasalSearch>
         <createContexts>true</createContexts>
+        <!--These folling two should be optional or made mandatory in the schema-->
+        <maxKwicsToHarvest>10</maxKwicsToHarvest>
+        <maxKwicsToShow>10</maxKwicsToShow>
         <totalKwicLength>15</totalKwicLength>
         <kwicTruncateString>...</kwicTruncateString>
         <verbose>false</verbose>
