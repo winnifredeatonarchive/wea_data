@@ -188,12 +188,16 @@ function addHeaderSearch(){
 function submitSearch(){
     var e=arguments[0];
     var searchInput = document.getElementById('nav_search_input');
-    console.log(this.tagName);
-    if (this.tagName == 'A' || e.key == 'Enter'){
+    if (this.tagName == 'A' || e.key == 'Enter' || this.tagName == 'BUTTON'){
         if (this.tagName == 'A'){
             e.preventDefault();
         }
-        window.location.href = 'search.html?q=' + encodeURIComponent(searchInput.value);
+        console.log(searchInput);
+        var href = "search.html";
+        if (!(searchInput.value === "")){
+            href = "search.html?q=" + encodeURIComponent(searchInput.value);
+        }
+        window.location.href = href;
     }
      
 }
