@@ -195,7 +195,7 @@
             <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="people.xml#$1"/>
             <prefixDef ident="wdt" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
             <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="$1.xml$2"/>
-            <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1_sm.png"/>
+            <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1"/>
             <prefixDef ident="fig" matchPattern="(.+)" replacementPattern="media.xml#$1"/>
             <prefixDef ident="org" matchPattern="(.+)" replacementPattern="organizations.xml#$1"/>
             <prefixDef ident="bibl" matchPattern="(.+)" replacementPattern="bibliography.xml#bibl$1"/>

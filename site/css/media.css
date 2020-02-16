@@ -193,6 +193,11 @@ ul#menu_main > li > ul{
     left:0;
 }
 
+[data-el='event'] [data-el='ab'][data-type='graphic']{
+    max-width:50%;
+}
+
+
 
 
 /*        
@@ -408,6 +413,8 @@ ul#menu_main > li > ul{
     margin-right:auto;
 }
 
+
+
 [data-el='event']{
     width:90%;
     padding-left:0.8rem;
@@ -420,6 +427,7 @@ ul#menu_main > li > ul{
   border-left:5px solid pink;
 
 }
+
 
 [data-el='event']:nth-of-type(2n):hover{
     border-color:var(--wea-pink);

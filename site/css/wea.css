@@ -474,6 +474,13 @@ nav > div > div{
 /* ******* ON HOVER  */
 
 
+/* Basic img handling */
+
+img{
+    width:100%;
+    height:auto;
+}
+
 /* END MEDIA QUERY */
 
 nav > div > div > a{
@@ -1086,6 +1093,7 @@ footer ul > li > a{
 }
 
 footer img{
+  width:unset;
   max-height: 100%;
   max-width: 100%;
 }
@@ -1394,9 +1402,12 @@ div[data-type='listFigure'] img{
   padding-bottom:1rem;
 }
 
+
 [data-el='event'] > * {
   padding:.25rem 1.5rem;
 }
+
+
 
 [data-el='event'] > div[data-el='p']{
     margin-top:0;
@@ -1424,6 +1435,10 @@ div[data-type='listFigure'] img{
 
 [data-el='event']:nth-of-type(2n) > *{
   text-align:right;
+}
+
+[data-el='event']:nth-of-type(2n) [data-el='ab'][data-type='graphic']{
+    position:relative;
 }
 
 [data-el='event']  [data-el='label']{
