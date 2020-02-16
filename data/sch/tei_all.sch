@@ -2,37 +2,67 @@
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             xmlns:rng="http://relaxng.org/ns/structure/1.0"
             queryBinding="xslt2">
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="tei"
+           uri="http://www.tei-c.org/ns/1.0"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="xs"
+           uri="http://www.w3.org/2001/XMLSchema"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="rng"
+           uri="http://relaxng.org/ns/structure/1.0"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="s"
+           uri="http://www.ascc.net/xml/schematron"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="sch"
+           uri="http://purl.oclc.org/dsdl/schematron"/>
    <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="tei"
-       uri="http://www.tei-c.org/ns/1.0"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="xs"
-       uri="http://www.w3.org/2001/XMLSchema"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="rng"
-       uri="http://relaxng.org/ns/structure/1.0"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="s"
-       uri="http://www.ascc.net/xml/schematron"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="sch"
-       uri="http://purl.oclc.org/dsdl/schematron"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:svg="http://www.w3.org/2000/svg"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:math="http://www.w3.org/1998/Math/MathML"
+       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
        xmlns:xlink="http://www.w3.org/1999/xlink"
        xmlns:tei="http://www.tei-c.org/ns/1.0"
        xmlns:teix="http://www.tei-c.org/ns/Examples"
@@ -42,7 +72,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="d9e121007-constraint">
+            id="d9e119503-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -53,7 +83,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="d9e122274-constraint">
+            id="d9e120721-constraint">
          <rule context="tei:datatype">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -245,11 +275,11 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 context="tei:desc[ @type eq 'deprecationInfo']">
-	              <sch:assert test="../@validUntil">Information about a
-	deprecation should only be present in a specification element
-	that is being deprecated: that is, only an element that has a
-	@validUntil attribute should have a child &lt;desc
-	type="deprecationInfo"&gt;.</sch:assert>
+               <sch:assert test="../@validUntil">Information about a
+        deprecation should only be present in a specification element
+        that is being deprecated: that is, only an element that has a
+        @validUntil attribute should have a child &lt;desc
+        type="deprecationInfo"&gt;.</sch:assert>
             </sch:rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -313,14 +343,6 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                      test="@target and count( child::* ) &gt; 0">
 If the @target attribute on <sch:name/> is used, the
 relatedItem element must be empty</sch:report>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-relatedItem-targetorcontent1-constraint-assert-8">
-            <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -539,7 +561,25 @@ You must supply at least two values for @target on <name/>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-catchwords-catchword_in_msDesc-constraint-assert-12">
+            id="tei_all-standOff-nested_standOff_should_be_typed-constraint-assert-12">
+            <rule context="tei:standOff">
+               <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="@type or not(ancestor::tei:standOff)">This
+      <sch:name/> element must have a @type attribute, since it is
+      nested inside a <sch:name/>
+               </sch:assert>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="tei_all-catchwords-catchword_in_msDesc-constraint-assert-13">
             <rule context="tei:catchwords">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -564,14 +604,6 @@ You must supply at least two values for @target on <name/>
                  test="count(tei:width)&gt; 1">
 The element <name/> may appear once only
       </report>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-dimensions-duplicateDim-constraint-report-21">
-            <rule context="tei:dimensions">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -580,14 +612,6 @@ The element <name/> may appear once only
                  test="count(tei:height)&gt; 1">
 The element <name/> may appear once only
       </report>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-dimensions-duplicateDim-constraint-report-22">
-            <rule context="tei:dimensions">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -602,7 +626,7 @@ The element <name/> may appear once only
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-secFol-secFol_in_msDesc-constraint-assert-13">
+            id="tei_all-secFol-secFol_in_msDesc-constraint-assert-14">
             <rule context="tei:secFol">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -617,7 +641,7 @@ The element <name/> may appear once only
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-signatures-signatures_in_msDesc-constraint-assert-14">
+            id="tei_all-signatures-signatures_in_msDesc-constraint-assert-15">
             <rule context="tei:signatures">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -646,7 +670,7 @@ The element <name/> may appear once only
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-relation-reforkeyorname-constraint-assert-15">
+            id="tei_all-relation-reforkeyorname-constraint-assert-16">
             <rule context="tei:relation">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -702,7 +726,7 @@ The element <name/> may appear once only
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-shift-shiftNew-constraint-assert-16">
+            id="tei_all-shift-shiftNew-constraint-assert-17">
             <rule context="tei:shift">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -720,7 +744,7 @@ remarkable at this point.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-rdgGrp-only1lem-constraint-assert-17">
+            id="tei_all-rdgGrp-only1lem-constraint-assert-18">
             <rule context="tei:rdgGrp">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -809,7 +833,7 @@ remarkable at this point.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-addSpan-spanTo-constraint-assert-19">
+            id="tei_all-addSpan-spanTo-constraint-assert-20">
             <rule context="tei:addSpan">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -824,7 +848,7 @@ remarkable at this point.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-addSpan-spanTo_fr-constraint-assert-20">
+            id="tei_all-addSpan-spanTo_fr-constraint-assert-21">
             <rule context="tei:addSpan">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -839,7 +863,7 @@ remarkable at this point.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-damageSpan-spanTo-constraint-assert-21">
+            id="tei_all-damageSpan-spanTo-constraint-assert-22">
             <rule context="tei:damageSpan">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -854,7 +878,7 @@ The @spanTo attribute of <name/> is required.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-damageSpan-spanTo_fr-constraint-assert-22">
+            id="tei_all-damageSpan-spanTo_fr-constraint-assert-23">
             <rule context="tei:damageSpan">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -868,7 +892,7 @@ The @spanTo attribute of <name/> is required.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-delSpan-spanTo-constraint-assert-23">
+            id="tei_all-delSpan-spanTo-constraint-assert-24">
             <rule context="tei:delSpan">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -882,7 +906,7 @@ The @spanTo attribute of <name/> is required.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-delSpan-spanTo_fr-constraint-assert-24">
+            id="tei_all-delSpan-spanTo_fr-constraint-assert-25">
             <rule context="tei:delSpan">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -896,7 +920,7 @@ The @spanTo attribute of <name/> is required.</assert>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-subst-substContents1-constraint-assert-25">
+            id="tei_all-subst-substContents1-constraint-assert-26">
             <rule context="tei:subst">
                <assert xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -924,12 +948,6 @@ The @spanTo attribute of <name/> is required.</assert>
                   value="if ( normalize-space( @maxOccurs ) eq 'unbounded')                         then -1                         else @maxOccurs cast as xs:integer"/>
         <sch:assert test="$max eq -1  or  $max ge $min">@maxOccurs should be greater than or equal to @minOccurs</sch:assert>
       </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-att.repeatable-MINandMAXoccurs-constraint-rule-15">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -974,7 +992,7 @@ should correspond to an existing module, via a moduleSpec or
             <sch:let name="me_phrase"
                   value="if (@ident)                                                then concat('The ', @ident )                                                else concat('This ',                                                            local-name(.),                                                            ' of ',                                                            ancestor::tei:*[@ident][1]/@ident )"/>
             <sch:assert test="@validUntil cast as xs:date  ge  current-date()">
-              <sch:value-of select="                  concat( $me_phrase,                          'construct is outdated (as of ',                          @validUntil,                          '); ODD processors may ignore it, and its use is no longer supported'                        )"/>
+              <sch:value-of select="                  concat( $me_phrase,                          ' construct is outdated (as of ',                          @validUntil,                          '); ODD processors may ignore it, and its use is no longer supported'                        )"/>
          </sch:assert>
               <sch:assert role="nonfatal"
                      test="@validUntil cast as xs:date  ge  $advance_warning_period">
@@ -1092,25 +1110,6 @@ Child elements of <name/> are only allowed when an external module is being load
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="tei_all-content-empty-content-deprecated-constraint-assert-32">
-            <rule context="tei:content">
-               <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
-                     xmlns:svg="http://www.w3.org/2000/svg"
-                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                     xmlns:math="http://www.w3.org/1998/Math/MathML"
-                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                     xmlns="http://www.tei-c.org/ns/1.0"
-                     test="*">The use of the &lt;content&gt; element
-      without any child elements is deprecated, and will be considered
-      invalid after 2019-08-25. Use a child &lt;empty&gt; element to
-      indicate that the element being specified is not allowed to have
-      content.</sch:assert>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
             id="tei_all-sequence-sequencechilden-constraint-assert-33">
             <rule context="tei:sequence">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1177,13 +1176,7 @@ Child elements of <name/> are only allowed when an external module is being load
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             id="tei_all-constraintSpec-needrules-constraint-rule-23">
-            <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                context="tei:macroSpec/tei:constraintSpec[@scheme eq 'schematron']/tei:constraint">
+            <sch:rule context="tei:macroSpec/tei:constraintSpec[@scheme eq 'schematron']/tei:constraint">
                <sch:report test="sch:assert|sch:report">An ISO Schematron constraint specification for a macro should not
         have an 'assert' or 'report' element without a parent 'rule' element</sch:report>
             </sch:rule>

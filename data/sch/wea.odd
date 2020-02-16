@@ -1311,6 +1311,69 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </p>
                </div>
             </div>
+            
+            <div xml:id="editing_timeline">
+               <head>Editing the Timeline Page</head>
+               <p>The timeline XML document (about/timeline.xml) is a <gi>listEvent</gi> document with <gi>event</gi> elements. Each <gi>event</gi> element has an <att>when</att> to specify the date and a <gi>p</gi> as a description of the event.
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listEvent>
+                        <event when="1861">
+                           <p>Achuen Amoy is baptized <q>Grace</q> in London and travels to China to work as a
+                           missionary.</p>
+                        </event>
+                     
+                        <event when="1863">
+                           <p>Edward Eaton marries Achuen Amoy in Shanghai more formally, after being married on
+                           board ship.</p>
+                        </event>
+                     
+                        <event when="1864">
+                           <p>Winnifred’s brother Edward Charles born in China. Eatons return to
+                           England soon afterward, settling in Macclesfield. </p>
+                        </event>
+                     </listEvent>
+                  </egXML>
+               
+               </p>
+               
+               <p>To add an image to the timeline entry, use an <gi>ab</gi> element with a <gi>type</gi>=<val>graphic</val> and a nested <gi>graphic</gi> element. This <gi>graphic</gi> element should have a <att>url</att> attribute that points to an image file located in the /media/ directory like so:
+                  
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <graphic url="media:myPicture.png"/>
+                     
+                     <!--In another event element-->
+                     <graphic url="media:anotherPicture.jpg"/>
+                  </egXML>
+                  
+                  Make sure to also put in a <gi>desc</gi> in the <gi>graphic</gi> for accessibility.
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  
+                     <event when="1839">
+                        <ab type="graphic">
+                           <graphic url="media:fig1.png">
+                              <desc>An image of Winnifred Eaton.</desc>
+                           </graphic>
+                        </ab>
+                        <p>Eaton’s father, Edward Eaton, born in Macclesfield, Cheshire,
+                        England.</p>
+                     </event>
+                  
+                     <event when="1846">
+                        <ab type="graphic">
+                           <graphic url="media:fig2.png">
+                              <desc>Winnifred Eaton outside of her home in Calgary.</desc>
+                           </graphic>
+                        </ab>
+                        <p>Eaton’s mother, Achuen Amoy, born in China, perhaps in/near Shanghai. As
+                        a young child, she is sold to Chinese acrobat and knife-thrower Tuck Quy
+                        (Teh-Kwei) and tours China, the United States, France, England,
+                        Scotland, and Ireland with the <q>Chinese Magicians</q> (also known as
+                        <q>Chinese Jugglers</q>), beginning in 1851.</p>
+                     </event>
+                  </egXML>
+               
+               </p>
+            </div>
          
             <div xml:id="encoding_citing">
                <head>How to Cite Things</head>
@@ -1707,7 +1770,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>Genre</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:exhibit">
-                              <desc>Exhibits</desc>
+                              <desc>Exhibit</desc>
                            </valItem>
                         </valList>
                      </attDef>
@@ -1717,10 +1780,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>Primary Source</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docPrimarySourceMS">
-                              <desc>Manuscripts</desc>
+                              <desc>Primary Source: Manuscripts</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docPrimarySourcePublished">
-                              <desc>Published Primary Sources</desc>
+                              <desc>Primary Source: Published</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:docBornDigital">
                               <desc>Born Digital document</desc>
@@ -1732,7 +1795,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>Documentation</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreShortStory">
-                              <desc>Short Stories</desc>
+                              <desc>Short Story</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreNF">
                               <desc>Non-fiction</desc>

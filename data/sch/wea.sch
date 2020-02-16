@@ -2,24 +2,39 @@
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
             xmlns:rng="http://relaxng.org/ns/structure/1.0"
             queryBinding="xslt2">
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="tei"
-       uri="http://www.tei-c.org/ns/1.0"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="xs"
-       uri="http://www.w3.org/2001/XMLSchema"/>
-   <ns xmlns="http://purl.oclc.org/dsdl/schematron"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns:tei="http://www.tei-c.org/ns/1.0"
-       xmlns:teix="http://www.tei-c.org/ns/Examples"
-       prefix="rng"
-       uri="http://relaxng.org/ns/structure/1.0"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="tei"
+           uri="http://www.tei-c.org/ns/1.0"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="xs"
+           uri="http://www.w3.org/2001/XMLSchema"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="rng"
+           uri="http://relaxng.org/ns/structure/1.0"/>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -190,11 +205,11 @@
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 context="tei:desc[ @type eq 'deprecationInfo']">
-	              <sch:assert test="../@validUntil">Information about a
-	deprecation should only be present in a specification element
-	that is being deprecated: that is, only an element that has a
-	@validUntil attribute should have a child &lt;desc
-	type="deprecationInfo"&gt;.</sch:assert>
+               <sch:assert test="../@validUntil">Information about a
+        deprecation should only be present in a specification element
+        that is being deprecated: that is, only an element that has a
+        @validUntil attribute should have a child &lt;desc
+        type="deprecationInfo"&gt;.</sch:assert>
             </sch:rule>
          </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -569,14 +584,6 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                      test="@target and count( child::* ) &gt; 0">
 If the @target attribute on <sch:name/> is used, the
 relatedItem element must be empty</sch:report>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-assert-28">
-            <rule context="tei:relatedItem">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
