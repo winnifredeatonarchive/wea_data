@@ -453,7 +453,7 @@
     
     <xsl:template match="graphic" mode="tei">
         <xsl:variable name="url" select="@url"/>
-        <xsl:variable name="urlNorm" select="if (ends-with($url,'\.pdf')) then replace($url,'.pdf','.png') else $url"/>
+        <xsl:variable name="urlNorm" select="if (matches($url,'\.pdf$')) then replace($url,'\.pdf$','.png') else $url"/>
         <xsl:choose>
             <xsl:when test="ancestor::list[@xml:id='featuredItems']">
                 <a href="{replace(parent::item/@corresp,'.xml','.html')}">
