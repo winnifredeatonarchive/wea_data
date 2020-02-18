@@ -25,6 +25,30 @@ function init(){
 }
 
 
+window.addEventListener("beforeprint", setupPrint);
+window.addEventListener("afterprint", undoPrint);
+
+function setupPrint(){
+    var credits = document.getElementById('credits');
+    
+    if (!(credits.classList.contains('open'))){
+        credits.classList.remove('closed');
+        credits.classList.add('open');
+        credits.classList.add('printonly');
+    }
+    
+}
+
+
+function undoPrint(){
+    var credits = document.getElementById('credits');
+    if (credits.classList.contains('open') && credits.classList.contains('printonly')){
+        credits.classList.remove('open');
+        credits.classList.remove('printonly');
+        credits.classList.add('closed');
+    }
+}
+
 
 function addEvents(){
     addHeaderSearch();
