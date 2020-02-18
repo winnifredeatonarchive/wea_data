@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="20.1">
+<project version="21.1">
     <meta>
         <filters directoryPatterns="" filePatterns="wea_data.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="20.1" xml:space="preserve">
+            <serialized version="21.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>code-templates</String>
@@ -10814,9 +10814,6 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                             <field name="openInBrowser">
                                                 <Boolean>false</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <null/>
                                             </field>
@@ -10866,6 +10863,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -10885,6 +10885,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>concept</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -10945,9 +10948,6 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                             <field name="openInBrowser">
                                                 <Boolean>false</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <null/>
                                             </field>
@@ -10997,6 +10997,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -11016,6 +11019,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>reference</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -11076,9 +11082,6 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                             <field name="openInBrowser">
                                                 <Boolean>false</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <null/>
                                             </field>
@@ -11128,6 +11131,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -11147,6 +11153,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>task</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -11207,9 +11216,6 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                             <field name="openInBrowser">
                                                 <Boolean>false</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <null/>
                                             </field>
@@ -11259,6 +11265,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="hasXPathValue">
                                                             <Boolean>false</Boolean>
                                                         </field>
+                                                        <field name="isStatic">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
                                                     </transformationParameter>
                                                     <transformationParameter>
                                                         <field name="paramDescription">
@@ -11278,6 +11287,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <String>topic</String>
                                                         </field>
                                                         <field name="hasXPathValue">
+                                                            <Boolean>false</Boolean>
+                                                        </field>
+                                                        <field name="isStatic">
                                                             <Boolean>false</Boolean>
                                                         </field>
                                                     </transformationParameter>
@@ -14493,9 +14505,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                             <field name="openInBrowser">
                                                 <Boolean>true</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <String>${cfd}/${cfn}.html</String>
                                             </field>
@@ -14578,9 +14587,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                             </field>
                                             <field name="openInBrowser">
                                                 <Boolean>true</Boolean>
-                                            </field>
-                                            <field name="outputFile">
-                                                <null/>
                                             </field>
                                             <field name="outputResource">
                                                 <String>${cfd}/${cfn}.pdf</String>
@@ -14813,9 +14819,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                             </field>
                                             <field name="openInBrowser">
                                                 <Boolean>true</Boolean>
-                                            </field>
-                                            <field name="outputFile">
-                                                <null/>
                                             </field>
                                             <field name="outputResource">
                                                 <null/>
@@ -15064,9 +15067,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                             <field name="openInBrowser">
                                                 <Boolean>true</Boolean>
                                             </field>
-                                            <field name="outputFile">
-                                                <null/>
-                                            </field>
                                             <field name="outputResource">
                                                 <null/>
                                             </field>
@@ -15313,9 +15313,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                             </field>
                                             <field name="openInBrowser">
                                                 <Boolean>true</Boolean>
-                                            </field>
-                                            <field name="outputFile">
-                                                <null/>
                                             </field>
                                             <field name="outputResource">
                                                 <null/>
@@ -15602,9 +15599,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <String>${cfd}/${cfn}_fixed.xml</String>
                                 </field>
@@ -15652,6 +15646,9 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                 <String>${people}</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -15709,9 +15706,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <String>${pdu}/code/gutenberg/tei/${cfn}.xml</String>
@@ -15829,9 +15823,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -15947,9 +15938,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -16076,6 +16064,9 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
     </meta>
     <projectTree name="wea_data.xpr">
         <folder path="."/>
+        <file name="../../Desktop/winnifred%20website/born%20digitals/website/photos/Eaton%20family%20photos/Beryl%20Eaton,%20back%20says%20To%20George%20and%20May%20with%20love%20from%20Beryl%20Xmas%20rooney.jpg"/>
         <file name="../../Desktop/winnifred%20website/UPDATED%20Texts%20by%20OW/HardTimes.pdf"/>
+        <file name="../../Desktop/winnifred%20website/films%20posters%20video%20clips%20articles/What%20Happenedmotionpicturemag36moti_0625.jpg"/>
+        <file name="../../Desktop/winnifred%20website/born%20digitals/website/photos/hollywood/Winnifred%20MGM%20IMG_20160519_125349.jpg"/>
     </projectTree>
 </project>
