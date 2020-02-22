@@ -712,6 +712,29 @@ Note: If it is not defined then the element at the caret position will be used.&
                                     <String>text/css</String>
                                 </field>
                                 <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',
+          arg-elementLocation, '.',
+          arg-fragment, '&lt;element/>'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Replaces the content of the fully selected element or the content of the element at caret (if the selection is empty or a node is not entirely selected)&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>elementLocation&lt;/b> = An XPath expression indicating the element whose attribute will be changed.
+Note: If it is not defined then the element at the caret position or the current fully selected element will be used.&lt;/li>&lt;li>&lt;b>fragment&lt;/b> = The new content of the element.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',&lt;br/>          arg-elementLocation, '.',&lt;br/>          arg-fragment, '&lt;element/>'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ReplaceElementContentOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
                                     <String>operation, 'ro.sync.ecss.extensions.commons.operations.SetPseudoClassOperation',
           arg-elementLocation, '.',
           arg-name, '',
@@ -1585,6 +1608,155 @@ Should be inserted as name=value pairs separated by comma or line break.&lt;/li>
                             </codeTemplateItem>
                             <codeTemplateItem>
                                 <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;datalist id="id${caret}">
+  &lt;option value="">&lt;/option>
+  &lt;option value="">&lt;/option>
+&lt;/datalist></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML data list with autocomplete options</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>datalist</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;dl>
+  &lt;dt>${caret}&lt;/dt>&lt;dd>&lt;/dd>
+  &lt;dt>&lt;/dt>&lt;dd>&lt;/dd>
+&lt;/dl></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML definition list</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>dl</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;figure>
+  &lt;img src="src${caret}" alt="">
+  &lt;figcaption>&lt;/figcaption>
+&lt;/figure></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML figure with image and caption</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>figure</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;ol type="1${caret}">
+  &lt;li>&lt;/li>
+  &lt;li>&lt;/li>
+&lt;/ol></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML ordered list</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>ol</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;table>
+  &lt;caption>${caret}&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>&lt;/th>
+      &lt;th>&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>&lt;/td>
+      &lt;td>&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML table</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>table</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/html</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>&lt;ul>
+  &lt;li>${caret}&lt;/li>
+  &lt;li>&lt;/li>
+&lt;/ul></String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>HTML unordered list</String>
+                                </field>
+                                <field name="renderString">
+                                    <String>ul</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
                                     <String>text/json</String>
                                 </field>
                                 <field name="unparsedInsertString">
@@ -2225,6 +2397,29 @@ Note: If it is not defined then the element at the caret position will be used.&
                                 </field>
                                 <field name="renderString">
                                     <String>op_ReplaceContentOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',
+          arg-elementLocation, '.',
+          arg-fragment, '&lt;element/>'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Replaces the content of the fully selected element or the content of the element at caret (if the selection is empty or a node is not entirely selected)&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>elementLocation&lt;/b> = An XPath expression indicating the element whose attribute will be changed.
+Note: If it is not defined then the element at the caret position or the current fully selected element will be used.&lt;/li>&lt;li>&lt;b>fragment&lt;/b> = The new content of the element.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',&lt;br/>          arg-elementLocation, '.',&lt;br/>          arg-fragment, '&lt;element/>'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ReplaceElementContentOperation</String>
                                 </field>
                                 <field name="enabled">
                                     <Boolean>true</Boolean>
@@ -6814,201 +7009,6 @@ ${caret}</String>
                                 </field>
                                 <field name="renderString">
                                     <String>xsl</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/css</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',
-          arg-elementLocation, '.',
-          arg-fragment, '&lt;element/>'</String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Replaces the content of the fully selected element or the content of the element at caret (if the selection is empty or a node is not entirely selected)&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>elementLocation&lt;/b> = An XPath expression indicating the element whose attribute will be changed.
-Note: If it is not defined then the element at the caret position or the current fully selected element will be used.&lt;/li>&lt;li>&lt;b>fragment&lt;/b> = The new content of the element.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',&lt;br/>          arg-elementLocation, '.',&lt;br/>          arg-fragment, '&lt;element/>'&lt;/p>&lt;/body>&lt;/html></String>
-                                </field>
-                                <field name="renderString">
-                                    <String>op_ReplaceElementContentOperation</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;datalist id="id${caret}">
-  &lt;option value="">&lt;/option>
-  &lt;option value="">&lt;/option>
-&lt;/datalist></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML data list with autocomplete options</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>datalist</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;dl>
-  &lt;dt>${caret}&lt;/dt>&lt;dd>&lt;/dd>
-  &lt;dt>&lt;/dt>&lt;dd>&lt;/dd>
-&lt;/dl></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML definition list</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>dl</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;figure>
-  &lt;img src="src${caret}" alt="">
-  &lt;figcaption>&lt;/figcaption>
-&lt;/figure></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML figure with image and caption</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>figure</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;ol type="1${caret}">
-  &lt;li>&lt;/li>
-  &lt;li>&lt;/li>
-&lt;/ol></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML ordered list</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>ol</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;table>
-  &lt;caption>${caret}&lt;/caption>
-  &lt;thead>
-    &lt;tr>
-      &lt;th>&lt;/th>
-      &lt;th>&lt;/th>
-    &lt;/tr>
-  &lt;/thead>
-  &lt;tbody>
-    &lt;tr>
-      &lt;td>&lt;/td>
-      &lt;td>&lt;/td>
-    &lt;/tr>
-  &lt;/tbody>
-&lt;/table></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML table</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>table</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/html</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>&lt;ul>
-  &lt;li>${caret}&lt;/li>
-  &lt;li>&lt;/li>
-&lt;/ul></String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>HTML unordered list</String>
-                                </field>
-                                <field name="renderString">
-                                    <String>ul</String>
-                                </field>
-                                <field name="enabled">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="accelerator">
-                                    <null/>
-                                </field>
-                            </codeTemplateItem>
-                            <codeTemplateItem>
-                                <field name="contentType">
-                                    <String>text/less</String>
-                                </field>
-                                <field name="unparsedInsertString">
-                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',
-          arg-elementLocation, '.',
-          arg-fragment, '&lt;element/>'</String>
-                                </field>
-                                <field name="descriptionString">
-                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Replaces the content of the fully selected element or the content of the element at caret (if the selection is empty or a node is not entirely selected)&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>elementLocation&lt;/b> = An XPath expression indicating the element whose attribute will be changed.
-Note: If it is not defined then the element at the caret position or the current fully selected element will be used.&lt;/li>&lt;li>&lt;b>fragment&lt;/b> = The new content of the element.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ReplaceElementContentOperation',&lt;br/>          arg-elementLocation, '.',&lt;br/>          arg-fragment, '&lt;element/>'&lt;/p>&lt;/body>&lt;/html></String>
-                                </field>
-                                <field name="renderString">
-                                    <String>op_ReplaceElementContentOperation</String>
                                 </field>
                                 <field name="enabled">
                                     <Boolean>true</Boolean>
@@ -16353,6 +16353,8 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
         <folder path="."/>
         <file name="../../Desktop/winnifred%20website/born%20digitals/website/photos/Eaton%20family%20photos/Beryl%20Eaton,%20back%20says%20To%20George%20and%20May%20with%20love%20from%20Beryl%20Xmas%20rooney.jpg"/>
         <file name="../../Desktop/winnifred%20website/UPDATED%20Texts%20by%20OW/HardTimes.pdf"/>
+        <file name="../../Desktop/winnifred%20website/U%20of%20C%20Archives%20and%20SC%20WEA%20photos/na-4320-5WEandChildrenonsleigh.tif"/>
+        <file name="../../Desktop/winnifred%20website/U%20of%20C%20Archives%20and%20SC%20WEA%20photos/na-4320-9WEatRanch.tif"/>
         <file name="../../Desktop/winnifred%20website/films%20posters%20video%20clips%20articles/What%20Happenedmotionpicturemag36moti_0625.jpg"/>
         <file name="../../Desktop/winnifred%20website/born%20digitals/website/photos/hollywood/Winnifred%20MGM%20IMG_20160519_125349.jpg"/>
     </projectTree>
