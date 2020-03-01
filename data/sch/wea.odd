@@ -2803,6 +2803,18 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="graphic.noSpaceInUrl" scheme="schematron">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:*[@url]">
+                              <sch:assert test="not(matches(@url,'\s+'))">
+                                 ERROR: Do not put spaces in image names. If it is an image in the repository,
+                                 please rename it to not use spaces.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
                
                
