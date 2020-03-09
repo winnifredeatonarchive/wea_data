@@ -4,8 +4,7 @@
   * Add an event listener for the onload event so that we can call the 
   * initStatic function
   */
-if (window.addEventListener) window.addEventListener('load', init, false)
-else if (window.attachEvent) window.attachEvent('onload', init);
+window.addEventListener('DOMContentLoaded', init, false);
 
 var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 url = new URL(document.URL);
@@ -13,7 +12,7 @@ searchParams = url.searchParams;
 
 function init(){
     addDocClass();
-    if (document.querySelectorAll('img[data-src]')){
+    if (document.querySelectorAll('img.lazy')){
         lazyload();
     }
    if (searchParams.has("searchTokens")){
@@ -32,8 +31,15 @@ window.addEventListener("beforeprint", setupPrint);
 window.addEventListener("afterprint", undoPrint);
 
 function lazyload(){
+    var imgs = document.querySelectorAll('img.lazy');
+    imgs.forEach(function(img){
+        var src = img.src;
+        img.setAttribute('data-src',src);
+        img.removeAttribute('src');
+    });
+
     var lazyLoadInstance = new LazyLoad({
-    elements_selector: "img[data-src]"
+    elements_selector: "img.lazy"
 });
 }
 

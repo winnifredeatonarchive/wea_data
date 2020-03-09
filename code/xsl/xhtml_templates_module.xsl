@@ -461,7 +461,7 @@
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <img data-src="{$urlNorm}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
+                <img src="{$urlNorm}" class="lazy" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
             </xsl:otherwise>
         </xsl:choose>
        
