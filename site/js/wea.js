@@ -13,6 +13,9 @@ searchParams = url.searchParams;
 
 function init(){
     addDocClass();
+    if (document.querySelectorAll('img[data-src]')){
+        lazyload();
+    }
    if (searchParams.has("searchTokens")){
     highlightSearchMatches();
     } else {
@@ -27,6 +30,12 @@ function init(){
 
 window.addEventListener("beforeprint", setupPrint);
 window.addEventListener("afterprint", undoPrint);
+
+function lazyload(){
+    var lazyLoadInstance = new LazyLoad({
+    elements_selector: "img[data-src]"
+});
+}
 
 function setupPrint(){
     var credits = document.getElementById('credits');

@@ -32,7 +32,9 @@
                 <link rel="stylesheet" type="text/css" href="css/index.css"/>
             </xsl:if>
             <link rel="icon" type="image/png" href="images/icon.png"/>
+            <script src="js/lazyload.min.js"/>
             <script src="js/wea.js"/>
+
             <xsl:if test="@xml:id='search'">
                 <script src="js/porterStemmer.js"/>
                 <script src="js/search.js"/>
