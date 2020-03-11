@@ -31,7 +31,7 @@ window.addEventListener("beforeprint", setupPrint);
 window.addEventListener("afterprint", undoPrint);
 
 function lazyload(){
-    var imgs = document.querySelectorAll('img.lazy');
+    var imgs = document.querySelectorAll('#text img.lazy');
     imgs.forEach(function(img){
         var src = img.src;
         img.setAttribute('data-src',src);
@@ -39,7 +39,7 @@ function lazyload(){
     });
 
     var lazyLoadInstance = new LazyLoad({
-    elements_selector: "img.lazy"
+    elements_selector: "img.lazy[data-src]"
 });
 }
 
