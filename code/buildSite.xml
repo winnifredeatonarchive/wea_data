@@ -75,7 +75,7 @@
         <!--First make small copies-->
         <apply executable="vipsthumbnail">
             <srcfile/>
-            <arg line="--size x600"/>
+            <arg line="--size 10000x600"/>
             <arg line="-o small/%s.jpg"/>
             <fileset refid="mediaFileset"/>
             
