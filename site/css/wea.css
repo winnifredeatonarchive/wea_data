@@ -360,13 +360,13 @@ div#nav_search button:hover{
     transition: color 0.2s ease-in-out;
 }
 
-.JS img[data-wea-src]{
+.JS img[data-wea-src ^='media/']{
     cursor:pointer;
     transform: scale(1);
     transition: transform 0.2s ease-in-out;
 }
 
-.JS img[data-wea-src]:hover{
+.JS img[data-wea-src ^='media/']:hover{
     transform: scale(1.05);
      transition: transform 0.2s ease-in-out;
 }
