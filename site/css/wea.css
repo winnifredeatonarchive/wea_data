@@ -352,6 +352,12 @@ div#nav_search button:hover{
         display:block;
         position:relative;
         cursor:pointer;
+        transition: color 0.2s ease-in-out;
+}
+
+.JS #facsViewerContainer.open #facs_closer:hover{
+    color:var(--wea-pink);
+    transition: color 0.2s ease-in-out;
 }
 
 .JS img[data-wea-src]{
@@ -374,6 +380,7 @@ div#nav_search button:hover{
     position:fixed;
     top:0;
     left:0;
+    filter: blur(2px);
 }
 
 
@@ -1413,14 +1420,28 @@ div[data-type='biblio_list']{
 
 /****************************************************************** MEDIA GALLERY ********/
 
-div[data-type='listFigure']{
+div[data-type='listFigure'] {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap;
+}
+
+div[data-type="listFigure"] > div{
+    flex: 0 1 29%;
+    padding:1rem;
+    align-self:center;
+}
+
+
+
+/*div[data-type='listFigure']{
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
     
 }
 
-div[data-type="listFigure"] > div{
+{
     width:8rem;
     padding:5%;
     margin:.5rem;
@@ -1437,7 +1458,7 @@ div[data-type='listFigure'] img{
     max-width:8rem;
     height:auto;
 }
-
+*/
 /******************************************************* LIST EVENT HANDLING ************ */
 
 
