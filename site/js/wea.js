@@ -103,22 +103,30 @@ function makeNavClickable(){
     var navCloser = document.getElementById('nav_closer');
     navCloser.addEventListener('click', toggleNav, true);
     var overlayCloser = document.getElementById('header_overlay');
-    overlayCloser.addEventListener('click',toggleNav,true);
+    overlayCloser.addEventListener('click',toggleOverlay,true);
 }
  
  
-function toggleNav(){
-      var e=arguments[0];
+ function toggleOverlay(){
+       var e=arguments[0];
       /* Get rid of the #href functionality */
       e.preventDefault();
+     var facsViewer = document.getElementById('facsViewerContainer');
+     if (facsViewer && facsViewer.classList.contains('open')){ 
+            document.getElementById('facs_closer').click();
+     } else {
+         document.getElementById('nav_closer').click();
+     }
+     
+ }
+ 
+function toggleNav(){
+
       
       toggleOpenClose(document.getElementById('menu_main'), true);
-      toggleOverlay();
+      document.getElementsByTagName('body')[0].classList.toggle("overlay");
 }    
 
-function toggleOverlay(){
-    document.getElementsByTagName('body')[0].classList.toggle("overlay");
-}
 
 function makeTablesSortable(){
     var th = document.querySelectorAll('th.sortable');
