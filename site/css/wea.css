@@ -340,7 +340,8 @@ div#nav_search button:hover{
     position:fixed;
     align-self:center;
     z-index:9000;
-    transform:translateY(25%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .JS #facsViewerContainer.open #facs_closer{
