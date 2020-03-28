@@ -73,7 +73,7 @@
         
 
         <!--First make small copies-->
-        <apply executable="vipsthumbnail">
+        <apply executable="vipsthumbnail" outputproperty="nonce">
             <srcfile/>
             <arg line="--size 10000x600"/>
             <arg line="-o small/%s.jpg"/>
