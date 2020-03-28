@@ -56,42 +56,31 @@
         <exec executable="vipsthumbnail">
             <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.png --size 10000x300"/>
         </exec>
-        <!--<exec executable="pdftoppm">
-            <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 600"/>
-        </exec>
-        <exec executable="pdftoppm">
-            <arg line="${pdf} ${site.dir}/facsimiles/${base} -singlefile -png -scale-to 300"/>
-        </exec>-->
+        
     </target>
    
     <target name="processMedia">
         
-        <echo message="Creating smaller PNGs from PNGS"/>
-        <!--<apply executable="convert" dest="${site.dir}/media" force="true" failonerror="true" verbose="true">
-            <arg line="-density 150 -thumbnail x600"/>
+        <echo message="Creating small JPGs from large media files for display across the site..."/>
+        <delete dir="${site.dir}/media/small"/>
+        <mkdir dir="${site.dir}/media/small"/>
+        
+        
+        <fileset dir="${site.dir}/media" id="mediaFileset">
+            <include name="**"/>
+            <exclude name="**.pdf"/>
+        </fileset>
+        
+
+        <!--First make small copies-->
+        <apply executable="vipsthumbnail">
             <srcfile/>
-            <targetfile/>
-            <fileset dir="${site.dir}/media">
-                <include name="**.png"/>
-            </fileset>
-            <mapper>
-                <globmapper from="*.png" to="*_sm.png"/>
-            </mapper>
+            <arg line="--size x600"/>
+            <arg line="-o small/%s.jpg"/>
+            <fileset refid="mediaFileset"/>
+            
         </apply>
-        <echo message="Creating small PNGs from PDFs"/>
-        <apply executable="convert" dest="${site.dir}/media" force="true" failonerror="true" verbose="true">
-            <arg line="-density 150 -thumbnail x600"/>
-            <srcfile suffix="[0]"/>
-            <arg line="+profile 'icc'"/>
-            <arg line="-background white -alpha remove -alpha off"/>
-            <targetfile/>
-            <fileset dir="${site.dir}/media">
-                <include name="**.pdf"/>
-            </fileset>
-            <mapper>
-                <globmapper from="*.pdf" to="*_sm.png"/>
-            </mapper>
-        </apply>-->
+
     </target>
 
  
@@ -128,7 +117,6 @@
     </target>
     
     <target name="createIndex">
-        <echo message="DOING NOTHING"/>
         <echo message="Creating index..."/>
         <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/xsl/xml_index_master.xsl"/>

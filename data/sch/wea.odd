@@ -2750,7 +2750,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>Every figure in the figure database should have structured data</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
+                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]">
                               <sch:assert test="tei:head and tei:figDesc and tei:bibl">
                                  ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
                               </sch:assert>
@@ -2782,6 +2782,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <valItem ident="ephemera">
                               <gloss>Ephemera</gloss>
                               <desc>Any other figure that does not fall into a more specific category.</desc>
+                           </valItem>
+                           <valItem ident="generated">
+                              <gloss>Generated Image</gloss>
+                              <desc>DO NOT USE: An image generated from the file structure; this is an temporary solution.</desc>
                            </valItem>
                         </valList>
                      </attDef>

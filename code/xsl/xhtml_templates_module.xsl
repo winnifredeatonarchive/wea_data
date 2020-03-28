@@ -73,6 +73,10 @@
                 <xsl:call-template name="createAppendix"/>
             </div>
             <xsl:call-template name="createPopup"/>
+            <xsl:if test="//graphic">
+                <xsl:call-template name="createFacsView"/>
+            </xsl:if>
+
            <xsl:call-template name="createFooter"/>
         </body>
     </xsl:template>
@@ -189,12 +193,8 @@
                 <xsl:apply-templates select="head" mode="tei"/>
 
                 <figure class="thumb">
-                    <a href="{$href}" xsl:use-attribute-sets="newTabLink">
-                        <img src="{graphic/@url}" alt="{ancestor::figure/figDesc}"/>
-                        <div class="imageText">
-                            <h4>View Image</h4>
-                        </div>
-                    </a>
+                    <xsl:apply-templates select="graphic" mode="tei"/>
+                    
                 </figure>
                 <xsl:variable name="tempP">
                     <tei:p>
@@ -453,7 +453,22 @@
     
     <xsl:template match="graphic" mode="tei">
         <xsl:variable name="url" select="@url"/>
-        <xsl:variable name="urlNorm" select="if (matches($url,'\.pdf$')) then replace($url,'\.pdf$','.png') else $url"/>
+        <xsl:variable name="urlNorm">
+            <xsl:choose>
+                <xsl:when test="matches($url,'\.pdf$')">
+                    <xsl:value-of select="replace($url,'\.pdf$','.png')"/>
+                </xsl:when>
+                <xsl:when test="matches($url,'^media/')">
+                    <xsl:value-of 
+                        select="replace($url,'^media/','media/small/')
+                                => replace('\.[a-zA-Z]+$','.jpg')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$url"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+        </xsl:variable>
         <xsl:choose>
             <xsl:when test="ancestor::list[@xml:id='featuredItems']">
                 <a href="{replace(parent::item/@corresp,'.xml','.html')}">
@@ -461,7 +476,7 @@
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <img src="{$urlNorm}" class="lazy" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
+                <img src="{$urlNorm}" class="lazy" data-wea-src="{if (matches($url,'\.tiff?','i')) then replace($url,'\.tiff?','.png','i') else $url}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
             </xsl:otherwise>
         </xsl:choose>
        

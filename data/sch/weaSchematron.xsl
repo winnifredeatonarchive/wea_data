@@ -2228,11 +2228,11 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:figure[ancestor::tei:div[@type='listFigure']]"
+   <xsl:template match="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]"
                  priority="1000"
                  mode="M51">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:figure[ancestor::tei:div[@type='listFigure']]"/>
+                       context="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

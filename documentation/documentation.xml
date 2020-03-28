@@ -2862,7 +2862,11 @@
                         <cell>
                            <label>May contain</label>
                         </cell>
-                        <cell>Empty element</cell>
+                        <cell>
+                           <list>
+                              <item>XSD Name</item>
+                           </list>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -10817,6 +10821,8 @@ material</measure>
                                                 <item>(Paratextual Materials) Materials that are related to a text, but are not necessarily part of the central text. This category includes objects like mastheads, covers, and other print cultural artifacts.</item>
                                                 <label>ephemera</label>
                                                 <item>(Ephemera) Any other figure that does not fall into a more specific category.</item>
+                                                <label>generated</label>
+                                                <item>(Generated Image) DO NOT USE: An image generated from the file structure; this is an temporary solution.</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -11005,7 +11011,7 @@ material</measure>
                         </cell>
                         <cell>Every figure in the figure database should have structured data<code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]"&gt;
+&lt;sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]"&gt;
  &lt;sch:assert test="tei:head and tei:figDesc and tei:bibl"&gt; ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
@@ -12495,7 +12501,11 @@ material</measure>
                         <cell>
                            <label>May contain</label>
                         </cell>
-                        <cell>Empty element</cell>
+                        <cell>
+                           <list>
+                              <item>XSD Name</item>
+                           </list>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -12703,6 +12713,21 @@ material</measure>
 &lt;sch:rule context="tei:graphic[ancestor::tei:div[@type='listFigure']]"&gt;
  &lt;sch:assert test="@mimeType"&gt; ERROR: All media in the media database should use the @mimeType attribute to specify
    the source mimetype.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:*[@url]"&gt;
+ &lt;sch:assert test="not(matches(@url,'\s+'))"&gt; ERROR: Do not put spaces in image names. If it is an image in the repository,
+   please rename it to not use spaces.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

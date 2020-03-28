@@ -29,6 +29,24 @@
         <xsl:call-template name="createResourcesBibl"/>
     </xsl:template>
     
+    <xsl:template match="body[ancestor::TEI/@xml:id='media']" mode="original">
+        <body>
+            <head>Media Gallery</head>
+            <div type="listFigure">
+                <xsl:for-each select="uri-collection($outDir || '/media?select=*')">
+                    <xsl:if test="matches(.,'\.(tiff?|png|jpe?g|bmp)$','i')">
+                        <figure xml:id="fig{position()}" type="generated">
+                            <graphic url="media:{substring-after(.,'media/')}" mimeType="image/png">
+                                <desc><xsl:value-of select="substring-after(.,'media/')"/></desc>
+                            </graphic>
+                        </figure>
+                    </xsl:if>
+                </xsl:for-each>
+            </div>
+        </body>
+        
+    </xsl:template>
+    
     
     <!--Clean up empty names in the respStmts-->
     <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">

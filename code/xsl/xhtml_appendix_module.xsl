@@ -80,6 +80,14 @@
     </xsl:template>
     
     
+    <xsl:template name="createFacsView">
+        <div id="facsViewerContainer">
+            <span id="facs_closer">X</span>
+            <canvas id="viewer"/>
+        </div>        
+
+    </xsl:template>
+    
     <xsl:template name="createPopup">
         <div id="popup" class="hidden">
             <div id="popup_closer">X</div>

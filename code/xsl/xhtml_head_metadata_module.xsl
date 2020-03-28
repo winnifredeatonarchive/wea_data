@@ -34,7 +34,10 @@
             <link rel="icon" type="image/png" href="images/icon.png"/>
             <script src="js/lazyload.min.js"/>
             <script src="js/wea.js"/>
-
+            <xsl:if test="//graphic[contains(@url,'media/')]">
+                <script src="js/facsimile_view.js"/>
+            </xsl:if>
+ 
             <xsl:if test="@xml:id='search'">
                 <script src="js/porterStemmer.js"/>
                 <script src="js/search.js"/>

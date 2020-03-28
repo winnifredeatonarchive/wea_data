@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-03-01T04:16:24Z. .
+Schema generated from ODD source 2020-03-28T19:58:21Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -5256,7 +5256,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
+                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]">
                               <sch:assert test="tei:head and tei:figDesc and tei:bibl">
                                  ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
                               </sch:assert>
@@ -5279,6 +5279,8 @@ Suggested values include: 1] label; 2] data</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Paratextual Materials) Materials that are related to a text, but are not necessarily part of the central text. This category includes objects like mastheads, covers, and other print cultural artifacts.</a:documentation>
                   <value>ephemera</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ephemera) Any other figure that does not fall into a more specific category.</a:documentation>
+                  <value>generated</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Generated Image) DO NOT USE: An image generated from the file structure; this is an temporary solution.</a:documentation>
                </choice>
             </attribute>
          </optional>

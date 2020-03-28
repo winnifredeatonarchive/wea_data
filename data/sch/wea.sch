@@ -816,7 +816,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']]">
+                           <sch:rule context="tei:figure[ancestor::tei:div[@type='listFigure']][not(@type='generated')]">
                               <sch:assert test="tei:head and tei:figDesc and tei:bibl">
                                  ERROR: Every figure in the media database must include a head element, a figDesc element, and a bibl element.
                               </sch:assert>
