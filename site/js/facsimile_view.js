@@ -24,7 +24,10 @@ function setup(){
     document.getElementById('facs_closer').addEventListener('click', function(){
         var body = document.getElementsByTagName('body')[0];
         body.classList.remove('facs-overlay');
-        document.getElementById('facsViewerContainer').classList.remove('open');
+        var fcv = document.getElementById('facsViewerContainer');
+        fcv.classList.remove('open');
+        fcv.classList.remove('loaded');
+        
     });
     var canvas = document.getElementsByTagName('canvas')[0];
     canvas.setAttribute('data-width', canWidth);
@@ -96,12 +99,11 @@ function drawFacs(){
     var facsCtr = document.getElementById('facsViewerContainer');
     document.getElementsByTagName('body')[0].classList.add('facs-overlay');
     facsCtr.classList.add('open');
-    
     /* Add a little loading boilerplate... */
     
-    ctx.fillText("Loading...", 350, 300);
     /* Once the facs loads, then draw the facsimile */
     facs.onload = function(){
+       facsCtr.classList.add('loaded');
        drawFacsimile(imgDiv, this);
     }
     facs.onerror = function(){

@@ -83,6 +83,7 @@
     <xsl:template name="createFacsView">
         <div id="facsViewerContainer">
             <span id="facs_closer" class="mi">close</span>
+            <span id="facs_loader">LOADING</span>
             <canvas id="viewer"/>
         </div>        
 

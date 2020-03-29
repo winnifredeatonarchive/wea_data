@@ -368,7 +368,19 @@ div#nav_search button:hover{
 
 .JS img[data-wea-src ^='media/']:hover{
     transform: scale(1.05);
-     transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+#facs_loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size:1.4rem;
+}
+
+.loaded #facs_loader{
+    display:none;
 }
 
  .JS.facs-overlay #header_overlay
