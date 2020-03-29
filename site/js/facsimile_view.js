@@ -27,6 +27,12 @@ function setup(){
         var fcv = document.getElementById('facsViewerContainer');
         fcv.classList.remove('open');
         fcv.classList.remove('loaded');
+        if (window.stop !== undefined){
+            window.stop();
+         }
+        else if (document.execCommand !== undefined){
+                document.execCommand("Stop", false);
+        }
         
     });
     var canvas = document.getElementsByTagName('canvas')[0];
