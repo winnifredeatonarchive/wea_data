@@ -165,6 +165,7 @@ function drawFacsimile(imgDiv, facs){
 		
 		canvas.addEventListener('mousedown',function(evt){
 			document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'none';
+			document.body.style.cursor = 'grabbing';
 			lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
 			lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
 			dragStart = ctx.transformedPoint(lastX,lastY);
@@ -183,6 +184,7 @@ function drawFacsimile(imgDiv, facs){
 		canvas.addEventListener('mouseup',function(evt){
 			dragStart = null;
 			if (!dragged) zoom(evt.shiftKey ? -1 : 1 );
+			document.body.style.cursor = 'auto';
 			document.body.style.mozUserSelect = document.body.style.webkitUserSelect = document.body.style.userSelect = 'auto';
 		},false);
 		
