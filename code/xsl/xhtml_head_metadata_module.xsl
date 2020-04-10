@@ -92,10 +92,19 @@
             </xsl:if>
         </xsl:for-each>
         <xsl:if test="wea:isObject(.)">
+            
+            <!--Start grouping by names-->
             <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
                 <meta name="Pseudonym" class="staticSearch.filter" content="{wea:namecase(current-grouping-key())}"/>
                 <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
             </xsl:for-each-group>
+            
+            <meta name="Has facsimile?" class="staticSearch.bool" content="{xs:boolean(exists(//text/@facs))}"/>
+            <meta name="Has transcription?" class="staticSearch.bool" content="{not(xs:boolean(exists(//gap[@reason='noTranscriptionAvailable'])))}"/>
+            <!--Get facs-->
+            <xsl:if test="//text/@facs">
+                <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.png')}"/>
+            </xsl:if>
            <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>
             <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
             <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>

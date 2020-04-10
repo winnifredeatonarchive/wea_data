@@ -368,6 +368,7 @@ div#nav_search button:hover{
 }
 
 .JS img[data-wea-src ^='media/']:hover{
+    cursor:zoom-in;
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;
 }
@@ -986,6 +987,25 @@ mark{
     background:inherit;
 }
 
+div#ssResults>ul>li {
+    flex-direction:row-reverse;
+    justify-content:flex-end;
+    margin-bottom:.75rem;
+}
+
+div#ssResults > ul > li > a{
+    flex:0 1 20%;
+    margin-left:1rem;
+    margin-right:-1rem;
+}
+
+div#ssResults img{
+    margin-top:2rem;
+}
+
+div#ssResults > ul > li > div{
+    flex:0 1 80%;
+}
 
 /********* HEADER SEARCH ********/
 

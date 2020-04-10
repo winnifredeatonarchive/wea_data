@@ -562,5 +562,14 @@ ul#menu_main > li > ul{
  table[data-type="exhibit"] th:first-child{
      display:none;
  }
+ 
+ div#ssResults > ul > li > div{
+    flex:0 1 100%;
+}
+
+div#ssResults > ul > li > a{
+    display:none!important;
+    flex:0;
+}
     
 }
