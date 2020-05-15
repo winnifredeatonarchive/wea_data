@@ -22,6 +22,9 @@
         <xsl:call-template name="createIndexPage"/>
     </xsl:template>
     
+    
+    
+    
    <xsl:template name="createIndexPage">
        <xsl:call-template name="generateTeiPage">
            <xsl:with-param name="thisId" select="'azindex'"/>

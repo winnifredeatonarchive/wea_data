@@ -452,23 +452,6 @@
                         </egXML>
                         
                      </p>
-                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the <att>type</att> value of <val>bio</val>, with a subtype of either <val>short</val> or <val>long</val>:
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <person xml:id="JS1">
-                              <persName>
-                                 <forename>John</forename>
-                                 <surname>Smith</surname>
-                                 <reg>John Smith</reg>
-                              </persName>
-                           </person>
-                           <note type="bio" subtype="short">
-                              <p>John Smith is a professor of English at the University of British Columbia</p>
-                           </note>
-                           <note type="bio" subtype="long">
-                              <p>Receiving his doctorate from the University of Arkansas, John Smith has worked across many disciplines, including neuroscience, anthropology, and literary studies. His current work investigates<!--[...]-->.</p>
-                           </note>
-                        </egXML>
-                     </p>
                   </div>
                </div>
                <div xml:id="encodingDatabases_organizations">
@@ -2265,66 +2248,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:note[@type='bio']">
-                              <sch:assert test="parent::tei:person">
-                                 ERROR: Biographical notes should only be used for people in personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:note[@type='bio']">
+                           <sch:rule context="tei:person/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes should have at least one paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:assert test="count(tei:p) = 1">
-                                 ERROR: Short biographies should only contain a single paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.subtypeOnlyForBio">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:note[@subtype]">
-                              <sch:assert test="@type='bio'">
-                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="bioNoteOneOfEach">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:person">
-                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
-                                 ERROR: Only one of each long and short bios are allowed in the personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="shortBiosShouldBeShort">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:let name="wc"
-                                       value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
-                              <sch:assert test="$wc lt 76">
-                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                                 ERROR: All biographical notes must contain at least one paragraph..
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -2341,22 +2267,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>authorial</desc>
                               <gloss>an authorial note; currently only used with quotations where the author
                                  interrupts the dominant narrative voice by interjecting explanatory commentary.</gloss>
-                           </valItem>
-                           <valItem ident="bio" mode="add">
-                              <desc>biographical</desc>
-                              <gloss>a biographical note, only to be used within the personography.</gloss>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="subtype" mode="replace">
-                        <valList mode="add" type="closed">
-                           <valItem ident="short" mode="add">
-                              <desc>short bio</desc>
-                              <gloss>a short biographical note for display in popups.</gloss>
-                           </valItem>
-                           <valItem ident="long" mode="add">
-                              <desc>long bio</desc>
-                              <gloss>a long biographical note.</gloss>
                            </valItem>
                         </valList>
                      </attDef>

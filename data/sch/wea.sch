@@ -403,91 +403,9 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:note[@type='bio']">
-                              <sch:assert test="parent::tei:person">
-                                 ERROR: Biographical notes should only be used for people in personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:note[@type='bio']">
+                           <sch:rule context="tei:person/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes should have at least one paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:assert test="count(tei:p) = 1">
-                                 ERROR: Short biographies should only contain a single paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:note[@subtype]">
-                              <sch:assert test="@type='bio'">
-                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:person">
-                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
-                                 ERROR: Only one of each long and short bios are allowed in the personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:let name="wc"
-                  value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
-                              <sch:assert test="$wc lt 76">
-                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                                 ERROR: All biographical notes must contain at least one paragraph..
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -670,7 +588,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-30">
+            id="wea-lg-atleast1oflggapl-constraint-assert-25">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -1026,7 +944,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-47">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-42">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -1230,7 +1148,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-documentRefsShouldBeGood-constraint-rule-52">
+            id="wea-documentRefsShouldBeGood-constraint-rule-47">
       <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"

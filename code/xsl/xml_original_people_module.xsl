@@ -69,11 +69,5 @@
      
     </xsl:template>
     
-    <!--Delete short bio-->
-    <xsl:template match="person/note[@type='bio'][@subtype='short']" mode="people"/>
-    
-    <xsl:template match="person/note[@type='bio'][@subtype='long']" mode="people">
-            <xsl:apply-templates mode="#current"/>
-    </xsl:template>
     
 </xsl:stylesheet>
