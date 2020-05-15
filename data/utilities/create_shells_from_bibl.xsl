@@ -35,7 +35,7 @@
                 <xsl:param name="i" select="1"/>
                 <xsl:variable name="id" select="current-grouping-key() || ($max + $i)"/>
                 <xsl:message>Creating <xsl:value-of select="$id"/> from <xsl:value-of select="@xml:id"/></xsl:message>
-                <xsl:result-document href="tmp/{$id}.xml" method="xml" indent="yes">
+                <xsl:result-document href="texts/{$id}.xml" method="xml" indent="yes">
                     <xsl:processing-instruction name="xml-model">href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
                     <xsl:processing-instruction name="xml-model">href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>
                     <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="{$id}">
