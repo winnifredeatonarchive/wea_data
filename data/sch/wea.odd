@@ -5,6 +5,7 @@
 <?xml-model href="wea.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
      xmlns:math="http://www.w3.org/1998/Math/MathML"
      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1933,6 +1934,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>JT1</desc>
                               <gloss>Joey Takeda</gloss>
                            </valItem>
+                           <valItem mode="add" ident="pers:SB2">
+                              <desc>SB2</desc>
+                              <gloss>Samantha Bowen</gloss>
+                           </valItem>
                            <valItem mode="add" ident="pers:SP1">
                               <desc>SP1</desc>
                               <gloss>Serina Patterson</gloss>
@@ -2016,6 +2021,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <valItem mode="add" ident="pers:JT1">
                               <desc>JT1</desc>
                               <gloss>Joey Takeda</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="pers:SB2">
+                              <desc>SB2</desc>
+                              <gloss>Samantha Bowen</gloss>
                            </valItem>
                            <valItem mode="add" ident="pers:SP1">
                               <desc>SP1</desc>
@@ -2935,6 +2944,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>JT1</desc>
                               <gloss>Joey Takeda</gloss>
                            </valItem>
+                           <valItem mode="add" ident="pers:SB2">
+                              <desc>SB2</desc>
+                              <gloss>Samantha Bowen</gloss>
+                           </valItem>
                            <valItem mode="add" ident="pers:SP1">
                               <desc>SP1</desc>
                               <gloss>Serina Patterson</gloss>
@@ -3373,6 +3386,28 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                     <xsl:with-param name="useDq" select="true()"/>
                                  </xsl:call-template>
                               </sqf:replace>
+                           </sqf:fix>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="biblsNeedId">
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_we']]">
+                           <sch:assert test="@xml:id" sqf:fix="addNewBiblId">ERROR: QUICKFIX: All WE bibls need an id. Click the red lightbulb to the left to add one. </sch:assert>
+                           <sqf:fix id="addNewBiblId">
+                              <sqf:description>
+                                 <sqf:title>Add a new bibl id</sqf:title>
+                              </sqf:description>
+                              <sqf:add match="." target="xml:id" node-type="attribute">
+                                 <xsl:variable name="bibls"
+                                               select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+                                 <xsl:variable name="newNum" select="max(for $n in $bibls return xs:integer($n)) + 1"/>
+                                 <xsl:value-of select="'bibl' || $newNum"/>
+                                 
+                              </sqf:add>
                            </sqf:fix>
                         </sch:rule>
                      </sch:pattern>
