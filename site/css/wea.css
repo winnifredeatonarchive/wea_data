@@ -851,6 +851,30 @@ transition: border-bottom-color 0.15s ease-in-out;
     padding-right:1rem;
 }
 
+.wea-ss-filters > .heading{
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: white;
+    margin-left:0.25rem;
+    
+}
+
+.wea-ss-filters > .heading > .metadataLabel{
+    font-weight:bold;
+    font-size:1.2rem;
+    
+}
+
+#filterSearch{
+        border: 1px solid #efefef;
+    /* outline: none; */
+    padding: .25rem .5rem;
+    background: none;
+}
+
 .wea-ss-filters > h4{
     width:100%;
 }
@@ -882,7 +906,11 @@ ul.ssDescCheckboxList li{
     padding-bottom:1rem;
     margin-bottom:1rem;
     font-size:0.9rem;
-    border-bottom:1px solid var(--wea-info-bg-color);
+
+}
+
+#ssResults details + .kwic{
+        border-top:1px solid var(--wea-info-bg-color);
 }
 
 #ssResults details > summary{

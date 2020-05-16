@@ -38,6 +38,10 @@
             <xsl:apply-templates select="@*|script"/>
             <script src="js/wea_search.js"><!--Keep open--></script>
             <div class="wea-ss-filters">
+                <div class="heading">
+                    <div class="metadataLabel">Search Filters</div>
+                    <button id="filterSearch">Filter</button>
+                </div>
                 <xsl:apply-templates select="./form/div[matches(@class,'Filters')]"/>
             </div>
             <div class="wea-ss-search-and-results">
