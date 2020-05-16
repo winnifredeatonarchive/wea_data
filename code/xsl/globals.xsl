@@ -35,6 +35,8 @@
     
     <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=yes'))"/>
     
+    <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
+    
     <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']" as="element(TEI)"/>
     
     <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']" as="element(TEI)"/>

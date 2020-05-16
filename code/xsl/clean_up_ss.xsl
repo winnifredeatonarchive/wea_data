@@ -19,24 +19,6 @@
     
     <xsl:mode on-no-match="shallow-copy"/>
     
-    <!--Add the script first-->
-    <xsl:template match="head/script[matches(@src,'wea\.js')]">
-        <xsl:copy-of select="."/>
-        <script src="js/enhance_staticSearch.js"/>
-    </xsl:template>
-
-    <!--And get rid of any old instance sof it -->
-    <xsl:template match="script[@src='js/enhance_staticSearch.js']"/>
-    
-    <xsl:template match="div[@class='ssBoolFilters']">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <fieldset class="ssFilters">
-                <legend>Document Features</legend>
-                <xsl:apply-templates select="node()"/>
-            </fieldset>
-        </xsl:copy>
-    </xsl:template>
     
   <!--  <xsl:template match="form[@id='ssForm']">
         <xsl:copy>
@@ -50,7 +32,34 @@
         </xsl:copy>
     </xsl:template>-->
     
-
+    
+    <xsl:template match="div[@id='staticSearch']">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|script"/>
+            <script src="js/wea_search.js"><!--Keep open--></script>
+            <div class="wea-ss-filters">
+                <xsl:apply-templates select="./form/div[matches(@class,'Filters')]"/>
+            </div>
+            <div class="wea-ss-search-and-results">
+                  <xsl:apply-templates select="form"/>
+                  <xsl:apply-templates select="div"/>
+            </div>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!--Remove initial static search init; we do it ourselves so we can manipulate the results if we want to-->
+    <xsl:template match="div[@id='staticSearch']/script[not(@src)]"/>
+    
+    
+    
+    <xsl:template match="form">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()[not(self::div)]"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    
+    
     <xsl:template match="input[@type='text'][not(@placeholder)]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

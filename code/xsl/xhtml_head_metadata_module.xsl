@@ -37,11 +37,6 @@
             <xsl:if test="//graphic[contains(@url,'media/')]">
                 <script src="js/facsimile_view.js"/>
             </xsl:if>
- 
-            <xsl:if test="@xml:id='search'">
-                <script src="js/porterStemmer.js"/>
-                <script src="js/search.js"/>
-            </xsl:if>
             <xsl:if test="@xml:id='index'">
                 <script src="js/index.js"/>
             </xsl:if>
@@ -91,6 +86,13 @@
                 <meta name="{$thisTax/bibl}" class="staticSearch.desc" content="{$thisCat/catDesc/term}"/>
             </xsl:if>
         </xsl:for-each>
+        
+        <!--Get facs-->
+        <xsl:if test="//text/@facs">
+            <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.png')}"/>
+        </xsl:if>
+        
+        
         <xsl:if test="wea:isObject(.)">
             
             <!--Start grouping by names-->
@@ -99,13 +101,25 @@
                 <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
             </xsl:for-each-group>
             
-            <meta name="Has facsimile?" class="staticSearch.bool" content="{xs:boolean(exists(//text/@facs))}"/>
+            
+            <meta name="docImage" class="staticSearch.docImage">
+                <xsl:attribute name="content">
+                    <xsl:choose>
+                        <xsl:when test="//text/@facs">
+                            <xsl:value-of select="replace(//text/@facs,'\.pdf$','_tiny.png')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="'images/cooking.png'"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </meta>
+           
+  
+            <!--Removing boolean filters-->
+<!--            <meta name="Has facsimile?" class="staticSearch.bool" content="{xs:boolean(exists(//text/@facs))}"/>
             <meta name="Has transcription?" class="staticSearch.bool" content="{not(xs:boolean(exists(//gap[@reason='noTranscriptionAvailable'])))}"/>
-            <!--Get facs-->
-            <xsl:if test="//text/@facs">
-                <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.png')}"/>
-            </xsl:if>
-           <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>
+           <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>-->
             <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
             <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>
             <xsl:variable name="dateString" select="if ($isRange) then concat($date/(@notBefore|@from)[1],'/', $date/(@notAfter|@to)[1]) else $date/@when" as="xs:string?"/>
