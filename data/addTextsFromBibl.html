@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Add Texts from Bibls</title>
+    </head>
+    <body>
+        <h2>When Do I Use This?</h2>
+        <p>Use this utility page after you've created a new bibliography entry in the bibliography file. Note that to create a bibliography entry, you should do the following (but see the documentation for further instructions):</p>
+        <ol>
+            <li>Create a new <code>&lt;bibl&gt;</code> entry <em>without</em> an <code>@xml:id</code>. If this is an existing work, find the work's &lt;listBibl&gt; element; if it is not an existing work, then create a new listBibl element with the <code>@xml:id</code> for that work. For instance, if you discovered a new work called <q>My Fair Lady</q>, then you would create a new listBibl with an <code>@xml:id</code> of <code>MyFairLady</code>; if you were adding a new bibl for Pot of Paint, then you'd add a new bibl in the &lt;listBibl&gt; element with the <code>@xml:id</code> of <code>PotOfPaint</code></li>
+            <li>Once you've created and tagged the new &lt;bibl&gt;, it will be invalid and say that you need to give it an <code>@xml:id</code>. Click the red lightbulb on the left hand side beside the bibl, and press <q>Create New Id</q>.</li>
+            <li>Once the bibl file is valid, go to this page to create a new document.</li>
+        </ol>
+        <h2>How To Use This</h2>
+        <p>Once those bibls are added, go to this page and press the red <q>Play</q> button at the top of your oXygen screen (it's beside the red check mark button). It should take a few seconds.</p>
+        <p>You should then have a new set of texts created in the <code>text/</code> folder with filenames corresponding to the work id (i.e. <code>MyFairLady1.xml</code> or <code>PotOfPaint2</code>)—you might need to refresh the oXygen directory to see those; you can do that by right clicking the texts folder and pressing refresh. Open those files and make sure that they are valid and add any category references for genre etc.</p>
+        <p>Once they are valid, make sure to svn add those documents to the repository and commit your files.</p>
+    </body>
+    
+    
+</html>

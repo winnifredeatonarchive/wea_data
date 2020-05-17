@@ -828,11 +828,156 @@ transition: border-bottom-color 0.15s ease-in-out;
     
 }
 
-#staticSearch.docOnly #ssResults ul{
-    columns: 2;
-    column-rule: 1px dotted #ccc;
+
+/******** STATIC SEARCH OVERRIDES */
+
+
+
+#staticSearch{
+    display:flex;
+}
+.wea-ss-search-and-results{
+    width:100%;
+}
+.wea-ss-filters{
+    height: calc(95vh - var(--header-height));
+    position:sticky;
+    top:calc(var(--header-height) + .5rem);
+    overflow-y:auto;
+    width:12.5rem;
+    margin-right:3rem;
+    font-size:0.8rem;
+    overflow-x:hidden;
+    padding-right:1rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:2.5rem;
 }
 
+.wea-ss-filters > .ssDateFilters{
+    order:2;
+    display:block; /* For some reason, Safari makes the date filter overlap with other bits
+     * if it is displayed flex, so we need it to be displayed block  */
+}
+
+.wea-ss-filters > .heading{
+    margin-bottom: 1rem;
+    padding-bottom: 0.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: white;
+    margin-left:0.25rem;
+    
+}
+
+.wea-ss-filters > .ssDescFilters{
+    order:3;
+}
+
+/* Desc filter order */
+
+.ssDescFilters > .ssFieldset[title='Genre']{
+    order:1;
+}
+.ssDescFilters > .ssFieldset[title='Pseudonym']{
+    order:2;
+}
+.ssDescFilters > .ssFieldset[title='Document Type']{
+    order:3;
+}
+
+.ssDescFilters > .ssFieldset[title='Exhibit']{
+    order:4;
+}
+
+.wea-ss-filters > .heading > .metadataLabel{
+    font-weight:bold;
+    font-size:1.2rem;
+    
+}
+
+.wea-ss-filters input[type='checkbox']:checked + label{
+    font-weight:bold;
+}
+
+#filterSearch{
+        border: 1px solid #efefef;
+    /* outline: none; */
+    padding: .25rem .5rem;
+    background: none;
+}
+
+.wea-ss-filters > h4{
+    width:100%;
+}
+
+fieldset{
+    border:none;
+}
+
+fieldset > legend{
+    opacity: 0.9;
+    padding:0.25em;
+    margin-bottom:1rem;
+    border-bottom: 1px solid #efefef;
+    width:100%;
+    display:block;
+    font-weight:bold;
+}
+
+ul.ssDescCheckboxList{
+    max-height:unset;
+}
+
+ul.ssDescCheckboxList li{
+    padding-left:.1rem;
+}
+
+#ssResults details{
+    margin-top:1rem;
+    padding-bottom:1rem;
+    margin-bottom:1rem;
+    font-size:0.9rem;
+
+}
+
+#ssResults details + .kwic{
+        border-top:1px solid var(--wea-info-bg-color);
+}
+
+#ssResults details > summary{
+    width:100%;
+}
+
+#ssResults details  > div{
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+#ssResults details > div > div{
+    flex: 1 1 45%;
+    padding:0.25rem;
+    margin:0.25rem;
+}
+
+
+/* Override some default padding */
+div.ssDateFilters fieldset.ssFieldset span, div.ssNumFilters fieldset.ssFieldset span, div.ssBoolFilters fieldset.ssFieldset span{
+    padding:0;
+}
+
+
+
+div#ssResults>ul>li>a{
+    margin-right: 1.75rem;
+}
+
+ul.ssDescCheckboxList input{
+    margin-right: .3rem;
+    margin-top: .1rem;
+}
 #ssClear{
     border: 1px solid #efefef;
     /* outline: none; */
@@ -843,43 +988,32 @@ transition: border-bottom-color 0.15s ease-in-out;
 #ssClear:hover{
     background:#ccc;
 }
-
-#ssFieldSets{
-    margin-top:0.85rem;
-}
-.ssFieldSet{
-        font-size:0.85rem;
+#ssResults{
+    margin-top:2rem;
 }
 
-
-
-ul.ssDescCheckboxList{
-    list-style-type: none;
-    overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
+#ssResults > ul > li{
+    margin-bottom:0.75rem;
+    margin-top:0.75rem;
+    padding-top:.5rem;
+    padding-bottom:1rem;
 
 }
 
-ul.ssDescCheckboxList li{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding: 0.5rem 1.25rem;
-    margin: 0.25rem;
-    /* width: 5rem; */
-    background: #efefef;
-    border-radius: .25rem;
+
+#ssResults > ul > li:not(:last-child){
+        border-bottom:1px solid #efefef;
 }
 
-.ssDescCheckboxList li.checked{
-    background:#ccc
+#ssResults .kwic{
+    font-size:0.9rem;
 }
 
-ul.ssDescCheckboxList label{
-    cursor:pointer;
+fieldset.ssFieldset > span{
+    background-color:transparent;
+    border:none;
 }
+    
 
 #ssDoSearch{
     position:relative;
@@ -890,78 +1024,12 @@ ul.ssDescCheckboxList label{
     padding:0 .5rem;
 }
 
-div[class*='ssDesc']{
-  margin-top:1rem;
-}
 
 #ssDoSearch:hover{
     background:#ccc;
     
 }
-fieldset{
-    border: none;
-    padding: 0.5rem 0rem;
-    font-size: 0.95rem;
-}
 
-fieldset.closed > *{
-    display:none
-}
-
-fieldset.closed{
-    width:100%;
-}
-
-fieldset.closed > legend{
-    display:block!important;
-}
-legend{
-    margin-bottom:0.45rem;
-    padding-bottom:0.21rem;
-    font-weight:bold;
-    border-bottom: 1px solid #2f2f2f;
-    width: 90%;
-    cursor:pointer;
-}
-
-ul.checkboxList li{
-    
-}
-
-ul.checkboxList li{
-    padding-left:0;
-}
-
-  div.results,
-  div.ssResults{
-    margin-top:1.5rem;
-    animation: fadein 2s;
-}
-
-fieldset input[type='checkbox']{
-margin-right:.25rem;
-
-}
-div.results > div,
-div.ssResults > div{
-    margin-top:1em;
-}
-
-#searchResults,
-#ssResults{
-    margin-top:2em;
-}
-
-
-
-#searchResults.closed{
-    opacity:0;
-}
-
-#searchResults.showing{
-    opacity: 1;
-    transition: opacity .75s;
-}
 
 
 .snippet,
@@ -969,7 +1037,7 @@ div.ssResults > div{
 .kwic li
 {
     padding:.5rem;
-    border: 1px dotted black;
+    border: 1px dotted #efefef;
 }
 
 .kwic{
@@ -987,25 +1055,6 @@ mark{
     background:inherit;
 }
 
-div#ssResults>ul>li {
-    flex-direction:row-reverse;
-    justify-content:flex-end;
-    margin-bottom:.75rem;
-}
-
-div#ssResults > ul > li > a{
-    flex:0 1 20%;
-    margin-left:1rem;
-    margin-right:-1rem;
-}
-
-div#ssResults img{
-    margin-top:2rem;
-}
-
-div#ssResults > ul > li > div{
-    flex:0 1 80%;
-}
 
 /********* HEADER SEARCH ********/
 
@@ -1319,10 +1368,14 @@ li{
     padding-left:1.5em;
 }
 
-#mainBody:not(.docBornDigitalListing) #text{
+
+#mainBody #text{
     max-width: var(--max-text-width);
+}
 
-
+#search #mainBody #text,
+#mainBody.docBornDigitalListing #text{
+    max-width: calc(var(--max-text-width) * 1.8);
 }
 
 #info{
@@ -1330,6 +1383,7 @@ li{
       overflow:hidden;
       padding: 5% 8% 3% 8%;
       margin:0 auto;
+      max-width: calc(var(--max-text-width) * 1.8);
       }
       
 #mainBody[class*='Listing'] #info{

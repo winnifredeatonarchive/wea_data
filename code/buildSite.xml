@@ -215,6 +215,16 @@
         <delete dir="${xh.validation.dir}"/>
     </target>
     
+    <target name="createDocDetails">
+        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
+            <arg value="-xsl:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
+            <arg value="-s:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
+            <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+            
+        </java>
+    </target>
    
     
   
@@ -222,7 +232,7 @@
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml "/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails"/>
     
     <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
     

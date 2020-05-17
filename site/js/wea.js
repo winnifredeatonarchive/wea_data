@@ -31,7 +31,7 @@ window.addEventListener("beforeprint", setupPrint);
 window.addEventListener("afterprint", undoPrint);
 
 function lazyload(){
-    var imgs = document.querySelectorAll('#text img.lazy');
+    var imgs = document.querySelectorAll('#text img.lazy:not([data-src])');
     imgs.forEach(function(img){
         var src = img.src;
         img.setAttribute('data-src',src);

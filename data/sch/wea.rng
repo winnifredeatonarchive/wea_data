@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-03-28T19:58:21Z. .
+Schema generated from ODD source 2020-05-15T20:56:31Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -322,6 +322,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -336,6 +337,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -350,6 +352,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -378,6 +381,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -486,6 +490,8 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
                      <value>pers:JT1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
+                     <value>pers:SB2</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
                      <value>pers:SP1</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
                      <value>pers:HB1</value>
@@ -744,6 +750,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -800,6 +807,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2238,6 +2246,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
             <rule context="tei:p">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2252,6 +2261,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
             <rule context="tei:p">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2272,6 +2282,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="macro.phraseSeq"/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2321,6 +2332,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <ref name="macro.specialPara"/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2394,6 +2406,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
             <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2604,6 +2617,8 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
                   <value>pers:JT1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
+                  <value>pers:SB2</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
                   <value>pers:SP1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
                   <value>pers:HB1</value>
@@ -2658,6 +2673,8 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
                   <value>pers:JT1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
+                  <value>pers:SB2</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
                   <value>pers:SP1</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
                   <value>pers:HB1</value>
@@ -2806,6 +2823,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
          <empty/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2820,6 +2838,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2838,6 +2857,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
             <rule context="tei:ptr">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2876,6 +2896,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             <rule context="tei:ref">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -2963,6 +2984,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                   id="wea-list-gloss-list-must-have-labels-constraint-rule-12">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3051,6 +3073,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <ref name="macro.specialPara"/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3064,6 +3087,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3088,6 +3112,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          </pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3107,6 +3132,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3120,87 +3146,22 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:note[@type='bio']">
-                              <sch:assert test="parent::tei:person">
-                                 ERROR: Biographical notes should only be used for people in personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:note[@type='bio']">
+                           <sch:rule context="tei:person/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes should have at least one paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:assert test="count(tei:p) = 1">
-                                 ERROR: Short biographies should only contain a single paragraph.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:note[@subtype]">
-                              <sch:assert test="@type='bio'">
-                                 ERROR: @subtype is only allowed when used in concert with notes biographical.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:person">
-                              <sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) lt 2">
-                                 ERROR: Only one of each long and short bios are allowed in the personography.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:note[@type='bio'][@subtype='short']">
-                              <sch:let name="wc"
-                        value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/>
-                              <sch:assert test="$wc lt 76">
-                                 ERROR: This short biographical statement should be 75 words maximum. Current word count: <sch:value-of select="$wc"/>.
+                                 ERROR: All biographical notes must contain at least one paragraph..
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.placement.attributes"/>
          <ref name="att.pointing.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -3210,19 +3171,6 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                   <value>authorial</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(an authorial note; currently only used with quotations where the author
                                  interrupts the dominant narrative voice by interjecting explanatory commentary.) authorial</a:documentation>
-                  <value>bio</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a biographical note, only to be used within the personography.) biographical</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="subtype">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>short</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a short biographical note for display in popups.) short bio</a:documentation>
-                  <value>long</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(a long biographical note.) long bio</a:documentation>
                </choice>
             </attribute>
          </optional>
@@ -3255,6 +3203,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          </zeroOrMore>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3269,6 +3218,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3306,6 +3256,7 @@ Elements]</a:documentation>
          <empty/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3319,6 +3270,7 @@ Elements]</a:documentation>
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3332,6 +3284,7 @@ Elements]</a:documentation>
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3430,6 +3383,7 @@ Elements]</a:documentation>
          <ref name="macro.paraContent"/>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3689,6 +3643,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          </zeroOrMore>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3702,6 +3657,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3769,6 +3725,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                <sch:report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
+                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
                            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
                            xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3780,6 +3737,7 @@ relatedItem element must be empty</sch:report>
                <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                            xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
+                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
                            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
                            xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3817,6 +3775,7 @@ relatedItem element must be empty</sch:report>
             <rule context="tei:l">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3874,10 +3833,11 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-30">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-25">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
+                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
                            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
                            xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -3892,6 +3852,7 @@ relatedItem element must be empty</sch:report>
             <rule context="tei:lg">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4179,6 +4140,7 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4385,6 +4347,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4543,6 +4506,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4850,6 +4814,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4872,6 +4837,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4982,6 +4948,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -4998,6 +4965,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
          <sch:pattern xmlns:rng="http://relaxng.org/ns/structure/1.0"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5225,6 +5193,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          </optional>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5238,6 +5207,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5251,6 +5221,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5346,6 +5317,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
             <rule context="tei:ab">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5360,6 +5332,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
             <rule context="tei:ab">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -5453,6 +5426,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
             <rule context="tei:msIdentifier">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6172,6 +6146,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
          </choice>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6186,6 +6161,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6199,6 +6175,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
                         </sch:pattern>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6420,6 +6397,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
                  xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6430,6 +6408,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
                  xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6440,6 +6419,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0"
                  xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6764,6 +6744,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          </group>
          <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       xmlns:math="http://www.w3.org/1998/Math/MathML"
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6780,6 +6761,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -6794,6 +6776,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             <rule context="tei:div">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                        xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                        xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7193,10 +7176,11 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-47">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-42">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7253,6 +7237,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
    </start>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7365,6 +7350,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern> 
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7378,6 +7364,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7393,6 +7380,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern> 
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7407,6 +7395,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern> 
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7421,7 +7410,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                         </sch:rule>
                      </sch:pattern> 
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-documentRefsShouldBeGood-constraint-rule-52">
+            id="wea-documentRefsShouldBeGood-constraint-rule-47">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
@@ -7436,6 +7425,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
    </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7450,6 +7440,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7465,6 +7456,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7479,6 +7471,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7517,6 +7510,31 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                        <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_we']]">
+                           <sch:assert test="@xml:id" sqf:fix="addNewBiblId">ERROR: QUICKFIX: All WE bibls need an id. Click the red lightbulb to the left to add one. </sch:assert>
+                           <sqf:fix id="addNewBiblId">
+                              <sqf:description>
+                                 <sqf:title>Add a new bibl id</sqf:title>
+                              </sqf:description>
+                              <sqf:add match="." target="xml:id" node-type="attribute">
+                                 <xsl:variable name="bibls"
+                             select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+                                 <xsl:variable name="newNum" select="max(for $n in $bibls return xs:integer($n)) + 1"/>
+                                 <xsl:value-of select="'bibl' || $newNum"/>
+                                 
+                              </sqf:add>
+                           </sqf:fix>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7551,6 +7569,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -7598,6 +7617,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"

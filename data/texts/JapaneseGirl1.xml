@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseGirl1">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Japanese Girl</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl copyOf="bibl:220"/>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef target="wdt:Japan" scheme="wdt:exhibit"/>
+            <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
+            <catRef target="wdt:genreShortStory" scheme="wdt:genre"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="empty">
+         <change who="pers:JT1" when="2020-05-15" status="empty">Created file from bibl.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <gap reason="noTranscriptionAvailable"/>
+         </div>
+      </body>
+   </text>
+</TEI>

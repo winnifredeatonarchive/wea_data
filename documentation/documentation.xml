@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
      xmlns:math="http://www.w3.org/1998/Math/MathML"
      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -343,22 +344,6 @@
                            </person>
                            <note>
                               <p><!--Content goes here--></p>
-                           </note>
-                        </egXML>
-                     </p>
-                     <p>There are two types of biographical statements that should be encoded for each person: a short and a long version. The short should be a maximum of 75 words (which is checked by the schematron); the long biography can be as verbose as you'd like. To encode these, use the <att>type</att> value of <val>bio</val>, with a subtype of either <val>short</val> or <val>long</val>: <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <person xml:id="JS1">
-                              <persName>
-                                 <forename>John</forename>
-                                 <surname>Smith</surname>
-                                 <reg>John Smith</reg>
-                              </persName>
-                           </person>
-                           <note type="bio" subtype="short">
-                              <p>John Smith is a professor of English at the University of British Columbia</p>
-                           </note>
-                           <note type="bio" subtype="long">
-                              <p>Receiving his doctorate from the University of Arkansas, John Smith has worked across many disciplines, including neuroscience, anthropology, and literary studies. His current work investigates<!--[...]-->.</p>
                            </note>
                         </egXML>
                      </p>
@@ -17503,6 +17488,8 @@ raiders and saved the town from capture.</desc>
                                                 <item>(Ken Ip) KI1</item>
                                                 <label>pers:JT1</label>
                                                 <item>(Joey Takeda) JT1</item>
+                                                <label>pers:SB2</label>
+                                                <item>(Samantha Bowen) SB2</item>
                                                 <label>pers:SP1</label>
                                                 <item>(Serina Patterson) SP1</item>
                                                 <label>pers:HB1</label>
@@ -18068,7 +18055,7 @@ raiders and saved the town from capture.</desc>
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.placement">att.placement</ref> (<att>place</att>) <ref target="#TEI.att.pointing">att.pointing</ref> (<att>target</att>) <table>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.placement">att.placement</ref> (<att>place</att>) <ref target="#TEI.att.pointing">att.pointing</ref> (<att>target</att>) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
                               <row>
                                  <cell>type</cell>
                                  <cell>
@@ -18090,34 +18077,6 @@ raiders and saved the town from capture.</desc>
                                                 <label>authorial</label>
                                                 <item>(an authorial note; currently only used with quotations where the author
                                  interrupts the dominant narrative voice by interjecting explanatory commentary.) authorial</item>
-                                                <label>bio</label>
-                                                <item>(a biographical note, only to be used within the personography.) biographical</item>
-                                             </list>
-                                          </cell>
-                                       </row>
-                                    </table>
-                                 </cell>
-                              </row>
-                              <row>
-                                 <cell>subtype</cell>
-                                 <cell>
-                                    <table>
-                                       <row>
-                                          <cell>
-                                             <label>Status</label> 
-                                          </cell>
-                                          <cell>Optional</cell>
-                                       </row>
-                                       <row>
-                                          <cell>
-                                             <label>Legal values are:</label>
-                                          </cell>
-                                          <cell>
-                                             <list>
-                                                <label>short</label>
-                                                <item>(a short biographical note for display in popups.) short bio</item>
-                                                <label>long</label>
-                                                <item>(a long biographical note.) long bio</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -18504,81 +18463,8 @@ psychological significance.
                         <cell>
                            <code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:note[@type='bio']"&gt;
- &lt;sch:assert test="parent::tei:person"&gt; ERROR: Biographical notes should only be used for people in personography.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>
-                           <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:note[@type='bio']"&gt;
- &lt;sch:assert test="tei:p"&gt; ERROR: All biographical notes should have at least one paragraph.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>
-                           <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:note[@type='bio'][@subtype='short']"&gt;
- &lt;sch:assert test="count(tei:p) = 1"&gt; ERROR: Short biographies should only contain a single paragraph.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>
-                           <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:note[@subtype]"&gt;
- &lt;sch:assert test="@type='bio'"&gt; ERROR: @subtype is only allowed when used in concert with notes biographical.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>
-                           <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:person"&gt;
- &lt;sch:assert test="count(tei:note[@type='bio'][@subtype='long']) lt 2 and count(tei:note[@type='bio'][@subtype='short']) 
- lt 2"&gt; ERROR: Only one of each long and short bios are allowed in the personography.
- &lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                        </cell>
-                     </row>
-                     <row>
-                        <cell>
-                           <label>Schematron</label>
-                        </cell>
-                        <cell>
-                           <code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:note[@type='bio'][@subtype='short']"&gt;
- &lt;sch:let name="wc"
-  value="count(tokenize(normalize-space(string-join(descendant::text(),'')),'\s+'))"/&gt;
- &lt;sch:assert test="$wc lt 76"&gt; ERROR: This short biographical statement should be 75 words maximum. Current word count: &lt;sch:value-of select="$wc"/&gt;.
+&lt;sch:rule context="tei:person/tei:note"&gt;
+ &lt;sch:assert test="tei:p"&gt; ERROR: All biographical notes must contain at least one paragraph..
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
@@ -24991,6 +24877,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                                 <item>(Ken Ip) KI1</item>
                                                 <label>pers:JT1</label>
                                                 <item>(Joey Takeda) JT1</item>
+                                                <label>pers:SB2</label>
+                                                <item>(Samantha Bowen) SB2</item>
                                                 <label>pers:SP1</label>
                                                 <item>(Serina Patterson) SP1</item>
                                                 <label>pers:HB1</label>
@@ -35169,6 +35057,8 @@ epistemology, methodology and history of
                                                 <item>(Ken Ip) KI1</item>
                                                 <label>pers:JT1</label>
                                                 <item>(Joey Takeda) JT1</item>
+                                                <label>pers:SB2</label>
+                                                <item>(Samantha Bowen) SB2</item>
                                                 <label>pers:SP1</label>
                                                 <item>(Serina Patterson) SP1</item>
                                                 <label>pers:HB1</label>
@@ -38909,6 +38799,34 @@ epistemology, methodology and history of
  &lt;sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"&gt; ERROR: Document
    xml:id (&lt;sch:value-of select="$docId"/&gt;) does not match the document file
    name (&lt;sch:value-of select="$docUri"/&gt;). &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>
+                        <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_we']]"&gt;
+ &lt;sch:assert test="@xml:id"
+  sqf:fix="addNewBiblId"&gt;ERROR: QUICKFIX: All WE bibls need an id. Click the red lightbulb to the left to add one. &lt;/sch:assert&gt;
+ &lt;sqf:fix id="addNewBiblId"&gt;
+  &lt;sqf:description&gt;
+   &lt;sqf:title&gt;Add a new bibl id&lt;/sqf:title&gt;
+  &lt;/sqf:description&gt;
+  &lt;sqf:add match="." target="xml:id"
+   node-type="attribute"&gt;
+   &lt;xsl:variable name="bibls"
+    select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id 
+ return substring-after($bibl,'bibl')"/&gt;
+   &lt;xsl:variable name="newNum"
+    select="max(for $n in $bibls return xs:integer($n)) + 1"/&gt;
+   &lt;xsl:value-of select="'bibl' || $newNum"/&gt;
+  &lt;/sqf:add&gt;
+ &lt;/sqf:fix&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
                      </cell>
