@@ -22,7 +22,7 @@
         <xsl:message>Creating document ajax frags...</xsl:message>
         <xsl:for-each select="$xhtmlDocs">
             <xsl:result-document href="{$outDir || '/ajax/' || //html/@id || '.html'}">
-                <details>
+                <details open="open">
                     <summary>More Info</summary>
                     <div>
                         <xsl:for-each select="//meta[matches(@class,'staticSearch\.(desc|date|bool)')]">

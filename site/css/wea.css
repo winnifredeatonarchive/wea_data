@@ -849,6 +849,12 @@ transition: border-bottom-color 0.15s ease-in-out;
     font-size:0.8rem;
     overflow-x:hidden;
     padding-right:1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.wea-ss-filters > .ssDateFilters{
+    order:2;
 }
 
 .wea-ss-filters > .heading{
@@ -862,10 +868,18 @@ transition: border-bottom-color 0.15s ease-in-out;
     
 }
 
+.wea-ss-filters > .ssDescFilters{
+    order:3;
+}
+
 .wea-ss-filters > .heading > .metadataLabel{
     font-weight:bold;
     font-size:1.2rem;
     
+}
+
+.wea-ss-filters input[type='checkbox']:checked + label{
+    font-weight:bold;
 }
 
 #filterSearch{
@@ -928,6 +942,14 @@ ul.ssDescCheckboxList li{
     padding:0.25rem;
     margin:0.25rem;
 }
+
+
+/* Override some default padding */
+div.ssDateFilters fieldset.ssFieldset span, div.ssNumFilters fieldset.ssFieldset span, div.ssBoolFilters fieldset.ssFieldset span{
+    padding:0;
+}
+
+
 
 div#ssResults>ul>li>a{
     margin-right: 1.75rem;
