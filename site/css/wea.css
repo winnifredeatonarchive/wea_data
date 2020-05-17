@@ -843,7 +843,7 @@ transition: border-bottom-color 0.15s ease-in-out;
     height: calc(95vh - var(--header-height));
     position:sticky;
     top:calc(var(--header-height) + .5rem);
-    overflow-y:scroll;
+    overflow-y:auto;
     width:12.5rem;
     margin-right:3rem;
     font-size:0.8rem;
@@ -856,6 +856,8 @@ transition: border-bottom-color 0.15s ease-in-out;
 
 .wea-ss-filters > .ssDateFilters{
     order:2;
+    display:block; /* For some reason, Safari makes the date filter overlap with other bits
+     * if it is displayed flex, so we need it to be displayed block  */
 }
 
 .wea-ss-filters > .heading{

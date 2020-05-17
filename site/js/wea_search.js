@@ -30,6 +30,13 @@
                 Sch.searchFinishedHook = function(){
                 let thisResults = this.resultsDiv;
                 let headers = this.resultsDiv.querySelectorAll('div > a');
+                let images = this.resultsDiv.querySelectorAll('img');
+                images.forEach(function(img){
+                   img.classList.add('lazy');
+                   img.setAttribute('data-src',img.src);
+                   img.src='';
+                });
+                lazyload();
                 filterBtn.setAttribute('disabled', 'disabled');
                 headers.forEach(function(head){
                     let link = head.getAttribute('href');
