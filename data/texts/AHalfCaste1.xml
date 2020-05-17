@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="AHalfCaste1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="AHalfCaste1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -20,20 +20,158 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" when="2019-06-08" status="empty">Added facsimile.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl7 using XSLT.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl7 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:AHalfCaste1">
+      <pb n="489"/>
       <body>
+         <head>A Half Caste.</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <!--ANy opening things put here-->
+         <div type="content">
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>A miscellaneous crowd of men, women and children jostled each other on the wharf, some of them going perilously near the end of it in their eagerness to watch the passengers on the 
+      Empress of India, which had just arrived.</p>
+            <p>Norman Hilton stood on deck, his hands thrust deep in his trousers pockets. He seemed in no hurry to leave the boat, but leaned against the guardrail, watching the surging crowd on the wharf beneath.</p>
+            <p><q>Shall you go ashore to-night?</q></p>
+            <p>He started from the moody dream into which he had drifted; then answered, absently, pushing his cap far back on his head:</p>
+            <p><q>Well, I don’t know. Fact is, now the journey is over—I feel—er—just a trifle nervous</q>.</p>
+            <p>His friend looked at him keenly.</p>
+            <p><q>Second trip for you, I believe?</q></p>
+            <p><q>Yes</q>.</p>
+            <p><q>Fifth for me</q>, his companion continued. <q>Rather be here than anywhere else</q>.</p>
+            <p><q>Why?</q> Hilton looked at him curiously.</p>
+            <p>The other laughed, waving his hand lightly toward the city.</p>
+            <p><q>You know my weakness—and, for that matter, your own—women. I like the Japanese style, too—artless, jolly, pretty—er—. Agree with me?</q></p>
+            <p><q>Perhaps</q>.</p>
+            <p>Hilton put a cigar between his teeth and began smoking it. He broke a silence that fell between them with the information that on his former voyage he had married a Japanese girl—in Japanese fashion—adding, with unconcealed grim contempt for himself, that of course he had left her in American fashion.</p>
+            <p><q>Expect to see her again?</q></p>
+            <p><q>No, she is dead!</q> He paused for a moment, and then added, a trifle hesitatingly: <q>There was a child. I want it</q>.</p>
+            <p><q>Ah!</q></p>
+            <p>Hilton finished smoking his cigar and threw the stub into the bay.</p>
+            <p><q>I have a hard job before me</q>, he said, nervously, <q>as I have little or no clew to the child’s whereabouts. It was nearly sixteen years ago, you know</q>. He paused again, ruminating, and took a few slow strides across the deck. <q>I am alone in the world. She is about all the kin I have, in fact. It sounds brutal, I suppose, but during all these years I have made no inquiry about her whatever. I forgot the fact of her birth almost as I forgot the mother’s existence. I don’t know what possessed me to come now, anyhow. One of my unconquerable impulses, I suppose. You know how they affect me</q>.</p>
+            <pb n="490"/>
+            <p>His friend made no remark whatever. Hilton had always seemed to him so young a man that it was hard for him to realize for the moment that he was actually the father of a girl of fifteen. He was an extremely handsome man, with a keen, clever face, hair slightly tinged with gray, and fine athletic figure. He dressed well, and had the appearance of a man of the world, one who was in the habit, perhaps, of putting himself always first and best. In his early youth Hilton had gone the pace of most young men of fashion and wealth in a foreign land. Divorced from his American wife scarcely a year after his marriage to her, he had lived alone ever since. His wife had remarried long ago. Now, at the age of forty, Hilton found himself altogether alone in the world, with a strange weariness of his own companionship and an unconquerable longing to have someone with him who actually belonged to him. Then, one day, there came a memory of a little Japanese woman who had once really loved him for himself. Hilton’s hard eyes had softened a trifle. He was suddenly keenly alive to the fact that he was a father; that he owed his first duty in life to the one being in the world who belonged to him—his little Japanese daughter, whom he had never seen, for she had been born after he had left Japan. He could not account for the vague yearning and longing for his own child that now suddenly possessed him.</p>
+    
+      
+    
+            <milestone unit="sectionBreak"/>
+    
+      
+    
+            <p>Okikusan (Miss Chrysanthemum) was in trouble again. This time she had offended her master by refusing to dance for the American who threw his money so lavishly about. He had specially asked that the girl with the red cheeks, large eyes and white skin be asked to dance for him.</p>
+            <p>The dancing mats were thrown, the music started, and Kiku had thrust forward one little foot and had courtesied to the four corners of the earth. Then she twirled clear around on the tips of the toes of one little foot, her hand tapering out toward the American. She had started to dance without once glancing at the visitor. By chance her eye happened to fall on him, and with a.sudden whim she paused in her steps and subsided to the mats, her little feet drawn under her.</p>
+            <p>The proprietor of the tea-garden came toward her in amazement.</p>
+            <p><q>What does this mean?</q> he asked, in a terrible voice of suppressed anger.</p>
+            <p><q>That I will not dance for the foreign devil!</q> she said, defiantly.</p>
+            <p>Takahashi, the proprietor, looked in trepidation at his customer as she spoke, fearing that he had overheard her, and perhaps understood the language. The American was watching the girl with amused eyes. Then he crossed to where she sat on the ground.</p>
+            <p><q>Why did you stop dancing?</q> he asked her, in fairly good Japanese.</p>
+            <p>She answered him in broken English:</p>
+            <p><q>Tha’s account I nod lig’ to danze for you!</q> she told him, candidly.</p>
+            <p><q>Why?</q></p>
+            <p>Takahashi answered hastilv for her.</p>
+            <p><q>She is rnos’ rude. I beg your augustness to pardon her. She is the most miserably rude and homely girl in the tea-house. Deign to permit me to furnish you with someone who is more amiable to dance for you. I will dismiss this one</q>.</p>
+            <pb n="491"/>
+            <p><q>And if you do I will never come here again</q>, the American told him, for Kiku-san was the prettiest thing he had ever seen, far prettier than all the other geisha girls. If she would not dance for him he would not insist. In fact, he was content simply to look at her.</p>
+            <p>Takahashi made some abject apologies for her, volunteering the information that he never could understand the girl’s unreasonable dislike for foreigners. Then he left the two together.</p>
+            <pb n="492"/>
+            <p>The girl still sat on the mat, looking straight out before her, her face un- readable in its cold indifference. Hilton could not understand her. She was so unlike any Japanese girl he had ever met, for they generally were so willing and eager to please. After a time he broke the somewhat strained silence to say, in his soft, drawling fashion:</p>
+            <p><q>Would you not like something—er—to drink? Shall I fetch something for you?</q></p>
+            <p>The question was so absurd that the girl’s studied indifference broke down.</p>
+            <p><q>Tha’s nod your place to waid on me!</q> she said, loftily, rising to her feet. <q>I thing thad you lig something to dring. Yes? Thad I git paid to worg here. I thing I bedder bring you something to dring</q>, she added, stiffly. <q>Bud I nod lig to waid on you. I prefer vaery much waid on Japanese gents</q>.</p>
+            <p>There was a sibilant softness to her voice that was bewildering in its charm and sweetness, and her broken English was prettier than anything he had ever heard.</p>
+            <p>When she brought the hot saké back to him her face was smiling above the dainty tray, and as she knelt at his feet while he drank it, he could see that her former petulant mood was gone, and that she was now using every effort to please and conciliate him.</p>
+            <p><q>Now you look like a Japanese sunbeam</q>, he told her, softly, looking unutterable things at her out of his deep gray eyes.</p>
+            <p><q>Tha’s account I ‘fraid gitting discharged</q>, she told him, calmly, still smiling. <q>Mr. Takahashi tell me if I nod vaery kin’ to you he goin’ to send me long way from here</q>.</p>
+            <p><q>Ah, I see. Then you are only pretending to smile?</q></p>
+            <p>She shrugged her little shoulders.</p>
+            <p><q>Yes</q>, she said, indifferently. <q>Tha’s worg’ for geisha girl. Whad you thing we goin’ to git paid for? Account we frown? Or account we laugh? I thing that’s account we laugh. Thad is my worg. You nod onderstand? You worg, I worg, aeverybody worg. All different ways. Geisha girl mus’ 
+      be always gay—always dance, laugh, sing; laugh mos’ of all—to mek you laugh, too, so that you pay the money, mek us reech. I nod lig vaery much thees worg, but whad kin I do? Thad I nod worgin’ I goin’ to starve. Tha’s bedder I worg foraever. Whad you thing?</q></p>
+            <p><q>That you are a philosopher</q>, he told her, smiling, and added: <q>But what a cynic, too! I didn’t expect to find it among Japanese women — cynicism</q>.</p>
+            <p>The girl smiled a trifle bitterly.</p>
+            <p><q>Oa!</q> she said, <q>you nod fin’ thad ‘mong Japanese—only me! I different from aeverybody else</q>. She set the tray on the ground and sat down at his feet.</p>
+            <p>Takahashi strolled across the grounds and passed them slowly, giving the girl a quick, stern, almost threatening look, and beamning on the American in a fashion that annoyed him.</p>
+            <p>Okikusan began to speak in a panic to the American, raising her voice so that the words would reach Takahashi:</p>
+            <pb n="493"/>
+             <p><q>Bud I lig you. My! how nize I thing you are!</q></p>
+            <p>Hilton stared at her in amazement. The moment Takahashi had passed out of sight, she rose impatiently to her feet.</p>
+            <pb n="494"/>
+            <p><q>Tha’s a liar</q>, she said, with quiet scorn. <q>You thing I mean thad ? —that I lig you? I only spik thad for please Takahashi-sama</q>.</p>
+            <p>The soft outlines of her face had suddenly hardened and surprised him with a look of shrewd understanding, such as he had never seen on a Japanese woman’s face before.</p>
+            <p><q>You are lig this</q>, she said, making a sweeping gesture with her hands, <q>so fool conceit. Tha’s way all big mans come from the West. They thing my! we so nize! Thing, we foolin’ with liddle Japanese women thad don’ know much</q>.</p>
+            <p><q>How old are you?</q> Hilton asked her, curiously.</p>
+            <p><q>Twenty-two</q>, she told him.</p>
+            <p><q>You look like a child</q>.</p>
+    
+      
+    
+            <milestone unit="sectionBreak"/>
+    
+         </div>
+         <div>
+    
+            <p>It was two weeks later. With a restless fascination he could not understand, Hilton went every day to the little tea-house on the hill. Always he sought out Okikusan, and would spend the entire day with her, totally oblivious to almost all else save the girl’s beauty and charm. It was her weird shrewdness and cleverness that had first attracted him to her. Formerly he had delighted in the Japanese women because of that artlessness which is so original and refreshing in them. Kiku was anything but artless. She said things that no American girl would say, and that few Japanese girls would understand, and in spite of this she was a charming individual.</p>
+            <p>And Hilton forgot his mission in Japan, forgot that Japanese women had always been merely the playthings of a moment; that he had tired of life— everything save the delightful, irresistible feelings that had awakened in him. What was it? Hilton was in love, and with a Japanese woman! Years ago he had married one in Japanese fashion, and had left her. She had been a gentle, clinging little woman, with whom he had passed a dreamy, sleepy summer. What could he do with Kiku? She was unlike any Japanese woman he had ever known—unlike any woman he had met. She was the one woman in the world he had loved during all his long, checkered career—a life spent in idle pursuit of his own pleasures.</p>
+    
+      
+    
+            <milestone unit="sectionBreak"/>
+    
+      
+    
+            <p>Hilton’s friend, who had accompanied him on the voyage, was beginning to feel anxious about him, for, in spite of his admission of his own weakness for Japanese women, he was far more alive to and quick to scent real danger than Hilton, who followed his extravagant impulses only, while the cooler man kept a level head in the midst of his pleasures.</p>
+            <p><q>My dear boy</q>, he said to Hilton, <q>you’ve got the fever, I believe?</q></p>
+            <p>Hilton laughed weakly.</p>
+            <p><q>Nonsense!</q></p>
+            <p><q>You are in love with some Japanese girl!</q> his friend continued. <q>You want to look out for them, you know</q>.</p>
+            <p>Hilton rose to his feet and began pacing the room in long, irregular strides.</p>
+            <p><q>Don’t you suppose I am old enough to be proof against such things?</q></p>
+            <p><q>Well, I don’t know, Hilton, to tell you the truth. You see, Japanese<pb n="495"/> women are different. You’re only human, after all. I’d advise you to marry her—for a while, of course, as you did the other one</q>.</p>
+            <p><q>I have an idea</q>, Hilton said, with some hesitancy, <q>that I am too old for another affair of that kind. I thought of settling down—that is, I intended returning to America, and—er—marrying</q>.</p>
+            <p><q>What are you waiting for, then? The child died, did it not?</q></p>
+            <p><q>So they say</q>.</p>
+            <p>He flung himself restlessly across a couch, staring moodily at the fusuma.</p>
+            <p><q>What do you say to our leaving next week?</q></p>
+            <p><q>Good</q>.</p>
+            <p><q>Better keep away from the tea-house in the meanwhile</q>, his friend advised.</p>
+            <p>Hilton did not answer.</p>
+            <p>He did not go near the tea-house, however, all the next day. By evening he was seized with a fit of unconquerable restlessness and blues. He was awake the entire night, tossing restlessly from side to side.</p>
+            <p>He kept up his resolution all the next morning, but about the middle of the afternoon threw it up, and almost rushed across the rice-fields to the little tea-garden.</p>
+            <p>He found her in a field blazing with a vivid burning glory of natan and azalea-blossoms. She saw him coming toward her, and stooped down among the long grasses to hide from him. The man was intoxicated with his hunger for her, and caught her in his arms with all his pent-up love and passion.</p>
+            <p><q>Kiku</q>, he whispered, <q>I tried to stay away. I could not. Don’t you understand?</q> He was holding her close to him now, and covering her face with a passion of kisses. <q>I love you! I love you! I love you!</q> he began, murmuring in her ear.</p>
+            <p>The girl’s eyes were fixed full on his face. He caught the elfish, searching full gaze, and for a moment released her. She stooped to pick up the scattered blossoms that had fallen.</p>
+            <p><q>Go’ way!</q> she said, pettishly. <q>I nod lig you. You mus’ nod do thad</q>, she continued, as he tried to draw her into his arms again. <q>Tha’s nod ride ! Tha’s—</q></p>
+            <p><q>It is right, Kiku-san</q>, he whispered, <q>because I love you!</q> His words hurried over each other. <q>I am going to take you away with me, Kiku-san—to my home. We will be married. I cannot live without you, and—</q></p>
+            <p>The girl shivered, and her face grew suddenly white.</p>
+            <p><q>Go ‘way!</q> she repeated, this time with almost an imploring note in her voice. <q>I don’ wanter tell you. I thing it bes’ nod. No, I nod tell you—aeverything. Besides, I nod lig you vaery much. Jus’ lidle bit now. At first I hate—hate with all my heart! Now I ver’ sawry—ver’ sawry thad, thad I bin unkin’. Tha’s account you unkin’, too</q>.</p>
+            <p><q>I unkind!</q> he repeated, stupidly. <q>I don’t understand, Kiku-san?</q></p>
+            <p><q>No, you nod onderstan’</q>, she said, in despair. <q>What kin I do? Oh, pitiful Kwannon! help me! I thing I tell you. I bin rnos’ vaery onhappy<pb n="496"/> long time now, because aeverybody hate me. Account I loog lig American. You nod onderstand? No? My fadder</q>—she paused a moment—<q>he leave my modder. We vaery onhappy so thad she goin’ to die. Then w’en she die I worg, worg hard at the factory, an’ here. Nobody lig me account my fadder American, an’ I thing account thad I goin’ hate all Americans foraever, because my fadder vaery wigged, because he mek my modder suffer! And me? I suffer, too</q>.</p>
+            <p>A grayness had crept over Hilton’s face. He felt suddenly weak and old.</p>
+            <p><q>You still nod onderstand?</q> she asked. Her hands had fallen from his now, and he had staggered back a few paces.</p>
+            <p><q>Not yet!</q> he said, faintly.</p>
+            <p><q>Then I tell you</q>, she said, firmly. <q>I nod lig you because w’en you come here someone thad know my modder w’en she alive point at you and say, ‘Thad you’ fadder!’</q></p>
+            <p>The silence that was between them now was horrible. It suddenly assumed a savage mockery by the wild singing of a nightingale which flew over their heads and trilled aloud its song of gladness.</p>
+            <p>The man could not speak. He stood looking out in front of him with a pitiful look of horror, and only halt comprehension on his face.</p>
+            <p>After a while the girl continued:</p>
+            <p><q>Firs’ I thing I will tell you. Then I remember my modder and how onhappy she be, and how hard I worg all those years w’ile you have so much rich, an’ then I hate you foraever and bury all sawry for you in my heart, an’ I hate all mens from the West, foraever so fool of conceit. Tha’s a liar thad I say I twenty-two years old. I thing now thad my time come to fool. I thing I revenge my modder? I thing I mek you suffer lig her. You nod onderstan? Always she have pain here!</q> She clasped her hand over her heart, and then continued, wearily: <q>Tha’s account you tich her to luf you. I nod onderstand that liddle word vaery much. Aevery- body say I nod have aeny heart. All hard daed. Tha’s account I luf only my modder, an’ she die. An’ I also hate you thad you kill that modder</q>.</p>
+            <p>Through the mists of pain and horror that had overcome him the memory of dead days were coming back to Hilton. He could not think of Kiku-san now as his own child—his very own blood—he would not!</p>
+            <p><q>You must be mistaken!</q> His voice sounded strange, even to his own ears. <q>My child died—they told me so</q>.</p>
+            <p>The girl laughed bitterly. <q>Tha’s bedder I daed. I going away. Aeverybody thinging I daed ‘cept me. I know always. You thing I loog lig Japanese girl?</q></p>
+            <p>She suddenly loosened her hair, and it fell down around her in thick, shining brown curls.</p>
+            <p><q>Thad lig Japanese girl?—thad?—thad?—thad? Thad?</q> She pushed back the sleeves and showed him the white purity of her arms.</p>
+            <p>Then she turned and left him, with the same still look of despair on his face and the pitiless sun beating on the golden fields.</p>
+         </div>
          </div>
       </body>
    </text>
