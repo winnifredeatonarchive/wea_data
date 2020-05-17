@@ -18,6 +18,15 @@
                     });
                 });
                 
+                var textInputs = document.querySelectorAll('.wea-ss-filters input[type="text"]');
+                textInputs.forEach(function(input){
+                    input.addEventListener('keydown', function(e){
+                       if (e.key == 'Enter'){
+                           document.getElementById('ssDoSearch').click();
+                       } 
+                    }); 
+                });
+                
                 Sch.searchFinishedHook = function(){
                 let thisResults = this.resultsDiv;
                 let headers = this.resultsDiv.querySelectorAll('div > a');

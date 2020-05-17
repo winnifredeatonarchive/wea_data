@@ -81,6 +81,7 @@
         <ant antfile="code/buildSite.xml" target="quickWithFacs" inheritall="false"/>
      </target>
     
+    <target name="search" depends="createStaticSearch, cleanUpStaticSearch"/>
    
     <target name="copyAuxFiles">
         <ant antfile="code/buildSite.xml" target="copyAuxFiles" inheritall="false"/>

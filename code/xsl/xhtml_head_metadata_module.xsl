@@ -82,8 +82,7 @@
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
             <!--Exclude primary source from being its own category in the SS search-->
             <xsl:if test="not($refId = 'docPrimarySource')">
-                <meta name="{$thisTax/bibl}" class="staticSearch.filter" content="{$thisCat/catDesc/term}"/>
-                <meta name="{$thisTax/bibl}" class="staticSearch.desc" content="{$thisCat/catDesc/term}"/>
+                <meta name="{$thisTax/bibl}" class="staticSearch.desc" data-link="{$refId}.html" content="{$thisCat/catDesc/term}"/>
             </xsl:if>
         </xsl:for-each>
         
@@ -97,7 +96,6 @@
             
             <!--Start grouping by names-->
             <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-                <meta name="Pseudonym" class="staticSearch.filter" content="{wea:namecase(current-grouping-key())}"/>
                 <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
             </xsl:for-each-group>
             

@@ -873,6 +873,22 @@ transition: border-bottom-color 0.15s ease-in-out;
     order:3;
 }
 
+/* Desc filter order */
+
+.ssDescFilters > .ssFieldset[title='Genre']{
+    order:1;
+}
+.ssDescFilters > .ssFieldset[title='Pseudonym']{
+    order:2;
+}
+.ssDescFilters > .ssFieldset[title='Document Type']{
+    order:3;
+}
+
+.ssDescFilters > .ssFieldset[title='Exhibit']{
+    order:4;
+}
+
 .wea-ss-filters > .heading > .metadataLabel{
     font-weight:bold;
     font-size:1.2rem;
