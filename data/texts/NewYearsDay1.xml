@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NewYearsDay1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NewYearsDay1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>New Year’s Day in Japan</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,52 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl100 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl100 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:NewYearsDay1">
+      <pb n="283"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>New Year’s Day in Japan.</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+          
+            <p>Somehow though the sun may have shone just as brightly on the previous day, and indeed the whole year round, yet it all seems changed and different on this, the first day of the year. It is the spirit of the New Year! This is the time of universal peace and goodwill; when the inhabitants of the little empire start life anew with fine resolutions and promises for the future, and all ill feeling done away with.</p>
+            <p>The 1st of January bears the significant title of <foreign xml:lang="ja">Gan-san</foreign>(the Three Beginnings), meaning, beginning of the year, beginning of the month, and beginning of the day. And to this might be added the beginning of a new and better life. What Christmas is to the Occidentals, New Year’s is to the Japanese, although greetings and congratulations are not confined to the first day of the year, but at any time between the first and the fifteenth.</p>
+            <p>The Japanese begin to prepare for the New Year nearly a month before, and in fact give their houses and possessions a thorough cleansing, just as the good American housewife does in the springtime. Even the very poorest people do this, laying mats of rice straw, and cleaning every nook and corner with fresh bamboo dusters and brooms, which are said to symbolize prosperity and good fortune. And after the house has been aired and cleaned, it is decorated with pine and bamboo, for the Japanese venerate both of these, because they keep green through the entire winter and symbolize longevity. The Japanese read in the most insignificant natural objects some striking significance, and there is a meaning attached to almost every decoration or ornament in the house. The outsides and gardens of the houses are also beautifully decorated, to say nothing of the streets, which present a most interesting and animated spectacle at this time.</p>
+            <p>On New Year’s Eve the streets and stores, which at this time display their most attractive goods, are thronged with people intent on buying the requisites for the coming year. At night the streets are brilliantly illuminated with lines of big lanterns, family crests, flags, shop-signs, etc., hung from every store. On this eve many of the people remain up all night, and watch the old year out and the new year in, though a few old-fashioned ones prefer the custom of rising very early in the morning to worship the first rising sun of the New Year.</p>
+            <p>A strange custom prevails of eating soba (a kind of vermicelli) on the last day of December, in order that their wealth and prosperity may become as <q>long</q> as the strings of soba.</p>
+               <p>Outside a typical Japanese house will be found the <foreign xml:lang="ja">shimekazari</foreign>, which represent the three Chinese ideographs, seven, five and three, which are considered lucky numbers. The <foreign xml:lang="ja">shimekazari</foreign> is made of rice straw in various shapes, twisted into three, five and seven pendants and hung in conspicuous <pb n="284"/>places on the eaves; a few jagged strips of paper, a few fern leaves and a boiled lobster are tied in the middle of the <foreign xml:lang="ja">shimekazari</foreign>. The origin of this decoration is mythological.</p>
+            <p>The 1st of January is the only day in the year on which all stores are closed, and in fact is the only universal holiday in Japan, to the merchants at any rate, who don’t recognize the sabbath or other holidays.</p>
+            <p>After the hustle and bustle of the previous month of preparation, the whole country seems to present a markedly changed aspect. A general air of quiet and happiness seems to pervade everything.</p>
+            <p><q>Happy New Year!</q> <q>Happy New Year!</q> is heard everywhere, and the shining, smiling faces of the people beam with earnestness, goodwill and lightheartedness. The very birds are trilling in a tenderer tone, and the exquisite wild-plum blossom (the nume) breathes its perfume and loveliness over all, while the soft strains of the beautiful national hymn may be heard from many of the homes, mingled with the accompaniment of the koto and samisen.</p>
+            <p>On this day all the members of a family assemble together and congratulate each other the first thing in the morning. They then sit at little tables, each having one to themselves; these tables are about half a foot from the floor. Spiced cake is then passed, symbolic of the wish that each one may drink a cup of immortality; then soup follows, and they all wish each other ten thousand years of joy.</p>
+            <p>In the days of the Tokugawas the most imposing ceremonies were held, the streets being constantly filled with the parades of the various lords and nobles; but with the dawn of western ideas Japan, retaining most of her Orientalness, gave up a great deal of what the reformists termed <q>useless expense and display</q>. Yet the beautiful parades of Old Japan were said to be as innocent as they were conducive to merriment and good feeling, absurd though some of them might have seemed to foreigners, just as masquerades and carnivals might be said to be. And so only the recollections of these brilliant processions remain to the old survivors who witnessed the state of things in the pre-restoration days, and most of them love to tell you of them, and dwell with kindling face as they do so on the dream memories of their past.</p>
+            <p>Every month has its special significance in Japan, and the Japanese were wont to observe ceremonies peculiar to each. Thus the month of January bears the poetical title of <foreign xml:lang="ja">Mutsuki</foreign>, or Social month, as it is devoted to social gatherings and pleasure. As little work as possible is done, and on the first day of the year no one will even touch broom or duster, in case the new goodness might also be swept from the house with the dust.</p>
+            <p>The custom prevails to this day of making hundreds of calls on the first day. <foreign xml:lang="ja">Jinrikishas</foreign> are flying hither and thither, from one end of the city to the other, and cards are dropped at doors of relatives, friends and acquaintances. The occupant of the <foreign xml:lang="ja">jinrikisha</foreign>, however, seldom alights.</p>
+               <p>Always at New Year’s the parents gather their little ones together and try to instill into them the meaning of the New Year, and so even the very small children try their little best also to be unusually good, gentle, docile and <pb n="285"/> obedient at this time. Though they play happy games, yet they are not too boisterous, and never quarrelsome. Looking at a group of Japanese children a westerner will be struck more than ever by the innate gentleness and refinement of the people. They are happy, healthy, full of life, hut they are seldom noisy or crying and whining, and never vulgar. Some American writer in Japan describes them as being the best children in the world, and speaks of <q>being as good as a Japanese child, and as pretty as an American</q>.</p>
+            <p>The youngsters at this season also strive to excel in penmanship and other school work.</p>
+            <p>The young girls learn a new tune on the <foreign xml:lang="ja">koto</foreign> or <foreign xml:lang="ja">samisen</foreign>, and make themselves pretty new gowns. Most Japanese girls make their own dresses, and derive great pleasure in embroidering them. And, as in all the world over, there is to be found in many a Japanese home that unselfish patient heroine—the big sister, who with a half dozen sturdy little brothers and sisters, fashions all their garments, waits on them and cares for them; thus taking the burden from the parents’ shoulders and shifting it to her own, for in Japan the older people—particularly father and mother—are venerated and esteemed above all else, and are spared all labor possible.</p>
+            <p>On the 2d of January the streets are brilliantly illuminated with lanterns and hung with the national flag and streams of bunting. The shrill calls of procession venders arc heard everywhere in the evening, though there is nothing discordant or disagreeable in their cries.</p>
+               <p><q><foreign xml:lang="ja">Otakara</foreign>! <foreign xml:lang="ja">Otakara</foreign>!</q> (Treasure Ship! Treasure Ship!) There they come, walking slowly at the back of their heavily laden carts, drawn by oxen decorated with flags and cloths of every color, and behind them and all along the way beside them follow a surging crowd of happy children and holiday <pb n="286"/> seekers. Very good-natured and jolly is the vender. How proud of his wares and his importance at this time! pausing to joke every once in a while with a competitor, or to exchange a friendly word with some jinrikiman.</p>
+            <p>And once in a while some little bit of humanity in the shape of a very small boy becomes mixed up in the crowd and loses his bearings. A desolate, grimy, tear-stained little face peers at you. Someone picks him up, raises him high in the air. <q>Who owns this august baby?</q> Everybody laughs, and the women cry perhaps as they laugh, and murmur sympathetic words of endearment, as women will. The kind-hearted treasure vender dries his tears with some bright tawdry toy or piece of rice candy, and as he is restored to the anxious parents the dirty little tear-stained face has regained its wonted serenity and happiness. Ah, but the good will of the new year has touched the veriest peddler and vender!</p>
+            <p>Young men and women as well as the children play outdoors at this season—the favorite game is battledore and shuttlecock. Kite-flying is the favorite amusement with boys, and among the older people card parties are indulged in in the evenings to a large extent. Card-playing in Japan, however, does not resemble that in vogue here, and when the New Year season is over, people never look at the cards till the next January. The cards used are <foreign xml:lang="ja">Hiyakumin-ishu</foreign>, or One Hundred Select Verses, every card being inscribed with a poem.</p>
+            <p>The <foreign xml:lang="ja">torioi</foreign> or female street musicians still play from house to house, fakirs and comical street performers also traverse the cities, though these are rapidly passing out of existence for want of patronage.</p>
+            <p>In spite of the general joy and happiness visible everywhere, one is struck by the unobtrusive way in which the Japanese take their pleasure. There is no noisy rioting, no boisterous games, no drunken revelers or screaming children. In fact, their merriment is so musical and refreshing that the sibilant laughter and chatter add to the air of happy restfulness, and seem to accord with the beauty and sunshine everywhere. And how lovable and gentle they are to each other at this season! Not truly in the western fashion of caressing and kissing, but in a gentle, quiet way.</p>
+            <p>Even the foreigners are not forgotten, but come in for their share of gifts, congratulations and good wishes, and special banquets are very often given to them. The New Year season in Japan is, in fact, the happiest time for a foreigner to visit Japan.</p>
+            <p>So the general good will and spirit permeates and reaches everyone, and as one surveys the happy, contented faces of this little people one shudders at the terrible old missionary adage that <q>Man is vile</q>. Not in Japan!</p>
+         </div>
          </div>
       </body>
    </text>
