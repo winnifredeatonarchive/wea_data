@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseDrama1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseDrama1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,12 +11,16 @@
                <name ref="pers:WE1">Winnifred Eaton</name>
             </respStmt>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
+               <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -31,20 +35,125 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-05">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl155 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-05">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl155 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:JapaneseDrama">
+      <pb n="231"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Japanese Drama and the Actor</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+    
+            <p>Even in the primitive times singing, dancing, and playing on musical instruments were not uncommon in Japan. The old histories record that verses were sung and musical instruments played on.</p>
+          
+            <p>A variety of Chinese music found its way into Japan in the twentieth reign of the Empress Suiko (612), and continued in favor for two hundred years. It was chiefly used in the Buddhist courts and temples. Mimashi, a native of Corea, became nationalised in Japan and set forth a claim that he had mastered the art of Kushimo, a certain kind of dancing. He thereupon was established in Sakurai, where he taught his art extensively. This is said to be the first notice of Chinese music being introduced into Japan. From that time it rose, and to this day the Yamatogaku has been handed down as the refined and unmixed music of Japan. It includes both musical tunes and dances, and is distinguished by these terms: on – gaku, meaning sound – gaku, and bugaku, or dance-gaku. The Chinese music, however, cannot be said to have been altogether popular with the Japanese. In fact, while it was the fashion of the Buddhist temples and the court, where it found high favor with the priests and nobles, nevertheless the Japanese public at large was not particularly interested in the form of the dancing or the tone of the music.</p>
+    
+      
+    
+            <p>The rise of the Japanese drama itself did not actually occur till about the sixteenth century, and neither Chinese nor Corean music had aught to do with it.</p>
+    
+      
+    
+               <p>The earliest dramatic productions were called the <foreign xml:lang="ja"><q>Joruri</q></foreign>, having derived their title from the heroine of the plays which dealt with the love affairs of the Lady Joruri, daughter of a wealthy countryman, and Yoshitsuné, brother of the founder of the feudal system, and one of the favorite idols of Old Japan. The author of this play was said to be a talented woman, by name Ono O-Tsu, a waiting-woman in the house of Ota Nobunaga, the Taiko’s master.</p>
+    
+      
+    
+               <p><foreign xml:lang="ja">Katari</foreign> (narrative or recitation) dates from the most remote past. The production from the Joruri was first given out in Katari form by a blind priest, accompanied by the <foreign xml:lang="ja">koto</foreign>. It met with almost instantaneous success. The <foreign xml:lang="ja">samisen</foreign>f had also about this time made its appearance and was used with effect in the recitation of the Joruri. This instrument came originally from the Loochoo Islands, and is now considered the national music instrument in Japan. Some hold that the Spanish adventurers, the first of whom, Magellan, discovered the Philippines in 1520, introduced it into the archipelago, but there are many who strongly oppose this, denying that the instrument at all resembles the Spanish guitar. Another version of the origin is that the Loochooans used to play on an instrument with a long body made of snakeskin, which emitted a sound resembling the cry of an animal which preyed on the snake, and thus were able to ward off the snakes and reptiles with which their islands were infested. However the instrument found its way into Japan in 1558 and cat-skin was substituted<pb n="232"/> for snake-skin, while the strings were tuned to the first, second, and fourth strings of the biwa. It was changed and improved in other ways, and became a necessary adjunct to the Joruri. From the time of the production of the Joruri, men of distinct talnet began to arise all over the country and, following the example of O-Tsu, gave to their country excellent dramas and plays.</p>
+    
+      
+    
+            <p>Puppets were made to act in accord with the narrative. Later Takemoto Gidayu, whose gifts as a musician seemed phenomenal, appeared in Osaka, and at the same time also came Chickamatsu Monzayemon, the Japanese Shakespeare. These two men formed a unique partnership and worked in unison together, for, while Chickamatsu, who was a year younger than Takemoto, wrote his magnificent plays, Takemoto would simultaneously recite and sing them with his wonted skill, and make his puppets perform in accordance with the narrative.</p>
+    
+      
+    
+            <p>Chickamatsu wrote about sixty plays for Takemoto during the twenty-eight years of their acquaintance, and only two of his plays were not written for Takemoto, but for a pupil. This unique partnership between two men of such remarkable talent established the lyrical drama of Japan. Newspapers were unknown in those days, and every item of news was eagerly devoured. Takemoto would keep his eyes and ears alert and open for sensational occurrences. As soon as he heard of one that pleased him, he forthwith went to Chickamatsu, who used the subject before it became commonly known, and thus it was presented to the people as something fresh and novel. Chickamatsu excelled in his domestic plays rather than in historical, as in the latter he was forced to subordinate his genius to the popular traditions of historical characters, and also to regard the mental capacity of his audience. In 1687 Takemoto opened his first puppet show in Osaka, where he sang and recited himself. At this time he was thirty-five years of age. His fame eclipsed any and all of his rivals.</p>
+    
+      
+    
+               <p>Chickamatsu Monzaye-<pb n="233"/>mon, who was born in 1653, had been brought up in the temple, and was in the service of a court noble for some time. He began writing libretti for puppet shows. He wrote eight plays before he produced the first of his great plays for Takemoto. These first plays had no particular merit and are extinct in literature to-day.</p>
+    
+      
+    
+            <p>Takemoto died in 1714, and ten years later his then celebrated collaborator followed him.</p>
+    
+      
+    
+            <p>The beauty and diction of the plays for Chickamatsu are almost unsurpassed in Japanese literature, and his master of language was such that even the scholars of the classical and Chinese schools gave him their sympathy and admiration. His greatest play is the Tenno-Amijima. It describes the suicide of two lovers, a paper dealer, and a courtesan. It was written while he was in his sixty-eighth year. After the death of Chickamatsu, joint authorship in writing dramas came into fashion, and a number of talented writers collaborated with each other in the production of celebrated plays. Each one would be assigned a certain portion to write. Then they would meet together and the whole would be thoroughly revised and gone over.</p>
+    
+      
+    
+            <p><q>The Chushengura</q>, by Tukeda Izuama, is supposed to be the best of these dramas. It is to-day the stock play, and will draw full houses when all others fail. Danjuro, the leading actor in Tokyo to-day, has played the role of hero no less than forty-eight times. Chickamatsu Monzayemon, Chickamatsu Hayi (1725-1783), and Takeda Izuma form the great trio of lyrical dramatists; but after their death the school declined. Few plays of any great note or merit have been produced since; and with the decline of this school the puppet shows fell out of favor. They are still held regularly in Osaka and Tokyo, but the theatre has practically superseded them.</p>
+    
+      
+    
+               <p>These dramas, formerly produced with puppets and narrative and singing,<pb n="234"/> now are produced on the stage, though the lyrical drama is not the only form to-day. Crude plays were written in the seventeenth century by actors owning their own theatres, who thus added original plots and situations to their repertoire of lyrical plays. And in the following century, even while the dramas of Chickamatsu Monzayemon and his successors were still at the zenith of power, the prose drama took a high literary form under Tsuuchi Jihei, who was succeeded by many talented writers, the last of whom was Kawalake Mokuami (1816-1893). But even the high standard of the literary excellence of their plays could not diminish the popularity of the lyrical dramas of Chickamatsu Monzayemon and his successors. The Restoration even has not yet given rise to a new form of drama.</p>
+    
+      
+    
+            <p>In 1564 O-Kuni, a priestess of Izuma, appeared among the dancing girls, and by her improvement in the art added to the excellence of even the drama itself. At first she went from city to city and danced to collect funds to repair the great shrine of that province. In Kyoto she danced before the Shogun himself, and pleased him so much that he at once ordered the shrine to be repaired out of the public fund. The girl, who was beautiful, young, witty, and talented, remained in the capital and soon captured the heart of a young noble, a retainer in the Shogun’s household named Nagoya Sanzayemon. He wrote simple dramatic pieces for her, and they were privately married. When the Shogun heard of it he was very wroth and immediately discharged the young man from his service, and the couple set out together in their profession, playing in open air or in booths. They met with great success and had a large following. The plays of O-Kuni are known as <q>O-Kuni-Kabuki</q>. O-Kuni is represented in old prints and picture books as being dressed in the most dazzling attire, her wealth of hair in the wildest confusion about her, a golden crown on her head, her face and form of an almost unearthly beauty. She carried all by storm before her, and became the mad fashion of the hour in despite of the displeasure of the Shogun himself, who, however, subsequently forgave the young couple.</p>
+    
+      
+    
+            <p>In the era of Seiho and Keian (A.D. 1644-1881), women were forbidden to appear on the stage and men were substituted.</p>
+    
+      
+    
+            <p>The first theatre of Japan was constructed in 1624 in Yedo (Tokyo). It has been burnt down frequently or destroyed by the authorities. It was built by Suruwaka Kanzaburo and was owned by his hereditary descendants. To-day semi-European theatres are now built with high brick walls. There are, I believe, six large and twelve small theatres in Tokyo.</p>
+    
+      
+    
+            <p>While, of course, the truly remarkable performance of Takemoto and his puppets was never questioned, still the first really great actor to perform on the Japanese stage bore the stage name of Ichikawa Danjuro. He was born in 1660, and was acknowledged as the leading actor. He began his career as an actor at the age of thirteen. In 1704 he was murdered by a fellow player. His son, Kuzo Danjuro succeeded to the stage name and maintained its high repute till his death.</p>
+    
+      
+    
+               <p>Strange as it may seem to westerners who flock to see an individual actor or actress who have made their names through their own personal merit and genius, yet in Japan an actor’s popularity depends largely on the name he has inherited, either from his ancestors or as a gift from a master. Thus, for instance, the name Danjuro, which is to-day borne by the greatest Japanese actor, has also been the name borne by the great Japanese actors before him. The son of a great actor will inherit his father’s stage name, and will endeavor to uphold it. Should he prove unworthy of it, it is a source of regret to every one, who, however, will go to see him rather because he bears the name than from any knowledge of his ability. Fortunately, it became legal for a great actor to bestow his stage name on a clever pupil whom he would adopt. So the excellency of the art was maintained with the high name borne. Several actors may bear the same stage<pb n="235"/> surname, and while the one who is the most efficient and pleases most may not be at all a descendant of the illustrious man who established the name, nevertheless it is a high honor for him to bear it. To be a Danjuro, for instance, means that one has either proved by one’s talent and genius the right to so high a title, or else is a natural descendant of the name. In the latter case, where talent in this direction is plainly absent, the individual generally prefers to drop the stage name of his forefathers, and while retaining his rightful name takes up another calling, leaving others more competent to add to the glory established by his ancestor.</p>
+    
+      
+    
+               <p>The Danjuro name has been handed<pb n="236"/> down thus: The first Danjuro was murdered. His son Kuzo, succeeding, had no son of his own. He adopted one, on whom he bestowed his name. This young man died at an early age, and Danjuro Kuzo adopted another. This, the fourth Danjuro (1711-1788), was succeeded by his son, fifth of that name (1741-1806). The sixth died before his father, and the coveted name was transmitted to a nephew. He was the ablest of the seven Danjuros. His son committed honorable suicide in order to save his father from disgrace and reproach, and for nineteen years the name remained in abeyance. In 1874 his half-brother assumed it. This, the ninth Danjuro, is acknowledged as the greatest living actor in Japan.</p>
+    
+      
+    
+            <p>Thus it will be seen that it is not an easy matter to succeed as an actor in Japan unless one can begin with some great hereditary stage name. Of course, there is a strict law which prevents any one adopting these names unless legally entitled to do so, either by descent, adoption, or gift of the former holder of the name. So an actor, bearing a great name, may bestow it on whomsoever he chooses in the profession. However, many actors who have no great stage name to back them do succeed in their profession entirely through their wonderful efforts and talent.</p>
+    
+      
+    
+            <p>In the old days a square cage rested on the front roof of a theatre, wrapped about with a curtain. Here a drum was beaten morning and night. Modern theatres have done away with this, however.</p>
+           
+               <p>The interior of a Japanese theatre is square, and is partitioned into little compartments. These compartments will hold four or five persons each. An entrance way level with the top of the compartments runs down each side of the pit. These were formerly adorned with flowers and called <q>The Flowery Way</q>. Thus when one has descended to the little compartment his head and shoulders reach this level, and when bordered with flowers the effect is surely delightful and grateful. The stage faces south. Outside <q>The Flowery Way</q> are two or three more rows of compartments a little higher than the pit. These are the better seats. There is a second story of compartments facing the stage and rising one above the other, until bounded by a long window with iron bars. Outside this window runs a passage. Here a spectator is admitted for one single act.<pb n="237"/> Should he desire to see more, he is obliged to pay extra.</p>
+    
+      
+    
+            <p>The stage curtain draws from side to side. In the centre of the stage is the large turn-table or revolving stage. By this revolving stage scenes can be changed and shifted without the curtain having to be drawn. Thus a whole scene revolves to present a new one on a new semicircle. This is managed adroitly by men who work in a space underneath the boards aptly called <q>Hell</q>.</p>
+    
+      
+    
+            <p>A theatre is to be open not more than eight hours per day; this rule being set by the Metropolitan Police Board. Previously, the theatre would remain open from dawn until midnight. Parties of four or five will occupy a compartment and enjoy the performance together, spending an entire day there. Adjoining the theatres are tea-houses and gardens, the proprietors of which agree to furnish the patrons of the theatre with whatever they desire between the acts. Thus one can spend an entire day in a theatre and not find it necessary to return home for his meals or other requisites. By this means also the tea-houses are enabled to profit largely. Meals are even served in the compartments, and while the play is in progress some of the men insist on having their <q>sake</q> at their elbows, and it is not an uncommon thing in consequence for some to grow drunk and unruly and so have to be ejected.</p>
+    
+      
+    
+            <p>A play generally lasts thirty-five days, each act seeming like a new chapter in the history of the plot. Of course one can go and see but an act of the play and find enjoyment, to say nothing of the small one- or two-act plays, but an average good Japanese historical or domestic play will occupy this time.</p>
+    
+      
+    
+            <p>The prompters are called blackamoors. They wear black veils and are on the stage visible to every one. They glide lightly about, keeping the stage in order, and prompting the <q>lines</q>. The audience, strange to say, is supposed to be altogether blind to these figures; however, when interested in the play and the actors, one scarcely casts a thought to the dark figures at the back.</p>
+    
+      
+    
+            <p>Where in the old days the actor was despised and held in low esteem, today he is respected of all, and the idol of the young particularly. The private life of the actor is said to be loose, his morality anything but of the purest, but however this may be the theatre is certainly the most pleasant diversion in which the Japanese indulge.</p>
+         </div>
          </div>
       </body>
    </text>
