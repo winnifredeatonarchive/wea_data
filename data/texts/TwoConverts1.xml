@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TwoConverts1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TwoConverts1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -16,7 +16,11 @@
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -31,20 +35,138 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl203 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl203 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:TwoConverts">
+      <pb n="585"/>
       <body>
+         <head>Two Converts</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <!--ANy opening things put here-->
+         <div type="content">
+            
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+           
+            <p>        After a hard day, spent in going over his new parish and the mission church and school, the pretty, trim little house on the hill, with its sloping roofs and wide balconies, looked refreshing and restful to the Reverend John Redpath. Everything about it was dainty and exquisite.</p>
+            <p>        His predecessor was leaving the American chairs, tables, and beds behind, but apart from these it was furnished entirely in Japanese fashion.</p>
+            <p>        The Reverend John Redpath was past forty, but he had the guileless conscience of a boy whose ideals are as yet unsmirched by bitter experience. It was with boyish enjoyment and curiosity that he sat down to the queer little repast prepared for him, and to which, of course, he was wholly unaccustomed. His predecessor talked to, or rather at, him during the meal, but John, while apparently listening, was absently noting the quaint pattern of the shoji, the dim light of the andon, and the bamboo mats and tall vases. There was a faint odor about the place that delighted him.</p>
+            <p>        Tiny as the house was, John found that he was now the master of three servants. One was a jinrikiman, one a coolie and gardener, and the last his housekeeper and maid-servant.</p>
+            <p>        In the morning the glorious sunshine of Japan poured its wealth into his room, waking him from a strangely refreshing sleep. He found, after he had bathed in the delightful water, subtly perfumed like everything else, that he was averse to drawing on his heavy shoes and trading on the exquisite matting. The thin partition-walls, the freshness and the cleanliness of everything, delighted him.</p>
+            <p>        Immediately after his breakfast, the smiling, round-faced little maid, curtsying and bobbing between the parted shoji, announced that some one awaited him in the zashishi (guest-room), and the minister hastily left the table.</p>
+            <p>        His visitor sat in almost the centre of the room; and as he entered she put her head prone down on her two hands, spread palm downward on the floor. She remained in this apparently cramped position for some time.</p>
+            <p>        <q>How do you do?</q> he said, pleasantly. As soon as he spoke, the girl rose to her feet. She was very pretty, despite the demure dropped head, little folded hands, and plain gray kimono, and he felt instinctively that the greater part of her dignity was affected. When he drew forward one of his American chairs, and motioned courteously for her to be seated, she seemed childishly timorous. The chair was so big, and she so small, that she almost disappeared in its depths, her feet reaching only quarter-way to the floor. The minister smiled cheerfully at her, and encouraged thereby, the girl smiled back at him, her face dimpling and her eyes shining, so that she seemed more than ever a child, and very bewitching.</p>
+            <p>        <q>You wish to see me on business?</q> queried the minister.</p>
+            <p>        <q>Yes. I here you come at Japan to make nice speeches at our most augustly insignificant and honorably ignorant nation. That so?</q></p>
+            <p>        She waited a moment for him to say something, but he merely smiled at the way she had put it, and she continued, with a little argumentative air:</p>
+            <p>        <q>Now what I most anxious to learn is, how you going to make those same great speeches at those ignorant people if you don’ can speak Japanese language?</q></p>
+            <p>        <q>Why, I shall have to learn the language, of course</q>, said John.</p>
+            <p>        <q>Ah</q>, she said, <q>tha’s just exactly what I riding after</q>.</p>
+            <p>        <q>You what?</q></p>
+            <p>        <q>Riding to—a—a—maybe you don’ quite understand. Tha’s just liddle bid silly barbarian slang. Excuse me</q>.</p>
+            <p>        <q>Oh, I see</q>, he said. <q>Now what is it you—ah—</q></p><pb n="586"/>
+            <p>        <q>I like to teach you thad same language, so’s you can make those beautiful speeches</q>.</p>
+            <p>        <q>Ah, that’s it, is it?</q></p>
+            <p>        He sat down opposite her, and drew up his chair.</p>
+            <p>        <q>You’ve come to apply for a position as teacher; is that the idea?</q></p>
+            <p>        She inclined her head.</p>
+            <p>        <q>You’ve had some experience?</q></p>
+            <p>        <q>Ten years</q>, she solemnly prevaricated.</p>
+            <p>        <q>Good gracious!</q> said John. <q>Why, why, you are much older than I thought</q>.</p>
+            <p>        She bowed gravely.</p>
+            <p>        <q>Well—er—whom do you teach? Have you classes, or—</q></p>
+            <p>        <q>I am visiting teacher. I come unto you to teach</q>.</p>
+            <p>        <q>Have you many pupils?</q></p>
+            <p>        <q>Most pupils of any teacher in all Tokyo</q>. She produced a very long piece of rice paper, on which she had spread out the names and addresses of twenty or  thirty people.</p>
+            <p>        <q>Of course</q>, said the minister, <q>I shall have to take lessons of somebody, and if you think that you are efficient for the work—</q></p>
+            <p>        <q>I am augustly sufficient</q>, she said.</p>
+            <p>        <q>Hm!</q> said he, and looked at her doubtfully. <q>Of course I had not decided with whom I should study. You look very young—excessively young, in fact. I don’t want to do anything hastily, but if you will call to-morrow, I will—</q></p>
+            <p>        <q>Yes, yes</q>, she said, <q>I will come sure thing—er—to-morrow; thad day most convenient to you?</q></p>
+            <p>        <q>It will be convenient, I presume</q>.</p>
+            <p>        <q>Oh, thank you</q>, she said, gratefully, and began backing across the room toward the door.</p>
+            <p>        When she had left him, John deliberated over the matter, and after much weighty thought, he decided that it would be better for him to have a man teacher. It would look better. Of course it was too bad to disappoint the little girl—she only looked like a little girl, despite her ten years’ experience—but still this would be the wisest course for him to pursue. He had an uncomfortable feeling, however, that when he told her to come the following day, she had understood him to mean that he wished to commence taking lessons, for he could not quite forget how grateful she had looked, the extravagance of her expressions of gratitude.</p>
+            <p>        And the next day she arrived with a large bundle under her arm.</p>
+            <p>        <q>You see</q>, she informed him, smiling confidently, <q>I been making purchases for you—books, slates, paper, pencils, ink—that sufficient to study. Now we begin!</q> And there was nothing left for the minister to do but to begin.</p>
+            <p>        Three weeks later the Reverend John Redpath, by dint of great perseverance, study, and diligent work, was able to say a number of Japanese words—never quite intelligibly, it is true, except when repeated immediately after his teacher, who, despite his apparent stupidity, was the incarnation of patience, and had great hopes that he would surely speak the language <q>some nice soon day</q>.</p>
+            <p>        It must be said that the minister was very earnest and laborious in his endeavor to learn the language. Arguing that it would be practically useless for him to attempt any sort of work until he had first mastered it, he devoted the greater part of his time to studying. Much of the time so spent was given up to the discussion of trivial matters that bore no relation to the rudiments of how to read and write in the Japanese language, but to John such talks were as essential to his Japanese education as were the studies through the medium of the books. He was learning something new in this way all the time; and, moreover, he had always considered it one of the duties of life to become well acquainted with those near him, and—well, Otoyo was now almost a part of his household.</p>
+            <p>        John made a discovery. Despite the fact that she made her living by giving lessons in the Japanese language to various visiting foreigners, she was not of their religion. In fact, she belonged to that great bulk of <q>heathen</q> that the Reverend John had manfully come forth to reclaim.</p>
+            <p>        After that he insisted on double lessons replacing the one received each day by him. Following his lesson, he undertook to teach her the Christian religion, through the medium of the Bible. John soon found that Otoyo as<pb n="587"/> a pupil was altogether different from Otoyo as a teacher. She plied him with questions that staggered him, and which he, poor man, found it almost impossible to answer.</p>
+            <p>        John was not a brainy or a brilliant man, and the girl kept him on his mettle constantly. He had acquired a peculiar fondness for her, and her conversion was near and dear to his heart. Not only was he interested in her future life, but in her present. He tried to teach her new methods of thought and living. He was anxious to know how she spent her time when away from him, who were her relatives, and whether she had lovers. She was reluctant to talk about herself, and he thought her strangely secretive.</p>
+            <p>        One day the Reverend John Redpath received a letter. It was written in elegant Japanese characters, and he took it to Otoyo for translation. She laughed a little, nervously and excitedly, as she read it through. Then she became quite solemn.</p>
+            <p>        <q>Tha’s a letter from my husband</q>, she informed him, calmly.</p>
+            <p>        The Reverend John sat up in his chair and stared at her dimly. He felt almost powerless to move, and when he finally found his voice, it was husky and strange.</p>
+            <p>        <q>What do you mean?</q> he demanded.</p>
+            <p>        <q>Tha’s a letter</q>, said Otoyo, slowly, <q>from my husband, Mr. Shawtaro Hashimoto, to you, the Revelind John Ridpath. You like me read it to you?</q> Her eyes, bright and guilty, still looked straight into his. They never so much as flickered.</p>
+            <p>        The minister was filled with ungovernable toward her. Her deceit smote him.</p>
+            <p>        <q>How long have you been married?</q> he inquired, briefly.</p>
+            <p>        She counted on her five pink fingers, standing out straight, plump, and separate. <q>Ten months</q>, said she.</p>
+            <p>        <q>And you never told me one word! You—</q></p>
+            <p>        <q>You din ask one word</q>, she said.</p>
+            <p>        <q>I took it that you would have informed me of such an event. You won my confidence. I do not see how I can trust you again</q>, he said, sternly; and then added, as a bitter after-thought: <q>After all, it is a matter of total indifference to me whether you are married or unmarried. It is the principle that pains me</q>.</p>
+            <p>        <q>Revelind John Ridpath</q>, said Otoyo, her eyes all clouded, <q>I don’ tell you that sad tale about me because I din wan’ to pain your so gendle heart</q>.</p>
+            <p>        <q>I don’t understand you</q>, he answered her, briefly.</p>
+            <p>        <q>My marriage most unhappy in all the whole world. My father and mother marrying me unto this gentleman. He just so bad and cruel as all the fiends of that place you tell me about. I hate him! Therefore I just leave him, go live all ‘lone, and work hard this-a-way</q>.</p>
+            <p>        <q>It was barbarous to marry you against your wish</q>, said the Reverend John, visibly relenting. <q>I have heard of this custom of your people. I hope someday to show them how wrong it is. But you have done wrong to leave your husband</q>.</p>
+            <p>        She sighed heavily, hypocritically. <q>Ah, I thought I would like to learn that Chlistianity religion</q>, she said, and looked down pathetically. She had touched a sore spot, and he winced. He got up from his seat and began pacing the floor restlessly. After a while he came back to her.</p>
+            <p>        <q>What does he want with me? If he wishes you to return, my duty is plain. Read me the letter, if you please</q>.</p>
+            <p>        <q>He don’ wish me to return. He just want to make liddle bid rattle and noise, just to make you know he own me, and thad I just—his—slave</q>.</p>
+            <p>        <q>Read the letter, please</q>.</p>
+            <p>        It was as follows:</p>
+            <p>        <q>Excellency, –I have to request your lordship against the forbidden misconduct of making my wife a Christian. It is my desire that she shall not embrace a religion foreign to all my ancestors. I also honorably request that you must not condescend to teach her other barbarous customs and manners of your West country. I desire my wife to follow only the augustly unworthy and honorable customs of my country. I beg that you will accept my humblest compliments.                Shawtaro Hashimoto</q>.</p>
+            <p>        That was all.</p>
+            <p>        <q>Of course</q>, said the now irate Reverend John, <q>I expected opposition in<pb n="588"/> my work. I will brook no dictation, and, Otoyo, we will continue the lessons</q>.</p>
+            <p>        There was an element of combativeness in John Redpath’s nature. He was an Englishman. A few days after this letter there came another one, and a few days after that another, and still another. They were all couched in pretty much the same language. The minister ignored them, though Otoyo informed him that she had answered, acknowledging them all, as this was the correct and proper thing to do in Japan. In fact, she wrote laboriously polite and diplomatic letters from the minister to her husband, signing them boldly with the minister’s name.</p>
+            <p>        Meanwhile she had artfully wheedled her way back into the minister’s confidence. She had managed to make him believe that her husband was a brute of the worst type. She made up pathetic tales of his bad treatment, how he had beaten and starved her, and kept her from seeing her ancestors (parents and grandparents). The minister was, as I have said, an Englishman, and a brave one. Her tales, told with all of the art of which she was mistress, awakened his native chivalry, and, mingled with his unconquerable fondness for her, there arose in him a strong desire to protect her.</p>
+            <p>        Otoyo now showed a ready inclination to embrace the new religion. Matters which hitherto had seemed abstruse and hard for her to understand she now declared were becoming as clear as the Lake Biwa. She professed an inordinate admiration for the rule <q>Love one another</q>, and lamented the fact that in all the language of Japan, flowery and poetic as it was, there was no such word as <q>Love</q>. Nor in all the philosophy of Buddhism had the injunction <q>to love</q> been once laid upon them.</p>
+            <p>        And the minister, who was an honest and straightforward man, and unused to the arts and wiles of the Orient, took all her questionings to heart, and labored unceasingly to lead her to the light.</p>
+            <p>        But one day a terrible thing happened. Otoyo failed to appear, and for a week the minister saw nothing of her. Filled with anxious forebodings and imaginings as to her fate, he lost his head completely, and acted in a most undignified and unmissionarylike fashion, searching all around the town by day, and coming home late at night, moping and growling like one half demented. The end of the week found him haggard and broken-hearted.</p>
+            <p>        When Otoyo came back, she brought with her quite a large box and a number of bundles, which she carefully carried into the zashishi and there deposited.</p>
+            <p>        At the inquiry of the minister as to what they contained, she informed him placidly that it was her wardrobe. She then undid a scroll of paper, and after glancing over it herself, she handed it, together with another letter from her husband, to the minister.</p>
+            <p>        He gave them back to her. <q>What is this?</q> he asked, testily.</p>
+            <p>        <q>Thad</q>, she pointed to the scroll, <q>is my divorce. My honorable husband divorcing me. Thad</q>, she pointed to the letter, <q>is a letter for you from my same honorable husband, Mr. Shawtaro Hashimoto</q>.</p>
+            <p>        She read it:</p>
+            <p>        <q>Excellency, –I have repeatedly warned you against my dissatisfaction of making my wife convert as a Christian. You have answered me, politely acknowledging my letters, but you have paid no heed to my requests. I have also warned you against teaching her the barbarian ways of your honorable nation, and this also you have politely acknowledged, but failed to heed. You have now not only converted her at this so abominable religion, and the barbarian ways of the foreigners, but you have stolen her wife-love from me. I have therefore divorced her, and now send her to you herewith</q>.</p>
+            <p>        It is needless to describe the sensations of the Reverend John Redpath. He was too confounded at first for speech. Then he began striding up and down the room, like one nigh crazy. <q>I will not be the means of separating man and wife. It is preposterous. I’ll have the fellow arrested! I—</q></p>
+            <p>        <q>But</q>, said Otoyo, argumentatively, <q>he don’ did nothing that you kin arrest him for. If you go have rattle and fight at the pleece station with him, they going to lock you up for making such disturbance. He don’ git hurt</q>.</p><pb n="589"/>
+            <p>        <q>Are you defending him?</q> said the minister, turning on her almost fiercely.</p>
+            <p>        <q>No, Excellency; I just giving you advice. Now pray be calm, like nize good Chlistian minister unto the gospel, and listen at me</q>.</p>
+            <p>        <q>You listen to me</q>, he said. <q>I want you to go right back to your husband. There must be a stop put to this—</q></p>
+            <p>        <q>Tha’s too late to go back</q>, said Otoyo. <q>I already divorce. I not any longer his wife</q>.</p>
+            <p>        <q>What are you going to do?</q></p>
+            <p>        <q>Me?</q> she opened her eyes wide. <q>What I do! Why, stay at your house—be wife with you!</q></p>
+            <p>        <q>What!</q> he shouted.</p>
+            <p>        She pouted, and then rose up indignantly. <q>Excellency</q>, she said, <q>I answering that letter. Tha’s p’lite to answer that honorable letter. Tha’s also p’lite that you marry with me. Why, evry mans at Japan, even poor low coolie, do such thing if my husband divorcing me for you</q>.</p>
+            <p>        <q>What did you answer?</q> he demanded.</p>
+            <p>        She brought out a copy of her reply.</p>
+            <p>        <q>Augustness,–I have received your so p’lite letter, and the wife also enclose. I acknowledge I have convert your wife at that abominable religion, and taught her the honorable barbarian ways of my country. Therefore I must accept the wife enclosed, for which I condescend to thank you</q>.</p>
+            <p>        He looked at her almost stupidly.</p>
+            <p>        <q>You can’t stay here, Otoyo, and it was very wrong to answer like that</q>.</p>
+            <p>        She denied this fiercely. <q>Tha’s right do. You living at Japan. Therefore mus’ be like Japanese. Roman do’s Roman do!</q> She misquoted.</p>
+            <p>        <q>Would a Japanese have answered that way?</q></p>
+            <p>        She nodded emphatically. <q>Just like same thad</q>, she declared.</p>
+            <p>        <q>And accepted you, and married you!</q></p>
+            <p>        She nodded again, violently now.</p>
+            <p>        <q>Well—I won’t!</q> said the Reverend John Redpath, and turned his back on her.</p>
+            <p>        Otoyo approached him slowly, then she suddenly placed herself directly in front of him, forced her own little hands into his, and compelled his eyes to look into her own, which were imploring.</p>
+            <p>        <q>You not going to send me out of your house?</q></p>
+            <p>        The Reverend John cleared his throat and straightened his shoulders bravely.</p>
+            <p>        <q>I see only one course to be pursued</q>.</p>
+            <p>        <q>You desire me leave you, Excellency?</q></p>
+            <p>        <q>Ye-e-es</q>, said the Reverend John, nervously. And then, as she dropped his hands and turned quickly to obey him, he shouted, with startling vehemence, <q>No!</q></p>
+            <p>        A few days later there were two ceremonies performed at the mission-house. At the first the Reverend John Redpath himself officiated. He christened Otoyo and pronounced her a convert to the Christian religion. In the second his predecessor acted, coming up from his city parish to repeat the Christian marriage service over their heads. He would have been horrified had he known that he had married two converts instead of one—one a convert to Christianity, the other a convert to divorce.</p>
+  
+    
+         </div>
          </div>
       </body>
    </text>
