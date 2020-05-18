@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TheHalfCaste1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TheHalfCaste1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Half Caste</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,136 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl151 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl151 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:TheHalfCaste1">
+      <pb n="10"/>
       <body>
+         <head>The Half Caste</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+ 
+            <p>Perhaps one of the most pitiful and undesirable positions in society in Japan is that held by the half breed. I mean the half breed whose blood is a mixture of the Caucasian and Japanese. It is usually the mother who is a Japanese, the father being a foreigner. Born in Japan, and entered on the registers of that country as Japanese citizens, they live strangely isolated both from their mother’s people and from their father’s. If they at all resemble their father, or act or live different from those about them, the Japanese look down on them, alluding to them half contemptuously, as <q>half castes</q>. On the other hand, Westerners are inclined to regard them with interest, strongly mixed perhaps with a pity that the proud sensitive heart of the half breed resents.</p>
+    
+      
+    
+            <milestone unit="sectionBreak"/>
+    
+      
+         </div>
+            <div n="1">
+            <head>Their Disposition.</head>
+    
+      
+    
+            <p>The Japanese half breeds are wonderfully precocious, their sharpness and brightness being almost abnormal, though as a rule they are so versatile that their cleverness is too general for them to accomplish much in any one direction. Furthermore they are extremely erratic and moody, made happy by the smallest of things, and plunged into the depths of despair at trifles.</p>
+    
+      
+    
+            <p>Some one once said to me that they considered half breeds as a rule hard and heartless. I have found it to be the reverse. It is true that they are reticent and slow to make friends, and even where they make them, it is observed no one ever gets really close to them, yet when it comes to an act of wonderful heroism or unselfishness, I am never surprised to find a half breed the one who has done it. They are generous to a fault to those they love, and bitter as death to those they dislike.</p>
+    
+      
+    
+            <p>From their earliest childhood, whether in this country, Europe or Japan, they are made to feel that they are different from those about them. Children are very often the cruelest of torturers as  well as the keenest sufferers. The sufferings of half breeds while in their childhood from the hands of unscrupulous, thoughtless children, can never perhaps be understood or appreciated by any one.</p>
+    
+      
+         </div>
+            <milestone unit="sectionBreak"/>
+    
+      
+            <div n="2">
+            <head>Always Despised.</head>
+    
+      
+    
+            <p>Should they be educated in Japan, the Japanese children will despise them because their fathers were Kirishitans (Christians). In this country or in England they are accused of being <q>niggers</q>, <q>Chinese</q>, etc. Such methods of torture are administered to these children under the very noses of the teachers both in Japan and other countries, though it is less common here in America. When it is brought to the notice of the teachers, they will perhaps administer some slight punishment, and the incident passes from their minds. How many acts of cruelty are daily performed by thoughtless children unknown by parents or teachers. To a supersensitive nature such as is that of the half breed, the smallest cut or slight is felt. This is how cynics are made. Half breeds are either cynics, or they are philosophers or geniuses. They are seldom ordinary—seldom normal.</p>
+    
+      
+    
+            <p>I knew a little half breed Japanese girl of twelve years who used to say that she loved and hated every country in the world. It made her angry to find people patriotic, because patriotism seemed to her so selfish—an exalted sort of conceit. This is how patriotism appeared to a little girl who had no real country to be proud of. Perhaps both of the countries she might have called home, had bruised her so that in the midst of her yearning and love for them, she resented the fact that she herself belonged to neither of them, inasmuch as she was an alien on both soils—entirely different from those about her.</p>
+    
+      
+    
+            <milestone unit="sectionBreak"/>
+    
+      </div>
+            <div n="3">
+            <head>Not Demonstrative.</head>
+    
+      
+    
+            <p>Japanese half breeds are not demonstrative, nor do they have a great many people. When, however, their deeper feelings are touched, then the passion and trust with them is such that its very strength becomes a weakness. They are not lukewarm in their affections, hating fiercely or loving passionately; their lives are consumed with the intensity of their feelings, and the inevitable crosses they are bound to encounter.</p>
+    
+      
+    
+            <p>The hardest, most cynical, careless and pessimistic person I have ever known was a Japanese half breed; the tenderest, truest, most generous and unselfish person I have ever met was a Japanese half breed. They give all, or they give nothing. Can you get beyond the harsh, cold wall by which they surround themselves, forget their skepticism, their egotism and cynicism and reach the warm, pulsating heart? Surely no heart beats more truly. You have discovered a new country. That being you have always considered so hard and proud has suddenly changed; he has melted into a yearning, hungry, human being. Pride, sensitiveness—these are the garments in which the half breed enwraps himself. We say, <q>A shadow passes by</q>, but pull the garments aside even for a minute, and like Columbus in discovering the new world, your heart will beat with a rapture that is almost akin to pain. It is the revelation of your discovery. It is the pleasure that one might experience in discovering that something we had always considered the commonest brass was the brightest and best of gold, which wanted only the outside coating, that the rough handling of many had left on it, to be removed in order to show its genuineness. But alas! these qualities are so seldom discovered, and often the hungry heart of the half breed becomes so hardened from enforced isolation that in a rash despair he plunges into a life of excitement and pleasure where he is forgotten of all the world.</p>
+    
+      
+            </div>
+            <milestone unit="sectionBreak"/>
+    
+      
+            <div n="4">
+            <head>Lack Veneration.</head>
+    
+      
+    
+            <p>The Japanese half breeds seldom make good sons or daughters, nor do they have that great reverence and love for the parents which is common among children of ordinary parentage. I do not know why this is so, unless it lies in the fact that the same love and care that are given by most good parents to their children are withheld from them. Their educations are spasmodic; they are taught the smarter tricks of their father’s country, and those of their mother’s. Very often their parents do not live together and then they have merely the guidance of a parent who is embittered perhaps. Of course, there are exceptional cases, where the children are brought up entirely as their father’s people, or as their mother’s, but this is only in rare instances, and usually the Japanese half breed does not know the counsel, and the dearly-to-be-desired strict guidance of a father, or the watchful, tender loving care of a mother.</p>
+    
+      
+    </div>
+            <milestone unit="sectionBreak"/>
+    
+      
+            <div n="5">
+            <head>Childhood.</head>
+    
+      
+    
+            <p>It must not be imagined, however, that the half breed’s life is altogether devoid of happiness. It is generally in their childhood that they really suffer the most. After that period is passed, they go out into the world prepared to encounter sorrows. It is noticeable that people who have suffered an isolated childhood, who in their early youth have been ridiculed and tortured by companions, for no other reason perhaps than that they were different from them, usually make the very best or the very worst of men and women. Some of them become quite philosophic, and it is natural for them to weigh everything that comes in their way. They look back on their childhood with amazement, wondering how they could have let such trifles cause them so much misery. These ones doubtless even in childhood fought their ways among their school mates and demanded and get all their rights. On the other hand the over-sensitive ones are spoilt from childhood for any sort of a higher life. From constantly being called names and shunned, they become morose, bitter and harsh in their judgment of every one.</p>
+    
+      
+    </div>
+            <milestone unit="sectionBreak"/>
+    
+      
+            <div n="6">
+            <head>Characteristics.</head>
+    
+      
+    
+            <p>Half breed Japanese children are as a rule very pretty. They have dark hair and eyes, and in that way resemble more the Japanese; in fact, they are in childhood decidedly of a Japanese type. As they grow older, however, their features assume rather the cast of a Western face, their features being very regular and finely formed. Their eyes are larger than the Japanese eye but smaller than a Westerner’s, though brighter than an eye three times their size. They generally enjoy fine physical constitutions, though they are nervous, highly strung, jealous, conceited, yet humble and self-deprecating and overly modest at times, sarcastic, skeptical, generous and impulsive. It is hard to analyze their natures, because they are so changeable. They are born artists. Maybe they inherit this from the Japanese, and being born in that home of beauty their passionate love of nature can be understood. Although they seem to have very little love for any particular country, yet I believe had they a country of their own they would be the most patriotic people in the world, though some of them would likely disclaim this, as they so often boast that patriotism is merely an exalted form of narrowness.</p>
+    
+      
+    
+            <p>They are extremely ambitious, but generally meet with so many disappointments and hamperments that it is not a common thing for any of them to be more than ordinarily successful in life. Often the greatest impediment to their success is their own erratic, proud natures. One does not often find a Japanese half breed criminal, however, though suicide among them is more common.</p>
+    
+      
+    </div>
+            <milestone unit="sectionBreak"/>
+    
+      
+            <div n="7">
+            <head>Possible Exceptions.</head>
+    
+      
+    
+            <p>There are a great number of Japanese half breeds, though they are scattered so much that it is not often one comes into contact with them. I wonder whether the sadness of their youth ever leaves them, or whether it leaves its mark on them forever. We hear of few, if any, instances of their distinguishing themselves before the world. Perhaps the children of Lafeadio Hearn, the American writer, and those of Sir Edwin Arnold, the English writer, whose mothers are Japanese women, will prove exceptions, as they will doubtless have the protection and love of these great men. They are many Japanese men, too, in this country who have married American or English women, and whose children receive every opportunity, but alas! for the hundreds of pitiful little ones who are born in Japan every year, and whose fathers they seldom know.</p>
+    
+      
+          </div>
          </div>
       </body>
    </text>
