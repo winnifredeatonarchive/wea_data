@@ -37,7 +37,7 @@
     
     <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
     
-    <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']" as="element(TEI)"/>
+    <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']/TEI" as="element(TEI)"/>
     
     <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']" as="element(TEI)"/>
     

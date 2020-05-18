@@ -24,7 +24,6 @@
                 <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
                 <xsl:with-param name="content">
-                    
                     <xsl:apply-templates select="." mode="people"/>
                 </xsl:with-param>
             </xsl:call-template>
@@ -38,30 +37,47 @@
         <body>
             <head><xsl:value-of select="persName/reg"/></head>
             <div>
-                <head>Biography</head>
+<!--                <head>Biography</head>-->
                 <xsl:apply-templates select="note" mode="#current"/>
             </div>
-            <xsl:variable name="respStmts" select="$sourceXml//TEI/descendant::respStmt[name[@ref=concat('pers:',$thisId)]]" as="element(respStmt)*"/>
+            <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
             <xsl:if test="not(empty($respStmts))">
                 <div>
                     <head>Credits</head>
-                    <xsl:for-each-group select="$respStmts" group-by="resp">
-                        <div>
-                            <head><xsl:value-of select="current-grouping-key()"/></head>
-                            <p>
-                                <list>
-                                    <xsl:for-each-group select="current-group()" group-by="ancestor::TEI">
-                                        <xsl:variable name="root" select="current-group()[1]/ancestor::TEI"/>
-                                        
-                                        <xsl:for-each select="current-group()">
-                                            <item><ref target="doc:{$root/@xml:id}"><xsl:sequence select="$root/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></item>
+                    <table type="exhibit">
+                        <row role="label">
+                            <cell/>
+                            <cell>Title</cell>
+                            <cell>Roles Played</cell>
+                        </row>
+                        <xsl:for-each select="$respStmts">
+                            <xsl:variable name="thisDoc" select="."/>
+                            <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                            <row>
+                                <cell>
+                                    <xsl:choose>
+                                        <xsl:when test="$thisDoc//text[@facs]">
+                                            <figure>
+                                                <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.png">
+                                                    <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                </graphic>
+                                            </figure>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </cell>
+                                <cell>
+                                    <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                </cell>
+                                <cell>
+                                    <list>
+                                        <xsl:for-each select="$thisDoc//respStmt[name[@ref=concat('pers:',$thisId)]]">
+                                            <item><xsl:value-of select="resp"/></item>
                                         </xsl:for-each>
-                                        
-                                    </xsl:for-each-group>
-                                </list>   
-                            </p>
-                        </div>
-                    </xsl:for-each-group>
+                                    </list>
+                                </cell>
+                            </row>
+                        </xsl:for-each>
+                    </table>
                 </div>
             </xsl:if>
             

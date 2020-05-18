@@ -174,7 +174,7 @@
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
-        <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject(ancestor::TEI)) and not(ancestor::TEI/descendant::catRef[contains(@target,'Listing')])">
+        <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject(ancestor::TEI)) and not(ancestor::TEI/descendant::catRef[contains(@target,'Listing')]) and not(ancestor::TEI/@xml:id = $personography//person/@xml:id)">
             <div id="info">
                 <xsl:call-template name="createTOC"/>
                 <xsl:call-template name="createCreditsAndCitations"/>
