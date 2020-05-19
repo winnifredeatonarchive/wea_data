@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="21.1">
+<project version="22.0">
     <meta>
         <filters directoryPatterns="" filePatterns="wea_data.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="21.1" xml:space="preserve">
+            <serialized version="22.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>code-templates</String>
@@ -10759,6 +10759,18 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <field name="alias">
                                                                 <String>${i18n(row.wizard)}</String>
                                                             </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
                                                         </contextItem>
                                                         <contextItem>
                                                             <field name="targets">
@@ -10772,6 +10784,18 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <field name="alias">
                                                                 <String>${i18n(table.wizard)}</String>
                                                             </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
                                                         </contextItem>
                                                         <contextItem>
                                                             <field name="targets">
@@ -10784,6 +10808,18 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             </field>
                                                             <field name="alias">
                                                                 <String>${i18n(img.wizard)}</String>
+                                                            </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
                                                             </field>
                                                         </contextItem>
                                                     </contextItem-array>
@@ -14535,6 +14571,18 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                             <field name="alias">
                                                                 <String>${i18n(figure.wizard)}</String>
                                                             </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
                                                         </contextItem>
                                                         <contextItem>
                                                             <field name="targets">
@@ -14548,6 +14596,18 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                             <field name="alias">
                                                                 <String>${i18n(table.wizard)}</String>
                                                             </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
                                                         </contextItem>
                                                         <contextItem>
                                                             <field name="targets">
@@ -14560,6 +14620,18 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                             </field>
                                                             <field name="alias">
                                                                 <String>${i18n(row.wizard)}</String>
+                                                            </field>
+                                                            <field name="replacementFor">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="replacedElementNs">
+                                                                <null/>
+                                                            </field>
+                                                            <field name="displayOnlyWhenElementAllowed">
+                                                                <Boolean>false</Boolean>
+                                                            </field>
+                                                            <field name="useReplaceElementName">
+                                                                <Boolean>false</Boolean>
                                                             </field>
                                                         </contextItem>
                                                     </contextItem-array>
@@ -15700,6 +15772,11 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                         <String>ANT</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -15713,6 +15790,11 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -15730,6 +15812,11 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                         <String>ANT</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -15745,6 +15832,11 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                         <String>XSL</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -15758,6 +15850,11 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
