@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseInAmerica1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseInAmerica1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -11,12 +11,16 @@
                <name ref="pers:WE1">Winnifred Eaton</name>
             </respStmt>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
+               <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -31,20 +35,145 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl156 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl156 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:JapaneseInAmerica">
+      <pb n="100"/>
       <body>
+         <head>The Japanese in America</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+   
+            <p>Ever since the Japanese school trouble in San Francisco became acute I have read with interest and considerable sadness the various published articles and editorials upon the subject. A curious article by a special newspaper correspondent on the Pacific coast, impels me to take up my pen, not as a champion for the Japanese, but in appeal to the fair-minded, right-thinking Americans for ordinary justice and sane judgment for <q>the little brown man</q>, as this correspondent terms him.</p>
+    
+      
+    
+            <p>The writer of the article in question refers to the Japanese as <q>a race from which came our servants!</q> Repeated references are made to the fact that the Japanese stubbornly refuses to recognize the white man as his superior. <q>The white race every time</q>, cries the writer, attempting to make a case from so poor an issue. Various mean characteristics of the Japanese race the writer enumerates, laying emphasis on his <q>conceit</q>. Finally the writer makes the astonishing statement that the war correspondents who went to the front full of admiration and enthusiasm for the Japanese, returned voicing <q>eternal condemnation for everything Japanese</q>.</p>
+    
+      
+    
+            <p>Also the writer paints a ludicrous picture of the dowdy little Japanese woman as she appears in American dress. Such articles mislead and inflame.</p>
+    
+      
+    
+            <p>What reflection upon the race can result through the failure of its women to dress in Western garb with style? The description of the Japanese woman given by the writer, however, must apply to the humblest among the race who live in America. The Japanese gentlewoman in America wears the foreign dress with far more smartness and ease than the foreign woman in Japan does the native garb there. The article against which I appeal appeared as a commentary upon the message of President Roosevelt dealing with the Japanese problem. The writer, <q>M. E. C.</q>, a special correspondent of the New York <q>Times</q> in Oakland, Cal., had these things to say, among others:</p>
+    
+      
+    
+            <p>“We recognize the grave import of the message, a message likely to be fraught with such consequences to the Pacific coast. And we hark back to<pb n="101"/> the time when the Japanese first slipped quietly in among us. He was a demure little brown man, and we treated him well—we gave him a home and we educated him. We were the dominant Caucasian race, he was of the inferior Asiatic race—a race from which came our servants. The Japanese furnished only another phase of the intense cosmopolitanism of San Francisco—parts of which were distinctly of Europe and others of the Orient.</p>
+    
+      
+    
+            <p>“The Japanese took up life quietly in many homes. He helped the mistress of the family before school, then went to school with the children. He aided in household tasks after school hours. He was well fed and had his own room and his evenings to himself. He was paid three or four dollars a week, as much as white servants were paid in the East. They were most kindly treated everywhere—in the home, in the schools. In the latter they received the greatest consideration, helped along by the children, and taught with exceeding patience by the teachers. Fancy the annoyance of having a Japanese man who cannot speak English in a class of fifty little children. The one man took up so much time that it was not always fair to the children. *  *  *</p>
+    
+      
+    
+            <p>“The Japanese do not come here to be our servants; that is only their stepping stone. They come to go into business, and that has been the experience also in Hawaii. The Japanese has not the responsibilities of the white man; he has not his traditions, his ideals. He lives on so little, in such squalid, meager surroundings, that he can lower business prices and business standards till the white man is driven out. *  *  *</p>
+    
+      
+    
+            <p><q>San Francisco is a tremendous mass of debris—miles and miles of it. It is the great burden which the white laborer is bearing; it is his back bending to the load which one sees; he has no assistance from the Japanese laboring class</q>.</p>
+    
+      
+    
+            <p>Again <q>M. E. C</q>. asserts that the war changed the Japanese.</p>
+    
+      
+    
+            <p>“The great change in the Japanese, which seems to have precipitated all the trouble, dates from the late war. Sentiment was almost entirely with them. Here and there were a few who looked distrustfully at everything Oriental and said:</p>
+    
+      
+    
+            <p>“ ‘The white man every time—the white man against the field, right or wrong!’</p>
+    
+      
+    
+            <p>“But most men got back to the principle involved and rejoiced with the Japanese as battles were won. It was only a few months ago that war correspondents from all over the United States and England passed through San Francisco on their way to the Orient. All was enthusiasm for the Japanese as they set sail for the land of the Mikado.</p><pb n="102"/>
+    
+      
+    
+            <p><q>But, oh! the difference when they returned to America some months later! They voiced eternal condemnation for everything Japanese. On one thing were they all agreed—on insincerity as a dominating Japanese characteristic. And they learned something else in their weary months of waiting among this alien people. They learned the hatred which these Oriental races have for the white race, a hatred well covered up ordinarily, but a hatred that exists. Any scheme for the settlement of the present question which fails to recognize this great race hatred fails in a very vital point</q>.</p>
+    
+      
+    
+            <p>Conceit Japan certainly has. What race has not? What of the conceit which makes the bland statement that because of its peculiar skin-color, a race is superior? Since when did the Oriental nations become the slaves or servants of the Caucasian race? To speak of the Oriental nations as inferior is to make an ignorant and stupid statement—dangerous, moreover. Is it desirable that the Oriental nations be goaded into proving they are not inferior? What constitutes civilization? A crossing of swords could actually prove nothing, but the Oriental knows it is the test of the Western nations and he may elect some day to be put to this test. With how tragic a result for the whole world! Why are the bigoted, stupid-tongued ones permitted to speak aloud? They awaken hatred, prejudice.</p>
+    
+      
+    
+            <p>Are we no better to-day than in the time when the white-skinned Spaniard came all conquering to exterminate the darker-hued man of the New World? Do the Western nations, indeed, cherish the childish delusion that a race as proud and intelligent as the Japanese or the Chinese could be likewise subjected?</p>
+            
+            <p>It is preposterous to name the Japanese as an inferior race—to wave a flag as red as that before the eyes of a people admittedly full of pride and pugnacity.</p>
+    
+      
+    
+            <p>Yes. Japan is <q>bursting with conceit</q>. So is every nation. Conceit, if such it can be called, is what makes one accomplish things. It is the assurance behind the hand that strikes which makes the blow the surer and severer. Why reproach Japan for an attribute common to every self-respecting nation on the earth? Of course, crowned with her new war laurels, Japan’s vanity is more apparent at the present time. How was America after the war with Spain? At such a time would it have been well for another nation to speak sneeringly of it as an <q>inferior nation?</q></p>
+    
+      
+    
+            <p>The statement regarding the war correspondents is audaciously false. I read omnivorously all the books I could get written by these same correspondents after their return to America. With only one or two excep-<pb n="103"/>tions, they almost over-praised Japan. Indeed, Japan’s conceit has been very much fed by the fulsome praise bestowed upon her by these very American writers who have lived among, known and sometimes loved the Japanese. Who will heed to-day the words of those who seek to decry the character of such a nation?</p>
+    
+      
+    
+            <p>How foolish is the supposition that the Japanese immigrants will overrun this country, and in competition with the native crush him to the wall. Japan is a little nation at best. How many of her people would she spare to cause the terrible havoc here predicted? The closing paragraph of <q>M. E. C.’s</q> article follows:</p>
+    
+      
+    
+            <p><q>Now the wise men of the nation are studying a question full of important phases—the old question which always comes up when two alien races undertake to live out life together, under the same conditions. It is simplified to some extent when one is the dominant race and the other the definitely subjected one—the latter the servant class, and content to remain so. But when the alien race aims at equality it calls out the stubborn resistance of the stronger race, and an antagonism sets in, the end of which no man can see</q>.</p>
+    
+      
+    
+            <p>As for the school question itself, I cannot express an opinion. But I do not understand how the pupils in the schools are Japanese men; for education has been for long compulsory in Japan. Had these men not had a lower school education before they came to America? If they go merely to learn the English language, then, indeed, I sympathize with the Californians and believe that adult Japanese should be excluded. But as regards the little children, what a complication America would face, were it to supply separate schools for the children of every individual nationality!</p>
+    
+      
+    
+            <p>The <q>social ostracism</q> of certain races is a sad thing, indeed; but when it strikes at a proud and noble people it is not only sad—it is foolhardy. The fact that California knows the individual Japanese as a domestic servant does not make of the Japanese a servile race.</p>
+    
+      
+    
+            <p>The contempt with which the word <q>servant</q> is flung now at the Japanese awakes in me an understanding of the most important of all problems to American women—the servant problem. People are abandoning home life because of it. Race suicide is one of the direct results. And the reason? Because of the contemptuous term <q>servant</q>.</p>
+    
+      
+    
+            <p>Recently to your shores has come a new kind of servant—a self-respecting, clean, decent person, who in his very character has elevated the station of the servant. Would you discourage him also? He comes of a race which<pb n="104"/> deems no employment degrading. In Japan a mistress does not despise her maid. She will make the simple statement: <q>Who knows but that I may come to this myself</q>.</p>
+    
+      
+    
+            <p>We are all servants—of various sorts. I serve you, for whom I write. You serve your customers, or your clients. Shall each one of us kick at the one below us? And why is the work of a home, the cooking, the ministering to our personal wants and needs, not to be esteemed? To be done properly it should bring out the best traits of our character.</p>
+    
+      
+    
+            <p>I myself have had the servants in America of nearly every sort and kind. I had best service from the Japanese, for the simple reason that I found them less dissatisfied with their thankless work than were the others. But even they were affected by the attitude of Americans toward the servant. I remember Dan, a cook and butler, whose surliness, independence and resentful looks I never understood until I questioned him. He said, <q>Mrs., in America to be servant is to be dog. Velly well—dog bark and bite. Me too</q>. Later I obtained the services of a newer recruit—an optimistic, apple-faced newcomer, whose shining eyes beheld everything American with astonishment and delight. Him I regretfully dismissed because of his inability to understand morals—as viewed by a Westerner. Taku was wont to take his daily bath in a tub, openly set out in the center of my kitchen floor, and when a scandalized Irish maid would walk into the kitchen, he would arise politely and bow to her from his watery retreat.</p>
+    
+      
+    
+            <p>Yes. The Japanese of the poorer class will work for you as servants—but not for long—for some day you will teach them the opprobrium of the term <q>servant</q>, and the meanest Japanese has pride.</p>
+    
+      
+    
+            <p><q>M. E. C</q>. avers that the Japanese hates the white man. He does not. I have never known one to do so yet. What race is engaged in the thankless employment of hating any other nation, save its oppressor or enemy.</p>
+    
+      
+    
+            <p>I am not Oriental or Occidental either, but Eurasian. I must bleed for both my nations. I am Irish more than English—Chinese as well as Japanese. Both my fatherland and my motherland have been the victims of injustice and oppression. Sometimes I dream of the day when all of us will be world citizens—not citizens merely of petty portions of the earth, showing our teeth at each other, snarling, sneering, biting, and with the ambition of the murderer at our heart’s core—every man with the savage instinct of the wild beast to get the better of his brother—to prove his greater strength—his mightier mind—the superiority of his color.</p>
+    
+      
+    
+    
+      
+    
+         </div>
          </div>
       </body>
    </text>
