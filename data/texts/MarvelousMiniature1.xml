@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MarvelousMiniature1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MarvelousMiniature1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Marvelous Miniature Trees of Japan</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,97 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-            <catRef target="wdt:genreNF" scheme="wdt:genre"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-02">Added cat refs and facs.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl172 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-02">Added cat refs and facs.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl172 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:MarvelousMiniatureTrees">
+      <pb n="16"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Marvelous Miniature Trees of Japan</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+            <p>Author of <q>A Japanese Nightingale</q>, etc.</p>
+    
+      
+    
+            <p>These Curious Effects Are Only Attained After Generations of Patient Toil</p>
+    
+      
+    
+            <p>Among the many delightful arts and studies of the Japanese none is more strange, unique and ancient than that of their training, cultivating and dwarfing of their flower-bearing trees. They seize upon certain peculiarities of the tree, and emphasize or exaggerate this trait even to the point of caricature. They aim to express delicate meanings which a Western imagination could scarcely grasp; as, for instance, laboriously training certain types of trees to convey the ideas of peace, chastity, quiet old age, connubial happiness, and the sweetness of solitude.</p>
+    
+      
+    
+            <p>While essentially artistic, Japanese gardeners do not seek for rare flowers or trees, however beautiful they may be, but rather cultivate the cherry, the plum, azalea, japonica and other common flowering trees, and train these into the rarest of shapes, making festivals of their blossoming-time, and placing fairy plum and cherry trees in pots in the guest-chamber as a token of hospitality. The cultivated flowers of Japan are the wild flowers, and the cultivated trees are those most commonly known and understood.</p>
+    
+      
+    
+            <p>It would seem that the same perverse order of things obtains in their culture of dwarf trees as in everything else Japanese. Where Westerners would train their trees to grow tall and straight and symmetrical, the Japanese fix upon a motif, and laboriously, patiently and systematically adapt Nature to their own design, until the tree is twisted and distorted from its original plan, and slowly follows their conception to perfection. The process sometimes covers hundreds of years, being handed down from generation to generation, for this precious labor cannot be accomplished by one man or one generation. When the design is developed by the exposure of the root it can only be done at the rate of a quarter of an inch a year. Many of the designs are developed by grafting various kinds of trees upon one root, or planting more than one tree in a garden and training the roots and branches together.</p>
+    
+      
+    
+            <p>The Japanese exhibit the same exquisite veneration for age in trees as in people, and a favorite conceit is the training of the plum-tree, so rugged and gnarled and knotted with its slender shoots and sparse studded arrangement of flowers, that it typifies admirably the contrast of bent or crabbed age with fresh and vigorous youth, best displayed when the tree is in bud.</p>
+    
+      
+    
+            <p>The plum-tree is, in fact, a favorite subject for their skill, and is trained in a variety of shapes, bent and curved, and with graftings of different-colored blossom-sprays, fresh, fragrant and long-lasting, form one of the most welcome and beautiful decorations during the early spring.</p>
+    
+      
+    
+            <p>The plum-tree, originally the imperial favorite, was long since, however, supplanted by the cherry. A pretty story is told of the origin of the name <q>O-shu-ku-bai</q>, meaning <q>Nightingale-dwelling-plum-tree</q>, a variety with pink blossoms and a delicious odor: In the tenth century the plum-tree, which according to custom had been planted in front of the imperial palace, withered and died. In a search for a tree worthy to be planted in its stead, one was found in the garden of a well-known poet named Kino Tsurayuki, and was demanded by the court officials. The daughter of the poet was filled with grief at the loss of her tree, and wrote this verse, secretly pinning it to the tree:</p>
+    
+      
+    
+            <p>Claimed for our Sovereign’s use,</p>
+            <p>Blossoms I’ve loved so well,</p>
+            <p>Can I in duty fail?</p>
+            <p>But for the nightingale</p>
+            <p>Seeking her home of song</p>
+            <p>How shall I find excuse?</p>
+    
+      
+    
+            <p>In some way the lines fell into the hands of the good emperor, and he straightaway ordered the tree returned, hence the name <q>Nightingale-dwelling-plum-tree</q>.</p>
+    
+      
+    
+            <p>And in fact all the names of these curious trees have a poetic significance. One cannot visit Japan without hearing of the Recumbent Dragon plum-tree at Kameido, north of Tokio. This rare and curious tree of extreme old age and contorted shape, whose branches had been plowing the soil, forming new roots in fourteen places, straggling over an extreme area, from its suggestive likeness was named the <q>Recumbent Dragon</q>, and yearly clad with fresh shoots and white blossoms of fine perfume it attracted large crowds of visitors and pilgrims. The fruit of the tree was yearly sent to the shogun. But like everything else, it finally succumbed to extreme age, and was replaced by the less imposing trees selected because of their likeness to its crawling shape.</p>
+    
+      
+    
+            <p>The pine is indispensable to the true Japanese, and is found wherever he resides. It surrounds the chapel of the sun-god and that of the saints and patrons. The dwarf variety called Fine Gojo Matsu, meaning <q>dwarf pine with five leaves</q>, is much sought after, as it is a symbol of happiness and prolonged life. Sometimes a dwarf pine has its branches wide-spread and the top literally covered with snowy blossoms, a fitting symbol of winter in the home of the rich.</p>
+    
+      
+    
+            <p>In this artificial culture of the pine, extremes meet: specimens of immense size and those reduced to minute proportions are placed side by side. At Okosaka is the celebrated pine-tree whose artificially extended branches have a circuit of one hundred and thirty-five feet, while at Yedo one sees a dwarf pine in a lacquered box not occupying more than two square inches.</p>
+    
+      
+    
+            <p>The peach-tree has a mystic value derived from ancient Chinese legends. The peach-tree of the Taoists, said to grow within the gardens of the fairy Si-Wang-Mu, blossoms but once in three thousand years, but each peach is believed to confer three thousand years of life upon the fortunate or unfortunate mortal who consumes it. The peach-tree is seldom employed as an art motif except in association with the emblematic significance which links it to the pine. The pine forms the chief element of the Sho-chiku-bai, the triple emblem of old age, dwarfed by the horticulturist by compression of its roots and tortured and twisted into simulated antiquity by cords and  training, and is in strange contrast to the noble forest-tree, permitted to grow unrestrained by artifice in its native soil. The dwarf pines are often trained out over the surface of the water in spherical form, or trailed upon the ground. Again, they are cultivated in the tama-tusukuri style, a method by which each tuft of foliage is cut into a disk-like form.</p>
+    
+      
+    
+            <p>One specimen of a tree, a larch, has been trained in a hoop to represent a moon, with branches trimmed to represent clouds across its face. Often trees are trained around a rock or grown from a mountain sponge. Some represent insects, grasshoppers, spiders, or the Japanese legend of the long and short armed man.</p>
+    
+      
+    
+            <p>Two trunks are sometimes trained to represent the stork, with a low branch for a tortoise at its feet. Again, a tree is supposed to be growing under a waterfall, that washes away the earth from the roots; these are gradually uncovered in training, and the branches trimmed so that they seem to be blown back by the wind and the water from the fall.</p>
+    
+      
+    
+            <p>Admiration deepens as one studies these gardens, never better shown than in the imperial gardens, where each carefully calculated hillock bears a poetical resemblance to Mount Fuji, each pond or row of stones has some philosophical meaning, not to be fathomed by a hasty glance.</p>
+         </div>
          </div>
       </body>
    </text>
