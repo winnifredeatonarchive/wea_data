@@ -7,6 +7,7 @@
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns:map="http://www.w3.org/2005/xpath-functions"
     xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xh="http://www.w3.org/1999/xhtml"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -35,22 +36,44 @@
                 </xsl:result-document>
             </xsl:if>
         </xsl:for-each>
-        <xsl:call-template name="createStaticSearchPage"/>
+        <xsl:call-template name="createSiteMap"/>
     </xsl:template>
     
-    <xsl:template name="createStaticSearchPage">
-        <xsl:result-document href="{concat($outDir,'/ssSearch.html')}" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
-            <html id="ssSearch" lang="en">
-                <head><title>Static Search Document</title></head>
-                <body>
+    <xsl:template name="createSiteMap">
+        <xsl:result-document href="{$outDir || '/ajax/sitemap.html'}" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+            <section>
+                <xsl:for-each-group select="$standaloneXml" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
+                    <xsl:sort select="current-grouping-key()" order="descending"/>
+                    <xsl:variable name="isPrimary" select="current-grouping-key()"/>
                     <div>
-                        <h2>Static Search Document</h2>
-                        <div id="staticSearch"/>
+                        <h3>
+                            <xsl:choose>
+                                <xsl:when test="$isPrimary">Primary Sources</xsl:when>
+                                <xsl:otherwise>Born Digital</xsl:otherwise>
+                            </xsl:choose>
+                        </h3>
+                        <xsl:for-each select="current-group()">
+                            <div class="item">
+                                <a href="{//TEI/@xml:id}.html">
+                                    <xsl:apply-templates select="//teiHeader/fileDesc/titleStmt[1]/title[1]/node()" mode="tei"/>
+                                </a>
+                                <div class="item_info">
+                                    <xsl:variable name="categories">
+                                        <xsl:apply-templates select="//catRef" mode="metadata"/>
+                                    </xsl:variable>
+                                    <xsl:for-each select="$categories/xh:div/xh:div[2]/xh:a">
+                                        <span><xsl:copy-of select="node()"/></span>
+                                    </xsl:for-each>
+                                </div>
+                            </div>
+                        </xsl:for-each>
                     </div>
-                </body>
-            </html>
+                </xsl:for-each-group>
+            </section>
         </xsl:result-document>
+
     </xsl:template>
+
     
     
     

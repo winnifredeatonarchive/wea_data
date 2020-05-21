@@ -218,20 +218,32 @@ function addHeaderSearch(){
 
      var headerInput = document.getElementById('nav_search_input');
      
-     /* Add the main title search capacity */
-     headerInput.addEventListener('input',titleSearch);
-     var results = document.querySelectorAll('#siteMap .item');
+     fetch('ajax/sitemap.html')
+         .then(function(file){
+              return file.text();
+         })
+         .then(function(doc){
+              /*  And put the stuff in a nonce div and pass the inner HTML to it*/
+                        var nonce = document.createElement('div');
+                        nonce.innerHTML = doc;
+                        let divs = nonce.querySelectorAll('section > div');
+                        divs.forEach(function(div){
+                            document.getElementById('siteMap').appendChild(div);
+                        });
+                        headerInput.addEventListener('input',titleSearch);
+                        var results = document.querySelectorAll('#siteMap .item');
+                        /* For every result item, add the addFocusEvent */
+                        results.forEach(function(r){
+                            r.addEventListener('focus', addFocusEvent)
+                        });
      
-     /* For every result item, add the addFocusEvent */
-     results.forEach(function(r){
-         r.addEventListener('focus', addFocusEvent)
-         });
-     
-     /* And for the header input */
-     headerInput.addEventListener('focus',addFocusEvent);
-     headerInput.addEventListener('keydown',submitSearch);
-}
+                        /* And for the header input */
+                        headerInput.addEventListener('focus',addFocusEvent);
+                        headerInput.addEventListener('keydown',submitSearch);
+           });
 
+}
+         
 function submitSearch(){
     var e=arguments[0];
     var searchInput = document.getElementById('nav_search_input');
@@ -858,37 +870,32 @@ function highlightSearchMatches(){
         } else {
             ulDir='lower/';
         }
-        var url ="js/search/" + ulDir + thisToken + ".json";
-        getJson(url, highlightTerms);
-
-
+        var url = "staticSearch/" + ulDir + thisToken + ".json";
+        console.log(url);
+        fetch(url)
+        .then(
+            function(response){
+                return response.json();
+            }
+        )
+        .then(
+            function(obj){
+                console.log(obj);
+                highlightTerms(obj);
+            })
+        .catch(function(err){
+            console.log('NO GO');
+        }
+        )
 }
         
     }
     
-    function getJson(url, callback){
-     var json = new Array();
-     console.log('REquesting ' + url);
-     var xmlhttp = new XMLHttpRequest();
-xmlhttp.open('GET', url, true);
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4) {
-        if(xmlhttp.status == 200) {
-            var obj = JSON.parse(xmlhttp.responseText);
-            callback(obj);
-         }
-    } else {
-        addEvents();
-    }
-};
-
-xmlhttp.send(null);
-    }
     
     
     function highlightTerms(obj){
         var body = document.getElementsByTagName('body')[0];
-        console.log(obj[0]);
+        console.log(obj);
         var instance;
         for (i=0; i < obj.instances.length; i++){
             thisInstanceId = obj.instances[i].docId;
@@ -896,8 +903,17 @@ xmlhttp.send(null);
                 instance = obj.instances[i]
             }
         }
-        var forms = instance.forms;
-        var matches;
+       
+       let forms = [];
+       for (var context in instance.contexts){
+            let thisForm = instance.contexts[context].form;
+            if (!forms.includes(thisForm)){
+                forms.push(thisForm);
+            }
+       }
+        
+        console.log(forms);
+
         
         for (f=0; f < forms.length; f++){
             console.log(forms[f]);
