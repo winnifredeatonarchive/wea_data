@@ -14,19 +14,8 @@
     <xsl:output indent="yes"/>
     
     <xsl:variable name="taxonomies" select="document('../../data/taxonomies.xml')"/>
-    <xsl:variable name="people" select="document('../../data/people.xml')"/>
     <xsl:variable name="sq">'</xsl:variable>
     
-    
-    <!--         <constraintSpec scheme="schematron" ident="catRef.occurence">
-                     <desc>An XsLT generated co-occurence constraint</desc>
-                     <constraint>
-                        
-                     </constraint>
-                                           <sch:pattern>
-                           <sch:rule 
-                        </sch:pattern>
-                  </constraintSpec>-->
     <xsl:template match="constraintSpec[@ident='catRef.occurence']/constraint">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
@@ -42,34 +31,8 @@
             </sch:pattern>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template match="elementSpec[@ident=('name','rs')]/attList/attDef[@ident='ref']/valList | classSpec[@ident='att.global.responsibility']/attList/attDef[@ident='resp']/valList">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:for-each select="$people//person[@xml:id]">
-                <valItem mode="add" ident="pers:{@xml:id}">
-                    <desc><xsl:value-of select="@xml:id"/></desc>
-                    <gloss><xsl:value-of select="persName/reg"/></gloss>
-                </valItem>
-            </xsl:for-each>
-        </xsl:copy>
-    </xsl:template>
-    
-   <!-- <xsl:template match="constraintSpec[@ident='textClass.oneofEach']/constraint">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <sch:pattern>
-                <xsl:for-each select="$taxonomies//taxonomy[@xml:id='docClassTaxonomies']/taxonomy">
-                    <xsl:variable name="str" select="concat('wdt:',@xml:id)"/>
-                    <sch:rule context="tei:textClass">
-                        <sch:assert test="tei:catRef[@scheme='wdt:{@xml:id}']">
-                            ERROR: Missing category reference <xsl:value-of select="@xml:id"/>.
-                        </sch:assert>
-                    </sch:rule>
-                </xsl:for-each>
-            </sch:pattern>
-        </xsl:copy>
-    </xsl:template>-->
+
+
     
     <xsl:function name="jt:makeRegex">
         <xsl:param name="seq"/>

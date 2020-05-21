@@ -2710,6 +2710,20 @@ On <xsl:text/>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+
+		    <!--ASSERT -->
+      <xsl:choose>
+         <xsl:when test="@xml:id and matches(@xml:id,'^bibl\d+$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="@xml:id and matches(@xml:id,'^bibl\d+$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>ERROR: QUICKFIX: All WE bibls need a bibl id in the format bibl#. Click the red lightbulb to the left to replace the current id.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="*" mode="M67"/>
    </xsl:template>
    <xsl:template match="text()" priority="-1" mode="M67"/>

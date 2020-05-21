@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Philomena1">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Philomena</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl copyOf="bibl:224"/>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="empty">
+         <change who="pers:JT1" status="empty" when="2020-05-21">Created from bibl.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <gap reason="noTranscriptionAvailable"/>
+         </div>
+      </body>
+   </text>
+</TEI>

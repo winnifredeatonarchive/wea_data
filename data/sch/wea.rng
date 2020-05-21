@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-15T20:56:31Z. .
+Schema generated from ODD source 2020-05-21T19:17:26Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -118,7 +118,16 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
       </optional>
    </define>
    <define name="att.canonical.attributes">
+      <ref name="att.canonical.attribute.key"/>
       <ref name="att.canonical.attribute.ref"/>
+   </define>
+   <define name="att.canonical.attribute.key">
+      <optional>
+         <attribute name="key">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</a:documentation>
+            <data type="string"/>
+         </attribute>
+      </optional>
    </define>
    <define name="att.canonical.attribute.ref">
       <optional>
@@ -467,48 +476,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsible party) indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber.</a:documentation>
             <list>
                <oneOrMore>
-                  <choice>
-                     <value>pers:WE1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE1</a:documentation>
-                     <value>pers:SE1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(S. Ehrhart) SE1</a:documentation>
-                     <value>pers:AB1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Albert Blashfield) AB1</a:documentation>
-                     <value>pers:SB1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sara Bosse) SB1</a:documentation>
-                     <value>pers:CH1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Charles Horell) CH1</a:documentation>
-                     <value>pers:GY1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Genjiro Yeto) GY1</a:documentation>
-                     <value>pers:MC1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC1</a:documentation>
-                     <value>pers:JLC1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jean Lee Cole) JLC1</a:documentation>
-                     <value>pers:SL1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sydney Lines) SL1</a:documentation>
-                     <value>pers:KI1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
-                     <value>pers:JT1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
-                     <value>pers:SB2</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
-                     <value>pers:SP1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
-                     <value>pers:HB1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB1</a:documentation>
-                     <value>pers:XY1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Xine Yao) XY1</a:documentation>
-                     <value>pers:PP1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pavlina Pajot) PP1</a:documentation>
-                     <value>pers:LM1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Lucia Maggio) LM1</a:documentation>
-                     <value>pers:DB1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Diana Birchall) DB1</a:documentation>
-                     <value>pers:KS1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Karen Skinazi) KS1</a:documentation>
-                     <value>pers:SH1</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Shaun Hunter) SH1</a:documentation>
-                  </choice>
+                  <data type="anyURI"/>
                </oneOrMore>
             </list>
          </attribute>
@@ -2594,48 +2562,11 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <optional>
             <attribute name="ref">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>pers:WE1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE1</a:documentation>
-                  <value>pers:SE1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(S. Ehrhart) SE1</a:documentation>
-                  <value>pers:AB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Albert Blashfield) AB1</a:documentation>
-                  <value>pers:SB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sara Bosse) SB1</a:documentation>
-                  <value>pers:CH1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Charles Horell) CH1</a:documentation>
-                  <value>pers:GY1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Genjiro Yeto) GY1</a:documentation>
-                  <value>pers:MC1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC1</a:documentation>
-                  <value>pers:JLC1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jean Lee Cole) JLC1</a:documentation>
-                  <value>pers:SL1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sydney Lines) SL1</a:documentation>
-                  <value>pers:KI1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
-                  <value>pers:JT1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
-                  <value>pers:SB2</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
-                  <value>pers:SP1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
-                  <value>pers:HB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB1</a:documentation>
-                  <value>pers:XY1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Xine Yao) XY1</a:documentation>
-                  <value>pers:PP1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pavlina Pajot) PP1</a:documentation>
-                  <value>pers:LM1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Lucia Maggio) LM1</a:documentation>
-                  <value>pers:DB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Diana Birchall) DB1</a:documentation>
-                  <value>pers:KS1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Karen Skinazi) KS1</a:documentation>
-                  <value>pers:SH1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Shaun Hunter) SH1</a:documentation>
-               </choice>
+               <list>
+                  <oneOrMore>
+                     <data type="anyURI"/>
+                  </oneOrMore>
+               </list>
             </attribute>
          </optional>
          <empty/>
@@ -2650,48 +2581,11 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <optional>
             <attribute name="ref">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>pers:WE1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Winnifred Eaton) WE1</a:documentation>
-                  <value>pers:SE1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(S. Ehrhart) SE1</a:documentation>
-                  <value>pers:AB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Albert Blashfield) AB1</a:documentation>
-                  <value>pers:SB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sara Bosse) SB1</a:documentation>
-                  <value>pers:CH1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Charles Horell) CH1</a:documentation>
-                  <value>pers:GY1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Genjiro Yeto) GY1</a:documentation>
-                  <value>pers:MC1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Mary Chapman) MC1</a:documentation>
-                  <value>pers:JLC1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Jean Lee Cole) JLC1</a:documentation>
-                  <value>pers:SL1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Sydney Lines) SL1</a:documentation>
-                  <value>pers:KI1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Ken Ip) KI1</a:documentation>
-                  <value>pers:JT1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Joey Takeda) JT1</a:documentation>
-                  <value>pers:SB2</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Samantha Bowen) SB2</a:documentation>
-                  <value>pers:SP1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Serina Patterson) SP1</a:documentation>
-                  <value>pers:HB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Hilary Ball) HB1</a:documentation>
-                  <value>pers:XY1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Xine Yao) XY1</a:documentation>
-                  <value>pers:PP1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Pavlina Pajot) PP1</a:documentation>
-                  <value>pers:LM1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Lucia Maggio) LM1</a:documentation>
-                  <value>pers:DB1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Diana Birchall) DB1</a:documentation>
-                  <value>pers:KS1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Karen Skinazi) KS1</a:documentation>
-                  <value>pers:SH1</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Shaun Hunter) SH1</a:documentation>
-               </choice>
+               <list>
+                  <oneOrMore>
+                     <data type="anyURI"/>
+                  </oneOrMore>
+               </list>
             </attribute>
          </optional>
          <empty/>
@@ -3433,166 +3327,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
-         <optional>
-            <attribute name="ref">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>org:Ainslee</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ainslee’s</a:documentation>
-                  <value>org:Albertan</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Albertan</a:documentation>
-                  <value>org:AmericanHome</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">American Home Journal</a:documentation>
-                  <value>org:AmericanYouth</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">American Youth</a:documentation>
-                  <value>org:Anderson</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Anderson [sc] Intelligencer</a:documentation>
-                  <value>org:Blue</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Blue Book</a:documentation>
-                  <value>org:Book</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Book News</a:documentation>
-                  <value>org:Bookman</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bookman</a:documentation>
-                  <value>org:Boston</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Boston Journal</a:documentation>
-                  <value>org:Calgary</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Calgary Daily Herald</a:documentation>
-                  <value>org:CartersMonthly</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Carter’s Monthly</a:documentation>
-                  <value>org:Chicago</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Chicago Magazine</a:documentation>
-                  <value>org:ChristianScience</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Christian-Science Monitor</a:documentation>
-                  <value>org:Cincinnati</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Cincinnati Commercial Tribune</a:documentation>
-                  <value>org:Columbian</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Columbian Magazine</a:documentation>
-                  <value>org:Conkey</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Conkey’s Home Journal</a:documentation>
-                  <value>org:Critic</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Critic</a:documentation>
-                  <value>org:Current</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Current Literature</a:documentation>
-                  <value>org:Day</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Day Book</a:documentation>
-                  <value>org:Eclectic</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Eclectic Magazine</a:documentation>
-                  <value>org:Farm</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Farm and Ranch Review</a:documentation>
-                  <value>org:Frank</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Frank Leslie’s Popular Monthly</a:documentation>
-                  <value>org:Galls</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Gall’s Daily News Letter</a:documentation>
-                  <value>org:Good</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Good Housekeeping</a:documentation>
-                  <value>org:Greenfield</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Greenfield Gazette and Courier</a:documentation>
-                  <value>org:HarpersMonthly</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper’s Monthly</a:documentation>
-                  <value>org:HarpersWeekly</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper’s Weekly</a:documentation>
-                  <value>org:Hearsts</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hearst’s</a:documentation>
-                  <value>org:Home</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Home and Flowers</a:documentation>
-                  <value>org:Hutchinson</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Hutchinson’s</a:documentation>
-                  <value>org:IConfess</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">I Confess</a:documentation>
-                  <value>org:Idler</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Idler</a:documentation>
-                  <value>org:Iroquois</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Iroquois</a:documentation>
-                  <value>org:LadiesHomeCompanion</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ladies’ Home Companion</a:documentation>
-                  <value>org:LadiesHomeJournal</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Ladies’ Home Journal</a:documentation>
-                  <value>org:LadysMagazine</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lady’s Magazine</a:documentation>
-                  <value>org:Lippincott</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lippincott’s</a:documentation>
-                  <value>org:Lyttleton</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lyttleton [NZ] Times</a:documentation>
-                  <value>org:Macleans</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Maclean’s</a:documentation>
-                  <value>org:MetropolitanNY</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Metropolitan (New York)</a:documentation>
-                  <value>org:MetropolitanMag</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Metropolitan Magazine (Montreal)</a:documentation>
-                  <value>org:Montreal</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Montreal Daily Star</a:documentation>
-                  <value>org:MotionPictureClassic</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Motion Picture Classic Magazine</a:documentation>
-                  <value>org:MotionPictureMag</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Motion Picture Magazine</a:documentation>
-                  <value>org:Munsey</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Munsey’s</a:documentation>
-                  <value>org:NewMetro</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">New Metropolitan Magazine</a:documentation>
-                  <value>org:Puritan</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Puritan</a:documentation>
-                  <value>org:Red</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Red Book</a:documentation>
-                  <value>org:SFCall</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">San Francisco Call</a:documentation>
-                  <value>org:Saturday</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Saturday Evening Post</a:documentation>
-                  <value>org:Screen</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Screen Secrets</a:documentation>
-                  <value>org:Smart</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Smart Set</a:documentation>
-                  <value>org:Smith</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Smith’s Magazine</a:documentation>
-                  <value>org:Sovereign</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sovereign Magazine</a:documentation>
-                  <value>org:Spanish</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spanish Fork Press</a:documentation>
-                  <value>org:Spokane</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Spokane Press</a:documentation>
-                  <value>org:Canterbury</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The [Canterbury, NZ] Press</a:documentation>
-                  <value>org:Quill</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The Quill</a:documentation>
-                  <value>org:TrueStory</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">True Story Magazine</a:documentation>
-                  <value>org:Washington</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Washington Times</a:documentation>
-                  <value>org:WomansHomeCompanion</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s Home Companion</a:documentation>
-                  <value>org:WomansHomeJournal</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s Home Journal</a:documentation>
-                  <value>org:WomansWorld</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Woman’s World</a:documentation>
-                  <value>org:Blakely</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Blakely Press</a:documentation>
-                  <value>org:Century</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Century</a:documentation>
-                  <value>org:CenturyPress</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Century Press</a:documentation>
-                  <value>org:Dodd</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Dodd, Mead</a:documentation>
-                  <value>org:Harper</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Harper and Brothers</a:documentation>
-                  <value>org:McClelland</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">McClelland and Stewart</a:documentation>
-                  <value>org:Macmillan</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Macmillan</a:documentation>
-                  <value>org:Rand</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Rand, McNally</a:documentation>
-                  <value>org:Watt</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">W. J. Watt</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <choice>
-                  <value>source</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source) The source database or holding repository for this item.</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
+         <ref name="att.canonical.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7518,6 +7253,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_we']]">
                            <sch:assert test="@xml:id" sqf:fix="addNewBiblId">ERROR: QUICKFIX: All WE bibls need an id. Click the red lightbulb to the left to add one. </sch:assert>
+                           <sch:assert test="@xml:id and matches(@xml:id,'^bibl\d+$')" sqf:fix="replaceBiblId">ERROR: QUICKFIX: All WE bibls need a bibl id in the format bibl#. Click the red lightbulb to the left to replace the current id.</sch:assert>
                            <sqf:fix id="addNewBiblId">
                               <sqf:description>
                                  <sqf:title>Add a new bibl id</sqf:title>
@@ -7529,6 +7265,18 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                                  <xsl:value-of select="'bibl' || $newNum"/>
                                  
                               </sqf:add>
+                           </sqf:fix>
+                           <sqf:fix id="replaceBiblId">
+                              <sqf:description>
+                                 <sqf:title>Replace bibl id</sqf:title>
+                              </sqf:description>
+                              
+                              <sqf:replace match="@xml:id" node-type="attribute" target="xml:id">
+                                 <xsl:variable name="rBibls"
+                                    select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+                                 <xsl:variable name="rNewNum" select="max(for $n in $rBibls return xs:integer($n)) + 1"/>
+                                 <xsl:value-of select="'bibl'||$rNewNum"/>
+                              </sqf:replace>
                            </sqf:fix>
                         </sch:rule>
                      </sch:pattern>

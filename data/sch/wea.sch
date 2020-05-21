@@ -1265,6 +1265,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_we']]">
                            <sch:assert test="@xml:id" sqf:fix="addNewBiblId">ERROR: QUICKFIX: All WE bibls need an id. Click the red lightbulb to the left to add one. </sch:assert>
+                           <sch:assert test="@xml:id and matches(@xml:id,'^bibl\d+$')" sqf:fix="replaceBiblId">ERROR: QUICKFIX: All WE bibls need a bibl id in the format bibl#. Click the red lightbulb to the left to replace the current id.</sch:assert>
                            <sqf:fix id="addNewBiblId">
                               <sqf:description>
                                  <sqf:title>Add a new bibl id</sqf:title>
@@ -1276,6 +1277,13 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                                  <xsl:value-of select="'bibl' || $newNum"/>
                                  
                               </sqf:add>
+                           </sqf:fix>
+                           <sqf:fix id="replaceBiblId">
+                              <sqf:description>
+                                 <sqf:title>Replace bibl id</sqf:title>
+                              </sqf:description>
+                              <sqf:delete match="." target="xml:id" node-type="attribute"/>
+                              <sqf:call-fix ref="addNewBiblId"/>
                            </sqf:fix>
                         </sch:rule>
                      </sch:pattern>
