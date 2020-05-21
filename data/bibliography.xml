@@ -20,7 +20,7 @@
             </textClass>
         </profileDesc>
         <revisionDesc status="published">
-           <change who="pers:MC1" when="2020-05-20" status="published">tried to demarcate different parts of serial.</change><change who="pers:MC1" when="2020-05-19" status="published">added 3 new bibl entries and generated ids.</change><change who="pers:MC1" when="2020-05-15" status="published">added other editions of Cattle.</change><change who="pers:MC1" when="2020-05-11" status="published">added Japanese Girl.</change><change who="pers:MC1" when="2020-04-20" status="published">changed additional dates re Shaun Hunter ideas.</change>
+           <change who="pers:MC1" when="2020-05-21" status="published">added illustrators.</change><change who="pers:MC1" when="2020-05-20" status="published">tried to demarcate different parts of serial.</change><change who="pers:MC1" when="2020-05-19" status="published">added 3 new bibl entries and generated ids.</change><change who="pers:MC1" when="2020-05-15" status="published">added other editions of Cattle.</change><change who="pers:MC1" when="2020-05-11" status="published">added Japanese Girl.</change><change who="pers:MC1" when="2020-04-20" status="published">changed additional dates re Shaun Hunter ideas.</change>
            <change who="pers:MC1" when="2020-04-18" status="published">changed dates re Shaun Hunter ideas.</change><change who="pers:MC1" when="2019-07-29" status="published">Added page info for Other Peoples Troubles.</change>
            <change who="pers:JT1" when="2019-04-11" status="published">Added bibl ids and some automatic tagging through XSLT.</change>
             <change who="pers:JT1" when="2019-03-29">Created file.</change>
@@ -63,12 +63,12 @@
 
                    <listBibl xml:id="Father">
                       <head>A Father</head>
-                      <bibl xml:id="bibl6"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Father</title>. <publisher ref="org:Conkey"><title level="j">Conkey’s Home Journal</title></publisher>, <date when="1900-01">Jan. 1900</date>, pp. <biblScope unit="page">9-10</biblScope>.</bibl>
+                      <bibl xml:id="bibl6"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Father</title>. llustrated by <author role="illustrator"><name ref="pers:LB1">Louis Betts</name></author>. <publisher ref="org:Conkey"><title level="j">Conkey’s Home Journal</title></publisher>, <date when="1900-01">Jan. 1900</date>, pp. <biblScope unit="page">9-10</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="AHalfCaste">
                       <head>A Half Caste</head>
-                      <bibl xml:id="bibl7"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Half Caste</title>. <publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular Monthly</title></publisher>, vol. <biblScope unit="volume">48</biblScope>, <date when="1899-09">Sept. 1899</date>, pp. <biblScope unit="page">489-96</biblScope>.</bibl>
+                      <bibl xml:id="bibl7"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Half Caste</title>. llustrated by <author role="illustrator"><name ref="pers:AC1">Alfred S. Campbell</name></author>.<publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular Monthly</title></publisher>, vol. <biblScope unit="volume">48</biblScope>, <date when="1899-09">Sept. 1899</date>, pp. <biblScope unit="page">489-96</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="HorselessCarriage">
@@ -736,8 +736,9 @@
                    
                    <listBibl xml:id="PotOfPaint">
                       <head>The Pot of Paint</head>
-                      <bibl xml:id="bibl182"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Pot of Paint</title>. <publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular Monthly</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp. <biblScope unit="page">414-24</biblScope>.</bibl>
+                      <bibl xml:id="bibl182"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Pot of Paint</title>. llustrated by <author role="illustrator"><name ref="pers:GY1">Genjiro Yeto</name></author>.<publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular Monthly</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp. <biblScope unit="page">414-24</biblScope>.</bibl>
                    </listBibl>
+                  
                    
                    <listBibl xml:id="StoryOfIdo">
                       <head>The Story of Ido: How a Japanese Half-Caste Came to His Own</head>
