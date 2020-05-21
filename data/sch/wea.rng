@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-21T19:17:26Z. .
+Schema generated from ODD source 2020-05-21T22:23:54Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -6990,8 +6990,9 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                         <sch:let name="thisProjectDir"
                value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
                         <sch:let name="theseDocs"
-               value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
-                        <sch:let name="allDocIds" value="$theseDocs//tei:TEI/@xml:id"/>
+               value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+                        <sch:let name="allDocIds"
+               value="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -7273,8 +7274,9 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                               
                               <sqf:replace match="@xml:id" node-type="attribute" target="xml:id">
                                  <xsl:variable name="rBibls"
-                                    select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
-                                 <xsl:variable name="rNewNum" select="max(for $n in $rBibls return xs:integer($n)) + 1"/>
+                             select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+                                 <xsl:variable name="rNewNum"
+                             select="max(for $n in $rBibls return xs:integer($n)) + 1"/>
                                  <xsl:value-of select="'bibl'||$rNewNum"/>
                               </sqf:replace>
                            </sqf:fix>

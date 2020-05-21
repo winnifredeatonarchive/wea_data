@@ -982,8 +982,9 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         <sch:let name="thisProjectDir"
                value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
                         <sch:let name="theseDocs"
-               value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
-                        <sch:let name="allDocIds" value="$theseDocs//tei:TEI/@xml:id"/>
+               value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+                        <sch:let name="allDocIds"
+               value="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -1282,8 +1283,14 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                               <sqf:description>
                                  <sqf:title>Replace bibl id</sqf:title>
                               </sqf:description>
-                              <sqf:delete match="." target="xml:id" node-type="attribute"/>
-                              <sqf:call-fix ref="addNewBiblId"/>
+                              
+                              <sqf:replace match="@xml:id" node-type="attribute" target="xml:id">
+                                 <xsl:variable name="rBibls"
+                             select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+                                 <xsl:variable name="rNewNum"
+                             select="max(for $n in $rBibls return xs:integer($n)) + 1"/>
+                                 <xsl:value-of select="'bibl'||$rNewNum"/>
+                              </sqf:replace>
                            </sqf:fix>
                         </sch:rule>
                      </sch:pattern>

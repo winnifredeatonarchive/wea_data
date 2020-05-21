@@ -2370,8 +2370,9 @@ On <xsl:text/>
    <xsl:variable name="thisProjectDir"
                  select="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
    <xsl:variable name="theseDocs"
-                 select="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
-   <xsl:variable name="allDocIds" select="$theseDocs//tei:TEI/@xml:id"/>
+                 select="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
+   <xsl:variable name="allDocIds"
+                 select="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/>
    <xsl:template match="text()" priority="-1" mode="M57"/>
    <xsl:template match="@*|node()" priority="-2" mode="M57">
       <xsl:apply-templates select="*" mode="M57"/>

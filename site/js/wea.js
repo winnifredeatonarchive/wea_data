@@ -214,11 +214,21 @@ function sortTable(){
     }
     
 
+
 function addHeaderSearch(){
 
      var headerInput = document.getElementById('nav_search_input');
-     
-     fetch('ajax/sitemap.html')
+     headerInput.addEventListener('click',makeHeaderTypeahead);
+     headerInput.addEventListener('focus',makeHeaderTypeahead);
+}
+
+
+         let typeaheadMade = false;
+         
+     function makeHeaderTypeahead(){
+      if (!typeaheadMade){
+                   let headerInput = this;
+            fetch('ajax/sitemap.html')
          .then(function(file){
               return file.text();
          })
@@ -232,18 +242,15 @@ function addHeaderSearch(){
                         });
                         headerInput.addEventListener('input',titleSearch);
                         var results = document.querySelectorAll('#siteMap .item');
-                        /* For every result item, add the addFocusEvent */
-                        results.forEach(function(r){
-                            r.addEventListener('focus', addFocusEvent)
-                        });
-     
-                        /* And for the header input */
-                        headerInput.addEventListener('focus',addFocusEvent);
                         headerInput.addEventListener('keydown',submitSearch);
-           });
-
-}
-         
+                        typeaheadMade = true;
+           });  
+      }
+     
+ 
+     }
+     
+     
 function submitSearch(){
     var e=arguments[0];
     var searchInput = document.getElementById('nav_search_input');
@@ -273,135 +280,7 @@ function removeOtherOpenNavs(){
 }
 
 
-/* A small function to add the keydown press; it likely doesn't need
- * to be a function, but we'll keep it like in case we need to remove it */
-function addFocusEvent(){
-      // this.addEventListener('keydown',scrollThruNew);
-}
-
-/*
-function scrollThruNew(){
-     var e=arguments[0];
-     var searchBox = document.getElementById('nav_search');
-     var results = document.querySelector('#siteMap .item.showing');
-     console.log(results);
     
-}
-
-
-function prevInput (inputArray, currentInput, inputClass){
-    for (i=0; i < inputArray.length - 1; i ++){
-        if (currentInput == inputArray[1]){
-            for (j = 1; j < inputArray.length - 1; j++){
-                if (inputArray[i + j] && input[i +j].className == inputClass){
-                    return inputArray[i-j];
-                    break;
-                }
-            }
-        }
-    }
-    
-}
-
-function nextInput(inputArray, currentInput, inputClass) {
-    for (i = 0; i < inputArray.length - 1; i++) {
-        if(currentInput == inputArray[i]) {
-            for (j = 1; j < inputArray.length - i; j++) {
-                //Check if the next element exists and if it has the desired class
-                if(inputArray[i + j] && (inputArray[i + j].className == inputClass)) {
-                    return inputArray[i + j];
-                    break;
-                }
-            }
-        }
-    }   
-}
-
-
-/\* Function to scroll through the search results using the arrow keys *\/
-function scrollThru(){
-       var e=arguments[0];
-       var searchBox = document.getElementById('headerSearchForm');
-       var results = document.querySelectorAll('#siteMap > div > .showing');
-       var preSib, nextSib;
-       
-       /\* If the focus is in the headerSEarchForm
-        * then we just get the first and last result and set those
-        * as the previous and next sibling *\/
-       if (this.id == 'headerSearchForm'){
-           nextSib = results[0];
-           preSib = results[results.length -1];
-       } else {
-         /\* 
-          * Otherwise, actually use the right pre and next.
-          *\/
-          var preSib = getPreSib(this);
-          var nextSib = getNextSib(this);
-       }
-       
-       /\* If either pre or nextSib variables are null,
-        * then the previous/next choice is the search box *\/
-       if (preSib == null){
-           preSib = searchBox;
-       }
-       if (nextSib == null){
-           nextSib = searchBox;
-       }
-       var key = e.key;
-       
-       /\* Now do stuff on arrow up/down *\/
-       if (key == 'ArrowUp'|| key == 'ArrowDown'){
-          /\* Prevent the default action (i.e. window scrolling) *\/
-           e.preventDefault();
-           
-           /\* If they've pressed up, go up. *\/
-           if (key == 'ArrowUp'){
-               preSib.focus();
-           } 
-           /\* Otherwise, go down. *\/
-           else {
-             nextSib.focus();
-           }
-           /\* Now unfocus the first thing. *\/
-          this.blur();
-       } else 
-       /\* If they've pressed enter, then they want to go to that page (other than the search form, of course) *\/
-       if (key == 'Enter'){
-         if (this.id == 'headerSearchForm'){
-             return;
-         } else {
-             window.location = this.firstElementChild.href;  
-         }
-     
-           
-       }
-        
-}
-
-
-/\* Taken, with thanks, from: 
- * 
- * https://gomakethings.com/finding-the-next-and-previous-sibling-elements-that-match-a-selector-with-vanilla-js/
- *  *\/
- 
- 
-function getPreSib(el){
-    var pre = el.previousSibling;
-    
-    while (pre){
-           if (pre.classList.contains('result')) return pre;
-           pre = pre.previousSibling;
-    }
-}
-
-function getNextSib(el){
-        var next = el.nextSibling;
-    while (next){
-           if (next.classList.contains('result')) return next;
-           next = next.nextSibling;
-    }
-}*/
-
 
 function toggleOpenClose(el, removeAllNavs){
     if (el.classList.contains('open')){

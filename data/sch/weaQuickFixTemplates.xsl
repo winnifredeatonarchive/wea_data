@@ -134,4 +134,22 @@
                  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                  name="newNum"
                  select="max(for $n in $bibls return xs:integer($n)) + 1"/>
+   <xsl:variable xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 name="rBibls"
+                 select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
+   <xsl:variable xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 name="rNewNum"
+                 select="max(for $n in $rBibls return xs:integer($n)) + 1"/>
 </xsl:stylesheet>
