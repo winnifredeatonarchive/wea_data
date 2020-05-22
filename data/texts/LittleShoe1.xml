@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleShoe1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleShoe1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Little Shoe</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,216 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySourceMS" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl161 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl161 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:LittleShoe">
+   <text facs="facs:LittleShoe">
+      <pb n="1"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Little Shoe</head>
+         <opener>
+         </opener>
+         <div type="content">
+            <div>
+    
+               <milestone unit="sectionBreak"/>
+    
+            <p>Bigelow opened the door softly and advanced steathily into the room. When he got just at the back of the abstracted Batchellor, his mouth and eyes opened wide with amazed suspicion, and he could not keep back the astonished exclamation that escaped him.</p>
+    
+      
+    
+            <p><q>Caught! You great greasy grind!</q> said he, and pounded the other across the back.</p>
+            <p>Batchellor sprang to his feet, breathing hard with excited embarrassment. His face was deeply flushed and he had hastily dropped to the floor the little shoe he had been rapturously admiring and caressing.</p>
+    
+      
+    
+            <p><q>Where did you get it? Who is she? - - of all the unmitigated foxes! Let’s see the ‘Trilby’</q> and Bigelow reached out for the shoe.</p>
+    
+      
+    
+            <p><q>Isn’t it a dandy!</q> said Batchellor with glowing enthusiasm.</p>
+    
+      
+    
+            <p><q>It is kind ‘o pretty</q> admitted Bigelow, turning it over in his hand. [<q>]Who is she, Batch? Out with it now!</q></p>
+    
+      
+    
+            <p>Batchellor was ruminating. He did not reply at once and when he finally did so, it was with a great air of confidential mystery.</p>
+    
+      
+    
+            <p><q>Now look here, Bige., can you keep your mouth shut?</q> he began with assumed hesitation. <q>Sa-ay, I’m on to the dandiest thing that ever happened!</q></p>
+    
+      
+    
+               <p><q>Well?</q> insisted Bigelow, the most notorious gossip in Columbia, <q>Why don’t you speak up like a man then?</q></p><pb n="2"/>
+            <p>Batchellor leaned against the back of his chair, and folded his arms across his heart.</p>
+    
+      
+    
+            <p><q>I’ve decided to keep mum after all</q> he said slowly. <q>You know very well, Bige., you couldn’t keep it to yourself to save your ungodly soul from perdition</q>.</p>
+    
+      
+    
+               <p><q>Oh</q>, returned Bigelow nonchalantly, <q>of course it’s your own affair – and yet – By Jove, Batch., as I’ve already said, you’re the foxiest fox in the College. Here you’ve been posing as so blamed virtuous, that a fellow couldn’t drag you from your almighty cramming, if we dangled the reddest peach in New York before your eyes, and all this while – when we fellows thought you were interested in only one thing on earth, -how to get through your exams. Creditably, you have been hugging up to your big self a neat little <q>affair</q> and – er – neat – little shoe – and the Lord knows what else</q>.</p>
+    
+      
+    
+            <p><q>Say Batch. she has, really you know quite a pretty, pretty little foot, hem – from the looks of that there. Know her pretty well?</q></p>
+    
+      
+    
+            <p>Batchellor shrugged his shoulders carelessly. <q>Oh so, so!</q> said he – <q>You see when a fellow can get a girl’s shoe and –</q></p>
+    
+      
+    
+            <p><q>What else have you got?</q> sniffed Bigelow suspiciously.</p>
+    
+      
+    
+            <p>Batchellor got up and stretched himself.</p>
+    
+      
+    
+            <p><q>That’s my little affair Bige</q>. he said, yawning.</p>
+    
+      
+    
+            <p>Bigelow stared at him, with exasperated admiration.</p>
+    
+      
+    
+               <p><q>Well</q>, he said, and stopped thoughtfully a moment halfway across the room – <q>So long!</q> he added suddenly and went out, banging the door behind him.</p><pb n="3"/>
+    
+      
+    
+            <p>As the door closed, Batchellor picked up the little shoe and regarded it ruefully.</p>
+    
+      
+    
+            <p><q>You little devil</q> he said softly, <q>You’re going to give me some fun, are you? It’ll be all over the place before this night wanes, God wot, and, By Jove, I’ll have to keep it up too</q>.</p>
+    
+      
+    
+            <p>He put the shoe down on his washstand before him, lit a cigar and sat forward in his reading chair, looking thoughtfully and sentimentally at it through the dreamy mazes of the smoke that drifted about him.</p>
+    
+      
+    
+            <p>It was a little dancing slipper – No. 2. It had once been exquisitely pretty and stylish, with it’s little high French heel and dainty black satin covered with jet bead work, and the pretty ribbon bow above the instep. And yet in its worn and battered condition now, it was prettier than it ever could have been when it had first left the shoemaker’s, for a perfectly moulded little foot had danced and warmed its way into the heart of the shoe, leaving the imprint of its shape and form. The toe was crushed at the tip showing where the shoe was a wee bit too long for its wearer, but apart from this and the bewitching incurves at the sides, it still retained it’s shape. The satin was frayed and worn in places and its light sole was on the verge of breaking.</p>
+    
+      
+    
+               <p>From the very first Batchellor had been in love with it. He was a dreamy, imaginative young fellow and despite his great bulk was almost girlish in his sensitiveness. The tiny shoe appealed to his imagination and his first enthusement had simmered down to a quiet<pb n="4"/> love for it that was really pretty to see. He had gotten into the habit of fondling and even apostrophising it. He called it his <q>Mascot</q> and wore it in his sweater whenever he played with his team. He fancied he could study better when the little shoe was in his sight, and he delighted in making a secret ash receiver of it.</p>
+    
+      
+    
+            <p>About two weeks later a delegation of seven strapping, grinning and important Columbia boys waited upon Batchellor in his room at the Dormitory. Each man was the particular spokesman for the party and they all spoke at once, just like a crowd of giddy young school girls or flighty women might have done.</p>
+    
+      
+    
+            <p><q>Now look here, Batch., we’re on to you!</q> went off the first firecracker.</p>
+            <p><q>Confession is good for the soul, my boy!</q> piped one little chap, with an irresistible air of paternal patronimity.</p>
+    
+      
+    
+            <p><q>What’s your latest, Batch.?</q> inquired another.</p>
+    
+      
+    
+            <p><q>A Corset!</q> squeeled a youngster, named Mount, in high glee.</p>
+    
+      
+    
+            <p><q>A corset!</q> echoed Bigelow with immense scorn – <q>A corset – nothing! 
+      He’s got a pair of garters now if you please, dirty as dirt too, they are. Good Lord, I did imagine the creature was something dainty and bewitching after the little shoe – but pshaw! those corsets and garters, they’re rotten!</q></p>
+ 
+               <p><q>Look a here!</q> said Batchellor good naturedly <q>I wish you fellows would clear out of here. What in the dickens do you want anyhow?</q></p><pb n="5"/>
+    
+      
+    
+            <p><q>Want!</q> echoed Bigelow with a world of disgusted expression – and <q>want</q> echoed the <q>kid</q> shrilly – <q>We want to know all about this bird you have on the string</q>.</p>
+    
+      
+    
+            <p><q>Batch</q>., said another, popularly known as <q>The Parson</q>, <q>where did those shoes come from? Who gave you that mooshoir handkercheef? – who wore those celestial garters and dirty corsets eh?</q></p>
+    
+      
+    
+            <p><q>A No. 2 shoe, a No. 34 corset, that looks as if it had been worn by a cow, a dirty pair of garters and a little girl’s glove! - - do you really mean to say that you think we’re going to believe they belong all to one and the same person?</q></p>
+    
+      
+    
+            <p><q>No. 34!</q> echoed Batchellor uncomfortably; <q>well, what’s wrong with that, eh?</q></p>
+    
+      
+    
+            <p><q>Only that No. 34 corsets might fit an elephant, while No. 2 shoes belong to a fairy!</q></p>
+    
+      
+    
+            <p><q>Nonsense!</q> said Batchellor getting out the corests, and opening them; <q>you dont suppose anyone could squeeze into anything smaller than these? Good gracious, they don’t go half round anyhow!</q> and he adjusted them about his own unsupple waist amid the cheers and jeers of the others.</p>
+    
+      
+    
+               <p>It was not so very long after this, and while Batchellor was still the object of much suspicion and speculation, that the little shoe was given a rival. Batchellor had fallen in love again; in fact, this time with a young girl.</p><pb n="6"/>
+    
+      
+    
+            <p>He had met her at a small entertainment given by one of the Frats. at Barnard, and had lost his heart and head to her almost at once.</p>
+    
+      
+    
+            <p>In a short time he had managed to overcome his customary bashfulness with her sex sufficiently to seek her out, and eventually haunt her like an ardent and persistent shadow.</p>
+    
+      
+    
+            <p>And the girl, who was just as nice as she was pretty, with a woman’s quick intuition, perceiving how it was with him, proceeded to fulfil the words of the Scripture that <q>Love begats love</q>.</p>
+    
+      
+    
+            <p>She blushed delicately when they met (accidentally, of course,) when going back and forth from Columbia to Barnard. She blushed vividly and shyly when he accosted her, asking if <q>he might carry her books for her and see her home</q>, and she blushed all rosy red, even to the tips of her little ears, one night when he had kissed her little hand at parting, with all a young fellow’s ardent admiration and devotion. And all the night long Batchellor talked in his sleep of a girl with blushes - - all kinds – soft pink, deeply scarlet, vividly glowing red blushes.</p>
+    
+      
+    
+               <p>In the morning he whistled like a humming bird as he dressed, and even hailed Bigelow whom he had grown to detest, with a hearty <q>Hello, old fellow!</q></p><pb n="7"/>
+    
+      
+    
+            <p>Meanwhile the girl, whose name by the way was June Bertrand and who lived in one of the big dormitories connected with the college, was sitting up in her bed, with her little knees drawn up under night gown, resting her chin on her clasped hands, and listening with a little white face to the gossip of her roommate.</p>
+    
+      
+    
+            <p><q>And I think it horrid that boys should be so horrid! The idea! – the very idea! a corset, of all things! – and a pair of garters! and a – look here, June, there’s no trusting these earnest looking, sincere, deceitful men, I tell you! The idea! I told you to look out for him, - didn’t I? Now didn’t I? and you ought to’ve had more sense than to get so – so familiar with him. Good gracious! June – you look me square in the face, -- now have you – did you – did you – have you ever permitted that – that man to kiss you?</q> she ended in an awful whisper.</p>
+    
+      
+    
+            <p><q>No!</q> said poor little June passionately, and then she turned about, buried her face in her pillow and fell to weeping.</p>
+    
+      
+    
+            <p>Then the other girl immediately melted and began consoling her in this wise:</p>
+    
+      
+    
+               <p><q>There, don’t cry, June, - there! don’t ---- that brute! – he isn’t worth it. Don’t! Don’t! It may’nt be true anyhow! – I for one don’t believe it. No, sir! Don’t cry so, dear. That comes of trusting men! He needn’t deny it either! Everyone knows it’s true. My goodness gracious! didn’t Mr. Bigelow tell brother Bob about it, and Bob himself went over, and saw them with his own<pb n="8"/> eyes, - yes, indeedy – saw those awful corsets! Don’t you mind, June – and they were number thirty-fours, think of it – a great big, ugly cat of a woman, and oh my, Bob said it was the prettiest shoe – only 2 – think of it! Small as yours, June—Ah – h – there</q>.</p>
+    
+      
+    
+            <p>That day about three in the afternoon Batchellor waited in vain for June to pass a certain door of the library building, where they had been in the habit of meeting each other. It was a cold day, and Batchellor stamped his feet and shivered as he waited. And for three whole days there was no sign of the girl. Then Batchellor went out of his way, missed a class and stationed himself where knew it would be necessary for her to pass when leaving the college. She came out with a number of other girls. She was smiling faintly until she saw him, and then the little smile seemed almost startled from her face, and instead of blushing rosily as hitherto, a cold, freezing expression came to her face, and it was in the most distant and haughty fashion that she returned his bow.</p>
+    
+      
+    
+            <p>Poor Batchellor, distracted and baffled, spent the rest of the day in crazily and unavailingly trying to search his mind for some cause of her coldness. For two other weeks following, and whenever he met the girl, he was treated in the same scant fashion, though it seemed to his frenzied imagination that her recognition of him grew fainter and more frigid each time. And no wonder! From day to day June was hearing more of the mysterious . . .</p>
+         </div>
          </div>
       </body>
    </text>
