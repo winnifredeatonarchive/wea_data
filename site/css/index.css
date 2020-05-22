@@ -101,6 +101,7 @@ a[data-el='ptr'][data-type='readMore']::after{
     background-image: url(../images/WEA-hero-img.png);
     height: 85vh;
     min-height: 300px;
+    margin-top:0!important;
 background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -144,7 +145,7 @@ background-position: center;
 /********************************************************** INDEX INFO  */
 
 #index_info{
-   margin-top:2rem;
+   margin-top:2rem!important;
 }
 
 
@@ -378,7 +379,7 @@ body.JS #index_featuredItems > a.selected,
     margin-bottom:0;
     padding-top:1rem;
     color: var(--wea-pink);
-    font-weight:900;
+    font-weight:700;
     font-family: "Sans";
     text-transform:uppercase;
 }

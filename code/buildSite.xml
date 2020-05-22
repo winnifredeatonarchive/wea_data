@@ -13,7 +13,7 @@
   
     
     <target name="copyAuxFiles">
-        <copy todir="${site.dir}">
+        <copy todir="${site.dir}" overwrite="true">
             <fileset dir="../site">
                 <include name="**/**"/>
             </fileset>

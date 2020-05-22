@@ -11,32 +11,188 @@
  * 
  */
 
-@font-face{
-    font-family: "Sans";
-    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+/* montserrat-100 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Montserrat Thin'), local('Montserrat-Thin'),
+       url('../fonts/montserrat-v14-latin-100.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-100.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-@font-face{
-    font-family: "Sans";
-    src: url(../fonts/Montserrat/Montserrat-Light.ttf);
-    font-weight:300;
+/* montserrat-100italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Montserrat Thin Italic'), local('Montserrat-ThinItalic'),
+       url('../fonts/montserrat-v14-latin-100italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-100italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-@font-face{
-    font-family: "Sans";
-    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
-    font-weight: 700;
+/* montserrat-200 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),
+       url('../fonts/montserrat-v14-latin-200.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-200italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 200;
+  src: local('Montserrat ExtraLight Italic'), local('Montserrat-ExtraLightItalic'),
+       url('../fonts/montserrat-v14-latin-200italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-200italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat Light'), local('Montserrat-Light'),
+       url('../fonts/montserrat-v14-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-300italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Montserrat Light Italic'), local('Montserrat-LightItalic'),
+       url('../fonts/montserrat-v14-latin-300italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-300italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../fonts/montserrat-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Montserrat Italic'), local('Montserrat-Italic'),
+       url('../fonts/montserrat-v14-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+       url('../fonts/montserrat-v14-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-500italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'),
+       url('../fonts/montserrat-v14-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+       url('../fonts/montserrat-v14-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'),
+       url('../fonts/montserrat-v14-latin-600italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-600italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/montserrat-v14-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'),
+       url('../fonts/montserrat-v14-latin-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-800 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+       url('../fonts/montserrat-v14-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-800italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Montserrat ExtraBold Italic'), local('Montserrat-ExtraBoldItalic'),
+       url('../fonts/montserrat-v14-latin-800italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-800italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-900 - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'),
+       url('../fonts/montserrat-v14-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-900italic - latin */
+@font-face {
+  font-family: 'Sans';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Montserrat Black Italic'), local('Montserrat-BlackItalic'),
+       url('../fonts/montserrat-v14-latin-900italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/montserrat-v14-latin-900italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-@font-face{
-    font-family: "Serif";
-    src: url(../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
-    font-display:swap;
+
+/* playfair-display-regular - latin */
+@font-face {
+  font-family: 'Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/playfair-display-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/playfair-display-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-@font-face{
-    font-family: "Serif";
-    src: url(../fonts/Playfair_Display/PlayfairDisplay-Bold.ttf);
-    font-weight: bold;
-    font-display: swap;
+/* playfair-display-italic - latin */
+@font-face {
+  font-family: 'Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/playfair-display-v20-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/playfair-display-v20-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 
@@ -978,14 +1134,14 @@ ul.ssDescCheckboxList input{
     margin-right: .3rem;
     margin-top: .1rem;
 }
-#ssClear{
+#ssClear, #filterSearch, #ssResults button{
     border: 1px solid #efefef;
     /* outline: none; */
     padding: .25rem .5rem;
     background: none;
 }
 
-#ssClear:hover{
+#ssClear:hover, #filterSearch:hover, #ssResults button:hover{
     background:#ccc;
 }
 #ssResults{
@@ -998,6 +1154,18 @@ ul.ssDescCheckboxList input{
     padding-top:.5rem;
     padding-bottom:1rem;
 
+}
+
+#searchSort {
+    display:flex;
+    margin:1rem 0;
+}
+
+#searchSort h4{
+    font-size:0.8rem;
+    font-weight:bold;
+    font-family: "Sans";
+    margin-right:1rem;
 }
 
 
@@ -1499,7 +1667,7 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
 }
 
 #mainBody[class*="BornDigital"]:not([class*='Listing']) .metadataLabel{
-    font-size:1em;
+   font-size: 1.2em;
 }
 #mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content *{
 }
@@ -2004,11 +2172,6 @@ h4, h5, h6{
     font-size: 1.25rem;
 }
 
-h1, h2{
-    font-weight:500;
-}
-
-
 
 
 #info h2{
@@ -2059,10 +2222,11 @@ div[data-el="p"]{
  }
 
 .metadataLabel{
-    text-transform:lowercase;
-    font-variant:small-caps;
-    font-size:1.05rem;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 1.2rem;
     color: #33383D;
+    font-weight: 500;
 }
 
 div[data-el='note'] > div[data-el='p']{
