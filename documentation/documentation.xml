@@ -38544,7 +38544,7 @@ epistemology, methodology and history of
   value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/&gt;
  &lt;sch:let name="errors"
   value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/&gt;
- &lt;sch:assert test="empty($errors)"&gt; ERROR: Org ids &lt;sch:value-of select="string-join($errors,', ')"/&gt; do not exist in the organizations document.&lt;/sch:assert&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: Org id &lt;sch:value-of select="string-join($errors,', ')"/&gt; does not exist in the organizations document.&lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
                      </cell>
@@ -38594,7 +38594,7 @@ epistemology, methodology and history of
   value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/&gt;
  &lt;sch:let name="errors"
   value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/&gt;
- &lt;sch:assert test="empty($errors)"&gt; ERROR: Person ids &lt;sch:value-of select="string-join($errors,', ')"/&gt; do not exist in the person document. &lt;/sch:assert&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: Person id &lt;sch:value-of select="string-join($errors,', ')"/&gt; does not exist in the person document. &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
                      </cell>

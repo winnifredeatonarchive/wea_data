@@ -1129,7 +1129,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                   value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/>
                            <sch:let name="errors"
                   value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/>
-                          <sch:assert test="empty($errors)"> ERROR: Person ids <sch:value-of select="string-join($errors,', ')"/> do not exist in the person document. </sch:assert>
+                          <sch:assert test="empty($errors)"> ERROR: Person id <sch:value-of select="string-join($errors,', ')"/> does not exist in the person document. </sch:assert>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1163,7 +1163,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                   value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/>
                            <sch:let name="errors"
                   value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/>
-                           <sch:assert test="empty($errors)"> ERROR: Org ids <sch:value-of select="string-join($errors,', ')"/> do not exist in the organizations document.</sch:assert>
+                           <sch:assert test="empty($errors)"> ERROR: Org id <sch:value-of select="string-join($errors,', ')"/> does not exist in the organizations document.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"

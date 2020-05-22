@@ -2501,9 +2501,9 @@ On <xsl:text/>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> ERROR: Person ids <xsl:text/>
+               <svrl:text> ERROR: Person id <xsl:text/>
                   <xsl:value-of select="string-join($errors,', ')"/>
-                  <xsl:text/> do not exist in the person document. </svrl:text>
+                  <xsl:text/> does not exist in the person document. </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2561,9 +2561,9 @@ On <xsl:text/>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> ERROR: Org ids <xsl:text/>
+               <svrl:text> ERROR: Org id <xsl:text/>
                   <xsl:value-of select="string-join($errors,', ')"/>
-                  <xsl:text/> do not exist in the organizations document.</svrl:text>
+                  <xsl:text/> does not exist in the organizations document.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
