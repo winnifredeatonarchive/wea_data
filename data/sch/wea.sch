@@ -980,7 +980,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
                         <sch:let name="thisProjectDir"
-               value="substring-before($thisUri,'/data/') || '/data/'"/>
+               value="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>
                         <sch:let name="theseDocs"
                value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
                         <sch:let name="allDocIds"

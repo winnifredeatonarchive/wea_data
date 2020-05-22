@@ -2396,7 +2396,7 @@ On <xsl:text/>
                  select="some $r in $docTypes satisfies matches($r,'Documentation')"/>
    <xsl:variable name="thisUri" select="document-uri(/)"/>
    <xsl:variable name="thisProjectDir"
-                 select="substring-before($thisUri,'/data/') || '/data/'"/>
+                 select="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>
    <xsl:variable name="theseDocs"
                  select="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
    <xsl:variable name="allDocIds"

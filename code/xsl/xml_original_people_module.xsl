@@ -41,7 +41,8 @@
                 <xsl:apply-templates select="note" mode="#current"/>
             </div>
             <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
-            <xsl:if test="not(empty($respStmts))">
+            <xsl:variable name="illCredits" select="if ($thisId = 'WE1') then () else $sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$thisId)]]" as="element(bibl)*"/>
+            <xsl:if test="not(empty(($respStmts,$illCredits)))">
                 <div>
                     <head>Credits</head>
                     <table type="exhibit">
@@ -50,6 +51,41 @@
                             <cell>Title</cell>
                             <cell>Roles Played</cell>
                         </row>
+                        <xsl:for-each select="$illCredits">
+                            <xsl:variable name="thisBibl" select="."/>
+                            <xsl:variable name="biblId" select="@xml:id"/>
+                            <xsl:variable name="thisDoc" select="$sourceXml//TEI[descendant::sourceDesc[bibl[@copyOf = replace($biblId,'bibl','bibl:')]]]" as="element(TEI)*"/>
+                            <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                            <row>
+                                <cell>
+                                    <xsl:choose>
+                                        <xsl:when test="$thisDoc//text[@facs]">
+                                            <ref target="doc:{$docId}">
+                                                <figure>
+                                                    <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.png">
+                                                        <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                    </graphic>
+                                                </figure>
+                                            </ref>
+                                            
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </cell>
+                                <cell>
+                                    <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                </cell>
+                                <cell>
+                                    <xsl:for-each select="$thisBibl/descendant::name[@ref=concat('pers:',$thisId)]">
+                                       <xsl:choose>
+                                           <xsl:when test="parent::author[@type='illustrator']">Illustrator</xsl:when>
+                                           <xsl:when test="parent::author">Author</xsl:when>
+                                           <xsl:when test="parent::editor">Editor</xsl:when>
+                                           <xsl:otherwise>Contributor</xsl:otherwise>
+                                       </xsl:choose>
+                                    </xsl:for-each>
+                                </cell>
+                            </row>
+                        </xsl:for-each>
                         <xsl:for-each select="$respStmts">
                             <xsl:variable name="thisDoc" select="."/>
                             <xsl:variable name="docId" select="$thisDoc/@xml:id"/>

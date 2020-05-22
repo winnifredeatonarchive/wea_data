@@ -350,7 +350,10 @@
                     <!--If it doesn't match the local prefix regex,
                 then just spit the token back out, unresolved-->
                     <xsl:otherwise>
-                        <xsl:message>Couldn't resolve token: <xsl:value-of select="$token"/></xsl:message>
+                        <xsl:if test="not(matches($token,'^(https?|mailto)'))">
+                            <xsl:message>Couldn't resolve token: <xsl:value-of select="$token"/></xsl:message>
+                        </xsl:if>
+     
                         <xsl:value-of select="$token"/>
                     </xsl:otherwise>
                 </xsl:choose>

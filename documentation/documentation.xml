@@ -38781,7 +38781,8 @@ epistemology, methodology and history of
 &lt;sch:let name="thisUri"
  value="document-uri(/)"/&gt;
 &lt;sch:let name="thisProjectDir"
- value="substring-before($thisUri,'/data/') || '/data/'"/&gt;
+ value="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') 
+ || '/data/') else replace($thisUri,'[^/]+$','')"/&gt;
 &lt;sch:let name="theseDocs"
  value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/&gt;
 &lt;sch:let name="allDocIds"

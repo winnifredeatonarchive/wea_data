@@ -188,7 +188,6 @@
                                 <xsl:choose>
                                     <xsl:when test="$thisDoc//sourceDesc/bibl[@copyOf]">
                                         <xsl:variable name="biblId" select="replace($thisDoc//sourceDesc/bibl/@copyOf,':','')"/>
-                                        <xsl:message>bibl id<xsl:value-of select="$biblId"/></xsl:message>
                                         <xsl:variable name="biblDate" select="$sourceXml[//TEI[@xml:id='bibliography']]//bibl[@xml:id=$biblId]/date[1]"/>
                                         <xsl:choose>
                                             <xsl:when test="not(empty($biblDate))">
