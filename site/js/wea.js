@@ -35,7 +35,7 @@ function lazyload(){
     imgs.forEach(function(img){
         var src = img.src;
         img.setAttribute('data-src',src);
-        img.removeAttribute('src');
+        img.setAttribute('src', 'images/cooking.png');
     });
 
     var lazyLoadInstance = new LazyLoad({
