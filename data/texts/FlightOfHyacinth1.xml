@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="FlightOfHyacinth1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="FlightOfHyacinth1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Flight of Hyacinth</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,156 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl148 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl148 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:FlightofHyacinth">
+   <text facs="facs:FlightofHyacinth">
+      <pb n="437"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Flight of Hyacinth</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+    
+    
+            <p>The following story is an episode from the body of Onoto Watanna’s new novel of Japanese life, The Heart of Hyacinth, an exquisite story of heart interest. Hyacinth, who is really an American girl who has been reared by a Japanese woman, learns that her father whom she has never seen and for whom she has consequently little feeling, is coming to take her away. In grief at leaving her foster mother, the Japanese woman, she runs away to the hills and hides. Komazawa, her foster brother, who has just returned from England, hastens to search for the girl.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
+            <p>It was nearly midnight when Komazawa passed along the shore of Matsushima and began to climb toward the tombs. He knew every inch of the land. Unlike poor, wandering Hyacinth, he passed steadily ahead without the slightest hesitation. He had reached the small cliff path which led to the great Daterock cavern. Now he was before the rock itself.</p>
+            <p>Without pausing an instant, holding the lighted lantern he carried above his head, he entered the cavern beneath the rock. Every inch of the ground within he examined, feeling about with his hands in the darkened corners where his Iantern could not penetrate. Over and over the same ground he went, fear urging him forward. When the certainty that she was not within the cavern forced itself upon him, his shaking frame testified to his agitation. He had been so certain that the girl would come here. This was the great secret cave he himself had shown to her, where they had spent their childhood together, in defiance of the mild remonstrance of the temple priests.</p>
+            <p>Very slowly now Koma crawled from out the cavern. The lantern he set upon the ground at the mouth of the cave. Then he stood still, uncertain what to do, a great despair coming upon him.</p>
+            <p>Only a few paces away, he knew, were other tombs and caverns, but these were built in the slanting cliffs, down which no maiden could have gone in safety. Of them he would not think. He dared not look at them, lest he become dizzy with horror. And so Komazawa raised his face upward to the sky, just as Hyacinth had done.</p>
+               <p>Then he saw, far up above his head, something dark and still outstretched upon the surface of the rock. He caught his breath, then covered his mouth with his hands lest a cry escape him. Slowly and carefully he climbed up to the surface of the rock. A moment, on its edge, he paused irresolute, then crept on his knees toward the sleeping girl.</p><pb n="438"/>
+            <p>For a long time he knelt in a rapt silence beside her, his eyes fixed, entranced, upon her face.</p>
+            <p>She was slumbering as calmly as a child, and her upturned face, with the moon-rays upon it, was wondrously, ethereally beautiful. Awed, reverential, Koma gazed upon the picture, then soundlessly he crept back to the edge of the rock and clambered down. Once more he stood on the ground below. His face had a strange, strained expression, and in his eyes gleamed a new light.</p>
+    
+      
+    
+            <p><q>l cannot awaken her</q>, he said to himself, <q>and oh, ye gods! how beautiful she has grown!</q></p>
+               
+               <milestone unit="sectionBreak"/>
+               
+            <p>For a time he stood there without moving, plunged in reverie. Then his eyes, wandering mechanically toward the bay, fell on a series of lights on the shore below. They were one behind the other, and swung back and forth. In an instant he recognized them. The next moment he had thrust his own light into the cavern.</p>
+            <p><q>They will not come this way</q>, he assured himself. <q>This ancient path is little known save to the priests. Yet—if they should!</q></p>
+            <p>He clinched his hands tensely at his sides and stood off a few paces, looking up at the top of the rock.</p>
+            <p><q>It is very high up, and—they might not see. As I did—they might pass by</q>.</p>
+            <p>He leaned far over, straining his eyes to pierce through the shadows beneath. The lights below flashed a mornent from out some foliage, disappeared behind some rocks, reappeared again, and then plunged into a forest path which led, Koma knew, far from his present position.</p>
+            <p>He heaved a great sigh of relief. <q>Ah, it is well—well</q>, he said; <q>yet, nevertheless, I must watch—I must guard her</q>.</p>
+    
+      
+    
+            <p>With stealing step morning crept up on Matsushima. The sky had scarcely paled to a slumberous gray ere the soft, yellow streaks of the sun shot upward in the east, tinting all the land with its glow. The morning star was poised on high, as though lingering to watch the sun’s awakening. Then, softly, it twinkled out into the vapor.</p>
+            <p>Hyacinth stirred on her strange couch, her eyelashes quivered sleepily against her cheeks. One little hand opened a moment, then clutched the dew-wet moss. The touch of the unfamiliar grass against her hand startled her, and the girl opened her eyes. They looked upward at the softly bluing sky. A breeze of morning swept across her brow, moving a little truant curl. She sat up and stared about her wonderingly. Then remembrance coming to her, she sat still, silently watching the sunrise. For some moments she remained in this absorbed silence. Then mechanically she raised her hands to her head and sought to smooth the soft hair that the breeze had ruffled.</p>
+            <p><q>How still it is!</q> she said. Then, a moment after, <q>Heu! the rock is so hard, and it is chilly</q>. She shivered.</p>
+            <p>Then, moving along the rock, she came to the edge and began to clamber down. There were clefts in the rock which Koma had cut as a boy, and she had no difficulty in descending. She dropped to the ground as lightly as a bird. Turning about, a sudden little cry escaped her lips.</p>
+            <p>She stood as if rooted to the ground, regarding with dilated eyes the figure before her. He did not speak. His eyes were upon her face, and he was watching her startled expression with an eager glance. Then she took a step towards him, holding out both her hands.  </p>
+            <p><q>Komazawa!</q> she cried. <q>It is you!</q></p>
+            <p>He did not touch her outstretched hands, and she shrank back as if struck.</p>
+            <p><q>You, too!</q> she said, and her hand sought her head bewilderedly.</p>
+            <p><q>I too?</q> he repeated, stupidly.</p>
+            <p><q>Yes</q>, she cried. <q>I understand why you are here, why you do not speak to me and embrace me as of old. Ah, it is all very plain</q>.</p>
+            <p><q>What is very plain?</q> he asked, still keeping his distance from her.</p>
+            <p><q>Why you are here. They have sent you to find me, to give me over to those strangers. It is cruel, cruel</q>! she cried, covering her face with her hands.</p>
+            <p><q>It is not true!</q> he cried, going to her and taking her hands from her face and holding them closely in his own.</p>
+            <p>She did not seek to release them, but permitted them to remain passively in his, as she looked up into his face through her tears.</p>
+            <p><q>It is not true</q>, he repeated, softly.</p>
+            <p><q>Yet you were not glad to see me</q>, she said, tremulously.</p>
+            <p><q>Ah, but I was</q>, he replied, in the same soft, subtle voice which, somehow, vaguely thrilled her.</p>
+            <p><q>You did not speak to me</q>.</p>
+            <p><q>Your face—your sudden appearance—startled me; I could not speak for a moment</q>, he said.</p>
+               <p><q>Yet even now</q>, she said, catching her breath, <q>you do not embrace me</q>.</p><pb n="439"/>
+            <p>He dropped her hands slowly and drew back a pace.</p>
+            <p><q>It would not be right— now</q>. he said, huskily.</p>
+            <p><q>I do not understand</q>, she said. <q>Have we not always embraced each other?</q></p>
+            <p><q>We were children before</q>, he said, <q>but now—embraces are for—for lovers only</q>.</p>
+            <p>She looked at him a long moment in wondering silence, a slow, pink glow spreading gradually over her face. Then she repeated, slowly, almost falteringly:</p>
+            <p><q>For—for lovers</q>!</p>
+            <p>He turned his eyes away from her face. She put a timid hand upon his arm.</p>
+            <p><q>Yet</q>, she said, <q>Yamashiro Yoshida was my lover, and—and we did not embrace</q>.</p>
+            <p><q>Ah, no, thank the Heavens!</q> he cried, impetuously, again possessing himself of her hands. <q>You were safe from such things here, little one. Yet you have much to learn—much, and I—</q> His eyes became purple and his chin squared in strong resolution. <q>I’m going to teach you</q>, he said.</p>
+            <p><q>Teach me?</q> she faltered. <q>What will you teach me?</q></p>
+            <p><q>The meaning of love</q>, he said, the words escaping him as if he could not control them.  </p>
+            <p><q>You will be my lover?</q> she said, timid wonder in her eyes.</p>
+            <p>He could not speak for some moments. Then—</p>
+            <p><q>Ah, what have I been saying? Little one, you do not know, you cannot dream of the extent of your own innocence. I would be less than man if your words did not pierce my heart and thrill my whole being. Yet I am not altogether selfish—no—though I have spent years of my life among those who were so. I will not take advantage of the little one. She shall have every opportunity her birth, her beauty, demands. You will go with your father, Hyacinth. Nay, do not interrupt me. It will be for your good. You must see this other world, to which you rightfully belong. Then when you have come to years of womanhood you can decide for yourself</q>.</p>
+            <p><q>I am already a woman</q>, she said, tremulously.</p>
+            <p><q>Only a child—a little girl</q>, he said softly; <q>a poor little one who has been imprisoned so long she has come to believe her own cage is gilded, and will not take her freedom when the doors are opened</q>.</p>
+            <p>Earnestly she looked into his face.</p>
+            <p><q>And if I go to the West country, you, too, will go with me, will you not, Koma?</q></p>
+            <p>He shook his head, smiling sadly.</p>
+               <p><q>No; I would not have the right</q>.</p><pb n="440"/>
+            <p><q>I will not go, then</q>, she said, simply. <q>If they should force me I can be as brave as others. I would take my life</q>.</p>
+            <p><q>No, you would not do so, for then you would break our hearts</q>.</p>
+            <p><q>Yet you have no pity for mine</q>, she said, near to tears now.</p>
+            <p><q>Poor little heart!</q> he whispered, tenderly.</p>
+            <p>After a moment she inquired, quietly:</p>
+            <p><q>And did you come with my august parent, then?</q></p>
+            <p><q>On the same steamer—yes. It was an accidental meeting</q>.</p>
+            <p><q>Ah, then you did not come back for the purpose of helping them?</q></p>
+            <p><q>No, I had another purpose. I came to break your betrothal with Yamashiro Yoshida</q>.</p>
+            <p><q>Well, they have saved you that trouble</q>, she said, sighing.</p>
+            <p>He regarded her keenly. <q>Why do you sigh? You have regrets?</q></p>
+            <p><q>Yes</q>, she admitted, <q>for if they had not cast me off I could have remained in Japan. Now—</q> Her voice faltered and she turned her head away.</p>
+            <p><q>Now?</q> he repeated.</p>
+            <p><q>Ah, yes</q>, she said, <q>I begin to see there is nothing else to be done. I am resigned</q>.</p>
+            <p><q>You are resigned</q>, he repeated, disappointment showing in his transparent face.</p>
+            <p><q>Yes</q>, she said, with a fleeting upward glance at his face.</p>
+            <p>She suddenly laughed quite merrily.</p>
+            <p><q>Come</q>, she said, <q>let us go home. I must humbly submit myself to the august will of my honorable parent</q>.</p>
+            <p>Koma said never a word. Manlike, he was regretting his late words of advised self- sacrifice.</p>
+            <p>It was a slow pilgrimage homeward that these two young people made, for they stopped at every familiar place on the hills and by the bay that they had known as children. And, like children, they dipped their faces in the shining water of the little brook that wound its way around the hills and fell in a tiny waterfall below into the bay.</p>
+            <p>The girl, whose heart had been so heavy for days with the thought of leaving her home, now with the lightheartedness of a child seemed to have forgotten all her troubles and to revel in the joy of living.</p>
+            <p>But a gentle melancholy was upon Komazawa. It was with something of reproach that he answered the merry chatter of his companion.</p>
+            <p><q>Yonder</q>, she said, pointing across the bay, while her long sleeve, falling back, disclosed her soft, dimpled arm, <q>is the naked island, Hadakajima. See, it is not changed at all, Koma. Do you remember those times when you would carry me on your shoulder and step from rock to rock in the bay until you had reached Hadakajima</q>?</p>
+            <p><q>Yes</q>, he said, watching her eyes.</p>
+            <p>She looked up at him sideways, then drooped her lashes downward.</p>
+            <p><q>You would not do the same to-day?</q> she said.</p>
+            <p><q>You are not the same—child</q>, he replied.</p>
+            <p><q>Ah, no</q>, she sighed. <q>I am changed, alas!</q></p>
+            <p><q>Why ‘alas’?</q></p>
+            <p><q>The change does not please you</q>, she said.</p>
+            <p><q>Ah, but it does</q>.</p>
+            <p><q>Yet you were kinder to me then</q>.</p>
+            <p>He did not reply. She raised her face.</p>
+            <p><q>Is it not so?</q></p>
+            <p><q>Perhaps</q>, he replied.</p>
+            <p><q>Then you must have loved me more then</q>, she said.</p>
+            <p><q>No, that is not true</q>.</p>
+            <p><q>No? Do you still love me, then</q>.</p>
+            <p><q>l cannot answer you</q>, he said. <q>If I were to tell you my heart you would not believe me, because you would not understand</q>.</p>
+            <p><q>Ah, but I would, indeed</q>, she said, softly.</p>
+            <p><q>You are innocent</q>, he said, regarding her thoughtfully, <q>but you are a coquette by nature</q>.</p>
+            <p><q>What is that</q>?</p>
+            <p><q>One who makes a jest of love</q>.</p>
+            <p><q>And what is love?</q></p>
+            <p><q>Your heart will tell you some day</q>.</p>
+            <p><q>Yet I would have your heart tell me now</q>.</p>
+            <p><q>Love is a rosy pain of the heart</q>.</p>
+            <p><q>Then I do not feel it</q>, she said, stretching out her little, pink fingers over her heart, <q>for mine thrills and beats with joyous palpitations. Yet</q>—she looked up at him seriously—<q>perhaps that, too, is another of the moods of this love</q>.</p>
+            <p><q>Perhaps</q>, he said. <q>Love is capricious</q>.</p>
+            <p>Hyacinth sighed and looked out wistfully across the bay.</p>
+            <p><q>It is a strange word</q>, she said, vaguely.</p>
+            <p><q>Yes, strange</q>, he said. <q>l have lived years in England, but I had to return to Nippon to learn its meaning</q>.</p>
+            <p><q>Yet you have been back but a day</q>, she said, tremulously. -</p>
+            <p><q>And love is born in a moment</q>, he whispered, and took her hand softly in his own.</p>
+    
+    
+            <p>[1]
+         
+        *The Heart of Hyacinth, Onoto Watanna, N. Y., Harper &amp; Brothers. $2.00. Copyright, 1903, by Harper &amp; Brothers. All rights reserved.</p>
+    
+         </div>
          </div>
       </body>
    </text>
