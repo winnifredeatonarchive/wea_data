@@ -77,7 +77,7 @@
                                 <cell>
                                     <xsl:for-each select="$thisBibl/descendant::name[@ref=concat('pers:',$thisId)]">
                                        <xsl:choose>
-                                           <xsl:when test="parent::author[@type='illustrator']">Illustrator</xsl:when>
+                                           <xsl:when test="parent::author[@role='illustrator']">Illustrator</xsl:when>
                                            <xsl:when test="parent::author">Author</xsl:when>
                                            <xsl:when test="parent::editor">Editor</xsl:when>
                                            <xsl:otherwise>Contributor</xsl:otherwise>
