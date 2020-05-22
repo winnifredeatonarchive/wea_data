@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="EyesThatSawNot1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="EyesThatSawNot1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -31,20 +31,525 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl44 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl44 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:EyesThatSawNot">
+      <pb n="30"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>Eyes That Saw Not</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name> and Bertrand W. Babcock</byline>
+         </opener>
+         <div type="content">
+            <div>
+    
+    
+            <p>Graytown had put out its lights and retired for the night, with the well-bred decorum of small-towned respectability, when John Swinnerton came home smitten with blindness. Only the station porter saw the little party that met him almost at the door of the Pullman. John’s mother was the first to greet him.</p>
+    
+      
+    
+            <p><q>John</q>, she said, as he stepped off the train—<q>John, it will be all right. Mrs. Thomas knows a specialist in New York who—</q> The rest of the sentence was lost in the hubbub of arrival.</p>
+    
+      
+    
+            <p>His father standing by heard and smiled in pity. <q>John, old man!</q> was all he said.</p>
+    
+      
+    
+            <p>There was some little delay while Jerry clumsily drove his cab up to the board platform, and Elizabeth, who had also come down to the station, found herself alone with John for a moment.</p>
+    
+      
+    
+            <p><q>I’m so sorry, John</q>, she said.</p>
+    
+      
+    
+            <p>Her chagrin at the trite inadequacy of her words received instant compensation when John replied melodramatically, just as she feared he would:</p>
+            
+            <p><q>It is nothing. Say no more. The light without has gone to feed the flame within</q>.</p>
+    
+      
+    
+            <p>Then she guided him into the cab, and the others silently clambered after and took their places. Jerry’s fumbling at the door-catch and the sharp bang of the door’s closing awoke in each the same memory. Certainly there had been happier home-comings than this of John Swinnerton to Graytown.</p>
+    
+      
+    
+            <p>There was no conversation during the long ride to the Swinnertons’ home, the residence of Graytown’s leading family. To Elizabeth’s relief, John’s mother had insisted upon sitting by him, and as John sat idly holding his mother’s hand, Elizabeth was shocked to surprise herself smiling at the idea of John’s fancying it to be her hand.</p>
+    
+      
+    
+            <p>Once home, the party broke up immediately. The hour was late, and John, the bereft sense of his affliction fresh upon him, craved the solitude of his old room. He could feel the way even now. His mother attempted, in the overflowing tenderness of her heart, to follow him.</p>
+    
+      
+    
+            <p><q>No, mother, not to-night</q>, he remonstrated, kissing her, and gently pushing her from the room.</p>
+    
+      
+    
+            <p>He heard her crying in his father’s room as he undressed. Then he lay down, and, utterly fatigued and worn out, fell asleep almost instantly.</p>
+    
+      
+    
+            <p>Graytown, after the manner of most inland towns, followed with close interest the careers of its young men, even after they had fled, as is their wont, to the great cities, which drew them forth into the vortex of human activity and strife. Nor was this interest less tenacious for the fact that they left behind them scores of young unmarried women, who watched their struggles for riches and honor, and while waiting found encouragement in sundry notes and epistles confided to envelopes bearing the postmark of one or another far-away metropolis. So was John’s career the cynosure of Graytown in general and of Elizabeth in particular.</p>
+    
+      
+    
+            <p>Graytown’s solicitude for the welfare of the native was none the less genuine because an inquisitive sympathy was its accompaniment. Thus, on the morning following the sad reunion at the railroad station, John’s arrival and misfortune were known to the whole town. Early-morning neighbors on their way to office and shop stared cautiously at the red curtains that shut out the light from John’s room. The newsboy when he brought the morning paper asked the cook how John was. When John’s mother opened the library door on the veranda to receive from the postman the day’s mail, his inquiry brought tears to her eyes.</p>
+    
+      
+    
+               <p>Behind those red curtains, insensible to the thrill of curiosity he was causing<pb n="31"/> his neighbors, John himself lay wide-awake. He had been stirred to consciousness as the machinists, who lived on the street’s new extension, hurried past the house with rattling dinner-buckets to the shop before the five-minute whistle blew. He lay quite still for a long time, listening to their heavy, shuffling tread. Then a rooster crowed. John knew him well. He was a descendant of that old black Spaniard he had tried to kill with a Flobert rifle on one of his college vacations. From far below the bluff on which the house stood came the rattle of the morning train, loaded with fisherman going <q>up the river</q> for the day. It was all just as he had known it before he left home for the first time three years ago, yet it came to him now with a note of pathos and isolation. These people were going on without him. It was nothing to them that his career, as it seemed, had been suddenly cut short on the very threshold.</p>
+    
+      
+    
+            <p>Then he drifted into another train of thought. He began to review his three years’ work on the New York morning newspaper on which, as he put it, he had served his literary apprenticeship. All the incidents sedulously chronicled in his diary were recalled: the nights spent in the morgue—waiting for the identification of the mysteriously found body, and watching the reporters, who were always turning up with some false clew; the scenes in the Tenderloin, rich in color for the book he meant one day to write; the women’s clubs he had attended, with orders from the city editor to <q>write up a funny story about them</q>. Then there was his sudden resolution to give up the newspaper business for a serious attempt at real literary work, and his subsequent transfer to a copy desk, with the new idea of saving a little money before making the plunge. And then this catastrophe—his total blindness.</p>
+    
+      
+    
+            <p>Yet, strange to say, this catastrophe failed to daunt John’s hopes and ambitions, as it might have done with a young man of less buoyancy and self-confidence. His overweening vanity, the very strand in his character which showed weakest, was the strongest now to save him from utter collapse.</p>
+    
+      
+    
+            <p>As the scenes of his reporter days recurred to him his imagination grew warm; a woman’s face thrusting itself into the tangled mass of color and incident fixed his resolution.</p>
+    
+      
+    
+            <p><q>I’ll do it, by all the gods!</q> he cried aloud.</p>
+    
+      
+    
+            <p>His mother, waiting outside in the hall, heard him. Emboldened, she brought in the breakfast-tray.</p>
+    
+      
+    
+            <p><q>John dear</q>, she said, <q>I didn’t know you were awake. I’ve been standing out here with the breakfast things, listening, and I’m afraid the oatmeal’s all cold</q>.</p>
+    
+      
+    
+            <p>John pushed the tray aside impatiently.</p>
+    
+      
+    
+            <p><q>Mother, I’m going to make you very happy</q>, he said, brusquely.</p>
+    
+      
+    
+            <p>John’s mother set the tray on the floor near the bedstead’s head. Then she sat down on the bed near him.</p>
+    
+      
+    
+            <p><q>There is really nothing to worry about, John</q>, she began. <q>Mrs. Thomas said—</q></p>
+    
+      
+    
+            <p><q>No, it’s not that</q>, John broke in. <q>I have given up all hope of ever being able to see again. You know I had a long talk with old Doctor Vermile just before I left. The old man’s been my friend ever since—well, never mind. You know what he said. Now let’s put that aside</q>.</p>
+    
+      
+    
+            <p><q>My brave boy!</q> John’s mother interjected.</p>
+    
+      
+    
+            <p><q>It’s just this, mother</q>, John went on. <q>I have had three years of living where life most abounds. I have studied human nature thoroughly. I have plenty of incident and plenty of color. My inability to see is a physical misfortune. It doesn’t impair my ability to write, nor destroy my knowledge of life. Mother, I intend to devote my life to literary work</q>.</p>
+    
+      
+    
+            <p><q>And Elizabeth and I will be your secretaries!</q> exclaimed John’s mother, enthusiastically—<q>that is</q>, she added, <q>until you are able to see again</q>.</p>
+    
+      
+    
+               <p>That early-morning conversation with his mother marked the beginning of a new period in John’s life. He devoted himself assiduously to what he called literary work. But he came to it by degrees. First of all he went over the notes he had laid up as treasure for his after-literary life: all the bits of genre description; all the quick impressions formed by seeing people, as the reporter alone sees them, at the great climaxes<pb n="32"/> in their lives. His mother, to begin with, read his notes and scrap-books to him, but later it fell to Elizabeth to be his sole co-worker and amanuensis.</p>
+          
+            <p>As a reporter, John Swinnerton had nursed the ultimate ambition of the literary aspirant. His scrap-books, containing under date and head-line all the printed results of his assignments, all his <q>stories</q>, were a source of boundless pleasure to him, and of unfailing inspiration to Elizabeth.</p>
+    
+      
+    
+            <p>She would read him some story of how the excursion steamer Oligarchy, coming up the bay in the fog, had met the Havana liner Orizaba; how both boats were steaming at each other with such speed that great disaster and loss of life seemed inevitable until, by a quick twist of the Oligarchy’s steam steering-gear to port, in spite of the other boat’s contradictory whistles, the excursionists had been saved, as the two boats cleared by about six inches.</p>
+    
+      
+    
+            <p>The story in itself was interesting to Elizabeth, but the story of the story, as told by the reporter, who had fallen into the bay after it, she thought the most wonderful thing she had ever heard. Her eyes sparkled. She caught up a pen.</p>
+    
+      
+    
+            <p><q>John</q>, she cried, <q>write that just as you have told it to me, under the title, <q>The Story of a Story</q>. Now, then, begin!</q></p>
+    
+      
+    
+            <p>John dictated.</p>
+    
+      
+    
+            <p>His narrative to Elizabeth had been instinct with the charm of a personal experience told in simple, direct, graphic language, and his assumption of the first person had led her to identify herself with the actor in the scene, as her imagination, warming at his words, had reproduced the experience to the smallest detail. But his dictation lacked every grace; all the strength and picturesque beauty of his narration were wanting. While he had been talking he was himself, natural, spontaneous; now he was somebody else, an author dictating a story. Like the mere ecclesiastic who enters the pulpit in cleric robes, but lacks the message of the living word, so John left out just those elements that were the very soul of his story.</p>
+    
+      
+    
+            <p>As the time-chipped phrases of the daily newspaper fell from his lips, Elizabeth wondered that the fortunate possessor of such rich experiences, possessed by one, too, who was capable of forming such vivid impressions, could so miserably fail in their ultimate expression.</p>
+    
+      
+    
+            <p>The story he dictated spoke of a <q>heroic young reporter</q>, of a <q>gruff sea-captain</q>; told how <q>the young hero</q> <q>boldly plunged into the dark depths</q> that <q>funereal-like enveloped him</q>, and so on ad nauseam.</p>
+    
+      
+    
+            <p>With other stories which followed, it was the same or worse. Experiences that would have delighted a literary artist became mere collections of literary mosaics, arranged with little more than a newspaper idea of journalistic effect.</p>
+    
+      
+    
+            <p>Elizabeth’s life now became a series of exhilarations followed by greater depressions. When he told her, in that vivid conversational way of his, how for three days he had searched for the mother of a girl who had brought death to three others and finally to herself, how at last he found her destitute—her daughter having taken the savings of years—and how she had only said, with that queer look of tenement-house pathos, <q>Well, I suppose the only thing to be done now is for all of us to pitch in and give her a first-class funeral</q>, Elizabeth thought that now perhaps John would rise to his opportunity. But no; as each grotesque experience was related to her she would thrill with the awakened instinct of creative power, but when John’s blundering, bald-phrased dictation began she shuddered, and her artistic perceptions underwent crucifixion.</p>
+    
+      
+    
+               <p>Just three years ago, John, encouraged by Elizabeth’s girlish admiration for what they had both regarded as his undoubted marks of literary talent, had announced his intention of leaving Graytown and going out into the larger world to win something more than her loving approval and applause. Elizabeth remembered, and how, inwardly, she had been passionately jealous of his work. In the months that followed, her resentment against the ambition which threatened to come between them and push her aside had steadily grown, and in time her bitterness had began to open her eyes to the true extent and value of his presumptive ability. She had slowly acquired a contempt and cynicism for it which<pb n="33"/> was pitiful in the extreme. For it must be remembered that Elizabeth had loved John ever since as a young girl of fifteen, recently orphaned, she had come to live with his mother, and John, then a bright-faced college boy home on a vacation, had teasingly asked her whether he was to address her as <q>Sis or <q>Sweetheart</q></q>.</p>
+    
+      
+    
+            <p>Now that John, helpless and almost at her mercy, was forced to abandon her very work that had taken him from her, she gradually relapsed into the old habit of encouraging him to pursue a work which she now realized could only reap a harvest of bitter disappointments and failure for him in the end. How different from the days when she and John used to go out into the woods together, and his wild imaginings would conjure up the most vivid and fanciful impressions! Elizabeth now saw, with all the quickened sensitiveness of latent power that was in herself, that John could never realize his literary hopes.</p>
+    
+      
+    
+            <p>Still, she cheered and comforted him, but as the days drifted into weeks and the weeks into months, despair and hopelessness seized on her heart, and John’s all-absorbing vanity grew more formidable.</p>
+    
+      
+    
+            <p>As the number of completed stories increased, the difficulty of placing them had to be faced. One after another they came back, looking at first as if they had been examined, but by-and-by Elizabeth knew that the leaves of manuscript had not been disturbed. Then she had to summon every resource of her woman’s nature to reassure John.</p>
+    
+      
+    
+            <p>The path of fame was none so easy, she would tell him. He must have patience and keep steadily at work. His reward would come some day.</p>
+    
+      
+    
+            <p>But she could not sustain him on this philosophical ground much longer. In the beginning she had encouraged him in his pathetic hopes, because her belief in his ability had been actual. Moreover, now, when he was stricken and helpless, the light flame of their boy and girl love had deepened into a lasting and immeasurable tenderness for him.</p>
+    
+      
+    
+            <p>For some days she had lacked courage to tell him of the return of a certain manuscript in which he had a special faith. The long delay in hearing from the magazine to which they had sent it at first depressed and then cheered him.</p>
+    
+      
+    
+            <p><q>Beth</q>, he would say, pathetically, <q>really, you know, they would not hold the thing so long as if they were not uncertain about its value</q>.</p>
+    
+      
+    
+            <p>Elizabeth could not bear it any longer. She went on a personal mission to the city. She told him she would call at the office of the magazine while there.</p>
+    
+      
+    
+            <p>When she came back to Graytown she brought news that gave new life to John. His story had been accepted. The first rung on the ladder had been mounted.</p>
+    
+      
+    
+            <p>After this desperate invention Elizabeth took the story to her room and read it over and over again, hoping against hope that she might be able to discover in it something that would make it sufficiently attractive. And as she read, the plot of the story grew into her consciousness, awakening in her all the power of the literary artist. She could almost hear John’s rich voice, with its ringing enthusiasm, as he had glowingly told her the story.</p>
+    
+      
+    
+            <p>A sudden excitement fired her. With a quick nervous pencil and an old pad of John’s, she sat down by her window and began to write feverishly.</p>
+    
+      
+    
+            <p>A few days later she made her second trip to the city, and just three months after she put the magazine, with the story printed over his name, into John’s hands. All that day long there was joy and peace in the Swinnerton household. And if Elizabeth, in her little white room upstairs, smothered her sobs at night in her pillow, she smiled by day.</p>
+    
+      
+    
+            <p>The effect of the publication of his first story upon John was instantaneous. Plans and ambitions wilder and more futile than ever occupied his mind. And Elizabeth had to bear the brunt of them. Hour after hour she took his dictation. She thought of those prisoners condemned to work forever at machines that merely registered their efforts—a round of endless labor with nothing but a dial face to show what might have been accomplished.</p>
+    
+      
+    
+               <p>But when she went to work on John’s dictation, the passion of the writer possessed her, and she forgot that she had been walking the treadmill of letters. The instant acceptance and publication of most of the stories—were they not John’s as much as hers?—whetted confidence in her ability and acted as a spur<pb n="34"/> to her pen. Gradually all the stories bearing the name of John Swinnerton found acceptance wherever sent.</p>
+    
+      
+    
+            <p>Then the critics found him out. Articles, well written, which could not but appeal to his peculiar vanities, appeared in the press. He became popularly known as <q>the well-known short-story writer, who unites the observation of the reporter with the grace of the artist</q>.</p>
+    
+      
+    
+            <p>He was now a full-fledged author, and a successful one.</p>
+    
+      
+    
+            <p>Meanwhile Elizabeth kept an almost jealous guard over him. No one, not even his mother, must read his precious work to him but her who had shared his labours. And John’s fond little mother, with tears in her eyes, kissed the girl’s wistful white face and promised.</p>
+    
+      
+    
+            <p>To John, Elizabeth said:</p>
+    
+      
+    
+            <p><q>John, you are now a very important man. You must live a secluded life. It will not do for you to be disturbed by the vulgar outside world—not yet, at least</q>.</p>
+    
+      
+    
+            <p><q>You are all I want</q>, said John.</p>
+    
+      
+    
+            <p>Elizabeth’s lip quivered.</p>
+    
+      
+    
+            <p><q>Then, too</q>, she continued, her voice shaking, <q>you must keep very quiet. You must not be excited or disturbed. Your work demands it</q>.</p>
+    
+      
+    
+            <p>John’s mother said to him:</p>
+    
+      
+    
+            <p><q>Dear, you must do all Elizabeth says. She knows best</q>.</p>
+    
+      
+    
+            <p><q>She is a wonder!</q> said John, softly, and John’s mother startled at the little sob that involuntarily escaped Elizabeth.</p>
+    
+      
+    
+            <p>John began upon a novel. The plot he had planned out long ago, and Elizabeth had thrilled and glowed over it with all the sympathy of the natural-born writer.</p>
+            
+            <p>It was done at last. Wooden characters strode through melodramatic situations with the commonplaces of newspaper phraseology upon their lips.</p>
+    
+      
+    
+            <p>Nevertheless, the day came when Elizabeth put the book into John’s hand.</p>
+    
+      
+    
+            <p><q>Your novel, John</q>, she said, hurrying from the room to her own chamber, and locking herself in.</p>
+    
+      
+    
+            <p>An hour later she found him still alone with the book. He was rubbing it gently over his cheek, handling it as if it were a thing of life, to be touched reverently. He opened it, fingering with delicate affection the bold lines of print.</p>
+    
+      
+    
+            <p><q>My book, Beth!</q> he said, almost in a whisper.</p>
+    
+      
+    
+            <p><q>Your book, John!</q></p>
+    
+      
+    
+            <p><q>Beth, you don’t know what this day is to me. A little while ago I was alone in the darkness, vainly groping toward the light. Now I have found it. Then I was only a blind man, without the right to hope. Now I am an author whom the world recognizes</q>.</p>
+    
+      
+    
+            <p>He paused.</p>
+    
+      
+    
+            <p><q>Beth, when I was blind and obscure, I did not dare hope for that which you must know has been my heart’s desire ever since I have known you</q>.</p>
+    
+      
+    
+            <p>Even in his emotion John’s words did not escape a certain affectation of manner.</p>
+    
+      
+    
+            <p><q>I resolved to struggle to the light for your sake only, Beth. You were the prize which was to crown my efforts. Dear, you must know that glorious and intoxicating as is the beckoning hand which leads me on to where the star of fame is poised, dizzy and alluring, yet the star of love shines above it, supreme, and without it the star of fame is blurred and dim, a dazzling light without warmth and life. My struggles you have witnessed—and shared. The result you see. It is no martyrdom now I ask you to take up with me, but the love of a strong, successful man, an author blind, but with insight into the human heart. Beth, will you—can you—</q></p>
+    
+      
+    
+            <p>He stopped. The novel he held out between them. All of a sudden she struck it to the floor jealously, and put her hand in his in place of the book.</p>
+    
+      
+    
+            <p><q>John</q>, she said, in a voice barely above a whisper, <q>you love me—better—than—</q></p>
+    
+      
+    
+            <p><q>My work?</q> he laughed, joyously. <q>Yes, yes</q>, he said. <q>It is only a record of my brain. You, you dearest and sweetest of women, you are my heart, my soul! You will be my wife, Beth?</q></p>
+    
+      
+    
+            <p>With a smile that seemed the most pitiful thing in life, she raised her own misty eyes ot the wonder, groping, sightless ones.</p>
+    
+      
+    
+            <p><q>Yes, John</q>, she said, simply.</p>
+    
+
+    
+            <p>It was spring-time, three years since the night John Swinnerton returned to Graytown. In two months he was to be married.</p>
+    
+      
+    
+               <p>He sat impatiently by an open window, restlessly turning his eyes toward the<pb n="36"/> little path that led up to the house, just as if they were endowed with sight. Suddenly they dilated with excitement, as he felt, rather than heard, some one enter the little gate.</p>
+    
+      
+    
+            <p>A few moments later a big burly professional-looking man was closeted alone with him. Outside the door, her hands trembling as though afflicted with ague, her ear straining at the key-hole, knelt, or rather crouched, his mother.</p>
+    
+      
+    
+            <p>Scarce an hour later John’s mother was sobbing in his arms.</p>
+    
+      
+    
+            <p><q>Oh, John, John, John!</q> she was crying. <q>I knew it. Mrs. Thomas said . . . and oh, thank God!</q></p>
+    
+      
+    
+            <p>John’s face was aglow. <q>Mother dear</q>, he said, <q>we must keep this from Beth a little longer. Let us surprise her when she comes back from the city</q>.</p>
+    
+     
+            <p>When John Swinnerton first saw the light again, it awoke in him a sudden shock, almost repulsion. His eyes, which had been trembling in the dark so long, pained him excessively after the operation. By a strange revulsion of the delight with which he had looked forward to this event, a feeling of inexplicable depression and melancholia assailed him, a premonition of disaster amounting almost to superstition. It may have been due to the fact that Elizabeth was absent in the city with an aunt, who was in John’s confidence, buying her trousseau. However it was, when they told John of the success of the operation, and he saw for the first time in three years a peep of light warming his eyeballs, he marvelled at the depression that weighed down his spirits.</p>
+    
+      
+    
+            <p>But he was up and about and quite strong and hearty when Elizabeth returned home.</p>
+    
+      
+    
+            <p>He had watched for her all morning—watched little path with eyes that behind their darkened glasses saw clearly.</p>
+    
+      
+    
+            <p>His mother, who met Elizabeth at the door, acted in what seemed to her an extraordinary fashion, laughing and kissing her hysterically, and then pushing her toward John’s door.</p>
+    
+      
+    
+            <p>When she stepped into the room, John, instead of coming to meet her, stood back from her sombrely, pale to the lips with tense emotion, his two hands, quivering and trembling, outstretched to her.</p>
+    
+      
+    
+            <p><q>Here I am, dear—</q> she began; <q>and your mother—</q> She stopped short, for her eyes had travelled upward to his face, and with a sudden shock she saw the glasses, and all in a moment she understood.</p>
+    
+      
+    
+            <p>She caught at the edge of the table dizzily, trying to gather her scattered senses. And then John, unable to restrain himself longer, strode across to her with an exclamation of the most immeasurable love, and folded her in his arms.</p>
+    
+      
+    
+            <p>When the first hysterical inrush of her emotion was past, and John was holding her at arm’s-length so that his greedy eyes might feed once more on her delightful beauty, a horror of the events of the past three years swept over her and took full possession of her.</p>
+    
+      
+    
+            <p>What had she done? What would John do when he knew the truth? John, who despised dishonesty in every shape and form; John, who was so greedy and proud of his attainments, whose whole life had been one upward struggle and straining after the unattainable prize, which she by a trick had placed in his hands? She could not go on deceiving him. He knew nothing as yet; otherwise he would not have taken her to his heart. Ah, she knew John so well! And as all the horrible questions came up in her mind one by one, like a long thread of dismal phantoms in a nightmare, she almost lost consciousness as she stood there before him, vainly trying to put them from her mind and feign understanding of what he was saying, to listen to his whispered and broken words of love. Ah, could she do without them now? They had become her life! John meant them. He had said he loved her for herself alone; then she had not won his love by her trick. Oh, no, no; not that! But would he spurn and hate her when he knew the truth? She had long studied his complex character. She had been cynical in her grand disdain of the vanity which was so dominant in him. He had called it <q>self-confidence</q>. Was it stronger than his love for her? Ah, that was the question!</p>
+    
+      
+    
+            <p>Gradually, she drew away from him.</p>
+    
+      
+    
+               <p><q>You—you—you</q> Words failed her, and she began to sob.</p><pb n="38"/>
+    
+      
+    
+            <p><q>Why, my darling!</q> He knelt beside her. Out in the hall they could hear his mother weeping also. She had not resisted the tempting pleasure of listening to them at the door. <q>They are so sweet!</q> she apologized to herself; and still crying softly, she passed down the hall.</p>
+    
+      
+    
+            <p><q>Let me think—I must think—</q> cried Elizabeth. <q>No, John, don’t touch me. Let me alone a moment</q>.</p>
+    
+      
+    
+            <p><q>But, dearest one—</q></p>
+    
+      
+    
+            <p><q>John, do you remember what I once asked you—whether you loved best me or your work?</q></p>
+    
+      
+    
+            <p><q>And I said you, of course</q>, he replied, quickly.</p>
+    
+      
+    
+            <p><q>John, answer me that when—when you—John dear—when you have read over—some—of your stories, John</q>.</p>
+    
+      
+    
+            <p>Still mystified, but greatly moved by her apparent distress, he replied, <q>But, dearest, I know them already, almost by heart</q>.</p>
+    
+      
+    
+            <p><q>No, no!</q> She was losing herself in her passionate distraction. She caught up his book and thrust it into his hands. <q>Can you see well enough to read? There—do—just a few chapters—</q> Her breath almost left her.</p>
+    
+      
+    
+            <p>His eyes strained as he turned the title-pages, and slowly, painfully, he began to read.</p>
+    
+      
+    
+            <p>The silence in the room was horrible. It would not have been broken but that the book dropped from his nerveless hands. He staggered back, his hand to his head, like one who has suddenly lost reason, memory, understanding; and as she approached him with wide bright eyes full of piteous supplication, he stepped backward away from her.</p>
+    
+      
+    
+            <p><q>John</q>, she said, <q>for the love of Heaven, speak to me</q>.</p>
+    
+      
+    
+            <p>Her voice recalled him. <q>You!</q> he turned on her with savage fierceness. <q>What have you done? What horrible deceit is this you have practised on me? My God!</q></p>
+    
+      
+    
+            <p><q>John, I—</q></p>
+    
+      
+    
+            <p><q>Whose work is this?</q></p>
+    
+      
+    
+            <p><q>Yours, dear—all yours!</q></p>
+    
+      
+    
+            <p><q>Mine!</q> He laughed mockingly.</p>
+    
+      
+    
+            <p><q>Yours—and mine, John. You were my inspiration. You gave the life, the spark. I could not have written a line but for you. Your soul, which could not find expression through your medium, dear, entered into mine, and I—</q></p>
+    
+      
+    
+            <p><q>Ah-h!</q> he said, <q>I understand. It is all clear to me now. You—you stole—you took—my—work. You are guilty of the most despicable, the meanest of thefts</q>.</p>
+    
+      
+    
+            <p>He sank down in a chair, burying his face in his hands, and groaning in the agony of sudden disillusion.</p>
+    
+      
+    
+            <p><q>John</q>, she cried, her two little hands stretched toward him appealingly. <q>I can’t bear it. John, love, it was for you!</q></p>
+    
+      
+    
+            <p>He looked up at her. <q>For God’s sake leave me</q>, he cried. <q>Your jest has come to its end</q>.</p>
+    
+      
+    
+            <p>She was gone. He rose and stumbled about the room, more helpless than when he was totally blind. He began feverishly gathering the scrap-books in which the printed stories which had been cut from the magazines were pasted. Then he groped his way across the room to a chest of drawers. He drew out the original manuscripts—<q>the copies</q>, she had called them. These at least were his own. He carried them over to the table, and spread them out side by side in order, opposite to the stories in the scrap-books bearing the same titles.</p>
+    
+      
+    
+            <p>He was shaking pitifully. His hands trembled violently as he turned page after page, and as he read, a great light, a light that was startling in its poignant clearness, dawned upon him. The crudities of his own work, the set, stupid, inane phraseology, the long, tedious duologues! And then, opposite, the delicate wit, the intangible art, the philosophy, the pathos!</p>
+    
+      
+    
+            <p>His shoulders heaved, his heart suffocated him with its tumultuous beating, and his brain was swimming with vertigo. His thoughts would not tarry with him. They wandered inconstantly without any abiding-place in his mind. One great feeling welled up and took full possession of him, a longing that was almost madness for the presence, the touch, the sympathy of her he had spurned.</p>
+           
+            <p>He sprang to his feet and strode to the door, throwing it open violently.</p>
+    
+      
+    
+            <p><q>Beth!</q> he called, and the startled cry of fear and longing rang up through the deserted halls.</p>
+    
+      
+    
+            <p>In her room she heard it, and was glad.</p>
+         </div>
          </div>
       </body>
    </text>
