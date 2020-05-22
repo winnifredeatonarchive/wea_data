@@ -2532,11 +2532,15 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                  value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
                         <sch:let name="thisProjectDir"
-                                 value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
+                                 value="substring-before($thisUri,'/data/') || '/data/'"/>
                         <sch:let name="theseDocs"
                                  value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
                         <sch:let name="allDocIds"
                                  value="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/>
+                        <sch:let name="peopleIds"
+                                 value="document($theseDocs[matches(.,'people.xml$')][1])//tei:person/@xml:id/xs:string(.)"/>
+                        <sch:let name="orgIds"
+                                 value="document($theseDocs[matches(.,'organizations.xml')][1])//tei:org/@xml:id/xs:string(.)"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -2645,7 +2649,62 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraint>
                </constraintSpec>
                
+               <constraintSpec scheme="schematron" ident="badPersId">
+                  <desc>All person ids must be found in the personography.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
+                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
+                           <sch:let name="errors"
+                                    value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                
+               <constraintSpec scheme="schematron" ident="badPersId">
+                  <desc>All person ids must be found in the personography.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
+                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
+                           <sch:let name="ids"
+                                    value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/>
+                           <sch:let name="errors"
+                                    value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/>
+                          <sch:assert test="empty($errors)"> ERROR: Person id <sch:value-of select="string-join($errors,', ')"/> does not exist in the person document. </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec scheme="schematron" ident="badOrgPrefix">
+                  <desc>All person ids must be found in the personography.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:publisher[@ref]">
+                           <sch:let name="errors"
+                                    value="for $i in tokenize(@ref,'\s+') return if (matches($i,'^org:')) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: All org pointers must start with the org: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="badOrgId">
+                  <desc>All publisher ids must be found in the orgs doc.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:publisher[@ref]">
+                           <sch:let name="ids"
+                                    value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/>
+                           <sch:let name="errors"
+                                    value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: Org id <sch:value-of select="string-join($errors,', ')"/> does not exist in the organizations document.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                
 
                <constraintSpec scheme="schematron" ident="misMatchedQuote">

@@ -38537,6 +38537,72 @@ epistemology, methodology and history of
                      <cell>
                         <label>Schematron</label>
                      </cell>
+                     <cell>All publisher ids must be found in the orgs doc.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:publisher[@ref]"&gt;
+ &lt;sch:let name="ids"
+  value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/&gt;
+ &lt;sch:let name="errors"
+  value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: Org ids &lt;sch:value-of select="string-join($errors,', ')"/&gt; do not exist in the organizations document.&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>All person ids must be found in the personography.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:publisher[@ref]"&gt;
+ &lt;sch:let name="errors"
+  value="for $i in tokenize(@ref,'\s+') return if (matches($i,'^org:')) then 
+ () else $i"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: All org pointers must start with the org: prefix.&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>All person ids must be found in the personography.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"&gt;
+ &lt;sch:let name="att"
+  value="if (@ref) then @ref else @who"/&gt;
+ &lt;sch:let name="errors"
+  value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then 
+ () else $i"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: All personography pointers must start with the pers: prefix.&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>All person ids must be found in the personography.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"&gt;
+ &lt;sch:let name="att"
+  value="if (@ref) then @ref else @who"/&gt;
+ &lt;sch:let name="ids"
+  value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/&gt;
+ &lt;sch:let name="errors"
+  value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/&gt;
+ &lt;sch:assert test="empty($errors)"&gt; ERROR: Person ids &lt;sch:value-of select="string-join($errors,', ')"/&gt; do not exist in the person document. &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
@@ -38563,9 +38629,15 @@ epistemology, methodology and history of
   &lt;sqf:description&gt;
    &lt;sqf:title&gt;Replace bibl id&lt;/sqf:title&gt;
   &lt;/sqf:description&gt;
-  &lt;sqf:delete match="." target="xml:id"
-   node-type="attribute"/&gt;
-  &lt;sqf:call-fix ref="addNewBiblId"/&gt;
+  &lt;sqf:replace match="@xml:id"
+   node-type="attribute" target="xml:id"&gt;
+   &lt;xsl:variable name="rBibls"
+    select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id 
+ return substring-after($bibl,'bibl')"/&gt;
+   &lt;xsl:variable name="rNewNum"
+    select="max(for $n in $rBibls return xs:integer($n)) + 1"/&gt;
+   &lt;xsl:value-of select="'bibl'||$rNewNum"/&gt;
+  &lt;/sqf:replace&gt;
  &lt;/sqf:fix&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
@@ -38709,12 +38781,15 @@ epistemology, methodology and history of
 &lt;sch:let name="thisUri"
  value="document-uri(/)"/&gt;
 &lt;sch:let name="thisProjectDir"
- value=" if (matches($thisUri,'/data/[^/]+/.+\.xml$')) then replace($thisUri,'/data/.+', 
- '/data/') else replace($thisUri,'[^/]+$','')"/&gt;
+ value="substring-before($thisUri,'/data/') || '/data/'"/&gt;
 &lt;sch:let name="theseDocs"
- value="collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/&gt;
+ value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/&gt;
 &lt;sch:let name="allDocIds"
- value="$theseDocs//tei:TEI/@xml:id"/&gt;
+ value="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/&gt;
+&lt;sch:let name="peopleIds"
+ value="document($theseDocs[matches(.,'people.xml$')][1])//tei:person/@xml:id/xs:string(.)"/&gt;
+&lt;sch:let name="orgIds"
+ value="document($theseDocs[matches(.,'organizations.xml')][1])//tei:org/@xml:id/xs:string(.)"/&gt;
 &lt;sqf:fix id="globals"&gt;
  &lt;sqf:description&gt;
   &lt;sqf:title&gt;Global Templates&lt;/sqf:title&gt;

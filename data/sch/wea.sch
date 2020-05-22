@@ -980,11 +980,15 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
                         <sch:let name="thisProjectDir"
-               value="                            if (matches($thisUri,'/data/[^/]+/.+\.xml$'))                            then replace($thisUri,'/data/.+', '/data/')                            else replace($thisUri,'[^/]+$','')"/>
+               value="substring-before($thisUri,'/data/') || '/data/'"/>
                         <sch:let name="theseDocs"
                value="uri-collection(concat(substring-after($thisProjectDir,'file:'),'?select=*.xml;skip-errors=true;recurse=yes'))"/>
                         <sch:let name="allDocIds"
                value="for $doc in $theseDocs return replace($doc,'.+/([^/]+)\.xml', '$1')"/>
+                        <sch:let name="peopleIds"
+               value="document($theseDocs[matches(.,'people.xml$')][1])//tei:person/@xml:id/xs:string(.)"/>
+                        <sch:let name="orgIds"
+               value="document($theseDocs[matches(.,'organizations.xml')][1])//tei:org/@xml:id/xs:string(.)"/>
                         <sqf:fix id="globals">
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
@@ -1102,6 +1106,76 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
+                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
+                           <sch:let name="errors"
+                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
+                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
+                           <sch:let name="ids"
+                  value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/>
+                           <sch:let name="errors"
+                  value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/>
+                          <sch:assert test="empty($errors)"> ERROR: Person ids <sch:value-of select="string-join($errors,', ')"/> do not exist in the person document. </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:publisher[@ref]">
+                           <sch:let name="errors"
+                  value="for $i in tokenize(@ref,'\s+') return if (matches($i,'^org:')) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: All org pointers must start with the org: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:publisher[@ref]">
+                           <sch:let name="ids"
+                  value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/>
+                           <sch:let name="errors"
+                  value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/>
+                           <sch:assert test="empty($errors)"> ERROR: Org ids <sch:value-of select="string-join($errors,', ')"/> do not exist in the organizations document.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="onlyOneQuote"
                   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
@@ -1149,7 +1223,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-documentRefsShouldBeGood-constraint-rule-47">
+            id="wea-documentRefsShouldBeGood-constraint-rule-51">
       <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"
