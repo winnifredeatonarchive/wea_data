@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfGeishaGirl1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfGeishaGirl1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Love of a Geisha Girl</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,21 +28,103 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2019-08-31">directed to facs.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl162 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:MC1" status="empty" when="2019-08-31">directed to facs.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl162 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
     <text facs="facs:LoveOfAGeishaGirl">
-      <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+       <pb n="16"/>
+       <body>
+          <head>The Love of a Geisha Girl</head>
+          <opener>
+             <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+          </opener>
+          <div type="content">
+             <div>
+            <p>Natsu’s father had been an American, her mother a Japanese woman. She had never seen her father, and her mother had died when she was a little bit of a girl, so that she had been brought up by her Japanese relatives, who secretly despised and disliked her, on her father’s account. He was said to have deserted her mother.</p>
+            <p>Natsu was very beautiful. She earned her living as a geisha girl in one of the prominent tea-houses of Nagasaki, and although her life was essentially a gay one, in view of her profession, she had lived a strangely lonely and isolated life.</p>
+            <p>Frank Canfield was the first friend she had ever had, and he was only sojourning in the country for a short season. From the first day when he had visited the tea-house with a party of tourists Natsu had attached herself to him, and had thereafter sought him out and followed him around like a pathetic and faithful little dog, to the amusement of his friends and the intense embarrassment and stealthy delight of the young man himself, who was keenly susceptible to the girl’s extraordinary beauty. In a few weeks’ time he had lost his head, if not his heart, to the little girl.</p>
+            <p><q>You are the prettiest thing I have ever seen</q>, he told her one day.</p>
+            <p><q>More beauteefool than the Americazan ladies?</q></p>
+            <p><q>Ever so much</q>, he told her, extravagantly.</p>
+            <p><q>So? Then perhaps you tekin’ me with you nex’ time you goin’ bag cross the west waters!</q></p>
+            <p><q>What do you want to go for?</q></p>
+            <p>She shrugged her little shoulders, and moved restlessly at his feet.</p>
+            <p><q>Me my ownself don’ know. Cep’ thad also I ’blongin’ ad your red-head country. Pray tek’ me with you. Whad you say?</q></p>
+            <p>As he did not answer her, she continued, reproachfully, <q>Mebbe you ‘shamed tek’ me there?</q></p>
+            <p><q>I’m not—not a bit</q>, he answered quickly, taking her two little hands in his, and smoothing them lovingly. <q>But—er—you know—that wouldn’t do at all, Natsu. You wouldn’t understand the people in the slightest, and you might be very unhappy</q>.</p>
+            <p>Natsu did not answer him, but the dissatisfied look on her face deepened. The dreamy, sleepy, happy days of a Japanese summer passed in the company of her lover banished the shadow, however, and lit up the wistful, questioning eyes to a joyous contentment with her lot.</p>
+            <p>Then there came a day when Frank climbed the hill with lagging steps.</p>
+            <p><q>I am going home</q>, he told her, with brief cruelty.</p>
+            <p>The girl’s face blanched a pitiful white, and she began to shiver.</p>
+            <p><q>An’ me?</q></p>
+            <p>His courage broke down in the face of her grief.</p>
+            <p><q>I am coming back to you. I am coming back, sure, sure!</q> he lied to her. He knew, even as he spoke, that it was his intention never to see her again, but he could not summon the courage to tell her so, and drive away from the girl’s beseeching face all its trembling, questioning, hopeful light.</p>
+                
+                <milestone unit="sectionBreak"/>
+            
+            <p>Before Frank Canfield had sailed for Japan he had asked Grace Evans to be his wife. She had told him very gently that she was not prepared to answer him then. Frank had started out on a voyage round the world. They had corresponded constantly during the period of his travels, and now her answer had come to him. It was such as would have thrilled him with gladness in the old days, for she had bade him come to her! Yet when he read the letter slowly he was conscious only of a pain that stupefied him. It is true he had looked forward to, and waited for, this answer; yet now that it had come he felt no delight. With hands thrust deep into his pockets, the young man paced the floor, thinking of Grace Evans—thinking of Natsu!</p>
+            <p>He tried to assure himself that he was mistaken in his feeling for Natsu. She had merely helped him bear the pain of the separation from the other. She was a dear little thing, but—Frank Canfield thrust her from his memory, for after all she was impossible for him—a Japanese girl! What would his friends, his parents, his society sisters say were he to return with a Japanese bride? The idea was preposterous. And so for the present he let the memory of his old love absorb his heart, and push slowly from it the dear delight of his present love.</p>
+            <p>When he had told her the parting would not be forever she had been so sweet and acquiescent and trusting that for a moment Frank forgot everything but the girl herself, and felt like throwing up all his plans, staying in Japan, and—yes, even marrying Natsu. But these wild ideas only remained with him while he was in her presence, and once alone again he returned to all his firm resolutions of duty to Grace Evans.</p>
+            <p>But as the boat moved away, and he saw the dim outline of the receding shore, he wondered if after all he could forget Natsu so easily.</p>
+            <p>As for Natsu-San? She found her way back to the tea-garden, her face happy in spite of the tear traces on it. As she passed in at the gate three geisha girls were playing on harps and samisens. Natsu caught up a small drumstick, and beat four tremendous blows on the drum. This relieved her.</p>
+            <p>It was two years later. Grace Evans was very happy. She was waiting for Frank Canfield. When he had returned to America the girl had again put off their marriage, pleading that she was not yet prepared to renounce her girlhood. Now she was ready. It would be only one month before the wedding. The girl’s fair, beautiful face was flushed and happy. She had just returned from a trip to Europe.</p>
+            <p>She stood with hands clasped before her, looking out of the window. Frank had come in very softly upon her, and she had raised her calm eyes with the little dream still in them as he took her hands in his.</p>
+            <p><q>Oh, it is you!</q> she said, emphasizing tenderly the last word. They sat down together side by side, their hands still clasped, the girl’s face shining with its quiet pleasure, which however was not reflected in the man’s. He was nervous and constrained.</p>
+                
+                <milestone unit="sectionBreak"/>
+                
+            <p><q>It is quite near the time now, little girl</q>, he said, tenderly.</p>
+            <p><q>Yes, dear</q>.</p>
+            <p><q>You have made me wait a long time</q>.</p>
+            <p><q>Yes, I have</q>, she was smiling at him in her slow, calm way, <q>but it is all over now</q>.</p>
+            <p><q>Yes, all over</q>, he breathed between his set teeth. His words sounded like a sigh.</p>
+            <p><q>Why</q>, she pouted, <q>you look quite gloomy</q>.</p>
+            <p>His face turned from hers now. He got up restlessly, and walked across the room. For a moment he was silent, then he stole a look at the sweet, dreamy face. She had forgotten already what she had said, and scarcely noticed his nervousness, for she was so assured and happy. Canfield almost groaned aloud as he looked at her. He knew the bitter agonizing truth, even though he had hidden it from her. He did not love her, after all. He had not yet forgotten Natsu-San.</p>
+            <p>One night he had dreamt of Natsu-San—dreamt she was standing by his side; once more she was ministering to his wants with her sweet, soothing hands; she was smoothing away all the lines of care from his face that had come there since he had left her, and he, Canfield, the stoic, as they called him, was laughing aloud in boyish delight. All the next day he thought of her, and each day after that the memory had grown, not diminished. Sometimes he was filled with a wild, almost insane, longing to go to her, to see her once more, if only for a moment, to whisper sweet words of love with all the abandon she had loved to hear in the old days. But in the midst of his longing Grace returned, and for the time being his delirious mind came back to the ever¬present duty—a stern duty that he felt he owed her.</p>
+            <p>Now that his mind was consumed with memories of Natsu-San he was horrified to find that what he had hitherto reverenced in Grace, that strange atmosphere about her that even held him at a distance, was slowly being replaced by a feeling of repugnance, almost dislike. When the girl’s long, cold white hands rested in his he felt strangely repelled, and longed with a longing that was almost insanity for the clasp of warm little fervid fingers that would cling to his with a passion that would thrill him.</p>
+            <p>Now a silence had been between them for some time. The girl broke it to say, in her slow, gentle way, <q>I forgot to tell you, dear, but we had a little surprise yesterday</q>.</p>
+            <p><q>Yes</q>, he said, trying to appear interested.</p>
+            <p><q>Yes; I thought it would interest you, after your having been in Japan. Papa brought a friend home to dinner last night—a Mr. Pierce. We knew him in Philadelphia. He is very interesting, and used to live in Japan some years ago. He went back last year, and now has returned with a dear little Japanese girl—and—she—is—his—own—daughter, he says. Was born on his first visit to Japan. No one knew of it, but he was married to a Japanese woman</q>.</p>
+            <p><q>He didn’t tell us why they separated, but they did anyhow. She died—the wife—and now he has the child. He is just as proud of her as he can be. He said he would bring her to see us to-night. He told us all about how glad she was to see him, and how fond he has grown of her. Isn’t it romantic? Just to think of that poor man living all these years alone when he had a little daughter</q>.</p>
+            <p><q>Such cases are common in Japan</q>, Frank said, quietly. <q>The father generally deserts the wife—for no reason—and the children grow up anyhow</q>.</p>
+            <p>That night Mr. Pierce brought his little Japanese daughter to visit Grace Evans.</p>
+            <p>She was small, with a little oval face, round which her shining black hair was softly puffed. Dressed in an American costume it would have been hard to determine her nationality.</p>
+            <p>Grace went forward to meet her with both hands outstretched. <q>I am so glad to know you</q>, she murmured.</p>
+            <p>The girl looked at her bright shining hair, her great blue eyes, and smiled a trifle.</p>
+            <p><q>You are beauteefool, lig’ our sun-goddess</q>, said the girl, softly.</p>
+            <p>The other girl smiled, too, but she did not deprecate the compliment. <q>And is the sun-goddess very beautiful ?</q></p>
+            <p><q>Yaes—lig’ unto you—those eyes an’ hair</q>, the girl continued, absorbed in studying her. <q>I thing thad’s nize, be vaery beauteefool. Me? I not beauteefool—blag’ hair—eyes. I lig’ golden hair lig’ thad—always I lig vaery fair peebles, account he fair lig’ thad—I thing he—</q></p>
+            <p>Her father interrupted her, with some embarrassment. <q>Natsu was at one time—hem—she imagined herself in love with some American who visited Nagasaki. She talks of him constantly</q>.</p>
+            <p><q>How ees thad?</q> the girl asked. <q>You say I ‘in luf.’ My! how fonny thad is—how nize! Yaes, I thing I luf all with my heart. Thad heart’s break- in’ now foraever, account he go away naever cum’ bag to poor liddle me. Now whad you thing he say? Thad some day wen I cummin’ to America I goin’ to fin’ him</q>, her voice fell with its depression.</p>
+            <p><q>I nod fin’ him. Fin’ lods of peebles loog lig’ him vaery much. Bud thad’s nod him</q>.</p>
+            <p>The American girl’s face had grown a trifle flushed. She did not answer the Japanese girl. She glanced with some concern at Canfield. He was standing in the doorway, his eyes fastened on Natsu’s face with a look she had never seen there before.</p>
+            <p>Grace went up to him and put her hand on his arm. He shook it off almost roughly, and his eyes followed Natsu as she disappeared with her father into the next room. She had not seen him.</p>
+            <p>The American girl had grown very white, but her voice did not tremble in the slightest. She held her little head erect and proudly.</p>
+            <p><q>I understand</q>, she breathed.</p>
+            <p>But he had forgotten her altogether. The old fever of Japan was coursing through his blood madly now. With a few quick strides he crossed the room, drew aside the heavy curtains, and called to her. <q>Natsu! Natsu! Don’t you know me?</q></p>
+                
+                <milestone unit="sectionBreak"/>
+       
+            <p>The Japanese girl stood still in the middle of the room. The joy of the moment overpowered her, but as his arms closed about her, and he began whispering to her that he loved her—had loved her always—she murmured back between her happy sobs, <q>Oh, merciful Kwannon, how good thou art!</q></p>
+            <p>They left them alone together, for Grace had come into the room like a pale angel and had firmly drawn the entire family from the room. Scarcely a word was spoken. Grace’s wonderful courage and firmness deceived her parents, and led them to believe that she was not actually suffering, and they remembered how she had put the marriage off from time to time.</p>
+            <p>But later in the evening Frank Canfield sought her in the now cold and cheerless library. She was sitting by the empty grate, and there was not a trace of light or hope in her eyes. He was too happy to see or understand the mute suffering, and only a trace of embarrassment and remorse lingered in his voice.</p>
+            <p><q>I could not help myself, Grace. Remember, you sent me from you</q>.</p>
+            <p><q>Yes, I remember</q>, she said, wearily. <q>And I—I am—glad!</q></p>
+            <p>He repeated the words after her, <q>You—are— glad!</q></p>
+            <p><q>Yes</q>, her voice was very quiet now, and the darkness of the room mercifully hid her pale face.</p>
+            <p><q>I was mistaken. I did not love you</q>, she added after a moment.</p>
+            <p>With a great sigh of relief he passed out of the room. At the door he paused, for he fancied he heard a woman weeping, but it was doubtless only the wind.</p>
          </div>
+          </div>
       </body>
    </text>
 </TEI>
