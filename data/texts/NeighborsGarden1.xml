@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NeighborsGarden1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NeighborsGarden1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -16,7 +16,11 @@
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -31,20 +35,191 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl20 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl20 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:ANeighborsGarden1" next="ANeighborsGarden2">
+      <pb n="347"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>A Neighbor’s Garden, My Own and a Dream One</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Drawings by Alden Peirson</byline>
+            <byline>A Japanese Story in Two Parts - Part I</byline>
+         </opener>
+         <div type="content">
+            <div>
+
+    
+      
+    
+            <p>I have always loved flowers. The wild ones tossing up their bright heads in the fields and woods I have gathered at will and filled my house with. But toward the exquisite darlings which bloom in gardens I have felt as I do to precious jewels which I see set out in a shop window or ablaze on the person of some fortunate lady: they are things I love to look at, but do not own. At least, I have only a few bits of fine jewelry, just as I have only a few flowers I can call my very own.</p>
+    
+      
+    
+               <p>Though I have never desired to possess jewels, I have positively hungered for a garden of flowers. I have spent sleepless nights in which I planned to have one all my own, and have gone to sleep to dream of it. Since I came to America, however, I have been a dweller, until recently, in the big, grimy cities where the ugly buildings and the noises made of life to me a veritable inferno. It is not always the ones who live among the flowers that love them most. The city child—child of the slums, sometimes—with its one pot of geraniums, will often expend upon it more care and thought than some women give to the flowers which seem literally to garland their home, inside and out. I often think of my mother, and her pathetic attempts to recall the bloom of the flowering land of Japan which had been her home. The first time she made the long journey to this country, she carried with her a dozen or more boxes in which <pb n="348"/> were planted, and even at sea she had her little green growth always with her.</p>
+    
+      
+    
+            <p>Here in America she was never without her own bit of a garden, her <q>flowering spot</q>, as she named it, and often it consisted only of an ugly hotel window ledge, or the roof of some city house. But she never lost her passionate love for flowers, and she passed this trait along to me. I consider flowers the loveliest things in creation, and yet, as I have said, I have never owned any, hardly.</p>
+    
+      
+    
+            <p>About four years ago I bade the city a sincere and cordial farewell. For a time we lived in the suburbs, where, on a tiny lawn, I cherished a few pansies and geraniums, but I could not have a garden, for with my work as a writer I found that the most I could do in life was to produce a book and a baby a year. Besides, I wanted the real country for my garden. By and by fortune made this possible. I dwell now in the heart of Westchester, near the metropolis. I have a little acre of land all my own. Around me are sumptuous homes, mansions set amid grounds kept as perfect and smooth as a well-swept parlor. My little frowsy acre, with its unshorn lawns and overgrown carriage drives, seems a reproach to an otherwise immaculate community. I’m sure my neighbors regard me with suspicion, convinced I am an eccentric individual who prefers my place unclipped. But, in truth, I love the smooth, sweet, rolling green expanse of well-cut lawns, and I should like to own the flowers and flowering shrubs which grow within the gardens of my neighbors. But I keep no man, and have neither the strength nor ambition to push a lawn-mower over an acre of lawn.</p>
+            <p>When the babies have ceased to come, and when the ones that are here have ceased to need me all the time, then I expect to have flowers of my own. Meanwhile I content myself with wandering into the gardens of my neighbors.</p>
+    
+      
+    
+               <p>I am not interested in the work of the mere professional landscape gardener; so after a brief look at a few of these places, I turn away. In nearly all the places hereabouts I perceive only the work of the conventional hired gardener. I like a garden which shows individuality, which not only is a bit of earth in which to grow flowers, but in which, like a room in which one lives, one’s actual personality appears. My neighbors seem impressed, however, with the necessity of formal gardens on their places. Ital-<pb n="349"/>ian, Dutch, even Japanese, gardens are out of place in America, and look incongruous in the shadow of an American country house. So I was disappointed in my neighborhood, and after a few weeks of searching after gardens I stayed at home, contented with my frowsy acre, flowerless though it was.</p>
+    
+      
+    
+            <p>I wish I lived, as I hope to soon, in a simpler community, where there are greater woods, and perhaps a river, or at least a little stream or brook twisting in and out. The gleam of the Sound is, I suppose, beautiful enough, but it does not run inland. A big body of water tires me; but a river or even a little brook, never does.</p>
+    
+      
+    
+            <p>In the spring, Norah, the Irish girl who cares for my three fat babies, came to me with a great bunch of lilies-of-the-valley in her hand, and a mass of buttercups in her apron. The lilies, she said, were for me, the buttercups for the nursery. She had found the lilies, she said, in the little fenced-in yard we used for drying clothes.</p>
+    
+      
+    
+            <p>I greedily took the buttercups as well from her, and in my pretty shallow fern dish arranged the lilies—the leaves discarded—with the buttercups amongst them, with an exquisite result. Against Norah’s protests that buttercups were not fit for a parlor, the lovely posey found the place of honor in what my little boy calls <q>mamma’s best room</q>. Then at once I demanded to be taken to the spot where grew the lilies. I had thought my acre yielded only two large lilac trees, one wistaria vine, some Virginia creeper and two peony bushes. Such a bare acre, with nothing at all set out, save the great trees! Yet the fair actress from whom I purchased the place had smilingly informed me she spent five hundred dollars each summer on flowers. Whereupon she showed me an enormous round bed, wherein each year a florist raised certain ornate annuals. Also there are no less than nine garden boxes on the great verandas; besides, set out at various points along the carriage drive, are huge red tubs. The bed, boxes and tubs, so far, had been empty since my advent. I cannot afford five hundred dollars to fill them with the desired annuals, and at this time I cannot make up my mind whether to plant a maple tree in the huge round bed or to turn it into a great sand pile for fat babies and doggies to roll in.</p>
+    
+      
+    
+               <p>But I digress. Following Norah, I<pb n="350"/> went into the little yard in question. No lilies. Norah kneeled down and put her hand under the fence. Lilies! I turned pale, kneeled also and looked. A neighbor’s garden—and right next to me, where I had never thought to look at all.</p>
+    
+      
+    
+            <p>With Norah’s aid I climbed up the fence and after a cautious look at the rather frowning looking, and seemingly deserted house a short distance away, I surveyed the place. It was only a very little garden, filled with old-fashioned and odorous flowers. At this time of year only a few of them, comparatively speaking, were in bloom, but the lilies-of-the-valley underneath a great oak tree, which crowded against my fence, were all a-bloom, sending up a wonderful fragrance in the dewy morning. Also the honeysuckle was in bloom, and hyacinths.</p>
+    
+      
+    
+            <p><q>I wish</q>, said I to Norah, <q>that we owned that place instead of this. Now, the woman who lives there has planted flowers for her fortunate successor to come into, but my actress planted only for herself, five hundred dollars’ worth a summer, and scarcely a flower left for me. I’m going to get acquainted in the neighborhood. There must be gardens somewhere. If the people don’t call on me, I’ll call on them, or rather on their gardens, and if they snub me, Norah, I’ll send you over to steal their flowers. You do get your hand so beautifully under fences</q>. Whereat the scandalized Norah left me in what she would have termed <q>doodgeon</q>, and I was left alone ruminating on the fence, and enviously regarding my neighbor’s garden.</p>
+    
+      
+    
+               <p>I was awakened from my reverie by the melodious accents of the now much excited Norah. She had discarded her erstwhile grimy apron and now appeared before me in a beautiful white starched one, which she tied on her excitedly as she spoke thus elegantly:</p><pb n="351"/>
+    
+      
+    
+            <p><q>For the love of God, ma’am, get down from the fince and put some clothes on yer back!</q></p>
+    
+      
+    
+            <p>I sprang down as airily as a mother of three may, and demanded of my servant what was the matter with the clothes I had on—a decent skirt and waist, the latter with sleeves rolled comfortably to the elbows.</p>
+    
+      
+    
+            <p><q>There’s three grand ladies in yer parlor!</q> said Norah in a loud whisper, <q>Hurry!</q></p>
+    
+      
+    
+            <p>I forgot my progeny of three and flew houseward as though I was not married at all. Up the back steps I sped, and a few minutes later I was descending the front stairs, dressed as I should be—according to Norah, anyhow.</p>
+    
+      
+    
+            <p>The three <q>grand ladies</q> consisted of a mother and two rather pretty daughters. They were acquainted with city friends of mine, were delighted to have me as a neighbor, so they said, and finally the older lady said smilingly:</p>
+    
+      
+    
+            <p><q>And I want you to come over as soon as possible and see my garden—I am sure you must love flowers, too</q>.</p>
+    
+      
+    
+            <p>I gave a little jump in my seat. <q>Have you a garden?</q> said I.</p>
+    
+      
+    
+            <p><q>Yes, and one I planted all myself! There is not a flower in my garden that I did not plant or raise myself, sometimes from my own seeds, and I’ve—</q></p>
+    
+      
+    
+            <p>Here the younger girl interrupted, apologetically I thought. <q>It’s mamma’s fad</q>, said she. <q>She thinks more of her flowers than of her children</q>.</p>
+    
+      
+    
+            <p><q>I don’t wonder!</q> I exclaimed shamelessly in the face of the two pretty daughters. <q>Why, I’ll confess to you the truth. Ten minutes ago I was sitting on my back fence, looking at and coveting my neighbor’s flowers, some of which, you see Norah had already stolen for me</q>, and I indicated my posy.</p>
+    
+      
+    
+            <p>This brought out a burst of mirth, explained presently by the mother:</p>
+    
+      
+    
+            <p><q>My dear, that little old garden was my first attempt. Four years ago we lived in that place, but after my father’s death we moved into the big place we now occupy. If you think well of that little garden, I wonder what you will say of my present place. Now, you must come, just as soon as possible;</q> and I said I would.</p>
+    
+      
+    
+               <p>I will call my neighbor Mrs C. Her place is on the top of a hill. She has almost seventeen acres of rolling lands and lawns. I felt a bit disappointed as I climbed up the winding path which led<pb n="352"/> to the house. From the front the place has the usual aspect of the conventional rich man’s country place. How smoothly are the lawns cut! Here and there shrubs laden with spring blossoms are set as formally as pieces of furniture in a parlor. But the lady herself came halfway down the path to meet me, both hands held out. She drew me around the side of the house, saying:</p>
+    
+      
+    
+            <p><q>My dear, my garden is at the back. My men care for the front of the place. I disport myself back here</q>.</p>
+    
+      
+    
+            <p>Then I found myself in her garden. Even thus early—it was the middle of May, I believe—it was a mass of bloom, bloom of that fresh lovely kind which the first flowers show. The exotic radiance which comes in midsummer, or even the dreamy deep purple red-browns and golden colors of the fall, have not that same appeal of the spring colors the first of the year.</p>
+
+            <p>Some people set out their gardens as they do a room. They hang twin pictures side by side, or a large one in the center. They fill their room with furniture, so that it looks and feels like an overcrowded shop, with the goods on exhibition. Everything just so, almost as if tagged. But I like flower beds, as I do pictures, set out haphazard, with charming inconsequence and irregularity. Indeed, much art could be expended on the irregular disposition of flower beds in a garden. That’s why I fell in love with the garden of Mrs C.</p>
+    
+      
+    
+            <p>She had planted her flowers willy-nilly, anywhere and everywhere, and yet there was a studied design in the placing of her beds. No gigantic middle beds. Irregular rows of long beds running two and three parallel with one another. Corners massed high with tall growing varieties, climbing roses smothering the stump of an old dead tree. A bed all in bridal white—what it was I cannot now quite remember, whether sweet alyssum or candytuft—and then a bed to hold one’s eyes enthralled. The colors of the flowers seemed those of sweet peas, but they had not the disadvantage of the ungainly vines. They grew in a shady spot, where few other flowers were, and hence their loveliness was enhanced by the cool greenness about them. Aquilegia, she called them; columbine. She wanted to pick some for me, but I would not let her. They are of the sort of flowers that look better growing.</p>
+    
+      
+    
+               <p>There was one great bed of a white blooming flower for the center, while, banked up against it, were the old-fashioned bleeding heart, the bushes fairly laden with red pink blossoms. Her hedgerows were of lilac, the Persian variety, a deeper purple than the English, and while not so fragrant, far more lovely, in my opinion. She showed me where she had planted banks of hollyhocks, and told how when in bloom they literally glorified the whole otherwise homely and out-of-the-way spot she had given them. With these<pb n="353"/> she had mixed sunflowers and other tall bright flowers. Her lilacs, at this time, were all in bloom, a lovely line of purple my eye returned to constantly.</p>
+    
+      
+    
+            <p>In spring, it seems to me, purple is the predominating color; purple, white and pink. The flowering trees and shrubs are mostly pink and white. I know no lovelier sight than a single tree of magnolia on a green lawn in full, pink bloom—no lovelier sight save the blowing cherry and plum blossoms of far Japan.</p>
+    
+      
+    
+            <p>Mrs C has built her garden on a rocky hilltop. The huge rocks themselves have added to its natural beauty, and over these she has thrown haphazard the cheerful nasturtium seed, and farther down some odd and tropic-looking plants, which were sent to her from California.</p>
+    
+      
+    
+            <p>While going with her from bed to bed, a neighbor’s voice called across the dividing lilac hedge, and I perceived the face of a smooth-shaven scholarly looking gentleman, at the lilac hedge.</p>
+    
+      
+    
+            <p><q>Ah, Mr B!</q> exclaimed my hostess, and she led me over to him, on the way explaining: <q>Now, you must meet my teacher and master in the art of gardening. He it was who first interested me in the work, who taught me, in fact, all I know. Many of my flowers have grown up from his slips and seeds. I call them his grandchildren. I’m afraid when you look over the fence into my neighbor’s garden you will not want to look back again</q>.</p>
+    
+      
+    
+            <p>But I could not see much of the Englishman’s garden from my position at the hedge, and at that moment I was filled with such deep admiration for the garden of Mrs C that I did not want to see any other. I felt very ignorant and awed listening to the Englishman talking of flowers, and when he handed me a basket full of rudbeckia roots, I would not have confessed my ignorance of what those flowers were for anything on earth.</p>
+            
+            <p>I went back home with some odd sensations. Here was I with the beginnings—some roots—of a garden; I had spent an entire afternoon in one of the prettiest gardens I had ever seen. I had made the acquaintance of a character as fragrant as the flowers themselves. She told me how she had come to turn to gardening. The two pretty daughters I had met were both married women, one of them, like myself, the mother of two or three babies. The loneliness of the great place had come upon the mother after they had left home, and about this time also the father fell sick with a malady of the heart. She saw him daily passing away before her eyes, unable to do a thing to hold him, or to prevent the inevitable. She said the thought of her coming agony was more than she could bear.</p>
+    
+      
+    
+            <p>And then, suddenly, for the first time in her life, she had begun to raise flowers herself. What a surcease for an aching mind! What a balm for a bleeding heart! The flowers, like children, needed constant care and food. Parental pride in their beauty meant one must never forget them, but always strive to add to the cultivation of their grace. And so my lady of the flower garden had found that which we all seek in time of trouble—comfort.</p>
+    
+      
+    
+            <p>When I reached home, and went, with my basket of roots, to my lower veranda, the boxes of the actress never seemed so ugly before. Yet there was something appealing to me about them. They were so empty! I had intended to plant my roots in a conspicuous place on my lawn, but I hesitated as I went past the row of empty boxes.</p>
+    
+      
+    
+            <p><q>You wouldn’t look so bad</q>, said I, <q>if there was only something in you. Now, if she hadn’t spoken that figure--$500—I might have interested myself in you. Even as it is—</q></p>
+    
+      
+    
+            <p>I dug a bit into the earth that was still in them, and then, after a moment, went to work in earnest. I planted my rudbeckia roots in the actress’s flower boxes. Then I went indoors, washed my hands, and dreamed a bit of what my boxes (not garden this time) would look like when full of bloom.</p>
+    
+      
+    
+            <p>(To be concluded in the May number)</p>
+         </div>
          </div>
       </body>
    </text>
