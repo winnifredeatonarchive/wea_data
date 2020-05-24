@@ -51,10 +51,10 @@
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <!--Now create the thumbnails-->
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.png --size 10000x600"/>
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.jpg --size 10000x600"/>
         </exec>
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.png --size 10000x300"/>
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.jpg --size 10000x300"/>
         </exec>
         
     </target>

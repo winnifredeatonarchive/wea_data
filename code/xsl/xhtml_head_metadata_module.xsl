@@ -88,7 +88,7 @@
         
         <!--Get facs-->
         <xsl:if test="//text/@facs">
-            <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.png')}"/>
+            <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.jpg')}"/>
         </xsl:if>
         
         
@@ -104,10 +104,10 @@
                 <xsl:attribute name="content">
                     <xsl:choose>
                         <xsl:when test="//text/@facs">
-                            <xsl:value-of select="replace(//text/@facs,'\.pdf$','_tiny.png')"/>
+                            <xsl:value-of select="replace(//text/@facs,'\.pdf$','_tiny.jpg')"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="'images/cooking.png'"/>
+                            <xsl:value-of select="'images/cooking.jpg'"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:attribute>

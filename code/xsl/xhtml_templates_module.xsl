@@ -456,7 +456,7 @@
         <xsl:variable name="urlNorm">
             <xsl:choose>
                 <xsl:when test="matches($url,'\.pdf$')">
-                    <xsl:value-of select="replace($url,'\.pdf$','.png')"/>
+                    <xsl:value-of select="replace($url,'\.pdf$','.jpg')"/>
                 </xsl:when>
                 <xsl:when test="matches($url,'^media/')">
                     <xsl:value-of 

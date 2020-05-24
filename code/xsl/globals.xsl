@@ -69,7 +69,7 @@
     
     <xsl:function name="wea:getImageDimensions" as="xs:integer*">
         <xsl:param name="pngName"/>
-            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.png:'))) then $s else ()" as="xs:string?"/>
+            <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.jpg:'))) then $s else ()" as="xs:string?"/>
         <xsl:if test="not(empty($thisLine))">
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[2])"/>
             <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>

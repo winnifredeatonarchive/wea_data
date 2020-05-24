@@ -62,7 +62,7 @@
                                             <xsl:choose>
                                                 <xsl:when test="$thisDoc//text[@facs]">
                                                     <figure>
-                                                        <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.png">
+                                                        <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
                                                             <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
                                                         </graphic>
                                                     </figure>

@@ -190,7 +190,7 @@
                                 <xsl:call-template name="makeRelatedItemBox">
                                     <xsl:with-param name="label" select="$relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
                                     <xsl:with-param name="link" select="$targ"/>
-                                    <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.png') else 'images/cooking.png'"/>
+                                    <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.jpg') else 'images/cooking.jpg'"/>
                                     <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
                                 </xsl:call-template>
                             </xsl:when>
@@ -372,8 +372,8 @@
     
     <xsl:template name="createFacs">
         <xsl:variable name="facsAvailable" select="exists(@facs)"/>
-        <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'images/cooking.png'"/>
-        <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.png') else $imgToUse"/>
+        <xsl:variable name="imgToUse" select="if ($facsAvailable) then @facs else 'images/cooking.jpg'"/>
+        <xsl:variable name="thisThumbnail" select="if ($facsAvailable) then replace($imgToUse,'\.pdf','.jpg') else $imgToUse"/>
         <xsl:variable name="altText" select="if ($facsAvailable) then 'First page of facsimile' else 'Illustration of woman cooking to denote no facsimile available'"/>
         <xsl:variable name="height" select="wea:getImageDimensions(substring-before(@facs,'.pdf'))[1]"/>
         
