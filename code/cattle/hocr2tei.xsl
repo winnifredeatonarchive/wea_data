@@ -21,34 +21,47 @@
     <!--We're outputting the XHTML-ish to TEI-->
     <xsl:output method="xml" indent="true" suppress-indentation="p q"/>
     
-    <xsl:variable name="docs" select="collection('archive/body?select=*.hocr')"/>
+    <xsl:include href="../../data/sch/weaQuickFixTemplates.xsl"/>
+    
+    <xsl:variable name="docs" select="collection('../cattle_tmp/body?select=*.hocr')"/>
     
     <xsl:template match="/">
-        <xsl:result-document href="cattle-body.xml">
+        <xsl:result-document href="../cattle_tmp/cattle-body.xml">
             <text>
                 
 
-                        
-                        <xsl:call-template name="structure">
-                            <xsl:with-param name="content">
-                                <body>
-                                    <xsl:for-each select="$docs//body">
-                                        <xsl:sort select="document-uri(root(.))"/>
-                                        <xsl:message>Processing <xsl:value-of select="document-uri(root(.))"/></xsl:message>
-                                    <xsl:apply-templates select=".">
-                                        <xsl:with-param name="pos" select="position() + 6" tunnel="yes"/>
-                                    </xsl:apply-templates>
-                                    </xsl:for-each>
-                                </body>
-                          
-                            </xsl:with-param>
-                        </xsl:call-template>
-                    
-                
-               
-                
+                     <xsl:variable name="tmp">
+                         <xsl:call-template name="structure">
+                             <xsl:with-param name="content">
+                                 <body>
+                                     <xsl:for-each select="$docs//body">
+                                         <xsl:sort select="document-uri(root(.))"/>
+                                         <xsl:message>Processing <xsl:value-of select="document-uri(root(.))"/></xsl:message>
+                                         <xsl:apply-templates select=".">
+                                             <xsl:with-param name="pos" select="position() + 6" tunnel="yes"/>
+                                         </xsl:apply-templates>
+                                     </xsl:for-each>
+                                 </body>
+                                 
+                             </xsl:with-param>
+                         </xsl:call-template>
+                     </xsl:variable>
+                     <xsl:apply-templates select="$tmp" mode="final"/>
             </text>
         </xsl:result-document>
+    </xsl:template>
+    
+    <xsl:template match="*:q" mode="final">
+        <q><xsl:apply-templates mode="#current"/></q>
+    </xsl:template>
+    
+    <xsl:template match="*:q/text()" mode="final">
+        <xsl:message>??</xsl:message>
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
+    
+    <xsl:template match="text()" mode="final">
+        <xsl:value-of select="replace(.,'\s+',' ')"/>
     </xsl:template>
     
  
@@ -62,6 +75,7 @@
     </xsl:template>
     
     <xsl:mode name="structure" on-no-match="shallow-copy"/>
+    <xsl:mode name="final" on-no-match="shallow-copy" exclude-result-prefixes="#all"/>
     
    
     <xsl:template match="tei:body" mode="structure">
@@ -89,23 +103,36 @@
             <xsl:when test="following-sibling::*[1]/self::tei:pb and not(*) and matches(text(),'^\s*\d+\s*$')"/>
             <xsl:otherwise>
                 <xsl:copy>
-                    <xsl:for-each-group select="node()" group-starting-with="tei:anchor">
-                        <xsl:choose>
-                            <xsl:when test="some $c in current-group() satisfies $c/self::tei:anchor[@type='qStart']">
-                                <q><xsl:apply-templates select="current-group()" mode="#current"/></q>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:apply-templates select="current-group()" mode="#current"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:for-each-group>
+                    <xsl:variable name="replaced">
+                        <xsl:call-template name="replaceApos">
+                            <xsl:with-param name="useDq" select="true()"/>
+                        </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:variable name="tagged">
+                        <xsl:for-each select="$replaced">
+                            <xsl:call-template name="tagQuote">
+                                <xsl:with-param name="left">“</xsl:with-param>
+                                <xsl:with-param name="right">”</xsl:with-param>
+                            </xsl:call-template>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:apply-templates select="$tagged" mode="#current"/>
                 </xsl:copy>
-                <xsl:text>&#xA;&#xA;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
         
     </xsl:template>
     
+    <xsl:template match="tei:q" mode="structure">
+        <xsl:copy>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="tei:q/text()" mode="structure">
+            <xsl:value-of select="normalize-space()"/>
+        
+    </xsl:template>
     <xsl:template match="tei:fw[@type='pageHeading']" mode="structure">
         <xsl:copy-of select="."/>
         <xsl:text>&#xA;&#xA;</xsl:text>
@@ -200,24 +227,13 @@
             <xsl:apply-templates select="."/><xsl:if test="not(position() = last())"><xsl:text> </xsl:text></xsl:if>
         </xsl:for-each>
     </xsl:template>
+    
+    
         
         
-    <xsl:template match="span[@class='ocrx_word']/text()[matches(.,'”|“')]">
-        <xsl:analyze-string select="." regex="“|(‘‘)">
-             <xsl:matching-substring>
-                 <anchor type="qStart"/>
-             </xsl:matching-substring>
-             <xsl:non-matching-substring>
-                 <xsl:analyze-string select="." regex="”|(’’)">
-                     <xsl:matching-substring>
-                         <anchor type="qEnd"/>
-                     </xsl:matching-substring>
-                     <xsl:non-matching-substring>
-                         <xsl:value-of select="."/>
-                     </xsl:non-matching-substring>
-                 </xsl:analyze-string>
-             </xsl:non-matching-substring>
-         </xsl:analyze-string>
+    <xsl:template match="span[@class='ocrx_word']/text()">
+        <xsl:variable name="dq">"</xsl:variable>
+        <xsl:value-of select="replace(.,'”’|“‘|“|(‘‘)|(’’)|‘'||$dq||'\*|”|“’|^\*$|^\*\*$',$dq)"/>
      </xsl:template>
         
     
