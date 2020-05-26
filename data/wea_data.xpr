@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="22.0">
+<project version="22.1">
     <meta>
         <filters directoryPatterns="" filePatterns="wea_data.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="22.0" xml:space="preserve">
+            <serialized version="22.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>code-templates</String>
@@ -7009,6 +7009,48 @@ ${caret}</String>
                                 </field>
                                 <field name="renderString">
                                     <String>xsl</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteValidationScenariosOperation',
+          arg-scenarioNames, ''</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Run a named validation scenario defined in the associated document type.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>scenarioNames&lt;/b> = The names of the validation scenario which will be executed, separated by new lines.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteValidationScenariosOperation',&lt;br/>          arg-scenarioNames, ''&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ExecuteValidationScenariosOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteValidationScenariosOperation',
+          arg-scenarioNames, ''</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Run a named validation scenario defined in the associated document type.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>scenarioNames&lt;/b> = The names of the validation scenario which will be executed, separated by new lines.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteValidationScenariosOperation',&lt;br/>          arg-scenarioNames, ''&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ExecuteValidationScenariosOperation</String>
                                 </field>
                                 <field name="enabled">
                                     <Boolean>true</Boolean>
