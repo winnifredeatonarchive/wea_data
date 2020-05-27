@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="KirishimaSan1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="KirishimaSan1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Kirishima-san</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,181 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl68 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-05-27" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl68 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:KirishimaSan">
+   <text facs="facs:KirishimaSan">
+      <pb n="315"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>Kirishima-san</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+         
+            <p>She had just administered her daily scolding to her pupil, and sat watching him with a look of extreme exasperation and hopelessness on her face.</p>
+            <p><q>How you egspeg aever speeg Japanese when you nod try. I tell you all the time thad you mus’ nod talk at me lig thad, bud you have so much persist I noto onderstan’ to tich you</q>.</p>
+            <p>There was almost a sob in the last words.</p>
+            <p>The young man, who had been all the time enjoying her anger, and, in fact, generally purposely provoked it, was suddenly covered with contrition.</p>
+            <p><q>Oh! I say, Kirishima-san</q>, he said, taking the book from her, <q>really I’m a brute. Now go ahead again. I’ll be good as a—lamb. I’ll speak Japanese in a week</q>.</p>
+            <p>The girl’s face instantly brightened.</p>
+            <p><q>My! How good you kin be wen you wanter be</q>. She opened the little book and put her head severely on one side.</p>
+            <p><q>Now how you say gooe morning?</q></p>
+            <p>Jack Mortimer scratched his head, tried to look over her shoulder at the book, then gave it up. Kirishima looked reproachfully at him.</p>
+            <p><q>All day I teach you thad liddle word</q>, she said. <q>You oughter know it vaery mos’ well</q>.</p>
+            <p><q>What does it sound like—start it for me</q>.</p>
+            <p><q>Now I tell you once more, an’ thad you forgit again I thing you torgit for- aever an’ aever</q>. She paused a moment before interpreting the words for him: then a bright idea seemed to strike her.</p>
+            <p><q>I tell you whad</q>, she said, confidently, almost mysteriously; <q>I kin tell you one grade way thad you naever forgit thad</q>.</p>
+            <p><q>Yes? Well, go ahead</q>.</p>
+            <p><q>You riglegt the grade big States in America?</q></p>
+            <p><q>Well, I guess so.’</q></p>
+            <p><q>Whad you call thad State where you tell me all big—pol-pol-li-tishins cum from?</q></p>
+            <p><q>Ohio</q>, said Jack solemnly.</p>
+            <p><q>That’s ride</q>, said Kirishima-san.</p>
+            <p><q><q>Ohayo</q> is <q>good morning</q> in Japanese, an’ you say thad jus’ lig you say the ‘Ohio’ in America</q>.</p>
+            <p>Kirishima-san went home that day with a very bright little face. She had finally managed to teach her big, stupid pupil how to say one Japanese word properly.</p>
+            <p>Now Jack Mortimer had lived in Japan one whole month, and although he had had almost daily instruction at the hands of Kirishima-san. who had become known among the Americans as an <q>imminent Japanese teacher</q>, he literally could not learn to speak the language. When Kirishima, who was small, pretty and bewilderingly fascinating in her daintiness and charm, scolded and stormed at him. Jack would tower above and watch her in admiring silence, deliberately trying to appear even more stupid for the sake of seeing her angry; when she coaxed him he was just as bad, but when she broke down in sheer despair and there was a suggestion of tears in her voice, Jack would break down also and would become the most abject, contrite, cringing pupil that ever was.</p>
+               <p>He knew that the real cause of his bad progress lay in the fact that he was far more interested and intent on studying Kirishima-san herself rather than the Japanese language. Besides, apart from the fact that Karishima was his<pb n="316"/> teacher, she was also his confidante and friend. Although she always assumed a certain superior sort of dignity which was irresistible to Jack, nevertheless she really did take a great deal of interest, and sympathised with him in all his troubles (most of which he invented just for the sake of gaining her sympathy). She would listen to him very gravely when he bewailed the smallness of his American mail, would sweep and tidy his office for him and often cut the pages of his magazines and papers in the neatest way, while he dwelt on the fact that he was fatherless, motherless, brotherless, and almost sisterless, since his one sister was married—and Jack told Kirishima that was next door to burying herself. Kirishima had five brothers and seven sisters, besides a father and mother. She professed a deep sympathy for the desolate American, and would try in every’ way possible to keep him from becoming lonely.</p>
+            <p><q>You mus’ worg</q>, she told him, wisely. <q>Now whad you thing thad you goin’ nod to git lonely wen you nod worg. I worg vaery hard all day an’ all nide. I tich some pippies. Thad’s account my fadder have lods of children. So I mus’ worg an’ help mek the munney</q>.</p>
+            <p>She told him this confidentially one day. Jack doubled her salary in consequence the next week.</p>
+               
+               <milestone unit="sectionBreak"/>
+               
+               <p>Jack Mortimer had arrived in Japan with a large party of tourists. It was their intention to spend only a few months in Japan, and as the time was so limited, they spent most of it going from one place to another, seldom staying over a week in anyone city. Jack, however, had taken the notion into his head that he could learn the language, and so had advertised in the <foreign xml:lang="ja">Kokumin no Tomi</foreign> for a teacher, with a vague idea that he could learn the language in a couple of weeks. This idea came from the fact that a good number of his friends in America, who were considered authorities on the subject of Japan and the Japanese, had written articles for magazines, novels, and sketches on the subject, after having lived only a couple of months on the island. When Kirishima-san had applied for the position Jack had engaged her on the spot, asking for no references whatever. A few days after he rented a little Japanese house of his own, told his party he proposed remaining in Tokyo a few days, and settled down to hard <q>cramming</q>. The result? At the end of two months his vocabulary consisted of the following: <foreign xml:lang="ja">Kirishima-san</foreign> (Miss Azalea). (He corrupted this name to <q>Shima</q>.) <foreign xml:lang="ja">Nippon</foreign> (Japan), <foreign xml:lang="ja">sake</foreign> (wine), <foreign xml:lang="ja">ohayo</foreign> (good morning), <foreign xml:lang="ja">sayonara</foreign> (good night).</p>
+            <p>He was inordinately proud of this vocabulary, and fired the words at Kirishima at all times without regard generally to their meaning.</p>
+            <p>Finally his party, which in the meanwhile had travelled nearly all over the little island, returned to Tokyo and called on him in a body.</p>
+            <p>Now, the day before this a curious thing had happened. Jack had been unusually good during the lesson, trying in every way possible to learn it, and thus please Kirishima, who had not once had occasion to reprove him. He had gone laboriously through a whole list of words without once interrupting her to start some conversation that had no connection with the matter on hand whatever, as was his wont. This unusual docility must have astonished Kirishima. She glanced at him sideways out of her little eyes, and said, as she shook her head: <q>How good you becomin’. I thing I sugceed mek you vaery good boy</q>.</p>
+               <p>If Kirishima-san had known the proverb about giving some people an inch and they take a mile, she would have applied it to Jack. The moment she showed the least sign of relenting from the stiff, almost solemn attitude she usually assumed when trying to<pb n="317"/> teach him, and gave him the smallest word of approbation, he immediately took advantage of it.</p>
+            <p><q>There. Shima, I have studied a hard lot to-day, haven’t I? We’ll put the blamed book by now. Learned enough for one day. Let’s talk</q>.</p>
+            <p>Kirishima instantly froze again.</p>
+            <p><q>No</q>, she said severely; <q>thad you not interrupt don’ mek thad you study. No—you nod study. You jus’ mekin’ believe. What kin you say more in Japanese thad you nod say yistidy?</q></p>
+            <p>Jack rose stubbornly to his feet, and crossed his arms, looking very aggrieved and hurt.</p>
+            <p><q>Look a here</q>, he finally said, as he saw Kirishima was not to be melted, <q>I’ve studied hard, desperately hard, to-day. Even you, who always scold and are so hard to please, were astonished. We’re going to have a holiday now. May as well close the book</q>, he added, as the girl paused irresolutely.</p>
+            <p>Kirishima did close the book, and slipped it into her little bag.</p>
+            <p><q>Vaery well</q>, she said; <q>you kin tek holiday. I go home tek holiday, too</q>.</p>
+            <p><q>No, you don’t</q>. said Jack, as she marched toward the door. <q>Now, see here, Shima-san, can’t you stay and talk with a fellow for a moment?</q></p>
+               <p><q>Now whad you thing</q>, she said with exasperation, <q>thad I have nodding bedder to do but stay talk with you?</q> and added with a scornful toss of her little head: <q>You thing thad I <foreign xml:lang="ja">geisha</foreign> girl thad I talk and amuse you foraever?</q></p>
+            <p>Something in this remark made Jack grin copiously. He fancied he detected in it a suggestion of pique, for he had tried to tease her only the previous day by pretending that he was in love with a geisha girl.</p>
+            <p><q>No, indeed, I don’t think you are a bit like them. Shima. If you were, you’d        </q> he paused, choosing his</p>
+            <p>words carefully, <q>you wouldn’t freeze a fellow all up</q>.</p>
+            <p>The girl’s eyes were lowered.</p>
+               <p><q>I nod wanter freeze you vaery much</q>, she said; <q>an’ if I freeze thad’s nod because I nod thing vaery kind to you. Geisha girl only laugh at you an’ not freeze, but she nod lig you foraever. Me? I lig you all with my heart;</q> she hesitated as Jack came nearer to her, and added hurriedly: <q>Thad’s because you my pupil, an’ I mus’ be kind to you</q>.</p>
+            <p>But Jack would not take this into account, and when she stepped toward the door to pass out he stood in front of her, his fine fair face illuminated with a smile half of tenderness, half of amusement.</p>
+            <p><q>Can’t pass now, Shima</q>, he whispered.</p>
+            <p><q>I thing I mus’ pass</q>, she said in confusion.</p>
+            <p><q>Not till</q> he stooped down and took her startled face between his hands. <q>There!</q> he said, and kissed the small, inviting mouth.</p>
+            <p>It was with some uneasiness that he noticed she was nearly fifteen minutes late for the lesson the next day. He began pacing the floor in long irregular strides. Then his man had announced his visitors, and the gay party of Americans had come in upon him.</p>
+            <p><q>Well, what have you been doing?</q></p>
+            <p><q>Why did you not go with us?</q></p>
+            <p><q>And, oh, Mr. Mortimer, what a pretty little house!</q></p>
+            <p><q>Are you living in it all alone?</q></p>
+            <p><q>How funny!</q></p>
+            <p>The ladies covered him with questions.</p>
+            <p><q>Fact is</q>, he told them, <q>I thought I’d like to study the language some— couldn’t very well if I was running all over the country. So I took this place, and</q>—he straightened himself proudly— <q>am getting along famously</q>.</p>
+            <p><q>You are?</q> said a pretty girl shaking her finger at him slyly. <q>Oh, yes, we’ve heard all about it—and—the teacher</q>.</p>
+               <p>Jack Mortimer was only twenty-two<pb n="318"/> years of age. The girl’s bantering words and the laughing, knowing eyes of the rest of the party confused him.</p>
+            <p><q>Now, what is she like?</q> the girl continued, rushing headlong into the subject, as women usually do, without pausing to consider whether it was any of her business or not.</p>
+            <p><q>Like the rest of them</q>, he said hastily, scarce knowing what he was saying himself. <q>They all look alike, you know</q>.</p>
+            <p>His inquisitor was an extremely charming girl. On the voyage out Jack had been unusually attentive to her. She shook her head very sagely at him. Perhaps Jack had been wiser had he remained silent and avoided explanation.</p>
+            <p><q>Fact is</q>, he said weakly, <q>she is— a—a—jolly little thing. Had lots of fun with her. She—a</q></p>
+            <p><q>In love with her, I suppose</q>, the girl put in shrewdly.</p>
+            <p>Jack’s sister, who was one of the party, was watching his flushed face curiously.</p>
+            <p><q>Well</q>, she put in sharply, <q>I hope you have not been foolish enough to fall in love with a Japanese woman, Jack</q>.</p>
+            <p><q>Why, how absurd!</q> he said hurriedly. <q>Why—er—I’m just having a little fun with her, that’s all</q>.</p>
+               <p>Something fell sharply to the floor in the next room. Jack pushed the <foreign xml:lang="ja">fusuma</foreign> aside. Kirishima was kneeling on the ground, picking up the pieces of a broken slate.</p>
+            <p><q>When—er—did you come in?</q> he asked with a wild sinking at his heart.</p>
+            <p>She raised a perfectly calm, still face to him.</p>
+            <p><q>I have jus’ cum</q>, she said, <q>an’ I fall an’ braeg my slate</q>.</p>
+            <p>She did not give him his lesson as usual, and he was unable to detain her as his visitors were still there, and were watching with interested eyes the little Japanese girl as she answered Jack’s questions in a quiet, emotionless fashion, scarce looking at his guests, apparently indifferent to their persistent curiosity in her.</p>
+            <p>Long after his guests had left him Jack Mortimer sat miserably in his office, thinking of Kirishima-san, and his own mad folly in having spoken of her so in that momentary shame he had felt when Miss Newton quizzed him and his sister looked half scornful.</p>
+            <p><q>It is not true after all</q>, he said to himself. <q>God! how could I have been such a cur? That girl——</q></p>
+            <p>He suddenly picked up his hat and passed outdoors.</p>
+            
+               <milestone unit="sectionBreak"/>
+               
+            <p>Night was falling in Tokyo. Softly, tenderly, the darkness swept away the exquisite rays of red and yellow that the departing sun had left behind. The streets were almost deserted, and stillness reigned over the city. Jack Mortimer had promised his friends to take them to a picturesque tea house that evening, but instead he was striding toward the hills with a restlesness[sic] he could not conquer.</p>
+            <p>Kirishima’s young brother came to to the door.</p>
+            <p><q>I want to see your sister</q>.</p>
+            <p>The boy eyed him suspiciously.</p>
+            <p><q>My seester nod see aeny one. Thad’s too lade</q>.</p>
+            <p><q>Tell her</q>, Jack said impatiently, <q>that—that I wish to see her about some work. I have a new pupil for her. Give her this;</q> he handed his card to the boy, who took it reluctantly from him.</p>
+            <p>When Kirishima came into the room she was accompanied by her father, mother, and brother.</p>
+            <p><q>I came over</q>, said Jack, in a panic, <q>because—er—I’ve a pupil for you</q>.</p>
+            <p><q>Thad’s fonny thad you nod waid till the mornin’</q>, the girl said, icily.</p>
+            <p><q>Well — fact is, they’re going away to-night</q>, he said, wildly conscious that he had made an absurd statement.</p>
+               <p><q>Thad’s still mos’ fonny</q>, the girl<pb n="319"/> said, <q>thad they go way. How you egspeg I kin tich?</q></p>
+            <p>This question floored Jack.</p>
+            <p><q>I would like to see you alone</q>, he said, in a low, imploring voice.</p>
+            <p>The girl turned to her brother, and said something in Japanese. He got up and left the room.</p>
+            <p><q>My fadder and modder nod onderstan’ spik Americanazan. You can spik to me now</q>, she said.</p>
+            <p>Jack stood helplessly before her.</p>
+            <p><q>But I—I want to be alone with you, Shima</q>, he repeated, desperately.</p>
+            <p>The girl looked him full in the face. Her words were slow and distinct.</p>
+            <p><q>Thad’s nod ride thad I seein’ you alone</q>, she said, cruelly. <q>I goin’ to marry vaery soon now. So thad’s nod ride I seein’ you alone</q>.</p>
+            <p><q>You are going to marry?</q> he repeated, dully, and then was silent. He looked at her with uncomprehending eyes in silence. She stood perfectly cold and indifferent, her eyes downcast.</p>
+            <p><q>I will go now</q>, he said, bitterly. <q>There was no new pupil. I used that as an excuse. I came over simply to tell you that I was a fool. You must have heard the conversation this afternoon. My man said you had been there some time. I wanted to apologise—to tell you I didn’t know what I was talking about, However</q>—his voice broke a trifle with his pain, for he was consumed with self-pity for the moment—<q>however, you have had the laugh against me all the time, because I am the one that cares now—not you. I did try to make you care for me, and only succeeded in falling in love with you myself. But you are like the rest of your race, I suppose. You don’t even know the meaning of the word ‘love,’ much less are you capable of understanding it</q>.</p>
+            <p>He had not intended speaking like this to her, but he was carried away with his self-pity. The girl stood perfectly silent, seemingly indifferent.</p>
+            <p><q>It is quide lade now</q>, she finally said. <q>Thad I goin’ to marry I will nod tich you aeny more</q>.</p>
+            <p>As he passed out miserably into the night she said, very sweetly:</p>
+            <p><q>Sayonara</q>, and repeated mockingly, as she used to do when teaching him, <q>Goo night</q>.</p>
+            <p>Jack Mortimer’s Japanese house was in great confusion. Japanese bric-a-brac, mingled with American chairs and tables, were distributed every where. Out of the chaos he was trying to pack up what things he wanted to take with him, for he had decided to make a trip with his party to Matsushima Bay. Jack had never kept house before, and as he was giving the house up altogether he was at a loss to know what to do with all the American furniture he had purchased. It was a week since he had seen Kirishima. He looked tired and a trifle haggard.</p>
+            <p>One of his friends sauntered over through the day.</p>
+            <p><q>I’d leave all this truck behind</q>, he advised Jack, as he lit a cigar and found a seat on a half-packed trunk.</p>
+            <p><q>I dare say</q>, said Jack, <q>but unfortunately, my landlord insists on my taking the <q>truck</q>, as you call it, away with me. Says the Japanese have no use for American furniture— unpleasant in the houses during earthquakes and other jolly circuses in Japan</q>.</p>
+            <p><q>What the deuce ever induced you to go into housekeeping? Should have thought you’d have found it more comfortable and convenient at one of the hotels</q>.</p>
+            <p><q>I dare say</q>, the other answered, and added spitefully: <q>Suppose I thought it a better place to study</q>.</p>
+            <p>His friend laughed.</p>
+               <p><q>Say, Mortimer, what is all this talk about this Japanese teacher? Brown pointed her out to me at the hotel the other day. Said you—you cared for<pb n="320"/> her. Of course it was a joke</q>.</p>
+            <p><q>Yes, I cared for her</q>, the other answered shortly, almost irritably.</p>
+            <p>His friend surveyed him a moment in amazement, and whistled under his breath. He could not bring his English intelligence to understand how an all round, wholesome American could fall in love with a little Japanese woman, his own acquaintance with them being peculiarly limited.</p>
+            <p>He changed the subject, delicately making some remark about the oddity of the fusuma, but Jack was persistent in a dogged sort of way, and seemed almost to want to talk to some one on the subject.</p>
+            <p><q>It was like this</q>, he said, grimly. <q>You remember my telling Miss Newton the other day about my fooling with her? Well, it was the other way</q>.</p>
+            <p><q>The other way?</q> His friend was puzzled.</p>
+            <p><q>Yes</q>. Jack continued deliberately. <q>She was fooling with me. She is to be married in a month or two, I believe</q>.</p>
+            <p>With a sudden energy and recklessness he began pulling at the things in the room and crushing them into the boxes and trunks. He broke a long silence that fell between them by looking up suddenly and saying: <q>Never dreamed I should really care for a Japanese woman. I’d have laughed at the idea a few months ago: but, somehow, she was different. She will laugh now. I suppose</q>.</p>
+            <p>His friend left him. As he passed thoughtfully down the street he came face to face with Kirishima-san. He recognised her almost immediately, for she had had pupils in the hotel where he was staying. She seemed in a hurry, and there was a distressed, anxious look about her little face.</p>
+            <p><q>Where are you going?</q> he asked her abruptly, pausing in front of her.</p>
+            <p><q>I thing I goin’ home</q>, she answered vaguely, hanging her head.</p>
+            <p><q>You’re going the wrong direction, then</q>.</p>
+            <p><q>Yaes?</q> She seemed confused. Suddenly she said quite nervously for a Japanese: <q>The Americazan—he goin’ away, I thing?</q></p>
+            <p><q>Yes</q>, the man said, sternly.</p>
+            <p><q>Whad for is he goin’ away?</q> Her voice trembled.</p>
+            <p><q>Because you don’t want him to stay</q>, said Jack’s friend bluntly.</p>
+            <p>The girl caught her breath with a sob.</p>
+            <p><q>Yaes, but I want vaery much thad he stay</q>.</p>
+            <p>The man’s face softened. He caught a hint of the girl’s charm, and began to understand Jack’s infatuation for her. There was something so appealing and alluring in the little drooped head.</p>
+            <p><q>Go and tell him, then</q>, he told her.</p>
+            <p>Without a word the girl almost ran down the street. She paused before entering Mortimer’s house. Then she pushed the door open without even knocking.</p>
+            <p>Jack was trying to whistle as he packed some Japanese stones and relics that Shima herself had given to him.</p>
+            <p><q>I cum tell you</q>, she said almost breathlessly, <q>thad I nod lig for you to go ’way</q>.</p>
+            <p>Jack had risen on her entrance, and now stood irresolutely in front of her.</p>
+            <p><q>What do you mean?</q></p>
+            <p><q>I don’ to onderstan’</q>, the girl said, pitifully; <q>but I lig thad you stay in Japan foraever an’ aever</q>. She paused, and then added almost tremblingly his name— <q>Jag</q>.</p>
+            <p><q>Shima!</q> In an instant he was with her. <q>Do you mean that?</q></p>
+            <p><q>Yaes</q>, she said, tearfully; <q>bud I suffer vaery much thad you talk with the pritty Americazan lady ’bout fooling with poor liddle me—an’—an’</q></p>
+            <p><q>I—I was a—a—liar</q>, said Jack.</p>
+            <p><q>Yaes</q>, the girl agreed.</p>
+               <p><q>And a fool</q>, he supplemented.</p><pb n="321"/>
+            <p><q>Yaes</q>.</p>
+            <p>Her assent staggered him somewhat. He looked down at the little drooped head a moment.</p>
+            <p><q>When are you going to be married, Shima?</q> he asked sternly.</p>
+            <p><q>I dunnon</q>, she said, in a forlorn little voice. <q>I thing I tell lie, too</q>.</p>
+            <p>Jack was silent a moment, watching the girl thoughtfully; then he said very gently: <q>But it was true, Shima</q>.</p>
+            <p><q>No</q>. She shook her head emphatically. <q>I only fooiin’ with you</q>.</p>
+            <p><q>But it is true</q>, he persisted, <q>because—look up, Shima—because you are going to be married to me</q>.</p>
+    
+      
+    
+         </div>
          </div>
       </body>
    </text>
