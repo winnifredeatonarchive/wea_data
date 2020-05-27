@@ -38537,22 +38537,6 @@ epistemology, methodology and history of
                      <cell>
                         <label>Schematron</label>
                      </cell>
-                     <cell>All publisher ids must be found in the orgs doc.<code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:publisher[@ref]"&gt;
- &lt;sch:let name="ids"
-  value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/&gt;
- &lt;sch:let name="errors"
-  value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/&gt;
- &lt;sch:assert test="empty($errors)"&gt; ERROR: Org id &lt;sch:value-of select="string-join($errors,', ')"/&gt; does not exist in the organizations document.&lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                     </cell>
-                  </row>
-                  <row>
-                     <cell>
-                        <label>Schematron</label>
-                     </cell>
                      <cell>All person ids must be found in the personography.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:publisher[@ref]"&gt;
@@ -38577,24 +38561,6 @@ epistemology, methodology and history of
   value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then 
  () else $i"/&gt;
  &lt;sch:assert test="empty($errors)"&gt; ERROR: All personography pointers must start with the pers: prefix.&lt;/sch:assert&gt;
-&lt;/sch:rule&gt;
-&lt;/sch:pattern&gt;</code>
-                     </cell>
-                  </row>
-                  <row>
-                     <cell>
-                        <label>Schematron</label>
-                     </cell>
-                     <cell>All person ids must be found in the personography.<code>
-&lt;sch:pattern&gt;
-&lt;sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"&gt;
- &lt;sch:let name="att"
-  value="if (@ref) then @ref else @who"/&gt;
- &lt;sch:let name="ids"
-  value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/&gt;
- &lt;sch:let name="errors"
-  value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/&gt;
- &lt;sch:assert test="empty($errors)"&gt; ERROR: Person id &lt;sch:value-of select="string-join($errors,', ')"/&gt; does not exist in the person document. &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
                      </cell>

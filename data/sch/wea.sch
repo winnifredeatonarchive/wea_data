@@ -1123,47 +1123,10 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
-                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
-                           <sch:let name="ids"
-                  value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/>
-                           <sch:let name="errors"
-                  value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/>
-                          <sch:assert test="empty($errors)"> ERROR: Person id <sch:value-of select="string-join($errors,', ')"/> does not exist in the person document. </sch:assert>
-                        </sch:rule>
-                     </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:publisher[@ref]">
                            <sch:let name="errors"
                   value="for $i in tokenize(@ref,'\s+') return if (matches($i,'^org:')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All org pointers must start with the org: prefix.</sch:assert>
-                        </sch:rule>
-                     </sch:pattern>
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xmlns:tei="http://www.tei-c.org/ns/1.0"
-                xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:publisher[@ref]">
-                           <sch:let name="ids"
-                  value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/>
-                           <sch:let name="errors"
-                  value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/>
-                           <sch:assert test="empty($errors)"> ERROR: Org id <sch:value-of select="string-join($errors,', ')"/> does not exist in the organizations document.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1223,7 +1186,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-documentRefsShouldBeGood-constraint-rule-51">
+            id="wea-documentRefsShouldBeGood-constraint-rule-49">
       <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"

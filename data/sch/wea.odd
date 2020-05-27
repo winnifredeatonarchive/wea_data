@@ -2663,7 +2663,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraint>
                </constraintSpec>
                
-               <constraintSpec scheme="schematron" ident="badPersId">
+               <!--    <constraintSpec scheme="schematron" ident="badPersId">
                   <desc>All person ids must be found in the personography.</desc>
                   <constraint>
                      <sch:pattern>
@@ -2677,7 +2677,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->
                <constraintSpec scheme="schematron" ident="badOrgPrefix">
                   <desc>All person ids must be found in the personography.</desc>
                   <constraint>
@@ -2690,7 +2690,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
+               <!--   
                <constraintSpec scheme="schematron" ident="badOrgId">
                   <desc>All publisher ids must be found in the orgs doc.</desc>
                   <constraint>
@@ -2704,7 +2704,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->
                
 
                <constraintSpec scheme="schematron" ident="misMatchedQuote">

@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-22T22:25:31Z. .
+Schema generated from ODD source 2020-05-27T01:17:56Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -7125,43 +7125,10 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
-                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
-                           <sch:let name="ids"
-                  value="for $n in tokenize($att,'\s+') return substring-after($n,'pers:')"/>
-                           <sch:let name="errors"
-                  value="for $i in $ids return if ($peopleIds[.=$i]) then () else $i"/>
-                          <sch:assert test="empty($errors)"> ERROR: Person id <sch:value-of select="string-join($errors,', ')"/> does not exist in the person document. </sch:assert>
-                        </sch:rule>
-                     </sch:pattern> 
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:publisher[@ref]">
                            <sch:let name="errors"
                   value="for $i in tokenize(@ref,'\s+') return if (matches($i,'^org:')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All org pointers must start with the org: prefix.</sch:assert>
-                        </sch:rule>
-                     </sch:pattern> 
-   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:publisher[@ref]">
-                           <sch:let name="ids"
-                  value="for $n in tokenize(@ref,'\s+') return substring-after($n,'org:')"/>
-                           <sch:let name="errors"
-                  value="for $i in $ids return if ($orgIds[.=$i]) then () else $i"/>
-                           <sch:assert test="empty($errors)"> ERROR: Org id <sch:value-of select="string-join($errors,', ')"/> does not exist in the organizations document.</sch:assert>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -7212,7 +7179,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                         </sch:rule>
                      </sch:pattern> 
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-documentRefsShouldBeGood-constraint-rule-51">
+            id="wea-documentRefsShouldBeGood-constraint-rule-49">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
