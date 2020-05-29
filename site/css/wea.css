@@ -244,8 +244,7 @@
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+-moz-osx-font-smoothing: grayscale;
 
   /* Support for IE. */
   font-feature-settings: 'liga';
@@ -351,6 +350,7 @@ nav .home{
     padding: 0;
     font-family: "Serif";
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     
 }
@@ -506,8 +506,11 @@ div#nav_search button:hover{
     padding-right:2rem;
     align-self:center;
     z-index:9000;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+
+
 }
 
 .JS #facsViewerContainer.open #facs_closer{
@@ -2149,6 +2152,7 @@ h1,h2,h3,h4,h5,h6{
     font-family: "Serif";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
     font-weight:400;
      color: #111111;
 
@@ -2236,6 +2240,7 @@ div[data-el="p"]{
     font-size: 1.2rem;
     color: #33383D;
     font-weight: 500;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 div[data-el='note'] > div[data-el='p']{
