@@ -53,7 +53,7 @@
 
 <!--        <xsl:call-template name="badPtrs"/>-->
         <xsl:call-template name="documentsAwaitingMC"/>
-
+        <xsl:call-template name="facsWithoutNotes"/>
         <xsl:call-template name="documentsWithoutFacs"/>
         <xsl:call-template name="documentsWithoutGenre"/>
         <xsl:call-template name="documentsWithoutExhibit"/>
@@ -62,6 +62,30 @@
 
     </xsl:template>
     
+    <xsl:template name="facsWithoutNotes">
+        <xsl:variable name="errors" select="$dataDocs//TEI[not(descendant::notesStmt/note)][descendant::text[@facs]]" as="element(TEI)*"/>
+        <div type="diagnostic">
+            <head n="{count($errors)}">Documents with facsimiles without a note</head>
+            <p>All documents with facsimiles should have a note describing the open-access source of the facsimile.</p>
+            <xsl:choose>
+                <xsl:when test="not(empty($errors))">
+                    <table>
+                        <row role="label">
+                            <cell>ID</cell>
+                            <cell>Document</cell>
+                        </row>
+                        <xsl:for-each select="$errors">
+                            <xsl:sort select="@xml:id"/>
+                            <row>
+                                <cell><xsl:value-of select="@xml:id"/></cell>
+                                <cell><ref target="https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/products/site/{@xml:id}.html"><xsl:value-of select="//teiHeader/fileDesc/titleStmt/title[1]"/></ref></cell>
+                            </row>
+                        </xsl:for-each>
+                    </table>
+                </xsl:when>
+            </xsl:choose>
+        </div>
+    </xsl:template>
     
     <xsl:template name="duplicateIds">
         <xsl:variable name="errors" as="element(list)*">
