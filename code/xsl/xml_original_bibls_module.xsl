@@ -74,11 +74,24 @@
         <xsl:copy>
             <xsl:apply-templates select="@*" mode="#current"/>
             <xsl:apply-templates select="bibl" mode="#current">
-                <xsl:sort select="string(.)"/>
+                <xsl:sort>
+                    <xsl:value-of>
+                        <xsl:apply-templates mode="sort"/>
+                    </xsl:value-of>
+                </xsl:sort>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     
+    
+    <!--Special set of templates to create a sort key-->
+    <xsl:template match="*" priority="1" mode="sort">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    
+    <xsl:template match="title/text()" mode="sort">
+        <xsl:value-of select="replace(replace(.,'^(The|Le|La|An?)\s',''),'‘|’','')"/>
+    </xsl:template>
     
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
