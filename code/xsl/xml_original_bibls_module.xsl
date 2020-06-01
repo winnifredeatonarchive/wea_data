@@ -70,6 +70,15 @@
          </div>
     </xsl:template>
     
+    <xsl:template match="div[@xml:id='bibliography_resources']/listBibl" mode="removeId">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <xsl:apply-templates select="bibl" mode="#current">
+                <xsl:sort select="string(.)"/>
+            </xsl:apply-templates>
+        </xsl:copy>
+    </xsl:template>
+    
     
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
