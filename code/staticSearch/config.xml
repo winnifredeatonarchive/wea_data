@@ -18,20 +18,20 @@
     </params>
     
     <rules>
-        <rule xpath="div[@id='info'][not(ancestor::div[@id='mainBody'][contains-token(@class,'docBornDigitalListing')])]" weight="0"/>
-        <rule xpath="footer" weight="0"/>
-        <rule xpath="div[@id='appendix']" weight="0"/>
-        <rule xpath="div[@id='metadata']" weight="0"/>
-        <rule xpath="*[contains(@class,'noteNum')]" weight="0"/>
-        <rule xpath="header" weight="0"/>
-        <rule xpath="meta[matches(@class,'(^|\s+)ss')][ancestor::html/descendant::div[@id='mainBody'][not(descendant::div[@id='info'])][contains-token(@class,'docBornDigitalListing')]]" weight="0"/>
-        <rule xpath="*[matches(local-name(),'^h\d+$')]" weight="0"/>
-        <rule xpath="a[span[@data-el='pb']]" weight="0"/>
-        <rule xpath="div[@id='tools_container']" weight="0"/>
-        <rule xpath="div[@id='info_right']" weight="0"/>
-        <rule xpath="a[text()[matches(.,'^https?://')]]" weight="0"/>
-        <rule xpath="table[ancestor::div[@id='mainBody'][contains(@class,'docBornDigitalListing')]]" weight="0"/>
-        <rule xpath="*[@id='popup_closer']" weight="0"/>
-        <!--  <rule xpath="body[not(ancestor::html/@id ='foreign')]" weight="0"/>-->
+        <rule match="div[@id='info'][not(ancestor::div[@id='mainBody'][contains-token(@class,'docBornDigitalListing')])]" weight="0"/>
+        <rule match="footer" weight="0"/>
+        <rule match="div[@id='appendix']" weight="0"/>
+        <rule match="div[@id='metadata']" weight="0"/>
+        <rule match="*[contains(@class,'noteNum')]" weight="0"/>
+        <rule match="header" weight="0"/>
+        <rule match="meta[matches(@class,'(^|\s+)ss')][ancestor::html/descendant::div[@id='mainBody'][not(descendant::div[@id='info'])][contains-token(@class,'docBornDigitalListing')]]" weight="0"/>
+        <rule match="*[matches(local-name(),'^h\d+$')]" weight="0"/>
+        <rule match="a[span[@data-el='pb']]" weight="0"/>
+        <rule match="div[@id='tools_container']" weight="0"/>
+        <rule match="div[@id='info_right']" weight="0"/>
+        <rule match="a[text()[matches(.,'^https?://')]]" weight="0"/>
+        <rule match="table[ancestor::div[@id='mainBody'][contains(@class,'docBornDigitalListing')]]" weight="0"/>
+        <rule match="*[@id='popup_closer']" weight="0"/>
+        <!--  <rule match="body[not(ancestor::html/@id ='foreign')]" weight="0"/>-->
     </rules>
 </config>
