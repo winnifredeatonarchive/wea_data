@@ -7,20 +7,33 @@
 window.addEventListener('DOMContentLoaded', init, false);
 
 var docId = document.getElementsByTagName('html')[0].getAttribute('id');
-url = new URL(document.URL);
-searchParams = url.searchParams;
+
 
 function init(){
     addDocClass();
+    addEvents();
     if (document.querySelectorAll('img.lazy')){
         lazyload();
     }
-   if (searchParams.has("searchTokens")){
-    highlightSearchMatches();
-    } else {
-        addEvents();
+    let searchStr = window.location.search;
+    let params = new URLSearchParams(searchStr)
+    if (params.has('tsCol')){
+        let cn = params.get('tsCol');
+        let asc = params.get('asc');
+        let thead = document.querySelectorAll('thead')[0];
+        let th = thead.querySelectorAll('th');
+        let thToClick = th[ (cn * 1) - 1];
+        if (asc == 'false'){
+            thToClick.classList.add('up');
+        } else {
+            thToClick.classList.remove('up');
+            thToClick.classList.add('down');
+        }
+        
+        thToClick.click();
+        
     }
-
+   
 /*    makeAsideResponsive();*/
 
 
@@ -128,12 +141,16 @@ function toggleNav(){
 }    
 
 
+
+
 function makeTablesSortable(){
     var th = document.querySelectorAll('th.sortable');
     th.forEach(function(t){
         t.addEventListener('click', sortTable, true)
     });
 }
+
+
 
 /* This is a fairly crude table sorting function that relies on the 
  * fact that our tables already have their sort key in place. Since each cell in a table
@@ -209,8 +226,12 @@ function sortTable(){
        for (var i=rows.length -1; i>-1; i--){
            tbody.appendChild(rowArray[i]);
        }
-   }  
-
+   }
+   
+   /* Reset the URLs */
+   console.log(window.location.pathname);
+     let newUrl = window.location.pathname + "?tsCol=" + cn + "&asc=" + asc;
+    history.pushState({},document.title, newUrl);
     }
     
 
@@ -420,6 +441,8 @@ function makeNamesResponsive(){
         n.classList.add('popup');
     });
 }
+
+
 
 function makeCitationsResponsive(){
     var citations = document.querySelectorAll("a[data-el='ref'][data-type='bibl']");
@@ -809,8 +832,6 @@ function highlightSearchMatches(){
         
         /* Add dehighlight button */
         addUnhighlightButton();
-        /* Now once this is done you can add event listeners */
-        addEvents();
     }
     
     function addUnhighlightButton(){
