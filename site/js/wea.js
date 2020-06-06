@@ -231,7 +231,7 @@ function sortTable(){
    /* Reset the URLs */
    console.log(window.location.pathname);
      let newUrl = window.location.pathname + "?tsCol=" + cn + "&asc=" + asc;
-    history.pushState({},document.title, newUrl);
+    history.replaceState({},document.title, newUrl);
     }
     
 
