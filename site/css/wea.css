@@ -1022,6 +1022,11 @@ transition: border-bottom-color 0.15s ease-in-out;
     padding-bottom:2.5rem;
 }
 
+#ssResults > ul{
+    display:flex;
+    flex-direction:column;
+}
+
 .wea-ss-filters > .ssDateFilters{
     order:2;
     display:block; /* For some reason, Safari makes the date filter overlap with other bits
