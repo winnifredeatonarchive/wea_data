@@ -30,6 +30,15 @@
         </xsl:map>
     </xsl:variable>
     
+    <xsl:variable name="titleMap" as="map(xs:string,xs:integer)">
+        <xsl:map>
+            <xsl:for-each select="$xhtmlDocs">
+                <xsl:sort select="wea:makeTitleSortKey(//head/title[1])"/>
+                <xsl:map-entry key="//html/@id/string(.)" select="position()"/>
+            </xsl:for-each>
+        </xsl:map>
+    </xsl:variable>
+    
     
     <xsl:template match="/">
         <xsl:message>Creating document ajax frags...</xsl:message>
@@ -38,6 +47,7 @@
             <xsl:result-document href="{$outDir || '/ajax/' || $thisId || '.html'}">
                 <details open="open">
                     <xsl:attribute name="data-dateOrder" select="$dateMap($thisId)"/>
+                    <xsl:attribute name="data-titleOrder" select="$titleMap($thisId)"/>
                     <summary>More Info</summary>
                     <div>
                         <xsl:for-each-group select="//meta[matches(@class,'staticSearch\.(desc|date|bool)')]" group-by="@name">

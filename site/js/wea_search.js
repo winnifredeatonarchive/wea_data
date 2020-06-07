@@ -49,22 +49,30 @@ window.addEventListener('load', function () {
             });
         });
          let buttonDiv = document.createElement('div');
+         buttonDiv.setAttribute('id', 'sorters');
          thisResults.insertBefore(buttonDiv, thisResults.firstElementChild);
-         /* JUST HIDE THE DIV FOR NOW */
-         buttonDiv.style.display='none';
+
         ['score','date', 'title'].forEach(function(o){
             let btn = document.createElement('button');
             btn.setAttribute('id', o + 'Sort');
             btn.innerHTML = o.charAt(0).toUpperCase() + o.slice(1);
-            if (hasKwic && o == 'score'){
-                btn.disabled='true';
-            }
             if (!hasKwic && o=='score'){
                 return;
             }
             buttonDiv.appendChild(btn);
             btn.addEventListener('click', function(){
-                let sortKeyArr = [];
+                if (!btn.classList.contains('asc')){
+                    btn.classList.remove('desc');
+                    btn.classList.add('asc');
+                } else {
+                    btn.classList.remove('asc');
+                    btn.classList.add('desc');
+                }
+                let abtns = document.querySelectorAll('#sorters > button.active');
+                abtns.forEach(function(a){
+                    a.classList.remove('active');
+                });
+                btn.classList.add('active');
                 if (o == 'score'){
                     resultObjs.forEach(function(r){
                         r.style.order = '';
@@ -73,7 +81,18 @@ window.addEventListener('load', function () {
                     resultObjs.forEach(function(r){
                         r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-dateorder');
                     });
-                } 
+                } else if (o == 'title'){
+                    resultObjs.forEach(function(r){
+                       r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-titleorder');
+                    });
+                
+                }
+                
+                if (btn.classList.contains('asc')){
+                        btn.parentNode.parentNode.classList.add('reverse');
+                } else {
+                        btn.parentNode.parentNode.classList.remove('reverse');
+                }
                 
             });
         });

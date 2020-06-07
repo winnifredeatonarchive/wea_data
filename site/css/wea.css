@@ -1027,12 +1027,25 @@ transition: border-bottom-color 0.15s ease-in-out;
     flex-direction:column;
 }
 
+#ssResults.reverse > ul{
+    flex-direction:column-reverse;
+}
+
 .wea-ss-filters > .ssDateFilters{
     order:2;
     display:block; /* For some reason, Safari makes the date filter overlap with other bits
      * if it is displayed flex, so we need it to be displayed block  */
 }
+#sorters > button.active:after{
+    content: "arrow_drop_up";
+    font-family: "Material Icons";
+    display:inline-block;
+    padding:0 .5rem;
+}
 
+#sorters > button.active.desc::after{
+    transform: rotate(-180deg);
+}
 .wea-ss-filters > .heading{
     margin-bottom: 1rem;
     padding-bottom: 0.25rem;
@@ -1186,7 +1199,7 @@ ul.ssDescCheckboxList input{
 }
 
 
-#ssResults > ul > li:not(:last-child){
+#ssResults > ul > li{
         border-bottom:1px solid #efefef;
 }
 
