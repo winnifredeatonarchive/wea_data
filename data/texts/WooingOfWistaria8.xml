@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="WooingOfWistaria8">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="WooingOfWistaria8">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Wooing of Wistaria (Part 8)</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,21 +31,870 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-            <catRef target="wdt:genreNovelSerial" scheme="wdt:genre"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-02">Added facs, notes stmt, and cat refs.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl193 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-06-08" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-02">Added facs, notes stmt, and cat refs.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl193 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:WooingOfWistaria8" prev="doc:WooingOfWistaria7" next="doc:WooingOfWistaria9">
-      <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+   <text facs="facs:WooingOfWistaria8"
+         prev="doc:WooingOfWistaria7"
+         next="doc:WooingOfWistaria9">
+         <body>
+               <head>The Wooing of Wistaria</head>
+               <opener>
+                     <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+               </opener>
+               <div type="content">
+                     <div>
+                           <div>    
+                                 
+                                 <p>Continued From Last Sunday</p>
+                                                
+                                 
+                                 <milestone unit="sectionBreak"/>
+                                 
+                           </div>
+                           <div>    
+ 
+            <head>Chapter XXX</head>
+    
+      
+    
+            <p>Whatever speculation the sudden friendly interposition of a Japanese into the American officer’s dilemma caused among the sub-officials in charge of the Treaty House, it did not run a lengthy course. News that was whispered about, first among the multitude of unofficial visitors crowding all the surrounding points of vantage not occupied by the <foreign xml:lang="ja">Shogun</foreign>’s troops, penetrated gradually to the focal spot of the greatest curiosity, the Treaty House. It was an event of secondary importance to the expected visit from the men-of-war. The princes Aidzu and Catzu had arrived from Yedo, and were now awaiting the foreigners in the quarters prepared for them.</p>
+    
+      
+    
+            <p>Many of those present had never seen these powerful princes. So, crowding past the common soldiers, they pressed upon their headquarters, until stopped by the chosen guard of <foreign xml:lang="ja">samurai</foreign> surrounding the princely pavilions.</p>
+    
+      
+    
+            <p>About the tent of Catzu the press of the mob was heaviest. The huge Sir Genji, toying with his glittering blade significantly whenever a curious citizen came too near the entrance, remarked grimly to a fellow-<foreign xml:lang="ja">samurai</foreign>:</p>
+    
+      
+    
+            <p><q>Of a truth, all the dogs of Nippon invade our ranks to-day. I have only to extend my sword to split a dozen fat merchants</q>.</p>
+    
+      
+    
+            <p><q>Extend it, then</q>, growled the other, as with the flat of his blade he dealt a gentle blow upon the pate of a vendor of wines.</p>
+    
+      
+    
+            <p>The treatment accorded to the crowd by the <foreign xml:lang="ja">samurai</foreign> engendered no bitterness. The mercantile classes, awed at all times by the sight of one in <foreign xml:lang="ja">samurai</foreign> orders, shrank back at the first sign of displeasure brought upon themselves from the proudest grade in Japan.</p>
+    
+      
+    
+            <p>Nor, indeed, was the real displeasure of the <foreign xml:lang="ja">samurai</foreign> at any time in evidence. They, too, like the common people, were engrossed in the expectation of events. Although their impassive faces did not permit the revelation of their real feeling, there was among them the same subtle curiosity and foreboding.</p>
+    
+      
+    
+            <p>From across the bay, rolling and reverberating, striking the rocky angles of the highlands and driven back repulsed, came the long roar of the foreigners’ saluting guns. Instantly the populace became silent, riveted to whatever locality they occupied.</p>
+    
+      
+    
+            <p>Among the ships there was a bustle and movement. The foreigners were lowering boats from every vessel in their squadron. With their crews and officers sitting in them, the boats swung from the davits into the water. Plainly the squadron was sending every man and officer to be spared.</p>
+    
+      
+    
+            <p>While the guns were still vomiting forth their salute to the occasion, the Lord Catzu came forth from his tent. With a wave of his hand he turned to Genji.</p>
+    
+      
+    
+            <p><q>Drive me back this rabble</q>, he ordered.</p>
+    
+      
+    
+            <p>Instantly the <foreign xml:lang="ja">samurai</foreign>, joining with the common troop, beat back the mass of citizens, forcing open a wide lane, that extended but a short distance towards the Treaty House. Where no guards were, there the people obstructed the passage.</p>
+    
+      
+    
+            <p>Genji quickly remedied this by dispatching guards to clear a pathway to a point where a similar line from the Prince of Aidzu’s pavilion should join. Into the two paths opened by the <foreign xml:lang="ja">Shogun</foreign>’s troops the cortege of the two prince-commissioners passed. That of the Lord Catzu was headed by a troop of the young sons of <foreign xml:lang="ja">samurai</foreign>, boys small in stature, bearing aloft a silken banner whose gold embroideries were the crests of the <foreign xml:lang="ja">Shogun</foreign> and his feudal vassal Catzu. Next rode a troop of inferior <foreign xml:lang="ja">samurai</foreign>, heavily armed, on black horses. After them came the chief vassal of the Lord Catzu, mounted on a white horse, with three of his own vassals, each with his train of attendants. Finally, at the head of a brilliant and sparkling train of warriors and courtiers, came the imposing and portly Lord of Catzu, carried in a gilded <foreign xml:lang="ja">norimon</foreign>. A company of <foreign xml:lang="ja">samurai</foreign>, whose chief upon all ordinary occasions was Sir Genji, brought up the rear.</p>
+    
+      
+    
+            <p>The train of the Prince of Aidzu was, in general order and arrangement, similar to that of the Lord Catzu.</p>
+    
+      
+    
+            <p>The two corteges moved in lines slightly converging until they met. Then the heads of each side column or division rode side by side. Throughout the whole company, in perfect order, this arrangement held, the left train of the Lord Catzu being nearer the bay than that of Aidzu. So completely was the symmetry of the parallel movement carried out that the Prince of Catzu had on his left the Prince of Aidzu.</p>
+    
+      
+    
+            <p>At the moment of complete juncture, a word of command sped back among the allied ranks. In a moment Genji, at the head of large body of mounted <foreign xml:lang="ja">samurai</foreign>, passed to the right of his lord on his way to the van. A similar body passed along the left.</p>
+    
+      
+    
+            <p>These <foreign xml:lang="ja">samurai</foreign>, arrived at the front, rapidly drove the crowds back from the line of march, leaving a passage, which they lined at intervals, clear to the Treaty House. Each <foreign xml:lang="ja">samurai</foreign> rode back and forth in the side space he had kept free to himself.</p>
+    
+      
+    
+            <p>The gorgeous pageant advanced rapidly through the short passage until its head rested upon the entrance of the Treaty House. Instantly the lines of the two princes divided as before, falling back on either side until the two <foreign xml:lang="ja">norimons</foreign> of the princes were reached. These advanced as before until the chief vassal of each prince stood before the Treaty House. Then the vassals assisted their lords to dismount from their <foreign xml:lang="ja">norimons</foreign>, bowing deeply and profoundly as they did so.</p>
+    
+      
+    
+            <p>Side by side the two commissioners marched to the door of entrance, whose threshold they crossed alone. After a respectful interval the chief vassals and functionaries, with a number of <foreign xml:lang="ja">samurai</foreign>, followed their lords. The military force and other attendants still stood with their ranks open outside. Genji gave a quick command, and, the double ranks closing, faced about so as to present a solid armed front to any one moving against the Treaty House.</p>
+    
+      
+    
+            <p>Inside, the princes with their chief commissioners were ranged at the head of the Treaty House, in silent waiting on the foreigners.</p>
+    
+      
+    
+            <p>Meanwhile the fleet of small boats form the squadron were nearing the shore. Splendid as was the retinue of the commissioners, and outnumbering as it did that of the Americans, yet it was apparent at a glance that Perry had stripped his hips of all but a small force. The boats, crowded to the gunwales, moved slowly to the landing-place, built over-night.</p>
+    
+      
+    
+            <p>First, the bodies of sailor-soldiers were disembarked. They wore the dress of sailors, but each carried a musket. Then a band came ashore. Finally the officers of the squadron and Perry’s staff itself mingled with the others. A small guard was left with the boats before the march was taken up to the Treaty House. Then, in quick step to the music of the band, the company set off, traveling at twice the pace of the Japanese retinues.</p>
+    
+      
+    
+            <p>The band marched first. Then came the marines with their officers. In the centre was the Commodore Perry, with his staff. Following were more marines and officers.</p>
+    
+      
+    
+            <p>As this army proceeded in the quick, sharp, uniform step peculiar to disciplined bodies, there were no shouts of applause, no encouraging cheers, no uncovering of heads, no clapping of hands. The silent multitudes regarded them sullenly, expectantly, fearfully.</p>
+    
+      
+    
+            <p><q>Gad!</q> exclaimed a young lieutenant, <q>they don’t take to us. This is no Fifth Avenue parade</q>.</p>
+    
+      
+    
+            <p><q>No, it is not. More like action</q>, mumbled his companion.</p>
+    
+      
+    
+            <p>When the officers came within sight of the entrance and saw the columns hostilely arranged, there was a movement of alarm. But quickly the dual force of Catzu and Aidzu spread out to permit a passage through itself.</p>
+    
+      
+    
+            <p>The Americans gave an order. Their band went suddenly to the rear, its place taken by a body of marines, who moved until their head rested upon the door of entrance. They in turn opened a way for the division at whose head marched the chief officer. With arms at <q>present</q>, they stood, awaiting its approach.</p>
+    
+      
+    
+            <p>At the head of the division now advancing under the colors and backed by minor officers, strode a commanding figure. It was that of a full-bodied, ruddy, stern-featured man, in whose every poise of body and head was command. He was bareheaded. About his temples the breeze from the bay scattered his short, slightly gray hair.</p>
+    
+      
+    
+            <p>The sight of the Japanese army in its menacing position, facing the multitudes, may have carried alarm to his soul. It had been instantly met by his counter arraying of marines; but there was no fear manifest in face, gait, or manner. Without pause he entered quickly the audience-hall, followed by his officers. Turning his head to neither side, he seated himself in a chair similar in respect and position to those occupied by the commissioners.</p>
+    
+      
+    
+            <p>There was a pause, a momentary embarrassment was felt by all present. Then the American commodore summoned the Dutch interpreter, through whom the conversation was to take place.</p>
+    
+      
+    
+            <p><q>Inform them</q>, he said, <q>that I have some questions to ask</q>.</p>
+    
+      
+    
+         <milestone unit="sectionBreak"/>
+  </div>  
+  <div>    
+    
+            <head>Chapter XXXI</head>
+    
+      
+    
+            <p>When the company of foreigners had passed into the Treaty House, the few moments intervening before the beginning of the ceremonies within were employed by the <foreign xml:lang="ja">samurai</foreign> still on guard outside in scrutinizing the cards of those citizens whose rank permitted them to fill the vacant rear of the hall.</p>
+    
+      
+    
+            <p>At first the <foreign xml:lang="ja">samurai</foreign>, exacting in their task, examined carefully the invitation of each applicant. When, however, those in charge warned them that the time was short, they crowded ceremoniously within their lines into the hall, while those without, whether card-holders or not, were driven back roughly.</p>
+    
+      
+    
+            <p>The movement had been noted in its first stages by Mori, who with Toro and Jiro had been forcing his way steadily towards the guarding samurai. When the first press of the rejected smote him on all sides, he turned to Jiro.</p>
+    
+      
+    
+            <p><q>If we are separated in this turmoil, I would charge you, Jiro—</q> he began.</p>
+    
+      
+    
+            <p>The sudden interposition of a double rank of <foreign xml:lang="ja">samurai</foreign> drove him back, while it swept his companions within the circle of those being forced into the Treaty House. Turning, Jiro watched Mori struggle under the disadvantage the crowd imposed upon him. Then, with a resigned smile and a shrug of the shoulders, Mori made to Jiro a sign of writing. A moment more and Toro and Jiro found themselves within the audience chamber. They gained places beside an opening through which the <foreign xml:lang="ja">samurai</foreign> preserving order outside could be seen.</p>
+    
+      
+    
+            <p>When the American commodore addressed his first words to the interpreter, the Lord of Catzu arose. Toro and Jiro whispered together as they caught sight of the gorgeous figure. The interpreter translated to him the words of the American. Then through the interpreter the Lord of Catzu made reply:</p>
+    
+      
+    
+            <p><q>August sir, Lord Admiral of the unknown fleet, we will have joy in answering your honorable questions—any and all—in good time</q>, he said. <q>But first allow us to offer our apologies. We were unable to provide you with arm-chairs such as your excellency is accustomed to occupy on board your honorable ships; for that reason we are greatly pained, and trust you will overlook our impoliteness. But that chair which you now fill and whose brothers we humbly occupy, out of compliment to your excellency, resembles it so far as our abilities have been able to copy it</q>.</p>
+    
+      
+    
+            <p>The American commodore looked at the chair he occupied. If the first words of the commissioner appealed at all to his risibilities, he was both too courteous a gentleman and too astute a diplomat to betray any sign. His face was grave to solemnity as he regarded the superb workmanship of the chair upon which he sat, plainly an Oriental interpretation of an American article.</p>
+    
+      
+    
+            <p><q>The chair is comfortable. It serves its purpose and honors its makers</q>, he made reply. <q>But I desire before presenting my credentials to question the prince-commissioners</q>.</p>
+    
+      
+    
+            <p>Some one tapped Jiro lightly upon the shoulder. Looking about, he saw that a <foreign xml:lang="ja">samurai</foreign>, half extended through the window, had thus drawn his attention, and he was now making him the secret sign of the Imperialist, that of dropping suddenly downward the left hand with the little finger extended. Jiro looked into the face of the <foreign xml:lang="ja">samurai</foreign> Genji, where a smile of peculiar meaning shone. In the shock of surprise, Jiro’s face was raised so that Genji’s eyes gazed closely upon the entire contour, as for a moment the hair fell back from the youth’s brow. Instantly the smile in Genji’s face changed. His expression became involved. In it, Jiro read surprise, then delight, distrust, and apprehension.</p>
+    
+      
+    
+            <p>As Jiro’s eyes met Genji’s again, the crimson flushed with sudden violence the lad’s cheeks. His eyes sank. Genji slipped into his hand a tiny roll.</p>
+    
+      
+    
+            <p><q>What is it?</q> whispered Toro.</p>
+    
+      
+    
+            <p><q>Genji</q>, said Jiro, with an expression of terror; <q>he recognized me</q>.</p>
+    
+      
+    
+            <p><q>But what did he want?</q></p>
+    
+      
+    
+            <p>Then Jiro recalled the paper in his hands. He opened it with trembling fingers. It was brief, and from Mori, who had evidently trusted his old friend Genji to deliver it to his attendant Jiro.</p>
+    
+      
+    
+            <p><q>If aught is said of the cause, defend!</q> he read.</p>
+    
+      
+    
+            <p><q>What is the meaning?</q> said Toro.</p>
+    
+      
+    
+            <p><q>Plainly what he says</q>, returned Jiro; <q>if any one speaks ill of the cause I am to silence and confound him</q>.</p>
+    
+      
+    
+            <p>Toro smiled with superiority.</p>
+    
+      
+    
+            <p><q>You!</q> he whispered; <q>it is for me</q>.</p>
+    
+      
+    
+            <p>With a passionate movement of negation, Jiro thrust the epistle into his bosom.</p>
+    
+      
+    
+            <p><q>Do nothing</q>, urged Toro; <q>if you disturb this gathering you are as good as dead. For a <foreign xml:lang="ja">samurai</foreign> it would be a pleasing feat</q>. Toro swelled in appreciation. <q>But for you—</q> He broke off. <q>Mori would not have asked it if he had known—</q></p>
+    
+      
+    
+            <p><q>Silence!</q> whispered Jiro. <q>Listen</q>.</p>
+            <p>Several of the Dutchman’s translations had been lost by Toro and Jiro, but the interpreter was now speaking again for the American.</p>
+    
+      
+    
+            <p><q>I desire to know</q>, he said, <q>before I deliver my letters, with whom I am treating—with what Emperor—with which of the two?</q></p>
+    
+      
+    
+            <p>The Japanese were astounded.</p>
+    
+      
+    
+            <p><q>You are dealing with the Emperor of Japan</q>, they responded.</p>
+    
+      
+    
+            <p><q>But there are two. Which one?</q></p>
+    
+      
+    
+            <p><q>We are unable to explain</q>, said Aidzu; <q>we cannot account for your strange belief</q>.</p>
+    
+      
+    
+            <p><q>Perhaps</q>, interjected the wily Catzu, <q>the Lord Admiral has confounded the head of our religion with the head of our State</q>.</p>
+    
+      
+    
+            <p><q>I must speak</q>, said Jiro, who was laboring under repressed excitement. <q>It is time</q>.</p>
+    
+      
+    
+            <p><q>Tsh-h!</q> growled Toro, staying his effort to rise.</p>
+    
+      
+    
+            <p><q>Let the prince-commissioner continue. I have been told that there are two emperors in this land, and that I have been placed in communication with the inferior, who is without authority to ratify his acts</q>.</p>
+    
+      
+    
+            <p><q>I assure you, my Lord Admiral</q>, said Catzu, <q>that you have fallen into an error common to foreigners</q>.</p>
+    
+      
+    
+            <p><q>Possibly</q>, was Perry’s brief assent.</p>
+            <p><q>We have two heads, one a font of wisdom, the other of action. The one is the spiritual head, the divine Emperor; the other the true ruler and Emperor, with whom you are in communication. The spiritual head is without authority in mundane affairs. You make no error, for we, the princes of Japan’s real ruler, tell you this</q>.</p>
+    
+      
+    
+            <p>Despite every attempted restraint of Toro, Jiro leaped to his feet.</p>
+    
+      
+    
+            <p><q>Thou liest! Thou knowest there is but one true ruler in Japan, the Mikado!</q> he shouted, in a voice that, rapidly ascending in pitch, became femininely shrill.</p>
+    
+      
+    
+            <p>Every eye in the assembly, foreign and Japanese, turned upon the slight, quivering figure there by the breeze-swept opening. The Lord of Catzu, still upon his feet, stood like a sable statue, his arm still held alof in the concluding gesture he had used a moment before. The Prince of Aidzu remained in his chair, seemingly incapable of motion. The American Perry alone preserved his composure, looking from one to the other in a puzzled effort to determine the meaning of this interruption.</p>
+    
+      
+    
+            <p>The silence within the hall deepened as the startled gaze of the assemblage continued fixed upon Jiro. So still was it that the voices of the <foreign xml:lang="ja">samurai</foreign> outside seemed annoyingly loud, as they floated into the quiet apartment.</p>
+    
+      
+    
+            <p>There was a long moment of this stunned, bewildered, yet intense stillness. It was broken by Toro, who, ashamed of having been outdone in daring by his slighter companion, threw himself convulsively into the focus of the company.</p>
+    
+      
+    
+        <p><q>Thou, my Lord of Catzu</q>, he shouted—<q>thou knowest that the youth speaks truth. Banzai the <foreign xml:lang="ja">Mikado</foreign>! Banzai <foreign xml:lang="ja">Nippon!</foreign></q></p>
+    
+      
+    
+            <p>Another sensational moment! The <foreign xml:lang="ja">samurai</foreign> Genji had placed himself nearer to the two.</p>
+    
+      
+    
+            <p>The Lord of Catzu broke the spell of wonderment. As he frowned penetratingly upon Toro and Jiro, his face cleared in sudden recognition of his son. He raised his arm in imperative signal to the <foreign xml:lang="ja">samurai</foreign>.</p>
+    
+      
+    
+            <p><q>Eject for me these fanatics</q>, he cried, <q>and guard them closely</q>.</p>
+    
+      
+    
+            <p>Instantly the gigantic Genji, leaping through the opening, laid a heavy hand upon the shoulder of the youth. Back to the opening he drew them.</p>
+    
+      
+    
+            <p><q>They are in custody, my lord</q>, he answered.</p>
+    
+      
+    
+            <p>While the <foreign xml:lang="ja">samurai</foreign> drew the struggling comrades into the outer air, there was the quick hum of voices over the assemblage that a moment before had seemed as stone. Neighbor conversed with neighbor, the Japanese in consternation, the Americans in wonder.</p>
+    
+      
+    
+            <p>The interpreter rapidly translated to the American officer the words that had passed between the commissioner and his interrupters. Some of the Americans caught at the drift of events even before their comrades sitting near to the interpreter understood the Dutchman’s statements to their commander.</p>
+    
+      
+    
+            <p><q>‘Pears to me to be something to this two-king business</q>, said a marine to his fellow.</p>
+    
+      
+    
+            <p><q>We’ll leave our bones here, sure enough</q>, was the pessimistic response.</p>
+    
+      
+    
+            <p><q>What explanation can you offer of this?</q> demanded Perry.</p>
+    
+      
+    
+            <p>The Lord Catzu lifted his eyebrows.</p>
+    
+      
+    
+            <p><q>Explanation! I do not explain it. They were fanatical priests, madmen, who thought that the head of the church should take over the direction of the State. You have such in your own country?</q></p>
+    
+      
+    
+            <p>The American was not satisfied with this statement. The interpreter informed the commissioners of this fact. Said the Lord Catzu:</p>
+    
+      
+    
+            <p><q>If you do not believe me, I shall, with the concurrence of my colleague, be obliged to declare all proceedings stopped. I cannot continue under such circumstances</q>.</p>
+    
+      
+    
+            <p>The American saw thus slipping from him the rewards of the labor of months. He might be making a mistake, but he must proceed at once.</p>
+    
+      
+    
+            <p><q>I am ready to continue</q>, he said.</p>
+    
+      
+    
+            <p><q>Very well. You may deliver your letters to the Emperor of Japan</q>, responded Catzu, with great dignity.</p>
+    
+      
+    
+            <p>At a sign from Perry, two cabin-boys who had remained in the ante-chamber came up the central aisle, closely followed by two huge negroes in marine dress. The boys carried silver and gold salvers, upon which rested the richly set gold boxes containing the documents signed by Millard Fillmore, President of the United States of America, asking consideration of a treaty for open ports.</p>
+    
+      
+    
+            <p>As the boys reached the red-lacquered box at the head of the hall they stopped upon either side, while the negroes stopped between them. Lifting the letter receptacles from the salvers, the negroes deposited them in the red chest indicated by an aide of Catzu. This done, they retreated down the aisle.</p>
+    
+      
+    
+            <p><q>All is now done</q>, said Catzu. <q>Permit me to inquire when your excellency will return for an answer</q>.</p>
+    
+      
+    
+            <p><q>In some months’ time</q>, was Perry’s thoughtful reply.</p>
+    
+      
+    
+            <p><q>We need not detain you longer</q>, said the commissioner. <q>Permit us to express our gratification at meeting you and our compliments for your courtesy</q>.</p>
+    
+      
+    
+            <p>The American commodore acknowledged the deep obeisance with which the commissioners and their staffs now favored him with a bow as courtly and dignified as their own.</p>
+    
+      
+    
+            <p>Then foreigners and Japanese filed out from the Treaty House of Yokohama.</p>
+    
+      
+    
+        <milestone unit="sectionBreak"/>
+ </div>
+ <div>                          
+      
+    
+            <head>Chapter XXXII</head>
+    
+      
+    
+            <p>With the fecundity peculiar to the storm and stress period of a nation’s history, the germ almost forcibly implanted into Japanese soil by Commodore Perry waxed strong, came to blossom, fell into seed, and ended by multiplying itself into international form. No sooner had two seaports been opened through signature of the treaty passed by Perry than the English sought and obtained the same privileges. Other nations followed the leaders in timeliness, differing as to their national equation.</p>
+    
+      
+    
+            <p>During all this time Mori had remained in Yedo watching the course of events, and the gradual rise in prestige of the already powerful <foreign xml:lang="ja">shogunate</foreign>.</p>
+    
+      
+    
+            <p>The policy advocated by Mori was the same outlined by him in his act of instruction to Jiro when he had bade the boy explain to the foreigners the true conditions of government. The <foreign xml:lang="ja">shogunate</foreign> must be embroiled with the foreign powers in such a way that retaliation of the world powers would fall upon the <foreign xml:lang="ja">shogunate</foreign> alone, destroying it, while at a leap the Imperial party would return to power upon an anti-<foreign xml:lang="ja">Shogun</foreign> basis. This policy he was foremost in pressing upon other leaders of his party, but without avail. The drift of events was too uncertain to permit civil war at this time, his compatriots asserted.</p>
+    
+      
+    
+            <p>Toro and Jiro did not share the Yedo vigil of Mori. When, upon the evening of the Treaty House assemblage, Genji had brought them to Keiki’s headquarters, the Prince had received them as from the grasp of death. The task he had set them, he knew, meant a risk of death, but even a <foreign xml:lang="ja">samurai</foreign> of lesser rank would have welcomed a death decreed by the cause. He had given them up as memories of the past when the Great Genji brought them before him.</p>
+    
+      
+    
+            <p><q>My prince</q>, Genji had said. <q>I have ever been at heart one of your party. As an earnest of my desire to return to your allegiances, I bring you two prisoners, committed to my hands by the Lord of Catzu</q>.</p>
+    
+      
+    
+            <p>The sight of the <foreign xml:lang="ja">samurai</foreign> Genji had called back into the life and soul of Mori things he had put aside as unfitting his consecration to the cause. Nevertheless, he received him gladly, and made no objection to the proposal of the <foreign xml:lang="ja">samurai</foreign> that he should be permitted to go with Toro and Jiro to the Mori fortress, since longer residence in Yedo was unsafe for the two who had exhibited themselves before the choice gathering of the <foreign xml:lang="ja">Shogun</foreign>’s followers at the Treaty House. So it was that for a time Mori remained alone in Yedo.</p>
+    
+      
+    
+            <p>The continued presence in the <foreign xml:lang="ja">Shogun</foreign>’s city of one known throughout the length and breadth of the land as the Imperialist leader could not in the nature of events remain unknown to the authorities. On several occasion he was pressed so hard that he found an occasional sojourn outside of Yedo imperative. It was upon his return from one of these flittings that the Prince Mori found strange news awaiting him.</p>
+    
+      
+    
+            <p>The Shogun Iyesada was dead. The choice of a successor devolving upon the Regent Ii, a man said to be of low birth, the wishes of a considerable number of the <foreign xml:lang="ja">shogunate</foreign> following had bene ignored. Kii, a boy of twelve, had been selected by the Regent.</p>
+    
+      
+    
+            <p>To make a show of boasted power before the foreigners, now always pressing for treaty privileges, the Regent Ii had ratified with them a treaty then pending, afterwards reporting it tardily to the Emperor at Kioto.</p>
+    
+      
+    
+            <p>Instantly the city rang with protest, and, following it, the country.</p>
+    
+      
+    
+            <p><q>This Ii would remain alone with a boy <foreign xml:lang="ja">Shogun</foreign>!</q> cried the nobles of both parties.</p>
+    
+      
+    
+            <p>Mori dispatched instantly to his fortress couriers who conveyed orders to Toro that a considerable body of Mori’s troops should proceed at one to Yedo. Before their arrival, however, a crisis had been reached.</p>
+    
+      
+    
+       <p><foreign xml:lang="ja">Ronins</foreign> in great numbers had visited the Imperialist headquarters, urging instant action. These roving <foreign xml:lang="ja">samurai</foreign>, having renounced all allegiance to their own lords, had become free agents (<foreign xml:lang="ja">ronins</foreign>), and had sworn never to return to their homes until the <foreign xml:lang="ja">shogunate</foreign> was overthrown.</p>
+    
+      
+    
+            <p>One Hasuda headed a party that sought out the Prince Mori.</p>
+    
+      
+    
+            <p><q>Let every foreign legation be burned this night</q>, urge Hasuda. <q>Let us drive into the seas those dogs who already have delayed our action too long. Let it be done to-night</q>.</p>
+    
+      
+    
+            <p><q>No</q>, said Mori, firmly. <q>Do not let your acts, which hitherto, in spite of their lawlessness, have been tinged with patriotism, be tainted by such action as you now propose. The function of a patriot is not that of assassination, but of honest warfare. Be counseled by me. Do nothing yet awhile. Wait! My men are on the march. They cannot arrive for some days. When they have come, and when our <foreign xml:lang="ja">Mikado</foreign> has given us the signal, let us then attack and evict these foreign barbarians</q>.</p>
+    
+      
+    
+            <p><q>No, no</q>, insisted Hasuda, whose sword itched for action; <q>the <foreign xml:lang="ja">Mikado</foreign> is influenced by those about him who are hostile to us. He dare not</q>.</p>
+    
+      
+    
+            <p><q>Only by his order will I attack the foreigners</q>, Mori insisted.</p>
+    
+      
+    
+            <p><q>He will not speak</q>, said Hasuda.</p>
+    
+      
+    
+            <p><q>He will</q>, said Mori. <q>I have assurances to that effect</q>.</p>
+    
+      
+    
+            <p>Hasuda altered his plea.</p>
+    
+      
+    
+            <p><q>But, your highness</q>, he urged, <q>what I now advocate is your own policy. The <foreign xml:lang="ja">shogunate</foreign> is responsible to the foreigners for the peace. Destroy their legations and their wrath will descend upon the <foreign xml:lang="ja">shogunate</foreign></q>.</p>
+    
+      
+    
+            <p><q>Listen; I will not stoop to massacre, but I promise you that upon the order of the Emperor I will fire at once upon their fleets and make warfare against them</q>.</p>
+    
+      
+    
+            <p>The <foreign xml:lang="ja">ronin</foreign> Hasuda smiled slyly, as with a gesture of resignation he threw his arms aside.</p>
+    
+      
+    
+            <p><q>Your highness</q>, he said, <q>be it so. I consent, upon one condition. Go thou to Kioto. Obtain at once audience with the Son of Heaven. Secure his consent. Thou hast means within the palace to reach him safely. Do so, then. I will await your return</q>.</p>
+    
+      
+    
+            <p><q>Agreed</q>, answered Mori.</p>
+    
+      
+    
+            <p>Within a few moments his <foreign xml:lang="ja">norimon</foreign> was carrying him out of Yedo.</p>
+    
+      
+    
+            <p>Two <foreign xml:lang="ja">ronins</foreign> joined Hasuda near the headquarters half an hour later.</p>
+    
+      
+    
+            <p><q>Your news?</q> he demanded.</p>
+    
+      
+    
+            <p><q>The Prince of Mori is on the highway to Kioto</q>.</p>
+    
+      
+    
+            <p><q>Good! Then let the bands separate</q>.</p>
+    
+      
+    
+            <p>The several hundred <foreign xml:lang="ja">ronins</foreign>, divided into parties of some six or seven, set out in various directions. Two hours later they were in the shadows of the Sakurada gate of the <foreign xml:lang="ja">Shogun</foreign>’s palace.</p>
+    
+      
+    
+            <p>A spy from the interior made his report to Hasuda. It was accompanied by many gestures directed towards the wide path which led through the garden to the palace within.</p>
+    
+      
+    
+            <p>A stately procession was passing down the garden path and had taken the road. It was the cortege of the Baron Ii Kamon-no-Kami, the hated Regent of Japan. Only his ordinary train of attendants and <foreign xml:lang="ja">samurai</foreign> accompanied him. Absorbed in their own personal reflections, they were apparently without suspicion of a planned assault.</p>
+    
+      
+    
+            <p>Hasuda, in the shadow of the gate and the farther shadow of the cedars which bent their branches over the walls, raised his sword.</p>
+    
+      
+    
+            <p><q>Now</q>, he whispered, in a soft, penetrating voice, insistent as the hiss of a serpent. From the shadows of the walls against which they had stood <foreign xml:lang="ja">ronins</foreign> leaped upon the <foreign xml:lang="ja">samurai</foreign> and attendants about the <foreign xml:lang="ja">norimon</foreign> of Ii. These gave way instantly, some were killed outright, others wounded, while still others were left engaged in deadly strife with <foreign xml:lang="ja">ronin</foreign> adversaries.</p>
+    
+      
+    
+            <p><q>Quick! Forward!</q> urged Hasuda.</p>
+    
+      
+    
+            <p>A chosen body sprang out from the <foreign xml:lang="ja">ronin</foreign> ranks, and surrounding the <foreign xml:lang="ja">norimon</foreign> of the Regent, drew him with rough hands out into the road. They dragged him before Hasuda. Within the palace a cry of alarm rang through the night, followed by the hurried mustering of troops.</p>
+    
+      
+    
+            <p>Outside the Sakurada gate, however, the numerous <foreign xml:lang="ja">ronins</foreign>, showing no sign of fear, proceeding leisurely. Ii had fallen upon his knees. His mute lips moved in prayers for mercy, though no sound escaped them. His lips were livid, his eyes glazed.</p>
+    
+      
+    
+            <p>At what seemed this manifestation of cowardice the <foreign xml:lang="ja">ronins</foreign>, outlawed <foreign xml:lang="ja">samurai</foreign> as they were, laughed scornfully. They would have died unflinchingly. Ii was not of <foreign xml:lang="ja">samurai</foreign> blood.</p>
+    
+      
+    
+            <p><q>Death to the traitor!</q> roared a <foreign xml:lang="ja">ronin</foreign> chorus.</p>
+    
+      
+    
+            <p><q>Ay</q>, replied Hasuda—<q>death!</q> Then to the Regent: <q>Ii, thou art a traitor. Rise and receive sentence</q>.</p>
+    
+      
+    
+            <p>Ii seemed paralyzed with fear.</p>
+    
+      
+    
+            <p><q>Let him die</q>, said Hasuda.</p>
+    
+      
+    
+            <p><q>Let him die</q>, growled the <foreign xml:lang="ja">ronins</foreign>.</p>
+    
+      
+    
+            <p>Hasuda sent a keen glance over his ranks. He said, quickly:</p>
+    
+      
+    
+            <p><q>Let a <foreign xml:lang="ja">samurai</foreign> volunteer as executioner, but let him remember that he, too, must die, that no <foreign xml:lang="ja">Shogun</foreign> follower may punish him</q>.</p>
+    
+      
+    
+            <p>A grim, middle-aged <foreign xml:lang="ja">ronin</foreign> pushed forward.</p>
+    
+      
+    
+            <p><q>I was of Satsuma</q>, he said; <q>that is all you need know of me</q>.</p>
+    
+      
+    
+            <p><q>Do thy office</q>, commanded Hasuda.</p>
+    
+      
+    
+            <p>The <foreign xml:lang="ja">samurai</foreign> thereupon forced the Regent to his knees, where he cringed trembling and shivering. The sword of the <foreign xml:lang="ja">samurai</foreign> hissed, curved, shone, shot through the air. The head of Ii lay upon the ground.</p>
+    
+      
+    
+            <p>Hasuda then spoke:</p>
+    
+      
+    
+            <p><q>That no malice may be imputed to us, use thy second sword</q>.</p>
+    
+      
+    
+            <p>Without a word the Satsuma <foreign xml:lang="ja">samurai</foreign> drew his second sword from his belt. The hilt he rested upon the ground. In an instant he fell upon its point.</p>
+    
+      
+    
+            <p>The <foreign xml:lang="ja">ronins</foreign> left the vicinity of the palace, carrying the head of Ii with them. This they nailed to a post in a public place of the city.</p>
+    
+      
+    
+            <p>In a short time, from the newly established foreign quarter of Yeo, flames leaped forth in destruction of the legations. Many foreigners found Japanese graves that night.</p>
+    
+      
+    
+            <p>Yet, strange inconsistency! the <foreign xml:lang="ja">ronins</foreign>, still under the direction of Hasuda, went about everywhere, crying: <q>Down with the foreigners! Long live the Shogun!</q></p>
+    
+      
+    
+            <p>Those foreigners who escaped believed that the <foreign xml:lang="ja">Shogun</foreign> had ordered the night’s horrors.</p>
+    
+      
+    
+            <p>At the hour of dawn Hasuda wiped his sword on a foreign fabric. As the morning breezes form the bay cooled his tired brow he laughed grimly.</p>
+    
+      
+    
+       <milestone unit="sectionBreak"/>
+  </div>  
+  <div>    
+    
+            <head>Chapter XXXIII</head>
+    
+      
+    
+            <p>It was night when the runners of the Prince Mori’s <foreign xml:lang="ja">norimon</foreign>, having traveled the highway to its gated termination, entered Kioto. Uncertain as to his exact course, the Prince was settled upon one thing—haste—haste to arrive in the neighborhood of the Mikado’s palace, that he might plan in the shadows his future actions.</p>
+    
+      
+    
+            <p>He had passed through the city’s gates, and with new cries to his runners was again urging them forward, when a cloacked figure, holding one hand a naked sword, barred to the <foreign xml:lang="ja">norimon</foreign> farther passage. The runners stopped abruptly. Impatiently Mori thrust his head through the curtains.</p>
+    
+      
+    
+            <p><q>What now, you laggards?</q> he demanded, in no gentle voice.</p>
+    
+      
+    
+            <p>At the sound of Mori’s words the man in the roadway uttered a cry of surprise.</p>
+    
+      
+    
+            <p><q>Thou, Mori!</q></p>
+    
+      
+    
+            <p><q>What then?</q> inquired the Prince, defiantly, preparing to leap to the ground, sword in hand.</p>
+    
+      
+    
+            <p><q>It is I, Echizen. I will join you in your <foreign xml:lang="ja">norimon</foreign></q>.</p>
+    
+      
+    
+            <p><q>Good!</q> said Mori. <q>Urgently I need your advice</q>.</p>
+    
+      
+    
+            <p>Echizen climbed into the vehicle quickly. With a swift movement he drew Mori’s cloak about his shoulders in such a way that it hid his face.</p>
+    
+      
+    
+            <p><q>There is danger in Kioto for you</q>, he said. <q>Just now as I passed, the sound of your voice instructing your runners struck me with its familiar tones. When you raised your voice I recognized you immediately. You must be more careful, my lord</q>.</p>
+    
+      
+    
+            <p><q>Why should there be danger for me in Kioto?</q> inquired Keiki, quickly. <q>I am in my Emperor’s capital now</q>.</p>
+    
+      
+    
+            <p><q>But the massacres you have just instigated in Yedo are being used to your disadvantage. Aidzu has come to Kioto two hours ahead of you, and all is known to his Majesty</q>.</p>
+    
+      
+    
+            <p><q>Massacres!</q></p>
+    
+      
+    
+            <p><q>Are you ignorant of them?</q></p>
+            <p><q>You do not mean—</q> Keiki paused, a suspicion of Hasuda dawning upon him. <q>Massacres by the <foreign xml:lang="ja">ronins</foreign>?</q></p>
+    
+      
+    
+            <p><q>Yes</q>.</p>
+    
+      
+    
+            <p>The Prince of Mori groaned.</p>
+    
+      
+    
+            <p><q>Hasuda, the chief <foreign xml:lang="ja">ronin</foreign></q>, he said, <q>has broken his pledged word to me</q>. He explained briefly to Echizen his compact with Hasuda.</p>
+    
+      
+    
+            <p>Echizen leaned from the <foreign xml:lang="ja">norimon</foreign>.</p>
+    
+      
+    
+            <p><q>Proceed slowly</q>, he told the runner, <q>in that direction</q>, pointing to a quarter of the town distant from the Imperial palace.</p>
+    
+      
+    
+            <p><q>We must adopt some plan of action</q>, he continued to Keiki. <q>These outbreaks, which I at first thought were at your order, will have fearful consequences. We must plan to turn them to account with the Emperor</q>.</p>
+    
+      
+    
+            <p><q>But he already knows of the massacres</q>.</p>
+    
+      
+    
+            <p><q>Assuredly. Aidzu is Governor of the city, and a person of influence with him. He will use the Yedo massacres to your disadvantage</q>.</p>
+    
+      
+    
+            <p><q>But Aidzu is a <foreign xml:lang="ja">shogunate</foreign></q>.</p>
+    
+      
+    
+            <p><q>True; but lately he has gone over to the Emperor. He is still at heart a <foreign xml:lang="ja">shogunate</foreign>. It is by the order of the <foreign xml:lang="ja">Shogun</foreign> that he has come to the <foreign xml:lang="ja">Mikado</foreign>’s court, in fact. He is both a spy and an influence upon the Emperor for the <foreign xml:lang="ja">shogunate</foreign></q>.</p>
+    
+      
+    
+            <p><q>How do you know all these things?</q> inquired Keiki.</p>
+    
+      
+    
+            <p><q>Since I left you in Yedo</q>, replied Echizen, <q>I have made considerable progress in the favor of the Emperor, all for the sake of the cause. I try to set myself against Aidzu</q>.</p>
+    
+      
+    
+            <p><q>Well, and what is the disposition of the Emperor towards my wing of the party? What does he desire us to do? What attitude should we take towards the foreigners and the <foreign xml:lang="ja">shogunate</foreign> at this time? I have a purpose in these questions</q>.</p>
+    
+      
+    
+            <p>Echizen looked thoughtfully towards the east, where the offshoots of the still distant day were charging the rear-guard of night.</p>
+    
+      
+    
+            <p><q>My prince</q>, he said, slowly, <q>I feel that  this day will be a decisive one in our annals. I feel that there is a great opportunity to be born a new nation to-day</q>.</p>
+    
+      
+    
+            <p><q>Speak on</q>, said Mori.</p>
+    
+      
+    
+            <p><q>The Emperor Kommei is, of course, desirous of regaining the power once held by his ancestors. He knows, as an educated man, that the <foreign xml:lang="ja">shogunate</foreign> has no legitimate right to existence. But he is a man of two natures. Fear, which is not cowardice, and suspicion. He is surrounded by <foreign xml:lang="ja">shogunate</foreign> spies. Every effort he has made up to this time to communicate with us has been frustrated. Were he to put trust in a <foreign xml:lang="ja">samurai</foreign> and think of sending him as a messenger to us, the <foreign xml:lang="ja">shogunate</foreign> straightway removed that <foreign xml:lang="ja">samurai</foreign></q>.</p>
+    
+      
+    
+            <p><q>By the sword, of course</q>.</p>
+    
+      
+    
+            <p><q>By secret means. In time the Emperor Kommei came to believe that the <foreign xml:lang="ja">shogunate</foreign> held his life in its hands, as it has. He came to distrust all men. He trusts neither Aidzu, his enemy, nor me, his friend</q>.</p>
+    
+      
+    
+            <p><q>What of the foreigners?</q></p>
+    
+      
+    
+            <p><q>I believe that he would desire above all things to issue an order for their expulsion, and encourage us secretly to make war upon the <foreign xml:lang="ja">shogunate</foreign>, convinced as he is that his life and the very office of Emperor are at stake</q>.</p>
+    
+      
+    
+            <p>Mori leaned out from the <foreign xml:lang="ja">norimon</foreign> and signed to the runners. They halted.</p>
+    
+      
+    
+            <p><q>One question more</q>, he said to Echizen. <q>Have you convenient access to the Emperor?</q></p>
+            <p><q>At any hour</q>, Echizen answered. Mori bent towards the runners.</p>
+    
+      
+    
+            <p><q>Full speed</q>, he cried, <q>to the Emperor’s palace</q>.</p>
+    
+      
+    
+            <p>The <foreign xml:lang="ja">norimon</foreign> started ahead.</p>
+    
+      
+    
+            <p><q>To the Emperor’s palace?</q> repeated Echizen. <q>What are you going to do?</q></p>
+    
+      
+    
+            <p><q>To confront Aidzu, my accuser, and urge the Emperor to expel the foreigners</q>, said Mori.</p>
+    
+      
+    
+            <p><q>Perhaps it is the best course</q>, answered Echizen, slowly.</p>
+    
+      
+    
+            <p><q>It is the opportunity of which you spoke</q>, said Mori. <q>The opportunity for which I have long waited</q>.</p>
+    
+      
+    
+        <milestone unit="sectionBreak"/>
+ </div>   
+ <div>     
+    
+            <p>To Be Continued Next Sunday</p>
          </div>
+        </div>  
+       </div>               
       </body>
    </text>
 </TEI>
