@@ -23,12 +23,24 @@ window.addEventListener('load', function () {
         });
     });
     
+ document.getElementById('ssDoSearch').addEventListener('click', function(){
+    let sorters = document.querySelectorAll('#sorters');
+    if (sorters.length > 0){
+        sorters[0].parentNode.removeChild(sorters[0]);
+    }
+  });
+
     Sch.searchFinishedHook = function () {
         let thisResults = this.resultsDiv;
         let resultObjs = thisResults.querySelectorAll('div');
         let headers = this.resultsDiv.querySelectorAll('div > a');
         let images = this.resultsDiv.querySelectorAll('img');
         let hasKwic = thisResults.querySelectorAll(".kwic").length > 0;
+        
+        /* Reset sorting */
+        this.resultsDiv.classList.remove('reverse');
+        this.resultsDiv.classList.remove('loaded');
+        
         images.forEach(function (img) {
             img.classList.add('lazy');
             img.setAttribute('data-src', img.src);
@@ -36,7 +48,7 @@ window.addEventListener('load', function () {
         });
         lazyload();
         filterBtn.setAttribute('disabled', 'disabled');
-        headers.forEach(function (head) {
+        headers.forEach(function (head, i) {
             let link = head.getAttribute('href');
             fetch('ajax/' + link).then(function (file) {
                 /* Get the response as text */
@@ -46,57 +58,85 @@ window.addEventListener('load', function () {
                 var nonce = document.createElement('div');
                 nonce.innerHTML = frag;
                 head.after(nonce.firstElementChild)
+                if (i == headers.length - 1){
+                  thisResults.classList.add('loaded');
+                  if (!hasKwic){
+                     sortByTitle();
+                  }
+         
+                }
             });
         });
+        
+
          let buttonDiv = document.createElement('div');
          buttonDiv.setAttribute('id', 'sorters');
          thisResults.insertBefore(buttonDiv, thisResults.firstElementChild);
-
-        ['score','date', 'title'].forEach(function(o){
-            let btn = document.createElement('button');
-            btn.setAttribute('id', o + 'Sort');
-            btn.innerHTML = o.charAt(0).toUpperCase() + o.slice(1);
-            if (!hasKwic && o=='score'){
-                return;
-            }
-            buttonDiv.appendChild(btn);
-            btn.addEventListener('click', function(){
-                if (!btn.classList.contains('asc')){
-                    btn.classList.remove('desc');
-                    btn.classList.add('asc');
-                } else {
-                    btn.classList.remove('asc');
-                    btn.classList.add('desc');
+         let label = document.createElement('label');
+         label.setAttribute('for','sortSelect');
+         label.setAttribute('id', 'sortSelectLabel');
+         label.innerHTML = "Sort by";
+         let select = document.createElement('select');
+         select.setAttribute('id','sortSelect');
+         buttonDiv.appendChild(label);
+         buttonDiv.appendChild(select);
+         let options = {
+             "score": ["Score", "Highest", "Lowest"],
+             "title": ["Title", "A", "Z"],
+             "date": ["Date", "Earliest", "Latest"]
+         }
+         
+         if (!hasKwic){
+             delete options["score"];
+         }
+         for (const option in options){
+                let captions = options[option];
+                for (let i=1; i<3; i++){
+                      let optEl = document.createElement("option");
+                      let first = (i == 1) ? captions[1] : captions[2];
+                      let second = (i == 2) ? captions[1] : captions[2];
+                      optEl.innerHTML = captions[0] + " (" + first + " to " + second + ")";
+                      let suffix = "";
+                      if (i == 2){
+                          suffix = "-r";
+                      }
+                      optEl.setAttribute('value',captions[0].toLowerCase() + suffix);
+                      select.appendChild(optEl);
                 }
-                let abtns = document.querySelectorAll('#sorters > button.active');
-                abtns.forEach(function(a){
-                    a.classList.remove('active');
-                });
-                btn.classList.add('active');
-                if (o == 'score'){
+         }
+         
+  
+         select.addEventListener('change',function(){
+             let selectedOption = this.options[this.selectedIndex].value;
+             console.log(selectedOption);
+             let o = selectedOption.split('-')[0];
+             this.parentNode.parentNode.classList.remove('reverse');
+              if (o == 'score'){
                     resultObjs.forEach(function(r){
                         r.style.order = '';
                     });
                 } else if (o == 'date'){
-                    resultObjs.forEach(function(r){
-                        r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-dateorder');
-                    });
+                   sortByDate();
                 } else if (o == 'title'){
-                    resultObjs.forEach(function(r){
-                       r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-titleorder');
-                    });
+                    sortByTitle();
                 
                 }
-                
-                if (btn.classList.contains('asc')){
-                        btn.parentNode.parentNode.classList.add('reverse');
-                } else {
-                        btn.parentNode.parentNode.classList.remove('reverse');
-                }
-                
+             if (selectedOption.split('-')[1] == 'r'){
+                 this.parentNode.parentNode.classList.add('reverse');
+             }
+         });
+         
+          function sortByDate(){
+           resultObjs.forEach(function(r){
+                        r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-dateorder');
             });
-        });
-
+         }
+         
+         function sortByTitle(){
+             resultObjs.forEach(function(r){
+                       r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-titleorder');
+           });
+         }
     }
 });
 
@@ -108,4 +148,8 @@ function getDate(r){
         return new Date('2020-01-01');
     }
 }
+
+    
+
+
 

@@ -1036,16 +1036,21 @@ transition: border-bottom-color 0.15s ease-in-out;
     display:block; /* For some reason, Safari makes the date filter overlap with other bits
      * if it is displayed flex, so we need it to be displayed block  */
 }
-#sorters > button.active:after{
-    content: "arrow_drop_up";
-    font-family: "Material Icons";
-    display:inline-block;
-    padding:0 .5rem;
+
+#sorters {
+    margin: 0.85rem 0 1.25rem 0;
 }
 
-#sorters > button.active.desc::after{
-    transform: rotate(-180deg);
+#sorters label{
+    font-size:0.95rem;
 }
+
+#sorters select{
+    font-family: "Sans";
+    padding:0.3rem;
+    margin-left:.5rem;
+}
+
 .wea-ss-filters > .heading{
     margin-bottom: 1rem;
     padding-bottom: 0.25rem;
@@ -1120,6 +1125,14 @@ ul.ssDescCheckboxList li{
     padding-left:.1rem;
 }
 
+#ssResults{
+    opacity:0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#ssResults.loaded{
+    opacity:1;
+}
 #ssResults details{
     margin-top:1rem;
     padding-bottom:1rem;
