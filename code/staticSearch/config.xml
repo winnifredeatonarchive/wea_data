@@ -26,6 +26,9 @@
         <rule match="header" weight="0"/>
         <rule match="meta[matches(@class,'(^|\s+)ss')][ancestor::html/descendant::div[@id='mainBody'][not(descendant::div[@id='info'])][contains-token(@class,'docBornDigitalListing')]]" weight="0"/>
         <rule match="*[matches(local-name(),'^h\d+$')]" weight="0"/>
+        
+        <!--Credits table should be excluded too-->
+        <rule match="div[h2/string(.) = 'Credits'][table[@class='sortable'][@data-type='exhibit']]" weight="0"/>
         <rule match="a[span[@data-el='pb']]" weight="0"/>
         <rule match="div[@id='tools_container']" weight="0"/>
         <rule match="div[@id='info_right']" weight="0"/>
