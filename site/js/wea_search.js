@@ -112,9 +112,10 @@ window.addEventListener('load', function () {
              let o = selectedOption.split('-')[0];
              this.parentNode.parentNode.classList.remove('reverse');
               if (o == 'score'){
+                   console.log('hskdfj');
                     resultObjs.forEach(function(r){
-                        r.style.order = '';
-                    });
+                        r.parentNode.style.order = '';
+                  });
                 } else if (o == 'date'){
                    sortByDate();
                 } else if (o == 'title'){
