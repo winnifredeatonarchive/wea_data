@@ -69,7 +69,7 @@
     
     
     
-    <target name="all" depends="getStaticSearch, validate, checkFacs, createSite, createDocSite, createStaticSearch, cleanUpStaticSearch"/>
+    <target name="all" depends="validate, checkFacs, createSite, createDocSite, search"/>
     
     <target name="allServer" depends="all, startLocalServer"/>
     
@@ -85,7 +85,7 @@
         <ant antfile="code/buildSite.xml" target="quickWithFacs" inheritall="false"/>
      </target>
     
-    <target name="search" depends="createStaticSearch, cleanUpStaticSearch"/>
+    <target name="search" depends="getStaticSearch, createStaticSearch, cleanUpStaticSearch"/>
    
     <target name="copyAuxFiles">
         <ant antfile="code/buildSite.xml" target="copyAuxFiles" inheritall="false"/>
