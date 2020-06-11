@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HerLoveSin1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HerLoveSin1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Her Love Sin</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SC1">Sijia Cheng</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,67 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl46 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SC1" when="2020-06-10" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl46 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:HerLoveSin1">
       <body>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+    
+            <p>Her Love Sin</p>
+            <p>The Story of a Fallen Woman</p>
+            <p>Is a woman ever justified in sinning when it is to save the man she loves? Read this heart-searching document of a wife’s sacrifice and judge for yourself whether her wrong was too great for pardon.</p>
+            <p>We were so much in love with each other that we counted time lost when we were not together, and, being, poor, we were obliged to be apart eight hours of the day, for both of us worked, I as a stenographer of a film corporation and George as a clerk in a department store.</p>
+            <p>If we had not been so much in love, we would have waited until we were in a better position financially to marry. Indeed George demurred at first against my continuing to work after marriage and he was sensitive about the fact that I earned three dollars more a week than he did. However, we both knew—we both were sure— that some day George would be famous, and with fame would come fortune. We could afford to wait and make sacrifices in the meanwhile.</p>
+            <p>George had the habit of disappearing as it were, <q>into the clouds</q>. I used to give him a little loving push to bring him back to earth. Sometimes he would look at me with a startled, almost wild expression—the desperate, thwarted look of the interrupted artist. Then gradually his gaze would soften. He’d reach for his pipe and make a place for me upon his knee in the curve of his arm. And so for the rest of the evening, we would sit and dream till presently I would point sternly to the clock and remind George that we were day laborers and must arise at the chill hour of six-thirty A.M. if we were to have a bite of breakfast before faring forth to our daily toil.</p>
+            <p>Love alone does not make life joyful. Bliss is more or less illusory. Though George and I loved each other, we soon discovered that it was possible to love and be loved and still be miserable and dissatisfied with life. George once said to me that life does not disappoint him who expects nothing of life, but he who expects much is always near to starvation. I remember all the beautiful things George ever said to me. Perhaps they may not sound beautiful to others. I treasured them up—hoarded them as a miser does his gold. I didn’t need to write them down. They were printed upon my heart. Another thing George said to me at that time was that unless one had a definite outlet for self-expression all was in danger of perishing, and he said that the fight to escape from the serfdom of one’s daily life was sufficient to break the human heart.</p>
+            <p>I began to realize that even with his arms around me his heart was slowly breaking to pieces. I would see his eyes stealthily, hungrily, turned toward that long, paper-littered table, the table I had recognized from the first as my only and formidable rival.  The table upon which George kept his precious papers—notes scratched on the backs of envelopes or note paper; school exercise books sprawled over with pages of his writing, and the one neat place in the corner, a small heap of neatly typed manuscripts, George’s finished stories and plays.</p>
+            <p>I suppose all great geniuses carry with them the intuitive knowledge and assurance of their divine gift. George did, I know, even in the days when he was only a poor young clerk measuring out yards and yards of silk and velvet to the hundreds of women who came to his department. He did not hate his job. On the contrary he once said he liked the feel of the soft silken things running through his hands. He said one could weave a romance around the shimmering yards of ever changing colors. He said too that looking at some of those wonderful oriental patterns, dazzling mixtures of every imaginable shade and sheen, one could transport himself, as it were, upon a fairy veil or carpet to another sphere. That’s the kind of man my George was—a dreamer, you see—a true poet. There are not many men who could squeeze a measure of real delight behind a counter in a large department store. But there was George for you. Different from other men, as all artists are.</p>
+            <p>All, or most of George’s literary efforts at this time had been been accomplished prior to our marriage. He had been accustomed to write at night or till far into the early morning, after work. I, of course, would not hear of his working at night as well as by day. We argued the matter over and over again, though we did not quarrel, for George was impressionable and easily won over. It was all very well for him to cite Edison and other famous men who did not require more than a few hours sleep. I held out for the majority opinion—eight hours sleep per day for the normal man or woman. I was not going to have his health undermined. Not for all the fame in the world. And anyway, wasn’t he happy, just as we were? Didn’t he love me enough to be happy just with me? I daresay many brides try their husband’s soul with similar pleas and arguments and win out too—at first.</p>
+            <p>I think the fret and frustration of his passionate desire to write was the real cause of his insomnia. He would lie awake for hours, feverish and restless, trying not to toss and turn for fear he might awaken me—I who lay wide awake beside him, from sympathy and love. I suffered agonies of self-reproach, for I knew I had only to say the word and  George would leap out of bed and over to the table and his precious papers. I said to myself:</p>
+            <p><q>One of us has got to be practical. One of us must see that we retain our cold common sense. Bread and butter are not romantic articles but they are necessary to keep us alive</q>.</p>
+            <p>And so, as I have said, I hung out as long as I could. Then one night, when he had been lying tensely awake at my side for more than two hours, George started up like one beside himself, and holding his head, he rocked himself from side to side like one in great pain.</p>
+            <p><q>What is it, dear? Tell me. Do</q>.</p>
+            <p><q>I can’t sleep</q>, he said in a muffled voice. <q>I haven’t slept for ages and I’m going crazy, I believe</q>.</p>
+            <p><q>Oh, George, dear</q>, I said, <q>I’ll get you a glass of hot milk. Have my pillow too. It’ll raise your head and relieve the blood pressure and after you drink the milk inhale and take long breaths and think of ships at sea—sailing vessels and things like floating clouds and—</q></p>
+            <p>For the first time since our marriage he spoke to me angrily:</p>
+            <p><q>For heaven’s sake lie down. Let me alone! It isn’t a case for hot milk and sailing vessels. It’s—it’s organic —pathological, I tell you. It can’t be cured unless I’m allowed to follow my natural inclination—to write. Don’t you understand, Jocelyn? Don’t you understand that you are suffocating me?</q>’</p>
+            <p>He put his arms around me in the dark and clung to me, desperately, but when I turned my cheek toward his face which was against my shoulder I felt something wet against it and I knew that George was crying. Crying! A big man—think of it. Oh, it doesn’t mean weakness or cowardice when a man cries! Why shouldn’t a man cry as well as a woman? Tears are nothing but the outward and visible sign of sorrow within. And anyway it soothes and brings peace and comfort and George was much the better after he had sobbed a bit against my breast. Then suddenly I sat up in bed and drew him with me,</p>
+            <p><q>George darling, go and write! If you can’t sleep, you might just as well be up anyway. I believe it will be the best thing for you</q>.</p>
+            <p>I felt his arms tightening around me and George moved electrically. I could hear him breathing—long, hard breaths—breaths of relief, like big sighs. Then, without giving me an opportunity to change my mind—and I could not have done it—George was out of bed.</p>
+            <p>I missed him even in my sleep, for next morning my pillow was all wet where I had cried. I sat up and looked down at his empty place, the pillow still dented where his head had lain; then across to the alcove. We really only had one room hut we pretended the alcove was our <q>living room</q>—and there I saw George, arms spread out across the desk, head upon them. He was sound asleep. I did not awaken him. I doubt if I could have, so very sound was his sleep— the sleep of complete and utter exhaustion, hut my heart leaped within me and I felt a great lump rise in my throat as I saw before him the pile of pages covered with his writing. George had begun to write his first great novel. A greater mother than I—Mother Nature—had intervened. She had taken my George into her arms and wrapped him in the precious garment of Sleep. And that was the first time George stayed home from work.</p>
+            <p>You may think that my language is a bit high flown—even maybe—poetic, if that is the word. It ought to be. Don’t forget that I was the wife and companion of George Lascelles.</p>
+            <p>Of course, we couldn’t continue to burn the candle at both ends. I, it is true, managed to sleep at night. Healthy and young, I literally willed myself to sleep, but George continued to spend all of his nights at his desk. He would write steadily for several hours and then toward morning he would drop automatically to sleep at his desk. It used to break my heart nearly to wake him in the morning. I would do it gradually, putting up the shades and moving around, bathing, dressing, getting breakfast. By the time I would have his cold bath ready for him, the coffee would be on our little gas stove and I would shake him awake. I had to shake him.</p>
+            <p>I tell you it nearly broke my heart to do it. However, by the time he had his bath he would he feeling better and I always had the coffee very strong and hot, so that he would start off feeling fairly well, but he would come home at night looking like a veritable ghost, with dark shadows under his eyes, and his face so lean and drawn. It was queer too that tired as he would be and though he would throw himself down on our couch, he never went to sleep then.</p>
+            <p>He was not, however, a swift writer He once said jokingly that he was not a <q>write-rich-quick</q> author. However it may be that the abnormal conditions under which he then had to work —that is to say, writing at night, after eight hours of work in the store in the day time—may have accounted for his mind’s inability to function with the facility of some authors.</p>
+            <p>That was a cold and a long winter. We had blizzards and storms worse than those they have out Northwest. I have seen New York streets when the snow was piled in hillocks on both sides of the streets with only a narrow path to get through. I have gone to work with my feet soaked with the slush and snow that covered the tops of my shoes. I bought over shoe rubbers for George, but half the time he forgot to put them on, and he would come home with ice cold feet. I used to rub them and do everything to bring back circulation, but George was anaemic I think. His fingers too would be stiff and it would drive him half crazy to be unable to go ahead with his writing because he had to thaw out his hands.</p>
+            <p>You know how one feels the cold in New York. It’s the dampness and humidity, I suppose. How I hated those days, the wretched chilly cold and oppression. I was able to bear it myself, but it took a terrible toll from the strength of George—working day and night, and sleeping scarcely at all. Then our rooms were none too well heated. They would turn off the steam about eleven or twelve at night in our house and you can imagine what that meant when George would be up till three or four in the morning. Even with the windows closed and the oven of our little gas range on full, even with a hot water bag at his feet and one of the comforters from the bed around him, he was always cold. The only time I knew him to stop work voluntarily was on a bitter night when he was literally <q>frozen out</q>. He got into bed with me to warm up, intending to go back to work, but fortunately for him, he dropped asleep.</p>
+            <p>I think it was toward the end of March—it was a terrible month that year—that George came down with a most frightful cold. In the spring it was still with him. He couldn’t shake it. He developed a chronic cough. I was alarmed, but he insisted it was nothing—a <q>cigarette cough</q>, that was all. I forgot to say that he smoked cigarettes all the time when he worked. He had given up his good old pipe.</p>
+            <p>He was so thin at this time, and though there was color in his cheeks, somehow George did not look healthy. I read somewhere that T.B. people often have a high color in their cheeks. I begged him to see a doctor, but he just laughed at me or got cross at the suggestion. Nor would he take any of my home-made remedies. I made him some good stuff too with honey and tar. You see I was a small-town girl. I was born up State. I had a small town girl’s sense of home. I liked to putter around making things pretty and I loved to cook and clean, and George said I sewed his buttons on with threads of iron. That was the kind of girl I was then.</p>
+            <p>I’ve had so much to tell you about my life at home with George that I haven’t said anything about my position, or the people I worked with there. Yet all the while things were happening to me at that office that might have caused me considerable worry and possibly forced me to leave my position had I not been so completely obsessed with George and anxious about his health. You see I was a very pretty girl then. I know it’s hard to believe now—but I was, nevertheless. I daresay if it hadn’t been for the life I have dragged through the last three years, I’d still be pretty. You know they say the average life of a woman of my class is only three years. My three years are up! I’m glad of that.</p>
+            <p>I was telling you about myself.... about being pretty— So I was. Very pretty. There was an artist— a very great artist now—who once said to George that I was not merely pretty; I was beautiful! Beauty is not always an asset. We all know it sometimes proves to be a curse. I won’t say that my looks were at fault or even the cause of my downfall.</p>
+            <p>There was a man—a Mr. Multinnez —queer name, isn’t it? I think he had some foreign blood in him, though I don’t know and don’t care what it was. Anyway, he was a very rich man—one of the largest stockholders in our company. He was influential too. Everybody in the office watched their step when he was there. I had never noticed him especially— was hardly conscious of his existence, in fact—though he must have been coming back and forth to our office for months before he finally forced himself upon my special notice.</p>
+            <p>I was at my machine, copying some promotion stuff, when he came over. He took the chair beside me, pulled out the little slat on my desk and setting his pudgy elbow upon it, did not even remove the cigar from his mouth or the hat from his head. He sat there just watching me. I went on typing, but his presence nevertheless irritated me. So presently I said:</p>
+            <p><q>Is there anything I can do for you?</q> and I took out my note book.</p>
+            <p>He leaned heavily over toward me and said:</p>
+            <p><q>Yes, baby, write a letter to yourself. Just say that any time you say the word, Nathan Multinnez is yours for the having</q>.</p>
+            <p>My first impulse was one of rage and I felt myself turning white and red. Then even while my tongue burned to insult him I thought of George—George, whose eyes had a feverish, hunted look in them.</p>
+            <p>I swallowed the words that were surging up to my lips. I looked into the prominent eyes of the man ogling down at me. He was big and stout, with black hair, thick lips, a broad nose and big lead-colored eyes. From his personality there seemed to emanate a disgusting odor of affluence and sensuality.</p>
+            <p>Have you ever tried to smile when you wanted to scream with rage? Have you ever tried to smile sweetly when you wanted to—spit? If you have, you’ll have some idea of the kind of smile I was able to force to my lips. Could I have but known then that in two short weeks’ time this repulsive man, this horrible loathsome mass of flesh, would hold me in his arms!</p>
+            <p>But how was she to know? Necessity, circumstances—these are the motives that prompt women to cast their souls in the mire!</p>
+            <p>Is Jocelyn guilty? Dare you judge her? The concluding instalment of this powerful confession will grip you like a vise.</p>
+            <p>Don’t miss it!</p>
+    
+      
+    
          </div>
       </body>
    </text>
