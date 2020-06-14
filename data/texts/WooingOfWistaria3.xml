@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="WooingOfWistaria3">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="WooingOfWistaria3">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -26,7 +26,7 @@
             <note>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1905/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1905/</ref>.</note>
          </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:188"/>
+            <bibl copyOf="bibl:186"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,657 +37,1017 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
-         <change who="pers:SB2" when="2020-06-08" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2020-06-14" status="inProgress">Changed id from WooingOfWistaria1 to WooingOfWistaria3.</change>
+         <change who="pers:SB2" when="2020-05-29" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-02">Added facs, notes stmt, and cat refs.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl188 using XSLT.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl186 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:WooingOfWistaria3"
-         prev="doc:WooingOfWistaria2"
-         next="doc:WooingOfWistaria4">
+   <text facs="facs:WooingOfWistaria1" next="doc:WooingOfWistaria4">
       <body>
-                  <head>The Wooing of Wistaria</head>
-                  <opener>
-                        <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
-                  </opener>
-                  <div type="content">
-                        <div>
-         <div>
-        
-            <p>Continued From Last Sunday</p>
+         <head>The Wooing of Wistaria</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+         <div type="content">
+            <div>
+ 
+ <div>
+           <head>Synopsis of Preceding Chapters</head>
     
       
     
-               <milestone unit="sectionBreak"/>
+    <p>The earliest recollection of the Lady Wistaria goes back to the day when her father carried her in his arms to Yedo, where a great procession was passing through the principal street. Suddenly her parent raised his hand and pointing to a gaudily dressed man carried on a palanquin by ten stout attendants, told her there was the man who killed her mother, that it was he who was responsible for her need of a mother’s love. Wistaria now spent most of her time at the palace of her uncle, one of the <foreign xml:lang="ja">samurai</foreign>, known as the Lord of Catzu. Her presentation at court was at hand, and gowned magnificently, under the chaperonage of her uncle’s wife, the Lady Evening Glory, who had long prepared for the event, the girl made her official bow at the <foreign xml:lang="ja">Shogun</foreign>’s throne. But Wistaria had as much time for the good looking men of the court as the <foreign xml:lang="ja">Shogun</foreign> himself, much to the chagrin of her royal aunt. In fact, that lady was so mortified that she decided then and there that the girl should be banished from court, returned to Yedo, to learn once more the ways of the elite. On the way Wistaria’s many suitors tried in vain to slip her a note, telling of their love for her, but their plans were frustrated in all cases but one, which happened to be a young noble who attracted her attention at court. This suitor, however, is of the Mori family, who are hostile to the <foreign xml:lang="ja">Shogun</foreign>. His boldness increases when he finds that he is not rebuked, and before the journey comes to an end he succeeds in throwing a note into the <foreign xml:lang="ja">norimono</foreign> in which Wistaria is riding. The girl reads it, then sends a reply in which she tells of her appreciation of his attention, but cautions him against further actions, for fear of his life. The young nobleman is not daunted. He follows the girl to the palace at Catzu, hides in the grounds at night, and when morning comes approaches Wistaria’s window. The girl again cautions him of the danger he is running, but the young man proceeds to make love to her whether he die for it. Presently they are aware that their meeting has been discovered, and Wistaria, with a little cry, vanishes from the window.</p>
     
-         </div>
-    <div>
-            <head>Chapter XIII</head>
-    
-      
-    
-            <p>The death of the mother of Wistaria had taken place the day after the girl’s birth. Her father had left his young <foreign xml:lang="ja">Eta</foreign> wife to go to the village to purchase medicines and food. She was in the care of her grandmother, who was old and weak, and powerless to protect her.</p>
-    
-      
-    
-            <p>The Mori <foreign xml:lang="ja">samurai</foreign>, all of them in a state of savage intoxication, had come to the house demanding and calling for Shimadzu. They had been drinking heavily all day, and swore they would have their final cup with their former comrade.</p>
-    
-      
-    
-            <p>When Madame Mume assured them of his absence, they insisted upon entering the house, and, pushing past the old woman, straightway took possession of the place. One of their number suggested that in the absence of Shimadzu they must be entertained by his Eta wife, whereupon the others, taking up the cry, boisterously began to shout for the hostess of the house.</p>
-    
-      
-    
-            <p>Meanwhile the young wife, very weak and ill from her recent confinement, listened with feverish excitement to the loud voices and the bedlam of noises now rattling through the little cottage. Fearful for the safety of her lord, in a moment of delirium she arose from her sick bed to go to them, staggering through the dividing rooms until she came to the ribald debauchees.</p>
-    
-      
-    
-            <p>As she pushed aside the sliding doors and stood in the opening, her white bed-robes about her, she seemed like an apparition. A sudden silence fell upon the revellers. It was broken by a <foreign xml:lang="ja">samurai</foreign> whose <foreign xml:lang="ja">sake</foreign> cup dropped from his nerveless hand to the floor, where it shattered into fragments.</p>
-    
-      
-    
-            <p>The next instant there was a general movement towards the figure between the <foreign xml:lang="ja">shoji</foreign>. That simultaneous, half-savage advance seemed to snap the last vital cord in the woman. When they reached her she no longer swayed between the <foreign xml:lang="ja">shoji</foreign>. They bent over her in various attitudes of horror, where she lay prone at their feet, a white, crushed thing whose delicate life had been brutally snuffed out forever.</p>
-    
-      
-    
-            <p>With a loud cry of fear and dismay they rushed from the chamber, out from the house into the open air, where their befogged brains still seemed to behold a vision of an avenging pursuing spirit.</p>
-    
-      
-    
-            <p>Hearing the wailing cries of the old grandmother while he was yet afar off from the house, Shimadzu began to run at his utmost speed, a premonition of disaster forcing itself upon him. Up the hillocks he sped. A moment of fearful striving effort and he was beside the old woman. Something froze in Shimadzu, paralyzing his faculties. Power of speech and movement was gone.</p>
-    
-      
-    
-            <p>The old woman caught his arm, shook it, and gazed with her fading eyesight into his staring  eyes.</p>
-    
-      
-    
-            <p><q>Master, master!</q> she cried.</p>
-    
-      
-    
-            <p>He only stared at the figure upon the floor. The old woman rushed from the house, shrieking and calling aloud for help. Neighbors came rushing up from the little village below and began to fill the house. They tried to arouse the stricken <foreign xml:lang="ja">samurai</foreign>, but he heeded them not. But when they attempted to move the young wife, a strange guttural sound of savage protest escaped his lips, so that they dared not touch her.</p>
-    
-      
-    
-            <p>Then the neighbors mingled their cries with those of the old woman, and the house of death was rendered hideous with their ceaseless moaning and the muffled beating of <foreign xml:lang="ja">Shinto</foreign> drums.</p>
-    
-      
-    
-            <p>All night long the <foreign xml:lang="ja">samurai</foreign> crouched in that paralyzed attitude by the side of his wife. But in the morning strong and stout armed men from the village, disregarding his cries of protest, lifted the body of the wife upon the deathcouch, drew the lids over the staring eyes, closed the frothed mouth, where the teeth shone out like small white fangs, and folded the frozen white hands across her breast. Then the <foreign xml:lang="ja">samurai</foreign> came back to life—vivid, horrible, insane life.</p>
-    
-      
-    
-            <p>Some kindly woman brought in the little Wistaria and held her towards him with a pitying exclamation, knowing that this little life could not but comfort the bereft man. He seized the child wildly in his arms. Then holding his one-day old babe over the dead body of his wife, he swore a fearful oath of vengeance.</p>
-    
-      
-    
-            <p>From that day the <foreign xml:lang="ja">samurai</foreign> had but one purpose in life, but one hope and ambition: to encompass the ruin and death of those he deemed the murderers of his wife. It happened that he came of a powerful family, who, in all his troubles, had offered him their sympathy and would gladly have received back among them in spite of his marriage to an <foreign xml:lang="ja">Eta</foreign> girl. They were in high favor at court, and now they carried his case to the <foreign xml:lang="ja">Shogun</foreign> himself. The exiled <foreign xml:lang="ja">samurai</foreign> was forthwith ordered to appear before the <foreign xml:lang="ja">Shogun</foreign>, who had been deeply impressed and touched by his sorrows, and who had cause for prejulice against his former lord.</p>
-    
-      
-    
-            <p>The <foreign xml:lang="ja">Shogun</foreign> offered to force his lord to restore to the <foreign xml:lang="ja">samurai</foreign> his estates and rank, but Shimadzu fiercely refused to accept these favors, wildly declaring that he would rather be buried alive than enter the service of such a lord. The <foreign xml:lang="ja">Shogun</foreign>, still anxious to please his family, begged him to make some request which it would be in his power to grant, whether for service under another lord or at court in attendance upon his own person.</p>
-    
-      
-    
-            <p><q>I have but one request to make, my lord</q>, responded the samurai.</p>
-    
-      
-    
-            <p><q>That is?—</q></p>
-    
-      
-    
-            <p><q>To be made the public executioner</q>.</p>
-    
-      
-    
-            <p>All these things the Lady Wistaria now learned for the first time. She was as one struck down by a sudden shock of grief. In one little hour she had fallen from a great height, and had learned of things that had caused her to quiver with anguish and shame. She could not at once share the thought of the father whose wrongs haunted him, demanding vengeance and justice. She thought, instead, of other things. She was the daughter of the public executioner, the hangman!—an <foreign xml:lang="ja">Eta</foreign> girl—an outcast! The odium of it all crushed her. In that hour of agony her imagination conjured up the noble, highborn face of her lover, torturing her soul with its infinite distance from her. She knew now that he was as far beyond her reach as the sun.</p>
-    
-      
-    
-            <p><q>Shrink not, my daughter</q>, came her father’s voice harshly upon her thoughts; <q>your father’s [hands are not stained in the blood of any of his fellow-men save those who were his by divine right. To underlings I gave the punish]ment of the public criminal, but to myself I kept the sacred task of seeking, tracking, running and killing with my own hands the destroyers of my house</q>.</p>
-    
-      
-    
-            <p><q>Then</q>, said Wistaria, in a strangely pleading voice, <q>you have avenged my mother. All is done, all is finished. Oh, my father, let us forget all this past, and go away where we may not be known and pass our days in peace until the end</q>.</p>
-    
-      
-    
-            <p><q>Nay, all is not done</q>, replied the father. <q>You forget that while I have had the holy joy of executing the six murderers of my wife, their prince still lives</q>.</p>
-    
-      
-    
-            <p><q>Ah!</q></p>
-    
-      
-    
-            <p><q>Once I served under him, honored him above all men; now I desire nothing else on earth but to bow his head in the dust. He is a great prince, beyond my reach, but I have sought and found a better means of striking at him. For this purpose, my daughter, I need your aid</q>.</p>
-    
-      
-    
-            <p><q>You mean—</q> she began.</p>
-    
-      
-    
-            <p><q>This Prince of Mori is the man. Now you understand. His heart, his whole life, is wrapped up in his son. But yesterday, my daughter, I caught that son in the trap which I set through you. To-morrow he pays the penalty of the sins of his father</q>.</p>
-    
-      
-    
-            <p>Wistaria tottered to her feet. Then she fell on her knees and crept upon them to her father.</p>
-    
-      
-    
-            <p><q>Father, dear, my father, I beg, I implore you to show mercy</q>.</p>
-    
-      
-    
-            <p><q>For whom do you ask mercy, my lady?</q> asked the father.</p>
-    
-      
-    
-            <p><q>For the innocent—for this young Prince of Mori</q>.</p>
-    
-      
-    
-            <p><q>You—you ask mercy for this prince!—you, the daughter of a murdered woman!</q> In an instant she was sitting up stiff and rigid.</p>
-    
-      
-    
-            <p><q>My lord</q>, she said, <q>I am, indeed, too insignificant and unworthy to be thy daughter, but for one small moment I did forget our wrongs and fain would have spared my soul the sacrifice of innocent blood</q>.</p>
-    
-      
-          <milestone unit="sectionBreak"/>
-    
-    </div>
-    <div>                       
-    
-            <head>Chapter XIV</head>
-    
-      
-    
-            <p>Early in the morning the inhabitants of the little <foreign xml:lang="ja">Eta</foreign> village were startled by the unusual sound in the streets of the <q>clip-clop</q> of palanquin runners’ sandals. The <foreign xml:lang="ja">Eta</foreign> were not used to being carried in gilded <foreign xml:lang="ja">norimonos</foreign>, or of traveling in any other fashion than on foot. Consequently, the spectacle of an exquisitely finished <foreign xml:lang="ja">norimono</foreign> carried on the shoulders of liveried attendants, created as much stir as it is possible for the placid Japanese to manifest. The bamboo curtains of the <foreign xml:lang="ja">norimono</foreign> were closely drawn. The runners sped siftly along, paying no heed to the raised shutters or the curious eyes at the wall holes. On either side of the palanquin two couriers or personal <foreign xml:lang="ja">samurai</foreign> walked.</p>
-    
-      
-    
-            <p>The runners stopped before the house of Shimadzu, and, having thrown aside the curtains, bowed low as they backed before a veiled lady, who stepped from the <foreign xml:lang="ja">norimono</foreign>. The lady, however, unmindful of her bending servitors, hurried up the graveled pathway to beat upon the door with her delicate fists.</p>
-    
-      
-    
-            <p>The early morning visitor entered the house before the Lady Wistaria had descended from her chamber. When she threw back the covering from her head, the proud face of the Lady Evening Glory appeared with all its cold beauty and strange pallor. Her lips trembled so that she could not keep them together.</p>
-    
-      
-    
-            <p>She had traveled all night in the utmost haste to throw herself at the feet of her brother, praying his mercy for the young Prince of Mori. She did not wait for her brother to question her, but began at once a pitiful, disjointed tale concerning her son Toro.</p>
-    
-      
-    
-            <p>The young man had involved himself in great trouble in the Choshui province, and was now held a prisoner by the Prince of Mori. Toro, the foolhardy, imitating the actions of the young courtier of the Mori clan, had fared badly. Caught scaling the walls surrounding the palace of the father of the Lady Hollyhock, he had been arrested and brought before the Prince of Mori. This nobleman had at first intended to return the young fellow to his neighbor courteously, with some satirical rebuke which would scorch the vanity of the boy’s father, but just at this juncture had come the fearful intelligence of the arrest, secret trial for treason, and sentence to death of the young heir of Mori. The old Prince, rendered frantic with fear and anguish, dispatched word immediately to Catzu that unless the Prince Keiki were spared, the same fate should be meted out to the young Catzu Toro.</p>
-    
-      
-    
-            <p>So the Lady Evening Glory had come now to her brother to demand, to beg the pardon of their enemy, this young Prince of Mori, while her husband had hastened to Yedo to seek the aid of the Shogun. Nevertheless, both father and mother knew that the fate of their son depended not upon the august <foreign xml:lang="ja">Shogun</foreign>, but upon their brother, the <foreign xml:lang="ja">samurai</foreign> Shimadzu, for the <foreign xml:lang="ja">Shogun</foreign> would scarcely have time to send forces to compel Mori to release Toro before the execution of Keiki took place, which would be undoubtedly the signal for the immediate dispatch of Toro.</p>
-    
-      
-    
-            <p>The unexpected answer the lady received from her brother stunned her so completely that she was robbed of all hope. Now she suffered in turn all the pangs of frantic despair and agony that her niece had so lately undergone through her agency.</p>
-    
-      
-    
-            <p><q>What!</q> cried the <foreign xml:lang="ja">samurai</foreign>, with stern derision, <q>permit the consummation of the work of a lifetime of misery and torture to slip through my aching fingers now? Not for a thousand nephews!</q></p>
-            <p>Yet he endeavored in his rough and stern way to comfort his sister with these strange words:</p>
-    
-      
-    
-            <p><q>Catzu Toro is of <foreign xml:lang="ja">samurai</foreign> blood. It behooves him, therefore, to give up fearlessly his life for the honor of his family. He ought to bless the gods for the opportunity</q>.</p>
-    
-      
-    
-            <p>The mother wept, prayed, threatened. All in vain. Shimadzu was inflexible. Meanwhile the hour which had been set for the execution of the young Prince of Mori approached with more than the natural speed of time, and the Lady Evening Glory’s couriers, the <foreign xml:lang="ja">samurai</foreign> Genji and Matsue, waited in agonized impatience for word of truce to carry to the old Prince of Mori.</p>
-    
-      
-    
-            <p>Finding all her efforts to move her brother unavailing, the Lady of Catzu sought desperately though impotently to bar his egress from the room. She clutched the dividing 
-                  <foreign xml:lang="ja">shoji</foreign> which opened into the corridor, then placed her back against them. When Shimadzu turned to the doors on the opposite side she rushed before him, and again sought to prevent his departure. Firmly, but not ungently, Shimadzu put her aside, whereupon she fell down at his feet, clasping her arms about his legs, while her lips emitted strange and piteous outcries.</p>
-    
-      
-    
-            <p>Yet what could the utmost strength of a delicate lady do against that of a <foreign xml:lang="ja">samurai</foreign> man? With one quick movement he freed himself from her clinging hands. The next moment the Lady Evening Glory was quite alone. She suddenly realized that the gods had denied her all succor, and crawled across the room until she stood in front of the small shrine in the place of the <foreign xml:lang="ja">tokonoma</foreign>. There she prostrated herself, but her lips could not frame themselves in petition to the gods.</p>
-    
-      
-    
-            <p>How long she lay thus she could not have told. Gradually she became conscious that some one was kneeling beside her, and that a soft and tender hand was smoothing back the wild hair that escaped about her face. A gentle voice whispered:</p>
-    
-      
-    
-            <p><q>The gods are good—good! Take heart! They will not desert us! The gods are good!</q></p>
-            <p>Then the proud Lady of Catzu, raising herself to a kneeling posture, gazing up into the bending, pitying face above her, saw her niece, whom she had so vindictively persecuted. Before she could speak one word, Wistaria drew her hand to her breast. Then the bereaved mother gave way to a passion of tears of weakness and despair.</p>
-    
-      
-    
-            <p><q>You are calmer now, dear aunt</q>, said the Lady Wistaria after a while. <q>Weep no more, I pray you. But try rather to bring your mind to think clearly with mine. We must conceive some way by which we can outwit my honorable parent. We have yet two hours before the time when my father will depart for—for his prisoner</q>.</p>
-    
-      
-    
-            <p>But the after-effects of weeping, great sighs, rendered the Lady Evening Glory speechless. She could only shake her head hopelessly, helplessly.</p>
-    
-      
-    
-            <p><q>All night long</q>, said Wistaria, <q>I have kept vigil. I have thought and thought and thought, until my brains has seemed ready to burst. I too, my lady, have yielded myself to such despair as you now feel. I suffer more than the pain of one who loses a beloved, for I am tortured with the knowledge that I am guilty. Oh, lady, was it not I who betrayed this prince, and would I not be the indirect cause of dear Toro’s death also? Therefore it is my task to save the life of this prince, if that can be done</q>.</p>
-    
-      
-    
-            <p><q>But it cannot—cannot</q>, moaned the Lady Evening Glory. <q>Thou knowest not thy father!</q></p>
-    
-      
-    
-            <p><q>And yet</q>, said Wistaria, slowly, <q>I have thought of one way</q>.</p>
-    
-      
-    
-            <p><q><foreign xml:lang="ja">Anata!</foreign></q></p>
-    
-      
-    
-            <p><q>Tell me first, my lady, is it not so—that one who marries an <foreign xml:lang="ja">Eta</foreign> is forever after disgraced—branded?</q></p>
-    
-      
-    
-            <p><q>Yes, yes, that is true—but—</q></p>
-    
-      
-    
-            <p><q>It is of importance that I know all this. Now is it not also true that my father’s chief ambition is to break the pride and spirit of the old Lord Mori?</q></p>
-    
-      
-    
-            <p><q>Yes, it is so, it is so</q>.</p>
-    
-      
-    
-            <p><q>Then, my lady, be comforted. Mayhap I shall find a solution to all our troubles</q>.</p>
-    
-      
-    
-            <p>Arising, gently she took her arms from about her aunt to hasten into the adjoining chamber. Her voice addressing the Madame Mume came to the Lady Evening Glory.</p>
-    
-      
-    
-            <p><q>Tell my honorable father</q>, she said, <q>that I beg for just one minute of his honorable time</q>.</p>
-    
-      
-    
-            <p>When she returned to her aunt her face had a wan little smile of hope on it. The <foreign xml:lang="ja">samurai</foreign> Shimadzu followed her into the room. Wistaria prostrated herself before him with the utmost humility.</p>
-    
-      
-    
-            <p><q>You have asked for an audience, my lady. Speak quickly, for I have work to do ere long</q>.</p>
-    
-      
-    
-            <p><q>Honored parent</q>, said Wistaria, with her eyes upon his, <q>I have thought much upon what thou were pleased to tell me last night</q>.</p>
-    
-      
-    
-            <p><q>Indeed</q>.</p>
-    
-      
-    
-            <p><q>And, my father, the more I have thought of the matter the greater have the wrongs of my father and mine, those of our house, appeared to me to be</q>.</p>
-    
-      
-    
-            <p><q>Thou speakest now</q>, said the <foreign xml:lang="ja">samurai</foreign>, quietly, <q>as becomes an honorable daughter</q>.</p>
-    
-      
-    
-            <p><q>Oh, my father, so deeply do I feel the wrongs of our house that I have felt that even the very death of this young prince would not be a sufficient vengeance</q>.</p>
-    
-      
-    
-            <p>She was speaking slowly and distinctly, so that each sentence should take effect upon her father.</p>
-    
-      
-    
-            <p><q>Having broken the heart and spirit of my enemy</q>, said Shimadzu, <q>I shall have accomplished all. It will be sufficient, and my work, my duty, will then be consummated</q>.</p>
-    
-      
-    
-            <p><q>But think you, my father, that by the killing of his prince you will indeed have broken the heart and spirit of your enemy?</q></p>
-    
-      
-    
-            <p><q>Ay! For I shall have robbed him of that thing which he prizes above all else on earth—his son!</q></p>
-    
-      
-    
-            <p><q>But has he not seven other sons who would quickly fill the place of this one?</q></p>
-    
-      
-    
-            <p><q>That is so. Were it possible for me to have seven instead of one Mori prince for execution this day, I would be seven times the happier</q>.</p>
-    
-      
-    
-            <p><q>August father, you have taught me, and I have learned, that death is not the greatest of sorrows that can befall us. Execute this prince and he will quickly pass into another world, where the fates may befriend him. He will be beyond our reach. In the eyes of his parent he will have died an heroic and exalted death, since he gives up his life for what he deems a noble cause. Oh, my father, in all the empire of Japan, what Imperialist would not envy him such a death? No, the death of this prince would be inadequate revenge for the wrongs we have suffered. Far better if he could be forced to live so that he might suffer the devils of pain to gnaw at his heart all the rest of his life</q>.</p>
-    
-      
-    
-            <p><q>Thou wouldst have him spared for purposes of torture?</q></p>
-    
-      
-    
-            <p><q>Yes, honored father</q>.</p>
-    
-      
-    
-            <p><q>Thou art indeed a woman</q>, said the <foreign xml:lang="ja">samurai</foreign>. <q>Yet a <foreign xml:lang="ja">samurai</foreign>’s sword has never been turned to such a purpose</q>.</p>
-    
-      
-    
-            <p><q>That is right, for your honorable sword is not sufficiently sharp, my father</q>.</p>
-    
-      
-    
-            <p><q>Thou speakest darkly, my daughter</q>.</p>
-    
-      
-    
-            <p><q>I have thought darkly of our wrongs, my father. I have found a more refined revenge to inflict upon this prince, one which would wound him more deeply than the death of one of his eight sons</q>.</p>
-    
-      
-    
-            <p><q>Well, and what is your revenge?</q></p>
-    
-      
-    
-            <p><q>First answer me this: What would be the feelings of this proud and arrogant prince if his idolized heir were to be guilty of that very fault for which he exiled his <foreign xml:lang="ja">samurai</foreign>?</q></p>
-            <p><q>What fault?</q></p>
-    
-      
-    
-            <p><q>The fault of marrying into a degraded and outcast class</q>.</p>
-    
-      
-    
-            <p>The <foreign xml:lang="ja">samurai</foreign> started. Then a strange smile flitted across his thin face.</p>
-    
-      
-    
-            <p><q>His pride would fall. Such a calamity would crush—bend—kill him!</q></p>
-    
-      
-    
-            <p><q>True. Then if his pride is such, let us strike at it before his heart. I think I see a way by which this can be accomplished</q>.</p>
-    
-      
-    
-            <p><q>How?</q></p>
-    
-      
-    
-            <p><q>Bring this young prince hither. Leave him to me!</q></p>
-    
-      
-    
-            <p><q>To you!</q></p>
-    
-      
-    
-            <p>She went very close to her father and raised her face upward so that he might see it perfectly.</p>
-    
-      
-    
-            <p><q>Look upon me, honorable parent. Am I not fair? Bring hither this son of an evil prince, and in twenty-four hours he will be ready to wed an 
-                  <foreign xml:lang="ja">Eta</foreign> maiden</q>.</p>
-    
-      
-    
-            <p><q>An 
-                  <foreign xml:lang="ja">Eta</foreign> maiden!</q> suddenly shrieked her aunt. <q>Who? Not—</q> She made an indescribable gesture towards the girl.</p>
-            <p><q>I</q>, said Wistaria, throwing back her head—<q>I am an <foreign xml:lang="ja">Eta</foreign> maiden, my lady</q>. She bowed very low, then moved towards the door. Before passing out she turned.</p>
-    
-      
-    
-            <p><q>I go</q>, she said, <q>to garb myself in the dress of an <foreign xml:lang="ja">Eta</foreign> maiden. But do not believe, my lady aunt, that I shall have lost that beauty with which the gods have blessed me, and with which I shall win and wed this Mori prince to the disaster of his household and the triumph of my father’s</q>.</p>
-    
-      
-    
-            <p>With that she was gone from the room. They heard her light feet flying up to her chamber above.</p>
-    
-      
-    
-            <p><q>It will crush—bend—kill the father!</q> muttered the <foreign xml:lang="ja">samurai</foreign>, softly. <q>It is well!</q></p>
-    
-      
-    
-            <p><q>It is well!</q> repeated his sister, but in a different tone.</p>
-          
-          
-          <milestone unit="sectionBreak"/>
-  
-    </div>
-    <div>                          
-      
-    
-            <head>Chapter XV</head>
-    
-      
-    
-            <p>The young Prince of Mori, no longer the Shining Prince Keiki, lay huddled in a corner of his dungeon. Vainly he had thrown his weight against the stone doors, only to rebound, baffled and bruised. Vainly he had called in piercing accents for help. There came no response from man or gods. Only his frantic voice, fleeing like the wind through the passage ways of the empty prison, dark, damp, and for long unused, seemed to call back to him in the mocking tones of a demoniac.</p>
-    
-      
-    
-            <p>A prisoner! A prisoner! He, the heir of Mori, the hope, the idol of the brave Imperialists, the son of the most powerful prince in all Japan, barring not even the <foreign xml:lang="ja">Shogun</foreign> himself! A prisoner! Penned like a common criminal within the stone walls of a loathsome dungeon! It could not be true. It was a hideous nightmare, caused by that terrible, ceaseless, excruciating pain in his head, and the mad turmoil in his brain.</p>
-    
-      
-    
-            <p>He had been captured on the outskirts of his father’s province. He was alone, with not one vassal or retainer in attendance upon him. He had made the wildest resistance. More than one <foreign xml:lang="ja">samurai</foreign> paid with his life for the capture of the Shining Prince. Overpowered by such numbers that it seemed madness not to yield, Keiki could not be taken while a spark of life remained in him with which to resist. Only when he was beaten quite senseless were the <foreign xml:lang="ja">Shogun</foreign>’s officers and the Catzu <foreign xml:lang="ja">samurai</foreign> able to capture the Prince. Even then many of the <foreign xml:lang="ja">samurai</foreign> refused the inglorious task of carrying away the young Prince, who had fought against them with such desperate bravery. To drag his unconscious, bleeding, helpless body before his judges would be beneath the dignity of a <foreign xml:lang="ja">samurai</foreign>. So the office was assigned to some of the <foreign xml:lang="ja">Shogun</foreign>’s spies.</p>
-            <p>When Keiki had returned to consciousness he was as one in a dull dream, a nightmare, wherein painful events wove a net about him from which he could not stir or move to save himself.</p>
-    
-      
-    
-            <p>The trial had been a brief one. A few questions, a multitude of proofs, irrefutable evidence, the testimony of some false <foreign xml:lang="ja">samurai</foreign> now become a <foreign xml:lang="ja">ronin</foreign>, a private statement by the <foreign xml:lang="ja">samurai</foreign> Shimadzu—that was all. No word or question whatever was addressed to the prisoner, nor was he given the opportunity to speak in his own defense, had he been in a condition to do so. He stood between two guards, one on either side, while four others stood before him and a score at his back.</p>
-    
-      
-    
-            <p>Keiki was quite beyond understanding the proceedings, and only the Spartan will of the <foreign xml:lang="ja">samurai</foreign> lent to him that almost unnatural strength by which he stood stoutly upon his feet while his head swam. Out of a multitude of surging words and sentences only one word reached his ears and penetrated to his consciousness—</p>
-    
-      
-    
-            <p><q>Treason!</q></p>
-    
-      
-    
-            <p>And the word called up a haunting memory of a dark and stagnant moat wherein the sacred lotus blossoms, symbolic of the purity of woman, hid the treacherous waters beneath, of a sloping bank where the grasses grew high over his head, and the willows at the bottom waved in a foot of water. A young girl’s face shone out of this strangely mixed background. It was very long ago, it seemed to Keiki, and though her face was quite dim to his vision now, he remembered that it was like unto the lotus, perfectly pure and peerlessly beautiful, only behind her beauty, unlike that of the lotus, there were no treacherous deeps of darkling waters. Keiki remembered vaguely now that she had crawled, through the willows, through the moat, perhaps, to come to him to warn him of this treason. Treason? Whose?</p>
-    
-      
-    
-            <p>Thus Keiki’s tangled mind followed not the mockery of the trial, nor heeded the sonorous voice of the crier, who echoed the words of the Lord Judge, and shouted mechanically:</p>
-    
-      
-    
-            <p><q>Guilty! Death!</q></p>
-    
-      
-    
-            <p>A small company of armed men led him from the judgment-hall. They made a long journey, matching by night. Passive, stupidly indifferent to everything, Keiki was led to prison.</p>
-    
-      
-    
-            <p>Only when they had locked him within the empty stone cell, did the old, passionate rebellion that had swayed him so savagely when he had resisted capture break out with renewed fury, driving in a flash his apathetic dullness from him.</p>
-    
-      
-    
-            <p>His captors had taken his two swords from him, the two proud swords from which a <foreign xml:lang="ja">samurai</foreign> must never part. The Prince was to be come lord over the <foreign xml:lang="ja">samurai</foreign>, yet he had been trained in the same school, and with as severe a discipline as that of the simple soldier. Had they left him these, his <foreign xml:lang="ja">samurai</foreign> swords, in all probability the Prince would have ended his misery. As it was, he spent the night in fruitless, impotent raving. Morning found him exhausted. Even the <foreign xml:lang="ja">samurai</foreign>’s great power of will over the physical body could avail him no longer.</p>
-    
-      
-    
-            <p>When the <foreign xml:lang="ja">samurai</foreign> Shimadzu unlocked the door of the cell no desperate, wild-eyed prince leaped at his throat. The young Prince of Mori lay stretched across the floor of the dungeon. The glittering cords of his coat, the golden hip-cape, with its billowings and embroiderings of dragons and falcons, all the late luxurious finery which had earned for him the sobriquet of <q>The Shining Prince</q>, and which were also the insignia of his high rank, were now torn and stained with the cruelest of colors. The dark hair fell back, clotted with the perspiration on his noble brow, from which the blue veins started through the fine skin. The long lashes covered the eyes and swept the almost boyish curves of the death-white cheeks. His lips were parted, and he was still raving, but in the babbling, weak, piteous fashion of one delirious from loss of blood.</p>
-    
       
     
-            <p>After feeling the Prince’s hands and head, Shimadzu was satisfied with his condition. Roughly binding up a bad wound upon the shoulder, he called for a stretcher. Borne upon this temporary couch, straightway the Prince was carried to the home of the executioner.</p>
+            <p>The intruder proves to be one Catzu Toro, son of Lord Catzu. He at once engages the lover in sword combat, but is no match for him. After he is beaten he talks matters over with the enemy and the two agree to help each other, as Toro can be of assistance to Wistaria’s lover, while the latter agrees to do what he can for Toro, who is suitor to a young princess in the clan to which he belongs. Wistaria’s lover takes the name of Keiki in order that his identity will not be discovered, also adopting the dress of the Catzu clan. The Lord of Catzu receives his son’s friend (Keiki) with hospitality, giving him fine apartments in the palace. He even favors his suit for the hand of the princess, taking them daily on picnics up the river when the weather permits, never realizing for a moment that he is entertaining a member of the hostile Mori clan. Meanwhile the Lady Evening glory, who had been ill, recovers and starts in with a determination to break up the infatuation of the two lovers at any cost. She knows they are much interested in each other, but never dreamed that they had met to talk it over. She rises early one morning and entering the apartments of the princess unannounced, finds that little lady seated on the floor surrounded by flowers, which is evidence that she had a lover, a very bold thing to reveal in Japan.</p>
     
       
     
-            <p>Meanwhile Wistaria had made ready for the reception of their expected guest. Having taken off her silken <foreign xml:lang="ja">omeshi</foreign> and removed the jeweled ornaments from her hair, she appeared in a rough cotton <foreign xml:lang="ja">kimono</foreign>, of a bright red-and-yellow pattern, such a garment as a laboring woman or one of the <foreign xml:lang="ja">heimin</foreign> would have worn. But she had taken especial pains with her hair and face. The shining, dark locks, which formed such a charming frame for her beautiful face, were spread wide and folded back, so that their beauty might be exaggerated. Because she was pale, as one about to die rather than to wed, she had rubbed upon her cheeks, chin and brow brazen red paint, something previously she would have scorned to touch. Instead of brightening the pallof her face, however, it only heightened its haggardness.</p>
-    
-      
-    
-            <p>Wistaria sat in the centre of the chill, empty guest-room. She was smiling. She had been smiling ever since she had descended from her chamber. Her eyes were glassy, and shared not in that forced, blighting smile which she wore upon her lips. Very still, like an automatic puppet with the works unwound within it, she sat.</p>
-    
-      
-    
-            <p>The Lady Evening Glory, on the other hand, flitted back and forth like a restless spirit. Sometimes she paused by the little, waiting figure, stroking the shining head. But in her heart the proud Lady of Catzu had little sympathy for the one who was to be sacrificed to the vengeance of a <foreign xml:lang="ja">samurai</foreign>. When she realized that her niece was renouncing her lover to whom she had pledged herself to all eternity, she thought, with the selfish egotism of one who has outgrown her own heart, that in marrying a prince, even though she won him by trickery, certainly her niece would be faring better than if she had bestowed herself on one of his vassals.</p>
-    
-      
-    
-            <p>Then, too, Wistaria, after all, was merely a female—an <foreign xml:lang="ja">Eta</foreign> maiden. So the lady’s selfish mind fed itself upon one thought, mingled hope and suspense for the fate of her son.</p>
-    
-      
-    
-            <p>When the sound of tramping feet was heard without, the Lady Wistaria did not stir, but the cold and stately Lady of Catzu went r ushing across the room to fling herself against the window. The tramp of feet grew louder, deeper, heavier. They smote upon Wistaria’s ears like the beat of <foreign xml:lang="ja">Shinto</foreign> drums at a funeral. Still she did not stir, not even when the doors of the house were pushed wide apart and the tramping feet entered, passed through the outer room, and then into the guest-room. The set smile upon her face deepened. Wistaria laid her head to the mats, prostrated herself in exquisite humble greeting.</p>
-    
-      
-    
-            <p>Thus, for some time, she courtesied low.</p>
-    
-      
-    
-            <p>Some one pulled her sleeve. She sat up and stared at the figure on the stretcher. They had set it down beside her on the floor. Somewhere in another part of the house she heard dim voices, above them all her father’s deep, hollow voice, sounding strange—clear.</p>
-    
-      
-    
-            <p>A sort of awe and horrible reverence fell upon her as she clutched her aunt’s hand. Then the two half crept, half crawled, close to the stretcher. Wistaria looked at the face, looked, and looked, and looked again. A heart-rending shriek burst from her lips. She fell across her lover’s body, spreading the wings of her sleeve over and about him, as though to shield and protect him from all harm.</p>
-    
-      
+    <milestone unit="sectionBreak"/>
     
-          <milestone unit="sectionBreak"/>
+ </div>
+ <div>
 
-    </div>
-    <div>                        
-    
-            <head>Chapter XVI</head>
+            <head>Chapter VII – Continued</head>
     
       
     
-            <p><q>Brother, you were surely blind that you did not recognize your prisoner</q>, said the Lady Evening Glory, after the lovers had been carried from the room.</p>
+            <p>The Lady Evening Glory’s lips became a thin pursued line.</p>
     
       
     
-            <p><q>His appearance, my lady, had no interest for me</q>.</p>
+            <p><q>The flowers? Whence came they?</q></p>
     
       
     
-            <p><q>Now that you are aware he is her lover, what then?</q></p>
+            <p><q>From the honorable garden</q>, answered Wistaria, trembling.</p>
     
       
     
-            <p><q>All that is very fortunate. Whatever doubt I may have felt as to my daughter’s ability to ensnare this Mori prince into marrying her is now set at rest. She already possesses his affection. Nothing remains, therefore, to be done save to bring about their early union. This shall be effected just as soon as the young man regains sufficient strength. Meanwhile—</q></p>
+            <p><q>There is no tree in all the garden with blossoms in full bloom. They are only commencing to bud, and will not blossom before the first of April</q>.</p>
     
       
     
-            <p><q>Meanwhile?</q></p>
+            <p>To this undeniable fact Wistaria made no response.</p>
     
       
     
-            <p><q>You have permission to dispatch word to Choshui that a delay has been granted to the Prince. This will keep them for a time from attacking Catzu Toro. Also, the <foreign xml:lang="ja">shogunate</foreign>, availing itself of the time to march upon Choshui, will rescue your son</q>.</p>
+            <p><q>Answer when you art spoken to</q>, prompted her aunt, sharply.</p>
     
       
     
-            <p><q>But will not the Mori immediately retaliate by sending troops here to attempt the rescue of their own prince?</q></p>
+            <p><q>My lady—I do not know what to say</q>.</p>
     
       
     
-            <p><q>Not so, since the whereabouts of their prince is entirely unknown to them. As you are aware, his trial was in secret. Only the <foreign xml:lang="ja">shogunate</foreign> is acquainted with his present abode. The secret will be guarded, rest assured. In fact, for the very purpose of forestalling any such attempt on the part of the Mori, they have placed at any service a company of soldiers and large number of spies</q>.</p>
+            <p><q>Then you leave me to my own conjectures. You have a lover</q>.</p>
     
       
     
-            <p><q>What are your intentions with regard to this Mori prince?</q></p>
+            <p><q>Oh, no, indeed!</q></p>
     
       
     
-            <p><q>He shall marry, as you already know, the Lady Wistaria, and in that way will become an outcast, both legally and morally</q>.</p>
+            <p><q>What! Flowers fresh from the morning dew in your chamber, and you with you hair unbound! Pray when did it become an honorable fashion for ladies of our rank to venture out to purchase flowers before sunrise—and in such scanty attire?</q></p>
     
       
     
-            <p><q>And after their marriage?</q></p>
+            <p><q>My aunt, you are killing me</q>.</p>
     
       
     
-            <p><q>Immediate notification of the fact to his father</q>.</p>
+            <p><q>Your health appears to me to be far from feeble</q>.</p>
     
       
     
-            <p><q>And after that? What of the order from the <foreign xml:lang="ja">shogunate</foreign> touching his execution?</q></p>
+            <p><q>I am innocent of any wrong</q>, said Wistaria, with a flash of spirit.</p>
     
       
     
-            <p><q>It shall be destroyed. I have given my promise to my daughter</q>.</p>
+            <p><q>Then you will not object to inform me who presented you with these flowers?</q></p>
     
       
     
-            <p><q>But when this fact reaches the <foreign xml:lang="ja">shogunate</foreign> people they will resent it, and will never permit so valuable a prisoner to escape them. They will send troops, if necessary, to take him from you. IN the event of your refusing to execute him, they will find another who will do so</q>.</p>
+            <p><q>An honorable gentleman</q>, said Wistaria.</p>
     
       
     
-            <p><q>Very well, let them do so. I have no doubt, however, that the Prince Keiki will escape them. But having become an outcast, he will be useless as an Imperialist leader</q>.</p>
+            <p><q>Indeed! And what is this honorable gentleman’s name, may I ask?</q></p>
     
       
     
-            <p><q>Which does not alter the fact that the <foreign xml:lang="ja">Shogun</foreign>’s men will continue to fear him. Even now, you say, their spies and soldiers are lurking about on all sides. I tell you it is quite impossible for him to escape them now</q>.</p>
+            <p>Wistaria hesitated. Then a sudden idea came to her. She smiled mysteriously.</p>
     
       
     
-            <p><q>Well, all that is his affair, my lady. So far as I am concerned, on the day of his <foreign xml:lang="ja">Eta</foreign> marriage I shall destroy the order of execution</q>.</p>
+            <p><q>But I do not know his name</q>, she said, which was quite true, as she was unaware of her lover’s true name.</p>
     
       
     
-            <p><q>Which would be a criminal act, and one that would place you under the ban of the law</q>.</p>
+            <p><q>You do not know the name of your lover!</q> cried her aunt, incredulously.</p>
     
       
     
-            <p><q>That is true, but I shall answer, I assure you, for whatever unlawful acts I have committed during my lifetime to a higher tribunal than any that could be formed by the august shogunate</q>.</p>
+            <p><q>Indeed, I wish I did</q>.</p>
     
       
     
-            <p><q>Brother, what do your words imply?</q></p>
+            <p><q>Yet you accept his gift! You are entirely without shame, girl!</q></p>
     
       
     
-            <p><q>Sister, I cannot answer that question yet. When my purpose in life is accomplished you shall have the answer. And after that, will you perform a favor for me?</q></p>
+            <p><q>Oh, lady, the flowers were so beautiful I could not resist them</q>.</p>
     
       
     
-            <p><q>Certainly</q>.</p>
+            <p><q>Beautiful!</q> shrieked her aunt. <q>And because flowers are beautiful, is that an excuse for accepting the lover of some impudent adventurer?</q></p>
     
       
     
-            <p><q>The Lady Wistaria will be alone</q>.</p>
+            <p><q>Accepting the love!</q> repeated Wistaria, faltering.</p>
     
       
     
-            <p><q>Alone? She will have a husband</q>.</p>
+            <p><q>Yes, indeed, and you need not pretend ignorance of my words. They are quite clear to you, I have no doubt</q>.</p>
     
       
     
-            <p><q>She will be alone, I repeat. Do you suppose I should rest peacefully in my grave with the knowledge that the blood of Mori was mingling with my own? I repeat once more, my daughter will be quite alone, sister. Be gentle with her, and as tender and kind as it is possible for one woman to be to another. She will not lack for worldly wealth, for I shall leave her a fortune. I do not wish her to return to Catzu. I desire that a small temple shall be built for her somewhere in a quite and remote region. There I wish her to become a high priestess, to devote the remainder of her life to works of holiness and charity. In this way she will atone for the many sins of her father, and the gods will listen to her prayers and show charity to his soul</q>.</p>
+            <p><q>But—</q></p>
     
       
     
+            <p><q>You are well aware that by accepting the flowers you also accept his despicable love, and practically betroth yourself to this fellow. He shall be flogged for his impertinence</q>.</p>
     
       
     
-          <milestone unit="sectionBreak"/>
+            <p><q>Flogged!</q> cried Wistaria, becoming very pale.</p>
     
-    </div>
-   <div>                          
+      
     
-            <p>To Be Continued Next Sunday</p>
+            <p><q>Flogged, I repeat</q>, said her aunt, coldly.</p>
+    
+      
+    
+            <p>Wistaria shivered with apprehension. She had not until now grasped the real seriousness of her position.</p>
+    
+      
+    
+            <p><q>Your father</q>, continued the Lady Evening Glory, <q>shall be sent for this day. We shall see what those in authority over you think of your conduct</q>.</p>
+    
+      
+    
+            <p>The aunt had but to mention the father to fill Wistaria with fear. She sprang to her feet and stood trembling among the scattered blossoms.</p>
+    
+      
+    
+            <p><q>I am guilty of no wrong, I do assure you, my lady aunt. But I arose to enjoy the sun’s awakening, and—and I did find these honorable flowers on my sill, and indeed they spoke to me of—of the coming summer, and so many things, dear aunt, that I was fain to take them in</q>.</p>
+    
+      
+    
+            <p><q>Then do, pray, my little dove, inform me what you know concerning this presumptuous fellow who placed them on your sill</q>.</p>
+    
+      
+    
+            <p><q>Oh, my lady, he is indeed honorably noble</q>.</p>
+    
+      
+    
+            <p><q>Indeed!</q></p>
+            <p><q>I do assure you. He is—</q> she broke off, painfully debating in her mind the wisdom of confessing the truth to her aunt.</p>
+    
+      
+    
+            <p><q>He is—?</q> repeated her aunt.</p>
+    
+      
+    
+            <p><q>Our own august guest</q>.</p>
+    
+      
+    
+            <p><q>Ah—ho! Then if that is so, you spoke a lie just a moment since when you said you did not know your lover’s name</q>.</p>
+    
+      
+    
+            <p>Wistaria attempted to speak, but broke off, faltering and stammering piteously.</p>
+    
+      
+    
+            <p><q>May I inquire, then</q>, continued her aunt, relentlessly, <q>whether you are unacquainted with the honorable name of our august guest?</q></p>
+    
+      
+    
+            <p><q>Oh, my lady, I do believe that—that he assumed another—only—just for the innocent romance of wooing me under an assumed title</q>.</p>
+    
+      
+    
+            <p><q>So! And pray how comes it, then, that my son’s honorable guest should also happen to be your lover? If in order to woo you he came hither under an assumed name, then it would seem that you had some previous acquaintance with him?</q></p>
+    
+      
+    
+            <p><q>He followed our cortege from Yeddo, madame</q>, confessed the unhappy girl.</p>
+    
+      
+    
+            <p><q>What! You do not meant to tell me that he is that insolent Mori courtier of whom I heard only after my arrival home?</q></p>
+    
+      
+    
+            <p>Wistaria pressed her hands tightly together. She seemed overcome. Then suddenly she raised her head with almost defiant bravery.</p>
+    
+      
+    
+            <p><q>He is of the Mori clan, madame</q>, she said.</p>
+    
+      
+    
+            <p><q>The Mori clan!</q> The lady’s voice rose shrilly. <q>How came he, then, to enter our grounds?</q></p>
+    
+      
+    
+            <p><q>He came, my lady, by the south river, where there is a break in the wall</q>.</p>
+    
+      
+    
+            <p><q>But how could he know this? Answer me that at once</q>.</p>
+    
+      
+    
+            <p><q>I—</q></p>
+    
+      
+    
+            <p><q>Will you deign to inform me whether you condescended so far as to answer the love letters of this young man, for I have no doubt he favored you with many?</q></p>
+    
+      
+    
+            <p><q>I wrote only one insignificant reply</q>, said Wistaria.</p>
+    
+      
+    
+            <p><q>And what, pray, did you say in this reply?</q></p>
+    
+      
+    
+            <p><q>I implored him to follow us no farther. I besought him to give up the impossible exploit of entering our grounds, and, knowing what would be his fate if he attempted to do so, I also informed him that if he must indeed enter, to do so by way of the south river, that a portion of our grounds ran down to this honorable river and was unprotected by the walls, which otherwise surrounded us on all sides</q>.</p>
+    
+      
+    
+            <p><q>So it seems that you have betrayed to our enemy the weakness of our condition?</q></p>
+    
+      
+    
+            <p><q>Not an enemy, lady! He is not, indeed</q>.</p>
+    
+      
+    
+            <p><q>And may I ask how your redoubtable lover, having gained entrance to our grounds, also contrived to wedge his way into the palace and become a guest of our hospitality?</q></p>
+    
+      
+    
+            <p><q>Toro—</q> faltered Wistaria.</p>
+    
+      
+    
+            <p>Her aunt’s face flamed.</p>
+    
+      
+    
+            <p><q>Toro, he discovered him the first morning, and—and—they became friends at once</q>.</p>
+    
+      
+    
+            <p><q>My son!</q></p>
+    
+      
+    
+            <p><q>Oh, yes, madame, and on my two knees, I am prepared to beg you to show him mercy</q>.</p>
+    
+      
+    
+            <p><q>Keep your knees, my young lady, to beg mercy for yourself. You may have need of it ere long</q>, said her aunt, with chilling irony.</p>
+    
+      
+    
+    <milestone unit="sectionBreak"/>
+    
+      
+</div>
+               <div>
+                  
+            <head>Chapter VIII</head>
+    
+      
+    
+            <p>From the insinuations and threats of the Lady Evening Glory it might seem as if Wistaria’s lover were in imminent danger, and that the Catzu family might be expected to hasten instantly to cast him out from their province or have him imprisoned as a trespasser and imposter. But Japanese craft is more subtle. Besides, the right of judgment lay in the hands of the father of Wistaria, who was her natural and legal guardian. It was necessary, therefore, that the young man should, for the time being, gather no suspicion of their discovery. Consequently the Catzu family redoubled their expression of good will and friendship for their guest, while the only one who could have warned him was placed where she was helpless to do so.</p>
+    
+      
+    
+            <p>With excessive sweetness, the Lady Evening Glory informed the courtier that she had heard such good reports of him from her honorable husband that she had risen prematurely from her bed of sickness in order to greet him and assure him of her solicitation for his comfort and pleasure during his stay in Catzu.</p>
+    
+      
+    
+            <p>All these marks of friendship and compliment from the honorable lady of the house, besides the increased cordiality of the Lord of Catzu, would have been very delightful to the lover, but for the fact that almost coincident with the return to health of her aunt it was announced that the Lady Wistaria was unable to leave her apartments because of a sudden illness. The lover, therefore, in an agony of apprehension for the health of Wistaria had no heart or ears for the words of compliment pressed upon him by her family.</p>
+    
+      
+    
+            <p>He spent his time roving restlessly about the grounds of the palace in the neighborhood of Wistaria’s casement, but the blinds were drawn tightly, morning, noon and night, and there was only the memory of the girl’s exquisite face at the window to torture the lover.</p>
+    
+      
+    
+            <p>The arrival of Shimadzu, the father of Lady Wistaria, created no stir in the Catzu palace. He came silently at night. If any of the servants or members of the household knew of his presence they were dumb concerning the matter. The lover, consequently, was wholly unaware of his coming.</p>
+    
+      
+    
+            <p>Shimadzu was closeted for some hours with his sister and sister-in-law. The Lady Evening Glory was bitter against her niece. Not merely the fact of the indelicate and unconventional manner of the courtship, nor even the fact that the lover was a member of their rival clan, and though his residence among them must have acquired information concerning their province which would be of value to his prince—not these things infuriated her so much as the thought that her son, the pride and joy of her life, the heir of Catzu, had been led by this stranger into an undertaking both perilous and shameful, the outcome of which was most uncertain.</p>
+    
+      
+    
+            <p>The Lord of Catzu was milder and more lenient towards the guilty parties, possibly realizing in his inmost soul a measure of the responsibility. He endeavored to palliate their offense.</p>
+    
+      
+    
+            <p>As for Shimadzu himself, he had not one word to say. He listened to the separate speeches of his sister and brother-in-law, and when they had concluded he simply requested that his daughter be ordered into his presence at once.</p>
+    
+      
+    
+            <p>Wild-eyed and trembling, Wistaria was brought in. Gone from her face, pale and drawn with the intensity of her sufferings, was all the sun. During the three days preceding the arrival of her father she had been locked up alone in an interior room of the palace. No one had approached save her august aunt, who brought food with her own hands, and whose absolute silence inspired her with a great dread. She would speak no word, or even deign to look at the unhappy girl. Wistaria, rendered frantic by fears for her lover, had ofttimes thrown herself at her aunt’s feet, piteously beseeching that she would enlighten her as to the fate of her lover. But the Lady Evening Glory would shake her skirts icily and contemptuously from her grasp, to retire without a word of response.</p>
+    
+      
+    
+            <p>Now Wistaria prostrated herself before the parent who had always inspired her with such incomprehensible fear. He motioned her to be seated though he himself remained standing. Mutely, mechanically, she obeyed him.</p>
+    
+      
+    
+                  <p>For a moment there was silence. The deep-set eyes of the father looked out at the young girl, noting the piteous tremble of the hands, the small, bowed head, the down-dropped eyes which dared no meet his own, and all the other evidences of her sufferings. Whatever the thoughts of the father, whether merciful or cruel, his impassive face revealed not his inner feelings. In some strange way this <foreign xml:lang="ja">samurai</foreign> seemed steeled against the pain of the world itself. Suddenly he spoke, his hollow voice smiting with a shock the frail, highly-strung girl.</p>
+    
+      
+    
+            <p><q>My daughter, had you a mother to love and guide you, you would not now be unhappy</q>.</p>
+    
+      
+    
+            <p>He paused to note the effect of his strange words—strange because of the lack of emotion and sympathy that should have accompanied them. Wistaria raised her head painfully, but she did not speak.</p>
+    
+      
+    
+            <p><q>Therefore</q>, continued her father, <q>I wish to inform you that it is because of an enemy that you are now motherless, and therefore misguided</q>.</p>
+    
+      
+    
+            <p><q>An enemy?</q> repeated Wistaria, dully.</p>
+    
+      
+    
+            <p><q>And it is to take my revent upon this enemy that I am now about to impose a certain duty upon you which may at first seem repugnant. Before I do so, however, I wish to remind you that you come of a proud and heroic race, my daughter, no member of which has ever faltered in his duty. I would, therefore, my daughter, much rather see you strong and fearless than weak and trembling, as you now appear</q>.</p>
+    
+      
+    
+            <p>Raising herself bravely, with a superhuman effort the girl grasped at her strength of will.</p>
+    
+      
+    
+            <p><q>My weakness, honorable father, is but temporary. Speak your august will with me</q>, she said.</p>
+    
+      
+    
+                  <p><q>That is well</q>, returned the <foreign xml:lang="ja">samurai</foreign>, briefly. <q>I have a few questions first of all to put to you. I need not say that I expect truthful answers, and will tolerate no prevarication</q>.</p>
+    
+      
+    
+            <p>The girl bowed her head with a certain dignity of submissiveness.</p>
+    
+      
+    
+            <p><q>Of what rank is your lover?</q></p>
+    
+      
+    
+            <p>Wistaria trembled.</p>
+    
+      
+    
+            <p><q>I do not know</q>, she replied, in a low voice.</p>
+    
+      
+    
+            <p><q>He has not mentioned his rank to you?</q></p>
+    
+      
+    
+            <p><q>Only that he was of honorably insignificant rank</q>.</p>
+    
+      
+    
+            <p><q>Humph! Well, that is but a natural reply. What is his appearance?</q></p>
+    
+      
+    
+            <p>For a brief moment a gleam of strange pride came over her face. She pressed her little hands passionately together.</p>
+    
+      
+    
+            <p><q>Oh, my father, he is honorably noble, I do assure you. He possesses—</q></p>
+    
+      
+    
+                  <p><q>I did not ask for a rhapsody upon his merits</q>, interrupted the <foreign xml:lang="ja">samurai</foreign>, coldly. <q>However, I am satisfied as to his rank</q>.</p>
+    
+      
+    
+            <p>A tear fell softly upon her little hand. Feeling, rather than seeing, her father’s irritation, she brushed it away impatiently, trying vainly to appear brave.</p>
+    
+      
+    
+            <p><q>Now</q>, resumed Shimadzu, half to himself, <q>if he is of noble rank it follows that he is close to the Mori family. Very good</q>.</p>
+    
+      
+    
+            <p>He turned to his daughter.</p>
+    
+      
+    
+            <p><q>He is a good Imperialist?</q></p>
+            <p><q>He is honorably loyal</q>, she replied.</p>
+    
+      
+    
+            <p><q>Loyal to his prince, you mean, or his party?</q></p>
+    
+      
+    
+            <p><q>Surely to both. He could not be otherwise. He is a brave and true gentleman, my father</q>.</p>
+    
+      
+    
+            <p><q>Very well, I have no more questions to ask you. I shall now outline to you the duty I have prepared for you. You are ready to obey my will?</q></p>
+    
+      
+    
+            <p><q>In all things, honored parent</q>.</p>
+    
+      
+    
+            <p><q>That is well. I commend you for your filial words. First of all, I desire all possible information concerning the young heir of Mori</q>.</p>
+    
+      
+    
+            <p><q>But—</q> she faltered, <q>how is it possible for me—?</q></p>
+    
+      
+    
+            <p><q>Your lover</q>, said her father, quickly, <q>is a Mori courtier. There is no doubt he will give you all the information I require</q>.</p>
+    
+      
+    
+            <p><q>Oh, then, my father</q>, she cried, clasping her hands together, <q>you will be lenient towards him, will you not? You will permit him to see me?</q></p>
+    
+      
+    
+            <p><q>I have nothing against your lover</q>, said her father, with slight irritation.</p>
+    
+      
+    
+            <p><q>Oh, father!</q> In a moment her face was aglow with hope and happiness.</p>
+    
+      
+    
+            <p><q>I advise you to listen to me</q>, he rejoined, coldly.</p>
+    
+      
+    
+            <p><q>Speak! Speak, august father! I will follow your commands faithfully, joyfully</q>.</p>
+    
+      
+    
+                  <p><q>I wish to know the nature of this prince, his habits, his mode of life, and the esteem in which he is held by his people. Once you have learned these facts, you mst secure for me specific details concerning his political schemes against the <foreign xml:lang="ja">Shogun</foreign></q>.</p>
+            <p>Gradually Wistaria had rise to her feet. She had grown strangely pale. Her eyes were frightened and apprehensive.</p>
+    
+      
+    
+            <p><q>You desire</q>, she repeated, slowly, as though she scarce comprehended the words—<q>you desire to know the secrets of—of his honorable party?</q></p>
+    
+      
+    
+            <p><q>Exactly</q>.</p>
+    
+      
+    
+            <p><q>You desire</q>, she began to repeat, <q>to know the secrets—</q></p>
+    
+      
+    
+            <p><q>More than that</q>.</p>
+    
+      
+    
+            <p><q>More. You—you—my father, you would not injure his—his party?</q></p>
+    
+      
+    
+            <p><q>Your apprehension, my lady, for a hostile party, is strange for one of your training. Are you, then, turned Imperialist?</q></p>
+            <p><q>No. I have no fear for myself, my lord. But he, he—You must understand, my lord, he believes in—loves his honorable party—whether right or wrong. I would not injure it because of his sake</q>.</p>
+    
+      
+    
+            <p><q>I have had enough of this weakness, my daughter, and you must admit I have been patient. To relieve your mind, however, of one thing, I will inform you that I have no designs against this young man or his party</q>.</p>
+    
+      
+    
+            <p><q>Oh, you lift from my heart, my honored parent, a weight too heavy for me to bear</q>.</p>
+    
+      
+    
+            <p><q>Pugh! It seems you are determined not to listen to my orders</q>.</p>
+    
+      
+    
+            <p><q>Speak at once. I will not again interrupt you</q>.</p>
+    
+      
+    
+            <p><q>Very good. While I have said I have nothing against this Imperialist party, I am, nevertheless, desirous of knowing all their plans and secrets. It will be your duty, therefore, to ascertain these for me. Do not interrupt—</q> as she made as if to speak. <q>You would say your lover is too loyal to betray his party secrets, even to you. Then you will use your wit to compel him to do so</q>.</p>
+    
+      
+    
+            <p><q>I—I will do so</q>, she replied, drearily.</p>
+    
+      
+    
+                  <p><q>That is not all. I with you to force your love into betraying some scheme or intrigue of his prince which would, if brought to the attention of the <foreign xml:lang="ja">Shogun</foreign>, implicate him criminally. Now I have arrived at my chief desire—in other words, I wish to accomplish the ruin—the death of the Prince of Mori</q>.</p>
+    
+      
+    
+            <p>Wistaria’s head swam in vertigo. She scarce could think or feel. Only one horrible thought hammered itself into her mind. By the cajolery and arts of a false woman she was to assist in the betrayal of the prince to whom her lover had sworn allegiance. It was revolting, cruel, horrible. The mere thought of it made her head whirl in dizziness.</p>
+    
+      
+    
+            <p>When she attempted to speak, her words escaped her slowly in gasps.</p>
+    
+      
+    
+            <p><q>I can—not—do—that!</q></p>
+    
+      
+    
+            <p>A terrible expression came into her father’s face.</p>
+    
+      
+    
+            <p><q>You dare defy my authority?</q> he shouted.</p>
+    
+      
+    
+            <p><q>Oh, my father, put upon me any other task but this. It is base, cruel, cruel. And I—I am only a weak woman—</q></p>
+    
+      
+    
+            <p><q>That is true. Do not, then, I advise you, attempt to pit your weakness against my strength. If you are so lacking in all those qualities admirable in a woman and a daughter of a noble race, I shall take means to force you to do your duty</q>.</p>
+    
+      
+    
+                  <p>A sudden wave of courage swept over her. She ceased to tremble, though the <foreign xml:lang="ja">samurai</foreign> was fierce and menacing. There sprang into her eyes a light of defiance.</p>
+    
+      
+    
+            <p><q>You have reminded me, my father that I come of a race of proud and heroic men. Then let me tell you that I, too, am conscious of possessing the intrepid blood of my ancestors, and that you can force me to do nothing against my will</q>.</p>
+    
+      
+    
+            <p>As she spoke she had backed slowly across the room, away from her father, as though retreating from a blow. Now she stood against the wall, her arms spread out on either side, the hands clutching the partition.</p>
+    
+      
+    
+            <p><q>In ten minutes I shall show you, my lady</q>, said her father, between angry, clenched teeth, <q>the fate of one who dares defy her honorable parent</q>.</p>
+    
+      
+    
+            <p><q>Do so</q>, was her astonishing response. <q>Kill me, break all my honorable bones, my lord. We all must suffer and die!</q></p>
+    
+      
+    
+            <p><q>You are too quick to choose your method of punishment, my lady. I have a more subtle means of teaching you the duty of a child to its parent. Do not imagine that I shall kill your body. It is your mind and heart I shall crush</q>.</p>
+    
+      
+    
+            <p><q>What do you mean, my lord?</q></p>
+    
+      
+    
+            <p><q>You will understand, my lady, when your lover is paying with his life for—</q></p>
+    
+      
+    
+            <p><q>Oh, no, no, no, no!</q> she cried, wildly, her hands groping through blinding emotion as though she would push away from her some horror too awful for utterance. <q>No, no, no!</q></p>
+    
+      
+    
+            <p>She fell down at her father’s feet, burying her face in the folds of his <foreign xml:lang="ja">hakama</foreign>, her hands clutched about it frantically. <q>Oh, my father—no, no, no!</q></p>
+    
+      
+    
+            <p>She could say no more.</p>
+    
+      
+    
+            <p><q>You will obey my commands?</q> inquired the father, bending over her.</p>
+    
+      
+    
+            <p><q>Yes, yes—oh, my lord—anything on earth you may command. Only spare him, I beseech you, I pray to you, as I would to a god!</q> She fell to moaning and crying with the weakness of hysteria, no longer brave, defiant.</p>
+    
+      
+    
+            <p>He raised her not ungently. Holding her hands firmly, he looked sternly into her face.</p>
+    
+      
+    
+            <p><q>Listen to me, my daughter. The task may seem to you horrible. It should not be so. It is a righteous, holy cause you serve. I have sworn to the dead, pledged myself, to encompass a certain vengeance, which must not escape me now. I have lived for no other purpose. If I have seemed a cold, unfeeling father, stern, unsympathetic and unloving, it is because I have a mission in life greater than that of a father. It is you who must help me to attain this ambition. Vengeance—honest, righteous vengeance—for a wrong done me and mine in a holy cause. No Japanese girl can regard it otherwise. The Prince of Mori is our bitter enemy. We must accomplish his undoing—his death!</q></p>
+    
+      
+    
+            <p><q>Yes, yes</q>, she said, between her chattering teeth; <q>and you will not harm him?</q></p>
+    
+      
+    
+            <p><q>I repeat I have nothing against this man. It is his prince whose proud spirit I will break! Kill!</q></p>
+    
+      
+    
+            <p><q>Yes, yes—only his prince—the old prince. You wish me to kill him? Yes, I will do so</q>.</p>
+    
+      
+    
+            <p><q>No; it is the young prince who must die—the son of the Prince of Mori. Do you not understand that I accomplish a more complete revenge by compassing the death of him who is the salt of his life?</q></p>
+    
+      
+    
+            <p><q>Yes, yes; I see it clear. I must kill the innocent. Ah-h! Oh, it is cruel, cruel!</q></p>
+    
+      
+    
+            <p>She was weeping brokenly, piteously at his feet again, her physical strength quite gone.</p>
+    
+      
+    
+                  <milestone unit="sectionBreak"/>
+    
+      
+               </div>
+               <div>
+            <head>Chapter IX</head>
+    
+      
+    
+            <p>April danced lightly over the land. Merrily she flung her rainbow showers of sweetest water upon the earth, the trees, the fearsome grass which March had coaxed in vain to do more than peep its head above the soil. Now the land was covered with a mantle so soft and tender that its young life seemed a thing that it were wanton to crush beneath the feet.</p>
+    
+      
+    
+            <p>Early, early in the morning, before the birds and flowers had cocked up their little heads to seize the first sun-kiss, a lover stood in a garden all made of gently sloping hillocks, crowned with trees whitened as if frost-laden, with the full bloom of the cherry and plum. And the lover’s voice called softly and tenderly to his lady’s casement:</p>
+    
+      
+    
+            <p><q>Lady Wistaria! My sweetest Wistaria!</q></p>
+    
+      
+    
+            <p>At first there was no response. Moving nearer the casement, he called again:</p>
+    
+      
+    
+            <p><q>Sweetest, dearest one, will you not come to your window for a minute—but a fraction of a minute?</q></p>
+    
+      
+    
+            <p>Softly a hand slid back the <foreign xml:lang="ja">shoji</foreign>—a slender, small, expressive hand of perfect form and contour, and then a young girl’s face appeared at the opening.</p>
+    
+      
+    
+            <p><q>Speak to me at once</q>, implored the lover, <q>for but a moment since I thought you a spirit. Dearest one, assure me that my passion is not in vain, and that my eyes deceive me when they fancy that your’s are sad</q>.</p>
+    
+      
+    
+            <p>Her voice faltered and trembled at first. Gradually she steadied it.</p>
+    
+      
+    
+            <p><q>My honorable eyes</q>, she said, <q>are not always faithful mirrors of my heart. Yes, indeed, you are deceived, my lord. Look again. Surely you will see that—that they do smile</q>.</p>
+    
+      
+    
+                  <p><q>Yes</q>, he replied, regarding her somewhat wistfully, <q>it is true. They do smile, and yet—</q> He hesitated. <q>You do not appear happy, <foreign xml:lang="ja">Fuji-wara</foreign></q>.</p>
+    
+      
+    
+            <p>A strange little laugh escaped her lips. But she made no reply. She had turned her eyes from his, staring out before her. As the trouble deepened in the lover’s eyes, he reached up, touching very gently the small white hand on the sill. The light touch of his hand startled her. Before he could speak she had recovered herself, leaning farther over to him. Her words sounded strangely harsh.</p>
+    
+      
+    
+            <p><q>My lord, do let us resume our conversation concerning this brave cause to which you adhere</q>.</p>
+    
+      
+    
+            <p>He flushed warmly.</p>
+    
+      
+    
+            <p><q>It seems incongruous</q>, he replied, after a moment, <q>that a tender maiden should be interested in political conflicts</q>.</p>
+    
+      
+    
+            <p><q>That is very unkind, my lord. You do not credit me, then, with any other quality, apparently, than that of pale softness. Indeed, my vanity has saved me from the knowledge that the gods have been most unkind</q>.</p>
+    
+      
+    
+            <p><q>Nay, do not speak so</q>, he tenderly chid her. Of late he had chafed not a little at her persistent waiving aside of all tenderer subjects to discuss those of larger import to men alone.</p>
+    
+      
+    
+                  <p><q>Well, then</q>, she persisted, <q>say that I am capricious, whimsical, what you will. But do, pray, humor me, and if I find it necessary</q>—she <choice><sic>stamemred</sic><corr>stammered</corr></choice> over her words—<q>if I find it interesting to discuss such matters, pray allow me to do so</q>.</p>
+    
+      
+    
+            <p><q>Do so, then, at once, dear one! I am all ears to listen and all tongue to reply</q>.</p>
+    
+      
+    
+            <p><q>Pray tell me, then, are you truly an Imperialist at heart, or merely so in name because you are a Mori?</q></p>
+    
+      
+    
+            <p><q>Pray tell me where my insignificant sympathies should lie, and there I swear to you shall they be</q>.</p>
+    
+      
+    
+            <p>She protested that he but begged her question.</p>
+    
+      
+    
+            <p><q>Dear Wistaria</q>, entreated the lover, <q>I pray you do not disturb your gentle bosom with these questions which are meant for soldiers, not for maidens</q>.</p>
+    
+      
+    
+            <p><q>Nay, then</q>, she replied, and there were tears in her voice now, <q>why will you persist so? You are quite wrong, too. Let me repeat: I am the daughter of a family whose women have had their honorable share in the affairs of the nation</q>.</p>
+    
+      
+    
+            <p><q>True, but your house has stood always on one side only. They have never deigned even to hear the argument, the pious, patriotic cry of the other side</q>.</p>
+    
+      
+    
+            <p><q>My house! Well, my lord, and am I a house?</q></p>
+    
+      
+    
+            <p>He kissed the slender hand on the window-ledge. It reached just to his lips.</p>
+    
+      
+    
+            <p><q>Nay, I swear you are a goddess. It could not be possible that one so good and fair would favor an evil cause</q>.</p>
+    
+      
+    
+            <p><q>Evil? Ah, then, my lord, is the cause of my house an evil one?</q></p>
+    
+      
+    
+            <p><q>I should be a traitor, my lady, did I take advantage of the friendly hospitality your house has offered me to repay it by sowing seeds of mischief</q>.</p>
+    
+      
+    
+            <p><q>But if the seeds were not mischievous, my lord? If they were worthy and good?</q></p>
+    
+      
+    
+            <p>He dropped her hand abruptly, and paced for a time up and down the small grass-grown walk beneath her window.</p>
+    
+      
+    
+            <p>In the shadow of the room behind the Lady Wistaria another face appeared for the space of a moment only. Long, lean, cadaverous it was, wherein fierce eyes burned like living coals. With a shudder, Wistaria clutched her hand over her heart. Back to her casement came the lover.</p>
+    
+      
+    
+            <p><q>My sweetest girl, do not let us discuss so melancholy a subject</q>.</p>
+    
+      
+    
+            <p><q>Melancholy, my lord? Nay, you would treat me as a child. You would turn my heart from a lofty subject with the graceless remark that it is too melancholy for me</q>.</p>
+    
+      
+    
+            <p><q>Lady, I would turn your heart to the holiest of all subjects on earth</q>.</p>
+    
+      
+    
+            <p><q>Ah, what is that, dear Keiki— No, no, no! Pray excuse my honorable rudeness. Do pray, my lord, rather perceive my intense curiosity in the matter of which we have spoken. Then when you have enlightened me, speak whatever you will, my lord. I will listen</q>.</p>
+    
+      
+    
+            <p><q>And concerning what am I to enlighten you?</q></p>
+    
+      
+    
+            <p><q>The question which cuts our country into two bitter factions, each defiant and warlike towards the other</q>.</p>
+    
+      
+    
+            <p>Into the lover’s face there crept vague, baffled perplexity mirroring the thought beyond. Coquetry, or desire for political truth—which swayed his love? If the former, there was no combating it; if the latter, then—why then he would speak her true. He said:</p>
+    
+      
+    
+            <p><q>Will you tell me, then, whom you have been taught to regard as the ruler of Japan?</q></p>
+    
+      
+    
+            <p><q>Why, our good <foreign xml:lang="ja">Shogun</foreign> Iyesada</q>, she returned, promptly.</p>
+    
+      
+    
+            <p><q>Yet he is not so regarded by every one in Japan</q>.</p>
+    
+      
+    
+            <p><q>Why is that?</q>
+        <q>Because there are many who would see our rightful sovereign, our divine Emperor, upon the throne</q>.</p>
+    
+      
+    
+            <p><q>But, my lord, his Imperial Majesty is, indeed, already upon the throne, is he not?</q></p>
+    
+      
+    
+            <p><q>Only nominally, I fear, my lady, that you have not read the <foreign xml:lang="ja">Dai Nihon Shi</foreign> of the Prince of Mori?</q></p>
+    
+      
+    
+            <p><q>No, but I am much interested in it</q>.</p>
+    
+      
+    
+                  <p><q>The history</q>, continued the young man, with vehement bitterness, <q>was purged repeatedly by the <foreign xml:lang="ja">Yedo</foreign> censor of the <foreign xml:lang="ja">Shogun</foreign>. It dared to speak the truth to the people. I do assure you it was not destroyed, however, before it had done its work well</q>.</p>
+    
+      
+    
+            <p><q>How? Pray do tell me all about it</q>.</p>
+    
+      
+    
+            <p><q>Have you never heard that pious—fanatical, if will—cry, a barely half-muffled war-cry now, ‘<foreign xml:lang="ja">Daigi Heibunor</foreign>!’</q> (the King and the Subject).</p>
+    
+      
+    
+            <p>An exclamation escaped the lips of the young girl.</p>
+    
+      
+    
+            <p><q>Oh, my lord, do not speak so loudly. I would feign warn you. I—I—</q></p>
+    
+      
+    
+            <p>She broke off in her agitation. But her apparent fear for him only filled her lover with a great joy. His voice softened.</p>
+    
+      
+    
+                  <p><q><foreign xml:lang="ja">Fiji-wara</foreign>, will you suffer yourself to listen hereafter to a confessed traitor?</q></p>
+    
+      
+    
+            <p><q>Dear lord, traitor to the wrong?</q></p>
+    
+      
+    
+            <p><q>Oh, dearest girl, can it actually be that you sympathize with our noble cause?</q></p>
+    
+      
+    
+            <p><q>I—I—Tell me, do, pray tell me, with whom does the young Prince of Mori sympathize?</q></p>
+    
+      
+    
+            <p><q>Oh, the rascal is a descendant of the Mori of whom I spoke just now</q>.</p>
+    
+      
+    
+            <p><q>And an adherent to his views?</q></p>
+    
+      
+    
+            <p><q>Possibly</q>.</p>
+    
+      
+    
+            <p><q>You do not know for a fact</q>, she urged, tremulously, <q>just to what party the Prince does adhere?</q></p>
+    
+      
+    
+            <p><q>My lady</q>, replied the lover, with some constraint, <q>the Prince has his pride of caste. He is also not without the inherited germs of patriotism in his soul</q>.</p>
+    
+      
+    
+            <p><q>And still they do say that he is as silly as a butterfly, and so given to frivolity that his head can hold no serious thought</q>.</p>
+    
+      
+    
+            <p><q>I do assure you</q>, replied the other, flushing warmly, <q>that our prince is not all he may seem</q>.</p>
+    
+      
+    
+            <p><q>My lord, I have conceived the most overwhelming interest in this young Prince Mori</q>.</p>
+    
+      
+    
+            <p><q>Indeed!</q> The young man started back in humorous dismay. The girl smiled now, a little, dreary smile.</p>
+    
+      
+    
+            <p><q>Be assured, my lord, that the interest is not of a sentimental nature. But it would seem that the young Prince was surely born for a great purpose</q>.</p>
+    
+      
+    
+            <p><q>Yes?</q> inquired the other, eagerly.</p>
+    
+      
+    
+            <p><q>And that is, to follow in the steps of his honorable ancestor</q>.</p>
+    
+      
+    
+            <p><q>Oh, dearest girl, you fill my soul with joy! I am ready to swear that your sweet heart beats for the right—the noble cause to which—</q></p>
+    
+      
+    
+            <p><q>The Prince Mori is sworn?</q> she interrupted, quickly.</p>
+    
+      
+    
+            <p><q>Ay! and all the patriotic sons of Japan!</q></p>
+    
+      
+    
+            <p><q>And what do these sons of Japan propose to do? What are the plans of the Prince Mori?</q></p>
+    
+      
+    
+            <p><q>My lady!</q></p>
+    
+      
+    
+            <p><q>Pray, why do you start so, Keiki-sama?</q></p>
+    
+      
+    
+            <p><q>You ask a weighty question with the same lightness you would bestow if inquiring about the weather!</q></p>
+    
+      
+    
+            <p><q>Then the tones of my voice do me injustice</q>.</p>
+    
+      
+    
+            <p><q>Wistaria, I swear I will not speak another word on this subject. No—not even to you</q>.</p>
+    
+      
+    
+            <p><q>But—</q></p>
+    
+      
+    
+            <p><q>Did I arise an hour before the sun, think you, to preach politics to my love?</q></p>
+    
+      
+    
+            <p><q>You recall the hour to me now. It seems I must bid you farewell. My maid even now is tapping on my door. Do, pray then, depart</q>.</p>
+    
+      
+    
+            <p>The young man appeared cut to the heart at the parting. He sighed so deeply that Wistaria could not bear to gaze upon him, and, conscious of the impatient presence within, she drew her windows back hastily and shut out the sight of her lover from her. Then she faced her father within.</p>
+    
+      
+    
+            <p><q>You have heard all, honored parent?</q></p>
+    
+      
+    
+            <p><q>Everything</q>.</p>
+    
+      
+    
+            <p><q>You are a witness of my continued efforts. I fear we have learned all there is to now</q>.</p>
+    
+      
+    
+            <p><q>Your opinion was not asked</q>, replied the father, coldly. <q>Your services are all I require. You will resume them to-morrow</q>.</p>
+    
+      
+    
+                  <p><emph>To Be Continued Next Sunday</emph></p>
+    
+      
+               </div>
+            </div>
          </div>
-           </div>
-             </div>
       </body>
    </text>
 </TEI>
