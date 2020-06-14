@@ -34,11 +34,13 @@
             </textClass>
         </profileDesc>
         <revisionDesc status="published">
+            <change when="2020-06-13" status="published">Fixing up some of the language regarding XML downloading and adding links.</change>
             <change when="2020-04-29"
                 who="pers:MC1" status="published">added content.</change>
             <change when="2020-02-21"
-                who="pers:MC1" status="published">added content.</change><change when="2019-02-19"
-                who="pers:JT1" status="published">Created file.</change>
+                who="pers:MC1" status="published">added content.</change>
+            <change when="2019-02-19"
+                    who="pers:JT1" status="published">Created file.</change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -52,38 +54,48 @@
                 
                 <p>In the Winnifred Eaton Archive’s second phase, Mary Chapman (University of British Columbia), together with her research team in collaboration with Cole, updated Cole’s original archive to conform with the Textual Encoding Initiative P5 schema and added edited encoded transcriptions of dozens of additional periodical publications she discovered, as well as additional manuscripts held in the Winnifred Eaton Reeve Fonds. Chapman also added to the site biographical information, a bibliography, a timeline, a list of pseudonyms, a copy of a film for which Eaton wrote the screenplay, and numerous photographs relevant to Eaton and her family. </p> 
                 
-                <p>The Winnifred Eaton Archive is organized into exhibits that roughly correspond to periods in Eaton’s career. These periods overlap chronologically somewhat: <q>Early Experiments</q> features texts written in the 1890s and early 1900s during Eaton’s writing apprenticeship in Montreal and Jamaica, and/or before she had taken up her identity as <q>Onoto Watanna</q>; <q>Playing Japanese</q> collects all texts written on Japanese subjects and themes from 1897 until 1922; <q>New York Years</q> collects texts marking a period of reinvention, from 1902-1916 after the novelty of Eaton’s Japanese romances had faded; <q>Alberta</q> collects texts written about Western ranch country, during her years living in Alberta, roughly 1919-1933; and finally, <q>In Hollywood</q> collects her screenplays, treatments, extant films, as well as fiction about the movie business written from 1921-1935.</p></div>
+                <p>The Winnifred Eaton Archive is organized into exhibits that roughly correspond to periods in Eaton’s career. These periods overlap chronologically somewhat: <ref target="wdt:EarlyExperiment"><q>Early Experiments</q></ref> features texts written in the 1890s and early 1900s during Eaton’s writing apprenticeship in Montreal and Jamaica, and/or before she had taken up her identity as <q>Onoto Watanna</q>; <ref target="wdt:Japan"><q>Playing Japanese</q></ref> collects all texts written on Japanese subjects and themes from 1897 until 1922; <ref target="wdt:NewYork"><q>New York Years</q></ref> collects texts marking a period of reinvention, from 1902-1916 after the novelty of Eaton’s Japanese romances had faded; <ref target="wdt:Alberta"><q>Alberta</q></ref> collects texts written about Western ranch country, during her years living in Alberta, roughly 1919-1933; and finally, <ref target="wdt:Hollywood"><q>In Hollywood</q></ref> collects her screenplays, treatments, extant films, as well as fiction about the movie business written from 1921-1935.</p></div>
+            
+            <div>
+                <head>Our Audience and Contributors</head>
+                <p>The Winnifred Eaton Archive is committed to providing complete, current, and reliable information that is both suitable for scholarly citation and accessible to students, teachers, and community members outside the university. We welcome contributions from scholars, community experts, and advanced students. The site provides an opportunity to contribute transcriptions of and headnotes for all Winnifred Eaton works as well as facsimiles of recently recovered texts by Winnifred Eaton. All contributions (headnotes, editions, etc.) will be refereed.</p>
+            </div>
+            
+            <div>
                 
-                <div><head>Our Audience and Contributors</head>
-                <p>The Winnifred Eaton Archive is committed to providing complete, current, and reliable information that is both suitable for scholarly citation and accessible to students, teachers, and community members outside the university. We welcome contributions from scholars, community experts, and advanced students. The site provides an opportunity to contribute transcriptions of and headnotes for all Winnifred Eaton works as well as facsimiles of recently recovered texts by Winnifred Eaton. All contributions (headnotes, editions, etc.) will be refereed.</p></div>
+                <head>Our Principles</head>
                 
                 <div>
-                    
-                    <head>Our Principles</head>
+                    <head>Open Peer Review</head>
+                    <p>The Winnifred Eaton Archive is committed to new forms of peer review, including cross-reviewing inspired by the MoEML https://mapoflondon.uvic.ca/about.htm and research apprenticeships. We currently give our reviewers the choice of anonymity or full credit. </p>
+                </div>
                 
-                    <div>
-                        <head>Open Peer Review</head>
-                        <p>The Winnifred Eaton Archive is committed to new forms of peer review, including cross-reviewing inspired by the MoEML https://mapoflondon.uvic.ca/about.htm and research apprenticeships. We currently give our reviewers the choice of anonymity or full credit. </p>
-                        </div>
-                    
-                <div><head>Open Access</head>
-                <p>All of our pages are freely available to anyone with an internet connection and a web browser. We do not charge fees for access or restrict any aspect of our site’s functionality. We link to other open-access resources preferentially. Whenever possible, we supplement what is available from subscription databases by obtaining fresh scans of materials from institutions willing to share their resources with the world and making these scans freely available. </p></div>
-                <div><head>Open-Source</head>
-                <p>The Winnifred Eaton Archive team makes all of its back-end data and markup available to the public. Curious readers can see any page in extensible markup language (XML) by clicking the See XML link in the top left-hand corner.</p> </div>
-                <div><head>Open-Code</head>
-                <p>We are an open-code project. Some of our code is deposited in GitHub. All of our TEI elements, attributes, and values are searchable via Programmer Martin Holmes’s CodeSharing Service. </p></div>
+                <div>
+                    <head>Open Access</head>
+                    <p>All of our pages are freely available to anyone with an internet connection and a web browser. We do not charge fees for access or restrict any aspect of our site’s functionality. We link to other open-access resources preferentially. Whenever possible, we supplement what is available from subscription databases by obtaining fresh scans of materials from institutions willing to share their resources with the world and making these scans freely available.</p>
+                </div>
+                <div>
+                    <head>Open-Source</head>
+                    <p>The Winnifred Eaton Archive team makes all of its back-end data and markup available to the public. Curious readers can view the source XML of any document by visiting the Github repository. The WEA also make available two variants of each document’s TEI encoding: the <q>Original</q> XML, which is a lightly modified version of the source XML, and the <q>Standalone</q> XML, which contains all of the standoff entities (people, organizations, bibliographic citations, and taxonomies) and is thus the most amenable for re-use. These TEI files can be downloaded in the <q>Credits and Citations</q> menu on every page under the <q>Download</q> heading.</p>
+                </div>
                 
-                <div><head>Transparent Work Practices</head>
-                <p>We aim to be fully transparent about all Winnifred Eaton Archive work practices. Our extensive documentation gives detailed instructions to team members. These instructions are openly published as a guide to how we work. </p></div>
-                   
-                <div><head>Credit</head>
-                <p>We give credit where credit is due, in keeping with the Collaborators’ Bill of Rights and A Student Collaborators’ Bill of Rights. We do not distinguish between paid and unpaid labour. In our view, all paid research assistants deserve credit for their critical input; by the same token, our paid RAs take intellectual responsibility for their work. We do not consider any labour to be mechanical; all labour is critical and worthy of acknowledgement.</p> </div>
+                <div>
+                    <head>Open-Code</head>
+                    <p>We are an open-code project. All of our code is deposited in <ref target="https://github.com/winnifredeatonarchive/wea_data">GitHub</ref>.</p>
+                </div>
                 
-                <div><head>Our Content</head></div>
+                <div>
+                    <head>Transparent Work Practices</head>
+                    <p>We aim to be fully transparent about all Winnifred Eaton Archive work practices. Our <ref target="docs/index.html">extensive documentation</ref> gives detailed instructions to team members. These instructions are openly published as a guide to how we work. </p></div>
+                
+                <div>
+                    <head>Credit</head>
+                    <p>We give credit where credit is due, in keeping with the Collaborators’ Bill of Rights and A Student Collaborators’ Bill of Rights. We do not distinguish between paid and unpaid labour. In our view, all paid research assistants deserve credit for their critical input; by the same token, our paid RAs take intellectual responsibility for their work. We do not consider any labour to be mechanical; all labour is critical and worthy of acknowledgement.</p> </div>
+                
                 
                 <div><head>Creative Commons License</head>
                     <p>All of our content is licensed under a CC BY-SA 4.0 license, which gives anyone the right to download and repurpose our content and/or associated mark-up, provided the use is non-commercial and gives full credit to the Winnifred Eaton Archive and its contributors. </p>  </div>              
-                </div>
+            </div>
             <div>
                 <head>Contact Us</head>
                 
@@ -93,11 +105,11 @@
                 </list>
                 
             </div>
-                
-                <div>
-                
             
-                           
+            <div>
+                
+                
+                
             </div>
         </body>
     </text>
