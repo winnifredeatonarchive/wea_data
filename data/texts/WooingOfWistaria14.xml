@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="WooingOfWistaria14">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>The Wooing of Wistaria</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl copyOf="bibl:197"/>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNovel"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="empty">
+         <change who="pers:JT1" when="2020-06-14" status="empty">Changed id from WooingOfWistaria12 to WooingOfWistaria14.</change>
+         <change who="pers:SL1" status="empty" when="2019-08-23">Added facs.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl197 using XSLT.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <gap reason="noTranscriptionAvailable"/>
+         </div>
+      </body>
+   </text>
+</TEI>
