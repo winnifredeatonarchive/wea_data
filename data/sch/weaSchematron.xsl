@@ -2602,7 +2602,7 @@ On <xsl:text/>
                        context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]"/>
       <xsl:variable name="atts" select="@*[matches(.,'^|\s+')]"/>
       <xsl:variable name="tokens"
-                    select="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+                    select="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork)$'))]"/>
       <xsl:variable name="errors"
                     select="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
 

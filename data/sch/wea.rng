@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-05-27T01:17:56Z. .
+Schema generated from ODD source 2020-06-15T07:56:03Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -7184,7 +7184,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                 context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"
-                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork)$'))]"/>
                         <sch:let name="errors"
                   value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
                         <sch:assert test="count($errors) = 0">

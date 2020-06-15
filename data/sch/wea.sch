@@ -1190,7 +1190,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
       <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"
-                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')]"/>
+                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork)$'))]"/>
                         <sch:let name="errors"
                   value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
                         <sch:assert test="count($errors) = 0">
