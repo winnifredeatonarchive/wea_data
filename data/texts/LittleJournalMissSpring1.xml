@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleJournalMissSpring1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleJournalMissSpring1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Little Journal of Miss Spring</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,211 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl160 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-06-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl160 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:LittleJournalMissSpring">
+   <text facs="facs:LittleJournalMissSpring">
+      <pb n="300"/>
       <body>
+         <head>The Little Journal of Miss Spring</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name> (Author of Sunny-san, etc.)</byline>
+            <byline>Illustrated by M. McKinlay</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+
+            <p><q>The gods have their seat on the brow of a just man!</q></p>
+    
+         </div>
+         <div>
+            
+            <p><emph>The last day of March.</emph></p>
+            <p><emph>Season of Awakening Insects.</emph></p>
+    
+      
+    
+            <p>My windbells were tingling faintly, as if brushed by a shadow hand, and, opening my <emph><foreign xml:lang="ja">shoji</foreign></emph>, I saw a bright butterfly dancing under the glass. Its coming so early in the year, full-grown and brilliant, thrilled me, and I called to my sister to see what the spring had brought us.</p>
+    
+      
+    
+            <p>She came, running, the wings of her blue sleeves blowing from her round arms, the skirts of her <foreign xml:lang="ja">kimono</foreign> tied back, showing the scarlet petticoat beneath, denoting that my sister was still a maiden—Little Smile, so soon to wear the <emph><foreign xml:lang="ja">marumage</foreign></emph> (marriage flowers) in her hair.</p>
+    
+      
+    
+            <p>On tiptoe she stole to the <emph><foreign xml:lang="ja">shoji</foreign></emph>, and breathlessly watched our pretty visitor as it fluttered beneath the glass. Suddenly her eyes widened with excitement, and she whispered:</p>
+    
+      
+    
+            <p><q>Oh, <foreign xml:lang="ja">ani-san</foreign></q>, (elder sister), <q>see, its wings are like the sleeves of our mother’s last dress. It is a happy omen. The gods have heard our prayers</q>.</p>
+    
+      
+    
+            <p>The thought that the butterfly might indeed be the spirit of our absent mother, come at this sad time to cheer us, comforted me warmly.</p>
+    
+      
+    
+            <p>My sister’s gaze wandered wistfully from the butterfly, strayed across the gardens, where the plum trees already seemed weighted with rosy snow, and rested upon the house across the way—the house of the latticed walls and the curtains of cherry gauze, where the widowed dancer, Madame Many Joys, lived with her young son, O-Goto-sama. Our honourable father had promised my sister, Little Smile, to the Lord Sioji Taro; but my sister thought ever and only of Goto, in the House of the Latticed Walls.</p>
+    
+         </div>
+         <div>
+    
+            <p><emph>April 5th.</emph></p>
+            <p><emph>The Season of Clear Weather.</emph></p>
+    
+      
+    
+            <p>In the chilly evenings my father would sit by the warm <foreign xml:lang="ja">kotatsu</foreign>, and, I, in my mother’s place, at his knee, dutifully filled and refilled his pipe and <emph><foreign xml:lang="ja">sake</foreign></emph> bowl. Father heard only his own authoritative voice, talking or reading the words of wisdom; but always I listened for the soft slide of my sister’s little feet, as she stole out to meet young Goto at the wistaria gate. Often their musical laughter wafted over the gardens and into the room where I sat with our father, and sometimes the laughter and soft singing mingled with the musical plink-plank of the boy’s <emph><foreign xml:lang="ja">samisen</foreign></emph>.</p>
+    
+      
+    
+            <p>Little Smile’s life had been like the music of her lover’s <emph><foreign xml:lang="ja">samisen</foreign></emph>, a dancing, joyous song; but mine was as smooth as a placid river, where there are no surges. Each day brought its bouquet of duties, simple and fragrant, and the quiet evenings seemed <pb n="301"/>sweet to me, thrilling romantically with the intimate knowledge of the young happy lovers at the gate, and in service upon my father and the Lord Sioji Taro.</p>
+    
+      
+    
+            <p>He would come to our house when the day was done, to spend an hour in talk and respectful argument with my father. I loved to hear them talk, though permitted myself to be but a silent and humble listener, and the noble, fiery utterances of the Lord Sioji Taro moved and thrilled me. Not often dared I lift my eyes to look upon our honourable guest, for a maiden may not see, but only serve the male guests of her father, but I knew that his smile was gentle and grave as one of superior years, and his smooth head was like that of a boy’s.</p>
+    
+      
+    
+            <p>Sometimes, for just a flickering moment, our eyes would furtively meet; swiftly to be withdrawn, as custom demanded; mine to rest upon my folded hands, and his to turn in respectful attention upon my ever-talking parent. The courteous evening greetings, those silent, stolen glances and the murmured <emph><foreign xml:lang="ja">sayonars</foreign></emph>—that was all that passed ‘twixt Sioji Taro and me; yet unknown tumults stirred within my heart, and ah! if on the surface my life seemed like a smoothly flowing river, the surges moved beneath.</p>
+    
+      
+    
+            <p>When I had passed my twentieth year, and no suitor came to our house to ask me of my parent, then my father said it was plain the gods had destined me to take the place of my honourable mother. He instructed me to thank the compassionate gods for thus generously providing for my lot, in permitting my humble life to be for the sole service of one of the superior race of man.</p>
+    
+      
+    
+            <p>Father was always right. This was so, and that was so. This was wrong; that right. Everything was definite and final to him, for my father was a scientist, and his knowledge we humble women verily believed was as large as that of the gods. Nevertheless, there were times when I felt a faint opposition to his authority. He knew everything too definitely, and things seemed to me more beautiful in their vagueness than the near certainty of explanation. I loved the hills and clouds farthest away, and the unattainable was to me ever the most to be desired.</p>
+    
+      
+    
+            <p>So when my father said that I was destined for the rest of my days to wear the scarlet petticoat of maidenhood, I frankly desired otherwise; and looking up in meek rebellion, I met the sympathetic, reassuring smile of Sioji Taro. And that was the night his honourable parents asked my father for the hand of my sister, Little Smile.</p>
+    
+      </div>
+      <div>   
+    
+            <p><emph>April 20th.</emph></p>
+            <p><emph>In the Time of Seed Rain.</emph></p>
+    
+      
+    
+            <p>Half a month has passed away since the shining butterfly danced beneath our windbells and we hailed it as a bright omen of coming days, the spirit of our mother coming with the spring to bring us hope and comfort. But frost came with the night. We did not leave the <emph><foreign xml:lang="ja">shoji</foreign></emph> open. The butterfly perished in the bitter wind. My sister put the tiny, frozen body in a paper coffin and carried it to the temple grounds. There, with a tear and a prayer, she buried it, even as she had buried her hopes.</p>
+    
+      </div>
+      <div>   
+    
+            <p><emph>The end of April.</emph></p>
+            <p><emph>Period of Little Plenty.</emph></p>
+    
+      
+    
+            <p>The petals from the cherry trees fall all about us, like flying snowflakes. They carry with them, on their light wing, the fragrant spring. I am sorry that spring should vanish so swiftly, for often, I have thought, with our poet, that this is the season when our best hopes, like flowers, blossom in our hearts to be burned, alas! away with the hot breath of summer. But now, indeed, there is little time to look at the blowing cherry petals, and we are even too busy for tears. There are many marriage clothes to make for Little Smile, and the house must be cleansed, new matting replace the old, and everything in the house of the bride fresh and new, that sweet luck may accompany her into the house of the bridegroom.</p>
+    
+      
+    
+            <p>Many visitors come—neighbours, friends, relatives, and strangers. Even the dancing lady, from the house of the latticed walls, has entered our home; and although [302] we but talked of conventional things that interest mere women, her hand crept up to my sister’s sleeve and found and held hers.</p>
+    
+      
+    
+            <p>There are to be fêtes and festivals following the marriage, and when our Little Smile goes to the house of the parents of Sioji Taro, and all the singing and dancing and feastings are done, my father and I will miss the brightness and the fevered gaiety of these days.</p>
+    
+      
+    
+            <p>It is good that a wedding entails so much preparation and labour, and the constant stream of callers keeps one alert, like a soldier on guard. One must wear a mask and hold ever before them a shield, and who should guess that the smile upon our lips is not reflected in our hearts? When my sister’s wedding is over, and I am left alone in my chamber, then the gods will permit me to place a lotus blossom upon my heart, emblem of eternal peace. Then the surges in the river of my soul will no longer move.</p>
+    
+      
+    
+            <p>Summer is almost here. Now the cherry trees are bare, and at the wistaria gate the heavy vines are dropping their fruit. The seamstresses are incessantly at work upon my sister’s marriage robes; but she will not even temporarily bear the silken robes upon her. And so, perforce, they are placed on me. To-day they put all seven of the marriage robes upon me, some of them fine as a spider’s web, and some weighted with golden embroidery, heavy as my heart. That my father and Sioji Taro might especially judge and criticise the work, I was shown in them like a mannikin. My father was much pleased and praised the workers, but Sioji Taro looked only into my eyes, that fell before his strangely deep, entreating gaze, but even beneath the closed lids dropped a tear upon the ruby-coloured <emph><foreign xml:lang="ja">obi</foreign></emph> of my sister’s wedding gown. Never again shall I look into the eyes of the Lord Sioji Taro!</p>
+    
+      </div>
+      <div>
+         
+            <p><emph>Mid May.</emph></p>
+            <p><emph>The Season of Transplanting Rice.</emph></p>
+    
+      
+    
+            <p>All the opening flowers are drenched by the softly falling rain that seems to drop like tears, soundlessly upon our garden. Presently I know the brief rain will pass, and in its place will come the hot glow of the sun. Then all the flowers will be wide open, glowing and shining in the warmth. I wish that it might be thus in life, and that our softly falling tears might be the prelude to the sun that the gods, it is said, pour for a little time at least into all our lives.</p>
+    
+      
+    
+            <p>The house across the street, with its curtains of cherry gauze, is all lighted up to-night, almost as if it too were a marriage house. From my <emph><foreign xml:lang="ja">shoji</foreign></emph>, across the darkened garden, even though the silken, mistlike rain, I see the pretty house, shining like a lighted lantern in the gloom. Merrily across the air floats the dancing strains of the <emph><foreign xml:lang="ja">samisen</foreign></emph> of young Hoto. Through the fragile paper walls I see the shadowy silhouettes of moving figures, like printed pictures on a screen. One may discern all who are in the <emph><foreign xml:lang="ja">osashiki</foreign></emph>. There is Goto, his young head thrown back, singing to the accompaniment of the <emph><foreign xml:lang="ja">biwa</foreign></emph>, a song by himself indited to my sister. And by his side, leaning against his shoulder—No! that cannot be the dancing lady, Madame Many Joys. It is the figure and butterfly head-dress of a young girl—my sister, Little Smile!</p>
+    
+      
+    
+            <p>If a neighbour passes in the dark street! If a breath of gossip touches the name of the bride! If my stern father should learn of his child’s indiscretion! If Sioji Taro—</p>
+    
+      </div>
+      <div>  
+    
+            <p><emph>June.</emph></p>
+            <p><emph>In the Season of Little Heat.</emph></p>
+    
+      
+    
+            <p><foreign xml:lang="ja">Daikoku</foreign>, the God of Fortune, is good! Many times I have laid my humble forehead at his feet. What is not good or sweet in this beautiful world? It seems as if something sang within me. I scarcely know this new me. The face that looks at me from my small mirror seems not my own, for mine was pale, and my eyes lustreless. This one smiles rosily back at me, and the eyes dance like stars. I had the sad look of the <q>old maid</q> my father declared I must be. Ah! my honorable parent! I clap my hands in spirit in your face; not from lack of filial respect, but for very joy. You, who are so wise, great, learned scientist, with all your wisdom are nevertheless eternally stupid and but a child in [304] my heart. For what is wisdom without humour, and knowledge without love?</p>
+    
+      
+    
+            <p>My words trip over each other like tipsy dancers who cannot follow the rhythm of the music, but move and sway according to the moment’s mood and emotion.</p>
+    
+      
+    
+            <p>Out in the rain of that night I stumbled through the dark garden, intent only on reaching the house across the way—the house of the latticed walls and curtains of cherry gauze. And as I ran, feeling my way, till I came to the wistaria gate, I heard my father’s condemning voice; I saw my little sister outcast, her sleeves for ever wet with the dew of her tears. And I told myself that I, the good, gentle, dutiful elder sister, Miss Spring, was responsible for this; had I not wickedly encouraged the stolen meetings of the young lovers at the wistaria gate? Thus with my chaotic thoughts and fears, I came to the gate itself. My hand was on the bamboo bar, and I was about to lift it, when someone softly whispered my name—<q>Miss Spring!</q>—and a hand was laid upon mine on the bamboo bar.</p>
+    
+      
+    
+            <p>A lantern hung from the trellis above, just over his head, but that was the solitary light in the darkness and the rain; but ah! even in that dim light I saw the eyes—nay, I felt them!—of Sioji Taro, and they spoke to me a language that has no name.</p>
+    
+      
+    
+            <p>I remembered my mission. I trusted he had not seen; yet the wistaria gate fronted the street, where just across the way was the house of the latticed walls and the curtains of cherry gauze.</p>
+    
+      
+    
+            <p><q>I go upon a message</q>, breathlessly I whispered. <q>My honourable young sister visits in my place the sick dancing lady in the house of latticed walls. I go to bring her home</q>.</p>
+            <p>So long was the silence between us that I knew not what further to say or do; but always his hand warmly clasped my own, and suddenly the Lord Sioji Taro’s face pressed mine. His voice seemed in my ears like sweet music that comes from very far away. I was like one entrapped in a fairy dream, wherein one sees and feels and hears things dimly, as through a golden mist.</p>
+    
+      
+    
+            <p>I know not what he said. I know not what I whispered in reply. Only I know that the last bitter doubt was swept aside, and all was clear as a summer sea.</p>
+    
+      
+    
+            <p>In the conventional form of our country, his parents had asked my father for his daughter. Custom assumed always that the elder daughter was meant; but my all-wise parent, having in mind the fixed and unchangeable thought that his oldest child had passed the age of marriage, reluctant to part with the comfort of her competent and filial service upon him, had named his younger daughter, Little Smile, for the bride. Thus the matter had been formally settled by the parents. We children were consulted not. Ours the duty simply to bow to the will of the honourable authorities.</p>
+    
+      
+    
+            <p><q>The lotus springs form the mud</q>, quoted Sioji Taro to my father, <q>and though the son of Madame Many Joys comes not of illustrious ancestry, the gods have endowed him with the gifts of music and poetry, and who in Japan does not love and respect our artists, however lowly their origin?</q></p>
+    
+      
+    
+            <p>My father bangs his pip upon the <emph><foreign xml:lang="ja">hibachi</foreign></emph>. In silence he smokes. His frown is portentous, and his silence more formidable than words of condemnation. My sister, Little Smile, steals like a mouse into the room, while silhouetted against the paper walls without I see the outline of young Goto’s figure, waiting in humble patience for my father’s verdict. Little Smile timidly puts her glowing cheek against my father’s He does not move, and her arms go caressingly about his neck. Now our father clears his throat ominously, but he takes not the arms away, and presently, roughly, he quotes the words of the philosopher:</p>
+            <p><q>A narrow-minded man or bigot looks at the heavens through a needle’s eye</q>.</p>
+    
+      
+    
+            <p>A smile spread like the dawn over all our faces, and approvingly, admiringly the Lord Sioji in turn applies a famous proverb to my father:</p>
+    
+      
+    
+            <p><q>The gods have their seat on the brow of a just man!</q></p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
          </div>
       </body>
    </text>
