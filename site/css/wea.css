@@ -389,8 +389,8 @@ ul#menu_main > li > ul{
 
 ul#menu_main > li > ul > li{
     margin:0;
-    padding: .75rem .5rem;
     text-transform:none;
+    padding-left:0;
     border-bottom: 1px solid #efefef;
 }
 
@@ -398,6 +398,7 @@ ul#menu_main > li > ul > li > a{
     display:inline-block;
     width:100%;
     height:100%;
+    padding: .75rem .5rem;
 }
 
 ul#menu_main > li > ul > li:last-child{
@@ -3014,6 +3015,7 @@ tr img{
 #index #index_header h3:not([data-type]),
 nav a.home{
     font-family: "hack-serif"!important;
+    font-display: swap;
 }
 
 
