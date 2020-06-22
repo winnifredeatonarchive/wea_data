@@ -20,6 +20,7 @@
             </textClass>
         </profileDesc>
         <revisionDesc status="published">
+           <change who="pers:SB2" when="2020-06-22" status="published">tagged publishers.</change>
            <change who="pers:MC1" when="2020-06-08" status="published">fixed Sinners info.</change><change who="pers:DC1" when="2020-06-08" status="published">changed secondary source links.</change><change who="pers:DC1" when="2020-06-08" status="published">added secondary bibl entries.</change>
            <change who="pers:DC1" when="2020-06-05" status="published">added secondary bibl entries.</change><change who="pers:DC1" when="2020-06-05" status="published">changing links of secondary bibl entries.</change>
            <change who="pers:MC1" when="2020-05-29" status="published">revised cattle author.</change><change who="pers:DC1" when="2020-05-29" status="published">added secondary bibl entry.</change><change who="pers:DC1" when="2020-05-29" status="published">added secondary bibl entry.</change><change who="pers:DC1" when="2020-05-29" status="published">added secondary bibl entry.</change>
@@ -62,7 +63,7 @@
                 
                    <listBibl xml:id="DaughterTwoLands">
                       <head>A Daughter of Two Lands</head>
-                      <bibl xml:id="bibl5"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Daughter of Two Lands</title>. <publisher><title level="j">Red Book Magazine</title></publisher>, <date when="1909-11">Nov. 1909</date>, pp. <biblScope unit="page">33-48</biblScope>.</bibl>
+                      <bibl xml:id="bibl5"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Daughter of Two Lands</title>. <publisher ref="org:Red"><title level="j">Red Book Magazine</title></publisher>, <date when="1909-11">Nov. 1909</date>, pp. <biblScope unit="page">33-48</biblScope>.</bibl>
                    </listBibl>
 
                    <listBibl xml:id="Father">
@@ -93,7 +94,7 @@
                                       
                    <listBibl xml:id="JapaneseLoveStory">
                       <head>A Japanese Love Story</head>
-                      <bibl xml:id="bibl11"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Japanese Love Story</title>. <publisher><title level="j">American Youth Magazine</title></publisher>, <date when="1897">1897</date>. <distributor>Winnifred Eaton Reeve Fonds</distributor>, <idno>17.2</idno>.</bibl>
+                      <bibl xml:id="bibl11"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Japanese Love Story</title>. <publisher ref="org:AmericanYouth"><title level="j">American Youth Magazine</title></publisher>, <date when="1897">1897</date>. <distributor>Winnifred Eaton Reeve Fonds</distributor>, <idno>17.2</idno>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="JapaneseLullaby">
@@ -124,7 +125,7 @@
                 
                    <listBibl xml:id="PoorDevil">
                       <head>A Poor Devil</head>
-                      <bibl xml:id="bibl22"><author><name ref="pers:WE1">Eaton, Winnie</name></author>. <title level="a">A Poor Devil</title>. <publisher><title level="j">Metropolitan Magazine</title></publisher> 
+                      <bibl xml:id="bibl22"><author><name ref="pers:WE1">Eaton, Winnie</name></author>. <title level="a">A Poor Devil</title>. <publisher ref="org:MetropolitanMag"><title level="j">Metropolitan Magazine</title></publisher> 
                          <pubPlace><supplied>Montreal</supplied></pubPlace>, <date notBefore="1893" notAfter="1895">1893-1895</date> <distributor>Winnifred Eaton Reeve Fonds</distributor>, <idno>17.2</idno>.</bibl>
                    </listBibl>
                
@@ -165,7 +166,7 @@
                 
                    <listBibl xml:id="AlbertaLandOfWork">
                       <head>Alberta, the Land of Work, is New Name Given to This Country by Calgary Author</head>
-                      <bibl xml:id="bibl26"><author><name ref="pers:WE1">Reeve, Mrs. Francis</name></author>. <title level="a">Alberta, the Land of Work, is New Name Given to This Country by Calgary Author</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1924-01-12">12 Jan 1924</date>, p. <biblScope unit="page">5</biblScope>.</bibl>
+                      <bibl xml:id="bibl26"><author><name ref="pers:WE1">Reeve, Mrs. Francis</name></author>. <title level="a">Alberta, the Land of Work, is New Name Given to This Country by Calgary Author</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1924-01-12">12 Jan 1924</date>, p. <biblScope unit="page">5</biblScope>.</bibl>
                    </listBibl>
                 
                    <listBibl xml:id="AmoyChineseGirl">
@@ -185,7 +186,7 @@
                    
                    <listBibl xml:id="UnexpectedGrandchild">
                       <head>An Unexpected Grandchild</head>
-                      <bibl xml:id="bibl30"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">An Unexpected Grandchild</title>. <publisher><title level="j">Lippincott’s Monthly</title></publisher>, volume <biblScope unit="volume">84</biblScope>, <date when="1909-12">Dec. 1909</date>, pp. <biblScope unit="page">684-700</biblScope>.</bibl>
+                      <bibl xml:id="bibl30"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">An Unexpected Grandchild</title>. <publisher ref="org:Lippincott"><title level="j">Lippincott’s Monthly</title></publisher>, volume <biblScope unit="volume">84</biblScope>, <date when="1909-12">Dec. 1909</date>, pp. <biblScope unit="page">684-700</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="BarbaryCoast">
@@ -211,9 +212,9 @@
                    
                    <listBibl xml:id="Cattle">
                       <head>Cattle</head>
-                      <bibl xml:id="bibl36"><author><name ref="pers:WE1">Eaton, Winnifred</name> (<name ref="pers:WE1">Watonna, Onota</name>)</author>. <title level="m">Cattle</title>. <pubPlace>New York</pubPlace>, <publisher>W.J. Watt</publisher>, <date when="1924">1924</date>.</bibl>
+                      <bibl xml:id="bibl36"><author><name ref="pers:WE1">Eaton, Winnifred</name> (<name ref="pers:WE1">Watonna, Onota</name>)</author>. <title level="m">Cattle</title>. <pubPlace>New York</pubPlace>, <publisher ref="org:Watt">W.J. Watt</publisher>, <date when="1924">1924</date>.</bibl>
                       <bibl xml:id="bibl221"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Cattle</title>. <pubPlace>Toronto</pubPlace>, <publisher>Musson</publisher>, <date when="1923">1923</date>.</bibl>
-                      <bibl xml:id="bibl222"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Cattle</title>. <pubPlace>London</pubPlace>, <publisher>Hutchinson</publisher>, <date when="1923">1923</date>.</bibl>
+                      <bibl xml:id="bibl222"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Cattle</title>. <pubPlace>London</pubPlace>, <publisher ref="org:Hutchinson">Hutchinson</publisher>, <date when="1923">1923</date>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="CountOgurisQuest">
@@ -239,7 +240,7 @@
                    
                    <listBibl xml:id="Elspeth">
                       <head>Elspeth</head>
-                      <bibl xml:id="bibl41"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Elspeth</title>. <publisher><title level="j">The Quill: The Canadian Short Story Magazine</title></publisher>, <date when="1923-01">Jan. 1923</date>, pp. <biblScope unit="page">23-30</biblScope>.</bibl>
+                      <bibl xml:id="bibl41"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Elspeth</title>. <publisher ref="org:Quill"><title level="j">The Quill: The Canadian Short Story Magazine</title></publisher>, <date when="1923-01">Jan. 1923</date>, pp. <biblScope unit="page">23-30</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="EverydayLifeInJapan">
@@ -272,12 +273,12 @@
                    
                    <listBibl xml:id="HisJapaneseTeacher">
                       <head>His Japanese Teacher </head>
-                      <bibl xml:id="bibl50"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">His Japanese Teacher</title>. <publisher><title level="j">The Puritan</title></publisher>, <date when="1899-03">Mar. 1899</date>, pp. <biblScope unit="page">209-217</biblScope>.</bibl><!--<ref target="http://www.philsp.com/homeville/fmi/t/t4922.htm#A108777">-->
+                      <bibl xml:id="bibl50"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">His Japanese Teacher</title>. <publisher ref="org:Puritan"><title level="j">The Puritan</title></publisher>, <date when="1899-03">Mar. 1899</date>, pp. <biblScope unit="page">209-217</biblScope>.</bibl><!--<ref target="http://www.philsp.com/homeville/fmi/t/t4922.htm#A108777">-->
                    </listBibl>
                    
                    <listBibl xml:id="HisRoyalNibs">
                       <head>His Royal Nibs</head>
-                      <bibl xml:id="bibl51"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">His Royal Nibs</title>. New York, <publisher>W.J. Watt</publisher>, <date when="1925">1925</date>.</bibl>
+                      <bibl xml:id="bibl51"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">His Royal Nibs</title>. New York, <publisher ref="org:Watt">W.J. Watt</publisher>, <date when="1925">1925</date>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="HisWifesHusband">
@@ -292,8 +293,8 @@
                    
                    <listBibl xml:id="HomeLifeJapaneseWoman">
                       <head>Home Life of the Japanese Woman</head>
-                      <bibl xml:id="bibl54"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Home Life of the Japanese Woman</title>. <publisher><title level="j">Home and Flowers: An Illustrated Monthly Magazine Devoted to the Beautiful</title></publisher>, <date when="1902-11">Nov. 1902</date>, pp. <biblScope unit="page">7-10</biblScope>.</bibl>
-                      <bibl xml:id="bibl63"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Japanese Woman</title>. <publisher><title level="j">Anderson Intelligencer</title></publisher>, <date when="1903-02-25">25 Feb. 1903</date>, p. <biblScope unit="page">6</biblScope>.</bibl>
+                      <bibl xml:id="bibl54"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Home Life of the Japanese Woman</title>. <publisher ref="org:Home"><title level="j">Home and Flowers: An Illustrated Monthly Magazine Devoted to the Beautiful</title></publisher>, <date when="1902-11">Nov. 1902</date>, pp. <biblScope unit="page">7-10</biblScope>.</bibl>
+                      <bibl xml:id="bibl63"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Japanese Woman</title>. <publisher ref="org:Anderson"><title level="j">Anderson Intelligencer</title></publisher>, <date when="1903-02-25">25 Feb. 1903</date>, p. <biblScope unit="page">6</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="HonorableMovie">
@@ -345,7 +346,7 @@
                    
                    <listBibl xml:id="JohnnysCalf">
                       <head>Johnny’s Calf and Pa’s Cow</head>
-                      <bibl xml:id="bibl66"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Johnny’s Calf and Pa’s Cow</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1921-12-24">24 Dec. 1921</date>, p. 28 (p. 2 Feature Section).</bibl>
+                      <bibl xml:id="bibl66"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Johnny’s Calf and Pa’s Cow</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-12-24">24 Dec. 1921</date>, p. 28 (p. 2 Feature Section).</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="Karo">
@@ -360,8 +361,8 @@
                    
                    <listBibl xml:id="LendMeYourTitle">
                       <head>Lend Me Your Title</head>
-                      <bibl xml:id="bibl69"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Lend Me Your Title</title>. Part One. Illustrated by <author role="illustrator"><name ref="pers:CP1">C. F. Peters</name></author>. <publisher><title level="j">Maclean’s Magazine</title></publisher>, <date when="1919-02">Feb. 1919</date>, pp. <biblScope unit="page">13, 14, 72-74</biblScope>.</bibl>
-                      <bibl xml:id="bibl70"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Lend Me Your Title</title>. Part Two. Illustrated by <author role="illustrator"><name ref="pers:CP1">C. F. Peters</name></author>. <publisher><title level="j">Maclean’s Magazine</title></publisher>, <date when="1919-03">Mar. 1919</date>, pp. <biblScope unit="page">16, 18-19, 66-69</biblScope>.</bibl>
+                      <bibl xml:id="bibl69"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Lend Me Your Title</title>. Part One. Illustrated by <author role="illustrator"><name ref="pers:CP1">C. F. Peters</name></author>. <publisher ref="org:Macleans"><title level="j">Maclean’s Magazine</title></publisher>, <date when="1919-02">Feb. 1919</date>, pp. <biblScope unit="page">13, 14, 72-74</biblScope>.</bibl>
+                      <bibl xml:id="bibl70"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Lend Me Your Title</title>. Part Two. Illustrated by <author role="illustrator"><name ref="pers:CP1">C. F. Peters</name></author>. <publisher ref="org:Macleans"><title level="j">Maclean’s Magazine</title></publisher>, <date when="1919-03">Mar. 1919</date>, pp. <biblScope unit="page">16, 18-19, 66-69</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="LiChingsBaby">
@@ -376,15 +377,15 @@
                    
                    <listBibl xml:id="Marion">
                       <head>Marion: The Story of an Artist’s Model</head>
-                      <bibl xml:id="bibl73"><author><rs ref="pers:WE1">The author of <title level="m">Me</title>, <title level="m">Marion: The Story of an Artist’s Model</title>, Herself</rs></author>, and <author><rs ref="pers:SB1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. New York, <publisher>W.J. Watt</publisher>, <date when="1916">1916</date>.</bibl>
-                      <bibl xml:id="bibl74"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 1. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-04">Apr. 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">4</biblScope>, pp. <biblScope unit="page">254-257, 304-306</biblScope>.</bibl>
-                      <bibl xml:id="bibl75"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 2. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-05">May 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">345-347, 414-416</biblScope>.</bibl>
-                      <bibl xml:id="bibl76"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 3. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-06">June 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">6</biblScope>, pp. <biblScope unit="page">441-443, 460, 462</biblScope>.</bibl>
-                      <bibl xml:id="bibl77"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 4. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-07">July 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">1</biblScope>, pp. <biblScope unit="page">9-11, 57-59</biblScope>.</bibl>
-                      <bibl xml:id="bibl78"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 5. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-08">Aug. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>.</bibl>
-                      <bibl xml:id="bibl79"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 6. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-09">Sept. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">3</biblScope>, pp. <biblScope unit="page">155-157, 190-192</biblScope>.</bibl>
-                      <bibl xml:id="bibl80"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 7. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-10">Oct. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">4</biblScope>, pp. <biblScope unit="page">231-232, 258</biblScope>.</bibl>
-                      <bibl xml:id="bibl81"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 8. <publisher><title level="j">Hearst’s International</title></publisher>, <date when="1916-11">Nov. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">329-330, 338-339</biblScope>.</bibl>
+                      <bibl xml:id="bibl73"><author><rs ref="pers:WE1">The author of <title level="m">Me</title>, <title level="m">Marion: The Story of an Artist’s Model</title>, Herself</rs></author>, and <author><rs ref="pers:SB1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. New York, <publisher ref="org:Watt">W.J. Watt</publisher>, <date when="1916">1916</date>.</bibl>
+                      <bibl xml:id="bibl74"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 1. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-04">Apr. 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">4</biblScope>, pp. <biblScope unit="page">254-257, 304-306</biblScope>.</bibl>
+                      <bibl xml:id="bibl75"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 2. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-05">May 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">345-347, 414-416</biblScope>.</bibl>
+                      <bibl xml:id="bibl76"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 3. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-06">June 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">6</biblScope>, pp. <biblScope unit="page">441-443, 460, 462</biblScope>.</bibl>
+                      <bibl xml:id="bibl77"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 4. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-07">July 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">1</biblScope>, pp. <biblScope unit="page">9-11, 57-59</biblScope>.</bibl>
+                      <bibl xml:id="bibl78"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 5. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-08">Aug. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>.</bibl>
+                      <bibl xml:id="bibl79"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 6. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-09">Sept. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">3</biblScope>, pp. <biblScope unit="page">155-157, 190-192</biblScope>.</bibl>
+                      <bibl xml:id="bibl80"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 7. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-10">Oct. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">4</biblScope>, pp. <biblScope unit="page">231-232, 258</biblScope>.</bibl>
+                      <bibl xml:id="bibl81"><author><rs ref="pers:SB1">Herself</rs></author>, and <author><rs ref="pers:WE1">the author of <title level="m">Me</title></rs></author>. <title level="m">Marion: The Story of an Artist’s Model</title>. Part 8. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>, <date when="1916-11">Nov. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">329-330, 338-339</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="Me">
@@ -398,7 +399,7 @@
                    </listBibl>
                    <listBibl xml:id="Memories">
                       <head>Memories</head>
-                      <bibl xml:id="bibl88"><author><name ref="pers:WE1">Reeve, Winifred</name> (<name ref="pers:WE1">Watanna, Onoto</name>)</author>. <title level="a">Memories</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1922-06-17">17 June 1922</date>, p. <biblScope unit="page">23</biblScope>.</bibl>
+                      <bibl xml:id="bibl88"><author><name ref="pers:WE1">Reeve, Winifred</name> (<name ref="pers:WE1">Watanna, Onoto</name>)</author>. <title level="a">Memories</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1922-06-17">17 June 1922</date>, p. <biblScope unit="page">23</biblScope>.</bibl>
                    </listBibl>
                    <listBibl xml:id="MissLily">
                       <head>Miss Lily and Miss Chrysanthemum</head>
@@ -411,7 +412,7 @@
                    
                    <listBibl xml:id="MissNumeJapaneseRomance">
                       <head>Miss Nume of Japan</head>
-                      <bibl xml:id="bibl91"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Miss Nume of Japan: A Japanese Romance</title>. <pubPlace>Chicago</pubPlace>, <publisher>Rand McNally</publisher>, <date when="1899">1899</date>.</bibl>
+                      <bibl xml:id="bibl91"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Miss Nume of Japan: A Japanese Romance</title>. <pubPlace>Chicago</pubPlace>, <publisher ref="org:Rand">Rand McNally</publisher>, <date when="1899">1899</date>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="MissPerfume">
@@ -478,12 +479,12 @@
                    
                    <listBibl xml:id="PlainPig">
                       <head>Plain Pig</head>
-                      <bibl xml:id="bibl115"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Plain Pig</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1921-09-30">30 Sept. 1921</date>, p. <biblScope unit="page">27</biblScope>.</bibl>
+                      <bibl xml:id="bibl115"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Plain Pig</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-09-30">30 Sept. 1921</date>, p. <biblScope unit="page">27</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="PlentyOfOpportunity">
                       <head>Plenty of Opportunity for Men in Alberta If They Will Go on the Land</head>
-                      <bibl xml:id="bibl116"><author><name ref="pers:WE1">Reeve, Mrs. Francis</name></author>. <title level="a">Plenty of Opportunity for Men in Alberta If They Will Go on the Land</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1924-01-19">19 Jan. 1924</date>, p. <biblScope unit="page">7</biblScope>.</bibl>
+                      <bibl xml:id="bibl116"><author><name ref="pers:WE1">Reeve, Mrs. Francis</name></author>. <title level="a">Plenty of Opportunity for Men in Alberta If They Will Go on the Land</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1924-01-19">19 Jan. 1924</date>, p. <biblScope unit="page">7</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="PrinceSagaritsu">
@@ -534,13 +535,13 @@
                    
                    <listBibl xml:id="SomeMotorists">
                       <head>Some Motorists Are Not as Popular with the Farmers as Many of Them Think</head>
-                      <bibl xml:id="bibl127"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Some Motorists Are Not as Popular with the Farmers as Many of Them Think</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1921-10-22">22 Oct. 1921</date>, p. <biblScope unit="page">28</biblScope>.</bibl>
+                      <bibl xml:id="bibl127"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Some Motorists Are Not as Popular with the Farmers as Many of Them Think</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-10-22">22 Oct. 1921</date>, p. <biblScope unit="page">28</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="StarvingAndWriting">
                       <head>Starving and Writing in New York</head>
-                      <bibl xml:id="bibl128"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Starving and Writing in New York</title>. <publisher><title level="j">MacLean’s Magazine</title></publisher>, <date when="1922-10-15">15 Oct. 1922</date>, pp. <biblScope unit="page">66-67</biblScope>.</bibl>
-                      <bibl xml:id="bibl129"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Hard Times in New York for Struggling Writers</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1922-06-24">24 June 1922</date>, p. <biblScope unit="page">18</biblScope>.</bibl>
+                      <bibl xml:id="bibl128"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Starving and Writing in New York</title>. <publisher ref="org:Macleans"><title level="j">MacLean’s Magazine</title></publisher>, <date when="1922-10-15">15 Oct. 1922</date>, pp. <biblScope unit="page">66-67</biblScope>.</bibl>
+                      <bibl xml:id="bibl129"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Hard Times in New York for Struggling Writers</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1922-06-24">24 June 1922</date>, p. <biblScope unit="page">18</biblScope>.</bibl>
                    </listBibl>
 
                    <listBibl xml:id="SunnySan">
@@ -570,7 +571,7 @@
                    
                    <listBibl xml:id="Taro">
                       <head>Taro</head>
-                      <bibl xml:id="bibl136"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Taro</title>. <publisher><title level="j">The Chicago Magazine</title></publisher>,<date notBefore="1899" notAfter="1900">1899–1900</date>  pp. <biblScope unit="page">99-102</biblScope>. <distributor>Winnifred Eaton Reeve Fonds</distributor>, <idno>16.1</idno>.</bibl>
+                      <bibl xml:id="bibl136"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Taro</title>. <publisher ref="org:Chicago"><title level="j">The Chicago Magazine</title></publisher>,<date notBefore="1899" notAfter="1900">1899–1900</date>  pp. <biblScope unit="page">99-102</biblScope>. <distributor>Winnifred Eaton Reeve Fonds</distributor>, <idno>16.1</idno>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="BetrothalOfOtoyo">
@@ -580,7 +581,7 @@
                    
                    <listBibl xml:id="BrideOfYonejiro">
                       <head>The Bride of Yonejiro</head>
-                      <bibl xml:id="bibl138"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Bride of Yonejiro</title>. <publisher><title level="j">Metropolitan Magazine</title></publisher>, <date when="1902-05">May 1902</date>, pp. <biblScope unit="page">603-07</biblScope>.</bibl>
+                      <bibl xml:id="bibl138"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Bride of Yonejiro</title>. <publisher ref="org:MetropolitanMag"><title level="j">Metropolitan Magazine</title></publisher>, <date when="1902-05">May 1902</date>, pp. <biblScope unit="page">603-07</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="CanadianSpirit">
@@ -631,7 +632,7 @@
                    
                    <listBibl xml:id="HappyLot">
                       <head>The Happy Lot of Japanese Women: Educated, Modest and Gentle, Their Home Life Full of Charm, While They Exercise a Quiet Influence in the Nation’s Progress</head>
-                      <bibl xml:id="bibl152"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Happy Lot of Japanese Women, Educated, Modest and Gentle, Their Home Life Full of Charm, While They Exercise a Quiet Influence in the Nation’s Progress</title>. <publisher><title level="j">Metropolitan Magazine</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp. <biblScope unit="page">231-37</biblScope>.</bibl>
+                      <bibl xml:id="bibl152"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Happy Lot of Japanese Women, Educated, Modest and Gentle, Their Home Life Full of Charm, While They Exercise a Quiet Influence in the Nation’s Progress</title>. <publisher ref="org:MetropolitanMag"><title level="j">Metropolitan Magazine</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp. <biblScope unit="page">231-37</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="HeartOfHyacinth">
@@ -671,7 +672,7 @@
                    
                    <listBibl xml:id="LittleGeisha">
                       <head>The Little Geisha</head>
-                      <bibl xml:id="bibl159"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Little Geisha</title>. <publisher><title level="j">The Spanish Fork Press</title></publisher>, <date when="1906-05-17">17 May 1906</date>, p. <biblScope unit="page">5</biblScope>.</bibl>
+                      <bibl xml:id="bibl159"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Little Geisha</title>. <publisher ref="org:Spanish"><title level="j">The Spanish Fork Press</title></publisher>, <date when="1906-05-17">17 May 1906</date>, p. <biblScope unit="page">5</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="LittleJournalMissSpring">
@@ -710,11 +711,11 @@
                    <listBibl xml:id="MarriageOfJinyo">
                       
                       <head>The Marriage of Jinyo</head>
-                      <bibl xml:id="bibl169"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Marriage of Jinyo</title>. <publisher><title level="j">Red Book Magazine</title></publisher>, <date when="1910-02">Feb. 1910</date>, pp. <biblScope unit="page">740-44</biblScope>.</bibl>
+                      <bibl xml:id="bibl169"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Marriage of Jinyo</title>. <publisher ref="org:Red"><title level="j">Red Book Magazine</title></publisher>, <date when="1910-02">Feb. 1910</date>, pp. <biblScope unit="page">740-44</biblScope>.</bibl>
                    </listBibl>
                    <listBibl xml:id="MarriageOkikuSan">
                       <head>The Marriage of Okiku-San</head>
-                      <bibl xml:id="bibl170"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Marriage of Okiku-San</title>. <publisher><title level="j">Red Book Magazine</title></publisher>, <date when="1910-06">June 1910</date>, pp. <biblScope unit="page">254-63</biblScope>.</bibl>
+                      <bibl xml:id="bibl170"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Marriage of Okiku-San</title>. <publisher ref="org:Red"><title level="j">Red Book Magazine</title></publisher>, <date when="1910-06">June 1910</date>, pp. <biblScope unit="page">254-63</biblScope>.</bibl>
                       <bibl xml:id="bibl171"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Marriage of Okiku-San</title>. <publisher ref="org:SFCall"><title level="j">San Francisco Call</title></publisher>, <date when="1911-04-16">16 Apr. 1911</date>, p. <biblScope unit="page">41</biblScope>.</bibl>
                    </listBibl>
                    <listBibl xml:id="MarvelousMiniature">
@@ -789,13 +790,13 @@
                    
                    <listBibl xml:id="ThreeLoves">
                       <head>Three Loves</head>
-                      <bibl xml:id="bibl200"><author><name ref="pers:WE1">Eaton, Winnifred</name></author>. <title level="a">Three Loves</title>. <publisher><title level="j">The Puritan</title></publisher>, <date when="1901-01">Jan. 1901</date>, pp. <biblScope unit="page">645-650</biblScope>.</bibl>
+                      <bibl xml:id="bibl200"><author><name ref="pers:WE1">Eaton, Winnifred</name></author>. <title level="a">Three Loves</title>. <publisher ref="org:Puritan"><title level="j">The Puritan</title></publisher>, <date when="1901-01">Jan. 1901</date>, pp. <biblScope unit="page">645-650</biblScope>.</bibl>
                       <bibl xml:id="bibl201"><author><name ref="pers:WE1">Eaton, Winnifred</name></author>. <title level="a">Three Loves</title>. Illustrated by <author role="illustrator"><name ref="pers:CH1">Charles Horell</name></author>. <publisher ref="org:LadysMagazine"><title level="j">Lady’s Magazine</title></publisher> (England), <date when="1902-07">July 1902</date>, pp. <biblScope unit="page">266-273</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="Tokiwa">
                       <head>Tokiwa: A Tale of Old Japan</head>
-                      <bibl xml:id="bibl202"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Tokiwa: A Tale of Old Japan</title>. <publisher><title level="j">Red Book Magazine</title></publisher>, <date when="1911-05">May 1911</date>, pp. <biblScope unit="page">49-57</biblScope>.</bibl>
+                      <bibl xml:id="bibl202"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Tokiwa: A Tale of Old Japan</title>. <publisher ref="org:Red"><title level="j">Red Book Magazine</title></publisher>, <date when="1911-05">May 1911</date>, pp. <biblScope unit="page">49-57</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="TwoConverts">
@@ -810,7 +811,7 @@
                    
                    <listBibl xml:id="VisitingMlleButterfly">
                       <head>Visiting Mlle. Butterfly</head>
-                      <bibl xml:id="bibl205"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Visiting Mlle. Butterfly</title>. <publisher><title level="j">The Columbian Magazine</title></publisher>, <date when="1911-09">Sept. 1911</date>, pp. <biblScope unit="page">1171-1180</biblScope>.</bibl>
+                      <bibl xml:id="bibl205"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Visiting Mlle. Butterfly</title>. <publisher ref="org:Columbian"><title level="j">The Columbian Magazine</title></publisher>, <date when="1911-09">Sept. 1911</date>, pp. <biblScope unit="page">1171-1180</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="WhatHappenedHayakawa">
@@ -835,12 +836,12 @@
                    
                    <listBibl xml:id="WillardMack">
                       <head>Willard Mack to Collaborate With Mrs. Frances Reeve</head>
-                      <bibl xml:id="bibl210"><author><name ref="pers:WE1">Reeve, Mrs.Frances</name></author>. <title level="a">Willard Mack to Collaborate With Mrs. Frances Reeve</title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1921-09-14">14 Sept. 1921</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
+                      <bibl xml:id="bibl210"><author><name ref="pers:WE1">Reeve, Mrs.Frances</name></author>. <title level="a">Willard Mack to Collaborate With Mrs. Frances Reeve</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-09-14">14 Sept. 1921</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
                    </listBibl>
                    
                    <listBibl xml:id="WriterTells">
                       <head>Writer Tells How She Came to Write <title level="a">Cattle</title></head>
-                      <bibl xml:id="bibl211"><author><name ref="pers:WE1">Reeve, Winnifred Eaton</name></author>. <title level="a">Writer Tells How She Came to Write <title level="a">Cattle</title></title>. <publisher><title level="j">Calgary Herald</title></publisher>, <date when="1923-12-20">20 Dec. 1923</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
+                      <bibl xml:id="bibl211"><author><name ref="pers:WE1">Reeve, Winnifred Eaton</name></author>. <title level="a">Writer Tells How She Came to Write <title level="a">Cattle</title></title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1923-12-20">20 Dec. 1923</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
                       <bibl xml:id="bibl212"><name ref="pers:WE1">Reeve, Winnifred Eaton</name> (Onoto Watanna), <title level="a">How I came to write <title level="a">Cattle</title>.</title> <publisher><title level="j">Edmonton Journal</title></publisher>, <date when="1923-12-08">8 Dec. 1923</date>, p. <biblScope unit="page">20</biblScope>.</bibl>
                    </listBibl>
                    
@@ -853,7 +854,7 @@
                       <head>Yoshida Yone, Lover</head>
                       <bibl xml:id="bibl214"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Yoshida Yone, Lover</title>. <publisher ref="org:Smart"><title level="j">Smart Set</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp. <biblScope unit="page">133-38</biblScope>.</bibl>
                       
-                      <bibl xml:id="bibl215"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Yosheda Yone, Lover</title>. <publisher><title level="j">The <supplied>Canterbury, NZ</supplied> Press</title></publisher>, <date when="1902-11-25">25 Nov. 1902</date>, p. <biblScope unit="page">11439</biblScope>.</bibl>
+                      <bibl xml:id="bibl215"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Yosheda Yone, Lover</title>. <publisher ref="org:Canterbury"><title level="j">The <supplied>Canterbury, NZ</supplied> Press</title></publisher>, <date when="1902-11-25">25 Nov. 1902</date>, p. <biblScope unit="page">11439</biblScope>.</bibl>
                    </listBibl>
                    
             <listBibl xml:id="YouCantRunAway">
