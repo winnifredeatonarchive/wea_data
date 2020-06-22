@@ -7,6 +7,14 @@
          <titleStmt>
             <title>The Little Journal of Miss Spring</title>
             <respStmt>
+               <resp>Author</resp>
+               <name ref="pers:WE1">Winnifred Eaton</name>
+            </respStmt>
+            <respStmt>
+               <resp>Illustrator</resp>
+               <name ref="pers:MM1">M. McKinlay</name>
+            </respStmt>
+            <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
@@ -34,7 +42,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-06-21" status="published">proofread.</change><change who="pers:SB2" when="2020-06-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SB2" when="2020-06-22" status="published">Added illustrator tag.</change>
+         <change who="pers:MC1" when="2020-06-21" status="published">proofread.</change>
+         <change who="pers:SB2" when="2020-06-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl160 using XSLT.</change>
       </revisionDesc>
@@ -45,7 +55,7 @@
          <head>The Little Journal of Miss Spring</head>
          <opener>
             <byline>By <name ref="pers:WE1">Onoto Watanna</name> (Author of Sunny-san, etc.)</byline>
-            <byline>Illustrated by M. McKinlay</byline>
+            <byline>Illustrated by <name ref="pers:MM1">M. McKinlay</name></byline>
          </opener>
          <div>
 
