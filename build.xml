@@ -3,7 +3,7 @@
     
     <include file="buildGlobals.xml"/>
   
-  <property name="staticSearchBranch" value="dev"/>
+    <property name="staticSearchBranch" value="issue_48_wildcards"/>
   
   <target name="getStaticSearch">
      <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
