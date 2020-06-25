@@ -35,22 +35,24 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:DC1" when="2020-06-25" status="inProgress">Encoding.</change>
          <change who="pers:DC1" when="2020-06-25" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-02">Updated subtitle and added facs.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl39 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:DeliaDissents">
+      <pb n="22"/>
       <body>
-         <div>
-            <p>Delia Dissents:</p>
-            <p>Her Diary Records the End of a Great Endeavor</p>
-    
-      
-    
-            <p>By Onoto Watanna</p>
-            <p>Illustrated by May Wilson Preston</p>
-            <p> </p>
+         <head>Delia Dissents</head>
+         <opener>
+            <byline>Her Diary Records the End of a Great Endeavor</byline>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline>Illustrated by May Wilson Preston</byline>
+         </opener>
+         <div type="content">
+            <div>
+            
             
             <p>We dressed in our best. Miss Claire was after linding me her illygunt camio broach, for ses she shmiling:</p>
             
@@ -104,7 +106,7 @@
             
             <p>Wid that he paused, then hissed out the follering terryfying ixplunashun:</p>
             
-            <p><q>It’s an unfirnal masheen!</q>ses he.</p>
+            <p><q><emph>It’s an unfirnal masheen!</emph></q>ses he.</p>
             
             <p><q>Grashus!</q> ses I, joomping on the table, follared by ivery female in the room, all haulding up there shkirts as though the kitchen were alive wid mice, while the men—the crachures made a onited move tord the winders and doors.</p>
             
@@ -160,7 +162,7 @@
             
             <p><q>I have a secret to tell</q>, ses the girl, and I seen at wance that she was Frinch, lady’s maid to Miss Una Robins.</p>
           
-            <p><q>Behold zese hands!</q> ses she. <q>Do zay look pretty  to you?</q></p>
+            <p><q>Behold zese hands!</q> ses she. <q>Do zay look pretty  to you?</q></p><pb n="23"/>
          
             <p><q>Very</q>, ses Larry, and then shrunk back in his place at the look of contimp I’m afther giving him.</p>
          
@@ -313,6 +315,7 @@
             <p><q>The meeting</q>, ses I, <q>has broken up in dishorder</q>.</p>
             
             <p><q>Delia, darlint</q>. ses he, <q>wud ye mind calling the roll</q>.</p>
+         </div>
          </div>
       </body>
    </text>
