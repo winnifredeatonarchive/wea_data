@@ -31,7 +31,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
-         <change who="pers:SC1" status="inProgress" when="2020-06-21">Begin transcribing</change>
+         <change who="pers:MC1" status="inProgress" when="2020-06-30">added next instalment link</change><change who="pers:SC1" status="inProgress" when="2020-06-21">Begin transcribing</change>
          <change who="pers:MC1" status="empty"  when="2019-07-29">changed text link to pdf.</change>
          <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
          
@@ -39,9 +39,12 @@
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl106 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Other_Peoples_Troubles3">
+   <text facs="facs:Other_Peoples_Troubles3" prev="doc:OtherPeoplesTroubles2"  next="doc:OtherPeoplesTroubles4">
+      
       <pb n="331"/>
       <body>
+         <div>
+    
          <head>Other People’s Troubles</head>
          <head type="subtitle">An Antidote for Your Own</head>
          <opener>
@@ -200,8 +203,7 @@
             </p>
             <pb n="333"/>
             
-         </div>
+         </div></div>
       </body>
-      
-   </text>
+         </text>
 </TEI>
