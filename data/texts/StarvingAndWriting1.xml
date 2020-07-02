@@ -48,7 +48,9 @@ Publicly accessible
 -->
          </publicationStmt>
 
-
+         <notesStmt>
+            <note>Facsimile retrieved from University of British Columbia</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:128"/>
          </sourceDesc>
@@ -61,8 +63,8 @@ Publicly accessible
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
-         <change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre.</change>
+      <revisionDesc status="published">
+         <change who="pers:MC1" status="published"  when="2020-07-02">Added note about source.</change><change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl128 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatStar. Old filename: Starving_and_Writing_in_NY.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
