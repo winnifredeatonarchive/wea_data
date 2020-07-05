@@ -1139,6 +1139,23 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:change[@who]">
+                           <sch:let name="errors"
+                  value="tokenize(@who,'\s+')[not(matches(.,'^pers:[A-Z]{2}\d+$'))]"/>
+                           <sch:assert test="empty($errors)">ERROR: Bad @who value for this change element: <sch:value-of select="string-join($errors,' ')"/>
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                         <sch:rule context="tei:*[not(ancestor-or-self::tei:code)][text()][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="onlyOneQuote"
                   value="some $t in text() satisfies (not(count(tokenize($t,'”')) = count(tokenize($t,'“'))))"/>
@@ -1186,7 +1203,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-documentRefsShouldBeGood-constraint-rule-49">
+            id="wea-documentRefsShouldBeGood-constraint-rule-50">
       <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"

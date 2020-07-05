@@ -2690,6 +2690,20 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="changeWithWho">
+                  <desc>All change/@who pointers should be properly formatted.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:change[@who]">
+                           <sch:let name="errors"
+                                    value="tokenize(@who,'\s+')[not(matches(.,'^pers:[A-Z]{2}\d+$'))]"/>
+                           <sch:assert test="empty($errors)">ERROR: Bad @who value for this change element: <sch:value-of select="string-join($errors,' ')"/>
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
                <!--   
                <constraintSpec scheme="schematron" ident="badOrgId">
                   <desc>All publisher ids must be found in the orgs doc.</desc>
