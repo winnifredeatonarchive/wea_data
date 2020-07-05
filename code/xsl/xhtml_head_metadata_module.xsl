@@ -70,7 +70,7 @@
         <meta property="dc.source" content="The Winnifred Eaton Archive"/>
         <meta property="dc.type" content="Text"/>
         <meta property="dc.format" content="text/html"/>
-        <meta property="dc.identifier" content="https://winnifredeatonarchive.com/{@xml:id}.html" />
+        <meta property="dc.identifier" content="https://winnifredeatonarchive.org/{@xml:id}.html" />
     </xsl:template>
     
     <xsl:template name="createStaticSearchMetadata">

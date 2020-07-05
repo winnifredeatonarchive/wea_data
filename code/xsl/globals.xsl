@@ -72,7 +72,6 @@
             <xsl:variable name="thisLine" select="for $s in $imageSizeDocLines return if (matches($s,concat('^.+/',functx:escape-for-regex($pngName),'.jpg:'))) then $s else ()" as="xs:string?"/>
         <xsl:if test="not(empty($thisLine))">
             <xsl:variable name="size" select="normalize-space(tokenize(substring-after($thisLine,':'),'\s*,\s*')[15])"/>
-            <xsl:message><xsl:value-of select="$size"/></xsl:message>
             <xsl:variable name="height" select="normalize-space(substring-before($size,'x'))"/>
             <xsl:variable name="width" select="normalize-space(substring-after($size,'x'))"/>
             <xsl:value-of select="xs:integer($height)"/>
