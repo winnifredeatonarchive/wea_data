@@ -6,10 +6,25 @@
       <fileDesc>
          <titleStmt>
             <title>Wild Rose</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from the University of Calgary.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:209"/>
          </sourceDesc>
@@ -22,11 +37,12 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:SB2" status="empty"  when="2020-07-08">Added facsimile and encoded general information.</change>
          <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl209 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:Wild_Rose">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
