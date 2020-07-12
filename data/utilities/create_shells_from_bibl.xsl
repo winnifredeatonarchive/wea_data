@@ -15,6 +15,8 @@
     <xsl:variable name="texts" select="collection('../texts?select=*.xml')"/>
     
     
+    
+    
     <xsl:variable name="usedBibls" select="$texts//sourceDesc/bibl/replace(@copyOf,':','')" as="xs:string*"/>
     
     <xsl:variable name="textIdMap" as="map(xs:string,xs:integer+)">
@@ -53,9 +55,13 @@
                             </fileDesc>
                             <profileDesc>
                                 <textClass>
+                                    <catRef scheme="wdt:genre" target=""/>
+                                    <catRef scheme="wdt:exhibit" target=""/>
+                                    <catRef scheme="wdt:docType" target=""/>
                                 </textClass>
                             </profileDesc>
                             <revisionDesc status="empty">
+                                <change who="pers:JT1" when="{format-date(current-date(),'[Y0001]-[M01]-[D01]')}" status="empty">Created shell from bibl file.</change>
                             </revisionDesc>
                         </teiHeader>
                         <text>
