@@ -2495,12 +2495,16 @@ a.current{
 
 
 
-div.blockquote,
+div.blockquote:not([data-type='internal']),
 div[data-el='floatingText']{
     margin: 1.5rem 5rem 1.5rem 1.5rem;
     font-size:95%;
 }
 
+
+div.blockquote[data-type='internal'] > [data-el='p']:before{
+    content:"‘";
+}
 
 span[data-el='foreign']{
     font-style:italic;
