@@ -491,7 +491,7 @@
     <xsl:template match="gap[@reason='noTranscriptionAvailable']" mode="tei">
         <xsl:variable name="subject">WEA: <xsl:value-of select="ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
         <xsl:variable name="temp" as="element(tei:div)">
-            <tei:div>
+            <tei:div type="noTranscriptionAvailable">
                 <tei:head>No Transcription Available</tei:head>
                 <tei:div>There is no transcription available yet for this item. If you would like to contribute a transcription,
                 please contact the <tei:ref target="mailto:mchapman@ubc.ca?subject={encode-for-uri($subject)}">Project Director</tei:ref>.</tei:div>

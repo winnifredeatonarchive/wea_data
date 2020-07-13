@@ -312,6 +312,14 @@ body{
     overflow-x:hidden;
 }
 
+/* Special hadnling if no transcription available */
+
+div[data-type='noTranscriptionAvailable']{
+      margin-top: 2.5rem;
+    margin-bottom: -2.5rem;
+}
+}
+
 /*  OVERLAY (MAY COME IN HANDY IN OTHER CONTEXTS) */
 
 
