@@ -447,6 +447,9 @@
     
     <xsl:template match="figure" mode="tei">
         <figure>
+            <xsl:if test="not(graphic)">
+                <xsl:attribute name="class" select="'placeholder'"/>
+            </xsl:if>
             <xsl:apply-templates mode="#current"/>
         </figure>
     </xsl:template>
