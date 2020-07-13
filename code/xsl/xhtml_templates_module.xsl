@@ -439,7 +439,7 @@
     </xsl:template>
     
     
-    <xsl:template match="text()[not(ancestor::q)][preceding::text()[1][ancestor::q or ancestor::title[@level='a']]][matches(., '^[,\.]')]" mode="tei">
+    <xsl:template match="text()[not(parent::q)][preceding::text()[1][ancestor::q or ancestor::title[@level='a']]][matches(., '^[,\.]')]" mode="tei">
         <xsl:value-of select="substring(., 2)"/>
     </xsl:template>
     

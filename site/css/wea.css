@@ -2503,7 +2503,7 @@ div[data-el='floatingText']{
 
 
 div.blockquote[data-type='internal'] > [data-el='p']:before{
-    content:"‘";
+    content:"“";
 }
 
 span[data-el='foreign']{
@@ -2530,11 +2530,11 @@ div[data-el='lg']{
     padding: .5em 0;
 }
 
-span[data-el='q'] span[data-el='q']::before{
+[data-el='q'] [data-el='q']::before{
     content:"‘";
 }
 
-span[data-el='q'] span[data-el='q']::after{
+[data-el='q'] [data-el='q']::after{
     content:"’";
 }
 
