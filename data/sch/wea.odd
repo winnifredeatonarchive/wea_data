@@ -639,7 +639,7 @@
                </div>
             </div>
             <div xml:id="creatingNewText">
-               <head>Creating a Create a New Text</head>
+               <head>Creating a New Text</head>
                <p>Most of the WE texts already have shell files in the texts/ folder. If the text already exists in the bibliography and exists in the /texts/ folder, but you want to add the transcription from Google Drive, following the Adding Transcription instructions. Otherwise, following the Adding a New Text instructions below.</p>
                <div xml:id="creatingNewTextFromScratch">
                   <head>Adding a New Text</head>
@@ -682,7 +682,7 @@
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
                                  <head>Cars Are Bad</head>
-                                 <bibl/>
+                                 <bibl><!--Content goes here--></bibl>
                               </listBibl>
                            </egXML>
                         </p>
@@ -691,7 +691,7 @@
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
                                  <head>Cars Are Bad</head>
-                                 <bibl xml:id="bibl232"/>
+                                 <bibl xml:id="bibl232"><!--Content goes here--></bibl>
                               </listBibl>
                            </egXML>
                         </p>
@@ -707,7 +707,7 @@
                      </div>
                   </div>
                   <div>
-                     <head>Step 1: Generate a new Document</head>
+                     <head>Step 2: Generating a New Document</head>
                      <p>Once you've created a new bibl entry, you can add a new shell for that document.</p>
                      <p>To do so, open the document addTextsFromBibl.html from your oXygen menu; it should be below addTextFromDrive.xml</p>
                      <p>Next, click the red play button at the top of the document. </p>
@@ -715,10 +715,8 @@
                      <p>If that's successful, then you can go into the /texts/ folder and find your document. You may need to right-click and click refresh on /texts/ directory in your oXygen project pane.</p>
                      <p>Open that document and make any of the necessary metadata changes: adding proper category references and metadata primarily.</p>
                      <p>Once the file is valid and has all of the appropriate metadata, make sure to <code>svn add</code> your document to the repo:
-                     <code rend="block">
-                        svn add texts/CarsAreBad1.xml
-                        svn commit -m "Adding new CarsAreBad file from new bibl entry"
-                     </code>
+                     <code rend="block">svn add texts/CarsAreBad1.xml</code>
+                     <code rend="block">svn commit -m "Adding new CarsAreBad file from new bibl entry"</code>
                      </p>
                   </div>
                </div>
