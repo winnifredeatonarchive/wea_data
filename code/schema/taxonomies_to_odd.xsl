@@ -7,11 +7,11 @@
     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:eg="http://www.tei-c.org/ns/Examples"
-    version="2.0">
+    version="3.0">
     
     <!--This stylesheet adds values from our taxonomies to the ODD file-->
     
-    <xsl:output indent="yes"/>
+    <xsl:output indent="yes" suppress-indentation="egXML p code"/>
     
     <xsl:variable name="taxonomies" select="document('../../data/taxonomies.xml')"/>
     <xsl:variable name="sq">'</xsl:variable>

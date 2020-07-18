@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Processing instructions for the TEI ODDs rng-->
-<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev-with-Stylesheets-dev/ws/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev-with-Stylesheets-dev/ws/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="wea.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:svg="http://www.w3.org/2000/svg"
@@ -485,6 +485,7 @@
                            </listBibl>
                         </egXML>
                      </p>
+                     
                      <div>
                         <head>Components of a bibl</head>
                         <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
@@ -638,57 +639,93 @@
                </div>
             </div>
             <div xml:id="creatingNewText">
-               <head>Creating a New Text in oXygen</head>
-               <p>To create a new text file, use the built in text template</p>
-               <list>
-                  <item>First, in the project view in oXygen, right click the data/texts folder and click <q>Add new file</q>
-                  </item>
-                  <figure>
-                     <figDesc>Add a new file.</figDesc>
-                     <graphic url="../graphics/create_new_file_1.gif"/>
-                  </figure>
-                  <item>Select <q>wea_template.xml</q> and give your file a name. The name should be two or three words, separated with underscores.</item>
-                  <figure>
-                     <figDesc>Give it a name.</figDesc>
-                     <graphic url="../graphics/create_new_file_2.gif"/>
-                  </figure>
-                  <item>Input the (modernized) title of the document</item>
-                  <figure>
-                     <figDesc>Give it a title.</figDesc>
-                     <graphic url="../graphics/create_new_file_3.gif"/>
-                  </figure>
-                  <item>Select the transciber</item>
-                  <figure>
-                     <figDesc>Select the transcriber</figDesc>
-                     <graphic url="../graphics/create_new_file_4.gif"/>
-                  </figure>
-                  <item>Select the copy editor</item>
-                  <figure>
-                     <figDesc>Select the copy editor.</figDesc>
-                     <graphic url="../graphics/create_new_file_5.gif"/>
-                  </figure>
-                  <item>Select the encoder (who is usually you)</item>
-                  <figure>
-                     <figDesc>Select the encoder</figDesc>
-                     <graphic url="../graphics/create_new_file_6.gif"/>
-                  </figure>
-                  <item>Select the genre</item>
-                  <figure>
-                     <figDesc>Select the genre.</figDesc>
-                     <graphic url="../graphics/create_new_file_7.gif"/>
-                  </figure>
-                  <item>Select the exhibit (usually derived from the Google Drive folder structure)</item>
-                  <figure>
-                     <figDesc>Select the exhibit</figDesc>
-                     <graphic url="../graphics/create_new_file_8.gif"/>
-                  </figure>
-                  <item>Your new document should be created!</item>
-                  <figure>
-                     <figDesc>Hooray! New document created.</figDesc>
-                     <graphic url="../graphics/create_new_file_9.gif"/>
-                  </figure>
-                  <item>Remember to commit the changes to the repository using the above instructions.</item>
-               </list>
+               <head>Creating a Create a New Text</head>
+               <p>Most of the WE texts already have shell files in the texts/ folder. If the text already exists in the bibliography and exists in the /texts/ folder, but you want to add the transcription from Google Drive, following the Adding Transcription instructions. Otherwise, following the Adding a New Text instructions below.</p>
+               <div xml:id="creatingNewTextFromScratch">
+                  <head>Adding a New Text</head>
+                  <p>In order for a new text to be added to the WEA, each text must have two necessary components: a bibliographic item in the bibliography file (bibliography.xml) and a corresponding file for the transcription in /data/texts.</p>
+                  <p>Note that all of these instructions assume that you have the WEA project file (wea_data.xpr) project open in oXygen. I.e. in the left pane of oXygen, you should see something at the top that says wea_data.xpr.</p>
+                  <div>
+                     <head>Step 1: Add to the bibliography</head>
+                     <div>
+                        <head>Step 1a: Create a new work</head>
+                        <p>Depending on the new text, you may need to create a new <q>work</q> for the bibliographic item. The idea here is that each individual instance of a text (i.e. something that <emph>actually</emph> exists in some printed form) is related to a more abstract notion of the <q>work</q>. For instance, we have three different version of <title level="m">Cattle</title> in the project: these are more-or-less the same, but contain some significant differences that we want to capture in the project. Another example is a text like <title level="m">Marion</title>, which is a serialized novel: each individual serialized chapter and the novel itself all relate to the abstract notion of a text called <title level="m">Marion</title>.</p>
+                        <p>What this means is that the bibliography is structured in such a way so that each text is related to its corresponding work via a <gi>listBibl</gi>. An example from <title level="m">Cattle</title>:
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listBibl xml:id="Cattle">
+                              <head>Cattle</head>
+                              <bibl xml:id="bibl36"><author><name ref="pers:WE1">Eaton, Winnifred</name> (<name ref="pers:WE1">Watonna, Onota</name>)</author>. <title level="m">Cattle</title>. <pubPlace>New York</pubPlace>, <publisher ref="org:Watt">W.J. Watt</publisher>, <date when="1924">1924</date>.</bibl>
+                              <bibl xml:id="bibl221"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Cattle</title>. <pubPlace>Toronto</pubPlace>, <publisher ref="org:Musson">Musson</publisher>, <date when="1923">1923</date>.</bibl>
+                              <bibl xml:id="bibl222"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">Cattle</title>. <pubPlace>London</pubPlace>, <publisher ref="org:Hutchinson">Hutchinson</publisher>, <date when="1923">1923</date>.</bibl>
+                           </listBibl>
+                        </egXML>
+                           
+                        </p>
+                        <p>Each work gets a <gi>listBibl</gi> in the we_bibliography <gi>listBibl</gi>. The <att>xml:id</att> for that bibliographic entry is whatever you think the text file should be called without the number (so, here <val>Cattle</val>, which then corresponds with files in /texts/: Cattle1.xml, Cattle2.xml, and Cattle3.xml). Note that the <gi>bibl</gi> xml:ids do not match the file names and they are not necessarily in sequence; that's addressed in the next step.</p>
+                        <p>For now, though, if you are adding a new item to the WEA, you must first check whether or not the <q>work</q> exists. Usually this will the case if a new instance of a text (like a serialized novel) has been discovered. If you are adding a new text to a pre-existing work, then you can skip to the next step.</p>
+                        <p>Otherwise, you must create a new work in the bibliography. To do so, find an appropriate place (alphabetically) in bibliography.xml where you can add your work and then create a new listBibl for it. If we were adding a new like called <q>Cars are Bad</q>, we would do something like this (note: it doesn't really matter where you end up putting it so long as it's within the wea_bibliography):
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <listBibl xml:id="CarsAreBad">
+                                 <head>Cars Are Bad</head>
+                              </listBibl>
+                           </egXML>
+                        </p>
+                        <p>Note that there are two necessary things here: the <att>xml:id</att> and the <gi>head</gi> element: the <gi>head</gi> element is the title for the work; the <att>xml:id</att> is the id for the entire work and should correspond with the base id of the new text (i.e. in this instance, CarsAreBad1.xml). Note that this will also be the URL of the document, so try and be consistent with the rest of the texts regarding leading articles, et cetera.</p>
+                     </div>
+                     
+                     
+                     <div>
+                        <head>Step 1b: Adding a new bibliographic entry</head>
+                        <p>To add a new bibliographic entry to a work, first add a <gi>bibl</gi> element after the <gi>head</gi> like so:
+                           
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <listBibl xml:id="CarsAreBad">
+                                 <head>Cars Are Bad</head>
+                                 <bibl/>
+                              </listBibl>
+                           </egXML>
+                        </p>
+
+                        <p>oXygen will be mad at you: that's OK and expected. Click on the red underlined <gi>bibl</gi> tag. You should now see a little red lightbulb beside the <gi>bibl</gi> element. Click on the lightbulb and you should see a box that says something like <q>Add a new bibl id</q>. Click on that (or press enter). With any luck, you should then get a properly formed bibl <att>xml:id</att>, which will look something like so:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <listBibl xml:id="CarsAreBad">
+                                 <head>Cars Are Bad</head>
+                                 <bibl xml:id="bibl232"/>
+                              </listBibl>
+                           </egXML>
+                        </p>
+                        
+                        <p>Next, add the details to the bibliography following the <ref target="#encodingDatabases_bibliography_WE">style guidelines here</ref>. Once all of that information has been filled in, you should have a bibl that looks something like this:
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <listBibl xml:id="CarsAreBad">
+                                 <head>Cars Are Bad</head>
+                                 <bibl xml:id="bibl232"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Cars Are Bad</title>. <publisher ref="org:CdnBookman"><title level="j">Canadian Bookman</title></publisher>, vol. <biblScope unit="volume">1</biblScope>, no. <biblScope unit="issue">1</biblScope>, <date when="1920-02">Feb. 1920</date>, pp. <biblScope unit="page">140-147</biblScope>.</bibl>
+                              </listBibl>
+                           </egXML>
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <head>Step 1: Generate a new Document</head>
+                     <p>Once you've created a new bibl entry, you can add a new shell for that document.</p>
+                     <p>To do so, open the document addTextsFromBibl.html from your oXygen menu; it should be below addTextFromDrive.xml</p>
+                     <p>Next, click the red play button at the top of the document. </p>
+                     <p>After a few seconds, you should see something at the bottom of your screen that says which new documents were created. If you created a new work, then you'd see something like <q>Creating CarsAreBad1 from bibl232</q>.</p>
+                     <p>If that's successful, then you can go into the /texts/ folder and find your document. You may need to right-click and click refresh on /texts/ directory in your oXygen project pane.</p>
+                     <p>Open that document and make any of the necessary metadata changes: adding proper category references and metadata primarily.</p>
+                     <p>Once the file is valid and has all of the appropriate metadata, make sure to <code>svn add</code> your document to the repo:
+                     <code rend="block">
+                        svn add texts/CarsAreBad1.xml
+                        svn commit -m "Adding new CarsAreBad file from new bibl entry"
+                     </code>
+                     </p>
+                  </div>
+               </div>
+               <div xml:id="createNewTextTranscription">
+                  <head>Adding Transcription</head>
+                  <p>To add a new transcription from the Google Drive, go to the file addTextFromDrive.xml in your oXygen project pane on the left and follow the instructions there.</p>
+               </div>
         
             </div>
             <div xml:id="encoding_primary">
