@@ -492,6 +492,11 @@ ul#menu_main > li > ul{
         
     }
     
+    [data-el='fw'][data-place='left'] + [data-el='fw'][data-place='right']{
+    margin-top:1rem;
+    
+}
+    
     div[data-type='noTranscriptionAvailable']{
         margin-bottom:0;
     }

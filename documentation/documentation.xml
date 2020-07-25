@@ -55,7 +55,7 @@
             <div xml:id="svn">
                <head>Using Subversion (for most encoders)</head>
                <p>Most encoders will prefer to use Subversion as the versioning software to interact with the repository. One of the major benefits of using subversion (besides its fairly simple syntax) is the ability to checkout only part of the repository.</p>
-               <p>Most encoders (those who are not actively contributing facsimiles to the project) will want to checkout just the data directory. To do so: </p>
+               <p>To checkout the WEA data:</p>
                <list>
                   <item>Open the terminal</item>
                   <item>Create a directory for working in: <code rend="block">mkdir wea</code> 
@@ -64,16 +64,16 @@
                   <item>Go into the directory: <code rend="block">cd wea</code>
                   </item>
                   <item>Checkout the repo:</item>
-                  <item>For <emph>encoders</emph> who do not need the entire directory: <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/data .</code>
+                  <item>For <emph>encoders</emph>: <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/data .</code>
                   </item>
-                  <item>For <emph>developers</emph> who do need the entire directory: <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/ .</code>
+                  <item>For <emph>developers</emph> (who need the entire codebase): <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/ .</code>
                   </item>
-                  <item>In both cases <emph>note the trailing period</emph>!</item>
+                  <item>In both cases: <emph>note the trailing period</emph>!</item>
                </list>
                <div>
                   <head>Updating the repository</head>
                   <p>At the beginning of your work day (and as often as you remember), you should <q>up</q> the repository: <list>
-                        <item>Go into the wea directory: <code rend="block">cd wea</code>
+                        <item>Go into your wea directory: <code rend="block">cd wea</code>
                         </item>
                         <item>Then do an svn up: <code rend="block">svn up</code>
                         </item>
@@ -224,7 +224,7 @@
                <head>Introduction to the WEA Project</head>
                <div>
                   <head>File Structure</head>
-                  <p>The file structure for the WEA project is as follows: <list style="font-family:monospace">
+                  <p>The file structure for the full WEA project is as follows: <list style="font-family:monospace">
                         <item>code/</item>
                         <item>data/</item>
                         <item>documentation/</item>
@@ -236,8 +236,9 @@
                         <item>build.xml</item>
                         <item>buildGlobals.xml</item>
                         <item>README.md</item>
-                     </list> For most encoders, almost all of the work you happen in the <code>data/</code> directory.</p>
-                  <p>The data directory contains all of the TEI files and images that comprise the main dataset for the WEA project. The folder structure may change over time, but currently it is as follows: <list style="font-family: monospace;">
+                     </list>
+                  </p>
+                  <p>Most encoders will only need to checkout the data directory, which contains all of the TEI files and images that comprise the main dataset for the WEA project. The folder structure may change over time, but currently it is as follows: <list style="font-family: monospace;">
                         <item>facsimiles/</item>
                         <item>images/</item>
                         <item>info/</item>
@@ -994,10 +995,10 @@
             </div>
             <div xml:id="encoding_bornDigital">
                <head>Encoding Born Digital Documents</head>
-               <p>Born digital documents are ones that have no <q>source</q>: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
+               <p>Born digital documents are documents that are not primary sources (i.e. not texts) and whose contents were written for the purpose of the site: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
                <div>
                   <head>Editing the Home Page</head>
-                  <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within xhtml_index_module.xsl.</p>
+                  <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within code/xsl/xhtml_index_module.xsl.</p>
                   <div>
                      <head>Editing the <q>Hero Image</q> Text</head>
                      <p>The text that overlays the <q>hero image</q> (the big banner image of Winnifred Eaton) is encoded in the <code>div/@xml:id='index_header'</code>. It currently looks like this: <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1615,7 +1616,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -1867,7 +1869,8 @@
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -1932,7 +1935,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -2219,7 +2223,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -2397,7 +2402,8 @@
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -2430,6 +2436,8 @@
                                  <ref target="#TEI.persName">persName</ref> 
                                  <ref target="#TEI.placeName">placeName</ref> 
                                  <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -2664,7 +2672,8 @@
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -2870,7 +2879,8 @@
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -3073,7 +3083,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -3213,6 +3224,8 @@
                                  <ref target="#TEI.gi">gi</ref> 
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -3501,6 +3514,8 @@
                                  <ref target="#TEI.titlePart">titlePart</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
                               </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
+                              </item>
                            </list>
                         </cell>
                      </row>
@@ -3770,7 +3785,8 @@
                               <item>tagdocs: <ref target="#TEI.code">code</ref> 
                                  <ref target="#TEI.ident">ident</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -4216,7 +4232,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -4412,7 +4429,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -4545,6 +4563,8 @@
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -4771,7 +4791,8 @@
                               </item>
                               <item>textstructure: <ref target="#TEI.docAuthor">docAuthor</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -5471,7 +5492,8 @@ Of Clare-Hall in Cambridge.</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -5640,7 +5662,8 @@ Of Clare-Hall in Cambridge.</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -5835,7 +5858,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -6015,7 +6039,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -6049,6 +6074,8 @@ supplied to printer.</change>
                               <item>tagdocs: <ref target="#TEI.egXML">egXML</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -6321,7 +6348,8 @@ supplied to printer.</change>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -6523,7 +6551,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -6644,6 +6673,8 @@ supplied to printer.</change>
                                  <ref target="#TEI.gi">gi</ref> 
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -6786,7 +6817,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -6866,7 +6898,8 @@ supplied to printer.</change>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -7331,7 +7364,8 @@ supplied to printer.</change>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -7391,7 +7425,8 @@ supplied to printer.</change>
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -7563,7 +7598,8 @@ supplied to printer.</change>
                               </item>
                               <item>textstructure: <ref target="#TEI.docDate">docDate</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -7789,7 +7825,8 @@ supplied to printer.</change>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -8193,7 +8230,8 @@ supplied to printer.</change>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -8243,7 +8281,64 @@ supplied to printer.</change>
                         <cell>
                            <label>Attributes</label>
                         </cell>
-                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (<att>type</att>, <att>subtype</att>) </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
+                              <row>
+                                 <cell>type</cell>
+                                 <cell>characterizes the element in some sense, using any convenient classification scheme or typology.<table>
+                                       <row>
+                                          <cell>
+                                             <label>Derived from</label>
+                                          </cell>
+                                          <cell>
+                                             <ref target="#TEI.att.typed">att.typed</ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Optional</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Datatype</label> 
+                                          </cell>
+                                          <cell>
+                                             <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>chapter</label>
+                                                <item>(A chapter in a longer work) chapter</item>
+                                                <label>content</label>
+                                                <item>(The main content) content</item>
+                                                <label>paratext</label>
+                                                <item>(Paratextual material, likely NOT written by WE) paratext</item>
+                                                <label>section</label>
+                                                <item>(An arbitrary section) section</item>
+                                                <label>letter</label>
+                                                <item>(DO NOT USE: Used in converted text and should be removed. Use the floatingText element instead.) letter</item>
+                                                <label>postscript</label>
+                                                <item>(DO NOT USE: Used in converted text and should be removed. Use the postscript element instead.) Postscript</item>
+                                                <label>listFigure</label>
+                                                <item>(A born-digital list of images; not to be used in primary source texts.) List of Figures</item>
+                                                <label>exhibitInfo</label>
+                                                <item>(DO NOT USE: used only in generated processes for info boxes on exhibit pages (Japan, Alberta, etc)) Exhibit Information</item>
+                                                <label>biblio_list</label>
+                                                <item>(DO NOT USE: used only in generated processes for bibliographies) Bibliographic List container</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
                      </row>
                      <row>
                         <cell>
@@ -8326,6 +8421,8 @@ supplied to printer.</change>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -8740,7 +8837,8 @@ supplied to printer.</change>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -8931,7 +9029,8 @@ and then a Captain of several Ships</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -9034,6 +9133,8 @@ and then a Captain of several Ships</byline>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.titlePart">titlePart</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -9178,7 +9279,8 @@ and then a Captain of several Ships</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -9317,7 +9419,8 @@ and then a Captain of several Ships</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -9750,7 +9853,8 @@ and then a Captain of several Ships</byline>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -9830,7 +9934,8 @@ and then a Captain of several Ships</byline>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -10061,6 +10166,8 @@ formatting or layout information preserved.</p>
                               <item>tagdocs: <ref target="#TEI.egXML">egXML</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -10368,7 +10475,8 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -10433,7 +10541,8 @@ formatting or layout information preserved.</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -10600,7 +10709,8 @@ formatting or layout information preserved.</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -10956,7 +11066,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -11268,7 +11379,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -11293,6 +11405,8 @@ material</measure>
                               <item>textstructure: <ref target="#TEI.back">back</ref> 
                                  <ref target="#TEI.body">body</ref> 
                                  <ref target="#TEI.front">front</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -11481,7 +11595,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -11546,7 +11661,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -11721,7 +11837,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -11786,7 +11903,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -11890,6 +12008,8 @@ material</measure>
                                  <ref target="#TEI.titlePage">titlePage</ref> 
                                  <ref target="#TEI.titlePart">titlePart</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -12050,6 +12170,309 @@ material</measure>
    &lt;/sequence&gt;
   &lt;/sequence&gt;
  &lt;/sequence&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.fw">
+                  <head>&lt;fw&gt;</head>
+                  <p>
+                     <label>&lt;fw&gt; </label>(forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHSK">11.6. Headers, Footers, and Similar Matter</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>transcr — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>Attributes <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.typed">att.typed</ref> (type, @subtype) <table>
+                              <row>
+                                 <cell>type</cell>
+                                 <cell>
+                                    <table>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Required</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>continued</label>
+                                                <item>(A phrase stating a text is continued or a continuation of another text) continued</item>
+                                                <label>copyright</label>
+                                                <item>(A statement of copyright) copyright</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                              <row>
+                                 <cell>place</cell>
+                                 <cell>specifies where this item is placed.<table>
+                                       <row>
+                                          <cell>
+                                             <label>Derived from</label>
+                                          </cell>
+                                          <cell>
+                                             <ref target="#TEI.att.placement">att.placement</ref>
+                                          </cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Status</label> 
+                                          </cell>
+                                          <cell>Required</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Datatype</label> 
+                                          </cell>
+                                          <cell> 1–∞ occurrences of <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#TEI.teidata.enumerated">teidata.enumerated</tei:ref> separated by whitespace</cell>
+                                       </row>
+                                       <row>
+                                          <cell>
+                                             <label>Legal values are:</label>
+                                          </cell>
+                                          <cell>
+                                             <list>
+                                                <label>left</label>
+                                                <item>(Left aligned) left</item>
+                                                <label>right</label>
+                                                <item>(Right aligned) right</item>
+                                                <label>center</label>
+                                                <item>(Centered) center</item>
+                                             </list>
+                                          </cell>
+                                       </row>
+                                    </table>
+                                 </cell>
+                              </row>
+                           </table>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.milestoneLike">model.milestoneLike</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
+                                       <ref target="#TEI.address">address</ref> 
+                                       <ref target="#TEI.author">author</ref> 
+                                       <ref target="#TEI.bibl">bibl</ref> 
+                                       <ref target="#TEI.biblScope">biblScope</ref> 
+                                       <ref target="#TEI.cit">cit</ref> 
+                                       <ref target="#TEI.corr">corr</ref> 
+                                       <ref target="#TEI.date">date</ref> 
+                                       <ref target="#TEI.editor">editor</ref> 
+                                       <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
+                                       <ref target="#TEI.foreign">foreign</ref> 
+                                       <ref target="#TEI.head">head</ref> 
+                                       <ref target="#TEI.hi">hi</ref> 
+                                       <ref target="#TEI.item">item</ref> 
+                                       <ref target="#TEI.l">l</ref> 
+                                       <ref target="#TEI.label">label</ref> 
+                                       <ref target="#TEI.lg">lg</ref> 
+                                       <ref target="#TEI.list">list</ref> 
+                                       <ref target="#TEI.listBibl">listBibl</ref> 
+                                       <ref target="#TEI.name">name</ref> 
+                                       <ref target="#TEI.note">note</ref> 
+                                       <ref target="#TEI.num">num</ref> 
+                                       <ref target="#TEI.p">p</ref> 
+                                       <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                       <ref target="#TEI.publisher">publisher</ref> 
+                                       <ref target="#TEI.q">q</ref> 
+                                       <ref target="#TEI.quote">quote</ref> 
+                                       <ref target="#TEI.ref">ref</ref> 
+                                       <ref target="#TEI.reg">reg</ref> 
+                                       <ref target="#TEI.resp">resp</ref> 
+                                       <ref target="#TEI.rs">rs</ref> 
+                                       <ref target="#TEI.sic">sic</ref> 
+                                       <ref target="#TEI.sp">sp</ref> 
+                                       <ref target="#TEI.speaker">speaker</ref> 
+                                       <ref target="#TEI.term">term</ref> 
+                                       <ref target="#TEI.title">title</ref> 
+                                       <ref target="#TEI.unclear">unclear</ref>
+                                    </item>
+                                    <item>figures: <ref target="#TEI.cell">cell</ref> 
+                                       <ref target="#TEI.table">table</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.authority">authority</ref> 
+                                       <ref target="#TEI.change">change</ref> 
+                                       <ref target="#TEI.distributor">distributor</ref> 
+                                       <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
+                                       <ref target="#TEI.language">language</ref> 
+                                       <ref target="#TEI.licence">licence</ref>
+                                    </item>
+                                    <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.seg">seg</ref>
+                                    </item>
+                                    <item>msdescription: <ref target="#TEI.collection">collection</ref> 
+                                       <ref target="#TEI.institution">institution</ref> 
+                                       <ref target="#TEI.repository">repository</ref>
+                                    </item>
+                                    <item>namesdates: <ref target="#TEI.birth">birth</ref> 
+                                       <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.forename">forename</ref> 
+                                       <ref target="#TEI.nationality">nationality</ref> 
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
+                                       <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.person">person</ref> 
+                                       <ref target="#TEI.placeName">placeName</ref> 
+                                       <ref target="#TEI.surname">surname</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.back">back</ref> 
+                                       <ref target="#TEI.body">body</ref> 
+                                       <ref target="#TEI.byline">byline</ref> 
+                                       <ref target="#TEI.closer">closer</ref> 
+                                       <ref target="#TEI.dateline">dateline</ref> 
+                                       <ref target="#TEI.div">div</ref> 
+                                       <ref target="#TEI.docAuthor">docAuthor</ref> 
+                                       <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docTitle">docTitle</ref> 
+                                       <ref target="#TEI.epigraph">epigraph</ref> 
+                                       <ref target="#TEI.floatingText">floatingText</ref> 
+                                       <ref target="#TEI.front">front</ref> 
+                                       <ref target="#TEI.opener">opener</ref> 
+                                       <ref target="#TEI.salute">salute</ref> 
+                                       <ref target="#TEI.signed">signed</ref> 
+                                       <ref target="#TEI.text">text</ref> 
+                                       <ref target="#TEI.titlePage">titlePage</ref> 
+                                       <ref target="#TEI.titlePart">titlePart</ref> 
+                                       <ref target="#TEI.trailer">trailer</ref>
+                                    </item>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>analysis: <ref target="#TEI.pc">pc</ref>
+                              </item>
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
+                                 <ref target="#TEI.choice">choice</ref> 
+                                 <ref target="#TEI.cit">cit</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.date">date</ref> 
+                                 <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
+                                 <ref target="#TEI.foreign">foreign</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
+                                 <ref target="#TEI.graphic">graphic</ref> 
+                                 <ref target="#TEI.hi">hi</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.num">num</ref> 
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref> 
+                                 <ref target="#TEI.q">q</ref> 
+                                 <ref target="#TEI.quote">quote</ref> 
+                                 <ref target="#TEI.ref">ref</ref> 
+                                 <ref target="#TEI.reg">reg</ref> 
+                                 <ref target="#TEI.rs">rs</ref> 
+                                 <ref target="#TEI.sic">sic</ref> 
+                                 <ref target="#TEI.term">term</ref> 
+                                 <ref target="#TEI.title">title</ref> 
+                                 <ref target="#TEI.unclear">unclear</ref>
+                              </item>
+                              <item>figures: <ref target="#TEI.figure">figure</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.seg">seg</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>tagdocs: <ref target="#TEI.att">att</ref> 
+                                 <ref target="#TEI.code">code</ref> 
+                                 <ref target="#TEI.gi">gi</ref> 
+                                 <ref target="#TEI.ident">ident</ref> 
+                                 <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
+                              </item>
+                              <item>character data</item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Where running heads are consistent throughout a chapter or section, it is usually more convenient to relate them to the chapter or section, e.g. by use of the <att>rend</att> attribute. The <ref target="#TEI.fw"><gi>fw</gi></ref> element is intended for cases where the running head changes from page to page, or where details of page layout and the internal structure of the running heads are of paramount importance.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <fw type="sig" place="bottom">C3</fw>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;macroRef key="macro.phraseSeq"/&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -12257,7 +12680,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -12509,7 +12933,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -12656,7 +13081,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -12930,7 +13356,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -13142,7 +13569,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -13222,7 +13650,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -13494,7 +13923,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -13721,7 +14151,8 @@ material</measure>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -13867,6 +14298,8 @@ material</measure>
                                  <ref target="#TEI.gi">gi</ref> 
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -14100,7 +14533,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -14302,7 +14736,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -14496,7 +14931,8 @@ material</measure>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -14822,6 +15258,8 @@ entre les Romains.</label>
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
                               </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
+                              </item>
                               <item>character data</item>
                            </list>
                         </cell>
@@ -14977,6 +15415,8 @@ entre les Romains.</label>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -15193,7 +15633,8 @@ entre les Romains.</label>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -15427,6 +15868,8 @@ entre les Romains.</label>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -15760,6 +16203,8 @@ entre les Romains.</label>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listRelation">listRelation</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -17064,7 +17509,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -17299,7 +17745,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -17605,7 +18052,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -17670,7 +18118,8 @@ raiders and saved the town from capture.</desc>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -17860,7 +18309,8 @@ raiders and saved the town from capture.</desc>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -18248,7 +18698,8 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -18331,7 +18782,8 @@ raiders and saved the town from capture.</desc>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -18767,7 +19219,8 @@ psychological significance.
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -18832,7 +19285,8 @@ psychological significance.
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -19081,7 +19535,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -19239,7 +19694,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -19419,6 +19875,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.place">place</ref> 
                                  <ref target="#TEI.placeName">placeName</ref> 
                                  <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -19600,7 +20058,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -19665,7 +20124,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -19851,7 +20311,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -20071,7 +20532,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -20357,7 +20819,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -20556,7 +21019,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -20774,6 +21238,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.nationality">nationality</ref> 
                                  <ref target="#TEI.occupation">occupation</ref> 
                                  <ref target="#TEI.persName">persName</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -21162,7 +21628,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -21227,7 +21694,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -21783,7 +22251,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -21968,7 +22437,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -22258,7 +22728,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -22640,7 +23111,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -22723,7 +23195,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -23045,7 +23518,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -23128,7 +23602,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -23288,7 +23763,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -23368,7 +23844,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -23534,7 +24011,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -23614,7 +24092,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -24123,6 +24602,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
                               </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
+                              </item>
                               <item>character data</item>
                            </list>
                         </cell>
@@ -24238,6 +24719,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.gi">gi</ref> 
                                  <ref target="#TEI.ident">ident</ref> 
                                  <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -24756,7 +25239,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -24821,7 +25305,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -24980,7 +25465,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -25115,7 +25601,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -25195,7 +25682,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -25474,7 +25962,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -25554,7 +26043,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -25753,7 +26243,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -26017,6 +26508,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
+                              </item>
                            </list>
                         </cell>
                      </row>
@@ -26180,7 +26673,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -26342,7 +26836,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -26422,7 +26917,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -26592,7 +27088,8 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -26657,7 +27154,8 @@ Sydney Smith</egXML>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -26858,6 +27356,8 @@ Sydney Smith</egXML>
                                  <ref target="#TEI.salute">salute</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
                                  <ref target="#TEI.trailer">trailer</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -27434,7 +27934,8 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -27499,7 +28000,8 @@ Sydney Smith</egXML>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -27643,6 +28145,8 @@ Sydney Smith</egXML>
                               <item>textstructure: <ref target="#TEI.back">back</ref> 
                                  <ref target="#TEI.body">body</ref> 
                                  <ref target="#TEI.front">front</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -28057,7 +28561,8 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -28137,7 +28642,8 @@ Sydney Smith</egXML>
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -28326,6 +28832,8 @@ epistemology, methodology and history of
                                  <ref target="#TEI.docTitle">docTitle</ref> 
                                  <ref target="#TEI.epigraph">epigraph</ref> 
                                  <ref target="#TEI.titlePart">titlePart</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref>
                               </item>
                            </list>
                         </cell>
@@ -28550,7 +29058,8 @@ epistemology, methodology and history of
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -28808,7 +29317,8 @@ epistemology, methodology and history of
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -29062,7 +29572,8 @@ epistemology, methodology and history of
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -29142,7 +29653,8 @@ epistemology, methodology and history of
                               </item>
                               <item>textstructure: <ref target="#TEI.floatingText">floatingText</ref>
                               </item>
-                              <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
                               </item>
                               <item>character data</item>
                            </list>
@@ -29296,7 +29808,8 @@ epistemology, methodology and history of
                                        <ref target="#TEI.titlePart">titlePart</ref> 
                                        <ref target="#TEI.trailer">trailer</ref>
                                     </item>
-                                    <item>transcr: <ref target="#TEI.supplied">supplied</ref>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
                                     </item>
                                  </list>
                               </item>
@@ -30221,6 +30734,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.model.global.edit">model.global.edit</ref> [<ref target="#TEI.gap">gap</ref>]  <ref target="#TEI.model.global.meta">model.global.meta</ref> 
                            <ref target="#TEI.model.milestoneLike">model.milestoneLike</ref> [<ref target="#TEI.anchor">anchor</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.milestone">milestone</ref> 
                            <ref target="#TEI.pb">pb</ref>]  <ref target="#TEI.model.noteLike">model.noteLike</ref> [<ref target="#TEI.note">note</ref>]  <ref target="#TEI.figure">figure</ref>
                         </cell>
@@ -30719,6 +31233,7 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ref target="#TEI.anchor">anchor</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.milestone">milestone</ref> 
                            <ref target="#TEI.pb">pb</ref>
                         </cell>
@@ -33428,6 +33943,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -33705,6 +34221,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -33900,6 +34417,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -34110,6 +34628,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -34440,6 +34959,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -34707,6 +35227,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -34972,6 +35493,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.foreign">foreign</ref> 
                            <ref target="#TEI.forename">forename</ref> 
                            <ref target="#TEI.front">front</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.gap">gap</ref> 
                            <ref target="#TEI.gi">gi</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -35980,6 +36502,7 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ref target="#TEI.figure">figure</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.head">head</ref> 
                            <ref target="#TEI.label">label</ref> 
                            <ref target="#TEI.note">note</ref> 
@@ -36487,6 +37010,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.figure">figure</ref> 
                            <ref target="#TEI.floatingText">floatingText</ref> 
                            <ref target="#TEI.forename">forename</ref> 
+                           <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.head">head</ref> 
                            <ref target="#TEI.ident">ident</ref> 
                            <ref target="#TEI.idno">idno</ref> 
@@ -36778,6 +37302,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.extent">extent</ref> 
                               <ref target="#TEI.foreign">foreign</ref> 
                               <ref target="#TEI.forename">forename</ref> 
+                              <ref target="#TEI.fw">fw</ref> 
                               <ref target="#TEI.label">label</ref> 
                               <ref target="#TEI.name">name</ref> 
                               <ref target="#TEI.nationality">nationality</ref> 
@@ -37070,9 +37595,13 @@ epistemology, methodology and history of
                                  <item>
                                     <ref target="#TEI.desc">desc</ref>/@type</item>
                                  <item>
+                                    <ref target="#TEI.div">div</ref>/@type</item>
+                                 <item>
                                     <ref target="#TEI.divGen">divGen</ref>/@type</item>
                                  <item>
                                     <ref target="#TEI.egXML">egXML</ref>/@valid</item>
+                                 <item>
+                                    <ref target="#TEI.fw">fw</ref>/@place</item>
                                  <item>
                                     <ref target="#TEI.gap">gap</ref>/@reason</item>
                                  <item>

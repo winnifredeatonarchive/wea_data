@@ -61,29 +61,29 @@
                <head>Using Subversion (for most encoders)</head>
                <p>Most encoders will prefer to use Subversion as the versioning software to interact with the repository. One of the major benefits of using subversion (besides its fairly simple syntax)
                is the ability to checkout only part of the repository.</p>
-               <p>Most encoders (those who are not actively contributing facsimiles to the project) will want to checkout just the data directory. To do so:
-               </p>
+               <p>To checkout the WEA data:</p>
                <list>
                   <item>Open the terminal</item>
                   <item>Create a directory for working in: <code rend="block">mkdir wea</code>
                      <emph>Note: If you already have the github repository checked out, you will need to delete the Github verison first.</emph>
                   </item>
-                  <item>Go into the directory: <code rend="block">cd wea</code>
+                  <item>Go into the directory: 
+                     <code rend="block">cd wea</code>
                   </item>
                   <item>Checkout the repo:</item>
-                  <item>For <emph>encoders</emph> who do not need the entire directory:
+                  <item>For <emph>encoders</emph>:
                      <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/data .</code>
                   </item>
-                  <item>For <emph>developers</emph> who do need the entire directory:
+                  <item>For <emph>developers</emph> (who need the entire codebase):
                      <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/ .</code>
                   </item>
-                  <item>In both cases <emph>note the trailing period</emph>!</item>
+                  <item>In both cases: <emph>note the trailing period</emph>!</item>
                </list>
                <div>
                   <head>Updating the repository</head>
                   <p>At the beginning of your work day (and as often as you remember), you should <soCalled>up</soCalled> the repository:
                      <list>
-                        <item>Go into the wea directory: <code rend="block">cd wea</code>
+                        <item>Go into your wea directory: <code rend="block">cd wea</code>
                         </item>
                         <item>Then do an svn up: <code rend="block">svn up</code>
                         </item>
@@ -308,7 +308,7 @@
                <head>Introduction to the WEA Project</head>
                <div>
                   <head>File Structure</head>
-                  <p>The file structure for the WEA project is as follows:
+                  <p>The file structure for the full WEA project is as follows:
 
                      <list style="font-family:monospace">
                         <item>code/</item>
@@ -322,10 +322,9 @@
                         <item>build.xml</item>
                         <item>buildGlobals.xml</item>
                         <item>README.md</item>
-                     </list>
-                  For most encoders, almost all of the work you happen in the <code>data/</code> directory.                  
+                     </list>                
                   </p>
-                  <p>The data directory contains all of the TEI files and images that comprise the main dataset for the WEA project. The folder structure may change over time, but currently it is as follows:
+                  <p>Most encoders will only need to checkout the data directory, which contains all of the TEI files and images that comprise the main dataset for the WEA project. The folder structure may change over time, but currently it is as follows:
                   <list style="font-family: monospace;">
                         <item>facsimiles/</item>
                         <item>images/</item>
@@ -1155,10 +1154,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             
            <div xml:id="encoding_bornDigital">
               <head>Encoding Born Digital Documents</head>
-              <p>Born digital documents are ones that have no <q>source</q>: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
+              <p>Born digital documents are documents that are not primary sources (i.e. not texts) and whose contents were written for the purpose of the site: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
               <div>
                  <head>Editing the Home Page</head>
-                 <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within xhtml_index_module.xsl.</p>
+                 <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within code/xsl/xhtml_index_module.xsl.</p>
                  <div>
                     <head>Editing the <q>Hero Image</q> Text</head>
                     <p>The text that overlays the <q>hero image</q> (the big banner image of Winnifred Eaton) is encoded in the <code>div/@xml:id='index_header'</code>. It currently looks like this:
@@ -1525,7 +1524,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="textstructure"
                           include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
           
-               <moduleRef key="transcr" include="supplied"/>
+               <moduleRef key="transcr" include="fw supplied"/>
           
                <!--MODULE: HEADER-->
           
@@ -2397,12 +2396,87 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:pattern>
                            <sch:rule context="tei:div[@type='listFigure']/tei:*">
                               <sch:assert test="self::tei:div[@type='listFigure'] or self::tei:figure">
-                                ERROR: listFigure divs should only contain figures or itself.
+                                 ERROR: listFigure divs should only contain figures or itself.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="add" type="closed">
+                           <valItem ident="chapter" mode="add">
+                              <desc>chapter</desc>
+                              <gloss>A chapter in a longer work</gloss>
+                           </valItem>
+                           <valItem ident="content" mode="add">
+                              <desc>content</desc>
+                              <gloss>The main content</gloss>
+                           </valItem>
+                           <valItem ident="paratext" mode="add">
+                              <desc>paratext</desc>
+                              <gloss>Paratextual material, likely NOT written by WE</gloss>
+                           </valItem>
+                           <valItem ident="section" mode="add">
+                              <desc>section</desc>
+                              <gloss>An arbitrary section</gloss>
+                           </valItem>
+                           <valItem ident="letter" mode="add">
+                              <desc>letter</desc>
+                              <gloss>DO NOT USE: Used in converted text and should be removed. Use the floatingText element instead.</gloss>
+                           </valItem>
+                           <valItem ident="postscript" mode="add">
+                              <desc>Postscript</desc>
+                              <gloss>DO NOT USE: Used in converted text and should be removed. Use the postscript element instead.</gloss>
+                           </valItem>
+                           <valItem ident="listFigure" mode="add">
+                              <desc>List of Figures</desc>
+                              <gloss>A born-digital list of images; not to be used in primary source texts.</gloss>
+                           </valItem>
+                           <valItem ident="exhibitInfo" mode="add">
+                              <desc>Exhibit Information</desc>
+                              <gloss>DO NOT USE: used only in generated processes for info boxes on exhibit pages (Japan, Alberta, etc)</gloss>
+                           </valItem>
+                           <valItem ident="biblio_list" mode="add">
+                              <desc>Bibliographic List container</desc>
+                              <gloss>DO NOT USE: used only in generated processes for bibliographies</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
+               <elementSpec ident="fw" module="transcr" mode="change">
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="continued">
+                              <desc>continued</desc>
+                              <gloss>A phrase stating a text is continued or a continuation of another text</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="copyright">
+                              <desc>copyright</desc>
+                              <gloss>A statement of copyright</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="place" mode="change" usage="req">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="left">
+                              <desc>left</desc>
+                              <gloss>Left aligned</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="right">
+                              <desc>right</desc>
+                              <gloss>Right aligned</gloss>
+                           </valItem>
+                           <valItem mode="add" ident="center">
+                              <desc>center</desc>
+                              <gloss>Centered</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                
                

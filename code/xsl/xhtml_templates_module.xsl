@@ -84,12 +84,14 @@
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp" mode="tei">
+    <xsl:template match="ab | body | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
+    
+    
     
     <!--Special handling for ab[@type-'headnote_byline'] since it occurs in a span-->
     <xsl:template match="ab[@type='headnote_byline']" mode="tei">

@@ -902,7 +902,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:div[@type='listFigure']/tei:*">
                               <sch:assert test="self::tei:div[@type='listFigure'] or self::tei:figure">
-                                ERROR: listFigure divs should only contain figures or itself.
+                                 ERROR: listFigure divs should only contain figures or itself.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>

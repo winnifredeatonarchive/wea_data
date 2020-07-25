@@ -1989,6 +1989,45 @@ div.expandable.closed span.mi{
     display:block;
 }
 
+/* FW */
+
+[data-el='fw']{
+    font-size:95%;
+    font-style:italic;
+    margin: 1rem 0;
+    display:flex;
+}
+
+[data-el='fw'][data-place='center']{
+    justify-content:center;
+}
+
+[data-el='fw'][data-place='right']{
+    justify-content:flex-end;
+}
+
+[data-el='fw'][data-place='left'] + [data-el='fw'][data-place='right']{
+    margin-top:-2.2rem;
+    
+}
+
+div[data-type='paratext']{
+    font-size:95%;
+    font-style:italic;
+    
+}
+
+div[data-type='paratext']:after{
+    content:"";
+    display:block;
+    width:80%;
+    height:1px;
+    margin: 2.5rem auto 1.5rem auto;
+    background: black;
+}
+
+
+
 
 /**** LINKS ***** */
 
@@ -2251,7 +2290,7 @@ h4, h5, h6{
 
 
 
-[class*=docPrimarySource] div[data-el='div'] + div[data-el='div']{
+[class*=docPrimarySource] div[data-el='div']:not([data-type='paratext']) + div[data-el='div']{
     margin-top: 3rem;
 }
 

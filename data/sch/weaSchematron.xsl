@@ -2284,7 +2284,7 @@ On <xsl:text/>
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                                ERROR: listFigure divs should only contain figures or itself.
+                                 ERROR: listFigure divs should only contain figures or itself.
                               </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
