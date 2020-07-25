@@ -2219,8 +2219,21 @@ h1 + h1[data-type='subtitle']{
 
 h3{
     font-size: 1.563rem;
+    
 }
 
+/* Make labels looking like headings */
+span[data-el='label'][data-type='heading']{
+    display:block;
+    font-size: 1.563rem;
+    font-family: "Serif";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    color: #111111;
+}
+      
 h4, h5, h6{
     font-size: 1.25rem;
 }
