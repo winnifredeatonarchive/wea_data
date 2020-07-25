@@ -443,8 +443,8 @@
             <tei:name>
                 <xsl:copy-of select="@*"/>
                 <xsl:choose>
-                    <xsl:when test="self::name">
-                        <xsl:analyze-string select="string(.)" regex="^(.+),\s(.+)$">
+                    <xsl:when test="self::name and not(child::*)">
+                        <xsl:analyze-string select="string(.)" regex="^([A-Z][^,]+),\s*([A-Z][^,]+)$">
                             <xsl:matching-substring>
                                 <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
                             </xsl:matching-substring>
