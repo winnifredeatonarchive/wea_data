@@ -93,11 +93,12 @@
         
         
         <xsl:if test="wea:isObject(.)">
+             
             
             <!--Start grouping by names-->
-            <xsl:for-each-group select="//text/descendant::name[@ref='#WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
-                <meta name="Pseudonym" class="staticSearch.desc" content="{wea:namecase(current-grouping-key())}"/>
-            </xsl:for-each-group>
+            <xsl:for-each select="distinct-values(//name/@key)">
+                <meta name="Pseudonym" class="staticSearch.desc" content="{.}"/>
+            </xsl:for-each>
             
             
             <meta name="docImage" class="staticSearch.docImage">

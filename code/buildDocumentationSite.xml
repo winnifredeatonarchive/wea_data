@@ -37,7 +37,7 @@
     
     
     <target name="createDocSite">
-        <java classpath="${project.dir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/documentation/xhtml_documentation_master.xsl"/>
             <arg value="-s:${project.dir}/documentation/documentation_full.xml"/>
             <arg value="outDir=${doc.site.dir}"/>

@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns="http://www.tei-c.org/ns/1.0"
@@ -14,6 +15,7 @@
             <xd:p>This stylesheet module creates the category pages for the WEA project.</xd:p>
         </xd:desc>
     </xd:doc>
+    
     
     
     <xsl:template name="createPeoplePages">
@@ -41,7 +43,8 @@
                 <xsl:apply-templates select="note" mode="#current"/>
             </div>
             <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
-            <xsl:variable name="illCredits" select="if ($thisId = 'WE1') then () else $sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$thisId)]]" as="element(bibl)*"/>
+            <xsl:variable name="illCredits" select="wea:getBiblRolesFromPers($thisId)" as="map(xs:string, xs:string*)?"/>
+            <xsl:variable name="creditDocs" select="if (exists($illCredits)) then map:keys($illCredits) else ()" as="xs:string*"/>
             <xsl:if test="not(empty(($respStmts,$illCredits)))">
                 <div>
                     <head>Credits</head>
@@ -51,11 +54,9 @@
                             <cell>Title</cell>
                             <cell>Roles Played</cell>
                         </row>
-                        <xsl:for-each select="$illCredits">
-                            <xsl:variable name="thisBibl" select="."/>
-                            <xsl:variable name="biblId" select="@xml:id"/>
-                            <xsl:variable name="thisDoc" select="$sourceXml//TEI[descendant::sourceDesc[bibl[@copyOf = replace($biblId,'bibl','bibl:')]]]" as="element(TEI)*"/>
-                            <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                        <xsl:for-each select="$creditDocs">
+                            <xsl:variable name="docId" select="."/>
+                            <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id = $docId]"/>
                             <row>
                                 <cell>
                                     <xsl:choose>
@@ -74,16 +75,7 @@
                                 <cell>
                                     <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
                                 </cell>
-                                <cell>
-                                    <xsl:for-each select="$thisBibl/descendant::name[@ref=concat('pers:',$thisId)]">
-                                       <xsl:choose>
-                                           <xsl:when test="parent::author[@role='illustrator']">Illustrator</xsl:when>
-                                           <xsl:when test="parent::author">Author</xsl:when>
-                                           <xsl:when test="parent::editor">Editor</xsl:when>
-                                           <xsl:otherwise>Contributor</xsl:otherwise>
-                                       </xsl:choose>
-                                    </xsl:for-each>
-                                </cell>
+                                <cell><xsl:sequence select="string-join($illCredits($docId),', ')"/></cell>
                             </row>
                         </xsl:for-each>
                         <xsl:for-each select="$respStmts">
@@ -124,5 +116,37 @@
      
     </xsl:template>
     
+    
+    <xsl:function name="wea:getBiblRolesFromPers" new-each-time="no" as="map(xs:string, xs:string*)?">
+        <xsl:param name="personId" as="xs:string"/>
+        <xsl:variable name="bibls" select="$sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$personId)]]" as="element(bibl)*"/>
+        <xsl:if test="$bibls">
+            <xsl:map>
+                <xsl:for-each select="$bibls">
+                    <xsl:variable name="thisBibl" select="." as="element(bibl)"/>
+                    <xsl:variable name="thisBiblId" select="@xml:id"/>
+                    <xsl:variable name="thisBiblKey" select="replace($thisBiblId,'bibl','bibl:')"/>
+                    <xsl:variable name="docId" 
+                        select="$sourceXml//TEI[descendant::sourceDesc[bibl[@copyOf = $thisBiblKey]]]/@xml:id" as="xs:string?"/>
+                    <xsl:variable name="rolesPlayed" as="xs:string*">
+                        <xsl:for-each select="$thisBibl/descendant::name[@ref=concat('pers:',$personId)]">
+                            <xsl:choose>
+                                <xsl:when test="parent::author[@role='illustrator']">Illustrator</xsl:when>
+                                <xsl:when test="parent::author">Author</xsl:when>
+                                <xsl:when test="parent::editor">Editor</xsl:when>
+                                <xsl:otherwise>Contributor</xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:if test="$docId">
+                        <xsl:map-entry key="xs:string($docId)" select="distinct-values($rolesPlayed)"/>
+                    </xsl:if>
+                </xsl:for-each>
+            </xsl:map>
+        </xsl:if>    
+        
+        
+        
+    </xsl:function>
     
 </xsl:stylesheet>

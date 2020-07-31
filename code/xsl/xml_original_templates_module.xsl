@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
@@ -19,6 +20,35 @@
     
     <xsl:template match="divGen[@xml:id='pseudonyms_table']" mode="original">
         <xsl:call-template name="createPseudonymsTable"/>
+    </xsl:template>
+    
+    <xsl:template match="divGen[@xml:id='we_collaborators_table']" mode="original">
+        <xsl:call-template name="createCollabTable"/>
+    </xsl:template>
+    
+    <xsl:template name="createCollabTable">
+        <div>
+            <table>
+                <row role="label">
+                    <cell>Name</cell>
+                    <cell>Roles</cell>
+                    <cell>Biography</cell>
+                </row>
+                <xsl:for-each select="$sourceXml//TEI[@xml:id='people']//listPerson[@type='primary']/person[not(@xml:id='WE1')]">
+                    <row>
+                        <cell><ref target="doc:{@xml:id}"><xsl:sequence select="persName/reg/node()"/></ref></cell>
+                        <cell>
+                            <xsl:variable name="credits" select="wea:getBiblRolesFromPers(xs:string(@xml:id))"/>
+                            <xsl:if test="not(empty($credits))">
+                                <xsl:sequence select="string-join(distinct-values(for $key in map:keys($credits) return $credits($key)),', ')"/>
+                            </xsl:if>
+                        </cell>
+                        <cell><xsl:sequence select="note/node()"/></cell>
+                    </row>
+                </xsl:for-each>
+            </table>
+        </div>
+        
     </xsl:template>
     
     <xsl:template match="divGen[@xml:id='we_bibliography_content']" mode="original">
@@ -49,7 +79,7 @@
     
     
     <!--Clean up empty names in the respStmts-->
-    <xsl:template match="respStmt/name[@ref][normalize-space(text())='']" mode="original">
+    <xsl:template match="respStmt/name[@ref][not(string(.)='')]" mode="original">
         <xsl:variable name="thisRef" select="@ref"/>
         <xsl:variable name="thisPerson" select="wea:getPerson($thisRef)"/>
         <xsl:copy>
@@ -123,6 +153,17 @@
 
     </xsl:template>
     
+    <xsl:template match="name[@ref='pers:WE1'][ancestor::body][not(ancestor::note)]" mode="original">
+        <xsl:copy>
+            <xsl:if test="ancestor::TEI/descendant::catRef[contains(@target,'docPrimarySource')]">
+                <xsl:attribute name="key" select="wea:makePseudo(.)"/>
+            </xsl:if>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+
+  
     
     <xsl:template name="addSourceDescNote">
         <note>This document is a remediation of an earlier TEI encoded file, generously provided by <xsl:value-of select="ancestor::TEI/descendant::sourceDesc/biblFull/descendant::publisher[1]"/>. Please see the source <ref target="xml/original/{ancestor::TEI/@xml:id}.xml">XML</ref> for full licensing and source details.</note>

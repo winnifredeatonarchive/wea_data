@@ -27,7 +27,7 @@
                     <cell role="sortkey">Uses</cell>
                     <cell>Documents by Date</cell>
                 </row>
-                <xsl:for-each-group select="$sourceXml[//catRef[contains(@target,'docPrimarySource')]]//text//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="lower-case(normalize-space(string-join(descendant::text(),'')))">
+                <xsl:for-each-group select="$sourceXml[//catRef[contains(@target,'docPrimarySource')]]//text//name[@ref='pers:WE1'][not(ancestor::note[@type='editorial'])]" group-by="wea:makePseudo(.)">
                     <xsl:sort select="count(current-group())" order="ascending"/>
                     <row>
                         <cell><xsl:value-of select="wea:namecase(current-grouping-key())"/></cell>
@@ -60,7 +60,7 @@
         </div>
     </xsl:template>
     
-    <xsl:function name="wea:getYearFromBibl" as="xs:string?">
+    <xsl:function name="wea:getYearFromBibl" as="xs:string?" new-each-time="no">
         <xsl:param name="node"/>
         <xsl:variable name="biblPtr" select="$node/ancestor::TEI//sourceDesc/bibl[@copyOf][1]/translate(@copyOf,':','')"/>
         <xsl:variable name="bibls" select="$sourceXml//TEI[@xml:id='bibliography']//bibl[date]" as="element(bibl)+"/>

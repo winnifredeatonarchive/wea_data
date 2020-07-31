@@ -29,11 +29,11 @@
     <!--NOTE TO SELF: These collections should be written without the trailing //TEI
          as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
     
-    <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=yes'))"/>
+    <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=no'))"/>
     
-    <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=yes'))"/>
+    <xsl:variable name="originalXml" select="collection(concat($originalXmlDir,'?select=*.xml&amp;recurse=no'))"/>
     
-    <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=yes'))"/>
+    <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=no'))"/>
     
     <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
     
@@ -213,6 +213,12 @@
             </TEI>
         </xsl:result-document>
     </xsl:template>
+    
+    <xsl:function name="wea:makePseudo" new-each-time="no" as="xs:string">
+        <xsl:param name="nameEl" as="element(name)"/>
+        <xsl:sequence select="string-join($nameEl/descendant::text(),'') => normalize-space() => lower-case() => wea:namecase()"/>
+    </xsl:function>
+    
     
     <xsl:function name="wea:namecase">
         <xsl:param name="name"/>

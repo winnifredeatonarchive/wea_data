@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="we_collaborators">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Winnifred Eaton’s Collaborators</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:MC1">Mary Chapman</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change who="pers:MC1" when="2020-06-30" status="published">Proofread</change><change who="pers:MC1" when="2019-06-21" status="readyForProof">Wrote technical content and added content from MC. Set to ready for proof.</change>
+            <change when="2019-02-19"
+                who="pers:JT1" status="empty">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Winnifred Eaton’s Collaborators</head>
+            <div>
+                <p>????????</p>
+            </div>
+            <divGen xml:id="we_collaborators_table"/>
+        </body>
+    </text>
+</TEI>

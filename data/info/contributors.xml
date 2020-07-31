@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="contributors">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Contributors</title>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:MC1">Mary Chapman</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JLC1">Jean Lee Cole</name>
+                </respStmt>
+                <respStmt>
+                    <resp>Author</resp>
+                    <name ref="pers:JT1">Joey Takeda</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2020-07-27"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Contributors</head>
+            <div>
+                <head>???</head>
+                <list>
+                    <item><name ref="pers:MC1">Mary Chapman</name>, Director</item>
+                    <item><name ref="pers:JLC1">Jean Lee Cole</name>, Senior Consultant</item>
+                    <item><name ref="pers:JT1">Joey Takeda</name>, Technical Director</item>
+                    <item><name ref="pers:SL1">Sydney Lines</name>, Project Manager</item>
+                    <item><name ref="pers:SP1">Serina Patterson</name>, Website Designer</item>
+                </list>
+            </div>
+            <div>
+                <head>Research Assistants</head>
+                <list>
+                    <item><name ref="pers:HB1">Hilary Ball</name></item>
+                    <item><name ref="pers:SB2">Samantha Bowen</name></item>
+                    <item><name ref="pers:SC1">Sijia Cheng</name></item>
+                    <item><name ref="pers:DC1">Daisy Couture</name></item>
+                    <item><name ref="pers:KI1">Ken Ip</name></item>
+                </list>
+            </div>
+            <div>
+                <head>Collabotors/Advisors</head>
+                <list>
+                    <item><name ref="pers:DB1">Diana Birchall</name></item>
+                    <item><name ref="pers:SH1">Shaun Hunter</name></item>
+                    <item><name ref="pers:KS1">Karen Skinazi</name></item>
+                </list>
+            </div>
+            
+            
+        </body>
+    </text>
+</TEI>

@@ -33,10 +33,13 @@
                 <xsl:apply-templates select="." mode="original"/>
             </xsl:result-document>
         </xsl:for-each>
+        
+        <xsl:if test="$docsToBuild = ''">
             <xsl:call-template name="createCategoryPages"/>
             <xsl:call-template name="createWorkPages"/>
             <xsl:call-template name="createPeoplePages"/>
             <xsl:call-template name="createOrgPages"/>
+        </xsl:if>
         
     </xsl:template>
     

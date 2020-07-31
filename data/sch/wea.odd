@@ -2168,7 +2168,48 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                
                <elementSpec ident="name" module="core" mode="change">
                   <attList>
-                     <attDef ident="key" mode="delete"/>
+                     <attDef ident="key" mode="add" usage="opt">
+                        <desc xml:lang="en">provides an externally-defined means of identifying the entity (or entities) being
+                           named, using a coded value of some kind.</desc>
+                        <datatype>
+                           <dataRef key="teidata.text"/>
+                        </datatype>
+                        <exemplum xml:lang="en">
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="en" source="#NONE">
+                              <author>
+                                 <name key="name 427308" type="organisation">[New Zealand Parliament, Legislative Council]</name>
+                              </author>
+                           </egXML>
+                        </exemplum>
+                        <exemplum xml:lang="en">
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:lang="fr" source="#NONE">
+                              <author>
+                                 <name key="Hugo, Victor (1802-1885)" ref="http://www.idref.fr/026927608">Victor Hugo</name>
+                              </author>
+                           </egXML>
+                        </exemplum>
+                        
+                        <remarks versionDate="2013-06-20" xml:lang="en">
+                           <p>For the Winnifred Eaton Project, we use the <att>key</att> attribute to signify the pseudonym
+                           for the pseudonym table.</p>
+                           <p>The value may be a unique identifier from a database, or any other externally-defined
+                              string identifying the referent. </p>
+                           <p>No particular syntax is proposed for the values of the <att>key</att> attribute, since 
+                              its form will depend entirely on practice within a given project. For the same reason, this 
+                              attribute is not recommended in data interchange, since there is no way of ensuring 
+                              that the values used by one project are distinct from those used by another. In such
+                              a situation, a preferable approach for magic tokens which follows standard practice 
+                              on the Web is to use a <att>ref</att> attribute whose value is a tag URI as defined in 
+                              <ref target="#RFC4151">RFC 4151</ref>.</p>
+                        </remarks>
+                        <remarks versionDate="2009-05-25" xml:lang="fr">
+                           <p>La valeur peut être un identifiant unique dans une base de données, ou toute autre chaîne
+                              définie de façon externe identifiant le référent. </p>
+                        </remarks>
+                        <remarks xml:lang="ja" versionDate="2018-12-31">
+                           <p>値はデータベースにおけるユニークな識別子や、外部で定義された指示対象を特定するなんらかの文字列であってよい。<att>key</att>属性の値に関してさだまった構文は提案されていない。なぜならば、それぞれのプロジェクトのやりかたに完全に依存するからである。同様の理由によって、データの相互交換においてこの属性は推奨されない。在るプロジェクトで用いられた値が他のプロジェクトの値と異なることを保証できないからである。そのような場面における魔法石的対処は、<ref target="#RFC4151">RFC4151</ref>に定義されるタグURIを値とする<att>ref</att>属性を用いて、標準的なウェブにおける習慣にしたがってmagic tokenを使うことである。</p>
+                        </remarks>
+                     </attDef>
                      <attDef ident="ref" mode="add">
                         <datatype minOccurs="1" maxOccurs="unbounded">
                            <dataRef key="teidata.pointer"/>
@@ -2874,14 +2915,14 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
+               <!--          
                <constraintSpec scheme="schematron" ident="documentRefsShouldBeGood">
                   <desc>Checks to make sure any doc: ref is actually in the collection</desc>
                   <constraint>
                      <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
                         <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
                         <sch:let name="tokens"
-                                 value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork)$'))]"/>
+                                 value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork|[A-Z]{2}\d+)$'))]"/>
                         <sch:let name="errors"
                                  value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
                         <sch:assert test="count($errors) = 0">
@@ -2889,13 +2930,13 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:assert>
                      </sch:rule>
                   </constraint>
-               </constraintSpec>
+               </constraintSpec>-->
                
              
                <constraintSpec scheme="schematron" ident="noSpaceInRefs">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l">
+                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l | tei:orgName | tei:persName/tei:reg">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'^\s+|\s+$'))">
                               ERROR: <sch:name/> should not begin or end with spaces.

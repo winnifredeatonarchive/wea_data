@@ -21,12 +21,12 @@
     <xsl:variable name="svgs" select="doc('../../site/fonts/material-icons.svg')"/>
     <!--FUNCTIONS-->
     
-    <xsl:function name="wea:getNoteId">
+    <xsl:function name="wea:getNoteId" new-each-time="no">
         <xsl:param name="note"/>
         <xsl:value-of select="concat('note_',count($note/preceding::note[@type='editorial'])+1)"/>
     </xsl:function>
     
-    <xsl:function name="wea:resolveTarget">
+    <xsl:function name="wea:resolveTarget" new-each-time="no">
         <xsl:param name="target"/>
         <xsl:choose>
             <xsl:when test="starts-with($target,'http')">
@@ -43,24 +43,23 @@
     
     <xsl:function name="wea:getTitle">
         <xsl:param name="docId"/>
-        
         <xsl:sequence select="$standaloneXml[//TEI/@xml:id=$docId]//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
     </xsl:function>
     
     <xsl:function name="wea:isObject" as="xs:boolean">
         <xsl:param name="doc"/>
-        <xsl:value-of select="not(wea:bornDigital($doc))"/>
+        <xsl:sequence select="not(wea:bornDigital($doc))"/>
     </xsl:function>
     
     <xsl:function name="wea:isExhibit" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$standaloneXml//TEI[@xml:id='taxonomies']/descendant::taxonomy[@xml:id='exhibit']/category[@xml:id=$doc/@xml:id]"/>
-        <xsl:value-of select="not(empty($category))"/>
+        <xsl:sequence select="not(empty($category))"/>
     </xsl:function>
     
     <xsl:function name="wea:bornDigital" as="xs:boolean">
         <xsl:param name="doc"/>
-        <xsl:value-of select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
+        <xsl:sequence select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
     </xsl:function>
     
     <xsl:function name="wea:crumb">

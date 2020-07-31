@@ -282,7 +282,7 @@
     </xd:doc>
     <xsl:function name="wea:isSelfClosed" as="xs:boolean">
         <xsl:param name="tag"/>
-        <xsl:value-of select="string($tag) = '' and not($tag/child::*) and not($tag/child::comment())"/>
+        <xsl:sequence select="string($tag) = '' and not($tag/child::*) and not($tag/child::comment())"/>
     </xsl:function>
     
 </xsl:stylesheet>

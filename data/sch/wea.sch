@@ -1199,22 +1199,6 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-documentRefsShouldBeGood-constraint-rule-50">
-      <sch:rule context="tei:*[some $a in @* satisfies (matches($a,'(^|\s+)doc:'))]">
-                        <sch:let name="atts" value="@*[matches(.,'^|\s+')]"/>
-                        <sch:let name="tokens"
-                  value="for $a in $atts return tokenize($a,'\s+')[matches(.,'^doc:')][not(matches(.,'^doc:(Japan|EarlyExperiment|Hollywood|Alberta|NewYork)$'))]"/>
-                        <sch:let name="errors"
-                  value="for $t in $tokens return if (substring-after($t,'doc:')=$allDocIds) then () else $t"/>
-                        <sch:assert test="count($errors) = 0">
-                           ERROR: Document reference(s) <sch:value-of select="string-join($errors,', ')"/> not found.
-                        </sch:assert>
-                     </sch:rule>
-   </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -1225,7 +1209,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l">
+                        <sch:rule context="tei:name | tei:ref[not(descendant::tei:graphic)] | tei:title | tei:l | tei:orgName | tei:persName/tei:reg">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'^\s+|\s+$'))">
                               ERROR: <sch:name/> should not begin or end with spaces.

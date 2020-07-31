@@ -128,7 +128,7 @@
       <move file="${wea.odd.expanded}" tofile="${wea.odd.src}" overwrite="true"/>
   </target>
     
-    <target name="modifyTemplate">
+<!--    <target name="modifyTemplate">
         <description>Modifes the template file, populating with values</description>
         <java jar="${saxon}" fork="true" failonerror="true">
             <arg line="-s:${wea.template}"/>
@@ -146,7 +146,7 @@
             <arg line="-xsl:extract-xslt-from-odd.xsl"/>
         </java>
     </target>
-    
+    -->
     <target name="odd2processedOdd">
         <description>Processes the W ODD against the TEI All using
             TEI stylesheets.</description>
@@ -235,7 +235,6 @@
         </java>
     </target>
     
-    
     <target name="clean">
         <delete file="${project.dir}/documentation/documentation_crude.html"/>
         <delete file="${wea.odd.processed}"/>
@@ -245,7 +244,7 @@
         
     
     
-    <target name="all" depends="addVals,modifyTemplate, extractTemplates, odd2processedOdd, odd2rng, odd2sch, odd2Doc, getTei, clean">
+    <target name="all" depends="addVals, odd2processedOdd, odd2rng, odd2sch, odd2Doc, clean">
         <description>Processes the WEA ODD and create the standard WEA schema.</description>
     </target>
     

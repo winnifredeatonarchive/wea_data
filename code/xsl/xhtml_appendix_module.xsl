@@ -94,8 +94,10 @@
     
     <xsl:template name="createPopup">
         <div id="popup" class="hidden">
-            <div id="popup_closer">X</div>
-            <div id="popup_content"/>
+            <div class="popup_container">
+                <div id="popup_closer">X</div>
+                <div id="popup_content"/>
+            </div>
         </div>
     </xsl:template>
     

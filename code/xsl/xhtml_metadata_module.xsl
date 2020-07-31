@@ -259,7 +259,7 @@
         <tei:item><tei:ref target="#{wea:getId(.)}"><xsl:apply-templates select="head[1]" mode="#current"/></tei:ref>
             <xsl:if test="child::div[head]">
                 <tei:list>
-                    <xsl:apply-templates select="div[head]" mode="#current"/>
+                    <xsl:apply-templates select="child::div[head]" mode="#current"/>
                 </tei:list>
             </xsl:if>
         </tei:item>

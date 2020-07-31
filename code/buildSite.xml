@@ -9,6 +9,7 @@
     <target name="init">
         <delete dir="${products.dir}"/>
         <mkdir dir="${site.dir}"/>
+        <mkdir dir="${site.dir}/xml"/>
     </target>
   
     
@@ -30,6 +31,11 @@
         </copy>
         <copy todir="${site.dir}/facsimiles">
             <fileset dir="../data/facsimiles">
+                <include name="**"/>
+            </fileset>
+        </copy>
+        <copy todir="${site.dir}/xml/sch">
+            <fileset dir="../data/sch">
                 <include name="**"/>
             </fileset>
         </copy>
@@ -87,7 +93,7 @@
  
  <target name="createSourceXml">
      <echo message="Creating source XML..."/>
-     <copy todir="${source.xml.dir}">
+     <copy todir="${source.xml.dir}" flatten="true">
          <fileset dir="${data.dir}">
              <include name="**/**.xml"/>
              <exclude name="documentation/**.xml"/>
@@ -101,14 +107,14 @@
     
   <target name="createOriginalXml">
       <echo message="Creating site..."/>
-      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" >
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" >
           <arg value="-xsl:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
           <arg value="docsToBuild=${docsToBuild}"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>          
       </java>
-  </target>  
+  </target>
     
     <target name="validateOriginalXml">
         <ant antfile="buildValidate.xml" inheritall="no">
@@ -118,7 +124,7 @@
     
     <target name="createIndex">
         <echo message="Creating index..."/>
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${site.dir}"/>
@@ -128,7 +134,7 @@
     </target>
     
  <target name="createStandaloneXml">
-     <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+     <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
          <arg value="-xsl:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="-s:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${site.dir}"/>
@@ -180,7 +186,7 @@
     
   <target name="createXhtml">
       <echo message="Creating site..."/>
-      <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  >
           <arg value="-xsl:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
@@ -216,7 +222,7 @@
     </target>
     
     <target name="createDocDetails">
-        <java classpath="../lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true"  >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  >
             <arg value="-xsl:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
             <arg value="outDir=${site.dir}"/>
