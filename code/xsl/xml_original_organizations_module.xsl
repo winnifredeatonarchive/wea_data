@@ -47,6 +47,7 @@
             <div>
                 <xsl:apply-templates select="note" mode="#current"/>
             </div>
+            <div>
             <xsl:choose>
                 <xsl:when test="not(empty(($pubBibls,$fondsBibls)))">
                     <table type="exhibit">
@@ -116,6 +117,7 @@
                     <p>No documents available.</p>
                 </xsl:otherwise>
             </xsl:choose>
+            </div>
         </body>
         
     </xsl:template>
