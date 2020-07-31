@@ -23,7 +23,7 @@
             <xsl:call-template name="generateTeiPage">
                 <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
                 <xsl:with-param name="thisId" select="@xml:id"/>
-                <xsl:with-param name="categories" select="'wdt:docBornDigital'"/>
+                <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
                 <xsl:with-param name="content">
                     <xsl:apply-templates select="." mode="people"/>
@@ -34,53 +34,88 @@
   
   
   
-    <xsl:template match="person" mode="people">
+   <xsl:template match="person[parent::listPerson[@type='contributor']]" mode="people">
+       <xsl:variable name="thisId" select="@xml:id"/>
+       <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
+       <body>
+           <head><xsl:value-of select="persName/reg"/></head>
+           <div>
+               <xsl:apply-templates select="note" mode="#current"/>
+           </div>
+           <xsl:if test="exists($respStmts)">
+               <div>
+                   <head>Credits</head>
+                   <table type="exhibit">
+                       <row role="label">
+                           <cell/>
+                           <cell>Title</cell>
+                           <cell>Role</cell>
+                       </row>
+                       <xsl:for-each select="$respStmts">
+                           <xsl:variable name="thisDoc" select="."/>
+                           <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                           <row>
+                               <cell>
+                                   <xsl:choose>
+                                       <xsl:when test="$thisDoc//text[@facs]">
+                                           <ref target="doc:{$docId}">
+                                               <figure>
+                                                   <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
+                                                       <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                   </graphic>
+                                               </figure>
+                                           </ref>
+                                           
+                                       </xsl:when>
+                                   </xsl:choose>
+                               </cell>
+                               <cell>
+                                   <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                               </cell>
+                               <cell>
+                                   <list>
+                                       <xsl:for-each select="$thisDoc//respStmt[name[@ref=concat('pers:',$thisId)]]">
+                                           <item><xsl:value-of select="resp"/></item>
+                                       </xsl:for-each>
+                                   </list>
+                               </cell>
+                           </row>
+                       </xsl:for-each>
+                       
+                   </table>
+               </div>
+           </xsl:if>
+           
+       </body>
+       
+       
+       
+   </xsl:template>
+    <xsl:template match="person[parent::listPerson[@type='primary']]" mode="people">
         <xsl:variable name="thisId" select="@xml:id"/>
         <body>
             <head><xsl:value-of select="persName/reg"/></head>
             <div>
-<!--                <head>Biography</head>-->
                 <xsl:apply-templates select="note" mode="#current"/>
             </div>
-            <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
-            <xsl:variable name="illCredits" select="wea:getBiblRolesFromPers($thisId)" as="map(xs:string, xs:string*)?"/>
-            <xsl:variable name="creditDocs" select="if (exists($illCredits)) then map:keys($illCredits) else ()" as="xs:string*"/>
-            <xsl:if test="not(empty(($respStmts,$illCredits)))">
+            <xsl:variable name="bibls" select="wea:getBiblsFromPers($thisId)" as="element(bibl)*"/>
+            <xsl:variable name="credits" select="wea:getBiblRolesFromPers($thisId)" as="map(xs:string, xs:string*)?"/>
+            <xsl:variable name="creditDocs" select="if (exists($credits)) then map:keys($credits) else ()" as="xs:string*"/>
+            <xsl:if test="exists($creditDocs)">
                 <div>
                     <head>Credits</head>
                     <table type="exhibit">
                         <row role="label">
                             <cell/>
                             <cell>Title</cell>
-                            <cell>Roles Played</cell>
+                            <cell>Date</cell>
+                            <cell>Role</cell>
                         </row>
                         <xsl:for-each select="$creditDocs">
                             <xsl:variable name="docId" select="."/>
                             <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id = $docId]"/>
-                            <row>
-                                <cell>
-                                    <xsl:choose>
-                                        <xsl:when test="$thisDoc//text[@facs]">
-                                            <ref target="doc:{$docId}">
-                                                <figure>
-                                                    <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
-                                                        <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
-                                                    </graphic>
-                                                </figure>
-                                            </ref>
-                                            
-                                        </xsl:when>
-                                    </xsl:choose>
-                                </cell>
-                                <cell>
-                                    <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
-                                </cell>
-                                <cell><xsl:sequence select="string-join($illCredits($docId),', ')"/></cell>
-                            </row>
-                        </xsl:for-each>
-                        <xsl:for-each select="$respStmts">
-                            <xsl:variable name="thisDoc" select="."/>
-                            <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                            <xsl:variable name="thisBiblId" select="$thisDoc//sourceDesc/bibl/replace(@copyOf,'bibl:','bibl')"/>
+                            <xsl:variable name="thisBibl" select="$bibls[@xml:id=$thisBiblId]" as="element(bibl)"/>
                             <row>
                                 <cell>
                                     <xsl:choose>
@@ -100,14 +135,19 @@
                                     <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
                                 </cell>
                                 <cell>
-                                    <list>
-                                        <xsl:for-each select="$thisDoc//respStmt[name[@ref=concat('pers:',$thisId)]]">
-                                            <item><xsl:value-of select="resp"/></item>
-                                        </xsl:for-each>
-                                    </list>
+                                    <xsl:choose>
+                                        <xsl:when test="$thisBibl/date">
+                                            <xsl:sequence select="$thisBibl/date"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <date/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </cell>
+                                <cell><xsl:sequence select="string-join($credits($docId),', ')"/></cell>
                             </row>
                         </xsl:for-each>
+
                     </table>
                 </div>
             </xsl:if>
@@ -119,7 +159,7 @@
     
     <xsl:function name="wea:getBiblRolesFromPers" new-each-time="no" as="map(xs:string, xs:string*)?">
         <xsl:param name="personId" as="xs:string"/>
-        <xsl:variable name="bibls" select="$sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$personId)]]" as="element(bibl)*"/>
+        <xsl:variable name="bibls" select="wea:getBiblsFromPers($personId)"/>
         <xsl:if test="$bibls">
             <xsl:map>
                 <xsl:for-each select="$bibls">
@@ -147,6 +187,11 @@
         
         
         
+    </xsl:function>
+    
+    <xsl:function name="wea:getBiblsFromPers" new-each-time="no" as="element(bibl)*">
+        <xsl:param name="personId" as="xs:string"/>
+        <xsl:sequence select="$sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$personId)]]"/>
     </xsl:function>
     
 </xsl:stylesheet>

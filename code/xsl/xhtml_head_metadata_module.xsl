@@ -31,6 +31,9 @@
             <xsl:if test="@xml:id='index'">
                 <link rel="stylesheet" type="text/css" href="css/index.css"/>
             </xsl:if>
+            <xsl:if test="@xml:id = 'pseudonyms'">
+                <link rel="stylesheet" type="text/css" href="js/timeline3/css/timeline.css"/>
+            </xsl:if>
             <link rel="icon" type="image/png" href="images/icon.png"/>
             <script src="js/lazyload.min.js"/>
             <script src="js/wea.js"/>
@@ -40,6 +43,11 @@
             <xsl:if test="@xml:id='index'">
                 <script src="js/index.js"/>
             </xsl:if>
+<!--            <xsl:if test="@xml:id ='pseudonyms'">
+                <script src="js/timeline3/js/timeline.js"><!-\-Keep open-\-></script>
+                <script src="js/timeline.js"><!-\-Keep open-\-></script>
+            </xsl:if>
+            -->
 
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
    

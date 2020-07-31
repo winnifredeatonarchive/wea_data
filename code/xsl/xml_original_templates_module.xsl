@@ -20,6 +20,7 @@
     
     <xsl:template match="divGen[@xml:id='pseudonyms_table']" mode="original">
         <xsl:call-template name="createPseudonymsTable"/>
+<!--        <xsl:call-template name="createPseudonymsTimeline"/>-->
     </xsl:template>
     
     <xsl:template match="divGen[@xml:id='we_collaborators_table']" mode="original">
@@ -28,7 +29,7 @@
     
     <xsl:template name="createCollabTable">
         <div>
-            <table>
+            <table type="exhibit">
                 <row role="label">
                     <cell>Name</cell>
                     <cell>Roles</cell>

@@ -51,8 +51,8 @@
     <xsl:template name="createWorkBibl">
         <div xml:id="{$weWorkBiblId}" type="biblio_list">
             <head>Bibliography by Work<!--<note type="editorial">By work, we refer here to groupings of texts based off of their relationship to one another. Reprints, serialized versions of novels, and other texts that are related in some capacity are grouped here as a single <q>work</q>.</note>--></head>
-            
-            <xsl:for-each select="$biblDoc//div[@xml:id='bibliography_we']/listBibl/listBibl">
+            <xsl:for-each select="$biblDoc//div[@xml:id='bibliography_we']/listBibl">
+                <xsl:sort select="wea:simpleTitleSortKey(string(head))"/>
                 <div xml:id="{$weWorkBiblId}_{@xml:id}">
                     <xsl:apply-templates select="." mode="removeId"/>
                 </div>
@@ -69,6 +69,9 @@
              <xsl:apply-templates select="$biblDoc//div[@xml:id='bibliography_resources']/listBibl" mode="removeId"/>
          </div>
     </xsl:template>
+    
+    
+    
     
     <xsl:template match="div[@xml:id='bibliography_resources']/listBibl" mode="removeId">
         <xsl:copy>
@@ -90,9 +93,13 @@
     </xsl:template>
     
     <xsl:template match="title/text()" mode="sort">
-        <xsl:value-of select="replace(replace(.,'^(The|Le|La|An?)\s',''),'‘|’','')"/>
+        <xsl:value-of select="wea:simpleTitleSortKey(.)"/>
     </xsl:template>
     
+    <xsl:function name="wea:simpleTitleSortKey">
+        <xsl:param name="str"/>
+        <xsl:value-of select="normalize-space($str) => replace('^(The|Le|La|An?)\s','') => replace('‘|’','')"/>
+    </xsl:function>
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
     <xsl:template match="@*|node()" priority="-1" mode="removeId">

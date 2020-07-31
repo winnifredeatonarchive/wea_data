@@ -1600,7 +1600,7 @@ li{
 
 #search #mainBody #text,
 #mainBody.docBornDigitalListing #text{
-    max-width: calc(var(--max-text-width) * 1.8);
+    max-width: calc(var(--max-text-width) * 1.5);
 }
 
 #info{
@@ -1608,7 +1608,7 @@ li{
       overflow:hidden;
       padding: 5% 8% 3% 8%;
       margin:0 auto;
-      max-width: calc(var(--max-text-width) * 1.8);
+      max-width: calc(var(--max-text-width) * 1.5);
       }
       
 #mainBody[class*='Listing'] #info{
@@ -1616,7 +1616,6 @@ border-top-left-radius: 1rem;
 border-top-right-radius: 1rem;
 
 }
-
 
 
 #mainBody[class*="docPrimarySource"] > #info{

@@ -104,6 +104,10 @@
     <!--We delete the exhibit info div, since it gets processed out of the regular flow-->
     <xsl:template match="div[@type='exhibitInfo']" mode="tei"/>
     
+    
+    <xsl:template match="div[@xml:id='pseudonyms_timeline']/node()" mode="tei"/>
+    
+    
     <!--Special template for handling events-->
     <xsl:template match="listEvent" mode="tei">
         <div>
@@ -166,6 +170,8 @@
         </li>
     </xsl:template>
     
+  
+    
     
     
 
@@ -184,6 +190,10 @@
             
         </xsl:if>
     </xsl:template>
+    
+     <xsl:template match="div[@xml:id='pseudonyms_timeline']">
+         
+     </xsl:template>
     
     <xsl:template match="div[@type='listFigure']/figure" mode="tei">
         <xsl:variable name="ext" select="tokenize(graphic/@mimeType,'/')[last()]"/>
