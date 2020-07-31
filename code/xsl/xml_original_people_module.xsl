@@ -36,7 +36,9 @@
   
    <xsl:template match="person[parent::listPerson[@type='contributor']]" mode="people">
        <xsl:variable name="thisId" select="@xml:id"/>
-       <xsl:variable name="respStmts" select="$sourceXml//TEI[descendant::respStmt[name[@ref=concat('pers:',$thisId)]]]" as="element(TEI)*"/>
+       <xsl:variable name="ptr" select="'pers:'||$thisId" as="xs:string"/>
+       <xsl:variable name="respStmts" 
+           select="$sourceXml//TEI[descendant::respStmt[name[@ref=$ptr]] or descendant::abstract[contains-token(@resp,$ptr)]]" as="element(TEI)*"/>
        <body>
            <head><xsl:value-of select="persName/reg"/></head>
            <div>
@@ -74,14 +76,16 @@
                                </cell>
                                <cell>
                                    <list>
-                                       <xsl:for-each select="$thisDoc//respStmt[name[@ref=concat('pers:',$thisId)]]">
+                                       <xsl:for-each select="$thisDoc//respStmt[name[@ref=$ptr]]">
                                            <item><xsl:value-of select="resp"/></item>
+                                       </xsl:for-each>
+                                       <xsl:for-each select="$thisDoc//abstract[contains-token(@resp,$ptr)]">
+                                           <item>Author of Headnote</item>
                                        </xsl:for-each>
                                    </list>
                                </cell>
                            </row>
                        </xsl:for-each>
-                       
                    </table>
                </div>
            </xsl:if>

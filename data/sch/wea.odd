@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Processing instructions for the TEI ODDs rng-->
-<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev-with-Stylesheets-dev/ws/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://teijenkins.hcmc.uvic.ca/job/TEIP5-dev-with-Stylesheets-dev/ws/P5/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="wea.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:svg="http://www.w3.org/2000/svg"
@@ -1503,7 +1503,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="analysis" include="pc"/>
           
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l label lg list listBibl milestone name note num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
                
@@ -1639,6 +1639,23 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </valList>
                      </attDef>
                   </attList>
+               </elementSpec>
+               
+               <elementSpec ident="lb" module="core" mode="change">
+                  <constraintSpec scheme="schematron" ident="textClass.oneofEach">
+                     <desc>Don't allow lbs ANYWHERE except in floating texts.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:lb">
+                              <sch:assert test="ancestor::tei:floatingText">
+                                 ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+                                 texts.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  
                </elementSpec>
           
                <!--And make at least one catRef mandatory-->

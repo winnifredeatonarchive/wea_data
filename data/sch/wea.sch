@@ -501,6 +501,23 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:lb">
+                              <sch:assert test="ancestor::tei:floatingText">
+                                 ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+                                 texts.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:title[@ref]">
                               <sch:assert test="@level='j'">
                                  ERROR: Only "j" level titles should use the @ref attribute.
@@ -588,7 +605,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-25">
+            id="wea-lg-atleast1oflggapl-constraint-assert-26">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -944,7 +961,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-42">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"

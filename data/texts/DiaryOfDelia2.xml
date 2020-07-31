@@ -93,14 +93,20 @@
             <p>I tuk a bit of paper from Mr. John’s desk, and I pinned the follering warning in plane litters and langwidge:</p>
               
             <q>
-               <floatingText type="letter">
-                  <body><p>BREKFUST SAR-</p>
-                     <p>VED AT 8 OANLEY</p>
-                     <p>NO BREKFUST SAR-</p>
-                     <p>VED LATER</p>
-                     <closer>
-                        <salute> DELIA </salute>
-                        <signed>O’MALLEY</signed>
+               <floatingText type="letter" style="font-size:1.05rem; text-align:center; line-height: 1.55; margin-bottom: 2rem;">
+                  <body>
+                         
+                     <ab>
+                        BREKFUST SAR-
+                        <lb/>VED AT 8 OANLEY
+                        <lb/>NO BREKFUST SAR-
+                        <lb/>VED LATER
+                     </ab>
+                     <closer style="text-align: center; margin-left: 4em;">
+                        <signed>
+                           <seg style="display:block">DELIA</seg>
+                           <seg style="display:block; margin-left:5em;">O’MALLEY</seg>
+                        </signed>
                      </closer>
                     </body>
                </floatingText>
