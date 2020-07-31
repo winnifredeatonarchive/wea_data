@@ -2123,9 +2123,21 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:person/tei:note">
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes must contain at least one paragraph..
+                                 ERROR: All person and org notes must contain at least one paragraph.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
+                              <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
+                              <sch:assert test="$text=''">
+                                 ERROR: All textual content for person/org notes should be contained within a paragraph.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>

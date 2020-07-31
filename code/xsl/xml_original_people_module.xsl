@@ -148,7 +148,13 @@
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </cell>
-                                <cell><xsl:sequence select="string-join($credits($docId),', ')"/></cell>
+                                <cell>
+                                    <list>
+                                        <xsl:for-each select="$credits($docId)">
+                                            <item><xsl:value-of select="."/></item>
+                                        </xsl:for-each>
+                                    </list>
+                                </cell>
                             </row>
                         </xsl:for-each>
 

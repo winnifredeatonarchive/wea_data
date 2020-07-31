@@ -403,9 +403,26 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
-                           <sch:rule context="tei:person/tei:note">
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes must contain at least one paragraph..
+                                 ERROR: All person and org notes must contain at least one paragraph.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
+                              <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
+                              <sch:assert test="$text=''">
+                                 ERROR: All textual content for person/org notes should be contained within a paragraph.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -605,7 +622,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-26">
+            id="wea-lg-atleast1oflggapl-constraint-assert-27">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -961,7 +978,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-44">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"

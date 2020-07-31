@@ -615,17 +615,31 @@ div#nav_search button:hover{
 }
 
 
+.JS.overlay{
+    overflow-y:hidden;
+    padding-right:15px;
+    
+}
 
- .JS.facs-overlay #header_overlay
+#header_overlay{
+    opacity:0;
+    height:1px;
+    width:1px;
+    transition:opacity 0.5s ease-in-out;
+    background:black;
+}
+
+ .JS.facs-overlay #header_overlay,
+ .JS.overlay #header_overlay
 {
     background:black;
     opacity:0.7;
     width:100vw;
     height:101vh;
     position:fixed;
+    transition:opacity 0.3s ease-in-out;
     top:0;
     left:0;
-    filter: blur(2px);
 }
 
 
@@ -1603,6 +1617,12 @@ li{
     max-width: calc(var(--max-text-width) * 1.5);
 }
 
+
+#mainBody.docBornDigitalListing [data-el='p']{
+    max-width: var(--max-text-width);
+    margin:0 auto;
+    display:block;
+}
 #info{
       background-color: var(--wea-info-bg-color);
       overflow:hidden;
@@ -2634,42 +2654,111 @@ figure.placeholder h2{
 /************************************************************************ POPUPS */
 
 #popup{
-    min-width:0;
-    max-width:30rem;
-    min-height:0;
-    max-height:8rem;
-    overflow-y:auto;
+   top: 50%;
+   left: 50%;
+   overflow-y: auto;
+     /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+-moz-osx-font-smoothing: grayscale;
 }
 
-#popup h3{
-    margin-bottom:.85rem;
+
+
+#popup:not(.showing){
+   opacity:0;
+    min-height:1px;
+    min-width:1px;
+    visibility:hidden;
 }
-#popup.hidden{
-    display:none;
+
+#popup li{
+    margin-left:0;
+    padding-left:0;
+}
+
+.popupCredits{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+
+}
+#popup h3{
+    margin-bottom:2rem;
+}
+
+#popup .personMeta{
+    margin-top:-1rem;
+    margin-bottom: 1.5rem;
+}
+
+#popup h4,
+#popup h5{
+    font-family: "Sans";
+    text-transform:lowercase;
+    font-variant: small-caps;
+    margin-bottom:0.4rem;
+}
+
+#popup_content > div > div{
+    margin-top:0;
+    margin-bottom:1.2em;
+}
+
+#popup_content [data-el='p']{
+    margin-top:0;
 }
 
 #popup.showing{
-    position:absolute;
     word-wrap: break-word;
-    font-size:1.2rem;
+    max-height:80vh;
     background:white;
     padding:.7em;
-    border: 1px solid #b9b9b9;
-    border-radius: 9px;
-    box-shadow: 1px 1px 1px #b9b9b9;
     display:block;
-    animation: fade-in .5s;
     margin-left: .15rem;
     z-index:9000;
+    transform: translate(-50%, -50%);
+    position:fixed;
+    transition: opacity 0.1s ease-in-out 0.2s;
+    font-size: .95em;
+    padding: 2.5em 4.5em 2em 2.5em;
+    margin: 0;
+    max-width: 35em;
+    min-width: 25%;
 
 }
 
 
-#popup.showing.toolbar{
-    max-width:30rem;
-    
+#popup_closer{
+    float:right;
+    top:5rem;
+    font-size:200%;
+    color: #ccc;
+    margin-top:-.5rem;
+    transition: color 0.2s ease-in-out;
+    cursor:pointer;
 }
 
+#popup.textual-note{
+    padding: 1.35em 2em 1.5em 2em;
+}
+
+#popup.textual-note h4,
+#popup.editorial-note h4{
+    margin-bottom:1rem;
+}
+
+#popup.textual-note #popup_closer,
+#popup.editorial-note #popup_closer{
+    margin-top:-.3rem;
+    font-size: 160%;
+}
+
+
+/*
 
 
 #popup::after, #popup::before {
@@ -2692,7 +2781,7 @@ figure.placeholder h2{
 }
 
 
-/* POPUP ARROWS */
+/\* POPUP ARROWS *\/
 #popup.right::after, #popup.right::before{
     right: 100%;
 	top: 50%;
@@ -2725,23 +2814,23 @@ figure.placeholder h2{
 
 
 
-/* RIGHT ARROW */
+/\* RIGHT ARROW *\/
 #popup.right::after {
 	border-right-color: white;
-		/* THIS IS WHAT CONTROLS THE ARROW SIZE */
+		/\* THIS IS WHAT CONTROLS THE ARROW SIZE *\/
 	margin-top: -6px;
 }
 #popup.right::before {
 	border-right-color: transparent;;
-    /* SHHOULD ALWAYS BE +BORERWIDTH */
+    /\* SHHOULD ALWAYS BE +BORERWIDTH *\/
 
 	margin-top: -7.5px;
 }
 
-/* HORIZONTAL ARROWS */
+/\* HORIZONTAL ARROWS *\/
 
 #popup.right::after, #popup.left::after{
-/* THIS IS WHAT CONTROLS THE ARROW SIZE */
+/\* THIS IS WHAT CONTROLS THE ARROW SIZE *\/
    margin-top: -6px;
 }
 
@@ -2749,7 +2838,7 @@ figure.placeholder h2{
 margin-top: -7.5px;
 }
 
-/* VERTICAL ARROWS */
+/\* VERTICAL ARROWS *\/
 
 #popup.top::after, #popup.bottom_left::after, #popup.bottom_right::after{
     margin-left:-6px;
@@ -2760,7 +2849,7 @@ margin-top: -7.5px;
 }
 
 
-/* LEFT ARROW (I.E POINTING RIGHT) */
+/\* LEFT ARROW (I.E POINTING RIGHT) *\/
 #popup.right::after {
 	border-right-color: white;
 
@@ -2769,7 +2858,7 @@ margin-top: -7.5px;
 	border-right-color: #b9b9b9;
 }
 
-/* RIGHT */
+/\* RIGHT *\/
 #popup.left::after {
 	border-left-color: white;
 
@@ -2779,7 +2868,7 @@ margin-top: -7.5px;
 	border-left-color: #b9b9b9;
 }
 
-/* TOP */
+/\* TOP *\/
 #popup.top::after {
 	border-top-color: white;
 
@@ -2788,7 +2877,7 @@ margin-top: -7.5px;
 	border-top-color: #b9b9b9;
 }
 
-/* BOTTOM */
+/\* BOTTOM *\/
 #popup.bottom_left::after,
 #popup.bottom_right::after{
 	border-bottom-color: white;
@@ -2800,29 +2889,13 @@ margin-top: -7.5px;
 }
 
 
-#popup.hidden{
-    display:none;
-   opacity:0;
-}
 
-
-#popup_content{
-    margin: .5em .25em .25em .25em;
-    font-size:75%;
-}
-
+*/
 #popup_content .returnToNote{
  display:none;   
 }
 
-#popup_closer{
-    float:right;
-    top:5rem;
-    font-size:70%;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-}
+
 
 
 /***************************************************************************** ANIMATIONS */

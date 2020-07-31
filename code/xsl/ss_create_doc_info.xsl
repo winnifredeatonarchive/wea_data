@@ -96,22 +96,5 @@
             </xsl:when>
         </xsl:choose>
     </xsl:function>
-    
-    <xsl:function name="wea:expandDate" as="xs:date">
-        <xsl:param name="date"/>
-        <xsl:variable name="tokens" select="tokenize($date,'-')"/>
-        <xsl:choose>
-            <xsl:when test="count($tokens) = 3">
-                <xsl:sequence select="xs:date($date)"/>
-            </xsl:when>
-            <xsl:when test="count($tokens) = 2">
-                <xsl:sequence select="xs:date($date || '-01')"/>
-            </xsl:when>
-            <xsl:when test="count($tokens) = 1">
-                <xsl:sequence select="xs:date($date || '-01-01')"/>
-            </xsl:when>
-        </xsl:choose>
-    </xsl:function>
-    
-    
+
 </xsl:stylesheet>

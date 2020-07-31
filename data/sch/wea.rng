@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-07-31T09:10:57Z. .
+Schema generated from ODD source 2020-07-31T09:27:40Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -3054,9 +3054,24 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                       xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                           <sch:rule context="tei:person/tei:note">
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
                               <sch:assert test="tei:p">
-                                 ERROR: All biographical notes must contain at least one paragraph..
+                                 ERROR: All person and org notes must contain at least one paragraph.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+         <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                      xmlns:svg="http://www.w3.org/2000/svg"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                      xmlns:math="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                      xmlns="http://www.tei-c.org/ns/1.0"
+                      xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                           <sch:rule context="tei:person/tei:note | tei:org/tei:note">
+                              <sch:let name="text" value="normalize-space(string-join(text(),''))"/>
+                              <sch:assert test="$text=''">
+                                 ERROR: All textual content for person/org notes should be contained within a paragraph.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -3602,7 +3617,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-26">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-27">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                            xmlns:svg="http://www.w3.org/2000/svg"
@@ -6970,7 +6985,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-43">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-44">
       <sch:rule xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"

@@ -19213,8 +19213,24 @@ psychological significance.
                         <cell>
                            <code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:person/tei:note"&gt;
- &lt;sch:assert test="tei:p"&gt; ERROR: All biographical notes must contain at least one paragraph..
+&lt;sch:rule context="tei:person/tei:note | tei:org/tei:note"&gt;
+ &lt;sch:assert test="tei:p"&gt; ERROR: All person and org notes must contain at least one paragraph.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:person/tei:note | tei:org/tei:note"&gt;
+ &lt;sch:let name="text"
+  value="normalize-space(string-join(text(),''))"/&gt;
+ &lt;sch:assert test="$text=''"&gt; ERROR: All textual content for person/org notes should be contained within a paragraph.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

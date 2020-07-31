@@ -6,6 +6,7 @@
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xh="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     version="3.0">
     <xd:doc>
@@ -15,6 +16,144 @@
             <xd:p>This stylesheet contains all of the templates for creating the "appendix" content (bibliographies, editorial notes, lists of people, et cetera). Many of these templates end up calling the templates in mode="tei," which are in the main templates module.</xd:p>
         </xd:desc>
     </xd:doc>
+    
+    
+    <!--First, let's construct a map for all of these people and orgs so that we only need to process their actual inner contents once-->
+    <xsl:variable name="personMap" as="map(xs:string, element(xh:div))">
+        <xsl:map>
+            <xsl:for-each select="$standaloneXml//TEI[@xml:id='people']/descendant::person[@xml:id]">
+                <xsl:map-entry key="xs:string(@xml:id)">
+                    <xsl:apply-templates select="." mode="popup"/>
+                </xsl:map-entry>
+            </xsl:for-each>
+        </xsl:map>
+    </xsl:variable>
+    
+    <xsl:variable name="orgMap" as="map(xs:string, element(xh:div))">
+        <xsl:map>
+            <xsl:for-each select="$standaloneXml//TEI[@xml:id='organizations']/descendant::org[@xml:id]">
+                <xsl:map-entry key="xs:string(@xml:id)">
+                    <xsl:apply-templates select="." mode="popup"/>
+                </xsl:map-entry>
+            </xsl:for-each>
+        </xsl:map>
+
+    </xsl:variable>
+    
+    <xsl:template match="person" mode="popup">
+        <xsl:variable name="thisId" select="@xml:id"/>
+        <xsl:variable name="thisStandaloneDoc" select="$standaloneXml//TEI[@xml:id=$thisId]" as="element(TEI)"/>
+        <xsl:variable name="thisCreditsTable" select="$thisStandaloneDoc//table" as="element(table)?"/>
+        <xsl:variable name="isWinnifred" select="@xml:id ='WE1'" as="xs:boolean"/>
+        <div id="{@xml:id}">
+            <h3><a href="{if ($isWinnifred) then 'timeline' else @xml:id}.html"><xsl:apply-templates select="persName/reg/node()" mode="tei"/></a></h3>
+            <xsl:if test="birth or death">
+                <div class="personMeta">
+                    <ul>
+                        <xsl:if test="birth">
+                            <xsl:variable name="when" select="birth/@when" as="xs:string"/>
+                            <xsl:variable name="formatted" select="wea:formatDate($when)|| (if (birth/@cert = 'low') then '?' else ())"/>
+                            <li>Born: <xsl:value-of select="$formatted"/></li>
+                        </xsl:if>
+                        <xsl:if test="death">
+                            <xsl:variable name="when" select="death/@when" as="xs:string"/>
+                            <xsl:variable name="formatted" select="wea:formatDate($when)|| (if (death/@cert = 'low') then '?' else ())"/>
+                            <li>Died: <xsl:value-of select="$formatted"/></li>
+                        </xsl:if>
+                    </ul>
+                </div>
+            </xsl:if>
+            <xsl:if test="exists(note/p)">
+                <div>
+<!--                    <h4>Note</h4>-->
+                    <xsl:apply-templates select="note/p" mode="tei"/>
+                </div>
+            </xsl:if>
+            <xsl:if test="not($isWinnifred) and exists($thisCreditsTable)">
+                <div class="popupCredits">
+                    <xsl:for-each-group select="$thisCreditsTable//row[not(@role='label')]" group-by="cell[last()]/list/item/text()">
+                        <xsl:sort select="count(current-group())" order="descending"/>
+                        <div>
+                            <h4><xsl:value-of select="current-grouping-key()"/></h4>
+                            <ul>
+                                <xsl:sequence select="wea:makeTruncatedList(current-group(), $thisId)"/>
+                            </ul>
+                        </div>
+                    </xsl:for-each-group>
+                </div>
+              
+                
+            </xsl:if>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="org" mode="popup">
+        <xsl:variable name="thisId" select="@xml:id"/>
+        <xsl:variable name="thisStandaloneDoc" select="$standaloneXml//TEI[@xml:id=$thisId]" as="element(TEI)"/>
+        <xsl:variable name="thisCreditsTable" select="$thisStandaloneDoc//table" as="element(table)?"/>
+        <xsl:variable name="isWinnifred" select="@xml:id ='WE1'" as="xs:boolean"/>
+        <div id="{@xml:id}">
+            <h3><a href="{@xml:id}.html"><xsl:apply-templates select="orgName/node()" mode="tei"/></a></h3>
+            <xsl:if test="exists(note/p)">
+                <div>
+                    <xsl:apply-templates select="note/p" mode="tei"/>
+                </div>
+            </xsl:if>
+
+            <xsl:if test="not($isWinnifred) and exists($thisCreditsTable)">
+                <div>
+                    <h4>Published</h4>
+                    <div>
+                        <ul>
+                            <xsl:sequence select="wea:makeTruncatedList($thisCreditsTable//row[not(@role='label')], $thisId)"/>
+                        </ul>
+                    </div>
+                </div>
+            </xsl:if>
+        </div>
+    </xsl:template>
+    
+    
+    
+    
+    <xsl:function name="wea:makeTruncatedList" as="element(xh:li)*">
+        <xsl:param name="rows"/>
+        <xsl:param name="id"/>
+        <xsl:variable name="max" select="5"/>
+        <xsl:variable name="rowCount" select="count($rows)"/>
+        <xsl:for-each select="$rows[position() lt $max + 1]">
+            <li><xsl:apply-templates select="cell[ref[not(descendant::graphic)]]/ref" mode="tei"/></li>
+        </xsl:for-each>
+        <xsl:if test="$rowCount gt $max">
+            <li><a href="{$id}.html">+ <xsl:value-of select="$rowCount - $max"/></a></li>
+        </xsl:if>
+    </xsl:function>
+    
+    
+    <xsl:function name="wea:formatDate" as="xs:string">
+        <xsl:param name="date" as="xs:string"/>
+        <xsl:variable name="dateTokens" select="tokenize($date,'-')"/>
+        <xsl:variable name="count" select="count($dateTokens)"/>
+        <xsl:choose>
+            <xsl:when test="$count = 3">
+                <xsl:sequence select="format-date(xs:date($date), '[MNn] [D00], [Y0000]')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="expanded" select="wea:expandDate($date)"/>
+                <xsl:choose>
+                    <xsl:when test="$count = 2">
+                        <xsl:sequence select="format-date(xs:date($date),'[MNn] [Y0000]')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:sequence select="$date"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:function>
+    
+    
     
     <xsl:template match="note[@type='editorial']" mode="appendix">
         <xsl:variable name="noteId" select="wea:getNoteId(.)"/>
@@ -54,7 +193,7 @@
                 <xsl:with-param name="id" select="'personography'"/>
             </xsl:call-template>
             <h2>People Mentioned</h2>
-            <xsl:apply-templates select="person" mode="tei"/>
+            <xsl:apply-templates select="person" mode="appendix"/>
         </div>
     </xsl:template>
     
@@ -64,8 +203,38 @@
                 <xsl:with-param name="id" select="'organizations'"/>
             </xsl:call-template>
             <h2>Organizations Mentioned</h2>
-            <xsl:apply-templates select="org" mode="tei"/>
+            <xsl:apply-templates select="org" mode="appendix"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="org" mode="appendix">
+        <xsl:sequence select="$orgMap(xs:string(@xml:id))"/>
+    </xsl:template>
+    
+    <xsl:template match="person[@xml:id = 'WE1']" mode="appendix">
+        <xsl:variable name="thisFrag" select="$personMap(xs:string(@xml:id))"/>
+        <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="pseudos" select="$root//name[@key]" as="element(name)*"/>
+        <xsl:variable name="distinctPseudos" select="distinct-values($pseudos/@key)" as="xs:string*"/>
+        <xsl:for-each select="$thisFrag">
+            <xsl:copy>
+                <xsl:sequence select="@*|node()"/>
+                <xsl:if test="not(empty($pseudos))">
+                    <div class="popupPseudonyms">
+                        <h4>Pseudonym<xsl:if test="count($distinctPseudos) gt 1">s</xsl:if> used in this text</h4>
+                        <ul>
+                            <xsl:for-each-group select="$pseudos" group-by="@key">
+                                <li><a href="search.html?Pseudonym={encode-for-uri(@key)}"><xsl:value-of select="current-grouping-key()"/></a></li>
+                            </xsl:for-each-group>
+                        </ul>
+                    </div>
+                </xsl:if>
+            </xsl:copy>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="person" mode="appendix">
+        <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
     </xsl:template>
     
     

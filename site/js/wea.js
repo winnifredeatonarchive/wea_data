@@ -120,13 +120,17 @@ function makeNavClickable(){
 }
  
  
+ 
  function toggleOverlay(){
        var e=arguments[0];
       /* Get rid of the #href functionality */
       e.preventDefault();
      var facsViewer = document.getElementById('facsViewerContainer');
+     let popup = document.getElementById('popup');
      if (facsViewer && facsViewer.classList.contains('open')){ 
             document.getElementById('facs_closer').click();
+     } else if (popup && popup.classList.contains('showing')){ 
+            document.getElementById('popup_closer').click();
      } else {
          document.getElementById('nav_closer').click();
      }
@@ -477,26 +481,20 @@ function makeCitationsResponsive(){
             var popup = document.getElementById('popup');
       if (this.classList.contains('noteMarker')){
           id = this.getAttribute('href').substring(1);
-          popup.setAttribute('data-place','right');
       } else if (this.classList.contains('toolbar_item')){
           id = this.getAttribute('href').substring(1);
-          popup.setAttribute('data-place','right');
           popup.classList.add('toolbar');
       }
      /* Else if this is a name element and it has an @href that is a local pointer */
       else if (this.getAttribute('data-el') == 'name' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
-          popup.setAttribute('data-place','right');
       } else if (this.getAttribute('data-el') == 'ref' && this.getAttribute('data-type') == 'bibl' && this.getAttribute('href').startsWith('#')){
           id=this.getAttribute('href').substring(1);
-          popup.setAttribute('data-place', 'right');
       }
       else if (this.getAttribute('data-el') == 'org' && this.getAttribute('href').startsWith('#')){
           id = this.getAttribute('href').substring(1);
-          popup.setAttribute('data-place','right');
       } else if (this.getAttribute('title') && !(this.getAttribute('href'))){
           useTitle = true;
-          popup.setAttribute('data-place','right');
       }
       /* Otherwise, return */
       else{
@@ -515,32 +513,67 @@ function makeCitationsResponsive(){
           console.log('I should close...'); 
        }
       var content;
-      if (useTitle){
+            if (useTitle){
           var dummyDiv = document.createElement('div');
-          dummyDiv.setAttribute('class','para');
-          dummyDiv.innerHTML = this.getAttribute('title');
+          let header = document.createElement('h4');
+          let para = document.createElement('div');
+          para.setAttribute('class','para');
+          para.setAttribute('data-el','p');
+          header.innerHTML = "Textual Note";
+          dummyDiv.appendChild(header);
+          dummyDiv.appendChild(para);
+          para.innerHTML = this.getAttribute('title');
           content = dummyDiv;
-      } else if (!(useTitle) && !(id == '')){
+          popup.classList.add('textual-note');
+      } else if (this.classList.contains('noteMarker') && !(id == '')){
            var thisThing = document.getElementById(id);
+           var clone = thisThing.cloneNode(true);
+           var heading = document.createElement('h4');
+           heading.innerHTML = "Editorial Note";
+           clone.prepend(heading);
+           popup.classList.add('editorial-note');
+           content = clone;
+      } else if (!(id == '') && this.classList.contains('toolbar_item')){
+            let header = document.createElement('h4');
+            let parId = this.parentNode.getAttribute('id');
+            let headingText;
+            if (parId === 'tools_cite'){
+                headingText = 'Citation';
+            } else if (parId === 'tools_toc'){
+                headingText = "Table of Contents"
+            } else {
+                headingText = this.querySelector('div.label').innerHTML;
+            }
+            header.innerHTML = headingText;
+            let thisThing = document.getElementById(id);
             var clone = thisThing.cloneNode(true);
+            clone.prepend(header);
+            content = clone;
+            
+            
+      } else if (!(id == '')) {
+          let thisThing = document.getElementById(id);
+          let clone = thisThing.cloneNode(true);
           content = clone;
-      } else if (removeEvent){
+          
+      } else  {
           var dummyDiv = document.createElement('div');
           dummyDiv.setAttribute('class','para');
           dummyDiv.innerHTML = 'This popup is not available.';
           content = dummyDiv;
       }
       
+      if (popup.getAttribute('data-place') == null){
+          document.getElementsByTagName('body')[0].classList.toggle("overlay");
+      }
       
+      let contentLinks = content.querySelectorAll('a[href^="#"]');
+      contentLinks.forEach(link => {
+          link.addEventListener('click', e => {
+                closePopup();   
+          })
+      });
       popupContent.appendChild(content);
-            //Set the popup @data-showing to the ids
-        windowResize = function(){
-            resize(el, popup);
-        }
-        
-        window.addEventListener('resize', closePopup, false);
-        window.addEventListener('scroll', closePopup, false);
-/*        window.addEventListener('resize',windowResize, false);*/
         if (!(useTitle)){
               popup.setAttribute('data-showing',id);
         }
@@ -548,8 +581,7 @@ function makeCitationsResponsive(){
         //And set the display to block
       popup.classList.remove('hidden');
       popup.classList.add('showing');
-      placeNote(this,popup);
-
+      
      this.classList.add('clicked');
         if (removeEvent){
             this.removeEventListener('click',showPopup,true);
@@ -745,7 +777,7 @@ function closePopup(){
     if (popup.classList.contains('showing')){
         console.log('Removing popup');
          popup.removeAttribute('style');
-         popup.classList.remove('showing','top','bottom','left','right');
+         popup.classList.remove('showing','top','bottom','left','right','textual-note','editorial-note');
          popup.classList.add('hidden');
          popup.removeAttribute('data-showing');
          var popupContent = document.getElementById('popup_content');
@@ -758,8 +790,7 @@ function closePopup(){
                   c[i].classList.remove('clicked');
                   }
    
-   
-       window.removeEventListener('resize',windowResize, false);
+   document.getElementsByTagName('body')[0].classList.toggle("overlay");
 }
 
 
