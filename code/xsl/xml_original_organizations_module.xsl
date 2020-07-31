@@ -35,79 +35,89 @@
     <xsl:template match="org" mode="orgs">
         <xsl:variable name="thisId" select="@xml:id"/>
         <xsl:variable name="thisIdPtr" select="concat('org:',$thisId)"/>
-        <xsl:variable name="bibls" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id][publisher[@ref=$thisIdPtr]]"/>
+        <xsl:variable name="pubBibls" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id][publisher[@ref=$thisIdPtr]]" as="element(bibl)*"/>
+        <xsl:variable name="fondsBibls" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id][distributor[@ref=$thisIdPtr]]" as="element(bibl)*"/>
+        <xsl:variable name="bibls" select="($pubBibls,$fondsBibls)"/>
+        <xsl:variable name="isFonds" select="exists($fondsBibls)"/>
+        <xsl:if test="$isFonds and exists($pubBibls)">
+            <xsl:message terminate="yes">ERROR: Something is both a publisher and a distributor</xsl:message>
+        </xsl:if>
         <body>
-            <head><xsl:value-of select="orgName"/></head>
+            <head><xsl:copy-of select="orgName/node()"/></head>
+            <div>
+                <xsl:apply-templates select="note" mode="#current"/>
+            </div>
             <xsl:choose>
-                <xsl:when test="not(empty($bibls))">
-                    <div>
-                        <head>In the Archive</head>
-                        <table type="exhibit">
-                            <row role="label">
-                                <cell/>
-                                <cell>Title</cell>
-                                <cell>Date Published</cell>
-                                <cell>Transcription Available</cell>
-                            </row>
-                            <!--A small function to get the category docs for this category-->
-                            <xsl:for-each select="$bibls">
-                                <xsl:variable name="thisBibl" select="."/>
-                                <xsl:variable name="biblId" select="$thisBibl/@xml:id"/>
-                                <xsl:variable name="docs" select="$sourceXml//TEI[//sourceDesc/bibl[@copyOf=replace($biblId,'bibl','bibl:')]]"/>
-                                <xsl:for-each select="$docs">
-                                    <xsl:variable name="thisDoc" select="."/>
-                                    <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
-                                    <row>
-                                        <cell>
-                                            <xsl:choose>
-                                                <xsl:when test="$thisDoc//text[@facs]">
-                                                    <figure>
-                                                        <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
-                                                            <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
-                                                        </graphic>
-                                                    </figure>
-                                                </xsl:when>
-                                            </xsl:choose>
-                                        </cell>
-                                        
-                                        <cell>
-                                            <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
-                                        </cell>
-                                        <cell>
-                                            <xsl:choose>
-                                                <xsl:when test="not(empty($thisBibl/date))">
-                                                    <xsl:copy-of select="$thisBibl/date"/>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <date/>
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                                    
-                                        </cell>
-                                        <cell>
-                                            <xsl:choose>
-                                                <xsl:when test="normalize-space(string-join($thisDoc//text,'')) ne ''">
-                                                    <xsl:text>Yes</xsl:text>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <xsl:text>No</xsl:text>
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                        </cell>
-                                    </row>
-                                </xsl:for-each>
+                <xsl:when test="not(empty(($pubBibls,$fondsBibls)))">
+                    <table type="exhibit">
+                        <row role="label">
+                            <cell/>
+                            <cell>Title</cell>
+                            <xsl:if test="$isFonds">
+                                <cell>Box/File Number</cell>
+                            </xsl:if>
+                            <cell>Date</cell>
+                            <cell>Transcription Available</cell>
+                        </row>
+                        <xsl:for-each select="$bibls">
+                            <xsl:variable name="thisBibl" select="."/>
+                            <xsl:variable name="biblId" select="$thisBibl/@xml:id"/>
+                            <xsl:variable name="docs" select="$sourceXml//TEI[//sourceDesc/bibl[@copyOf=replace($biblId,'bibl','bibl:')]]"/>
+                            <xsl:for-each select="$docs">
+                                <xsl:variable name="thisDoc" select="."/>
+                                <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
+                                <row>
+                                    <cell>
+                                        <xsl:choose>
+                                            <xsl:when test="$thisDoc//text[@facs]">
+                                                <figure>
+                                                    <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
+                                                        <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                    </graphic>
+                                                </figure>
+                                            </xsl:when>
+                                        </xsl:choose>
+                                    </cell>
+                                    
+                                    <cell>
+                                        <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                    </cell>
+                                    <cell>
+                                        <xsl:choose>
+                                            <xsl:when test="not(empty($thisBibl/date))">
+                                                <xsl:copy-of select="$thisBibl/date"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <date/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </cell>
+                                    <xsl:if test="$isFonds">
+                                        <cell><xsl:value-of select="$thisBibl/idno"/></cell>
+                                    </xsl:if>
+                                    
+                                    <cell>
+                                        <xsl:choose>
+                                            <xsl:when test="normalize-space(string-join($thisDoc//text,'')) ne ''">
+                                                <xsl:text>Yes</xsl:text>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:text>No</xsl:text>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </cell>
+                                </row>
                             </xsl:for-each>
-                        </table>
-                    </div>
+                        </xsl:for-each>
+                    </table>
                 </xsl:when>
                 <xsl:otherwise>
                     <p>No documents available.</p>
                 </xsl:otherwise>
             </xsl:choose>
-            
         </body>
         
     </xsl:template>
-
+    
     
 </xsl:stylesheet>

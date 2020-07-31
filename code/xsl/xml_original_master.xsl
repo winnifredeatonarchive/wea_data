@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
@@ -24,6 +25,8 @@
     <xsl:include href="xml_original_work_module.xsl"/>
     <xsl:include href="xml_original_pseudonym_module.xsl"/>
     <xsl:include href="xml_original_bibls_module.xsl"/>
+    
+    
     
     <xsl:template match="/">
         <xsl:for-each select="wea:getWorkingDocs($sourceXml)">

@@ -499,9 +499,14 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="publisher" mode="metadata">
+    <xsl:template match="publisher | distributor" mode="metadata">
         <div>
-            <div class="metadataLabel">Publisher</div>
+            <div class="metadataLabel">
+                <xsl:choose>
+                    <xsl:when test="self::publisher">Publisher</xsl:when>
+                    <xsl:otherwise>Distributor</xsl:otherwise>
+                </xsl:choose>
+            </div>
             <div>
                 <xsl:choose>
                     <xsl:when test="@ref">
@@ -523,15 +528,6 @@
                         <xsl:apply-templates select="if (title) then title/node() else node()" mode="tei"/>
                     </xsl:otherwise>
                 </xsl:choose>
-            </div>
-        </div>
-    </xsl:template>
-    
-    <xsl:template match="distributor" mode="metadata">
-        <div>
-            <div class="metadataLabel">Distributor</div>
-            <div>
-                <xsl:apply-templates mode="tei"/>
             </div>
         </div>
     </xsl:template>
