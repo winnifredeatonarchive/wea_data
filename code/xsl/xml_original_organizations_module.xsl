@@ -53,10 +53,11 @@
                         <row role="label">
                             <cell/>
                             <cell>Title</cell>
+                
+                            <cell>Date</cell>
                             <xsl:if test="$isFonds">
                                 <cell>Box/File Number</cell>
                             </xsl:if>
-                            <cell>Date</cell>
                             <cell>Transcription Available</cell>
                         </row>
                         <xsl:for-each select="$bibls">
