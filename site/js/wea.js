@@ -700,9 +700,13 @@ function addDocClass(){
       
      document.getElementsByTagName('header')[0].classList.add('closed');
      document.getElementById('menu_main').classList.add('closed');
-       var expandDiv = document.querySelectorAll('.expandable');
-    for (i=0; i < expandDiv.length; i++){
-        expandDiv[i].classList.add('closed');   
+     var expandDiv = document.querySelectorAll('.expandable');
+    for (var i=0; i < expandDiv.length; i++){
+        if (expandDiv[i].getAttribute('id') == 'headnote'){
+            expandDiv[i].classList.add('open');
+        } else {
+            expandDiv[i].classList.add('closed');   
+        }
     }
        
 }
