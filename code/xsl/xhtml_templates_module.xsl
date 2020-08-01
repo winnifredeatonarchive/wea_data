@@ -191,10 +191,6 @@
         </xsl:if>
     </xsl:template>
     
-     <xsl:template match="div[@xml:id='pseudonyms_timeline']">
-         
-     </xsl:template>
-    
     <xsl:template match="div[@type='listFigure']/figure" mode="tei">
         <xsl:variable name="ext" select="tokenize(graphic/@mimeType,'/')[last()]"/>
         <xsl:variable name="href" select="replace(graphic/@url,'_sm.png$',concat('.',$ext))"/>
@@ -216,34 +212,6 @@
                 
                 <xsl:apply-templates select="$tempP" mode="#current"/>
             </div>
-            <!--FIRST MAKE THE IMAGE-->
-            
-            
-           <!--<div class="expandable">
-               <div class="content">
-                  <!-\- <xsl:if test="listPerson">
-                       <div>
-                           <h3>Subjects</h3>
-                           <xsl:variable name="tempList">
-                               
-                               <tei:list>
-                                   <xsl:for-each select="listPerson/person">
-                                       <xsl:variable name="ptr" select="substring-after(@corresp,'#')"/>
-                                       <xsl:variable name="thisPerson" select="ancestor::TEI//person[@xml:id=$ptr]"/>
-                                       <tei:item>
-                                           <tei:name ref="{@corresp}"><xsl:copy-of select="$thisPerson/persName/reg/node()"/></tei:name>
-                                       </tei:item>
-                                   </xsl:for-each>
-                               </tei:list>
-                           </xsl:variable>
-                           
-                           <xsl:apply-templates select="$tempList" mode="#current"/>
-                       </div>
-                   </xsl:if>-\->
-               </div>
-                
-            </div>-->
-        <!--</div>-->
     </xsl:template>
     
     
@@ -653,8 +621,56 @@
     </xsl:template>
     
     
-  
+    <xsl:template match="body[ancestor::TEI/@xml:id='people']" mode="tei">
+        <div>
+           <xsl:call-template name="processAtts"/>
+           <xsl:apply-templates select="node()[not(self::listPerson)]" mode="#current"/>
+           <xsl:variable name="tempTable" as="element(tei:table)">
+               <table xmlns="http://www.tei-c.org/ns/1.0" type="exhibit">
+                   <row role="label">
+                       <cell>ID</cell>
+                       <cell>Type</cell>
+                       <cell>Regularized name</cell>
+                       <cell>Note</cell>
+                   </row>
+                   <xsl:for-each select="//person[@xml:id]">
+                       <row>
+                           <cell><ref target="{@xml:id}.html"><xsl:value-of select="@xml:id"/></ref></cell>
+                           <cell><xsl:value-of select="wea:capitalize(parent::listPerson/@type)"/></cell>
+                           <cell><xsl:sequence select="persName/reg/node()"/></cell>
+                           <cell><xsl:sequence select="note/node()"/></cell>
+                       </row>
+                   </xsl:for-each>
+               </table>
+           </xsl:variable>
+            <xsl:apply-templates select="$tempTable" mode="tei"/>
+        </div>
+    </xsl:template>
     
+    <xsl:template match="body[ancestor::TEI/@xml:id='organizations']" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="node()[not(self::listOrg)]" mode="#current"/>
+            <xsl:variable name="tempTable" as="element(tei:table)">
+                <table xmlns="http://www.tei-c.org/ns/1.0" type="exhibit">
+                    <row role="label">
+                        <cell>ID</cell>
+                        <cell>Name</cell>
+                        <cell>Note</cell>
+                    </row>
+                    <xsl:for-each select="//org[@xml:id]">
+                        <row>
+                            <cell><ref target="{@xml:id}.html"><xsl:value-of select="@xml:id"/></ref></cell>
+                            <cell><xsl:sequence select="orgName/node()"/></cell>
+                            <cell><xsl:sequence select="note/node()"/></cell>
+                        </row>
+                    </xsl:for-each>
+                </table>
+            </xsl:variable>
+            <xsl:apply-templates select="$tempTable" mode="tei"/>
+        </div>
+    </xsl:template>
+
     <xsl:template match="person" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
@@ -670,6 +686,20 @@
             <h3><a href="{@xml:id}.html"><xsl:apply-templates select="orgName" mode="#current"/></a></h3>
             <xsl:apply-templates select="node()[not(self::orgName)]" mode="#current"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="div[@xml:id='search_instructions']" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <details>
+                <summary><xsl:apply-templates select="head/node()"/></summary>
+                <xsl:apply-templates select="node() except head" mode="#current"/>
+            </details>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="code" mode="tei">
+        <code><xsl:apply-templates mode="#current"/></code>
     </xsl:template>
     
     

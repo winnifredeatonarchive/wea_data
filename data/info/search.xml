@@ -35,11 +35,42 @@
          <div>
             <divGen type="searchBox"/>
          </div>
-   <!--      <head>Search</head>-->
-<!--         <div>
-            <p>Use the following input box to search the Winnifred Eaton Archive text collection.</p>
-         </div>-->
-
+         <div xml:id="search_instructions">
+            <head>Instructions</head>
+            <div>
+               <head>Word Searches</head>
+               <p>The search supports term searches with flags for may contain, must contain and must not contain, as well as exact phrase searches.</p>
+               <list type="searchExamples">
+                  <item><code>driving</code> the term <q>driving</q> and its related stems (drive, drives, driving)</item>
+                  <item><code>driving daughter</code> <emph>may contain</emph> one or both of <q>driving</q> and <q>daughter</q></item>
+                  <item><code>daughter -nijo</code> contains <q>daughter</q> and <emph>must not contain</emph> <q>nijo</q>.</item>
+                  <item><code>+driving +nijo</code> <emph>must contain</emph> <q>driving</q> and <emph>must contain</emph> <q>nijo</q></item>
+                  
+                  <item><code>"the thousand and one cares"</code> contains the exact phrase <q>the thousand and one cares</q></item>
+                  <item><code>"ghost river" +aristocrat</code> contains the exact phrase <q>ghost river</q> and <emph>must contain</emph> <q>aristocrat</q></item>
+               </list>
+            </div>
+            <div>
+               <head>Wildcard Searches</head>
+               <p>The search supports standard wildcard features:
+                  <list>
+                     <item><code>*</code> 0 or more characters</item>
+                     <item><code>?</code> any character</item>
+                     <item><code>[abc]</code> one of a, b, or c</item>
+                  </list>
+               </p>
+               <list type="searchExamples">
+                  <item><code>can*</code> begins with <q>can</q> and followed by any sequence of letters (candor, cannot, Canada, candle)</item>
+                  <item><code>fus[ua]ma</code> one or both of fusuma and fusama</item>
+                  <item><code>kimon?</code> <q>kimon</q> followed by any letter (kimona or kimono)</item>
+                  <item><code>sam*r*</code> <q>sam</q> followed by 0 or more characters, followed by an <q>r</q>, and followed 0 or more characters (samurai, samouri, or samourai)</item>
+               </list>
+            </div>
+            <div>
+               <head>Filtered Searches</head>
+               <p>The filter boxes on the left provide mechanisms either to filter the results by genre, pseudonyms employed, publication date, et cetera. These filters can either be used without a search query (i.e. search for all documents signed <q>Onoto Watanna</q> published between 1910–1920) or in combination with a query (i.e. search for all non-fiction documents that contain the exact phrase <code>"New York"</code> and that are published after 1918 and are signed as one of <q>Winifred Reeve</q>, <q>Winnie Eaton</q>, <q>Winnifred Eaton</q>, <q>Winnifred Eaton Reeve</q>, <q>Winnifred Reeve</q>.</p>
+            </div>
+         </div>
       </body>
   </text>
 </TEI>

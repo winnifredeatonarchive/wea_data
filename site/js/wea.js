@@ -538,7 +538,7 @@ function makeCitationsResponsive(){
             let parId = this.parentNode.getAttribute('id');
             let headingText;
             if (parId === 'tools_cite'){
-                headingText = 'Citation';
+                headingText = 'Cite this Page';
             } else if (parId === 'tools_toc'){
                 headingText = "Table of Contents"
             } else {

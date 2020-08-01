@@ -605,6 +605,7 @@
     
     <xsl:template match="respStmt/name" mode="metadata">
         <div>
+            <!--Make a virtual copy of the name to avoid something??-->
             <xsl:variable name="thisName">
                 <xsl:copy-of select="."/>
             </xsl:variable>

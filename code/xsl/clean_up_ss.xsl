@@ -46,6 +46,7 @@
             </div>
             <div class="wea-ss-search-and-results">
                   <xsl:apply-templates select="form"/>
+                  <xsl:copy-of select="ancestor::html/descendant::div[@id='search_instructions']"/>
                   <xsl:apply-templates select="div"/>
             </div>
         </xsl:copy>
@@ -54,7 +55,7 @@
     <!--Remove initial static search init; we do it ourselves so we can manipulate the results if we want to-->
     <xsl:template match="div[@id='staticSearch']/script[not(@src)]"/>
     
-    
+    <xsl:template match="div[@id='search_instructions']"/>
     
     <xsl:template match="form">
         <xsl:copy>

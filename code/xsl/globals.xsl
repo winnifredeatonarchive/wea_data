@@ -219,10 +219,15 @@
         <xsl:sequence select="string-join($nameEl/descendant::text(),'') => normalize-space() => lower-case() => wea:namecase()"/>
     </xsl:function>
     
+    <xsl:function name="wea:capitalize" as="xs:string">
+        <xsl:param name="string" as="xs:string"/>
+        <xsl:sequence select="concat(upper-case(substring($string,1,1)),substring($string,2))"/>
+    </xsl:function>
+    
     
     <xsl:function name="wea:namecase">
         <xsl:param name="name"/>
-        <xsl:value-of select="for $r in tokenize($name,'\s+') return concat(upper-case(substring($r,1,1)),substring($r,2))" separator=" "/>
+        <xsl:value-of select="for $r in tokenize($name,'\s+') return wea:capitalize($r)" separator=" "/>
     </xsl:function>
     
     <xsl:function name="wea:expandDate" as="xs:date">

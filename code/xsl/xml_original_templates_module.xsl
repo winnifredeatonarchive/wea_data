@@ -80,12 +80,12 @@
     
     
     <!--Clean up empty names in the respStmts-->
-    <xsl:template match="respStmt/name[@ref][not(string(.)='')]" mode="original">
+    <xsl:template match="respStmt/name[@ref][string(.)='']" mode="original">
         <xsl:variable name="thisRef" select="@ref"/>
         <xsl:variable name="thisPerson" select="wea:getPerson($thisRef)"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
-            <xsl:value-of select="$thisPerson/persName/reg"/>
+            <xsl:sequence select="$thisPerson/persName/reg/node()"/>
         </xsl:copy>
     </xsl:template>
     

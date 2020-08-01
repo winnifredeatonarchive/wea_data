@@ -16,13 +16,17 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
+            <catRef scheme="wdt:docType" target="wdt:docBornDigitalListing"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-07-30" status="published">added JLC RA names</change><change who="pers:MC1" when="2020-07-06" status="published">changed Fernie last name</change>
-         <change who="pers:MC1" when="2020-06-28" status="published">added Wilson last name</change><change who="pers:MC1" when="2020-06-21" status="published">added artist bios</change>
-         <change who="pers:MC1" when="2020-06-18" status="published">added artist bios</change><change who="pers:MC1" when="2020-05-31" status="published">added Isobel bio</change><change who="pers:MC1" when="2020-05-29" status="published">added Sijia and fixed proofread</change>
+         <change who="pers:MC1" when="2020-07-30" status="published">added JLC RA names</change>
+         <change who="pers:MC1" when="2020-07-06" status="published">changed Fernie last name</change>
+         <change who="pers:MC1" when="2020-06-28" status="published">added Wilson last name</change>
+         <change who="pers:MC1" when="2020-06-21" status="published">added artist bios</change>
+         <change who="pers:MC1" when="2020-06-18" status="published">added artist bios</change>
+         <change who="pers:MC1" when="2020-05-31" status="published">added Isobel bio</change>
+         <change who="pers:MC1" when="2020-05-29" status="published">added Sijia and fixed proofread</change>
          <change who="pers:MC1" when="2020-05-29" status="published">correctly spelled Daisy.</change>
          <change who="pers:MC1" when="2020-05-29" status="published">added Daisy.</change>
          <change who="pers:MC1" when="2020-05-23" status="published">added illustrator.</change>
@@ -39,6 +43,8 @@
    </teiHeader>
    <text>
       <body>
+         <head>People Database</head>
+         <p>This document includes all people referenced in the WEA project, including both primary people (i.e. illustrators, authors, et cetera) as well as contributors to the project.</p>
          <listPerson type="primary">
             <person xml:id="WE1">
                <persName>
@@ -332,17 +338,7 @@
          </listPerson>
 
          <listPerson type="contributor">
-            
-            
-            <person xml:id="IG1">
-               <persName>
-                  <reg>Isobel Gibson</reg>
-                  <forename>Isobel</forename>
-                  <surname>Gibson</surname>
-               </persName>
-               <note><p>Isobel Gibson is a Bachelor of Arts Honours student majoring in History at Queen’s University. Isobel’s work as a research assistant for the Winnifred Eaton Archive intersects with her passions for art history as well as research.</p></note>
-            </person>
-            
+  
             
             <person xml:id="MC1">
                <persName>
@@ -388,7 +384,7 @@
                   <surname>Takeda</surname>
                </persName>
                <note>
-                  <p>Joey Takeda is the User Interface Developer at the Digital Humanities Innovation Lab (Simon Fraser University) and Technical Director of the Winnifred Eaton Archive. He is also an MA student at the University of British Columbia where his researched focuses on Indigenous and diasporic Canadian literature; he is currently completing a digital edition of <title level="m">His Royal Nibs</title>.</p>
+                  <p>Joey Takeda is the Technical Director of the Winnifred Eaton Archive and the User Interface Developer at the Digital Humanities Innovation Lab (Simon Fraser University). He is also an MA student at the University of British Columbia where his research focuses on Indigenous and diasporic Canadian literature; he is currently completing a digital edition of <title level="m">His Royal Nibs</title>.</p>
                </note>
                
             </person>
@@ -480,6 +476,17 @@
                <note><p>
                   Shaun Hunter is the author of <title level="m">Calgary through the Eyes of Writers</title> (Rocky Mountain Books, 2018) and consultant for an exhibition of the same name, featuring Winnifred Eaton, at the Lougheed House in Calgary.</p></note>
             </person>
+            
+            
+            <person xml:id="IG1">
+               <persName>
+                  <reg>Isobel Gibson</reg>
+                  <forename>Isobel</forename>
+                  <surname>Gibson</surname>
+               </persName>
+               <note><p>Isobel Gibson is a Bachelor of Arts Honours student majoring in History at Queen’s University. Isobel’s work as a research assistant for the Winnifred Eaton Archive intersects with her passions for art history as well as research.</p></note>
+            </person>
+            
             
             <person xml:id="SC1">
                <persName>

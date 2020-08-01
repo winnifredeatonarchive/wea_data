@@ -107,7 +107,7 @@
     
   <target name="createOriginalXml">
       <echo message="Creating site..."/>
-      <java classpath="${saxon}" classname="net.sf.saxon.Transform" >
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
           <arg value="-xsl:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
