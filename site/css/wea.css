@@ -1312,6 +1312,18 @@ mark{
 code{
     padding:0.25em;
     border:1px dashed #efefef;
+    margin-right:.5em;
+    background-color:transparent;
+    transition: 0.2s background-color ease-in-out;
+}
+
+code.link{
+    cursor:pointer;
+
+}
+
+code.link:hover{
+        background-color: #efefef;
 }
 
 

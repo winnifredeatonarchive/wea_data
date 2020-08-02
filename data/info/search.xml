@@ -52,13 +52,7 @@
             </div>
             <div>
                <head>Wildcard Searches</head>
-               <p>The search supports standard wildcard features:
-                  <list>
-                     <item><code>*</code> 0 or more characters</item>
-                     <item><code>?</code> any character</item>
-                     <item><code>[abc]</code> one of a, b, or c</item>
-                  </list>
-               </p>
+               <p>The search supports standard wildcard features (<code>*</code> = 0 or more characters, <code>?</code> = any character, <code>[abc]</code> = one of a, b, or c).</p>
                <list type="searchExamples">
                   <item><code>can*</code> begins with <q>can</q> and followed by any sequence of letters (candor, cannot, Canada, candle)</item>
                   <item><code>fus[ua]ma</code> one or both of fusuma and fusama</item>

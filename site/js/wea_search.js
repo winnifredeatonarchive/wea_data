@@ -1,6 +1,15 @@
 let Sch;
 window.addEventListener('load', function () {
     Sch = new StaticSearch();
+    
+    let codeSamples = document.querySelectorAll("[data-type='searchExamples'] code");
+    codeSamples.forEach(code => {
+        code.classList.add('link');
+        code.addEventListener('click', e => {
+              Sch.queryBox.value=code.innerHTML;
+              Sch.searchButton.click();
+        });
+    });
     var filterBtn = document.getElementById('filterSearch');
     filterBtn.addEventListener('click', function (e) {
         document.getElementById('ssDoSearch').click();
