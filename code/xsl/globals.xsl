@@ -43,6 +43,10 @@
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
     
+    <xsl:variable name="orgIds" select="$sourceXml//org[@xml:id]/@xml:id"/>
+    <xsl:variable name="peopleIds" select="$sourceXml//person[@xml:id]/@xml:id"/>
+    <xsl:variable name="workIds" select="$sourceXml//listBibl[@xml:id]/@xml:id"/>
+    
     <xsl:variable name="fileSizeDoc" select="unparsed-text(concat($outDir,'info/sizes.txt'))"/>
     <xsl:variable name="fileSizeDocLines" select="tokenize($fileSizeDoc,'\n')"/>
     

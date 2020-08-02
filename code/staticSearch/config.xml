@@ -40,5 +40,6 @@
     </rules>
     <excludes>
         <exclude match="html[@id='search']" type="index"/>
+        <exclude match="html[descendant::meta[@name='Ignore']]" type="index"/>
     </excludes>
 </config>

@@ -24,6 +24,14 @@
             <title><xsl:value-of select="teiHeader/fileDesc/titleStmt/title[1]"/></title>
             <xsl:call-template name="createOpenGraph"/>
             <xsl:call-template name="createDCMetadata"/>
+            <xsl:choose>
+                <xsl:when test="@xml:id = $workIds">
+                    <meta name="Ignore" class="staticSearch.desc" content="true"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="createStaticSearchMetadata"/>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:call-template name="createStaticSearchMetadata"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="stylesheet" type="text/css" href="css/media.css"/>
@@ -127,6 +135,8 @@
 <!--            <meta name="Has facsimile?" class="staticSearch.bool" content="{xs:boolean(exists(//text/@facs))}"/>
             <meta name="Has transcription?" class="staticSearch.bool" content="{not(xs:boolean(exists(//gap[@reason='noTranscriptionAvailable'])))}"/>
            <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>-->
+            
+            
             <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
             <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>
             <xsl:variable name="dateString" select="if ($isRange) then concat($date/(@notBefore|@from)[1],'/', $date/(@notAfter|@to)[1]) else $date/@when" as="xs:string?"/>
