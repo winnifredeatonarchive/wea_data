@@ -1,51 +1,142 @@
-let Sch;
-window.addEventListener('load', function () {
-    Sch = new StaticSearch();
-    
-    let codeSamples = document.querySelectorAll("[data-type='searchExamples'] code");
+
+/* Set up some null globals */
+let Sch, staticSearchDiv, filterBtn, filtersSection, filterFieldsets, filterInputs, mainSection;
+
+window.addEventListener('load', searchInit);
+
+function searchInit(){
+    /* First set up */
+    searchSetup();
+    searchCreateSearch();
+}
+
+
+function searchSetup(){
+  staticSearchDiv = document.getElementById('staticSearch');
+  filtersSection = staticSearchDiv.querySelector('.wea-ss-filters');
+  filterFieldsets =   filtersSection.querySelectorAll('fieldset');
+  filterInputs = filtersSection.querySelectorAll('input');
+  mainSection = staticSearchDiv.querySelector('.wea-ss-search-and-results');
+  filterBtn = document.getElementById('filterSearch');
+  
+  let searchBtn = document.getElementById('ssDoSearch');
+  let codeSamples = mainSection.querySelectorAll("[data-type='searchExamples'] code");
+  let queryBox = staticSearchDiv.querySelector('#ssQuery');
+  
+  /* First make the code samples clickable */
     codeSamples.forEach(code => {
         code.classList.add('link');
         code.addEventListener('click', e => {
-              Sch.queryBox.value=code.innerHTML;
-              Sch.searchButton.click();
+              queryBox.value=code.innerHTML;
+              searchBtn.click();
         });
     });
-    var filterBtn = document.getElementById('filterSearch');
-    filterBtn.addEventListener('click', function (e) {
-        document.getElementById('ssDoSearch').click();
+   
+   
+   /* Now make the filterBtn a proxy for the actual search button */
+    filterBtn.addEventListener('click', e => { 
+        searchBtn.click(); 
     });
-    var filters = document.querySelectorAll('.wea-ss-filters input');
-    filters.forEach(function (i) {
-        i.addEventListener('change', function (e) {
-            console.log('changed');
+    
+       
+
+    filterInputs.forEach( input => {
+        input.addEventListener('change', e => {
             if (filterBtn.disabled) {
-                filterBtn.removeAttribute('disabled');
-            }
-        });
-    });
-    var textInputs = document.querySelectorAll('.wea-ss-filters input[type="text"]');
-    textInputs.forEach(function (input) {
-        input.addEventListener('keydown', function (e) {
-            if (e.key == 'Enter') {
-                document.getElementById('ssDoSearch').click();
+               filterBtn.removeAttribute('disabled');
             }
         });
     });
     
- document.getElementById('ssDoSearch').addEventListener('click', function(){
-    let sorters = document.querySelectorAll('#sorters');
-    if (sorters.length > 0){
-        sorters[0].parentNode.removeChild(sorters[0]);
-    }
-  });
+    filterFieldsets.forEach(fieldset => {
+        fieldset.classList.add('expandable');
+        fieldset.classList.add('closed');
+        let legend = fieldset.querySelector('legend');
+        let miDiv = document.createElement('span');
+       
+       /* Add a right arrow btn */
+        miDiv.classList.add('mi');
+        miDiv.innerText = 'chevron_right';
+        legend.appendChild(miDiv);
+        
+       /* And group stuff as content */ 
+        let contentDiv = document.createElement('div');
+        contentDiv.classList.add('content');
+        let sib = legend.nextElementSibling;
+        while (sib){
+            contentDiv.appendChild(sib);
+            sib = legend.nextElementSibling;
+        }
+        
+        /* And now put the content in the content div */
+        fieldset.appendChild(contentDiv);
+        
+        /* And let these be expandable */
+        legend.addEventListener('click', e => {
+            if (fieldset.classList.contains('closed')){
+                fieldset.classList.remove('closed');
+                fieldset.classList.add('open');
+            } else {
+                fieldset.classList.remove('open');
+                fieldset.classList.add('closed');
+            }
+        });
+    });
+    
+    
+    filterInputs.forEach(input => {
+        if (!input.type == 'text'){
+            return;
+        }
+        input.addEventListener('keydown', e => {
+                if (e.key == 'Enter') {
+                    searchBtn.click();
+                }
+         })
+     });
+     
+     searchBtn.addEventListener('click', function(){
+            let sorters = document.querySelectorAll('#sorters');
+            if (sorters.length > 0){
+                sorters[0].parentNode.removeChild(sorters[0]);
+            }
+        });
+    
+}
 
-    Sch.searchFinishedHook = function () {
+function openFilters(){
+    filterFieldsets.forEach(fieldset => {
+        let activeInputs = false;
+        fieldset.querySelectorAll('input').forEach(input => {
+            console.log(input);
+            console.log(input.checked);
+            console.log(input.value.length);
+            if (input.checked || (input.type == 'text' && input.value.length > 0)){
+                activeInputs = true;
+                return;
+            }
+        });
+        if (activeInputs){
+            fieldset.classList.remove('closed');
+            fieldset.classList.add('open');
+        }
+    })
+}
+
+function searchCreateSearch(){
+      Sch = new StaticSearch();  
+      Sch.searchFinishedHook = function () {
+        openFilters();
         let thisResults = this.resultsDiv;
         let resultObjs = thisResults.querySelectorAll('div');
         let headers = this.resultsDiv.querySelectorAll('div > a');
         let images = this.resultsDiv.querySelectorAll('img');
         let hasKwic = thisResults.querySelectorAll(".kwic").length > 0;
         
+        resultObjs.forEach(o => {
+            let childNodes = o.childNodes;
+            Array.from(childNodes).forEach(node => node.nodeType != 1 && node.parentNode.removeChild(node))
+        });
         /* Reset sorting */
         this.resultsDiv.classList.remove('reverse');
         this.resultsDiv.classList.remove('loaded');
@@ -148,7 +239,10 @@ window.addEventListener('load', function () {
            });
          }
     }
-});
+    
+}
+
+
 
 function getDate(r){
     let date = r.querySelectorAll("div[data-filter='Publication Date']")[0];

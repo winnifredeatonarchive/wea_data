@@ -19,27 +19,49 @@
     </params>
     
     <rules>
-        <rule match="div[@id='info'][not(ancestor::div[@id='mainBody'][contains-token(@class,'docBornDigitalListing')])]" weight="0"/>
-        <rule match="footer" weight="0"/>
-        <rule match="div[@id='appendix']" weight="0"/>
-        <rule match="div[@id='metadata']" weight="0"/>
+        
+        <!--Weigh primary sources higher-->
+        <!--NOTE: Remove this rule if using RAW SCORE rather than RELEVANCE-->
+        <rule
+            match="div[@id='mainBody'][some $class in tokenize(@class,'\s+') satisfies matches($class,'PrimarySource')]"
+            weight="2"/>
+        
+        <!--ID based / element name based ignores-->
+        <rule
+            match="header | footer | *[@id=('appendix', 'metadata','info_right', 'credits' ,'tools_container', 'popup')]"
+            weight="0"/>
+        
+        <!--More complicated ignores-->
+        
+        <!--Ignore note numbers-->
         <rule match="*[contains(@class,'noteNum')]" weight="0"/>
-        <rule match="header" weight="0"/>
+        
+        <!--Ignore page beginnings-->
+        <rule match="a[span[@data-el='pb']]" weight="0"/>
+        
+        <!--Ignore meta tags of some sort??-->
         <rule match="meta[matches(@class,'(^|\s+)ss')][ancestor::html/descendant::div[@id='mainBody'][not(descendant::div[@id='info'])][contains-token(@class,'docBornDigitalListing')]]" weight="0"/>
         
+        <!--Pseudonyms listing table-->
+        <rule match="table[ancestor::html[@id='pseudonyms']]"  weight="0"/>
         
         <!--Credits table should be excluded too-->
         <rule match="div[h2/string(.) = 'Credits'][table[@class='sortable'][@data-type='exhibit']]" weight="0"/>
-        <rule match="a[span[@data-el='pb']]" weight="0"/>
-        <rule match="div[@id='tools_container']" weight="0"/>
-        <rule match="div[@id='info_right']" weight="0"/>
+        
+        <!--Ignore links that are just pointers-->
         <rule match="a[text()[matches(.,'^https?://')]]" weight="0"/>
-        <rule match="table[ancestor::div[@id='mainBody'][contains(@class,'docBornDigitalListing')]]" weight="0"/>
-        <rule match="*[@id='popup_closer']" weight="0"/>
-        <!--  <rule match="body[not(ancestor::html/@id ='foreign')]" weight="0"/>-->
+        
+        <!--Ignore most tables-->
+        <rule match="table[ancestor::div[@id='mainBody'][contains(@class,'docBornDigitalListing')]]"
+              weight="0"/>
+        
+        <!--Ignore the body of these documents (we want them to be indexed still, however -->
+        <rule match="body[ancestor::html[@id=('we_bibliography','bibliography')]]" weight="0"/>
+        <rule match="body[ancestor::html/descendant::meta[@name='Ignore']]" weight="0"/>
     </rules>
     <excludes>
         <exclude match="html[@id='search']" type="index"/>
-        <exclude match="html[descendant::meta[@name='Ignore']]" type="index"/>
+        <exclude match="html[@id='index']" type="index"/>
+        <exclude match="meta[@name='Ignore']" type="filter"/>
     </excludes>
 </config>

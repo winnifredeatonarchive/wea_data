@@ -32,7 +32,6 @@
                     <xsl:call-template name="createStaticSearchMetadata"/>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:call-template name="createStaticSearchMetadata"/>
             <link rel="stylesheet" type="text/css" href="css/wea.css"/>
             <link rel="stylesheet" type="text/css" href="css/media.css"/>
             <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>

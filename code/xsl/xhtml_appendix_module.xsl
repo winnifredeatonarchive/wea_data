@@ -119,14 +119,21 @@
     <xsl:function name="wea:makeTruncatedList" as="element(xh:li)*">
         <xsl:param name="rows"/>
         <xsl:param name="id"/>
-        <xsl:variable name="max" select="5"/>
+        <xsl:variable name="max" select="6"/>
         <xsl:variable name="rowCount" select="count($rows)"/>
-        <xsl:for-each select="$rows[position() lt $max + 1]">
-            <li><xsl:apply-templates select="cell[ref[not(descendant::graphic)]]/ref" mode="tei"/></li>
+        
+        <xsl:variable name="rowsToUse" select="$rows[not(wea:getRefFromRow(.)[substring-before(@target,'.xml') = $id])]"/>
+        <xsl:for-each select="$rowsToUse[position() lt $max + 1]">
+            <li><xsl:apply-templates select="wea:getRefFromRow(.)" mode="tei"/></li>
         </xsl:for-each>
         <xsl:if test="$rowCount gt $max">
             <li><a href="{$id}.html">+ <xsl:value-of select="$rowCount - $max"/></a></li>
         </xsl:if>
+    </xsl:function>
+    
+    <xsl:function name="wea:getRefFromRow" as="element(tei:ref)">
+        <xsl:param name="row"/>
+        <xsl:sequence select="$row/cell[ref[not(descendant::graphic)]]/ref"/>
     </xsl:function>
     
     
