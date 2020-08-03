@@ -63,7 +63,7 @@
                                            <ref target="doc:{$docId}">
                                                <figure>
                                                    <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
-                                                       <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                       <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]"/>.</desc>
                                                    </graphic>
                                                </figure>
                                            </ref>
@@ -72,7 +72,7 @@
                                    </xsl:choose>
                                </cell>
                                <cell>
-                                   <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                   <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
                                </cell>
                                <cell>
                                    <list>
@@ -127,7 +127,7 @@
                                             <ref target="doc:{$docId}">
                                                 <figure>
                                                     <graphic url="facsimiles/{substring-after($thisDoc//text/@facs,'facs:')}_tiny.jpg">
-                                                        <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc//titleStmt/title[1]"/>.</desc>
+                                                        <desc>Thumbnail of the first page of the facsimile for <xsl:value-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]"/>.</desc>
                                                     </graphic>
                                                 </figure>
                                             </ref>
@@ -136,7 +136,7 @@
                                     </xsl:choose>
                                 </cell>
                                 <cell>
-                                    <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc//titleStmt/title[1]/node()"/></ref>
+                                    <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
                                 </cell>
                                 <cell>
                                     <xsl:choose>
