@@ -34,7 +34,7 @@
         <!--More complicated ignores-->
         
         <!--Ignore note numbers-->
-        <rule match="*[contains(@class,'noteNum')]" weight="0"/>
+        <rule match="*[contains(@class,'noteMarker')]" weight="0"/>
         
         <!--Ignore page beginnings-->
         <rule match="a[span[@data-el='pb']]" weight="0"/>

@@ -1215,8 +1215,12 @@ div.ssDateFilters fieldset.ssFieldset span, div.ssNumFilters fieldset.ssFieldset
 
 
 
-div#ssResults>ul>li>a{
-    margin-right: 1.75rem;
+div#ssResults > ul > li > *{
+flex-basis: 22.5%;
+}
+
+div#ssResults > ul > li > a {
+    text-align:center;
 }
 
 ul.ssDescCheckboxList input{
