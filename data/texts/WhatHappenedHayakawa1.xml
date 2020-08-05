@@ -63,7 +63,8 @@ Publicly accessible
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="published">
+         <change who="pers:MC1" status="published"  when="2020-08-05">fixed opener.</change>
          <change who="pers:MC1" status="inProgress"  when="2020-07-02">Added note about source.</change><change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl206 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatHaya. Old filename: What_Happened_to_Hayakawa.xml.)</change>
@@ -74,18 +75,12 @@ Publicly accessible
       </revisionDesc>
    </teiHeader>
 
-
-
-
-
    <text facs= "facs:WhatHappenedHayakawa">
       <pb n="89"/>
       <body>
-         <head>
-            <q>What Happened to Hayakawa</q>. 
-            <!--<hi rend="italic">Motion Picture Magazine</hi> (January 1929): 33, 90-91.-->
-            By Winnifred Eaton Reeve (Onoto Watanna)</head>
-         <div>
+         <head>What Happened to Hayakawa</head>
+         <opener><byline>By <name ref="pers:WE1">Onoto Watanna</name></byline></opener>
+               <div type="content">                     
 
             <div>
 	              <p>Sessue Hayakawa. Once a name to conjure with in the motion picture world. Star of the first magnitude. His fame comparable to that of Valentino. His admirers legion. The star who opened the great Strand Theater in New York, and kept it packed for months.</p>
