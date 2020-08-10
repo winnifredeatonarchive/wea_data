@@ -25,6 +25,7 @@
         <xsl:map>
             <xsl:for-each select="$xhtmlDocs">
                 <xsl:sort select="wea:returnDate(.)"/>
+                <xsl:message expand-text="yes">{//html/@id}: {position()}: {wea:returnDate(.)}</xsl:message>
                 <xsl:map-entry key="//html/@id/string(.)" select="position()"/>
             </xsl:for-each>
         </xsl:map>
@@ -78,7 +79,9 @@
     
     <xsl:function name="wea:returnDate">
         <xsl:param name="doc"/>
+        <xsl:variable name="dummyDate" select="xs:date('2020-01-01')" as="xs:date"/>
         <xsl:variable name="dateMeta" select="$doc//meta[matches(@class,'staticSearch.date')][@name='Publication Date'][1]" as="element(meta)?"/>
+        
         <xsl:choose>
             <xsl:when test="$dateMeta">
                 <xsl:choose>
@@ -89,11 +92,14 @@
                         <xsl:variable name="thisDocId" select="$doc//html/@id"/>
                         <xsl:variable name="thisTeiDoc" select="$standaloneXml//tei:TEI[@xml:id=$thisDocId]"/>
                         <xsl:variable name="thisPubDate" select="$thisTeiDoc//tei:sourceDesc/tei:bibl/tei:date/(@notBefore|@from|@when)[1]"/>
-                        <xsl:variable name="expandedDate" select="if ($thisPubDate) then wea:expandDate($thisPubDate) else xs:date('2020-01-01')"/>
+                        <xsl:variable name="expandedDate" select="if ($thisPubDate) then wea:expandDate($thisPubDate) else $dummyDate"/>
                         <xsl:sequence select="$expandedDate"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="$dummyDate"/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
 

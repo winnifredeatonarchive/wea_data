@@ -2,6 +2,7 @@
 /* Set up some null globals */
 let Sch, staticSearchDiv, filterBtn, filtersSection, filterFieldsets, filterInputs, mainSection;
 
+
 window.addEventListener('load', searchInit);
 
 function searchInit(){
@@ -128,12 +129,13 @@ function searchCreateSearch(){
       Sch.searchFinishedHook = function () {
         openFilters();
         let thisResults = this.resultsDiv;
-        let resultObjs = thisResults.querySelectorAll('div');
+        Sch.resultObjs = thisResults.querySelectorAll('div');
+        createSorters();
+
+
         let headers = this.resultsDiv.querySelectorAll('div > a');
         let images = this.resultsDiv.querySelectorAll('img');
-        let hasKwic = thisResults.querySelectorAll(".kwic").length > 0;
-        
-        resultObjs.forEach(o => {
+        Sch.resultObjs.forEach(o => {
             let childNodes = o.childNodes;
             Array.from(childNodes).forEach(node => node.nodeType != 1 && node.parentNode.removeChild(node))
         });
@@ -148,6 +150,7 @@ function searchCreateSearch(){
         });
         lazyload();
         filterBtn.setAttribute('disabled', 'disabled');
+        trimResults();
         headers.forEach(function (head, i) {
             let link = head.getAttribute('href');
             fetch('ajax/' + link).then(function (file) {
@@ -160,18 +163,53 @@ function searchCreateSearch(){
                 head.after(nonce.firstElementChild)
                 if (i == headers.length - 1){
                   thisResults.classList.add('loaded');
-                  if (!hasKwic){
-                     sortByTitle();
+                  if (!hasKwic()){
+                     sortByDate();
                   }
          
                 }
             });
         });
         
+       
+        
+        
+    }
+    
+}
 
+
+function trimResults(){
+   let kwicLists = Sch.resultsDiv.querySelectorAll('ul.kwic');
+   kwicLists.forEach(list => {
+      let items = list.querySelectorAll('li');
+      if (items.length > 10){
+          for (let i = 10; i < items.length; i++){
+              items[i].style.display='none';
+          }
+             let plusMore = `<li>+ ${items.length - 10} more </li>`;
+     list.insertAdjacentHTML("beforeend", plusMore);
+      } 
+  
+      
+   });
+    
+    
+}
+
+function createSorters(){
+    
+
+    
+const options = {
+             "relevance": ["Relevance", "Highest", "Lowest"],
+             "instances": ["Instances", "Highest", "Lowest"],
+             "date": ["Date", "Earliest", "Latest"],
+             "title": ["Title", "A", "Z"]
+             }
          let buttonDiv = document.createElement('div');
          buttonDiv.setAttribute('id', 'sorters');
-         thisResults.insertBefore(buttonDiv, thisResults.firstElementChild);
+         Sch.resultsDiv.insertBefore(buttonDiv, Sch.resultsDiv.firstElementChild);
          let label = document.createElement('label');
          label.setAttribute('for','sortSelect');
          label.setAttribute('id', 'sortSelectLabel');
@@ -180,16 +218,16 @@ function searchCreateSearch(){
          select.setAttribute('id','sortSelect');
          buttonDiv.appendChild(label);
          buttonDiv.appendChild(select);
-         let options = {
-             "score": ["Score", "Highest", "Lowest"],
-             "title": ["Title", "A", "Z"],
-             "date": ["Date", "Earliest", "Latest"]
-         }
          
-         if (!hasKwic){
-             delete options["score"];
+         
+         
+     
+         
+         if (!hasKwic()){
+             delete options["instances"];
+             delete options["relevance"];
          }
-         for (const option in options){
+         for (let option in options){
                 let captions = options[option];
                 for (let i=1; i<3; i++){
                       let optEl = document.createElement("option");
@@ -197,7 +235,7 @@ function searchCreateSearch(){
                       let second = (i == 2) ? captions[1] : captions[2];
                       optEl.innerHTML = captions[0] + " (" + first + " to " + second + ")";
                       let suffix = "";
-                      if (i == 2){
+                      if (((i == 1) && option == 'instances') || (i == 2 && !(option=='instances'))){
                           suffix = "-r";
                       }
                       optEl.setAttribute('value',captions[0].toLowerCase() + suffix);
@@ -211,37 +249,21 @@ function searchCreateSearch(){
              console.log(selectedOption);
              let o = selectedOption.split('-')[0];
              this.parentNode.parentNode.classList.remove('reverse');
-              if (o == 'score'){
-                   console.log('hskdfj');
-                    resultObjs.forEach(function(r){
+              if (o == 'relevance'){
+                    Sch.resultObjs.forEach(function(r){
                         r.parentNode.style.order = '';
-                  });
-                } else if (o == 'date'){
+                  })} else if (o == 'instances') {
+                    sortByScore();
+                }else if (o == 'date'){
                    sortByDate();
                 } else if (o == 'title'){
                     sortByTitle();
-                
                 }
              if (selectedOption.split('-')[1] == 'r'){
                  this.parentNode.parentNode.classList.add('reverse');
              }
          });
-         
-          function sortByDate(){
-           resultObjs.forEach(function(r){
-                        r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-dateorder');
-            });
-         }
-         
-         function sortByTitle(){
-             resultObjs.forEach(function(r){
-                       r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-titleorder');
-           });
-         }
-    }
-    
 }
-
 
 
 function getDate(r){
@@ -253,6 +275,33 @@ function getDate(r){
     }
 }
 
+
+ function sortByDate(){
+           Sch.resultObjs.forEach(function(r){
+                        r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-dateorder');
+            });
+         }
+         
+         function sortByTitle(){
+             Sch.resultObjs.forEach(function(r){
+                       r.parentNode.style.order = r.querySelectorAll('details')[0].getAttribute('data-titleorder');
+           });
+         }
+         
+         function sortByScore(){
+             Sch.resultObjs.forEach(function(r){
+                 let id = r.querySelector('a').getAttribute('href');
+                 console.log(id);
+                 let currResultObj = Sch.resultSet.mapDocs.get(id);
+                 console.log(Sch.resultSet.mapDocs);
+                 let count = currResultObj['contexts'].length;
+                 r.parentNode.style.order = count;
+             });
+         }
+         
+ function hasKwic(){
+     return Sch.resultsDiv.querySelectorAll(".kwic").length > 0;
+ }
     
 
 
