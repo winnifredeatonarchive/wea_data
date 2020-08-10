@@ -1143,7 +1143,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                         <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
                            <sch:let name="att" value="if (@ref) then @ref else @who"/>
                            <sch:let name="errors"
-                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then () else $i"/>
+                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
                         </sch:rule>
                      </sch:pattern>

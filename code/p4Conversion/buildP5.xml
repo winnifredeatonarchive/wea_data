@@ -49,6 +49,9 @@
                 <replaceregex flags="g" pattern="&amp;iuml;" replace="ï"/>
                 <replaceregex flags="g" pattern="&amp;ndash;" replace="–"/>
             </filterchain>
+            <mapper>
+                <flattenmapper/>
+            </mapper>
         </copy>
     </target>
     

@@ -2520,7 +2520,7 @@ On <xsl:text/>
                        context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"/>
       <xsl:variable name="att" select="if (@ref) then @ref else @who"/>
       <xsl:variable name="errors"
-                    select="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then () else $i"/>
+                    select="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) then () else $i"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

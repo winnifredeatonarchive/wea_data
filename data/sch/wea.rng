@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-08-02T21:29:28Z. .
+Schema generated from ODD source 2020-08-10T19:18:30Z. .
 TEI Edition: Version 4.0.0. Last updated on
 	13th February 2020, revision ccd19b0ba
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 4.0.0/
@@ -7222,7 +7222,7 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                         <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
                            <sch:let name="att" value="if (@ref) then @ref else @who"/>
                            <sch:let name="errors"
-                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then () else $i"/>
+                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
                         </sch:rule>
                      </sch:pattern> 
