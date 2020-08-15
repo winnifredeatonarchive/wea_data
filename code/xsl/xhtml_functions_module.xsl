@@ -57,11 +57,7 @@
         <xsl:sequence select="not(empty($category))"/>
     </xsl:function>
     
-    <xsl:function name="wea:bornDigital" as="xs:boolean">
-        <xsl:param name="doc"/>
-        <xsl:sequence select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
-    </xsl:function>
-    
+
     <xsl:function name="wea:crumb">
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#exhibit')]/@target"/>

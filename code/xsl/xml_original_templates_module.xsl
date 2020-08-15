@@ -151,8 +151,32 @@
                 <xsl:call-template name="addSourceDescNote"/>
             </notesStmt>
         </xsl:if>
-
     </xsl:template>
+    
+    <xsl:template match="publicationStmt/p" mode="original">
+        <p>See the <ref target="doc:legal">legal</ref> page for information about republication. The recommended citation for this document can be found below (in the standalone XML version).</p>
+    </xsl:template>
+    
+    <!--Refresh the encoding Desc if necessary-->
+    <xsl:template match="encodingDesc" mode="original">
+        <xsl:if test="wea:bornDigital(ancestor::TEI)">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()" mode="#current"/>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="revisionDesc" mode="original">
+        <xsl:if test="not(wea:bornDigital(ancestor::TEI))">
+            <encodingDesc>
+                <p>See <ref target="doc:editorial_principles">Editorial Principles</ref>.</p>               
+            </encodingDesc>
+        </xsl:if>
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
     
     <xsl:template match="name[@ref='pers:WE1'][ancestor::body][not(ancestor::note)]" mode="original">
         <xsl:copy>

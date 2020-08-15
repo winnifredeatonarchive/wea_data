@@ -179,6 +179,10 @@
         <xsl:sequence select="$out"/>
     </xsl:function>
     
+    <xsl:function name="wea:bornDigital" as="xs:boolean">
+        <xsl:param name="doc"/>
+        <xsl:sequence select="some $q in $doc//catRef/@target satisfies (contains($q,'BornDigital'))"/>
+    </xsl:function>
     
     <xsl:template name="generateTeiPage">
   

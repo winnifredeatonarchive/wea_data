@@ -224,7 +224,7 @@
     </xsl:template>
     
     
- 
+  
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
            <xsl:call-template name="processAtts">
