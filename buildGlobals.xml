@@ -57,6 +57,8 @@
     <!--Data fileset-->
     <fileset id="dataXml" dir="${data.dir}">
         <include name="**/**.xml"/>
+        <exclude name="documentation/**.xml"/>
+        <exclude name="addTextFromDrive.xml"/>
         <exclude name="**/addTextFromDrive.xml"/>
     </fileset>
     
@@ -79,6 +81,10 @@
     <fileset id="siteHtml" dir="${site.dir}">
         <include name="**.html"/>
     </fileset>
+    
+    <pathconvert refid="dataXml" pathsep="${line.separator}" property="dataList">
+        <regexpmapper from="^${project.dir}(.+)" to="\1"/>
+    </pathconvert>
     
     
     <!--Tasks Defs-->

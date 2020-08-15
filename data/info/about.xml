@@ -75,15 +75,20 @@
                     <head>Open Access</head>
                     <p>All of our pages are freely available to anyone with an internet connection and a web browser. We do not charge fees for access or restrict any aspect of our site’s functionality. We link to other open-access resources preferentially. Whenever possible, we supplement what is available from subscription databases by obtaining fresh scans of materials from institutions willing to share their resources with the world and making these scans freely available.</p>
                 </div>
-                <div>
-                    <head>Open-Source</head>
-                    <p>The Winnifred Eaton Archive team makes all of its back-end data and markup available to the public. Curious readers can view the source XML of any document by visiting the Github repository. The WEA also make available two variants of each document’s TEI encoding: the <q>Original</q> XML, which is a lightly modified version of the source XML, and the <q>Standalone</q> XML, which contains all of the standoff entities (people, organizations, bibliographic citations, and taxonomies) and is thus the most amenable for re-use. These TEI files can be downloaded in the <q>Credits and Citations</q> menu on every page under the <q>Download</q> heading.</p>
+                <div xml:id="about_openSourceCode">
+                    <head>Open-Source and Open-Code</head>
+                    <p>The Winnifred Eaton Archive team makes all of its code and data available to the public. All of the code and stylesheets used to create the web application is available via  our <ref target="https://github.com/winnifredeatonarchive/wea_data">Github repository</ref>, which also includes the source data for the project. In keeping with <ref target="https://endings.uvic.ca/">The Endings Project</ref> as well as to ensure that our data is as interoperable with other projects as possible, the WEA makes available multiple versions of the source XML, all of which can be downloaded from the <q>Credits and Citations</q> menu on every page under the <q>Download</q> heading.</p>
+                        
+                        <p>There are three versions:
+                        
+                        <list>
+                            <item>Source XML: The source XML is basically a duplicate of what is in the Github repository and is exactly the same version of the XML encoded by the project. Note that not all documents will contain a source XML file; some documents are created <q>on the fly</q> from larger files during the creation of the <q>Original</q> XML.</item>
+                            <item><q>Original</q> XML: The <q>original</q> XML is a lightly modified version of the source XML. This is a slightly cleaned up version of the source XML with project specific shortcuts resolved and standardized.</item>
+                            <item><q>Standalone</q> XML: The <q>standalone</q> XML is built from the <q>original</q> XML and contains all of the standoff entities (people, organizations, bibliographic citations, and taxonomies) referenced in that document. This means this document is most amenable for re-use. </item>
+                        </list>
+                    </p>
                 </div>
-                
-                <div>
-                    <head>Open-Code</head>
-                    <p>We are an open-code project. All of our code is deposited in <ref target="https://github.com/winnifredeatonarchive/wea_data">GitHub</ref>.</p>
-                </div>
+
                 
                 <div>
                     <head>Transparent Work Practices</head>

@@ -5093,6 +5093,8 @@ Of Clare-Hall in Cambridge.</byline>
                                                 <item>Non-fiction: Autobiography</item>
                                                 <label>wdt:genreNFDedication</label>
                                                 <item>Non-fiction: Dedication</item>
+                                                <label>wdt:genreNFLetter</label>
+                                                <item>Non-fiction: Letter</item>
                                                 <label>wdt:genreNFInterview</label>
                                                 <item>Non-Fiction: Interview</item>
                                                 <label>wdt:genreNFIntroduction</label>
@@ -5233,7 +5235,7 @@ Of Clare-Hall in Cambridge.</byline>
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:genre']"&gt;
- &lt;sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:exhibit']"&gt;
@@ -39490,8 +39492,8 @@ epistemology, methodology and history of
  &lt;sch:let name="att"
   value="if (@ref) then @ref else @who"/&gt;
  &lt;sch:let name="errors"
-  value="for $i in tokenize($att,'\s+') return if (matches($i,'^pers:')) then 
- () else $i"/&gt;
+  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) 
+ then () else $i"/&gt;
  &lt;sch:assert test="empty($errors)"&gt; ERROR: All personography pointers must start with the pers: prefix.&lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>

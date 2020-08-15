@@ -42,7 +42,7 @@
     </target>-->
     
     <target name="createStaticSearch">
-        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="all">
+        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="allButValidate">
             <property name="config" value="../config.xml"/>
             <property name="headless" value="true"/>
         </ant>
@@ -77,7 +77,14 @@
         <ant antfile="code/buildSite.xml"  target="quick" inheritall="false"/>
     </target>
     
+  
+    
     <target name="justXml">
+        <description>target: justXml
+        
+        The justXml targets is the whole site build minus with the facsimiles and media production. So this includes
+        all XML/XHTML generation and validation.
+        </description>
         <ant antfile="code/buildSite.xml" target="justXml" inheritall="false"/>
     </target>
     

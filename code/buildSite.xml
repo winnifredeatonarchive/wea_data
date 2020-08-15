@@ -3,8 +3,7 @@
   
   
   <include file="../buildGlobals.xml"/>
-    
- 
+
     
     <target name="init">
         <delete dir="${products.dir}"/>
@@ -94,12 +93,7 @@
  <target name="createSourceXml">
      <echo message="Creating source XML..."/>
      <copy todir="${source.xml.dir}" flatten="true">
-         <fileset dir="${data.dir}">
-             <include name="**/**.xml"/>
-             <exclude name="documentation/**.xml"/>
-             <exclude name="addTextFromDrive.xml"/>
-             <exclude name="**/addTextFromDrive.xml"/>
-         </fileset>
+         <fileset refid="dataXml"/>
      </copy>
  </target>
     
@@ -177,7 +171,8 @@
                 <include name="**/**.tif"/>
             </fileset>
         </apply>
-
+        
+        <echo file="${site.dir}/info/dataList.txt" message="${dataList}"/>
         
     </target>
     
@@ -241,7 +236,7 @@
     <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails"/>
     
     <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
-    
+        
       
     
 </project>

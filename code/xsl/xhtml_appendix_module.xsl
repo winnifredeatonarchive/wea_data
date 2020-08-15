@@ -241,7 +241,13 @@
     </xsl:template>
     
     <xsl:template match="person" mode="appendix">
-        <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
+        <xsl:try>
+            <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
+            <xsl:catch>
+                <xsl:message terminate="yes">ERROR: Cannot find person <xsl:value-of select="@xml:id"/></xsl:message>
+            </xsl:catch>
+        </xsl:try>
+  
     </xsl:template>
     
     

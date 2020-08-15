@@ -53,8 +53,15 @@
     <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($outDir,'info/images.txt'))"/>
     <xsl:variable name="imageSizeDocLines" select="tokenize($imageSizeDoc,'\n')"/>
     
-    <xsl:variable name="sha" select="wea:getGitSHA()"/>
     
+    <xsl:variable name="dataListLines" select="unparsed-text-lines($outDir || 'info/dataList.txt')"/>
+    
+    
+    <xsl:variable name="sha" as="xs:string">
+        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master') =>  json-to-xml()"/>
+        <xsl:sequence select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
+    </xsl:variable>
+   
     
     <xsl:function name="wea:getFileSize" as="xs:string?">
         <xsl:param name="filename"/>
@@ -83,14 +90,7 @@
         </xsl:if>
             
     </xsl:function>
-    
-    
-    <xsl:function name="wea:getGitSHA" as="xs:string">
-        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master') =>  json-to-xml()"/>
-        <xsl:variable name="sha" select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
-        <xsl:value-of select="$sha"/>
-    </xsl:function>
-    
+
     
     
     <xsl:function name="wea:makeTitleSortKey" as="xs:string">

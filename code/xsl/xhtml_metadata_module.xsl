@@ -87,6 +87,7 @@
     
     <xsl:template name="createCreditsAndCitations">
         <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="currId" select="$root/@xml:id"/>
         <div id="credits" class="additionalInfo expandable">
             <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations<span class="mi">chevron_right</span></div>
             <div id="credits_content" class="content">
@@ -107,12 +108,29 @@
 
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
+                    <xsl:variable name="sourceUri"
+                        select="concat('xml/original/', $currId, '.xml')"/>
                     <xsl:variable name="originalUri" select="concat('xml/original/',ancestor::TEI/@xml:id,'.xml')"/>
-                    <xsl:variable name="standaloneUri" select="concat('xml/standalone/',ancestor::TEI/@xml:id,'.xml')"/>
+                    <xsl:variable name="standaloneUri" 
+                        select="concat('xml/standalone/', $currId ,'.xml')"/>
+                    
+                    <xsl:variable name="thisSourcePath" select="$dataListLines[matches(.,('/' || $currId || '.xml$'))]" as="xs:string"/>
+                    
+                    <xsl:variable name="sourceSize" select="wea:getFileSize($sourceUri)"/>
                     <xsl:variable name="originalSize" select="wea:getFileSize($originalUri)"/>
                     <xsl:variable name="standaloneSize" select="wea:getFileSize($standaloneUri)"/>
+                    
                     <xsl:variable name="tempList">
                         <tei:list>
+                            <xsl:if test="exists($sourceUri)">
+                                <tei:item>
+                                    <tei:ref target="{$sourceUri}">Source XML</tei:ref>
+                                    <xsl:if test="not(empty($sourceSize))">
+                                        <xsl:value-of select="' (' || $sourceSize || ')'"/>
+                                    </xsl:if>
+                                    <xsl:text> [</xsl:text><tei:ref target="https://github.com/winnifredeatonarchive/wea_data/blob/{$sha}{$thisSourcePath}">View on Github</tei:ref><xsl:text>]</xsl:text>
+                                </tei:item>
+                            </xsl:if>
                             <tei:item>
                                 <tei:ref target="{$originalUri}">Original XML</tei:ref>
                                 <xsl:if test="not(empty($originalSize))">
@@ -129,6 +147,7 @@
                     </xsl:variable>
                     <div>
                         <xsl:apply-templates select="$tempList" mode="tei"/>
+                        <div data-el="p">See the <a href="about.html#about_openSourceCode">About</a> page for information about these XML versions.</div>
                     </div>
                 </div>
             </div>

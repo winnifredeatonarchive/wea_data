@@ -441,6 +441,9 @@ function makeToolbarResponsive(){
 function makeNamesResponsive(){
     var names = document.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
+        if (/^https?:/gi.test(n.getAttribute('href'))){
+            return;
+        }
         n.addEventListener('click', showPopup, true);
         n.classList.add('popup');
     });
