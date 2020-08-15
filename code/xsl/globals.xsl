@@ -13,6 +13,7 @@
     <xsl:param name="verbose">false</xsl:param>
     <xsl:param name="docsToBuild"/>
     <xsl:param name="outDir"/>
+    <xsl:param name="version"/>
     
     <xsl:variable name="documentationOutDir" select="'../../products/docs'"/>
     
@@ -55,6 +56,7 @@
     
     
     <xsl:variable name="dataListLines" select="unparsed-text-lines($outDir || 'info/dataList.txt')"/>
+
     
     
     <xsl:variable name="sha" as="xs:string">

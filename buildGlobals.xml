@@ -28,6 +28,7 @@
     
     <property name="xh.validation.dir" value="${data.dir}/xhValidation/"/>
     
+    <loadfile property="version" srcfile="${project.dir}/VERSION"/>
     
     <!--The schema directory-->
     <property name="sch.dir" value="${project.dir}/data/sch"/>

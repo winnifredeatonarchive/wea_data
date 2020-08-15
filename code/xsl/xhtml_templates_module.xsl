@@ -224,11 +224,7 @@
     </xsl:template>
     
     
-    
-    <xsl:template match="seg[@type='currentRevision']" mode="tei">
-        
-    </xsl:template>
-        
+ 
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
            <xsl:call-template name="processAtts">

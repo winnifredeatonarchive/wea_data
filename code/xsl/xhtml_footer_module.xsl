@@ -35,4 +35,8 @@
         <a href="https://github.com/winnifredeatonarchive/wea_data/tree/{$sha}"><xsl:value-of select="substring($sha,1,7)"/></a>
     </xsl:template>
     
+    <xsl:template match="seg[@type='version']" mode="tei">
+        <xsl:value-of select="$version"/>
+    </xsl:template>
+    
 </xsl:stylesheet>

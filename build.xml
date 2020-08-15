@@ -5,6 +5,10 @@
   
     <property name="staticSearchBranch" value="dev"/>
   
+    <target name="echoProps">
+        <echoproperties/>
+    </target>
+  
   <target name="getStaticSearch">
      <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
       <delete dir="${ss.codeDir}"/>
@@ -67,7 +71,7 @@
     
 
     
-    
+
     
     <target name="all" depends="validate, checkFacs, createSite, createDocSite, search"/>
     

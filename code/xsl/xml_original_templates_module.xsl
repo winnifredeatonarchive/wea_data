@@ -184,7 +184,7 @@
                 <xsl:variable name="thisPerson" select="wea:getPerson(.)"/>
                 <respStmt>
                     <xsl:attribute name="xml:id" select="$abstract/ancestor::TEI/@xml:id || '_abstractResp_' || substring-after($thisPtr,'pers:')"/>
-                    <resp>Author of Abstract</resp>
+                    <resp>Author of Headnote</resp>
                     <name ref="{.}"><xsl:value-of select="$thisPerson/persName/reg"/></name>
                 </respStmt>
             </xsl:for-each>
