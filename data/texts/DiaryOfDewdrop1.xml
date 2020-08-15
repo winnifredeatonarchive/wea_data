@@ -7,10 +7,6 @@
          <titleStmt>
             <title>The Diary of Dewdrop</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
@@ -85,6 +81,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">recoded head.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change>
          <change who="pers:SL1" when="2019-05-29" status="published">Made copy edits.</change>

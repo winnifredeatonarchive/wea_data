@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="PlainPig1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="PlainPig1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Plain Pig</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -41,13 +37,15 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-04" status="published">proofread.</change><change who="pers:MC1" when="2020-07-01" status="published">Added note about source.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-04" status="published">proofread.</change>
+         <change who="pers:MC1" when="2020-07-01" status="published">Added note about source.</change>
          <change who="pers:MC1" when="2019-06-08" status="published">proofread.</change>
          <change who="pers:SL1" when="2019-05-15" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl115 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-     <text facs="facs:Plain_Pig">
+   <text facs="facs:Plain_Pig">
       <body>
          <head>Plain Pig</head>
          <opener>
@@ -104,8 +102,7 @@
          <div n="10">
             <head>Now for a Ride</head>
             <p>Now we are all through, and I say: <q>Hurrah, Nellie, here’s where I escape. Come along, and we’ll have a ride before dinner</q>.</p>
-            <p>She stops in her work of scraping her precious pigs’ feet, and gives me a look of half astonishment, half withering scorn. Nellie does not condescend to even reply to my suggestion, but I read in her face her opinion of a woman who will go <q>gallivantin’</q> about on a horse, when there’s real work to be done in a house. So I run up to my room,<note
-               type="editorial" resp="pers:MC1"> New sentence in original.</note> get  out of my greasy duds, and am into a fresh smelling pongee midge, riding britches and coat, pull on my brown leather riding boots, a kid’s tam for my head, and my Indian gaily beaded gauntlets (which one of our squaws——we adjoin an Indian reserve——specially made for me) and am running downstairs in short order, en route through the kitchen, and out through the garden and the barnyard to the corral, where I know Silver Heels awaits me. As I pass through the kitchen, Nellie inquires with elaborate sarcasm:</p>
+            <p>She stops in her work of scraping her precious pigs’ feet, and gives me a look of half astonishment, half withering scorn. Nellie does not condescend to even reply to my suggestion, but I read in her face her opinion of a woman who will go <q>gallivantin’</q> about on a horse, when there’s real work to be done in a house. So I run up to my room,<note type="editorial" resp="pers:MC1"> New sentence in original.</note> get  out of my greasy duds, and am into a fresh smelling pongee midge, riding britches and coat, pull on my brown leather riding boots, a kid’s tam for my head, and my Indian gaily beaded gauntlets (which one of our squaws——we adjoin an Indian reserve——specially made for me) and am running downstairs in short order, en route through the kitchen, and out through the garden and the barnyard to the corral, where I know Silver Heels awaits me. As I pass through the kitchen, Nellie inquires with elaborate sarcasm:</p>
             <p><q>Ain’t you goin’ to give me a hand with them pigs’ feet?</q></p>
             <p><q>I should say I ain’t</q> I laugh back. <q>Throw ‘em out, Nellie</q>.</p>
             <p><q>The best part of the pig!</q> grunts Nellie, <q>I’d like to see me doin’ anything so foolish and wasteful</q>.</p>
@@ -116,10 +113,8 @@
            
          <div n="11">
             <head>Doing Nothing</head>
-            <p>Doing nothing! I am overcome with indignation. I who have helped to put down about 400 lbs of pig! I am so cross with Nellie that I cinch Silver Heels much too tightly, and he turns about restlessly and noses towards my shoulder. As I throw my leg——I suppose one ought to say <q>limb</q> if one follows the standards of a Nellie——across my horse’s bonny back, and I come out through that barnyard at a neat clip. Before me stretches a wide expanse of rolling meadows, fragrant of new mown hay——for they are still haying, though it is the end of October. Thus it is in Sunny Alberta. I face the beginning of a glorious sunset, lingering in splendor behind that skyline of Rocky mountains. There is a clean, cold nip in the air, a stillness and freshness and fragrance that both charms and exhilarates. As I canter across the country, I forget all about the tiresome day in the hot kitchen, and the mountains and billows of pig. Our dog is leaping around us, jumping up to tease Silver Heels, and I tell him to be gone<note
-               type="editorial" resp="pers:MC1"> <q>be</q> and <q>gone</q> are one word in original.</note> and bring home the milk cows, and I point with my quirt to where a bunch of cattle are grazing on a hill slope. You should see our Patsy then. He is off across meadow and field at a breathless scamper. Now he is on the hill side. That little dog barks at the heels of three of that herd of 20 or 25 head, picking and bunching the milk cows from the rest of the herd and driving them down to the milk shed.</p>
-            <p><q>Good old Pat! Nice old Pat!</q> I call at him in reward, but only the wagging tail and lolling tongue and a yelping bark of that small dog reveals that he hears me. Pat is at work, and not to be beguiled by the fair words of a mere woman. Those cows must be taken and driven into the cowshed, and then Pat has a job to close that door with his nose, a trick taught to him by my twelve-year-old boy. Presently as I turn into the path that leads through our woods down to the Ghost River, I hear panting behind me, and lo! Pat, his job done, breathless from his frantic run to catch up with us, yelps for approval. What a dog! A little mongrel cattle cur, with an ugly, shaggy coat, and a comical wise head with one ear everlasting cocked up and two bright intelligent eyes that can fix themselves frightfully upon yours, and makes you think of <q>Alice, Bent Bolt, who wept with delight when you gave her a smile, and trembled with fear at your frown</q>. <note
-               type="editorial" resp="pers:MC1"> A quotation from Thomas Dunn English’s poem <q>Ben Bolt</q></note></p>
+            <p>Doing nothing! I am overcome with indignation. I who have helped to put down about 400 lbs of pig! I am so cross with Nellie that I cinch Silver Heels much too tightly, and he turns about restlessly and noses towards my shoulder. As I throw my leg——I suppose one ought to say <q>limb</q> if one follows the standards of a Nellie——across my horse’s bonny back, and I come out through that barnyard at a neat clip. Before me stretches a wide expanse of rolling meadows, fragrant of new mown hay——for they are still haying, though it is the end of October. Thus it is in Sunny Alberta. I face the beginning of a glorious sunset, lingering in splendor behind that skyline of Rocky mountains. There is a clean, cold nip in the air, a stillness and freshness and fragrance that both charms and exhilarates. As I canter across the country, I forget all about the tiresome day in the hot kitchen, and the mountains and billows of pig. Our dog is leaping around us, jumping up to tease Silver Heels, and I tell him to be gone<note type="editorial" resp="pers:MC1"> <q>be</q> and <q>gone</q> are one word in original.</note> and bring home the milk cows, and I point with my quirt to where a bunch of cattle are grazing on a hill slope. You should see our Patsy then. He is off across meadow and field at a breathless scamper. Now he is on the hill side. That little dog barks at the heels of three of that herd of 20 or 25 head, picking and bunching the milk cows from the rest of the herd and driving them down to the milk shed.</p>
+            <p><q>Good old Pat! Nice old Pat!</q> I call at him in reward, but only the wagging tail and lolling tongue and a yelping bark of that small dog reveals that he hears me. Pat is at work, and not to be beguiled by the fair words of a mere woman. Those cows must be taken and driven into the cowshed, and then Pat has a job to close that door with his nose, a trick taught to him by my twelve-year-old boy. Presently as I turn into the path that leads through our woods down to the Ghost River, I hear panting behind me, and lo! Pat, his job done, breathless from his frantic run to catch up with us, yelps for approval. What a dog! A little mongrel cattle cur, with an ugly, shaggy coat, and a comical wise head with one ear everlasting cocked up and two bright intelligent eyes that can fix themselves frightfully upon yours, and makes you think of <q>Alice, Bent Bolt, who wept with delight when you gave her a smile, and trembled with fear at your frown</q>. <note type="editorial" resp="pers:MC1"> A quotation from Thomas Dunn English’s poem <q>Ben Bolt</q></note></p>
            </div> 
          
          <div n="12">

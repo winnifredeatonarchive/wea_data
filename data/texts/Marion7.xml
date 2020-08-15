@@ -8,10 +8,6 @@
             <title>Marion (Part 6)</title>
             <title type="sub">The Story of an Artist’s Model</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
@@ -38,8 +34,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl79 using XSLT.</change>
+         <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl79 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Marion6" prev="doc:Marion6" next="doc:Marion8">

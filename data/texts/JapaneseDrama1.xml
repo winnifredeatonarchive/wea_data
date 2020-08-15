@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseDrama1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapaneseDrama1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Japanese Drama and the Actor</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
@@ -41,6 +37,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-05-25" status="published">Proofread.</change>
          <change who="pers:SB2" when="2020-05-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-05">Added facs and readied for proof.</change>

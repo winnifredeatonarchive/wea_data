@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TwoConverts1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TwoConverts1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Two Converts</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -41,6 +37,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-05-25" status="published">final proofread.</change>
          <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl203 using XSLT.</change>

@@ -6,10 +6,6 @@
       <fileDesc>
          <titleStmt>
             <title>A Cottage in Matsushima</title>
-         	<respStmt>
-         		<resp>Author</resp>
-         		<name ref="pers:WE1">Winnifred Eaton</name>
-         	</respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -41,8 +37,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-      	<change who="pers:MC1" when="2020-05-29" status="published">final edits</change><change who="pers:MC1" when="2019-05-15" status="published">final edits</change>
-      	<change who="pers:JT1" when="2019-04-30" status="readyForProof">readied for proofing</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-05-29" status="published">final edits</change>
+         <change who="pers:MC1" when="2019-05-15" status="published">final edits</change>
+         <change who="pers:JT1" when="2019-04-30" status="readyForProof">readied for proofing</change>
          <change who="pers:JT1" when="2019-04-30" status="inProgress">Encoded and imported transcription.</change>
          <change who="pers:JT1" when="2019-04-11">Created file from bibliography entry bibl3 using XSLT.</change>
       </revisionDesc>

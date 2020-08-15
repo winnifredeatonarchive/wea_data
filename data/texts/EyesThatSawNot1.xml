@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="EyesThatSawNot1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="EyesThatSawNot1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Eyes That Saw Not</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -45,7 +41,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">encoded Babcock.</change><change who="pers:MC1" when="2020-06-21" status="published">Proofread.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">encoded Babcock.</change>
+         <change who="pers:MC1" when="2020-06-21" status="published">Proofread.</change>
          <change who="pers:SB2" when="2020-06-19" status="inProgress">Proofread.</change>
          <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
@@ -57,7 +55,7 @@
       <body>
          <head>Eyes That Saw Not</head>
          <opener>
-            <byline>By <name ref="pers:WE1">Onoto Watanna</name> and Bertrand W. Babcock<name ref="pers:BB1"></name></byline>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name> and Bertrand W. Babcock<name ref="pers:BB1"/></byline>
          </opener>
          <div type="content">
             <div>

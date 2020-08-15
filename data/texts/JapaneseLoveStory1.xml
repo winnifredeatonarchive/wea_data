@@ -7,10 +7,6 @@
          <titleStmt>
             <title>A Japanese Love Story</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
@@ -31,7 +27,8 @@
             <p>Publication Information</p>
          </publicationStmt>
          <notesStmt>
-            <note>Facsimile retrieved from original at University of Calgary, Winnifred Eaton Reeve Fonds</note></notesStmt>
+            <note>Facsimile retrieved from original at University of Calgary, Winnifred Eaton Reeve Fonds</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:11"/>
          </sourceDesc>
@@ -45,7 +42,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change><change who="pers:MC1" when="2020-04-18" status="published">Made some changes to fill in gaps at end by reading against Japanese Girl text recently found.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change>
+         <change who="pers:MC1" when="2020-04-18" status="published">Made some changes to fill in gaps at end by reading against Japanese Girl text recently found.</change>
          <change who="pers:MC1" when="2019-05-22" status="published">Proofread.</change>
          <change who="pers:SL1" when="2019-05-09" status="readyForProof">Edited trasncriber, copy editor, proofreader and encoder; updated status to readyForProof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl11 using XSLT.</change>

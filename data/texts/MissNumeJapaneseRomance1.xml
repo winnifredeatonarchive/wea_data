@@ -7,10 +7,6 @@
          <titleStmt>
             <title>Miss Nume of Japan: A Japanese Romance</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:DC1">Daisy Couture</name>
             </respStmt>
@@ -22,7 +18,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt><note>Transcription retrieved from Project Gutenberg</note></notesStmt>
+         <notesStmt>
+            <note>Transcription retrieved from Project Gutenberg</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:91"/>
          </sourceDesc>
@@ -35,11 +33,14 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:DC1" status="published"  when="2019-08-06">Proofreading.</change>   <change who="pers:DC1" status="published"  when="2019-08-06">Adding RespStatements.</change> <change who="pers:DC1" status="published"  when="2019-08-06">Encoded paratext.</change>
-         <change who="pers:DC1" status="inProgress"  when="2019-08-05">Proofreading, encoding foreign words.</change>
-         <change who="pers:DC1" status="inProgress"  when="2019-07-29">Proofreading.</change>
-         <change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="inProgress"  when="2019-04-11">Created file from bibliography entry bibl91 using XSLT.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:DC1" status="published" when="2019-08-06">Proofreading.</change>
+         <change who="pers:DC1" status="published" when="2019-08-06">Adding RespStatements.</change>
+         <change who="pers:DC1" status="published" when="2019-08-06">Encoded paratext.</change>
+         <change who="pers:DC1" status="inProgress" when="2019-08-05">Proofreading, encoding foreign words.</change>
+         <change who="pers:DC1" status="inProgress" when="2019-07-29">Proofreading.</change>
+         <change who="pers:SL1" status="inProgress" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="inProgress" when="2019-04-11">Created file from bibliography entry bibl91 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Nume">
@@ -4917,5 +4918,4 @@ and Tom Ballard had been married for a month past!</p>
          </div>
       </body>
    </text>
-   
 </TEI>

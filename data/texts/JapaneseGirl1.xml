@@ -7,10 +7,6 @@
          <titleStmt>
             <title>A Japanese Girl</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
@@ -45,6 +41,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-08-13" status="published">Added paratext code.</change>
          <change who="pers:MC1" when="2020-08-13" status="published">note about source.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">changed note.</change>

@@ -7,10 +7,6 @@
          <titleStmt>
             <title>Miss Perfume</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
@@ -69,6 +65,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2019-07-01" status="published">Final proof.</change>
          <change who="pers:SL1" when="2019-06-18" status="readyForProof">Tagged foreign words, added divs, and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl92 using XSLT.</change>

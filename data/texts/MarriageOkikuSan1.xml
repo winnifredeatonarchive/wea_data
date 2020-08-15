@@ -7,14 +7,6 @@
          <titleStmt>
             <title>The Marriage of Okiku-San</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
-               <resp>Illustrator</resp>
-               <name>Taka Spiro</name>
-            </respStmt>
-            <respStmt>
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
@@ -81,6 +73,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">added illustrator.</change>
          <change who="pers:MC1" when="2019-07-01" status="published">Proofed.</change>
          <change who="pers:SL1" when="2019-06-19" status="readyForProof">Added facsimile; readied for proof.</change>

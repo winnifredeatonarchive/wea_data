@@ -7,10 +7,6 @@
          <titleStmt>
             <title>An Unexpected Grandchild</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
@@ -73,6 +69,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-07-21" status="published">Made minor fixes.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
          <change who="pers:MC1" when="2019-06-17" status="published">Final proofread.</change>

@@ -7,10 +7,6 @@
          <titleStmt>
             <title>The Diary of Delia (Part 4)</title>
             <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
@@ -37,8 +33,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl145 using XSLT.</change>
+         <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl145 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:DiaryOfDelia4" prev="doc:DiaryOfDelia3">

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MarriageOkikuSan2">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MarriageOkikuSan2">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Marriage of Okiku-San (Reprint)</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
@@ -37,7 +33,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">proofread.</change><change who="pers:SB2" when="2020-05-28" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">proofread.</change>
+         <change who="pers:SB2" when="2020-05-28" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">added facs, notes stmt and cat refs.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl171 using XSLT.</change>
       </revisionDesc>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="OchikaSan1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="OchikaSan1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Ochika-San</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
-               <resp>Illustrator</resp>
-               <name>Genijiro Yeto</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -45,13 +37,15 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05"  status="published">added illsutrator.</change><change who="pers:MC1" when="2019-07-03"  status="published">proofed.</change>
-         <change who="pers:SL1" when="2019-06-19"  status="readyForProof">Readied for proof.</change>
-         <change who="pers:SL1" when="2019-05-03"  status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">added illsutrator.</change>
+         <change who="pers:MC1" when="2019-07-03" status="published">proofed.</change>
+         <change who="pers:SL1" when="2019-06-19" status="readyForProof">Readied for proof.</change>
+         <change who="pers:SL1" when="2019-05-03" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" when="2019-04-11">Created file from bibliography entry bibl102 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-           <text facs="facs:Ochika-San">
+   <text facs="facs:Ochika-San">
     <pb n="20"/>
       <body>
          <div>

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JohnnysCalf1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JohnnysCalf1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Johnny’s Calf and Pa’s Cow</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:KI1">Ken Ip</name>
@@ -48,13 +44,19 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-14" status="published"> Added draft headnote.</change><change who="pers:MC1" when="2020-08-05" status="published"> Added illustrator.</change><change who="pers:MC1" when="2020-08-13" status="published"> Added draft headnote.</change><change who="pers:MC1" when="2020-08-05" status="published"> Added illustrator.</change><change who="pers:MC1" when="2020-07-01" status="published"> Added note about source.</change><change who="pers:MC1" when="2019-07-15" status="published"> proofed.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-14" status="published"> Added draft headnote.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published"> Added illustrator.</change>
+         <change who="pers:MC1" when="2020-08-13" status="published"> Added draft headnote.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published"> Added illustrator.</change>
+         <change who="pers:MC1" when="2020-07-01" status="published"> Added note about source.</change>
+         <change who="pers:MC1" when="2019-07-15" status="published"> proofed.</change>
          <change who="pers:SL1" when="2019-05-16" status="readyForProof">Readied for proof and added unicode ellipses in place of trailing punctuation.</change>
          <change who="pers:SL1" when="2019-05-16" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl66 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-     <text facs="facs:Johnnys_Calf_and_Pas_Cow">
+   <text facs="facs:Johnnys_Calf_and_Pas_Cow">
       <body>
          <div>
             <head>Johnny’s Calf and Pa’s Cow</head>

@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleJournalMissSpring1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleJournalMissSpring1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Little Journal of Miss Spring</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
-            <respStmt>
-               <resp>Illustrator</resp>
-               <name ref="pers:MM1">M. McKinlay</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
@@ -45,6 +37,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
          <change who="pers:SB2" when="2020-06-22" status="published">Added illustrator tag.</change>
          <change who="pers:MC1" when="2020-06-21" status="published">proofread.</change>

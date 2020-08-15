@@ -2,14 +2,10 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="PoorDevil1">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>A Poor Devil</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name ref="pers:WE1">Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:MC1">Mary Chapman</name>
@@ -26,32 +22,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-            <notesStmt>
-               <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
-            </notesStmt>
-        
-         
+         <notesStmt>
+            <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:22"/>
          </sourceDesc>
-         
       </fileDesc>
-     <profileDesc>
-        <textClass>
-           <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
-           <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
-           <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
-        </textClass>
-     </profileDesc>
-     <revisionDesc status="published">
-        <change who="pers:MC1" when="2020-06-30" status="published">Added note re source.</change>
-        <change who="pers:SL1" when="2019-05-08" status="published">Added MC final edits and changed status to published.</change>
-        <change who="pers:JT1" when="2019-05-05" status="readyForProof">Fixed up bibls and changed status for readyForProof.</change>
+      <profileDesc>
+         <textClass>
+            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+            <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">Added note re source.</change>
+         <change who="pers:SL1" when="2019-05-08" status="published">Added MC final edits and changed status to published.</change>
+         <change who="pers:JT1" when="2019-05-05" status="readyForProof">Fixed up bibls and changed status for readyForProof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl22 using XSLT.</change>
-        <change when="2019-02-07" who="pers:JT1">Created file.</change>
-     </revisionDesc>
-  </teiHeader>
-  <text facs="facs:Poor_Devil">
+         <change when="2019-02-07" who="pers:JT1">Created file.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text facs="facs:Poor_Devil">
      <pb n="1"/>
       <body>
          <head>A Poor Devil</head>

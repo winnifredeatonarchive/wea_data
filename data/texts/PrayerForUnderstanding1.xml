@@ -2,14 +2,10 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="PrayerForUnderstanding1">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>A Prayer for Understanding</title>
-            <respStmt>
-               <resp>Author</resp>
-               <name>Winnifred Eaton</name>
-            </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:KI1"/>
@@ -33,23 +29,24 @@
             <bibl copyOf="bibl:23"/>
          </sourceDesc>
       </fileDesc>
-     <profileDesc>
-        <textClass>
-           <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
-           <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
-           <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
-        </textClass>
-     </profileDesc>
-     <revisionDesc status="published">
-        <change who="pers:SL1" when="2020-02-12" status="published"> adjusted alignment </change>
-        <change who="pers:MC1" when="2019-07-28" status="published"> new facs </change>
-        <change who="pers:MC1" when="2019-05-15" status="published"> final edits </change>
-           <change who="pers:SL1" when="2019-05-08" status="readyForProof">Updated facsimile source and changed status to readyForProof</change> 
-        <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl23 using XSLT.</change>
-        <change when="2019-02-14" who="pers:SL1">Created file.</change>
-     </revisionDesc>
-  </teiHeader>
-  <text facs="facs:Prayer_For_Understanding">
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
+            <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
+            <catRef scheme="wdt:genre" target="wdt:genrePoem"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:SL1" when="2020-02-12" status="published"> adjusted alignment </change>
+         <change who="pers:MC1" when="2019-07-28" status="published"> new facs </change>
+         <change who="pers:MC1" when="2019-05-15" status="published"> final edits </change>
+         <change who="pers:SL1" when="2019-05-08" status="readyForProof">Updated facsimile source and changed status to readyForProof</change>
+         <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl23 using XSLT.</change>
+         <change when="2019-02-14" who="pers:SL1">Created file.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text facs="facs:Prayer_For_Understanding">
       <body>
          <head>A Prayer for Understanding</head>
          
