@@ -13,9 +13,10 @@
     <xd:doc scope="stylesheet">
         <xd:desc>
             <xd:p>Author: Joey Takeda</xd:p>
-            <xd:p>Date: April 2019</xd:p>
+            <xd:p>Date: August 2020</xd:p>
             <xd:p>This stylesheet is a utility transformation to fix up the respStmts from the 
                 texts converted from P4.</xd:p>
+            <xd:p>RUN ON AUGUST 15, 2020. DO NOT RUN AGAIN.</xd:p>
         </xd:desc>
     </xd:doc>
     
