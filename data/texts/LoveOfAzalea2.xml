@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea2">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea2">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -28,31 +28,28 @@
             <bibl copyOf="bibl:164"/>
          </sourceDesc>
       </fileDesc>
-         <profileDesc>
-               <textClass>
-                  <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
-         </profileDesc>
-         <revisionDesc status="published">
-            <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change><change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change><change who="pers:MC1" when="2019-07-03" status="published">Proofed.</change><change who="pers:SL1" when="2019-06-25" status="readyForProof">Readied for proof.</change>
-               <change who="pers:SL1" when="2019-06-25" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
-               <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl165 using XSLT.</change>
-         </revisionDesc>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change><change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change><change who="pers:MC1" when="2019-07-03" status="published">Proofed.</change><change who="pers:SL1" when="2019-06-25" status="readyForProof">Readied for proof.</change>
+         <change who="pers:SL1" when="2019-06-25" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl165 using XSLT.</change>
+      </revisionDesc>
    </teiHeader>
-           <text facs="facs:LoveOfAzalea2" prev="doc:LoveOfAzalea1" next="doc:LoveOfAzalea3">
-              <pb n="65"/>
-              <body>
-                 <head>The Love of Azalea</head>
-                 <opener>
-                    <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
-                    <note>In Three Parts—Part II</note>
-                 </opener>
-                 
-                 
+   <text facs="facs:LoveOfAzalea2" prev="doc:LoveOfAzalea1" next="doc:LoveOfAzalea3">
+      <pb n="65"/>
+      <body>
+         <head>The Love of Azalea</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <note>In Three Parts—Part II</note>
+         </opener>  
    <div>
-
             <p>She ran all the way home. She wanted her step-mother’s consent as quickly as possible, so that she might hasten back to the minister.</p>
             <p>Her breathless words astounded Madame Yamada.</p>
             <p><q>That barbarous, beautiful priest wishes to marry me</q>, she announced in one breath.</p>
@@ -356,11 +353,9 @@
              <p>Physical strength crept back into her wasted body, bringing health, too, to her bewildered mind. Memory—-burning, invincible, accusing—-awoke, told her that she was about to become a thing more outcast than ever, because she would be guilty of that sin the most unpardonable of any a woman of his (her husband’s) people could commit. She could not delude herself with the fancy that she would be the wife of Matsuda Isami, whatever the law might be, for she had pledged an eternal faith to her true husband and the child was the connecting link between them. Now as from day to day she waited in fear for the time to come when Matsuda Isami should claim her promise, a promise she dared not break if she would keep her child, there flooded back upon her the teachings of her husband. Now at last she knew she believed in the faith of the Kirishitan, and before that faith she stood convicted. She did not attempt to justify her actions by her sufferings. There was no justifica<pb n="79"/>tion in the creed of his religion. His last words to her had been: <q>Have faith always. Be true to me, my love, and to yourself. I will return</q>. Yet how had he kept his word to her. There had not come to her one word or sign since his departure. If he had sent word to her the great waters that divided them must have swallowed it up. There was nothing left to her now save the child, and for his sake she would sell herself and become wife to Matsuda Isami.</p>
             
              </div>
-              
-              <div>
-                 
-              <note>(To be concluded)</note>
+
+              <fw type="continued" place="center">(To be concluded)</fw>
     
-         </div>
-         </text>
-     </TEI>
+      </body>
+   </text>
+ </TEI>
