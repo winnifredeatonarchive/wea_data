@@ -26,21 +26,31 @@
                <resp>Proofreader</resp>
                <name ref="pers:MC1">Mary Chapman</name>
             </respStmt>
-
             <respStmt>
-               <resp notAfter="2019">Creation of machine-readable version</resp>
-               <name>Jean Lee Cole</name>
+               <resp notAfter="2017">Original Creator of Machine-Readable Version</resp>
+               <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
-               <resp notAfter="2019">Conversion to TEI.2-conformant markup</resp>
-               <name>University of Virginia Library Electronic Text Center</name>
+               <resp notAfter="2017">Original Creator of TEI Text</resp>
+               <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>
             </respStmt>
             <respStmt>
-               <resp>Conversion to P5 conformant markup:</resp>
-               <name>Joey Takeda</name>
+               <resp when="2008-01">Original Migrator</resp>
+               <name ref="pers:GM1">Greg Murray</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2007-09">Original Migrator</resp>
+               <name ref="pers:EG1">Ethan Gruber</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2005-07">Original Corrector</resp>
+               <name ref="pers:JC2">John Ivor Carlson</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2004-06">Original Corrector</resp>
+               <name ref="pers:JS1">Jolie Sheffer</name>
             </respStmt>
          </titleStmt>
-
          <publicationStmt>
             <p>Publication information</p>
             <!--
@@ -57,12 +67,12 @@ Publicly accessible
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065173">https://hdl.handle.net/2027/uc1.b3065173</ref>.</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:182"/>
          </sourceDesc>
       </fileDesc>
-
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
@@ -71,7 +81,8 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-05-21" status="published">additional proofreading.</change><change who="pers:MC1" when="2019-07-15" status="published">final proof.</change>
+         <change who="pers:MC1" when="2020-05-21" status="published">additional proofreading.</change>
+         <change who="pers:MC1" when="2019-07-15" status="published">final proof.</change>
          <change who="pers:SL1" when="2019-07-08" status="readyForProof">Added genre, notes stmt, and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl182 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatPotp. Old filename: Pot_of_Paint.xml.)</change>
@@ -81,8 +92,6 @@ Publicly accessible
          <change when="2004-06">Jolie Sheffer, Electronic Text Center: corrector. Added TEI header and tags. Added pseudonym.</change>
       </revisionDesc>
    </teiHeader>
-
-
    <text facs="facs:PotOfPaint">
       <pb n="414"/>
       <body>
@@ -194,7 +203,7 @@ Publicly accessible
             <p>Then Moonshine conceived a plot by which she would put her beauty to the test. Gowning herself in an exquisite dove-colored <foreign xml:lang="ja">kimono</foreign>, tied about with a lavender <foreign xml:lang="ja">obi</foreign>, with a little purple parasol shading her bare head, the hair of which was dressed after the prevailing Japanese fashion, and being careful to put no paint or powder whatever on her face, she went down to that quarter of Nagasaki where she had previously lived, hoping to encounter some of her old friends, who would surely enlighten her as to the truth.</p>
             <p>She had excused herself from accompanying her husband on a little business trip by wrapping her head up in wet linen in the morning and pleading a violent headache.</p>
             <p>At first, when Moonshine left the hotel, her guilty heart beat rapidly with the excitement and fear of her proposed scheme. She felt like a naughty child running away from home. But gradually, as the flying feet of her runner put a great distance between her and the hotel the fear vanished from her; she even forgot the fact that she had come out in Japanese attire and with her face untouched by any beauty save that of nature. A sense of delight possessed her as they neared the old familiar quarter of the town where she had spent nearly her entire life. She smiled with delight over her stolen holiday.</p>
-            <p>In a little street, gay with painted signboards and posters and quaint goods displayed in front of shops, Moonshine alighted from her <foreign xml:lang= "ja">jinrikisha</foreign>, and bidding her man not to lose sight of her, she started down the street, stopping at several stores to make small purchases for herself. She was bending over a silk merchant’s counter, examining the quality of a rich <foreign xml:lang="ja">obi</foreign>, when the titter of familiar, silvery laughter caused her to look up.</p>
+            <p>In a little street, gay with painted signboards and posters and quaint goods displayed in front of shops, Moonshine alighted from her <foreign xml:lang="ja">jinrikisha</foreign>, and bidding her man not to lose sight of her, she started down the street, stopping at several stores to make small purchases for herself. She was bending over a silk merchant’s counter, examining the quality of a rich <foreign xml:lang="ja">obi</foreign>, when the titter of familiar, silvery laughter caused her to look up.</p>
             <p>Two young Japanese girls were standing near her, their little almond eyes sparking with fun over the tops of their fans, and undisguisedly and openly laughing at the pale Moonshine.</p>
             <p>The girl took a couple of little steps toward them, opening her own little fan with a whirl.</p>
             <p><q>Ah, good morning, Perfume and Spring</q>, she said in soft Japanese. <q>Pray, is your honorable health good?</q></p>

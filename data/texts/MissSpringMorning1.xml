@@ -6,7 +6,6 @@
       <fileDesc>
          <titleStmt>
             <title>Miss Spring-Morning</title>
-
             <respStmt>
                <resp>Author</resp>
                <name ref="pers:WE1">Winnifred Eaton</name>
@@ -16,19 +15,30 @@
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
-               <resp notAfter="2019">Creation of machine-readable version</resp>
-               <name>Cole, Jean Lee</name>
+               <resp notAfter="2017">Original Creator of Machine-Readable Version</resp>
+               <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
-               <resp notAfter="2019">Conversion to TEI.2-conformant markup</resp>
-               <name>University of Virginia Library Electronic Text Center</name>
+               <resp notAfter="2017">Original Creator of TEI Text</resp>
+               <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>
             </respStmt>
             <respStmt>
-               <resp>Conversion to P5 conformant markup:</resp>
-               <name>Joey Takeda</name>
+               <resp when="2008-01">Original Migrator</resp>
+               <name ref="pers:GM1">Greg Murray</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2007-09">Original Migrator</resp>
+               <name ref="pers:EG1">Ethan Gruber</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2005-07">Original Corrector</resp>
+               <name ref="pers:JC2">John Ivor Carlson</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2004-06">Original Corrector</resp>
+               <name ref="pers:JS1">Jolie Sheffer</name>
             </respStmt>
          </titleStmt>
-
          <publicationStmt>
             <p>Publication information</p>
             <!--
@@ -45,13 +55,12 @@ Publicly accessible
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Library of Congress</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
          </notesStmt>
-
          <sourceDesc>
             <bibl copyOf="bibl:93"/>
          </sourceDesc>
       </fileDesc>
-
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
@@ -60,7 +69,14 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">added author.</change><change who="pers:MC1" when="2020-07-08" status="published">proofread.</change><change who="pers:MC1" when="2020-07-02" status="published">changed genre.</change><change who="pers:MC1" when="2020-07-02" status="published">Added note about source.</change><change who="pers:MC1" when="2020-05-26" status="published">proofreading to line 934.</change><change who="pers:MC1" when="2020-05-26" status="published">making milestones into paragraph breaks.</change><change who="pers:MC1" when="2020-05-25" status="published">proofread to line 693.</change><change who="pers:MC1" when="2019-08-29" status="published">Directed to facs.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">added author.</change>
+         <change who="pers:MC1" when="2020-07-08" status="published">proofread.</change>
+         <change who="pers:MC1" when="2020-07-02" status="published">changed genre.</change>
+         <change who="pers:MC1" when="2020-07-02" status="published">Added note about source.</change>
+         <change who="pers:MC1" when="2020-05-26" status="published">proofreading to line 934.</change>
+         <change who="pers:MC1" when="2020-05-26" status="published">making milestones into paragraph breaks.</change>
+         <change who="pers:MC1" when="2020-05-25" status="published">proofread to line 693.</change>
+         <change who="pers:MC1" when="2019-08-29" status="published">Directed to facs.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl93 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatSpmo. Old filename: Miss_Spring_Morning.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -69,7 +85,7 @@ Publicly accessible
          <change when="2004-06">Jolie Sheffer, Electronic Text Center: corrector. Added TEI header and tags.</change>
       </revisionDesc>
    </teiHeader>
-      <text facs="facs:Miss_Spring_Morning">
+   <text facs="facs:Miss_Spring_Morning">
       <pb n="666"/>
       <body>
          <head>Miss Spring Morning</head>
@@ -262,7 +278,7 @@ neck and three strings.</note> and its accompanying drum kept constantly twangin
             <p>After a time, she said with forced calmness:</p>
             <p><q>I dare say it has not occurred to you that these foreign devils are taking advantage of your youth and ignorance. The amount they pay you is not enough</q>.</p>
             <p><q>But</q>, cried the girl, surprised and hurt, <q>it is more than twice what many girls receive for similar employment. And the work is pleasant. It is easy to serve those who are kind</q>.</p>
-            <p><q>You talk the nonsense of a child--you who are married to a soldier of <foreign xml:lang="ja">Tenshi-sama</foreign></q>,> said her mother sternly. <q>We do not serve foreign devils for the same money we would our own folk. It’s not merely payment for our labor, but payment for the degradation of serving those--beneath us! Pah--cheap--vulgar barbarians! Would you labor as the slave of the esteemed monkey-man?</q></p>
+            <p><q>You talk the nonsense of a child--you who are married to a soldier of <foreign xml:lang="ja">Tenshi-sama</foreign></q>,&gt; said her mother sternly. <q>We do not serve foreign devils for the same money we would our own folk. It’s not merely payment for our labor, but payment for the degradation of serving those--beneath us! Pah--cheap--vulgar barbarians! Would you labor as the slave of the esteemed monkey-man?</q></p>
             <p><q>I was glad</q>, faltered the girl, <q>to find employment of any kind. We cannot starve</q>.</p>
             <p><q>Oh, it is not likely we will starve</q>, said her mother-in-law. <q>I have still a little of the marriage-gift money left for our sustenance; but very shortly it too will be gone. Now there are several things for you to do--many ways to make an honest livelihood. That’s right, look at me, daughter-in-law. Well, I have something on my mind</q>.</p>
             <p><q>Yes? Do tell me what it is. You do not know how anxious I am to serve you</q>, said Spring-morning gently.</p>
@@ -757,7 +773,7 @@ neck and three strings.</note> and its accompanying drum kept constantly twangin
             <p><q>I don’t know what to say, Jamison; but, perhaps, it would be best after all for your mother to come with me. I am alone, as you know, and I shall be glad to have her. Maybe, we could go away together somewhere, for a little while, till the excitement is over. See how agitated she is--all upset. And you arrange for Spring-morning to go somewhere else, until your mother is able to bear it better</q>.</p>
             <p>Mrs. Tyrrell made a scornful sound of dissent, implying that such a time could never come.</p>
             <p><q>As you wish, then</q>, said the young man, a trifle surlily, and added after a moment: <q>Of course you know what this will mean, then--Mother’s leaving my house like this. I don’t propose to subject Spring-morning to the slightest criticism</q>. (His mother’s lip turned in scorn.) <q>And so we won’t wait, as I planned to do. I’ll take her to-night with me to Father Daly</q>.</p>
-            <p></p>
+            <p/>
             <p>Edith said nothing to this. She was assisting Mrs. Tyrrell with her coat and hat, and had deftly packed a few necessary articles in a grip. Jamison, thus ignored, strode agitatedly up and down the room, muttering to himself incoherent exclamations of anger and protest. He made another effort to appeal to his mother:</p>
             <p><q>Now look here, Mother, you can’t go like this. You--</q></p>
             <p><q>Are you ready, Edith?</q> inquired Mrs. Tyrrell with apparent deadly calmness.</p>
@@ -819,7 +835,7 @@ neck and three strings.</note> and its accompanying drum kept constantly twangin
             <p><q>What else could I do?</q> he inquired jocularly.</p>
             <p><q>Thas true</q>, she said mournfully. <q>You—-you jos’ a foreign mister—-liddle while ad Japan. Tangs!</q></p>
             <p><q>Well, I like that!</q> he laughed. <q>Is that all the thanks I’m to have then?</q></p>
-            <p></p>
+            <p/>
             <p>She stared for a moment sadly at the rueful young face of her husband, and then her eyes became enlarged, and as she spoke her voice throbbed with some inner fervor that moved her.</p>
             <p><q>Sup—pose you Japanese hosban! Oh! Glorious then you do! Yaes. You so <emph>big</emph>-—so grade and so brave. You mek one big soldier for Mikado. Kill mebbe one hundled Lussian soldier. How then your wife <emph>adore</emph> you, jus’ <pb n="705"/> same’s you <foreign xml:lang="ja">HAchiman</foreign> those terrible God of War!</q></p>
             <p>Jamison’s rueful amazement turned to mirth.</p>
@@ -947,7 +963,7 @@ neck and three strings.</note> and its accompanying drum kept constantly twangin
             <p>The maid, still on her knees, then announced in a placid, sing-song voice, that: <q>Okusama long way gone away last night</q>.</p>
             <p>As though unaware of the electrical effect of her words, she added:</p>
             <p><pb n="710"/>      <q>Okusama say, excellency know allee ‘bout same. No need humble one mek excuse</q>.</p>
-            <p></p>
+            <p/>
             <p>Even after Ume had picked up her broom and pattered stolidly across the floor, Jamison Tyrrell found himself unable to arouse himself from the sudden condition of shock. It seemed as if his mind had, without the slightest further explanation, grasped at the actual facts of the case. His wife had simply gone—Spring-morning had left him. He had failed to make her happy, and she was gone!</p>
             <p>The mere statement of the maid brought out from him not a single ejaculation or question. Slowly, his mind, so dull and slow it seemed this morning, set to work to recall the various acts of his wife lately—her unhappy looks—her unexpected tears, her piteous pleas that he would forgive her <q>mebbe ad those udder life</q>.</p>
             <p>When finally he aroused himself from the stupor which had seized him at the maid’s words, he rose slowly to his feet, though his knees felt weak as those of one long ill. He walked unsteadily toward the stairs and found his way to their room. He examined her bed and saw it had not been slept upon. It was strange he had not noticed this before, he thought. She must have lain down for a while upon the coverlets, for there was the slight pressure of her body still upon the bed. He remembered how quickly he had fallen asleep the previous night. Suddenly he recalled the drink she had made for him. His teeth gritted together, stifling the groan which would come despite his best efforts. He had been drugged! Spring-morning had drugged him! It was unbelievable that she could do such a thing! Spring-morning! His wife!</p>
@@ -1109,7 +1125,7 @@ spelled most commonly as a-moral into the twentieth century.</note> attitude to 
             <p><q>The heroes of <foreign xml:lang="ja">Temshi-sama</foreign></q>, said she, <q>carry always the mark of the gods upon them. Oh radiantly may your heart beat forever, Omi-sama!</q></p>
             <p>Her words, the shining fervor of her face, and the pitying expression in her eyes, moved the young man from his stolid impassiveness. For the first time his voice showed emotion.</p>
             <p><q>Spring-morning</q>, said he, <q>you wear still the honorable <foreign xml:lang="ja">marumage</foreign></q> (marriage ornament) <q>in your hair. Do not forget that it was I—who placed it there!</q></p>
-            <p></p>
+            <p/>
             <p>His words recalled her. She became tensely aware of that other silent, terrible figure in the room with them, and at whom now she felt that never again might she dare to look. She was thinking already of Jamison Tyrrell as one beloved—dead. With him she had passed the happiest days of her life; but now she was hearing the stern voices of the gods in her ears, and peremptorily they were demanding of the Japanese girl that she do her duty.</p>
             <p>Here was her husband before her—Omi, whose young body had been torn and wracked in the service of his country and Emperor. She did not love him; she loved that other one—the <foreign xml:lang="ja">Eijin-san</foreign>—but it was her duty humbly to follow and serve her lord.</p>
             <p>Dimly only she heard the words of Omi, and knew that Jamison had come closely behind her, and was waiting— hanging in agony—upon her decision, but uttering no word to coerce or hold her. It was not in him to hold her against her will.</p>
@@ -1148,7 +1164,7 @@ spelled most commonly as a-moral into the twentieth century.</note> attitude to 
             <p>Jamison turned his face away, and his head slightly dropped. He seemed to be gloomily ruminating over the situation. Presently, in a low voice he asked her:</p>
             <p><q>What do you think I should do, Edith? So long as she considers herself the wife of this man and wishes to go with him, do you expect me, in spite of that, to hold her—to force her to stay with me here!</q></p>
             <p><q>Yes, I do</q>, said the girl, and suddenly she threw back her head with a beautiful motion of pride and bravery, and her clear gray eye met his squarely. <q>And I will tell you why, though I wonder that you do not know it already. Spring-morning is soon to become the mother of your child</q>.</p>
-            <p></p>
+            <p/>
             <p>At her words a startling change came to the faces of both men. Jamison’s eyes were fastened as if in amazing doubt upon Miss Latimer’s face, while the muscles on the face of the Japanese were jerking up and down, so that his yellow face seemed to move like some animated mask, as vainly he sought to control it. A moment later Jamison sank down in his chair, and throwing out his arms in a motion of complete exhaustion and despair, he buried his face upon them. When Edith, who had bent above him with an exclamation of womanly pity, looked up again, she found the Japanese was gone.</p>
             <p><q>Look, Jamy</q>, said she softly. <q>See, Omi is gone. Was not that fine of him! Now</q>, she cried joyously, <q>everything is all right, and you and Spring-morning are going to be happy, just as the fairy-stories have it, forever and ever</q>. But though her words were triumphantly joyous, they ended in a brave sob, and Jamison, looking up at her, saw that she too was crying.</p>
             <p><q>Did it mean so much to you, Edith?</q> he asked gently.      <q>Y-your happiness, Jamy?</q> she said. <q>It—it meant— everything!</q></p>
@@ -1163,7 +1179,7 @@ spelled most commonly as a-moral into the twentieth century.</note> attitude to 
             <p>It needed no words of the weeping Ume to tell her master the truth. His little Japanese wife was dead.</p>
             <p>The problem that had troubled him so bitterly since the return of Omi was solved now for him forever. His pride, the disenchantment, which despite his overwhelming pity for her had remained, his cynical vision of this people he had loved--what of it now?</p>
             <p>Somewhere in the street there was heard the soft muffled beating of a little Buddhist drum, and a child put its chubby, warm little hand into his. A young girl, a friend of Spring-morning’s, preceded him, sobbing softly, into the house.</p>
-            <p></p>
+            <p/>
             <p>There all was very still. On the lower floor, all alone in the <foreign xml:lang="ja">ozashiki</foreign>, in her old place by the <foreign xml:lang="ja">shoji</foreign>, where she had been wont to sit and watch with condemning eyes the passing throngs, was the <foreign xml:lang="ja">Okusama</foreign>. How bitterly she had hated Spring-morning! It was strange that Jamison should think of this now, as he moved uncertainly in the half-darkened room toward her; yet he felt no resentment or bitterness at the thought, only a nameless sadness.</p>
             <p>She started to her feet, and threw her arms about him, murmuring her sorrow, and for a moment he let her cry there against his breast. Then suddenly he drew himself up stiffly, his nerves tingling electrically, as, his head lifted, his ears strained alertly, he listened to that strange new sound in his house, the tremulous, feeble, fearfully appealing cry of a new soul! It moved him as nothing in his life had ever done before, this seeking, weird cry of which he was the creator!</p>
          </div>

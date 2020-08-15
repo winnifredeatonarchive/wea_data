@@ -6,7 +6,6 @@
       <fileDesc>
          <titleStmt>
             <title>Starving and Writing in New York</title>
-
             <respStmt>
                <resp>Author</resp>
                <name ref="pers:WE1">Winnifred Eaton</name>
@@ -15,24 +14,31 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
             <respStmt>
-               <resp notAfter="2019">Creation of machine-readable version</resp>
-               <name>Jean Lee Cole</name>
+               <resp notAfter="2017">Original Creator of Machine-Readable Version</resp>
+               <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
-               <resp notAfter="2019">Conversion to TEI.2-conformant markup</resp>
-               <name>University of Virginia Library Electronic Text Center</name>
+               <resp notAfter="2017">Original Creator of TEI Text</resp>
+               <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>
             </respStmt>
             <respStmt>
-               <resp>Conversion to P5 conformant markup:</resp>
-               <name>Joey Takeda</name>
+               <resp when="2008-01">Original Migrator</resp>
+               <name ref="pers:GM1">Greg Murray</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2007-09">Original Migrator</resp>
+               <name ref="pers:EG1">Ethan Gruber</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2005-07">Original Corrector</resp>
+               <name ref="pers:JC2">John Ivor Carlson</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2004-07">Original Corrector</resp>
+               <name ref="pers:JS1">Jolie Sheffer</name>
             </respStmt>
          </titleStmt>
-
          <publicationStmt>
             <p>Publication information</p>
             <!--
@@ -47,15 +53,14 @@ Publicly accessible
  uva-lib:475940 
 -->
          </publicationStmt>
-
          <notesStmt>
             <note>Facsimile retrieved from University of British Columbia</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:128"/>
          </sourceDesc>
       </fileDesc>
-
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
@@ -64,7 +69,9 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" status="published"  when="2020-08-01">Proofread.</change><change who="pers:MC1" status="published"  when="2020-07-02">Added note about source.</change><change who="pers:SL1" status="inProgress"  when="2019-07-08">Added catRef genre.</change>
+         <change who="pers:MC1" status="published" when="2020-08-01">Proofread.</change>
+         <change who="pers:MC1" status="published" when="2020-07-02">Added note about source.</change>
+         <change who="pers:SL1" status="inProgress" when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl128 using XSLT.</change>
          <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatStar. Old filename: Starving_and_Writing_in_NY.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
@@ -73,9 +80,6 @@ Publicly accessible
          <change when="2004-07">Jolie Sheffer, Electronic Text Center: corrector. Added tei header and tags.</change>
       </revisionDesc>
    </teiHeader>
-
-
-
    <text facs="facs:StarvingAndWriting1">
       <pb n="66"/>
       <body>

@@ -6,7 +6,6 @@
       <fileDesc>
          <titleStmt>
             <title>The Bride of Yonejiro</title>
-
             <respStmt>
                <resp>Author</resp>
                <name ref="pers:WE1">Winnifred Eaton</name>
@@ -15,24 +14,31 @@
                <resp>Editor</resp>
                <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
-            
-
-
-
             <respStmt>
-               <resp notAfter="2019">Creation of machine-readable version</resp>
-               <name>Jean Lee Cole</name>
+               <resp notAfter="2017">Original Creator of Machine-Readable Version</resp>
+               <name ref="pers:JLC1">Jean Lee Cole</name>
             </respStmt>
             <respStmt>
-               <resp notAfter="2019">Conversion to TEI.2-conformant markup</resp>
-               <name>University of Virginia Library Electronic Text Center</name>
+               <resp notAfter="2017">Original Creator of TEI Text</resp>
+               <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>
             </respStmt>
             <respStmt>
-               <resp>Conversion to P5 conformant markup:</resp>
-               <name>Joey Takeda</name>
+               <resp when="2008-01">Original Migrator</resp>
+               <name ref="pers:GM1">Greg Murray</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2007-09">Original Migrator</resp>
+               <name ref="pers:EG1">Ethan Gruber</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2005-07">Original Corrector</resp>
+               <name ref="pers:JC2">John Ivor Carlson</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2004-06">Original Corrector</resp>
+               <name ref="pers:JS1">Jolie Sheffer</name>
             </respStmt>
          </titleStmt>
-
          <publicationStmt>
             <p>Publication information</p>
             <!--
@@ -49,13 +55,12 @@ Publicly accessible
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Library of Congress</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
          </notesStmt>
-
          <sourceDesc>
             <bibl copyOf="bibl:138"/>
          </sourceDesc>
       </fileDesc>
-
       <profileDesc>
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
@@ -75,8 +80,6 @@ Publicly accessible
          <change when="2004-06">Jolie Sheffer, Electronic Text Center: corrector. Added TEI header and tags.</change>
       </revisionDesc>
    </teiHeader>
-
-
    <text facs="facs:Bride_of_Yonejiro">
       <pb n="603"/>
       <body>
