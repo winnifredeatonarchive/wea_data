@@ -130,19 +130,27 @@ function searchCreateSearch(){
         openFilters();
         let thisResults = this.resultsDiv;
         Sch.resultObjs = thisResults.querySelectorAll('div');
-        createSorters();
-
-
+ 
         let headers = this.resultsDiv.querySelectorAll('div > a');
         let images = this.resultsDiv.querySelectorAll('img');
-        Sch.resultObjs.forEach(o => {
-            let childNodes = o.childNodes;
-            Array.from(childNodes).forEach(node => node.nodeType != 1 && node.parentNode.removeChild(node))
-        });
-        /* Reset sorting */
+        if (Sch.resultObjs.length === 0){
+            thisResults.classList.add('loaded');
+            return;
+        }
+        
+         /* Reset sorting */
         this.resultsDiv.classList.remove('reverse');
         this.resultsDiv.classList.remove('loaded');
+        if (Sch.resultObjs.length > 1){
+             createSorters();
+        }  
         
+        Sch.resultObjs.forEach(o => {
+            let childNodes = o.childNodes;
+            Array.from(childNodes).forEach(node => node.nodeType !== 1 && node.parentNode.removeChild(node))
+        });
+        
+
         images.forEach(function (img) {
             img.classList.add('lazy');
             img.setAttribute('data-src', img.src);

@@ -39,12 +39,12 @@
             <head>Instructions</head>
             <div>
                <head>Word Searches</head>
-               <p>The search supports term searches with flags for may contain, must contain and must not contain, as well as exact phrase searches.</p>
+               <p>The search supports term searches with flags for may contain, must contain, and must not contain, as well as exact phrase searches.</p>
                <list type="searchExamples">
                   <item><code>driving</code> the term <q>driving</q> and its related stems (drive, drives, driving)</item>
                   <item><code>driving daughter</code> <emph>may contain</emph> one or both of <q>driving</q> and <q>daughter</q></item>
-                  <item><code>daughter -nijo</code> contains <q>daughter</q> and <emph>must not contain</emph> <q>nijo</q>.</item>
-                  <item><code>+driving +nijo</code> <emph>must contain</emph> <q>driving</q> and <emph>must contain</emph> <q>nijo</q></item>
+                  <item><code>daughter -nijo</code> <emph>contains</emph> <q>daughter</q> and <emph>must not contain</emph> <q>nijo</q>.</item>
+                  <item><code>+tenacious +thrill</code> <emph>must contain</emph> <q>tenacious</q> and <emph>must contain</emph> <q>thrill</q></item>
                   
                   <item><code>"the thousand and one cares"</code> contains the exact phrase <q>the thousand and one cares</q></item>
                   <item><code>"ghost river" +aristocrat</code> contains the exact phrase <q>ghost river</q> and <emph>must contain</emph> <q>aristocrat</q></item>
@@ -62,7 +62,26 @@
             </div>
             <div>
                <head>Filtered Searches</head>
-               <p>The filter boxes on the left provide mechanisms either to filter the results by genre, pseudonyms employed, publication date, et cetera. These filters can either be used without a search query (i.e. search for all documents signed <q>Onoto Watanna</q> published between 1910–1920) or in combination with a query (i.e. search for all non-fiction documents that contain the exact phrase <code>"New York"</code> and that are published after 1918 and are signed as one of <q>Winifred Reeve</q>, <q>Winnie Eaton</q>, <q>Winnifred Eaton</q>, <q>Winnifred Eaton Reeve</q>, <q>Winnifred Reeve</q>.</p>
+               <p>Search results can be filtered using the left panel. Using filters, you can narrow down the document collection by the following:</p>
+                  <list>
+                     <item><label>Date of Publication</label>: Filter by the date that a document was published (in <code>YYYY</code> [1912], <code>YYYY-MM</code> [1914-05], or <code>YYYY-MM-DD</code> [1901-01-02] format). This can either be a single date (i.e. all documents after 1912 or all documents before 1920) or a range (all documents published between 1904-02 and 1918).</item>
+                     <item><label>Genre</label>: Filter by the genre of the text, which are broadly formal in scope (i.e. poetry versus novels).</item>
+                     <item><label>Pseudonym</label>: Filter by the pseudonym under which the text was signed. For more information on Winnifred Eaton’s pseudonyms, see the introduction to <ref target="doc:pseudonyms"><title level="a">Pseudonyms used by Winnifred Eaton</title></ref>.</item>
+                     <item><label>Document Type</label>: Filter by the document type, which refers to the text’s classification within the WEA: primary source, <q>born digital</q> document (e.g. the <q>About</q> page), or a <q>listing page</q> (e.g. a page that lists all contributions by an illustrator). Note that the search returns results from the entire document collection by default. If you want to search just within Eaton’s texts, filter results by <q>Document Type</q> and select both <q>Primary Source: Manuscripts</q> and <q>Primary Source: Published</q>.</item>
+                     <item><label>Exhibit</label>: Filter results by the corresponding WEA exhibit.</item>
+                  </list>
+               <p>These filters can be used without a search query (i.e. search for all documents signed <q>Onoto Watanna</q> published between 1910–1920) or in combination with a query (i.e. search for all non-fiction documents that contain the exact phrase <code>"New York"</code> and that are published after 1918 and are signed as one of <q>Winifred Reeve</q>, <q>Winnie Eaton</q>, <q>Winnifred Eaton</q>, <q>Winnifred Eaton Reeve</q>, <q>Winnifred Reeve</q>.</p>
+            </div>
+            <div>
+               <head>Sorting Results</head>
+               <p>Results can be sorted in multiple ways, depending on the type of query performed. The following sort options are available:</p>
+                  <list>
+                     <item><label>Relevance</label>: Sort the results by ranking the query’s relative importance in a document compared to the rest of the document collection. Note that this option is not applicable to document only (i.e. filtered) searches.</item>
+                     <item><label>Instances</label>: Sort the results based off of the number of times the term (or terms) appears in a document.</item>
+                     <item><label>Date</label>: Sort the results based off of their date of publication. Note that for documents with date ranges or uncertain dates (i.e. 1917/1920), the document is sorted by its earliest date.</item>
+                     <item><label>Title</label>: Sort the results based off of their title (ignoring leading articles).</item>
+                  </list>
+
             </div>
          </div>
       </body>

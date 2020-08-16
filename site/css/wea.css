@@ -1336,10 +1336,13 @@ mark{
     margin-top:1.75rem!important;
 }
 
+#search_instructions [data-el='label']{
+    font-weight:bold;
+}
 
 
 
-[data-el='list'][data-type='searchExamples'] > [data-el='item']{
+#search_instructions [data-el='list'] > [data-el='item']{
    margin: 0.5em 0;
 }
 
