@@ -402,7 +402,8 @@ body.JS #index_featuredItems > a.selected,
     margin-top:2rem;
     margin-bottom: 1rem;
     padding: 0 1.5rem;
-    
+    max-width: 40rem;
+    text-align:center;
     /* TREAT THIS LIKE A HEADING */
     
 }
@@ -530,6 +531,11 @@ body.JS #index_featuredItems > a.selected,
 
  }
  
+ #index_header h3,
+ #index_header h3 + h3{
+     max-width:85%;
+    margin:0 auto;
+ }
  #index_archive li > a{
        font-size:1.563rem;
  }
@@ -563,7 +569,7 @@ body.JS #index_featuredItems > a.selected,
 
 #index_header h3 {
     font-size: 3.052rem;
-    max-width:25rem;
+
 }
 
 
