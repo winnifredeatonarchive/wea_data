@@ -68,7 +68,7 @@
     <xsl:function name="wea:getURL" as="xs:string">
         <xsl:param name="el"/>
         <xsl:variable name="root" select="$el/ancestor-or-self::TEI"/>
-        <xsl:value-of select="concat('https://winnifredeatonarchive.org/',$root/@xml:id,'.html')"/>
+        <xsl:value-of select="concat($siteUrl, '/',$root/@xml:id,'.html')"/>
     </xsl:function>
     
     <xsl:function name="wea:getSvg">

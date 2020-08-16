@@ -226,7 +226,7 @@
     
     <xsl:function name="wea:appendMLA" as="item()+">
         <xsl:param name="doc"/>
-        <xsl:variable name="uri" select="'https://winnifredeatonarchive.org/'||$doc/@xml:id || '.html'"/>
+        <xsl:variable name="uri" select="$siteUrl || '/' ||$doc/@xml:id || '.html'"/>
         <xsl:text> </xsl:text><title level="m">The Winnifred Eaton Archive</title>, edited by Mary Chapman and Jean Lee Cole, v. <xsl:value-of select="$version"/>, <xsl:value-of select="format-date(current-date(),'[D01] [MNn] [Y0001]')"/>, <ref target="{$uri}"><xsl:value-of select="$uri"/></ref><xsl:text>.</xsl:text>
     </xsl:function>
     

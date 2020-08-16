@@ -85,7 +85,7 @@
         <meta property="dc.source" content="The Winnifred Eaton Archive"/>
         <meta property="dc.type" content="Text"/>
         <meta property="dc.format" content="text/html"/>
-        <meta property="dc.identifier" content="https://winnifredeatonarchive.org/{@xml:id}.html" />
+        <meta property="dc.identifier" content="{$siteUrl}/{@xml:id}.html" />
     </xsl:template>
     
     <xsl:template name="createStaticSearchMetadata">
@@ -148,15 +148,17 @@
     </xsl:template>
 
     <xsl:template name="addNamespaces">
-        <xsl:attribute name="prefix" select="'og: http://ogp.me/ns# wea: http://winnifredeatonarchive.com/taxonomies.html# dcterms: http://purl.org/dc/terms/ dc: http://purl.org/dc/elements/1.1/'"/>   
+        <xsl:attribute name="prefix" select="concat('og: http://ogp.me/ns# wea: ', $siteUrl, '/taxonomies.html# dcterms: http://purl.org/dc/terms/ dc: http://purl.org/dc/elements/1.1/')"/>   
     </xsl:template>
     
     <xsl:template name="createOpenGraph">
         <meta property="og:title" content="{//teiHeader/fileDesc/titleStmt/title[1]}" />
         <xsl:call-template name="getOGTypes"/>
-        <meta property="og:url" content="http://winnifredeatonarchive.com/{@xml:id}.html" />
-        <meta property="og:image" content="{if (//text/@facs) then concat('http://winnifredeatonarchive.github.io/wea/',replace(//text/@facs,'.pdf','.png')) else 
-            'http://winnifredeatonarchive.github.io/wea/images/icon.png'}" />
+        <meta property="og:url" content="{$siteUrl}/{@xml:id}.html" />
+        <meta property="og:image"
+            content="{if (//text/@facs) 
+            then concat($siteUrl,'/', replace(//text/@facs,'.pdf','_tiny.jpg')) 
+            else concat($siteUrl, '/images/WEA-hero-img.jpg')}" />
     </xsl:template>
     
     <xsl:template name="getOGTypes">
