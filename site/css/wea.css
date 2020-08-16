@@ -1150,7 +1150,6 @@ fieldset > legend{
     margin-bottom:1rem;
     border-bottom: 1px solid #efefef;
     width:100%;
-    display:flex;
     align-items:center;
     text-transform:uppercase;
     font-variant:small-caps;
@@ -1161,6 +1160,8 @@ fieldset > legend{
 fieldset > legend > .mi{
     font-variant:normal;
     font-size:18px;
+    position:relative;
+    top:4px;
 }
 
 
