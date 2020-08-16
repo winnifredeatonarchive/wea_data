@@ -30,7 +30,9 @@
             </textClass>
         </profileDesc>
         <revisionDesc status="published">
-            <change who="pers:MC1" when="2020-06-30" status="published">Proofread</change><change who="pers:MC1" when="2019-06-21" status="readyForProof">Wrote technical content and added content from MC. Set to ready for proof.</change>
+            <change who="pers:JT1" when="2020-08-15" status="published">Minor fixes and updates.</change>
+            <change who="pers:MC1" when="2020-06-30" status="published">Proofread</change>
+            <change who="pers:MC1" when="2019-06-21" status="readyForProof">Wrote technical content and added content from MC. Set to ready for proof.</change>
             <change when="2019-02-19"
                 who="pers:JT1" status="empty">Created file.</change>
         </revisionDesc>
@@ -44,24 +46,19 @@
             </div>
             <div>
                 <head>Images</head>
-                <p>Information regarding images of periodical publications is located in the  <q>Credits and Citations</q> block at the top of any page. Commercial users should contact the institution listed as holding the original manuscript.</p>
+                <p>Information regarding images of periodical publications is located in the <q>Credits and Citations</q> block at the top of any page. Commercial users should contact the institution listed as holding the original manuscript.</p>
             </div>
             <div>
                 <head>Code and Technical Licensing</head>
                 <p>We use open-access software for development and testing of the site. We use:
                 <list>
                     <item><ref target="https://ant.apache.org/">Apache Ant</ref></item>
-                    <item><ref target="http://www.saxonica.com/welcome/welcome.xml">Saxon 9HE</ref></item>
+                    <item><ref target="http://www.saxonica.com/welcome/welcome.xml">Saxon 10</ref></item>
                     <item><ref target="https://validator.github.io/validator/">The NU HTML Validator (W3C)</ref></item>
                     <item><ref target="https://relaxng.org/jclark/jing.html">RelaxNG Validator</ref></item>
                 </list>
-                    Licenses for all libraries can be found in the <ref target="https://github.com/winnifredeatonarchive/wea_data/tree/master/lib">WEA’s Github repository</ref>.
                 </p>
-                <div>
-                    <head>Search</head>
-                    <p>Our search functionality builds on work by Martin Holmes and Joey Takeda. The primary search Javascript (<ref target="js/search.js">search.js</ref>) was written by Martin Holmes and subsequently adapted by Joey Takeda. It relies on a <ref target="js/porterStemmer.js">Javascript implementation</ref> of the <ref target="https://tartarus.org/martin/PorterStemmer/">Porter Stemming algorithm</ref>, created by Github user <ref target="https://github.com/kristopolous/Porter-Stemmer">Kristopolous</ref>.</p>
-    
-                </div>
+                <p>Licenses for all libraries can be found in the <ref target="https://github.com/winnifredeatonarchive/wea_data/tree/master/lib">WEA’s Github repository</ref>.</p>
             </div>     
         </body>
     </text>
