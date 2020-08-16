@@ -27,7 +27,7 @@
     
     <!--A few templates to add here-->
     <xsl:template match="seg[@type='currentDate']" mode="tei">
-        <span><xsl:value-of select="format-date(current-date(),'[D01] [MNn], [Y0001]')"/></span>
+        <span><xsl:value-of select="format-date(current-date(),'[D01] [MNn] [Y0001]')"/></span>
     </xsl:template>
     
     <xsl:template match="seg[@type='revision']" mode="tei">
