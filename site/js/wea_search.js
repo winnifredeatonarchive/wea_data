@@ -125,7 +125,7 @@ function openFilters(){
 }
 
 function searchCreateSearch(){
-      Sch = new StaticSearch();  
+      Sch = new StaticSearch();
       Sch.searchFinishedHook = function () {
         openFilters();
         let thisResults = this.resultsDiv;
