@@ -57,6 +57,9 @@
         <rule match="table[ancestor::div[@id='mainBody'][contains(@class,'docBornDigitalListing')]]"
               weight="0"/>
         
+        <!--Ignore headnotes resps-->
+        <rule weight="0" match="div[contains-token(@class,'headnoteResp')]"/>
+        
         <!--Ignore the body of these documents (we want them to be indexed still, however -->
         <rule match="body[ancestor::html[@id=('we_bibliography','bibliography')]]" weight="0"/>
         <rule match="body[ancestor::html/descendant::meta[@name='Ignore']]" weight="0"/>
