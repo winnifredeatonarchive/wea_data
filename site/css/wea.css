@@ -1875,7 +1875,7 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
     margin-top:1rem;
 }
 
-[data-el='listBibl'] > :first-child{
+[data-el='listBibl'] > :first-child:not(.bibl){
     margin-bottom:0.75rem;
 }
 
