@@ -12,6 +12,7 @@ var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 function init(){
     addDocClass();
     addEvents();
+    makeNavbarFocusable();
     if (document.querySelectorAll('img.lazy')){
         lazyload();
     }
@@ -39,6 +40,12 @@ function init(){
 
 }
 
+function makeNavbarFocusable(){
+        document.querySelectorAll("#menu_main > li[data-el='item']:not([id])")
+            .forEach(item => {
+               item.setAttribute('tabindex', 0) 
+            })
+}
 
 window.addEventListener("beforeprint", setupPrint);
 window.addEventListener("afterprint", undoPrint);
