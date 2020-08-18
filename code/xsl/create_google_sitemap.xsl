@@ -17,7 +17,7 @@
             <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
                 <xsl:for-each select="$xhtmlDocs">
                     <url>
-                        <loc><xsl:value-of select="$siteUrl || tokenize(document-uri(),'/')[last()]"/></loc>
+                        <loc><xsl:value-of select="$siteUrl || '/' || tokenize(document-uri(),'/')[last()]"/></loc>
                         <lastmod><xsl:value-of select="$today"/></lastmod>
                     </url>
                 </xsl:for-each>
