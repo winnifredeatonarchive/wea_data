@@ -146,6 +146,8 @@ width: 60%;
 right: 0;
  }
  
+
+ 
  ul#menu_main > li {
       border-bottom: 1px solid #757575;
        padding-top:.75rem;
@@ -153,6 +155,11 @@ right: 0;
        margin:.5rem;
        
  }
+ 
+  ul#menu_main > li:last-child{
+     padding-bottom:7.5rem;
+ }
+ 
  
 ul#menu_main > li > ul{
      display:block;
