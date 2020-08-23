@@ -372,7 +372,7 @@
     
     <xsl:template match="text/@next | text/@prev" mode="metadata">
         <div>
-            <div class="metadataLabel"><xsl:value-of select="if (local-name()='next') then 'Next' else 'Previous'"/> Installment</div>
+            <div class="metadataLabel"><xsl:value-of select="if (local-name()='next') then 'Next' else 'Previous'"/> Instalment</div>
             <div><a href="{wea:resolveTarget(.)}"><xsl:apply-templates select="wea:getTitle(substring-before(.,'.xml'))" mode="tei"/></a></div>
         </div>
     </xsl:template>
