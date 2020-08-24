@@ -20,6 +20,7 @@
             </textClass>
         </profileDesc>
         <revisionDesc status="published">
+           <change who="pers:MC1" when="2020-08-24" status="published">Added Morning Albertan items.</change>
            <change who="pers:MC1" when="2020-08-23" status="published">Fixed typos.</change>
            <change who="pers:MC1" when="2020-08-23" status="published">Changed page number for First Appearance.</change><change who="pers:MC1" when="2020-08-21" status="published">added additional entry of Other People.</change><change who="pers:MC1" when="2020-08-14" status="published">added additional editions of novels.</change>
            <change who="pers:MC1" when="2020-08-13" status="published">added additional editions of novels.</change><change who="pers:MC1" when="2020-08-13" status="published">Fixed how They Cast typo.</change><change who="pers:MC1" when="2020-08-12" status="published">fixed n word.</change><change who="pers:MC1" when="2020-08-10" status="published">deleted Wooing instalments because non-existent.</change>
@@ -54,6 +55,7 @@
               but listBibl will be the actual work entry.-->
             <div xml:id="bibliography_we">
                <head>Works by Winnifred Eaton</head>
+               
                 <listBibl xml:id="ChineseJapaneseCookbook">
                       <head>Chinese-Japanese Cookbook</head>
                       <bibl xml:id="bibl1"><author><name ref="pers:WE1">Watanna, Onoto</name></author>, and <author><name ref="pers:SB1">Sara Bosse</name></author>. <title level="m">Chinese-Japanese Cookbook</title>. <pubPlace>New York</pubPlace>, <publisher ref="org:Rand">Rand McNally</publisher>, <date when="1914">1914</date>.</bibl>
@@ -94,7 +96,6 @@
                       <bibl xml:id="bibl8"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">The Horseless Carriage of Japan</title>. Illustrated by <author role="illustrator"><name ref="pers:KA1">Karl J. Anderson</name></author>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home Companion</title></publisher>, <date when="1900-04">Apr. 1900</date>, p. <biblScope unit="page">13</biblScope>.</bibl>
                    </listBibl>
 
-                  
                    <listBibl xml:id="JapaneseAmericanLoveStory">
                       <head>A Japanese-American Love Story</head>
                       <bibl xml:id="bibl9"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Japanese American Love Story</title>. Illustrated by <author role="illustrator"><name ref="pers:CA1">Clare Angell</name></author>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home Companion</title></publisher>, <date when="1902-08">Aug. 1902</date>, pp. <biblScope unit="page">13-14</biblScope>.</bibl>
@@ -145,8 +146,7 @@
                    <listBibl xml:id="PrayerForUnderstanding">
                       <head>A Prayer for Understanding</head>
                       <bibl xml:id="bibl23"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">A Prayer for Understanding</title>. <publisher ref="org:ChristianScience"><title level="j">Christian-Science Monitor</title></publisher>, <date when="1899-02">Feb. 1899</date>, p. <biblScope unit="page">785</biblScope>.</bibl>
-                   </listBibl>
-                
+                   </listBibl>                
                 
                    <listBibl xml:id="RhapsodyOnJapan">
                       <head>A Rhapsody on Japan</head>
@@ -213,10 +213,20 @@
                       <bibl xml:id="bibl33"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Because We Were Lonely</title>. <publisher ref="org:TrueStory"><title level="j">True Story Magazine</title></publisher>, <date when="1933-04">Apr. 1933</date>, pp. <biblScope unit="page">28-30, 92-96</biblScope>.</bibl>
                    </listBibl>
                    
-                   <listBibl xml:id="BooksLiteraryNotes">
+                   <listBibl xml:id="BooksLiteraryNotesEdithWharton">
                       <head>Books, Literary Notes, etc.</head>
-                      <bibl xml:id="bibl34"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Books, Literary Notes, etc</title>, ms. <date notBefore="1924" notAfter="1925">1924–1925</date> <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor> <idno>17.3</idno>.</bibl>
+                      <bibl xml:id="bibl34"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="a">Books, Literary Notes, etc</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date notBefore="1924" notAfter="1925">1924–1925</date> <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor> <idno>17.3</idno>.</bibl>
                    </listBibl>
+               
+               <listBibl xml:id="BooksLiteraryNotesBlissCarman">
+                  <head>Books, Literary Notes, etc.</head>
+                  <bibl xml:id="bibl298"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="a">Books, Literary Notes, etc</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date when="1924-01-22">22 Jan 1924</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
+               </listBibl>
+               
+               <listBibl xml:id="BooksLiteraryNotesVictorLauriston">
+                  <head>Books, Literary Notes, etc.</head>
+                  <bibl xml:id="bibl299"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="a">Books, Literary Notes, etc</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date when="1924-02-05">5 Feb 1924</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
+               </listBibl>
                    
                    <listBibl xml:id="ButcheringBrains">
                       <head>Butchering Brains, An Author in Hollywood is as a Lamb in an Abattoir</head>
@@ -248,8 +258,7 @@
                    <listBibl xml:id="DeliaDissents">
                       <head>Delia Dissents</head>
                       <bibl xml:id="bibl39"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Delia Dissents</title>. Illustrated by <author role="illustrator"><name ref="pers:MP1">May Wilson Preston</name></author>. <publisher ref="org:Saturday"><title level="j">Saturday Evening Post</title></publisher>, <date when="1908-08-22">22 Aug. 1908</date>, pp. <biblScope unit="page">22-23</biblScope>.</bibl>
-                   </listBibl>
-                   
+                   </listBibl>                   
                    
                    <listBibl xml:id="EastIsWest">
                       <head>East is West</head>
@@ -263,8 +272,7 @@
                    
                    <listBibl xml:id="EverydayLifeInJapan">
                       <head>Every-day Life in Japan</head>
-                      <bibl xml:id="bibl42"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Every-day Life in Japan</title>. <publisher ref="org:HarpersWeekly"><title level="j">Harper’s Weekly</title></publisher>, <date when="1904-04-02">2 Apr. 1904</date>, pp. <biblScope unit="page">500-502, 527-528</biblScope>, 527-28.</bibl>
-                      
+                      <bibl xml:id="bibl42"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="a">Every-day Life in Japan</title>. <publisher ref="org:HarpersWeekly"><title level="j">Harper’s Weekly</title></publisher>, <date when="1904-04-02">2 Apr. 1904</date>, pp. <biblScope unit="page">500-502, 527-528</biblScope>, 527-28.</bibl>                      
                    </listBibl>
                    
                    <listBibl xml:id="EyesThatSawNot">
@@ -806,17 +814,11 @@
                   <head>Showboat</head>
                   <bibl xml:id="bibl230"><author><name ref="pers:WE1">Winnifred Reeve</name></author>. <title level="m">Showboat [adaptation]</title>. <publisher ref="org:Universal">Universal Studios</publisher>. <date when="1929">1929</date>.</bibl>
                </listBibl>
-               
-               
-               
+                             
                <listBibl xml:id="PhantomOfTheOpera">
                   <head>Phantom of the Opera</head>
                   <bibl xml:id="bibl231"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="m">Phantom of the Opera [adaptation]</title>. <author>Julian, Rupert</author>, dir. <publisher ref="org:Universal">Universal Studios</publisher>. <date when="1925-01">Jan. 1925</date>. </bibl>
-                  
-               </listBibl>
-               
-    
-                  
+               </listBibl>                 
                    
                    <listBibl xml:id="WooingOfWistaria">
                       <head>The Wooing of Wistaria</head>                                                               <bibl xml:id="bibl186"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. <title level="m">The Wooing of Wistaria</title> (Chapters 7–9). <publisher ref="org:LosAngelesHerald"><title level="j">Los Angeles Herald</title></publisher>, <date when="1905-12-17">17 Dec. 1905</date>.</bibl>
@@ -1180,13 +1182,23 @@
                
                <listBibl xml:id="SomeLesserKnown">
                   <head>Some Lesser Known Authors of Alberta</head>
-                  <bibl xml:id="bibl288"><author><name ref="pers:WE1">Winnifred Reeve</name></author>. <title level="a">Some Lesser Known Authors of Alberta</title>.  <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1923-10-13">13 Oct 1923</date>, p. <biblScope unit="page">52</biblScope>.</bibl>
+                  <bibl xml:id="bibl288"><author><name ref="pers:WE1">Winnifred Reeve</name></author>. <title level="a">Some Lesser Known Authors of Alberta</title>.  <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1923-10-13">13 Oct 1923</date>, p. <biblScope unit="page">52</biblScope>.</bibl></listBibl>
                   
+                  <listBibl xml:id="CanadianAuthorsGarvin">
+                     <head>Canadian Authors</head>
+                     <bibl xml:id="bibl296"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="a">Canadian Authors</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date when="1924-01-05">5 Jan 1924</date>, p. <biblScope unit="page">4</biblScope>.</bibl></listBibl>
                   
+                     <listBibl xml:id="CanadianAuthorsDennison">
+                        <head>Canadian Authors</head>
+                        <bibl xml:id="bibl297"><author><name ref="pers:WE1">Winnifred Eaton Reeve. Author of <q>Cattle</q> Etc</name></author>, <title level="a">Canadian Authors</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date when="1924-01-09">9 Jan 1924</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
                </listBibl>  
-               
-                            
+              
+                  <listBibl xml:id="CanadianAuthorsCarman">
+                     <head>Canadian Authors</head>
+                     <bibl xml:id="bibl295"><author><name ref="pers:WE1">Winnifred Eaton Reeve</name></author>. <title level="a">Canadian Authors</title>. <publisher ref="org:Calgary"><title level="j">Morning Albertan</title></publisher>, <date when="1924-02-13">13 Feb 1924</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
+                  </listBibl>          
             </div>
+           
            <div xml:id="bibliography_resources">
               <head>Further Resources</head>
               <listBibl>
