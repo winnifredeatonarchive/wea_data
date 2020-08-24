@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan3">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan3">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Sunny-San [Part 1]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,25 +31,647 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SB2" status="empty"  when="2020-08-15">Added brief notes statement.</change>
-         <change who="pers:SB2" status="empty"  when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">changed title.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">changed title.</change>
-         <change who="pers:MC1" status="empty"  when="2020-06-30">Added next instalment.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl131 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-08-23" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes statement.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">changed title.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">changed title.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added next instalment.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl131 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Sunny-San2"
-      next="doc:SunnySan4">
+   <text facs="facs:Sunny-San2" next="doc:SunnySan4">
+      <pb n="328"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+            
+        <head>Sunny-San</head>
+            
+        <opener>
+    
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline><emph>Illustrated by Tom Peddie</emph></byline>
+    
+        </opener>
+ 
+      <div type="paratext">
+            <p>A splendid new serial by the author of <q>The Japanese Nightingale</q>, which has been dramatised and translated into many languages.</p>
+      </div>
+            
+      <div>
+    
+      <head>Chapter 1</head>
+    
+      
+            <p>Madame Many Smiles was dead. The famous dancer of the House of a Thousand Joys had fluttered out into the Land of Shadows. No longer would poet or reveller vie with each other in doing homage to her whose popularity had known no wane with the years, who had indeed become one of the classic objects of art of the city. In a land where one’s ancestry is esteemed the all-important thing, Madame Many Smiles had stood alone, with neither living relatives or ancestors to claim her. Who she was, or whence she had come, none knew, but the legend of the House was that on a night of festival she had appeared at the illuminated gates, as a moth who, beaten by the winds and storms without, seeks shelter in the light and warmth of the joyhouse within.</p>
+    
+            <p>Hirata had bonded her for a life term. Her remuneration was no more than the <foreign xml:lang="ja">geishas</foreign>’ meagre wage, but she was allowed the prerogative of privacy. Her professional duties over, no admiring patron of the gardens might claim her further service. She was free to return to her child, whose cherry blossom skin and fair hair proclaimed clearly the taint of her white blood. Hirata was lenient in his training of the child, for the dancer had brought with her the into the House of a Thousand Joys <foreign xml:lang="ja">Daikoku</foreign>, the God of Fortune, and Hirata could afford to bide his time till the child of the dancer should step into her shoes. But the day had come far ahead of his preparations, and while the dancer was at the zenith of her fame. They were whispering about the gardens that the moth that had fluttered against the House of Joy had fluttered back into the darkness from which she had come. With her she had taken <foreign xml:lang="ja">Daikoku</foreign>.</p>
+    
+            <p>A profound depression had settled upon the House of a Thousand Joys. <foreign xml:lang="ja">Geishas</foreign>, apprentices and attendants moved aimlessly about their tasks, their smiles mechanical and their motions automatic. The pulse and inspiration of the house had vanished. In the gardens the effect of the news was even more noticeable. Guests were hurriedly departing, turning their cups upside down and calling for their clogs. Tea girls slid in and out on hurried service to the departing guests, and despite the furious orders of the master to affect a gaiety they did not feel, their best efforts were unavailing to dispel the strange veil of gloom that comes ever with death. The star of the House of a Thousand Joys had twinkled out for ever.</p>
+    
+            <p>It was the night of the festival of the Full Moon. The cream of the city was gathered to do honour to the shining <foreign xml:lang="ja">Tsuki no Kami</foreign>in the clear sky above. But the death of the dancer had cast its shadow upon all, and there was a superstitious feeling abroad that it was the omen of a bad year for the city.</p>
+    
+            <p>In fury and despair Hirata turned from the ingratiating women of his house and again sought the apartments where the dead dancer lay in state among her robs. Here, with her face at her mother’s feet, the child of the dancer prayed unceasingly to the gods that they would permit her to attend her mother upon the long journey to the <foreign xml:lang="ja">Meido</foreign>. Crushed and hurt by a grief that nothing could assuage, only dimly the girl sensed the words of the master, ordering her half peremptorily, half imploringly, to prepare for service <pb n="330"/>to the House. Possibly it was his insinuation that for the sake of her mother’s honour it behoved her to step into her place, and uphold the fame of the departed one, that aroused her to a mechanical assent. Soon she was in the hands of the dressers, her mourning robes stripped, and the skin tights of the trapeze performer substituted.</p>
+    
+            <p>Hirata, in the gardens, clapping his hands loudly to attract the attention of the departing guests, took his stand upon the little platform. Saluting his patrons with lavish compliments, he begged their indulgence and patience. The light of his House, it was true, so he said, had been temporarily extinguished, but the passing of a dancer meant no more than the falling ofa star; and just as there were other stars in the firmament brighter than those that had fallen, so the House of a Thousand Joys possessed in reserve greater beauty and talent than that the guests had generously bestowed their favour upon. The successor to the honourable dancer was bound to please, since she excelled her mother in beauty even as the sun does the moon. He therefore entreated his guests to transfer their gracious patronage to the humble descendant of Madame Many Smiles.</p>
+            
+            <p>The announcement caused as much of a sensation as the news of the dancer’s death had done. There was an element of disapproval and consternation in the glances exchanged in the garden. Nevertheless there was a disposition, governed by curiosity, to at least see the daughter of the famous dancer, who appeared on the night of her mother’s death.</p>
+            
+            <p>A party of American students, with a tutor, were among those still remaining in the gardens. Madame Many Smiles had been an especial favourite with them, their interest possibly due to the fact that she was said to be a half caste. Her beauty and fragility had appealed to them as something especially rare, like a choice piece of cloisonn, and the romance and mystery that seemed ever about her, captivated their interest, and set them speculating as to what was the true story of this woman, whom the residents pointed to with pride as the masterpiece of their city. An interpreter having translated the words of the manager, there was a general growl of disapproval from the young Americans. However, they, too, remained to see the daughter ofMadame Many Smiles, and pushed up near to the rope, along which now came the descendant.</p>
+            
+            <p>She was a child of possibly fourteen years, her cheeks as vividly red as the poppies in herhair, her long large eyes, with their shining black lashes, strangely bright and feverish. She came tripping across the rope, with a laugh upon her lips, her hair glistening, under the spotlight, almost pure gold in colour. Bobbed and banged in the fashion of the Japanese child, it yet curled about her exquisite young face, and added the last touch of witchery to her beauty. Though her bright red lips were parted in the smile that had made her mother famous, there was something appealing in her wide, blank stare at her audience.She was dressed in tights, without the customary cape above her, and her graceful, slender limbs were those of extreme youth, supple as elastic from training and ancestry, the lithe, pliable young body of the born trapese performer and dancer. She tossed her parasol to her shoulder, threw up her delicate little pointed chin and laughed across at that sea of faces, throwing right and left her kisses; but the Americans, close to the rope, were observing a phenomenon, for even as her charming little teeth gleamed out in that so captivating smile, a dewdrop appeared to glisten on the child’s shining face. Even as she laughed and postured to the music that burst out, there a-tiptoe on the tightrope, the dewdrop fell down her face and disappeared into the sawdust.</p>
+            
+            <p>Like a flower on the end of a long slender stalk, tossing in the wind, her lovely little head swayed from side to side. Her small, speaking hands, the wrists of which were lovelier than those celebrated by the Japanese poet who for fifteen years had penned his one-line poems to her mother, followed the rhythm of the music, and every part of that delicate young body seemed to sensitively stir and move to the pantomime dance of the tightrope.</p>
+            
+            <p>In triumph, Hirata heard the loud<pb n="331"/> <q>Hee-i-i-!</q> and the sharp indrawing and expulsions of breaths. Scrambling across the room, puffing and expressing his satisfaction, came the Lord of Negato, drunk with <foreign xml:lang="ja">saki</foreign> and amorous for the child upon the rope. He pushed his way past the besieging tea house maidens, who proffered him sweets and tea and <foreign xml:lang="ja">saki</foreign>. His hands went deep into his sleeves, and drew forth a shining bauble. With ingratiating cries to attract her attention, he flung the jewel to the girl upon the rope. Returning his smile, she whirled her fan wide open, caught the gift upon it, and, laughing, tossed it into the air. Juggling and playing with the pretty toy, she kept it twirling in a circle above her, caught it again on her fan, and dropped it down onto the sawdust beneath. Then, like a naughty child, pleased over some trick, she danced back and forth along the rope, as it swung wide with her.</p>
+            
+            <p>A grunt of anger came from Hirata, who approached near enough for her to see and be intimidated by him, but she kept her gaze well above his head, feigning neither to see him, nor the still pressing Negato. He was calling up to her now, clucking as one might at a dog, and when at last her glance swept his, he threw at her a handful of coin. This also she caught neatly on her opened fan, and then, acting upon a sudden impetuous and impish impulse, she threw right in the face of her besieging admirer. Jumping from the rope to the ground, she smiled and bowed right and left, kissed her hands to her audience, and vanished into the teahouse.</p>
+            
+            <p>With an imprecation, Hirata followed her into the house. The little maiden, holding thetray, and pausing to solicit the patronage of the Americans, had watched the girl’s exit withtroubled eyes, and now she said in English:</p>
+            
+            <p><q><emph>Now</emph> Hirata will beat her</q>.</p>
+    
+            <p><q>What do you mean?</q> demanded the young man, who had rejected the proffered cup, and was staring at her with such angry eyes that Spring Morning dropped her own, and bobbed her knees in apology for possible offence. 
+       
+            <q>What do you mean?</q> repeated Jerry Hammond, determined upon securing an answer, while his friends crowded about interested also in the reply. Half shielding her face with her fan, the girl replied in a low voice:</p>
+            
+            <p><q>Always the master beats the apprentice who do wrong. When her mother live, he do not touch her child, but now Madame Many Smiles is dead, and Hirata is very angry. He will surely put the lash to-night upon her</q>.</p>
+            
+            <p><q>Do you mean to tell me that that little girl is being beaten because she threw back that dirty gorilla’s coin to him?</q></p>
+            
+            <p>Spring Morning nodded, and the tears that came suddenly to her eyes revealed that the girl within had all of her sympathy.</p>
+            
+            <p><q>The devil she is!</q> Jerry Hammond turned to his friends, <q>Are we going to stand for this?</q> demanded Jerry.</p>
+            
+            <p><q>Not by a dashed sight!</q> shrilly responded the youngest of the party, a youth of seventeen, whose heavy bone-ribbed glasses gave him a preternaturally wise look.</p>
+            
+            <p>The older man of the party here interposed with an admonitory warning:</p>
+            
+            <p><q>Now, boys, I advise you to keep out of these oriental scraps. We don’t want to get mixed up in any teahouse brawls. These Japanese girls are used——</q></p>
+            
+            <p><q>She’s not a Japanese girl</q>, furiously denied Jerry. <q>She’s as white as we are. Did you see her hair?</q></p>
+            
+            <p><q>Nevertheless——</q>began Professor Barrowes, but was instantly silenced by his clamouring young charges.</p>
+            
+            <p><q>I</q>, said Jerry, <q>propose to go on a privately conducted tour of investigation into the infernal regions of that house of alleged joys. If any of you fellows have cold feet, stay right here snug with papa. I’ll go it alone</q>.</p>
+            
+            <p>That was quite enough for the impetuous youngsters. With a whoop of derision at the idea of their having <q>cold feet</q>, they were soon following Jerry in a rush upon the house that was reminiscent of football days.</p>
+            
+            <p>In the main hall of the teahouse a bevy of girls were running about agitatedly, some of them with their sleeves before their faces, crying. Two little apprentices crouched up against a screen, loudly moaning. There was every evidence of upset and distress in the House of a Thousand Joys. To Jerry’s demand for<pb n="332"/> Hirata, he was met by a frightened silence from the girls, and a stony faced, sinister-eyed woman attempted to block the passage of the young men, thus unconsciously revealing the direction Hirata had gone. Instantly Jerry was upon the screen and with rough hand had shoved it aside. They penetrated to an interior room that opened upon an outbuilding, which was strung out like a pavilion across the garden. At the end of this long, empty structure, lit only by a single lantern, the Americans found what they sought. Kneeling on the floor, in her skin tights, her hands tied behind her with red cords that cut into the delicate flesh, was the girl who had danced on the rope. Through the thin silk of her tights showed a red welt where one stroke of the lash had fallen. Before her, squatting on his heels, Hirata, one hand holding the whip, and the other his suspended pipe, was waiting for his slave to come to terms. She had felt the first stroke of the lash. It should be her first or last, according to her promise.</p>
+            
+            <p>As the Americans broke into the apartment, Hirata arose partly to his knees and then to his feet, and as he realized their intention, he began to leap up and down shouting lustily:</p>
+            
+            <p><q>Oi!—Oi! Oi-i-i-!</q></p>
+            
+            <p>Jerry’s fist found him under the chin, and silenced him. With murmurs of sympathy and anger, the young men cut the bonds of the little girl. She fell limply upon the floor, breathlessly sighing:</p>
+            
+            <p><q><foreign xml:lang="ja">Arigato</foreign>! <foreign xml:lang="ja">Arigato</foreign>! <foreign xml:lang="ja">Arigato</foreign>!</q> (Thank you.)</p>
+            
+            <p><q>Hustle. Did you hear that gong! They’re summoning the police. Let’s beat it</q>.</p>
+            
+            <p><q>And leave her here at his mercy? Nothing doing</q>.</p>
+      
+        
+            <p>Jerry had lifted the child bodily in his arms, and tossed her across his shoulder. They came out of the house and the gardens through a hue and cry of alarmed attendants and inmates. Hirata had crawled on hands and knees into the main dance hall, and every drum was beating upon the place. Above the beat of the drums came the shrill outcry of Hirata, yelling at the top of his voice:</p>
+            
+            <p><q><foreign xml:lang="ja">Hotogoroshi</foreign>!</q> (Murder.)</p>
+            
+            <p>Through a protecting lane made by his friends, fled Jerry Hammond, the girl upon his shoulder, a chattering, clattering, screeching mob at his heels, out of the gardens and into the dusky streets, under the benignant eye of the Lady Moon, in whose honour a thousand revellers and banquetters were celebrating. Fleet of foot and strong as a young Atlas, Jerry, buoyed up with excitement and rage, fled like the wind before his pursuers, till presently he came to the big brick house, the building of which had been such a source of wonder and amusement to the Japanese, but which had ever afterwards housed white residents sojourning in the city. With one foot Jerry kicked peremptorily upon the door, and a moment later a startled young Japanese butler flungthe heavy doors apart, and Jerry rushed in.</p>
+            
+           </div>
+           <div>
+            
+            <head>Chapter II</head>
+                 
+            <p>She awoke on a great soft bed that seemed to her wondering eyes as large as a room. She was sunk in a veritable nest of down, and, sitting up, she put out a little cautious hand and felt and punched the great pillow to reassure herself as to its reality. There was a vague question trembling in the girl’s mind as to whether she might not, in fact, have escaped from Hirata through the same medium as her adored mother, and was now being wafted on a snowy cloud along the eternal road to Nirvanna.</p>
+    
+            <p>Then the small statue like figure at the foot of the great mahogany bed moved. Memory flooded the girl. She thought of her mother, and a sob of anguish escaped her. Crowding upon the mother came the memory of that delirious moment upon the rope, when feeling that her mother’s spirit was animating her body, she had faced the revellers. Followed the shivering thought of Hirata—the lash upon her shoulder, its sting paining so that the mere recollection caused her face to blanch with terror, dissipated by the memory of what had followed. Again she felt the excitingthrill of that long flight through the night on the shoulder of the strange young barbarian. He had burst into the room like a veritable god from the heavens, and it was impossible to think of him otherwise than some mighty spirit which the gods had sent to rescue and save the unworthy child of the dancer. In an instant, she was out of bed, her quick glance searching the big room, as if somewhere within it her benefactor was. She was still in her sadly ragged tights, the red welt showing where the silk had been split by the whip of Hirata.</p>
+            
+            <p>The maid approached and wrapped the girl in one of her own <foreign xml:lang="ja">kimonas</foreign>. She was a silent tongued, still faced woman, who spoke not at all as she swiftly robed her charge. A servant in the household of the Americans, she had been summoned in the night to attend the strange new visitor. Goto, the house boy, had explained to Hatsu that the girl was a dancer from a neighbouring teahouse, whom his young masters had kidnapped. She was a great prize, jealously to be guarded, whispered the awed and gossiping Goto. Hatsu at first had her doubts on this score, for no dancer or teahouse maiden within her knowledge had ever worn hair of such a colour nor had skin which was bleached as that of the dead. Hatsu had discovered her charge in a sleep of complete exhaustion, her soft fair hair tossed about her on the pillow like that of a child.</p>
+            
+            <p>Now as the maid removed the tawdry tights, and arrayed the strange girl in a respectable <foreign xml:lang="ja">kimona</foreign>, she recognised that those shapely and supple limbs could only be the peculiar heritage of a dancer and performer. A warmth radiated lovingly through her hands as she dressed the young creature confided to her charge. It had never been the lot of Hatsu to serve one as beautiful as this girl, and there was something of maternal pride in her as she fell to her task. There was necessity for haste, for the <q>Mr. American sirs</q>were assembled in the main room awaiting her. Hatsu’s task completed, she took the girl by the sleeve, and led her into the big living room, where were her friends.</p>
+            
+            <p>Even in the long loose robes of the elderly maid, she appeared but a child, with her short hair curling about her face, and her frankly questioning eyes turning from one to the other. There was an expression of mingled appeal and childish delight in that expressive look that she turned upon them ere she knelt on the floor. She made her obeisances with art and grace, as a true apprentice of her mother. Indeed, her head ceased not to bob till a laughing young voice broke the spell ofsilence that her advent had caused with:</p>
+            
+            <p><q>Cut it out, kid! We want to have a look at you. Want to see what sort of prize we pulled in the dark</q>.</p>
+    
+            <p>Promptly, obediently she rested back upon her heels, her two small hands resting flatly on her knees. She turned her face archly, as if inviting inspection, much to the entertainment of the now charmed circle. The apprentice of the House of a Thousand Joys upheld the prestige of her mother’s charm. Even the thin, elderly man, with the bright glasses over which he seemed to peer with an evidently critical and appraising air, softened visibly before that mingled look of nave appeal and glowing youth. The glasses were blinked from the nose, and dangled by their gold string. He approached nearer to the girl, again put on his glasses, and subjected her through them to a searching scrutiny, his trained eye resting longer upon the shining hair of the girl. Theglasses blinked off again at the unabashed wide smile of confidence in those extraordinary eyes; he cleared his throat, prepared to deliver an opinion and diagnosis upon the particular species before his glass. Before he could speak, Jerry broke in belligerently.</p>
+            
+            <p><q>First of all, let’s get this thing clear. She’s not going to be handed back to that blanketty blank baboon. I’m responsible for her, and I’m going to see that she gets a square deal from this time on</q>.</p>
+            
+            <p>The girl’s eyes widened as she looked steadily at the kindling face of the young man, whom she was more than ever assured was a special instrument of the gods. Professor Barrowes cleared his throat noisily again, and holding his glasses in his hand, punctuated andemphasised his remarks:</p>
+            
+            <p><q>Young gentlemen, I suggest that we put the matter in the hands of Mr. Blumenthal, our consul here at Nagasaki. I do not know—I will not express—my opinion of what our rights are in the matter—er as to whether we have in fact broken some law of Japan in—er—thus forcibly bringing the—ah—young lady to our home. I am inclined to think that we are about to experience trouble—considerable trouble I should say—with this man Hirata. If my memory serves me right, I recall hearing or reading somewhere that a master of such a house has certain property right in these—er—young—ah—ladies</q>.</p>
+            
+            <p><q>That may be true</q>, admitted the especial agent of the gods. <q>Suppose she is owned by this man. I’ll bet that Japan is not so dashed medival in its laws, that it permits a chimpanzee like that to beat and ill-use even a slave, and anyway, we’ll give him all that’s coming to him if he tries to take her from us</q>.</p>
+            
+            <p><q>He’ll have his hands danged full trying!</q></p>
+                 
+            <p>The girl’s champion this time was the youthful one of the bone ribbed glasses. Looking at him very gravely, she perceived his amazing youth, despite the wise spectacles that had at first deceived her. There was that about him that made her feel he was very near to her own age, which numbered less than fifteen years. Across the intervening space between them, hazily the girl thought, what a charming playmate the boy of the bone ribbed glasses would make. She would have liked to run through the temple gardens with him, and hide in the cavities of the fantastic rocks, where Japanese children loved to play, and where the wistful eyes of the solitary little apprentice of the House of a Thousand Joys had often longingly and enviously watched them.</p>
+            
+            <p>Her new friend she was to know as <q>Monty</q>. He had a fine long name with a junior on the end of it also, but it took many years before she knew her friends by other than the appellations assigned to them by each other.</p>
+            
+            <p>Now the elderly man—perhaps he was the father, thought the girl on the mat—was againspeaking in that emphatic tone of authority.</p>
+            
+            <p><q>Now my young friends, we have come to Japan with a view to studying the country and people, and to avail ourselves of such pleasures as the country affords to its tourists, etc., and, I may point out, that it was no part of our programme or itinerary to take upon ourselves the responsibility and burden, I may say, of——</q></p>
+            
+            <p><q>Have—a heart!</q></p>
+                 
+            <p>The big slow voice came from the very fat young man, whose melancholy expression belied the popular conception of the comical element associated with those blessed with excessive flesh. <q>Jinx</q>, as his chums called him, was the scion of a house of vast wealth and fame, and it was no fault of his that his heritage had been rich also in fat, flesh and bone. But now the girl’s first friend, with that manner of the natural leader among men, had again taken matters into his own evidently competent hands.</p>
+            
+            <p><q>I say, Jinx, suppose you beat it over to the consul’s and get what advice and dope you can from him. Tell him we purpose carrying the case to Washington and so forth. And you, Monty and Bobs, skin over to the teahouse and scare the guts out of that chimpanzee. Hire a bunch of Japs and cops to help along with the noise. Give him the scare of his life. Tell him she—she is—dying—at her last gasp and——</q></p>
+    
+            <p>(Surely the object of their concern understood the English language, for just then several unexpected dimples sprang abroad, and the little row of white teeth showed that smilethat was her heritage from her mother.)</p>
+            
+            <p><q>Tell him</q>, went on Jerry, a bit unevenly, deviated from his single track of thought by that most engaging and surprising smile— <q>that we’ll have him boiled in oil or lava or some other Japanese concoction. Toddle along, old dears, or that fellow with the face supporting the Darwinian theory will get ahead of us with the police</q>.</p>
+            
+            <p><q>What’s your hurry?</q> growled Jinx, his sentimental gaze resting fascinatedly upon the girl on the floor.</p>
+        
+            <p>The young man Jerry had referred to as Bobs now suggested that there was a possibility that the girl was deaf and dumb, in view of the fact that she had not spoken once. This alarming suggestion created ludicrous consternation.</p>
+            
+            <p><q>Where’s that dictionary, confound it!</q> Jerry sought the elusive book in sundry portions of his clothing, and then appealed to the oracle of the party.</p>
+            
+            <p><q>I suggest</q>, said Professor Barrowes didactically, <q>that you try the—ah—young lady—with the common Japanese greeting. I believe you all have learned it by now</q>.</p>
+            
+            <p>Promptly there issued from four American mouths the musical morning greeting of the Japanese, reminiscent to them of a well known State productive of presidents.</p>
+            
+            <p><q>O—hi—o!</q></p>
+                 
+            <p>The effect on the girl was instantaneous. She arose with grace to her feet, put her two small hands on her two small knees, bobbed up and down half a dozen times, and then with that white row of pearls revealed in an irresistible smile, she returned:</p>
+            
+            <p><q>Goog—a—morning!</q></p>
+                 
+            <p>There was a swelling of chests at this. Pride in their protege aroused them to enthusiastic expressions.</p>
+           
+            <p><q>Can you beat it?</q></p>
+                 
+            <p><q>Did you hear her?</q></p>
+                 
+            <p><q>She’s a cute kid</q>.</p>
+                 
+            <p>And from Monty:</p>
+                 
+            <p><q>I could have told you from the first that a girl with hair and eyes like that wouldn’t be chattering any monkey speech</q>.</p>
+            
+            <p>Thereupon the girl, uttered another jewel in English, which called forth not merely approbation, but loud and continuous applause, laughter, and fists clapped into hands. Said the girl:</p>
+            
+            <p><q>I speag those mos’ bes’ Angleesh ad Japan!</q></p>
+            
+            <p><q>I’ll say you do</q>, agreed Monty with enthusiasm.</p>
+            
+            <p><q>Gosh!</q> said Jinx sadly. <q>She’s the cutest kid <emph>I’ve</emph> ever seen</q>.</p>
+            
+            <p><q>How old are you?</q>Jerry put the question gently, touched, despite the merriment her words had occasioned, by something forlorn in the little figure on the mat before them, so evidently anxious to please them.</p>
+            
+            <p><q>How ole?</q> Her expressive face showed evidence of deep regret at having to admit the humiliating fact that her years numbered but fourteen and ten months. She was carefulto add the ten months to the sum of her years.</p>
+            
+            <p><q>And what’s your name?</q></p>
+                 
+            <p><q>I are got two names</q>.</p>
+                 
+            <p><q>We all have that—Christian and surname we call ‘em. What’s yours?</q></p>
+            
+            <p><q>I are got Angleesh name—Fleese. You know those name?</q> she inquired anxiously. <q>Thas Angleesh name</q>.</p>
+            
+            <p><q>Fleese! Fleese!</q> Not one of them but wanted to assure her that <q>Fleese</q> was a well known name in the English tongue, but even Professor Barrowes, an authority on the roots of all names, found <q>Fleese</q> a new one. She was evidently disappointed, and said in a slightly depressed voice:</p>
+            
+            <p><q>I are sawry you do not know thad Angleesh name. My father are give me those name</q>.</p>
+            
+            <p><q>I have it! I have it!</q> Bobs, who had been scribbling something on paper, and repeating it with several accents, shouted that the name the girl meant was undoubtedly <q>Phyllis</q>, and at that she nodded her head so vigorously, overjoyed that he threw back his head and burst into laughter, which was loudly and most joyously and ingenuously entered into by <q>Phyllis</q> also.</p>
+        
+            <p><q>So that’s your name—Phyllis</q>, said Jerry. <q>You <emph>are</emph> English then?</q></p>
+            
+            <p>She shook her head, sighing with regret.</p>
+                 
+            <p><q>No, I sawry for those. I <emph>lig’</emph> be Angleesh. Thas nize be Angleesh; but me, I are not those. Also I are got Japanese name. It are Sunlight. My mother——</q> Her face became instantly serious as she mentioned her mother, and bowed her head to the floor reverently. <q>My honourable mother have give me that Japanese name—Sunlight, but my father are change those name. He are call me—Sunny. This whad he call me when he go away——</q> Her voice trailed off forlornly, hurt by a memory that went back to her fifth year.</p>
+            
+            <p>They wanted to see her smile again, and Jerry cried enthusiastically:</p>
+            
+            <p><q>Sunny! Sunny! What a corking little name! It sounds just like you look. We’ll call you that too—Sunny</q>.</p>
+                 
+            <p>Now Professor Barrowes, too long in the background, came to the fore with precision. He had been scratching upon a pad of paper a number of questions he purposed to put to Sunny, as she was henceforth to be known to her friends.</p>
+            
+            <p><q>I have a few questions I desire to ask the young—ah—lady, if you have no objection. I consider it advisable for us to ascertain what we properly can about the history of Miss—er—Sunny—andso, if you will allow me</q>.</p>
+    
+            <p>He cleared his throat, referred to the paper in his hand and propounded the first question as follows:</p>
+            
+            <p><q>Question number one: Are you a white or a Japanese girl?</q></p>
+                 
+            <p>Answer from Sunny:</p>
+            
+            <p><q>I are white on my face and my honourable body, but I are Japanese on my honourable insides</q>.</p>
+            
+            <p>Muffled mirth followed this reply, and Professor Barrowes having both blown his nose and cleared his throat applied his glasses to his nose but was obliged to wait a while before resuming,and then:</p>
+                 
+            <p><q>Question number two: Who were or are your parents? Japanese or white people?</q></p>
+                
+            <p>Sunny, her cheeks very red and her eyes very bright:</p>
+              
+            <p><q>Aexcuse me. I are god no parents or ancestors on those worl’. I sawry. I miserable girl wizout no ancestor</q>.</p>
+                 
+            <p><q>Question number three: You had parents. You remember them. What nationality was your mother? I believe Madame Many Smiles was merely her professional pseudonym. I have heard her variously described as white, partly white, half caste. What was she—a white woman or a Japanese?</q></p>
+            
+            <p>Sunny was thinking of that radiant little mother as last she had seen her in the brilliant dancing robes of the dead <foreign xml:lang="ja">geisha</foreign>. The questions were touching the throbbing cords of a memory that pierced. Over the sweet young face a shadow crept.</p>
+            
+            <p><q>My m-mother</q>, said Sunny softly, <q>are god two bloods ad her insides. Her father are Lussian gentleman and her mother are Japanese</q>.</p>
+                 
+            <p><q>And your father?</q></p>
+                 
+            <p>A far-away look came into the girl’s eyes as she searched painfully back into that past that held such sharply bright and poignantly sad memories of the father she had known such a little time. She no longer saw the eager young faces about her, or the kindly one of the man who questioned her. Sunny was looking out before her across the years into that beautiful past, wherein among the cherry blossoms she had wandered with her father. It was he who had changed her Japanese name of Sunlight to <q>Sunny</q>. A psychologist might have found in this somewhat to redeem him from his sins against his child and her mother, for surely the name revealed a softness of the heart which his subsequent conduct might have led a sceptical world to doubt. Moreover, the first language of her baby lips was that of her father, and for five years she knew no other tongue. She thought of him always as of some gay figure in a bright dream that fled away suddenly into the cruel years that followed.</p>
+  
+            <p>There had been days of real terror and fear, when Sunny and her mother had taken the long trail of the mendicant, and knew what it was to feel hunger and cold and the chilly hand of charity. The mere memory of those days set the girl shivering, for it seemed such a short time since when she and that dearest mother crouched outside houses that, lighted within, shone warmly, like gaudy paper lanterns in the night; of still darker days of discomfort and misery, when they had hidden in bush, bramble and in dark woods beyond the paths of men. There had been a period of sweet rest and refuge in a mountain temple. There everything had appealed to the imaginative child. Tinkling bells and whirring wings of a thousand doves, whose home was in gilded loft andspire; bald heads of murmuring bonzes; waving sleeves of the visiting priestesses, dancing before the shrine to please the gods; the weary pilgrims who climbed to the mountain’s heart to throw their prayers in the lap of the peaceful Buddha. A hermitage in a still wood, where an old, old nun, with gentle feeble voice, crooned over her rosary. All this was as a song that lingers in one’s ears long after the melody has passed—a memory that stung with its very sweetness. Even here the fugitives were not permitted to linger for long.</p>
+            
+            <p>Pursuing shadows haunted her mother’s footsteps and sent her speeding ever on. She told her child that the shadows menaced their safety. They had come from across the west ocean, said the mother. They were barbarian thieves of the night, whose mission was to separate mother from child, and because separation from her mother spelled for little Sunny a doom more awful than death itself, she was wont to smother back her child’s cries in her sleeve, and bravely and silently push onward. So for a period of time of which neither mother nor child took reckoning the days of their vagabondage passed.</p>
+            
+            <p>Then came a night when they skirted the edges of a city of many lights; lights that hung like stars in the sky; lights that swung over the intricate canals that ran into streets in and out of the city; harbour lights from great ships that steamed into the port; the countless little lights of junks and fisher boats, and the merry lights that shone warmly inside the pretty paper houses that bespoke home and rest to the outcasts. And they came to a brilliantly lighted garden, where on long poles and lines the lanterns were strung, and within the gates they heard the chattering of the drum, and the sweet tinkle of the <foreign xml:lang="ja">samisen</foreign>. Here at the gates of the House of a Thousand Joys the mother touched the gongs. A man with a lantern in his hand came down to the gates, and as the woman spoke, he raised the light till it revealed that delicate face, whose loveliness neither pain nor privation nor time nor even death had ravaged.</p>
+            
+            <p>After that, the story of the <foreign xml:lang="ja">geisha</foreign> was well known. Her career had been an exceptional one in that port of many teahouses. From the night of her dbut to the night of her death the renown of Madame Many Smiles had been undimmed.</p>
+            
+            <p>Sunny, looking out before her, in a sad study, that caught her up into the web of the vanished years, could only shake her head dumbly at her questioner, as he pressed her:</p>
+            
+            <p><q>Your father—you have not answered me?</q></p>
+                 
+            <p><q>I kinnod speag about my—father. I sawry, honourable sir</q>, and suddenly the child’s face drooped forward as if she humbly bowed, but the young men watching her saw the tears that dropped on her clasped hands.</p>
+            
+            <p>Exclamations of pity and wrath burst from them impetuously.</p>
+            
+            <p><q>We’ve no right to question her like this</q>, declared Jerry Hammond hotly. <q>It’s not of any consequence who her people are. She’s got us now. We’ll take care of her from this time forth</q>. At that Sunny again raised her head, and right through her tears she smiled up at Jerry. It made him think of an April shower, the soft rain falling through the sunlight.</p>
+        
+           </div>
+           <div>
+           
+            <head>Chapter III</head>
+
+            <p>Only one who has been in bondage all of his days can appreciate that thrill that comes with sudden freedom. The Americans had set Sunny free. She had been bound by law to the man Hirata through an iniquitous bond that covered all the days of her young life—a bond into which the average <foreign xml:lang="ja">geisha</foreign> is sold in her youth. Sunny’s mother had signed the contract when starvation faced them, and reassured by the promises of Hirata.</p>
+            
+            <p>What price and terms the avaricious Hirata extracted from the Americans is immaterial, but they took precautions that the proceeding should be in strict accord with the legal requirements of Japan. The American consul and Japanese lawyers governed the transaction. Hirata, gloated with the unexpected fortune that had come to him through the sale of the apprentice-<foreign xml:lang="ja">geisha</foreign>, overwhelmed the disgusted young men, whom he termed now his benefactors, with servile compliments, and hastened to comply with all their demands, which included the delivery to Sunny of the effects of her mother. Goto bore the box containing her mother’s precious robes and personal belongings into the great living room.</p>
+            
+            <p>Life had danced by so swiftly and strangely for Sunny in these latter days, that she had been diverted from her sorrow. Now, as she slowly opened the bamboo chest, with its intangibleodour of dear things, she experienced a strangling sense of utter loss and pain. Never again would she hear that gentle voice, admonishing and teaching her; never again would she rest her tired head on her mother’s knee and find rest and comfort from the sore trials of the day; for the training of the apprentice-<foreign xml:lang="ja">geisha</foreign>is harsh and spartan like. As Sunny lifted out her mother’s sparkling robe, almost she seemed to see the delicate head above it. A sob broke from the heart of the girl, and throwing herself on the floor by the chest, she wept with her face in the silken folds. A moth fluttered out of one of the sleeves, and hung tremulously above the girl’s head. Sunny, looking up, addressed it reverently:</p>
+            
+            <p><q>I will not hurt you, little moth. It may be you are the spirit of my honourable mother. Pray you go upon your way</q>, and she softly blew up at the moth.</p>
+            
+            <p>It was that element of helplessness, a feminine quality of appeal about Sunny, that touched something in the hearts of her American friends that was chivalrous and quixotic. Always, when Sunny was in trouble, they took the jocular way of expressing their feelings for their charge. To tease, joke, chaff and play with Sunny, that was their way. So, on this day, when they returned to the house, to find the girl with her tear-wet face pressed against her mother’s things, they sought an instant means, and as Jerry insisted, a practical one, of banishing her sadness. After the box had been taken from the room, Goto and Jinx told some funny stories, which brought a faint smile to Sunny’s face. Monty proffered a handful of sweets picked up in some adjacent shop, while Bobs sought scientifically to arouse her to a semblance of her buoyant spirits by discussing all the small live things that were an unfailing source of interest always to the girl, and pretended an enthusiasm over white rabbits which he declared were in the garden. Jerry broached his marvelous plan, pronounced by Professor Barrowes to be preposterous, unheard of and impossible. In Jerry’s own words, the scheme was as follows:</p>
+            
+            <p><q>I propose that we organise and found a company or Syndicate, all present to have the privilege of owning stock in said company; its purpose being to take care of Sunny for the rest of her days. Sooner or later we fellows must return to the U. S. We are going to provide for Sunny’s future after we are gone</q>.</p>
+            
+            <p>Thus the Sunny Syndicate Limited came into being. It was capitalised at $10,000, paid in capital, a considerable sum in Japan, and quite sufficient to keep the girl in comfort for the rest of her days. Professor Timothy Barrowes was unanimously elected President, J. Lyon Crawford (Jinx) treasurer; Robert M. Mapson (Bobs), secretary of the concern, and Joseph Lamont Potter, Jr. (Monty), though under age, after an indignant argument was permitted to hold a minimum measure of stock and also voted a director. J. Addison Hammond, Jr. (Jerry), held down the positions of first vice-president, managing director and general manager and was grudgingly admitted to be the founder and promoter of the great idea, and the discoverer of Sunny, assets of aforesaid Syndicate.</p>
+            
+            <p>At the initial Board meeting of the Syndicate, which was riotously attended, the purpose of the Syndicate was duly set forth in the minutes read, approved and signed by all, which was, to wit, to feed, clothe, educate and furnish with sundry necessities and luxuries the aforesaid Sunny for the rest of her natural days.</p>
+            
+            <p>The education of Sunny strongly appealed to the governing president, who, despite his original protest, was the most active member of the Syndicate. He promptly outlined a course which would tend to cultivate those hitherto unexplored portions of Sunny’s pliable young mind. A girl of almost fifteen, unable to read or write, was in the opinion of Professor Barrowes a truly benighted heathen. What matter that she knew the Greater Learning for Women by heart, knew the names of all the gods and goddesses cherished by the Island Empire; had an intimate acquaintance with the Japanese language, and was able to translate and indite epistles in the peculiar figures intelligible only to the Japanese. The fact remained that she was in a state of abysmal ignorance so far as American education was concerned. Her friends assured her of the difficulty of their task, and impressed upon her the necessity of hard study and co-operation on her part. She was not merely to learn the American language, she was, with mock seriousness, informed, but she was to acquire the American point of view, and in fact unlearn much of the useless knowledge she had acquired of things Japanese.</p>
+            
+            <p>To each member of the Syndicate Professor Barrowes assigned a subject in which he was to instruct Sunny. Himself he appointed principal of the <q>seminary</q> as the young men merrily named it; Jerry was instructor in reading and writing, Bobs in spelling, Jinx in arithmetic, and to young Monty, aged seventeen, was intrusted the task of instructing Sunny in geography, a subject Professor Barrowes well knew the boy was himself deficient in. He considered this an ideal opportunity, in a sort of inverted way, to instruct Monty himself. To the aid and help of the Americans came the Reverend Simon Sutherland, a missionary, whose many years of service among the heathen had given to his face that sadly solemn expression of martyr zealot. His the task to transform Sunny into a respectable Christian girl.</p>
+            
+            <p>Sunny’s progress in her studies was eccentric. There were times when she was able to read so glibly and well that the pride of her teacher was only dashed when he discovered that she had somehow learned the words by heart, and in picking them out had an exasperating habit of pointing to the wrong words. She could count to ten in English. Her progress in Geography was attested to by her admiring and enthusiastic teacher, and she herself, dimpling, referred to the U. S. A. as being <q>over cross those west water, wiz grade flag of striped stars</q>.</p>
+            
+            <p>However, her advance in religion exceeded all her other attainments, and filled the breast of the good missionary with inordinate pride. An expert and professional in the art of converting the heathen, he considered Sunny’s conversion at the end of the second week as little short of miraculous, and, as he explained to the generous young Americans, who had done so much for the mission school in which the Reverend Simon Sutherland was interested, he was of the opinion that the girl’s quick comprehension of the religion was due to a sort of reversion to type, she being mainly of white blood. So infatuated indeed was the good man by his pupil’s progress that he could not forbear to bring her before her friends, and show them what prayer and sincere labour among the heathen were capable of doing.</p>
+            
+            <p>Accordingly, the willing and joyous convert was haled before an admiring if somewhat sceptical circle in the cheerful living room of the Americans. Here, her hands clasped piously together, she chanted the prepared formula:            </p>
+            
+            <p><q>Gentlemens</q>—Familiar daily intercourse with her friends brought easily to the girl’s tongue their various nicknames, but <q>Gentlemens</q> she now addressed them.</p>
+            
+            <p><q>I stan here to make statements to you that I am turn Kirishitan</q>.</p>
+            
+            <p><q>English, my dear child. Use the English language, please</q>.</p>
+                 
+            <p><q>—that I am turn those Christian girl. I can sing those—a-gospel song; and I are speak those—ah—gospel prayer, and I know those cat—cattykussem like—like——</q></p>
+                 
+            <p>Sunny wavered as she caught the uplifted eyebrow of the missionary signalling to her behind the back of Professor Barrowes. Now the words began to fade away from Sunny. Alone with the missionary it was remarkable how quickly she was able to commit things to memory. Before an audience like this, she was as a child who stands upon a platform with his first recitation, and finds his tongue tied and memory failing. What was it now the Reverend Simon Sutherland desired her to say? Confused, but by no means daunted, Sunny cast about in her mind for some method of propitiating the minister. At least, she could pray. Folding her hands before her, and dropping her Buddhist rosary through her fingers, she murmured the words of that quaint old hymn:</p>
+
+                  <lg>
+                    <l>What though those icy breeze,</l>    
+                    <l>He blow sof’ on ze isle</l>
+                    <l>Though evrything he pleases</l>
+                    <l>And jos those man he’s wild,</l>
+                    <l>In vain with large kind</l>
+                    <l>The gift of those gods are sown,</l>
+                    <l>Those heathen in blindness</l>
+                    <l>Bow down to wood and stone.</l>
+                 </lg>
+        
+        <p>They let her finish the chant, the words of which were almost unintelligible to her convulsed audience, who vainly sought to strangle their mirth before the crestfallen and sadly hurt Mr. Sutherland. He took the rosary from Sunny’s fingers, saying reprovingly:</p>
+            
+        <p><q>My dear child, that is not a prayer, and how many times must I tell you that we do not use a rosary in our church. All we desire from you at this time is a humble profession as to your conversion to Christianity. Therefore, my child, your friends and I wish to bereassured on that score</q>.</p>
+            
+        <p><q>I’d like to hear her do the catechism. She says she knows it</q>, came in a muffled voicefrom Bobs.</p>
+            
+        <p><q>Certainly, certainly</q>, responded the missionary. <q>Attention, my dear. First, I willask you: What is your name?</q></p>
+                 
+        <p>Sunny, watching him with the most painful earnestness indicative of her earnest desire to please, was able to answer at once joyously.            </p>
+            
+        <p><q>My name are Sunny—Syndicutt</q>.</p>
+            
+        <p>The mirth was barely suppressed by the now indignant minister, who glared in displeasure upon the small person so painfully trying to realise his ambitions for her. To conciliate the evidently angry Mr. Sutherland, she rattled along hurriedly:            </p>
+            
+        <p><q>I am true convert. I swear him. By those eight million gods of the heavens and the sea, and by God-dam I swear it that I am nixe Kirishitan girl</q>.</p>
+            
+        <p>A few minutes later Sunny was alone, even Professor Barrowes having hastily followed his charges from the room to avoid giving offence to the missionary, whose angry tongue was now loosened, and flayed the unhappy girl ere he too departed in dudgeon via the front door.    </p>
+            
+        <p>That evening, after the dinner, Sunny, who had been very quiet during the meal, went directly from the table to her room upstairs, and to the calls after her of her friends, she replied that she had <q>five thousan words to learn him to spell</q>.</p>
+            
+        <p>Professor Barrowes, furtively wiping his eyes and then his glasses, shook them at his protesting young charges and asserted that the missionary was quite within his rights in punishing Sunny by giving her 500 lines to write.          </p>
+            
+        <p><q>She’s been at it all day</q>, was the disgusted comment of Monty. <q>It’s a rotten shame, to put that poor kid to copying that little hell of a line</q>.</p>
+            
+        <p><q>Sir</q>, said the Professor, stiffening and glaring through his glasses at Monty, <q>I wish you to know that line happens to be taken from a—er—book esteemed sacred, and I have yet to learn that it had its origin in the infernal regions as suggested by you. What is more, I may say that Miss Sunny’s progress in reading and spelling, arithmetic, and geography has not been what I had hoped. Accordingly I have instructed her that she must study for an hour in the evening after dinner, and I have further advised the young lady that I do not wish her to leave the house on any pleasure expedition this evening</q>.</p>
+            
+        <p>A howl of indignant protest greeted this pronouncement and the air was electric with bristling young heads.</p>
+            
+        <p><q>Say, Proff. Sunny promised to go out with me this evening. She knows a shop where they sell that sticky gum drop stuff that I like, and we’re going down Snowdrop Ave. to Canal Lane. Let her off, just this time, will you?</q></p>
+            
+        <p><q>I will not. She must learn to spell Cat, Cow, Horse and Dog and such words as a baby of five knows properly before she can go out on pleasure trips</q>.</p>
+            
+        <p>Jinx ponderously sat up on his favourite sofa, the same creaking under him as the big fellow moved. In an injured tone he set forth his rights for the evening to Sunny.            </p>
+            
+        <p><q>Sunny has a date with me to play me a nice little sing-song on that Jap guitar of hers. I’m not letting her off this or any other night</q>.</p>
+            
+        <p><q>She made a date with me too</q>, laughed Bobs. <q>We were to star gaze, if you please. She says she knows the history of all the most famous stars in the heavens, and she agreed to show me the exact geographical spot in the firmament where that Amaterumtumtum, or whatever she calls it, goddess, lost her robes in the Milky Way just while she was descending to earth to be an ancestor to the Emperor of Japan</q>. Mockingly Bobs bowed his head in solemn and comical imitation of Sunny at the mention of the Emperor.</p>
+            
+        <p>Jerry was thinking irritably that Sunny and he were to have stolen away after supper for a little trip in a private junk, owned by a friend of Sunny’s, and she said that the rowers would play the guitar and sing as the gondoliers of Italy do. Jerry had a fancy for that trip in the moonlight, with Sunny’s little hand cuddled up in his, and the child chattering some of her pretty nonsense. Confound it, the little baggage had promised her time to every last one of her friends, and so it was nearly every night in the week. Sunny had much ado making and breaking engagementswith her friends.            </p>
+            
+        <p><q>It strikes me</q>, said Professor Barrowes, stroking his chin humorously, <q>that Miss Sunny has in her all the elements that go to the making of a most complete and finished coquette. For your possible edification, gentlemen, I will mention that the young lady also offered to accompany me to a certain small temple where she informs me a bonze of the Buddhist religion has a library of er—one million years, so claims Miss Sunny, and this same bonze she assured me has a unique collection of ancient butterflies which have come down from prehistoric days. Ahem!—er—I shall play fair with you young gentlemen. I desire very much to see the articles I have mentioned. I doubt very much the authenticity of the same, but have an open mind. I shall, however, reserve the pleasure of seeing these collections till a more convenient period. In the meanwhile I advise you all to go about your respective concerns, and I bid you good-night, gentlemen, I bid you good-night</q>.</p>
+            
+        <p>The house was silent. The living room, with its single reading lamp, seemed empty and cold, and Professor Barrowes with a book whose contents would have aforetime utterly absorbed him, as it dealt with the fascinating subject of the Dinornis, of post-Pliocene days, found himself unable to concentrate. His well-governed mind had in some inexplicable way become intractable. It persisted in wandering up to the floor above, where Professor Barrowes knew was a poor young girl, who was studying hard into the night. Twice he went outdoors to assure himself that Sunnywas still studying, and each time the glowing light, and the chanting voice aroused his further compunction and remorse. Unable longer to endure the distracting influence that took his mind from his favourite study, the Professor stole on tiptoe up the stairs to Sunny’s door. The voice inside went raucously on.</p>
+            
+        <p><q>C-a-t—dog. C-a-t—dog. C-a-t—dog!</q></p>
+                 
+        <p>Something about that voice, devoid of all the charm peculiar to Sunny, grated against the sensitive ear at the keyhole, and accordingly he withdrew the ear and applied the eye. What he saw inside caused him to sit back solidly on the floor, speechless with mirthful indignation.            </p>
+            
+        <p>Hatsu, the maid, sat stonily before the little desk of her mistress, and true to the instructionsof Sunny, she was loudly chanting that C-a-t spelled Dog.            </p>
+            
+        <p>Outside the window—well, there was a lattice work that ascended conveniently to Sunny’s room. Her mode of exit was visible to the simplest minded, but the question that agitated the mind of Professor Barrowes, and sent him off into a spree of mirthful speculation was which one of the members of the Sunny Syndicate Limited had Miss Sunny Sindicutt eloped with?</p>
+            
+      </div>
+      <div>
+  
+        <head>Chapter IV</head>
+
+         <p>To be adopted by four young men and one older one; to be surrounded by every care and luxury; to be alternately scolded, pampered, admonished and petted, this was the joyous fate of Sunny. Life ran along for the happy child like a song, a poem which even Takumushi could not have composed.            </p>
+           
+         <p>Sunny greeted the rising sun with the kisses that she had been taught to throw to garden audiences, and hailed the blazing orb each morning, having bowed three times, hands on knees, with words like these:            </p>
+            
+         <p><q><foreign xml:lang="ja">Ohayo</foreign>! honourable Sun. I glad you come again. Thas a beautiful day you are bring, an I thang you thad I are permit to live on those day. Hoh! <foreign xml:lang="ja">Amaterasuoho-mikami</foreign>, shining lady of the Sun, I are mos’ happiest girl ad those Japan!</q></p>
+            
+         <p>The professional <foreign xml:lang="ja">geisha</foreign> is taught from childhood—for her apprenticeship begins from earliest youth—that her mission in life is to bring joy and happiness into the world, to divert, to banish all care by her own infectious buoyancy, to heal, to dissipate the cares of mere mortals; to cultivate herself so that she shall become the very essence of joy. If trouble comes to her own life, to so exercise self-control that no trace of her inner distress must be reflected in her looks or conduct. She must, in fact, make a science of her profession. To laugh with those who laugh and weep with those who find a balm in tears—that is the work of the <foreign xml:lang="ja">geisha</foreign>.</p>
+            
+         <p>Sunny, a product of the <foreign xml:lang="ja">geisha</foreign> house, and herself apprentice to the joy women of Japan, was of another race by blood, yet always there was to cling to her that intangible charm, that like a strange perfume bespeaks the <foreign xml:lang="ja">geisha</foreign> of Japan. In her odd way Sunny laid out her campaign to charm and please the ones who had befriended her, and toward whom she felt a gratitude that both touched and embarrassed them.            </p>
+            
+         <p>Her new plan of life, however, violated all the old rules which had governed in the teahouse. Sunny was sore put to it to adjust herself to the novelty of a life that knew not the sharp and imperative voice, which cut like a whip in staccato order, from the master of the <foreign xml:lang="ja">geishas</foreign>; nor the perilous trapeze, the swinging rope, to fall from which was to bring down upon her head harsh rebuke, and sometimes the threatening flash of the whip, whirling in the air, and barely scraping the girl on the rope. She had been whipped but upon that one occasion, for her mother was toovaluable an asset in the House of a Thousand Joys for Hirata to risk offending; but always he loved to swing the lash above the girl’s head, or hurl it near to the feet that had faltered from the rope, so that she might know that it hung suspended above her to fall at a time when she failed. There were pleasant things too in the House of a Thousand Smiles that Sunny missed—the tap tap of the drum, the pat pat of the stockinged feet on the polished dance matting; the rising and falling of the music of the <foreign xml:lang="ja">samisen</foreign> as it tinkled in time to the swaying fans and posturing bodies of the <foreign xml:lang="ja">geishas</foreign>. All this was the joyous part of that gaudy past, which her honourable new owners had bidden her forget.            </p>
+            
+         <p>Sunny desired most earnestly to repay her benefactors, but her offers to dance for them were laughingly joshed aside, and she was told that they did not wish to be repaid in dancing coin. All they desired in return was that she should be happy, forget the bitter past, and they always added <q>grow up to be the most beautiful girl in Japan</q>. This was a joking formula among them. To order Sunny to be merely happy and beautiful. Happy she was, but beauty! Ah! that was more difficult.          </p>
+            
+         <p>Beauty, thought Sunny, must surely be the aim and goal of all Americans. Many were the moments when she studied her small face in the mirror, and regretted that it would be impossible for her to realise the ambition of her friends. Her face, she was assured, violated all the traditions and canons of the Japanese ideal of beauty. That required jet black hair, lustrous as lacquer, a long oval face, with tiny, carmine touched lips, narrow, inscrutable eyes, a straight, sensitive nose, a calmness of expression and poise that should serve as a mask to all internal emotions; above all an elegance and distinction in manners and dress that would mark one as being of an elevated station in life. Now Sunny’s hair was fair, and despite brush and oil generously applied, till forbidden by her friends, it curled in disobedient ringlets about her young face. The hair alone marked her in the estimation of the Japanese as akin to the lower races, since curly hair was one of the marks peculiar to the savages. Neither were her eyes according to the Japanese ideal of beauty. They were, it is true, long and shadowed by the blackest of lashes, and in fact were her one feature showing the trace of her oriental taint or alloy, for they tipped up somewhat at the corners, and she had a trick of glancing sideways through the dark lashes that her friends found eerily fascinating; unfortunately those eyes were large, and instead of being the prescribed black, were pure amber in colour, with golden lights of the colour of her hair. Her skin, finally, was, as the mentor of the <foreign xml:lang="ja">geisha</foreign> house had primly told her, bleached like the skin of the dead. Save where the colour flooded her cheeks like peach bloom, Sunny’s skin was as white as snow, and all the temporary stains and dark powder applied could not change the colour of her skin. To one accustomed to the Japanese point of view, Sunny therefore could see nothing in her own lovely face that would realise the desire of her friends that she should be beautiful; but respectfully and humbly she promised them that she would try to obey them, and she carried many gifts and offerings to the feet of <foreign xml:lang="ja">Amaterasu-ohomikami</foreign>, whose beauty had made her the supreme goddess of the heavens.</p>
+            
+         <p><q>Beauty</q>, said Jerry Hammond, walking up and down the big living room, his hair rumpled, and his hands loosely in his pockets, <q>is the aim and end of all that is worth while in life, Sunny. If we have it, we have everything. Beauty is something we are unable to define. It is elusive as a feather that floats above our heads. A breath will blow it beyond our reach, and a miracle will bring it to our hand. Now, the gods willing, I am going to spend all of the days of my life pursuing and reaching after Beauty. Despite my parents’ fond expectations of a commercial career for their wayward son, I propose to be an artist</q>.</p>
+            
+         <p>From which it will be observed that Jerry’s idea of beauty was hardly that comprehended by Sunny, though in a vague way she sensed also his ideal.</p>
+            
+         <p><q>An artist!</q> exclaimed she, clasping her hands with enthusiasm. <q>Ho! <emph>how</emph> thad will be grade. I thing you be more grade artist than <foreign xml:lang="ja">Hokusai</foreign>!</q></p>
+            
+         <p><q>Oh, Sunny, impossible! Hokusai was one of the greatest artists that ever lived. I’m not built of the same timber, Sunny</q>. There was a touch of sadness to Jerry’s voice. <q>My scheme is not to paint pictures. I propose to beautify cities. To the world I shall be known merely as an architect, but you and I, Sunny, we will know, won’t we, that I am an artist; because, you see, even if one fails to create the beautiful, the hunger and the desire for it is just as important. It’s like being a poet at heart, without being able to write poetry. Now some fellows <emph>write</emph> poetry of a sort—butthey are not poets—not in their thought and lives, Sunny. I’d rather be a poet than write poetry. Do you understand that?</q></p>
+         
+         <p><q>Yes—I understand</q>, said Sunny softly. <q>The liddle butterfly when he float on the flower, he cannot write those poetry—but he are a poem; and the honourable cloud in those sky, so sof’, so white, so loavely he make one’s heart leap up high at chest—thas poem too!</q></p>
+            
+         <p><q>Oh, Sunny, what a perfect treasure you are! I’m blessed if you don’t understand a fellow better than one of his own countrywomen would</q>.</p>
+            
+         <p>To cover a feeling of emotion and sentiment that invariably swept over Jerry when he talked with Sunny on the subject of beauty, and because moreover there was that about her own upturned face that disturbed him strangely, he always assumed a mock serious air, and affected to tease her.</p>
+            
+         <p><q>But to get back to you, Sunny. Now, all you’ve got to do to please the Syndicate is to be a good girl <emph>and</emph> beautiful. It ought not to be hard, because you see you’ve got such a bully start. Keep on, and who knows you’ll end not only by being the most beautiful girl in Japan, but the Emperor himself—the Emperor of Japan, mark you, will step down from his golden throne, wave his wand toward you and marry you! So there you’ll be—the royal Empress of Japan</q>.</p>
+            
+         <p><q>The Emperor!</q> Sunny’s head went reverently to the mats. Her eyes, very wide, met Jerry’s in shocked question. <q>You want me marry wiz—the Son of Heaven? <emph>How</emph>I can do those?</q></p>
+            
+         <p>Again her head touched the floor, her curls bobbing against flushed cheeks.</p>
+            
+         <p><q>Easy as fishing</q>, solemnly Jerry assured her. <q>They say the old dub is quite approachable, and you’ve only to let him see you once, and that will be enough for him. Just think, Sunny, what that will mean to you, and to us all—to be Empress of Japan. Why, you will only need to wave your hand or sleeve, and all sorts of favours will descend upon our heads. You will be able to repay us threefold for any insignificant service we may have done for you. Once Empress of Japan, you can summon us back to these fair isles and turn over to us all the political plums of the Empire. As soon as you give us the high sign, old scout, we’ll be right on the job</q>.</p>
+            
+         <p><q>Jerry, you like very much those plum?</q></p>
+         
+         <p><q>You better believe I do</q>.</p>
+            
+         <p>Sunny, chin in hand, was off in a mood of abstraction. She was thinking very earnestly of the red plum tree that grew above the tomb of the great Lord of Kakodate. He, that sleeping lord, would not miss a single plum, and she would go to the cemetery in the early morning, and when she had accomplished the theft, she would pray at the temple for absolution for her sin, which would not be so bad because Sunny would have sinned for love.            </p>
+            
+         <p><q>A penny for your thoughts, Sunny!</q></p>
+            
+         <p><q>I are think, Jerry, that some things you ask me I can do; others, no—thas not possible. Wiz this liddle hand I cannod dip up the ocean. Thas proverb of our Japan. I cannod marry those Emperor, and me? I cannod also make beauty on my face</q>.</p>
+
+         <p><q>Give it a try, Sunny</q>,jeered Jerry, laughing at her serious face. <q>You have no idea what time and art will do for one</q>.</p>
+            
+         <p><q>Time—and—art</q>, repeated Sunny, like a child learning a lesson. She comprehended time, but she had inherited none of the Japanese traits of patience. She would have wished to leap over that first obstacle to beauty. Art, she comprehended, as a physical aid to a face and form unendowed with the desired beauty. She carried her problem to her maid.            </p>
+            
+         <p><q>Hatsu, have you ever seen the Emperor?</q></p>
+      
+         <p>Both of their heads bobbed quickly to the mat.</p>
+            
+         <p>Hatsu had not. She had, it is true, walked miles through country roads, on a hot, dry day, to reach the nearest town through which the Son of Heaven’s cortege had once passed. But, of course, as the royal party approached, Hatsu, like all the peasants who had come to the town on this gala day, had fallen face downward on the earth. It was impossible for her therefore to see the face of the Son of Heaven. However, Hatsu had seen the back of his horse—the modern Emperor rode thus abroad, clear to the view of subjects less humble than Hatsu, who dared to raise their eyes to his supreme magnificence. Sunny sighed. She felt sure that had she been in Hatsu’s place, she would at least have peeped through her fingers at the <foreign xml:lang="ja">mikado</foreign>. Rummaging among her treasures in the bamboo chest, Sunny finally discovered what she sought—a picture of the Emperor. This she laid before her on the floor, and for a long, long time she studied the features thoughtfully and anxiously. After a while, she said with a sigh, unconscious of the blasphemy, which caused her maid to turn pale with horror,            </p>
+            
+         <p><q>I do not like his eye, and I do not like his nose, and I do not like his mouth. Yet, Hatsusan, it is the wish of Jerry-sama that I should marry this Emperor, and now I must make myself so beautiful that it will not hurt his eye if he deigns to look at me</q>.</p>
+            
+         <p>Hatsu, at this moment was too overcome with the utter audacity of the scheme to move, and when she did find her voice, she said in a breathless whisper:      </p>
+            
+         <p><q>Mistress, the Son of Heaven already has a wife</q>.</p>
+            
+         <p><q>Ah, yes</q>, returned Sunny, with somewhat of the careless manner toward sacred things acquired from her friends, <q>but perhaps he may desire another one. Come, Hatsusan. Work very hard on my face. Make me look like ancient picture of an Empress of Japan. See, here is a model!</q> She offered one of her mother’s old prints, that revealed a court lady in trailing gown and loosened hair, an uplifted fan half revealing, half disclosing a weirdly lovely face, as she turned to look at a tiny dog frolicking on her train.</p>
+            
+         <p>It was a long, a painful and arduous process, this work of beautifying Sunny. There was fractious hair to be darkened and smoothed, and false hair to help out the illusion. There was a small face that had to be almost completely made over, silken robes from the mother’s chest to slip over the girlish shoulders, shining nails to be polished and hidden behind gold nail protectors, paint and paste to be thickly applied, and a cape of a thousand colours to be thrown over the voluminous many coloured robes beneath.            </p>
+            
+         <p>The sky was a dazzling blaze of red and gold. Even the deepening shadows were touched with gilt, and the glory of that Japanese sunset cast its reflection upon the book-lined walls of the big living room, where the Americans, lingering over pipe and hook, dreamily and appreciatively watched the marvelous spectacle through the widely opened windows. But their siesta was strangely interrupted, for, like a peacock, a strange vision trailed suddenly into the room and stood with suspended breath, fan half raised, in the manner of a court lady of ancient days, awaiting judgment. They did not know her at first. This strange figure seemed to have stepped out of some old Japanese print, and was as far from being the little Sunny who had comeinto their lives and added the last touch of magic to their trip in Japan.            </p>
+            
+         <p>After the first shock, they recognised Sunny. Her face was heavily plastered with a white paste. A vivid splotch of red paint adorned and accentuated either slightly high cheek bone. Her eyebrows had disappeared under a thick layer of paste, and in their place appeared a brand new pair of intensely black ones, incongruously laid about an inch above the normal line and midway of her forehead. Her lips were painted to a vivid point, star shaped, so that the paint omitted the corners of Sunny’s mouth, where were the dimples that were part of the charm of the Sunny theyknew. Upon the girl’s head rested an amazing ebony wig, one long lock of which trailed fantastically down from her neck to the hem of her robe. Shining daggers and pins, and artificialflowers completed a head dress. She was arrayed in an antique <foreign xml:lang="ja">kimona</foreign>, an article of stiff and unlimited dimensions, under which were seven other robes of the finest silk, each signifying some special virtue. A train trailed behind Sunny that covered half the length of the room. Her heavily embroidered outer robe was a gift to her mother from a prince, and its magnificence proclaimed its antiquity.            </p>
+            
+         <p>It may be truly said for Sunny that she indeed achieved her own peculiar idea of what constituted beauty, and as she swept the fan from before her face with real art and grace there was pardonable pride in her voice as she said:</p>
+            
+         <p><q>Honourable Mr. sirs, mebbe <emph>now</emph> you goin’ say I are beautifullest enough girl to make those Emperor marry wiz me</q>.</p>
+            
+         <p>A moment of tense silence, and then the room resounded and echoed to the startled mirth of the young barbarians. But no mirth came from Sunny, and no mirth came from Jerry. The girl stood in the middle of the room, and through all her pride and dazzling attire she showed how deeply they had wounded her. A moment only she stayed, and then tripping over her long train and dropping her fan in her hurry, Sunny fled from the room.            </p>
+            
+         <p>Jerry said with an ominous glare at the convulsed Bobs, Monty and even the aforesaid melancholy Jinx:</p>
+            
+         <p><q>It was my fault. I told her art and time would make her beautiful</q>.</p>
+            
+         <p><q>The devil they would</q>, snorted Bobs. <q>I’d like to know how you figured that art and timecould contribute to Sunny’s natural beauty. By George, she got herself up with the aid of your damned art, to look like a valentine, if you ask me</q>.</p>
+            
+         <p><q>I don’t agree with you</q>, declared Jerry hotly. <q>It’s all how one looks at such things. It’s a symptom of provincialism to narrow our admiration to one type only. Such masters as Whistler of our own land, and many of the most famous artists of Europe have not hesitated to take Japanese art as their model. What Sunny accomplished was the reproduction of a living work of art of the past, and it is the crassest kind of ignorance to reward her efforts with laughter</q>.</p>
+            
+         <p>Jerry was almost savage in his denunciation of his friends.</p>
+            
+         <p><q>I agree with you</q>, said Professor Barrowes snapping his glasses back on his nose, <q>absolutely, absolutely. You are entirely right, Mr. Hammond</q>, and in turn he glared upon his <q>class</q> as if daring anyone of them to question his own opinion. Jinx indeed did feebly say:</p>
+            
+         <p><q>Well, for my part, give me Sunny as we know her. Gosh! I don’t see anything pretty in all that dolled-up stuff and paint on her</q>.</p>
+            
+         <p><q>Now, young gentleman</q>,continued Professor Barrowes, seizing the moment to deliver a gratuitous lecture, <q>there are certain cardinal laws governing art and beauty. It is not a matter of eyes, ears and noses, or even the colour of the skin. It is how we are accustomed to look at a thing. As an example, we might take a picture. Seen from one angle, it reveals a mass of chaotic colour that has no excuse for being. Seen from another point, the purpose of the artist is clearly delineated, and we are trapped in the charm of his creation. Every clime has its own peculiar estimate, but it comes down each time to ourselves. Poetically it has been beautifully expressedas follows: ‘Unless we carry the beautiful with us, we will find it not.’ Ahem!</q> Professor Barrowes cleared his throat angrily, and scowled, with Jerry, at their unappreciative friends.            </p>
+            
+         <p>Goto, salaaming deeply in the doorway, was sonorously announcing honourable dinner for the honourable sirs, and coming softly across the hall, in her simple plum coloured <foreign xml:lang="ja">kimono</foreign> with its golden <foreign xml:lang="ja">obi</foreign>, the paint washed from her face, and showing it fresh and clean as a baby’s, Sunny’s April smile was warming and cheering them all again.            </p>
+            
+         <p>Jinx voiced the sentiment of them all, including the angry professor and beauty lovingJerry:            </p>
+            
+         <p><q>Gosh! give me Sunny just as she is, without one plea</q>.</p>
+      
+      </div>
+      <div>
+        
+
+      <head>Chapter V</head>
+
+          <p>There comes a time in the lives of all young men sojourning in foreign lands when the powers that be across the water summon them to return to the land of their birth.</p>
+            
+          <p>Years before, letters and cablegrams not unsimilar to those that now poured in upon her friends came persistently across the water to the father of Sunny. Then there was no Professor Barrowes to govern and lay down the law to the infatuated man. He was able to put off the departure for several years, but with the passage of time the letters that admonished and threatened not only ceased to come, but the necessary remittances stopped also. Sunny’s father found himself in thenovel position of being what he termed <q>broke</q> in a strange land.</p>
+            
+          <p>As in the case of Jerry Hammond, whose people were all in trade, there was a strange vein of sentiment in the father of Sunny. To his people indeed, he appeared to be one of those freaks of nature that sometimes appear in the best regulated families, and deviate from the proper paths followed by his forbears. He had acquired a sentiment not merely for the land, but for the woman he had taken as his wife; above all, he was devoted to his little girl. It is hard to judge of the man from his subsequent conduct upon his return to America. His marriage to the mother of Sunny had been more or less of a mercenary transaction. She had been sold to the American by a stepfather anxious to rid himself of a child who showed the clear evidence of her white father, and greedy to avail himself of the terms offered by the American. It was, in fact, a gay union into which the rich, fast young man thoughtlessly entered, with a cynical disregard of anything but his own desires. The result was to breed in him at the outset a feeling that he would not have analysed as contempt, but was at all events scepticism for the seeming love of his wife for him.            </p>
+            
+          <p>It was different with his child. His affection for her was a beautiful thing. No shadow of doubt or criticism came to mar the love that existed between father and child. True, Sunny was the product of a temporary union, a ceremony of the teacup, which nevertheless is a legal marriage in Japan, and so regarded by the Japanese. Lightly as the American may have regarded his union with her mother, he looked upon the child as legally and fully his own, and was prepared to defend her rights.            </p>
+            
+          <p>In America, making a clean breast to parents and family lawyers, he assented to the terms made by them, on condition that his child at least should be obtained for him. The determination to obtain possession of his child became almost a monomania with the man, and he took measures that were undeniably ruthless to gratify his will. It may be also that he was at this time the victim of agents and interested parties. However, he had lived in Japan long enough to know of the proverbial frailty of the sex. The mercenary motives he believed animated the woman in marrying him, her inability to reveal her emotions in the manner of the women of his own race; her seeming indifference and coldness at parting, which indeed was part of her spartan heritage to face dire trouble unblenching—the sort of thing which causes Japanese women to send their warrior husbands into battle with smiles upon their lips—all these things contributed to beat the man into a mood of acquiescence to the demands of his parents. He deluded himself into believing that his Japanese wife, like her dolls, was incapable of any intense feeling.            </p>
+            
+          <p>In due time, the machinery of law, which works for those who pay, with miraculous swiftness in Japan, was set into motion, and the frail bonds that so lightly bound the American to his Japanese wife, were severed. At this time the mother of Sunny had been plastic and apparently complacent, though rejecting the compensation proffered her by her husband’s agents. The woman, who was later to be known as Madame Many Smiles, turned cold as death, however, when the disposition of her child was broached. Nevertheless her smiling mask betrayed no trace to the American agents of the anguished turmoil within. Indeed her amiability aroused indignant and disgusted comment, and she was pronounced a soulless butterfly. This diagnosis of the woman was to be rudely shattered, when, beguiled by her seeming indifference, they relaxed somewhat of their vigilant espionage of her, and awoke one morning to find that the butterfly had flown beyond their reach.            </p>
+            
+          <p>The road of the mendicant, hunger, cold, and even shame were nearer to the gates of Nirvanna than life in splendour without her child. That was all part of the story of Madame Many Smiles.            </p>
+            
+          <p>History, in a measure, was to repeat itself in the life of Sunny. She had come to depend for her happiness upon her friends, and the shock of their impending departure was almost more than she could bear.            </p>
+            
+          <p>She spent many hours kneeling before Kuonnon, the Goddess of Mercy, throwing her petitions upon the lap of the goddess, and bruising her brow at the stone feet. It is sad to relate of Sunny, who so avidly had embraced the Christian faith, and was to the proud Mr. Sutherland an example of his labours in Japan, that in the hour of her great trouble she should turn to a heathen goddess. Yet here was Sunny, bumping her head at the stone feet. What could the Three-in-one God of the Reverend Mr. Sutherland do for her now? Sunny had never seen his face; but she knew well the benevolent comprehending smile of the Goddess of Mercy, and in Her, Sunny placed her trust. And so:          </p>
+            
+          <p><q>Oh, divine Kuonnon, lovely Lady of Mercy, hear my petition. Do not permit my friends to leave Japan. Paralyse their feet. Blind their eyes that they may not see the way. Pray you close up the west ocean, so no ships may take my friends across. Hold them magnetized to the honourable earth of Japan</q>.</p>
+      
+          <p>Sitting back on her heels, having voiced her petition anxiously she scanned the face of the lady above her. The candles flickered and wavered in the soft wind, and the incense curled in a spiral cloud and wound in rings about the head of the celestial one. Sunny held her two hands out pleadingly toward the unmoving face.</p>
+            
+          <p><q>Lovely Kuonnon, it is true that I have tried magic to keep my friends with me, but even the <foreign xml:lang="ja">oni</foreign> (goblins) do not hear me, and my friends’ boxes stand now in the <foreign xml:lang="ja">ozashiki</foreign> and the cruel carts carry them through the streets</q>.</p>
+            
+          <p>Her voice rose breathlessly, and she leaned up and stared with wide eyes at the still face above her, with its everlasting smile, and its lips that never moved.            </p>
+            
+          <p><q>It is true! It is true!</q> cried Sunny excitedly. <q>The mission sir is right. There is no living heart in your breast. You are only stone. You cannot even hear my prayer. How then will you answer it?</q></p>
+            
+          <p>Half appalled by her own blasphemy, she shivered away from the goddess, casting terrified glances about her, and still sobbing in this gasping way, Sunny covered her face with her sleeve, and wended her way from the shrine to her home.            </p>
+            
+          <p>Here the dishevelled upset of the house brought home to her the unalterable fact of their certain going. Restraint and gloom had been in the once so jolly house, ever since Professor Barrowes had announced the time of departure. To the excited imagination of Sunny it seemed that her friends sought to avoid her. She could not understand that this was because they found it difficult to face the genuine suffering that their going caused their little friend. Sunny at the door of the living room sought fiercely to dissemble her grief. Never would she reveal uncouth and uncivilized tears; yet the smile she forced to her face now was more tragic than tears.            </p>
+            
+          <p>Jinx was alone in the room. The fat young man was in an especially gloomy and melancholy mood. He was wracking his brain for some solution to the problem of Sunny. To him, Sunny went directly, seating herself on the floor in front of him, so that he was obliged to look at the imploring young face, and had much ado to control the lump that would rise in Jinx’s remorseful throat.            </p>
+            
+          <p><q>Jinx</q>, said Sunny persuasively, <q>I do not like to stay ad this Japan all alone also. I lig’ you stay wiz me. Pray you do so, Mr. dear Jinx!</q></p>
+            
+          <p><q>Gosh! I only wish I could, Sunny</q>, groaned Jinx, sick with sympathy, <q>but, I can’t do it. It’s impossible. I’m not—not my own master yet. I did the best I could for you—wrote home and asked my folks if—if I could bring you along. Doggone them, anyway, they’ve kept the wires hot ever since squalling for me to get back</q>.</p>
+            
+          <p><q>They do nod lig’ Japanese girl?</q> asked Sunny sadly.</p>
+            
+          <p><q>Gosh, what do they know about it? I do, anyway. I think you’re a peachy kid, Sunny. You suit me down to the ground, I’ll tell the world, and you look-a-here, I’m coming back to see you, d’ye understand? I give you my solemn word I will</q>.</p>
+            
+          <p><q>Jinx</q>, said Sunny, without a touch of hope in her voice, <q>my father are say same thing; but—he never come bag no more</q>.</p>
+            
+          <p>Monty and Bobs, their arms loaded with sundry boxes of sweets and pretty things that aforetime would have charmed Sunny, came in from the street just then, and with affected cheer laid their gifts enticingly before the unbeguiled Sunny. <q>See here, kiddy. Isn’t this pretty!</q></p>
+            
+          <p>Bobs was swinging a long chain of bright red and green beads. Not so long before Sunny had led Bobs to that same string of beads, which adorned the counter of a dealer in Japanese jewelry, and had expressed to him her ambition to possess so marvellous a treasure. Bobs would have bought the ornament then and there; but it so happened that his finances were at their lowest ebb, his investment in the Syndicate having made a heavy inroad into the funds of the by no means affluent Bobs. The wherewithal to purchase the beads on the eve of departure had in fact come from some obscure corner of his resources, and he now dangled them enticingly before the girl’s cold eyes. She turned a shoulder expressive of aversion toward the chain.            </p>
+            
+          <p><q>I do nod lig’ those kind beads</q>, declared Sunny bitterly. Then upon an impulse, she removed herself from her place before Jinx, and kneeled in turn before Bobs, concentrating her full look of appeal upon that palpably moved individual.            </p>
+            
+          <p><q>Mr. sir—Bobs, I do nod lig’ to stay ad Japan, wizout you stay also. Please you take me ad America wiz you. I are not afraid those west oceans. I lig’ those water. It is very sad for me ad Japan. I do nod lig’ Japan. She is not Clistian country. Very bad people live on Japan. I lig’ go ad America. Please you take me wiz you to-day</q>.</p>
+            
+          <p>Monty, hovering behind Bobs, was scowling through his bone-ribbed glasses. Through his seventeen-year-old brain raced wild schemes of smuggling Sunny aboard the vessel; of choking the watchful professor; of penning defiant epistles to the home folks; of finding employment in Japan and remaining firmly on these shores to take care of poor little Sunny. The propitiating words of Bobs appeared to Monty the sheerest drivel, untrue slush that it was an outrage to hand to a girl who trusted and believed.            </p>
+            
+          <p>Bobs was explaining that he was the beggar of the party. When he returned to America, he would have to get out and scuffle for a living, for his parents were not rich, and it was only through considerable sacrifice, and Bobs’ own efforts at work (he had worked his way through college, he told Sunny) that he was able to be one of the party of students who following their senior year at college were travelling for a year prior to settling down at their respective careers. Bobs was too chivalrous to mention to Sunny the fact that his contribution to the Sunny Syndicate had caused such a shrinkage in his funds that it would take many months of hard work to make up the deficit; nor that he had even become indebted to the affluent Jinx in Sunny’s behalf. What he did explain was the fact that he expected soon after he reached America, to land a job of a kind—he was to do newspaper work—and just as soon as ever he could afford it, he promised to send for Sunny, who was more than welcome to share whatever two-by-four home Bobs may have acquired by that time.            </p>
+            
+          <p>Sunny heard and understood little enough of his explanation. All she comprehended was that her request had been denied. Her own father’s defective promises had made her forever sceptical of those of any other man in the world. Jinx in morose silence pulled fiercely on his pipe, brooding over the ill luck that dogged a fellow who was fat as a movie comedian and was related to an army of fat-heads who had the power to order him to come and go at their will. Jinx thought vengefully and ominously of his impending freedom. He would be of age in three months. Into his own hands then, triumphantly gloated Jinx, would fall the fortune of the house of Crawford, and <emph>then</emph> his folks would see! He’d show ‘em! And as for Sunny—well, Jinx was going to demonstrate to that little girl what a man of his word was capable of doing.            </p>
+            
+          <p>Sunny, having left Bobs, was giving her full attention to Monty, who showed signs ofpanic.            </p>
+            
+          <p><q>Monty, I wan’ go wiz you ad America. <emph>Please</emph> take me there wiz you. I nod make no trobble for you. I be bes’ nize girl you ever goin’ see those worl. Please take me, Monty</q>.</p>
+            
+          <p><q>Aw—all right, I will. You bet your life I will. That’s settled, and you can count on me. <emph>I’m</emph> not afraid of <emph>my</emph> folks, if the other fellows are of theirs. I can do as I choose. I’ll rustle up the money somehow. There’s always a way, and they can say what they like at home, I intend to do things in my own way. My governor’s threatening to cut me off; all the fellows’ parents are—they’re in league together, I believe, but I’m going to teach them all a lesson. I’ll not stir a foot from Japanwithout you, Sunny. You can put that in your pipe and swallow it. <emph>I</emph> mean every last word <emph>I</emph> say</q>.</p>
+            
+          <p><q>Now, now, now—not so hasty, young man, not so hasty! Not so free with promises you are unable to fulfil. Less words! Less words! More deeds!</q></p>
+      
+          <p>Professor Barrowes, pausing on the threshold, had allowed the junior member of the party he was piloting through Japan to finish his fiery tirade. He hung up his helmet, removed his rubbers, and rubbing his chilled hands to bring back the departed warmth, came into the room and laid the mail upon the table.</p>
+            
+          <p><q>Here you are, gentlemen. American mail. Help yourselves. All right, all right. Now, if agreeable, I desire to have a talk alone with Miss Sunny. If you young gentlemen will proceed with the rest of your preparations I daresay we will be on time. That will do, Goto. That baggage goes with us. Loose stuff for the steamer. Clear out</q>.</p>
+            
+          <p>Sunny, alone with the professor, made her last appeal.</p>
+            
+          <p><q>Kind Mr. Professor, please do not leave me ad those Japan. I wan go ad America wiz you. Please you permit me go also</q>.</p>
+            
+          <p>Professor Barrowes leaned over, held out both his hands, and as the girl came with a sob to him, he took her gently into his arms. She buried her face on the shabby coat of the old professor who had been such a good friend to her, and who with all his eccentricities had been so curiously loveable and approachable. After she had cried a bit against the old coat, Sunny sat back on her heels again, her two hands resting on the professor’s knees and covered with one of his.          </p>
+
+          <p><q>Sunny, poor child, I know how hard it is for you; but we are doing the best we can. I want you to try and resign yourself to what is after all inevitable. I have arranged for you to go to the Sutherlands’ home. You know them both—good people, Sunny, good people, in spite of their pious noise. Mr. Blumenthal has charge of your financial matters. You are amply provided for, thanks to the generosity of your friends, and I may say we have done everything in our power to properly protect you. You are going to show your appreciation by—er—being a good girl. Keep at your studies. Heed the instructions of Mr. Sutherland. He has your good at heart. I will not question his methods. We all have our peculiarities and beliefs. The training will do you no harm—possibly do you much good. I wish you always to remember that my interest in your welfare will continue, and it will be a pleasure to learn of your progress. When you can do so, I want you to write a letter to me, and tell me all about yourself</q>.</p>
+            
+          <p><q>Mr. Professor, if I study mos’ hard, mebbe I grow up to be American girl—jos same as her?</q></p>
+            
+          <p>Sunny put the question with touching earnestness.</p>
+            
+          <p><q>We-el, I am not prepared to offer the American girl as an ideal model for you to copy, my dear, but I take it you mean—er—that education will graft upon you our western civilisation, such as it is. It may do so. It may. I will not promise on that score. My mind is open. It has been done, no doubt. Many girls of your race have—ah—assimilated our own peculiar civilisation—or a veneer of the same. You are yourself mainly of white blood. Yes, yes, it is possible—quite probable in fact, that if you set out to acquire western ways, you will succeed in making yourself—er—like the people you desire to copy</q>.</p>
+            
+          <p><q>And suppose I grow up lig’ civilised girl, <emph>then</emph> I may live ad America?</q></p>
+            
+          <p><q>Nothing to prevent you, my dear. Nothing to prevent you. It’s a free country. Open to all. You will find us your friends, happy—I may say—overjoyed to see you again</q>.</p>
+            
+          <p>For the first time since she had learned the news of their impending departure a faint smile lighted up the girl’s sad face.            </p>
+            
+          <p><q>I stay ad Japan till I get—civil—ise</q>.</p>
+            
+          <p>She stood up, and for a moment looked down in mournful farewell on the seamed face of her friend. Her soft voice dropped to a caress.            </p>
+            
+          <p><q><foreign xml:lang="ja">Sayonara</foreign>, <emph>mos</emph> kindes’ man ad Japan. I goin’ to ask all those million gods be good to you</q>.</p>
+            
+          <p>And Professor Barrowes did not even chide her for her reference to the gods. He sat glaring alone in the empty room, fiercely rubbing his glasses, and rehearsing some extremely cutting and sarcastic phrases which he proposed to pen or speak to certain parents across the water, whose low minds suspected mud even upon a lily. His muttering reverie was broken by the quiet voice of Jerry. He had come out of the big window seat, where he had been all of the afternoon, unnoticed by the others.            </p>
+            
+          <p><q>Professor Barrowes</q>, said Jerry Hammond, <q>if you have no objection, I would like to take Sunny back with me to America</q>.</p>
+            
+          <p>Professor Barrowes scowled up at his favourite pupil.</p>
+            
+          <p><q>I do object, I do object. Emphatically. Most emphatically. I do not propose to allow you, or any of the young gentlemen entrusted to my charge, to commit an act that may be of the gravest consequences to your future careers</q>.</p>
+            
+          <p><q>In my case, you need feel under no obligations to my parents. I am of age as you know, and as you also know, I purpose to go my own way upon returning home. My father asked me to wait till after this vacation before definitely deciding upon my future. Well, I’ve waited, and I’m more than ever determined not to go into the shops. I’ve a bit of money of my own—enough to give me a start, and I purpose to follow out my own ideas. Now as to Sunny. I found that kid. She’s my own, when it comes down to that. I practically adopted her, and I’ll be hanged if I’m going to desert her, just because my father and mother have some false ideas as to the situation</q>.</p>
+            
+          <p><q>Leaving out your parents from consideration, I am informed that an engagement exists between you and a Miss—ah—Falconer, I believe the name is, daughter of your father’s partner, I understand</q>.</p>
+            
+          <p><q>What difference does that make?</q> demanded Jerry, setting his chin stubbornly.</p>
+            
+          <p><q>Can it be possible that you know human nature so little then, that you do not appreciate the feelings your fiance is apt to feel toward any young woman you choose to adopt?</q></p>
+            
+          <p><q>Why, Sunny’s nothing but a child. It’s absurd to refer to her as a woman, and if Miss Falconer broke with me for a little thing like that, I’d take my medicine I suppose</q>.</p>
+            
+          <p><q>You are prepared, then, to break an engagement that has the most hearty approval of your parents, because of a quixotic impulse toward one you say is a child, but, young man, I would have you reflect upon the consequences to the child. Your kindness would act as a boomerang upon Sunny</q>.</p>
+            
+          <p><q>What in the world do you mean?</q></p>
+            
+          <p><q>I mean that Sunny is emphatically not a child. She was fifteen years old the other day. That is an exceedingly delicate period in a girl’s life. We must leave the bloom upon the rose. It is a sensitive period in the life of a girl</q>.</p>
+            
+          <p>A long silence, and then Jerry:</p>
+            
+          <p><q>Right-oh! It’s good-bye to Sunny!</q></p>
+            
+          <p>He turned on his heel and strode out to the hall. Professor Barrowes heard him calling to the girl upstairs in the cheeriest tone.</p>
+            
+          <p><q>Hi! up there, Sunny! Come on down, you little rascal. Aren’t you going to say bye-bye to your best friend?</q></p>
+            
+          <p>Sunny came slowly down the stairs. At the foot, in the shadows of the hall she looked upat Jerry.</p>
+            
+          <p><q>Now remember</q>, he rattled along with assumed merriment, <q>that when next we meet I expect you to be the Empress of Japan</q>.</p>
+            
+          <p><q>Jerry</q>, said Sunny, in a very little voice, her small eerie face seeming to shine with some light, as she looked steadily at him, <q>I lig’ ask you one liddle bit favour before you go way from these Japan</q>.</p>
+            
+          <p><q>Go to it. What is it, Sunny. Ask, and thou shalt receive</q>.</p>
+            
+          <p>Sunny put one hand on either of Jerry’s arms, and her touch had a curiously electrical effect upon him. In the pause that ensued he found himself unable to remove his fascinated gaze from her face.            </p>
+            
+          <p><q>Jerry, I wan’ ask you, will you please give me those American—kiss—good-a-bye</q>.</p>
+            
+          <p>A great wave of tingling emotions swept over Jerry, blinding him to everything in the world but that shining face so close to his own. Sunny a child! Her age terrified him. He drew back, laughing huskily. He hardly knew himself what it was he was saying:            </p>
+            
+          <p><q>I don’t want to, Sunny—I don’t——</q></p>
+            
+          <p>He broke away abruptly and, turning, rushed into the living room, seized his coat and hat, and was out of the house in a flash.            </p>
+            
+          <p>Professor Barrowes stared at the door through which Jerry had made his hurried exit. To his surprise, he heard Sunny in the hall, laughing softly, strangely. To his puzzled query as to why she laughed, she said softly:            </p>
+            
+          <p><q>Jerry are afraid of me!</q></p>
+            
+          <p>And Professor Barrowes, student of human nature as he prided himself upon being, did not know that Sunny had stepped suddenly across the gap that separates a girl from a woman, and had come into her full stature.</p>
+    
+
+    
          </div>
       </body>
    </text>
