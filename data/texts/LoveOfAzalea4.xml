@@ -23,7 +23,8 @@
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:SC1" when="2020-08-28" status="inProgress">Begin transcribing and proofreading</change>
          <change who="pers:MC1" when="2020-07-24" status="empty">Changed title.</change><change who="pers:MC1" when="2020-07-02" status="empty">Changed genre.</change><change who="pers:MC1" when="2020-07-01" status="empty">Added note about source.</change>
          <change who="pers:SL1" when="2019-08-23" status="empty">Addes facs.</change>
          <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
@@ -32,9 +33,18 @@
    </teiHeader>
    <text facs="facs:LoveOfAzalea">
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Love of Azalea</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name> 
+               Author of <ref target="doc:JapaneseNightingale6">A Japanese Nightingale</ref>, <ref
+                     target="doc:HeartOfHyacinth1">The Heart of Hyacinth</ref>, etc.
+           </byline>   
+         </opener>
+         
+            <div type="content">
+               <div type="chapter" n="1">
          </div>
+            </div>
       </body>
    </text>
 </TEI>
