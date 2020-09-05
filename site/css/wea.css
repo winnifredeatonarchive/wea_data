@@ -1059,6 +1059,10 @@ transition: border-bottom-color 0.15s ease-in-out;
     flex-direction:column;
 }
 
+#ssResults div > span {
+    display:none;
+}
+
 #ssResults.reverse > ul{
     flex-direction:column-reverse;
 }
@@ -1229,6 +1233,7 @@ flex-basis: 22.5%;
 
 div#ssResults > ul > li > a {
     text-align:center;
+    margin-bottom:auto;
 }
 
 ul.ssDescCheckboxList input{
@@ -1278,10 +1283,35 @@ ul.ssDescCheckboxList input{
     font-size:0.9rem;
 }
 
+.kwic .hidden{
+    display:none;
+}
+
+.showHideKwic{
+    display:block;
+    width:100%;
+    text-align:right;
+
+}
+
+.showHideKwic:hover{
+    background: #efefef;
+}
+
+.showHideKwic:before{
+    content: "-";
+}
+
+.showHideKwic.show:before{
+    content: "+";
+}
+
 fieldset.ssFieldset > span{
     background-color:transparent;
     border:none;
 }
+
+
     
 
 #ssDoSearch{

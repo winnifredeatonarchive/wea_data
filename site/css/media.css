@@ -501,6 +501,8 @@ ul#menu_main > li > ul{
         margin-left:87.5%;
         
     }
+
+
     
     #popup.showing{
       max-width: calc(55vw + 2em);
@@ -606,5 +608,32 @@ div#ssResults > ul > li > a{
     display:none!important;
     flex:0;
 }
-    
+
+#staticSearch {
+    flex-direction: column;
+}
+
+div#ssResults > ul > li{
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.wea-ss-filters{
+    height:unset;
+    position:static;
+    width:unset;
+}
+
+.wea-ss-filters > .heading{
+    display:flex;
+    justify-content:space-between;
+}
+
+.wea-ss-filters > .heading .metadataLabel{
+    width:unset;
+}
+fieldset{
+    width:100%;
+}
+
 }
