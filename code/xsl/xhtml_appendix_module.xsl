@@ -52,12 +52,12 @@
                     <ul>
                         <xsl:if test="birth">
                             <xsl:variable name="when" select="birth/@when" as="xs:string"/>
-                            <xsl:variable name="formatted" select="wea:formatDate($when)|| (if (birth/@cert = 'low') then '?' else ())"/>
+                            <xsl:variable name="formatted" select="wea:formatPersonDate($when)|| (if (birth/@cert = 'low') then '?' else ())"/>
                             <li>Born: <xsl:value-of select="$formatted"/></li>
                         </xsl:if>
                         <xsl:if test="death">
                             <xsl:variable name="when" select="death/@when" as="xs:string"/>
-                            <xsl:variable name="formatted" select="wea:formatDate($when)|| (if (death/@cert = 'low') then '?' else ())"/>
+                            <xsl:variable name="formatted" select="wea:formatPersonDate($when)|| (if (death/@cert = 'low') then '?' else ())"/>
                             <li>Died: <xsl:value-of select="$formatted"/></li>
                         </xsl:if>
                     </ul>
@@ -137,7 +137,7 @@
     </xsl:function>
     
     
-    <xsl:function name="wea:formatDate" as="xs:string">
+    <xsl:function name="wea:formatPersonDate" as="xs:string">
         <xsl:param name="date" as="xs:string"/>
         <xsl:variable name="dateTokens" select="tokenize($date,'-')"/>
         <xsl:variable name="count" select="count($dateTokens)"/>
@@ -156,8 +156,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
-        </xsl:choose>
-        
+        </xsl:choose>        
     </xsl:function>
     
     

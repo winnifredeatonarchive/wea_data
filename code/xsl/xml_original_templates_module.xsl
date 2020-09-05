@@ -96,9 +96,10 @@
         <xsl:copy>
             <xsl:apply-templates select="@*" mode="#current"/>
             <xsl:variable name="thisBibl" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id=$thisBiblId]" as="item()+"/>
-            <xsl:sequence select="$thisBibl/node()"/>
+            <xsl:apply-templates select="$thisBibl/node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
+    
     
     <xsl:template match="item[@corresp]" mode="original">
         <xsl:variable name="thisCorresp" select="@corresp"/>

@@ -191,7 +191,7 @@
                                         <xsl:variable name="biblDate" select="$sourceXml[//TEI[@xml:id='bibliography']]//bibl[@xml:id=$biblId]/date[1]"/>
                                         <xsl:choose>
                                             <xsl:when test="not(empty($biblDate))">
-                                                <xsl:copy-of select="$biblDate"/>
+                                                <xsl:sequence select="wea:formatDate($biblDate)"/>
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <date/>

@@ -102,6 +102,7 @@
     </xsl:function>
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
+    
     <xsl:template match="@*|node()" priority="-1" mode="removeId">
         <xsl:apply-templates select="." mode="original"/>
     </xsl:template>

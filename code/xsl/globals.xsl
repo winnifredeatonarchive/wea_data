@@ -98,8 +98,8 @@
     <xsl:function name="wea:makeTitleSortKey" as="xs:string">
         <xsl:param name="string"/>
         <xsl:variable name="lower" select="lower-case($string)"/>
-        <xsl:variable name="first" select="replace($lower,'^(an?|the)\s','')"/>
-        <xsl:value-of select="$first"/>
+        <xsl:variable name="first" select="replace($lower,'^(an?|the)\s','') => translate('[](),.''’','')"/>
+        <xsl:sequence select="$first"/>
     </xsl:function>
     
     
@@ -240,8 +240,101 @@
         <xsl:value-of select="for $r in tokenize($name,'\s+') return wea:capitalize($r)" separator=" "/>
     </xsl:function>
     
+    
+    <!--Function create a sort key from a date; since we have date ranges this is all very complicated.
+        
+        If a date has a simple when, then we expand it and then convert it to a number:
+        <date when="1922"> 
+        => 1922-01-01 
+        => 19220101
+        
+        If a date has a range, then we expand both bits, and then turn it into a decimal number with the latest first
+        and the earlier second:
+        
+        <date notBefore="1920" notAfter="1931"/> 
+        => [1920-01-01, 1931-01-01]
+        => [19220101, 19310101] 
+        => 19310101.19220101 
+        
+        This allows 1917-1922 to sort before 1920-1922
+        
+       -->
+    <xsl:function name="wea:getDateSortKey" as="xs:decimal">
+        <xsl:param name="date" as="element(tei:date)"/>   
+        <xsl:variable name="when" select="$date/@when" as="attribute()?"/>
+        <xsl:variable name="leftBound" select="($date/@notBefore | $date/@from)[1]" as="attribute()?"/>
+        <xsl:variable name="rightBound" select="($date/@notAfter | $date/@to)[1]" as="attribute()?"/>
+        
+        <xsl:variable name="ints" as="xs:integer+">
+            <xsl:choose>
+                <xsl:when test="$when">
+                    <xsl:sequence select="wea:dateToInt($when)"/>
+                </xsl:when>
+                <xsl:when test="$leftBound or $rightBound">
+                    <xsl:if test="$leftBound">
+                        <xsl:sequence select="wea:dateToInt($leftBound)"/>
+                    </xsl:if>
+                    <xsl:if test="$rightBound">
+                        <xsl:sequence select="wea:dateToInt($rightBound)"/>
+                    </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:sequence select="wea:dateToInt($today)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="sortKey" 
+            select="string-join(reverse($ints),'.') => xs:decimal()"/>
+        <xsl:sequence select="$sortKey"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:dateToInt" as="xs:integer">
+        <xsl:param name="date" as="xs:string"/>
+        <xsl:variable name="expanded" select="wea:expandDate($date)"/>
+        <xsl:sequence select="replace(xs:string($expanded),'-','') => xs:integer()"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:formatDate" as="element(tei:date)">
+        <xsl:param name="dateEl" as="element(tei:date)"/>
+        <tei:date>
+            <xsl:sequence select="$dateEl/@*"/>
+            <xsl:choose>
+                <xsl:when test="$dateEl/@when">
+                    <!--Easiest -->
+                    <xsl:sequence select="wea:dateString($dateEl/@when)"/>
+                </xsl:when>
+                <xsl:when test="$dateEl[@notBefore or @notAfter or @from or @to]">
+                    <xsl:variable name="left" select="wea:dateString($dateEl/(@notBefore|@from)[1])" as="xs:string?"/>
+                    <xsl:variable name="right" select="wea:dateString($dateEl/(@notAfter|@to)[1])" as="xs:string?"/>
+                    <xsl:sequence select="string-join(($left, $right),'–')"/>
+                </xsl:when>
+            </xsl:choose>
+        </tei:date>
+        
+    </xsl:function>
+    
+    <xsl:function name="wea:dateString" as="xs:string?">
+        <xsl:param name="date" as="xs:string?"/>
+        <xsl:if test="not(empty($date))">
+            <xsl:variable name="tokens" select="tokenize($date,'-')"/>
+            <xsl:variable name="expandedDate" select="wea:expandDate($date)" as="xs:date"/>
+            <xsl:choose>
+                <xsl:when test="count($tokens) = 3">
+                    <xsl:sequence select="format-date($expandedDate, '[MNn] [D01], [Y0001]')"/>
+                </xsl:when>
+                <xsl:when test="count($tokens) = 2">
+                    <xsl:sequence select="format-date($expandedDate, '[MNn] [Y0001]')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:sequence select="format-date($expandedDate, '[Y0001]')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+    </xsl:function>
+    
+    
     <xsl:function name="wea:expandDate" as="xs:date">
-        <xsl:param name="date"/>
+        <xsl:param name="date" as="xs:string"/>
         <xsl:variable name="tokens" select="tokenize($date,'-')"/>
         <xsl:choose>
             <xsl:when test="count($tokens) = 3">
