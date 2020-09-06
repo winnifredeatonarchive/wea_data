@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan4">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan4">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Sunny-San [Part 2]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,27 +31,235 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SB2" status="empty"  when="2020-08-15">Added brief notes statement.</change>
-         <change who="pers:SB2" status="empty"  when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">changed title</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">changed title</change>
-         <change who="pers:MC1" status="empty"  when="2020-06-30">Added next instalment link.</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl132 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-09-06" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes statement.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">changed title</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">changed title</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added next instalment link.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl132 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Sunny-San3"
-         prev="doc:SunnySan3" 
-         next="doc:SunnySan5">
+   <text facs="facs:Sunny-San3" prev="doc:SunnySan3" next="doc:SunnySan5">
+      <pb n="425"/>
       <body>
+         
+         <head>Sunny-San</head>
+         
+         <opener>
+            
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline><emph>Illustrated by <name ref="pers:TP1">Tom Peddie</name></emph></byline>
+            
+         </opener>
+         
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+    
+            <head>Prologue</head>
+      
+            <p>It was the night of the Festival of the Full Moon, but Hirata, the proprietor of the House of a Thousand Joys, was infuriated, for was not Madame Many Smiles, the famous dancer, lying dead among her robes? At her feet knelt her child, crushed and hurt by a grief that nothing could assuage, and it was for the sake of her mother’s honour that presently she stood a-tiptoe on the tight-rope, laughing at the sea of faces round her and throwing her kisses right and left. So charming was she that the Lord of Negato, amorous for this lovely child, tossed her a jewel and a handful of coin, which she cleverly caught on her fan but, acting under a sudden impish impulse, she suddenly threw them in her admirer’s face and, jumping to the ground, vanished into the tea-house.</p>
+    
+            <p>A party of English students visiting Japan had witnessed this scene, and learning that she was to be punished for her slight to the Japanese nobleman, they made a sudden raid on the tea-house and carried off the girl before Hirata’s lash could fall a second time upon her shoulders.</p>
+  
+            <p>These four students and their tutor then decided to adopt Sunny-san, the dancer’s child, whose father was a white man. They formed a syndicate, and together raised sufficient money to provide for Sunny during her lifetime.</p>
+    
+            <p>Soon a time came when the Englishmen had to return to their own country, and they regretfully departed, leaving Sunny in charge of a missionary. She begged them to take her with them, but the hardest moment came when she said good-bye to Jerry Hammond, who had been her faithful champion from the first. However, the ship carrying the Englishmen sailed away, and left a sorrowful Sunny languishing in Nagasaki.</p>
+    
+            </div>
+            <div>
+   
+      <head>Chapter VI</head>
+
+            <p>It came to pass that Sunny’s friends across the sea reached a period where they thought of her vaguely only as a charming and amusing episode of an idyllic summer in the Land of the Rising Sun. Into the oblivion of the years, farther and farther retreated the face of the Sunny, whose April smile and ingenuous ways and lovely face had once so warmed and charmed their young hearts.</p>
+            
+            <p>New faces, new scenes, new loves, work, and the claims and habits that fasten upon one with the years—these were the forces that engrossed them. I will not say that she was altogether forgotten in the new life, but at least she occupied but a tiny niche in their sentimental recollections. There were times when a reference to Japan would call forth a murmur of pleasurable reminiscences, and humorous references to some remembered fantastic trick or trait peculiar to the girl, but all of them were occupied with the concerns and careers that were of paramount importance to them.</p>
+            
+            <p>Monty, though but in his twenty-first year, a medical student; Bobs, star reporter on a famous daily paper; Jinx, overwhelmingly rich, the melancholy and unwilling magnet of all aspiring mothers-in-law; Jerry, an outlaw from the house of Hammond, though his engagement to Miss Falconer bade fair to reinstate him in his parents’ affections. He was doggedly following that star of which he had once told Sunny. Eight hours per day in an architect’s office, and four or six hours in <pb n="426"/>his own studio, was the sum of the work of Jerry. He <q>lived in the clouds</q>, according to his people; but all the great deeds of the world, and all of the masterpieces penned or painted by the hand of man, Jerry knew were the creations of dreamers—the cloud livers. So he took no umbrage at the taunt, and kept on reaching after what he had once told Sunny was that jade of fortune—Beauty.</p>
+               
+            <p>Somewhere in the country, Professor Barrowes pursued the uneven tenor of his way as Professor of Archaeology in a small college. Impetuous and erratic, becoming more restless with the years, he escaped the irritations and demands of the class room at beautiful intervals, when he indulged in a passion of research that took him into the far corners of the world, to burrow into the earth in search of things belonging to the remote dead, and which he held of more interest than mere living beings. His fortunes were always uncertain, because of this eccentric weakness, and often, upon returning from some such quest, his friends had much ado to secure him a berth that would serve as an immediate livelihood. Such position secured, after considerable wire pulling on the part of Jerry and other friends, Professor Barrowes would be no sooner seated in the desired chair, when he would begin to lay plans for another escape. An intimate friendship existed between Jerry and his old master, and it was to Jerry that he invariably went upon his return from his archaeological quests. Despite the difference in their years, there was a true kinship between these two. Each comprehended the other’s aspirations, and in a way the passion for exploration and the passion for beauty is analogous. Jerry’s parents looked askance at this friendship, and were accustomed to blame the Professor for their son’s vagaries, believing that he aided and abetted and encouraged Jerry, which was true enough.</p>
+               
+            <p>Of all Sunny’s friends, Professor Barrowes, alone, kept up an irregular communication with the Sutherlands. Gratifying reports of the progress of their protegée came from the missionary at such times. Long since, it had been settled that Sunny should be trained to become a shining example to her race—if, in fact, the Japanese might be termed her race. It was the ambition of the good missionary to so instruct the girl that she would be competent to step into the missionary work, and with her knowledge of the Japanese tongue and ways, her instructor felt assured they could expect marvels from her in the matter of converting the heathen.</p>
+               
+            <p>It is true the thought of that vivid little personality in the grey rôle of a preacher, brought somewhat wry faces to her friends, and exclamations even of distaste.</p>
+               
+            <p><q>Gosh!</q> groaned Jinx sadly, <q>I’d as lief see her back on the tightrope</q>.</p>
+            
+            <p><q>Imagine Sunny preaching! It would be a joke. I can just hear her twisting up her eight million gods and goddesses with our own deity</q>, laughed Bobs.</p>
+            
+            <p><q>Like quenching a firefly’s light, or the bruising of a butterfly’s wings</q>, murmured Jerry, dreamily, his head encircled with rings of smoke.</p>
+               
+            <p>But the years ran on and on, as they do in life, and as they do in stories, such as this, and it came to pass, as written above, that Sunny disappeared into the fragrant corners of a pretty memory. There is where Sunny should perhaps have stayed, and thus my story come to a timely end.</p>
+               
+            <p>Consider the situation. A girl, mainly of white blood, with just a drop of Oriental blood in her—enough to make her a shade different from the average female of the species, enough, say, to give a snack of that savage element attributed to the benighted heathen. Rescued by men of her father’s race from slavery and abuse; provided for for the rest of her days; under the instruction of a zealous and conscientious missionary and his wife, who earnestly taught her how to save the souls of the people of Japan. Sunny’s fate was surely a desirable one, and as she progressed on the one side of the water, her friends on the other side were growing in sundry directions, ever outward, and upward, acquiring new responsibilities, new loves, new claims, new passions with the passing of the years. What freak of fate therefore should interpose at this juncture, and thrust Sunny electrically into the lives of her friends again?</p>
+        
+      
+      </div>
+      <div>
+    
+      
+    
+         <pb n="428"/>
+         
+         <head>Chapter VII</head>
+
+            <p>On a certain bleak day in the month of March, J. Addison Hammond, Jun., tenaciously at work upon certain plans and drawings that were destined at a not far distant date to bring him a measure of fame and fortune, started impatiently from his seat and cursed <q>that telephone</q>.</p>
+         
+            <p>Jerry at this stage of his picturesque career, occupied what is known in London, and possibly other equally enlightened cities, as a duplex studio. Called <q>duplex</q> for no very clear reason. It consists of one very large room (called <q>atelier</q> by artistic tenants and those who have lived or wanted to live in France). This room is notable not merely for its size, but its height, the ceiling not unsimilar to the vaulted one of a church, or a glorified attic. Adjustable skylights lend the desired light. About this main room, and midway of the wall is a gallery, which runs on all four sides, and on this gallery are doors opening into sundry rooms designated as bedrooms. The arrangement is an excellent one, since it gives one practically two floors. That, no doubt, is why we call it <q>duplex</q>. We have a weakness for one floor bungalows when we build houses these days, but for flats and studios, the epicure demands the duplex.</p>
+            
+            <p>In this especial duplex studio there also abode one, Hatton, or as he was familiarly known to the friends of Jerry Hammond, <q>Hatty</q>. Hatty, then, was the valet and man of all work in the employ of Jerry. He was a marvellous cook, an extraordinary house cleaner, an incomparable valet, and to complete the perfections of this jewel, possessed solely by the apparently fortunate Jerry, his manners, his face and his form were of that ideal sort seen only in fiction and never in life.</p>
+            
+            <p>Having detailed the talents of Hatty, it is painful here to admit a flaw in the character of the otherwise perfect Hatton. This flaw he had very honestly divulged to Jerry at the time of entering his employ, and the understanding was that upon such occasions when said flaw was due to have its day, the master was to forbear from undue criticism or from discharging said Hatton from his employ. Hatton at this time earnestly assured the man in whose employ he desired to enter that he could always depend upon his returning to service in a perfectly normal state, and life would resume its happy way under his competent direction.</p>
+            
+            <p>It so happened upon this especial night, when that <q>pestiferous</q> telephone kept up its everlasting ringing—a night when Jerry hugged his head in his hands, calling profanely and imploringly upon Christian and heathen saints and gods to leave him undisturbed—that Hatton lay on his bed above, in a state of oblivion from which it would seem a charge of dynamite could not have awakened him.</p>
+         
+            <p>For the fiftieth, or possibly hundredth time, Jerry bitterly swore that he would fire Hatton out on the following day. He had had enough of him. Whenever he especially needed quiet and service, that was the time the valet chose to break loose and go on one of his infernal sprees. For the fourth time within half an hour Jerry seized that telephone and shouted into the receiver:</p>
+            
+            <p><q>What in hades do you want?</q></p>
+        
+            <p>The response was a long and continuous buzzing, through which a jabbering female tongue screeched that it was Y. Dubaday talking. It sounded like <q>Y. Dubaday</q>, but Jerry knew no one of that name, and so emphatically stated, adding to the fact that he didn’t know anyone of that name and didn’t want to, and if this was their idea of a joke——</p>
+            
+            <p>He hung up at this juncture, seized his head, groaned, walked up and down, swearing softly and almost weeping with nervousness and distraction. Finally, with a sigh of hopelessness as he realised the impossibility of concentrating that night, Jerry gathered up his tools and pads, packed them into a portfolio, which he craftily hid under a mass of papers—Jerry knew where he could put his hands on any desired one—got his pipe, pulled up before the waning fire, gave it a shove, put on a fresh log, lit his pipe, stretched out his long legs, put his brown head back against the chair, and sought what comfort there might be left to an exasperated young aspirant for fame who had been interrupted a dozen times inside <pb n="429"/>of an hour or so. Hardly had he settled down into this comparative comfort when that telephone rang again. Jerry was angry now—<q>hopping mad</q>.He lifted that receiver with ominous gentleness, and his voice was silken.</p>
+            
+            <p> <q>What can I do for you, fair one?</q></p>
+         
+            <p>Curiously enough the buzzing had completely stopped and the fair one’s reply came vibrating clearly into his listening ear.</p>
+            
+            <p><q>Mr. Hammond?</q></p>
+            
+            <p><q>Well, what of it?</q></p>
+         
+            <p><q>Mr. Hammond, manager of some corporation or company in Japan?</q></p>
+         
+            <p><q>What are you talking about?</q></p>
+         
+            <p><q>If you’ll hold the wire long enough to take a message from a friend, I’ll deliver it</q>.</p>
+         
+            <p><q>Friend, eh? Who is he? I’d like be looking at him this moment. Take your time</q>.</p>
+         
+            <p><q>Well, I’ve no time to talk nonsense. This is the Y. W. C. A. speaking, and there’s a young lady here, who says she—er—belongs to you. She——</q></p>
+         
+            <p><q>What? Say that again, please</q>.</p>
+         
+            <p><q>A young lady that appears to be related to you—says you are her guardian or manager or something of the sort. She was delivered to the Y. W. C. A. by the Reverend Miss Miriam Richardson, in whose care she was placed by the Mission Society of Naga—er—Nagasaki, Japan. One minute, I’ll get her name again</q>.</p>
+         
+            <p>A photograph of Jerry at this stage would have revealed a young man sitting at a telephone desk, registering a conflict of feelings and emotions indicative of consternation, guilt, tenderness, fear, terror, compunction, meanness and idiocy. When that official voice came over the wire a second time, Jerry all but collapsed against the table, holding the receiver uncertainly in the direction of that ear that still heard the incredible news and confirmed his fears:</p>
+            
+            <p><q>Name—Miss Sindicutt</q>.</p>
+         
+            <p>Silence, during which the other end apparently heard not that exclamation of desperation: <q>Ye gods and little fishes!</q> for it resumed complacently:</p>
+         
+            <p><q>Shall we send her up to you?</q></p>
+         
+            <p><q>No, no, for Heaven’s sake don’t. That is, wait a bit, will you? Give me a chance to get over the</q>—— Jerry was about to say <q>shock</q>, but stopped himself in time, and with as much composure as he could muster he told the Y. W. C. A. that he was busy just now, but would call later and advise them what to do in the—under his breath he said <q>appalling</q>—circumstances.</p>
+         
+            <p>Slowly Jerry put the receiver back on the hook. He remained in the chair like one who has received a galvanic shock. That Japanese girl, of a preposterous dream, had actually followed him to England. She here—in London. It was fantastic, impossible! Ha, ha! it would be funny, if it were not impossible. In England, of all places! She, who ought to be among her heathens, making good converts. What in the name of common sense had she come to England for? Why couldn’t she let Jerry alone, when he was up to his neck in plans that he fairly knew were going to create an upheaval in the architectural world. Just because he had befriended her in his infernal youth, he could not be expected to be responsible for her for the rest of her days. Besides, he, Jerry, was not the only one in that comic opera Syndicate. The thought of his partners in crime, as they now seemed to him, brought him up again before that telephone, seizing upon it this time as a last straw.</p>
+         
+            <p>He was fortunate to get in touch with all three of the members of the former Sunny Syndicate Limited. While Monty and Bobs rushed over immediately, Jinx escaped from the Golf Club where for weeks he had been vainly trying to get rid of some of his superfluous flesh by chasing little balls over the still frost-bound course, flung himself into his powerful Rolls Royce, and went speeding along the London road at a rate that caused an alarm to be sent out for him from point to point, but not swift enough to keep up with the fat man in the massive car that reached Jerry’s studio inside of an hour, and rushed like a juggernaut over the roads and the asphalt of the suburbs.</p>
+         
+            <p>Jerry’s summons to his college friends had been in the nature of an S. O. S. call for help. On the telephone he vouchsafed merely the information that it was <q>a deadly matter of life and death</q>.</p>
+      
+      <pb n="430"/>
+            
+            <p>The astounding news he flung like a bomb at each hastily arriving member of the late syndicate. When the first excitement had subsided, the paramount feeling was one of consternation and alarm.</p>
+         
+            <p><q>Gosh!</q> groaned Jinx. <q>What in the name of thunderation are you going to do with a Japanese girl in London? I pity you, Jerry, for, of course, you are mainly responsible——</q></p>
+         
+            <p><q>Responsible nothing——</q> from the indignant Jerry, wheeling about with a threatening look at that big <q>fathead</q>.<q>I presume I was the <emph>only</emph>member of that—er—syndicate</q>.</p>
+         
+            <p><q>At least it was your idea</q>, said Monty, extremely anxious to get back to the hospital, where he had been personally supervising a case of <q>Circocele</q>.</p>
+            
+            <p><q>You might have known</q>, suggested Bobs, <q>that she was bound to turn up some day. Of course, we’ll all stand by you, old chap, but you know how I am personally situated</q>.</p>
+         
+            <p>Jerry’s wrathful glare embraced the circle of his renegade friends.</p>
+            
+            <p><q>You’re a fine bunch of snobs. I’m not keen myself on having a Jap girl foisted on to my hands, and there’ll be a mess of explanations to make to my friends and people, and the Lord only knows how I’ll ever be able to put my mind back on my work, and—— At the same time, I’m not so white-livered that I’m going to funk the responsibility. We encouraged—invited her to join us out here. I did. You did, so did you, and you! I heard you all—every one of you, and you can’t deny it</q>.</p>
+         
+            <p><q>Well, it was one thing to sentimentalise over a pretty little Jap in Japan</q>, growled Bobs, who was not a snob, but in spite of his profession, at heart something of a stickler for the conventions, <q>but it’s another proposition here. Of course, as I said, we fellows all intend to stand by you</q>. (Grunts of unwilling assent from Monty and Jinx.) <q>We aren’t going to jib at our part of the job, and here and now we may as well plan out some scheme to work this thing properly. Supposewe make the most of the matter for the present. We’ll keep her down there at that Y. W. C. A. Do you see? Then, we can each do something to—er—make it—well uncomfortable for her here. We’ll freeze her out if it comes down to that. Make her feel that this country isn’t all it’s supposed to be, and she’ll get homesick for her gods and goddesses and at the psychological moment when she’s feeling her worst, why we’ll just slip her aboard ship, and there you are</q>.</p>
+         
+            <p><q>Great mind! Marvellous intellect you got, Bobs. In the first place, the Y. W. C. A. informed me on the ‘phone that they are sending her here. They are waiting now for me to give the word when to despatch her, in fact. Now the question is</q>—Jerry looked sternly at his friends—<q>which one of your families would be decent enough to give a temporary home to Sunny? My folks, as you know, are out of the reckoning, as I’m an outlaw from there myself</q>.</p>
+         
+            <p>Followed a heated argument and explanations. Monty’s people lived in Kent. He himself abode at the hospital. That, so he said, exempted him. Not at all, from Jerry’s point of view. Kent, said Jerry, was only a stone’s throw from London. Monty, exasperated, retorted that he didn’t propose to throw stones at his family. Monty, who had made such warm promises to Sunny!</p>
+            
+            <p>Bobs shared a five-room bachelor flat with two other newspaper men. Their hours were uncertain, and their actions erratic. Often they played cards till the small hours of the morning. Sunny would not fit into the atmosphere of smoke and disorder, though she was welcome to come, if she could stand the <q>gaff</q>. Bobs’ people lived in the South-West. His several sisters, Bobs was amusedly assured, would hardly put the girl from Japan at her ease.</p>
+         
+            <p>Jinx, on whom Jerry now pinned a hopeful eye, blustered shamelessly, as he tried to explain his uncomfortable position in the world. When not at his club in London, he lived with a sister, Mrs. Peters, and her growing family, in their mansion at Brighton. Said sister dominated this palatial abode and brother Jinx escaped to New York upon occasions, using craft and ingenuity always to escape the vigilant eye and flaying tongue of a sister who looked for the worst and found it. It was hard for Jinx to admit to his <pb n="432"/>friends that he was horribly henpecked, but he appealed to them as follows:—</p>
+            
+            <p><q>Have a heart about this thing. I ask you, what is a fellow to do when he’s got a sister behind him like that? If she suspects every little innocent chorus girl of the town, what is she going to say to Sunny when that kid goes up before her in tights</q>.</p>
+         
+            <p>It is extraordinary how we think of people we have not seen for years as they were when first we saw them. In the heat of argument, no one troubled to point out to Jinx that the Sunny who had come upon the tight rope that first night must have long since graduated from that reprehensible type of dress or rather undress.</p>
+         
+            <p>Finally, and as a last resort, an express letter was despatched to Professor Timothy Barrowes. All were now agreed that he was the one most competent to settle the matter of the disposition of Sunny, and all agreed to abide by his decision.</p>
+         
+            <p>At this juncture, and when a sense of satisfaction in having shifted the responsibility to the competent man of archaeology had temporarily cheered them, a tapping was heard on the studio door. Not the thumping of the goblin’s head of the Italian iron knocker; not the ring of the electric bell. Just a soft tap-tapping upon the door. Repeated several times, as no one answered, and increasing in noise and persistence.</p>
+         
+            <p>A long, a silent, a deadly pause ensued. At that moment, each found himself attributing to that girl they had known in Japan, and whom they realised was on the other side of that door, certain characteristic traits and peculiarities charming enough in Japan, but impossible to think of as in England. To each young man there came a mental picture of a bizarre and curious little figure, adorned with blazingly bright <foreign xml:lang="ja">kimono</foreign> and <foreign xml:lang="ja">obi</foreign>—a brilliant patch of colour, her bobbed hair and straight bangs seeming somehow incongruous and adding to her fantastic appearance. After all, in spite of her hair, she was typical of that land of crooked streets, and paper houses, and people who walked on the wrong side and mounted their horses from the front. The thought of that girl in New York City grated against their sensibilities. She didn’t belong, and she never could belong, was their internal verdict.</p>
+         
+            <p>It may have been only a coincidence, but it seemed weird, that Hatton, lately so dead to the world, should appear at that psychological moment on the steps of the gallery, immaculate in dress and with that cool air of superiority and efficiency that was part of his assets, descend in his stately and perfect way, approach the door as a butler should, and softly, imperturbably fling that door open. His back retained its stiff straight line, that went so well with the uniform Hatton insisted upon donning, but his head went sideways forward in that inimitable bow that Hatton always reserved for anything especially attractive in the female line.</p>
+         
+            <p>Upon the threshold there looked back at Hatton, and then beyond him, a girl whom the startled young men took at first to be a perfect stranger. She wore a plain blue serge suit, belted at the waist, with a white collar and jabot. A sailor hat, slightly rolled, crushed down the hair that still shone above the face whose remarkable beauty owed much to a certain quaintness of expression. She stood silently, without moving, for what seemed a long moment to them all, and then suddenly she spoke, breathlessly, and with that little catch in her voice, and her tone, her look, her words, her quick motions so characteristic of the little girl they had known, broke the spell of silence and let loose a flood of such warm memories that all the mean and harsh and contemptible thoughts of but a moment since were dissipated for ever.</p>
+         
+            <p>They crowded about her, hanging upon and hungry for her unabashed and delighted words, and dazzled by the girl’s uncanny loveliness.</p>
+         
+            <p><q>Jinx! Thad are you! I know you by your so nize fat!</q></p>
+         
+            <p>She had not lost her adorable accent. Indeed, if they could but have realised it, Sunny had changed not at all. She had simply grown up.</p>
+         
+            <p>Jinx’s soft hands were holding the two little fragrant ones thrust so joyously into his own. The fat fellow fought a sudden maddening desire to hug like a bear the girl whose bright eyes were searching his own so lovingly.</p><pb n="433"/>
+            
+            <p><q>Monty! Oh, you have grow into whole mans. <emph>How</emph> it is nize. And you still smile on me troo those glass ad you eye</q>.</p>
+         
+            <p>Smile! Monty was grinning like the proverbial cat of Cheshire. That case of Circocele at the hospital had vanished into the dim regions of young Monty’s mind. Anyway, there were a score of other students there, and Monty had his pass in his pocket.</p>
+            
+            <p><q>Bobs! Is thad youself, wiz those fonny liddle hair grow om your mout’. <emph>How</emph>it is grow nize on you face. I lig’ him there</q>.</p>
+         
+            <p>Any doubt that Bobs had experienced as to the desirability of that incipient moustache vanished then and there.</p>
+         
+            <p>And Jerry! Jerry, for the last, to be looked at with shining eyes, till something tightened in his throat, and his mind leaped over the years and felt, and felt again, that dizzy, tingling, electrical sensation when Sunny had asked him to kiss her.</p>
+        
+      
+      </div>
+      <div>
+      
+
+        <head>Chapter VIII</head>
+
+            <p>That <q>even tenor of their ways</q>, to which reference has already been made, ceased indeed to bear a remote resemblance to evenness. It may be recorded here, that for one of them at least, Sunny’s coming meant the hasty despatch of his peace of mind. Their well-laid schemes to be rid of her seemed now, in the face of their actions, like absurd aberrations that they were heartily ashamed of.</p>
+         
+            <p>It is astonishing how we are affected by mere clothes. Perhaps if Sunny had appeared at the door of Jerry Hammond’s studio arrayed in the shining garments of a Japanese, some measure of their alarm might have remained. But she came to their door as an English girl. That Sunny should have stood the test of English clothes, that she shone in them with a distinction and grace that was all her own, was a matter of extreme pride and delight to her infatuated friends. Appearances play a great part in the imagination and thought of the young Englishman. It was the fantastic conception they had formed of her, and the imagined effect of her strange appearance in England that had filled them with misgiving and alarm—the sneaky sort of apprehension one feels at being made conspicuous and ridiculous. There was an immense relief at the discovery that their fears were entirely unfounded. Sunny appeared a finished product in the art of dressing. Not that she was fashionably dressed. She simply had achieved the look of one who belonged. She was asnatural in her clothes as any of their sisters or the girls they knew. There was this difference, however; Sunny was one of those rare beings of earth upon whom the Goddess of Beauty has ineffaceably laid her hands. Her loveliness, in fact, startled one with its rareness, its crystal delicacy. One looked at the girl’s face, and caught one’s breath and turned to look again, with that pang of longing that is almost pain with which we gaze upon a masterpiece.            </p>
+            
+            <p>Yet <q>under the skin</q> she was the same confiding, appealing, mischievous little Sunny, who had pushed her way into the hearts of her friends.</p>
+         
+            <p>Her mission in England, much as it aroused the mirth of her friends, was a very serious one, and, it may be here stated, later, an eminently successful one. Sunny came as an emissary from the mission school to collect funds for the impoverished mission. Mr. Sutherland, a Scotsman by birth, was not without a canny and shrewd streak to his character, and he had not forgotten the generous contributions in the past of the rich young students whose protegée Sunny had been.</p>
+         
+            <p>Her effects consisted of a bag so small, and containing but a few articles of Japanese silk clothing and a tiny gift for each of her dear friends. Indeed, the smallness of Sunny’s luggage appealed instantly to her friends, who determined to purchase for the girl all the pretty clothes her heart should desire. This ambition to deck Sunny in the fine raiment of London was satisfactorily realised by each and every one of the former syndicate, Sunny accompanying them with alacrity, overjoyed by those delicious shopping tours, the results of which returned in Jinx’s Rolls Royce, Monti’s taxi, Bobs’ messenger boys, and borne by hand by Jerry. These articles, however, became such a bone of contention among her friends, each desiring her to <pb n="434"/>wear his especial choice, that Sunny had her hands full pleasing them all. She compromised by wearing a dress donated by Monty, hat from Jinx, a coat from Jerry, and stockings and gloves from Bobs. It was finally agreed by her friends that there should be a cessation to the buying of further clothes for Sunny. Instead an allowance of money was voted and quickly subscribed to by all, and after that, Sunny, with the fatherly aid of a surprisingly new Hatton, did her own purchasing.</p>
+         
+            <p>Of her four friends, Jerry was possibly the happiest and the unhappiest at this time. He was a prey to both exhilaration and panic. He moved heaven and earth to make Sunny so comfortable and contented in his studio, that all thought of returning to Japan would be banished for ever from her mind. On the other hand, he rushed off, panic stricken and sent telegrams to Professor Barrowes, entreating him to come at once and relieve Jerry of his dangerous charge. His telegrams, however, were unfruitful, for after an aggravating delay, during which Sunny became, like Hatton, one of the habits and necessities of Jerry’s life, he was noted that Professor Barrowes was no longer at that particular school of learning, and that his addressthere was unknown. Jerry, driven to extremities by the situation in his studio, made himselfsuch a nuisance to the college, that they bestirred themselves finally and ascertainedthat the last address of Professor Timothy Barrowes was Red Deer, Alberta, Canada. Now Red Deer represented nothing to Jerry Hammond save a town in Canada, where a wire would reach his friend. Accordingly he despatched the following:</p>
+            
+            <p><q>Professor Timothy Barrowes, Red Deer, Alberta, Canada</q>.</p>
+            <p><q>Come at once. Sunny in New York. Need you take her charge. Delay dangerous. Waiting for you. Come at once. Answer at once. Important</q>.</p>
+            <p><q>J. Addison Hammond</q>.</p>
+         
+            <p>Professor Barrowes received this frantic wire while sitting on a rock very close to the edge of a deep excavation that had recently been dug on the side of a cliff towering above a certain portion of the old Red Deer River. Below, on a plateau, a gang of men were digging and scraping and hammering at the cliff. Not in the manner of the husky workers of northwestern Canada, but carefully, tenderly. Not so carefully, however, but the tongue of the Professor on the rock above castigated and nagged and warned. Ever and anon Sunny’s old friend would leap down into the excavation, and himself assist the work physically.</p>
+            
+            <p>As stated, Jerry’s telegram came to his hand while seated upon aforesaid rock, was opened, and absent-mindedly scanned by Jerry’s dear friend, and then thrust hastily into the professor’s vest pocket, there to remain for several days, when it accidentally was resurrected, and he most thoughtfully despatched a reply, as follows:</p>
+            
+            <p><q>Jeremy Addison Hammond</q>,</p>
+            <p><q>Glad to hear from you. Especially so this time. Discovered dinosaur antedating post pleocene days. Of opinion Red Deer district contains greatest number of fossils of antique period in world. Will bring precious find New York in about one month or six weeks. Need extra funds transportation dinosaur and guard for same. Anticipate trouble Canadian government re taking valuable find from country. Much envy and propaganda, take credit from Canada for most important discovery of century. Get in communication right parties London, Canada if necessary. Have Consul here wired give full protection and help. Information sent confidential. Do not want Press to get word of remarkable find until fossil set up in museum. See curator about arrangements. May be quoted as estimating age as quaternary period. Wire five hundred pounds extra. Extraordinary find. Greatest moment my life. Note news arrival London Sunny. Sorry unable be there take charge. Dinosaur more important Sunny</q>.</p>
+            <p><q>Timothy Barrowes</q>.</p>
+         
+            <p>What Jerry said when he tore open and read that long expected telegram would not bear printing. Suffice it to say that his good old friend was consigned by the wrathful and disgusted Jerry to a warmer region than Mother Earth. Then, squaring his shoulders like a man, and setting his chin grimly, Jerry took up the burden of life, which in these latter days had assumed for him such bewildering proportions.</p>
+         
+         <div type="paratext">
+            <p>Another instalment of this brilliant novel will appear in the April issue of the <emph>Sovereign Magazine</emph>.</p>
+         </div>
+
          </div>
       </body>
    </text>
