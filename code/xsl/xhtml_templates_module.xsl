@@ -337,8 +337,9 @@
         <xsl:variable name="labelRow" select="$table/row[1][@role='label']" as="element(row)?"/>
         <xsl:variable name="dataRows" select="$table/row[not(@role='label')]" as="element(row)*"/>
         <xsl:variable name="colMap" select="wea:makeColMap($dataRows)" as="map(xs:integer, xs:string)"/>
-        <xsl:variable name="cellMap" select="wea:makeCellMap($dataRows, $colMap)" as="map(xs:string, item())"/>
         <xsl:variable name="firstToSortBy" select="wea:getFirstColToSort($labelRow, $colMap)" as="xs:integer"/>
+        <xsl:variable name="cellMap" select="wea:makeCellMap($dataRows, $colMap, $firstToSortBy)" as="map(xs:string, item())"/>
+
         
         
         <thead>
@@ -364,22 +365,30 @@
     <xsl:function name="wea:makeCellMap" as="map(xs:string, item())">
         <xsl:param name="rows" as="element(row)+"/>
         <xsl:param name="colMap" as="map(xs:integer, xs:string)"/>
-        <xsl:variable name="firstStringCol" select="min(for $key in map:keys($colMap) return if ($colMap($key) = 'string') then $key else ())" as="xs:integer?"/>
+        <xsl:param name="firstToSortBy" as="xs:integer"/>
+        <xsl:variable name="cols" select="map:keys($colMap)" as="xs:integer*"/>
+        <xsl:variable name="firstStringCol" select="min(for $key in $cols return if ($colMap($key) = 'string') then $key else ())" as="xs:integer?"/>
         <xsl:map>
             <xsl:for-each-group select="$rows/cell" group-by="count(preceding-sibling::cell)">
                 <xsl:variable name="colNumber" select="current-grouping-key()+1"/>
                 <xsl:variable name="colType" select="$colMap($colNumber)"/>
+                <xsl:variable name="pre" select="$colNumber - 1" as="xs:integer"/>
+                <xsl:variable name="post" select="$colNumber + 1" as="xs:integer"/>
                 <xsl:if test="not($colType = 'image')">
                     <xsl:for-each select="current-group()">
                         <xsl:sort select="wea:makeColSortKey(., $colType)"/>
                         <xsl:sort>
-                            <xsl:if test="$colType != 'string' and exists($firstStringCol)">
-                                <xsl:variable name="parentRow" select="parent::row"/>
-                                <xsl:variable name="stringCell" select="$parentRow/cell[$firstStringCol]"/>
-                                <xsl:sequence select="wea:makeTitleSortKeyFromCell($stringCell)"/>
-                            </xsl:if>
+                            <xsl:variable name="parentRow" select="parent::row" as="element(row)"/>
+                            <xsl:choose>
+                                <xsl:when test="$cols = $pre">
+                                    <xsl:sequence select="wea:makeColSortKey($parentRow/cell[$pre], $colMap($pre))"/>
+                                </xsl:when>
+                                <xsl:when test="$cols = $post">
+                                    <xsl:sequence select="wea:makeColSortKey($parentRow/cell[$post], $colMap($post))"/> 
+                                </xsl:when>
+                                <xsl:otherwise/>
+                            </xsl:choose>
                         </xsl:sort>
-                        
                         <xsl:variable name="pos" select="position()"/>
                         <xsl:map-entry key="generate-id(.)">
                             <xsl:map>
@@ -403,6 +412,9 @@
                     <xsl:choose>
                         <xsl:when test="every $cell in $cells satisfies wea:isEmpty($cell)">
                             <xsl:sequence select="xs:string('string')"/>
+                        </xsl:when>
+                        <xsl:when test="every $cell in $cells satisfies matches(normalize-space(string($cell)),'^(yes|no|true|false)$','i')">
+                            <xsl:sequence select="xs:string('boolean')"/>
                         </xsl:when>
                         <xsl:when test="not(empty($cells[date])) and (every $cell in $cells satisfies ($cell[date] or wea:isEmpty($cell)))">
                             <xsl:sequence select="xs:string('date')"/>
@@ -458,15 +470,19 @@
         
     </xsl:function>
 
-    <xsl:function name="wea:makeColSortKey" as="item()*">
+    <xsl:function name="wea:makeColSortKey" new-each-time="no" as="item()*">
         <xsl:param name="cell" as="element(cell)"/>
         <xsl:param name="colType" as="xs:string"/>
+
         <xsl:choose>
             <xsl:when test="$colType='date'">
                 <xsl:sequence select="wea:getDateSortKey($cell/date[1])"/>
             </xsl:when>
             <xsl:when test="$colType='float'">
                 <xsl:sequence select="xs:decimal(string($cell))"/>
+            </xsl:when>
+            <xsl:when test="$colType='boolean'">
+                <xsl:sequence select="if (matches(normalize-space(string($cell)),'yes|true','i')) then 0 else 1"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:sequence select="wea:makeTitleSortKeyFromCell($cell)"/>
