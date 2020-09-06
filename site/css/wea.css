@@ -550,7 +550,7 @@ div#nav_search button:hover{
 
 .JS img[data-wea-src ^='media/']:hover{
     cursor:zoom-in;
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -1725,7 +1725,8 @@ li{
 }
 
 #search #mainBody #text,
-#mainBody.docBornDigitalListing #text{
+#mainBody.docBornDigitalListing #text,
+#timeline #mainBody #text{
     max-width: calc(var(--max-text-width) * 1.5);
 }
 
@@ -1972,7 +1973,7 @@ div[data-type='listFigure'] img{
   width:50%;
   position:relative;
   border-left:5px solid pink;
-  padding-bottom:1rem;
+  padding:2.441rem 0;
 }
 
 
