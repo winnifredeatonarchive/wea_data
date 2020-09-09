@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan5">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan5">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Sunny-San [Part 3]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SB2">Samantha Bowen</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,27 +31,589 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SB2" status="empty"  when="2020-08-15">Added brief notes statement.</change>
-         <change who="pers:SB2" status="empty"  when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">changed title.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">changed title.</change>
-         <change who="pers:MC1" status="empty"  when="2020-06-30">Added next instlament link.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl133 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SB2" when="2020-09-09" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes statement.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">changed title.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">changed title.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added next instlament link.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl133 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Sunny-San4"
-      prev="doc:SunnySan4" 
-      next="doc:SunnySan2">
+   <text facs="facs:Sunny-San4" prev="doc:SunnySan4" next="doc:SunnySan2">
+      <pb n="510"/>
       <body>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
-         </div>
+    
+      
+    
+            <head>Sunny-San</head>
+    
+            <opener>
+               
+               <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+               <byline><emph>Illustrated by Arthur Ferrier</emph></byline>
+               
+            </opener>
+   
+    </div>
+    <div>     
+      
+    
+            <head>Prologue</head>
+    
+      
+    
+            <p>It was the night of the Festival of the Full Moon, but Hirata, the proprietor of the House of a Thousand Joys, was infuriated, for was not Madame Many Smiles, the famous dancer, lying dead among her robes? At her feet knelt her child, crushed and hurt by a grief that nothing could assuage, and it was for the sake of her mother’s honour that presently she stood a-tiptoe on the tight-rope, laughing at the sea of faces round her and throwing her kisses right and left. So charming was she that the Lord of Negato, amorous for this lovely child, tossed her a jewel and a handful of coin, which she cleverly caught on her fan but, acting under a sudden impish impulse, she suddenly threw them in her admirer’s face and, jumping to the ground, vanished into the tea-house.</p>
+    
+      
+    
+            <p>A party of English students visiting Japan had witnessed this scene and, learning that she was to be punished for her slight to the Japanese nobleman, they made a sudden raid on the tea-house and carried off the girl before Hirata’s lash could fall a second time upon her shoulders.</p>
+    
+      
+    
+            <p>These four students and their tutor then decided to adopt Sunny-san, the dancer’s child, whose father was a white man. They formed a syndicate, and together raised sufficient money to provide for Sunny during her lifetime.</p>
+    
+      
+    
+            <p>Soon a time came when the Englishmen had to return to their own country, and they regretfully departed, leaving Sunny in charge of a missionary. She begged them to take her with them, but the hardest moment came when she said good-bye to Jerry Hammond, who had been her faithful champion from the first. However, the ship carrying the Englishmen sailed away, and left a sorrowful Sunny languishing in Nagasaki.</p>
+    
+      
+    
+            <p>As time went on, Sunny’s friends across the sea reached a period where they thought of her as a charming and amusing episode of an idyllic summer in Japan. Cue bleak March day, Jerry was surprised to learn, on the telephone, that Sunny-san was in London and waiting instructions from the Syndicate. He hastily collected her other friends, and while they were discussing position Sunny entered. She had grown to be a charming young woman, and her friends, agreeably surprised, cannot do enough for her. Jerry cabled to the Professor to return from Canada to take charge of Sunny, but he was unable to do so, and she took up her abode in Jerry’s flat.</p>
+    
+      
+    
+        </div>
+        <div>
+     
+            <head>Chapter VIII-(Continued).</head>
+    
+      
+    
+            <p>That she was an amazing, actual part of his daily life seemed to him incredible, and beguiling and fascinating as life now seemed to him with her, and wretched and uncertain as it was away from her, his alarm increased with every day and hour of her abode in his house. He assured himself repeatedly that there was no more harm in Sunny living in his apartment than there was in her living in his house in Japan. What enraged the befuddled Jerry at this time was the officious attitude of his friends, Monty took it upon himself to go room-hunting for a place for Sunny, and talked a good deal about the results he expected from a letter written to Kent. He did not refer to Sunny now as a stone. Monty was sure that the place for Sunny was in that Kentish home, presided over by his doting parents and little brothers and sisters, and where it was quite accessible for weekend visits.</p>
+    
+      
+    
+            <p>Jinx, after a stormy scene with his elder sister, in which he endeavoured to force Sunny upon the indignant and suspicious Mrs. Peters, left in high dudgeon the Brighton home in which he had been born, and which was his own personal inheritance, and, with threats never to speak to his sister again, he took up his residence at his club, just two blocks from the studio.</p>
+    
+      
+    
+           <p>Bobs cleared out two of his friends from the flat, bought some cretonne curtains with outrageous roses and patches of yellow, purple, red and green, hung these in dining-room and bedroom and parlour, bought a brand new gramophone and some quite gorgeous Chinese rugs, and had a woman in cleaning for nearly a week. To his friends’ gibes and suggestions that he apparently contemplated matrimony, Bobs sentimentally rejoined that<pb n="511"/> sooner or later a fellow got tired of the dingy life of a smoke and card-filled flat and wanted a bit of real sweetness to take away the curse of life. He acquired some land somewhere by the river, and spent considerable time consulting in an architect’s office, shamefully ignoring Jerry’s gifts in that line.</p>
+    
+      
+    
+            <p>That his friends, who had so savagely protested against sharing the burden of Sunny, should now try to go behind his back and take her away from him was, in the opinion of Jerry, a clue to the kind of characters they possessed, and of which hitherto he had not the slightest suspicion.</p>
+    
+      
+    
+            <p>Jerry, at this time, resembled the proverbial dog in the manger. He did not want Sunny himself—that is, he dared not want Sunny—but the thought of her going to any other place filled him with anguish and resentment. Nevertheless, he realised the impossibility of maintaining her much longer in his studio. Already her presence had excited gossip and speculation in the studio building, but in that careless and Bohemian atmosphere with which denizens of the art world choose to surround themselves, the lovely young stranger in the studio of Jerry Hammond aroused merely smiling and indulgent curiosity. Occasionally a crude joke or inquiry from a neighbouring artist aroused murder in the soul of the otherwise civilised Jerry. That anyone could imagine anything wrong with Sunny seemed to him beyond belief.</p>
+    
+      
+    
+            <p>Not that he felt always kindly toward Sunny. She aroused his ire more often than she did his approval. She was altogether too free and unconventional, in the opinion of Jerry, and in a clumsy way he tried to teach her certain rules of deportment for a young woman living in the British Isles. Sunny, however, was so innocent, and so evidently earnest in her efforts to please him, that he invariably felt ashamed and accused himself of being a pig and a brute. Jerry was, indeed, like the unfortunate boatman, drifting toward the rocks, and seeing only the golden hair of the Lorelei.</p>
+    
+      
+    
+            <p>Even at home, Sunny had wrought havoc. Before she had been three days upon the place, Hatton, the stony-faced and spare of tongue, had confided to her the whole history of his life, and explained how his missus had driven him to drink.</p>
+    
+      
+    
+            <p><q>It’s ‘ard on a man, miss. ‘E tries to do ‘is best in life, but it’s ‘ard, miss, when there’s a woman as believes the worst, and brings out the worst in a man, miss, and man is only yuman, only yuman, miss, and all yuman beings ‘as their failings, as no doubt you know, miss</q>.</p>
+    
+      
+    
+            <p>Sunny did know. She told Hatton that she was full of failings. She didn’t think him a bad man at all, because once in a long time he drank a little bit. Lots of men did that. There was the Count of Matsuyama. He had made many gifts to the Shiba Temple, but he loved <foreign xml:lang="ja">saki</foreign> very much, and often in the tea-gardens the girls were kept up very late, because the Count of Matsuyama never returned home till he had drunk all the <foreign xml:lang="ja">saki</foreign> on the place, and that took many hours.</p>
+    
+      
+    
+            <p>Gratuitously, and filled with a sudden noble purpose, Hatton gave Sunny his solemn promise never again to touch the inebriating cup. She clapped her hands with delight at this, and cried:</p>
+    
+      
+    
+            <p><q>Ho! How you are nicer man now. Mebbe you wife she come bag agin unto you. How thad will be happy for you</q>.</p>
+    
+      
+    
+            <p><q>No, no, miss</q>, sadly and hastily Hatton rejoined; <q>you see, miss, it was a case of another woman, what the French call, miss: Shershy la Fam. I’m sorry, miss, but I’m only yuman, beggin’ your pardon, miss</q>.</p>
+    
+      
+    
+            <p>Sunny had assumed many of the duties that were previously Hatton’s. The kitchenette was her especial delight. Here, swathed in a long pongee smock, her sleeves rolled up, Sunny concocted some of those delectable dishes which her friends named variously as: Sunny Syndicate Cocktail; Purée à la Sunny; Potatoes au Sunny; Sweet pickles par la Sunny, and so forth. Her thrift also cut down Jerry’s bills considerably, and he was really so proud of her abilities in this line that he gave a special dinner to which he generously invited all three of their mutual friends, and announced at the table that the meal was entirely concocted by Sunny at a price inconceivably low.</p>
+    
+      
+    
+            <p>The <emph>pièce de résistance</emph> of this especial feast was a potato dish. Served in a casserole, it might at first sight and taste <pb n="512"/>have been taken for a glorified <emph>potatoes au gratin</emph>; but no, when tasted it revealed its superior qualities. The flushed and pleased Sunny, sitting at the head of the table, and dishing out the third or fourth serving to her admiring friends, was induced to reveal to her friends of what the dish was composed. The revelation, it is regrettable to state, convulsed and disconcerted her friends so that they ceased to eat the previously much appreciated dish. Sunny proudly informed them that her dish was made up mainly of potato peelings, washed, minced and scrambled in a mess of odds and ends in the way of pieces of cheese, mushroom, meat, and various vegetables garnered from plates of a recently wasteful meal.</p>
+            
+            <p>Her explanation caused such a profound silence for a moment, which was followed by uneasy and then unrepressed mirth that she was disconcerted and distressed and her friends were moved to the tenderest feelings and sought to console her by telling her that it didn’t matter what she made dishes of, everything she did was exactly right, which made it a bit harder to explain that the shining pan under the kitchen sink was the proper receptacle for all left overs on the plates.</p>
+    
+      
+    
+            </div>
+            <div>
+    
+      
+    
+           <head>Chapter IX</head>
+    
+      
+    
+            <p>Sunny had certain traits that contributed largely to what seemed almost an unconscious conspiracy to rob Jerry Hammond of his peace of mind. There was a resemblance in her nature to a kitten. She loved to nestle against one, and, in spite of being repelled and warned to keep her distance by the distracted Jerry, she persisted, all unconsciously, in certain maddening traits which bade fair to drive her benefactor into a state of blissful misery.</p>
+    
+      
+    
+            <p>To maintain a proper decorum in this relations with his guest, Jerry was wont, when alone, to arrive at the firm determination to hold her at a respectable distance. This was far from being, however, an easy matter. It was impossible for him to be in the room with Sunny and not sooner or later find her in touch with him. She had a trick of slipping her hand into his. She slipped under his most rigid guard, and acquired a bad habit of pressing close to his side and putting her arm through his. This was all very well when they took their long walks through the park. She could not see the reason why, if she could walk arm and arm with Jerry, when they climbed on the top of one of the buses that rolled round the Metropolis, she should not continue linked with her friend. In fact, Sunny found it far more attractive and comfortable to drive arm in arm with Jerry than walk thus with him. For, when walking, she loved to rove off from the paths, to make acquaintance with the squirrels and the friendly dogs.</p>
+    
+      
+    
+            <p>Her near proximity, however, had its most dangerous effect in the charmed evenings these two spent together, too often, however, marred by the persistent calls of their mutual friends. At these times Sunny had an uncanny trick of coming up at the back of Jerry, when that unconscious young man by the fireplace was off in a day dream (in which, by the way, in a vague way herself was always a part), and resting her cheek upon the brown comfortable head, there to stay till her warm presence startled him into wakefulness, and he would explode one of his usual expressions of these days:</p>
+    
+      
+    
+            <p><q>Don’t do that, I say!</q></p>
+    
+      
+    
+            <p><q>Keep your hands off me, will you</q>.</p>
+    
+      
+    
+            <p><q>Don’t come so close</q>.</p>
+    
+      
+    
+            <p><q>Keep off—keep off, I say</q>.</p>
+    
+      
+    
+            <p><q>I don’t like it</q>.</p>
+    
+      
+    
+            <p><q>For heaven’s sake, Sunny, will nothing teach you civilised ways</q>.</p>
+    
+      
+    
+            <p>At these times, Sunny always retired very meekly to a distant part of the room, where she would remain very still and crushed-looking, and shortly, Jerry, overcome with compunction, would coax her to a nearer proximity, mentally and physically.</p>
+    
+      
+    
+            <p>Another disturbing trick, which Jerry never had the heart to ban was that of kneeling directly in front of him, her two hands upon his own knees. From his vantage point, with her friendly, expressive and so lovely face raised to his, she would naïvely pour out to him her innocent confidences. After all, he savagely argued within himself, what harm in the world was there in a little girl kneeling by your side, and even laying her head, if it came [514] down to that, at times upon a fellow’s knee. It took a rotten mind to discover anything wrong with that, in the opinion of Jerry Hammond.</p>
+    
+      
+    
+            <p>However, there is a limit to all things, and that limit was reached on a certain evening in early spring, a dangerous season, as we all know. <q>If you give some people an inch they’ll take a mile</q>, Jerry, at that time angrily muttered, the humour of the situation not at all appealing to him.</p>
+    
+      
+    
+            <p>He was going over a publication on Spanish Architecture of the fourteenth and fifteenth centuries. Sunny was enjoying herself very at the piano-player, and Jerry should, as he afterwards admitted to himself, have <q>left well enough alone</q>. However it be, nothing would do but he must summon Sunny to his side, to share the pleasure of looking at these splendid examples of the magnificent work of the great Spanish architects.</p>
+    
+      
+    
+            <p>Now Sunny possessed, to an uncanny degree, that gift of understanding which is extremely rare with her sex. She possessed it, in fact, to such a fine degree, that nearly everyone who met her found himself pouring out the history of his life into her sympathetic and understanding little ear. There was something about her way of looking at one, a sort of hanging absorbedly upon one’s narrative of their history, that assured the narrator that he not only had the understanding but the sympathy of his pretty listener.</p>
+    
+      
+    
+            <p>Jerry, therefore, summoned her from her diversions at the piano-player, which she hastened to leave, though the record was her favourite one. Her murmuring exclamations above his shoulder revealed her instant enthusiasm and appreciation of just those details that Jerry knew would escape the less artistic eye of an ordinary person. She held pages open, to prolong the pleasure of looking at certain window traceries; she picked out easily the Geometrical Gothic type, and wanted Jerry’s full explanation as to its difference to those of another period. Her little pink forefinger even found points of interest in the sketches that Jerry was waiting to see if they would escape her, but unerringly, she found them, which made him chuckle with delight and pride. The value of Sunny’s criticism and opinion, moreover, was enhanced by the fact that she conveyed to the young man her conviction that while, of course, these were incredibly marvellous examples of the skill of ancient Spanish architects, they were not a patch on the work which J. Addison Hammon was going to do in the not far distant future. Though he protested against this with proper modesty, he was nevertheless beguiled and bewitched by the shining dream she called up. He had failed to note that she was perched on the arm of his chair, and that her head rested perilously near to his own. Possibly he would never have discovered this at all had not an accident occurred, an accident in fact that sent Hatton, busy on some task or other about the studio, scurrying in undignified flight from the room, with his stony face covered with his hands. From the kitchen regions thereafter came the sound of suppressed clucks, which by this time could have been recognised as Hatton’s laughter.</p>
+    
+      
+    
+            <p>What happened was this: At a moment when a turned leaf revealed a sketch of such ravishing splendour, Sunny’s breathless admiration, and Jerry’s own motion of appreciation, one fist clapped into the palm of the other hand, caused Sunny to slip from the arm of the chair on to Jerry’s knee.</p>
+    
+      
+    
+            <p>Jerry arose. To do him justice, he arose instantly, depositing both book and Sunny upon the floor. He then proceeded to read her such a savage lecture upon her pagan ways that the evident effect was so instantly apparent on her, that he stopped midway, glared, stared at the crushed little figure, so tenderly closing the upset book, and then turned on his heel and made an ignominious and undignified exit from the room.</p>
+    
+      
+    
+            <p><q>What’s the use? What’s the use?</q> demanded Jerry of the unresponsive walls. <q>Hang it all, this sort of thing has got to stop. What on earth is the Professor doing?</q></p>
+    
+      
+    
+            <p>He always liked to imagine at these times that his faith was pinned upon the early coming of Professor Barrowes, when he was assured that the hectic state of affairs in his studio would be clarified and Sunny disposed of once and for ever. Sunny, however, had been nearly a month <pb n="515"/>now in his studio, and in spite of a hundred telegrams to Professor Barrowes, demanding to know the exact time of his arrival, threatening, moreover, to hold back the money required to bring the dashed Dionornis from Red Deer, Alberta, Canada, to London, he got no satisfactory response from his old time teacher. That monomaniac merely replied with letter long telegrams—very expensive coming from the extreme north-western part of Canada to London, giving more detailed information about the above-mentioned Dionornis, or Dynosaurus, or whatever he called it, and explaining why more and more funds were required.</p>
+    
+      
+    
+            <p>As Jerry paced the floor of his room he paused to re-read the words of the motto recently pinned upon his wall, and, of course, it was as follows: <q><emph>Honi soit qui mal y pense</emph></q>. That was enough for Jerry. There was no question of the fact that he had been a <q>pig and a brute</q>, terms often in those days applied by himself to himself. Sunny was certainly not to be blamed for the accident of slipping from the arm of his chair. True, he had already told her that she was not to sit on that arm, but that was a minor matter, and there was no occasion for his making a <q>mountain out of a mole-hill</q>.</p>
+    
+      
+    
+            <p>Having arrived at the conclusion that, as usual, he, not Sunny, was the one to blame, it was in the nature of Jerry that he should hurriedly descend to admit his fault. Downstairs, therefore again, and into the now empty studio. Sounds came from the direction of that kitchen that were entirely too sweet to belong to the <q>pie-faced</q> Hatton, whose disgusting recent mirth might mean the loss of his job, ominously thought Jerry.</p>
+    
+      
+    
+            <p>In the kitchen Sunny was discovered, on her knees with her lips close to a small hole on the floor in the corner of the room. She was half whistling, half whispering, and she was scattering something into and about that hole, which had apparently cut out with a vegetable knife, that looked very much like cheese and breadcrumbs. Presently the amazed Jerry saw first one and then another tiny face appear at that hole, and there then issued forth a full fledged family of the mouse species, young and old, large and small, male and female. The explanation of the previously inexplicable appearance in the studio of countless mice was now clear. Jerry’s ward had been feeding and cultivating mice! At his exclamation she arose reproachfully, the mice scampering back into their hole.</p>
+    
+      
+    
+            <p><q>Oh!</q> said Sunny, regret, not guilt, visible on her face, <q>you are fright away my honourable mice, and thas hees time eat on his dinner. How I are sorry you are soach noisy mans!</q></p>
+    
+      
+    
+            <p>She put the rest of her crumbs into the hole, and called down coaxingly to her pets that breakfast would be ready next day.</p>
+    
+      
+    
+            <p><q>You mustn’t feed mice, you little donkey!</q> burst forth Jerry. <q>They’ll be all over the house. They are now. Everybody in the building is kicking about it</q>.</p>
+    
+      
+    
+            <p><q>Honourable mice very good animals</q>, said Sunny with conviction. <q>Mebbe some you and my ancestor are mice now. You kinnod tell ‘bout those. Mice got very honourable history ad Japan. I am lig’ them very much</q>.</p>
+    
+      
+    
+            <p><q>That’ll do. Don’t say another word. I’ll fix ‘em. Hi you, Hatton! you must have known about this</q>.</p>
+    
+      
+    
+            <p><q>Very sorry, sir, but orders from you, sir, was to allow Miss Sunny to have her way in the kitchen, sir. Hi tries to obey you, sir, and hi ‘adn’t the ‘eart to deprive Miss Sunny of her honly pets, sir. She’s honly yuman, sir, and being alone hall day, so young, sir, ‘as ‘ankerings for hinnocent things to play with</q>.</p>
+    
+      
+    
+            <p><q>That’ll do, Hatton. Nail up that hole. Hurry up</q>.</p>
+    
+      
+    
+            <p>Nevertheless, Hatton’s words sunk into the soul of Jerry. To think that even the poor working man was kinder to the little Sunny than was he. He ignored the fact, that as Hatton nailed tin over the guilty hole his shoulders were observed to be shaking, and these spasmodic clucks emanated at intervals also from him. In fact Hatton, in these days, had lost all his previously polished composure. That is to say, at inconvenient moments he would burst into this uncontrollable clucking, as, for instance, when waiting on table observing a guest devouring some especial edible concocted by Sunny, he would be obliged to retire from service at the table to the kitchen, to be discovered there by the irate Jerry, who had followed him, sitting [516] on a chair with tears running down his cheeks. To the threatened kicking if he didn’t get up and behave himself, Hatton returned:</p>
+    
+      
+    
+            <p><q>Oh, sir, hi ham honly yuman, and the gentlman was ravin’ so about them ‘spinuges’, sir, has ‘ce’s hafter calling them</q>.</p>
+    
+      
+    
+            <p><q>Well, what are they then?</q> demanded Jerry.</p>
+    
+      
+    
+            <p><q>Them’s weeds, sir</q>, whispered Hatton, wiping his eyes. <q>Miss Sunny, I seen her diggin’ them up in the lot across the way, and she come up the fire escape with them in ‘er petticoat, sir, and she ‘ad four cats in the petticoat also, sir. She’s feedin’ arf the population of cats in this neighbourhood, sir</q>.</p>
+    
+      
+    
+            <p>Jerry had been only irritated at that time. He knew that Sunny’s <q>weeds</q> were perfectly edible and far more toothsome in fact than mere spinach. Trust her Japanese knowledge to know what was what in the vegetable kingdom. However, mice were a more serious matter. There was an ironclad rule in the building that no live stock of any kind, neither dogs, cats, parrots, or birds or reptiles of any description (babies included in the ban) were to be lodged on these <emph>de luxe</emph> premises. Still—as Jerry watched Sunny’s brimming eyes, the eyes of one who sees her dear friends imprisoned and doomed to execution, while Hatton nailed the tin over the holes, he felt extremely mean and cruel.</p>
+    
+      
+    
+            <p><q>I’m awfully sorry, Sunny, old thing</q>, he said, <q>but you know we can’t possibly have <emph>mice</emph> on the place. Now if it were something like—like—well, a dog, for instance—</q></p>
+    
+      
+    
+            <p><q>I <emph>are</emph> got a nice dog</q>, said Sunny, beginning to smile through her tears.</p>
+    
+      
+    
+            <p>Apprehension instantly replaced the compunction on Jerry’s face, apprehension that turned to genuine horror, however, when Sunny opened the window on to the fire escape, and showed him a large grocer’s box, upholstered and padded with a red article that looked strangely familiar to Jerry, and was suspiciously like a Japanese petticoat. Digging under this padded silk, Sunny brought forth the yellowest, scurviest and meanest looking specimen of the dog family that it had ever been Jerry’s misfortune to see. She caught this disreputable object to her breast, and nestled her darling little chin against the wriggling head, that persisted in ducking up to release a long red tongue that licked her face with whines of delight and appreciation.</p>
+    
+      
+    
+            <p><q>Sunny! For the love of Mike! Where in the name of all the pagan gods and goddesses of Japan did you get that godforsaken animal from? If you wanted a dog, why in the name of goodness didn’t you tell me, and I’d have got you a respectable dog—if they’d let me—in the house</q>.</p>
+    
+      
+    
+            <p><q>Jerry, he are a respectable dog also. I buyed him from the butcher gentleman, who was mos’ kind, and he charge me no moaney for those dog, bi-cause he are say he are poor mans, and those dog came off those street and eat him up those sausage. So that butcher gentleman he are sell him to me, and he are my own dog, and I are love my Itchy mos’ bes’ of all dogs</q>.</p>
+    
+      
+    
+            <p>And she hugged her little cur protectingly to her breast, her eyes bright with the defiant look of a little mother at bay.</p>
+    
+      
+    
+            <p><q>Itchy?</q></p>
+    
+      
+    
+            <p><q>Thad are my dog’s name. The butcher gentleman, he say he are scratch on his itch all those time, so I are name him Itchy. Also I are cure on those itch spot, for I are wash him every day, and now he are so clean he got only two flea left on his body</q>.</p>
+    
+      
+    
+            <p><q>By what process of mathematics will you tell me did you arrive at the figure of two?</q> demanded the stunned young man, thrusting his two fists deep into his pockets and surveying Sunny and the aforesaid dog as one might curious specimens in the Zoo.</p>
+    
+      
+    
+            <p><q>Two? Two, flea?</q> Sunny passed her hand lovingly and sympathetically over her dog’s yellow body and replied so simply that even an extremely dense person ought to have been able to know the answer to that arithmetic question:</p>
+    
+      
+    
+            <p><q>He are scratch him in two place only</q>.</p>
+    
+      
+    
+            <p>Jerry threw back his head and burst into immoderate laugher. He laughed so hard that he was obliged to sit down on a chair, while Hatton, on the floor, sat down stolidly also, and desisted with his hammering. Jerry’s mirth having had <pb n="518"/> full sway, hands in pockets he surveyed Sunny as, lovingly, she returned her protesting cur to its silken retreat.</p>
+    
+      
+    
+            <p><q>Sunny! Sunny!</q> said Jerry, shaking his head. <q>You’ll be the death of me yet</q>.</p>
+    
+      
+    
+            <p>Sunny regarded him earnestly at that.</p>
+    
+      
+    
+            <p><q>No, Jerry, do not say those. I are not want to make you death. Thas very sad—for die</q>.</p>
+    
+      
+    
+            <p><q>What are we going to do about it? They’ll never let you keep a dog here. Against the rules</q>.</p>
+    
+      
+    
+            <p><q>No, no, it are no longer ‘gainst those rule. Are speag wiz the caretaker gentleman, and he are say: ‘Thas all ride, seein’ it’s you.’</q></p>
+    
+      
+    
+            <p><q>He did, did he? Got around him, too, did you? You’ll have the whole place demoralized if you keep on</q>.</p>
+    
+      
+    
+            <p><q>I are also speag ad those landlord</q>, confessed Sunny innocently, <q>bi-cause he are swear on those caretaker gentleman, account some are spik to him thad I are got dog live ad these house. And thad landlord gentleman he are come up here ad those studio, and I are show him those dog, and he are say he are nize dog, and thad those fire escape he is not <emph>inside</emph>. So I nod break those rule, and he go down stairs, spik ad those lady mek those complain, and he say doan koor if she dam clear out of this house. He doan lig’ her whichever</q>.</p>
+    
+      
+    
+            <p>Jerry threw up his hands.</p>
+    
+      
+    
+            <p><q>You win, Sunny! Do as you like. Fill the place full if you want to! There’s horses and cows to be had if they strike your fancy, and the Zoo is full of other kind of livestock. Take your choice</q>.</p>
+    
+      
+    
+            <p>Sunny, indeed, did proceed to take her choice. It is true she did not bring horses and cows and wild animals into Jerry’s apartment: but she passed the word to her doting friends, and in due time the inmates of that duplex apartment made quite a considerable family, with promise of early increase. There was, besides Itchy, Count and Countess Taguchi, overfed canaries, who taught Sunny a new kind of whistle; Mr. and Mrs. Satsuma; goldfish who occupied an ornate glass and silver dish, fern and rock-lined, presented by Jinx; and Miss Spring Morning, a large Persian cat, whom Sunny named after old friend of the teahouse of a Thousand Joys, but whose name should have been Mr. Spring Morning.</p>
+    
+      
+    
+            <p>It was a very happy family indeed; and in time the master of the house became quite accustomed to the pets (<q>pests</q> he called them at first), and had that proud feeling, moreover, the contented man of a family. He often fed the Satsuma, and Taguchis himself, and actually was observed to scratch the head of Itchy who, in these days, penetrated into the various rooms of the apartment (Sunny having had especial permission from the caretaker gentleman) so long as his presence was noiseless. He wore on his scrawny neck a fine leather and gilt collar that Monty sent all the way to Philadelphia to get for Sunny, thereby earning the bitter resentment of his kid brother, who considered that collar his by rightful inheritance from Monty’s own recent kid days. Monty’s remorse upon swiping said collar was shortlived, however, for Sunny’s smile and excitement, and the fun they had putting it on Itchy, more than compensated for any bitter threats of an unreasonable kid brother. Besides, Monty brought peace in that disturbed direction by sending the younger Potter a brand-new collar—not, it is true, of the history of the one taken, but much more shiny and semi-adjustable.</p>
+    
+      
+    
+          </div>
+          <div>
+    
+      
+    
+            <head>Chapter X</head>
+    
+      
+    
+            <p>On April 20th Sunny’s friend, <q>Mr. dear Monty</q>, as she called him (J. Lamont Potter, jun., was his real name), obtained an indefinite leave of absence from the hospital, and called upon Sunny in the absence of Jerry Hammond. He came very directly to the object of his call almost as soon as Sunny had admitted him, and while, indeed, she was assisting him to remove that nice loosely hanging spring coat that looked so well on Monty. Monty swung around as his arms came out of his coat’s sleeves, and made Sunny an offer of his heart and soul. Those the girl very regretfully rejected, after he had made it clear to her that, to get down to brass tacks, the offer meant pure and simple matrimony. Follows the gist of Sunny’s remarks in rejection of the offer: <pb n="319"/></p>
+    
+      
+    
+            <p><q>Monty, I do not wan’ getting’ marry wiz you jos yet, bi-cause you are got two more year to worg on those hospital. Then you are go ad those college and hospital in Hy—</q> She tried to say <q>Heidelberg</q>, but the word was too much for her, and he broke in impetuously:</p>
+    
+      
+    
+            <p><q>Listen, Sunny! Those <emph>were</emph> my plans, but everything’s changed now since I met you. I’ve decided to cut it all out and settle down and marry. I’ve got my degree, and can practise now. We’ll have to economise a bit at first, because the governor, no doubt, will cut me out for doing this; but I’m not in swaddling clothes, and I’ll do as I like. So, what do you say, Sunny?</q></p>
+    
+      
+    
+            <p><q>I say, thas nod ride do those? Your honorable father, he are spend plenty moaney for you, and thas unfilial do lig’ thad. I thang you, Monty, but I are sawry I kinnod do lig’ you ask</q>.</p>
+    
+      
+    
+            <p><q>But look here, Sunny, there are whole heaps of fellows—chaps who never go beyond their taking degree, who go to practising right away, and I can do as they do, as far as that goes, and with you I shouldn’t worry whether I specialised or not</q>.</p>
+    
+      
+    
+            <p><q>But, Monty, I <emph>wan’</emph> see you go up—Ho! up, way high to those top. Thas mos’ bes’ thing do for man. I do nod lig’ man who stay down low on ground. Thas nod grade man. I do nod wan’ make marry wiz man lig’ those</q>.</p>
+    
+      
+    
+            <p><q>We-el, I suppose I could go on with the work and study. If I did, would you wait for me? Would you, Sunny?</q></p>
+    
+      
+    
+            <p><q>I do not know, Monty. How are I kin see all those year come</q>.</p>
+    
+      
+    
+            <p><q>Well, but you can promise me, can’t you?</q></p>
+    
+      
+    
+            <p><q>No, Monty, bi-cause mebbe I goin’ die, and then thas break promise. Thas not perlite do lig’ those</q>.</p>
+    
+      
+    
+            <p><q>Pshaw! There’s no likelihood at all of your dying. You’re awfully healthy. Anyone can see it by your colouring. By Jove, Sunny, you have the prettiest complexion of any girl I’ve ever seen. Your cheeks are just like flowers. Die! You’re silly to think of it even. So you are perfectly safe in promising</q>.</p>
+    
+      
+    
+            <p><q>We-el, then I promise that mebbe after those five, six year, when you are all troo, <emph>if</emph> I are not marry wiz someone else, then I go <emph>consider</emph> marry wiz you, Monty</q>.</p>
+    
+      
+    
+            <p>This gracious speech was sweetened by an engaging smile, and Monty, believing that <q>half a loaf is better than no loaf</q>, showed his pleasure, though his curiosity prompted him to make anxious inquiry as to possible rivals.</p>
+    
+      
+    
+            <p><q>Bobs asked you yet?</q></p>
+    
+      
+    
+            <p><q>No—not yet</q>.</p>
+    
+      
+    
+            <p><q>You wouldn’t take him if he did, would you, Sunny?</q></p>
+    
+      
+    
+            <p><q>No—not yet</q>.</p>
+    
+      
+    
+            <p><q>Or any time. Say that</q>.</p>
+    
+      
+    
+            <p>Sunny laughed.</p>
+    
+      
+    
+            <p><q>Any time, Monty</q>.</p>
+    
+      
+    
+            <p><q>And Jinx? What abou Jinx</q>.</p>
+    
+      
+    
+            <p><q>He are always my good firend</q>.</p>
+    
+      
+    
+            <p><q>You wouldn’t marry him, would you?</q></p>
+    
+      
+    
+            <p><q>No. I are lig him as friend’</q>.</p>
+    
+      
+    
+            <p>Monty pursued no further. He, too, knew of the existence of Jerry’s Miss Falconer. Depressed, but not hopeless, Monty withdrew.</p>
+    
+      
+    
+            <p>That was on April 20th. Bob’s proposal followed on the 22nd. He inveigled Sunny into accompanying him to his polished and glorified flat, which was presided over by an ample-bosomed and smiling <q>mammy</q> housekeeper.</p>
+    
+      
+    
+            <p>His guest, having exclaimed and enthused over the really cosy and bright little flat, Bobs, with his fine, clever face aglow, asked her to share it with him. The request frightened Sunny. She had exhausted most of her stock of excuses against matrimony to Monty, and she did not want to see that look of hope fade from her dear Bobs’ face.</p>
+    
+      
+    
+            <p><q>Oh Bobs, I are <emph>thad</emph> sorry, but me? I do not wan’ make marry jes’ yet. Please you waid for some udder day when mebbe perhaps I go change those mind</q>.</p>
+    
+      
+    
+            <p><q>It’s all right, Sunny!</q></p>
+    
+      
+    
+            <p>Bobs took his medicine like a man, his clean-cut face slightly paling as he followed with a question, the lightness of which did not deceive the distressed Sunny.</p>
+    
+      
+    
+            <p><q>You’re not engaged to anyone else, are you, Sunny?</q></p>
+    
+      
+    
+            <p><q>Engaged? What are those, Bobs?</q></p>
+    
+      
+    
+            <p><q>You haven’t promised any other lucky dog that you’ll marry him, have you?</q></p>
+    
+      
+    
+            <p><q>No-o</q>. Sunny shook her bright head. <pb n="520"/><q>No one are ask me yet, ‘cept Monty; and I are say same t’ing to him</q>.</p>
+    
+      
+    
+            <p><q>Good!</q> Bobs beamed through his disappointment on her. <q>While there’s life there’s hope, you know!</q></p>
+    
+      
+    
+            <p>He felt that Jinx’s chances were slim, and he, too, knew of Miss Falconer and Jerry.</p>
+    
+      
+    
+            <p>Sunny, by no means elated by her two proposals, confided in Hatton, and received sage advice:</p>
+    
+      
+    
+            <p><q>Miss Sunny, Hi’m not hin a position exactly to advise you, and hits ‘ardly my place, miss, but so long as you hasks my hadvice I gives it you grattus. Now, Mr. Monty, ‘ees a trifle young for matrimony, miss—a trifle young; and Mr. Bobs, I ‘ear that ‘ee’s not got any too much money, and hits a beggarly profession ‘ee’s followin’, miss. I ‘ave ‘eard this from Mr. Jerry’s hown folks, ‘oo more than once ‘as cast aspirations against Mr. Jerry’s friends, but I takes it that wot they’re sayin’ comes near to the truth habout the newspaper as a perfession, miss. Now, there’s Mr. Crawford, miss—</q> Hatton’s voice took on both a respectful and confidential tone as he came to Jinx. <q>Now, Hi flatters myself that Hi’m some judge of yuman nature, miss, and I make bold to say, if I may, miss, that Mr. Crawford is about also to pop the ‘appy question to you, miss. Now, if I was in your place, miss, ‘ee’s the gentleman I’ll be after ‘ooking. ‘Is people hare of the harristocrissy—and Mr. Crawford is the hair to a varst fortune, miss. There’s no telling to wo ‘eighths you might climb if you buckles up with Mr. Crawford, miss</q>.</p>
+    
+      
+    
+            <p><q>Ho! Hatton I lig’ all those my frien’ jos same. Me? I would lig’ marry all those, but I kinnod do</q>.</p>
+    
+      
+    
+            <p><q>’Ardly, miss, ‘ardly. Hengland is ‘ardly a pollagamous country</q>.</p>
+    
+      
+    
+            <p>After a moment Sunny asked very softly:</p>
+    
+      
+    
+            <p><q>Hatton, mebbe Jerry ask me these same question</q>.</p>
+    
+      
+    
+            <p>Hatton turned his back, and fussed with the dishes in the sink. He too knew about Miss Falconer.</p>
+    
+      
+    
+            <p><q>’Ardly, miss, ‘ardly</q>.</p>
+    
+      
+    
+            <p><q>Why not, Hatton?</q></p>
+    
+      
+    
+            <p><q>If you’ll pardon me, I ‘ave a great deal of work before me. Hi’m in a ‘urry. ‘Ave you fed the Count and Countess Taguchi, may I ask, miss?</q></p>
+    
+      
+    
+            <p><q>Hatton, <emph>if</emph> a man <emph>not</emph> ask girl to make marry wiz him, what she can do?</q></p>
+    
+      
+    
+            <p><q>Well, now, miss, you got me there. Has far as Hi’m able to see personally, miss, there aren’t nothing left for ‘er to do except wait for the leap year</q>.</p>
+    
+      
+    
+            <p><q>Leap year? What are those, Hatton?</q></p>
+    
+      
+    
+            <p><q>A hodd year, miss—comes just in so often, miss, due to come next year halso. When the leap year comes, miss, then the ladies do the popping—they harsks the ‘appy question, miss</q>.</p>
+    
+      
+    
+            <p><q>Oh-h-h! Thas very nise. I wish it are leap year now</q>, said Sunny wistfully.</p>
+    
+      
+    
+            <p><q>Hit’ll come, miss. Hits on hits way. A few month, and then the ladies’ day will dawn</q>, and Hatton clucking and moving about with cheer clucked at the thought.</p>
+    
+      </div>
+      <div type="paratext">
+    
+            <p>Another instalment of this brilliant novel will appear in the May issue of the Sovereign Magazine.</p>
+    
+      </div>
       </body>
    </text>
 </TEI>
