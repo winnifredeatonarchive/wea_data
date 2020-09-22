@@ -179,10 +179,37 @@
     <xsl:template name="createAppendix">
         <div id="appendix">
             <xsl:call-template name="createNotes"/>
+       
+            <div id="feedback">
+                <xsl:if test="not(ancestor::TEI/descendant::abstract) and wea:isObject(ancestor::TEI)">
+                    
+                    <xsl:variable name="contribute_subject">WEA: Headnote for <xsl:value-of select="string-join(ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]/descendant::text(),'')"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
+                    <div>
+                        <h4>Contribute</h4>
+                        <div data-el="p">If you'd like to write a headnote for this text (that would be peer-reviewed before publication), 
+                            please <a href="mailto:mary.chapman@ubc.ca,winnifredeatonarchive@gmail.com?subject={encode-for-uri($contribute_subject)}">contact the Project Director Mary Chapman</a> to discuss.</div>
+                    </div>
+                </xsl:if>
+                
+                <div>
+                    <xsl:variable name="feedback_subject">WEA Feedback: <xsl:value-of select="string-join(ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]/descendant::text(),'')"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
+                    <xsl:variable name="feedback_body">[If you are reporting a bug or other technical issue, please provide as much detail as possible.]</xsl:variable>
+                    <h4>Technical Feedback</h4>
+                    <p>If you have noticed a bug, typo, or errors on the site or if you have any other feedback, please <a href="{wea:makeEmail($feedback_subject, $feedback_body)}">contact us</a>.</p>
+                </div>
+
+            </div>
+            
             <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>
         </div>
     </xsl:template>
     
+    
+    <xsl:function name="wea:makeEmail">
+        <xsl:param name="subject"/>
+        <xsl:param name="body"/>
+        <xsl:sequence select="'mailto:mary.chapman@ubc.ca,joey.takeda@gmail.com?subject=' || encode-for-uri($subject) || '&amp;body=' || encode-for-uri($body)"/>
+    </xsl:function>
     <xsl:template match="listBibl" mode="appendix">
         <div>
             <xsl:call-template name="processAtts">
