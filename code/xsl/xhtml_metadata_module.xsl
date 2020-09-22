@@ -648,6 +648,8 @@
                             </a>
                         </div>
                     </xsl:if>
+                    
+                    
                    <!-- <xsl:if test="//text[@facs] or ancestor::TEI/@xml:id='SunnySan1'">
                         <div id="tools_facsimiles">
                             <a class="toolbar_item" href="#tools_facsimiles_content">
@@ -667,12 +669,23 @@
                         </div>
                     </xsl:if>-->
                     
+                    <xsl:if test="//abstract">
+                        <div id="tools_headnote">
+                            <a class="toolbar_item" href="#headnote_content">
+                                <div class="mi">description</div>
+                                <div class="label">Headnote</div>
+                            </a>
+                        </div>
+                        
+                    </xsl:if>
+                    
                     <div id="tools_cite">
                         <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation_MLA">
                             <div class="mi">bookmark</div>
                             <div class="label">Cite</div>  
                         </a>
                     </div>
+          
                     
                     <div id="tools_feedback">
                         <xsl:variable name="subject">WEA Feedback: <xsl:value-of select="string-join(ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]/descendant::text(),'')"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
@@ -683,8 +696,8 @@
                         </a>
                     </div>
                     
-                  
-                    
+  
+
                     <div id="unhighlightButton" class="tool_search">
                         <a>
                             <div class="mi">
