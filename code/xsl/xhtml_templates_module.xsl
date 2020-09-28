@@ -61,6 +61,7 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="createInfo"/>
+                        <xsl:call-template name="createPrintInfo"/>
                         <div id="text_container">
                             <xsl:call-template name="createToolbar"/>
                             <div id="text">

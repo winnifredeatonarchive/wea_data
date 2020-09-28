@@ -23,6 +23,7 @@
     <xsl:include href="xhtml_nav_module.xsl"/>
     <xsl:include href="xhtml_footer_module.xsl"/>
     <xsl:include href="xhtml_head_metadata_module.xsl"/>
+    <xsl:include href="xhtml_print_module.xsl"/>
     
     
 </xsl:stylesheet>

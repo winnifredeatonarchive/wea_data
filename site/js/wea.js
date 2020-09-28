@@ -47,8 +47,6 @@ function makeNavbarFocusable(){
             })
 }
 
-window.addEventListener("beforeprint", setupPrint);
-window.addEventListener("afterprint", undoPrint);
 
 function lazyload(){
     var imgs = document.querySelectorAll('#text img.lazy:not([data-src])');
@@ -61,27 +59,6 @@ function lazyload(){
     var lazyLoadInstance = new LazyLoad({
     elements_selector: "img.lazy[data-src]"
 });
-}
-
-function setupPrint(){
-    var credits = document.getElementById('credits');
-    
-    if (!(credits.classList.contains('open'))){
-        credits.classList.remove('closed');
-        credits.classList.add('open');
-        credits.classList.add('printonly');
-    }
-    
-}
-
-
-function undoPrint(){
-    var credits = document.getElementById('credits');
-    if (credits.classList.contains('open') && credits.classList.contains('printonly')){
-        credits.classList.remove('open');
-        credits.classList.remove('printonly');
-        credits.classList.add('closed');
-    }
 }
 
 

@@ -30,7 +30,7 @@
         
         <!--ID based / element name based ignores-->
         <rule
-            match="header | footer | *[@id=('appendix', 'metadata','info_right', 'credits' ,'tools_container', 'popup')]"
+            match="header | footer | *[@id=('appendix', 'metadata','info_right', 'credits' ,'tools_container', 'popup','print')]"
             weight="0"/>
         
         <!--More complicated ignores-->

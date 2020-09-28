@@ -157,7 +157,7 @@
     
     
     <xsl:template name="createCitations">
-        <xsl:variable name="root" select="ancestor::TEI"/>
+        <xsl:variable name="root" select="ancestor-or-self::TEI"/>
         <xsl:variable name="uri" select="wea:getURL($root)"/>
         <xsl:if test="$root//sourceDesc[not(ancestor::sourceDesc)]/bibl">
             <div id="source_citation">
