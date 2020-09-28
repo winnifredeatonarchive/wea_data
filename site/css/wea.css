@@ -1082,7 +1082,7 @@ transition: border-bottom-color 0.15s ease-in-out;
     font-size:0.95rem;
 }
 
-#sorters select{
+select{
     font-family: "Sans";
     padding:0.3rem;
     margin-left:.5rem;
@@ -1904,8 +1904,25 @@ html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
 }
 
 
+[data-type='biblio_list'] > label,
+[data-type='biblio_list'] > select{
+    margin-top:-1rem;
+    margin-bottom:1.25rem;
+}
+
+[data-type='biblio_list'] .bibl + .bibl{
+    padding-top:1rem;
+}
 [data-el='listBibl']{
     margin-top:1rem;
+}
+
+[data-el='listBibl']:not([data-order='chrono']) .bibl > span:first-of-type{
+    font-weight:500;
+}
+
+[data-el='listBibl'][data-order='chrono'] [data-el='date']{
+    font-weight:500;
 }
 
 [data-el='listBibl'] > :first-child:not(.bibl){
@@ -2597,6 +2614,7 @@ span[data-el='pb']:not(.first)::before{
     text-indent:-2rem;
     padding-left:2rem;
     word-break: break-word;
+    line-height: 1.45;
 }
 
 

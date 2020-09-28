@@ -83,7 +83,7 @@ function addEvents(){
     }
     
     if (docId === 'resources'){
-        //addBiblSort();
+        addBiblSort();
     }
 }
 
@@ -91,8 +91,11 @@ function addEvents(){
 function addBiblSort(){
     const listBibl = document.querySelector("#text [data-el='listBibl']");
     let bibls = listBibl.querySelectorAll('.bibl');
-    const biblArr = Array.from(bibls);
-    let sortOptions = [['alpha', 'Alphabetical'], ['chrono','Chronological']];
+    bibls.forEach((bibl, i) => {
+            bibl.setAttribute('data-alpha', i)
+        }
+    )
+    let sortOptions = [['alpha', 'Author', 'A', 'Z'], ['chrono','Date', 'Earliest', 'Latest']];
     let label = `<label for="sort">Sort</label>`;
     let select = document.createElement('select');
     select.setAttribute('name','sort'); 
@@ -100,13 +103,32 @@ function addBiblSort(){
     listBibl.insertAdjacentElement('beforeBegin', select);
     sortOptions.forEach(option => {
         ['','-r'].forEach(param => {
-            let optEl = `<option name="${option[0]}${param}">${option[1]}${param === '-r' ? ' (Reverse)' : ''}</option>`;
+            let suffArr = option.slice(2);
+            if (param === '-r')  suffArr.reverse();
+            let suffix  = '(' + suffArr.join('-') + ')'
+            let optEl = `<option value="${option[0]}${param}">${option[1]} ${suffix}</option>`;
             select.insertAdjacentHTML('beforeEnd', optEl);
         });
     });
    select.addEventListener('change', e => {
-      let opt = select.options[select.selectedIndex];
-      console.log(opt);
+      let opt = select.options[select.selectedIndex].value;
+      let tokens = opt.split('-');
+      console.log(tokens);
+      let getVal = function(el){
+         return parseFloat(el.getAttribute('data-' + tokens[0]));
+      }
+      let sorted = Array.from(bibls).sort((a,b) =>{
+          console.log(getVal(a));
+          console.log(getVal(b));
+            return getVal(a) - getVal(b)
+
+      });
+      if (tokens.length > 1){
+          console.log('reverse it');
+          sorted = sorted.reverse();
+      }
+      listBibl.setAttribute('data-order', tokens[0]);
+      sorted.forEach(bibl => listBibl.appendChild(bibl))
    });
 }
 

@@ -150,7 +150,7 @@
     <xsl:template match="bibl" mode="tei">
         <div>
             <xsl:if test="ancestor::body and ancestor::TEI[@xml:id='resources']">
-                <xsl:attribute name="data-chron" select="wea:getDateSortKey(date)"/>
+                <xsl:attribute name="data-chrono" select="wea:getDateSortKey(date)"/>
             </xsl:if>
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes" select="'bibl'"/>
@@ -158,7 +158,7 @@
             <xsl:apply-templates mode='#current'/>
         </div>
     </xsl:template>
-    
+       
     <xsl:template match="div[head][not(ancestor::floatingText)][not(@xml:id)]" mode="tei">
         <div>
             <xsl:call-template name="processAtts">
@@ -221,7 +221,7 @@
     
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label | author | editor" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
