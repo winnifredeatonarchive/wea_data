@@ -567,6 +567,22 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
+                           <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_resources']]">
+                              <sch:assert test="tei:date[@when or @notBefore or @notAfter or @to or @from]">
+                                 ERROR: All secondary bibliography entries must encode a &lt;date&gt; element
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:sourceDesc[not(ancestor::tei:sourceDesc)]/tei:bibl">
                               <sch:assert test="@copyOf and starts-with(@copyOf,'bibl:')">
                                  ERROR: All bibls should have an @copyOf that points to the bibl
@@ -622,7 +638,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-27">
+            id="wea-lg-atleast1oflggapl-constraint-assert-28">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -978,7 +994,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-44">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"

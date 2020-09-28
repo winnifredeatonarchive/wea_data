@@ -2275,6 +2275,18 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="bibl.secondaryMustHaveDate" scheme="schematron">
+                     <desc>If you have issues and numbers, you should have a journal title.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:bibl[ancestor::tei:div[@xml:id='bibliography_resources']]">
+                              <sch:assert test="tei:date[@when or @notBefore or @notAfter or @to or @from]">
+                                 ERROR: All secondary bibliography entries must encode a &lt;date&gt; element
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <constraintSpec ident="bibl.sourceDescShouldUseCopyOf" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>

@@ -81,8 +81,34 @@ function addEvents(){
     if (docId == 'index'){
         initIndex();
     }
+    
+    if (docId === 'resources'){
+        //addBiblSort();
+    }
 }
 
+
+function addBiblSort(){
+    const listBibl = document.querySelector("#text [data-el='listBibl']");
+    let bibls = listBibl.querySelectorAll('.bibl');
+    const biblArr = Array.from(bibls);
+    let sortOptions = [['alpha', 'Alphabetical'], ['chrono','Chronological']];
+    let label = `<label for="sort">Sort</label>`;
+    let select = document.createElement('select');
+    select.setAttribute('name','sort'); 
+    listBibl.insertAdjacentHTML('beforeBegin', label);
+    listBibl.insertAdjacentElement('beforeBegin', select);
+    sortOptions.forEach(option => {
+        ['','-r'].forEach(param => {
+            let optEl = `<option name="${option[0]}${param}">${option[1]}${param === '-r' ? ' (Reverse)' : ''}</option>`;
+            select.insertAdjacentHTML('beforeEnd', optEl);
+        });
+    });
+   select.addEventListener('change', e => {
+      let opt = select.options[select.selectedIndex];
+      console.log(opt);
+   });
+}
 
 function addHeaderSearchSubmit(){
     

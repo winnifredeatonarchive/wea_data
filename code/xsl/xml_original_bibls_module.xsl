@@ -100,6 +100,7 @@
         <xsl:param name="str"/>
         <xsl:value-of select="normalize-space($str) => replace('^(The|Le|La|An?)\s','') => replace('‘|’','')"/>
     </xsl:function>
+    
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
     

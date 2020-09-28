@@ -149,6 +149,9 @@
     
     <xsl:template match="bibl" mode="tei">
         <div>
+            <xsl:if test="ancestor::body and ancestor::TEI[@xml:id='resources']">
+                <xsl:attribute name="data-chron" select="wea:getDateSortKey(date)"/>
+            </xsl:if>
             <xsl:call-template name="processAtts">
                 <xsl:with-param name="classes" select="'bibl'"/>
             </xsl:call-template>

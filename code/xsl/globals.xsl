@@ -258,15 +258,20 @@
         
         This allows 1917-1922 to sort before 1920-1922
         
+        If a date doesn't exist, just return 0
+        
        -->
     <xsl:function name="wea:getDateSortKey" as="xs:decimal">
-        <xsl:param name="date" as="element(tei:date)"/>   
+        <xsl:param name="date" as="element(tei:date)?"/>   
         <xsl:variable name="when" select="$date/@when" as="attribute()?"/>
         <xsl:variable name="leftBound" select="($date/@notBefore | $date/@from)[1]" as="attribute()?"/>
         <xsl:variable name="rightBound" select="($date/@notAfter | $date/@to)[1]" as="attribute()?"/>
         
         <xsl:variable name="ints" as="xs:integer+">
             <xsl:choose>
+                <xsl:when test="empty($date)">
+                    <xsl:sequence select="0"/>
+                </xsl:when>
                 <xsl:when test="$when">
                     <xsl:sequence select="wea:dateToInt($when)"/>
                 </xsl:when>
