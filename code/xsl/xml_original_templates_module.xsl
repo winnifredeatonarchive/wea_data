@@ -27,6 +27,10 @@
         <xsl:call-template name="createCollabTable"/>
     </xsl:template>
     
+    <xsl:template match="divGen[@xml:id='we_publishers_table']" mode="original">
+        <xsl:call-template name="createPublishersTable"/>
+    </xsl:template>
+    
     <xsl:template name="createCollabTable">
         <div>
             <table type="exhibit">

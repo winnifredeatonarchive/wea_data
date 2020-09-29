@@ -16,8 +16,10 @@
     </xd:doc>
     
     
+    <xsl:variable name="allOrgs" select="$sourceXml//TEI[@xml:id='organizations']/descendant::org[@xml:id]"/>
+    
     <xsl:template name="createOrgPages">
-        <xsl:for-each select="$sourceXml[//TEI/@xml:id='organizations']//org[@xml:id]">
+        <xsl:for-each select="$allOrgs">
             <xsl:call-template name="generateTeiPage">
                 <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
                 <xsl:with-param name="thisId" select="@xml:id"/>
@@ -28,6 +30,32 @@
                 </xsl:with-param>
             </xsl:call-template>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="createPublishersTable">
+        <div>
+            <table type="exhibit">
+                <row role="label">
+                    <cell role="sortkey">Name</cell>
+                    <cell>Note</cell>
+                    <cell>Texts Published</cell>
+                </row>
+                <xsl:for-each select="$allOrgs">
+                    <xsl:sort select="wea:makeTitleSortKey(string(orgName))"/>
+                    <xsl:variable name="thisId" select="@xml:id"/>
+                    <xsl:variable name="docsPublished"
+                        select="$sourceXml//TEI[@xml:id='bibliography']/descendant::bibl[descendant::*[@ref = 'org:' || $thisId]]"/>
+                    <xsl:variable name="count" select="count($docsPublished)" as="xs:integer"/>
+                    <xsl:if test="$count gt 0">
+                        <row>
+                            <cell><ref target="doc:{$thisId}"><xsl:sequence select="orgName/node()"/></ref></cell>
+                            <cell><xsl:sequence select="note/node()"/></cell>
+                            <cell><xsl:value-of select="$count"/></cell>
+                        </row>
+                    </xsl:if>
+                </xsl:for-each>
+            </table>
+        </div>
     </xsl:template>
     
     
