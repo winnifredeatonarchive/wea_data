@@ -464,10 +464,19 @@ function makeFootnotesResponsive(){
 function makeToolbarResponsive(){
     var toolbarItems = document.querySelectorAll('.toolbar_item');
     toolbarItems.forEach(function(t){
+        if (t.parentElement.id === 'tools_pagebreaks'){
+            t.addEventListener('click', togglePagebreaks, true);
+        }
         if (t.getAttribute('href').startsWith('#')){
             t.addEventListener('click', showPopup, true);
         } 
     });
+}
+
+function togglePagebreaks(){
+    arguments[0].preventDefault();
+
+    document.querySelector('#text').classList.toggle('no-pb');
 }
 
 function makeNamesResponsive(){

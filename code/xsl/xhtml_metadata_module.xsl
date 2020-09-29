@@ -659,15 +659,8 @@
                             
                         </div>  
                     </xsl:if>-->
-     <!--               
-                    <xsl:if test="//pb">
-                        <div id="tools_pagebreaks">
-                            <a class="toolbar_item" href="#tools_facsimiles_togglePb">
-                                <div class="mi">vertical_align_center</div>
-                                <div class="label">Remove page breaks</div>
-                            </a>
-                        </div>
-                    </xsl:if>-->
+                    
+     
                     
                     <xsl:if test="//abstract">
                         <div id="tools_headnote">
@@ -677,6 +670,15 @@
                             </a>
                         </div>
                         
+                    </xsl:if>
+                    
+                    <xsl:if test="//pb">
+                        <div id="tools_pagebreaks">
+                            <a class="toolbar_item" id="tools_pagebreaks_link" href="#tools_facsimiles_togglePb">
+                                <div class="mi">vertical_align_center</div>
+                                <div class="label">Toggle pages</div>
+                            </a>
+                        </div>
                     </xsl:if>
                     
                     <div id="tools_cite">

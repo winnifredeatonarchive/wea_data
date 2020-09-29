@@ -502,15 +502,20 @@
     </xsl:function>
     
     <!--QUOTATIONS-->
-    
-    
+
     <xsl:template match="q[not(descendant::div | descendant::p | descendant::lg | descendant::floatingText)] | title[@level='a']" mode="tei">
+        <xsl:variable name="even" select="count(ancestor::q | ancestor::title[@level='a']) mod 2 = 0" as="xs:boolean"/>
+        <xsl:variable name="lq" select="if ($even) then '“' else '‘'" as="xs:string"/>
+        <xsl:variable name="rq" select="if ($even) then '”' else '’'" as="xs:string"/>
+        
         <span>
             <xsl:call-template name="processAtts"/>
+            <xsl:value-of select="$lq"/>
             <xsl:apply-templates mode="#current"/>
             <xsl:if test="following::tei:*|text()[1][self::text()] and matches(following::text()[1], '^[,\.]') and not(child::tei:*[self::q][not(following-sibling::text())]) and (not(ancestor::q) or not(following-sibling::*))">
                 <xsl:value-of select="substring(following::text()[1], 1, 1)"/>
             </xsl:if>
+            <xsl:value-of select="$rq"/>
         </span>
     </xsl:template>
     
@@ -650,7 +655,7 @@
     
     <xsl:template match="pb" mode="tei">
        <!--This can't really be an hr anymore, since it can't go in <q> (where it appears a lot).-->
-        <a href="#{ancestor::TEI/@xml:id}_pg_{@n}">
+        <a href="#{ancestor::TEI/@xml:id}_pg_{@n}" class="pb-link">
             <span>
                 <xsl:call-template name="processAtts">
                     <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>

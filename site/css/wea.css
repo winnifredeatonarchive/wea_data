@@ -2262,7 +2262,9 @@ div:target > h6{
 animation: fadein 1s;
 }
 
-
+.no-pb .pb-link{
+    display:none!important;
+}
 
 [data-el='pb']:target:before{
       content: '';
@@ -2729,6 +2731,7 @@ span[data-el='emph']{
     font-style:italic;
 }
 
+/*
 span[data-el='q']::before,
 span[data-el='title'][data-level='a']::before{
     content:"“";
@@ -2740,18 +2743,20 @@ span[data-el='title'][data-level='a']::after{
     content:"”";
 }
 
-
-div[data-el='lg']{
-    padding: .5em 0;
-}
-
 [data-el='q'] [data-el='q']::before{
     content:"‘";
 }
 
 [data-el='q'] [data-el='q']::after{
     content:"’";
+} */
+
+
+div[data-el='lg']{
+    padding: .5em 0;
 }
+
+
 
 /************************************************************************* IN-LINE FIGURE MARKERS */
 
