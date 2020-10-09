@@ -39829,11 +39829,11 @@ epistemology, methodology and history of
                      </cell>
                      <cell>All person ids must be found in the personography.<code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"&gt;
+&lt;sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref] | tei:*[@resp]"&gt;
  &lt;sch:let name="att"
-  value="if (@ref) then @ref else @who"/&gt;
+  value="if (@ref) then @ref else if (@who) then @who else @resp"/&gt;
  &lt;sch:let name="errors"
-  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) 
+  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) 
  then () else $i"/&gt;
  &lt;sch:assert test="empty($errors)"&gt; ERROR: All personography pointers must start with the pers: prefix.&lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
