@@ -527,6 +527,7 @@ function makeCitationsResponsive(){
           dummyDiv.innerHTML = 'This popup is not available.';
           content = dummyDiv;
         }
+        console.log(typeof content);
         popupContent.appendChild(content);
         makeNamesResponsive(content);
         if (!(useTitle)){
@@ -623,29 +624,21 @@ function makeCitationsResponsive(){
           content = clone;
           
       } else{
-        try{
             fetch('ajax/'+ id + '.html')
             .then(html => html.text())
             .then(result => {
                 personography.insertAdjacentHTML('beforeEnd', result);
-                content = personography.querySelector('#' + id);
+                content = personography.querySelector('#' + id).cloneNode(true);
                 render();
                 return;
             })
-        } catch(e){
-            console.log("Couldn't find the popup: " + e.message);
-            content = '';
-            render();
-        }
-      }
+            .catch(e => {
+                console.log("Couldn't find the popup: " + e.message);
+                content = '';
+            });
+      } 
       
       document.getElementsByTagName('body')[0].classList.toggle("overlay");
-      let contentLinks = content.querySelectorAll('a[href^="#"]');
-      contentLinks.forEach(link => {
-          link.addEventListener('click', e => {
-                closePopup();   
-          })
-      });
       render();
    }
    
