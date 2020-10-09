@@ -2552,14 +2552,15 @@ On <xsl:text/>
 
 
 	  <!--RULE -->
-   <xsl:template match="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"
+   <xsl:template match="tei:name[@ref] | tei:change[@who] | tei:rs[@ref] | tei:*[@resp]"
                  priority="1000"
                  mode="M62">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]"/>
-      <xsl:variable name="att" select="if (@ref) then @ref else @who"/>
+                       context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref] | tei:*[@resp]"/>
+      <xsl:variable name="att"
+                    select="if (@ref) then @ref else if (@who) then @who else @resp"/>
       <xsl:variable name="errors"
-                    select="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) then () else $i"/>
+                    select="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) then () else $i"/>
 
 		    <!--ASSERT -->
       <xsl:choose>

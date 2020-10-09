@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2020-09-28T22:58:13Z. .
+Schema generated from ODD source 2020-10-08T23:56:36Z. .
 TEI Edition: Version 4.1.0. Last updated on
 	19th August 2020, revision b414ba550
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
@@ -7249,10 +7249,11 @@ Suggested values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] 
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref]">
-                           <sch:let name="att" value="if (@ref) then @ref else @who"/>
+                        <sch:rule context="tei:name[@ref] | tei:change[@who] | tei:rs[@ref] | tei:*[@resp]">
+                           <sch:let name="att"
+                  value="if (@ref) then @ref else if (@who) then @who else @resp"/>
                            <sch:let name="errors"
-                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs)')) then () else $i"/>
+                  value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
                         </sch:rule>
                      </sch:pattern> 
