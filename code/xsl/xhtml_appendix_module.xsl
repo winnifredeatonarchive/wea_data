@@ -42,6 +42,7 @@
     
     <xsl:template match="person" mode="popup">
         <xsl:variable name="thisId" select="@xml:id"/>
+        <xsl:variable name="thisResp" select="@resp"/>
         <xsl:variable name="thisStandaloneDoc" select="$standaloneXml//TEI[@xml:id=$thisId]" as="element(TEI)"/>
         <xsl:variable name="thisCreditsTable" select="$thisStandaloneDoc//table" as="element(table)?"/>
         <xsl:variable name="isWinnifred" select="@xml:id ='WE1'" as="xs:boolean"/>
@@ -68,6 +69,7 @@
 <!--                    <h4>Note</h4>-->
                     <xsl:apply-templates select="note/p" mode="tei"/>
                 </div>
+                <xsl:sequence select="wea:makePopupResp(xs:string($thisResp))"/>
             </xsl:if>
             <xsl:if test="not($isWinnifred) and exists($thisCreditsTable)">
                 <div class="popupCredits">
@@ -98,6 +100,7 @@
                 <div>
                     <xsl:apply-templates select="note/p" mode="tei"/>
                 </div>
+                <xsl:sequence select="wea:makePopupResp(xs:string(@resp))"/>
             </xsl:if>
 
             <xsl:if test="not($isWinnifred) and exists($thisCreditsTable)">
@@ -114,7 +117,40 @@
     </xsl:template>
     
     
-    
+    <xsl:function name="wea:makePopupResp" new-each-time="no" as="element()*">
+        <xsl:param name="thisResp" as="xs:string?"/>
+        <xsl:if test="$thisResp">
+            <xsl:variable name="respTokens" select="tokenize($thisResp)"/>
+            <xsl:variable name="respTokenCount" select="count($respTokens)"/>
+            <xsl:variable name="tmp" as="element(tei:ab)">
+                <tei:ab type="headnote_byline">Written by<xsl:text> </xsl:text>
+                    <xsl:for-each select="tokenize($thisResp)">
+                        <xsl:variable name="respToken" select="." as="xs:string"/>
+                        <xsl:variable name="thisPerson" 
+                            select="$personography/descendant::person[@xml:id = substring-after($respToken,'#')]" 
+                            as="element(person)"/>
+                        <tei:name ref="{$respToken}">
+                            <xsl:sequence
+                                select="$thisPerson/persName/reg/node()"/>
+                        </tei:name>
+                        <xsl:choose>
+                            <xsl:when test="count($respTokens) = 1"/>
+                            <xsl:when test="count($respTokens) = 2 and position() = 1">
+                                <xsl:text> and </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="count($respTokens) gt 2 and position() lt ($respTokenCount - 1)">
+                                <xsl:text>, </xsl:text>
+                            </xsl:when>
+                            <xsl:when test="count($respTokens) gt 2 and position() = ($respTokenCount - 1)">
+                                <xsl:text>, and </xsl:text>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:for-each>
+                </tei:ab>
+            </xsl:variable>
+            <xsl:apply-templates select="$tmp" mode="tei"/>
+        </xsl:if>
+    </xsl:function>
     
     <xsl:function name="wea:makeTruncatedList" as="element(xh:li)*">
         <xsl:param name="rows"/>
@@ -244,6 +280,10 @@
         <xsl:sequence select="$orgMap(xs:string(@xml:id))"/>
     </xsl:template>
     
+    <xsl:template match="person" mode="appendix">
+       <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
+    </xsl:template>
+    
     <xsl:template match="person[@xml:id = 'WE1']" mode="appendix">
         <xsl:variable name="thisFrag" select="$personMap(xs:string(@xml:id))"/>
         <xsl:variable name="root" select="ancestor::TEI"/>
@@ -266,15 +306,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="person" mode="appendix">
-        <xsl:try>
-            <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
-            <xsl:catch>
-                <xsl:message terminate="yes">ERROR: Cannot find person <xsl:value-of select="@xml:id"/></xsl:message>
-            </xsl:catch>
-        </xsl:try>
-  
-    </xsl:template>
+
     
     
     

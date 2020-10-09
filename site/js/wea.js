@@ -67,7 +67,7 @@ function addEvents(){
     addHeaderSearchSubmit();
     addPopupClose();
     makeFootnotesResponsive();
-    makeNamesResponsive();
+    makeNamesResponsive(document.querySelector('body'));
     makeCitationsResponsive();
     makeNavClickable();
     showHideTitles();
@@ -479,8 +479,8 @@ function togglePagebreaks(){
     document.querySelector('#text').classList.toggle('no-pb');
 }
 
-function makeNamesResponsive(){
-    var names = document.querySelectorAll('a[data-el=name]');
+function makeNamesResponsive(el){
+    var names = el.querySelectorAll('a[data-el=name]');
     names.forEach(function(n){
         if (/^https?:/gi.test(n.getAttribute('href'))){
             return;
@@ -517,7 +517,29 @@ function makeCitationsResponsive(){
       /* Declare empty var */
       var useTitle = false;
       var removeEvent = false;
+      let personography = document.querySelector('#personography');
       var id = '';
+      
+      let render = () => {
+        if (content == ''){
+          var dummyDiv = document.createElement('div');
+          dummyDiv.setAttribute('class','para');
+          dummyDiv.innerHTML = 'This popup is not available.';
+          content = dummyDiv;
+        }
+        popupContent.appendChild(content);
+        makeNamesResponsive(content);
+        if (!(useTitle)){
+              popup.setAttribute('data-showing',id);
+        }
+        //And set the display to block
+        popup.classList.remove('hidden');
+        popup.classList.add('showing');
+      
+        this.classList.add('clicked');
+      }
+      
+      
       /* If this is an annotation and the annotation button is checked */
       /* Sometimes the annotation/collation buttons aren't there (if, for instance, there are no collations in the document)
        * and we have to have a switch for that */
@@ -595,43 +617,36 @@ function makeCitationsResponsive(){
             content = clone;
             
             
-      } else if (!(id == '')) {
+      } else if (!(id == '') && document.getElementById(id)){
           let thisThing = document.getElementById(id);
           let clone = thisThing.cloneNode(true);
           content = clone;
           
-      } else  {
-          var dummyDiv = document.createElement('div');
-          dummyDiv.setAttribute('class','para');
-          dummyDiv.innerHTML = 'This popup is not available.';
-          content = dummyDiv;
+      } else{
+        try{
+            fetch('ajax/'+ id + '.html')
+            .then(html => html.text())
+            .then(result => {
+                personography.insertAdjacentHTML('beforeEnd', result);
+                content = personography.querySelector('#' + id);
+                render();
+                return;
+            })
+        } catch(e){
+            console.log("Couldn't find the popup: " + e.message);
+            content = '';
+            render();
+        }
       }
       
-      if (popup.getAttribute('data-place') == null){
-          document.getElementsByTagName('body')[0].classList.toggle("overlay");
-      }
-      
+      document.getElementsByTagName('body')[0].classList.toggle("overlay");
       let contentLinks = content.querySelectorAll('a[href^="#"]');
       contentLinks.forEach(link => {
           link.addEventListener('click', e => {
                 closePopup();   
           })
       });
-      popupContent.appendChild(content);
-        if (!(useTitle)){
-              popup.setAttribute('data-showing',id);
-        }
-      
-        //And set the display to block
-      popup.classList.remove('hidden');
-      popup.classList.add('showing');
-      
-     this.classList.add('clicked');
-        if (removeEvent){
-            this.removeEventListener('click',showPopup,true);
-            this.classList.remove('showTitle');
-        }
-
+      render();
    }
    
    

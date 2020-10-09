@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="#all"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
@@ -25,6 +26,7 @@
                 <xsl:with-param name="thisId" select="@xml:id"/>
                 <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
                 <xsl:with-param name="title"><xsl:value-of select="persName/reg"/></xsl:with-param>
+                <xsl:with-param name="respStmts" select="if (@resp) then wea:makeEntityResp(@resp) else ()"/>
                 <xsl:with-param name="content">
                     <xsl:apply-templates select="." mode="people"/>
                 </xsl:with-param>
@@ -39,21 +41,21 @@
        <xsl:variable name="ptr" select="'pers:'||$thisId" as="xs:string"/>
        <xsl:variable name="respStmts" 
            select="$sourceXml//TEI[descendant::respStmt[name[@ref=$ptr]] or descendant::abstract[contains-token(@resp,$ptr)]]" as="element(TEI)*"/>
+       <xsl:variable name="fragRespStmts" select="$sourceXml//tei:*[self::org or self::person or self::place][contains-token(@resp, $ptr)]" as="element()*"/>
        <body>
            <head><xsl:value-of select="persName/reg"/></head>
            <div>
                <xsl:apply-templates select="note" mode="#current"/>
            </div>
-           <xsl:if test="exists($respStmts)">
+           <xsl:if test="exists(($respStmts, $fragRespStmts))">
                <div>
-                   <head>Credits</head>
                    <table type="exhibit">
                        <row role="label">
                            <cell/>
                            <cell>Title</cell>
                            <cell>Role</cell>
                        </row>
-                       <xsl:for-each select="$respStmts">
+                       <xsl:for-each select="($respStmts, $fragRespStmts)">
                            <xsl:variable name="thisDoc" select="."/>
                            <xsl:variable name="docId" select="$thisDoc/@xml:id"/>
                            <row>
@@ -72,16 +74,32 @@
                                    </xsl:choose>
                                </cell>
                                <cell>
-                                   <ref target="doc:{$docId}"><xsl:copy-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
+                                   <ref target="doc:{$docId}">
+                                       <xsl:choose>
+                                           <xsl:when test="$thisDoc/self::TEI">
+                                               <xsl:copy-of select="$thisDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+                                           </xsl:when>
+                                           <xsl:otherwise>
+                                               <xsl:sequence select="($thisDoc/persName/reg | $thisDoc/orgName)[1]/node()"/>
+                                           </xsl:otherwise>
+                                       </xsl:choose>
+                                   </ref>
                                </cell>
                                <cell>
                                    <list>
-                                       <xsl:for-each select="$thisDoc//respStmt[name[@ref=$ptr]]">
-                                           <item><xsl:value-of select="resp"/></item>
-                                       </xsl:for-each>
-                                       <xsl:for-each select="$thisDoc//abstract[contains-token(@resp,$ptr)]">
-                                           <item>Author of Headnote</item>
-                                       </xsl:for-each>
+                                       <xsl:choose>
+                                           <xsl:when test="$thisDoc/self::TEI">
+                                               <xsl:for-each select="$thisDoc//respStmt[name[@ref=$ptr]]">
+                                                   <item><xsl:value-of select="resp"/></item>
+                                               </xsl:for-each>
+                                               <xsl:for-each select="$thisDoc//abstract[contains-token(@resp,$ptr)]">
+                                                   <item>Author of Headnote</item>
+                                               </xsl:for-each>
+                                           </xsl:when>
+                                           <xsl:otherwise>
+                                               <item>Author</item>
+                                           </xsl:otherwise>
+                                       </xsl:choose>
                                    </list>
                                </cell>
                            </row>

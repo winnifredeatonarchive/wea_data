@@ -1748,7 +1748,7 @@ li{
       max-width: calc(var(--max-text-width) * 1.5);
       }
       
-#mainBody[class*='Listing'] #info{
+#mainBody.exhibit #info{
 border-top-left-radius: 1rem;
 border-top-right-radius: 1rem;
 
@@ -1812,7 +1812,7 @@ border-top-right-radius: 1rem;
     margin-top: var(--body-margin-top);
 }
 
-/*#mainBody[class*="BornDigital"]:not([class*='Listing']){
+/*#mainBody[class*="BornDigital"]:not(.exhibit){
     background-image: url('../images/CherryTree/CherryBranchFlipped.png'), url('../images/BirdBanner/BirdBottomNoSand.png');
     background-repeat: no-repeat;
     background-position: top 1rem left 0, bottom right;
@@ -1820,75 +1820,79 @@ border-top-right-radius: 1rem;
     background-size: 20%, 40%;
 }*/
 
-html:not(#index) #mainBody[class*="BornDigital"]:not([class*='Listing']) > div{
+html:not(#index) #mainBody[class*="BornDigital"]:not(.exhibit) > div{
         margin-top:5%;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info{
     background-color:inherit;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info{
     padding:.25em 0;
     border-top:1px solid #ccc;
     border-bottom:1px solid #ccc;
     font-size: 0.85rem;
-    width:95%;
+    max-width: var(--max-text-width);
     margin:0 auto;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info > div{
     padding-left:0.5em;
     margin-right:1em;
 }
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info > div{
     width:100%;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info > div + div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info > div + div{
     border-top: 1px solid #ccc;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) .additionalInfoHeader{
+#mainBody[class*="BornDigital"]:not(.exhibit) .additionalInfoHeader{
     padding-left:0;
     padding-right:0;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) .metadataLabel{
-   font-size: 1.2em;
-}
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content *{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info [data-el='p']{
+    margin: .5rem 0;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div{
+#mainBody[class*="BornDigital"]:not(.exhibit) .metadataLabel{
+   font-size: 1.2em;
+}
+#mainBody[class*="BornDigital"]:not(.exhibit) #info .content *{
+}
+
+#mainBody[class*="BornDigital"]:not(.exhibit) div[data-el='respStmt'] > div{
     display:inline;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div[data-el='resp']{
+#mainBody[class*="BornDigital"]:not(.exhibit) div[data-el='respStmt'] > div[data-el='resp']{
 
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) div[data-el='respStmt'] > div[data-el='resp']::after{
+#mainBody[class*="BornDigital"]:not(.exhibit) div[data-el='respStmt'] > div[data-el='resp']::after{
     content:":";
     padding-right: .5em;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content > div + div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info .content > div + div{
     padding-top:1em;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .content > *:last-child{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info .content > *:last-child{
     padding-bottom:1rem;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #info .mi {
+#mainBody[class*="BornDigital"]:not(.exhibit) #info .mi {
     font-size: 1.35em;
     color: inherit;
     position:relative;
     right: 1.25em;
 }
 
-#mainBody[class*="BornDigital"]:not([class*='Listing']) #credits .bibl{
+#mainBody[class*="BornDigital"]:not(.exhibit) #credits .bibl{
     text-indent:0;
     padding-left:0;
 }

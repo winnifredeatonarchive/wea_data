@@ -54,7 +54,8 @@
         <body>
             <xsl:call-template name="createNav"/>
             <div id="mainBody">
-                <xsl:attribute name="class" select="string-join(for $n in //catRef/@target return substring-after($n,'#'),' ')"/>
+                <xsl:attribute name="class" select="
+                    string-join(for $n in //catRef/@target return substring-after($n,'#'),' ') || (if (wea:isExhibit(ancestor::TEI)) then ' exhibit' else ())"/>
                 <xsl:choose>
                     <xsl:when test="ancestor::TEI/@xml:id='index'">
                         <xsl:call-template name="createIndexPage"/>
@@ -175,21 +176,18 @@
         </li>
     </xsl:template>
     
-  
-    
-    
-    
-
-    
     <xsl:template match="head" mode="tei">
+        <xsl:variable name="root" select="ancestor::TEI"/>
         <xsl:variable name="nestLevel" select="count(ancestor::div)+1"/>
         <xsl:element name="{concat('h',$nestLevel)}">
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
-        <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject(ancestor::TEI)) and not(ancestor::TEI/descendant::catRef[contains(@target,'Listing')]) and not(ancestor::TEI/@xml:id = $personography//person/@xml:id)">
+        <xsl:if test="parent::body and count(following-sibling::head) = 0 and not(wea:isObject($root)) and not(wea:isExhibit($root))">
             <div id="info">
-                <xsl:call-template name="createTOC"/>
+                <xsl:if test="not($root/descendant::catRef[matches(@target,'Listing')])">
+                    <xsl:call-template name="createTOC"/>
+                </xsl:if>
                 <xsl:call-template name="createCreditsAndCitations"/>
             </div>
             

@@ -38,6 +38,8 @@
     
     <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
     
+    <xsl:variable name="srcPersonography" select="$sourceXml//TEI[@xml:id='people']" as="element(TEI)"/>
+    
     <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']/TEI" as="element(TEI)"/>
     
     <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']" as="element(TEI)"/>
@@ -191,6 +193,7 @@
         <xsl:param name="title"/>
         <xsl:param name="categories"/>
         <xsl:param name="content"/>
+        <xsl:param name="respStmts"/>
         <xsl:message>Generating <xsl:value-of select="$outDoc"/></xsl:message>
         <xsl:result-document href="{$outDoc}" method="xml" indent="no">
             <TEI xml:id="{$thisId}" xmlns="http://www.tei-c.org/ns/1.0">
@@ -198,6 +201,7 @@
                     <fileDesc>
                         <titleStmt>
                             <title><xsl:sequence select="$title"/></title>
+                            <xsl:sequence select="$respStmts"/>
                         </titleStmt>
                         <publicationStmt>
                             <p>???</p>
@@ -223,6 +227,23 @@
             </TEI>
         </xsl:result-document>
     </xsl:template>
+    
+    
+    <xsl:function name="wea:makeEntityResp" new-each-time="no" as="element(tei:respStmt)*">
+        <xsl:param name="resp" as="attribute(resp)"/>
+        <xsl:variable name="respTokens" select="tokenize($resp)" as="xs:string*"/>
+        <xsl:variable name="respIds"
+            select="distinct-values($respTokens!replace(.,'pers:',''))" as="xs:string*"/>
+        <xsl:variable name="people"
+            select="$srcPersonography//tei:person[@xml:id = $respIds]" as="element(tei:person)*"/>
+        
+        <xsl:for-each select="$people">
+            <respStmt xmlns="http://www.tei-c.org/ns/1.0">
+                <resp>Author</resp>
+                <name ref="pers:{@xml:id}"><xsl:value-of select="persName/reg"/></name>
+            </respStmt>
+        </xsl:for-each>
+    </xsl:function>
     
     <xsl:function name="wea:makePseudo" new-each-time="no" as="xs:string">
         <xsl:param name="nameEl" as="element(name)"/>

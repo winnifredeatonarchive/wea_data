@@ -114,7 +114,7 @@
                     <xsl:variable name="standaloneUri" 
                         select="concat('xml/standalone/', $currId ,'.xml')"/>
                     
-                    <xsl:variable name="thisSourcePath" select="$dataListLines[matches(.,('/' || $currId || '.xml$'))]" as="xs:string"/>
+                    <xsl:variable name="thisSourcePath" select="$dataListLines[matches(.,('/' || $currId || '.xml$'))]" as="xs:string?"/>
                     
                     <xsl:variable name="sourceSize" select="wea:getFileSize($sourceUri)"/>
                     <xsl:variable name="originalSize" select="wea:getFileSize($originalUri)"/>
@@ -672,6 +672,8 @@
                         
                     </xsl:if>
                     
+                    
+                <!--    
                     <xsl:if test="//pb">
                         <div id="tools_pagebreaks">
                             <a class="toolbar_item" id="tools_pagebreaks_link" href="#tools_facsimiles_togglePb">
@@ -679,7 +681,7 @@
                                 <div class="label">Toggle pages</div>
                             </a>
                         </div>
-                    </xsl:if>
+                    </xsl:if>-->
                     
                     <div id="tools_cite">
                         <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation_MLA">

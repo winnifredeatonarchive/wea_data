@@ -5,7 +5,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns:wea="https://github.com/wearchive/ns/1.0"
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
-    xmlns:map="http://www.w3.org/2005/xpath-functions"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xh="http://www.w3.org/1999/xhtml"
     version="3.0">
@@ -28,6 +28,7 @@
 
     
     <xsl:template match="/">
+ 
         <xsl:for-each select="wea:getWorkingDocs($standaloneXml)">
             <!--EXCLUDE INDEX FOR NOW, BUT NOT FOR LONG-->
             <xsl:if test="not(//TEI/@xml:id=('menu','footer'))">
@@ -37,6 +38,7 @@
             </xsl:if>
         </xsl:for-each>
         <xsl:call-template name="createSiteMap"/>
+        <xsl:call-template name="createAjaxFrags"/>
     </xsl:template>
     
     <xsl:template name="createSiteMap">
@@ -73,8 +75,20 @@
         </xsl:result-document>
 
     </xsl:template>
-
     
+    <xsl:template name="createAjaxFrags">
+        <xsl:message>Creating Ajax fragments....</xsl:message>
+        <xsl:for-each select="$orgMap, $personMap">
+            <xsl:variable name="map" select="."/>
+            <xsl:for-each select="map:keys($map)">
+                <xsl:variable name="key" select="."/>
+                <xsl:message>Creating <xsl:value-of select="."/></xsl:message>
+                <xsl:result-document href="{$outDir}/ajax/{$key}.html">
+                    <xsl:sequence select="map:get($map, $key)"/>
+                </xsl:result-document>
+            </xsl:for-each>
+        </xsl:for-each>
+    </xsl:template>
     
     
 

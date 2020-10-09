@@ -25,6 +25,7 @@
                 <xsl:with-param name="thisId" select="@xml:id"/>
                 <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
                 <xsl:with-param name="title"><xsl:value-of select="orgName"/></xsl:with-param>
+                <xsl:with-param name="respStmts" select="if (@resp) then wea:makeEntityResp(@resp) else ()"/>
                 <xsl:with-param name="content">
                     <xsl:apply-templates select="." mode="orgs"/>
                 </xsl:with-param>
