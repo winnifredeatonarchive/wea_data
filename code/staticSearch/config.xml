@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/projectEndings/staticSearch/iss67-tf-idf/schema/staticSearch.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/projectEndings/staticSearch/dev/schema/staticSearch.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <config xmlns="http://hcmc.uvic.ca/ns/staticSearch">
     <params>
         <searchFile>../../products/site/search.html</searchFile>
         <recurse>false</recurse>
         <scoringAlgorithm>tf-idf</scoringAlgorithm>
         <phrasalSearch>true</phrasalSearch>
-        
+       <linkToFragmentId>true</linkToFragmentId>
+        <scrollToTextFragment>true</scrollToTextFragment>
         <wildcardSearch>true</wildcardSearch>
         <createContexts>true</createContexts>
         <!--These following two should be optional or made mandatory in the schema-->
