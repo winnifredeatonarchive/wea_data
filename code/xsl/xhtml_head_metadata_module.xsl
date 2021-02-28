@@ -101,12 +101,6 @@
             </xsl:if>
         </xsl:for-each>
         
-        <!--Get facs-->
-        <xsl:if test="//text/@facs">
-            <meta name="docImage" class="staticSearch.docImage" content="{replace(//text/@facs,'.pdf$','_tiny.jpg')}"/>
-        </xsl:if>
-        
-        
         <xsl:if test="wea:isObject(.)">
              
             

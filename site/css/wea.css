@@ -1057,6 +1057,13 @@ transition: border-bottom-color 0.15s ease-in-out;
     padding-bottom:2.5rem;
 }
 
+div#ssResults>ul>li:nth-child(2n){
+    background-color: inherit;
+    border: inherit;
+    border-top: none;
+    border-bottom: 1px solid #efefef;
+}
+
 
 #ssResults > ul{
     display:flex;
@@ -1282,20 +1289,23 @@ ul.ssDescCheckboxList input{
 #ssResults > ul > li{
         border-bottom:1px solid #efefef;
 }
+div#ssResults>ul>li>div>ul.kwic>li>a{
+    font-size:1rem!important;
+}
 
 #ssResults .kwic{
     font-size:0.9rem;
 }
 
 .kwic .hidden{
-    display:none;
+    display:none!important;
 }
 
 .showHideKwic{
     display:block;
     width:100%;
     text-align:right;
-
+    font-size:1rem!important;
 }
 
 .showHideKwic:hover{
@@ -1315,7 +1325,9 @@ fieldset.ssFieldset > span{
     border:none;
 }
 
-
+.fidLink{
+    display:none;
+}
     
 
 #ssDoSearch{
@@ -1339,8 +1351,8 @@ fieldset.ssFieldset > span{
 #searchResults li,
 .kwic li
 {
-    padding:.5rem;
-    border: 1px dotted #efefef;
+    padding:.5rem!important;
+    border: 1px dotted #efefef!important;
 }
 
 .kwic{
