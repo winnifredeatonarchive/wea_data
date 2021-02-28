@@ -47,8 +47,7 @@
     
     <target name="createStaticSearch">
         <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="allButValidate">
-            <property name="config" value="../config.xml"/>
-            <property name="headless" value="true"/>
+            <property name="ssConfig" value="../config.xml"/>
         </ant>
     </target>
     
