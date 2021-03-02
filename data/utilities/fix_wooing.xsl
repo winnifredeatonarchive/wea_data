@@ -10,8 +10,7 @@
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
-   <!-- A small utility transform to fix the Wooing of Wisteria documents-->
-    
+   <!-- A small utility transform to fix the Wooing of Wisteria documents-->    
     <xsl:mode on-no-match="shallow-copy"/>
    
     <xsl:variable name="replaceMap" as="map(xs:integer, xs:integer)">
