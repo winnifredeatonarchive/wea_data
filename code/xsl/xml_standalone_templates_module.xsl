@@ -175,7 +175,6 @@
                         <xsl:variable name="authString" as="item()*">
                             <xsl:for-each select="$authors">
                                 <xsl:variable name="pos" select="position()"/>
-                                <xsl:message>This Pos: <xsl:value-of select="$pos"/></xsl:message>
                                 <xsl:choose>
                                     <xsl:when test="$pos = 1"/>
                                     <xsl:when test="$pos gt 1">
