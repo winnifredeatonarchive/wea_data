@@ -12,6 +12,8 @@ ok /Processing .?error.?/
 ok /Processing Warning/
 ok /Processing WARNING/
 ok /Processing warning/
+# JS Compiler for static search report
+ok /\[jscomp\]\s+0\s+error/
 
 # Regular errors
 error /[Ee]rror/
