@@ -226,7 +226,7 @@
     url(../fonts/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
-.mi {
+.mi, .fidLink:before {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -1289,7 +1289,7 @@ ul.ssDescCheckboxList input{
 #ssResults > ul > li{
         border-bottom:1px solid #efefef;
 }
-div#ssResults>ul>li>div>ul.kwic>li>a{
+div#ssResults>ul>li>div>ul.kwic>li>a:not(.fidLink){
     font-size:1rem!important;
 }
 
@@ -1326,7 +1326,12 @@ fieldset.ssFieldset > span{
 }
 
 .fidLink{
-    display:none;
+    font-size:1px!important;
+}
+
+.fidLink:before{
+    content: "arrow_right";
+    font-size: 0.85rem;
 }
     
 
