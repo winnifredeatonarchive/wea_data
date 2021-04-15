@@ -24,7 +24,7 @@
     
     <xsl:variable name="dateMap" as="map(xs:string,xs:integer)">
         <xsl:map>
-            <xsl:for-each select="$xhtmlDocs[descendant::meta[contains-token(@class,'staticSearch.date')]]">
+            <xsl:for-each select="$xhtmlDocs[descendant::meta[contains-token(@class,'staticSearch_date')]]">
                 <xsl:sort select="map:get(wea:returnDate(//html/@id), 'sort')"/>
                 <xsl:variable name="thisId" select="//html/@id" as="xs:string"/>
                 <xsl:variable name="position" select="position()" as="xs:integer"/>
@@ -55,7 +55,7 @@
                     <xsl:attribute name="data-titleOrder" select="$titleMap($thisId)"/>
                     <summary>More Info</summary>
                     <div>
-                        <xsl:for-each-group select="//meta[matches(@class,'staticSearch\.(desc|date|bool)')]" group-by="@name">
+                        <xsl:for-each-group select="//meta[matches(@class,'staticSearch_(desc|date|bool)')]" group-by="@name">
                             <div>
                                 <div class="metadataLabel"><xsl:value-of select="current-grouping-key()"/></div>
                                 <div>
@@ -65,7 +65,7 @@
                                                 <xsl:when test="@data-link">
                                                     <a href="{@data-link}"><xsl:value-of select="@content"/></a>
                                                 </xsl:when>
-                                                <xsl:when test="contains-token(@class,'staticSearch.date')">
+                                                <xsl:when test="contains-token(@class,'staticSearch_date')">
                                                     <xsl:value-of select="map:get(wea:returnDate($thisId),'display')"/>
                                                 </xsl:when>
                                                 <xsl:otherwise>
