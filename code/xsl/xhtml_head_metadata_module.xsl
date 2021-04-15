@@ -26,7 +26,7 @@
             <xsl:call-template name="createDCMetadata"/>
             <xsl:choose>
                 <xsl:when test="@xml:id = $workIds">
-                    <meta name="Ignore" class="staticSearch.desc" content="true"/>
+                    <meta name="Ignore" class="staticSearch_desc" content="true"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:call-template name="createStaticSearchMetadata"/>
@@ -97,7 +97,7 @@
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
             <!--Exclude primary source from being its own category in the SS search-->
             <xsl:if test="not($refId = 'docPrimarySource')">
-                <meta name="{$thisTax/bibl}" class="staticSearch.desc" data-link="{$refId}.html" content="{$thisCat/catDesc/term}"/>
+                <meta name="{$thisTax/bibl}" class="staticSearch_desc" data-link="{$refId}.html" content="{$thisCat/catDesc/term}"/>
             </xsl:if>
         </xsl:for-each>
         
@@ -106,11 +106,11 @@
             
             <!--Start grouping by names-->
             <xsl:for-each select="distinct-values(//name/@key)">
-                <meta name="Pseudonym" class="staticSearch.desc" content="{.}"/>
+                <meta name="Pseudonym" class="staticSearch_desc" content="{.}"/>
             </xsl:for-each>
             
             
-            <meta name="docImage" class="staticSearch.docImage">
+            <meta name="docImage" class="staticSearch_docImage">
                 <xsl:attribute name="content">
                     <xsl:choose>
                         <xsl:when test="//text/@facs">
@@ -125,16 +125,16 @@
            
   
             <!--Removing boolean filters-->
-<!--            <meta name="Has facsimile?" class="staticSearch.bool" content="{xs:boolean(exists(//text/@facs))}"/>
-            <meta name="Has transcription?" class="staticSearch.bool" content="{not(xs:boolean(exists(//gap[@reason='noTranscriptionAvailable'])))}"/>
-           <meta name="Contains Foreign phrases?" class="staticSearch.bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>-->
+<!--            <meta name="Has facsimile?" class="staticSearch_bool" content="{xs:boolean(exists(//text/@facs))}"/>
+            <meta name="Has transcription?" class="staticSearch_bool" content="{not(xs:boolean(exists(//gap[@reason='noTranscriptionAvailable'])))}"/>
+           <meta name="Contains Foreign phrases?" class="staticSearch_bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>-->
             
             
             <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
             <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>
             <xsl:variable name="dateString" select="if ($isRange) then concat($date/(@notBefore|@from)[1],'/', $date/(@notAfter|@to)[1]) else $date/@when" as="xs:string?"/>
             <xsl:if test="not(empty($date))">
-                <meta name="Publication Date" class="staticSearch.date" content="{$dateString}"/>
+                <meta name="Publication Date" class="staticSearch_date" content="{$dateString}"/>
             </xsl:if>
 
         </xsl:if>
