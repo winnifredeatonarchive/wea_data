@@ -7065,6 +7065,9 @@ ${caret}</String>
                         <String>document.types</String>
                         <documentTypeDescriptor-array>
                             <documentTypeDescriptor>
+                                <field name="webResources">
+                                    <null/>
+                                </field>
                                 <field name="extensionPatch">
                                     <null/>
                                 </field>
@@ -7291,6 +7294,9 @@ ${caret}</String>
                                 </field>
                             </documentTypeDescriptor>
                             <documentTypeDescriptor>
+                                <field name="webResources">
+                                    <null/>
+                                </field>
                                 <field name="extensionPatch">
                                     <null/>
                                 </field>
@@ -11715,6 +11721,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                 </field>
                             </documentTypeDescriptor>
                             <documentTypeDescriptor>
+                                <field name="webResources">
+                                    <null/>
+                                </field>
                                 <field name="extensionPatch">
                                     <null/>
                                 </field>
@@ -16395,6 +16404,12 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                 </field>
                                                 <field name="initializer">
                                                     <String></String>
+                                                </field>
+                                                <field name="profilingOutputFile">
+                                                    <null/>
+                                                </field>
+                                                <field name="isProfilingEnabled">
+                                                    <Boolean>false</Boolean>
                                                 </field>
                                             </xsltSaxonHEAdvancedOptions>
                                         </entry>
