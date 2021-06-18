@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MovieMadness1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MovieMadness1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Movie Madness [Part One]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:NI1">Nazua Idris</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,20 +31,192 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2020-07-31">Added instalment number.</change><change who="pers:MC1" status="empty"  when="2020-07-03">Added note about source.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl94 using XSLT.</change>
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2021-06-18" status="published">Downloaded document from Google Drive and converted to TEI. Encoded.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">Added instalment number.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-03">Added note about source.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl94 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:MovieMadness1">
+           <text facs="facs:MovieMadness1" next="doc:MovieMadness2">
+              
+   <pb n="56"/>
       <body>
+         <note>A Whirlwind Drama of Passionate Love, Hatred and Dark Intrigue in Talkie-crazed Hollywood</note>
+         <head>Movie Madness</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Winifred Reeve</name></byline>
+            <byline>Illustrations by <name ref="pers:EB1">Edward Butler</name></byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            
+            <p>As Jane Mercer stepped out of the bus that piles between Hollywood and Filmo City into the blinding sunlight of a California afternoon, a vague excitement filled her heart. She was nearing her rainbow’s end. Before her, sprawling out from the foothills, she saw the low, rambling collection of buildings that went to make up Filmo City, mecca of all her hopes and dreams. </p>
+            <p>She paused a moment, catching her breath, and then, clutching more firmly in her hand the precious portfolio that held the script of her talking picture play, she went up the flower-bordered walk to the red-roofed bungalow that housed the reception hall.</p>
+            <p>Within, she blended into a long line standing patiently before an efficient, varnished-looking young lady at the information desk.</p>
+            <p><q>Casting director?</q> asked the young woman crisply, taking it as a matter of course that Jane was an actress. Her eyes traveled appraisingly from the tip of Jane’s smart toque above her blue eyes to the toes of her reptile shoes.</p>
+            <p><q>Have you an appointment?</q> said the crisp voice. <q>No. I wish to see the scenario editor</q>. </p>
+            <p><q>N-no</q>, replied Jane, hesitantly, her face flushing a rose pink under the scrutiny. <q>I––I just wanted to show her a story</q>. </p>
+            <p><q>Sorry. Miss Dutton doesn’t see anyone without an appointment</q>. </p>
+            <p><q>But I––I––</q></p>
+            <p>The information girl was already engaged in conversation with another applicant. Jane moved away, fighting to keep tears of disappointment from welling into her eyes.</p>
+            
+ <pb n="57"/>
+            <p>As she passed blindly through the doorway, she looked back over her shoulder at the bungalow. She felt a sudden impact.  The brief case was knocked from her hand. </p>
+            <p><q>Look where you’re going!</q> rumbled a deep, masculine voice. </p>
+            <p><q>Lookout yourself!</q> Jane retorted sharply. Then, stopping to pick up her brief case, she saw havoc before her. The slender leather strap had broken, and a vagrant breeze was scattering the loose sheets of her precious manuscript about the lawn.</p>
+            <p><q>See what you’ve done!</q> she cried, now scarcely able to keep back the tears. <q>There goes the work of months. I hope you’re satisfied!</q></p>
+            <p>She looked up with brimming eyes to see before her a huge bulk of a man; a strong, bronzed face looming above the white expanse of his shirt. A moment later the stern face broke into a smile, and evidently forgetting his dignity, the man in the white shirt was down on his hands and knees, scrambling after the flitting pages of manuscript.</p>
+            <p><q>Here</q>, he said, regaining his former brusque manner with difficulty, after he had picked up the last sheet, <q>come into my office and get your sheets in order. What are they, by the way?</q></p>
+            <p><q>Stories</q>, Jane replied meekly, <q>nine of them. I came here to sell them</q>.</p>
+            <p>The man grunted.</p>
+            <p><q>So you’re one of those, eh?</q> he said.</p>
+            <p>As Jane looked up into the face of her benefactor, noting the keen humorous blue eyes and the hard lean jaw, she felt a strange desire to justify herself. Reaching into her portfolio, she drew out the letter from the Filmo scenario editor.</p>
+            <p><q>Look at this</q>, she said. The man scanned it hurriedly, a smile of scorn curling his lips. It read:</p>
+            <p>My dear Miss Mercer:</p>
+            <p>We are sorry to return you your manuscript, A Young Man In a Hurry, but it does not quite suit our requirements. Do let us see anything else you may write. And by the way, when our pictures, Bleeding Hearts, Salt of the Earth and others come to your town, don’t miss them, as you can learn from them just what we want in the way of stories. If you ever come to Hollywood drop in and see us.</p>
+            <p>Cordially yours, </p>
+            <p>EDITH DUTTON.</p>
+            <p><q>That’s the bunk</q>, said the man abruptly, <q>just a form letter they send out to all aspiring writers. Come on to my office and I’ll tell you what to do</q>.</p>
+            
+ <pb n="58"/>           
+            <p><q>I––I thought they meant it</q>, said Jane as they turned back towards the studio, <q>I’ve come all the way from New York state just to see the scenario editor. You––you can’t imagine what that letter meant to me</q>.</p>
+            <p>This time they passed the girl at the information desk with only a respectful nod of the head to Jane’s companion. Jane followed him down a long walk, past three or four large sound stages, until they came to a row of bungalows. On the door in large letters was the sign,</p>
+            <p>EDMUND BLANTON PRODUCTIONS.</p>
+            <p>Here they entered, passed through an outer office where two or three stenographers clattered busily at their machines and on into an office marked</p>
+            <p>MR. BLANTON</p>
+            <p>PRIVATE</p>
+            <p><q>Are you Mr. Blanton?</q> asked Jane, as she looked wide-eyed about her at the lavishly appointed room. </p>
+            <p><q>Yes</q>, he replied, reaching for a cigarette, <q>and you?</q> </p>
+            <p><q>Jane Mercer</q>.</p>
+            <p><q>Sit down, Miss Mercer</q>, he boomed, drawing up an arm chair for her, while he slumped his own six feet of bulk behind the mahogany desk, <q>now tell me your story</q>.</p>
+            <p><q>Well, I’ve always wanted to write for the movies</q>, Jane said, <q>and when I got this letter, I thought that all I needed to do was to come to Hollywood and––</q></p>
+            <p>Blanton shook his head slowly.</p>
+            <p><q><choice><sic>Your’s</sic><corr>Yours</corr></choice> is the same old story. Thousands of girls just like you come to Hollywood every year––thinking they can write. It may sound brutal to say it, but you haven’t a chance. No outsider has. They want established names, people who have written successful stage plays, short stories and books</q>.</p>
+            <p><q>But, Mr. Blanton, I don’t expect to get a big job right away. I am willing to start at the bottom. I’ll scrub floors, do anything just for a chance––</q></p>
+            <p><q>Where is your home?</q> he inquired.</p>
+            <p><q>Greenville, New York</q>.</p>
+            <p><q>See here</q>, he said, leaning forward in his chair. <q>Will you take some hard-boiled advice from a tough old veteran who has been through the mill?</q></p>
+            <p>Jane nodded.</p>
+            <p><q>Then forget it. Chalk it up as a pleasure trip. Take the next train back to Greenville tonight. And stay there</q>.</p>
+            <p><q>But, Mr. Blanton, I––I couldn’t go back home a failure. After everybody put their trust in me. I’d rather stay here and starve</q>.</p>
+            <p><q>Yeah. That’s what they all say. But there are lots of things easier to take than starvation</q>.</p>
+            <p>Jane stood up, brushing a stray wisp of hair back from her forehead with a quick and defiant gesture.</p>
+            <p><q>Thank you, Mr. Blanton, for your advice</q>, she said coldly, <q>but I am going to stay. I may starve, but I won’t go home</q>.</p>
+            <p>Blanton smiled cynically. He had heard that same story of brave and hopeful youth so often before. He spread his hands in a gesture of resignation.</p>
+            <p><q>All right then. But don’t blame me. I suppose you’ll have to find out for yourself</q>. There was a moment’s pause. Then he said, <q>Look here. Can you do anything useful? Anything to earn a living?</q></p>
+            <p><q>I’ve been a stenographer for three years</q>.</p>
+            <p><q>Now you’re talking. Would you be willing to take a job as a stenographer here to learn the game?</q></p>
+            <p><q>Oh, Mr. Blanton, I’d do anything just to be able to work here––and wait for my chance</q>.</p>
+            <p>He picked up a desk phone.</p>
+            <p><q>Blanton talking. Can you use a stenographer in the department over there? Yes, a good one. Okay. I’ll send her right over</q>.</p>
+            <p>He scribbled something on a slip of paper and handed it to Jane.</p>
+            <p><q>Take that to Miss Ross in the stenographic department. She’ll look after you</q>. Blanton stood up and held out his hand.</p>
+            <p>As Jane felt her fingers enclosed by the huge paw and she looked up into the crinkly blue eyes of her benefactor, a strange thrill such as she had never experienced before swept over her. She sensed at once that this man was going to be a real force in her life.</p>
+            <p><q>One thing more</q>, Blanton was saying, <q>don’t let anyone get you into the acting end of the game. You’ve got a pretty face and a lovely figure. They don’t mean a thing––common as dirt out here. Besides you’ve got something better than mere beauty</q>.</p>
+            <p><q>What?</q> asked Jane breathlessly.</p>
+            <p><q>Soul!</q> said Blanton his eyes burning deep into hers. Then, with a final lingering pressure of the hand, he led her to the door.</p>
+            <p>When Jane left Filmo City that afternoon, she was walking on air. Her dream was no longer in the realm of the impossible. She had a job!</p>
+            <p>Returning to Hollywood, she bought a paper and turning to the want ads, she set out to find a place to stay.</p>
+            <p>Late that afternoon she was standing before an apartment at 6832 Sunburst Avenue when a tall blonde girl in the bright red sport dress, drawn tight about the waist came up the stairs. </p>
+            <p><q>Answering the ad, kid?</q> she asked Jane.</p>
+            <p>Jane nodded.</p>
+            <p>After a few moments’ inspection of the bright, attractively furnished little apartment, and her prospective roommate, who bore the typically Hollywood name of Joybelle La Mogri, and who was an extra in the movies, Jane decided to move in at once.</p>
+            <p>The first days in the studio passed like a rapturous dream. The work was interesting. She learned much from typing the scripts that passed through her hands. Occasional glimpses of world-famous movie heroes and heroines, whom she recognized as she passed them on the lot, added the final touch of glamour.</p>
+            <p>Yet there was something else that was even a more potent factor for her happiness. For some time Jane did not realize it. She only knew that a glorious feeling of</p>
+            
+ <pb n="105"/>
+            <p>exhilaration possessed her, coloring her every waking moment. Gradually it dawned on her that she was falling in love with Edmund Blanton.</p>
+            <p>One noon, Millie Cohen, and Jane went to watch a picture being shot on one of the sound stages.</p>
+            <p>Millie went up to a short, dark man, sprawled in a camp chair with a script in his hands.</p>
+            <p>The man was on his feet at once, with eyes only for Jane.</p>
+            <p><q>Hello, Millie</q>, he said, <q>who’s your friend?</q></p>
+            <p><q>This is Jane Mercer, Mr. Harron</q>.</p>
+            <p>The man held out a fat, moist paw. He was about forty, Jane judged, and there was something unwholesome about him. His eyes were small and squinty, his mouth loose and sensual. He showed the effects of careless living.</p>
+            <p><q>What a contrast to Blanton!</q> she thought.</p>
+            <p><q>Say</q>, he said, eyeing Jane with a glance that seemed to strip her, <q>you’re star material, baby! What are you doing here?</q> Jane told him.</p>
+            <p><q>Listen, baby</q>, he said in a soft purring voice. <q>I like to make stars of little girls that like me</q>.</p>
+            <p><q>Thanks, but I don’t want to be a star</q>, said Jane, remembering Blanton’s advice.</p>
+            <p><q>You may change your mind, baby</q>, Harron said, <q>sit here, anyway, while I go on with this rehearsal</q>.</p>
+            <p><q>Harron is an ace director</q>, whispered Millie when the two girls were seated, <q>but he’s the bunk when it comes to women</q>.</p>
+            <p>Jane was intent on watching the love scene being rehearsed before her.</p>
+            <p><q>Who’s the woman?</q> she whispered to Millie.</p>
+            <p><q>That’s Sylvia Lawrence</q>, Millie answered, <q>I don’t see what Blanton sees in her</q>.</p>
+            <p>Jane felt a cold clutch of dread at her heart. What did Millie mean? </p>
+            <p>Before she could ask, Millie had pointed to her wrist watch. It was time they were getting back to work.</p>
+            <p>The next morning Jane had some news for Blanton. She found him in his office.</p>
+            <p><q>Oh, Mr. Blanton</q>, she cried, <q>Mr. Harron has promised to make me script girl on his next picture!</q></p>
+            <p>The lean jaw set in firm hard lines.</p>
+            <p><q>Well, you’re not going to accept it, my girl</q>, he said.</p>
+            <p><q>Why––</q> said Jane aghast.</p>
+            <p><q>I have other plans in mind for you. How would you like to be in the story department?</q></p>
+            <p><q>Oh, that would be wonderful</q>.</p>
+            <p><q>All right</q>, said Blanton, <q>and one thing more. I’m taking you to dinner at the Author’s Club and to a premiére tonight. I’ll be around at seven-thirty. Will that be okay?</q></p>
+            <p>Jane was in seventh heaven that night. She was in the presence of names famous the world over.</p>
+            <p>The lights, the music, intoxicated her.</p>
+            <p>On the way home, Blanton suggested a drive out Beverly Boulevard, down the winding road to the sea. In a dark side road he stopped and turned to her.</p>
+            <p><q>Jane</q>, he said, <q>do you value my friendship?</q></p>
+            <p><q>You know I do</q>, she replied tremulously.</p>
+            <p><q>Promise me then, you won’t have anything to do with Harron</q>.</p>
+            <p><q>Why do you care?</q> asked Jane in surprise.</p>
+            <p><q>First of all, because he is a rat with women, ruthless and unprincipled. But most of all because I can’t bear any other man to be with you or near you. I care too much</q>.</p>
+            <p>She looked up into his eyes.</p>
+            <p><q>You mean you––</q></p>
+            <p><q>I love you!</q></p>
+            <p>Her face was turned up to his, her sweet full lips parted in adoration. Suddenly Blanton crushed her to him. Their lips met in a frenzy of passion.</p>
+            <p><q>Do you love me, Jane?</q> He asked at length.</p>
+            <p><q>Oh, Edmund, I adore you!</q></p>
+            <p>The moon was low in the sky when they went up the walk to Jane’s apartment. In the hallway Blanton took her in his arms once more.</p>
+            <p>Now at last the question that had been trembling upon Jane’s lips since yesterday burst forth.</p>
+            <p><q>Edmund––will you tell me one thing?</q></p>
+            <p><q>Anything, my dearest, anything!</q></p>
+            <p><q>Who is Sylvia Lawrence? What is she to you?</q></p>
+            <p><q>Tomorrow, darling. Tomorrow I will tell you. But tonight is too wonderful to speak of anything but our love</q>.</p>
+            <p>The next morning Jane lost no time in telling Millie of her happiness, when they met for a moment at the studio.</p>
+            <p>A dark shadow crossed Millie’s face as Jane concluded, <q>Listen, don’t let that get around. I’ll talk to you more about it at noon</q>. And she was gone.</p>
+            <p>Suspicions, doubts, questions engulfed Jane’s mind. At eleven, unable to bear the suspense any longer, she went to Millie’s <choice><sic>resk</sic><corr>desk</corr></choice>.</p>
+            <p><q>Millie</q>, she said, <q>you were going to tell me about Blanton</q>.</p>
+            <p>The worried look came into Millie’s eyes again.</p>
+            <p><q>I can’t tell you here, Jane</q>, Millie said, <q>wait ’till tonight</q>.</p>
+            <p><q>Has––has Sylvia Lawrence anything to do with it?</q> queried Jane, her fears rising up in spite of her.</p>
+            <p>Millie nodded, but refused to say more.</p>
+            <p>In the studio lunchroom that noon, they met Harron. He came up behind the table where they were sitting</p>
+            
+ <pb n="106"/>
+            <p>and put his hands on Jane’s shoulders.</p>
+            <p><q>So you write stories, eh? Now listen, baby, I’m in the market for a good, sentimental love yarn right now. Suppose we get together and talk it over. How about a little party tonight?</q> He leaned over so that she felt his breath on her cheek.</p>
+            <p><q>I’m sorry, Mr. Harron, I don’t go out nights</q>.</p>
+            <p><q>I saw you at the opening with Blanton last night, didn’t I?</q></p>
+            <p><q>Yes, but––</q></p>
+            <p><q>Well, I’m just warning you that I can do more for you than he can, that’s all</q>. And Harron walked away.</p>
+            <p><q>You want to be careful how you treat him</q>, Millie said, <q>he’s a big shot around here. And if you want to put over a story, there’s your chance</q>.</p>
+            <p>When Jane returned to the office after lunch, her fears and suspicions about Blanton preyed on her mind so that she could not work.</p>
+            <p>A sudden panic rose within her. She could stand it no longer. She hurried to Blanton’s office. </p>
+            <p>For a few moments neither spoke. Blanton, his face drawn and worried, stared dully into space. </p>
+            <p><q>Edmund––what is it––what have I done?</q></p>
+            <p>He seized her hand convulsively.</p>
+            <p><q>Jane, dear, it’s not you. It is I who am to blame</q>.</p>
+            <p><q>In heaven’s name what is it?</q> Jane cried out. <q>This mystery is driving me mad</q>.</p>
+            <p><q>I had no right to tell you what I did last night. I was mad. I let myself go. Little good it does to regret it now, though</q>.</p>
+            <p>He laughed, a short bitter laugh.</p>
+            <p><q>You mean––you mean you didn’t mean it when you told me you loved me?</q></p>
+            <p><q>I had no right to mean it</q>.</p>
+            <p>Jane’s voice rose to a shrill crescendo.</p>
+            <p><q>I suppose it’s a small event in your life, winning a girl’s confidence, getting her to reveal her love and then tossing her aside, breaking her heart. I hope you enjoy yourself</q>. She could scarcely keep back the sobs.</p>
+            <p>There was real pain in Blanton’s voice as he cried in protest.</p>
+            <p><q>Jane, please––you are killing me!</q></p>
+            <p><q>Killing you! That’s good!</q> Jane burst into hysterical mirth.</p>
+            <p>Blanton started across the room, his arms out, seeking to comfort her.</p>
+            <p>Just then the door opened. The secretary thrust in her head.</p>
+            <p><q>Miss Lawrence is here to see you, Mr. Blanton</q>, she said. </p>
+            
+            <fw type="continued" place="center">(To be Continued)</fw>
+            
          </div>
       </body>
    </text>
