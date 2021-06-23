@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Ropes1">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Ropes1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Ropes</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:AK1">Axel Kong</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:MC1">Mary Chapman</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,22 +31,3785 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreFilm"/>
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2020-06-30">Added note about source.</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl118 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" when="2021-06-22" status="inProgress">Downloaded document from Google Drive and converted to TEI. Still editing.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added note about source.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl118 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:Ropes">
+   <text facs="facs:Ropes">
+       <pb n="0"/>
       <body>
+            <head>ROPES</head>
+            <opener>
+                  <byline>By </byline>
+                  <byline>Wilbur Daniel Steele</byline>
+                  <byline>Screen Story &amp; Dialogue</byline>
+                  <byline>By <name ref="pers:WE1">Winnifred Reeve</name></byline>
+            </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+    <milestone unit="page"/>
+           <p>ROPES</p>
+                           
+           <p>CHARACTERS</p>
+
+    
+            <p>JENNY BLAKE (Mary Nolan)</p>
+            <p>A girl of about 20. Flippant and pleasure loving, dance and boy mad, pretty and sexy. Lightheaded and vain. The kind of girl men go crazy about. Beneath her flighty ways, Jenny has a warm loveable nature.</p>
+            <p>Jenny is a product of the east side of New York. To her the noises and smells of New York, the teaming millions means –home and joy.</p>
+    
+      
+    
+            <p>PAUL WHALEN</p>
+            <p>About 27 or 28. A young life guard. Fine, athletic type. Big hearted, frank and square shooting by nature.</p>
+            <p>Born in a light-house, and loving nature and the sea.</p>
+    
+      
+    
+            <p>JIM PAINE (Eddie Phillips?)</p>
+            <p>About 30 years of age. A big animal.</p>
+            <p>Jealous and selfish—ruthless and cominant.</p>
+    
+      
+    
+            <p>KITTY LEWIS</p>
+            <p>A fairly pretty and colorless type of girl. In love with Jim. Will take any amount of snubs from him. Not a bad sort. Just a nonentity, yet a sort of faithful, sticking type. Jim can’t shake her.</p>
+    
+      
+    
+            <p>LITTLE PAULIE WHALEN</p>
+            <p>2 years old. Pretty but delicate. Born in lighthouse.</p>
+    
+      
+    
+            <p>SAM LOWENSTEIN</p>
+            <p>Whose little boy Paul rescues from drowning.</p>
+    
+      
+    
+            <p>People on the public beach. Jen’s young friends—boys and girls &amp;c.</p>
+    
          </div>
+    <div>
+    
+   <p>Sets for Ropes</p>
+          
+          <p>1. PUBLIC BEACH---Coney, Brighton, Venice, Santa Monica---wherever we decide.</p>
+          
+          <p>At the beach:</p>
+          
+          <p>a.Life guard look-out station.</p>
+          <p>b. Siren pole. on beach</p>
+          <p>c. Hot dog and hamburger shack.</p>
+      
+          <p>2. PUBLIC DANCE HALL ON PIER</p>
+      
+          <p>3. BEACH STREET</p>
+    <p>All we need is the outside of the window of Justice of Peace as described in adaptation.</p>
+    
+          <p>4. Exterior</p> 
+          
+          <p>LIGHTHOUSE</p>
+    
+          <p>a. LIVING ROOM</p>
+          <p>B. TOWER WITH THE BIG LIGHT</p>
+          <p>c. PLATFORM</p>
+          <p>d. BEDROOM</p>
+      
+          <p>5. Small beach harbor for boats.</p>
+      
+          <p>6. The open sea.</p>
+      
+   <pb n="1"/> 
+     
+    <p>Treatment and dialogue by:</p>
+            <p>WINNIFRED REEVE</p>
+          
+            <p>ROPES</p>
+            <p>By</p>
+            <p>WILBUR DANIEL STEELE</p>
+          
+            <p>Sequence 1.</p>
+            <p>        FADE IN</p>
+            <p>        Life-Guard Look-out Station</p>
+            <p>        This is a small structure (on scaffolding) about fifteen feet from the ground.</p>
+            <p>        These posts are maintained along the Public Beaches. They are the look-out stations from which the life guards scan the water, for people who may have gone beyond the danger lines.</p>
+            <p>        Two young Life guards are in the Station. They wear dark bathing suits, with the caption: U.S. LIFE GUARD in white letters across the breasts.</p>
+            <p>        One of them, a splendid young specimen of athletic manhood, is Paul Whalen. Through a pair of field glasses, Paul is scrutinizing the somewhat rough waves of the sea. Quite casually the glasses sweep the Beach and come to rest upon a girl – the center of a gay group.</p>
+            <p>        Show the girl Paul is looking at through glasses.</p>
+            <p>        She is a young slip of a thing. In the bathing suit. Pretty as a wildflower, laughing like a crazy kid, ready for any devilment. A slamgy, lightheaded light hearted girl.</p>
+    
+   <pb n="2"/> 
+    
+            <p>        She is holding a large ball above her head, and her eyes sweep the circle of fellows all calling to her to throw the ball to them.</p>
+            <p>        Look-out station. Paul is smiling as he looks through glasses. The other boy, also with glasses, is looking through them at the water.</p>
+            
+          <p>LIFE GUARD</p>
+            <p>The water’s pretty rough.</p>
+            
+          <p>PAUL</p>
+            <p>Look at that girl.</p>
+            
+          <p>LIFE GUARD</p>
+            <p>And there’s a powerful undertow off there.</p>
+            
+          <p>PAUL</p>
+            <p>Say, Bill – look at her – isn’t she pretty?</p>
+            
+          <p>        He nudges Bill and the latter reluctantly turns from the water and turns his glasses to the beach.</p>
+            <p>        PUBLIC BEACH – a type not unsimilar to Crystal Pier, Coney, Bridghton, or wherever we decide to lay our story – east or west coast. Preferably the east.</p>
+            <p>        It is a hot summer day, and scores of people have come to the beach for relief.</p>
+            <p>        We do not show the adjoining concessions, but we hear their noises and music. We do show part of the board walk, with its line of hot dog and hamburger shacks and the people strolling along.</p>
+            <p>        This being a Public beach, there are all sorts conditions of types.</p>
+    
+  <pb n="3"/> 
+    
+            <p>        Young couples sprawled in profusion every place. Quaintly bawdy.</p>
+            <p>        Pretty girls and homely ones. Lithe limbed boys and youths running here and there indulging in acrobatics and beach sports. Valuable checks and keys attached to bare legs by leathern thongs. Fat men and woman.</p>
+            <p>        Striped unbrellas and tents pepper the beach. Lunches are spread on the ground – picnic parties etc.</p>
+            <p>        The sough of the waves and the noise of the surf, gusts of wind, mingle with the music of the carousel, shouts and cries of hot dog, peanut, popcorn and marshmallow vendors, screeches of laughter, shouts and calls.</p>
+            <p>        A score of people are in the water. Some are fair swimmers, but most of the bathers hug the shore, clinging to the ropes and jumping with the pounding waves. Children everywhere. Also dogs.</p>
+            <p>        We come to the group of young people who are playing handball. Jenny Hall is the pretty girl, with the huge beach ball held above her head.</p>
+            <p>        We notice particularly JIM PAINE a dark browed, big fellow. He is Jenny’s <q>steady</q>, or considers himself so. He is jealous of everyone that looks at Jenny. At this time they are calling to her, or whistling.</p>
+            <p>        <q>Heh Jen, throw it to me!</q></p>
+            <p>        <q>This way, kid!</q></p>
+            <p>        <q>My turn</q>.</p>
+            <p>        <q>I’m your boy friend</q>.</p>
+            <p>        One of the girls, a plump girl named Kitty calls:</p>
+    
+  <pb n="4"/>    
+    
+            <p>KITTY</p>
+            <p>        Throw it to the one you love best, Jen!</p>
+            <p>        Instantly there is an anticipatory mock leaping around and we see however, that Jim Pane fully expects that Jen is hoping to throw the ball to him.</p>
+            <p>        Just to be contrary however, Jen singles out little Lindy Moore, a homely, thin little fellow.</p>
+            <p>JEN</p>
+            <p>Ketch him, Lindy.</p>
+            <p>She throws the ball to Lindy. There is a united dash for Lindy. We see him running fleetly, the little mob at his heel. He goes down before the onslaught. It is all rough and tumble beach play, but not so in the case of Jim Paine. Sore at his girl, contemptuous of Lindy, he has hurled himself upon him. Lindy is holding to the ball tenaciously and is unprepared for Jim’s brutal grasp. The latter shakes him as if he were a rat terrier, takes the ball from him and then deliberately pounds Lindy’s face into the sand. Having inflicted fire punishment he rises and turns back to Jen, who is blazing.</p>
+            <p>JIM</p>
+            <p>Here you are Jen!</p>
+            <p>Throws the ball to the girl. She ignores it. It rolls along the ground.</p>
+            <p>JEN</p>
+            <p>        I’m not playing any more.</p>
+            <p>        She turns and walks off. Jim follows, catches up to her.</p>
+            <p>JIM</p>
+            <p>Lets have another dip.</p>
+    
+ <pb n="5"/>    
+    
+            <p>JEN</p>
+            <p>        No. I don’t want to.</p>
+            <p>JIM</p>
+            <p>        You ain’t sore at me, are you?</p>
+            <p>JEN</p>
+            <p>        Yes I am, if you want to know.</p>
+            <p>JIM</p>
+            <p>        Just because I give that little runt a knock or two.</p>
+            <p>JEN</p>
+            <p>        Well, why did you? Who don’t you pick on a fellow your own size?</p>
+            <p>JIM</p>
+            <p>        I’ll pick on any one who poaches on my preserves.</p>
+            <p>Jen stops and stares at him in angry amazement.</p>
+            <p>JEN</p>
+            <p>        What do you mean by preserves?</p>
+            <p>JIM (Grinning possessively)</p>
+            <p>        You! You’re my girl, ain’t you?</p>
+            <p>JEN</p>
+            <p>        Is that so. How do you get that way?</p>
+            <p>JIM (a bit crestfallen)</p>
+            <p>        We been going together for two months now.</p>
+            <p>Jen’s two hands go to her hips. Her attitude is beligerant.</p>
+            <p>JEN</p>
+            <p>        I laugh in your face. I’ve gone with better fellows than you longer than that, and I’m fed up on your jealous tempers.</p>
+            <p>        She turns away. Jim starts to remonstrate. They move along the beach, arguing and quarrelling.</p>
+    
+ <pb n="6"/>   
+     
+            <p>LIFE GUARD STATION</p>
+            <p>        Bill is looking off intently through glasses at sea. We see his back tensing. He turns to Paul.</p>
+            <p>BILL</p>
+            <p>        Kid in the undertow!</p>
+            <p>Instantly Paul drops his glasses and springs into action. At the same time, we see Bill work the lever and we cut to the Siren in the center of the Beach. This is a tall white pole, at the top of which is the siren. It connects by wire with the life guard post.</p>
+            <p>THE BEACH</p>
+            <p>        Closeup of the siren. We hear its terrific screeching. It is similar to the Police and ambulance and fire alarms, but kept up indefinitely – in fact until the endangered person in the water is either brought in or lost.</p>
+            <p>        From all parts of the beach people are running toward the siren and down to the shore which is now lined with the bathers. We hear their exclamations:</p>
+            <p>        <q>Someone’s drowning!</q></p>
+            <p>        <q>It’s a child!</q></p>
+            <p>        Some women scream or faint.</p>
+            <p>        From the life guard station and from various parts of the beach we see the life guards charging. A boat is launched but several of the guards take no chances and dive straight into the water, making for where the child has gone under.</p>
+            <p>        A magnificent swimmer, Paul is ahead of the others.</p>
+    
+<pb n="7"/>    
+
+            <p>ON THE BEACH.</p>
+            <p>        A large woman is screaming frantically.</p>
+            <p>WOMAN</p>
+            <p>        Abie! Abie! It’s my little Abie!</p>
+            <p>        The father is almost as hysterical as his wife. He runs up and down futilely.</p>
+            <p>        Jenny and her friends are watching the lifeguards swimming for the child. Jenny is all excitement. She has not failed to note the splendid looking young life guard who is swimming ahead of his fellows.</p>
+            <p>        In the water, Paul has almost reached the child, when a log, borne by a mighty wave, smites him squarely between the eyes. For a moment he goes under. He comes up again; reaches out for the bobbing head, manages to grasp the child. The life boat comes alongside, and the child, sputtering, but not much the worse for his experience is taken aboard, as well as Paul.</p>
+            <p>NOTE
+      : Anyone who has been on a public beach will be familiar with the above circumstances. There is always some such rescue, and the alarming screech of the siren is an exciting diversion.</p>
+            <p>        There is the usual scene of the child brought to beach. The overjoyed parents, etc. Only the father notices the life guard who has saved his child. He rushes up to Paul, seizes both his hands and volubly thanks him. Running back to tent, he digs up a card, gives it to Paul and tells him any time he needs a friend to come to him.</p>
+            <p>        We should show this card.</p>
+            <p>        Paul is really feeling the strain, not so much of the rescue of the child but the blow from the log. The man asks</p>
+    
+<pb n="8"/>       
+          
+            <p>him about it but Paul says it is nothing. He’ll just stretch out a bit on the beach and be O.K. soon.</p>
+            <p>        He stretches out under the slight shade of the siren pole. Lies on his stomach, his head on his arms.</p>
+            <p>        A rescue on a public beach is a detail and the bathers are soon dispersing to their various places. Jenny and her friends come back to their umbrella. Jim is at Jen’s elbow. Jen is all enthusiasm now.</p>
+            <p>JEN</p>
+            <p>I’m just thrilled to pieces.</p>
+            <p>        Wasn’t he gorgeous?</p>
+            <p>JIM</p>
+            <p>        What do you mean – gorgeous – who was?</p>
+            <p>JEN</p>
+            <p>        Why that life-guard – the way he rescues that child. Did you see that log hit him – and it         didn’t feaze him. He went right after the kid.</p>
+            <p>JIM</p>
+            <p>        Say listen, that’s what he’s paid for. He’s a life guard, ain’t he? Anyone can swim out and         pull a kid from the water. That’s nothing to rave about.</p>
+            <p>JEN</p>
+            <p>        I’d like to see you do it.</p>
+            <p>JIM</p>
+            <p>        I don’t have to. My uncle’s head of the whole works. He’s superintendent of –</p>
+            <p>JEN</p>
+            <p>        Quit your braggin’ Jim. Go on in and take a dip.</p>
+            <p>JIM</p>
+            <p>        How about a hot dog?</p>
+    
+      
+<pb n="9"/>     
+    
+            <p>JEN</p>
+            <p>No thanks. I’m not hungry.</p>
+            <p>JIM</p>
+            <p>Ice cream – soda? what you like?</p>
+            <p>JEN</p>
+            <p>Nothing.</p>
+            <p>        She throws herself down on the sand, stretches herself out. The girl Kitty is there also. The boys and the other girls are all going in for another dip and they call to Jim to come along. He wants Jen with him.</p>
+            <p>JIM</p>
+            <p>        Come on Jen. We’re goin’ in the water again.</p>
+            <p>JEN (Sleepily)</p>
+            <p>        I’m not. I’m going to stay right here and go to sleep.</p>
+            <p>Jim and the rest of them go running down to beach and into the water.</p>
+            <p>        Jenny has maneuvered around so that stretched out on the sand her face comes directly in line with the young life guard Paul, also, stretched out on sand, his forehead resting on his crossed arms. Jen knows he must look up presently. Kitty is wearing white duck pants over her legs. She looks at Jen and hesitates. Presently she nudges her.</p>
+            <p>KITTY</p>
+            <p>        Jen.</p>
+            <p>Jenny is watching the life guard. She has even edged a bit nearer to him. She’ll be right there when he wakes – if he is asleep.</p>
+            <p>JEN (Absently)</p>
+            <p>        Yeh?</p>
+    
+<pb n="10"/>    
+    
+            <p>KITTY</p>
+            <p>        Why’nt you leave Jim Pain alone?</p>
+            <p>JEN</p>
+            <p>        How do you mean – leave him alone?</p>
+            <p>KITTY</p>
+            <p>        Well – you got all the fellows stuck on you, and you don’t care anything about him – you         know you don’t.</p>
+            <p>JEN</p>
+            <p>        I dunno about that. Sometimes I do and sometimes I don’t. He certainly gets my goat                 with his jealousy.</p>
+            <p>KITTY</p>
+            <p>        Before you come along, Jim and I were going together. Now he can’t see me for dust.</p>
+            <p>JEN</p>
+            <p>        Aw! That’s too bad. I didn’t know that, Kit.</p>
+            <p>KITTY (Pleadingly)</p>
+            <p>        Well, you know now. Couldn’t you shake him --</p>
+            <p>JEN</p>
+            <p>        That’d be easy, wouldn’t it – I don’t think. Jim’s just about as persistent and ugly as a                bull dog.</p>
+            <p>KITTY</p>
+            <p>        Yes, but if you started going steady with another fellow, he’d be frozen out.</p>
+            <p>JEN</p>
+            <p>        Where’s the other fellow?</p>
+            <p>KITTY</p>
+            <p>        Gee! They’re around you like flies – all the time.</p>
+    
+ <pb n="11"/>     
+     
+            <p>JEN</p>
+            <p>But I don’t give two darns to any of them. However – don’t worry, I’ll think about it for – your sake.</p>
+            <p>Kitty puts her head under the shade of the beach umbrella. Her legs, in beach pajamas are stretched out in the sun.</p>
+            <p>KITTY</p>
+            <p>        Guess I’ll take a snooze –</p>
+            <p>        She lies back drowsily and closes her eyes.</p>
+            <p>        Jen soon forgets Kitty. She is watching Paul eagerly. She edges still nearer. Their heads are only a few paces from each other. As Paul raises his head, he finds himself looking into the face of the girl he had been admiring through the glasses. They are both lying face down, heads raised. They look at each other, and then both of them laugh. Jenny raises herself to elbow. She is not in her element, flirting. Paul watches her delightedly. Jen pretends to edge back, as if she had trespassed upon his part of the beach.</p>
+            <p>PAUL</p>
+            <p>        Don’t go! Please don’t go.</p>
+            <p>JEN</p>
+            <p>        But this is your place.</p>
+            <p>PAUL (Smiling)</p>
+            <p>        No it’s not – it’s yours.</p>
+            <p>        Jenny laughs. The little awkward silence follows a flirtation of this sort, neither knowing quite what to say or do. Then Paul gets an inspiration.</p>
+            <p>PAUL</p>
+            <p>        How about a hot dog?</p>
+            <p>JEN (She is chewing gum)</p>
+            <p>        Goody! I’m starvin’. I could eat a horse.</p>
+    
+ <pb n="12"/>     
+    
+            <p>They both laugh. He helps her to her feet. Jen looks down at Kitty.</p>
+            <p>JEN (In whisper to Paul)</p>
+            <p>        Guess she’s asleep --</p>
+            <p>PAUL</p>
+            <p>        Don’t wake her – whatever you do –</p>
+            <p>        They both giggle and slip off toward boardwalk.</p>
+            <p>His hand under her elbow, they move across to the boardwalk, step across the little stone fence.</p>
+    
+<pb n="13"/>      
+    
+            <p>HOT DOG SHACK</p>
+            <p>        This is the usual open air affair. Paul manages to get a couple of stools for himself and Jen.</p>
+            <p>PAUL</p>
+            <p>        Two dogs with all the works.</p>
+            <p>We see the man cooking the weinerwursts, toasting the rolls, etc. on the counter stove. We see the heaped up chopped onions, lettuce leaves, tomatos, pickles, etc. and the rows of pies, bottles of soft drinks, etc. As their <q>dogs</q> are cooking, Jen and Paul are smiling at each other. Paul buys a coupld of bottles of pop and they sip through straws in bottles. As they sip their pop:</p>
+            <p>JEN</p>
+            <p>        You been on this beach long?</p>
+            <p>PAUL</p>
+            <p>        Since the season opened.</p>
+            <p>JEN</p>
+            <p>        That so? Funny I never saw you before.</p>
+            <p>PAUL</p>
+            <p>        I’ve seen you everytime you been at the beach.</p>
+            <p>JEN</p>
+            <p>        You have? How’d you notice me in a big crowd like this?</p>
+            <p>PAUL</p>
+            <p>        Any one’d notice you.</p>
+            <p>JEN (Dimpling and fishing for compliments)</p>
+            <p>        Why?</p>
+            <p>PAUL</p>
+            <p>        Because you’re so pretty.</p>
+    
+<pb n="14"/>    
+    
+            <p>JEN</p>
+            <p>        You’re kiddin’ me. Theres hundreds prettier’n me.</p>
+            <p>PAUL</p>
+            <p>        No they’re not. And then you always seem to be havin’ such a lot of fun.</p>
+            <p>JEN</p>
+            <p>        Well life’s fun anyway, isn’t it?</p>
+            <p>PAUL</p>
+            <p>        Since I met you – yes – it is!</p>
+            <p>JEN</p>
+            <p>        Go on – now!</p>
+            <p>The waiter slaps down the hot dog sandwiches before them. They talk as they eat, their eyes above the sandwiches, their mouths full.</p>
+            <p>JEN</p>
+            <p>        Where do you live?</p>
+            <p>PAUL</p>
+            <p>        Right here – at the beach.</p>
+            <p>JEN</p>
+            <p>        I mean, where’s your home?</p>
+            <p>PAUL</p>
+            <p>        I haven’t any.</p>
+            <p>JEN</p>
+            <p>        Well you must’ve been born somewhere. (They both laugh)</p>
+            <p>PAUL</p>
+            <p>        I was born in a lighthouse.</p>
+            <p>JEN</p>
+            <p>        Honest?</p>
+    
+<pb n="15"/>     
+    
+            <p>JEN</p>
+            <p>        Honest?</p>
+            <p>PAUL</p>
+            <p>        Honest. My father was a lighthouse keeper. Where were you born?</p>
+            <p>JEN</p>
+            <p>        East side – old New York. Right down among all the smells and the noises.</p>
+            <p>PAUL</p>
+            <p>        That’s pretty tough.</p>
+            <p>JEN</p>
+            <p>        I don’t see why. I like noises. I even like to hear the ‘L’ and the Subway. When I was a kid         I spent half my life on the sidewalks with the hurdy gurdies and dancing.</p>
+            <p>PAUL</p>
+            <p>        Like dancing, do you?</p>
+            <p>JEN</p>
+            <p>        And how! Don’t you?</p>
+            <p>PAUL</p>
+            <p>        Well, I’m kind of a heavy weight. Guess I need some lessons.</p>
+            <p>JEN</p>
+            <p>        I’m a swell – teacher!</p>
+            <p>They both burst out laughing at this as if it were some very brilliant sally.</p>
+            <p>        Jim and the rest of the party are coming out of the water and back up the beach toward their place. Arrived there, Jim at once misses Jen. Kitty seems to be asleep. He gives her</p>
+    
+<pb n="16"/>      
+    
+            <p>a prod with his foot.</p>
+            <p>JIM</p>
+            <p>        Where’s Jen?</p>
+            <p>KITTY (Sleepily)</p>
+            <p>        Dunno.</p>
+            <p>        Jim scowls. Looks about at the various people stretched out on the beach – peers under an umbrella. He starts calling:</p>
+            <p>JIM</p>
+            <p>        Jen! Jen! Jen!</p>
+    
+            <p>HOT DOG SHACK</p>
+            <p>        Jen and Paul are licking ice cream cones.</p>
+            <p>JEN</p>
+            <p>        Listen! That’s Jim Paine. He’s calling me.</p>
+            <p>PAUL</p>
+            <p>        Who is he?</p>
+            <p>JEN</p>
+            <p>        A friend.</p>
+            <p>PAUL</p>
+            <p>        A very particular friend?</p>
+            <p>JEN</p>
+            <p>        No – nothin’ like that.</p>
+            <p>        (Innocently)</p>
+            <p>        I haven’t any particular friend.</p>
+            <p>She gives him a sad, secudtive look.</p>
+            <p>PAUL (Falling)</p>
+            <p>        You have too!</p>
+            <p>JEN</p>
+            <p>        Who?</p>
+            <p>PAUL</p>
+            <p>        You know darn well – (means himself)</p>
+    
+<pb n="17"/>    
+ 
+            <p>Jim, more and more irritated is roaring.</p>
+            <p>JIM</p>
+            <p>        Jen! Where the heck are you, Jen!</p>
+            <p>JEN</p>
+            <p>        Listen to him, will you. Let’s duck!</p>
+            <p>They slip off stools ad are sneeking around the back of people on boardwalk, when the irate Jim who has come to the edge sees them. He comes tramping across to Jen, seizes her arm.</p>
+            <p>JIM</p>
+            <p>        Where’ve you been? Didn’t you hear me callin’ you?</p>
+            <p>JEN</p>
+            <p>        Let go my arm. I been right here – having a dog and –</p>
+            <p>Holds out ice cream cone.</p>
+            <p>JIM</p>
+            <p>        Thought you said you wasn’t hungry – didn’t want no dog or ice cream.</p>
+            <p>JEN</p>
+            <p>        I changed my mind. Let go my arm. Oh, by the way, shake hands with –</p>
+            <p>She doesn’t know Paul’s name. He supplies it, smiling.</p>
+            <p>PAUL</p>
+            <p>        Whalen’s my name – Paul Whalen.</p>
+            <p>The two men shake hands roughly, Jim glaring at Paul, and the latter smiling. Jen is wickedly enjoying the situation. She goes tripping ahead of them – off toward their umbrella – deserting them both.</p>
+            <p>JIM</p>
+            <p>        Thanks for the dog and the ice-cream for – my girl.</p>
+    
+<pb n="18"/>       
+    
+            <p>PAUL</p>
+            <p>        
+      Your
+       girl?</p>
+            <p>JIM</p>
+            <p>        That’s what I said.</p>
+            <p>        Suddenly the siren begins to screech again, and there is the usual running and excitement. Jim looks sneeringly at Paul.</p>
+            <p>JIM</p>
+            <p>        Better get on your job. There’s another kid for you to pull out of the water.</p>
+            <p>        Paul, enraged, starts toward him, and then as the siren continues, we see him wheel around and he starts running for the water.</p>
+            <p>        FADE OUT.</p>
+    
+<pb n="19"/>      
+    
+    
+            <p>SEQUENCE II.</p>
+            <p>        This is a Public Dance Hall on one of the concessions on the pier. It is a big, rough structure. Around the sides are booths, with tables and chairs for light refreshments and soft drinks.</p>
+            <p>        Admission to the dance floor is by tickets that are dropped into a slot similar to the old street car arrangements. A detailed description of this dance hall later.</p>
+            <p>        We must keep in mind that this is a 
+      Public
+       dance Hall. No high class sort of thing, though some swells are among the dancers.</p>
+            <p>        All types of people are here. Working girls with their fellows – sailors and chauffeurs – soldiers, clerks out for a good time are in sweaters and sports clothes, or in the flimsy finery.</p>
+            <p>        The floor is packed. The music deafening. Band music. Couples clinched together dancing in limited space. Fat and skinny men and women and girls and youths of all ages and all sizes. In fact the types one sees in a Public dance hall.</p>
+            <p>        In one of the booths – or at a side table, show Jim and Kitty. Jim is in a dark mood, Kitty watching him ansiously.</p>
+            <p>KITTY</p>
+            <p>        Jim ---</p>
+            <p>JIM</p>
+            <p>        Well?</p>
+            <p>KITTY</p>
+            <p>        I’d like a turn in the fun house.</p>
+            <p>JIM</p>
+            <p>        I’m staying here.</p>
+      
+<pb n="20"/>      
+    
+            <p>KITTY</p>
+            <p>        You’re just waitin’ for Jen.</p>
+            <p>JIM</p>
+            <p>        Well, suppose I am?</p>
+            <p>KITTY</p>
+            <p>        A lot of good it’ll do you. Paul’s got her clinched. They’ve been goin’ together for two                 two weeks now.</p>
+            <p>JIM</p>
+            <p>        You can’t tell me nothin’ about Jen. I know her. Before that bird come along, she was                 eatin’ out of my hand.</p>
+            <p>He curses under his breath, then leaning across he brings his heavy fist down on the table.</p>
+            <p>JIM</p>
+            <p>        And before I’m through with her she’ll come when I whistle for her – see! With him out                 of the way --</p>
+            <p>KITTY (Fearfully)</p>
+            <p>        How you goin’ to get him out of the way?</p>
+            <p>Jim winks one eye.</p>
+            <p>JIM</p>
+            <p>        You leave it to me!</p>
+            <p>Kitty looks scared</p>
+            <p>        We go to the opposite side of the dance hall, and we see coming in Jen and Paul. They both look very nice. Jen is in a little shoddy dress, very short and very scimpy – also very pretty – a cheap edition of something late and ultra in style. Paul is wearing white trousers and a pull over sweater. He wears no hat. We get the impression almost immediately that they are in love. Some snappy dance music. We see Jen moving</p>
+    
+<pb n="21"/>     
+      
+            <p>to the motions and keeping time before they are even on the floor. She is dance mad, and the mere sound of the music gets in her mood. She cannot resist it. Her eyes quest Paul’s. Paul smiles – holds out his arms, and they are off. They assume one of the common attitudes – the girls’ arm almost encircling the man’s neck. She raises her face. They look at each other as they dance.</p>
+            <p>        Back to Jim and Kitty.</p>
+            <p>KITTY (Anxiously)</p>
+            <p>        Jim, you aren’t plottin’ to do any harm to Paul are you?</p>
+            <p>JIM (With scorn)</p>
+            <p>        Gimme credit for having a nut.</p>
+            <p>        (Knocks head)</p>
+            <p>        If you’ll keep your trap shut, I’ll tell you a thing or two.</p>
+            <p>KITTY</p>
+            <p>        Did I ever doublecross you, Jim?</p>
+            <p>JIM</p>
+            <p>        Now listen. He got a bad crack on his head that day he pulled the kid out of the water --                 see.</p>
+            <p>KITTY</p>
+            <p>        Yes. I heard he’s been having headaches and laid him off.</p>
+            <p>JIM</p>
+            <p>        I know all about that. I got the low down from the Service doctor.</p>
+            <p>        Now the doctor says to him: ‘You got to get to some quiet place and rest up. If you got                 to work, then get a job that’s not too strenuous and whatever you do – take it easy’.</p>
+    
+<pb n="22"/>          
+    
+            <p>KITTY</p>
+            <p>        How can he do that? He’s got to work.</p>
+            <p>JIM</p>
+            <p>        Hold your horses will you? I’m comin’ to that.</p>
+            <p>Back to the dance floor. Jen and Paul dancing.</p>
+            <p>JEN (As they dance)</p>
+            <p>        Paul?</p>
+            <p>PAUL</p>
+            <p>        Yes, Jen?</p>
+            <p>JEN</p>
+            <p>        Like dancin’ with me?</p>
+            <p>PAUL</p>
+            <p>        You betchu. It’s next door to bein’ in heaven.</p>
+            <p>JEN (Snugging closer and with blissful sigh)</p>
+            <p>        Isn’t it, though? Paul?</p>
+            <p>PAUL</p>
+            <p>        Yes Jen?</p>
+            <p>JEN</p>
+            <p>        You don’t care about dancin’ with other girls, do You?</p>
+            <p>PAUL</p>
+            <p>        There’s only one girl in the world for me.</p>
+            <p>JEN</p>
+            <p>        Who is she?</p>
+            <p>PAUL</p>
+            <p>        Guess.</p>
+            <p>JEN</p>
+            <p>        I can’t.</p>
+    
+<pb n="23"/>
+    
+            <p>Paul gives her a squeeze. They almost stop dancing, to the amused irritation of couples around them.</p>
+            <p>PAUL</p>
+            <p>        The girl I love.</p>
+            <p>They collide against a couple. They are almost in the Seventh Heaven, but Jen still feels that there’s some reserve there.</p>
+            <p>JEN</p>
+            <p>        If you love her – why don’t you marry her?</p>
+            <p>PAUL (Joyously)</p>
+            <p>        I intend to.</p>
+            <p>JEN</p>
+            <p>        Sooner the better. We already got the license.</p>
+            <p>PAUL</p>
+            <p>        When they laid me off I felt I didn’t have the right to marry ‘till I was on my feet again.</p>
+            <p>JEN</p>
+            <p>        Well, it’s only for two weeks. You’ll soon be back.</p>
+            <p>PAUL</p>
+            <p>        No – I’ll not be back there, Jen. The season’s about over. But I got something better up                 my sleeve.</p>
+            <p>JEN</p>
+            <p>        What is it?</p>
+            <p>PAUL</p>
+            <p>        It’s a swell little job, Jen. It’ll be grand for a filler in, an’ until I’m O.K. again.</p>
+    
+      
+<pb n="24"/>    
+    
+            <p>JEN</p>
+            <p>        Well, what is the job? Why don’t you tell me?</p>
+            <p>PAUL</p>
+            <p>        I promised the fellow that’s gettin’ it for me that I’d keep mum about it.</p>
+            <p>Jen looks petulant.</p>
+            <p>JEN</p>
+            <p>        That’s just too bad about you and him. Who is he, anyway?</p>
+            <p>PAUL (Hesitating)</p>
+            <p>        Jim Paine.</p>
+            <p>Jen stops dancing. Paul pulls her to one side. She stares up at him wide eyed.</p>
+            <p>JEN</p>
+            <p>        You aren’t thinkin’ of takin’ any favors from Jim Paine, are you?</p>
+            <p>PAUL</p>
+            <p>        Why Jen – he’s been darned friendly.</p>
+            <p>JEN</p>
+            <p>        Ye-oh?</p>
+            <p>She is sceptical and a bit worried. Jen and Paul dancing again. BACK TO Jim and Kitty now watching Jen and Paul dancing. There is murder in Jim’s soul.</p>
+            <p>KITTY</p>
+            <p>        They do dance well, don’t they</p>
+            <p>JIM</p>
+            <p>        They won’t be dancin’ much longer together.</p>
+            <p>KITTY</p>
+            <p>        What do you mean?</p>
+    
+          <pb n="25"/>      
+      
+            <p>JIM</p>
+            <p>        He’s going to a place where there ain’t no dancing. – Come on. –</p>
+            <p>Jim and Kitty are now also dancing.</p>
+            <p>        We show alternately the two couples. As Jen sees Jim coming, she deliberately maneuvers so that they keep out of reach of each other.</p>
+            <p>JEN</p>
+            <p>        Let’s have some fun. Let’s dodge ‘em. They’re tryin’ to catch up to us.</p>
+            <p>They swing further away as if not seeing Jim.</p>
+            <p>        Jim is forging his way through the packed floor, in that bull dog hoggish way of some type of big dancers.</p>
+            <p>        Jen feels vindictive.</p>
+            <p>PAUL</p>
+            <p>        Jen, just a minute. I got to get some word from Jim. He told me he’d let me know                 tonight.</p>
+            <p>JEN</p>
+            <p>        Are you dancin’ with me or him?</p>
+            <p>PAUL</p>
+            <p>        But listen, Jen, a lot depends on what he says. Don’t you see – if I get that job –</p>
+            <p>JEN</p>
+            <p>        Yes?</p>
+            <p>PAUL</p>
+            <p>        Then you and I –</p>
+            <p>Jen’s eyes brighten. She comprehends. Nods. Jim and Kitty are now right near them.</p>
+            <p>PAUL</p>
+            <p>        Hello there!</p>
+    
+          <pb n="26"/> 
+    
+            <p>JIM</p>
+            <p>        Hello yourself –</p>
+            <p>Jen and Kitty also wave and call across to each other.</p>
+            <p>The two couples are now dancing in a congested space.</p>
+            <p>PAUL
+       (As they dance)</p>
+            <p>        Any word, Jim?</p>
+            <p>JIM</p>
+            <p>        Sure.</p>
+            <p>PAUL
+       (Anxiously)</p>
+            <p>        Well?</p>
+            <p>JIM</p>
+            <p>        It’s O.K. You get the job.</p>
+            <p>PAUL</p>
+            <p>        Fine. Did you hear that Jen?</p>
+            <p>        Jim got me the job.</p>
+            <p>Jenny doesn’t answer.</p>
+            <p>        The couples swing apart and then come abreast again.</p>
+            <p>JIM</p>
+            <p>        You’re to report at eight tomorrow.</p>
+            <p>PAUL</p>
+            <p>        Great. I’ll not forget this. You’ve been one fine friend, Jim.</p>
+            <p>JIM
+       (Out of corner of mouth)</p>
+            <p>        That’s O.K.</p>
+            <p>        Jen is trying to attract Paul’s attention and as the eager young fellow seems bent on talking with Jim, she pinches his hand to make him aware of her. He looks down at her. Laughs.</p>
+            <p>PAUL</p>
+            <p>        Isn’t that great news, kid? One Hundred per month and everything found. House, food,                 even uniform. You can’t beat it. It’s a swell chance.</p>
+    
+          <pb n="27"/> 
+    
+            <p>JEN</p>
+            <p>        Paul, swing out, will you?</p>
+            <p>PAUL</p>
+            <p>        Don’t want to dance any more?</p>
+            <p>JEN</p>
+            <p>        No. Don’t let Jim and Kitty get wise to it – but let’s slip out. I got a plan.</p>
+            <p>They manage to edge away and are presently out of sight in the press of dancers. They now leave the dance floor. Jen is didging behind people. She doesn’t want Jim to see them. Paul of course, is at her elbow, or following. On the floor Jim is craning his neck. He scratches his head as he misses them.</p>
+            <p>        A little street. We do not need to show the whole of this street. The idea is to give the impression that it is a business street of a beach town</p>
+            <p>NOTE: Now in Geenwich, Conn., in Reno, Nevada and in some other places where divorce and marriage is a commercial enterprize, there are rows of shops with cards and signs and placards of Justices of the Peace in window.</p>
+            <p>        I’ve seen illustrated placards, with turtle doves and clasped hands, above legends of this sort:</p>
+            <p>MARRY IN A MINUTE</p>
+            <p>        In other shops – the combined business of marriage brokers and jewelers flourish, and wedding rings are displayed conspicuously, on velvet cushions.</p>
+            <p>        Jen and Paul are looking in at the window of some such place. Jen has managed to lead Paul there.</p>
+          
+          <pb n="28"/> 
+      
+            <p>JEN</p>
+            <p>        Aren’t those rings nice?</p>
+            <p>PAUL</p>
+            <p>        They look good to me.</p>
+            <p>JEN</p>
+            <p>        They’re only Ten Dollars.</p>
+            <p>PAUL</p>
+            <p>        Cheap as dirt.</p>
+            <p>JEN
+       (Cuddling cheek against his arm)</p>
+            <p>        And we already got the license.</p>
+            <p>PAUL
+       (A bit anxious)</p>
+            <p>        But Jen – I ought to go ahead and look over the works. Mebbe you wouldn’t like it                 where I’m goin’ --</p>
+            <p>JEN</p>
+            <p>        I’d like any place where you are, Paul.</p>
+            <p>PAUL
+       (Thinking)</p>
+            <p>        It’s powerful lonesome at times.</p>
+            <p>JEN</p>
+            <p>        Paul Whalen, I wouldn’t be lonesome with you, if we were at the North Pole. D’you                 understand?</p>
+            <p>        (As they talk we hear all the dizzy sounds and noises of a nearby pleasure resort – the carousel, the barker’s shouts and the screams of laughter and the rest).</p>
+            <p>        Jen tugs at his arm. Paul looks down gravely at her. Then he puts his arm manfully about her. They move to the door, enter.</p>
+            <p>        FADE OUT.</p>
+    
+          <pb n="29"/>    
+    
+            <p>        Back at the Dance Hall Jim and Kitty are standing on the outside of the dancefloor. Jim is scowling.</p>
+            <p>Paul and Glen enter, etc</p>
+            <p>JIM (Masking fury)</p>
+            <p>        Where you been?</p>
+            <p>PAUL</p>
+            <p>        Just slipped out a minute.</p>
+            <p>Jen, now that she has hooked Paul, feels a bit pleasanter to Jim.</p>
+            <p>JEN</p>
+            <p>        Aren’t you and Kitty dancing?</p>
+            <p>JIM</p>
+            <p>        No. I was waitin’ for you. Thought you’d dance with me for a change.</p>
+            <p>JEN</p>
+            <p>        I’ve got a permanent dancing date, now, Jim.</p>
+            <p>JIM (Hoarsely)</p>
+            <p>        What ‘ya mean?</p>
+            <p>For answer Jen holds up her hand. We see the wedding ring. Jim takes this big. We see him grasping after control of himself.</p>
+            <p>KITTY (Joyfully)</p>
+            <p>        Jen! You and Paul aren’t married.</p>
+            <p>PAUL</p>
+            <p>        That’s just what we are. Want to see the marriage certificate?</p>
+            <p>He proudly shows it. Kitty kisses Jen. The two girls hug each other. Paul is too happy to realize the condition of Jim.</p>
+            <p>KITTY (To Jim)</p>
+            <p>        Come on, Jim. Be a sport. Wish them happiness.</p>
+    
+          <pb n="30"/>
+    
+            <p>JIM</p>
+            <p>        Sure.</p>
+            <p>Paul holds out hand.</p>
+            <p>PAUL</p>
+            <p>        Shake on that, Pal.</p>
+            <p>As they shake hands, Paul adds with real emotion:</p>
+            <p>PAUL</p>
+            <p>        If it wasn’t for you, Jim, I wouldn’t have had Jen. But when you got me that job, well we                 thought we could afford to tie up.</p>
+            <p>JIM</p>
+            <p>        That job?</p>
+            <p>He begins to laugh. His laugh is a strange croak.</p>
+            <p>JIM</p>
+            <p>        That job!</p>
+            <p>He swings around on Jen.</p>
+            <p>JIM</p>
+            <p>        YOU goin’ with him?</p>
+            <p>JEN</p>
+            <p>        I’ll say I am.</p>
+            <p>        Jim throws back his head and laughs more. Paul and Jen and Kitty stare at him. He masters himself and then starts roaring again.</p>
+            <p>PAUL</p>
+            <p>        What’s there so funny about it?</p>
+            <p>JIM</p>
+            <p>        I was tryin’ to feature Jen – in a lighthouse!</p>
+            <p>        He chokes.</p>
+          
+          <pb n="31"/>
+    
+            <p>        Jim’s diabolical mood has moved to another phase. He is looking at Jen.</p>
+            <p>JIM</p>
+            <p>        Well, how about it? Do I kiss the bride?</p>
+            <p>JEN</p>
+            <p>        Why not?</p>
+            <p>        Paul like most bridegrooms is reluctant to permit this but obliged to be reconciled.</p>
+            <p>PAUL</p>
+            <p>        O.K. with me, only don’t let me see you.</p>
+            <p>He turns his back.</p>
+            <p>        Jim approaches Jen. For a moment their glances cross, and we see Jen’s eyes enlarged with something like fear. Jim has a savage grin on his face. Suddenly he seizes her, crushes her in his arms, and his mouth crashes down on hers in a fierce and furious kiss. A long moment; then almost he throws her from him. He turns on his heel and strides off. We should have a closeup of Jen’s face. She makes an unconscious motion with her hand as though to wipe or hold the kiss upon her bitten lips. Her eyes are shining. She is tingling from head to foot.</p>
+            <p>        FADE OUT.</p>
+    
+          <pb n="32"/>
+    
+            <p>SEQUENCE III
+      .</p>
+            <p>        LONG SHOT of a Light House on rocks. It is dusk. We get the effect of utter isolation. Waves dashing against rocks, roar of the surf sea-gulls flying about the tower, etc.</p>
+            <p>        Dissolve into the living room of the lighthouse. It is a bare, rough plastered circular room with windows like port holes on a ship.</p>
+            <p>        A large solid door (Center) swinging inward, discloses when open, a narrow crone platform, and beyond it the upper strakes of a dory swung from davits.</p>
+            <p>        At right a spiral iron stair leads through an open well from below and winds up through the ceiling to the higher regions of the tower.</p>
+            <p>        Another door opens into the bedroom. Detailed description later.</p>
+            <p>        At first it seems as if no one were in the room. Then presently we concentrate on the single figure at the window. It is a young woman – her back to the camera. We get the effect of moodiness and depression. It is a subdued and changed Jen. Withal her listlessness, there is something tense and rebellious about her, as though she has never resigned herself to her fate.</p>
+            <p>Go now to the LAMP TOWER.</p>
+            <p>        This is another circular room, showing the huge lamp of the lighthouse in center – the platform surrounding the lamp; the windows on all sides giving to the sea.</p>
+            <p>        Paul is lighting the lamp. He does this very methodically and expertly. In contrast to Jen’s mood, he seems to be quite</p>
+          
+          <pb n="33"/>
+      
+    
+            <p>cheerful, for as he lights the lamp he is whistling.</p>
+            <p>        However, once it is lit, he squints up at it uncertainly, and the whistling wavers. Apparently his mind is distracted by something. He leaves the tower, and starts down the spiral</p>
+    
+    
+            <p>stairs, resuming his whistling.</p>
+            <p>        CUT NOW to the Interior of the bedroom of the lighthouse. This is rudely but not uncomfortably furnished. Detail description later.</p>
+            <p>        Show little Paulie, a child of about two, in the cot alongside the main bed in the room.</p>
+            <p>        Paulie is a pretty child but delicate. She has been put to bed but is peevish and restless and keeps tossing the covers off.</p>
+            <p>        BACK to living room.</p>
+            <p>        Jen is still looking out of the window. We hear Paul’s whistling outside door. Jen does not stir. Paul comes in. The door bangs to behind him. Paul sets down his lantern, goes to Jen. He puts his arm about her. He looks out.</p>
+            <p>        A marvelous sunset is making the sky a sea of Mother of Pearl and gold. We hear the low rumble of the waves. A wind blowing –</p>
+            <p>PAUL</p>
+            <p>        What you doin’ darling?</p>
+            <p>JEN (Listlessly)</p>
+            <p>        Nothing.</p>
+            <p>PAUL</p>
+            <p>        Lookin’ at the water? Looks great, doesn’t it?</p>
+            <p>JEN</p>
+            <p>        I wasn’t lookin’ at the water.</p>
+            <p>PAUL</p>
+            <p>        Isn’t that sunset wonderful Jen?</p>
+    
+          <pb n="34"/>
+          
+            <p>JEN</p>
+            <p>        Don’t talk to me about sunsets. I don’t care if I never see another one again.</p>
+            <p>PAUL</p>
+            <p>        But I thought that was why you were lookin’ out of the window. There’s nothing else to                 see but the water – and the sunset.</p>
+            <p>JEN (With bitter laugh)</p>
+            <p>        Nothing else is right. I wasn’t looking at neither of them. I was trying to see the lights of                 the city. --- Sometimes on clear nights you can see them – or their reflection. The lights                 of New York!</p>
+            <p>        Paul, very grave, looks at her without speaking. Jen is a prey to the most restless and tormented of moods. She begins to pace the narrow confines of the room.</p>
+            <p>JEN</p>
+            <p>        You talk of your water and your sunsets. She stops in her pacing and smites her fist on her breast.</p>
+            <p>        What do I care for water and sunsets. I like people – I like things! I – I--</p>
+            <p>PAUL</p>
+            <p>        I know it dear, and I never meant that we’d stay here so long – three years now –</p>
+            <p>        (brightening)</p>
+            <p>        But it won’t be much longer. Jim’s promised me my transfer for shore duty.</p>
+            <p>        Jen swings around, her eyes narrowing with an almost furious sneer.</p>
+            <p>JEN</p>
+            <p>        Don’t make me laugh. Jim Paine’s got us just where he wants us. He put us here in the                first place – and he’ll take care that here we’ll stay. Don’t tell me anything about Jim                 Paine.</p>
+    
+          <pb n="35"/>
+    
+            <p>PAUL</p>
+            <p>        That’s hardly fair, Jen. After all Jim’s been a darned good friend.</p>
+            <p>        Jen laughs harshly.</p>
+            <p>Paul brushes hand nervously across brow.</p>
+            <p>        The Bedroom.</p>
+            <p>        Little Paulie is sitting up in bed.</p>
+            <p>PAULIE (Calling)</p>
+            <p>        Mummie! Mummie!</p>
+            <p>She keeps on calling.</p>
+            <p>PAUL</p>
+            <p>        Paulie’s calling, Jen.</p>
+            <p>JEN</p>
+            <p>        Ye-oh – I hear her.</p>
+            <p>She moves listlessly to door. Opens it.</p>
+            <p>JEN</p>
+            <p>Now you lie right down and go to sleep.</p>
+            <p>PAULIE</p>
+            <p>        I want a dink of milk, Mummie.</p>
+            <p>JEN</p>
+            <p>        All right.</p>
+            <p>        She goes back into living room. Little Paulie clambers out of bed and barefooted, comes out into room.</p>
+            <p>        Jen has opened a cupboard. She forages on the shelf and brings out a bottle with the dregs of some stale milk. She looks at it, pours some into cup, tastes it.</p>
+            <p>JEN</p>
+            <p>        Sour of course.</p>
+            <p>        She thrusts the bottle roughly back. Turning she sees the baby.</p>
+    
+          <pb n="36"/>    
+    
+
+            <p>JEN</p>
+            <p>        What’re you doin’ out here, you bad girl? You get right back into bed.</p>
+            <p>PAUL</p>
+            <p>        Here! Come to Daddy.</p>
+            <p>        I’ll hold her while you fix the milk, Jen.</p>
+            <p>        Jenny takes out can of condensed milk. Prepares it with water. Brings it to Paulie. Paulie tastes, makes a wry face and pushes it from her.</p>
+            <p>PAULIE</p>
+            <p>        Don’ like!</p>
+            <p>        Jenny stares at her. The milk is dripping from the can. We can see that Jenny’s strange mood is mounting. She violently throws the can on the floor.</p>
+            <p>JEN</p>
+            <p>        Who would like it? Who – I ask you? Milk! Milk! In a nasty old can. Milk – for a baby --                 look at her – peaked and sallow.</p>
+            <p>        Pau’s eyes are straining. As Jen speaks he stands up, the baby in his arms. Paulie begins to howl, as a baby will when a grown up is raging. Her cries mingle with the torrent that comes from Jen, and the blowing of the wind – the beating of the waves. Jen, like many another mother, is wild at the crying.</p>
+            <p>JEN</p>
+            <p>        Keep still! Will you? What are you bawlin’ about, I say –</p>
+            <p>        Paul soothes the sobbing child, carries it to bed room. As he moves with baby in arms across the room, we get the first impression that he is almost uncertain of his direction.</p>
+    
+          <pb n="37"/> 
+    
+    
+            <p>        Jen, still in her wild mood, leans against the wall, a prey to tormenting thoughts.</p>
+            <p>INSIDE THE BEDROOM</p>
+            <p>        Paul lays the baby in the bed. It’s little arms go about his neck. He tucks her in.</p>
+            <p>PAUL</p>
+            <p>        There, there, baby. Don’t cry. We’ll have nice fresh milk for you in the morning.</p>
+            <p>LIVING ROOM</p>
+            <p>        Paul comes out. We see him fumbling along the wall. He makes his way uncertainly across the room to his seat at table.</p>
+            <p>JEN</p>
+            <p>        It’s a joke on us about the milk, isn’t it?</p>
+            <p>Paul doesn’t answer.</p>
+            <p>        A joke that we got to do without it like we got to do without everything else – on a                 lighthouse.</p>
+            <p>Paul does not answer.</p>
+            <p>JEN</p>
+            <p>        We’re like trapped things in a cage – that’s what we are. Trapped! Trapped! trapped!</p>
+            <p>        (She is nearly hysterical)</p>
+            <p>        Well, why don’t you say something? Why don’t you speak, instead of starin’ at me like a                 dummy.</p>
+            <p>PAUL</p>
+            <p>        I was just thinkin’ Jen.</p>
+            <p>JEN</p>
+            <p>        You’re great on thinkin’ ain’t you.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>PAUL</p>
+            <p>        I was thinkin’ how soon we could arrange for you and Paulie to go back to the land.</p>
+            <p>Jen becomes strangely quiet. She looks at Paul questioningly. Now that she is about to have her way, she begins to feel nervous about it.</p>
+            <p>JEN</p>
+            <p>        You’re talkin’ through your hat. There’s no chance for us to get away.</p>
+            <p>PAUL</p>
+            <p>        We might be able to arrange it.</p>
+            <p>        A vertical line comes between his eyes. We see they are straining painfully, as though he were trying to see Jen.</p>
+            <p>JEN
+       (Contritely)</p>
+            <p>        Don’t mind me Paul – I didn’t mean anything. All women get the nerves sometimes.</p>
+            <p>PAUL</p>
+            <p>        What you said is true. A woman’s got to be with people – have pretty things.</p>
+            <p>Jen chokes back a sob.</p>
+            <p>PAUL</p>
+            <p>        And then there’s Paulie. I expect a lighthouse is no place for a child – though I was born                 and raised in one myself.</p>
+            <p>JEN</p>
+            <p>        But you was strong – and Paulie’s delicate.</p>
+            <p>        (In Outburst)</p>
+            <p>        Oh Paul! She needs a 
+      real
+       place to run around and play in – like the streets of New York.                 Gee! They’re just swell with all the kids scuttling round and the noises and the organ                 grinders and the hurdy-gurdies and – They say the kids stand under the fire hoses now –         just think o’ that! It must be all kinds of fun ---</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>She breaks off. Her breath comes in a gasping sob.</p>
+            <p>PAUL</p>
+            <p>        I had thought maybe we could wait until Jim got me my transfer.</p>
+            <p>JEN</p>
+            <p>        Quit kiddin’ yourself about Jim Paine.</p>
+            <p>Paul passes his hand wearily over his eyes.</p>
+            <p>PAUL</p>
+            <p>        Jim’s Inspector of Lighthouses on this line now. That’s a powerful fine job.</p>
+            <p>JEN</p>
+            <p>        Ye-eh, it’s powerful all right.</p>
+            <p>Paul is thinking hard. He looks pathetic.</p>
+            <p>PAUL</p>
+            <p>        Jen, d’ you remember that kid I pulled out of the water, the first day we met?</p>
+            <p>JEN</p>
+            <p>        I remember.</p>
+            <p>JIM</p>
+            <p>        Well, the kid’s father gave me his card.</p>
+            <p>        He fumbles around in a bill fold, fingering a number of cards; picks out one, passes it to Jen. She gives him a queer look.</p>
+            <p>PAUL</p>
+            <p>He told me if I ever wanted a favor to come to him. See – he’s got a big business eh, so I’ve written him a letter and--</p>
+            <p>JEN
+       (Handing back card)</p>
+            <p>        That ain’t his card.</p>
+            <p>        Paul takes the card. His eyes strain. He holds it nearer to his eyes.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>PAUL</p>
+            <p>        Guess I got the cards mixed.</p>
+            <p>JEN</p>
+            <p>        What’s the matter with you Paul?</p>
+            <p>PAUL</p>
+            <p>        Why nothing.</p>
+            <p>        She watches him as he fumbles in bill fold. His fingers seem all thumbs. His hands are trembling. Jen stares at him. She does not quite comprehend what is happening, but a sickening premonition that something is wrong begins to dawn on her.</p>
+            <p>JEN</p>
+            <p>        Whatever’s the matter with you?</p>
+            <p>PAUL</p>
+            <p>        It’s nothing. Light the lamps Jen. It’s getting pretty dark.</p>
+            <p>        A long pause. Jen stares at him with unmasked fear now.</p>
+            <p>JEN</p>
+            <p>The lamps are lit
+      !</p>
+            <p>        There is a deep silence. In the pause we see Paul pass his fingers before his eyes. Jen is now nearly frantic. She realizes what has happened and smites her mouth with her clinched fist.</p>
+            <p>JEN</p>
+            <p>        Paul! Paul!</p>
+            <p>PAUL
+       (Half rising)</p>
+            <p>        That’s funny – I – I – I can’t 
+      see
+      .</p>
+            <p>        Jen screams, and then quickly muffles it. She is holding now with both hands to the table. Paul is staring out blindly. In the dead silence he suddenly speaks.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>PAUL</p>
+            <p>        Jen! – Where are you?</p>
+            <p>JEN
+       (Inarticulate whisper)</p>
+            <p>        I’m – here. Don’t you see me?</p>
+            <p>PAUL</p>
+            <p>        No! (A pause, and then) – Jen! – 
+      I’ve gone – blind
+      !</p>
+            <p>        Jen leaps to him. She throws her arms frantically about him, tries to take him bodily in her arms, like a child. She gets his head on her bosom. Over her waves of remorse and contrition are rolling</p>
+            <p>JEN</p>
+            <p>        Paul! Paul! Oh, my 
+      baby
+      ! Paul – 
+      my
+       Paul -----</p>
+            <p>        FADE OUT.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>SEQUENCE IV
+      .</p>
+            <p>        Dialogue will disclose that it is about a month later.</p>
+            <p>LIVING ROOM OF LIGHTHOUSE
+      .</p>
+            <p>        Paul is sitting by window. Jen comes in from the spiral stairs. She casts a nervous glance at Paul. Then goes to him, puts her hand gently on his arm, turning him back toward the desk-table. He rests his head back against her a moment. His smile is pathetic.</p>
+            <p>JEN</p>
+            <p>        Jim’ll be here any moment now. I’ve just seen his boat from the tower.</p>
+            <p>Paul nods.</p>
+            <p>PAUL</p>
+            <p>        Don’t worry dear. Everything will be all right.</p>
+            <p>JEN</p>
+            <p>        Yes – but watch your step, Paul.</p>
+            <p>        She guides his hand to the several articles on the table.</p>
+            <p>JEN</p>
+            <p>        Here’s your writing paper – right here, in front of you.</p>
+            <p>        Here’s your pen – here’s the ink.</p>
+            <p>        Your pipe’s right here---and the tobacco.</p>
+            <p>        Let me see you do it now.</p>
+            <p>        Jim reaches for pipe and tobacco. Fills pipe. He fumbles a bit for pen and dips it in ink. Pretends to write.</p>
+            <p>JEN</p>
+            <p>        Fine. He’ll never suspect, and keep your face turned sideways like this, when you’re not writing.</p>
+            <p>PAUL</p>
+            <p>        I know about where everything is on the table.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        We see his hand marking the articles. It closes about a sun visor. He snaps it on to his head.</p>
+            <p>JEN</p>
+            <p>        Now I must hustle. I got to get dressed.</p>
+            <p>        She exists into bedroom.</p>
+            <p>EXTERIOR OF LIGHTHOUSE</p>
+            <p>        Detail description later.</p>
+            <p>        It is about four o’clock in the P.M.</p>
+            <p>        A motor boat is chugging toward the Lighthouse, and has almost reached the ledge.</p>
+            <p>        Jim Paine, in the boat, stands up, cups his hands and calls:</p>
+            <p>JIM</p>
+            <p>        Ahoy! Ahoy! There aboard the light!</p>
+            <p>LIVING ROOM</p>
+            <p>        Jen comes hurrying out of the bedroom. She is all dolled up and looks very pretty. There is a look of eager expectancy about her. Jim’s impending visit has excited her. As she hears the call from below, she becomes electrified into action. She opens the window. Paul sits uncertain what to do. He is a prey to nervous apprehension now.</p>
+            <p>JEN
+       (In whisper)</p>
+            <p>Answer him!</p>
+            <p>Paul puts head out of window and calls:</p>
+            <p>PAUL</p>
+            <p>        Ahoy! There below! All’s well aboard the light.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>Jen runs about the room, setting things to rights.</p>
+            <p>        Presently there is a loud thump upon the heavy wooden door. Jen opens it, with assumed gaiety. Jim Paine comes in. He has packages in his arms. He seems hale and hearty and in fine humor.</p>
+            <p>JIM</p>
+            <p>        Hello, hello, Hello! How’s everyone?</p>
+            <p>        He beams at Jen. Throws a bunch of mail and packages down on table.</p>
+            <p>PAUL
+       (Half rising and extending hand in direction of Jim’s voice)</p>
+            <p>        How are you, Jim?</p>
+            <p>JIM</p>
+            <p>        Fine as silk. Well, well Jen!</p>
+            <p>He looks her over, admiringly.</p>
+            <p>JIM</p>
+            <p>        Durned if you don’t get prettier every time I see you.</p>
+            <p>        This flattery warms the soul of Jen. She tosses her head with something of her old coquet.</p>
+            <p>JIM</p>
+            <p>        And where’s little Paulie?</p>
+            <p>JEN</p>
+            <p>        We sent her on a visit to my mother.</p>
+            <p>JIM</p>
+            <p>        Well, well – I toted her out a present. Thought she’d like something like this.</p>
+            <p>Opens package, and dumps out a lot of blocks.</p>
+            <p>JEN</p>
+            <p>        She’ll love them, Jim. How good of you.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JIM</p>
+            <p>        Here’s your mail – Paul</p>
+            <p>Paul takes the package. He fumbles at the string.</p>
+            <p>JIM
+       (To Paul)</p>
+            <p>        Hadn’t you better run out and stow them supplies the boys are unloadin’.</p>
+            <p>        Jim half arises but Jen says quickly:</p>
+            <p>JEN</p>
+            <p>        There’s no hurry – Paul’s not feeling well. We’ll stow them away after you’re gone.</p>
+            <p>JIM</p>
+            <p>        Not feelin’ well? What’s the matter this time?</p>
+            <p>PAUL</p>
+            <p>        Well it’s nothing. Jen’s overanxious.</p>
+            <p>Jim gives him a sharp glance.</p>
+            <p>JIM</p>
+            <p>        So long as it doesn’t interfere with your tendin’ the light.</p>
+            <p>PAUL</p>
+            <p>        Don’t worry about that. The Light’s always tended to.</p>
+            <p>        Jim takes newspaper from coat pocket, throws it across to Paul.</p>
+            <p>PAUL</p>
+            <p>        There you are – this morning’s paper. You’ll get the latest on the fire at Hartford.</p>
+            <p>        Paul’s shaking hands on paper, which he opens out, an pretends to read.</p>
+            <p>        Jen watches him with tense apprehension and we see that Paul is holding the paper upside down. Jen in her effort to dis-</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>tract Jim only gets him wondering. Something is wrong somewhere. He hasn’t quite got the hang of it yet.</p>
+            <p>        Paul with pretended carelessness reaches for his pipe. Puts it between teeth. Reaches again for tobacco. Fumbles about – finds it – spills it, but manages finally to fill his pipe. He has some trouble finding the matches, and Jen’s heart is in her mouth, as he lights a match and tries to light pipe.</p>
+            <p>        Jim is watching him and his glances goes to Jen. He can see that she is in a state of disturbance.</p>
+            <p>EXTERIOR OF LEDGE
+       A man calling up:</p>
+            <p>MAN
+       (Hollering)</p>
+            <p>Hey Jim! How soon you comin?</p>
+            <p>BACK TO LIVING ROOM
+      .</p>
+            <p>        Jim calls out of window:</p>
+            <p>JIM</p>
+            <p>        Just a minute!</p>
+            <p>        Jim is now right opposite Paul</p>
+            <p>PAUL
+       (Pretending to read)</p>
+            <p>        Well, that was some fire all right.</p>
+            <p>        Jim sees the paper is upside down.</p>
+            <p>JIM</p>
+            <p>        What you wearin’ the eye shade for?</p>
+            <p>        Jen presses her hands together. She is breathless with encroaching fear.</p>
+            <p>PAUL</p>
+            <p>        Well – just – for the light.</p>
+            <p>JIM</p>
+            <p>        There ain’t no light. Pretty grey day. Looks like a storm’s brewing.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        Paul takes off eye-shade.</p>
+            <p>PAUL</p>
+            <p>        That’s right – it 
+      is
+       grey out.</p>
+            <p>        Clean forgot the thing was on my head.</p>
+            <p>        He stands up, and with careless deliberation starts to move across the room. Then, as if changing his mind, he sits back at desk. Pulls pad of paper toward him, reaches for pen. Jim is watching him intently. He sees Paul dip his pen into the sponge bowl.</p>
+            <p>        Now an amazed, an almost diabolical look comes on Jim’s face. He begins to comprehend that Paul has gone blind. To make sure he leans across and deliberately waggles his hand back and forth before the eyes of Paul. The latter stares blankly. Jen stifles a moan. Jim pinions her with his glance. His lips form but do not pronounce the words:</p>
+            <p>JIM</p>
+            <p>BLIND AS A BAT</p>
+            <p>        This is a whispered question to Jen, who in agony, nods.</p>
+            <p>        Jim is taking this immensely. Then he hitches up his breeches, tramps to window and calls down:</p>
+            <p>JIM</p>
+            <p>        Keep clear of the rocks there. I’ll be here a little spell.</p>
+            <p>        We now see that Paul is a prey to intense nervousness. He lifts his head with a motion as if listening. His eyes have that strained look, blank and fearful, of the blind. Jim is opposite him at table. Before him is the heap of blocks he had brought for the baby.</p>
+            <p>JIM</p>
+            <p>        Ever thought of getting out of the service, Paul?</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        As he speaks his sly glance goes from the man to Jen. Jen puts up a hand, as if to implore mercy. Paul tries to smile carelessly. Pen in hand, he looks up as if interrupted at his writing.</p>
+            <p>PAUL</p>
+            <p>        Well – no – for the present, I’d like to stay here.</p>
+            <p>        Resumes writing. Jim leans over and a grin spreads over his face. Though supposed to be writing, the sheet before Paul is naturally blank since his pen has not contacted with the ink, but goes each time to the sponge well.</p>
+            <p>        Jim exchanges glances with the agonized Jen. The he looks at the blocks and an idea comes to him. He indicates them to Jen who is puzzled. She watches, fascinated as his hands go to work at the blocks. Meanwhile, Jim continues to speak to Paul.</p>
+            <p>JIM</p>
+            <p>        Ain’t it kind of lonely here, Paul?</p>
+            <p>PAUL
+       (Very much absorbed in his <q>writing</q>)</p>
+            <p>        Oh, I don’t know about that. You get used to it.</p>
+            <p>        Jim winks at Jen and with his big forefinger, points to blocks. Jen looks at them and her breath is almost taken away as she reads:</p>
+            <p>KISS
+       
+      ME
+       
+      JEN</p>
+            <p>        Jen stands petrified with fear and yet in a way she is fascinated. Jim is beckoning to her commandingly with his finger. Paul continues to write unheeding. As Jen does not move,</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>Jim says:</p>
+            <p>JIM</p>
+            <p>        I’m just wondering whether you’re strong enough to –</p>
+            <p>        Jen takes a step forward, stops, retreats – goes forward again. Jim, smiling, continues to beckon. For the third time he points to the blocks. In the silence that ensues Paul half arises. He shows some slight distress.</p>
+            <p>PAUL</p>
+            <p>        Why, I’m as strong as they make ‘em –</p>
+            <p>        Jim looks at Jen and then at the blocks. He is still wagging his finger. He continues to wink and smile meaningly. She is panic-stricken as he says:</p>
+            <p>JIM</p>
+            <p>        Well, I’m not so sure –</p>
+            <p>        Jen makes a little rush toward him – pauses – and:</p>
+            <p>JIM</p>
+            <p>        Strikes me that your health ain’t nothin’ to brag about –</p>
+            <p>        Jen succumbs at that. Goes swiftly to Jim. He seizes her in his arms. His lips are on hers.</p>
+            <p>PAUL</p>
+            <p>        Don’t you worry about my health – why I’m fit as a fiddle.</p>
+            <p>        He stands up, pretends to stretch himself and yawn. Jen has broken away from Jim. She backs with her hands on her lips. But Jim is not through with her by a long shot. He gives a loud cough. She looks at him like a fascinated bird. His hands</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>are busy again. He is adding another word. It is: <q>Again</q>, and now the blocks read:</p>
+            <p>KISS ME AGAIN JEN</p>
+            <p>        Jen shakes her head. Jim shows his teeth, his eyes narrowing as he glares at her. He is about to speak, as she turns toward Jim, when with a rush, she is back to him. Now again she is in his arms, limp – yielding. He covers her face with kisses.</p>
+            <p>        Paul is showing some apprehension. He wants to escape from Jim’s scrutiny. He is disturbed without knowing what is the matter.</p>
+            <p>PAUL</p>
+            <p>        Well, I believe I’ll take a look aft. (Not sure of that word for him)</p>
+            <p>        With assumed casualness and deliberation he moves along the side of the room, making toward the big door. He passes within a foot of Jen and Jim, in each other’s arms. Jen is now yielding. Her lips cling lingeringly to Jim’s. Her closed eyes show the sensual effect upon her.</p>
+            <p>        Paul finds his way to the door, opens it and steps out. A big gust of wind blows in.</p>
+            <p>        Jim’s face turns craftily. We see his foot reach out and he closes the door behind Paul. It bangs to.</p>
+            <p>        Paul is now out on the platform. Jen and Jim alone in the room. The wind is heard and the beat of the waves against</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>the ledge.</p>
+            <p>        If desired we cut to Paul, leaning on the railing of the ledge supposedly looking down at the men in the motor boat, who are unloading the supplies.</p>
+            <p>        As the door bangs to, Jen breaks from Jim’s arms. She is still under his spell, but some other passionate emotion is fighting within her.</p>
+            <p>JIM</p>
+            <p>        Blind, heh?</p>
+            <p>        Jen nods, unable to speak.</p>
+            <p>JIM</p>
+            <p>        How long?</p>
+            <p>JEN</p>
+            <p>        Almost a month.</p>
+            <p>Jim throws back head. A hoarse chuckle comes from him.</p>
+            <p>JIM</p>
+            <p>        Well if that don’t beat the Dutch? A blind lighthouse-keeper!</p>
+            <p>JEN</p>
+            <p>        But I’ve been ‘tendin’ the light. 
+      I’m
+       not blind.</p>
+            <p>JIM</p>
+            <p>        Nor neither are you a lighthouse keeper.</p>
+            <p>Cut back to Paul on platform. One of the men calls up to him.</p>
+            <p>MAN
+       (Hollering)</p>
+            <p>        Ask him when he’ll be comin’.</p>
+            <p>Paul opens the door, calls:</p>
+            <p>PAUL</p>
+            <p>        Hey Jim! They want to know below, how long before you’ll be comin’.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JIM</p>
+            <p>        Tell ‘em to keep clear of the rock. I’ll be down in a jiffy.</p>
+            <p>        Paul’s face shows relief.</p>
+            <p>        He relays the message to the men in the boat below.</p>
+            <p>We hear his voice, while the scene continues with Jen and Jim.</p>
+            <p>JIM</p>
+            <p>        I’ll have to report this, Jen.</p>
+            <p>        Jen returns to him, grasps his arm, shaking it pleadingly.</p>
+            <p>JEN</p>
+            <p>        No – no – you wouldn’t do that Jim. You wouldn’t put us out.</p>
+            <p>        Jim is enjoying his position. In a judicial tone he questions her. Jen goes wandering about the room.</p>
+            <p>JIM</p>
+            <p>        How’d it happen?</p>
+            <p>JEN</p>
+            <p>        That blow he got when he saved that kid three years ago. The doctor said a blood clot formed --</p>
+            <p>JIM</p>
+            <p>        And he’ll be like that till – he dies, heh</p>
+            <p>JEN
+       (Despairingly)</p>
+            <p>        Like as not. (with a bit of hope) Though the doctor said mebbe some day he might see                 again all of a sudden like – if he got a shock or – something happened –</p>
+            <p>        She sinks into chair at desk. Jim looks sceptical and Jen shows that her hopes are based on the frailest of chances. Jim comes and stands beside her.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JIM</p>
+            <p>        Well, that’s just too bad. I had already sent up the recommendation for him to go on                 shore duty.</p>
+            <p>JEN
+       (Fiercely)</p>
+            <p>        Why didn’t you do it before? Why didn’t you do it before?</p>
+            <p>        Jim meets ferocity with ferocity.</p>
+            <p>JIM</p>
+            <p>        Why should I? Answer me that?</p>
+            <p>        Their eyes meet; his enraged; hers full of agony. Jim has worked himself up to a frenzy.</p>
+            <p>JIM</p>
+            <p>        You turned 
+      me
+       down for 
+      him
+       – didn’t you?</p>
+            <p>She shrinks in the chair.</p>
+            <p>JIM</p>
+            <p>        Well – didn’t ya?</p>
+            <p>JEN</p>
+            <p>        But that’s all in the past.</p>
+            <p>JIM</p>
+            <p>        No! It’s in the living present! 
+      I
+       never changed – neither did you.</p>
+            <p>JEN
+       (Falteringly)</p>
+            <p>        What do you mean, Jim?</p>
+            <p>JIM</p>
+            <p>        I mean that you loved me better’n you loved him even when you married him.</p>
+            <p>        Jenny shakes her head in dumb denial. She rises, tries to move across the room. Jim seizes her by the arms, turns her around. He is holding her by either arm now, so that their faces are opposite.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JIM</p>
+            <p>        You did love me best – Jen! You did! And by heaven – you love me still!</p>
+            <p>        She starts to shake her head again but she is swept off her feet by his violence. He drags her into his arms and kisses her heavily upon the lips.</p>
+            <p>        She pushes back from him, her two hands upon his breast. He stands gloatingly above her, as again she sits, her arms coming out along her lap, and staring out haggardly before her.</p>
+            <p>JIM</p>
+            <p>        He took you from me. Now I’m takin’ you from him. You’re comin’ with me girl.</p>
+            <p>        A breathless sob escapes her. She dumbly shakes her head.</p>
+            <p>JIM</p>
+            <p>        Think what I can do for you. Life ashore – friends – gay times – pretty things – dances --                 jazz – everything you was always crazy about, Jen.</p>
+            <p>        Jen is visualizing the old delights. We see her reacting to the temptation of his words.</p>
+            <p>JIM</p>
+            <p>        What’s he ever given you – answer me that?</p>
+            <p>JEN</p>
+            <p>        Bitterly, yet with an element of passion:</p>
+            <p>        He’s given me – sunrises and sunsets – and the wind – the wind – and the waves                         breakin’ against the ledge – snarling like wild dogs at our door – the water – water --                 water – all around us, Jim --</p>
+            <p>JIM</p>
+            <p>        You’re goin’ with me. You and me – we’ll have lovin’ and dancin’ days together yet.</p>
+            <p>        He takes her by arm. She makes no effort to resist him.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>Her hat and cap hang on wall. She looks at them. Jim takes them, wraps the cape about her. Jen puts up her hands, adjusting hat on her head. (Let her wear some little woolen beret – something like that). Even while she moves with Jim, she stops. Looks back and toward the door, behind which Paul is on the platform.</p>
+            <p>JEN</p>
+            <p>        No – no – I’ve not the nerve to go. I haven’t the heart to leave him.</p>
+            <p>JIM</p>
+            <p>        Come along now --</p>
+            <p>JEN</p>
+            <p>        But the light – what’ll we do about the light?</p>
+            <p>JIM</p>
+            <p>        Soon as we get ashore I’ll send a man to relieve him. It ain’t more ‘n four o’clock now.</p>
+            <p>JEN</p>
+            <p>        Oh Jim – I don’t want to hurt Paul.</p>
+            <p>JIM</p>
+            <p>        You won’t be hurtin’ him. He’s blind, ain’t he? Well then he’s got to be taken care of                 proper by some institution, and he’ll never be the wiser about you.</p>
+            <p>        The door opens. Paul stands framed in doorway. Jim doesn’t see him but Jen does and                she is panic stricken.</p>
+            <p>JIM</p>
+            <p>        What a man doesn’t know won’t hurt him.</p>
+            <p>PAUL</p>
+            <p>        What did you say, Jim?</p>
+            <p>JIM</p>
+            <p>        Oh it was nothin’. Guess I’ll be goin’ along!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        He makes a sign to Jen, pointing to the door that leads down below. Then he steps on to the platform right alongside of Paul. He calls down to the men in motor boat.</p>
+            <p>JIM</p>
+            <p>        Tender ahoy! Haul up! Look alive, will you? Alongside!</p>
+            <p>Turns back.</p>
+            <p>JIM</p>
+            <p>        Well, so long Paul. I’m on my way!</p>
+            <p>Paul holds out hand. They grip. Jen seeing this, sways slightly. Jim comes down. He sweeps her along with him. They go out down the stairs. Paul turns back to the rail.</p>
+            <p>CUT TO BOAT</p>
+            <p>Jen and Jim are both in it. The motor boat is beginning to chug. Jen, her eyes very wide, is looking up. There is an expression of intense agony on her face.</p>
+            <p>CUT TO PAUL</p>
+            <p>He is leaning over the railing. He has cupped his hands about his mouth. Little dreaming that his wife is in the boat below he calls:</p>
+            <p>PAUL (Calling)</p>
+            <p>        Ahoy—down there! Give our best to the folks ashore!</p>
+            <p>Back to the boat. Jim’s face has a broad, complacent grin. He, in turn, cups his hands and bellows back:</p>
+            <p>JIM</p>
+            <p>        Sure thing. I’ll tell them you’ll be seeing them soon!</p>
+            <p>He waves. The boat pulls away.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>THE LIVING ROOM</p>
+            <p>The door is opening. Paul stands a moment at top. He is smiling. He speaks to Jen whom he thinks is in the room.</p>
+            <p>PAUL</p>
+            <p>        Well thats over, eh?</p>
+            <p>Comes down a few steps.</p>
+            <p>        Put it across pretty nicely!</p>
+            <p>        We’re set now for awhile. It’ll be another month before Jim makes his next tour of inspection.</p>
+            <p>He keeps on talking, as he walks across the room.</p>
+               <p>        <q>And by tye way Jen, there was one scary moment there, when he got talking about my health. I kinda began to think he was on to us. So I says to myself—I’ll slip on out on to the platform where he won’t be noticin’ me. Did he say anything to you about it---about my health?</q></p>
+            <p>There is no reply.</p>
+            <p>        Jen---did’nt you hear me?</p>
+            <p>No repy. He looks puzzled. His hand sweeps his forehead vaguely. He raises his voice sharply.</p>
+            <p>        Jen!</p>
+            <p>        Jen---I say!</p>
+            <p>He stumbles about the room.</p>
+            <p>        Jen-----Jen----!</p>
+            <p>He stands stock still a moment, muttering something. We know that he is now overcome with a tremendous fear. Jen has gone!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        Now we see him make a scrambling dive toward the wall. He feels along it, slapping his hands against it. He is feeling for some special place. Now he has found it. It is place where Jen’s coat and hat have hung. We see his hand clutched around the nail. He stares out blankly. His lips moves soundlessly. And then: in a loud whisper:</p>
+            <p>PAUL</p>
+            <p>        What a man don’t know won’t hurt him! That was what he said.</p>
+            <p>He is overcome with frenzy. Once more, in a loud terrible voice he calls:</p>
+            <p>PAUL</p>
+            <p>        
+      JEN
+      !</p>
+            <p>This time he is calling up toward the tower. He moves toward the spiral stairs. His hand clutches the bannister. He goes up and up, but as he goes we see he is nearly beside himself, and suddenly the hand on the bannister loosens its grasp. His knees fail him. We see his feet slipping under him. He falls face forward, his head smiting the iron stair.</p>
+            <p>Fade.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>SEQUENCE V
+      .</p>
+            <p>        Show a small harbor. Maybe around Bath Beach. A place where a number of small boats are anchored. Rowboats, motor boats, sail boats.</p>
+            <p>        Not a yacht club – but some public anchorage along the Sound.</p>
+            <p>        It is just before twilight. The waters are rough. An ugly wind is blowing. The sky is grey.</p>
+            <p>        A motor boat puts into the shore landing. Jim Paine helps Jen to step out. We see her looking back. During the following action, and as they move toward the wharf, Jen continues to turn her head back toward the sea. Jim, all concern and attention, leads her along, but she goes slowly, step by step.</p>
+            <p>JIM</p>
+            <p>        Just about made it in time. Looks like a storm’s blowin’ up.</p>
+            <p>        She does not answer. She keeps turning and looking back. We show her face --- a mask of frozen woe. There is no joy in her sin.</p>
+            <p>JIM</p>
+            <p>        Come along, sweetness. I got a car parked back of the wharf. We’ll go straight into town.</p>
+            <p>        Jen’s hand tries to list his that is on her arm.</p>
+            <p>JEN</p>
+            <p>        I’m not goin’ with you.</p>
+            <p>JIM</p>
+            <p>        What d’ you mean – not going?</p>
+            <p>JEN</p>
+            <p>        Just that. I’m not going!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        She suddenly wrenches her arm free. We see that she is almost breathless. A strange light is in her eyes. A radiant fury seems to animate her face. Jim stares at her puzzled, not knowing what to make of her.</p>
+            <p>JIM</p>
+            <p>        Why what’s the matter – what’s eatin’ you, Jen?</p>
+            <p>JEN</p>
+            <p>        I tell you I’m not goin’ with you! I’m not goin’!</p>
+            <p>JIM</p>
+            <p>        WHAT!</p>
+            <p>JEN
+       (With driving fierceness)</p>
+            <p>        I 
+      hate you
+      !</p>
+            <p>        I hate you worse’n the wind and the water – and everything else I’ve hated.</p>
+            <p>JIM
+       (In a white fury)</p>
+            <p>        You do, heh? So that’s the kind of dame you are? Think you’ll fool me twice, heh?</p>
+            <p>        His ugly brutal chin is thrust out. His teeth gleam. He looks like a gorilla as he glares at her.</p>
+            <p>JIM</p>
+            <p>        I’ll learn you – I’ll learn you a thing or two.. You come along with me!</p>
+            <p>JEN</p>
+            <p>        No!</p>
+            <p>        He grasps her roughly. There is a struggle, Jen fighting like a wildcat. Suddenly we see her small fist doubled like a little rock. She has broken away space from Jim, but now she springs and smites him squarely between the eyes. He is so astonished that he staggers and before he can come out of his stunned</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>amazement, Jen is running like a wild thing down toward the beach.</p>
+            <p>        Jim stands a moment, stunned, looking after her. Then a short harsh laugh escapes him and his glace sweeps the water – the tossing boats upon it – the darkening sky-line. He knows there is no escape for her that way.</p>
+            <p>        Taking his time he tramps down to the beach.</p>
+            <p>        Jen is not making for the motor boat. With the superhuman courage of a half daft woman, she has clambered over the ropes and flung herself into a big rowboat. We see her seizing the oars, pull out into the rough waters.</p>
+            <p>        FADE OUT.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>SEQUENCE VI
+      .</p>
+            <p>        Show Jen in the row boat. She is pulling heroically against a terrific sea. The sky is getting darker – though it is not by any means night yet.</p>
+            <p>SHOW EXTERIOR OF LIGHTHOUSE</p>
+            <p>        The waves are high and beating against the ledge. The wind sounds like the long calling moan of some creature in labor. It is almost human. We get the effect of intense desolation.</p>
+            <p>        No light shows from the tower, though darkness if falling.</p>
+            <p>        We see Jen’s boat, pulling to the landing. She makes it fast, steps out upon the ledge. The long row across the water has not feazed her. She seems driven by some terrific purpose. Her cape and her hair blow wildly about her as she stands on the ledge. We see her cup her hands to mouth, and she calls up.</p>
+            <p>JEN</p>
+            <p>        Ahoy! Ahoy! On the light!</p>
+            <p>        The wind and the roaring sea seem to carry her voice away, though its shrill music seems to reverberate like a fine echo. There is no answering call from the Lighthouse above. She hurls herself in through the door, and begins to mount the spiral stairs. As she climbs she keeps on calling cna calling:</p>
+            <p>JEN</p>
+            <p>        Paul! Paul! Paul! Paul!</p>
+            <p>        Now in the darkness of the stairs she is at the heavy door that opens into the living room of the lighthouse. She thrusts it open – bursts into the room, still calling:</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JEN</p>
+            <p>        Paul! Paul! Where are you Paul?</p>
+            <p>        She looks around the room, frantically. It is empty. She runs into the bedroom – the little kitchen, and all through the place – all the time calling:</p>
+            <p>JEN</p>
+            <p>        Paul! Paul!</p>
+            <p>        A dreadful thought obsesses her as she pauses by the window. We see her looking out, stretching her arms, as the fear that Paul has jumped out from there takes possession of her. All the time she is calling him by name.</p>
+            <p>        Now from the window, we see that it is becoming dark. Across the water, we see the lights of a ship. Gradually a tense stillness sweeps over Jen. As she looks off, there comes to her a comprehension that ships are out there – that the night is dark, a storm brewing.</p>
+            <p>SOMEONE MUST TEND THE LIGHT
+      !</p>
+            <p>Hearts may break; those we love may die – 
+      but the light must go on
+      !</p>
+            <p>As she turns from the window, she is muttering:</p>
+            <p>JEN</p>
+            <p>        The Light! The Light!</p>
+            <p>        She stumbles out of the room.</p>
+            <p>        We follow her up and up to the tower.</p>
+            <p>THE TOWER ROOM</p>
+            <p>        Jen comes out upon the platform. Suddenly we see her stand still. She is staring at a figure – Paul</p>
+            <p>ing the lamp’</p>
+            <p>During the scene that follow, we show the great light, burning and burning. Let it be symbolic in a way, of the light that is within their tortured souls.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        He turns around. He sees Jen. Although she believes him to be blind, she shrinks back like one who has committed a crime.</p>
+            <p>JEN</p>
+            <p>        Paul! What are you doing up here?</p>
+            <p>PAUL</p>
+            <p>        I’m lighting the lamp!</p>
+            <p>JEN</p>
+            <p>        But you can’t – you are 
+      blind
+      !</p>
+            <p>PAUL</p>
+            <p>        Not so blind as you are, Jen.</p>
+            <p>JEN</p>
+            <p>        I left you – went away! Did you know that?</p>
+            <p>PAUL</p>
+            <p>        Yes.</p>
+            <p>JEN</p>
+            <p>        But I’ve come back. I 
+      had
+       to.</p>
+            <p>PAUL</p>
+            <p>        Why?</p>
+            <p>JEN</p>
+            <p>        Oh, Paul – 
+      I couldn’t live without you!</p>
+            <p>        There is a deep pause. Jen’s face is alight – it is very beautiful. She is pressing her two hands together. Then she parts them, tentatively holding out her arms, which she longs to put around him. Paul watches her gravely.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JEN</p>
+            <p>        Don’t you understand Paul. 
+      I love you
+      .</p>
+            <p>Paul does not speak.</p>
+            <p>JEN</p>
+            <p>        And then---there was another thing. It was the 
+      light
+       Paul. It seemed to draw me back. I                 guess I got lighthouse sense now. Its inside me. The feeling that no matter what                         happens ---even if our hearts are breaking-----
+      someone must tend the light!</p>
+            <p>Paul’s head drops. He is all breaking up, fighting to keep back the impending tears. Jen’s face has an exalted look. Her hands are stretched out toward him.</p>
+            <p>PAUL (In a deep, shaken voice)</p>
+            <p>        Why Jen, don’t you know that I can tend the light myself now. 
+      I’m no longer blind
+      !</p>
+            <p>She looks at him with mingled joy and almost terror. She can scarcely believe it. An inarticulate cry escapes her. She springs at him. Her two hands go to either side his face. She looks and looks into his eyes. Then with a cry:</p>
+            <p>JEN</p>
+            <p>        Paul! Oh my love!</p>
+            <p>Fade.</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>FADE IN</p>
+            <p>THE LIVING ROOM</p>
+            <p>The lights have not been lit as yet. Only the dim light of the fading day. The effect of dusk.</p>
+            <p>We want it almost dark, but not so dark but what we can see the blocks on the table, with the words spelled out clearly:</p>
+            <p>        
+      KISS ME AGAIN JEN!</p>
+            <p>No one is in the room. Jen and Paul come down the spiral stairs. His arm is about her. He carries a lantern in the other hand.</p>
+            <p>        They move toward table. Jim sets the lantern down on table, and its light spreads out. At first he does not see the blocks. It is Jen who sees them. Jen who is overtaken with panic and guilt and fear. Beside herself, she interposes between Paul and the blocks. She tries to laugh but her laugh is hysteric. Paul looks at her in puzzlement a moment. and then as his glance turns toward table she screams:</p>
+            <p>JEN</p>
+            <p>        Don’t look at the blocks----Don’t look at the blocks!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>        He puts her aside with his arm, and we see the words in livid type on the screen.</p>
+            <p>        
+      KISS ME AGAIN JEN</p>
+            <p>JEN
+       (In a strange, imploring voice)</p>
+            <p>        Don’t look at them! Don’t! Don’t!</p>
+            <p>        Now we see Paul’s hand resting on the word:</p>
+            <p>        
+      KISS</p>
+            <p>        His eyes seen burning in his face as he turns them in terrible question on his wife.</p>
+            <p>PAUL</p>
+            <p>        
+      Did
+       you, Jen?</p>
+            <p>        She meets his stern gaze and we see her nod. Her voice is a husky whisper:</p>
+            <p>JEN</p>
+            <p>        Yes – I 
+      did
+      ! –</p>
+            <p>        Show the blocks once again and this time we see Paul’s hand as it crashes against them and they are swept from the table to go clattering down on to the floor.</p>
+            <p>        An intense silence prevails in the room. Paul and Jen look at each other without speaking for a time. Paul has the look of one who has received his death word. Jen has but one passionate desire – to put her arms around him. To pour out her heart to him.</p>
+            <p>JEN</p>
+            <p>        He made me do it! I didn’t dare to disobey. I was afraid you’d lose your job – and when                 he wrote with the blocks --</p>
+            <p>PAUL</p>
+            <p>        I understand!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>JEN</p>
+            <p>        No – no – only a woman could understand.</p>
+            <p>PAUL</p>
+            <p>        I 
+      sensed
+       it.</p>
+            <p>JEN
+       (Wildly)</p>
+            <p>        Did you sense then that the second time I – gave myself freely – willingly?</p>
+            <p>        He does not reply.</p>
+            <p>JEN
+       (Swept by some fierce frenzy)</p>
+            <p>        Oh! I was like a starving woman – gone mad. All these months and days and years –                 hearin’ and seein’ nothin’ but the waves and the wind and the wind and the waves –</p>
+            <p>She throws out her arms wide with a primitive savage gesture.</p>
+            <p>JEN</p>
+            <p>        I was made with 
+      loneliness
+       – sick to have pretty things – pretty words – cravin’ – cravin’                --</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>PAUL</p>
+            <p>        Cravin’ Jim Paines’ kisses?</p>
+            <p>JEN</p>
+            <p>        Yes—Yes---anyones—Jim Paines’----anyone’s, I tell you. Sometimes a woman goes out of                her head. She does’nt know what she’s doing-what she wants!</p>
+            <p>PAUL</p>
+            <p>        Jen, I’m not blamin’ you. The likes of you and the likes of me should never be tied                 together. I’m blind no longer.</p>
+            <p>JEN</p>
+            <p>        You were never so blind as you are now. we have both been blind. we are all blind in                 this world. We only 
+      see
+       what we most desire when we have lost it. Paul!</p>
+            <p>She reaches out a timid, beseaching hand.</p>
+            <p>PAUL (Hoarsely)</p>
+            <p>        Yes Jen?</p>
+            <p>JEN</p>
+            <p>        It all came flooding over me suddenly--- just like a revellation from God. I know that                 there was only one thing on earth that mattered. Do you know what that was?</p>
+            <p>PAUL (Tremulously)</p>
+            <p>        No Jen.</p>
+            <p>JEN</p>
+            <p>Love. 
+      Your
+       love ----my love for you!</p>
+            <p>With smuffled cry, he reaches out and takes her into his arms.</p>
+            <p>PAUL</p>
+            <p>        My little Jen!</p>
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+            <p>After a moment, Jen raises her head. She is listening to something. Her face is alight. It is beautiful.</p>
+            <p>JEN</p>
+            <p>        Listen to the wind! Is’nt it immense? Sounds like a trumpet---blowing!</p>
+            <p>He kisses her.</p>
+            <p>JEN</p>
+            <p>        And listen to the waves. They sound just as if they were dancing---laughing! Oh! is’nt it                 all gorgeous.</p>
+            <p>PAUL</p>
+            <p>        Theres a letter there Jen, from the man who’s kid I saved. He’s got a job waiting for me                 ashore.</p>
+            <p>JEN (snuggling contentedly)</p>
+            <p>        I don’t want to go ashore. I want to stay here---alone with you! It’s 
+      HOME
+      !</p>
+    
+      
+
+  </div>
       </body>
    </text>
 </TEI>
