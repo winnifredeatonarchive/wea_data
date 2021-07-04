@@ -5,15 +5,15 @@
   
 
     
-    
+    <property name="fileset" value="dataXml"/>  
   <target name="validateRng">
       <echo message="${echo.separator}"/>
-      <echo message="Validating against RNG schema..."/>
+      <echo message="Validating ${fileset} against RNG schema ${rng}..."/>
       <echo message="${echo.separator}"/>
       <apply executable="java" parallel="true" failonerror="true">
           <arg line="-jar ${lib.dir}/jing.jar"/>
           <arg value="${rng}"/>
-          <fileset refid="dataXml"/>
+          <fileset refid="${fileset}"/>
       </apply>
   </target>
     
@@ -29,48 +29,18 @@
             which can trigger a build fail.
         </description>
         <echo message="${echo.separator}"/>
-        <echo message="Validating XML source files with project Schematron..."/>
-        <!--Delete the old temp.dir if it's there-->
-        <delete dir="${tempSchematron.dir}"/>
-        
-        <!--Remake the temp.dir-->
-        <mkdir dir="${tempSchematron.dir}"/>
-        
-        <!--It would be good to be able to conditionally select
-      the fileset to process-->
-        
-        <!--Process the files in source directory with the 
-      lemdoSchematron.xsl (which is created during the ODD
-      build). This creates new XML files in the temp
-      directory-->
-        <xslt destdir="${tempSchematron.dir}"
-            style="${sch.xsl}"
-            extension=".xml" classpath="${lib.dir}/saxon9he.jar"
-            useImplicitFileset="false" failonerror="true">
-            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
-            <fileset refid="dataXml"/>
-        </xslt>
-        
-        <!--Now we process those XML files, checking to see if there
-      are any errors. If there are, print them out and create a results
-      file in the temporary directory and break the build-->
-        <java fork="true" classname="net.sf.saxon.Transform" classpath="${lib.dir}/saxon9he.jar" failonerror="true">
-            <jvmarg value="-Xmx1024m"/>
-            <arg value="-s:schema/checkSchematronResults.xsl"/>
-            <arg value="-xsl:schema/checkSchematronResults.xsl"/> 
-            <arg value="-o:${tempSchematron.dir}/results.txt"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-            <arg value="tempDir=${tempSchematron.dir}"/>
-        </java>
-        
-        <!--Done!-->
+        <echo message="Validating against schematron ${sch}..."/>
         <echo message="${echo.separator}"/>
-        <echo message="Schematron validation complete."/>
-        
-        <!--Now we can delete the temporary directory, if 
-      everything is valid-->
-        <delete dir="${tempSchematron.dir}"/>
-    </target>
+        <java fork="true" classname="net.sf.saxon.Transform" classpath="${saxon}" failonerror="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:schema/checkSchematronResults.xsl"/> 
+            <arg value="-xsl:schema/checkSchematronResults.xsl"/> 
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+            <arg value="sch=${sch}"/>
+            <arg value="dir=${data.dir}"/>
+            <arg value="exclude=((documentation/.+)|(.*addTextFromDrive))\.xml"/>
+        </java>
+    </target>       
     
     
     <target name="all" depends="validateRng, validateSchematron"/>

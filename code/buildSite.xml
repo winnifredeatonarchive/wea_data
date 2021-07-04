@@ -113,6 +113,7 @@
     
     <target name="validateOriginalXml">
         <ant antfile="buildValidate.xml" inheritall="no">
+            <property name="fileset" value="originalXml"/>
             <property name="data.dir" value="${site.dir}/xml/original"/>
         </ant>
     </target>
@@ -143,6 +144,7 @@
     <target name="validateStandaloneXml">
         <ant antfile="buildValidate.xml" inheritall="no">
             <property name="data.dir" value="${site.dir}/xml/standalone"/>
+            <property name="fileset" value="standaloneXml"/>
             <property name="rng" value="${sch.dir}/tei_all.rng"/>
             <property name="sch" value="${sch.dir}/tei_all.sch"/>
             <property name="sch.xsl" value="${sch.dir}/tei_all.xsl"/>

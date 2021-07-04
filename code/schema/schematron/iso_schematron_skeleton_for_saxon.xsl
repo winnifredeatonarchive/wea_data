@@ -618,6 +618,25 @@ which require a preprocess.
 		<!-- was xsl:call-template name="stylesheetbody"/ -->
 	</axsl:stylesheet>
 </xsl:template>
+	
+	<!--ADDED BY J TAKEDA: Using XSLT3 -->
+<xsl:template match="iso:schema[@queryBinding=('xslt3','xpath3','xpath3.1')]" priority="10">
+	<axsl:stylesheet
+		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+		xmlns:saxon="http://saxon.sf.net/" 
+		>
+		<xsl:apply-templates 
+			select="iso:ns" />
+		<!-- Handle the namespaces before the version attribute: reported to help SAXON -->
+		<xsl:attribute name="version">2.0</xsl:attribute>
+		
+		<xsl:apply-templates select="." mode="stylesheetbody"/>
+		<!-- was xsl:call-template name="stylesheetbody"/ -->
+	</axsl:stylesheet>
+	
+</xsl:template>	
+	
 
 
 <!-- Uses unknown query language binding -->

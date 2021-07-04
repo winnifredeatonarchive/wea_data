@@ -277,7 +277,15 @@
     </xsl:template>
     
     <xsl:template match="org" mode="appendix">
-        <xsl:sequence select="$orgMap(xs:string(@xml:id))"/>
+        <xsl:try>
+            <xsl:sequence select="$orgMap(xs:string(@xml:id))"/>
+            <xsl:catch>
+                <xsl:message terminate="yes">
+                    ERROR: <xsl:sequence select="."/>
+                </xsl:message>
+            </xsl:catch>
+        </xsl:try>
+
     </xsl:template>
     
     <xsl:template match="person" mode="appendix">
