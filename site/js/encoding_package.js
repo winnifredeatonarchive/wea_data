@@ -31,16 +31,20 @@ class Zipper{
     
     setup(){
         let self = this;
-        this.inputs.forEach(input => {
-            input.addEventListener('change', e=> {
-                input.parentNode.classList.toggle('selected');
-            }) 
-        });
+
         this.downloadBtn = document.createElement('button');
         this.downloadBtn.innerHTML = `<span>Download</span>`;
         this.list.appendChild(this.downloadBtn);
         this.downloadBtn.classList.add('download_btn');
+        this.downloadBtn.disabled = true;
         this.downloadBtn.addEventListener('click', this.downloadZip.bind(this));
+        this.inputs.forEach(input => {
+            input.addEventListener('change', e=> {
+                input.parentNode.classList.toggle('selected');
+                self.downloadBtn.disabled = self.ids.length == 0;
+            });
+ 
+        });
     }
     
     async baseZip(){
