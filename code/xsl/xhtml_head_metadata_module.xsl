@@ -38,18 +38,20 @@
             <xsl:if test="@xml:id='index'">
                 <link rel="stylesheet" type="text/css" href="css/index.css"/>
             </xsl:if>
-            <xsl:if test="@xml:id = 'pseudonyms'">
+<!--            <xsl:if test="@xml:id = 'pseudonyms'">
                 <link rel="stylesheet" type="text/css" href="js/timeline3/css/timeline.css"/>
-            </xsl:if>
+            </xsl:if>-->
             <link rel="icon" type="image/png" href="images/icon.png"/>
             <script src="js/lazyload.min.js"/>
+            <script src="js/jszip.min.js"/>
             <script src="js/wea.js"/>
             <xsl:if test="//graphic[contains(@url,'media/')]">
-                <script src="js/facsimile_view.js"/>
+                <script src="js/facsimile_view.js"></script>
             </xsl:if>
             <xsl:if test="@xml:id='index'">
-                <script src="js/index.js"/>
+                <script src="js/index.js"></script>
             </xsl:if>
+            <script src="js/encoding_package.js"></script>
 <!--            <xsl:if test="@xml:id ='pseudonyms'">
                 <script src="js/timeline3/js/timeline.js"><!-\-Keep open-\-></script>
                 <script src="js/timeline.js"><!-\-Keep open-\-></script>

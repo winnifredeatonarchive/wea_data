@@ -147,6 +147,19 @@
         </li>
     </xsl:template>
     
+    <!--SPECIAL template for handling the contributor download list-->
+    <xsl:template match="list[@type='checklist']/item[@facs]" priority="1" mode="tei">
+        <xsl:variable name="thisRef" select="child::ref" as="element(ref)"/>
+        <xsl:variable name="thisDoc" select="$thisRef/@target" as="xs:string"/>
+        <xsl:variable name="thisDocId" select="substring-before($thisDoc,'.xml')"/>
+        <xsl:variable name="thisFacs" select="substring-after(@facs,'facs:')" as="xs:string"/>
+        <li>
+            <input type="checkbox" id="{$thisDocId}" 
+                name="{$thisDocId}" value="{$thisDocId}"></input>
+            <label for="{$thisDocId}">
+                <xsl:apply-templates select="$thisRef/node()" mode="#current"/></label>
+        </li>
+    </xsl:template>
     
     <xsl:template match="bibl" mode="tei">
         <div>

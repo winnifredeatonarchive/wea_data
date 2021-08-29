@@ -31,6 +31,23 @@
         <xsl:call-template name="createPublishersTable"/>
     </xsl:template>
     
+    <xsl:template match="divGen[@xml:id='contribute_package_texts']" mode="original">
+        <xsl:variable name="availableDocs" select="$sourceXml[descendant::gap[@reason='noTranscriptionAvailable'] and descendant::text[@facs] and descendant::revisionDesc/@status='empty']//TEI" as="element(TEI)*"/> 
+        <div xml:id="{@xml:id}">
+            <head>Texts</head>
+           <div>
+               <list xml:id="{@xml:id}_texts" type="checklist">
+                   <xsl:for-each select="$availableDocs">
+                       <xsl:sort select="string(@xml:id)"/>
+                       <item facs="facs:{//text/@facs}">
+                           <ref target="doc:{@xml:id}"><xsl:sequence select="//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref>
+                       </item>
+                   </xsl:for-each>
+               </list>
+           </div>
+        </div>
+    </xsl:template>
+    
     <xsl:template name="createCollabTable">
         <div>
             <table type="exhibit">

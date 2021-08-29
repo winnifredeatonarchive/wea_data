@@ -35,9 +35,25 @@
     </teiHeader>
     <text>
         <body>
+            <head>Contribute</head>
             <div>
                 <p>Eventually, each text in the Archive will be preceded by a peer-reviewed headnote of 75-100 words that will provide some sense of the theme, style and/or significance of the text, note any unusual features, in order to help a curious reader decide whether or not to read this particular text. Each of the Featured Items on the <ref target="doc:About">About</ref> page has a headnote. Together, they give a sense of the <q>headnote</q>genre. Please email the director about texts that interest you. When you’ve written a headnote, please email a Word Doc of the headnote without any author identification to the director. There is no particular deadline. We will send a group of headnotes out for peer review every few months.</p>
             </div>
+            <div xml:id="contribute_package">
+                <head>Download Contributor Package</head>
+                <p>Below are a list available that are not yet transcribed. Select the texts that you would like to transcribe below and click the <q>Download</q> button to download an encoding package that includes:
+                    <list>
+                        <item>The facsimiles for the document</item>
+                        <item>The TEI XML files</item>
+                        <item>The RelaxNG schema</item>
+                        <item>A custom oXygen project</item>
+                    </list>
+                </p>
+                <p>To transcribe these documents, you must have oXygen installed on your computer. Once the package is downloaded, unzip the file somewhere on your computer (i.e. in your <code>Documents</code> folder) and then open the <code>wea_encoder.xpr</code> file. On some systems, this might be as simple as double-clicking the file, which should open and load it within oXygen automatically; if that does not work, then open oXygen, and then click <q>Open New Project</q> and open the <code>wea_encoder.xpr</code> file.</p>
+                <divGen xml:id="contribute_package_texts"/>
+            </div>
+            
+            
         </body>
     </text>
 </TEI>

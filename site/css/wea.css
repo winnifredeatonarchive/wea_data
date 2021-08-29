@@ -258,7 +258,7 @@
     /* BASIC COLOURS */
     --wea-pink: #DF006E;
     --wea-grey: #efefef;
-    
+    --wea-pink-rgb: rgb(223, 0, 110);
     
     --wea-text-color: #292929;
     --wea-footer-bg-color: #f8f9fa;
@@ -279,6 +279,8 @@
     --max-text-width: 50rem;
     --main-padding-left: 10%;
     --main-padding-right: 10%;
+    
+    --download-btn-offset: 0%;
 }
 
 *{
@@ -477,6 +479,7 @@ div#nav_search input{
     padding:.25rem;
 }
 
+
 div#nav_search button,
 div#nav_search input{
         border: 1px solid #dee2e6;
@@ -487,6 +490,7 @@ div#nav_search input:focus{
     box-shadow: inset 0px 0px 1px .25px var(--wea-pink);
     transition: box-shadow .15s ease-in-out;
 }
+
 
 
 
@@ -648,6 +652,9 @@ div#nav_search button:hover{
     top:0;
     left:0;
 }
+
+
+/* Downloader styles */
 
 
 /*
@@ -3355,4 +3362,74 @@ nav a.home{
     font-display: swap;
 }
 
+/* *****  */
+
+ul#contribute_package_texts_texts {
+    max-height: 30rem;
+    overflow-y: auto;
+}
+
+
+ul#contribute_package_texts_texts > li + li{
+    border-top: 1px solid #efefef;
+}
+
+ul#contribute_package_texts_texts > li:hover,
+ul#contribute_package_texts_texts > li.selected
+{
+    background: #efefef;
+}
+
+button.download_btn {
+    cursor:pointer;
+    border: 1px solid #efefef;
+    /* outline: none; */
+    padding: .25rem .5rem;
+    background: none;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-variant: all-small-caps;
+    position:relative;
+    overflow-x:hidden;
+
+}
+
+.download_btn:hover,
+.download_btn.active{
+    background: #efefef;
+}
+
+.download_btn.active > span:after{
+    content: "ing...";
+}
+
+.download_btn.active:before{
+    content:"";
+    position:absolute;
+    background: rgba(223, 0, 110, 0.6);
+    display:block;
+    height:100%;
+    width:100%;
+    top:0;
+    left:-100%;
+    transition: 0.2s ease-in-out transform;
+    transform: translateX(var(--download-btn-offset));
+    opacity:0.4;
+}
+
+[data-type='checklist'] > li {
+    /* padding: 1rem; */
+    border-bottom: 1px solid black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+[data-type='checklist'] > li > label {
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+}
 
