@@ -233,15 +233,33 @@
         </java>
     </target>
     
+    <target name="createEncodingPackage">
+        <delete file="${site.dir}/encoding_package.zip"/>
+        <zip destfile="${site.dir}/encoding_package.zip">
+            <fileset dir="${project.dir}">
+                <include name="data/sch/**"/>
+                <include name="data/wea_data.xpr"/>
+                <!--Exclude all of the TEI schemas-->
+                <exclude name="data/sch/tei*"/>
+            </fileset>
+            <mappedresources>
+                <fileset dir="${project.dir}">
+                    <include name="site/js/encoding_package_readme.txt"/> 
+                </fileset>
+                <globmapper from="site/js/*" to="README.txt"/>
+            </mappedresources>
+        </zip>
+    </target>
+    
    
    
     
   
-  <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
+  <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml, createEncodingPackage"/>
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails"/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails, createEncodingPackage"/>
     
     <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
         

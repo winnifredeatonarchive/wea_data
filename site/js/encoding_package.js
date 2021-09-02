@@ -1,8 +1,7 @@
 
 //var circle = document.querySelector('circle');
 
-
-
+let WEAZip;
 
 class Zipper{
     constructor(){
@@ -10,7 +9,6 @@ class Zipper{
         this.list = document.querySelector('#contribute_package_texts');
         this.extensions = ['xml', 'pdf'];
         this.setup();
-        
     }
 
     get inputs(){
@@ -19,6 +17,10 @@ class Zipper{
 
     get ids(){
            return this.inputs.filter(inp => inp.checked).map(input => input.id);
+    }
+    
+    get basename(){
+        return `wea_${this.ids.join('_')}`;
     }
     
     set progress(num){
@@ -62,7 +64,7 @@ class Zipper{
         console.log('Blobbing finished');
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = `wea_${this.ids.join('_')}.zip`;
+        link.download = `${this.basename}.zip`;
         link.click();
         URL.revokeObjectURL(link.href);
         await this.baseZip();
@@ -80,11 +82,11 @@ class Zipper{
             console.log('Processing ' + id);
             await Promise.all(this.extensions.map(x => {
                 return new Promise(async (resolve, reject) => {
-                    let inDir = x == 'xml' ? 'xml/original' : 'facsimiles';
+                    let inDir = x == 'xml' ? 'xml/source' : 'facsimiles';
                     let outDir = x == 'xml' ? 'texts' : 'facsimiles';
                     const doc = await fetch(`${inDir}/${id}.${x}`);
                     const result = await (x == 'xml' ? doc.text() : doc.blob());
-                    let out = `${outDir}/${id}.${x}`;
+                    let out = `data/${outDir}/${id}.${x}`;
                     resolve(self.zip.file(out, result));
                 })
             }));
@@ -100,7 +102,7 @@ class Zipper{
 
 document.addEventListener('DOMContentLoaded', e => {
     if (document.documentElement.id == 'contribute'){
-        let z = new Zipper();   
+        WEAZip = new Zipper();   
     }
 });
 
