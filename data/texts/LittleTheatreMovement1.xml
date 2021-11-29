@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/winnifredeatonarchive/wea_data/b1d81df482e212085cae76c4d9a0e289b8aa99fc/data/sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/winnifredeatonarchive/wea_data/b1d81df482e212085cae76c4d9a0e289b8aa99fc/data/sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleTheatreMovement1">
    <teiHeader>
       <fileDesc>
@@ -25,7 +25,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="readyForProof">
+         <change who="pers:JT1" when="2021-11-29" status="readyForProof">Edited and added text to repository.</change>
          <change who="pers:KS1" when="2021-10-28" status="inProgress">Began Transcribing</change>
          <change who="pers:SL1" when="2021-10-12" status="empty">Added genre, exhibit, and doc type; assigned facs.</change>
          <change who="pers:JT1" when="2021-10-12" status="empty">Created shell from bibl file.</change>
@@ -37,12 +38,13 @@
          <head type="subtitle">
             <name ref="pers:WE1">Mrs. Winnifred Reeve</name> Gives Interesting Talk on Movement Started in Calgary--Speaker Points Out Success That Has Been Attained in Other Large Cities In United States and Canada
          </head>
-         <div><p><q>What does the little theatre movement mean</q>? This question was answered very clearly and fully by Mrs. Winnifred Reeve in an address given at the Gladya Attree studio on Thursday evening to a large audience. (??????) up her answer to the question. Mrs. Reeves explained that the movement is simply <q>drama of the people, by the people and for the people</q>.</p>
+         <div>
+            <p><q>What does the little theatre movement mean</q>? This question was answered very clearly and fully by Mrs. Winnifred Reeve in an address given at the Gladya Attree studio on Thursday evening to a large audience. <choice><sic>Summping</sic><corr resp="pers:JT1">Summoning</corr></choice> up her answer to the question, Mrs. Reeves explained that the movement is simply <q>drama of the people, by the people and for the people</q>.</p>
             <p>Mrs. Reeve commented her talk by expressing some little surprise that the question should be put by so many in a city the size and importance of Calgary, for, said she, nearly every city and town of any consequence in the United States and in Canada, to say nothing of Europe, today possesses its little theatre, or groups who make up community players.</p>
 <p>The objects of the little theatre, the speaker set forth as the promotion of the study of drama, the production of high-class plays--both foreign and Canadian, to develop and encourage the talent of the city--not merely dramatic talent--but talent of every kind and sort.</p>
          </div>
          <div>
-            <head>(HELP JOEY IDK WHY MY HEADERS ARE NUMBERED) Must Be Wide Open</head>
+            <head>Must Be Wide Open</head>
             <p>Proceeding, Mrs. Reeve said in part: <q>Indeed I may say at the outset that the closed shop idea would be fatal to such a movement. By that I mean small groups who might gather together and run things for the benefit of their own limited circle. We should not specialize on the talent of the west side the north side the east side or the south side of the city. The little theatre should have no pets no special man or woman to thrust repeatedly forward into the limelight unless he or she is of prime importance to the special play being put on. Pull and money should avail nothing. Talent alone should be the touchstone</q>.</p></div>
          <div>
             <head>Field is Limited</head>
@@ -53,9 +55,9 @@
          <p>
             <q>It would draw under its wing all of the dramatic clubs or community players of the city and it would open its doors wide to the talent of the city. Here are some of the assignments that would be given</q>:</p>
          <p>
-            <q>Designing costumes or scenery painting scenery (??????) printing dancing electrical work play rending secretarial work publicity dyeing stonefilling typewriting decorating play producing coaching play writing acting (?????) or instrumental (?????) work orchestra (?????????)</q></p>
+            <q>Designing costumes or scenery, painting scenery, <gap reason="illegible"/>, printing, dancing, electrical work, play reading, secretarial work, publicity, dyeing, stenciling, typewriting, decorating, play producing, coaching, play writing, acting, music, vocal or instrumental, carpentering work, clerical or executive work, <gap reason="illegible"/>, reading of MSS</q>.</p>
          <p>
-            <q>In some of the little theatres princes and millionaires have worked (??????) wielded the broom that has cleaned the stage while the daughter of a scrub woman has played the star part</q>.</p></div>
+            <q>In some of the little theatres princes and millionaires have worked <gap reason="illegible"/> wielded the broom that has cleaned the stage while the daughter of a scrub woman has played the star part</q>.</p></div>
          <div>
             <head>Success Everywhere</head>
          <p>Mrs. Reeve then went on to tell of the success of the little theatre idea has met with in a large number of cities of the United States and Canada and how it has succeeded in developing talent that would otherwise have lain dormant. Speaking of the effort in Toronto, the speaker said:</p>
@@ -73,7 +75,7 @@
          <p>
             <q>Then there is dancing. Dancing has always been closely allied with the theatre. Its proper setting is the stage</q>.</p>
          <p>
-            <q>All this (?????) would come with (?????????) these things not for use in professional life but because of love of them because of the culture to mind and body that they would impart</q>.</p></div>
+            <q>All this you see would come with <gap reason="illegible"/> these things not for use in professional life but because of love of them because of the culture to mind and body that they would impart</q>.</p></div>
       </body>
    </text>
 </TEI>
