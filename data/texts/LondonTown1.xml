@@ -6,6 +6,10 @@
       <fileDesc>
          <titleStmt>
             <title>London Town</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:HH2"></name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -21,16 +25,50 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:HH2" when="2021-10-28" status="inProgress"> Started transcribing</change>
          <change who="pers:SL1" when="2021-10-12" status="empty">Added genre, exhibit, doc type, and facs.</change>
          <change who="pers:JT1" when="2021-10-12" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:LondonTown">
+      <pb n="25"/>
       <body>
+         <head>London Town</head>
+         
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <lg>
+               <l>The golden streets of London town,</l>
+               <l>Their magic calls to me;</l>
+               <l>Yet what know I of London town--</l>
+               <l>Between us rides the sea.</l>
+               <l>The stretches of the prairie sod</l>
+               <l>Are all my memory knows,</l>
+               <l>The cool, clean wonder of her moons</l>
+               <l>Upon her silver snows;</l>
+               <l>But still the name of London town</l>
+               <l>Has ever held for me</l>
+               <l>A strange, unnamed attraction, born</l>
+               <l>Of charm and mystery.</l>
+            </lg>
+            <lg>
+               <l>The olden streets of London town</l>
+               <l>Are paved with Hist’ry’s gold--</l>
+               <l>Oh, I must go to London town</l>
+               <l>Soon, soon--before I’m old,</l>
+               <l>While yet my heart can understand</l>
+               <l>Romance of other days,</l>
+               <l>While yet my feet aweary not</l>
+               <l>In treading unknown ways.</l>
+               <l>Gay capitals of other lands</l>
+               <l>May lure with revelry,</l>
+               <l>But, Oh, it’s grey old London town</l>
+               <l>That holds a call for me.</l>
+            </lg>
          </div>
+         <closer>
+            <name ref="pers:WE1">Winnifred Reeves</name>
+         </closer>
       </body>
    </text>
 </TEI>
