@@ -6,6 +6,24 @@
   */
 window.addEventListener('DOMContentLoaded', init, false);
 
+
+/* 
+ * Add method to HTML element to toggle aria roles
+ * 
+ */
+ 
+ HTMLElement.prototype.removeAria = function(name){
+       let att = 'aria-' + name;
+       if (!this.hasAttribute(att)){
+           return;
+       }
+       this.removeAttribute(att);
+ }
+ 
+ HTMLElement.prototype.setAria = function(name, value){
+     this.setAttribute('aria-' + name, value);
+ }
+ 
 var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 
 
@@ -65,6 +83,7 @@ function lazyload(){
 
 
 function addEvents(){
+
     addHeaderSearch();
     addHeaderSearchSubmit();
     addPopupClose();
@@ -172,8 +191,6 @@ function makeNavClickable(){
  }
  
 function toggleNav(){
-
-      
       toggleOpenClose(document.getElementById('menu_main'), true);
       document.getElementsByTagName('body')[0].classList.toggle("overlay");
 }    
@@ -536,8 +553,9 @@ function makeCitationsResponsive(){
         }
         //And set the display to block
         popup.classList.remove('hidden');
+        popup.setAria('hidden', 'true');
         popup.classList.add('showing');
-      
+        popup.setAria('hidden','false');
         this.classList.add('clicked');
       }
       
@@ -561,7 +579,11 @@ function makeCitationsResponsive(){
       }
       else if (this.getAttribute('data-el') == 'org' && this.getAttribute('href').startsWith('#')){
           id = this.getAttribute('href').substring(1);
-      } else if (this.getAttribute('title') && !(this.getAttribute('href'))){
+      } else if ((this.getAttribute('data-el') == 'org' || this.getAttribute('data-el') == 'name') && this.getAttribute('data-ref').startsWith('#')){
+         id = this.getAttribute('data-ref').substring(1)
+      }
+      
+      else if (this.getAttribute('title') && !(this.getAttribute('href'))){
           useTitle = true;
       }
       /* Otherwise, return */

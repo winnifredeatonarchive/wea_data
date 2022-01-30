@@ -59,7 +59,6 @@
     
     <xsl:template match="xh:ul[@id='menu_main']" mode="nav">
         <xsl:copy>
-            <xsl:attribute name="role" select="'navigation'"/>
             <xsl:apply-templates select="@*" mode="#current"/>
             <li class="closer">
                 <a href="#" class="closer mi" id="nav_closer">close</a>
@@ -86,19 +85,6 @@
             <xsl:apply-templates select="@*|node()" mode="#current">
                 <xsl:with-param name="selectedLinks" select="($containsMe, $containsMyParent)" as="xs:string*" tunnel="yes"/>
             </xsl:apply-templates>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="xh:ul[@id='menu_main']/xh:li/xh:ul" mode="nav">
-        <xsl:copy>
-            <xsl:attribute name="aria-role" select="'navigation'"/>
-            <xsl:apply-templates select="@*|node()" mode="#current"/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template match="xh:ul[@id='menu_main']/xh:li/xh:ul/xh:li" mode="nav">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
     

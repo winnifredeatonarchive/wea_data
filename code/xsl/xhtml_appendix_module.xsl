@@ -236,7 +236,9 @@
 
             </div>
             
-            <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix"/>
+            <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix">
+                <xsl:with-param name="rootDoc" select="ancestor::TEI" tunnel="yes"/>
+            </xsl:apply-templates>
         </div>
     </xsl:template>
     
@@ -278,7 +280,7 @@
     
     <xsl:template match="org" mode="appendix">
         <xsl:try>
-            <xsl:sequence select="$orgMap(xs:string(@xml:id))"/>
+            <xsl:apply-templates select="$orgMap(xs:string(@xml:id))" mode="localize"/>
             <xsl:catch>
                 <xsl:message terminate="yes">
                     ERROR: <xsl:sequence select="."/>
@@ -289,7 +291,31 @@
     </xsl:template>
     
     <xsl:template match="person" mode="appendix">
-       <xsl:sequence select="$personMap(xs:string(@xml:id))"/>
+        
+       <xsl:apply-templates select="$personMap(xs:string(@xml:id))" mode="localize"/>
+    </xsl:template>
+    
+    <!--Catch any non-local links-->
+    <xsl:template match="xh:a/@href[matches(.,'^#')]" mode="localize">
+        <xsl:param name="rootDoc" as="element(TEI)" tunnel="yes"/>
+        <xsl:variable name="id" select="substring-after(.,'#')"/>
+        <xsl:attribute name="href">
+            <xsl:choose>
+                <xsl:when test="$rootDoc//*[@xml:id]/@xml:id = $id">
+                    <xsl:value-of select="."/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$id || '.html'"/>
+                </xsl:otherwise>
+            </xsl:choose>  
+        </xsl:attribute>
+    </xsl:template>
+    
+    <!--Identity transform for the localization of the already processed popup-->
+    <xsl:template match="@*|node()" priority="-1" mode="localize">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
     </xsl:template>
     
     <xsl:template match="person[@xml:id = 'WE1']" mode="appendix">
@@ -341,7 +367,7 @@
     </xsl:template>
     
     <xsl:template name="createPopup">
-        <div id="popup" class="hidden">
+        <div id="popup" class="hidden" aria-hidden="true">
             <div class="popup_container">
                 <div id="popup_closer">X</div>
                 <div id="popup_content"/>
@@ -352,7 +378,7 @@
     <!--A simple template to create an empty div that is
         the overlay-->
     <xsl:template name="createOverlay">
-        <div id="overlay" class="hidden"/>
+        <div id="overlay" class="hidden" aria-hidden="true"/>
     </xsl:template>
     
     
