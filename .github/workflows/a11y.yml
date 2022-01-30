@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Wait for Jenkins
         if: ${{ !(env.ACT || github.event_name == 'workflow_dispatch') }} 
-        run: ${{ github.workspace }}/code/countdown.sh 2
+        run: ${{ github.workspace }}/code/countdown.sh 10
       - name: Download assets
         run: echo "Download stuff"
       - name: Validate
