@@ -12,5 +12,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
            node-version: '16'
-      - name: Setup NPM    
-        run: npm install pa11y-ci pa11y-ci-reporter-html --g
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set environment variables
+        run: >
+            VERSION=$(cat ${{ github.workspace }}/VERSION);
+            SHORT_SHA=`git rev-parse --short HEAD`;
+            ARTIFACT_NAME="${VERSION}_${SHORT_SHA}";
+            echo "VERSION=${VERSION}" >> $GITHUB_ENV;
+            echo "SHORT_SHA=${SHORT_SHA}" >> $GITHUB_ENV;
+            echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> $GITHUB_ENV
