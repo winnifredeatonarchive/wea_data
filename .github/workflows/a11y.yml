@@ -7,14 +7,14 @@ jobs:
       - name: Wait for Jenkins
         if: ${{ !(env.ACT || github.event_name == 'workflow_dispatch') }}
         run: |
-            secs=60 
+            secs=5 
             while [ $secs -gt 0 ]; do
                printf "\rsleep: $((secs%3600/60))m:$((secs%60))s\033[0K" 
                sleep 1 
                : $((secs--)) 
             done
             printf "\n"
-      - name: Download assets
-        run: echo "Download stuff"
+      - name: Download repo assets
+        run: ls -l
       - name: Validate
         run: echo "Validate stuff"
