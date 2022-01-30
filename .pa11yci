@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "concurrency": 1,
+    "timeout": 5000,
+    "standard": "WCAG2AA",
+    "runners": ["htmlcs"],
+    "reporters": [
+	"cli",
+	"pa11y-ci-reporter-html"
+	]
+  }
+}
