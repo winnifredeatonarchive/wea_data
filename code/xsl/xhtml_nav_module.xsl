@@ -45,19 +45,21 @@
                     <div id="nav_search">
                         <label for="nav_search_input" class="hidden">Search the Archive</label>
                         <input id="nav_search_input" type="text" placeholder="Search..."/>
-                        <button type="button" id="nav_search_button">
+                        <button type="button" id="nav_search_button" aria-label="Search the Archive">
                             <span class="mi" aria-hidden="true">search</span>
                         </button>
                         <xsl:copy-of select="$siteMap"/>
                     </div>
 
-                    <a id="header_overlay" href="#"/>
+                    <a id="header_overlay" href="#" aria-label="Close header"/>
                 </nav>
             </header>
     </xsl:template>
     
+    
     <xsl:template match="xh:ul[@id='menu_main']" mode="nav">
         <xsl:copy>
+            <xsl:attribute name="role" select="'navigation'"/>
             <xsl:apply-templates select="@*" mode="#current"/>
             <li class="closer">
                 <a href="#" class="closer mi" id="nav_closer">close</a>
@@ -76,12 +78,27 @@
         <xsl:variable name="categories" select="$sourceDoc//catRef[contains(@scheme,'#exhibit')]/@target/substring-after(.,'#')"/>
         <xsl:variable name="containsMyParent" select="$sublinkIds[.=$categories]" as="xs:string*"/>
         <xsl:copy>
+            <xsl:attribute name="tabindex" select="'0'"/>
             <xsl:if test="not(empty($containsMe)) or not(empty($containsMyParent))">
                 <xsl:attribute name="class" select="'selected'"/>
             </xsl:if>
+            
             <xsl:apply-templates select="@*|node()" mode="#current">
                 <xsl:with-param name="selectedLinks" select="($containsMe, $containsMyParent)" as="xs:string*" tunnel="yes"/>
             </xsl:apply-templates>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="xh:ul[@id='menu_main']/xh:li/xh:ul" mode="nav">
+        <xsl:copy>
+            <xsl:attribute name="aria-role" select="'navigation'"/>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="xh:ul[@id='menu_main']/xh:li/xh:ul/xh:li" mode="nav">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
         </xsl:copy>
     </xsl:template>
     

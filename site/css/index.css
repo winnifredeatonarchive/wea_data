@@ -99,6 +99,7 @@ a[data-el='ptr'][data-type='readMore']::after{
 #index_header{
     grid-area: header;
     background-image: url(../images/WEA-hero-img.jpg);
+    background-color: black;
     height: 85vh;
     min-height: 300px;
     margin-top:0!important;
@@ -362,7 +363,7 @@ li{
    width:.75rem;
    background-color:#ccc;
    font-size:1px;
-   color:#ccc;
+   color: #2154a7;
    border-radius:1rem;
    transition: all 0.2s ease-in-out;
 }
@@ -370,7 +371,7 @@ body:not(.JS) #index_featuredItems > a:target,
 body.JS #index_featuredItems > a.selected,
 #index_featuredItems > a:hover{
     background-color:#717171;
-    color:#717171;
+    color:#fff;
 }
 
 #index_featuredItems h2{

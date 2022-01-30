@@ -18,14 +18,16 @@
 }
 
 ul#menu_main > li:hover,
-ul#menu_main > li:focus{
+ul#menu_main > li:focus,
+ul#menu_main > li:focus-within{
    border-bottom-color: var(--wea-pink);
    transition: border-bottom-color .4s;
    cursor:pointer;
 }
 
 ul#menu_main > li:hover > ul,
-ul#menu_main > li:focus > ul{
+ul#menu_main > li:focus > ul,
+ul#menu_main > li:focus-within > ul{
     position: absolute;
     display: block;
     margin-top: .825rem;

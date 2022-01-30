@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="22.0">
+<project>
     <meta>
         <filters directoryPatterns="" filePatterns="\Qwea_all.xpr\E" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="22.0" xml:space="preserve">
+            <serialized xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>document.types</String>
                         <documentTypeDescriptor-array>
                             <documentTypeDescriptor>
+                                <field name="webResources">
+                                    <null/>
+                                </field>
                                 <field name="extensionPatch">
                                     <null/>
                                 </field>
@@ -244,6 +247,10 @@
                         </documentTypeDescriptor-array>
                     </entry>
                     <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.editor.document.type.association.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
@@ -422,6 +429,10 @@
         </options>
     </meta>
     <projectTree name="wea_all.xpr">
+        <folder masterFiles="true" name="Main Files">
+            <file name="code/xsl/xhtml_master.xsl"/>
+            <file name="code/xsl/xml_index_master.xsl"/>
+        </folder>
         <folder path="."/>
     </projectTree>
 </project>

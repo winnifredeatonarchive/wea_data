@@ -573,14 +573,17 @@
             </xsl:choose>
             
         </xsl:variable>
+        <xsl:variable name="altText" select="if (desc) then normalize-space(string-join(desc)) else
+            normalize-space(string-join(ancestor::figure/figDesc))" as="xs:string?"/>
+        
         <xsl:choose>
-            <xsl:when test="ancestor::list[@xml:id='featuredItems']">
-                <a href="{replace(parent::item/@corresp,'.xml','.html')}">
-                    <img src="{$urlNorm}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/> 
+            <xsl:when test="ancestor::list[@xml:id='featuredItems']" >
+                <a href="{replace(parent::item/@corresp,'.xml','.html')}" aria-label="Link to {$altText}">
+                    <img src="{$urlNorm}" alt="{$altText}"/> 
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <img src="{$urlNorm}" class="lazy" data-wea-src="{if (matches($url,'\.tiff?','i')) then replace($url,'\.tiff?','.png','i') else $url}" alt="{if (desc) then normalize-space(string-join(desc)) else normalize-space(string-join(ancestor::figure/figDesc,''))}"/>
+                <img src="{$urlNorm}" class="lazy" data-wea-src="{if (matches($url,'\.tiff?','i')) then replace($url,'\.tiff?','.png','i') else $url}" alt="{$altText}"/>
             </xsl:otherwise>
         </xsl:choose>
        

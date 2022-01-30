@@ -135,11 +135,14 @@
                 <xsl:when test="starts-with($thisCorresp,'doc:')">
                     <xsl:variable name="docId" select="substring-after($thisCorresp,'doc:')"/>
                     <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id=$docId]"/>
+                    <xsl:variable name="docTitle" select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]" as="element(title)"/>
                     <ref target="doc:{$docId}">
-                        <graphic url="{$thisDoc//text/@facs}"/>
+                        <graphic url="{$thisDoc//text/@facs}">
+                            <desc><xsl:value-of select="normalize-space($docTitle)"/></desc>
+                        </graphic>
                     </ref>
 
-                    <label><ref target="{$thisCorresp}"><xsl:sequence select="$thisDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/></ref></label>
+                    <label><ref target="{$thisCorresp}"><xsl:sequence select="$docTitle/node()"/></ref></label>
                     <note>
                         <xsl:if test="$thisDoc//abstract">
                             <xsl:apply-templates select="$thisDoc//abstract/p/node()"/>

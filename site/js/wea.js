@@ -12,7 +12,7 @@ var docId = document.getElementsByTagName('html')[0].getAttribute('id');
 function init(){
     addDocClass();
     addEvents();
-    makeNavbarFocusable();
+    //makeNavbarFocusable();
     if (document.querySelectorAll('img.lazy')){
         lazyload();
     }
@@ -40,13 +40,15 @@ function init(){
 
 }
 
-function makeNavbarFocusable(){
+
+/* 
+    function makeNavbarFocusable(){
         document.querySelectorAll("#menu_main > li[data-el='item']:not([id])")
             .forEach(item => {
                item.setAttribute('tabindex', 0) 
             })
 }
-
+*/
 
 function lazyload(){
     var imgs = document.querySelectorAll('#text img.lazy:not([data-src])');
@@ -433,7 +435,6 @@ function clearTitleSearchResults(){
 
 
 function makeBarsExpandable(){
-
     var expandDiv = document.querySelectorAll('.expandable');
     expandDiv.forEach(function(e){
         e.firstElementChild.addEventListener('click', openCloseAI, true);
