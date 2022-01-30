@@ -1,0 +1,26 @@
+name: Build
+on: [push]
+concurrency:
+    group: ${{ github.ref }}
+    cancel_in_progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Checkout repository
+         uses: actions/checkout@v2
+         with:
+            submodules: true
+        # Ant isn't available using "act", so we install it if we must
+       - name: Update apt-get
+         run:  apt-get update
+       - name: Install libvips
+         run: sudo apt-get install -y --no-install-recommends --no-upgrade libvips-tools
+       - name: Install ant
+         if: ${{ env.ACT }}
+         run: sudo apt-get install -y --no-install-recommends --no-upgrade ant
+       - name: test
+         run: vips --version; ant --version
+
+
+        
