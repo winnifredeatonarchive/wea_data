@@ -2,7 +2,7 @@ name: Build
 on: [push]
 concurrency:
     group: ${{ github.ref }}
-    cancel_in_progress: true
+    cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
