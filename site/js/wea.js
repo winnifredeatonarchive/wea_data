@@ -300,9 +300,10 @@ function addHeaderSearch(){
 
 
          let typeaheadMade = false;
-         
+         let typeahead_going = false;
      function makeHeaderTypeahead(){
       if (!typeaheadMade){
+                    let navSearch = document.querySelector('#nav_search');
                    let headerInput = this;
             fetch('ajax/sitemap.html')
          .then(function(file){
@@ -313,8 +314,9 @@ function addHeaderSearch(){
                         var nonce = document.createElement('div');
                         nonce.innerHTML = doc;
                         let divs = nonce.querySelectorAll('section > div');
+                        let sitemap = document.querySelector('#siteMap');
                         divs.forEach(function(div){
-                            document.getElementById('siteMap').appendChild(div);
+                            siteMap.appendChild(div);
                         });
                         headerInput.addEventListener('input',titleSearch);
                         var results = document.querySelectorAll('#siteMap .item');
@@ -322,26 +324,23 @@ function addHeaderSearch(){
                         typeaheadMade = true;
            });  
       }
-     
- 
-     }
+   }
      
      
 function submitSearch(){
     var e=arguments[0];
+    typeahead_going = true;
     var searchInput = document.getElementById('nav_search_input');
     if (this.tagName == 'A' || e.key == 'Enter' || this.tagName == 'BUTTON'){
         if (this.tagName == 'A'){
             e.preventDefault();
         }
-        console.log(searchInput);
         var href = "search.html";
         if (!(searchInput.value === "")){
             href = "search.html?q=" + encodeURIComponent(searchInput.value);
         }
         window.location.href = href;
     }
-     
 }
 
 function removeOtherOpenNavs(){
@@ -407,7 +406,7 @@ function titleSearch(){
         var basicInput = document.getElementById('siteMap_input');
         basicInput.classList.add('item');
         basicInput.classList.add('showing');
-        basicInput.setAttribute('tabindex', 0);
+        //basicInput.setAttribute('tabindex', 0);
         var searchLink = document.getElementById('siteMap_input_link');
         var searchString = "search.html?q=" + encodeURIComponent(inputValue);
         searchLink.setAttribute('href',searchString);
@@ -423,7 +422,7 @@ function titleSearch(){
                 if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
                     if (match < 5){
                         currItem.classList.add('showing');
-                        currItem.setAttribute('tabindex',0);
+                        //currItem.setAttribute('tabindex',0);
                         var parent = currItem.parentNode;
                         if (!parent.classList.contains('showing')){
                             parent.classList.add('showing');
@@ -442,9 +441,8 @@ function titleSearch(){
 function clearTitleSearchResults(){
     var results = document.querySelectorAll('#nav_search .showing');
     for (r=0; r < results.length; r++){
-        console.log(results[r]);
         results[r].classList.remove('showing');
-        results[r].removeAttribute('tabindex');
+        //results[r].removeAttribute('tabindex');
     }
    /* document.getElementById('siteMap').classList.remove('hasResults');*/
 }
