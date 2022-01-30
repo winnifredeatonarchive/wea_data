@@ -9,8 +9,6 @@ jobs:
     steps:
        - name: Checkout repository
          uses: actions/checkout@v2
-         with:
-            submodules: true
         # Ant isn't available using "act", so we install it if we must
        - name: Update apt-get
          run:  sudo apt-get update
@@ -19,8 +17,5 @@ jobs:
        - name: Install ant
          if: ${{ env.ACT }}
          run: sudo apt-get install -y --no-install-recommends --no-upgrade ant
-       - name: test
-         run: vips --version; ant --version
-
-
-        
+       - name: Build site
+         run: ant -f ${{ github.workspace}/build.xml
