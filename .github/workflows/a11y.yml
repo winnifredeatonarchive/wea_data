@@ -1,5 +1,9 @@
 name: Validate accessibility
 on: [push, workflow_dispatch]
+concurrency:
+    group: ${{ github.ref }}
+    # Don't cancel already running builds
+    cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +14,7 @@ jobs:
       - name: Wait for Jenkins
         if: ${{ !(env.ACT || github.event_name == 'workflow_dispatch') }}
         run: |
-            secs=5 
+            secs=600 #Ten minutes 
             while [ $secs -gt 0 ]; do
                printf "\rsleep: $((secs%3600/60))m:$((secs%60))s\033[0K" 
                sleep 1 
@@ -30,4 +34,9 @@ jobs:
         run: unzip ${{github.workspace}}/archive.zip -d ${{ github.workspace }}
       - name: Run accessibility checks
         run: pa11y-ci ${{ github.workspace}}/archive/products/site/*.html
+      - name: Archive diagnostic reports
+        uses: actions/upload-artifact@v2
+        with:
+            name: pa11y-ci-report
+            path: pa11y-ci-report
         
