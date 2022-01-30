@@ -23,9 +23,11 @@ jobs:
             https://api.github.com/repos/${{ github.repository }}/contents/.pa11yci
             -o ${{ github.workspace }}/.pa11yci       
       - name: Download node modules
-        run: npm install pa11y-ci pa11y-ci-reporter-html
+        run: npm install pa11y-ci pa11y-ci-reporter-html --g
       - name: Download package from Jenkins
         run: curl -o ${{github.workspace}}/archive.zip "https://jenkins.hcmc.uvic.ca/job/WEA/lastSuccessfulBuild/artifact/*zip*/archive.zip"
       - name: Unzip
         run: unzip ${{github.workspace}}/archive.zip -d ${{ github.workspace }}
+      - name: Run accessibility checks
+        run: pa11y-ci ${{ github.workspace}}/archive/products/site/*.html
         
