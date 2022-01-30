@@ -9,13 +9,34 @@ jobs:
     steps:
        - name: Checkout repository
          uses: actions/checkout@v2
-        # Ant isn't available using "act", so we install it if we must
+       - name: Set environment variables
+         run: >
+            VERSION=$(cat ${{ github.workspace }}/VERSION);
+            SHORT_SHA=`git rev-parse --short HEAD`;
+            ARTIFACT_NAME="${VERSION}_${SHORT_SHA}";
+            echo "VERSION=${VERSION}" >> $GITHUB_ENV;
+            echo "SHORT_SHA=${SHORT_SHA}" >> $GITHUB_ENV;
+            echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> $GITHUB_ENV
+       # Run apt-get first
        - name: Update apt-get
          run:  sudo apt-get update
+        # Now install libvips
        - name: Install libvips
          run: sudo apt-get install -y --no-install-recommends --no-upgrade libvips-tools
+        # Now ant, if we must 
        - name: Install ant
          if: ${{ env.ACT }}
          run: sudo apt-get install -y --no-install-recommends --no-upgrade ant
+        # Must also install ant-contrib
+       - name: Install ant-contrib
+         run: sudo apt-get install -y --no-install-recommends -no-update ant-contrib
+        # Build the site fully
        - name: Build site
          run: ant -f ${{ github.workspace }}/build.xml
+         # Upload the artifacts
+       - name: Archive artifacts
+         uses: actions/upload-artifact@v2
+         with:
+            name: ${{ env.ARTIFACT_NAME }}
+            path: ${{ github.workspace }}/products
+         
