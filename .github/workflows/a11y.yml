@@ -1,0 +1,14 @@
+name: Validate accessibility
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Wait for Jenkins
+        if: ${{ !(env.ACT || github.event_name == 'workflow_dispatch') }} 
+        run: ${{ github.workspace }}/code/countdown.sh 2
+      - name: Download assets
+        run: echo "Download stuff"
+      - name: Validate
+        run: echo "Validate stuff"
