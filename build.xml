@@ -4,13 +4,15 @@
     <include file="buildGlobals.xml"/>
   
     <property name="staticSearchBranch" value="main"/>
+    <property name="ss.target" value="allButValidate"/>
+    <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
   
     <target name="echoProps">
         <echoproperties/>
     </target>
   
   <target name="getStaticSearch">
-     <property name="ss.codeDir" value="${basedir}/code/staticSearch/code"/>
+   
       <delete dir="${ss.codeDir}"/>
      <exec executable="git">
          <arg line="clone --single-branch --branch ${staticSearchBranch} https://github.com/projectEndings/staticSearch/ ${ss.codeDir}"/>
@@ -46,8 +48,10 @@
     </target>-->
     
     <target name="createStaticSearch">
-        <ant antfile="code/staticSearch/code/build.xml" inheritall="false" target="allButValidate">
-            <property name="ssConfig" value="../config.xml"/>
+        <ant antfile="${ss.codeDir}/build.xml" inheritall="false" >
+        
+            <target name="${ss.target}"/>
+            <property name="ssConfigFile" value="${basedir}/code/staticSearch/config.xml"/>
         </ant>
     </target>
     
