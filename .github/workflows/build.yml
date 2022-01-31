@@ -61,8 +61,8 @@ jobs:
       - name: Validate with pa11y
         run: pa11y-ci --config ${{ github.workspace }}/.pa11yci ./products/site/*.html
       - name: Archive reports
+        if: always()
         uses: actions/upload-artifact@v2
         with:
             name: pa11y-ci-report
             path: pa11y-ci-report
-    
