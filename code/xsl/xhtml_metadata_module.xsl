@@ -88,8 +88,8 @@
     <xsl:template name="createCreditsAndCitations">
         <xsl:variable name="root" select="ancestor::TEI"/>
         <xsl:variable name="currId" select="$root/@xml:id"/>
-        <div id="credits" class="additionalInfo expandable">
-            <div class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations<span class="mi">chevron_right</span></div>
+        <details id="credits" class="additionalInfo expandable">
+            <summary class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations<span class="mi">chevron_right</span></summary>
             <div id="credits_content" class="content">
                 <xsl:apply-templates select="$root//respStmt[not(ancestor::biblFull)]" mode="metadata"/>
                 <xsl:if test="$root//notesStmt[not(ancestor::biblFull)]/note">
@@ -152,7 +152,7 @@
                 </div>
             </div>
             
-        </div>
+        </details>
     </xsl:template>
     
     
@@ -187,8 +187,8 @@
     
     <xsl:template name="createRelatedItems">
         <xsl:if test="ancestor::TEI//relatedItem">
-            <div id="relatedItems" class="additionalInfo expandable">
-                <div class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></div>
+            <details id="relatedItems" class="additionalInfo expandable">
+                <summary class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></summary>
                 <div class="content">
                     <xsl:for-each select="ancestor::TEI//relatedItem">
                         <xsl:variable name="targ" select="@target"/>
@@ -218,7 +218,7 @@
                     </xsl:for-each>
 
                 </div>
-            </div>
+            </details>
         </xsl:if>
     </xsl:template>
     
@@ -250,12 +250,12 @@
             <xsl:apply-templates select="ancestor::TEI" mode="toc"/>
         </xsl:variable>
         <xsl:if test="exists($toc/item)">
-            <div id="toc" class="additionalInfo expandable">
-                <div class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents<span class="mi">chevron_right</span></div>
+            <details id="toc" class="additionalInfo expandable">
+                <summary class="metadataLabel additionalInfoHeader" id="toc_header">Table of Contents<span class="mi">chevron_right</span></summary>
                 <div class="content" id="toc_content">
                     <xsl:apply-templates select="$toc" mode="tei"/>
                 </div>
-            </div>
+            </details>
             
         </xsl:if>
     </xsl:template>
@@ -345,15 +345,15 @@
     
     <xsl:template match="abstract" mode="metadata">
         <xsl:variable name="curr" select="."/>
-        <div id="headnote" class="additionalInfo expandable">
-            <div class="metadataLabel additionalInfoHeader" id="headnote_header">Headnote<span class="mi">chevron_right</span></div>
+        <details id="headnote" class="additionalInfo expandable" open="open">
+            <summary class="metadataLabel additionalInfoHeader" id="headnote_header">Headnote<span class="mi">chevron_right</span></summary>
             <div class="content" id="headnote_content">
                 <xsl:apply-templates select="node()" mode="tei"/>         
                 <div class="headnoteResp">
                     <xsl:apply-templates select="wea:returnHeadnoteByline($curr)" mode="tei"/>
                 </div>
             </div>
-        </div>
+        </details>
     </xsl:template>
     
     <xsl:template name="getWork">

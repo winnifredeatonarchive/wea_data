@@ -1865,11 +1865,11 @@ html:not(#index) #mainBody[class*="BornDigital"]:not(.exhibit) > div{
     padding-left:0.5em;
     margin-right:1em;
 }
-#mainBody[class*="BornDigital"]:not(.exhibit) #info > div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info > :is(div, .expandable){
     width:100%;
 }
 
-#mainBody[class*="BornDigital"]:not(.exhibit) #info > div + div{
+#mainBody[class*="BornDigital"]:not(.exhibit) #info > .expandable + .expandable{
     border-top: 1px solid #ccc;
 }
 
@@ -2085,7 +2085,7 @@ div[data-type='listFigure'] img{
    
 }
 
-#additional_info > div{
+#additional_info > details{
     margin-top:1rem;
     background: var(--wea-additional-info-bg-color);
     box-shadow: 1px 1px 1px 1px #dcdcdc;
@@ -2104,11 +2104,65 @@ div[data-type='listFigure'] img{
     flex-wrap:wrap;
 }
 
+details.expandable summary{
+    list-style:none;
+}
+
+details.expandable summary:-webkit-details-marker{
+    display:none;
+}
+
+:root{
+    --accordion-easing: cubic-bezier(0.45,0.05,0.55,0.95);
+    --accordion-duration: 0.3s;
+}
+
 .expandable .content{
     padding-bottom:.25rem;
 }
 
+details .content{
+    transition: opacity var(--accordion-duration) var(--accordion-easing);
+}
 
+details[aria-expanded='false'] .content{
+    opacity: 0;
+}
+
+details[aria-expanded='true'] .content{
+    opacity: 1;
+}
+
+details > summary {
+    cursor:pointer;
+    padding:1rem;
+    -webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+    
+}
+
+.JS .additionalInfoHeader > span.mi{
+    display:inline-block;
+    float:right;
+        font-variant:none;
+}
+
+.expandable[aria-expanded='true'] span.mi{
+    transform: rotate(90deg);
+    transition: transform  .5s;
+}
+
+
+.expandable[aria-expanded='false'] span.mi{
+    transform: rotate(0deg);
+    transition: transform .5s;
+}
+
+
+/* 
 .JS .expandable.closed > .content{
     max-height:0;
     overflow:hidden;
@@ -2123,39 +2177,9 @@ div[data-type='listFigure'] img{
     transition: max-height 0.3s cubic-bezier(0.45,0.05,0.55,0.95);
     overflow:auto;
     animation: hide-scroll 0.3s backwards;    
-}
-
-.JS .additionalInfoHeader{
-    cursor:pointer;
-    padding:1rem;
-    -webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-    
-}
-
-.additionalInfoHeader > span.mi{
-    display:none;
-    font-variant:none;
-}
-
-.JS .additionalInfoHeader > span.mi{
-    display:inline-block;
-    float:right;
-}
-
-.expandable.open span.mi{
-    transform: rotate(90deg);
-    transition: transform  .5s;
-}
+} */
 
 
-.expandable.closed span.mi{
-    transform: rotate(0deg);
-    transition: transform .5s;
-}
 
 
 
