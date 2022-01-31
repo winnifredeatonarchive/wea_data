@@ -37,6 +37,7 @@
             <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
             <xsl:if test="@xml:id='index'">
                 <link rel="stylesheet" type="text/css" href="css/index.css"/>
+                <link rel="preload" as="image" href="images/WEA-hero-img.jpg"/>
             </xsl:if>
 <!--            <xsl:if test="@xml:id = 'pseudonyms'">
                 <link rel="stylesheet" type="text/css" href="js/timeline3/css/timeline.css"/>
