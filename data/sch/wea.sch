@@ -99,7 +99,7 @@
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 context="tei:*[@calendar]">
-            <sch:assert test="string-length(.) gt 0"> @calendar indicates the system or calendar to
+            <sch:assert test="string-length(.) gt 0"> @calendar indicates one or more systems or calendars to
               which the date represented by the content of this element belongs, but this
               <sch:name/> element has no textual content.</sch:assert>
           </sch:rule>
@@ -167,8 +167,8 @@
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
-        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.
+                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
       </report>
             </rule>
          </pattern>
@@ -871,8 +871,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:l or ancestor::tei:lg">
-        Abstract model violation: Lines may not contain higher-level divisions such as p or ab.
+                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+        Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
       </report>
             </rule>
          </pattern>
@@ -968,8 +968,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:l">
-        Abstract model violation: Lines may not contain higher-level structural elements such as div.
+                 test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
       </report>
             </rule>
          </pattern>
@@ -985,8 +985,8 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  xmlns:math="http://www.w3.org/1998/Math/MathML"
                  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
-        Abstract model violation: p and ab may not contain higher-level structural elements such as div.
+                 test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
+        Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
       </report>
             </rule>
          </pattern>

@@ -828,7 +828,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text> @calendar indicates the system or calendar to
+               <svrl:text> @calendar indicates one or more systems or calendars to
               which the date represented by the content of this element belongs, but this
               <xsl:text/>
                   <xsl:value-of select="name(.)"/>
@@ -934,14 +934,14 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:p"/>
 
 		    <!--REPORT -->
-      <xsl:if test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
+      <xsl:if test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                 test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
+                                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
             <svrl:text>
-        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
       </svrl:text>
          </svrl:successful-report>
       </xsl:if>
@@ -2241,14 +2241,14 @@ On <xsl:text/>
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ab"/>
 
 		    <!--REPORT -->
-      <xsl:if test="ancestor::tei:l or ancestor::tei:lg">
+      <xsl:if test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                 test="ancestor::tei:l or ancestor::tei:lg">
+                                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
             <svrl:text>
-        Abstract model violation: Lines may not contain higher-level divisions such as p or ab.
+        Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
       </svrl:text>
          </svrl:successful-report>
       </xsl:if>
@@ -2413,13 +2413,14 @@ On <xsl:text/>
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div"/>
 
 		    <!--REPORT -->
-      <xsl:if test="ancestor::tei:l">
-         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="ancestor::tei:l">
+      <xsl:if test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                 test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
             <svrl:text>
-        Abstract model violation: Lines may not contain higher-level structural elements such as div.
+        Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
       </svrl:text>
          </svrl:successful-report>
       </xsl:if>
@@ -2438,14 +2439,14 @@ On <xsl:text/>
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div"/>
 
 		    <!--REPORT -->
-      <xsl:if test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
+      <xsl:if test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
          <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                 test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
+                                 test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
             <xsl:attribute name="location">
                <xsl:apply-templates select="." mode="schematron-select-full-path"/>
             </xsl:attribute>
             <svrl:text>
-        Abstract model violation: p and ab may not contain higher-level structural elements such as div.
+        Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
       </svrl:text>
          </svrl:successful-report>
       </xsl:if>
