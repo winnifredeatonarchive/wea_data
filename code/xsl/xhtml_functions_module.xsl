@@ -62,7 +62,14 @@
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$doc//catRef[contains(@scheme,'#exhibit')]/@target"/>
         <xsl:variable name="thisCat" select="$standaloneXml//category[@xml:id=substring-after($category,'#')]"/>
-        <div class="breadcrumb metadataLabel"><a href="{$thisCat/@xml:id}.html"><xsl:apply-templates select="$thisCat/catDesc/term/node()" mode="tei"/></a></div>
+        <div class="breadcrumb metadataLabel">
+            <xsl:if test="exists($thisCat)">
+                <a href="{$thisCat/@xml:id}.html">
+                    <xsl:apply-templates select="$thisCat/catDesc/term/node()"
+                        mode="tei"/>
+                </a>
+            </xsl:if>
+        </div>
     </xsl:function>
     
     <xsl:function name="wea:getURL" as="xs:string">
