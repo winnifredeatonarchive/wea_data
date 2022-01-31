@@ -33,12 +33,14 @@ jobs:
         # Build the site fully
        - name: Build site
          run: ant -f ${{ github.workspace }}/build.xml
+       - name: Build dist
+         run: ant -f ${{ github.workspace }}/buildDist.xml
          # Upload the artifacts
        - name: Archive artifacts
          uses: actions/upload-artifact@v2
          with:
-            name: ${{ env.ARTIFACT_NAME }}
-            path: ${{ github.workspace }}/products/site
+            name: wea_small
+            path: ${{ github.workspace }}/dist/wea_small.zip
   checka11y:
     needs: build
     runs-on: ubuntu-latest

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildDist" basedir="." default="all">
+   <description>Build for creating small dist packages from the site</description>
+   
+   <loadfile property="version" srcfile="${basedir}/VERSION"/>
+   
+   <property name="distDir" value="${basedir}/dist"/>
+   
+   
+   <target name="init">
+      <delete dir="${distDir}"/>
+      <mkdir dir="${distDir}"/>
+   </target>
+   
+   <target name="getGitSHA">
+      <exec executable="git" outputproperty="git.SHA">
+         <arg line="rev-parse --short HEAD"/>
+      </exec>
+   </target>
+   
+   <target name="zipFull" depends="getGitSHA">
+      <zip destfile="${distDir}/wea.zip">
+         <fileset dir="${basedir}">
+            <include name="products/site/**"/>
+         </fileset>
+      </zip>
+   </target>
+   
+   <target name="zipSmall" depends="getGitSHA">
+      <zip destfile="${distDir}/wea_small.zip" >
+         <fileset dir="${basedir}">
+            <include name="products/site/**"/>
+            <exclude name="products/site/media/**"/>
+            <exclude name="products/site/facsimiles/*.pdf"/>
+            <exclude name="products/site/xml/**"/>
+            <exclude name="products/site/staticSearch/**"/>
+         </fileset>
+      </zip>
+   </target>
+   
+   <target name="all" depends="init, zipFull, zipSmall"/>
+   
+</project>
