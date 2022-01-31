@@ -56,8 +56,10 @@ jobs:
         uses: actions/download-artifact@v2
       - name: Unzip site
         run: unzip wea_small/wea_small.zip
+      - name: Debugging
+        run: pwd && ls -R
       - name: Validate with pa11y
-        run: pa11y-ci --config ${{ github.workspace }}/.pa11yci wea_small/products/site/*.html
+        run: pa11y-ci --config ${{ github.workspace }}/.pa11yci ./wea_small/products/site/*.html
       - name: Archive reports
         uses: actions/upload-artifact@v2
         with:
