@@ -289,6 +289,7 @@ function addBiblSort(){
     let label = `<label for="sort">Sort</label>`;
     let select = document.createElement('select');
     select.setAttribute('name','sort'); 
+    select.id = 'sort';
     listBibl.insertAdjacentHTML('beforeBegin', label);
     listBibl.insertAdjacentElement('beforeBegin', select);
     sortOptions.forEach(option => {
