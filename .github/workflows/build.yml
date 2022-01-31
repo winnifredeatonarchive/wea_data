@@ -45,12 +45,22 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v2
+        with:
+           node-version: '16'
+      - name: Download packages
+        run: npm install pa11y-ci pa11y-ci-reporter-html -g
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Download all artifacts
         uses: actions/download-artifact@v2
+      - name: Unzip site
+        run: unzip wea_small/wea_small.zip
+      - name: Validate with pa11y
+        run: pa11y-ci --config ${github.workspace}/.pa11yci wea_small/products/site/*.html
+      - name: Archive reports
+        uses: actions/upload-artifact@v2
         with:
-            path: products
-      - name: Check products
-        run: ls -R products
+            name: pa11y-ci-report
+            path: pa11y-ci-report
     
