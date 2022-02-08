@@ -570,7 +570,8 @@ function titleSearch(){
     
     /* IF the string matches, then proceed */
     if (/\S/.test(inputValue)){
-        var regex = new RegExp(inputValue,'i');
+        var regex = new RegExp(inputValue.replace(/[\s-]/g,'(-|\\s)'),'gi');
+        console.log(regex);
         var items = siteMap.querySelectorAll('.item');
         var s = 0;
         var match = 0;
@@ -589,8 +590,10 @@ function titleSearch(){
     
             for (s; s < items.length; s++){
                 var currItem = items[s];
-
-                if (currItem.getElementsByTagName('a')[0].innerText.match(regex) !== null){
+                var text = currItem.querySelector('a').innerText;
+                // Strip diacritics
+                var textClean = text.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+                if (regex.test(textClean)){
                     if (match < 5){
                         currItem.classList.add('showing');
                         //currItem.setAttribute('tabindex',0);
