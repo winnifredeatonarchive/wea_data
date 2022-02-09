@@ -47,52 +47,7 @@ function searchSetup() {
 		});
 	});
 
-	filterFieldsets.forEach(fieldset => {
-		fieldset.classList.add('expandable');
-		fieldset.classList.add('closed');
-		let legend = fieldset.querySelector('legend');
-		let miDiv = document.createElement('span');
-
-		/* Add a right arrow btn */
-		miDiv.classList.add('mi');
-		miDiv.innerText = 'chevron_right';
-		legend.appendChild(miDiv);
-
-		/* And group stuff as content */
-		let contentDiv = document.createElement('div');
-		contentDiv.classList.add('content');
-		let sib = legend.nextElementSibling;
-		while (sib) {
-			contentDiv.appendChild(sib);
-			sib = legend.nextElementSibling;
-		}
-
-		/* And now put the content in the content div */
-		fieldset.appendChild(contentDiv);
-
-		/* And let these be expandable */
-		legend.addEventListener('click', e => {
-			if (fieldset.classList.contains('closed')) {
-				fieldset.classList.remove('closed');
-				fieldset.classList.add('open');
-			} else {
-				fieldset.classList.remove('open');
-				fieldset.classList.add('closed');
-			}
-		});
-	});
-
-
-	filterInputs.forEach(input => {
-		if (!input.type == 'text') {
-			return;
-		}
-		input.addEventListener('keydown', e => {
-			if (e.key == 'Enter') {
-				searchBtn.click();
-			}
-		})
-	});
+	
 
 	searchBtn.addEventListener('click', function () {
 		let sorters = document.querySelectorAll('#sorters');
@@ -103,32 +58,15 @@ function searchSetup() {
 
 }
 
-function openFilters() {
-	filterFieldsets.forEach(fieldset => {
-		let activeInputs = false;
-		fieldset.querySelectorAll('input').forEach(input => {
-			console.log(input);
-			console.log(input.checked);
-			console.log(input.value.length);
-			if (input.checked || (input.type == 'text' && input.value.length > 0)) {
-				activeInputs = true;
-				return;
-			}
-		});
-		if (activeInputs) {
-			fieldset.classList.remove('closed');
-			fieldset.classList.add('open');
-		}
-	})
-}
-
 function searchCreateSearch() {
 	Sch = new StaticSearch();
+	document.querySelectorAll('details[open]').forEach(dtl => {
+	   dtl.setAttribute('aria-expanded', 'true'); 
+	    
+	});
 	Sch.searchFinishedHook = function () {
-		openFilters();
 		let thisResults = this.resultsDiv;
 		Sch.resultObjs = thisResults.querySelectorAll('div');
-		console.log(thisResults.cloneNode(true));
 		let headers = this.resultsDiv.querySelectorAll('div > a');
 		let images = this.resultsDiv.querySelectorAll('img');
 		if (Sch.resultObjs.length === 0) {

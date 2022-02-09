@@ -1055,7 +1055,7 @@ transition: border-bottom-color 0.15s ease-in-out;
     position:sticky;
     top:calc(var(--header-height) + .5rem);
     overflow-y:auto;
-    width:12.5rem;
+    width:14rem;
     margin-right:3rem;
     font-size:0.8rem;
     overflow-x:hidden;
@@ -1107,15 +1107,20 @@ select{
     margin-left:.5rem;
 }
 
-.wea-ss-filters > .heading{
-    margin-bottom: 1rem;
-    padding-bottom: 0.25rem;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: white;
-    margin-left:0.25rem;
-    
+.wea-ss-filters > * > *{
+    width:100%;
+}
+.wea-ss-filters summary{
+    padding:1em;
+    padding-left:0;
+    border-bottom: 1px solid #efefef;
+    width:100%;
+    align-items:center;
+    text-transform:uppercase;
+    font-variant:small-caps;
+    font-weight:400;
+    cursor:pointer;
+    font-size: 0.85rem;
 }
 
 .wea-ss-filters > .ssDescFilters{
@@ -1140,11 +1145,6 @@ select{
     order:4;
 }
 
-.wea-ss-filters > .heading > .metadataLabel{
-    font-weight:bold;
-    font-size:1.2rem;
-    
-}
 
 
 
@@ -1168,19 +1168,7 @@ fieldset{
     border:none;
 }
 
-fieldset > legend{
-    padding:0.25em;
-    margin-bottom:1rem;
-    border-bottom: 1px solid #efefef;
-    width:100%;
-    align-items:center;
-    text-transform:uppercase;
-    font-variant:small-caps;
-    font-weight:400;
-    cursor:pointer;
-}
-
-fieldset > legend > .mi{
+ .mi{
     font-variant:normal;
     font-size:18px;
     position:relative;

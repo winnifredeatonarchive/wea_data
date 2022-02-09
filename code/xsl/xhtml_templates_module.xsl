@@ -81,6 +81,7 @@
             </xsl:if>
 
            <xsl:call-template name="createFooter"/>
+            <script src="js/accordion.js"><!--Keep open--></script>
         </body>
     </xsl:template>
     
@@ -578,8 +579,8 @@
         
         <xsl:choose>
             <xsl:when test="ancestor::list[@xml:id='featuredItems']" >
-                <a href="{replace(parent::item/@corresp,'.xml','.html')}" aria-label="Link to {$altText}">
-                    <img src="{$urlNorm}" alt="{$altText}"/> 
+                <a href="{replace(parent::item/@corresp,'.xml','.html')}" aria-label="Link to {$altText}">z
+                    <img src="{$urlNorm}" alt="{$altText}"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>

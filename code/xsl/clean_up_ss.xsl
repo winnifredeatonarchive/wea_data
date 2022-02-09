@@ -7,6 +7,7 @@
     xpath-default-namespace="http://www.w3.org/1999/xhtml"
     xmlns="http://www.w3.org/1999/xhtml"
     exclude-result-prefixes="#all"
+    xmlns:wea="https://winnifredeatonarchive.org"
     version="3.0">
     <xd:doc scope="stylesheet">
         <xd:desc>
@@ -18,7 +19,6 @@
     
     
     <xsl:mode on-no-match="shallow-copy"/>
-    
     
   <!--  <xsl:template match="form[@id='ssForm']">
         <xsl:copy>
@@ -32,17 +32,30 @@
         </xsl:copy>
     </xsl:template>-->
     
+   
+    
+    
+    <xsl:template match="body">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+            <xsl:sequence select="descendant::div[@id='staticSearch']/script[matches(@src,'ssSearch')]"/>
+            <script src="js/wea_search.js"><!--Keep open--></script>
+            <script src="js/accordion.js"><!--Keep open--></script>
+        </xsl:copy>
+    </xsl:template>
+        
     
     <xsl:template match="div[@id='staticSearch']">
         <xsl:copy>
-            <xsl:apply-templates select="@*|script"/>
-            <script src="js/wea_search.js"><!--Keep open--></script>
+            <xsl:apply-templates select="@*"/>
             <div class="wea-ss-filters">
                 <div class="heading">
                     <div class="metadataLabel">Search Filters</div>
                     <button id="filterSearch">Filter</button>
                 </div>
-                <xsl:apply-templates select="./form/div[matches(@class,'Filters')]"/>
+                <xsl:apply-templates select="form/div[contains-token(@class,'ssDateFilters')]"/>
+                <xsl:apply-templates select="form/div[contains-token(@class,'ssDescFilters')]"/>
+             
             </div>
             <div class="wea-ss-search-and-results">
                   <xsl:apply-templates select="form"/>
@@ -52,8 +65,31 @@
         </xsl:copy>
     </xsl:template>
     
+    
+    <xsl:template match="fieldset">
+        <details class="expandable">
+            <summary>
+                <xsl:sequence select="legend/node()"/>
+                <span class="mi">chevron_right</span>
+            </summary>
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>
+        </details>
+    </xsl:template>
+    
+    <xsl:template match="fieldset/legend">
+        <xsl:copy>
+            <xsl:attribute name="class" select="'sr-only'"/>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
+
+        
+    
     <!--Remove initial static search init; we do it ourselves so we can manipulate the results if we want to-->
-    <xsl:template match="div[@id='staticSearch']/script[not(@src)]"/>
+    <xsl:template match="script[wea:isStaticSearchScript(.)]"/>
     
     <xsl:template match="div[@id='search_instructions']"/>
     
@@ -81,6 +117,11 @@
         </xsl:copy>
     </xsl:template>
     
+    
+    <xsl:function name="wea:isStaticSearchScript">
+        <xsl:param name="script"/>
+        <xsl:sequence select="matches($script/@src,'(ssSearch|ssInitialize|wea_search|accordion)\.js$')"/>
+    </xsl:function>
     
     
 </xsl:stylesheet>
