@@ -36,6 +36,8 @@
             <link rel="stylesheet" type="text/css" href="css/media.css"/>
             <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
             <xsl:if test="@xml:id='index'">
+                <!--Special meta to make the twitter widget work-->
+                <meta name="twitter:widgets:csp" content="on"/>
                 <link rel="stylesheet" type="text/css" href="css/index.css"/>
                 <link rel="preload" as="image" href="images/WEA-hero-img.jpg"/>
             </xsl:if>
