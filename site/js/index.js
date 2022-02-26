@@ -1,10 +1,9 @@
 /* THis is a special javascript library jsut for the index page */
     var hash = window.location.hash.substring(1);
-    var featuredItemRegex =  new RegExp ("index_featuredItems_\\d+");
+    var featuredItemRegex = new RegExp("index_featuredItems_\\d+");
 
-function initIndex(){
+
     makeFeaturedItemsLinks();
-}
 
 function makeFeaturedItemsLinks(){
 

@@ -10,14 +10,41 @@
         <mkdir dir="${site.dir}"/>
         <mkdir dir="${site.dir}/xml"/>
     </target>
-  
     
-    <target name="copyAuxFiles">
-        <copy todir="${site.dir}" overwrite="true">
-            <fileset dir="../site">
-                <include name="**/**"/>
+    <target name="copyCSS">
+        <!--First, use sass to minify the CSS files
+            (and to prep for sass in future)-->
+        <exec executable="sass">
+            <arg line="../site/sass:${site.dir}/css --style compressed"/>
+        </exec>
+    </target>
+    
+    <target name="copyJS">
+        <!--Then already minified javascript
+            is just copied-->
+        <copy todir="${site.dir}/js">
+            <fileset dir="../site/js">
+                <include name="**.min.js"/>
             </fileset>
         </copy>
+        
+        <!--Now use the closure compiler-->
+        <apply executable="java" append="false" parallel="false" force="true">
+            <arg line="-jar ${lib.dir}/closure-compiler.jar"/>
+            <arg line="--warning_level QUIET"/>
+            <arg value="--js"/>
+            <srcfile/>
+            <arg value="--js_output_file"/>
+            <targetfile/>
+            <fileset dir="../site">
+                <include name="**/**.js"/>
+                <exclude name="**/**.min.js"/>
+            </fileset>
+            <globmapper from="*" to="${products.dir}/site/*"/>
+        </apply>
+    </target>
+    
+    <target name="copyImages">
         <copy todir="${site.dir}/images">
             <fileset dir="../data/images">
                 <include name="**"/>
@@ -33,12 +60,24 @@
                 <include name="**"/>
             </fileset>
         </copy>
+    </target>
+    
+    
+    <target name="copySchema">
         <copy todir="${site.dir}/xml/sch">
             <fileset dir="../data/sch">
                 <include name="**"/>
             </fileset>
         </copy>
     </target>
+    
+    <target name="copyAuxFiles" depends="copyCSS, copyJS, copyImages, copySchema"/>
+        
+  
+        
+      
+
+    
     
     
     <target name="processPDFs">

@@ -81,7 +81,20 @@
             </xsl:if>
 
            <xsl:call-template name="createFooter"/>
+
+            <script src="js/lazyload.min.js"/>
+            <xsl:if test="//graphic[contains(@url,'media/')]">
+                <script src="js/facsimile_view.js"></script>
+            </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id='index'">
+                <script src="js/index.js"></script>
+            </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id = 'contribute'">
+                <script src="js/jszip.min.js"/>
+                <script src="js/encoding_package.js"></script>
+            </xsl:if>
             <script src="js/accordion.js"><!--Keep open--></script>
+            <script src="js/wea.js"/>
         </body>
     </xsl:template>
     
@@ -828,6 +841,15 @@
     </xsl:template>
     
     
+    <xsl:template match="divGen[@xml:id='index_twitter']" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <a data-tweet-limit="2" data-dnt="true"
+                class="twitter-timeline" href="https://twitter.com/WEatonArchive?ref_src=twsrc%5Etfw">Tweets by the WEA</a>
+            <script async="async" defer="defer" src="https://platform.twitter.com/widgets.js" charset="utf-8"><!--KEEP OPEN--></script>
+        </div>
+
+    </xsl:template>
 
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">

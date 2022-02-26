@@ -100,10 +100,6 @@ function addEvents(){
     if (document.getElementById('tools')){
         makeToolbarResponsive();
     }
-    if (docId == 'index'){
-        initIndex();
-    }
-    
     if (docId === 'resources'){
         addBiblSort();
     }

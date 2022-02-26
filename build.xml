@@ -105,6 +105,10 @@
         <ant antfile="code/buildSite.xml" target="copyAuxFiles" inheritall="false"/>
     </target>
     
+    <target name="copyCSS">
+        <ant antfile="code/buildSite.xml" target="copyCSS" inheritall="false"/>
+    </target>
+    
     <target name="makeSiteMap">
         <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
             <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
