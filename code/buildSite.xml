@@ -17,6 +17,12 @@
         <exec executable="sass">
             <arg line="../site/sass:${site.dir}/css --style compressed"/>
         </exec>
+        <!--And copy the fonts-->
+        <copy todir="${site.dir}/fonts">
+            <fileset dir="../site/fonts">
+                <include name="**"/>
+            </fileset>
+        </copy>
     </target>
     
     <target name="copyJS">
