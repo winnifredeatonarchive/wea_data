@@ -72,15 +72,8 @@
     </target>
     
     <target name="copyAuxFiles" depends="copyCSS, copyJS, copyImages, copySchema"/>
-        
-  
-        
-      
 
-    
-    
-    
-    <target name="processPDFs">
+    <target name="processPDFs">        
         <foreach target="convertPDF" param="pdf" parallel="true">
             <path>
                 <fileset dir="${site.dir}/facsimiles">
@@ -95,10 +88,10 @@
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <!--Now create the thumbnails-->
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.jpg --size 10000x600"/>
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.jpg --size x600"/>
         </exec>
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.jpg --size 10000x300"/>
+            <arg line="${site.dir}/facsimiles/${base}.jpg -o ${site.dir}/facsimiles/${base}_tiny.jpg --size x300"/>
         </exec>
         
     </target>
@@ -246,19 +239,17 @@
         <echo message="${echo.separator}"/>
         <echo message="Validating XHTML..."/>
         <echo message="${echo.separator}"/>
-        <mkdir dir="${xh.validation.dir}"/>
-        <copy todir="${xh.validation.dir}">
+        <apply executable="java" failonerror="false" parallel="true">
+            <arg line="-jar ${lib.dir}/vnu/vnu.jar 
+                --format gnu
+                --skip-non-html
+                --errors-only
+                -Dnu.validator.client.content-type=application/xhtml+xml"/>
             <fileset dir="${site.dir}">
                 <include name="*.html"/>
             </fileset>
-        </copy>
-        <java jar="${project.dir}/lib/vnu/vnu.jar" failonerror="false" fork="true">
-            <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
-            <arg value="--format text"/>
-            <arg value="--skip-non-html"/>
-            <arg value="${xh.validation.dir}/"/>
-        </java>
-        <delete dir="${xh.validation.dir}"/>
+        </apply>
+       
     </target>
     
     <target name="createDocDetails">
