@@ -29,7 +29,7 @@
     
     
     <xsl:template match="/">
-        <xsl:for-each select="wea:getWorkingDocs($sourceXml)">
+        <xsl:for-each select="wea:getWorkingDocs($sourceXml)[not(//TEI/@xml:id = 'redirects')]">
             <xsl:variable name="out" select="concat($outDir,'xml/original/',//TEI/@xml:id,'.xml')"/>
             <xsl:message>Processing <xsl:value-of select="document-uri(/)"/> to <xsl:value-of select="$out"/></xsl:message>
             <xsl:result-document href="{$out}" indent="no" method="xml">

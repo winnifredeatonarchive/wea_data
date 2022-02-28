@@ -36,7 +36,7 @@
     
     <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=no'))"/>
     
-    <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
+    <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')[not(descendant::*:meta[@http-equiv='refresh'])]"/>
     
     <xsl:variable name="srcPersonography" select="$sourceXml//TEI[@xml:id='people']" as="element(TEI)"/>
     

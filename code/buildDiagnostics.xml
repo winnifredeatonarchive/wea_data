@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="buildDiagnostics" default="createDiagnostics">
+<project basedir="." name="buildDiagnostics" default="diagnosticsAll">
     
     <include file="../buildGlobals.xml"/>
     
+    <property name="old.dir" value="${basedir}/oldVersions"/>
+    
+    <target name="init">
+        <delete dir="${old.dir}" verbose="yes"/>
+        <mkdir dir="${old.dir}"/>
+    </target>
+    
+    <target name="getGitTags">
+        <description>Lists all of the current tags</description>
+        <exec executable="git" outputproperty="tags">
+            <arg line="tag"/>
+        </exec>
+        <echo message="${tags}"/>
+        <mkdir dir="${old.dir}"/>
+        <foreach list="${tags}" param="tag" delimiter="${line.separator}" target="checkoutTag"/>
+    </target>
+    
+    <target name="checkoutTag">
+        <echo message="${tag}"/>
+        <delete dir="${old.dir}/${tag}"/>
+        <mkdir dir="${old.dir}/${tag}"/>
+        <exec executable="svn" dir="${old.dir}/${tag}">
+            <arg line="export https://github.com/winnifredeatonarchive/wea_data/tags/${tag}/data/texts"/>
+        </exec>
+    </target>
+    
     <target name="createDiagnostics">
-        
         <echo message="Creating site..."/>
         <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
             <arg value="-s:${project.dir}/documentation/documentation.xml"/>
             <arg value="-xsl:${project.dir}/code/documentation/diagnostics_master.xsl"/>
             <arg value="-o:${project.dir}/documentation/documentation_full.xml"/>
+            <arg value="oldDir=${old.dir}"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>          
         </java>
     </target>
+    
+    
+    <target name="diagnosticsAll" depends="init, getGitTags, createDiagnostics"/>
+    
+
     
 </project>

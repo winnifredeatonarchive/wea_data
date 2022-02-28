@@ -1246,11 +1246,20 @@
                <p>Each XSLT <q>master</q> file includes a number of <q>module</q> files; <q>modules</q> should never contain other <q>modules</q>. Of course, there's one exception: the XHTML master file loads in a module named <q>xhtml_modules_module.xsl</q>, which contains all of the modules for creating the XHTML. The reason that there is a <q>modules module</q> is so that this documentation can be created using the standard WEA stylesheets so that it can be easily integrated into the regular site build process.</p>
                <p>Each module is documented using the <q>xd:doc</q> elements, which are oXygen specific elements for documenting XSL stylesheets.</p>
             </div>
+            <div xml:id="technical_redirects">
+               <head>Retiring, Deleting, and Redirecting Documents</head>
+               <p>In cases where a document that had previously been released has been renamed, deleted, or merged into another document, we must implement a redirect to make sure any citations, etc, do not break. To do that, use the redirects.xml file (at the root of the repository) and add a new link element that points from the old id to the new id.</p>
+            </div>
          </div>
          <div xml:id="diagnostics">
             <head>Diagnostics</head>
-            <p>The follow are the diagnostics for the Winnifred Eaton Archive project. The diagnostics provide a report of potential encoding errors, et cetera.</p>
+            <p>The following are the diagnostics for the Winnifred Eaton Archive project. The diagnostics provide a report of potential encoding errors, et cetera.</p>
             <divGen xml:id="diagnostics_content"/>
+         </div>
+         <div xml:id="versions">
+            <head>Versions</head>
+            <p>The Winnifred Eaton Archive is published in distinct <q>versions</q>. Each version or release can be found on the Winnifred Eaton Archive's <ref target="https://github.com/winnifredeatonarchive/wea_data">GitHub repository</ref>. The following documents are automatically generated statistics for each version.</p>
+            <divGen xml:id="versions_content"/>
          </div>
       </body>
       <back xml:id="appendix">
@@ -1596,6 +1605,8 @@
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -1927,6 +1938,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -2221,6 +2234,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -2448,7 +2463,9 @@
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -3099,6 +3116,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -3250,7 +3269,9 @@
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -3536,7 +3557,9 @@
                                  <ref target="#TEI.table">table</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                  <ref target="#TEI.listOrg">listOrg</ref> 
@@ -3818,6 +3841,8 @@
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>msdescription: <ref target="#TEI.msIdentifier">msIdentifier</ref>
@@ -4283,6 +4308,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -4485,6 +4512,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -4618,7 +4647,9 @@
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                  <ref target="#TEI.listOrg">listOrg</ref> 
@@ -4855,6 +4886,8 @@
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -5564,6 +5597,8 @@ Of Clare-Hall in Cambridge.</byline>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -5737,6 +5772,8 @@ Of Clare-Hall in Cambridge.</byline>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -6178,7 +6215,9 @@ supplied to printer.</change>
                               </item>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>tagdocs: <ref target="#TEI.egXML">egXML</ref>
                               </item>
@@ -6470,6 +6509,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -6807,7 +6848,9 @@ supplied to printer.</change>
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -7026,6 +7069,8 @@ supplied to printer.</change>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -7569,6 +7614,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -7746,6 +7793,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -7978,6 +8027,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -8173,6 +8224,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.taxonomy">taxonomy</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.linkGrp">linkGrp</ref> 
                                        <ref target="#TEI.seg">seg</ref>
                                     </item>
                                     <item>namesdates: <ref target="#TEI.event">event</ref> 
@@ -8426,6 +8478,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -8614,7 +8668,9 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                  <ref target="#TEI.listOrg">listOrg</ref> 
@@ -9043,6 +9099,8 @@ supplied to printer.</change>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -9240,6 +9298,8 @@ and then a Captain of several Ships</byline>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -9362,7 +9422,9 @@ and then a Captain of several Ships</byline>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.titlePart">titlePart</ref>
                               </item>
@@ -9497,6 +9559,8 @@ and then a Captain of several Ships</byline>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -9639,6 +9703,8 @@ and then a Captain of several Ships</byline>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -10157,6 +10223,8 @@ and then a Captain of several Ships</byline>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -10406,7 +10474,9 @@ formatting or layout information preserved.</p>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                  <ref target="#TEI.listOrg">listOrg</ref> 
@@ -10529,7 +10599,9 @@ formatting or layout information preserved.</p>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.ab">ab</ref>
+                              <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.event">event</ref>
                               </item>
@@ -10758,6 +10830,8 @@ formatting or layout information preserved.</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -10932,6 +11006,8 @@ formatting or layout information preserved.</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -11648,7 +11724,9 @@ material</measure>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.back">back</ref> 
                                  <ref target="#TEI.body">body</ref> 
@@ -11896,6 +11974,8 @@ material</measure>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -12144,6 +12224,8 @@ material</measure>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -12254,7 +12336,9 @@ material</measure>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.closer">closer</ref> 
@@ -12686,6 +12770,8 @@ material</measure>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -13617,6 +13703,8 @@ material</measure>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -13918,6 +14006,8 @@ material</measure>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -14584,7 +14674,9 @@ material</measure>
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -14814,6 +14906,8 @@ material</measure>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -15022,6 +15116,8 @@ material</measure>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -15226,6 +15322,8 @@ material</measure>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -15565,7 +15663,9 @@ entre les Romains.</label>
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -15934,7 +16034,9 @@ entre les Romains.</label>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.closer">closer</ref> 
@@ -16145,6 +16247,8 @@ entre les Romains.</label>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -16227,6 +16331,419 @@ entre les Romains.</label>
                            <code>
 &lt;content&gt;
  &lt;macroRef key="macro.specialPara"/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.link">
+                  <head>&lt;link&gt;</head>
+                  <p>
+                     <label>&lt;link&gt; </label>(link) defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. Links</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>linking — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>
+                           <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) <ref target="#TEI.att.pointing">att.pointing</ref> (<att>target</att>) <ref target="#TEI.att.typed">att.typed</ref> (<att>type</att>, <att>subtype</att>) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.global.meta">model.global.meta</ref> 
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
+                                       <ref target="#TEI.address">address</ref> 
+                                       <ref target="#TEI.author">author</ref> 
+                                       <ref target="#TEI.bibl">bibl</ref> 
+                                       <ref target="#TEI.biblScope">biblScope</ref> 
+                                       <ref target="#TEI.cit">cit</ref> 
+                                       <ref target="#TEI.corr">corr</ref> 
+                                       <ref target="#TEI.date">date</ref> 
+                                       <ref target="#TEI.editor">editor</ref> 
+                                       <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
+                                       <ref target="#TEI.foreign">foreign</ref> 
+                                       <ref target="#TEI.head">head</ref> 
+                                       <ref target="#TEI.hi">hi</ref> 
+                                       <ref target="#TEI.item">item</ref> 
+                                       <ref target="#TEI.l">l</ref> 
+                                       <ref target="#TEI.label">label</ref> 
+                                       <ref target="#TEI.lg">lg</ref> 
+                                       <ref target="#TEI.list">list</ref> 
+                                       <ref target="#TEI.name">name</ref> 
+                                       <ref target="#TEI.note">note</ref> 
+                                       <ref target="#TEI.num">num</ref> 
+                                       <ref target="#TEI.p">p</ref> 
+                                       <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                       <ref target="#TEI.publisher">publisher</ref> 
+                                       <ref target="#TEI.q">q</ref> 
+                                       <ref target="#TEI.quote">quote</ref> 
+                                       <ref target="#TEI.ref">ref</ref> 
+                                       <ref target="#TEI.reg">reg</ref> 
+                                       <ref target="#TEI.resp">resp</ref> 
+                                       <ref target="#TEI.rs">rs</ref> 
+                                       <ref target="#TEI.sic">sic</ref> 
+                                       <ref target="#TEI.sp">sp</ref> 
+                                       <ref target="#TEI.speaker">speaker</ref> 
+                                       <ref target="#TEI.term">term</ref> 
+                                       <ref target="#TEI.title">title</ref> 
+                                       <ref target="#TEI.unclear">unclear</ref>
+                                    </item>
+                                    <item>figures: <ref target="#TEI.cell">cell</ref> 
+                                       <ref target="#TEI.table">table</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.authority">authority</ref> 
+                                       <ref target="#TEI.change">change</ref> 
+                                       <ref target="#TEI.distributor">distributor</ref> 
+                                       <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
+                                       <ref target="#TEI.language">language</ref> 
+                                       <ref target="#TEI.licence">licence</ref>
+                                    </item>
+                                    <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.linkGrp">linkGrp</ref> 
+                                       <ref target="#TEI.seg">seg</ref>
+                                    </item>
+                                    <item>msdescription: <ref target="#TEI.collection">collection</ref> 
+                                       <ref target="#TEI.institution">institution</ref> 
+                                       <ref target="#TEI.repository">repository</ref>
+                                    </item>
+                                    <item>namesdates: <ref target="#TEI.birth">birth</ref> 
+                                       <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.event">event</ref> 
+                                       <ref target="#TEI.forename">forename</ref> 
+                                       <ref target="#TEI.nationality">nationality</ref> 
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
+                                       <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.person">person</ref> 
+                                       <ref target="#TEI.place">place</ref> 
+                                       <ref target="#TEI.placeName">placeName</ref> 
+                                       <ref target="#TEI.surname">surname</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.back">back</ref> 
+                                       <ref target="#TEI.body">body</ref> 
+                                       <ref target="#TEI.byline">byline</ref> 
+                                       <ref target="#TEI.closer">closer</ref> 
+                                       <ref target="#TEI.dateline">dateline</ref> 
+                                       <ref target="#TEI.div">div</ref> 
+                                       <ref target="#TEI.docAuthor">docAuthor</ref> 
+                                       <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docTitle">docTitle</ref> 
+                                       <ref target="#TEI.epigraph">epigraph</ref> 
+                                       <ref target="#TEI.floatingText">floatingText</ref> 
+                                       <ref target="#TEI.front">front</ref> 
+                                       <ref target="#TEI.opener">opener</ref> 
+                                       <ref target="#TEI.salute">salute</ref> 
+                                       <ref target="#TEI.signed">signed</ref> 
+                                       <ref target="#TEI.text">text</ref> 
+                                       <ref target="#TEI.titlePage">titlePage</ref> 
+                                       <ref target="#TEI.titlePart">titlePart</ref> 
+                                       <ref target="#TEI.trailer">trailer</ref>
+                                    </item>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>Empty element</cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">This element should only be used to encode associations not otherwise provided for by more specific elements.</p>
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">The location of this element within a document has no significance, unless it is included within a <ref target="#TEI.linkGrp"><gi>linkGrp</gi></ref>, in which case it may inherit the value of the <att>type</att> attribute from the value given on the <ref target="#TEI.linkGrp"><gi>linkGrp</gi></ref>.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <s n="1">The state Supreme Court has refused to release <rs xml:id="R1">
+                                    <rs xml:id="R2">Rahway State Prison</rs> inmate</rs>
+                                 <rs xml:id="R3">James Scott</rs> on bail.</s>
+                              <s n="2">
+                                 <rs xml:id="R4">The fighter</rs> is serving 30-40 years
+      for a 1975 armed robbery conviction in <rs xml:id="R5">the penitentiary</rs>.</s>
+                              <!-- ... -->
+                              <linkGrp type="periphrasis">
+                                 <link target="#R1 #R3 #R4"/>
+                                 <link target="#R2 #R5"/>
+                              </linkGrp>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;sch:assert test="contains(normalize-space(@target),' ')"&gt;You must supply at least two values for @target or on &lt;sch:name/&gt;
+&lt;/sch:assert&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;empty/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.linkGrp">
+                  <head>&lt;linkGrp&gt;</head>
+                  <p>
+                     <label>&lt;linkGrp&gt; </label>(link group) defines a collection of associations or hypertextual links. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. Links</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>linking — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>
+                           <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.global.meta">model.global.meta</ref> 
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                       <ref target="#TEI.addrLine">addrLine</ref> 
+                                       <ref target="#TEI.address">address</ref> 
+                                       <ref target="#TEI.author">author</ref> 
+                                       <ref target="#TEI.bibl">bibl</ref> 
+                                       <ref target="#TEI.biblScope">biblScope</ref> 
+                                       <ref target="#TEI.cit">cit</ref> 
+                                       <ref target="#TEI.corr">corr</ref> 
+                                       <ref target="#TEI.date">date</ref> 
+                                       <ref target="#TEI.editor">editor</ref> 
+                                       <ref target="#TEI.emph">emph</ref> 
+                                       <ref target="#TEI.expan">expan</ref> 
+                                       <ref target="#TEI.foreign">foreign</ref> 
+                                       <ref target="#TEI.head">head</ref> 
+                                       <ref target="#TEI.hi">hi</ref> 
+                                       <ref target="#TEI.item">item</ref> 
+                                       <ref target="#TEI.l">l</ref> 
+                                       <ref target="#TEI.label">label</ref> 
+                                       <ref target="#TEI.lg">lg</ref> 
+                                       <ref target="#TEI.list">list</ref> 
+                                       <ref target="#TEI.name">name</ref> 
+                                       <ref target="#TEI.note">note</ref> 
+                                       <ref target="#TEI.num">num</ref> 
+                                       <ref target="#TEI.p">p</ref> 
+                                       <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                       <ref target="#TEI.publisher">publisher</ref> 
+                                       <ref target="#TEI.q">q</ref> 
+                                       <ref target="#TEI.quote">quote</ref> 
+                                       <ref target="#TEI.ref">ref</ref> 
+                                       <ref target="#TEI.reg">reg</ref> 
+                                       <ref target="#TEI.resp">resp</ref> 
+                                       <ref target="#TEI.rs">rs</ref> 
+                                       <ref target="#TEI.sic">sic</ref> 
+                                       <ref target="#TEI.sp">sp</ref> 
+                                       <ref target="#TEI.speaker">speaker</ref> 
+                                       <ref target="#TEI.term">term</ref> 
+                                       <ref target="#TEI.title">title</ref> 
+                                       <ref target="#TEI.unclear">unclear</ref>
+                                    </item>
+                                    <item>figures: <ref target="#TEI.cell">cell</ref> 
+                                       <ref target="#TEI.table">table</ref>
+                                    </item>
+                                    <item>header: <ref target="#TEI.authority">authority</ref> 
+                                       <ref target="#TEI.change">change</ref> 
+                                       <ref target="#TEI.distributor">distributor</ref> 
+                                       <ref target="#TEI.edition">edition</ref> 
+                                       <ref target="#TEI.extent">extent</ref> 
+                                       <ref target="#TEI.language">language</ref> 
+                                       <ref target="#TEI.licence">licence</ref>
+                                    </item>
+                                    <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.seg">seg</ref>
+                                    </item>
+                                    <item>msdescription: <ref target="#TEI.collection">collection</ref> 
+                                       <ref target="#TEI.institution">institution</ref> 
+                                       <ref target="#TEI.repository">repository</ref>
+                                    </item>
+                                    <item>namesdates: <ref target="#TEI.birth">birth</ref> 
+                                       <ref target="#TEI.death">death</ref> 
+                                       <ref target="#TEI.event">event</ref> 
+                                       <ref target="#TEI.forename">forename</ref> 
+                                       <ref target="#TEI.nationality">nationality</ref> 
+                                       <ref target="#TEI.occupation">occupation</ref> 
+                                       <ref target="#TEI.org">org</ref> 
+                                       <ref target="#TEI.orgName">orgName</ref> 
+                                       <ref target="#TEI.person">person</ref> 
+                                       <ref target="#TEI.place">place</ref> 
+                                       <ref target="#TEI.placeName">placeName</ref> 
+                                       <ref target="#TEI.surname">surname</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.back">back</ref> 
+                                       <ref target="#TEI.body">body</ref> 
+                                       <ref target="#TEI.byline">byline</ref> 
+                                       <ref target="#TEI.closer">closer</ref> 
+                                       <ref target="#TEI.dateline">dateline</ref> 
+                                       <ref target="#TEI.div">div</ref> 
+                                       <ref target="#TEI.docAuthor">docAuthor</ref> 
+                                       <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docTitle">docTitle</ref> 
+                                       <ref target="#TEI.epigraph">epigraph</ref> 
+                                       <ref target="#TEI.floatingText">floatingText</ref> 
+                                       <ref target="#TEI.front">front</ref> 
+                                       <ref target="#TEI.opener">opener</ref> 
+                                       <ref target="#TEI.salute">salute</ref> 
+                                       <ref target="#TEI.signed">signed</ref> 
+                                       <ref target="#TEI.text">text</ref> 
+                                       <ref target="#TEI.titlePage">titlePage</ref> 
+                                       <ref target="#TEI.titlePart">titlePart</ref> 
+                                       <ref target="#TEI.trailer">trailer</ref>
+                                    </item>
+                                    <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                       <ref target="#TEI.supplied">supplied</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>core: <ref target="#TEI.desc">desc</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.link">link</ref>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">May contain one or more <ref target="#TEI.link"><gi>link</gi></ref> or <ref target="#TEI.ptr"><gi>ptr</gi></ref> elements.</p>
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">A web or link group is an administrative convenience, which should be used to collect a set of links together for any purpose, not simply to supply a default value for the <att>type</att> attribute.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="mul">
+                              <linkGrp type="translation">
+                                 <link target="#CCS1 #SW1"/>
+                                 <link target="#CCS2 #SW2"/>
+                                 <link target="#CCS #SW"/>
+                              </linkGrp>
+                              <div type="volume" xml:id="CCS" xml:lang="fr">
+                                 <p>
+                                    <s xml:id="CCS1">Longtemps, je me suis couché de bonne heure.</s>
+                                    <s xml:id="CCS2">Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que je n'avais pas le temps de me dire : "Je m'endors."</s>
+                                 </p>
+                                 <!-- ... -->
+                              </div>
+                              <div type="volume" xml:id="SW" xml:lang="en">
+                                 <p>
+                                    <s xml:id="SW1">For a long time I used to go to bed early.</s>
+                                    <s xml:id="SW2">Sometimes, when I had put out my candle, my eyes would close so quickly that I had not even time to say "I'm going to sleep."</s>
+                                 </p>
+                                 <!-- ... -->
+                              </div>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;sequence&gt;
+  &lt;classRef key="model.descLike"
+   minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;alternate minOccurs="1"
+   maxOccurs="unbounded"&gt;
+   &lt;elementRef key="link"/&gt;
+   &lt;elementRef key="ptr"/&gt;
+  &lt;/alternate&gt;
+ &lt;/sequence&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -16395,7 +16912,9 @@ entre les Romains.</label>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.closer">closer</ref> 
@@ -18807,6 +19326,8 @@ raiders and saved the town from capture.</desc>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -19002,6 +19523,8 @@ raiders and saved the town from capture.</desc>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -19413,6 +19936,8 @@ raiders and saved the town from capture.</desc>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -19946,6 +20471,8 @@ psychological significance.
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -20194,6 +20721,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -20361,6 +20890,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -20552,7 +21083,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.event">event</ref> 
                                  <ref target="#TEI.forename">forename</ref> 
@@ -20803,6 +21336,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -20987,6 +21522,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -21948,7 +22485,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.birth">birth</ref> 
                                  <ref target="#TEI.death">death</ref> 
@@ -22161,7 +22700,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.biblFull">biblFull</ref> 
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.ab">ab</ref>
+                              <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.event">event</ref> 
                                  <ref target="#TEI.listEvent">listEvent</ref> 
@@ -22406,6 +22947,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -22957,6 +23500,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.rendition">rendition</ref>
                                     </item>
                                     <item>linking: <ref target="#TEI.ab">ab</ref> 
+                                       <ref target="#TEI.linkGrp">linkGrp</ref> 
                                        <ref target="#TEI.seg">seg</ref>
                                     </item>
                                     <item>msdescription: <ref target="#TEI.collection">collection</ref> 
@@ -23159,6 +23703,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -23454,6 +24000,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -23936,6 +24484,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -24348,6 +24898,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
                                  <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -24594,6 +25146,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -24847,6 +25401,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -25372,7 +25928,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -25494,7 +26052,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               </item>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
                                  <ref target="#TEI.location">location</ref> 
@@ -26087,6 +26647,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -26244,6 +26806,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -26464,6 +27028,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -26832,6 +27398,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -27038,6 +27606,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -27321,7 +27891,9 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.table">table</ref>
                               </item>
                               <item>linking: <ref target="#TEI.ab">ab</ref> 
-                                 <ref target="#TEI.anchor">anchor</ref>
+                                 <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.listEvent">listEvent</ref> 
                                  <ref target="#TEI.listOrg">listOrg</ref> 
@@ -27486,6 +28058,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -27727,6 +28301,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -27972,6 +28548,8 @@ Sydney Smith</egXML>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -28187,7 +28765,9 @@ Sydney Smith</egXML>
                               <item>figures: <ref target="#TEI.figure">figure</ref> 
                                  <ref target="#TEI.row">row</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.closer">closer</ref> 
@@ -28836,6 +29416,8 @@ Sydney Smith</egXML>
                               <item>header: <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -29002,7 +29584,9 @@ Sydney Smith</egXML>
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.back">back</ref> 
                                  <ref target="#TEI.body">body</ref> 
@@ -29489,6 +30073,8 @@ Sydney Smith</egXML>
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -29701,7 +30287,9 @@ epistemology, methodology and history of
                               </item>
                               <item>figures: <ref target="#TEI.figure">figure</ref>
                               </item>
-                              <item>linking: <ref target="#TEI.anchor">anchor</ref>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref>
                               </item>
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.docAuthor">docAuthor</ref> 
@@ -29915,6 +30503,8 @@ epistemology, methodology and history of
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -30178,6 +30768,8 @@ epistemology, methodology and history of
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -30520,6 +31112,8 @@ epistemology, methodology and history of
                                  <ref target="#TEI.idno">idno</ref>
                               </item>
                               <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
                                  <ref target="#TEI.seg">seg</ref>
                               </item>
                               <item>namesdates: <ref target="#TEI.forename">forename</ref> 
@@ -31082,6 +31676,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.category">category</ref> 
                               <ref target="#TEI.gap">gap</ref> 
                               <ref target="#TEI.graphic">graphic</ref> 
+                              <ref target="#TEI.linkGrp">linkGrp</ref> 
                               <ref target="#TEI.taxonomy">taxonomy</ref>
                            </ab>
                         </cell>
@@ -31667,8 +32262,8 @@ epistemology, methodology and history of
                            <label>Members</label>
                         </cell>
                         <cell>
-                           <ref target="#TEI.model.global.edit">model.global.edit</ref> [<ref target="#TEI.gap">gap</ref>]  <ref target="#TEI.model.global.meta">model.global.meta</ref> 
-                           <ref target="#TEI.model.milestoneLike">model.milestoneLike</ref> [<ref target="#TEI.anchor">anchor</ref> 
+                           <ref target="#TEI.model.global.edit">model.global.edit</ref> [<ref target="#TEI.gap">gap</ref>]  <ref target="#TEI.model.global.meta">model.global.meta</ref> [<ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref>]  <ref target="#TEI.model.milestoneLike">model.milestoneLike</ref> [<ref target="#TEI.anchor">anchor</ref> 
                            <ref target="#TEI.fw">fw</ref> 
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.milestone">milestone</ref> 
@@ -31705,6 +32300,48 @@ epistemology, methodology and history of
                         </cell>
                         <cell>
                            <ref target="#TEI.gap">gap</ref>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.model.global.meta">
+                  <head>model.global.meta</head>
+                  <p>
+                     <label>model.global.meta</label> groups globally available elements which describe the status of other elements. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ST.html#STEC">1.3. The TEI Class System</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>tei — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Used by</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.global">model.global</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Members</label>
+                        </cell>
+                        <cell>
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Elements in this class are typically used to hold groups of links or of abstract interpretations, or by provide indications of certainty etc. It may find be convenient to localize all metadata elements, for example to contain them within the same divison as the elements that they relate to; or to locate them all to a division of their own. They may however appear at any point in a TEI text.</p>
                         </cell>
                      </row>
                   </table>
@@ -35055,6 +35692,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -35343,6 +35982,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -35541,6 +36182,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -35754,6 +36397,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -36092,6 +36737,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -36370,6 +37017,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -36641,6 +37290,8 @@ epistemology, methodology and history of
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
+                           <ref target="#TEI.linkGrp">linkGrp</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -38013,6 +38664,7 @@ epistemology, methodology and history of
                         <cell>
                            <ref target="#TEI.catRef">catRef</ref> 
                            <ref target="#TEI.licence">licence</ref> 
+                           <ref target="#TEI.link">link</ref> 
                            <ref target="#TEI.note">note</ref> 
                            <ref target="#TEI.ptr">ptr</ref> 
                            <ref target="#TEI.ref">ref</ref> 
@@ -38431,6 +39083,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.label">label</ref> 
                            <ref target="#TEI.lb">lb</ref> 
                            <ref target="#TEI.lg">lg</ref> 
+                           <ref target="#TEI.link">link</ref> 
                            <ref target="#TEI.list">list</ref> 
                            <ref target="#TEI.listBibl">listBibl</ref> 
                            <ref target="#TEI.listChange">listChange</ref> 
@@ -40826,6 +41479,23 @@ epistemology, methodology and history of
   &lt;/xsl:analyze-string&gt;
  &lt;/xsl:template&gt;
 &lt;/sqf:fix&gt;
+&lt;/sch:pattern&gt;</code>
+                     </cell>
+                  </row>
+                  <row>
+                     <cell>
+                        <label>Schematron</label>
+                     </cell>
+                     <cell>All link/linkGrp elements must ONLY occur in the redirects file.<code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:linkGrp | tei:link"&gt;
+ &lt;sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'"&gt; ERROR: Only use &lt;sch:name/&gt; in the redirects file.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;sch:rule context="tei:link"&gt;
+ &lt;sch:assert test="@target and count(tokenize(@target,'\s+')) = 2"&gt; ERROR: Link must have an @target attribute with two pointers.
+ &lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
 &lt;/sch:pattern&gt;</code>
                      </cell>
                   </row>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/projectEndings/staticSearch/dev/schema/staticSearch.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/projectEndings/staticSearch/main/schema/staticSearch.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <config xmlns="http://hcmc.uvic.ca/ns/staticSearch">
     <params>
         <searchFile>../../products/site/search.html</searchFile>
@@ -68,6 +68,8 @@
     <excludes>
         <exclude match="html[@id='search']" type="index"/>
         <exclude match="html[@id='index']" type="index"/>
+        <!--Exclude redirect pages-->
+        <exclude match="html[descendant::meta[@http-equiv='refresh']]" type="index"/>
         <exclude match="meta[@name='Ignore']" type="filter"/>
     </excludes>
 </config>

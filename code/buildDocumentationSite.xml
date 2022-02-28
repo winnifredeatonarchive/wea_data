@@ -32,7 +32,7 @@
     </target>
     
     <target name="runDiagnostics">
-        <ant antfile="${project.dir}/code/buildDiagnostics.xml"/>
+        <ant antfile="${project.dir}/code/buildDiagnostics.xml" usenativebasedir="true"/>
     </target>
     
     

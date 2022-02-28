@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-01-31T21:12:28Z. .
+Schema generated from ODD source 2022-02-28T00:53:26Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -1287,7 +1287,10 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       <notAllowed/>
    </define>
    <define name="model.global.meta">
-      <notAllowed/>
+      <choice>
+         <ref name="link"/>
+         <ref name="linkGrp"/>
+      </choice>
    </define>
    <define name="model.milestoneLike">
       <choice>
@@ -5201,6 +5204,50 @@ Suggested values include: 1] label; 2] data</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="link">
+      <element name="link">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link) defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. Links]</a:documentation>
+         <empty/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="wea-link-linkTargets3-constraint-assert-40">
+            <rule context="tei:link">
+               <sch:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:svg="http://www.w3.org/2000/svg"
+                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           xmlns:math="http://www.w3.org/1998/Math/MathML"
+                           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                           xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           test="contains(normalize-space(@target),' ')">You must supply at least two values for @target or  on <sch:name/>
+               </sch:assert>
+            </rule>
+         </pattern>
+         <ref name="att.global.attributes"/>
+         <ref name="att.pointing.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="linkGrp">
+      <element name="linkGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link group) defines a collection of associations or hypertextual links. [16.1. Links]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="model.descLike"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <choice>
+                  <ref name="link"/>
+                  <ref name="ptr"/>
+               </choice>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="ab">
       <element name="ab">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
@@ -5722,8 +5769,8 @@ Sample values include: 1] proclaimed; 2] assumed; 3] verified; 4] clinical; 5] b
                <choice>
                   <ref name="model.noteLike"/>
                   <ref name="model.biblLike"/>
-          
-          
+                  <ref name="linkGrp"/>
+                  <ref name="link"/>
                   <ref name="idno"/>
                   <ref name="ptr"/>
                </choice>
@@ -6009,8 +6056,8 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
                <choice>
                   <ref name="model.noteLike"/>
                   <ref name="model.biblLike"/>
-        
-        
+                  <ref name="linkGrp"/>
+                  <ref name="link"/>
                   <ref name="ptr"/>
                </choice>
             </zeroOrMore>
@@ -6167,8 +6214,8 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
                   <ref name="model.biblLike"/>
                   <ref name="idno"/>
                   <ref name="ptr"/>
-          
-          
+                  <ref name="linkGrp"/>
+                  <ref name="link"/>
                </choice>
             </zeroOrMore>
       
@@ -7352,6 +7399,25 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                            <sch:let name="errors"
                   value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern> 
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+                        <sch:rule context="tei:linkGrp | tei:link">
+                           <sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'">
+                              ERROR: Only use <sch:name/> in the redirects file.
+                           </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:link">
+                           <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
+                              ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
                         </sch:rule>
                      </sch:pattern> 
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"

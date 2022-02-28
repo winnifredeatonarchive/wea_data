@@ -846,6 +846,23 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-link-linkTargets3-constraint-assert-40">
+            <rule context="tei:link">
+               <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="contains(normalize-space(@target),' ')">You must supply at least two values for @target or  on <sch:name/>
+               </sch:assert>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
             id="wea-ab-abstractModel-structure-ab-constraint-report-12">
             <rule context="tei:ab">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -1162,6 +1179,27 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                            <sch:let name="errors"
                   value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+   <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples">
+                        <sch:rule context="tei:linkGrp | tei:link">
+                           <sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'">
+                              ERROR: Only use <sch:name/> in the redirects file.
+                           </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:link">
+                           <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
+                              ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
                         </sch:rule>
                      </sch:pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"

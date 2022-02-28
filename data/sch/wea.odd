@@ -1480,16 +1480,28 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <p>Each XSLT <q>master</q> file includes a number of <q>module</q> files; <q>modules</q> should never contain other <q>modules</q>. Of course, there's one exception: the XHTML master file loads in a module named <q>xhtml_modules_module.xsl</q>, which contains all of the modules for creating the XHTML. The reason that there is a <q>modules module</q> is so that this documentation can be created using the standard WEA stylesheets so that it can be easily integrated into the regular site build process.</p>
                <p>Each module is documented using the <q>xd:doc</q> elements, which are oXygen specific elements for documenting XSL stylesheets.</p>
             </div>
+            <div xml:id="technical_redirects">
+               <head>Retiring, Deleting, and Redirecting Documents</head>
+               <p>In cases where a document that had previously been released has been renamed, deleted, or merged into another document,
+               we must implement a redirect to make sure any citations, etc, do not break. To do that, use the redirects.xml file (at the 
+               root of the repository) and add a new link element that points from the old id to the new id.</p>
+            </div>
          </div>
          
 
          <div xml:id="diagnostics">
             <head>Diagnostics</head>
-            <p>The follow are the diagnostics for the Winnifred Eaton Archive project. The diagnostics provide a report of potential encoding errors, et cetera.</p>
+            <p>The following are the diagnostics for the Winnifred Eaton Archive project. The diagnostics provide a report of potential encoding errors, et cetera.</p>
             <divGen xml:id="diagnostics_content"/>
-            
          </div>
-      
+         
+         <div xml:id="versions">
+            <head>Versions</head>
+            <p>The Winnifred Eaton Archive is published in distinct <q>versions</q>. Each version or release can be found on the Winnifred Eaton Archive's
+               <ref target="https://github.com/winnifredeatonarchive/wea_data">GitHub repository</ref>. The following documents are automatically generated
+            statistics for each version.</p>
+            <divGen xml:id="versions_content"/>
+         </div>
          
          
          
@@ -1509,7 +1521,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                
-               <moduleRef key="linking" include="ab seg anchor"/>
+               <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
                
                <moduleRef key="msdescription"
                           include="collection institution msIdentifier repository"/>
@@ -1715,47 +1727,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraintSpec>
                </elementSpec>
                
-               <elementSpec ident="ptr" module="core" mode="change">
-                  <constraintSpec scheme="schematron" ident="ptr.readMore">
-                     <desc>We allow extent ONLY for legacy purposes.</desc>
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:ptr">
-                              <sch:assert test="ancestor::tei:TEI/@xml:id='index'">
-                                 ERROR: Only use the ptr element in the index page,
-                                 and it must have type='readMore'.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="ptr.readMore">
-                     <desc>We allow extent ONLY for legacy purposes.</desc>
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:ptr">
-                              <sch:assert test="matches(@target,'^doc:')">
-                                 ERROR: All ptr elements must have a @target attribute
-                                 that points to a document using the doc: prefix.
-                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <attList>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="readMore" mode="add">
-                              <desc>Read More</desc>
-                              <gloss>A "read more" link used on the Index page</gloss>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="target" mode="change" usage="req"/>
-                  </attList>
-                  
-               </elementSpec>
+               
           
                <elementSpec ident="catRef" module="header" mode="change">
 
@@ -1921,6 +1893,51 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+               </elementSpec>
+               
+               <!--LINKING-->
+               
+               
+               <elementSpec ident="ptr" module="core" mode="change">
+                  <constraintSpec scheme="schematron" ident="ptr.readMore">
+                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:ptr">
+                              <sch:assert test="ancestor::tei:TEI/@xml:id='index'">
+                                 ERROR: Only use the ptr element in the index page,
+                                 and it must have type='readMore'.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="ptr.readMore">
+                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:ptr">
+                              <sch:assert test="matches(@target,'^doc:')">
+                                 ERROR: All ptr elements must have a @target attribute
+                                 that points to a document using the doc: prefix.
+                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="readMore" mode="add">
+                              <desc>Read More</desc>
+                              <gloss>A "read more" link used on the Index page</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="req"/>
+                  </attList>
+                  
                </elementSpec>
 
                
@@ -2853,6 +2870,24 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <sch:let name="errors"
                                     value="for $i in tokenize($att,'\s+') return if (matches($i,'^(pers:|https://dcs|#)')) then () else $i"/>
                            <sch:assert test="empty($errors)"> ERROR: All personography pointers must start with the pers: prefix.</sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               
+               <constraintSpec scheme="schematron" ident="linkGrpForRedirects">
+                  <desc>All link/linkGrp elements must ONLY occur in the redirects file.</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:linkGrp | tei:link">
+                           <sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'">
+                              ERROR: Only use <sch:name/> in the redirects file.
+                           </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:link">
+                           <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
+                              ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
