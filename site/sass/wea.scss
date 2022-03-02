@@ -2097,12 +2097,12 @@ div[data-type='listFigure'] img{
     flex-wrap:wrap;
 }
 
-details.expandable summary{
-    list-style:none;
-}
-
-details.expandable summary:-webkit-details-marker{
-    display:none;
+details.expandable > summary{
+    list-style-type:none;
+    &::-webkit-details-marker,
+    &::marker{
+        display:none;
+    }
 }
 
 :root{
