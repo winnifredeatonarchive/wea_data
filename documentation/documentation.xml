@@ -1882,6 +1882,7 @@
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -2430,6 +2431,7 @@
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -2703,6 +2705,7 @@
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -2919,6 +2922,7 @@
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -3573,6 +3577,7 @@
                                  <ref target="#TEI.div">div</ref> 
                                  <ref target="#TEI.docAuthor">docAuthor</ref> 
                                  <ref target="#TEI.docDate">docDate</ref> 
+                                 <ref target="#TEI.docImprint">docImprint</ref> 
                                  <ref target="#TEI.docTitle">docTitle</ref> 
                                  <ref target="#TEI.epigraph">epigraph</ref> 
                                  <ref target="#TEI.signed">signed</ref> 
@@ -5988,6 +5993,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -6730,6 +6736,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -7004,6 +7011,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -7560,6 +7568,7 @@ supplied to printer.</change>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -9248,6 +9257,7 @@ and then a Captain of several Ships</byline>
                                        <ref target="#TEI.body">body</ref> 
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.div">div</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.front">front</ref> 
                                        <ref target="#TEI.titlePage">titlePage</ref>
                                     </item>
@@ -9355,6 +9365,182 @@ and then a Captain of several Ships</byline>
                            <code>
 &lt;content&gt;
  &lt;macroRef key="macro.phraseSeq"/&gt;
+&lt;/content&gt;
+    </code>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div type="refdoc" xml:id="TEI.docImprint">
+                  <head>&lt;docImprint&gt;</head>
+                  <p>
+                     <label>&lt;docImprint&gt; </label>(document imprint) contains the imprint statement (place and date of publication, publisher name), as given (usually) at the foot of a title page. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSTITL">4.6. Title Pages</ref>]</p>
+                  <table>
+                     <row>
+                        <cell>
+                           <label>Module</label>
+                        </cell>
+                        <cell>textstructure — <tei:ref xmlns:tei="http://www.tei-c.org/ns/1.0" target="#schema">Schema Specification</tei:ref>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Attributes</label>
+                        </cell>
+                        <cell>
+                           <ref target="#TEI.att.global">att.global</ref> (<att>xml:id</att>, <att>n</att>, <att>xml:lang</att>)  (<ref target="#TEI.att.global.rendition">att.global.rendition</ref> (<att>style</att>, <att>rendition</att>))  (<ref target="#TEI.att.global.linking">att.global.linking</ref> (<att>corresp</att>, <att>copyOf</att>, <att>next</att>, <att>prev</att>))  (<ref target="#TEI.att.global.facs">att.global.facs</ref> (<att>facs</att>))  (<ref target="#TEI.att.global.change">att.global.change</ref> (<att>change</att>))  (<ref target="#TEI.att.global.responsibility">att.global.responsibility</ref> (<att>cert</att>, <att>resp</att>))  (<ref target="#TEI.att.global.source">att.global.source</ref> (<att>source</att>)) </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Member of</label>
+                        </cell>
+                        <cell>
+                           <ab>
+                              <ref target="#TEI.model.pLike.front">model.pLike.front</ref> 
+                              <ref target="#TEI.model.titlepagePart">model.titlepagePart</ref>
+                           </ab>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Contained by</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>
+                                 <list>
+                                    <item>textstructure: <ref target="#TEI.back">back</ref> 
+                                       <ref target="#TEI.front">front</ref> 
+                                       <ref target="#TEI.titlePage">titlePage</ref>
+                                    </item>
+                                 </list>
+                              </item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>May contain</label>
+                        </cell>
+                        <cell>
+                           <list>
+                              <item>analysis: <ref target="#TEI.pc">pc</ref>
+                              </item>
+                              <item>core: <ref target="#TEI.abbr">abbr</ref> 
+                                 <ref target="#TEI.address">address</ref> 
+                                 <ref target="#TEI.choice">choice</ref> 
+                                 <ref target="#TEI.corr">corr</ref> 
+                                 <ref target="#TEI.date">date</ref> 
+                                 <ref target="#TEI.emph">emph</ref> 
+                                 <ref target="#TEI.expan">expan</ref> 
+                                 <ref target="#TEI.foreign">foreign</ref> 
+                                 <ref target="#TEI.gap">gap</ref> 
+                                 <ref target="#TEI.graphic">graphic</ref> 
+                                 <ref target="#TEI.hi">hi</ref> 
+                                 <ref target="#TEI.lb">lb</ref> 
+                                 <ref target="#TEI.milestone">milestone</ref> 
+                                 <ref target="#TEI.name">name</ref> 
+                                 <ref target="#TEI.note">note</ref> 
+                                 <ref target="#TEI.num">num</ref> 
+                                 <ref target="#TEI.pb">pb</ref> 
+                                 <ref target="#TEI.ptr">ptr</ref> 
+                                 <ref target="#TEI.pubPlace">pubPlace</ref> 
+                                 <ref target="#TEI.publisher">publisher</ref> 
+                                 <ref target="#TEI.q">q</ref> 
+                                 <ref target="#TEI.ref">ref</ref> 
+                                 <ref target="#TEI.reg">reg</ref> 
+                                 <ref target="#TEI.rs">rs</ref> 
+                                 <ref target="#TEI.sic">sic</ref> 
+                                 <ref target="#TEI.term">term</ref> 
+                                 <ref target="#TEI.title">title</ref> 
+                                 <ref target="#TEI.unclear">unclear</ref>
+                              </item>
+                              <item>figures: <ref target="#TEI.figure">figure</ref>
+                              </item>
+                              <item>header: <ref target="#TEI.idno">idno</ref>
+                              </item>
+                              <item>linking: <ref target="#TEI.anchor">anchor</ref> 
+                                 <ref target="#TEI.link">link</ref> 
+                                 <ref target="#TEI.linkGrp">linkGrp</ref> 
+                                 <ref target="#TEI.seg">seg</ref>
+                              </item>
+                              <item>namesdates: <ref target="#TEI.forename">forename</ref> 
+                                 <ref target="#TEI.location">location</ref> 
+                                 <ref target="#TEI.orgName">orgName</ref> 
+                                 <ref target="#TEI.persName">persName</ref> 
+                                 <ref target="#TEI.placeName">placeName</ref> 
+                                 <ref target="#TEI.surname">surname</ref>
+                              </item>
+                              <item>tagdocs: <ref target="#TEI.att">att</ref> 
+                                 <ref target="#TEI.code">code</ref> 
+                                 <ref target="#TEI.gi">gi</ref> 
+                                 <ref target="#TEI.ident">ident</ref> 
+                                 <ref target="#TEI.val">val</ref>
+                              </item>
+                              <item>textstructure: <ref target="#TEI.docDate">docDate</ref>
+                              </item>
+                              <item>transcr: <ref target="#TEI.fw">fw</ref> 
+                                 <ref target="#TEI.supplied">supplied</ref>
+                              </item>
+                              <item>character data</item>
+                           </list>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Note</label>
+                        </cell>
+                        <cell><!-- -->
+                           <p xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                              xmlns:teix="http://www.tei-c.org/ns/Examples">Cf. the <gi>imprint</gi> element of bibliographic citations. As with title, author, and editions, the shorter name is reserved for the element likely to be used more often.</p>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Example</label>
+                        </cell>
+                        <cell>
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples"
+                                  xml:lang="en">
+                              <docImprint>Oxford, Clarendon Press, 1987</docImprint>
+                           </egXML>Imprints may be somewhat more complex: <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                                  xmlns:teix="http://www.tei-c.org/ns/Examples">
+                              <docImprint>
+                                 <pubPlace>London</pubPlace>
+Printed for <name>E. Nutt</name>,
+at 
+<pubPlace>Royal Exchange</pubPlace>;
+<name>J. Roberts</name> in 
+<pubPlace>wick-Lane</pubPlace>;
+<name>A. Dodd</name> without 
+<pubPlace>Temple-Bar</pubPlace>;
+and <name>J. Graves</name> in 
+<pubPlace>St. James's-street.</pubPlace>
+                                 <date>1722.</date>
+                              </docImprint>
+                           </egXML>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Content model</label>
+                        </cell>
+                        <cell>
+                           <code>
+&lt;content&gt;
+ &lt;alternate minOccurs="0"
+  maxOccurs="unbounded"&gt;
+  &lt;textNode/&gt;
+  &lt;classRef key="model.gLike"/&gt;
+  &lt;classRef key="model.phrase"/&gt;
+  &lt;elementRef key="pubPlace"/&gt;
+  &lt;elementRef key="docDate"/&gt;
+  &lt;elementRef key="publisher"/&gt;
+  &lt;classRef key="model.global"/&gt;
+ &lt;/alternate&gt;
 &lt;/content&gt;
     </code>
                         </cell>
@@ -10158,6 +10344,7 @@ and then a Captain of several Ships</byline>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -10774,6 +10961,7 @@ formatting or layout information preserved.</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -11374,6 +11562,7 @@ material</measure>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -11918,6 +12107,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -12168,6 +12358,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -12346,6 +12537,7 @@ material</measure>
                                  <ref target="#TEI.div">div</ref> 
                                  <ref target="#TEI.docAuthor">docAuthor</ref> 
                                  <ref target="#TEI.docDate">docDate</ref> 
+                                 <ref target="#TEI.docImprint">docImprint</ref> 
                                  <ref target="#TEI.docTitle">docTitle</ref> 
                                  <ref target="#TEI.epigraph">epigraph</ref> 
                                  <ref target="#TEI.salute">salute</ref> 
@@ -12708,6 +12900,7 @@ material</measure>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -13022,6 +13215,7 @@ material</measure>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -13288,6 +13482,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -13438,6 +13633,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -13941,6 +14137,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -14301,6 +14498,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -14532,6 +14730,7 @@ material</measure>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -15841,6 +16040,7 @@ entre les Romains.</label>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -15909,10 +16109,10 @@ entre les Romains.</label>
                         <cell>
                            <label>Schematron</label>
                         </cell>
-                        <cell>Don't allow lbs ANYWHERE except in floating texts.<code>
+                        <cell>Don't allow lbs ANYWHERE except in floating texts or front matter.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:lb"&gt;
- &lt;sch:assert test="ancestor::tei:floatingText"&gt; ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+ &lt;sch:assert test="ancestor::tei:floatingText or ancestor::tei:front"&gt; ERROR: Line beginning elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
    texts.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
@@ -16453,6 +16653,7 @@ entre les Romains.</label>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -16652,6 +16853,7 @@ entre les Romains.</label>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -18657,6 +18859,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -18891,6 +19094,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -19270,6 +19474,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -19862,6 +20067,7 @@ raiders and saved the town from capture.</desc>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -20415,6 +20621,7 @@ psychological significance.
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -21280,6 +21487,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -21759,6 +21967,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.docTitle">docTitle</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.floatingText">floatingText</ref> 
@@ -22058,6 +22267,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -22263,6 +22473,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -22891,6 +23102,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -23525,6 +23737,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -23655,6 +23868,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>core: <ref target="#TEI.bibl">bibl</ref>
                                     </item>
                                     <item>header: <ref target="#TEI.publicationStmt">publicationStmt</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.docImprint">docImprint</ref>
                                     </item>
                                  </list>
                               </item>
@@ -23952,6 +24167,8 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                     <item>core: <ref target="#TEI.bibl">bibl</ref>
                                     </item>
                                     <item>header: <ref target="#TEI.publicationStmt">publicationStmt</ref>
+                                    </item>
+                                    <item>textstructure: <ref target="#TEI.docImprint">docImprint</ref>
                                     </item>
                                  </list>
                               </item>
@@ -24415,6 +24632,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.div">div</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.epigraph">epigraph</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
@@ -25081,6 +25299,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -25336,6 +25555,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -26591,6 +26811,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -26963,6 +27184,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -27333,6 +27555,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -28236,6 +28459,7 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -28492,6 +28716,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -29360,6 +29585,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -30008,6 +30234,7 @@ Sydney Smith</egXML>
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -30294,6 +30521,7 @@ epistemology, methodology and history of
                               <item>textstructure: <ref target="#TEI.byline">byline</ref> 
                                  <ref target="#TEI.docAuthor">docAuthor</ref> 
                                  <ref target="#TEI.docDate">docDate</ref> 
+                                 <ref target="#TEI.docImprint">docImprint</ref> 
                                  <ref target="#TEI.docTitle">docTitle</ref> 
                                  <ref target="#TEI.epigraph">epigraph</ref> 
                                  <ref target="#TEI.titlePart">titlePart</ref>
@@ -31047,6 +31275,7 @@ epistemology, methodology and history of
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -31291,6 +31520,7 @@ epistemology, methodology and history of
                                        <ref target="#TEI.dateline">dateline</ref> 
                                        <ref target="#TEI.docAuthor">docAuthor</ref> 
                                        <ref target="#TEI.docDate">docDate</ref> 
+                                       <ref target="#TEI.docImprint">docImprint</ref> 
                                        <ref target="#TEI.opener">opener</ref> 
                                        <ref target="#TEI.salute">salute</ref> 
                                        <ref target="#TEI.signed">signed</ref> 
@@ -32235,6 +32465,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.date">date</ref> 
                               <ref target="#TEI.dateline">dateline</ref> 
                               <ref target="#TEI.div">div</ref> 
+                              <ref target="#TEI.docImprint">docImprint</ref> 
                               <ref target="#TEI.docTitle">docTitle</ref> 
                               <ref target="#TEI.epigraph">epigraph</ref> 
                               <ref target="#TEI.floatingText">floatingText</ref> 
@@ -33067,6 +33298,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.dateline">dateline</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.head">head</ref> 
@@ -33395,6 +33627,7 @@ epistemology, methodology and history of
                               <ref target="#TEI.closer">closer</ref> 
                               <ref target="#TEI.date">date</ref> 
                               <ref target="#TEI.dateline">dateline</ref> 
+                              <ref target="#TEI.docImprint">docImprint</ref> 
                               <ref target="#TEI.head">head</ref> 
                               <ref target="#TEI.l">l</ref> 
                               <ref target="#TEI.macro.paraContent">macro.paraContent</ref> 
@@ -33861,7 +34094,7 @@ epistemology, methodology and history of
                <div type="refdoc" xml:id="TEI.model.titlepagePart">
                   <head>model.titlepagePart</head>
                   <p>
-                     <label>model.titlepagePart</label> groups elements which can occur as direct constituents of a title page, such as <ref target="#TEI.docTitle"><gi>docTitle</gi></ref>, <ref target="#TEI.docAuthor"><gi>docAuthor</gi></ref>, <gi>docImprint</gi>, or <ref target="#TEI.epigraph"><gi>epigraph</gi></ref>. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSTITL">4.6. Title Pages</ref>]</p>
+                     <label>model.titlepagePart</label> groups elements which can occur as direct constituents of a title page, such as <ref target="#TEI.docTitle"><gi>docTitle</gi></ref>, <ref target="#TEI.docAuthor"><gi>docAuthor</gi></ref>, <ref target="#TEI.docImprint"><gi>docImprint</gi></ref>, or <ref target="#TEI.epigraph"><gi>epigraph</gi></ref>. [<ref xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSTITL">4.6. Title Pages</ref>]</p>
                   <table>
                      <row>
                         <cell>
@@ -33888,6 +34121,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.byline">byline</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.epigraph">epigraph</ref> 
                            <ref target="#TEI.graphic">graphic</ref> 
@@ -35655,6 +35889,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -35945,6 +36180,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -36145,6 +36381,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -36360,6 +36597,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -36700,6 +36938,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -36980,6 +37219,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 
@@ -37253,6 +37493,7 @@ epistemology, methodology and history of
                            <ref target="#TEI.divGen">divGen</ref> 
                            <ref target="#TEI.docAuthor">docAuthor</ref> 
                            <ref target="#TEI.docDate">docDate</ref> 
+                           <ref target="#TEI.docImprint">docImprint</ref> 
                            <ref target="#TEI.docTitle">docTitle</ref> 
                            <ref target="#TEI.edition">edition</ref> 
                            <ref target="#TEI.editor">editor</ref> 

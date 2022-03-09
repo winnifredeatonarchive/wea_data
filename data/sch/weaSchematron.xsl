@@ -1587,15 +1587,15 @@ attributes @target and @cRef may be supplied on <xsl:text/>
 
 		    <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="ancestor::tei:floatingText"/>
+         <xsl:when test="ancestor::tei:floatingText or ancestor::tei:front"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="ancestor::tei:floatingText">
+                                test="ancestor::tei:floatingText or ancestor::tei:front">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                                 ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+                                 ERROR: Line beginning elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
                                  texts.
                               </svrl:text>
             </svrl:failed-assert>

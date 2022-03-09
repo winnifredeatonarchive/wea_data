@@ -519,8 +519,8 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:tei="http://www.tei-c.org/ns/1.0"
                 xmlns:teix="http://www.tei-c.org/ns/Examples">
                            <sch:rule context="tei:lb">
-                              <sch:assert test="ancestor::tei:floatingText">
-                                 ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+                              <sch:assert test="ancestor::tei:floatingText or ancestor::tei:front">
+                                 ERROR: Line beginning elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
                                  texts.
                               </sch:assert>
                            </sch:rule>

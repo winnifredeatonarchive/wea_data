@@ -101,7 +101,7 @@
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw" mode="tei">
+    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>

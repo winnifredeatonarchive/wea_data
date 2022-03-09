@@ -1534,7 +1534,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="tei"/>
           
                <moduleRef key="textstructure"
-                          include="TEI back body byline closer dateline div docAuthor docDate docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
+                          include="TEI back body byline closer dateline div docAuthor docDate docImprint docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
           
                <moduleRef key="transcr" include="fw supplied"/>
           
@@ -1655,12 +1655,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                
                <elementSpec ident="lb" module="core" mode="change">
                   <constraintSpec scheme="schematron" ident="textClass.oneofEach">
-                     <desc>Don't allow lbs ANYWHERE except in floating texts.</desc>
+                     <desc>Don't allow lbs ANYWHERE except in floating texts or front matter.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:lb">
-                              <sch:assert test="ancestor::tei:floatingText">
-                                 ERROR: Line beginninge elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
+                              <sch:assert test="ancestor::tei:floatingText or ancestor::tei:front">
+                                 ERROR: Line beginning elements should ONLY be used in very special cases where lineation matters; currently that means only within floating
                                  texts.
                               </sch:assert>
                            </sch:rule>

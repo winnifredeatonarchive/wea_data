@@ -2630,6 +2630,25 @@ span[data-el='pb']:not(.first)::before{
 }
 
 
+/************************************************************************* TITLE PAGES */
+
+
+[data-el='front']{
+    
+    [data-el='salute']{
+        display:block;
+        text-align:center;
+    }
+    
+}
+[data-el='titlePage']{
+    text-align:center;
+    [data-el='titlePart']{
+        @extend h2;
+        
+    }
+}
+
 
 
 /********************************************************************** SPEECHES  */
@@ -2808,9 +2827,9 @@ div[data-el='lg']{
 /************************************************************************* IN-LINE FIGURE MARKERS */
 
 figure.placeholder{
-    margin: 0 auto;
+    margin: 1rem auto;
     background: #efefef;
-    padding: 1rem;
+    padding: 0.8rem;
     font-size: 0.9rem;
     width: 80%;
     text-align: center;
