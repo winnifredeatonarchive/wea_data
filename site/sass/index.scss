@@ -297,7 +297,32 @@ background-position: center;
 /******************************************************* FEATURED ITEMS */
 
 #index_featuredItemsWrapper{
-
+    button{
+        background: none;
+	   color: inherit;
+	   border: none;
+	   padding: 0;
+	   cursor: pointer;
+	   outline: inherit;
+    }
+    .next_prev{
+        display:block;
+        position:absolute;
+        top:50%;
+        z-index:999;
+        font-size: 2rem;
+        color: #717171;
+        opacity: 0.8;
+        &:hover{
+            opacity:1;
+        }
+        &.next{
+            right:0;
+        }
+        &:disabled{
+            opacity:0;
+        }
+    }
 }
 
 
