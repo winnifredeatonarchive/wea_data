@@ -22,12 +22,14 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2020-07-31">added instalment number</change><change who="pers:MC1" status="empty"  when="2020-05-23">Changed genre.</change>
+         <change who="pers:SL1" status="empty"  when="2022-03-09">added facsimile and prev/next instalment.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-31">added instalment number</change>
+         <change who="pers:MC1" status="empty"  when="2020-05-23">Changed genre.</change>
             <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl95 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:MovieMadness2" prev= "doc:MovieMadness1" next="doc:MovieMadness3">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>
