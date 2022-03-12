@@ -13,7 +13,7 @@
     
     
     <description>Document Id: the TEI document @xml:id in the data/texts folder</description>
-    <property name="documentId">DiaryOfDelia3</property>
+    <property name="documentId">BloodWillTell1</property>
     
     
     <description>Your Id: Your @xml:id</description>
@@ -70,7 +70,8 @@
         <echo message="**********************************************************"/>
         <echo message="Converting document..."/>
         <echo message="**********************************************************"/>
-        <java classpath="addTextFromDrive/saxon9he.jar" classname="net.sf.saxon.Transform" failOnError="true">
+        <java classpath="../lib/saxon-he-10.jar"
+            classname="net.sf.saxon.Transform" failOnError="true">
             <arg value="-xsl:addTextFromDrive/convert_epub_to_TEI.xsl"/>
             <arg value="-it:createDoc"/>
             <arg value="documentId=${documentId}"/>
@@ -101,26 +102,13 @@
     </target>
     
     
-    <scriptdef name="open" language="javascript">
-        <attribute name="file" />
-        <![CDATA[
-        var location = "file://"+attributes.get("file").toString().replaceAll("\\\\","/");
-        location = location.toString().replaceAll(" ","%20");
-        location = java.net.URLEncoder.encode(location, "UTF-8");
-        location = location.toString().replaceAll("%3A",":");
-        location = location.toString().replaceAll("%2F","/");
-        location = location.toString().replaceAll("%25","%");
-        var uriLocation = java.net.URI.create(location);
-        var desktop = java.awt.Desktop.getDesktop();
-        desktop.browse(uriLocation);
-    ]]>
-    </scriptdef>
-    
     
     
     <target name="open">
         <property name="outFile" value="${basedir}/texts/${documentId}.xml"/>
-        <open file="${outFile}"/>
+        <exec executable="open">
+            <arg line="${outFile}"/>
+        </exec>
     </target>
     
     <target name="all" depends="init, download, convert, clean, open"/>
