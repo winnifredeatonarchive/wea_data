@@ -9,6 +9,7 @@
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+    xmlns:array="http://www.w3.org/2005/xpath-functions/array"
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
@@ -61,7 +62,18 @@
     
     <xsl:variable name="sortedTags" select="map:keys($docsByTag) => sort() => reverse()" as="xs:string+"/>
     
-    <xsl:variable name="ids" select="$dataDocs//*/@xml:id"/>
+    <xsl:variable name="idMap" as="map(xs:string, xs:string+)?">
+        <xsl:map>
+            <xsl:for-each-group select="$dataDocs//*[@xml:id]/@xml:id" group-by="string(.)">
+                <xsl:map-entry key="current-grouping-key()">
+                    <xsl:for-each-group select="current-group()" group-by="ancestor-or-self::TEI/@xml:id">
+                        <xsl:sequence select="string(current-grouping-key())"/>
+                    </xsl:for-each-group>
+                </xsl:map-entry>
+            </xsl:for-each-group>
+        </xsl:map>
+    </xsl:variable>
+    
     
     <xsl:template match="divGen[@xml:id='versions_content']">
         <xsl:for-each select="$sortedTags">
@@ -176,19 +188,30 @@
     
     
     <xsl:template name="createChecks">
-
-<!--        <xsl:call-template name="badPtrs"/>-->
-        <xsl:call-template name="documentsAwaitingMC"/>
-        <xsl:call-template name="facsWithoutNotes"/>
+        <!--Initial checks that fail on error-->
+        <xsl:call-template name="duplicateIds"/>
+        <xsl:call-template name="badRedirects"/>
         
+        <!--Diagnostic checks-->
+        <xsl:call-template name="documentsAwaitingMC"/>
         <xsl:call-template name="documentsWithoutFacs"/>
         <xsl:call-template name="documentsWithoutGenre"/>
         <xsl:call-template name="documentsWithoutExhibit"/>
-        <xsl:call-template name="duplicateIds"/>
-        <xsl:call-template name="badRedirects"/>
+        <xsl:call-template name="facsWithoutNotes"/>
         <xsl:call-template name="japaneseWordsWithoutTerm"/>
-
-
+    </xsl:template>
+    
+    
+    <xsl:template name="duplicateIds">
+        <xsl:variable name="errors"
+            select="for $id in map:keys($idMap) return if (count($idMap($id)) gt 1) then $id else ()"
+            as="xs:string*"/>
+        <xsl:if test="count($errors) gt 0">
+            <xsl:for-each select="$errors">
+                <xsl:message>ERROR: Duplicate id: <xsl:value-of select="."/> (<xsl:value-of select="string-join($idMap(.),', ')"/>)</xsl:message>
+            </xsl:for-each>
+            <xsl:message terminate="yes"/>
+        </xsl:if>    
     </xsl:template>
     
     <xsl:template name="badRedirects">
@@ -202,273 +225,162 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template name="facsWithoutNotes">
-        <xsl:variable name="errors" select="$dataDocs//TEI[not(descendant::notesStmt/note)][descendant::text[@facs]]" as="element(TEI)*"/>
-        <div type="diagnostic">
-            <head n="{count($errors)}">Documents with facsimiles without a note</head>
-            <p>All documents with facsimiles should have a note describing the open-access source of the facsimile.</p>
-            <xsl:choose>
-                <xsl:when test="not(empty($errors))">
-                    <table>
-                        <row role="label">
-                            <cell>ID</cell>
-                            <cell>Document</cell>
-                        </row>
-                        <xsl:for-each select="$errors">
-                            <xsl:sort select="@xml:id"/>
-                            <row>
-                                <cell><xsl:value-of select="@xml:id"/></cell>
-                                <cell>    <xsl:sequence select="wea:docTitleLink(@xml:id)"/></cell>
-                            </row>
-                        </xsl:for-each>
-                    </table>
-                </xsl:when>
-            </xsl:choose>
-        </div>
-    </xsl:template>
-    
-    <xsl:template name="duplicateIds">
-        <xsl:variable name="errors" as="element(list)*">
-            <xsl:for-each select="distinct-values($ids)">
-                <xsl:variable name="thisId" select="."/>
-                <xsl:if test="count($ids[. = $thisId]) gt 1">
-                    <xsl:variable name="dups"
-                        select="
-                        for $d in ($dataDocs/descendant::tei:*[@xml:id = $thisId])
-                        return
-                        $d/ancestor-or-self::TEI/@xml:id"/>
-                    <list>
-                        <item><xsl:value-of select="$thisId"/>
-                        <list>
-                            <xsl:for-each select="$dups">
-                                <item><xsl:value-of select="."/> (<xsl:value-of select="document-uri(root(.))"/>)</item>
-                            </xsl:for-each>
-                        </list>
-                        </item>
-                    </list>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:variable>
-        <div type="diagnostic">
-            <head n="{count($errors)}">Duplicate <att>xml:id</att>s</head>
-            <p>All <att>xml:id</att>s in the project must be unique.</p>
-            <xsl:choose>
-                <xsl:when test="not(empty($errors))">
-                    <table>
-                        <row role="label">
-                            <cell>Id</cell>
-                            <cell>Documents</cell>
-                        </row>
-                        <xsl:for-each select="$errors">
-                            <xsl:sort select="normalize-space(*:item[1]/text())"/>
-                            <row>
-                                <cell><xsl:value-of select="normalize-space(*:item[1]/text())"/></cell>
-                                <cell><xsl:copy-of select="*:item[1]/*:list[1]"/></cell>
-                            </row>
-                        </xsl:for-each>
-                        
-                    </table>
-                    
-                </xsl:when>
-                <xsl:otherwise>
-                    <p>None found!</p>
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
-    </xsl:template>
-    
-
+   
     
     <xsl:template name="documentsAwaitingMC">
         <xsl:variable name="waitingDocs" select="$dataDocs//TEI[descendant::revisionDesc/@status='readyForProof']"/>
-        <div type="diagnostic">
-            <head n="{count($waitingDocs)}">Documents Ready for Proofing</head>
-            <p>Documents with the <att>status</att> value of <val>readyForProof</val> need to be reviewed by the Project Director before they can moved to published. If the Project Director has proofed these documents (i.e. they have been checked off as <q>Done</q> in the Google Drive spreadsheet), then the status should be changed to <val>published</val> with a corresponding new <gi>change</gi> element with a <att>status</att> value of <val>published</val> that gives who changed it and the date that it was published (using the <att>who</att> and <att>when</att> attributes, respectively).</p>
-            <xsl:choose>
-                <xsl:when test="not(empty($waitingDocs))">
-                    <table>
-                        <row role="label">
-                            <cell role="label">
-                                Document ID
-                            </cell>
-                            <cell role="label">
-                                Document Name
-                            </cell>
-                        </row>
-                        <xsl:for-each select="$waitingDocs">
-                            <xsl:sort select="@xml:id"/>
-                            <row>
-                                <cell><xsl:value-of select="@xml:id"/></cell>
-                                <cell>    <xsl:sequence select="wea:docTitleLink(@xml:id)"/></cell>
-                            </row>
-                        </xsl:for-each>
-                    </table>
-                </xsl:when>
-            </xsl:choose>
-        </div>
+        <xsl:variable name="inProgressDocs" select="$dataDocs//TEI[descendant::revisionDesc/@status = 'inProgress']"/>
         
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents Ready for Proofing</xsl:with-param>
+            <xsl:with-param name="description">
+                <p>Documents with the <att>status</att> value of <val>readyForProof</val> need to be reviewed by the Project Director before they can moved to published. If the Project Director has proofed these documents (i.e. they have been checked off as <q>Done</q> in the Google Drive spreadsheet), then the status should be changed to <val>published</val> with a corresponding new <gi>change</gi> element with a <att>status</att> value of <val>published</val> that gives who changed it and the date that it was published (using the <att>who</att> and <att>when</att> attributes, respectively).</p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Document ID', 'Document Name')"/>
+            <xsl:with-param name="errors" select="wea:makeErrorSeq($waitingDocs)"/>
+        </xsl:call-template>
+        
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents In Progress</xsl:with-param>
+            <xsl:with-param name="description">
+                <p>Documents with the <att>status</att> value of <val>inProgress</val> are documents currently being encoded; these should be moved to readyForProof once ready to be reviewed.</p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Document ID', 'Document Name')"/>
+            <xsl:with-param name="errors" select="wea:makeErrorSeq($inProgressDocs)"/>
+        </xsl:call-template>
     </xsl:template>
-    
     
     <xsl:template name="documentsWithoutFacs">
         <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')]][not(descendant::text/@facs)]"/>
-        <div type="diagnostic">
-            <head n="{count($errors)}">Documents without facsimiles</head>
-            <p>All primary source documents should be associated with a facsimile. These are the ones currently
-            missing facsimiles.</p>
-         
-            <xsl:choose>
-                <xsl:when test="not(empty($errors))">
-                    <table>
-                        <row role="label">
-                            <cell role="label">
-                                Document ID
-                            </cell>
-                            <cell role="label">
-                                Document Name
-                            </cell>
-                        </row>
-                        <xsl:for-each select="$errors">
-                            <xsl:sort select="@xml:id"/>
-                            <row>
-                                <cell><xsl:value-of select="@xml:id"/></cell>
-                                <cell>    <xsl:sequence select="wea:docTitleLink(@xml:id)"/></cell>
-                            </row>
-                        </xsl:for-each>
-                    </table>
-                </xsl:when>
-                <xsl:otherwise>
-                    <p>None found! </p>
-                </xsl:otherwise>
-            </xsl:choose>
-           
-        </div>
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents without Facsimiles</xsl:with-param>
+            <xsl:with-param name="description">
+                <p>All primary source documents should be associated with a facsimile. These are the ones currently
+                    missing facsimiles.</p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Document ID', 'Document Name')"/>
+            <xsl:with-param name="errors" select="wea:makeErrorSeq($errors)"/>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <xsl:template name="facsWithoutNotes">
+        <xsl:variable name="errors" select="$dataDocs//TEI[not(descendant::notesStmt/note)][descendant::text[@facs]]" as="element(TEI)*"/>
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents with facsimiles without a note</xsl:with-param>
+            <xsl:with-param name="description">
+                <p>All documents with facsimiles should have a note describing the open-access source of the facsimile.</p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="'ID', 'Document'"/>
+            <xsl:with-param name="errors" select="wea:sortByDocId($errors) ! array{./@xml:id, wea:docTitleLink(@xml:id)}"/>
+        </xsl:call-template>
     </xsl:template>
     
     <xsl:template name="documentsWithoutGenre">
         <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')]][not(descendant::catRef[@scheme='wdt:genre'])]"/>
-        <div type="diagnostic">
-            <head n="{count($errors)}">Documents without genre <gi>catRef</gi></head>
-            <p>All primary source documents should have a <gi>catRef</gi> element with a genre:
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
-                </egXML>
-            </p>
-            
-            <xsl:choose>
-                <xsl:when test="not(empty($errors))">
-                    <table>
-                        <row role="label">
-                            <cell role="label">
-                                Document ID
-                            </cell>
-                            <cell role="label">
-                                Document Name
-                            </cell>
-                        </row>
-                        <xsl:for-each select="$errors">
-                            <xsl:sort select="@xml:id"/>
-                            <row>
-                                <cell><xsl:value-of select="@xml:id"/></cell>
-                                <cell><xsl:sequence select="wea:docTitleLink(@xml:id)"/></cell>
-                            </row>
-                        </xsl:for-each>
-                    </table>
-                </xsl:when>
-                <xsl:otherwise>
-                    <p>None found! </p>
-                </xsl:otherwise>
-            </xsl:choose>
-            
-        </div>
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents without genre <gi>catRef</gi></xsl:with-param>
+            <xsl:with-param name="description">
+                <p>All primary source documents should have a <gi>catRef</gi> element with a genre:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
+                    </egXML>
+                </p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Document ID', 'Document Name')"/>
+            <xsl:with-param name="errors" select="wea:makeErrorSeq($errors)"/>
+        </xsl:call-template>
     </xsl:template>
     
     <xsl:template name="documentsWithoutExhibit">
         <xsl:variable name="errors" select="$dataDocs//TEI[descendant::catRef[contains(@target,'Primary')]][not(descendant::catRef[@scheme='wdt:exhibit'])]"/>
-        <div type="diagnostic">
-            <head n="{count($errors)}">Documents without exhibit <gi>catRef</gi></head>
-            <p>All primary source documents should have a <gi>catRef</gi> element with an exhibit:
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
-                </egXML>
-            </p>
-            
-            <xsl:choose>
-                <xsl:when test="not(empty($errors))">
-                    <table>
-                        <row role="label">
-                            <cell role="label">
-                                Document ID
-                            </cell>
-                            <cell role="label">
-                                Document Name
-                            </cell>
-                        </row>
-                        <xsl:for-each select="$errors">
-                            <xsl:sort select="@xml:id"/>
-                            <row>
-                                <cell><xsl:value-of select="@xml:id"/></cell>
-                                <cell>    <xsl:sequence select="wea:docTitleLink(@xml:id)"/></cell>
-                            </row>
-                        </xsl:for-each>
-                    </table>
-                </xsl:when>
-                <xsl:otherwise>
-                    <p>None found!</p>
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Documents without exhibit <gi>catRef</gi></xsl:with-param>
+            <xsl:with-param name="description">
+                <p>All primary source documents should have a <gi>catRef</gi> element with an exhibit:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <catRef scheme="wdt:exhibit" target="wdt:EarlyExperiment"/>
+                    </egXML>
+                </p>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Document ID', 'Document Name')"/>
+            <xsl:with-param name="errors" select="wea:makeErrorSeq($errors)"/>
+        </xsl:call-template>
     </xsl:template>
     
     <xsl:template name="japaneseWordsWithoutTerm">
         <xsl:variable name="errors" select="$dataDocs//foreign[@xml:lang='ja'][not(ancestor::term[@ref])]" as="element(foreign)*"/>
-
-            <div type="diagnostic">
-                <head n="{count($errors)}">Japanese terms without a glossary entry</head>
+        <xsl:call-template name="makeDiv">
+            <xsl:with-param name="heading">Japanese terms without a glossary entry</xsl:with-param>
+            <xsl:with-param name="description">
                 <p>All Japanese terms (i.e. terms tagged with <gi>foreign</gi>/<att>xml:lang</att>=<val>ja</val>) should be associated with a 
                     term in the glossary.
                 </p>
                 <p>Note that this diagnostic is meant to evaluate the list of terms we will need for the glossary IN FUTURE. We do not currently have the mechanism set up to tag these terms.</p>
-                <xsl:choose>
-                    <xsl:when test="not(empty($errors))">
-                        <table>
-                            <row role="label">
-                                <cell role="label">
-                                    Term
-                                </cell>
-                                <cell role="label">
-                                    Documents
-                                </cell>
+            </xsl:with-param>
+            <xsl:with-param name="labels" select="('Term', 'Documents')"/>
+            <xsl:with-param name="errors" as="array(item()*)*">
+                <xsl:for-each-group select="$errors" group-by="lower-case(string(.))">
+                    <xsl:sort select="lower-case(current-grouping-key())"/>
+                    <xsl:variable name="term" select="current-grouping-key()"/>
+                    <xsl:variable name="docs" as="item()*">
+                        <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
+                            <xsl:sequence select="wea:docTitleLink(current-grouping-key())"/>
+                            <xsl:if test="position() ne last()"><xsl:text> | </xsl:text></xsl:if>
+                        </xsl:for-each-group>               
+                    </xsl:variable>
+                    <xsl:sequence select="array{$term, array{$docs}}"/>
+                </xsl:for-each-group>
+            </xsl:with-param>
+        </xsl:call-template>
+    </xsl:template>
+    
+    <xsl:template name="makeDiv">
+        <xsl:param name="errors"/>
+        <xsl:param name="heading"/>
+        <xsl:param name="description"/>
+        <xsl:param name="labels"/>
+        <div type="diagnostic">
+            <head n="{count($errors)}"><xsl:sequence select="$heading"/></head>
+            <xsl:sequence select="$description"/>
+            <xsl:choose>
+                <xsl:when test="count($errors) = 0">
+                    <p>None found!</p>
+                </xsl:when>
+                <xsl:otherwise>
+                    <table>
+                        <row role="label">
+                            <xsl:for-each select="$labels">
+                                <cell><xsl:value-of select="."/></cell>
+                            </xsl:for-each>
+                        </row>
+                        <xsl:for-each select="$errors">
+                            <xsl:variable name="array" select="." as="array(*)"/>
+                            <row>
+                                <xsl:for-each select="1 to array:size($array)">
+                                    <cell><xsl:sequence select="array:flatten(array:get($array, .))"/></cell>
+                                </xsl:for-each>
                             </row>
-                            <xsl:for-each-group select="$errors" group-by="text()">
-                                <xsl:sort select="lower-case(current-grouping-key())"/>
-                                <row>
-                                    <cell><xsl:value-of select="current-grouping-key()"/></cell>
-                                    <cell>
-                                        <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                                            <xsl:sort/>
-                                            <xsl:variable name="doc" select="current-group()[1]/ancestor::TEI"/>
-                                            <xsl:variable name="currPos" select="position()"/>
-                                            <xsl:sequence select="wea:docTitleLink(current-grouping-key())"/>
-                                            <xsl:if test="$currPos ne last()"> | </xsl:if>
-                                            
-                                        </xsl:for-each-group>
-                                    </cell>
-                                </row>
-                            </xsl:for-each-group>
-                        </table>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <p>None found! </p>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </div>
+                        </xsl:for-each>
+                    </table>
+                </xsl:otherwise>
+            </xsl:choose>
+        </div>
     </xsl:template>
     
     <xsl:function name="wea:docTitleLink" as="element(ref)" new-each-time="no">
         <xsl:param name="id" as="xs:string"/>
         <xsl:sequence select="wea:docTitleLink($id, $dataDocs)"/>
-
+    </xsl:function>
+    
+    <xsl:function name="wea:sortByDocId" as="element(TEI)*" new-each-time="no">
+        <xsl:param name="docs" as="element(TEI)*"/>
+        <xsl:sequence select="sort($docs, (), function($doc){$doc/@xml:id})"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:makeErrorSeq" as="array(*)*">
+        <xsl:param name="errors" as="element(TEI)*"/>
+        <xsl:sequence select="wea:sortByDocId($errors) ! array{string(./@xml:id), wea:docTitleLink(./@xml:id)}"/>
+        
     </xsl:function>
     
     <xsl:function name="wea:docTitleLink" as="element(ref)" new-each-time="no">
@@ -478,10 +390,6 @@
             <xsl:value-of select="$docs//TEI[@xml:id=$id]/teiHeader/fileDesc/titleStmt/title[1]" />
         </ref>
     </xsl:function>
-    
-    
-   
-    
     
     <xsl:template match="@*|node()" priority="-1">
         <xsl:copy>
