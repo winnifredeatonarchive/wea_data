@@ -665,6 +665,18 @@
         </a>
     </xsl:template>
     
+    <xsl:template match="text()[ancestor::ref][contains(.,'/')]" mode="tei">
+        <xsl:analyze-string select="." regex="/+">
+            <xsl:matching-substring>
+                <xsl:value-of select="."/>
+                <wbr/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    
     <xsl:template match="ptr[@type='readMore']" mode="tei">
         <a href="{wea:resolveTarget(@target)}">
          <xsl:call-template name="processAtts"/>
