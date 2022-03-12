@@ -226,7 +226,7 @@
     <xsl:function name="wea:appendMLA" as="item()+">
         <xsl:param name="doc"/>
         <xsl:variable name="uri" select="$siteUrl || '/' ||$doc/@xml:id || '.html'"/>
-        <xsl:text> </xsl:text><title level="m">The Winnifred Eaton Archive</title>, edited by <editor>Mary Chapman</editor> and <editor>Jean Lee Cole</editor>, <edition n="{substring-after($version,'v')}">v. <xsl:value-of select="substring-after($version,'v')"/></edition>, <date when="{$today}"><xsl:value-of select="format-date(current-date(),'[D01] [MNn] [Y0001]')"/></date>, <ref target="{$uri}"><xsl:value-of select="$uri"/></ref><xsl:text>.</xsl:text>
+        <xsl:text> </xsl:text><title level="m">The Winnifred Eaton Archive</title>, edited by <editor>Mary Chapman</editor> and <editor>Jean Lee Cole</editor>, <edition n="{substring-after($version,'v')}">v. <xsl:value-of select="normalize-space(substring-after($version,'v'))"/></edition>, <date when="{$today}"><xsl:value-of select="format-date(current-date(),'[D01] [MNn] [Y0001]')"/></date>, <ref target="{$uri}"><xsl:value-of select="$uri"/></ref><xsl:text>.</xsl:text>
     </xsl:function>
     
     <xd:doc>

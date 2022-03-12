@@ -105,7 +105,7 @@
                 
                 <xsl:call-template name="createCitations"/>
 
-
+                <xsl:apply-templates select="$root//revisionDesc[not(ancestor::biblFull)]" mode="metadata"/>
                 <div id="xmlVersions">
                     <div class="metadataLabel">Download XML</div>
                     <xsl:variable name="sourceUri"
@@ -377,6 +377,8 @@
         </div>
     </xsl:template>
     
+    
+    
     <xsl:template match="catRef" mode="metadata">
         <xsl:variable name="target" select="@target"/>
         <xsl:variable name="scheme" select="@scheme"/>
@@ -603,8 +605,27 @@
     
     
     
-    <xsl:template match="titleStmt/title | revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
+    <xsl:template match="titleStmt/title | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
     
+    <xsl:template match="revisionDesc" mode="metadata">
+        <xsl:variable name="currStatus" select="@status" as="xs:string"/>
+        <xsl:variable name="statusLabel">
+            <xsl:choose>
+                <xsl:when test="$currStatus = 'empty'">Empty</xsl:when>
+                <xsl:when test="$currStatus = 'inProgress'">In Progress</xsl:when>
+                <xsl:when test="$currStatus= 'readyForProof'">Ready for Proof</xsl:when>
+                <xsl:when test="$currStatus = 'published'">Published</xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="whenChanged" select="change[@status = $currStatus][last()]/@when" as="xs:string"/>
+        <div>
+            <div class="metadataLabel">Document Status</div>
+            <div>
+                <xsl:value-of select="$statusLabel"/> (<xsl:value-of select="wea:dateString($whenChanged)"/>)
+            </div>
+        </div>
+        
+    </xsl:template>
     <xsl:template match="respStmt" mode="metadata">
         <div>
             <xsl:call-template name="processAtts"/>
@@ -687,6 +708,13 @@
                         <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation_MLA">
                             <div class="mi">bookmark</div>
                             <div class="label">Cite</div>  
+                        </a>
+                    </div>
+                    
+                    <div id="tools_info">
+                        <a class="toolbar_item" href="#credits_content">
+                            <div class="mi">info</div>
+                            <div class="label">Metadata</div>
                         </a>
                     </div>
           
