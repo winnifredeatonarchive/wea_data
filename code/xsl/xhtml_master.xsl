@@ -68,7 +68,7 @@
     <xsl:template name="createSiteMap">
         <xsl:result-document href="{$outDir || '/ajax/sitemap.html'}">
             <section>
-                <xsl:for-each-group select="$standaloneXml" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
+                <xsl:for-each-group select="$standaloneXml[not(//TEI[@xml:id = ('menu','footer','redirects')])]" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
                     <xsl:sort select="current-grouping-key()" order="descending"/>
                     <xsl:variable name="isPrimary" select="current-grouping-key()"/>
                     <div>
