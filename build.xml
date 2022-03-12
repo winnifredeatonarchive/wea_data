@@ -26,7 +26,7 @@
   <target name="checkFacs">
       <mkdir dir="temp"/>
       <exec executable="ls" dir="${basedir}/data/facsimiles" output="temp/facs.txt"/>
-      <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
           <arg value="-xsl:${project.dir}/code/documentation/check_facs.xsl"/>
           <arg value="-it:check"/>
           <arg value="facsList=${basedir}/temp/facs.txt"/>
@@ -56,7 +56,7 @@
     </target>
     
     <target name="cleanUpStaticSearch">
-        <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
             <arg value="-xsl:${project.dir}/code/xsl/clean_up_ss.xsl"/>
             <arg value="-s:${basedir}/products/site/search.html"/>
             <arg value="-o:${basedir}/products/site/search_clean.html"/>
