@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-03-09T19:39:39Z. .
+Schema generated from ODD source 2022-03-12T05:26:04Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -465,13 +465,13 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
                <value>empty</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that has not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
                <value>inProgress</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.) in progress</a:documentation>
                <value>readyForProof</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) Ready for Proofing</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) ready for proof</a:documentation>
                <value>published</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) Published</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) published</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -4877,13 +4877,13 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
                <value>empty</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that has not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</a:documentation>
                <value>inProgress</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is currently being encoded and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.) in progress</a:documentation>
                <value>readyForProof</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) Ready for Proofing</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A document that is ready to be proofed by the project director.) ready for proof</a:documentation>
                <value>published</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) Published</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(A published document.) published</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -7494,7 +7494,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                 xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron">
                         <sch:rule context="tei:TEI[descendant::tei:catRef[contains(@target,'Poem')]][not(descendant::tei:revisionDesc/@status='empty')]">
-                           <sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l]">
+                           <sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l or descendant::tei:gap[@reason=('readyForProof','inProgress')]]">
                               ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
                               Ensure that you do not use paragraph tags if it is a poem. 
                            </sch:assert>

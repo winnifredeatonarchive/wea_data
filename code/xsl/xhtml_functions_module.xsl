@@ -41,17 +41,22 @@
         </xsl:choose>
     </xsl:function>
     
-    <xsl:function name="wea:getTitle">
+    <xsl:function name="wea:getTitle" new-each-time="no">
         <xsl:param name="docId"/>
         <xsl:sequence select="$standaloneXml[//TEI/@xml:id=$docId]//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
     </xsl:function>
     
-    <xsl:function name="wea:isObject" as="xs:boolean">
+    <xsl:function name="wea:isObject" new-each-time="no" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:sequence select="not(wea:bornDigital($doc))"/>
     </xsl:function>
     
-    <xsl:function name="wea:isExhibit" as="xs:boolean">
+    <xsl:function name="wea:hasTranscription" new-each-time="no" as="xs:boolean">
+        <xsl:param name="doc"/>
+        <xsl:sequence select="not($doc//text/descendant::gap[@reason = ('noTranscriptionAvailable','readyForProof','inProgress')]) and matches(string-join($doc//text),'\S')"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:isExhibit" new-each-time="no" as="xs:boolean">
         <xsl:param name="doc"/>
         <xsl:variable name="category" select="$standaloneXml//TEI[@xml:id='taxonomies']/descendant::taxonomy[@xml:id='exhibit']/category[@xml:id=$doc/@xml:id]"/>
         <xsl:sequence select="not(empty($category))"/>
@@ -72,7 +77,7 @@
         </div>
     </xsl:function>
     
-    <xsl:function name="wea:getURL" as="xs:string">
+    <xsl:function name="wea:getURL" as="xs:string" new-each-time="no">
         <xsl:param name="el"/>
         <xsl:variable name="root" select="$el/ancestor-or-self::TEI"/>
         <xsl:value-of select="concat($siteUrl, '/',$root/@xml:id,'.html')"/>

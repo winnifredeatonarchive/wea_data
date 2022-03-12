@@ -26487,13 +26487,13 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                                           <cell>
                                              <list>
                                                 <label>empty</label>
-                                                <item>(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
+                                                <item>(A document that has not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
                                                 <label>inProgress</label>
-                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</item>
+                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.) in progress</item>
                                                 <label>readyForProof</label>
-                                                <item>(A document that is ready to be proofed by the project director.) Ready for Proofing</item>
+                                                <item>(A document that is ready to be proofed by the project director.) ready for proof</item>
                                                 <label>published</label>
-                                                <item>(A published document.) Published</item>
+                                                <item>(A published document.) published</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -35712,13 +35712,13 @@ epistemology, methodology and history of
                                           <cell>
                                              <list>
                                                 <label>empty</label>
-                                                <item>(Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
+                                                <item>(A document that has not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.) empty</item>
                                                 <label>inProgress</label>
-                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.) In Progress</item>
+                                                <item>(A document that is currently being encoded and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.) in progress</item>
                                                 <label>readyForProof</label>
-                                                <item>(A document that is ready to be proofed by the project director.) Ready for Proofing</item>
+                                                <item>(A document that is ready to be proofed by the project director.) ready for proof</item>
                                                 <label>published</label>
-                                                <item>(A published document.) Published</item>
+                                                <item>(A published document.) published</item>
                                              </list>
                                           </cell>
                                        </row>
@@ -41919,7 +41919,7 @@ epistemology, methodology and history of
                      <cell>If a document is classified as a poem, then it should have linegroup elements.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:TEI[descendant::tei:catRef[contains(@target,'Poem')]][not(descendant::tei:revisionDesc/@status='empty')]"&gt;
- &lt;sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l]"&gt; ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
+ &lt;sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l or descendant::tei:gap[@reason=('readyForProof','inProgress')]]"&gt; ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
    Ensure that you do not use paragraph tags if it is a poem.
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;

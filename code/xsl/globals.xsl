@@ -11,6 +11,7 @@
     version="3.0">
     
     <xsl:param name="verbose">false</xsl:param>
+    <xsl:param name="projectDir"/>
     <xsl:param name="docsToBuild"/>
     <xsl:param name="outDir"/>
     <xsl:param name="version"/>
@@ -29,6 +30,7 @@
     
     <!--NOTE TO SELF: These collections should be written without the trailing //TEI
          as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
+    <xsl:variable name="srcXml" select="collection($projectDir || '/data?select=*.xml;recurse=yes')" as="document-node()+"/>
     
     <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=no'))"/>
     

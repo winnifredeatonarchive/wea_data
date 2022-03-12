@@ -658,10 +658,11 @@
     
     
     <xsl:template name="createToolbar">
-        <xsl:if test="not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable']) and wea:isObject(ancestor::TEI)">
+        <xsl:variable name="doc" select="ancestor::TEI" as="element(TEI)"/>
+        <xsl:if test="wea:hasTranscription($doc) and wea:isObject($doc)">
             <div id="tools_container">
                 <div id="tools">
-                    <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
+                    <xsl:if test="$doc/descendant::text[descendant::div[head]]">
                         <div id="tools_toc" title="Table of Contents">
                             <a class="toolbar_item" href="#toc_content">
                                 <div class="mi">list</div>

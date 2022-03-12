@@ -2604,18 +2604,18 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <valList mode="add" type="closed">
                            <valItem ident="empty" mode="add">
                               <desc>empty</desc>
-                              <gloss>Documents with @status='empty' should be texts that have not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.</gloss>
+                              <gloss>A document that has not yet been transcribed or encoded. Do not use "empty" if we cannot find or otherwise we believe the text of this document is lost.</gloss>
                            </valItem>
                            <valItem ident="inProgress" mode="add">
-                              <desc>In Progress</desc>
-                              <gloss>A document that is currently being encoded and is not yet ready to be proofed. This may be because you the document is in progress, a facsimile needs to be added, or any other reason where the document has content but is not yet ready to be approved by the project director.</gloss>
+                              <desc>in progress</desc>
+                              <gloss>A document that is currently being encoded and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.</gloss>
                            </valItem>
                            <valItem ident="readyForProof" mode="add">
-                              <desc>Ready for Proofing</desc>
+                              <desc>ready for proof</desc>
                               <gloss>A document that is ready to be proofed by the project director.</gloss>
                            </valItem>
                            <valItem ident="published" mode="add">
-                              <desc>Published</desc>
+                              <desc>published</desc>
                               <gloss>A published document.</gloss>
                            </valItem>
                         </valList>
@@ -2972,7 +2972,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <constraint>
                      <sch:pattern>
                         <sch:rule context="tei:TEI[descendant::tei:catRef[contains(@target,'Poem')]][not(descendant::tei:revisionDesc/@status='empty')]">
-                           <sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l]">
+                           <sch:assert test="descendant::tei:text[descendant::tei:lg or descendant::tei:l or descendant::tei:gap[@reason=('readyForProof','inProgress')]]">
                               ERROR: This document is classified as a poem, but there are no line groups (&lt;lg&gt;) or lines (&lt;l&gt;).
                               Ensure that you do not use paragraph tags if it is a poem. 
                            </sch:assert>

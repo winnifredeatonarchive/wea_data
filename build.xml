@@ -95,6 +95,10 @@
         <ant antfile="code/buildSite.xml" target="justXml" inheritall="false"/>
     </target>
     
+    <target name="fast">
+        <ant antfile="code/buildSite.xml" target="fast" inheritall="false"/>
+    </target>
+    
     <target name="quickWithFacs">
         <ant antfile="code/buildSite.xml" target="quickWithFacs" inheritall="false"/>
      </target>

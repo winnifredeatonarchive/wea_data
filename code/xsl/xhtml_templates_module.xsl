@@ -606,13 +606,22 @@
     <xsl:template match="graphic/desc" mode="tei"/>
     
     
-    <xsl:template match="gap[@reason='noTranscriptionAvailable']" mode="tei">
+    <xsl:template match="gap[@reason=('noTranscriptionAvailable','readyForProof','inProgress')]" mode="tei">
         <xsl:variable name="subject">WEA: <xsl:value-of select="ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
         <xsl:variable name="temp" as="element(tei:div)">
             <tei:div type="noTranscriptionAvailable">
-                <tei:head>No Transcription Available</tei:head>
-                <tei:div>There is no transcription available yet for this item. If you would like to contribute a transcription,
-                please contact the <tei:ref target="mailto:mchapman@ubc.ca?subject={encode-for-uri($subject)}">Project Director</tei:ref>.</tei:div>
+
+                <xsl:choose>
+                    <xsl:when test="@reason = 'noTranscriptionAvailable'">
+                        <tei:head>No Transcription Available</tei:head>
+                        <tei:div>There is no transcription available yet for this item. If you would like to contribute a transcription,
+                            please contact the <tei:ref target="mailto:mchapman@ubc.ca?subject={encode-for-uri($subject)}">Project Director</tei:ref>.</tei:div>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <tei:head>Transcription Forthcoming</tei:head>
+                        <tei:div>The transcription for this text is currently in progress.</tei:div>
+                    </xsl:otherwise>
+                </xsl:choose>
             </tei:div>
         </xsl:variable>
         <xsl:apply-templates select="$temp" mode="#current"/>

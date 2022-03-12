@@ -130,9 +130,15 @@
  
  <target name="createSourceXml">
      <echo message="Creating source XML..."/>
-     <copy todir="${source.xml.dir}" flatten="true">
-         <fileset refid="dataXml"/>
-     </copy>
+     <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
+         <arg value="-xsl:${project.dir}/code/xsl/xml_source_master.xsl"/>
+         <arg value="-it:go"/>
+         <arg value="projectDir=${project.dir}"/>
+         <arg value="outDir=${site.dir}"/>
+         <arg value="docsToBuild=${docsToBuild}"/>
+         <arg value="version=${version}"/>
+         <arg value="--suppressXsltNamespaceCheck:on"/>          
+     </java>
  </target>
     
     
@@ -292,6 +298,8 @@
     
   
   <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml, createEncodingPackage"/>
+    
+    <target name="fast" depends="createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
