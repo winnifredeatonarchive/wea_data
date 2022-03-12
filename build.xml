@@ -64,27 +64,24 @@
         </java>
         <move file="${basedir}/products/site/search_clean.html" tofile="${basedir}/products/site/search.html"/>
     </target>
-    
-    <target name="startLocalServer">
-        <exec executable="python" dir="products/site">
-            <arg line="-m SimpleHTTPServer 8080"/>
-        </exec>
-       
+
+    <target name="makeSiteMap">
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
+            <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
+            <arg value="-it:go"/>
+            <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
     </target>
-    
 
     
+    <target name="all" depends="validate, checkFacs, createSite, createDocSite, search, makeSiteMap"/>
+    
 
-    
-    <target name="all" depends="validate, checkFacs, createSite, createDocSite, search"/>
-    
-    <target name="allServer" depends="all, startLocalServer"/>
-    
     <target name="quick">
         <ant antfile="code/buildSite.xml"  target="quick" inheritall="false"/>
     </target>
-    
-  
     
     <target name="justXml">
         <description>target: justXml
@@ -113,14 +110,6 @@
         <ant antfile="code/buildSite.xml" target="copyCSS" inheritall="false"/>
     </target>
     
-    <target name="makeSiteMap">
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
-            <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
-            <arg value="-it:go"/>
-            <arg value="outDir=${site.dir}"/>
-            <arg value="docsToBuild=${docsToBuild}"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-        </java>
-    </target>
+
     
 </project>
