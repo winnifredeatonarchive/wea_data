@@ -309,6 +309,7 @@ background-position: center;
         display:block;
         position:absolute;
         top:50%;
+        transform: translateY(-50%);
         z-index:999;
         font-size: 2rem;
         color: #717171;
@@ -342,6 +343,7 @@ div#index_featuredItemsWrapper::before {
 #index_featuredItems{
     overflow-x: hidden;
     background-color: var(--wea-info-bg-color);
+    position:relative;
 }
  
 #index_featuredItems ul {
