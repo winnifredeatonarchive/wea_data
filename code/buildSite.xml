@@ -14,8 +14,13 @@
     <target name="copyCSS">
         <!--First, use sass to minify the CSS files
             (and to prep for sass in future)-->
+        <copy todir="${site.dir}/sass">
+            <fileset dir="../site/sass">
+                <include name="**.scss"/>
+            </fileset>
+        </copy>
         <exec executable="sass">
-            <arg line="../site/sass:${site.dir}/css --style compressed"/>
+            <arg line="${site.dir}/sass:${site.dir}/css --style compressed"/>
         </exec>
         <!--And copy the fonts-->
         <copy todir="${site.dir}/fonts">
