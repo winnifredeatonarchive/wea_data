@@ -2916,8 +2916,28 @@ figure.placeholder h2{
     margin-bottom:1.2em;
 }
 
+#popup_content #credits_content{
+    #source_citation, #this_citation{
+        display:none;
+    }
+}
+
 #popup_content [data-el='p']{
     margin-top:0;
+}
+
+#popup_content #xmlVersions ul{
+    margin-bottom: 0.8em;
+    li{
+        margin-left: 1.5em;
+    }
+}
+
+#popup_content{
+    .bibl{
+        text-indent: 0;
+        padding-left:0;
+    }
 }
 
 #popup.showing{
