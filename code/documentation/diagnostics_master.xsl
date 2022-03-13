@@ -191,7 +191,8 @@
         <!--Initial checks that fail on error-->
         <xsl:call-template name="duplicateIds"/>
         <xsl:call-template name="badRedirects"/>
-        
+        <xsl:call-template name="checkNextPrevs"/>
+
         <!--Diagnostic checks-->
         <xsl:call-template name="documentsAwaitingMC"/>
         <xsl:call-template name="documentsWithoutFacs"/>
@@ -225,6 +226,88 @@
         </xsl:if>
     </xsl:template>
     
+    <xsl:template name="checkNextPrevs">
+        <xsl:variable name="instalments" select="$dataDocs//TEI[descendant::text[@next or @prev]]" as="element(TEI)+"/>
+        <xsl:message>Checking for bad instalment sequencing in <xsl:value-of select="count($instalments)"/> docs...</xsl:message>
+        <!--First, compile all of the documents into a map to make the sequence checking a bit faster-->
+        <xsl:variable name="instalmentMap" as="map(*)">
+            <xsl:map>
+                <xsl:for-each select="$instalments">
+                    <xsl:map-entry key="string(@xml:id)">
+                        <xsl:map>
+                            <xsl:for-each select="descendant::text/(@next | @prev)">
+                                <xsl:map-entry key="local-name()"
+                                    select="replace(string(.),'^doc:','')"/>
+                            </xsl:for-each>
+                        </xsl:map>
+                    </xsl:map-entry>
+                </xsl:for-each>
+            </xsl:map>
+        </xsl:variable>
+        <!--Now iterate through all of the keys and gather the errors-->
+        <xsl:iterate select="map:keys($instalmentMap)">
+            <xsl:param name="errors" as="xs:string*"/>  
+            <xsl:on-completion>
+                <!--If there are errors, output the message and fail the build-->
+                <xsl:if test="not(empty($errors))">
+                    <xsl:message terminate="yes">
+                        <xsl:for-each select="$errors">
+                            <xsl:message><xsl:value-of select="."/></xsl:message>
+                        </xsl:for-each>
+                    </xsl:message>
+                </xsl:if>
+            </xsl:on-completion>
+            <xsl:variable name="curr" select="."/>
+            <xsl:variable name="currMap" select="$instalmentMap(.)" as="map(*)"/>
+            <xsl:next-iteration>
+                <xsl:with-param name="errors" as="xs:string*">
+                    <xsl:sequence select="$errors"/>
+                    <!--Now iterate through the next/prev values on the current document,
+                    and see if the inverse value is correct; in other words,
+                    if Doc2 has prev=Doc1 and next=Doc3,
+                    make sure that Doc1 has next = Doc2
+                    and Doc3 has prev = Doc2
+                    -->
+                    <xsl:for-each select="map:keys($currMap)">
+                        <xsl:variable name="key" select="." as="xs:string"/>
+                        <xsl:variable name="inv" select="if ($key = 'next') then 'prev' else 'next'"/>
+                        <xsl:variable name="val" select="$currMap($key)" as="xs:string"/>
+                        <xsl:variable name="docExists" select="exists($dataDocs//TEI[@xml:id = $val])" as="xs:boolean"/>
+                        <xsl:variable name="hasInv" 
+                            select="if ($docExists) 
+                            then (map:contains($instalmentMap, $val) and map:contains($instalmentMap($val), $inv))
+                            else false()"
+                            as="xs:boolean"/>
+                        <xsl:variable name="hasCorrectVal" 
+                            select="if ($hasInv)
+                            then map:get($instalmentMap($val), $inv) = $curr 
+                            else false()" 
+                            as="xs:boolean"/>
+                        <xsl:if test="not($docExists and $hasInv and $hasCorrectVal)">
+                            <xsl:value-of>
+                                <xsl:value-of 
+                                    expand-text="yes">ERROR: {$curr} has {$key}="doc:{$val}", but </xsl:value-of>
+                                <xsl:choose>
+                                    <xsl:when test="not($docExists)">
+                                        <xsl:value-of 
+                                            expand-text="yes">{$val} doesn't exist</xsl:value-of>
+                                    </xsl:when>
+                                    <xsl:when test="not($hasInv)">
+                                        <xsl:value-of
+                                            expand-text="yes">{$val} has no {$inv} value</xsl:value-of>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of 
+                                            expand-text="yes">{$val} has {$inv}="doc:{map:get($instalmentMap($val), $inv)}"</xsl:value-of>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:value-of>                            
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:with-param>
+            </xsl:next-iteration>
+        </xsl:iterate>
+    </xsl:template>
    
     
     <xsl:template name="documentsAwaitingMC">
