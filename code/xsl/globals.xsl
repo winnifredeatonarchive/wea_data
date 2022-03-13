@@ -64,7 +64,7 @@
     <xsl:variable name="siteUrl" select="'https://winnifredeatonarchive.org'"/>
     
     <xsl:variable name="sha" as="xs:string">
-        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master') =>  json-to-xml()"/>
+        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/main') =>  json-to-xml()"/>
         <xsl:sequence select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
     </xsl:variable>
    
