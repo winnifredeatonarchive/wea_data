@@ -26,6 +26,8 @@
      
     <xsl:variable name="dataDocs" select="collection('../../data/?select=*.xml;recurse=yes')"/>
     
+    <xsl:variable name="taxonomyDoc" select="$dataDocs//TEI[@xml:id = 'taxonomies']" as="element(TEI)"/>
+    
     <xsl:variable name="redirectsDoc" select="$dataDocs//TEI[@xml:id='redirects']" as="element(TEI)"/>
     
     <xsl:variable name="docsByTag" as="map(xs:string, document-node()+)">
@@ -50,8 +52,11 @@
                         <xsl:for-each select="$docsByTag(.)">
                             <xsl:map-entry key="string(//TEI/@xml:id)">
                                 <xsl:map>
-                                    <xsl:map-entry key="'hasTranscription'" select="matches(string-join(//body),'\S')"/>
+                                    <xsl:map-entry key="'hasTranscription'" select="matches(string-join(//body),'\S') and //revisionDesc/@status  = 'published'"/>
                                     <xsl:map-entry key="'hasHeadnote'" select="matches(string-join(//abstract),'\S')"/>
+                                    <xsl:map-entry key="'hasFacsimile'" select="exists(//text/@facs)"/>
+                                    <xsl:map-entry key="'exhibit'" 
+                                        select="replace(descendant::catRef[@scheme='wdt:exhibit']/@target,'wdt:','')"/>
                                 </xsl:map>
                             </xsl:map-entry>
                         </xsl:for-each>
@@ -77,6 +82,7 @@
     
     
     <xsl:template match="divGen[@xml:id='versions_content']">
+        <xsl:message>Generating version stats...</xsl:message>
         <xsl:for-each select="$sortedTags">
             <xsl:call-template name="createVersions"/>
         </xsl:for-each>
@@ -106,6 +112,8 @@
         <xsl:variable name="prev" select="$sortedTags[$pos + 1]" as="xs:string"/>
         <xsl:variable name="prevData" select="$versionsMap($prev)" as="map(*)?"/>
         <xsl:variable name="docIds" select="map:keys($currData)" as="xs:string+"/>
+        <xsl:message>Comparing <xsl:value-of select="$tag"/> against <xsl:value-of select="$prev"/>...</xsl:message>
+        
         <xsl:variable name="newDocs"
             select="for $id in $docIds return if (map:contains($prevData, $id)) then () else $id"
             as="xs:string*"/>
@@ -122,19 +130,22 @@
             if ($currData($id)?hasHeadnote and (not(map:contains($prevData, $id)) or not($prevData($id)?hasHeadnote))) 
             then $id else ()"/>
         
+        <xsl:variable name="newFacsimiles" as="xs:string*"
+            select="for $id in $docIds return
+            if ($currData($id)?hasFacsimile and (not(map:contains($prevData, $id)) or not($prevData($id)?hasFacsimile)))
+            then $id else ()"/>
+        
         <row>
             <cell role="label">Documents Added</cell>
             <cell>
                 <xsl:value-of select="count($newDocs)"/>
             </cell>
             <cell>
-                <xsl:where-populated>
-                    <list>
-                        <xsl:for-each select="$newDocs">
-                            <item><xsl:sequence select="wea:docTitleLink(., $docsByTag($tag))"/></item>
-                        </xsl:for-each>
-                    </list>
-                </xsl:where-populated>
+                <xsl:call-template name="createDocListForVersions">
+                    <xsl:with-param name="ids" select="$newDocs"/>
+                    <xsl:with-param name="collection" select="$docsByTag($tag)"/>
+                    <xsl:with-param name="currData" select="$currData"/>
+                </xsl:call-template>
             </cell>
         </row>
         <row>
@@ -143,13 +154,11 @@
                 <xsl:value-of select="count($newTranscriptions)"/>
             </cell>
             <cell>
-                <xsl:where-populated>
-                    <list>
-                        <xsl:for-each select="$newTranscriptions">
-                            <item><xsl:sequence select="wea:docTitleLink(., $docsByTag($tag))"/></item>
-                        </xsl:for-each>
-                    </list>
-                </xsl:where-populated>
+                <xsl:call-template name="createDocListForVersions">
+                    <xsl:with-param name="ids" select="$newTranscriptions"/>
+                    <xsl:with-param name="collection" select="$docsByTag($tag)"/>
+                    <xsl:with-param name="currData" select="$currData"/>
+                </xsl:call-template>
             </cell>
         </row>
         <row>
@@ -158,15 +167,54 @@
                 <xsl:value-of select="count($newHeadnotes)"/>
             </cell>
             <cell>
-                <xsl:where-populated>
-                    <list>
-                        <xsl:for-each select="$newHeadnotes">
-                            <item><xsl:sequence select="wea:docTitleLink(., $docsByTag($tag))"/></item>
-                        </xsl:for-each>
-                    </list>
-                </xsl:where-populated>
+                <xsl:call-template name="createDocListForVersions">
+                    <xsl:with-param name="ids" select="$newHeadnotes"/>
+                    <xsl:with-param name="collection" select="$docsByTag($tag)"/>
+                    <xsl:with-param name="currData" select="$currData"/>
+                </xsl:call-template>
             </cell>
         </row>
+        <row>
+            <cell role="label">Facsimiles Added</cell>
+            <cell>
+                <xsl:value-of select="count($newFacsimiles)"/>
+            </cell>
+            <cell>
+                <xsl:call-template name="createDocListForVersions">
+                    <xsl:with-param name="ids" select="$newFacsimiles"/>
+                    <xsl:with-param name="collection" select="$docsByTag($tag)"/>
+                    <xsl:with-param name="currData" select="$currData"/>
+                </xsl:call-template>
+            </cell>
+        </row>
+    </xsl:template>
+  
+    <xsl:template name="createDocListForVersions">
+        <xsl:param name="ids"/>
+        <xsl:param name="currData"/>
+        <xsl:param name="collection"/>
+        <xsl:variable name="taxCats" select="$taxonomyDoc//category" as="element(category)+"/>
+        
+        <xsl:for-each-group select="$ids" group-by="$currData(.)?exhibit">
+            <xsl:sort select="($taxCats[@xml:id = current-grouping-key()]/@n, 10)[1] => xs:integer()"/>
+            <xsl:variable name="thisTax" select="$taxCats[@xml:id = current-grouping-key()]" as="element(category)?"/>
+            <list>
+                <label> 
+                    <xsl:choose>
+                        <xsl:when test="current-grouping-key() = ''">Uncategorized</xsl:when>
+                        <xsl:otherwise>
+                            <ref target="../{current-grouping-key()}.html">
+                                <xsl:value-of select="normalize-space(string-join($thisTax/catDesc/term/text()))"/>
+                            </ref>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </label>
+                <xsl:for-each select="current-group()">
+                    <xsl:sort select="wea:docTitle(., $collection)"/>
+                    <item><xsl:sequence select="wea:docTitleLink(., $collection)"/></item>
+                </xsl:for-each>
+            </list>
+        </xsl:for-each-group>
     </xsl:template>
     
     <xsl:template match="divGen[@xml:id='diagnostics_content']">
@@ -177,6 +225,7 @@
     
     
     <xsl:template name="createDiagnostics">
+        <xsl:message>Generating diagnostics...</xsl:message>
         <div xml:id="diagnostics_content">
             <head>WEA Site Diagnostics</head>
             <div>
@@ -205,6 +254,7 @@
     
     
     <xsl:template name="duplicateIds">
+        <xsl:message>Checking for duplicate ids...</xsl:message>
         <xsl:variable name="errors"
             select="for $id in map:keys($idMap) return if (count($idMap($id)) gt 1) then $id else ()"
             as="xs:string*"/>
@@ -217,6 +267,7 @@
     </xsl:template>
     
     <xsl:template name="badRedirects">
+        <xsl:message>Checking for bad redirects...</xsl:message>
         <!--Get the most recent-->
         <xsl:variable name="deletedDocs" select="for $id in map:keys($versionsMap($sortedTags[2])) return if (map:contains($versionsMap($sortedTags[1]), $id)) then () else $id" as="xs:string*"/>
         <xsl:variable name="redirectedDocs" select="$redirectsDoc//link/@target ! replace(tokenize(.)[1],'^.+:','')" as="xs:string+"/>
@@ -423,6 +474,7 @@
         <xsl:param name="heading"/>
         <xsl:param name="description"/>
         <xsl:param name="labels"/>
+        <xsl:message>Running diagnostic: <xsl:value-of select="$heading"/></xsl:message>
         <div type="diagnostic">
             <head n="{count($errors)}"><xsl:sequence select="$heading"/></head>
             <xsl:sequence select="$description"/>
@@ -470,8 +522,19 @@
         <xsl:param name="id" as="xs:string"/>
         <xsl:param name="docs" as="document-node()+"/>
         <ref target="../{$id}.html">
-            <xsl:value-of select="$docs//TEI[@xml:id=$id]/teiHeader/fileDesc/titleStmt/title[1]" />
+            <xsl:value-of select="wea:docTitle($id, $docs)"/>
         </ref>
+    </xsl:function>
+    
+    <xsl:function name="wea:docTitle" as="xs:string" new-each-time="no">
+        <xsl:param name="id" as="xs:string"/>
+        <xsl:value-of select="wea:docTitle($id, $dataDocs)"/>
+    </xsl:function>
+    
+    <xsl:function name="wea:docTitle" as="xs:string" new-each-time="no">
+        <xsl:param name="id" as="xs:string"/>
+        <xsl:param name="docs" as="document-node()+"/>
+        <xsl:value-of select="$docs//TEI[@xml:id=$id]/teiHeader/fileDesc/titleStmt/title[1]"/>
     </xsl:function>
     
     <xsl:template match="@*|node()" priority="-1">
