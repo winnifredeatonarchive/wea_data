@@ -84,17 +84,17 @@
 
             <script src="js/lazyload.min.js"/>
             <xsl:if test="//graphic[contains(@url,'media/')]">
-                <script src="js/facsimile_view.js"></script>
+                <script src="js/facsimile_view.js?v={normalize-space($version)}"></script>
             </xsl:if>
             <xsl:if test="ancestor::TEI/@xml:id='index'">
-                <script src="js/index.js"></script>
+                <script src="js/index.js?v={normalize-space($version)}"></script>
             </xsl:if>
             <xsl:if test="ancestor::TEI/@xml:id = 'contribute'">
                 <script src="js/jszip.min.js"/>
-                <script src="js/encoding_package.js"></script>
+                <script src="js/encoding_package.js?v={normalize-space($version)}"></script>
             </xsl:if>
-            <script src="js/accordion.js"><!--Keep open--></script>
-            <script src="js/wea.js"/>
+            <script src="js/accordion.js?v={normalize-space($version)}"><!--Keep open--></script>
+            <script src="js/wea.js?v={normalize-space($version)}"/>
         </body>
     </xsl:template>
     
