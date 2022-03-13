@@ -37,7 +37,8 @@
                     key="current-grouping-key()"
                     select="current-group() ! document(.)"/>
             </xsl:for-each-group>
-            <xsl:map-entry key="normalize-space(unparsed-text('../../VERSION'))" select="$dataDocs[matches(document-uri(.),'/texts/')]"/>
+            <xsl:map-entry key="normalize-space(unparsed-text('../../VERSION'))"
+                select="$dataDocs[matches(document-uri(.),'/texts/')]"/>
         </xsl:map>
     </xsl:variable>
     
@@ -463,7 +464,6 @@
     <xsl:function name="wea:makeErrorSeq" as="array(*)*">
         <xsl:param name="errors" as="element(TEI)*"/>
         <xsl:sequence select="wea:sortByDocId($errors) ! array{string(./@xml:id), wea:docTitleLink(./@xml:id)}"/>
-        
     </xsl:function>
     
     <xsl:function name="wea:docTitleLink" as="element(ref)" new-each-time="no">
