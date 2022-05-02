@@ -58,7 +58,7 @@ Publicly accessible
 -->
          </publicationStmt>
          <notesStmt>
-            <note>Facsimile retrieved from the Free Library of Philadelphia.</note>
+            <note>Facsimile retrieved from the Internet Archive.</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
          </notesStmt>
          <sourceDesc>
@@ -73,6 +73,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:SL1" when="2022-05-01" status="published">Added illustrator name ref and updated source note.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SL1" when="2019-05-15" status="published">added MC final edits and updated status to published.</change>
          <change who="pers:JT1" when="2019-04-11">Merged file, changed xml:id, and associated with bibliography entry bibl5 using XSLT.</change>
@@ -93,7 +94,7 @@ Publicly accessible
                By <name ref="pers:WE1">Onoto Watanna</name>
             </byline>
             <note>Author of <q>A Japanese Nightingale</q>, etc</note>
-            <byline>Illustrated by <name>W.H.D. Koerner</name></byline>
+            <byline>Illustrated by <name ref="pers:WK1">W.H.D. Koerner</name></byline>
          </opener>
          <div>
             <div>
