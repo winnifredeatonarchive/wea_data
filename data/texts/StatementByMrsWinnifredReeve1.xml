@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Statement</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,20 +28,46 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNFLetter"/>
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" when="2021-10-12" status="empty">Added exhibit and assigned facs.</change>
-         <change who="pers:JT1" when="2021-05-14" status="empty">Created shell from bibl file.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-05-06" status="published">Proofed and set to published.</change>
+         <change who="pers:LW1" when="2022-05-06" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI.</change>
+         <change who="pers:LW1" when="2022-05-06" status="empty">Finished transcription.</change>
+         <change who="pers:JT1" when="2021-10-12" status="empty">Added exhibit and assigned
+            facs.</change>
+         <change who="pers:JT1" when="2021-05-14" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Statement">
       <body>
+         <head>Statement by Mrs. Winnifred Reeve</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Mrs. Winnifred Reeve</name></byline>
+         </opener>
+
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>When I wrote the letter that appeared in the March issue of <q>The Canadian
+                  Bookman</q> I was smarting under a sense of personal injury and hurt. After I had
+               written it I tried to believe I had done a service to Canadian letters and Canadian
+               authors; but all the while I was troubled by the feeling that it was an ignoble thing
+               to do.</p>
+            <p>I was a veteran author, and should have assisted and protected the new young writer
+               coming with her first work, a brilliant production on which I had myself expended
+               unstinted praise. I should not have allowed what I thought was an unkind and
+               ungrateful act on her part toward me to have hurt me. Few of us can rise above our
+               personalities.</p>
+            <p>Mrs. Salversen denies that she told me she was paying Mr. Bothwell for his services.
+               I shall not dispute it. The conversation took place in the presence of myself and my
+               daughter. We all are liable to make mistakes.</p>
+            <p>I am making this statement voluntarily, and through no pressure, but because I desire
+               to clarify the situation and say something that may to some degree salve the hurt
+               feelings of Mrs. Salversen.</p>
          </div>
       </body>
    </text>
