@@ -25,11 +25,9 @@
     
   <target name="checkFacs">
       <mkdir dir="temp"/>
-      <exec executable="ls" dir="${basedir}/data/facsimiles" output="temp/facs.txt"/>
       <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
           <arg value="-xsl:${project.dir}/code/documentation/check_facs.xsl"/>
           <arg value="-it:check"/>
-          <arg value="facsList=${basedir}/temp/facs.txt"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>
       </java>
   </target>
@@ -49,7 +47,6 @@
     
     <target name="createStaticSearch">
         <ant antfile="${ss.codeDir}/build.xml" inheritall="false" >
-        
             <target name="${ss.target}"/>
             <property name="ssConfigFile" value="${basedir}/code/staticSearch/config.xml"/>
         </ant>
