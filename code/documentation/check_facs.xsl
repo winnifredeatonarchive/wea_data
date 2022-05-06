@@ -12,16 +12,37 @@
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
+    <xsl:param name="failOnError"
+        static="yes" 
+        select="true()" 
+        as="xs:boolean"/>
+    
     <xsl:output method="text"/>
     
     <xsl:mode name="ids" on-no-match="shallow-skip"/>
+    <xsl:mode name="errors" on-no-match="shallow-skip"/>
     
-    <xsl:variable name="dataDocs" select="collection('../../data/?select=*.xml;recurse=yes')"/>
+    <xsl:variable name="data" 
+        select="uri-collection('../../data?select=*;recurse=yes')"
+        as="xs:anyURI+"/>
+    
+    <xsl:variable name="xml" 
+        select="$data[ends-with(.,'.xml')]" 
+        as="xs:anyURI+"/>
+    
+    <xsl:variable name="binaries"
+        select="$data[not(. = $xml)]"
+        as="xs:anyURI+"/>
+    
+    <xsl:variable name="dataDocs"
+        select="$xml ! document(.)"
+        as="document-node()+"/>
+    
     
     <xsl:variable name="idMap" as="map(*)">
         <xsl:map>
             <xsl:apply-templates select="$dataDocs[//@xml:id]" mode="ids"/>
-            <xsl:for-each select="uri-collection('../../data/?select=*;recurse=yes')[not(ends-with(.,'.xml'))]">
+            <xsl:for-each select="$binaries">
                 <xsl:map-entry key="substring-after(.,'/data/')" select="true()"/>
             </xsl:for-each>
             <xsl:map-entry key="'azindex.xml'" select="true()"/>
@@ -35,50 +56,79 @@
     <xsl:variable name="prefixes"
         select="map:keys($prefixMap)" 
         as="xs:string*"/>
+    
     <xsl:variable name="prefixRex"
         select="'(^|\s+)(' || string-join($prefixes,'|') || '):'"
         as="xs:string"/>
     
+    <xsl:variable name="els"
+        select="$dataDocs//*[not(self::graphic[ancestor::TEI[@xml:id='media']])][@*[matches(.,$prefixRex)]]"
+        as="element()+"/>
+    <xsl:variable name="atts" select="$els/@*[matches(.,$prefixRex)]" 
+        as="attribute()+"/>
+    
 
     <xsl:template name="check">
         <xsl:call-template name="checkPointers"/>
+        <xsl:message>Done!</xsl:message>
     </xsl:template>
     
-    <xsl:template name="checkPointers">
-        <xsl:variable name="els"
-            select="$dataDocs//*[not(self::graphic[ancestor::TEI[@xml:id='media']])][@*[matches(.,$prefixRex)]]"
-            as="element()+"/>
-        <xsl:variable name="atts" select="$els/@*[matches(.,$prefixRex)]" 
-            as="attribute()+"/>
-        <xsl:message>
-            <xsl:for-each-group 
-                select="$atts"
-                group-by="wea:getPointers(.)">
-                <xsl:call-template name="resolvePointers"/>
-            </xsl:for-each-group>
-            <xsl:on-non-empty>
-                <xsl:message terminate="no"/>
-            </xsl:on-non-empty>
-        </xsl:message>
+    
+    <xsl:template name="checkPointers">        
+        <xsl:iterate select="$dataDocs">
+            <xsl:param name="errors" as="map(*)*" select="()"/>
+            <xsl:on-completion>
+                <xsl:variable name="merged" select="map:merge($errors)" as="map(*)"/>
+                <xsl:sequence select="map:keys($merged)"/>
+                <xsl:on-non-empty>
+                    <xsl:message _terminate="{xs:string($failOnError)}">
+                        <xsl:for-each-group select="map:keys($merged)" group-by="$merged(.)">
+                            <xsl:variable name="ptr" select="current-grouping-key()"/>
+                            <xsl:message>
+                                <xsl:value-of select="'ERROR: Bad pointer: ' || $ptr || ' found in the following documents: ' || string-join(current-group(), ', ')"/>
+                            </xsl:message>
+                        </xsl:for-each-group>
+                    </xsl:message>
+                </xsl:on-non-empty>
+            </xsl:on-completion>
+            <xsl:next-iteration>
+                <xsl:with-param name="errors" as="map(*)*">
+                    <xsl:sequence select="$errors"/>
+                    <xsl:apply-templates select="//TEI" mode="errors"/>
+                </xsl:with-param>
+            </xsl:next-iteration>
+        </xsl:iterate>
     </xsl:template>
     
-    <xsl:template name="resolvePointers">
-        <xsl:variable name="attGroup" select="current-group()" as="attribute()*"/>
-        <xsl:variable name="ptr" select="current-grouping-key()" as="xs:string"/>
-        <xsl:variable name="resolved" select="wea:resolvePointer($ptr)" as="xs:string"/>
-        <xsl:variable name="error" select="not(map:contains($idMap, $resolved))" as="xs:boolean"/>
-        <xsl:if test="$error">
-           <!-- <xsl:value-of select="current-grouping-key()"/>-->
-            <xsl:message>
-                <xsl:value-of select="'WARNING: Bad pointer: ' || $ptr || ' found in the following documents: '"/>
-                <xsl:value-of separator=", ">
-                    <xsl:for-each-group select="current-group()" group-by="ancestor::TEI/@xml:id">
-                        <xsl:sequence select="string(current-grouping-key())"/>
-                    </xsl:for-each-group>
-                </xsl:value-of>
-            </xsl:message>
+    <xsl:template match="TEI" mode="errors" as="map(*)?">
+        <xsl:variable name="errors" as="xs:string*">
+            <xsl:apply-templates mode="#current"/>
+        </xsl:variable>
+        <xsl:if test="exists($errors)">
+            <xsl:sequence select="map{string(@xml:id): $errors}"/>
         </xsl:if>
     </xsl:template>
+    
+    <xsl:template match="link[ancestor::TEI[@xml:id='redirects']]/@target" mode="errors">
+        <xsl:variable name="tokens"
+            select="tokenize(.)[position() gt 1][matches(.,$prefixRex)]"
+            as="xs:string*"/>
+        <xsl:sequence select="wea:checkPointers($tokens)"/>
+    </xsl:template>
+    
+    <xsl:template match="figure/graphic[@mimeType]/@url[matches(.,$prefixRex)]" mode="errors">
+        <xsl:variable name="ptr" 
+            select=". || '.' || tokenize(parent::graphic/@mimeType,'/')[last()]" as="xs:string"/>
+        <xsl:sequence select="wea:checkPointers($ptr)"/>
+    </xsl:template>
+
+    <xsl:template match="@*[matches(., $prefixRex)]" priority="0" mode="errors">
+          <xsl:variable
+              name="tokens" select="tokenize(.)[matches(.,$prefixRex)]" 
+              as="xs:string*"/>
+          <xsl:sequence select="wea:checkPointers($tokens)"/>
+    </xsl:template>
+    
     
     <xsl:template match="TEI[@xml:id]" mode="ids">
         <xsl:variable name="base" select="@xml:id || '.xml'" as="xs:string"/>
@@ -102,7 +152,7 @@
         <xsl:map-entry key=". || '.xml'" select="true()"/>
     </xsl:template>
     
-    <xsl:template match="text()" mode="ids"/>
+
     
     <xsl:template match="listPrefixDef" mode="prefixes">
         <xsl:map>
@@ -123,16 +173,13 @@
             <xsl:map-entry key="local-name()" select="string(.)"/>
         </xsl:if>
     </xsl:template>
+        
+    <xsl:template match="text()" mode="#all"/>
     
     
-    <xsl:function name="wea:getPointers" as="xs:string*" new-each-time="no">
-        <xsl:param name="att" as="attribute()"/>
-        <xsl:variable name="tokens" select="tokenize($att)" as="xs:string+"/>
-        <xsl:variable name="ptrs" select="$tokens[matches(.,$prefixRex)]" as="xs:string*"/>
-        <xsl:sequence 
-            select="
-            if ($att/parent::link and $att/ancestor::TEI/@xml:id='redirects') 
-            then $ptrs[2] else $ptrs"/>
+    <xsl:function name="wea:checkPointers" as="xs:string*" new-each-time="no">
+        <xsl:param name="ptrs" as="xs:string*"/>
+        <xsl:sequence select="$ptrs[not(map:contains($idMap, wea:resolvePointer(.)))]"/>
     </xsl:function>
     
     <xsl:function name="wea:resolvePointer" as="xs:string" new-each-time="no">
