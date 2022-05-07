@@ -8,6 +8,18 @@
             <title>Books, Literary Notes, etc [Bliss Carman]</title>
             <respStmt>
                <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
                <name ref="pers:SH1">Shaun Hunter</name>
             </respStmt>
          </titleStmt>
@@ -23,39 +35,75 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNFInterview"/>
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
-         <change who="pers:LW1" when="2022-05-06" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
-         <change who="pers:JT1" when="2021-09-02" status="empty">Added gap to signal no transcription.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-05-06" status="published">Proofed, person references added, and set to published.</change>
+         <change who="pers:LW1" when="2022-05-06" status="inProgress">Transcribed document. Uploaded
+            transcription. Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2021-09-02" status="empty">Added gap to signal no
+            transcription.</change>
          <change who="pers:MC1" when="2020-10-13" status="empty">removed transcription.</change>
          <change who="pers:MC1" when="2020-10-11" status="inProgress">Added transcription.</change>
-         <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
+
    </teiHeader>
    <text facs="facs:BooksLiteraryNotesCarman1">
       <body>
+         <head>Books, Literary Notes, Etc.</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Winnifred Eaton Reeve</name></byline>
+         </opener>
+
          <div>
-            <p>Books, Literary Notes, Etc.</p>
-            <p>By Winnifred Eaton Reeve</p>
-            <p>No date or page number</p>
-            <p>[Transcribed by Leean Wu]</p>
-            <p>Bliss Carman</p>
-            <p><q>Poets are reputed to walk with their heads in the clouds</q>, says the Canadian Bookman, <q>and Mr. Carman actually comes near to this description. He is over six feet two. His fine head is crowned with proper ‘poet’s hair.’ He has noble features, a mobile mouth, a characteristic nose and chin and dreamy eyes that seem to see into the far distance…Eyes that seek and find a wide horizon: that break into laughter…quicksilver eyes</q>.</p>
-            <p>“That the poet is not altogether a dreamer, however, is shown in his significant remarks anent the Canadian copyright law.</p>
-            <p><q>That the peculiar species</q>, says Carman, <q>known as the Canadian authors will become extinct shortly, because of the effect of thai law, and therefore I advise you to patronize your writers at once while they are still in the land of the living</q>.</p>
-            <p>When an interviewer from the Bookman recently called upon the poet, after exclaiming <q>God help you!</q> Mr. Carman said:</p>
-            <p><q>The only thing on which I can fire off an opinion as if it were a gun is in regard to the Canadian copyright act. Unless we can have one that is decent and honest, Canada will have no literature; only printers and publishers. However, as we, people or nations, get what we want and what we deserve we certainly won’t get literature. Judging by the copyright act, Canadianas don’t want literature</q>.</p>
-            <p>BLiss Carman comes of a family of scholars and literateurs. On his mother’s side he is a lineal descendant of Daniel Bliss, of Concord, one of the most famous and powerful ministers of his time, and great-grandfather of Ralph Waldo Emerson. He is a cousin of Charles G. D. Roberts, and in the recent book by Lloyd Roberts on the Roberts family, some illuminating and humorous stories are told of <q>Uncle Bliss</q>, who talked with the children man to man as if they were of his own age, and addressed each one as <q>old man</q>.</p>
-            <p>Carman’s sense of humor has always been a delight to his friends, and numerous stories are told to illustrate this. Especially characteristic is the following story:</p>
-            <p>It seems that Mr. Carman lost a poem in the great Pennsylavnian station in New York city, and failing to find it he appealed to a policeman to assist him. That burly representative of the law surveyed him with amazement, not unmixed with tolerant humor.</p>
-            <p><q>A poem, is it! Sure ‘tis no great loss. Can’t you be writing another one thin?</q></p>
-            <p>Bliss Carman lowered his voice confidentially, and plucking the policeman by the sleeve, he whispered in his ear:</p>
-            <p><q>Certainly, but you see, that poem was wrapped around a perfectly good sandwich!</q></p>
-            <p>Mr Carman is due in Calgary on February 8, when he will be heard in recital at the Central Methodist church.</p>
+            <p><q>Poets are reputed to walk with their heads in the clouds</q>, says the Canadian
+               Bookman, <q>and <name ref="pers:BC2">Mr. Carman</name> actually comes near to this
+                  description. He is over six feet two. His fine head is crowned with proper ‘poet’s
+                  hair.’ He has noble features, a mobile mouth, a characteristic nose and chin and
+                  dreamy eyes that seem to see into the far distance…Eyes that seek and find a wide
+                  horizon: that break into laughter…quicksilver eyes</q>.</p>
+            <p>That the poet is not altogether a dreamer, however, is shown in his significant
+               remarks anent the Canadian copyright law.</p>
+            <p><q>That the peculiar species</q>, says <name ref="pers:BC2">Carman</name>, <q>known
+                  as the Canadian authors will become extinct shortly, because of the effect of this
+                  law, and therefore I advise you to patronize your writers at once while they are
+                  still in the land of the living</q>.</p>
+            <p>When an interviewer from the Bookman recently called upon the poet, after exclaiming
+                  <q>God help you!</q>
+               <name ref="pers:BC2">Mr. Carman</name> said:</p>
+            <p><q>The only thing on which I can fire off an opinion as if it were a gun is in regard
+                  to the Canadian copyright act. Unless we can have one that is decent and honest,
+                  Canada will have no literature; only printers and publishers. However, as we,
+                  people or nations, get what we want and what we deserve we certainly won’t get
+                  literature. Judging by the copyright act, Canadianas don’t want
+               literature</q>.</p>
+            <p><name ref="pers:BC2">Bliss Carman</name> comes of a family of scholars and
+               litterateurs. On his mother’s side he is a lineal descendant of Daniel Bliss, of
+               Concord, one of the most famous and powerful ministers of his time, and
+               great-grandfather of Ralph Waldo Emerson. He is a cousin of Charles G. D. Roberts,
+               and in the recent book by Lloyd Roberts on the Roberts family, some illuminating and
+               humorous stories are told of <q>Uncle Bliss</q>, who talked with the children man to
+               man as if they were of his own age, and addressed each one as <q>old man</q>.</p>
+            <p><name ref="pers:BC2">Carman</name>’s sense of humor has always been a delight to his
+               friends, and numerous stories are told to illustrate this. Especially characteristic
+               is the following story:</p>
+            <p>It seems that <name ref="pers:BC2">Mr. Carman</name> lost a poem in the great
+               Pennsylavnian station in New York city, and failing to find it he appealed to a
+               policeman to assist him. That burly representative of the law surveyed him with
+               amazement, not unmixed with tolerant humor.</p>
+            <p><q>A poem, is it! Sure ‘tis no great loss. Can’t you be writing another one
+               thin?</q></p>
+            <p><name ref="pers:BC2">Bliss Carman</name> lowered his voice confidentially, and
+               plucking the policeman by the sleeve, he whispered in his ear:</p>
+            <p><q>Certainly, but you see, that poem was wrapped around a perfectly good
+                  sandwich!</q></p>
+            <p><name ref="pers:BC2">Mr. Carman</name> is due in Calgary on February 8, when he will
+               be heard in recital at the Central Methodist church.</p>
          </div>
       </body>
    </text>
