@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LendMeYourTitle1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LendMeYourTitle1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -29,187 +29,361 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:SL1" when="2022-03-10" status="published">Proofed, edited, and set to published.</change>
-         <change who="pers:SL1" when="2022-03-10" status="inProgress">Edited and standardized formatting. Added page numbers.</change>
-         <change who="pers:SL1" when="2022-03-09" status="inProgress">Downloaded document from Google Drive and converted to TEI. Began encoding. Edit catRef info.</change>
+         <change who="pers:SL1" when="2022-03-10" status="published">Proofed, edited, and set to
+            published.</change>
+         <change who="pers:SL1" when="2022-03-10" status="inProgress">Edited and standardized
+            formatting. Added page numbers.</change>
+         <change who="pers:SL1" when="2022-03-09" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI. Began encoding. Edit catRef info.</change>
          <change who="pers:MC1" status="empty" when="2020-07-31">Added instalment number</change>
          <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl69 using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
+            exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography
+            entry bibl69 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:LendMeYourTitle1" next="doc:LendMeYourTitle2">
       <pb n="13"/>
       <body>
-            <head>Lend Me Your Title</head>
-            <opener>
-               <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
-               <note>Author of <q>Me</q>, <q>Marion</q>, <q>A Japanese Nightingale</q>, etc.</note>
-               <byline>Illustrated by <name ref="pers:CP1">C. F. Peters</name></byline>
-            </opener>
-            
-            <div type="paratext">
-               <p>EDITOR’S NOTE.——. A few years ago a remarkable novel <q>Me</q> appeared anonymously, and much speculation followed as to the identity of the author. It is now possible to announce that it was the work of a well-known Canadian author, Onoto Watanna. The story which follows is the first to appear in MACLEAN’S from the pen of this gifted writer.</p>
-               </div>
-            
-            <div type="content">
-               
+         <head>Lend Me Your Title</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <note>Author of <q>Me</q>, <q>Marion</q>, <q>A Japanese Nightingale</q>, etc.</note>
+            <byline>Illustrated by <name ref="pers:CP1">C. F. Peters</name></byline>
+         </opener>
+
+         <div type="paratext">
+            <p>EDITOR’S NOTE.——. A few years ago a remarkable novel <q>Me</q> appeared anonymously,
+               and much speculation followed as to the identity of the author. It is now possible to
+               announce that it was the work of a well-known Canadian author, Onoto Watanna. The
+               story which follows is the first to appear in MACLEAN’S from the pen of this gifted
+               writer.</p>
+         </div>
+
+         <div type="content">
+
             <head>I—PROPOSAL</head>
-               
-            <p><q>KITTY!.....Is it truly you!</q></p> 
-               <p><q>Go on, Hawley, without me. ——Er——no——I’ll finish another time. Kitty, do you know I—</q></p> 
-            <p><q>Why haven’t I been around lately? Well, I like that, after the message you sent me by your mother</q>.</p> 
-               <p><q>What! You n——I knew —— just fairly knew you weren’t responsible for all that dashed snubbing. But when your mother said——</q></p> 
-               <p><q>Yes, that’s true. But let’s forget it. The main thing is you’re here——we’re here —— together! ——Alone at last! The first time in centuries</q>.</p> 
-               <p><q>Knew I was going to play to-day, and came on purpose! Listen to me, Kitty. <emph>I love you</emph>. I’m perfectly crazy about you. I——</q></p>
-            <p><q>I don’t care who is watching us. It’s none of their business</q>.</p> 
-               <p><q>Let him keep his eye on his ball. There! Served him right. Do you see where it landed? But, Kitty, I’m proposing to you, and here you are up to your old tricks again —— sidestepping the issue</q>.</p> 
-               <p><q>Oh, hang it all, I’m not such a <emph>dashed</emph> golf enthusiast that I’m going to watch a ball in the middle of the only proposal I ever made in my life. Oh, Kitty, will you——What are you turning your head for?</q></p> 
-               <p><q>Overlapping grip! Why, of course, anyone can do it. I’ll show you —— What did you pull your hands away like that for? One would think I had burned you. Anyhow, the overlapping grip isn’t practical for such little hands as yours. It’ll strain your wrists. Don’t try it. But I’m not going to talk about overlapping grips. I don’t care anything about them——or anything connected with them</q>.</p> 
-            <p><q>Now, look here, Kitty, this is the first chance I’ve had to see you alone for ages. Listen to me like a good girl. Look at me like an angel</q>.</p> 
-               <p><q>I don’t think so. He tee-ed it up too high. He’ll not make——but Kitty, for the love of Mike, turn your back on that blank tee. Look at me, won’t you? Will you —— Kitty! My God You don’t mean——-n——</q></p>
-               </div>
-         
+
+            <p><q>KITTY!.....Is it truly you!</q></p>
+            <p><q>Go on, Hawley, without me. ——Er——no——I’ll finish another time. Kitty, do you know
+                  I—</q></p>
+            <p><q>Why haven’t I been around lately? Well, I like that, after the message you sent me
+                  by your mother</q>.</p>
+            <p><q>What! You n——I knew —— just fairly knew you weren’t responsible for all that
+                  dashed snubbing. But when your mother said——</q></p>
+            <p><q>Yes, that’s true. But let’s forget it. The main thing is you’re here——we’re here
+                  —— together! ——Alone at last! The first time in centuries</q>.</p>
+            <p><q>Knew I was going to play to-day, and came on purpose! Listen to me, Kitty. <emph>I
+                     love you</emph>. I’m perfectly crazy about you. I——</q></p>
+            <p><q>I don’t care who is watching us. It’s none of their business</q>.</p>
+            <p><q>Let him keep his eye on his ball. There! Served him right. Do you see where it
+                  landed? But, Kitty, I’m proposing to you, and here you are up to your old tricks
+                  again —— sidestepping the issue</q>.</p>
+            <p><q>Oh, hang it all, I’m not such a <emph>dashed</emph> golf enthusiast that I’m going
+                  to watch a ball in the middle of the only proposal I ever made in my life. Oh,
+                  Kitty, will you——What are you turning your head for?</q></p>
+            <p><q>Overlapping grip! Why, of course, anyone can do it. I’ll show you —— What did you
+                  pull your hands away like that for? One would think I had burned you. Anyhow, the
+                  overlapping grip isn’t practical for such little hands as yours. It’ll strain your
+                  wrists. Don’t try it. But I’m not going to talk about overlapping grips. I don’t
+                  care anything about them——or anything connected with them</q>.</p>
+            <p><q>Now, look here, Kitty, this is the first chance I’ve had to see you alone for
+                  ages. Listen to me like a good girl. Look at me like an angel</q>.</p>
+            <p><q>I don’t think so. He tee-ed it up too high. He’ll not make——but Kitty, for the
+                  love of Mike, turn your back on that blank tee. Look at me, won’t you? Will you ——
+                  Kitty! My God You don’t mean——-n——</q></p>
+         </div>
+
          <div type="content">
             <pb n="14"/>
             <head>II—REJECTION </head>
-                
-            <p><q>DICK, I’d love to marry you, indeed I would. Don’t! Don’t! —— Richard Bradley, if you don’t let go my - Now listen to me, and don’t interrupt</q>.</p> 
-            <p><q>I’m not a flirt, you know that as well as I do, and I’m giving you an answer right out of my heart</q>.</p> 
-            <p><q>Well, if you won’t hear me out, I’m going to finish the course. That’s right. Now, keep there, and don’t interrupt. Dick, I would marry you if I could. Oh, <emph>don’t</emph> bounce up like that. Just see how you made that man pull, so his ball is away to that side. I wish this bench wasn’t so near the tee</q>.</p> 
-            <p><q>No —— not the woods. I prefer to speak right here</q>.</p> 
-            <p><q>I can’t, Dick! I can’t! I wish I could</q>.</p> 
-            <p><q>Oh, there’s a reason —— a very big one indeed. I c——can hardly tell it to you, but when I do, even you, dear old Dick, will see that we aren’t for each other</q>.</p>
-            <p><q>I’m n——not crying! Well, you may hold it then——under the clubs; but you’re not to come an inch nearer. Oh Dick, you’re so <emph>poor</emph>! Mother says we’d starve on your income, and just think what a large family we have, and the boys starting in to college and ——</q></p> 
-            <p><q>That’s just it! You see, if I married you, you’d have to support us all——eight of us, besides Mamma</q>.</p> 
-            <p><q>Rich? We? Oh Dick, so we seem, so we are in fact, but there’s a horrible string to it all. That’s why I can’t marry you</q>.</p>
-            <p><q>No, I can’t! I <emph>can’t</emph>, I say. You promised not to interrupt, Do you remember Uncle Dan Fisher?</q></p> 
-            <p><q>Yes, it’s his money we’re living on in such grand style</q>.</p> 
-            <p><q>Y——yes—— n——no —— yes ———— at least, no, he <emph>didn’t</emph> exactly leave us his money. Give me a chance to explain. Do you remember how perfectly crazy he always was on the subject of titles?</q></p> 
-            <p><q>But it <emph>has</emph> got something to do with this——everything, in fact. Dick, I can’t talk if you are going to put your arm there——. Oh! Oh! Those horrid little caddies saw you. There, they’ve told that man. Kick his ball into the brook. He sent it over here <emph>on purpose</emph>. That woman with him comes here just to take her fat down. Isn’t it absurd to wear a narrow skirt on the links! Keep still!</q></p> 
-            <p><q>No, not here! I think you ——er——sent it off there. It sliced off in <emph>that</emph> direction —— just about five feet from where you drove</q>.</p> 
-            <p><q>Not at all! —— Did you see his face? She could have bitten me!</q></p> 
-            <p><q>Yes, I’m coming to it. Where was I up to?</q></p> 
-            <p><q>Yes, titles. Well, when Uncle Dan was a cattleman out West, the Englishman who was his partner and had roughed it with him and been through all sorts of hardships with Uncle Dan turned out after all to be a real ‘ginooine’ Lord ! Uncle Dan went over with him to England to help him claim the title——and he got it too, after all sorts of legal trouble</q>.</p> 
-            <p><q>Yes, yes, don’t be so impatient, Dick. Well, from that time on Uncle Dan became simply crazy on the subject of titles, and indeed Mamma’s almost as bad</q>.</p> 
-            <p><q>Oh yes, they are good Canadians, but the Englishman proposed to Mamma before Papa did, and in Uncle Dan’s case it was a monomania—an obsession with him. So much so that when he died, leaving an estate of ten million, he left it all to me——</q></p> 
-            <p><q>Yes, indeed, I’m Uncle Dan’s sole heiress, under certain conditions. Why Dick, how white you look. ——Wh-why you’ve let go my hand</q>.</p> 
-            <p><q>Did I? I th—thought I said not to, while those people were looking. Oh Dick, I can’t marry you, I’ll lose all the money if I do!</q></p>
-            <p><q>Oh! Oh! Glad! Prefer me penniless! But what of the others? Not only I —— but my eight little brothers and sisters. And you wouldn’t want to see all that money, that Uncle Dan worked so hard to make, go to found a home for Destitute and Indigent Men of Titles, would you?</q></p> 
-            <p><q>Y——yes, that’s exactly what he’s done in his will. We’re to have the income only till I reach the age of twenty-one, and then, <emph>unless I marry a man of title</emph>, it is all to revert to that horrid home for Destitute and Indigent Men of Title!</q></p> 
-            <p><q>Your ten thousand? Oh Dicky, you are the loveliest, dearest, most generous boy on the face of the whole globe; but I couldn’t —— <emph>we</emph> couldn’t do it. Don’t you see, I’ve got to think of the others too, and of Mamma?</q></p> 
-            <p><q>But I can’t. I’ve given Mamma my word of honor. Yes, it’s come to that——a matter of honor now</q>.</p> 
-            <p><q>Oh, Dick, dear Dick, how <emph>can</emph> I?</q></p> 
-            <p><q>Why, it’s wicked to talk in that way</q>.</p> 
-            <p><q>No, there is no hope. I——I’m sorry, Dick. Forgive me —— I never thought you’d ever t——turn your back on me! Please —— p—please sh—shake hands with me anyhow, j—just to show you don’t h—hate me!</q></p> 
-            <p><q>Yes, I know you don’t</q>.</p> 
-            <p><q>Yes, I agree with you. Let us go then. It’s getting late anyhow. No, you drive first. I’m always nervous when anyone drives after me —— Oh ! wh—what a long, long drive! I—I—I’ll be miles behind you. Dick. Please don’t wait for me. I’d rather drive ——</q></p> 
-            <p><q>Oh, very well then.—— There, I’ve sent it right into the bush</q>.</p> 
-            <p><q>I don’t <emph>want</emph> you to. I <emph>told</emph> you to drive first on purpose. I—I put my ball —— th——there on purpose. Don’t you understand? This is——good-bye! —— Dick! Dick! Oh, he’s <emph>running</emph> after his ball! Dick! —— I—I am g—going after mine now. No one will see me there, and I’ve <emph>g—got</emph> to cry, or I shall —— die!</q></p>
+
+            <p><q>DICK, I’d love to marry you, indeed I would. Don’t! Don’t! —— Richard Bradley, if
+                  you don’t let go my - Now listen to me, and don’t interrupt</q>.</p>
+            <p><q>I’m not a flirt, you know that as well as I do, and I’m giving you an answer right
+                  out of my heart</q>.</p>
+            <p><q>Well, if you won’t hear me out, I’m going to finish the course. That’s right. Now,
+                  keep there, and don’t interrupt. Dick, I would marry you if I could. Oh,
+                     <emph>don’t</emph> bounce up like that. Just see how you made that man pull, so
+                  his ball is away to that side. I wish this bench wasn’t so near the tee</q>.</p>
+            <p><q>No —— not the woods. I prefer to speak right here</q>.</p>
+            <p><q>I can’t, Dick! I can’t! I wish I could</q>.</p>
+            <p><q>Oh, there’s a reason —— a very big one indeed. I c——can hardly tell it to you, but
+                  when I do, even you, dear old Dick, will see that we aren’t for each
+               other</q>.</p>
+            <p><q>I’m n——not crying! Well, you may hold it then——under the clubs; but you’re not to
+                  come an inch nearer. Oh Dick, you’re so <emph>poor</emph>! Mother says we’d starve
+                  on your income, and just think what a large family we have, and the boys starting
+                  in to college and ——</q></p>
+            <p><q>That’s just it! You see, if I married you, you’d have to support us all——eight of
+                  us, besides Mamma</q>.</p>
+            <p><q>Rich? We? Oh Dick, so we seem, so we are in fact, but there’s a horrible string to
+                  it all. That’s why I can’t marry you</q>.</p>
+            <p><q>No, I can’t! I <emph>can’t</emph>, I say. You promised not to interrupt, Do you
+                  remember Uncle Dan Fisher?</q></p>
+            <p><q>Yes, it’s his money we’re living on in such grand style</q>.</p>
+            <p><q>Y——yes—— n——no —— yes ———— at least, no, he <emph>didn’t</emph> exactly leave us
+                  his money. Give me a chance to explain. Do you remember how perfectly crazy he
+                  always was on the subject of titles?</q></p>
+            <p><q>But it <emph>has</emph> got something to do with this——everything, in fact. Dick,
+                  I can’t talk if you are going to put your arm there——. Oh! Oh! Those horrid little
+                  caddies saw you. There, they’ve told that man. Kick his ball into the brook. He
+                  sent it over here <emph>on purpose</emph>. That woman with him comes here just to
+                  take her fat down. Isn’t it absurd to wear a narrow skirt on the links! Keep
+                  still!</q></p>
+            <p><q>No, not here! I think you ——er——sent it off there. It sliced off in
+                     <emph>that</emph> direction —— just about five feet from where you
+               drove</q>.</p>
+            <p><q>Not at all! —— Did you see his face? She could have bitten me!</q></p>
+            <p><q>Yes, I’m coming to it. Where was I up to?</q></p>
+            <p><q>Yes, titles. Well, when Uncle Dan was a cattleman out West, the Englishman who was
+                  his partner and had roughed it with him and been through all sorts of hardships
+                  with Uncle Dan turned out after all to be a real ‘ginooine’ Lord ! Uncle Dan went
+                  over with him to England to help him claim the title——and he got it too, after all
+                  sorts of legal trouble</q>.</p>
+            <p><q>Yes, yes, don’t be so impatient, Dick. Well, from that time on Uncle Dan became
+                  simply crazy on the subject of titles, and indeed Mamma’s almost as bad</q>.</p>
+            <p><q>Oh yes, they are good Canadians, but the Englishman proposed to Mamma before Papa
+                  did, and in Uncle Dan’s case it was a monomania—an obsession with him. So much so
+                  that when he died, leaving an estate of ten million, he left it all to
+               me——</q></p>
+            <p><q>Yes, indeed, I’m Uncle Dan’s sole heiress, under certain conditions. Why Dick, how
+                  white you look. ——Wh-why you’ve let go my hand</q>.</p>
+            <p><q>Did I? I th—thought I said not to, while those people were looking. Oh Dick, I
+                  can’t marry you, I’ll lose all the money if I do!</q></p>
+            <p><q>Oh! Oh! Glad! Prefer me penniless! But what of the others? Not only I —— but my
+                  eight little brothers and sisters. And you wouldn’t want to see all that money,
+                  that Uncle Dan worked so hard to make, go to found a home for Destitute and
+                  Indigent Men of Titles, would you?</q></p>
+            <p><q>Y——yes, that’s exactly what he’s done in his will. We’re to have the income only
+                  till I reach the age of twenty-one, and then, <emph>unless I marry a man of
+                     title</emph>, it is all to revert to that horrid home for Destitute and
+                  Indigent Men of Title!</q></p>
+            <p><q>Your ten thousand? Oh Dicky, you are the loveliest, dearest, most generous boy on
+                  the face of the whole globe; but I couldn’t —— <emph>we</emph> couldn’t do it.
+                  Don’t you see, I’ve got to think of the others too, and of Mamma?</q></p>
+            <p><q>But I can’t. I’ve given Mamma my word of honor. Yes, it’s come to that——a matter
+                  of honor now</q>.</p>
+            <p><q>Oh, Dick, dear Dick, how <emph>can</emph> I?</q></p>
+            <p><q>Why, it’s wicked to talk in that way</q>.</p>
+            <p><q>No, there is no hope. I——I’m sorry, Dick. Forgive me —— I never thought you’d ever
+                  t——turn your back on me! Please —— p—please sh—shake hands with me anyhow, j—just
+                  to show you don’t h—hate me!</q></p>
+            <p><q>Yes, I know you don’t</q>.</p>
+            <p><q>Yes, I agree with you. Let us go then. It’s getting late anyhow. No, you drive
+                  first. I’m always nervous when anyone drives after me —— Oh ! wh—what a long, long
+                  drive! I—I—I’ll be miles behind you. Dick. Please don’t wait for me. I’d rather
+                  drive ——</q></p>
+            <p><q>Oh, very well then.—— There, I’ve sent it right into the bush</q>.</p>
+            <p><q>I don’t <emph>want</emph> you to. I <emph>told</emph> you to drive first on
+                  purpose. I—I put my ball —— th——there on purpose. Don’t you understand? This
+                  is——good-bye! —— Dick! Dick! Oh, he’s <emph>running</emph> after his ball! Dick!
+                  —— I—I am g—going after mine now. No one will see me there, and I’ve
+                     <emph>g—got</emph> to cry, or I shall —— die!</q></p>
          </div>
-            
+
          <div type="content">
-            
+
             <head>III—A MAN OF TITLE</head>
-            
+
             <p><q>WHAT do you call this, huh?</q></p>
-            <p><q>S-s-s-s-s-s———Thas honorable pancake roll wiz jelly on honorable insides</q>.</p> 
-            <p><q>Take it away</q>.</p> 
-            <p><q>Yaes sir. Ss-s-s———aexcuse. Ss-s———</q></p> 
-            <p><q>Well, what’s the matter? What are you hissing about now?</q></p> 
-            <p><q>S-s-s-s-s-s——You got a pain on those honorable haed!</q></p> 
-            <p><q>Well, rather. I made a night of it, Taku</q>.</p> 
-            <p><q>Also ad you honorable insides?</q></p> 
-            <p><q>If you mention the word ‘insides’ I’ll——</q></p> 
-            <p><q>How you lig’ piece of honorable pie——!</q></p> 
-            <p><q>Pie! .... Hang it all, Taku, I didn’t mean to hurt you. I’m a blanked pig! Here you’ve gone on serving me with the faithfulness of a slave now for the past six months, with just this sort of thankless thanks a reward</q>.</p> 
-            <p><q>S-s-s-s-s-s——At one hundred dollars each end per month</q>.</p> 
-            <p><q>One hundred dollars! What’s that? Why, one can’t live on ten thousand a year in this country. A girl told me that yesterday, Taku</q>.</p> 
-            <p><q>Ad Japan, one hundred dollar lots moaney. Many——exalted Prince not have so moach moaney!</q></p> 
-            <p><q>Well, I’d rather have less than one hundred cents and be the exalted Prince all the same!</q></p> 
-            <p><q>Ss-s-s-s-s——Yaes. Aexcuse. Sertinly. All Canadians. admire those Prince——yaes?</q></p> 
-            <p><q>No, none of them do. You bet we don’t. That is —— well, some fools do, Taku. Now, my case for instance. If I were a Prince or even a dinky little Baron, I’d not be sitting here barking at you and throwing cups at your good old head. No! I’d be in clover, Taku-with the girl I love!</q></p> 
-            <p><q>Ss-s-s-s-s-s———She —— those girl you loave, loave also those title? Aexcuse!</q></p> 
-            <p><q>She’s got to, Taku. She’s got to marry one within six months. It’s a cruel, cursed shame, a damned outrage perpetrated by a shortsighted, pigheaded, blind old title worshipper. Just think, Taku, in six months some stuttering, stammering sprig of alleged nobility will be marrying my girl —— when she really cares for me —— too!</q></p> 
-            <p><q>Ss-s-s-s-s———aexcuse. Why you don’t mek marry wiz her?</q></p> 
-            <p><q>I thought I told you why. I’m nothing but a commonplace, everyday, plain Canadian. I couldn t have a title even if I earned it</q>.</p>             
-            <p><q>Aexcuse! Ss-s-s-s-s——— Too bad! Too bad! Aexcuse! Title velly common ad Japan. Me? I am got those title!</q></p> 
-            <p><q>You! Do you mean to tell me that <emph>you</emph> —— even you —— old Taku! are a man of title?</q></p> 
-            <p><q>Ss-s-s-s——— aexcuse. Yaes. Me got mebbe one adtousan’ grade ancestor ad Japan</q>.</p> 
-            <p><q>Good Heaven! Then what are you working here for as a valet and butler?</q></p> 
-            <p><q>Ole family ad Japan vaery poor sinze Restoration. We <emph>got</emph> worg, else we starve. Some those family mek defy ad Mikado one time. They mek fight for Shogun. So-o-o, now —— they velly poor. God nudding. Got worg. Ss-s-s-s —— No worg degrade——ad some udder country! Plenty moaney ad those America. One hundred dollar each end per month —— thas lots moaney ad Japan. Tangs. Aexcuse. Ss-s-s-s-s-s———By’n by mebbe got lots moaney ad those bank. Tangs, Misterer Bladley</q>.</p> 
-            <p><q>Well, and what is your real name then —— and title?</q></p> 
-            <p><q>Aexcuse. Ss-s-s-s-s———</q></p> 
-            <p><q>Quit kowtowing. It isn’t becoming in a man of title. What’s your name, Taku?</q></p> 
-            <p><q>Ss-s-s-s-s-s——— Count Taguchi Tsunemoto Mototsune Takadzukasa Ichijo</q>.</p> 
-            <p><q>For the love of ——— That’ll do. What do they call you?</q></p> 
-            <p><q>Count Ichi</q>.</p> 
-            <p><q>Well, this beats the devil. Just to think, while I’ve been fairly eaten up with desire for even the smallest sniff of a title, you —— my valet and butler——have a great long handle to your name like that. Lord, I wish I were you, Taku!</q></p> 
-            <p><q>Tangs. Yaes! Ss-s-s-s———s————aexcuse. Much ’bliged</q>.</p> 
-            <p><q><emph>I</emph> know what I’d do if I had your title. I’d be uptown inside of two minutes, ringing at No. 8910 Fountain Drive, and two minutes after I’d——Oh, what’s the use? What’s the use? Hell! What’s the use. Instead of drivelling here, I’d better be heaving myself over into some watery grave. Suicidal instinct doesn’t mean insanity at all, Taku. The alienists are dead wrong. I never saw a chap yet who’d been turned down by his best girl, who didn’t feel like jumping off the face of the globe. Stop your kowtowing</q>.</p> 
-            <p><q>Ss-s-s-s———Mr. Bladley —— aexcuse. I lig’ do you those favor. Much ‘bliged. What I kin do?</q></p> 
-            <p><q>Quit kowtowing and hissing. Let my head alone, Taku. I can hold it myself. I want to think a minute. I want to figure some way out of this tangle</q>.</p> 
-            <p><q>Ss-s-s-s———aexcuse. Thas too bad! I velly solly you not got those title. Me? I nod care ’bout those title. Thas no good unto me</q>.</p> 
-            <p><q>Count Dum-te-dumtedum-te-dum de Ichijo! I wonder——By Jove! By Jehoshephat! By Jerusalem! By——No, I’m not going crazy. I’m just holding my head to prevent it whirling off. Count Dum-te——Why not? All’s fair in love and——Why not? Why not? Why not? Taku! You’re an archangel sent down from the highest heavens. Now look here. You think one hundred dollar each end per month a lot, eh? How about two? How about three, huh? Well, it’s yours——see——for a loan!</q></p> 
-            <p><q>Ss-s-s-s-s———aexcuse! S-s-s-s-s-s-s-s-s</q>.</p> 
-            <p><q>Lend me your title, sabe! Don’t explode. Don’t explode! It’s all right. There! There! You’ll come to in a minute. Stop sputtering! There you are. How about it?</q></p> 
-            <p><q>Ss-s-s-s-s-s-s-s-s———</q></p> 
-            <p><q>Exactly. Now remember, <emph>you</emph> can do it. You’ve got to turn me into a Jap, sabe</q>.</p> 
-            <p><q>Ss-s-s-s-s-s———</q></p> 
-            <p><q>It can be done. Take off this red mop of mine and dye it. No, that won’t take the kink out. Clip it to scalp and get me a wig</q>.</p> 
-            <p><q>Ss-s-s-s-s———Aexcuse —— I got! Wait!</q></p> 
-            <p><q>No, no —— not a queue. You know —— a wig. We’ll get one made if it costs a thousand dollars ——one that conies nice and tight over the forehead. Get busy, Taku, and get my moustache off</q>.</p> 
-            <p><q>Te-e-e-e-ee-ee-ee-ee———!</q></p> 
-            <p><q>Stop your cackling. That’s right. Can you fix my eyes? Clip the eyebrows off——better shave ’em</q>.</p> 
-            <p><q>By Jove, but shaven eyebrows give an Oriental cast to one’s face all right. What’s that——</q></p>
-            <p><q>Tee-ee-ee-ee-ee-e-e-e-e-e-e——!</q></p> 
-            <p><q>Dry up. You can’t work if you’re going to cackle like that</q>.</p> 
-            <p><q>Ss-s-s-s-s-s-s———You mek nize Japanese gents. Te-e-e-e-e-e-e-e-e-e-e!</q></p> 
-            <p><q>I’ll make the best Japanese gent you ever capped eyes on. Stop your cackling. You haven’t lied to me? That title’s O.K.?</q></p> 
-            <p><q>Before the gods, Misterer Bladley. You ride unto those Consul. He tollin’ you</q>.</p> 
-            <p><q>Got any ancestral estates?</q></p> 
-            <p><q>Ss-s-s-s———Honorable Shiro (mansion) four hundled year ole ad Echizen</q>.</p> 
+            <p><q>S-s-s-s-s-s———Thas honorable pancake roll wiz jelly on honorable insides</q>.</p>
+            <p><q>Take it away</q>.</p>
+            <p><q>Yaes sir. Ss-s-s———aexcuse. Ss-s———</q></p>
+            <p><q>Well, what’s the matter? What are you hissing about now?</q></p>
+            <p><q>S-s-s-s-s-s——You got a pain on those honorable haed!</q></p>
+            <p><q>Well, rather. I made a night of it, Taku</q>.</p>
+            <p><q>Also ad you honorable insides?</q></p>
+            <p><q>If you mention the word ‘insides’ I’ll——</q></p>
+            <p><q>How you lig’ piece of honorable pie——!</q></p>
+            <p><q>Pie! .... Hang it all, Taku, I didn’t mean to hurt you. I’m a blanked pig! Here
+                  you’ve gone on serving me with the faithfulness of a slave now for the past six
+                  months, with just this sort of thankless thanks a reward</q>.</p>
+            <p><q>S-s-s-s-s-s——At one hundred dollars each end per month</q>.</p>
+            <p><q>One hundred dollars! What’s that? Why, one can’t live on ten thousand a year in
+                  this country. A girl told me that yesterday, Taku</q>.</p>
+            <p><q>Ad Japan, one hundred dollar lots moaney. Many——exalted Prince not have so moach
+                  moaney!</q></p>
+            <p><q>Well, I’d rather have less than one hundred cents and be the exalted Prince all
+                  the same!</q></p>
+            <p><q>Ss-s-s-s-s——Yaes. Aexcuse. Sertinly. All Canadians. admire those
+               Prince——yaes?</q></p>
+            <p><q>No, none of them do. You bet we don’t. That is —— well, some fools do, Taku. Now,
+                  my case for instance. If I were a Prince or even a dinky little Baron, I’d not be
+                  sitting here barking at you and throwing cups at your good old head. No! I’d be in
+                  clover, Taku-with the girl I love!</q></p>
+            <p><q>Ss-s-s-s-s-s———She —— those girl you loave, loave also those title?
+               Aexcuse!</q></p>
+            <p><q>She’s got to, Taku. She’s got to marry one within six months. It’s a cruel, cursed
+                  shame, a damned outrage perpetrated by a shortsighted, pigheaded, blind old title
+                  worshipper. Just think, Taku, in six months some stuttering, stammering sprig of
+                  alleged nobility will be marrying my girl —— when she really cares for me ——
+                  too!</q></p>
+            <p><q>Ss-s-s-s-s———aexcuse. Why you don’t mek marry wiz her?</q></p>
+            <p><q>I thought I told you why. I’m nothing but a commonplace, everyday, plain Canadian.
+                  I couldn t have a title even if I earned it</q>.</p>
+            <p><q>Aexcuse! Ss-s-s-s-s——— Too bad! Too bad! Aexcuse! Title velly common ad Japan. Me?
+                  I am got those title!</q></p>
+            <p><q>You! Do you mean to tell me that <emph>you</emph> —— even you —— old Taku! are a
+                  man of title?</q></p>
+            <p><q>Ss-s-s-s——— aexcuse. Yaes. Me got mebbe one adtousan’ grade ancestor ad
+               Japan</q>.</p>
+            <p><q>Good Heaven! Then what are you working here for as a valet and butler?</q></p>
+            <p><q>Ole family ad Japan vaery poor sinze Restoration. We <emph>got</emph> worg, else
+                  we starve. Some those family mek defy ad Mikado one time. They mek fight for
+                  Shogun. So-o-o, now —— they velly poor. God nudding. Got worg. Ss-s-s-s —— No worg
+                  degrade——ad some udder country! Plenty moaney ad those America. One hundred dollar
+                  each end per month —— thas lots moaney ad Japan. Tangs. Aexcuse.
+                  Ss-s-s-s-s-s———By’n by mebbe got lots moaney ad those bank. Tangs, Misterer
+                  Bladley</q>.</p>
+            <p><q>Well, and what is your real name then —— and title?</q></p>
+            <p><q>Aexcuse. Ss-s-s-s-s———</q></p>
+            <p><q>Quit kowtowing. It isn’t becoming in a man of title. What’s your name,
+               Taku?</q></p>
+            <p><q>Ss-s-s-s-s-s——— Count Taguchi Tsunemoto Mototsune Takadzukasa Ichijo</q>.</p>
+            <p><q>For the love of ——— That’ll do. What do they call you?</q></p>
+            <p><q>Count Ichi</q>.</p>
+            <p><q>Well, this beats the devil. Just to think, while I’ve been fairly eaten up with
+                  desire for even the smallest sniff of a title, you —— my valet and butler——have a
+                  great long handle to your name like that. Lord, I wish I were you, Taku!</q></p>
+            <p><q>Tangs. Yaes! Ss-s-s-s———s————aexcuse. Much ’bliged</q>.</p>
+            <p><q><emph>I</emph> know what I’d do if I had your title. I’d be uptown inside of two
+                  minutes, ringing at No. 8910 Fountain Drive, and two minutes after I’d——Oh, what’s
+                  the use? What’s the use? Hell! What’s the use. Instead of drivelling here, I’d
+                  better be heaving myself over into some watery grave. Suicidal instinct doesn’t
+                  mean insanity at all, Taku. The alienists are dead wrong. I never saw a chap yet
+                  who’d been turned down by his best girl, who didn’t feel like jumping off the face
+                  of the globe. Stop your kowtowing</q>.</p>
+            <p><q>Ss-s-s-s———Mr. Bladley —— aexcuse. I lig’ do you those favor. Much ‘bliged. What I
+                  kin do?</q></p>
+            <p><q>Quit kowtowing and hissing. Let my head alone, Taku. I can hold it myself. I want
+                  to think a minute. I want to figure some way out of this tangle</q>.</p>
+            <p><q>Ss-s-s-s———aexcuse. Thas too bad! I velly solly you not got those title. Me? I nod
+                  care ’bout those title. Thas no good unto me</q>.</p>
+            <p><q>Count Dum-te-dumtedum-te-dum de Ichijo! I wonder——By Jove! By Jehoshephat! By
+                  Jerusalem! By——No, I’m not going crazy. I’m just holding my head to prevent it
+                  whirling off. Count Dum-te——Why not? All’s fair in love and——Why not? Why not? Why
+                  not? Taku! You’re an archangel sent down from the highest heavens. Now look here.
+                  You think one hundred dollar each end per month a lot, eh? How about two? How
+                  about three, huh? Well, it’s yours——see——for a loan!</q></p>
+            <p><q>Ss-s-s-s-s———aexcuse! S-s-s-s-s-s-s-s-s</q>.</p>
+            <p><q>Lend me your title, sabe! Don’t explode. Don’t explode! It’s all right. There!
+                  There! You’ll come to in a minute. Stop sputtering! There you are. How about
+                  it?</q></p>
+            <p><q>Ss-s-s-s-s-s-s-s-s———</q></p>
+            <p><q>Exactly. Now remember, <emph>you</emph> can do it. You’ve got to turn me into a
+                  Jap, sabe</q>.</p>
+            <p><q>Ss-s-s-s-s-s———</q></p>
+            <p><q>It can be done. Take off this red mop of mine and dye it. No, that won’t take the
+                  kink out. Clip it to scalp and get me a wig</q>.</p>
+            <p><q>Ss-s-s-s-s———Aexcuse —— I got! Wait!</q></p>
+            <p><q>No, no —— not a queue. You know —— a wig. We’ll get one made if it costs a
+                  thousand dollars ——one that conies nice and tight over the forehead. Get busy,
+                  Taku, and get my moustache off</q>.</p>
+            <p><q>Te-e-e-e-ee-ee-ee-ee———!</q></p>
+            <p><q>Stop your cackling. That’s right. Can you fix my eyes? Clip the eyebrows
+                  off——better shave ’em</q>.</p>
+            <p><q>By Jove, but shaven eyebrows give an Oriental cast to one’s face all right. What’s
+                  that——</q></p>
+            <p><q>Tee-ee-ee-ee-ee-e-e-e-e-e-e——!</q></p>
+            <p><q>Dry up. You can’t work if you’re going to cackle like that</q>.</p>
+            <p><q>Ss-s-s-s-s-s-s———You mek nize Japanese gents. Te-e-e-e-e-e-e-e-e-e-e!</q></p>
+            <p><q>I’ll make the best Japanese gent you ever capped eyes on. Stop your cackling. You
+                  haven’t lied to me? That title’s O.K.?</q></p>
+            <p><q>Before the gods, Misterer Bladley. You ride unto those Consul. He tollin’
+               you</q>.</p>
+            <p><q>Got any ancestral estates?</q></p>
+            <p><q>Ss-s-s-s———Honorable Shiro (mansion) four hundled year ole ad Echizen</q>.</p>
             <p><q>Fine. Anyone living there now?</q></p>
-            <p><q>Jos’ honorable rats, an’ bats. Tas all. He got no roof, Misterer</q>.</p> 
-            <p><q>Hm! That’s pleasant. Got a Jap dictionary? No, wait a bit. We’ll go into that later. Good Heaven! You’re not making of me a Jap, but a baboon! What on earth is that evil-smelling varnish you’re rubbing on my face now?</q></p> 
-            <p><q>Tee-ee-e-e-e——! S-s-s-s———Thad mek you nize an’ lellow. Aexcuse. Te-e-e-e-e-e! Now you loog lig’ unto me!</q></p> 
-            <p><q>Don’t flatter yourself! By Jove, I do look the limit all right. It’s that bald pate gives the nightmare look. You hustle out and get the wig. Go to——Here, I’ll get the address out of the telephone book. Write it down for you......There you are. They make a specialty of these things. Run along, I want a few hours to study Japanese in</q>.</p>
-            </div>  
-              
+            <p><q>Jos’ honorable rats, an’ bats. Tas all. He got no roof, Misterer</q>.</p>
+            <p><q>Hm! That’s pleasant. Got a Jap dictionary? No, wait a bit. We’ll go into that
+                  later. Good Heaven! You’re not making of me a Jap, but a baboon! What on earth is
+                  that evil-smelling varnish you’re rubbing on my face now?</q></p>
+            <p><q>Tee-ee-e-e-e——! S-s-s-s———Thad mek you nize an’ lellow. Aexcuse. Te-e-e-e-e-e! Now
+                  you loog lig’ unto me!</q></p>
+            <p><q>Don’t flatter yourself! By Jove, I do look the limit all right. It’s that bald
+                  pate gives the nightmare look. You hustle out and get the wig. Go to——Here, I’ll
+                  get the address out of the telephone book. Write it down for you......There you
+                  are. They make a specialty of these things. Run along, I want a few hours to study
+                  Japanese in</q>.</p>
+         </div>
+
          <div type="content">
-            
-            <head>IV—A LESSON IN JAPANESE</head> 
-            
-            <p><q>ALL I want is a string of Japanese words that are easy to pronounce to spring at them on occasions. You stand there and listen. And stop your cackling. How’s this: ‘Hi, fu, mi, yo, if, na, ya, ko!’</q></p> 
-            <p><q>Stop your teeheeing. Now we’ll have a bit of rehearsal. Say, I can’t bow like that. How’s this? Now! You’re supposed to be Mrs. Collins. I’ll speak for you. Mrs. Collins: ‘How are you, dearest Count Ichi?’ Count Ichi: ‘Hi, fu. mi, yo.’ In other words: one, two, three, four. Spoken expressively, Taku, with deep salaams, and with that charming and characteristic Japanese indrawing of breath and hissing expulsion of same, which this honorable Japanese history tells me always accompanies every remark of a cultivated Japanese, and as I have had ocular evidence in you</q>.</p> 
-            <p><q>Exactly. You see, I’ve been watching you pretty closely lately. I’ve even got your giggle. Listen: Te-ee-ee-e-e-e-e——! Ss-s-s-s——— You’ll crack your face if you don’t look out. Taku. What’s there so funny about it?</q></p> 
-<pb n="72"/>
-            <p><q>My looks? Oh, I don’t know. I bet even in your finest days you never made as distinguished a looking Jap as I am. But to resume: Let’s get down to more musical phrases. ‘Sayonara!’ Ah, savonara! What a bird of a word. Means —— ‘If it must be!’ Not with me, old man. It’s too pretty to be wasted for any such use as that. I shall use it thus, looking deeply meanwhile into her eyes, Taku. Thus, with a sort of romantic version of the Japanese hiss: ‘S-ss-s———Say——o—nara!’</q></p>
-            <p><q>‘Nuruhoda!’ Fine. Has a dignified sound. Good to use when introduced to any one of importance. Means: ‘Well, I never!’ That’s all right. I never!</q></p>
-            <p><q>Danna-san, hi no de! Humph! ‘Master, hei’e is the sun!’ Say, you’ve chosen some pretty good phrases for ‘em all right—oh! Taku! Now I intend to  use that when the real Sun——my Sun, Taku, enters the room!</q></p>
-            <p><q>Now, let’s see. I like those words ending in ‘ura:’ ‘Sakura! Numura! Popura! Loveura! I tell you I’ll make good use of ’em all right. And another thing, the names of the gods are all right</q>.</p>
-            <p><q>What do I care? Nothing sacrilegious about it. They come in handy, I tell you. Whenever I’m at a loss for a word, it’s the easiest thing to remember the heathen gods and goddesses. Thus: ‘Two lumps, Count Ichijo?’ Count Ichijo: (Holding up three fingers) ‘Ama-teras O-mi-kamai. In other words: ‘Honorable goddess of the Sun!’ And she’s all that, and more, Taku. Hum! Talk of Sun goddess. You Japs have a nerve. Wait till you see a real one——with hair the color of the actual article</q>.</p>
-            <p><q>Now let’s open the book at random. What do I see here: ‘Chabu, chabu, komarimasu, danna-san dozo!’ Ah—h!</q></p>
+
+            <head>IV—A LESSON IN JAPANESE</head>
+
+            <p><q>ALL I want is a string of Japanese words that are easy to pronounce to spring at
+                  them on occasions. You stand there and listen. And stop your cackling. How’s this:
+                  ‘Hi, fu, mi, yo, if, na, ya, ko!’</q></p>
+            <p><q>Stop your teeheeing. Now we’ll have a bit of rehearsal. Say, I can’t bow like
+                  that. How’s this? Now! You’re supposed to be Mrs. Collins. I’ll speak for you.
+                  Mrs. Collins: ‘How are you, dearest Count Ichi?’ Count Ichi: ‘Hi, fu. mi, yo.’ In
+                  other words: one, two, three, four. Spoken expressively, Taku, with deep salaams,
+                  and with that charming and characteristic Japanese indrawing of breath and hissing
+                  expulsion of same, which this honorable Japanese history tells me always
+                  accompanies every remark of a cultivated Japanese, and as I have had ocular
+                  evidence in you</q>.</p>
+            <p><q>Exactly. You see, I’ve been watching you pretty closely lately. I’ve even got your
+                  giggle. Listen: Te-ee-ee-e-e-e-e——! Ss-s-s-s——— You’ll crack your face if you
+                  don’t look out. Taku. What’s there so funny about it?</q></p>
+            <pb n="72"/>
+            <p><q>My looks? Oh, I don’t know. I bet even in your finest days you never made as
+                  distinguished a looking Jap as I am. But to resume: Let’s get down to more musical
+                  phrases. ‘Sayonara!’ Ah, savonara! What a bird of a word. Means —— ‘If it must
+                  be!’ Not with me, old man. It’s too pretty to be wasted for any such use as that.
+                  I shall use it thus, looking deeply meanwhile into her eyes, Taku. Thus, with a
+                  sort of romantic version of the Japanese hiss: ‘S-ss-s———Say——o—nara!’</q></p>
+            <p><q>‘Nuruhoda!’ Fine. Has a dignified sound. Good to use when introduced to any one of
+                  importance. Means: ‘Well, I never!’ That’s all right. I never!</q></p>
+            <p><q>Danna-san, hi no de! Humph! ‘Master, hei’e is the sun!’ Say, you’ve chosen some
+                  pretty good phrases for ‘em all right—oh! Taku! Now I intend to use that when the
+                  real Sun——my Sun, Taku, enters the room!</q></p>
+            <p><q>Now, let’s see. I like those words ending in ‘ura:’ ‘Sakura! Numura! Popura!
+                  Loveura! I tell you I’ll make good use of ’em all right. And another thing, the
+                  names of the gods are all right</q>.</p>
+            <p><q>What do I care? Nothing sacrilegious about it. They come in handy, I tell you.
+                  Whenever I’m at a loss for a word, it’s the easiest thing to remember the heathen
+                  gods and goddesses. Thus: ‘Two lumps, Count Ichijo?’ Count Ichijo: (Holding up
+                  three fingers) ‘Ama-teras O-mi-kamai. In other words: ‘Honorable goddess of the
+                  Sun!’ And she’s all that, and more, Taku. Hum! Talk of Sun goddess. You Japs have
+                  a nerve. Wait till you see a real one——with hair the color of the actual
+                  article</q>.</p>
+            <p><q>Now let’s open the book at random. What do I see here: ‘Chabu, chabu, komarimasu,
+                  danna-san dozo!’ Ah—h!</q></p>
             <p><q>What are you cackling about? Stop it, stop it. I can’t hear my own voice</q>.</p>
-            <p><q>Don’t you worry about my pronunciation. Imagine the effect of those pleading words on the beautiful creature when she asks me to sit down. Think of receiving an answer like this: ‘Please master, a penny, I am in great trouble for grub!’ Thus the honorable translation</q>.</p>
+            <p><q>Don’t you worry about my pronunciation. Imagine the effect of those pleading words
+                  on the beautiful creature when she asks me to sit down. Think of receiving an
+                  answer like this: ‘Please master, a penny, I am in great trouble for grub!’ Thus
+                  the honorable translation</q>.</p>
             <p><q>You’ve got to do some hustling now. Taku. Get into your best duds</q>.</p>
-            <p><q>Japanese, understand. Japanese clothes’ll lend elegance to the occasion. I’d wear them myself if they fitted me. Now hurry. Be ready by the time I’m through with this letter from my exself introducing my new self</q>.</p>
-            </div>
-         
+            <p><q>Japanese, understand. Japanese clothes’ll lend elegance to the occasion. I’d wear
+                  them myself if they fitted me. Now hurry. Be ready by the time I’m through with
+                  this letter from my exself introducing my new self</q>.</p>
+         </div>
+
          <div type="content">
-            
+
             <head>V—A LETTER OF INTRODUCTION</head>
-            
+
             <q>
                <floatingText type="letter">
                   <body>
                      <opener>
                         <salute>MY dear Mrs. Collins:</salute>
                      </opener>
-                     <p>The bearer of this does not speak a word of English. Therefore I feel safe in writing to you fully about him.</p>
-                     <p>Count Taguchi Mototsune Tsunemoto Tadazukasa Ichijo is a dear old college chum of mine, of whom I think most highly. He comes of one of the grandest old families in Japan —— in the entire Orient, in face —— his people being Samoroos (Japanese for Kings and Princes) when the rest of the world were in barbarism.</p>
-                     <p>The family seat of the TaguchiMototsune-Tsunemoto-Tadazukasa-Ichijos, notable for its wonderful collection of animals, is at Echizen.</p>
-                     <p>Please let me commend to your hospitable attention my dearest friend, Count Taguchi-Mototsune-Tsunemoto-Tadazukasa-Ichijo. Any favors shown him will be deeply appreciated by</p>
+                     <p>The bearer of this does not speak a word of English. Therefore I feel safe
+                        in writing to you fully about him.</p>
+                     <p>Count Taguchi Mototsune Tsunemoto Tadazukasa Ichijo is a dear old college
+                        chum of mine, of whom I think most highly. He comes of one of the grandest
+                        old families in Japan —— in the entire Orient, in face —— his people being
+                        Samoroos (Japanese for Kings and Princes) when the rest of the world were in
+                        barbarism.</p>
+                     <p>The family seat of the TaguchiMototsune-Tsunemoto-Tadazukasa-Ichijos,
+                        notable for its wonderful collection of animals, is at Echizen.</p>
+                     <p>Please let me commend to your hospitable attention my dearest friend, Count
+                        Taguchi-Mototsune-Tsunemoto-Tadazukasa-Ichijo. Any favors shown him will be
+                        deeply appreciated by</p>
                      <closer>
                         <salute>Most faithfully yours,</salute>
                         <signed>Richard Sheridan Bradley.</signed>
@@ -217,12 +391,12 @@
                   </body>
                </floatingText>
             </q>
-            </div>
-         
+         </div>
+
          <div type="content">
-            
+
             <head>VI——A TELEPHONE CONVERSATION</head>
-            
+
             <p><q>123567 River</q>.</p>
             <p><q>123456 River?</q></p>
             <p><q>I want to speak to Miss Collins, please</q>.</p>
@@ -231,10 +405,11 @@
             <p><q>Hello! Is that you, Ki————</q></p>
             <p><q>Oh, good evening. <emph>Mrs.</emph> Collins</q>.</p>
             <p><q>Yes, this is Dick Bradley</q>.</p>
-            <p><q>I’m sorry</q>.</p> 
+            <p><q>I’m sorry</q>.</p>
             <p><q>One minute——</q></p>
             <p><q>But I’ve something very important to say. It won’t take a minute</q>.</p>
-            <p><q>Thank you. I’ll be brief. I’m send-<pb n="73"/>ing a dear friend of mine up to see you with a note of introduction</q>.</p>
+            <p><q>Thank you. I’ll be brief. I’m send-<pb n="73"/>ing a dear friend of mine up to see
+                  you with a note of introduction</q>.</p>
             <p><q>Going out? That’s too bad. Couldn’t you see him just a few——</q></p>
             <p><q>Really I think you’d like to meet him</q>.</p>
             <p><q>No, no, really Mrs. Collins, he is not. Word of honor!</q></p>
@@ -242,35 +417,54 @@
             <p><q>I beg pardon?</q></p>
             <p><q>Well, you’d like Ichijo all right</q>.</p>
             <p><q>Pardon?</q></p>
-            <p><q>Oh, you are mistaken. There are some very fine Japanese in this country. Take Ichijo for instance. A relative of the Mikado’s, I understand</q>.</p>
+            <p><q>Oh, you are mistaken. There are some very fine Japanese in this country. Take
+                  Ichijo for instance. A relative of the Mikado’s, I understand</q>.</p>
             <p><q>Count Taguchi Mototsune———</q></p>
             <p><q>Yes, I said —— Count ——</q></p>
             <p><q>Ichi, for short</q>.</p>
             <p><q>Yes indeed</q>.</p>
             <p><q>Oh, charming! You never sawore elegant manners</q>.</p>
             <p><q>Presentable? Well, rather!</q></p>
-            <p><q>Looks? Hum, Well —— Ichi’s a pretty good looker, if I do say it myself, who shouldn’t. Er———— that is———— well, taken all in all. A bit above the average in height for a Jap, but with a fine yel————er-brown skin and a crop of jet black hair</q>.</p>
+            <p><q>Looks? Hum, Well —— Ichi’s a pretty good looker, if I do say it myself, who
+                  shouldn’t. Er———— that is———— well, taken all in all. A bit above the average in
+                  height for a Jap, but with a fine yel————er-brown skin and a crop of jet black
+                  hair</q>.</p>
             <p><q>Of course you’ll like him</q>.</p>
             <p><q>You will see him?</q></p>
             <p><q>Stay home specially? Say, that’s awfully bully of you</q>.</p>
-            <p><q>No, I’m sorry I can’t bring him out personally. I’ve a prior engagement. Besides, the fact is, I don’t mind saying it to you frankly, Mrs. Collins——I’m out of the running. I’m resigned</q>.</p>
-            <p><q>No, it isn’t that; but I quite agree with you that it isn’t fair for you all to be sacrificed because of any selfish, and perhaps purely transient sentiments on my part. So I’m retiring as gracefully as I can</q>.</p>
+            <p><q>No, I’m sorry I can’t bring him out personally. I’ve a prior engagement. Besides,
+                  the fact is, I don’t mind saying it to you frankly, Mrs. Collins——I’m out of the
+                  running. I’m resigned</q>.</p>
+            <p><q>No, it isn’t that; but I quite agree with you that it isn’t fair for you all to be
+                  sacrificed because of any selfish, and perhaps purely transient sentiments on my
+                  part. So I’m retiring as gracefully as I can</q>.</p>
             <p><q>Thank you, Mrs. Collins</q>.</p>
-            <p><q>Oh, but I want you to consider me still as a friend and that I am acting the part of a friend in sending my best friend, Count Taguchi-Mototsune-Tsunemoto-Tadazukasa-Ichijo to you</q>.</p>
+            <p><q>Oh, but I want you to consider me still as a friend and that I am acting the part
+                  of a friend in sending my best friend, Count
+                  Taguchi-Mototsune-Tsunemoto-Tadazukasa-Ichijo to you</q>.</p>
             <p><q>Beg pardon?</q></p>
             <p><q>I perfectly agree with you. There’s too much at stake</q>.</p>
-            <p><q>No, no, I don’t hold anything against you. Why, you always treated me tiptop</q>.</p>
-            <p><q>Well, of course, if you feel that way, and want to do me some favor, then do this: Be awfully good to Ichi won’t you? I think everything of him. In fact, I’m as devoted to him as if he were my own self</q>.</p>
+            <p><q>No, no, I don’t hold anything against you. Why, you always treated me
+               tiptop</q>.</p>
+            <p><q>Well, of course, if you feel that way, and want to do me some favor, then do this:
+                  Be awfully good to Ichi won’t you? I think everything of him. In fact, I’m as
+                  devoted to him as if he were my own self</q>.</p>
             <p><q>Thank you</q>.</p>
-            <p><q>Message for Kitty? Yes. One minute. Say just this: That any favor shown to Count Ichi will be the same as if shown to me. That since she is impossible for me, I could at least find some consolation in the thought that Ichi might win her in my place</q>.</p>
-            <p><q>Premature? Not at all. Wait till you see Ichi. I’ll send you his full pedigree later, by mail. <emph>Goodbye</emph></q>.</p>
-            </div>
-         
+            <p><q>Message for Kitty? Yes. One minute. Say just this: That any favor shown to Count
+                  Ichi will be the same as if shown to me. That since she is impossible for me, I
+                  could at least find some consolation in the thought that Ichi might win her in my
+                  place</q>.</p>
+            <p><q>Premature? Not at all. Wait till you see Ichi. I’ll send you his full pedigree
+                  later, by mail. <emph>Goodbye</emph></q>.</p>
+         </div>
+
          <div type="content">
-            
-         <head>VII——COUNT TAGUCHI MOTOTSUNE TSUNEMOTO TADAZUKASA ICHIJO</head>
-            
-            <p><q>MY <emph>dear</emph> Count Ichi, I’m charmed to meet you. I’ve heard so much about you from dear Mr. Bradley. Any friend of Dick’s is always more than welcome here. I beg your pardon?</q></p>
+
+            <head>VII——COUNT TAGUCHI MOTOTSUNE TSUNEMOTO TADAZUKASA ICHIJO</head>
+
+            <p><q>MY <emph>dear</emph> Count Ichi, I’m charmed to meet you. I’ve heard so much about
+                  you from dear Mr. Bradley. Any friend of Dick’s is always more than welcome here.
+                  I beg your pardon?</q></p>
             <p><q>Hi, fu, mi, yo!</q></p>
             <p><q>Oh, you don’t speak English? What charming manners, Kitty!</q></p>
             <p><q>S-s-s-s-s-s-s-s-s-s-s-s————</q></p>
@@ -278,120 +472,195 @@
             <p><q>S-s-s-s-s-s-sTe-ee-ee-ee-ee————!</q></p>
             <p><q>I’m surprised at you, Kitty. You are forgetting yourself!</q></p>
             <p><q>S-s-s-s-s-s-s-s——— Tee-hee-ee-e!</q></p>
-            <p><q>Er————ah————aha———— it’s so hard to know what to say, dear Count, when neither of us understands the other</q>.</p> 
+            <p><q>Er————ah————aha———— it’s so hard to know what to say, dear Count, when neither of
+                  us understands the other</q>.</p>
             <p><q>Namu, amida, butsu!</q></p>
-            <p><q>Wh-why, mother, I understand him slightly. That sounds exactly like the Buddhist invocation they used to chant in that little Japanese church in Honolulu. It means ‘Save us, Eternal Buddha!’</q></p>
-            <p><q>Absurd, Kitty! Suppose you find out what is keeping the Count’s friend who came with him. He stopped to speak a word with Gonji when he opened the door for them. Ah! Here he is!</q></p> 
-            <p><q>Good gracious, Mother, they’ll topple over if they aren’t more careful. Aren’t they the funniest looking little objects you ever set eyes on? I’m dying to laugh. Oh——ha————</q></p>
+            <p><q>Wh-why, mother, I understand him slightly. That sounds exactly like the Buddhist
+                  invocation they used to chant in that little Japanese church in Honolulu. It means
+                  ‘Save us, Eternal Buddha!’</q></p>
+            <p><q>Absurd, Kitty! Suppose you find out what is keeping the Count’s friend who came
+                  with him. He stopped to speak a word with Gonji when he opened the door for them.
+                  Ah! Here he is!</q></p>
+            <p><q>Good gracious, Mother, they’ll topple over if they aren’t more careful. Aren’t
+                  they the funniest looking little objects you ever set eyes on? I’m dying to laugh.
+                  Oh——ha————</q></p>
             <p><q>How dare——————</q></p>
             <p><q>Misiriss! Me? I speag those English!</q></p>
             <p><q>Oh! I hope now, Kitty, you are satisfied</q>.</p>
             <p><q>Tee-ee-ee-e-e-e-e————</q></p>
             <p><q>You are the Count’s friend?</q></p>
             <p><q>S-s-s—— his honorable valet, honorable Misiriss!</q></p>
-            <p><q>Mother, let me speak to the Count. Ohayo! I thought that’d make you smile. That’s a real Japanese word. I learned it from the Mr. Bradley who sent you to us. He learned it from his valet, he said. It means ———— er ———— Oh, I —— I —— promised not to tell</q>.</p>
+            <p><q>Mother, let me speak to the Count. Ohayo! I thought that’d make you smile. That’s
+                  a real Japanese word. I learned it from the Mr. Bradley who sent you to us. He
+                  learned it from his valet, he said. It means ———— er ———— Oh, I —— I —— promised
+                  not to tell</q>.</p>
             <p><q>S-s-s——— Tee-ee-e-e-e————!</q></p>
-            <p><q>Do tell the Count to stop bowing like that. It’s positively painful to see him, and dizzying, too. Is that customary in Japan?</q></p>
+            <p><q>Do tell the Count to stop bowing like that. It’s positively painful to see him,
+                  and dizzying, too. Is that customary in Japan?</q></p>
             <p><q>Sakura, namura, danjura!</q></p>
             <p><q>What does that mean?</q></p>
-            <p><q>S-s-s———Tee-hee-e-e-e———— He says, yaes, honorable meesie. Ad Japan thas custom-mary mek bow lig’ ———— those ————</q>.</p>
+            <p><q>S-s-s———Tee-hee-e-e-e———— He says, yaes, honorable meesie. Ad Japan thas
+                  custom-mary mek bow lig’ ———— those ————</q>.</p>
             <p><q>Damayout! Taku!</q></p>
-            <p><q>Wh——why, what a curious face he made at you. He does understand English then? —— since he answered my question</q>.</p>
+            <p><q>Wh——why, what a curious face he made at you. He does understand English then? ——
+                  since he answered my question</q>.</p>
             <p><q>Blank—you, Taku!</q></p>
             <p><q>Er———s-s-s-s———Tee-hee. Aexeuse</q>.</p>
-            <p><q>Much ’bliged. Er———thad Count he say, he nod speag those Eengleesh, bud he loog on top your face——— and mek onderstan’</q>.</p>
+            <p><q>Much ’bliged. Er———thad Count he say, he nod speag those Eengleesh, bud he loog on
+                  top your face——— and mek onderstan’</q>.</p>
             <p><q>My f——face! Wh——why, how ridiculous!</q></p>
             <p><q>Love-ura !</q></p>
-            <p><q>Mother, I believe I’ll go upstairs. I’ve some letters I want to finish. <emph>So</emph> sorry——</q></p>
-            <p><q>Kitty, you will stay right here!</q></p> 
-            <p><q>Mother, that little Japanese monkey is trying to flirt with me. The idea!</q></p> 
+            <p><q>Mother, I believe I’ll go upstairs. I’ve some letters I want to finish.
+                     <emph>So</emph> sorry——</q></p>
+            <p><q>Kitty, you will stay right here!</q></p>
+            <p><q>Mother, that little Japanese monkey is trying to flirt with me. The idea!</q></p>
             <p><q>Sh! Don’t speak so loud. They’ll hear you!</q></p>
-            <p><q>I don’t care if they do. Besides, the valet has gone now. I saw the Count make an awful motion to him to go</q>.</p> 
+            <p><q>I don’t care if they do. Besides, the valet has gone now. I saw the Count make an
+                  awful motion to him to go</q>.</p>
             <p><q>Chabu, chabu, komarimasu. Danna j san dozo!</q></p>
-            <p><q>Look, he is going to sit on the floor! I Oh! Oh! I can’t help it, mother! Let me go upstairs</q>.</p>
+            <p><q>Look, he is going to sit on the floor! I Oh! Oh! I can’t help it, mother! Let me
+                  go upstairs</q>.</p>
             <p><q>Kitty! I’ll have you know——</q></p>
-            <p><q>But mother, just look at him. Doesn’t he look for all the world like some little painted up mannikin’? I thought Japanese sat on their heels, not cross-legged</q>.</p>
+            <p><q>But mother, just look at him. Doesn’t he look for all the world like some little
+                  painted up mannikin’? I thought Japanese sat on their heels, not
+               cross-legged</q>.</p>
             <p><q>Kurumma!</q></p>
             <p><q>I beg your pardon? He’s asking for something, Kitty</q>.</p>
             <p><q>Kurumma</q>.</p>
             <p><q>I’ve heard that word before, Mother. Doesn’t it mean —— jinrikisha?</q></p>
             <p><q>This is no time for levity. You forget the Count is our guest</q>.</p>
-            <p><q>Well, but mother, I’m not joking. I’ve read lots of Japanese stories, and I know that kurumma means a sort of jinrikisha</q>.</p>
+            <p><q>Well, but mother, I’m not joking. I’ve read lots of Japanese stories, and I know
+                  that kurumma means a sort of jinrikisha</q>.</p>
             <p><q>Kurumma !</q></p>
             <p><q>I wish I knew what he meant, Kitty</q>.</p>
-<pb n="74"/>
+            <pb n="74"/>
             <p><q>It’s very embarrassing——. Yes, thank you, Count Ichi</q>.</p>
             <p><q>Ku-rum-ma!</q></p>
             <p><q>Oh, my goodness gracious, Mother</q>.</p>
             <p><q>he wants us to sit —— on the floor with him. See, he’s pointing</q>.</p>
-            <p><q>Well, why not? He’s our guest. In Rome we must do as the Romans do</q>.</p> 
-            <p><q>Well, but in this case we are the Romans, Mamma. Why, you dear old fat Mother! To think of your doing such a thing! Are you quite comfortable?</q></p>
-            <p><q>Why certainly, Kitty, and I do wish you would cease to refer to my f——weight. Touch the bell, and have Gonji bring in some tea —— Japanese tea, Kitty!</q></p>
-            <p><q>Chabu, chabu, arigato, kerishitan, sayonara issho dan sagete, Moshi, mashi, Yuki-sama!</q></p>
+            <p><q>Well, why not? He’s our guest. In Rome we must do as the Romans do</q>.</p>
+            <p><q>Well, but in this case we are the Romans, Mamma. Why, you dear old fat Mother! To
+                  think of your doing such a thing! Are you quite comfortable?</q></p>
+            <p><q>Why certainly, Kitty, and I do wish you would cease to refer to my f——weight.
+                  Touch the bell, and have Gonji bring in some tea —— Japanese tea, Kitty!</q></p>
+            <p><q>Chabu, chabu, arigato, kerishitan, sayonara issho dan sagete, Moshi, mashi,
+                  Yuki-sama!</q></p>
             <p><q>Certainly, Count Ichi. Ah, Gonji! Over here. You pour, Kitty</q>.</p>
             <p><q>Do you take sugar, Count?</q></p>
             <p><q>S-s-s-s-s-s-s-s-s-s————</q></p>
-            <p><q>Lemon —— or cream —— or how about carraway seeds? It’s the latest thing. Very—— Irish, they say</q>.</p>
-            <p><q>Kitty, what on earth is the matter with Gonji? I never saw the boy act so strangely</q>.</p>
+            <p><q>Lemon —— or cream —— or how about carraway seeds? It’s the latest thing. Very——
+                  Irish, they say</q>.</p>
+            <p><q>Kitty, what on earth is the matter with Gonji? I never saw the boy act so
+                  strangely</q>.</p>
             <p><q>Hum! He does look queer</q>.</p>
-            <p><q>Probably the valet has told him who the Count is, and he, poor Japanese boy, is overpowered at serving a personage of such importance</q>.</p>
+            <p><q>Probably the valet has told him who the Count is, and he, poor Japanese boy, is
+                  overpowered at serving a personage of such importance</q>.</p>
             <p><q>Tee-ee-e! Tee-ee-ee! Tee-ee-ee-e-e e-e-e-e-e!</q></p>
             <p><q>The Count’s laughing</q>.</p>
-            <p><q>Sneezing, Kitty. Call Gonji to close that window. The dear Count is sitting in a draft. Drafts, I have heard, Count Ichi, run along the floors. That’s a hint, Kitty, for him to let us sit on a chair. I can’t stand this much longer. He can’t understand you</q>.</p>
+            <p><q>Sneezing, Kitty. Call Gonji to close that window. The dear Count is sitting in a
+                  draft. Drafts, I have heard, Count Ichi, run along the floors. That’s a hint,
+                  Kitty, for him to let us sit on a chair. I can’t stand this much longer. He can’t
+                  understand you</q>.</p>
             <p><q>My back and I————</q></p>
             <p><q>Don’t stand it. Mother. The idea! Sit on a chair like a good Canadian</q>.</p>
             <p><q>S-s-s-s-s-s-s——Kurumma!</q></p>
-            <p><q>Certainly, Count. I had no intention of getting up. Don’t forget, Kitty, that Queen Victoria once drank out of a soup plate in order not to embarrass a guest who had done likewise</q>.</p>
-            <p><q>But Mother, you’re not comfy there. I <emph>wish</emph> he wouldn’t stare at me so. I feel —— queer. There’s something strange ——hypnotic about his eyes, Mother. They remind me of something——of someone I have known. I know, it’s Porthos! He had eyes just like that, with just that doglike expression</q>.</p> 
+            <p><q>Certainly, Count. I had no intention of getting up. Don’t forget, Kitty, that
+                  Queen Victoria once drank out of a soup plate in order not to embarrass a guest
+                  who had done likewise</q>.</p>
+            <p><q>But Mother, you’re not comfy there. I <emph>wish</emph> he wouldn’t stare at me
+                  so. I feel —— queer. There’s something strange ——hypnotic about his eyes, Mother.
+                  They remind me of something——of someone I have known. I know, it’s Porthos! He had
+                  eyes just like that, with just that doglike expression</q>.</p>
             <p><q>Hum! Ah-bah-ah!</q></p>
-            <p><q>Porthos, Kitty. Why, the idea! I don’t see the slightest resemblance between the Count’s eyes and the dogs</q></p> 
-            <p><q>Well, there’s something about his eyes that makes me——makes me feel queer all over——as if I—I had seen them before</q>.</p>
+            <p><q>Porthos, Kitty. Why, the idea! I don’t see the slightest resemblance between the
+                  Count’s eyes and the dogs</q></p>
+            <p><q>Well, there’s something about his eyes that makes me——makes me feel queer all
+                  over——as if I—I had seen them before</q>.</p>
             <p><q>Te-e-e-e-e————!</q></p>
-            <p><q>Keep on talking, and he’ll think we are answering him. Mother, I do feel so queer. I——it’s perfectly absurd, but I have a feeling as if——as if——I k—knew him——had known him somewhere before</q>.</p>
-            <p><q>Kitty dear, there’s a great deal in this reincarnation business of the Orientals. Yes, indeed, I don’t mind confessing to you that I’m inclined to believe in some of it myself. I have precisely the same feeling you have in regard to the Count. Something tells me, Kitty, he is an affinity of some kind in our lives</q>.</p>
+            <p><q>Keep on talking, and he’ll think we are answering him. Mother, I do feel so queer.
+                  I——it’s perfectly absurd, but I have a feeling as if——as if——I k—knew him——had
+                  known him somewhere before</q>.</p>
+            <p><q>Kitty dear, there’s a great deal in this reincarnation business of the Orientals.
+                  Yes, indeed, I don’t mind confessing to you that I’m inclined to believe in some
+                  of it myself. I have precisely the same feeling you have in regard to the Count.
+                  Something tells me, Kitty, he is an affinity of some kind in our lives</q>.</p>
             <p><q>Tee-ee-ee-ee-e-e-e-e-e-e-e-e-e————!</q></p>
             <p><q>Why, you dear old sentimental Mother!</q></p>
             <p><q>Do close that window!</q></p>
-            <p><q>There. I hope he won’t sneeze again; though it sounds more like laughing. Count, let me fill your cup. Don’t stand up. It’s all right. OH! Oh!</q></p> 
+            <p><q>There. I hope he won’t sneeze again; though it sounds more like laughing. Count,
+                  let me fill your cup. Don’t stand up. It’s all right. OH! Oh!</q></p>
             <p><q>Wow! Hang it!</q></p>
             <p><q>Did I <emph>burn</emph> you? Wh——why, you spoke English!</q></p>
             <p><q>S-s-s-s-s-s————Wowhangit! S-s-s-s-s-s——Wowhangit!</q></p>
-            <p><q>Wowhangit! What a funny Japanese word. Wait, I——I’ll be right back. I’m going to ask Gonji what it means</q>.</p>
-            </div>   
-            
-            
+            <p><q>Wowhangit! What a funny Japanese word. Wait, I——I’ll be right back. I’m going to
+                  ask Gonji what it means</q>.</p>
+         </div>
+
+
          <div type="content">
-            
-            <head>VIII—MISS KITTY COLLINS</head> 
-            <p><q>MARRY that little yellow-faced, hissing, bobbing Jap! Why, you must be taking leave of your senses, Mother!</q></p>
+
+            <head>VIII—MISS KITTY COLLINS</head>
+            <p><q>MARRY that little yellow-faced, hissing, bobbing Jap! Why, you must be taking
+                  leave of your senses, Mother!</q></p>
             <p><q>Kitty, you use such disrespectful language to your own mother!</q></p>
             <p><q>I’m sorry, Mamma</q>.</p>
-            <p><q>Never let me hear you apply such terms to a guest under our roof. I’m surprised at you</q>.</p>
-            <p><q>But Mamma, how could you even suggest such a thing? Why, you might as well marry me to a Cannibal Islander. Oh, I know the Japanese are a civilized people and all that; but this——this——particular one——why, he’s perfectly unspeakable! He’s impossible, Mother!</q></p>
-            <p><q>I think him a charming, cultivated, highly refined nobleman in every way</q>.</p> 
-            <p><q>Well, I don’t. There’s something nasty and queer about him. I’d like to know why he blackens his eyes at the corners</q>.</p>
-            <p><q>I’m surprised that a daughter of mine should display such amazing ignorance. Really, Kitty, I shall have to send you for another year to Miss Newcomb’s. Have you not yet learned that it is the custom in Oriental countries for them to fix and mark their faces? Why, the women even blacken their teeth and shave off their eyebrows</q>.</p>
-            <p><q>Well, they are mighty repulsive customs, I must say. And I’m not——I simply am <emph>not</emph> going to marry that Oriental. You can just make up your mind to that, Mamma</q>.</p>
-            <p><q>What are you going to do then, Kitty? Whom are you going to marry? There’s no use looking sulky about it. You’ll be twenty-one in June. It’s now March. How many proposals from men of title do you expect to receive before June?</q></p>
-            <p><q>Oh, Mamma, I don’t know. I’m nearly crazy thinking about it. Can’t we go abroad and——and search for someone?</q></p>
-            <p><q>Why should we? Here is a title right at our doors. Besides, we’ve already been abroad twice, and not a title offered!</q></p>
-            <p><q>Well, that was my fault. There would have been——dozens of them, if you want to know the truth. Nearly every one we went after! You needn’t look at me like that, Mother. Yes, I just refused them all before they even asked me. Every time you managed to get us introduced to some titled idiot, I’d announce flat out, as soon as you were out of hearing, that they needn’t trouble to propose to me, because I wouldn’t <emph>have</emph> them!</q></p>
-            <p><q>Kitty! How you must have disgraced us! No wonder everyone laughed at us. You made a laughing stock of us. But you’ve brought down on your own head the punishment. There is nothing left for you to do, save take this Japanese Count</q>.</p>
+            <p><q>Never let me hear you apply such terms to a guest under our roof. I’m surprised at
+                  you</q>.</p>
+            <p><q>But Mamma, how could you even suggest such a thing? Why, you might as well marry
+                  me to a Cannibal Islander. Oh, I know the Japanese are a civilized people and all
+                  that; but this——this——particular one——why, he’s perfectly unspeakable! He’s
+                  impossible, Mother!</q></p>
+            <p><q>I think him a charming, cultivated, highly refined nobleman in every way</q>.</p>
+            <p><q>Well, I don’t. There’s something nasty and queer about him. I’d like to know why
+                  he blackens his eyes at the corners</q>.</p>
+            <p><q>I’m surprised that a daughter of mine should display such amazing ignorance.
+                  Really, Kitty, I shall have to send you for another year to Miss Newcomb’s. Have
+                  you not yet learned that it is the custom in Oriental countries for them to fix
+                  and mark their faces? Why, the women even blacken their teeth and shave off their
+                  eyebrows</q>.</p>
+            <p><q>Well, they are mighty repulsive customs, I must say. And I’m not——I simply am
+                     <emph>not</emph> going to marry that Oriental. You can just make up your mind
+                  to that, Mamma</q>.</p>
+            <p><q>What are you going to do then, Kitty? Whom are you going to marry? There’s no use
+                  looking sulky about it. You’ll be twenty-one in June. It’s now March. How many
+                  proposals from men of title do you expect to receive before June?</q></p>
+            <p><q>Oh, Mamma, I don’t know. I’m nearly crazy thinking about it. Can’t we go abroad
+                  and——and search for someone?</q></p>
+            <p><q>Why should we? Here is a title right at our doors. Besides, we’ve already been
+                  abroad twice, and not a title offered!</q></p>
+            <p><q>Well, that was my fault. There would have been——dozens of them, if you want to
+                  know the truth. Nearly every one we went after! You needn’t look at me like that,
+                  Mother. Yes, I just refused them all before they even asked me. Every time you
+                  managed to get us introduced to some titled idiot, I’d announce flat out, as soon
+                  as you were out of hearing, that they needn’t trouble to propose to me, because I
+                  wouldn’t <emph>have</emph> them!</q></p>
+            <p><q>Kitty! How you must have disgraced us! No wonder everyone laughed at us. You made
+                  a laughing stock of us. But you’ve brought down on your own head the punishment.
+                  There is nothing left for you to do, save take this Japanese Count</q>.</p>
             <p><q>I won’t. I tell you, I won’t. I’ll die first</q>.</p>
-            <p><q>You wish to see your eight little brothers and sisters and your poor old mother brought down to poverty, you selfish, cruel, heartless, wicked girl!</q> <q>Oh m——m——mamma! I c——can’t, no, indeed, I can’t do it. You don’t know what you are asking. Oh Mamma, I simply can’t do it!</q></p>
+            <p><q>You wish to see your eight little brothers and sisters and your poor old mother
+                  brought down to poverty, you selfish, cruel, heartless, wicked girl!</q>
+               <q>Oh m——m——mamma! I c——can’t, no, indeed, I can’t do it. You don’t know what you are
+                  asking. Oh Mamma, I simply can’t do it!</q></p>
             <p><q>You detest Count Ichijo so much then?</q></p>
             <p><q>No——no worse than the others. But mother, I can’t marry anyone but Dick!</q></p>
             <p><q>What——t!</q></p>
-            <p><q>I’ve been thinking about him day and night ever since we parted on the golf links, and——and——you see how it is with me. And then I must think of him too. You wouldn’t have me wreck his life as well as my own!</q></p>
-            <p><q>Wreck <emph>his</emph> life! Why, he <emph>wants</emph> you to marry Count Ichijo!</q></p>
+            <p><q>I’ve been thinking about him day and night ever since we parted on the golf links,
+                  and——and——you see how it is with me. And then I must think of him too. You
+                  wouldn’t have me wreck his life as well as my own!</q></p>
+            <p><q>Wreck <emph>his</emph> life! Why, he <emph>wants</emph> you to marry Count
+                  Ichijo!</q></p>
             <p><q>He w————</q></p>
-            <p><q>He told me so. In a telephone conversation, before the Count came here at all. I spared your feelings and did not tell you. He sent Count Ichijo here for the avowee; purpose of courting you</q>.</p> 
+            <p><q>He told me so. In a telephone conversation, before the Count came here at all. I
+                  spared your feelings and did not tell you. He sent Count Ichijo here for the
+                  avowee; purpose of courting you</q>.</p>
             <p><q>I don’t believe it</q>.</p>
             <p><q>You doubt my word?</q></p>
-            <p><q>No——but——but I can’t believe it of Dick, Mother. You don’t know him as I do</q>.</p>
+            <p><q>No——but——but I can’t believe it of Dick, Mother. You don’t know him as I
+               do</q>.</p>
             <p><q>It is true. I asked the Count myself</q>.</p>
 
-    
+
          </div>
          <trailer>(To Be Concluded)</trailer>
       </body>
