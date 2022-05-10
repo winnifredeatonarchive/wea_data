@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Visiting New York</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -16,19 +28,50 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file and added facsimile.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-05-10" status="published">Proofed and set to published.</change>
+         <change who="pers:LW1" when="2022-05-10" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file and
+            added facsimile.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:StarvingAndWriting4">
       <body>
+         <head>Visiting New York</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna (Mrs. Winnifred Reeve)</name> author of
+                  <q>A Japanese Nightingale</q>.</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+
+            <p>I was eighteen years old. I had received a letter from Mr. Ellery Sedgwick, then
+               editor of Frank Leslie’s (now editor of the Atlantic Monthly). Instead of the usual
+               rejection slip, he wrote expressing an interest in me, and suggested that I should
+               let him see <q>anything else you have written</q>.</p>
+            <p>Upon my arrival in New York, I did not wait to secure lodgings. I went straight from
+               the train, bag in hand, to Mr. Sedgwick’s office. Having explained to him who I
+               was—he appeared to have forgotten that letter he had written me—I said: <q>And you
+                  wrote me to let you see anything else I had written, and so…</q></p>
+            <p>I opened my bag. He leaped to his feet, threw up his hands, and shouted:</p>
+            <p><q>Help! Help!</q></p>
+            <p>In rushed half a dozen editors and clerks, and the wild-looking Mr. Sedgwick pointed
+               dramatically to that bag of mine, which was brim full to the top with manuscripts.
+               With a vague idea that I was about to be arrested, I burst into tears. I bawled as
+               hard and heartily as only a husky youngster can, with the result that outrageous
+               mirth was checked, and Mr. Sedgwick alternately wringing his hands and running them
+               through his hair implored me to stop weeping. He said:</p>
+            <p><q>Don’t cry! Don’t cry! Don’t cry like that! Stop it! I’ll buy a story from you if
+                  you will. I’ll buy all your stories if you do. There, there, no one’s going to
+                  hurt you. Shut up, do!</q></p>
+            <p>In later years, when Mr. Sedgwick and I would meet at intervals, he liked to recall
+               the several amusing episodes he recalled in my past, and he told our friends that I
+               had blackmailed him with tears into buying my first story.</p>
          </div>
       </body>
    </text>
