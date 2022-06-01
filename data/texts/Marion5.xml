@@ -51,6 +51,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-05-31" status="published">Letters edited to floatingText.</change>
          <change who="pers:LW1" when="2022-05-17" status="published">Block quotes edited.</change>
          <change who="pers:LW1" when="2022-05-15" status="published">Block quotes fixed and set to
             published</change>
@@ -156,32 +157,44 @@
                   get work there, and could study besides. I borrowed twenty-five dollars from Lu,
                   and promised to pay her back thirty-five within three months.</p>
                <p>When I got back to my studio, I found this letter from Reggie:</p>
-
-               <div>
-                  <p>Darling:</p>
-                  <p>I know you will forgive your heart-broken Reggie, who was not himself last
-                     night. All shall be as it was between us, and I swear to you that never again
-                     will I say anything to my little girl that will hurt her feelings.</p>
-                  <p> Your repentant        REGGIE.</p>
-               </div>
-               <div>
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <opener>
+                           <salute>Darling:</salute>
+                        </opener>
+                        <p>I know you will forgive your heart-broken Reggie, who was not himself last
+                           night. All shall be as it was between us, and I swear to you that never again
+                           will I say anything to my little girl that will hurt her feelings.</p>
+                        <closer>
+                           <salute>Your repentant</salute><signed>REGGIE.</signed>
+                        </closer>
+                     </body>
+                  </floatingText>
+               </q>
                   <p>I crushed his letter in my hand. I felt that my love for him was dead. I never
                      wanted to see him again. He had sacrificed me for the sake of his selfish
                      ambitions.</p>
                   <p>My train was to leave at eight, and Lu was <pb n="10"/>going to be there to see
                      me off. I sat down and wrote the following letter to Reggie before leaving the
                      house:</p>
-               </div>
-               <div>
-                  <p>Dear Reggie:</p>
-                  <p>I am leaving for Boston to-night. I have loved you very dearly, and I feel bad
-                     at leaving you without saying good-by, but I will not live any longer in that
-                     studio that you pay for, and I could not stand home any more.</p>
-                  <p>I can earn my living better in Boston, and when you are ready I will come back
-                     to you, but I cannot trust myself to say good-by.</p>
-                  <p> Your loving        MARION.</p>
-               </div>
-               <div>
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <opener>
+                           <salute>Dear Reggie:</salute>
+                        </opener>
+                        <p>I am leaving for Boston to-night. I have loved you very dearly, and I feel bad
+                           at leaving you without saying good-by, but I will not live any longer in that
+                           studio that you pay for, and I could not stand home any more.</p>
+                        <p>I can earn my living better in Boston, and when you are ready I will come back
+                           to you, but I cannot trust myself to say good-by.</p>
+                        <closer>
+                           <salute>Your loving</salute><signed>MARION.</signed>
+                        </closer>
+                     </body>
+                  </floatingText>
+               </q>
                   <p>Then I went down to Hochelaga, and said good-by to them all at home. Papa
                      hunted up the address of Mr. Sands, the artist for whom I had done that work
                      when a little girl of thirteen. Papa felt sure he would help me get something.
@@ -238,8 +251,6 @@
                      Ada knew all of the planets and suns by name, and could pick them out, but to
                      me they were always little points of mystery. I remembered as a little girl I
                      used to look up at them and say to one particular star:</p>
-               </div>
-               <div>
                   <q>
                      <lg>
                         <l>’Star bright, star light</l>
@@ -248,8 +259,6 @@
                         <l>Get the wish I wish to-night.’</l>
                      </lg>
                   </q>
-               </div>
-               <div>
                   <p>Then I would say quickly: <q>Give me a doll’s carriage</q>.</p>
                   <p>Ada had told me if I did that for seven nights, the fairies would give me
                      whatever I asked for, and each night I asked for that doll’s carriage. I
@@ -726,7 +735,6 @@
                   <p>(To be continued in August)</p>
                </div>
             </div>
-         </div>
       </body>
    </text>
 </TEI>
