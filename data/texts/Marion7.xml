@@ -36,6 +36,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="readyForProof">
+         <change who="pers:LW1" when="2022-06-01" status="readyForProof">Changed letters to floatingText.</change>
          <change who="pers:LW1" when="2022-05-25" status="readyForProof">Status changed to readyForProof. Everything should be encoded.</change>
          <change who="pers:LW1" when="2022-05-25" status="inProgress">Downloaded document from
             Google Drive and converted to TEI.</change>
@@ -316,38 +317,45 @@
                   <p>When I got to my room, I found a note on my table. It was from Miss Darling,
                      and was as follows:</p>
                      <q>
-                        <lg>
-                        <l>’Dear Miss Marion:</l>
-                        <l>‘I don’t want to press you, but could you let me have the rent? I would
-                           not bother you, but I have expenses to meet, and even if you could let me
-                           have a part if you cannot let me have it all, I would be obliged.</l>
-                        <l>                                        ‘C. DARLING.’</l>
-                        </lg>
+                        <floatingText type="letter">
+                           <body>
+                              <opener>
+                                 <salute>’Dear Miss Marion:</salute>
+                              </opener>
+                              <p>‘I don’t want to press you, but could you let me have the rent? I would
+                                 not bother you, but I have expenses to meet, and even if you could let me
+                                 have a part if you cannot let me have it all, I would be obliged.</p>
+                              <closer>
+                                 <signed>‘C. DARLING.’</signed>
+                              </closer>
+                           </body>
+                        </floatingText>
                      </q>
-                  
-                  <div>
+                       
                      <p>There was a letter, too, from Reggie. I opened it with my hatpin and oh! I
                         think if I could have pierced Reggie instead of that letter, just then, I
                         would have liked to do it.</p>
-                  </div>
-                  <div>
-                    
-                     <q>
-                        <lg>
-                        <l>’Darling Girlie:</l>
-                        <l>‘I met your sister Ada on the street, and she tells me you are doing
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <opener>
+                           <salute>’Darling Girlie:</salute>
+                        </opener>
+                        <p>‘I met your sister Ada on the street, and she tells me you are doing
                            awfully well in Boston with your painting. I hope, however, you are not
                            forgetting your old sweetheart. Ada tells me you are coming home this
                            summer. Darling, I shall try to arrange to go to Boston, and we will come
                            back to Montreal together. I am longing for the moment when I can hold my
-                           own little Marion in my arms again, and tell her how much I love her.</l>
-                        <l>‘Everything’s going my way lately, and you’ll see me a Q. C. before many
-                           years have passed.         Your own,         REGGIE.’</l>
-                        </lg>
-                     </q>
-             
-                  </div>
-                  <div>
+                           own little Marion in my arms again, and tell her how much I love her.</p>
+                        <p>‘Everything’s going my way lately, and you’ll see me a Q. C. before many
+                           years have passed.</p>
+                        <closer>
+                           <salute>Your own,</salute> <signed>REGGIE.’</signed>
+                        </closer>
+                     </body>
+                  </floatingText>
+               </q>
+                        
                      <p>Somehow I blamed Reggie for all I had suffered, and as I stared out at the
                         darkening night descending upon the streets, I muttered to myself:</p>
                      <p><q>Now it is your fault that I am compelled to pose in the way I
@@ -731,7 +739,7 @@
                   </div>
                
             </div>
-         </div>
+
       </body>
    </text>
 </TEI>
