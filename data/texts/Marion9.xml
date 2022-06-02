@@ -8,19 +8,21 @@
             <title>Marion (Part 8)</title>
             <title type="sub">The Story of an Artist’s Model</title>
             <respStmt>
-               <resp>Proofreader</resp>
-               <name ref="pers:MC1">Mary Chapman</name>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
+               <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
          <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</note>
+            <note>Facsimile retrieved from Hathi Trust: <ref
+                  target="https://catalog.hathitrust.org/Record/000542803"
+                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:81"/>
@@ -33,172 +35,457 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
-         <change who="pers:LW1" when="2022-06-01" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
-         <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl81 using XSLT.</change>
+      <revisionDesc status="readyForProof">
+         <change who="pers:LW1" when="2022-06-01" status="readyForProof">Encoded everything. Set to readyForProof</change>
+         <change who="pers:LW1" when="2022-06-01" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from
+               <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for
+            proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography
+            entry bibl81 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Marion8" prev="doc:Marion8">
+      <pb n="329"/>
       <body>
-         <div>
-            <p>Marion: The Story of an Artist’s Model</p>
-            <p>By The Author of <q>Me</q></p>
-            <p>Illustrated by Henry Hutt</p>
-            <p>*</p>
-            <p>[329]</p>
-            <p>Synopsis: Here we have the story, told at first-hand, of Marion Ascough, sister of <q>Me</q>, a girl destined to eventually travel far—Montreal, Boston, New York, and even to <q>Bohemia</q>, accumulating experiences by the way—clinging to the highest ideals, as artist, model, friend of painters, and finally the wife of an artist. She was born in the queer little French-Canadian villageof Hochelaga, a suburb of Montreal; her father was an English painter, her mother a Frenchwoman. Here Monsieur de St. Vidal proposed to her in the snow, and she ran home. Then she had a bent for the stage and made a hit in amateur theatricals. Along came Mr. Reggie Bertie—call him Bartie, so English you know—remittance-man, who is studying for the bar. It was a case of love at first sight between handsome Reggie and pretty Marion Ascough. He took her to the ice carnival and when he should have been watching the procession he was looking down at her. Later, he refuses to take her into a flashy all-night restaurant because Marion is <q>too nice and too sweet</q>. Very soon they  become engaged, but while Bertie is an ardent wooer he does not want the marriage to take place; he’s afraid of <q>the governor</q> of England, so poor Marion is in for a long wait, during which she must be self-supporting at painting and other art work, besides helping at home. Then she hires a little studio of her own—Reggie pays for it—in Montreal; Reggie still procrastinates. At last she tells him that he has no right to monopolize her time and her society unless he intends to fulfill his promise,—particularly as he objects to her seeing any other men. She goes to Boston and there becomes a full-fledged model, with some weird experiences and cruel privations. Then she falls ill. Later she settles in New York and meets her fate.</p>
-            <p>*</p>
-            <p>I was helping Menna one day. He had been very busy, and I had been working for him both mornings and afternoons. He had told me, however, that soon he expected to <q>pick up and go West</q>, and I was troubled about that. I depended upon Menna for most of my work, and we got along splendidly together. As I have said, Menna had always treated me just like a <q>fellow</q>, as he would call it.</p>
-            <p>There was a knock at the door, and in came Paul Bonnat. After nodding to Menna, he strolled over to where I was working and stood at the back of me watching me paint.</p>
-            <p><q>She’s quite a painter</q>, he said after a moment to Menna, who looked up and nodded, and said:</p>
+         <head>Marion: The Story of an Artist’s Model</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">The Author of <q>Me</q></name></byline>
+            <byline>Illustrated by <name ref="pers:HH1">Henry Hutt</name></byline>
+         </opener>
+         <div type="content">
+            <milestone unit="sectionBreak"/>
+            <div>
+               <div type="paratext">
+            <p>Synopsis: Here we have the story, told at first-hand, of Marion Ascough, sister of
+                  <q>Me</q>, a girl destined to eventually travel far—Montreal, Boston, New York,
+               and even to <q>Bohemia</q>, accumulating experiences by the way—clinging to the
+               highest ideals, as artist, model, friend of painters, and finally the wife of an
+               artist. She was born in the queer little French-Canadian villageof Hochelaga, a
+               suburb of Montreal; her father was an English painter, her mother a Frenchwoman. Here
+               Monsieur de St. Vidal proposed to her in the snow, and she ran home. Then she had a
+               bent for the stage and made a hit in amateur theatricals. Along came Mr. Reggie
+               Bertie—call him Bartie, so English you know—remittance-man, who is studying for the
+               bar. It was a case of love at first sight between handsome Reggie and pretty Marion
+               Ascough. He took her to the ice carnival and when he should have been watching the
+               procession he was looking down at her. Later, he refuses to take her into a flashy
+               all-night restaurant because Marion is <q>too nice and too sweet</q>. Very soon they
+                become engaged, but while Bertie is an ardent wooer he does not want the marriage to
+               take place; he’s afraid of <q>the governor</q> of England, so poor Marion is in for a
+               long wait, during which she must be self-supporting at painting and other art work,
+               besides helping at home. Then she hires a little studio of her own—Reggie pays for
+               it—in Montreal; Reggie still procrastinates. At last she tells him that he has no
+               right to monopolize her time and her society unless he intends to fulfill his
+               promise,—particularly as he objects to her seeing any other men. She goes to Boston
+               and there becomes a full-fledged model, with some weird experiences and cruel
+               privations. Then she falls ill. Later she settles in New York and meets her fate.</p>
+               </div>
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+            <p>I was helping Menna one day. He had been very busy, and I had been working for him
+               both mornings and afternoons. He had told me, however, that soon he expected to
+                  <q>pick up and go West</q>, and I was troubled about that. I depended upon Menna
+               for most of my work, and we got along splendidly together. As I have said, Menna had
+               always treated me just like a <q>fellow</q>, as he would call it.</p>
+            <p>There was a knock at the door, and in came Paul Bonnat. After nodding to Menna, he
+               strolled over to where I was working and stood at the back of me watching me
+               paint.</p>
+            <p><q>She’s quite a painter</q>, he said after a moment to Menna, who looked up and
+               nodded, and said:</p>
             <p><q>Yes, she does quite O. K</q>.</p>
             <p>After a while Menna turned around his stool and asked:</p>
             <p><q>Got anything on to-night, Bonnat?</q></p>
             <p><q>No—nothing particular</q>.</p>
-            <p><q>Well, a lady friend of mine is coming in from Staten Island, and I promised to take her somewhere to supper and see the town. Can’t you and Miss Ascough join us?</q></p>
+            <p><q>Well, a lady friend of mine is coming in from Staten Island, and I promised to
+                  take her somewhere to supper and see the town. Can’t you and Miss Ascough join
+                  us?</q></p>
             <p>Bonnat beamed, just as if Menna had handed him a gift, and he said:</p>
             <p><q>Sure, if Miss Ascough will go with me</q>.</p>
-            <p>I said that I would. I think I would have gone with him anywhere he had asked me to.</p>
+            <p>I said that I would. I think I would have gone with him anywhere he had asked me
+               to.</p>
             <p><q>Meet us here at seve, then</q>, said Menna, returning to his work.</p>
-            <p><q>All right. Good-by</q>. Bonnat went out slamming the door noisily behind him. We could hear him singing the //Preislied// from <q>Die Meistersinger</q> as he went up the stairs. He had a big, wonderful baritone voice. We stopped painting to listen to him, but when I turned to resume my work, I found Menna watching me. He said:</p>
+            <p><q>All right. Good-by</q>. Bonnat went out slamming the door noisily behind him. We
+               could hear him singing the <emph>Preislied</emph> from <q>Die Meistersinger</q> as he went up
+               the stairs. He had a big, wonderful baritone voice. We stopped painting to listen to
+               him, but when I turned to resume my work, I found Menna watching me. He said:</p>
             <p><q>You and Bonnat are getting pretty friendly, eh?</q></p>
             <p>I felt myself color warmly, but I tried to laugh, and said:</p>
             <p><q>Oh, no more than I am with any of the other boys</q>.</p>
-            <p>Menna had his thumb through his palette, and he stared at me hard. Then he said quite suddenly:</p>
+            <p>Menna had his thumb through his palette, and he stared at me hard. Then he said quite
+               suddenly:</p>
             <p><q>Gee! What a fool I was to let him get ahead of me</q>.</p>
             <p>He set down his palette, and came over to my stool:</p>
-            <p><q>Say, Marion</q> (he had never called me Marion before), <q>you and I would make a corking good team. Suppose we pair off together to-night, and we’ll put Miss Fleming on to Bonnat? What do you say?</q></p>
-            <p><q>Mr. Menna, you had better stick to your own girl</q>, I said, feeling uneasy. Menna continued to stare down at me, and as he said nothing to that, I added:</p>
-            <p><q>You know you and I are just partners in our work, and don’t let’s fool. It’ll spoil everything</q>.</p>
-            <p><q>Oh, all right</q>, said he. <q>I don’t have to get down on my knees to you or any other girl</q>.</p>
-            <p>He had never spoken to me like that before. Until this day, he had never asked me to go anywhere with him, nor tried to see me after work hours; I did not suppose he was the least bit interested in me, and I imagine he was quite settled with his own sweetheart. I was so glad when Miss Fleming knocked on the door.</p>
-            <p>That evening we all went to Stuttgart Hall. It was one of the oldest places in New York, and was interesting because of the class of people who patronized the place and its resemblance to the German gardens, which it was in fact itself. There were German ornaments, and steins all around the place on a high shelf. There was an excellent orchestra, which played good selections, and Bonnat hummed when they played some of his favorites. Menna and Bonnat seemed to differ on almost every subject, and Menna seemed in a savagely contrary mood that night.</p>
-            <p>Bonnat would explain his point of view about something, and Menna would say irritably:</p>
+            <p><q>Say, Marion</q> (he had never called me Marion before), <q>you and I would make a
+                  corking good team. Suppose we pair off together to-night, and we’ll put Miss
+                  Fleming on to Bonnat? What do you say?</q></p>
+            <p><q>Mr. Menna, you had better stick to your own girl</q>, I said, feeling uneasy.
+               Menna continued to stare down at me, and as he said nothing to that, I added:</p>
+            <p><q>You know you and I are just partners in our work, and don’t let’s fool. It’ll
+                  spoil everything</q>.</p>
+            <p><q>Oh, all right</q>, said he. <q>I don’t have to get down on my knees to you or any
+                  other girl</q>.</p>
+            <p>He had never spoken to me like that before. Until this day, he had never asked me to
+               go anywhere with him, nor tried to see me after work hours; I did not suppose he was
+               the least bit interested in me, and I imagine he was quite settled with his own
+               sweetheart. I was so glad when Miss Fleming knocked on the door.</p>
+            <p>That evening we all went to Stuttgart Hall. It was one of the oldest places in New
+               York, and was interesting because of the class of people who patronized the place and
+               its resemblance to the German gardens, which it was in fact itself. There were German
+               ornaments, and steins all around the place on a high shelf. There was an excellent
+               orchestra, which played good selections, and Bonnat hummed when they played some of
+               his favorites. Menna and Bonnat seemed to differ on almost every subject, and Menna
+               seemed in a savagely contrary mood that night.</p>
+            <p>Bonnat would explain his point of view about something, and Menna would say
+               irritably:</p>
             <p><q>Yes, yes, but what’s the use?</q></p>
-            <p>Bonnat said that a man should show in his work the human mood, and that a picture should mean something more than a pretty melody of colors. Menna interrupted him with:</p>
+            <p>Bonnat said that a man should show in his work the human mood, and that a picture
+               should mean something more than a pretty melody of colors. Menna interrupted him
+               with:</p>
             <p><q>What the use, so long as we get good Pilsener beer</q>.</p>
-            <p>Paul laughed at that, and called to a waiter to bring some more PIlsener for Menna right away. After the dinner was over, Mr. Menna took Miss Fleming home, and Paul and I walked across on Fourteenth Street, stopping to look in the windows, and to glance at the curious people in the throngs that passed us. Fourteenth Street was then a very gay and bedizened place at night.</p>
-            <p>When we reached my door, Paul, who had been very silent, took my hand and held it for some</p>
-            <p>[330]</p>
-            <p>time without saying a word. I could feel his eyes looking down on me in the darkness of the street, and somehow the very clasp of his hand seemed to be speaking to me, telling me things that made me feel warm, and oh! so happy. When he did speak at last, his big voice was curiously repressed, and he said huskily:</p>
-            <p><q>I think I know now why some men give up Art for the sake of protecting their &lt;emph&gt;own!&lt;/emph&gt; He said “own</q> with such strange emphasis, and he pressed my hand as he said it, that I felt too moved to answer him, and I had a great longing to put my arms around him and draw his head down to mine.</p>
-            <p>After that night Mr. Menna did not seem the same to me. All the little kindnesses I had been accustomed to receive from him, such as cleaning my palette, my brushes, and nailing my canvases on the stretchers, eh now let me do myself, and once when I asked him to varnish a painting of mine, he answered:</p>
+            <p>Paul laughed at that, and called to a waiter to bring some more PIlsener for Menna
+               right away. After the dinner was over, Mr. Menna took Miss Fleming home, and Paul and
+               I walked across on Fourteenth Street, stopping to look in the windows, and to glance
+               at the curious people in the throngs that passed us. Fourteenth Street was then a
+               very gay and bedizened place at night.</p>
+            <p>When we reached my door, Paul, who had been very silent, took my hand and held it for
+               some <pb n="330"/>time without saying a word. I could feel his eyes looking down on me in the darkness
+               of the street, and somehow the very clasp of his hand seemed to be speaking to me,
+               telling me things that made me feel warm, and oh! so happy. When he did speak at
+               last, his big voice was curiously repressed, and he said huskily:</p>
+            <p><q>I think I know now why some men give up Art for the sake of protecting their
+                 <emph>own!</emph></q> He said <q>own</q> with such strange emphasis, and he
+               pressed my hand as he said it, that I felt too moved to answer him, and I had a great
+               longing to put my arms around him and draw his head down to mine.</p>
+            <p>After that night Mr. Menna did not seem the same to me. All the little kindnesses I
+               had been accustomed to receive from him, such as cleaning my palette, my brushes, and
+               nailing my canvases on the stretchers, eh now let me do myself, and once when I asked
+               him to varnish a painting of mine, he answered:</p>
             <p><q>Why don’t you get that Bonnat to do it for you?</q></p>
-            <p>//block quote//</p>
-            <p>‘Dear Marion:</p>
-            <p>‘Mr. Hersh is going to put on the living pictures in Providence for two weeks, and he says he would like to take the same girls that he had before, and told me to tell you that he will pay twenty dollars a week. Also that he will take us to Boston and some other places, if we do well in Providence.</p>
-            <p>‘Why don’t you come and see us to-night? and bring along the fellow Hatty said she saw you walking with on Fourteenth St. How are you, anyway? I’m leaving for Providence tomorrow. With love,                 LIL.’</p>
-            <p>//block quote end//</p>
-            <p>I had been thinking of Lil’s letter all day, but I could not make up my mind how to answer it. The thought of making forty dollars in two weeks appealed to me very much, for we were not very busy now, and Menna expected to go West very soon. On account of my work with Menna I had not done much posing in New York, but I intended to call on some artists and see about engagements when Menna should go. Forty dollars was a lot of money to me, and it would take me many weeks to earn that much in posing. It did seem as if I simply could not refuse this chance. But my mind kept turning to Paul Bonnat. I could think of nobody else but him. He had made my life worth while. I thought of all the happy times we had had together. He did not take me to expensive places as Reggie used to, but he lived as I did, and we enjoyed the same things—that Reggie would have called silly and cheap. We went to the exhibitions of the artists, long walks in the Park, to the Metropolitan Museum, and, best of all, to the Opera. That was the one thing Paul would be extravagant about, although our seats were in the top gallery of the family circle. I would be out of breath by the time I climbed up there, but I learned to appreciate and love only the best in music, just as Paul was teaching me to understand the best in all art.</p>
-            <p>There I listened with mingled feeling and enjoyment to the operas of Wagner. His <q>Tristan und Isolde ‘’ rang in my ears for days, and by the time I heard “Die Meistersinger</q> I was able thoroughly to enjoy what before had been an unknown land. We Canadians had never gone much beyond a little of Mendelssohn, which the teachers of music seemed to consider the height of classical music, and the people were still singing the old sentimental songs, not the ragtime the Americans love, but the deadly sweet melodies that cloy and teach one nothing. Of course, no doubt things have changed there now; but it was that way when I was a girl in Montreal.</p>
-            <p>I did not want to leave New York even for two weeks. I had begun to love my life here. There was something fine in that comradeship with the boys in the ramshackle studio building. I had been accepted as one of the crowd, and I knew it was Bonnat’s influence that made them all treat me as a sister. Fisher once said that a <q>fellow would think twice before he said anything to me that wasn’t straight goods</q>, and he added, <q>Bonnat’s so darned &lt;emph&gt;big&lt;/emph&gt;, you know</q>.</p>
-            <p>I had often cooked for all the boys in the building. We would have what they called a <q>spread</q> in Bonnat’s or Fisher’s studio, and they would all come flocking in, and fall to greedily upon the good things I had cooked. I felt a motherly impulse toward them all, and I wanted to care for and cook for—yes—and wash them, too. Some of the artists in that building &lt;emph&gt;were&lt;/emph&gt; pretty dirty. Paul had never spoken of love to me, and I was afraid to analyze my feelings for him. Reggie’s letters were still pouring in upon me and they still harped upon one thing—my running away from him in Boston. He kept urging me to come home, and lately he had event hinted that he was coming again to fetch me; but he said he would not tell me when he would come, in case I should run off again.</p>
-            <p>I used to sit reading Reggie’s letters with the queerest sort of feeling, for, as I read, I would not see Reggie in my mind at all, but Paul Bonnat! It did seem that all the things that Reggie said which once would have pierced and hurt me cruelly now seemed to have lost their power. I had even a tolerant sort of pity for Reggie, and wondered why he should trouble any longer to accuse me of this or that, or even to write to me at all. I am sure I should not have greatly cared if his letters had ceased to come. And now, as I turned over in my mind the question of leaving New York, I thought not only of Reggie, but of Paul. it is true, I might only be away for the two weeks in Providence; on the other hand I realized that I would be foolish not to go on with the troupe to Boston. I decided finally that I would go.</p>
-            <p>[338]</p>
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <opener>
+                           <salute>‘Dear Marion:</salute>
+                        </opener>
+                        <p>‘Mr. Hersh is going to put on the living pictures in Providence for two weeks, and he
+                           says he would like to take the same girls that he had before, and told me to tell you
+                           that he will pay twenty dollars a week. Also that he will take us to Boston and some
+                           other places, if we do well in Providence.</p>
+                        <p>‘Why don’t you come and see us to-night? and bring along the fellow Hatty said she
+                           saw you walking with on Fourteenth St. How are you, anyway? I’m leaving for
+                           Providence tomorrow.</p> 
+                        <closer><salute>With love,</salute>   <signed>LIL.’</signed></closer>
+                     </body>
+                  </floatingText>
+               </q>
+            
+            <p>I had been thinking of Lil’s letter all day, but I could not make up my mind how to
+               answer it. The thought of making forty dollars in two weeks appealed to me very much,
+               for we were not very busy now, and Menna expected to go West very soon. On account of
+               my work with Menna I had not done much posing in New York, but I intended to call on
+               some artists and see about engagements when Menna should go. Forty dollars was a lot
+               of money to me, and it would take me many weeks to earn that much in posing. It did
+               seem as if I simply could not refuse this chance. But my mind kept turning to Paul
+               Bonnat. I could think of nobody else but him. He had made my life worth while. I
+               thought of all the happy times we had had together. He did not take me to expensive
+               places as Reggie used to, but he lived as I did, and we enjoyed the same things—that
+               Reggie would have called silly and cheap. We went to the exhibitions of the artists,
+               long walks in the Park, to the Metropolitan Museum, and, best of all, to the Opera.
+               That was the one thing Paul would be extravagant about, although our seats were in
+               the top gallery of the family circle. I would be out of breath by the time I climbed
+               up there, but I learned to appreciate and love only the best in music, just as Paul
+               was teaching me to understand the best in all art.</p>
+            <p>There I listened with mingled feeling and enjoyment to the operas of Wagner. His
+                  <q>Tristan und Isolde</q> rang in my ears for days, and by the time I heard <q>Die
+                  Meistersinger</q> I was able thoroughly to enjoy what before had been an unknown
+               land. We Canadians had never gone much beyond a little of Mendelssohn, which the
+               teachers of music seemed to consider the height of classical music, and the people
+               were still singing the old sentimental songs, not the ragtime the Americans love, but
+               the deadly sweet melodies that cloy and teach one nothing. Of course, no doubt things
+               have changed there now; but it was that way when I was a girl in Montreal.</p>
+            <p>I did not want to leave New York even for two weeks. I had begun to love my life
+               here. There was something fine in that comradeship with the boys in the ramshackle
+               studio building. I had been accepted as one of the crowd, and I knew it was Bonnat’s
+               influence that made them all treat me as a sister. Fisher once said that a <q>fellow
+                  would think twice before he said anything to me that wasn’t straight goods</q>,
+               and he added, <q>Bonnat’s so darned <emph>big</emph>, you know</q>.</p>
+            <p>I had often cooked for all the boys in the building. We would have what they called a
+                  <q>spread</q> in Bonnat’s or Fisher’s studio, and they would all come flocking in,
+               and fall to greedily upon the good things I had cooked. I felt a motherly impulse
+               toward them all, and I wanted to care for and cook for—yes—and wash them, too. Some
+               of the artists in that building <emph>were</emph> pretty dirty. Paul had
+               never spoken of love to me, and I was afraid to analyze my feelings for him. Reggie’s
+               letters were still pouring in upon me and they still harped upon one thing—my running
+               away from him in Boston. He kept urging me to come home, and lately he had event
+               hinted that he was coming again to fetch me; but he said he would not tell me when he
+               would come, in case I should run off again.</p>
+            <p>I used to sit reading Reggie’s letters with the queerest sort of feeling, for, as I
+               read, I would not see Reggie in my mind at all, but Paul Bonnat! It did seem that all
+               the things that Reggie said which once would have pierced and hurt me cruelly now
+               seemed to have lost their power. I had even a tolerant sort of pity for Reggie, and
+               wondered why he should trouble any longer to accuse me of this or that, or even to
+               write to me at all. I am sure I should not have greatly cared if his letters had
+               ceased to come. And now, as I turned over in my mind the question of leaving New
+               York, I thought not only of Reggie, but of Paul. it is true, I might only be away for
+               the two weeks in Providence; on the other hand I realized that I would be foolish not
+               to go on with the troupe to Boston. I decided finally that I would go.</p>
+               <pb n="338"/>
+            
             <p>I went over especially to tell Paul about it. I said:</p>
-            <p><q>Mr. Bonnat, I’m going away from New York, to do some more of that—that living-picture work</q>. I waited a moment to see what he would say—he had not turned around—and then I added, as I wanted to see if he really cared—”Maybe I won’t come back at all.”</p>
+            <p><q>Mr. Bonnat, I’m going away from New York, to do some more of that—that
+                  living-picture work</q>. I waited a moment to see what he would say—he had not
+               turned around—and then I added, as I wanted to see if he really cared—<q>Maybe I won’t
+               come back at all</q>.</p>
             <p>He stood up, and took me by the shoulders, making me look straight at him.</p>
             <p><q>How long are you to be gone?</q> he demanded, as if he had penetrated my ruse.</p>
-            <p><q>Two weeks in Providence</q>, I said, <q>but if we succeed, we go on to Boston and—</q></p>
+            <p><q>Two weeks in Providence</q>, I said, <q>but if we succeed, we go on to Boston
+                  and—</q></p>
             <p><q>Promise me you’ll come back in two weeks. Promise me that</q>, he said.</p>
-            <p>He was looking straight down into my eyes, and I think I would have promised him anything he asked me to do; so I said, in a little weak voice:</p>
+            <p>He was looking straight down into my eyes, and I think I would have promised him
+               anything he asked me to do; so I said, in a little weak voice:</p>
             <p><q>I promise</q>.</p>
-            <p><q>Good!</q> he replied. <q>I would not let you go, if it were in my power to stop you, but I know you need the money, and I have no right to deprive you of it. Good gad! It’s tough not to be able to—</q> He broke off, and gently took my hands in his.</p>
-            <p><q>Look here, little mouse. There’s a chance of my being able to make a big pot of money. I’ll know in a few days’ time. Then you shall not have to worry about anything. But as I am now fixed, why I can’t stop you from anything. I haven’t the right</q>.</p>
+            <p><q>Good!</q> he replied. <q>I would not let you go, if it were in my power to stop
+                  you, but I know you need the money, and I have no right to deprive you of it. Good
+                  gad! It’s tough not to be able to—</q> He broke off, and gently took my hands in
+               his.</p>
+            <p><q>Look here, little mouse. There’s a chance of my being able to make a big pot of
+                  money. I’ll know in a few days’ time. Then you shall not have to worry about
+                  anything. But as I am now fixed, why I can’t stop you from anything. I haven’t the
+                  right</q>.</p>
             <p><q>Oh, I’ll be back soon, and if you like you can see me off on the train</q>.</p>
-            <p>When we were at the Grand Central the following night I tried to appear cheerful, but I could not prevent the tears running down my face, and when he finally took my hand to say good-by I said:</p>
-            <p><q>Oh, it’s dreadful for me to say this: b-but if I don’t see you soon again, I-I t-think I shall die!</q></p>
-            <p>He bent down when I said that and kissed me right on my lips, and he did not seem to care whether everyone in the station saw us or not. Then I knew that he did love me, and that knowledge sent me flying blindly down the platform. After I was aboard, I found I had taken the wrong train to Providence. I should have taken an earlier or a later one. Lil was already there, and was to have met me at the station, but the train I had taken would not get in till four in the morning.</p>
-            <p>When I arrived in Providence I did not know where to go. I had Lil’s address, but she had written me when she was living at a <q>very respectable house</q>, where the people would have been terribly shocked to know she was a model, and I felt I could not go there at such an hour in the morning. The rain was coming down in torrents. A colored boy was carrying my bag, and he asked me where I wanted to go. Indeed I did not know. When I hesitated, he said that the hotels didn’t take ladies alone, but that he knew of an all-night restaurant, where I could get something hot to eat and I could stay there till morning. So he took me over to Mink’s. I had often eaten in Mink’s restaurant in Boston, and the place looked quite familiar to me. I had a cup of hot coffee and a sandwich, and then I asked the waitress if there was some place where I could go and freshen or clean up a bit. She whispered to the man at the desk, and he nodded, and then she beckoned to me to follow her. We went upstairs to a sort of loft. It was bare, save of packing cases, but she showed me a little, cracked looking glass, where she said I could do my hair. I told her I had been on the train all night, and she said sympathetically:</p>
+            <p>When we were at the Grand Central the following night I tried to appear cheerful, but
+               I could not prevent the tears running down my face, and when he finally took my hand
+               to say good-by I said:</p>
+            <p><q>Oh, it’s dreadful for me to say this: b-but if I don’t see you soon again, I-I
+                  t-think I shall die!</q></p>
+            <p>He bent down when I said that and kissed me right on my lips, and he did not seem to
+               care whether everyone in the station saw us or not. Then I knew that he did love me,
+               and that knowledge sent me flying blindly down the platform. After I was aboard, I
+               found I had taken the wrong train to Providence. I should have taken an earlier or a
+               later one. Lil was already there, and was to have met me at the station, but the
+               train I had taken would not get in till four in the morning.</p>
+            <p>When I arrived in Providence I did not know where to go. I had Lil’s address, but she
+               had written me when she was living at a <q>very respectable house</q>, where the
+               people would have been terribly shocked to know she was a model, and I felt I could
+               not go there at such an hour in the morning. The rain was coming down in torrents. A
+               colored boy was carrying my bag, and he asked me where I wanted to go. Indeed I did
+               not know. When I hesitated, he said that the hotels didn’t take ladies alone, but
+               that he knew of an all-night restaurant, where I could get something hot to eat and I
+               could stay there till morning. So he took me over to Mink’s. I had often eaten in
+               Mink’s restaurant in Boston, and the place looked quite familiar to me. I had a cup
+               of hot coffee and a sandwich, and then I asked the waitress if there was some place
+               where I could go and freshen or clean up a bit. She whispered to the man at the desk,
+               and he nodded, and then she beckoned to me to follow her. We went upstairs to a sort
+               of loft. It was bare, save of packing cases, but she showed me a little, cracked
+               looking glass, where she said I could do my hair. I told her I had been on the train
+               all night, and she said sympathetically:</p>
             <p><q>Sure, you look it</q>.</p>
-            <p>I went over to Lil’s boarding house about seven in the morning. She was right near Mink’s, and said I was foolish not to have come right over.</p>
-            <p>Well, we played every night in the theater in Providence, and we made what theatrical people call a <q>hit</q>. the whole town turned out to see us. The girls were all as pleased as could be, and so was Mr. Hersh, and they made all kinds of plans for the road tour, but I could think of nothing but New York, and I was so lonely, in spite of the noisy company of the girls, that I used to go over and look at the railway tracks that I knew ran clear to New York. and I thought of Paul! I thought of Paul every single minute. The little maid would slip his letters every morning under my door, and I used to cry and laugh before I even opened them and I help them to my lips and face, and I kept them all in the bosom of my dress, right next to me.</p>
-            <p>*</p>
-            <p>We had finished our engagement. Lil and I were coming out of the dressing-room the last night, when somebody slapped me on the back. I turned around, and there was Mr. Davis; he was so glad to see me that he nearly wrung my hand off, and he insisted on walking home with us. He told me he was now manager of a theatrical company, and that he had been looking around for me every [sic, ever?] since Lil told him I was in New York.</p>
-            <p><q>Now, MArion</q>, he said, <q>you are going to begin where you left off in Montreal, and it’s up to you to make good. You’ve got it in you, and I want to prove it</q>.</p>
-            <p>I asked him what he meant, and he said he was starting a new <q>show</q> in Boston that week, and that he had a part for me that would give me an opportunity.</p>
+            <p>I went over to Lil’s boarding house about seven in the morning. She was right near
+               Mink’s, and said I was foolish not to have come right over.</p>
+            <p>Well, we played every night in the theater in Providence, and we made what theatrical
+               people call a <q>hit</q>. the whole town turned out to see us. The girls were all as
+               pleased as could be, and so was Mr. Hersh, and they made all kinds of plans for the
+               road tour, but I could think of nothing but New York, and I was so lonely, in spite
+               of the noisy company of the girls, that I used to go over and look at the railway
+               tracks that I knew ran clear to New York. and I thought of Paul! I thought of Paul
+               every single minute. The little maid would slip his letters every morning under my
+               door, and I used to cry and laugh before I even opened them and I help them to my
+               lips and face, and I kept them all in the bosom of my dress, right next to me.</p>
+            <milestone unit="sectionBreak"/>
+            <p>We had finished our engagement. Lil and I were coming out of the dressing-room the
+               last night, when somebody slapped me on the back. I turned around, and there was Mr.
+               Davis; he was so glad to see me that he nearly wrung my hand off, and he insisted on
+               walking home with us. He told me he was now manager of a theatrical company, and that
+               he had been looking around for me every [sic, ever?] since Lil told him I was in New
+               York.</p>
+            <p><q>Now, Marion</q>, he said, <q>you are going to begin where you left off in
+                  Montreal, and it’s up to you to make good. You’ve got it in you, and I want to
+                  prove it</q>.</p>
+            <p>I asked him what he meant, and he said he was starting a new <q>show</q> in Boston
+               that week, and that he had a part for me that would give me an opportunity.</p>
             <p>I said faintly: <q>I was gong back to New York to-morrow</q>.</p>
             <p>Lil exclaimed: <q>What’re you talking about? Aren’t you going with Mr. Hersh?</q></p>
-            <p><q>Instead of going to New York</q>, said Mr. Davis, <q>you come along with me to Boston. Cut out this living-picture stuff. It’s not worthy of you. I always said there was the right stuff in you, Marion, and now I</q>m going to give you the chance to prove it.”</p>
-            <p>For a moment an old vision came back to me. I saw myself as //Camille//, the part I had so loved when little more than a child in Montreal, and I felt again the sway of old ambitions. I said to Mr. Davis:</p>
-            <p><q>Oh yes, I think I //will// go with you!</q></p>
-            <p>But when I got back to my room I took out Paul’s last letter. How confident he was of my keeping my promise to return. He wrote of all the preparations he was making, and he said he had a stroke of luck, and that I should share it with him. We would have dinner at Mouquin’s, and then we would see some show, or the opera. Whatever we did, or wherever we went, we would be together.</p>
-            <p>//letter//</p>
+            <p><q>Instead of going to New York</q>, said Mr. Davis, <q>you come along with me to
+                  Boston. Cut out this living-picture stuff. It’s not worthy of you. I always said
+                  there was the right stuff in you, Marion, and now I’m going to give you the
+               chance to prove it</q>.</p>
+            <p>For a moment an old vision came back to me. I saw myself as <emph>Camille</emph>, the part I
+               had so loved when little more than a child in Montreal, and I felt again the sway of
+               old ambitions. I said to Mr. Davis:</p>
+            <p><q>Oh yes, I think I <emph>will</emph> go with you!</q></p>
+            <p>But when I got back to my room I took out Paul’s last letter. How confident he was of
+               my keeping my promise to return. He wrote of all the preparations he was making, and
+               he said he had a stroke of luck, and that I should share it with him. We would have
+               dinner at Mouquin’s, and then we would see some show, or the opera. Whatever we did,
+               or wherever we went, we would be together.</p>
             <p>I got out my little writing-pad, and I wrote a letter hurriedly to Mr. Davis:</p>
-            <p><q>Will you please excuse me, but I have to go to New York. I’ll let you know later about acting</q>.</p>
-            <p>//letter//</p>
-            <p>I sent the note to Mr. Davis by the little maid in the house, and he sent back a sheet with this laconic message upon it:</p>
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <p><q>Will you please excuse me, but I have to go to New York. I’ll let you know later
+                           about acting</q>.</p>
+                     </body>
+                  </floatingText>
+               </q>
+            <p>I sent the note to Mr. Davis by the little maid in the house, and he sent back a
+               sheet with this laconic message upon it:</p>
             <p><q>Now or never—Give you till morning</q>.</p>
-            <p>Lil talked and talked and talked to me all night about it, and she seemed to think I was crazy not to grab this chance that had come to me, and she said any one of the other girls would have gone clean daft about it. She said I was a little fool, and never knew when opportunity come in my way. <q>Just look</q>, she said, <q>how you turned down that chance you had to be a show-girl, and all of us other girls weren’t even asked, and I’ll bet our legs are as pretty as yours. It’s just because you’ve got a sort of—of—well, I heard a man call it sex-appeal about you, but you’re foolish to throw away your good chances, and by-and-by they won’t come to you. You’ll get fat and ugly</q>.</p>
+            <p>Lil talked and talked and talked to me all night about it, and she seemed to think I
+               was crazy not to grab this chance that had come to me, and she said any one of the
+               other girls would have gone clean daft about it. She said I was a little fool, and
+               never knew when opportunity come in my way. <q>Just look</q>, she said, <q>how you
+                  turned down that chance you had to be a show-girl, and all of us other girls
+                  weren’t even asked, and I’ll bet our legs are as pretty as yours. It’s just
+                  because you’ve got a sort of—of—well, I heard a man call it sex-appeal about you,
+                  but you’re foolish to throw away your good chances, and by-and-by they won’t come
+                  to you. You’ll get fat and ugly</q>.</p>
             <p>I said: <q>Oh, Lil, stop it. I guess I know my business better than you</q>.</p>
-            <p><q>Well, then, answer me this</q>, said Lil, sitting up in bed: <q>Are you engaged to that fellow who sends you letters every day?</q></p>
+            <p><q>Well, then, answer me this</q>, said Lil, sitting up in bed: <q>Are you engaged to
+                  that fellow who sends you letters every day?</q></p>
             <p>I could not answer her.</p>
             <p><q>Well, what about Reggie Bertie?</q></p>
-            <p><q>For heaven’s sake, go to sleep</q>, I entreated her, and with a grunt of disgust she at last turned over.</p>
-            <p>Next morning Paul’s letter fully decided me. It said that he would be at the station to meet me! He was expecting me, and I must not, on any account, fail him.</p>
-            <p><q>Lil, wake up! Wake up!</q> I cried, shaking her by the arm. <q>I’m going to take the first train back to New York</q>.</p>
+            <p><q>For heaven’s sake, go to sleep</q>, I entreated her, and with a grunt of disgust
+               she at last turned over.</p>
+            <p>Next morning Paul’s letter fully decided me. It said that he would be at the station
+               to meet me! He was expecting me, and I must not, on any account, fail him.</p>
+            <p><q>Lil, wake up! Wake up!</q> I cried, shaking her by the arm. <q>I’m going to take
+                  the first train back to New York</q>.</p>
             <p>Lil answered sleepily: <q>Marion, you always were crazy</q>.</p>
-            <p>All of a sudden the room turned red on all sides of us, and I realized that it was on fire. The little stove had a pipe with an elbow in the wall, and when I put a match to the kindling, the flames must have crept up to the thin wooden walls from the elbow, and in an instant the wall had ignited. I had on only a night-dress. I seized the quilt off the bed, and threw it on the flames, but it seemed only to serve as fresh fuel. Lil was crouched back on the bed, petrified with [339] terror, and literally unable to move. Desperately screaming:</p>
-            <p><q>Fire, fire!</q> I seized the pitcher and flung it at the flames, and then somehow I grabbed hold of Lil by the hand, and both shrieking, we ran out into the hall. Then I fainted. When I came to, the fire was out and the landlady and her son and husband and Lil were all standing over me laughing and crying.</p>
-            <p><q>Well</q>, said the man, <q>did you try to burn us out?</q> He turned to his wife and asked: <q>It’s a good job we’re insured, eh?</q>
-        
-        My clothes were not burned, but soaking wet, and so I missed my train that Paul was going to meet.</p>
-            <p>*</p>
-            <p>Oh, how good it was to enter New York once more! I remembered how ugly the city had looked to me that first time when I had come from Boston. Now even the rows of flat houses and dingy tall buildings seemed to take on a sturdy and friendly beauty.</p>
-            <p>Paul was walking up and down the station, and he came rushing up to me as I came through the gates. He was pale, and even seemed to tremble, as he caught me by the arm and cried:</p>
-            <p><q>When you did not come on that train, I was afraid you had changed your mind, and were not coming back to me. I’ve been waiting here all day, watching each train that arrived from Providence. Oh, sweetheart, I’ve been nearly crazy!</q></p>
+            <p>All of a sudden the room turned red on all sides of us, and I realized that it was on
+               fire. The little stove had a pipe with an elbow in the wall, and when I put a match
+               to the kindling, the flames must have crept up to the thin wooden walls from the
+               elbow, and in an instant the wall had ignited. I had on only a night-dress. I seized
+               the quilt off the bed, and threw it on the flames, but it seemed only to serve as
+               fresh fuel. Lil was crouched back on the bed, petrified with <pb n="339"/>terror, and
+               literally unable to move. Desperately screaming:</p>
+            <p><q>Fire, fire!</q> I seized the pitcher and flung it at the flames, and then somehow
+               I grabbed hold of Lil by the hand, and both shrieking, we ran out into the hall. Then
+               I fainted. When I came to, the fire was out and the landlady and her son and husband
+               and Lil were all standing over me laughing and crying.</p>
+            <p><q>Well</q>, said the man, <q>did you try to burn us out?</q> He turned to his wife
+               and asked: <q>It’s a good job we’re insured, eh?</q> My clothes were not burned, but
+               soaking wet, and so I missed my train that Paul was going to meet.</p>
+            <milestone unit="sectionBreak"/>
+            <p>Oh, how good it was to enter New York once more! I remembered how ugly the city had
+               looked to me that first time when I had come from Boston. Now even the rows of flat
+               houses and dingy tall buildings seemed to take on a sturdy and friendly beauty.</p>
+            <p>Paul was walking up and down the station, and he came rushing up to me as I came
+               through the gates. He was pale, and even seemed to tremble, as he caught me by the
+               arm and cried:</p>
+            <p><q>When you did not come on that train, I was afraid you had changed your mind, and
+                  were not coming back to me. I’ve been waiting here all day, watching each train
+                  that arrived from Providence. Oh, sweetheart, I’ve been nearly crazy!</q></p>
             <p>I told him about the fire, and he seized hold of my hands, and examined them.</p>
-            <p><q>Don’t tell me you hurt yourself!</q> he cried, and when I reassured him, it was all I could do to keep him from hugging me right there in the station. All the way on the car he held my hand, and although he did not say anything at all to me, I knew just what was in his heart. He loved me, and nothing else in all the whole wide world mattered.</p>
-            <p>He had helped me out at the Studio Building, and now as I went up the old rickety stairs, I realized that this was //my// home!</p>
-            <p>It was a ramshackle, very old, neglected, rickety sort of place, and I do not know why they called it Paresis Row. The name did not sound ugly to me, somehow. I loved everything about the place, even the queer businesses carried on upon the lower floors, and old Mary, the slatterny caretaker, who scolded the boys alternately and then did little kindnesses for them. I remember how once she kept a creditor away from poor Fisher by waving her broom at him till he fled in fear.</p>
-            <p>I laughed, as we went by the door of that crazy old artist that the boys used to tease by dropping a piece of iron on the floor, after holding it up high. They would wait a few minutes, and then he would come hobbling up the stairs. There would be three regular taps, and then he would put his head in and say:</p>
+            <p><q>Don’t tell me you hurt yourself!</q> he cried, and when I reassured him, it was
+               all I could do to keep him from hugging me right there in the station. All the way on
+               the car he held my hand, and although he did not say anything at all to me, I knew
+               just what was in his heart. He loved me, and nothing else in all the whole wide world
+               mattered.</p>
+            <p>He had helped me out at the Studio Building, and now as I went up the old rickety
+               stairs, I realized that this was <emph>my</emph> home!</p>
+            <p>It was a ramshackle, very old, neglected, rickety sort of place, and I do not know
+               why they called it Paresis Row. The name did not sound ugly to me, somehow. I loved
+               everything about the place, even the queer businesses carried on upon the lower
+               floors, and old Mary, the slatterny caretaker, who scolded the boys alternately and
+               then did little kindnesses for them. I remember how once she kept a creditor away
+               from poor Fisher by waving her broom at him till he fled in fear.</p>
+            <p>I laughed, as we went by the door of that crazy old artist that the boys used to
+               tease by dropping a piece of iron on the floor, after holding it up high. They would
+               wait a few minutes, and then he would come hobbling up the stairs. There would be
+               three regular taps, and then he would put his head in and say:</p>
             <p><q>Gentlemen, methinks I heard a noise!</q></p>
-            <p>On the first floor back a man taught singing, and he had gotten up a class of policemen. It seemed as if they sang forever the chorus of a song that went like this:</p>
+            <p>On the first floor back a man taught singing, and he had gotten up a class of
+               policemen. It seemed as if they sang forever the chorus of a song that went like
+               this:</p>
             <p><q>Don’t’ be afraid, don’t be afraid, don’t be a-f-r-a-i-d!</q></p>
-            <p>Paul opened the door of his studio. The place was all cleaned up and new paper was on the walls. He showed me behind the screen a little gas-stove, pots hanging at the back of it, and dishes in a little closet. Then, taking me by the hand, he opened a door, and showed me a little room adjoining his studio. It seemed to me lovely. It was papered in soft gray, and the curtains of yellow cheesecloth gave an appearance of sunlight to it. There were several pieces of new furniture in the room, and a little Mission dresser. Paul opened the drawers, and rather shyly showed me some sheets, pillow-slips and  towels, which he said he had purchased for me, and added:
-        
-        <q>I hope they are all right. I don’t know much about such things</q>.</p>
-            <p>I knew then that Paul intended the room to be for me. He had only the one studio room before.</p>
-            <p><q>Well, little mouse</q>, he said, <q>are you afraid to live with a poor beggar, or do you love me enough to take the chance?</q></p>
-            <p>Thoughts were rushing through my mind. Memories of conversations and stories among the artists, on the marriage question, by some considered unnecessary, and somehow with Paul it seemed right and natural, and the primitive women in me answered: <q>Why not? Others have lived with the man they loved without marriage. Why should not I?</q> He was waiting for me to speak. I put my hands on his shoulders, and said:</p>
+            <p>Paul opened the door of his studio. The place was all cleaned up and new paper was on
+               the walls. He showed me behind the screen a little gas-stove, pots hanging at the
+               back of it, and dishes in a little closet. Then, taking me by the hand, he opened a
+               door, and showed me a little room adjoining his studio. It seemed to me lovely. It
+               was papered in soft gray, and the curtains of yellow cheesecloth gave an appearance
+               of sunlight to it. There were several pieces of new furniture in the room, and a
+               little Mission dresser. Paul opened the drawers, and rather shyly showed me some
+               sheets, pillow-slips and  towels, which he said he had purchased for me, and added:
+                  <q>I hope they are all right. I don’t know much about such things</q>.</p>
+            <p>I knew then that Paul intended the room to be for me. He had only the one studio room
+               before.</p>
+            <p><q>Well, little mouse</q>, he said, <q>are you afraid to live with a poor beggar, or
+                  do you love me enough to take the chance?</q></p>
+            <p>Thoughts were rushing through my mind. Memories of conversations and stories among
+               the artists, on the marriage question, by some considered unnecessary, and somehow
+               with Paul it seemed right and natural, and the primitive women in me answered: <q>Why
+                  not? Others have lived with the man they loved without marriage. Why should not
+                  I?</q> He was waiting for me to speak. I put my hands on his shoulders, and
+               said:</p>
             <p><q>Oh, yes, Paul, I will come to you! I will</q>. A little later, I said:</p>
-            <p><q>Now I must go over to my old room, and have my trunk and some other things I left there brought over, and I must tell MRs. Whitehouse, the landlady, as she expects me back to-day</q>.</p>
-            <p><q>Well, don’t be long</q>, said Paul. <q>I’m afraid you will slip through my arms just as I have found you</q>.
-        
-        Mrs. Whitehouse, the landlady, met me at the door. I told her I was going to move over to Fourteenth Street, to Paresis Row. she threw up her hands and exclaimed:</p>
-            <p><q>Land sakes! That is no place for a girl to live, and I have no use for them artists. They are a half-crazy lot, and never have a cent to bless themselves with. If I were a young and pretty girl like you, Miss Ascough, I would not not waste my time on the likes of them. Now there’s been a fine looking gent calling for you the last two days, and I told him you’d be back to-day. He’s a real swell, and if you’d take my advice, you’d get right next to him</q>.</p>
-            <p>Even as she spoke the front bell rang. She opened the door, and there was Reggie! I was standing at the bottom of the stairs, but when I saw him, I fled into the parlor. He came after me, with his arms outstretched, I found myself staring across at him, as if I were looking at a stranger.</p>
-            <p><q>Marion</q> he cried, <q>I’ve come to bring you home</q>. I backed away from him.</p>
-            <p><q>No, no, Reggie, I don’t want you to touch me</q>, I said. <q>Go away! I tell you, go away!</q></p>
-            <p><q>You don’t understand</q>, said Reggie. <q>I’ve come to take you home. You’ve won out, Marion, I’m going to //marry// you!</q></p>
+            <p><q>Now I must go over to my old room, and have my trunk and some other things I left
+                  there brought over, and I must tell MRs. Whitehouse, the landlady, as she expects
+                  me back to-day</q>.</p>
+            <p><q>Well, don’t be long</q>, said Paul. <q>I’m afraid you will slip through my arms
+                  just as I have found you</q>. Mrs. Whitehouse, the landlady, met me at the door. I
+               told her I was going to move over to Fourteenth Street, to Paresis Row. she threw up
+               her hands and exclaimed:</p>
+            <p><q>Land sakes! That is no place for a girl to live, and I have no use for them
+                  artists. They are a half-crazy lot, and never have a cent to bless themselves
+                  with. If I were a young and pretty girl like you, Miss Ascough, I would not not
+                  waste my time on the likes of them. Now there’s been a fine looking gent calling
+                  for you the last two days, and I told him you’d be back to-day. He’s a real swell,
+                  and if you’d take my advice, you’d get right next to him</q>.</p>
+            <p>Even as she spoke the front bell rang. She opened the door, and there was Reggie! I
+               was standing at the bottom of the stairs, but when I saw him, I fled into the parlor.
+               He came after me, with his arms outstretched, I found myself staring across at him,
+               as if I were looking at a stranger.</p>
+            <p><q>Marion</q> he cried, <q>I’ve come to bring you home</q>. I backed away from
+               him.</p>
+            <p><q>No, no, Reggie, I don’t want you to touch me</q>, I said. <q>Go away! I tell you,
+                  go away!</q></p>
+            <p><q>You don’t understand</q>, said Reggie. <q>I’ve come to take you home. You’ve won
+                  out, Marion, I’m going to <emph>marry</emph> you!</q></p>
             <p>He looked as if he were conferring a kingdom on me.</p>
             <p><q>Listen to me, Reggie</q>, I said. <q>I can never, never be your wife now</q>.</p>
-            <p><q>Why not? What have you done?</q> His old anger and suspicion were mounting. He was looking at me lovingly, half furiously.</p>
+            <p><q>Why not? What have you done?</q> His old anger and suspicion were mounting. He was
+               looking at me lovingly, half furiously.</p>
             <p><q>I’ve done nothing—nothing—but I cannot be your wife</q>.</p>
-            <p><q>If you mean because of Boston—I’ve forgiven everything. I fought it all out in Montreal and I made up my mind that I had to have you. So I’m going to //marry// you, darling. Don’t you understand?</q></p>
-            <p>Further and further away I had backed from him, but now he was right before me. I looked up t REggie, but a vision arose between us—Paul Bonnat’s face. Paul, who was waiting for me, who had offered to share his all for me, and somehow it seemed to me immoral to marry Reggie than to live with the man I loved.</p>
-            <p><q>REggie Bertie</q>, I said; <q>it’s you who don’t understand. I can never be your wife—because—</q> Oh, it was very hard to drive that look of love and longing from Reggie’s face. Once I had loved him, and, although he had hurt me so cruelly in the past, in that moment I longed to spare him the pain that was to be his now.</p>
+            <p><q>If you mean because of Boston—I’ve forgiven everything. I fought it all out in
+                  Montreal and I made up my mind that I had to have you. So I’m going to <emph>marry</emph>
+                  you, darling. Don’t you understand?</q></p>
+            <p>Further and further away I had backed from him, but now he was right before me. I
+               looked up t REggie, but a vision arose between us—Paul Bonnat’s face. Paul, who was
+               waiting for me, who had offered to share his all for me, and somehow it seemed to me
+               immoral to marry Reggie than to live with the man I loved.</p>
+            <p><q>REggie Bertie</q>, I said; <q>it’s you who don’t understand. I can never be your
+                  wife—because—</q> Oh, it was very hard to drive that look of love and longing from
+               Reggie’s face. Once I had loved him, and, although he had hurt me so cruelly in the
+               past, in that moment I longed to spare him the pain that was to be his now.</p>
             <p><q>Well? What is it, Marion? What have you done?</q></p>
             <p><q>Reggie, it’s this: I no longer love you!</q></p>
-            <p>There was a silence, and then he said with an uneasy laugh:
-        
-        <q>You don’t mean that. You are angry with me. I’ll soon make you love me again, as you did once, Marion. You’ll do it when you are my wife</q>.
-        
-        <q>No—no—I never will</q>, I said steadily, <q>because—because—there’s another reason, Reggie. There’s someone else, someone who loves me, and whom I //adore!//</q></p>
-            <p>I hope I may never see a man look like Reggie did then. He had turned gray, even to his lips. He just stared at me, and I think the truth of what I had said slowly sank in upon him. He drew back.</p>
-            <p><q>I hope you’ll be happy!</q> he said, and I replied: <q>Oh, I hope you will be, too</q>.</p>
-            <p>I followed him to the door and he kept on staring at me with that dazed and incredulous look. Then he went out and closed the door forever on Reggie Bertie.</p>
-            <p>*</p>
-            <p>The expressman had just put my trunk in the studio. I opened the door of the little room that Paul had fixed up for me.</p>
-            <p><q>Are you afraid, darling?</q> he asked. <q>Are you going to regret giving yourself to a poor devil like me?</q>
-        
-        I answered him as steadily as my voice would let me, for I was trembling.</p>
+            <p>There was a silence, and then he said with an uneasy laugh: <q>You don’t mean that.
+                  You are angry with me. I’ll soon make you love me again, as you did once, Marion.
+                  You’ll do it when you are my wife</q>. <q>No—no—I never will</q>, I said steadily,
+                  <q>because—because—there’s another reason, Reggie. There’s someone else, someone
+                  who loves me, and whom I <emph>adore!</emph></q></p>
+            <p>I hope I may never see a man look like Reggie did then. He had turned gray, even to
+               his lips. He just stared at me, and I think the truth of what I had said slowly sank
+               in upon him. He drew back.</p>
+            <p><q>I hope you’ll be happy!</q> he said, and I replied: <q>Oh, I hope you will be,
+                  too</q>.</p>
+            <p>I followed him to the door and he kept on staring at me with that dazed and
+               incredulous look. Then he went out and closed the door forever on Reggie Bertie.</p>
+            <milestone unit="sectionBreak"/>
+            <p>The expressman had just put my trunk in the studio. I opened the door of the little
+               room that Paul had fixed up for me.</p>
+            <p><q>Are you afraid, darling?</q> he asked. <q>Are you going to regret giving yourself
+                  to a poor devil like me?</q> I answered him as steadily as my voice would let me,
+               for I was trembling.</p>
             <p><q>I am yours as long as you love me, Paul</q>. I had started to remove my hat.</p>
-            <p><q>Not yet, darling</q>, said Paul, and he took me by the arm and guided me toward the door. <q>First we have to go to the Little Church Around the Corner</q>.</p>
-            <p>*</p>
+            <p><q>Not yet, darling</q>, said Paul, and he took me by the arm and guided me toward
+               the door. <q>First we have to go to the Little Church Around the Corner</q>.</p>
+            <milestone unit="sectionBreak"/>
             <p>THE END</p>
+         </div>
          </div>
       </body>
    </text>
