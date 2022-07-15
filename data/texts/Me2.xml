@@ -36,7 +36,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-07-14" status="published">Coding complete. Set to published.</change>
          <change who="pers:LW1" when="2022-07-14" status="inProgress">Partly encoded.</change>
          <change who="pers:LW1" when="2022-07-14" status="inProgress">Downloaded document from
             Google Drive and converted to TEI.</change>
@@ -436,14 +437,16 @@
                   dog!</q></p>
             <p>He kept walking by the train, and now, as its speed increased, he was forced to run.
                He put his hand to his mouth and called to me:</p>
-            <p><q>I’ll //bring// him to you, little girl. Don’t you worry!</q></p>
+            <p><q>I’ll <emph>bring</emph> him to you, little girl. Don’t you worry!</q></p>
             <p>Worry!</p>
             <p>I went back to my seat, and all that afternoon I did not move. The shining country
                slipped by me, but I saw it not. I was like one plunged in a deep, golden dream.
                There was a pain in my heart, but it was an ecstatic one, and even as I cried softly,
                soundlessly, something within me sang a song that seemed immortal.</p>
-            <p>//flower icon//</p>
-            <p>XI</p>
+            <milestone unit="sectionBreak"/>
+         </div>
+         <div>
+            <head>XI</head>
             <p>I saw Chicago first through a late May rain—a mad, blowing, windy rain. The skies
                were overcast and gray. There was a pall like smoke over everything, and <pb n="31"/> through
                the downpour, looking not fresh and clean from the descending streams, but dingy and
@@ -510,29 +513,35 @@
             <p>I took Mr. Campbell’s letter of recommendation from my pocket-book, and handed it to
                her:</p>
             <p>It was as follows:</p>
-            <p>//letter//</p>
-            <p>To Whom it may Concern:</p>
-            <p>The bearer of this, Miss Nora Ascough, has been on the staff of <q>The Lantern</q>
-               for some time now, but unfortunately the tropical climate of Jamaica is not suited to
-               her constitution. In the circumstances she has to leave a position for which her
-               skill and competency eminently qualify her.</p>
-            <p>As a stenographer, amanuensis, and reporter I can give her the highest praise. She
-               has for the entire session of the local legislature reported the proceedings with
-               credit to herself and <q>The Lantern</q>, notwithstanding she was a stranger to her
-               surroundings, the people, and local politics. These are qualities that can find no
-               better recommendation. I confidently recommend her to any one requiring a skilled
-               amanuensis and reporter.</p>
-            <p>//end//</p>
+            <q>
+            <floatingText type="letter">
+               <body>
+                  <opener>
+                     <salute>To Whom it may Concern:</salute>
+                  </opener>
+                  <p>The bearer of this, Miss Nora Ascough, has been on the staff of <q>The Lantern</q>
+                     for some time now, but unfortunately the tropical climate of Jamaica is not suited to
+                     her constitution. In the circumstances she has to leave a position for which her
+                     skill and competency eminently qualify her.</p>
+                  <p>As a stenographer, amanuensis, and reporter I can give her the highest praise. She
+                     has for the entire session of the local legislature reported the proceedings with
+                     credit to herself and <q>The Lantern</q>, notwithstanding she was a stranger to her
+                     surroundings, the people, and local politics. These are qualities that can find no
+                     better recommendation. I confidently recommend her to any one requiring a skilled
+                     amanuensis and reporter.</p>
+               </body>
+            </floatingText>
+            </q>
             <p>I was justifiably proud of that reference, which Mr. Campbell had unexpectedly thrust
                upon me the day I left Jamaica. I broke down when I read it, for I felt I did not
                deserve it. The secretary of the Y.W.C.A., however, said in her unpleasant nasal
                voice as she turned it over almost contemptuously in her hand:</p>
             <p><q>Oh, this won’t do at all. It isn’t even an American reference, and we require a
-                  reference as to your //character// from some minister or doctor</q>.</p>
+                  reference as to your <emph>character</emph> from some minister or doctor</q>.</p>
             <p>Now, on the way to the association the lady who had brought me had told me that this
                place was self-supporting, that the girls must remember they were not objects of
                charity; but, on the contrary, they paid for everything they got, the idea of the
-               association benign to //make// no money from the girls, but simply to pay expenses.
+               association benign to <emph>make</emph> no money from the girls, but simply to pay expenses.
                In that way the girls were enabled to board there at about half the price of a
                boarding-house. In these circumstances I could not but inwardly resent the tone of
                this woman, and it seemed to me that these restrictions were unjust and preposterous.
@@ -554,7 +563,7 @@
             <p><q>You know our rules as well as I do, Miss Dutton</q>.</p>
             <p><q>Well, but she says she can get a minister’s reference in a few days</q>, said my
                friend.</p>
-            <p><q>Let her come here //then//</q>, said the secretary as she blotted the page on
+            <p><q>Let her come here <emph>then</emph></q>, said the secretary as she blotted the page on
                which she was writing. How I hated her, the cat!</p>
             <p><q>But I want to get her settled right away</q>, protested my friend.</p>
             <p>How I loved her, the angel!</p>
@@ -596,8 +605,10 @@
                   good girls, and we cannot admit girls who are not. By and by you’ll appreciate
                   that yourself. We’ll be protecting you, don’t you see?</q></p>
             <p>I didn’t, but she was so sweet that I said I did.</p>
-            <p>//flower icon//</p>
-            <p>XII</p>
+            <milestone unit="sectionBreak"/>
+         </div>
+         <div>
+            <head>XII</head>
             <p>Oh, such a splendid room! At least it seemed so to me, who had seen few fine rooms.
                It was so clean, even dainty. The walls and ceiling were pink calcimine, and some one
                had twisted pink tissue-paper over the electric lights. I didn’t discover that till
@@ -628,13 +639,17 @@
                to mind the children,—the little ones; they were still coming,—and I hated and
                alihorred the work. I remember once being punished in school because I wrote this in
                my school exercise:</p>
-            <p>//letter//</p>
-            <p>This is my conception of hell: a place full of howling, roaring, fighting, shouting
-               children and babies. It is supreme torture to a sensitive soul to live in such a
-               Bedlam. Give me the bellowings of a madhouse in preference. At least there I should
-               not have to dress and soothe and whip and chide and wipe the noses of the crazy
-               ones.</p>
-            <p>//end//</p>
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <p>This is my conception of hell: a place full of howling, roaring, fighting, shouting
+                        children and babies. It is supreme torture to a sensitive soul to live in such a
+                        Bedlam. Give me the bellowings of a madhouse in preference. At least there I should
+                        not have to dress and soothe and whip and chide and wipe the noses of the crazy
+                        ones.</p>
+                  </body>
+               </floatingText>
+            </q>
             <p>Ah, I wish I could have some charming memories of a lovely home! That’s a great deal
                to have. It is sad to think of those we love as in poor surroundings.</p>
             <p>I suppose there are people in the world who would smile at the thought of a girl’s
@@ -644,7 +659,7 @@
                There were two snow-white beds, an oak bureau, oak chairs, oak table, a bright rug on
                the floor, and simple white curtains at the window. At home I slept in a room with
                four of my little brothers and sisters. I hate to think of that room. As fast as I
-               picked up the scattering clothes, others seemed to accumulate. //Why// do children
+               picked up the scattering clothes, others seemed to accumulate. <emph>Why</emph> do children
                soil clothes so quickly!</p>
             <p>There was even a homy look about my room in the Y.W.C.A., for there were several good
                prints on the wall, photographs on the mantel and the bureau, a bright toilet set on
@@ -767,7 +782,7 @@
                so funny with nothing but her own hair that I wanted to laugh, but turned away, as I
                would not have hurt her feelings for worlds.</p>
             <p><q>Hello!</q> she sang out as I came in. <q>Dead tired, ain’t you?</q></p>
-            <p>How //can// a firm employ a stenographer who says <q>ain’t</q>?</p>
+            <p>How <emph>can</emph> a firm employ a stenographer who says <q>ain’t</q>?</p>
             <p>She offered me a piece of gum—unchewed. I took it and disconsolately went to
                work.</p>
             <p><q>Got soaked in the eye, didn’t you?</q> she inquired sympathetically.</p>
@@ -800,11 +815,11 @@
                rapidly disappear. Then, even when I did get a position, suppose they gave me only a
                beginner’s salary, how could I do more than pay my board from that? The possibility
                of getting that hundred dollars together again would then be remote, remote. And if I
-               could not get it, how, then, was I to see //him// again?</p>
+               could not get it, how, then, was I to see <emph>him</emph> again?</p>
             <p>I would stick to my first resolve. I would not write to him until I could send him
                back that money—that dirty money. I felt that it stood between us like a ghost.</p>
             <p>I wonder if many girls suffer from this passionate sensitiveness about money. Or was
-               I exceptional? //He// has said so, and yet I wonder.</p>
+               I exceptional? <emph>He</emph> has said so, and yet I wonder.</p>
             <p>I was determined to get work at once. I would learn and practise type-writing at
                night, but I would not wait till I had learned it, but look for work just the same
                through the day. Secretly I thought to myself that if Estelle took three weeks in
@@ -825,8 +840,10 @@
                might take. I could not afford to waste my time in small positions, and I argued that
                I would probably lose them as easily as the better positions. So I might as well
                start at the top.</p>
-            <p>//flower icon//</p>
-            <p>XIII</p>
+            <milestone unit="sectionBreak"/>
+         </div>
+         <div>
+            <head>XIII</head>
             <p>I hate to think of those nightmare days that followed. It seemed to me that a hundred
                thousand girls answered every advertisement. I stood in line with hundreds of them
                outside offices and shops and factories and all sorts of places. I stood or sat (when
@@ -855,7 +872,7 @@
                from work, while I was looking for it.</p>
             <p>And then I’ve gone back to my room in the Y.W.C.A., hurrying to get there before the
                chattering, questioning Estelle, and counted over my ever-diminishing hundred
-               dollars, and lain down upon my bed, feverishly to think ever and only of //him!// Oh,
+               dollars, and lain down upon my bed, feverishly to think ever and only of <emph>him!</emph> Oh,
                how far, far away now he always seemed from me!</p>
             <p>Sometimes, if I came in early enough, and if I were not too desperately tired, I
                would write things. Odds and ends—what did I not write ? Wisps of thoughts,
@@ -881,7 +898,7 @@
             <p>They used to cluster together in the lower halls and reading-room and talk over their
                experiences. Snorts of indignation, peals of laughter, strenuous words of advice—all
                these came in a stream from the girls. You’d hear one girl tell an experience, and
-               another would say, <q>I tell you what //I’d// have done: I’d have slapped him in the
+               another would say, <q>I tell you what <emph>I’d</emph> have done: I’d have slapped him in the
                   face!</q> Or again, a girl would say, <q>I just gave him one look that putrified
                   him</q>. From all of which I gathered that my own experiences while looking for
                work were common ones. Alas! <choice>
@@ -1071,7 +1088,7 @@
             <p>So now Estelle turned over in bed and snorted loud and long as Lolly got into
                mine.</p>
             <p>Lolly said:</p>
-            <p><q>George! how the //hoi-polloi// do snore!</q></p>
+            <p><q>George! how the <emph>hoi-polloi</emph> do snore!</q></p>
             <p>Estelle lifted her head from the pillow, to show she was not sleeping, and, as she
                would have put it, <q>putrified</q> Lolly with one long, sneering, contemptuous
                look.</p>
@@ -1093,8 +1110,10 @@
                I was going through it, I kept wondering what on earth pigs’ hair could be. I must
                say I did not look forward with any degree of delight to working in the pigs’-hair
                department.</p>
-            <p>//flower icon//</p>
-            <p>XIV</p>
+            <milestone unit="sectionBreak"/>
+         </div>
+         <div>
+            <head>XIV</head>
             <p>Have you ever ridden through the Chicago stock-yards on a sunny day in the month of
                June? If you have, you are not likely to forget the experience.</p>
             <p>As I rode with about twenty or thirty other girls in the bus, all apparently
@@ -1174,7 +1193,7 @@
                that Lolly had gone to work for O’Brien supposedly as a stenographer, and then had
                written up and exposed certain conditions in the yards), I stared at him
                questioningly, and he repeated with even more eloquent emphasis:</p>
-            <p><q>Well, I like her //nerve!// !t beats the //Dutch!//</q></p>
+            <p><q>Well, I like her <emph>nerve!</emph> !t beats the <emph>Dutch!</emph></q></p>
             <p>Then he chuckled, and again scrutinized me.</p>
             <p><q>That all the reference you got?</q> he asked.</p>
             <p>I produced Mr. Campbell’s, and as I watched him read it with a rather puzzled
@@ -1214,15 +1233,22 @@
                dictating he was chewing tobacco, stopping once in a while to spit in a cuspidor at
                his feet, and watching my face out of the corner of his eye. This was a sample of the
                letters I took, and you can judge of my feelings as I wrote:</p>
-            <p>//letter//</p>
-            <p>Messrs. So and So.</p>
-            <p>Gentlemen:</p>
-            <p>I send you F.O.B. five hundred broken babies, three hundred cracked babies, one
-               thousand perfect ones, etc.</p>
-            <p>//end//</p>
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <opener>
+                        <salute>Messrs. So and So.</salute>
+                        <salute>Gentlemen:</salute>
+                     </opener>
+                     <p>I send you F.O.B. five hundred broken babies, three hundred cracked babies, one
+                        thousand perfect ones, etc.</p>
+                  </body>
+               </floatingText>
+            </q>
+            
             <p>Broken babies, cracked babies, perfect ones! What sort of place was this, anyway? The
-               pigs’ hair department was mystifying and horrifying enough, and I //had// heard that
-               sausages were made from dogs and horses; but a trade in //babies//— cracked and
+               pigs’ hair department was mystifying and horrifying enough, and I <emph>had</emph> heard that
+               sausages were made from dogs and horses; but a trade in <emph>babies</emph>— cracked and
                broken!</p>
             <p>I suppose my face must have betrayed my wonder and perhaps horror, for O’Brien
                suddenly choked, though I don’t know whether he was laughing or coughing, but he made
@@ -1260,7 +1286,7 @@
             <p>I thought he meant me, and I started to protest that I was merely looking at the
                type, when I heard the feet of Red Top shuffle, and he said, oh, so meekly and
                respectfully:</p>
-            <p><q>Yes, sir; I ain’t staring at //her//, sir</q>.</p>
+            <p><q>Yes, sir; I ain’t staring at <emph>her</emph>, sir</q>.</p>
             <p>I was relieved, anyway, of a part of the pressure, for the office boy was now busy at
                some files. I found enough courage at last to look at O’Brien. He was studying me as
                if I were some strange curiosity that both amused and amazed him.</p>
@@ -1286,16 +1312,25 @@
             <p>In justification of my boast to O’Brien that I would <q>make good</q>, let me say
                that I stayed in his department all the time I was at the yards, and this is the
                reference he gave me when he himself left to take charge of the New York office:</p>
-            <p>//letter//</p>
-            <p>To Whom it may Concern:</p>
-            <p>This is to certify that Miss Nora Ascough, who has been in my employ for the past few
-               months as stenographer and type-writer, is an A No. 1 Crack-a-Jack.</p>
-            <p>Smith &amp; Co.       [signed] Per, Fred O’Brien, Mgr.</p>
-            <p>//end//</p>
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <opener>
+                        <salute>To Whom it may Concern:</salute>
+                     </opener>
+                     <p>This is to certify that Miss Nora Ascough, who has been in my employ for the past few
+                        months as stenographer and type-writer, is an A No. 1 Crack-a-Jack.</p>
+                     <closer>
+                        <salute>Smith &amp; Co.     Per, Fred O’Brien, Mgr.</salute>
+                     </closer>
+                  </body>
+               </floatingText>
+            </q>
+            
             <p>Some one once said of me that I owed my success as a writer mainly to the fact that I
                used my sex as a means to help me climb. That is partly true not only in the case of
                my writing, but of my work as a stenographer. I have been pushed and helped by men
-               who liked me, but in both cases I //made good// after I was started.</p>
+               who liked me, but in both cases I <emph>made good</emph> after I was started.</p>
             <p>I think it would have broken my heart not to have <q>made good</q> to Fred O’Brien
                after he had trusted me in this way. This man, the first I worked for in America, was
                probably the best friend I ever had or will have. I do not mean so much while I
@@ -1330,9 +1365,14 @@
             <p>I thought it was some instruction from O’Brien, especially as the boy said:</p>
             <p><q>Any answer?</q></p>
             <p>I unfolded the note, and this is what I read:</p>
-            <p>//letter//</p>
-            <p>I’m stuck on you. Will you keep company with me?</p>
-            <p>//end//</p>
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <p>I’m stuck on you. Will you keep company with me?</p>
+                  </body>
+               </floatingText>
+            </q>
+           
             <p>I had to laugh, though I knew my furiously red swain was watching me anxiously.</p>
             <p><q>Any answer?</q> again asked the boy. I wrote on a piece of paper the one word,
                   <q>Maybe</q>.</p>
@@ -1340,11 +1380,11 @@
                of such things!—have not really reckoned with a certain weak and silly side to my
                character. If as I proceed with this chronicle I shock you with the ease and facility
                with which I encouraged and accepted and became constantly engaged to men, please set
-               it down to the fact that I always felt an inability to //hurt// by refusing any one
+               it down to the fact that I always felt an inability to <emph>hurt</emph> by refusing any one
                who liked me enough to propose to me. I got into lots of trouble for this,—call it
                moral lack in me,—but I could not help it at the time. Why, it’s just the same way
                that I once felt in a private Catholic hospital, and little Sister Mary Eulalia tried
-               to convert me. Out of politeness and because I loved //her//, I was within an ace of
+               to convert me. Out of politeness and because I loved <emph>her</emph>, I was within an ace of
                acknowledging her faith, or any other faith she might choose.</p>
             <p>If you could have seen the broad smile of satisfaction that wreathed the face of my
                first stock-yards <q>mash</q>, you, in my place, would not have regretted that little
@@ -1354,19 +1394,26 @@
                   <q>mash</q> notes, which one of the girls later told me <q>was going it some for
                fair</q>.</p>
             <p>My second note was a pressed flower, accompanied by these touching lines:</p>
-            <p>//poetry, has diff coding//</p>
-            <p>The rose is red; the violet’s blue,</p>
-            <p>Honey’s sweet, and so are you!</p>
-            <p>And so is he, who sends you this,</p>
-            <p>And when we meet we’ll have a kiss.</p>
-            <p>//end//</p>
+            <q>
+               <lg>
+                  <l>The rose is red; the violet’s blue,</l>
+                  <l>Honey’s sweet, and so are you!</l>
+                  <l>And so is he, who sends you this,</l>
+                  <l>And when we meet we’ll have a kiss.</l>
+               </lg>
+            </q>
             <p>I don’t know who sent me this, but I suspected an office boy in a neighboring
                department.</p>
             <p>My third note came just about an hour before leaving. It was from Hermann, and in a
                sealed envelop. It was as follows:</p>
-            <p>//letter//</p>
-            <p>How about <q>Buffalo Bill</q> to-night?</p>
-            <p>//end//</p>
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <p>How about <q>Buffalo Bill</q> to-night?</p> 
+                  </body>
+               </floatingText>
+            </q>
+            
             <p>O’Brien leaned over me as I opened the note, deliberately took it from me, and read
                it. As he did so, Hermann stealthily pelted him with tightly chewed wads of paper,
                though, from his hunched-over position at his desk, no one would have suspected who
