@@ -38,6 +38,10 @@
                <resp when="2003-12">Original Corrector</resp>
                <name ref="pers:JT2">Jordan Taylor</name>
             </respStmt>
+            <respStmt>
+               <resp>Illustrator</resp>
+               <name ref="pers:CR1">Capel Rowley</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication information</p>
@@ -69,6 +73,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:SL1" when="2022-07-17" status="published">Added illustrator to metadata.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" status="published" when="2020-07-21">Made minor fixes.</change>
          <change who="pers:MC1" status="published" when="2020-07-02">Added note about source.</change>
