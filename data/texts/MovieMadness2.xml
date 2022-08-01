@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Movie Madness [Part Two]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:DC2">Donna Campbell</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,23 +31,155 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreShortStory"/>
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2022-03-09">Added facsimile and prev/next instalment. Added source note.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">added instalment number</change>
-         <change who="pers:MC1" status="empty"  when="2020-05-23">Changed genre.</change>
-            <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl95 using XSLT.</change>
+      <revisionDesc status="inProgress">
+         <change who="pers:SL1" when="2022-08-01" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2022-03-09">Added facsimile and prev/next instalment. Added source note.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">added instalment number</change>
+         <change who="pers:MC1" status="empty" when="2020-05-23">Changed genre.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl95 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:MovieMadness2" prev= "doc:MovieMadness1" next="doc:MovieMadness3">
+   <text facs="facs:MovieMadness2"
+         prev="doc:MovieMadness1"
+         next="doc:MovieMadness3">
+      
+      <pb n="58"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <note>Threatened by the jeopardy of an unscrupulous director, and the fierce jealousy of a scheming wife, two lovers battle against the shadow of new perils in Part Two of this thrilling serial of life in Hollywood.</note>
+         <head>Movie Madness</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Winifred Reeve</name></byline>
+            <byline>Illustrations by <name ref="pers:EB1">Edward Butler</name></byline>
+         </opener>
+         
+            <div type="paratext">
+            <p>Begin Here:</p>
+            <p>JANE MERCER, a lovely unsophisticated girl whose ambition is to become a scenario writer, journeys all the way from New York to Hollywood, with the hope of selling some of her stories to motion picture producers. She is unsuccessful, but meets Edmund Blanton, a studio official, who urges her to return home. Refusing to accept his advice, she prepares to go out in search of a job, but out of pity and admiration for her spirit, he finds her a position as stenographer in the studio. Then it is that Jane Mercer is drawn into a maelstrom of unforseen events. She again meets Blanton at the studio and accepts an invitation to dine with him that evening.</p>
+            <p>Later, the two attend a preview, and during the course of a drive along Beverly Boulevard following the theater, they are drawn to each other by an irresistible love.</p>
+            <p>The next day, Jane calls Blanton on the phone several times, but is always informed that he is too busy to talk to anyone. Hurt and amazed at his indifference, she goes to his office to discover the source of the trouble. Brokenly, Blanton tells her that he has no right to speak of love and begs for forgiveness. Jane is crushed and angered at his mysterious attitude, and bursts into tears, accusing him of deliberately seeking to break her heart.</p>
+            <p>At this point, the secretary interrupts them to announce the arrival of Sylvia Lawrence, a famous screen actress, with whom Jane has often heard Blanton’s name linked during the course of idle conversation between her worker associates.</p>
+            <p>Now go on with the story:</p>
+            </div>
+
+            <div>
+            <p>The door opened. Sylvia Lawrence entered, an insolent smile on her hard sharp features.</p>
+            <p><q>I’m so glad I’ve found you at last, Miss Mercer</q>, she said with a voice dangerously soft, <q>you know Edmund is fearfully forgetful, and I wouldn’t be in the least surprised if he had neglected to tell you that he is my husband!</q></p>
+            <p>Jane felt the world crashing about her ears. She wheeled on Blanton.</p>
+            <p><q>So, that is why you told me you had no right—</q> Blanton nodded dumbly.</p>
+            <p><q>Why didn’t you go on?</q> Jane cried, almost hysterically now, <q>it must have given you such fun to torture me, I suppose you wanted to prolong my misery!</q></p>
+            <p><q>Jane, don’t!</q> cried Blanton, with real pain in his voice, <q>please don’t condemn me until you’ve heard my side</q>.</p>
+            <p><q>I’ve heard all I want to hear</q>, blurted Jane miserably, and stumbled out of the office, fighting blindly to keep back the bitter tears that welled up into her eyes. She sought the solitude of the shrub-bordered walk leading to the sound stages. Presently she heard footsteps hurrying behind her.</p>
+            <p>Then someone was grasping her shoulders tenderly.</p>
+            <p>Blanton’s voice sounded in her ears.</p>
+            <p><q>Jane</q>, he murmured, <q>listen to me. I didn’t mean to hurt you. I had hoped to find a way out. Sylvia is nothing to me. We loathe each other. She is infatuated with Chris Cleveland, but I promised I wouldn’t divorce her until her next picture is released because the unfavorable publicity at this juncture might mean the end of her career. And that’s the way she shows her appreciation. I meant to tell you everything, Jane, when the time 
+<pb n="59"/> seemed right for you to understand. I love you, Jane</q>.</p>
+            <p><q>It looks like it!</q> cried Jane bitterly, and no longer able to keep back the tears she ran down the walk, crying softly.</p>
+            <p>JANE cried herself to sleep that night in the comforting arms of Millie Cohen. Outside, in the pale glow of a street lamp, pacing slowly up and down, up and down, could be seen the dark figure of a man. From time to time he paused in his vigil to come up and rap on the door of Jane’s apartment. Then he would return to his post on
+       
+      the sidewalk, feverishly smoking cigarette after cigarette. Finally, towards morning, Jane dozed from sheer exhaustion. When morning came the man was gone.</p>
+            <p>In the days that followed Jane threw herself into her work in a fierce effort to forget the biting pain that still lingered in her heart. How she lived through those first days after the shock of Blanton’s deception, she never knew. But gradually her determination to put love out of her heart bore fruit and she soon began to take increasing pleasure in the work that had brought her to Hollywood.</p>
+            <p>SHE had been assigned to do an adaptation and dialogue treatment of a story entitled, 
+      The Pearl of Price.
+       So satisfactory was her work on this that Miss Dutton, the scenario editor, at last called her into her office.</p>
+            <p><q>We all liked that treatment of yours immensely, Jane</q>, she said. <q>Now, how would you like to work on one of your own stories for a change?</q></p>
+            <p>Jane’s heart leaped with a sudden hope. Here was the chance she had been waiting for, the chance to show them something of the spark that was in her. She recalled a story that had always been dear to her heart. It was entitled, 
+      Rose Petals, 
+      and in it, she had immortalized the first love of her youth back in the
+       little country town in upstate New York from whence she had come to Hollywood.</p>
+            <p>Rose Petals
+       went into the front office with the following memo attached to it:</p>
+            <p>Edward Mabie,</p>
+            <p>Story Supervisor:</p>
+            <p>This is a real wow!</p>
+            <p>Edith Dutton,</p>
+            <p>Scenario Editor.</p>
+            <p>Within a few minutes after he had finished reading it, Mabie was on his way to the office of Minton, the general manager, with 
+      Rose Petals 
+      under his arm.</p>
+            <p><q>Here’s the super-special you’ve been looking for</q>, Mabie said, tossing the manuscript down on Minton’s desk.</p>
+            <p><q>Who wrote it?</q></p>
+            <p><q>Girl named Jane Mercer. She’s a reader</q>.</p>
+            <p><q>Is that the dame that Blanton is nuts about?</q></p>
+            <p><q>I don’t think Blanton is interested in her so much as Harron</q>.</p>
+            <p><q>Harron ?</q></p>
+            <p><q>Yes. It’s lucky it’s a good yarn because we’d probably <pb n="104"/> have to okay it anyway. You know how Harron stands with the old man</q>.</p>
+            <p><q>Well, we’ll let Harron make the picture then</q>, Minton replied.</p>
+            <p>JANE had not seen Edmund Blanton since that fateful day which had changed the whole course of her life. She had carefully avoided him.</p>
+            <p>One day as she was coming out of the Studio Inn a man held open the door for her. Her heart nearly skipped a beat. It was Edmund Blanton. He smiled, a cool, grim smile; and passed on. Jane felt a shiver sweep over her, then a strange, frigid calm possessed her. The meeting that she had dreaded so was over now. Blanton was only a poignant memory.</p>
+            <p>That night when she went home she found a note thrust under the door. Her fingers trembled as she tore at the flap. She read:</p>
+            <p>Dear Jane:</p>
+            <p>  I am sorry I met you this noon. It awakened memories that I am sure are painful to us both. I shall try to stay out of your life now. You do not need me any longer. You have a brilliant career ahead of you and your feet are firmly planted in the pathway that leads to success.</p>
+            <p>    In a week or so I am leaving for Europe to be gone a long time. I shall try not to see you again before I leave. Don’t think any harder of me than you can help. God bless you.</p>
+            <p>EDMUND.</p>
+            <p>Jane could not keep back the tears. Her body shook with sobs. The old wound that she had felt so sure was closed had reopened. She had to restrain herself by main force of will from going to the telephone and calling Blanton.</p>
+            <p>WHEN Jane came to the office the next morning she found herself the center of attention. There was a new deference in Miss Dutton’s attitude toward her.</p>
+            <p><q>Jane</q>, she said, <q>you’ve had wonderful luck. The front office is crazy about your story. It is to go into production immediately</q>.</p>
+            <p>Jane gave a cry of joy and ran out on the lot to tell Millie Cohen. She had just gone through the door when she heard someone calling her name. It was Harron. She had quite forgotten his existence.</p>
+            <p><q>Hello, Mr. Harron</q>, she called, flashing him a smile.</p>
+               <p><q>Miss Mercer—Jane! I’ve just come from Minton’s office. He has told me I’m to do Rose Petals. I’ve been going over the script and you’ve got one of the greatest yarns I’ve ever read</q>.</p>
+            <p><q>Oh, Mr. Harron</q>, cried Jane with delight, <q>I think that’s just wonderful. I’m so glad you’ve been chosen to direct, as everybody says that you are the one man on the lot to do it</q>.</p>
+            <p><q>What do you say we go out to dinner tonight and talk it over?</q> Harron asked.</p>
+            <p><q>Why, I’d just love to!</q></p>
+            <p>The Cannibal Village was a rendezvous for the gayer set of movie folk. Everyone bowed and nodded to Harron as they entered. Jane felt all eyes upon her, heard a low murmur of curiosity run around the room as she took her seat at the table.</p>
+            <p>It was her first taste of the glamour and glitter of fame and she reveled in it.</p>
+            <p>As they danced she sensed a vague fear as she realized the hypnotic power of the man. There might be danger ahead, she reflected, but there would also be life. Then she saw Blanton dancing with his wife.</p>
+            <p>A sudden pang shot through her. She went weak and limp, but steeled herself to meet his gaze. Blanton gave her his cool, impersonal smile and nodded. Then he saw her partner. His face went suddenly livid. Jane moved back to the table slowly, overcome with fear.</p>
+            <p>A waiter bent over Harron’s shoulder.</p>
+            <p><q>A gentleman wants to see you outside, sah!</q></p>
+            <p>As Harron disappeared through the aperture, Jane saw another man, taller, broader, heavier, slip through after him. She caught her breath. It was Blanton!</p>
+            <p>JANE waited, tense with fear and apprehension. What was the meaning of this? Why had Blanton called Harron outside? Minutes dragged by like hours. At last Harron returned.</p>
+            <p><q>The meddling fool!</q> he snarled, as he took his seat. <q>That was Blanton. He warned me to keep away from you</q>.</p>
+            <p><q>Edmund Blanton is nothing to me</q>, said Jane in a voice that she tried hard to keep from shaking.</p>
+            <p><q>Well, you’ve got me to look out for you now, baby</q>, said Harron with a queer glinting smile.</p>
+            <p>The appearance of Blanton had taken the edge off her enjoyment of the evening. The music irritated her, and she was glad when they were at last on their way home.</p>
+            <p>Harron left her at the door of her apartment after a clumsy attempt to kiss her good night.</p>
+            <p>She lay awake for a long time, wondering what course her chaotic life would finally take. Harron had been nice to her. He was an influential friend to have, and he would make a bad enemy. Yet, somehow an instinctive dread came over her when she thought of him.</p>
+            <p>Harron called her into his office the next day.</p>
+            <p><q>Jane</q>, he said abruptly, <q>How would you like a vacation?</q></p>
+            <p><q>Why, I—I don’t know Mr. Harron</q>, she stammered dumbfounded, <q>I hadn’t thought about it</q>.</p>
+               <p><q>Well</q>, he said, <q>I am taking my technical staff to the desert tomorrow to select a location for your story. I want your okay on the locale, too</q>.</p>
+            <p><q>Thank you so much, Mr. Harron</q>, Jane smiled, <q>when do we leave?</q></p>
+            <p><q>Tomorrow morning at daybreak. We’ve got to start early to get across the desert before the heat of the day sets in</q>.</p>
+            <p>About noon they arrived at the sleepy little town on the edge of the Mojave Desert. There was something charming about the place, a sort of a drowsy, romantic calm that got into one’s blood. Suddenly, quite unreasonably, she found herself wishing that Blanton were there.</p>
+            <p>Harron engaged rooms for them at a little adobe hotel that had once been a Spanish Mission. When Jane asked where the rest of the company was staying, he said that they were at a little frame hotel down the street.</p>
+            <p>Harron suggested that they go to their rooms and rest. Jane bathed and lay down on the bed for a short nap.</p>
+            <p>A LITTLE after five, she awoke with a strange senes of oppression. She arose, dressed for dinner and went out into the deserted little lobby of the hotel. There was no one there but herself.</p>
+            <p>Presently some of the other members of the company dropped in to see Harron. Among them was Dave Jones, a cameraman. When Jones returned from Harron’s room, his face wore a worried look.</p>
+            <p><q>Harron’s drinking again</q>, he said abruptly, <q>I don’t like to see him get started on one of these benders. There’s no telling when we will get him off of it</q>.</p>
+            <p><q>Is he—is he dangerous when he’s drunk?</q> asked Jane timidly.</p>
+               <p><q>I’d rather face a nest of wildcats</q>, said Jones with a wry grin, <q>looks like he’s off to a good one, too. Got a whole suitcase full of Scotch in his room, and he’s drinking alone</q>.</p>
+            <p>Left alone, terror overcame Jane. For the first time she realized how helpless she was. Her reflections were interrupted by the entrance of Harron. His face was flushed, his step unsteady and speech thick.</p>
+            <p>After dinner, Jane breathed a sigh of relief when he left her at her door. She turned the key in the flimsy, old-fashioned lock and propped a chair against the door. Slipping off her dress, she donned a negligee and sat down to read before going to bed.</p>
+            <p>Suddenly there was a knock at the door. The magazine fell from Jane’s inert fingers.</p>
+            <p><q>Who—who is it?</q> she whispered.</p>
+            <p><q>It’s me—Victor</q>, came the reply.</p>
+            <p><q>Sorry, I’ve gone to bed</q>, Jane managed to gasp out.</p>
+            <p>For answer the handle of the door was given a vicious twist. The flimsy lock snapped, the chair was swept backwards, and the director stumbled into the room.</p>
+            <p>His hair was dishevelled and his eyes were bloodshot and staring.</p>
+            <p><q>My sweetheart!</q> he murmured, coming towards her, <q>the cleverest li’l writer in the business</q>.</p>
+<pb n="105"/>
+            <p><q>Mr. Harron, you’re not yourself</q>, said Jane with an effort, <q>please go away until you are in proper condition to talk to me</q>.</p>
+            <p>She fearfully gathered her flimsy negligee about her bare shoulders.</p>
+            <p><q>You’re not goin’ to hight-hat your papa like that!</q> he said, coming closer. He lunged quickly, drawing her to him, and pressed hot kisses against her face. Jane, wild with fear struggled blindly. Her right arm became free and she struck him a resounding blow across the face.</p>
+            <p><q>So that’s the way you feel, you little spitfire!</q> he growled, momentarily sobered.</p>
+            <p>Jane, reaching behind her on the dressing table, found a heavy vase.</p>
+            <p><q>Mr. Harron</q>, she cried, <q>if you come one inch closer, I’ll kill you!</q></p>
+            <p>Still he came on. Jane raised her arm above her head and brought it down swiftly. There was a dull sound as the vase struck his head. Harron gave a groan and crumpled forward on the floor. He lay as though dead.</p>
+            <p>Jane stifled a scream. She hurriedly threw a coat over her negligee and rushed out of the room to the street. What was she to do?</p>
+            <p>As she hesitated, sobbing, an automobile came to a stop beside her. Someone jumped out.</p>
+            <p><q>Edmund!</q> she cried hysterically, for it was Edmund Blanton. She collapsed into the welcome arms that enfolded her.</p>
+            <p>At last she found her voice and told what had happened.</p>
+            <p><q>I blame myself</q>, Blanton complained bitterly, <q>I tried to find you to warn you. Oh, darling, if you knew how I loved you! I have tried to stay out of your life, but I can’t stand by and see these things happen to you</q>.</p>
+            <p>Then he became himself once more, the executive, equal to any situation.</p>
+            <p><q>Here</q>, he said, <q>climb into the car and wait there. I’m going to deal with Harron</q>.</p>
+            <p>Before Jane could remonstrate he had disappeared into the hotel. Fear beset her. What if Blanton in a fit of rage were to kill Harron? If she herself, had not already killed him!</p>
+               <fw type="continued" place="center">[to be continued]</fw>
          </div>
       </body>
    </text>
