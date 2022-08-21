@@ -15,12 +15,22 @@
                <resp>Encoder</resp>
                <name ref="pers:SB2">Samantha Bowen</name>
             </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
          <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</note>
+            <note>Facsimile retrieved from Hathi Trust: <ref
+                  target="https://catalog.hathitrust.org/Record/000542803"
+                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:74"/>
@@ -34,881 +44,1404 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-08-20" status="published">Corrected some transcription
+            mistakes. Encoded letter. Added content warning.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added fw type.</change>
-         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
-         <change who="pers:MC1" when="2020-08-05" status="published">added illustrator and paratext.</change>
-         <change who="pers:SB2" when="2020-06-12" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl74 using XSLT.</change>
+         <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people
+            from <gi>respStmt</gi> using XSLT.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">added illustrator and
+            paratext.</change>
+         <change who="pers:SB2" when="2020-06-12" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for
+            proof.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography
+            entry bibl74 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Marion1" next="doc:Marion3">
-         <pb n="254"/>
-         <body>
-               <head>Marion: The Story of an Artist’s Model</head>
-               <opener>
-                     <byline>By <name ref="pers:WE1">The Author of Me</name></byline>
-                  <byline>Illustrated by <name ref="pers:HH1">Henry Hutt</name></byline>
-               </opener>
-               <div type="content">
-                  
-                  
-                  <milestone unit="sectionBreak"/>
-                  
-                  
-                  
-                  
-                  <div type="paratext">
-                     <p>The debate is lively: Who wrote <q>Me</q>, that excellent story? And right into the midst of the discussion comes a second challenge, a new novel by the same author—<q>Marion</q>. Here’s the challenge: You couldn’t place <q>Me</q>; can you place my sister <q>Marion</q>? This is more than <q>the story of an artist’s model</q>. It is an intimate chronicle of the heartaches, the problems of life and love, of a young French-Canadian girl, who hears the call of art and forsakes home and native land to follow it. Instead of becoming an actress or a painter she is forced by dire necessity to earn a living as a model for other more successful artists. Her struggles, her many adventures in <q>Bohemian</q> life, told in the gripping language of a gifted, experienced author—they are <q>Marion</q>. This new novel by the author of <q>Me</q> will only serve to enhance further the deserved repute of the anonymous writer, who chose to strike out along new lines unhampered by a literary reputation. <q>Marion</q> will increase the desire of many thousands to answer the question, <q>Who is the Author of ‘Me’?</q></p>
-                  </div>
-                  
-                  
-                  <milestone unit="sectionBreak"/>
-                  
-             <div>        
-    
-            <p>I present my sister Marion’s story in practically her own simple language, as I have taken it from her notes and journals that she kept over the years.—The Author.</p>
-    
-      
-    
-            <p><q>In dat familee there are eleven cheeldren, and more—they come! See dat leetle one? She is très joli, très joli, n’est ce pas? De father he come from England about ten year ago. He was joost a young man, mebbe twenty-seven or twenty-eight year old, and he have one leetle foreign wife and six leetle cheeldren. They were all so cold. They are not use to dis climate of Canada. My wife and I, we keep de leetle ‘otel at Hochelaga, and my wife she take all dose leetle ones and she warm dem before the beeg hall stove, and she make for dem the good French pea-soup</q>.</p>
-    
-      
-    
-            <p>Mama had sent me to the corner grocer to buy some things. Thebeau, the grocer, was talking, and to a stranger. I felt ashamed and humiliated to hear our family thus discussed. Why should we always be pointed out in this way and made to feel conspicuous and freaky? It was horrid  that the size of our family and my mother’s nationality should be told to everyone by that corner grocer. I glared haughtily at Thebeau, but he went garrulously on, regardless of my discomfiture.</p>
-    
-      
-    
-            <p><q>De eldest—a boy, monsieur, he was joost nine year old, and my wife she call him, ‘Le petit père.’ His mother she send him out to walk wiz all hees leetle sisters, and she say to him: ‘Charles, you are one beeg boy, almost one man, and you must take care your leetle sisters; so, when the wind she blow too hard, you will walk you on the side of dat wind, and put yourself between it and your sisters.’</q></p>
-    
-      
-    
-            <p><q>‘Yes, mama,’ <foreign xml:lang="fr">il dit</foreign>. And we, my wife and I, we look out de window, and me? I am laugh, and my wife, she cry—she have lost her only bebby, <foreign xml:lang="fr">Monsieur</foreign>—to see dat leetle boy walk him in front of his leetle sisters, open hees coat, <foreign xml:lang="fr">comme ça</foreign>, <foreign xml:lang="fr">monsieur</foreign>, and spread it out wiz hees hands, to make him shield the wind from his sisters</q>.</p>
-    
-      
-    
-            <p>The man to whom Thebeau had been speaking, had turned around, and was regarding me curiously. I felt abashed and angry under his compelling glance. Then he smiled, and said:</p>
-    
-      
-    
-            <p><q>You are right. She <emph>is</emph> pretty—quite remarkably pretty!</q></p>
-    
-      
-    
-            <p>I forgot everything else. With my little light head and heart awhirl, I picked up my packages and ran out of the store. It was the first time I had been called pretty, and I was just twelve years old. I felt exhilarated and utterly charmed.</p>
-    
-      
-    
-            <p>When I reached home, I deposited the groceries on a table in the kitchen and ran up to my room. Standing on a chair, I was able to see my face in the oval mirror that topped a very high and scratched old <foreign xml:lang="fr">chiffonier</foreign>. I gazed long and eagerly at the face I had often heard Thebeau say was <q><foreign xml:lang="fr">très joli</foreign></q>, which French words I now learned must mean: <q>Pretty—quite remarkably pretty!</q> as had said that Englishman in the store.</p>
-    
-      
-    
-            <p>Was I really pretty, then? Surely the face reflected there was too fat and too red. My! my cheeks were as red as apples. I pushed back the offending fat with my two hands, and I opened my eyes wide and blinked them at myself in the glass. Oh! if only my hair were gold! I twisted about, and then I made grimaces at my own face.</p>
-    
-      
-    
-            <p>Suddenly I was thrilled with a great idea—one that for the moment routed my previous ambition to some day be an artist, as was my father. I would be an actress! If I were pretty, and both that Frenchman and Englishman had said so, why should I not be famous?</p>
-    
-      
-    
-            <p>I slipped into mama’s room, found a long skirt, and put it on me; also a feather which I stuck in my hair. Then, fearing detection, I ran out on tiptoe to the barn. There, marching up and down, I recited poems. I was pausing, to bow elaborately to the admiring audience, which, in my imagination, was cheering me with wild applause, when I heard mama’s voice calling to me shrilly:</p>
-    
-      
-    
-            <p><q>Marion! Marion! Where in the world is that girl?</q></p>
-    
-      
-    
-            <p><q>Coming, mama</q>.</p>
-    
-      
-    
-            <p>I divested myself hastily of skirt and feather, and left the barn on a run for the house. Here mama thrust our latest baby upon me, with instructions to keep him quiet while she got dinner. I took that baby in my arms, but I was still in that charmed world of dreams, and in my hand I clasped a French novel, which I had filched from my brother Charles’ room. Charles at this time was twenty years of age, and engaged to be married to a girl we did not like.</p>
-    
-      
-    
-            <p>After dinner, which we had at noon, I received the cherished permission, and ran along to papa’s room. Dear papa, whose gentle, sensitive hands are now at rest! I can see him sitting at his easel, with his blue eyes fixed absently upon the canvas before him. Papa, with the heart and soul of a great artist, <q>painting, painting</q>, as he would say, with a grim smile, <q>pot-boilers to feed my hungry children</q>.</p>
-    
-      
-    
-            <p>I pulled out my paints and table, and began to work. From time to time I spoke to papa.</p>
-    
-      
-    
-            <p><q>Say, papa, what do I use for these pink roses?</q></p>
-    
-      
-    
-            <p><q>Try rose madder, white and emerald green—a little Naples yellow</q>, answered papa patiently.</p>
-    
-      
-    
-            <p><q>Papa, what shall I use for the leaves?</q></p>
-    
-      
-    
-            <p><q>Oh, try making your greens with blues and yellows</q>.</p>
-    
-      
-    
-            <p>From time to time I bothered him. By and by, I tired of the work, and getting up with a clatter, I went over and watched him. He was painting cool green waves dashing over jagged rocks, from a little sketch he had taken down at Lachine.</p>
-    
-      
-    
-            <p><q>Tell me, papa</q>, I said after a moment, <q>if I keep on learning, do you think I will ever be able to earn my living as an artist?</q></p>
-    
-      
-    
-            <p><q>Who? What—you? Oh!—</q> Absently papa <pb n="255"/>blew the smoke about his head, gazed at me, but did not seem to see me. He seemed to be talking rather to himself, not bitterly, but just sadly: <q>Better be a dressmaker, or a plumber, or a butcher, or a policeman. There is no money in art!</q></p>
-    
-      
-    
-                   <milestone unit="sectionBreak"/>
-             </div>
-      <div>
-    
-            <p>Next to our garden, separated only by a wooden fence, through which we children used to peep, was the opulent and well-kept garden of <foreign xml:lang="fr">Monsieur</foreign> Prefontaine, who was a very important man, once Mayor of Hochelaga, the French quarter of Montreal, in which we lived. Madame Prefontaine, moreover, was an object of unfailing interest and absorbing wonder to us children. She was an enormously fat woman, and had once taken a trip to New York City, to look for a wayward sister. There she had been offered a job as fat woman for a big circus, Madame Prefontaine used to say to the neighbors, who always listened to her with great respect:</p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Mon Dieu</foreign>! That New York—it is one beeg hell! Never do I feel so hot as in dat terreeble city! I feel de grease it run all out of me! Mebbe, eef I stay at dat New York, I may be one beeg meelionaire—<foreign xml:lang="fr">Oui</foreign>! But, <foreign xml:lang="fr">non</foreign>! Me? I prefer my leetle home, so cool and quiet, in Hochelaga than be meelionaire in dat New York, dat is like purgatory</q>.</p>
-    
-      
-    
-            <p>We had an old, straggly garden. Everything about it looked <q>seedy</q> and uncared for and wild, for we could not afford a gardener. My sisters and I found small consolation in papa’s stout assertion that it looked picturesque, with its gnarled old apple-trees and shrubs in their natural wild state. I was sensitive about that garden. It was awfully poor looking, in comparison with our neighbors’ nicely kept places. It was just like our family, I sometimes treacherously thought—unkempt and wild and <q>heathenish</q>. A neighbor once called us that. I stuck out my tongue at her when she said it. Being just next to the fine garden of <foreign xml:lang="fr">Monsieur</foreign> Prefontaine, it appeared the more ragged and beggarly, that garden of ours.</p>
-    
-      
-    
-            <p>Mama would send us children to pick the maggots off the currant bushes and the bugs off the potato plants and, to encourage us, she would give us one cent for every pint of bugs or maggots we showed her. I hated the bugs and maggots, but it was fascinating to dig up the potatoes. To see the vegetables actually under the earth seemed almost like a miracle, and I would pretend the gnomes and fairies put them there, and hid inside the potatoes. I once told this to my little brothers and sisters, and Nora, who was just a little tot, wouldn’t eat a potato again for weeks, for fear she might bite on a fairy. Most of all, I loved to pick strawberries, and it was a matter of real grief and humiliation to me that our own strawberries were so dried-up looking and small, as compared with the big, luscious berries I knew were in the garden of Monsieur Prefontaine.</p>
-    
-      
-    
-            <p>On that day I had been picking strawberries for some time, and the sun was hot and my basket only half full. I kept thinking of the berries in the garden adjoining, and the more I thought of them, the more I wished I had some of them.</p>
-    
-      
-    
-            <p>It was very quiet in our garden. Not a sound was anywhere, except the breezes, making all kinds of mysterious whispers among the leaves. For some time my eye had become fixed, fascinated, upon a loose board, with a hole in it near the ground. I looked and looked at that hole, I thought to myself: <q>It is just about big enough for me to crawl through</q>. Hardly had that thought occurred to me, when down on hands and knees I dropped, and into the garden of the great Monsieur Prefontaine I crawled.</p>
-    
-      
-    
-            <p>The strawberry beds were right by the fence. Greedily I fell upon them. Oh, the exquisite joy of eating forbidden fruit! The fearful thrills that even as I ate ran up and down my spine, as I glanced about me on all sides. There was even a wicked feeling of fierce joy in acknowledging to myself that I was a thief.</p>
-    
-      
-    
-            <p><q>Thou shalt not steal!</q> I repeated the commandment that I had broken even while my mouth was full, and then, all of a sudden, I heard a voice, one that had inspired me always with feelings of respect, and awe, and fear.</p>
-    
-      
-    
-            <p><q>How you get in here?</q></p>
-    
-      
-    
-                   <p><foreign xml:lang="fr">Monsieur</foreign> Prefontaine was towering sternly above me. He was a big man, bearded, and with a face of preternatural importance and sternness.</p>
-    
-      
-    
-            <p>I got up. My legs were shaky, and the world was whirling about me. I thought of the jail, where thieves were taken, and a great terror seized me. <foreign xml:lang="fr">Monsieur</foreign> Prefontaine had been the Mayor of Hochelaga. He could have put me in prison for all the rest of my life. We would all be disgraced.</p>
-    
-      
-    
-            <p><q>Well? Well? How you get in here?</q> demanded <foreign xml:lang="fr">Monsieur</foreign> Prefontaine.</p>
-    
-      
-    
-            <p><q>M’sieu? I—I—<emph>crawled in</emph>!</q> I stammered, indicating the hole in the fence.</p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Bien</foreign>! <emph>Crawl out</emph>, <foreign xml:lang="fr">madame</foreign>!</q></p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Madame</foreign></q> to me, who was but twelve years old!</p>
-    
-      
-    
-            <p><q>CRAWL OUT!</q> commanded <foreign xml:lang="fr">Monsieur</foreign>, pointing to the hole, and feeling like a worm, ignominiously, under the awful eye of that ex-Mayor of Hochelaga, on hands and knees and stomach, I crawled out.</p>
-    
-      
-    
-            <p>Once on our side, I felt not the shame of being a thief so much, as the degradation of <emph>crawling out</emph> with that man looking.</p>
-    
-      
-    
-            <p>Feeling like a desperate criminal, I swaggered up to the house, swinging my half-filled basket of strawberries. As I came up the path, Ellen, a sister just two years older than I, put her head out of an upper window and called down to me:</p>
-    
-      
-    
-            <p><q>Marion, there’s a beggar boy coming in at the <pb n="256"/> gate. Give him some of that stale bread mama left on the kitchen table to make a pudding with</q>.</p>
-    
-      
-    
-            <p>The boy was about thirteen, and he was a very dirty boy, with hardly any clothes on him. As I looked at him, I was thrilled with a most beautiful inspiration. I could regenerate myself by doing an act of lovely charity.</p>
-    
-      
-    
-            <p><q>Wait a minute, boy</q>.</p>
-    
-      
-    
-            <p>Disregarding the stale bread, I cut a big generous slice of fresh, sweet smelling bread that Sung Sung, our one very old Chinese servant, had made that day. Heaping it thick with brown sugar, I handed it to the boy.</p>
-    
-      
-    
-            <p><q>There, beggar boy</q>, I said generously, <q>you can eat it all</q>.</p>
-    
-      
-    
-            <p>He took it with both hands, greedily, and now as I looked at him another fiendish impulse seized me. Big boys had often hit me, and although I fought back as valiantly and savagely as my puny fists would let me, I had always been worsted, and had been made to realize the weakness of my sex and age. Now as I looked at that beggar boy, I realized that here was my chance to hit a big boy. He was smiling at me gratefully across that slice of sugared bread, and I leaned over and suddenly pinched him hard on each of his cheeks. His eyes bulged with amazement, and I still remember his expression of surprise and pained fear. I made a horrible grimace at him and then ran out of the room.</p>
-    
-      
-    
-            <p>There was a long, black period when we knew acutely the meaning of what papa wearily termed <q>Hard Times</q>. Even in <q>Good Times</q> there are few people who buy paintings, and no one wants them in <q>Hard Times</q>. A terrible epidemic of smallpox broke out in the city. The French and not the English Canadians were the ones chiefly afflicted, and my father set this down to the fact that the French resisted vaccination. In fact, there were anti-vaccination riots all over the French quarter, where we lived.</p>
-    
-      
-    
-            <p>And now my father, in this desperate crisis, proved the truth of the old adage that <q>Blood will tell</q>. Ours was the only house on our block, or for that matter the surrounding streets, where the hideous yellow sign <q><foreign xml:lang="fr">PICOTTE</foreign></q> (small pox) was not conspicuously nailed upon the front door, and this despite the fact that we were a large family of children. Papa hung sheets all over the house, completely saturated with disinfectants. Every one of us children were vaccinated, and were not allowed to leave the premises. Papa himself went upon all the messages, even doing the marketing.</p>
-    
-      
-    
-            <p>He was not absentminded in those days, nor in the gruelling days of dire poverty that followed the plague. Child as I was, I vividly recall the terrors of that period, going to bed hungry, my mother crying in the night and my father walking up and down, up and down. Sometimes it seemed to me as if papa walked up and down all night long.</p>
-    
-      
-    
-            <p>My brother Charles, who had been for some time our main support, had married (the girl we did not like), and although he fervently promised to continue to contribute to the family’s support, his wife took precious care that the contribution should be of the smallest, and she kept my brother, as much as she could, from coming to see us.</p>
-    
-      
-    
-            <p>A day came when, with my mother and it seemed all of my brothers and sisters, I stood on a wharf waving to papa on a great ship. There he stood, by the railing, looking so young and good. Papa was going to England to try to induce grandpapa—that grandfather we had never seen—to help us. We clung about mama’s skirts—poor little mama, who was half distraught—and we all kept waving to papa, with our hats and hands and handkerchiefs, and calling out:</p>
-    
-      
-    
-            <p><q>Good-by, papa! Come back! Come back soon!</q> until the boat was only a dim, shadowy outline.</p>
-    
-      
-    
-            <p>The dreadful thought came to me that perhaps we would never see papa again! Suppose his people, who were rich and grand, should induce our father never to return to us        !</p>
-    
-      
-    
-            <p>I had kept back my tears. Mama had told us that none of us must let papa see us cry, as it might <q>unman</q> him, and she herself had heroically set the example of restraining her grief until after his departure. Now, however, the strain was loosened. I fancied I read in my brothers’ and sisters’ faces—we were all imaginative and sensitive and excitable—my own fears. Simultaneously we all began to cry.</p>
-    
-      
-    
-            <p>Never will I forget that return home, all of us children crying and sobbing, and mama now weeping as unconcealedly as any of us, and the French people stopping us on the way to console or commiserate with us; but although they repeated over and over, <q><foreign xml:lang="fr">Pauvres petits enfants</foreign>! <foreign xml:lang="fr">Pauvre petite mère</foreign>!</q> I saw their significant glances, and I knew that in their minds was the same treacherous thought of my father.</p>
-    
-      
-    
-            <p>But papa did return! He could have stayed in England, and, as my sister Ada extravagantly put it, <q>lived in the lap of luxury</q>, but he came back to his noisy, ragged little <q>heathens</q>, and the <q>painting, painting of pot-boilers to feed my hungry children</q>.</p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Monsieur</foreign> de St. Vidal is ringing the door-bell</q>, called Ellen. <q>Why don’t you open the door, Marion. I believe he has a birthday present for you in his hand</q>.</p>
-    
-      
-    
-            <p>It was my sixteenth birthday, and <foreign xml:lang="fr">Monsieur</foreign> de St. Vidal was my first beau! He was a relative of our neighbors, the Prefontaines, and I liked him pretty well. I think I chiefly liked to be taken about in his stylish little dog-cart. I felt sure all the other girls envied me.</p>
-    
-      
-    
-            <p><q>You go, Ellen, while I change my dress</q>.</p>
-            <p>I was anxious to appear at my best before St. Vidal. It was very exciting, this having a beau. I would have enjoyed it much more, however, but for the interfering inquisitiveness of my sisters, Ada and Ellen, who never failed to ask me each time I had been out with him, whether he had <q>proposed</q> yet or not.</p>
-    
-      
-    
-            <p>Ellen was running up the stairs, and now she burst into our room excitedly, with a package in her hand.</p>
-    
-      
-    
-            <p><q>Look, Marion! Here’s your present. He wouldn’t stop—just left it, and he said, with a Frenchy bow—Whew! I don’t like the French!—‘<foreign xml:lang="fr">Pour Mamselle Marion, avec mes compliments</foreign>!’</q> and Ellen mimicked St. Vidal’s best French manner and voice.</p>
-    
-      
-    
-            <p>I opened the package. Oh, such a lovely box of paints—a perfect treasure!</p>
-    
-      
-    
-            <p><q>Just exactly what I wanted!</q> I cried excitedly, looking at the little tubes, all shiny and clean, and the new brushes and palette.</p>
-    
-      
-    
-            <p>Ada was sitting reading by the window, and now she looked up and said:</p>
-    
-      
-    
-            <p><q>Oh, did that French <emph>wine merchant</emph> give that to Marion?</q></p>
-    
-      
-    
-            <p>She cast a disparaging glance at the box, and then, addressing Ellen, she continued:</p>
-            <p><q>Marion is disgustingly old for sixteen, but, of course, if he gives her <emph>presents</emph>—</q> (he had never given me anything but candy before) <q>he will propose to her, I suppose. Mama married at sixteen, and I suppose 
-      <emph>some</emph> people—</q> Ada gave me another look that was anything but approving—<q><emph>are</emph> in a hurry to get married. <emph>I</emph> shall never marry till I am twenty-five!</q> Ada was twenty.</p>
-    
-      
-    
-            <p>This time, Ellen, who was eighteen, got the condemning look. Ellen was engaged to be married to an American editor, who wrote to her every day in the week and sometimes telegraphed. They were awfully in love with each other. Ellen said now:</p>
-            <p><q>Oh, he’ll propose all right. Wallace came around a whole lot, you know, before he actually popped</q>.</p>
-    
-      
-    
-            <p><q>Well, maybe so</q>, said Ada, <q>but I think we ought to know that French wine merchant’s intention pretty soon. I’ll ask him if you like</q>, she volunteered.</p>
-    
-      
-    
-            <p><q>No, no, don’t you dare!</q> I protested. <pb n="257"/></p>
-    
-      
-    
-            <p><q>Well</q>, said Ada, <q>if he doesn’t propose to you soon, you ought to stop going out with him. It’s bad form</q>.</p>
-    
-      
-    
-            <p>That evening St. Vidal called and took me to the rink, and I enjoyed myself hugely. He was a graceful skater, and so was I, and I felt sure that everyone’s eye was upon me. I was very proud of my <q>beau</q>, and I secretly wished that he was blond. I did prefer the English type. However, conscious of what was expected of me by my sisters, I smiled my sweetest on St. Vidal, and by the time we started for home I realized, with a thrill of anticipation, that he was in an especially tender mood. He helped me along the street carefully and gallantly.</p>
-    
-      
-    
-            <p>It was a clear, frosty night, and the snow was piled up as high as our heads on each side of the sidewalks. Suddenly St. Vidal stopped, and drawing my hand through his arm, he began, with his walking stick, to write upon the snow:</p>
-    
-      
-    
-            <p><q>Madame Marion de St. Vida—</q></p>
-    
-      
-    
-            <p>Before he got to the <q>l</q> I was seized with panic. I jerked my hand from his arm, took to my heels and ran all the way home.</p>
-    
-      
-    
-            <p>Now it had come—that proposal, and I did not want it. It filled me with embarrassment and fright. When I got home, I burst into Ada’s room and gasped:</p>
-    
-      
-    
-            <p><q>It’s done! He did propose! B-but I said—I said—</q> I hadn’t said anything at all.</p>
-    
-      
-    
-            <p><q>Well?</q> demanded Ada.</p>
-    
-      
-    
-            <p><q>Why, I’m not going to, that’s all</q>, I said.</p>
-    
-      
-    
-            <p>Ada returned to the plaiting of her hair. Then she said skeptically:</p>
-    
-      
-    
-            <p><q>H’m, that’s very queer. Are you <emph>sure</emph> he proposed, because <emph>I</emph> heard he was all the time engaged to a girl in Côte des Neiges</q>.</p>
-    
-      
-    
-            <p><q>Oh, Ada</q>, I cried, <q>do you suppose he’s a bigamist? I think I’m fortunate to have escaped from his snare!</q></p>
-            <p>The next day <foreign xml:lang="fr">Madame</foreign> Prefontaine told mama that St. Vidal had said he couldn’t imagine what in the world I had run away suddenly from him like that for, and he said:</p>
-    
-      
-    
-            <p><q>Maybe she had a stomach-ache</q>.</p>
-    
-      
-    
-            <milestone unit="sectionBreak"/>
-    </div>
-    <div>  
-    
-            <p><q>Ellen, don’t you wish something would happen?</q></p>
-    
-      
-    
-            <p>Ellen and I were walking up and down the street near the English church.</p>
-    
-      
-    
-            <p><q>Life is so very dull and monotonous</q>, I went on. <q>My! I would be glad if something real bad happened—some sort of tragedy. Even that is better than this deadness</q>.</p>
-    
-      
-    
-            <p>Ellen looked at me, and seemed to hesitate.</p>
-    
-      
-    
-            <p><q>Yes, it’s awful to be so poor as we are</q>, she answered, <q>but what I would like is not so much money as fame, and, of course, love. That usually goes with fame</q>.</p>
-    
-      
-    
-            <p>Ellen’s fiancé was going to be famous some day. He was in New York, and had written a wonderful play. As soon as it was accepted, he and Ellen were to be married.</p>
-    
-      
-    
-            <p><q>Well, I tell you what I’d like above everything else on earth</q>, I said sweepingly. <q>I would love to be a great actress, and break everybody’s hearts. It must be perfectly thrilling to be notorious, and we certainly are miserable girls</q>.</p>
-    
-      
-    
-            <p>We were chewing away with great relish the contents of a bag of candy.</p>
-    
-      
-    
-            <p><q>Anyhow</q>, said Ellen, <q>you seem to be enjoying that candy</q>, and we both giggled.</p>
-    
-      
-    
-            <p>Two men were coming out of the side door of the church. Attracted by our laughter, they came over directly to us. One of them we knew well. He was Jimmy McAlpin, the son of a fine old, very rich, Scotch lady, who had always taken an interest in our family, and especially mama. Jimmy, though he took up the collection in church, had been, so heard the neighbors whisper to mama, once very dissipated. He had known us since we were little girls, and always teased us a lot. He would come up behind me on the street and pull my long plait of hair, saying: <q>Pull the string, gentlemen and ladies, and the figure moves!</q></p>
-    
-      
-    
-            <p>Now he came smilingly up to us, followed by his friend, a big stout man, with a military carriage and gray moustache. I recognized him, too, though we did not know him. He was a very rich and important citizen of our Montreal. Of him also I had heard bad things. People said he was <q>fast</q>. That was a word they always whispered in Montreal, and shook their heads over, but whenever I heard it, its very mystery and badness thrilled me somehow. Ada said there was a depraved and low streak in me, and I guiltily admitted to myself that she was right.</p>
-    
-      
-    
-            <p><q>What are you girls laughing about?</q> asked Jimmy, a question that merely brought forth a fresh accession of giggles.</p>
-    
-      
-    
-            <p>Colonel Stevens was staring at me, and he had thrust his right eye into a shining monocle. I thought him very grand and distinguished looking, much superior to St. Vidal. Anyway we were tired of the French, having them on all sides of us, and as I have said, I admired the blond type of men. Colonel Stevens was not exactly blond, for his hair was gray (he was bald on top, though his hat covered that), but he was typically British, and somehow the Englishmen always appeared to me much superior to our little French Canucks, as we called  them.</p>
-    
-      
-    
-            <p>Said the colonel, pulling at his moustache: <q>A laughing young girl in a pink-cotton frock is the sweetest thing on earth</q>.</p>
-    
-      
-    
-            <p>I had on a pink-cotton frock, and I was laughing. I thought of what I had heard Madame Prefontaine say to mama—in a whisper: <q>He is one dangerous man—dat Colonel Stevens, and any woman seen wiz him will lose her reputation</q>.</p>
-    
-      
-    
-            <p><q>Will I lose mind?</q> I asked myself. I must say my heart beat, fascinated, with the idea. Something, now, was really happening, and I was excited and delighted.</p>
-    
-      
-    
-            <p><q>Can’t we take the ladies</q>—I nudged Ellen—<q>some place for a little refreshment</q>, said the colonel.</p>
-    
-      
-    
-            <p><q>No</q>, said Ellen, <q>mama expects us home</q>.</p>
-    
-      
-    
-            <p><q>Too bad</q>, murmured the colonel, very much disappointed, <q>but how about some other night? To-morrow, shall we say?</q></p>
-    
-      
-    
-            <p>Looking at me, he added: <q>May I send you some roses, just the color of your cheeks?</q></p>
-            <p>I nodded from behind Ellen’s back.</p>
-    
-      
-    
-            <p><q>Come on</q>, said Ellen brusquely, <q>we’d better be getting home. You know you’ve got the dishes to do, Marion</q>.</p>
-    
-      
-    
-          <p>She drew me along. I couldn’t resist looking back, and there was that fascinating colonel, standing stock still in the street, still pulling <pb n="304"/> at his moustache, and staring after me. He smiled all over, when I turned, and blew me an odd little kiss, like a kind of salute, only from his lips.</p>
-    
-      
-    
-            <p>That night, when Ellen and I were getting ready for bed, I said: <q>Isn’t the colonel thrillingly handsome, though?</q></p>
-    
-      
-    
-            <p><q>Ugh! I should say not</q>, said Ellen. <q>Besides, he’s a married man, and a flirt</q>.</p>
-    
-      
-    
-            <p><q>Well, I guess he doesn’t love his old wife</q>, said I.</p>
-    
-      
-    
-            <p><q>If she is old</q>, said Ellen, <q>so is he—maybe older. Disgusting!</q></p>
-    
-      
-    
-            <p>All next day I waited for that box of roses and late in the afternoon, sure enough, it came, and with it a note:</p>
-    
-      
-    
-            <p><q>Dear Miss Marion: Will you and your charming sister take a little drive with me and a friend this evening? If so, meet us at eight o’clock corner of St. James and St. Denis streets. My friend has seen your sister in Judge Laflamme’s office</q> (Ellen worked there) <q>and he is very anxious to know her. As for me, I am thinking only of when I shall see my lovely rose again. I am counting the hours! Devotedly, Fred Stevens</q>.</p>
-    
-      
-    
-            <p>The letter was written on the stationary of the fashionable St. James Club. Now I was positive that Colonel Stevens had fallen in love with me. I thought of his suffering because he could not marry me. In many of the French novels I had read men ran away from their wives, and I thought: <q>Maybe the colonel will want me to elope with him, and if I won’t, perhaps he will kill himself</q>, and I began to feel very sorry to think of such a fine-looking soldierly man as Colonel Stevens killing himself just because of me.</p>
-            <p>When I showed Ellen the letter, after she got home from work, to my surprise and delight, she said:</p>
-    
-      
-    
-            <p><q>All right, let’s go. A little ride will refresh us, and I’ve had a hard week of it, but better not let mama know where we’re going. We’ll slip out after supper, when she’s getting the babies to sleep</q>.</p>
-    
-      
-    
-            <p>Reaching the corner of St. James and St. Denis streets that evening, we saw a beautiful closed carriage, with a coat of arms on the door, and a coachman in livery jumped down and opened the door for us. We stepped in. With the colonel was a middle-aged man, with a dry yellowish face and a very black—it looked dyed—moustache.</p>
-    
-      
-    
-            <p><q>Mr. Mercier!</q> said the colonel, introducing us.</p>
-    
-      
-    
-            <p><q>Oh</q>, exclaimed Ellen, <q>are you related to the Premier?</q></p>
-    
-      
-    
-            <p><q>Non, non, non</q>, laughed Mr. Mercier, and turning about in the seat, he began to look at Ellen, and to smile at her, until the ends of his waxed moustache seemed to jump up and scratch his nose. Colonel Stevens had put his arm just at the back of me, and as it slipped down from the carriage seat to my waist, I sat forward on the edge of the seat. I didn’t want to hurt his feelings by telling him to take his arm down, and still I didn’t want him to put it around me. Suddenly Ellen said:</p>
-    
-      
-    
-            <p><q>Marion, let’s get out of this carriage. That beast there put his arm around me, and he pinched me, too</q>. She indicated Mercier. She was standing up in the carriage, clutching at the strap, and she began to tap upon the window, to attract the attention of the coachman. Mr. Mercier was cursing softly in French.</p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Petite folie</foreign>!</q> he said, <q>I am not meaning to hurt you—joost a little loving. Dat is all</q>.</p>
-    
-      
-    
-            <p><q>You ugly old man</q>, said Ellen, <q>do you think I want <emph>you</emph> to love me? Let me get out!</q></p>
-    
-      
-    
-            <p><q>Oh, now, Miss Ellen</q>, said the colonel, <q>that is too rude. Mr. Mercier is a gentleman. See how sweet and loving your little sister is</q>.</p>
-    
-      
-    
-            <p><q>No, no!</q> I cried, <q>I am not sweet and loving. He had no business to touch my sister</q>.</p>
-    
-      
-    
-            <p>Mr. Mercier turned to the colonel.</p>
-    
-      
-    
-            <p><q>For these children did you ask me to waste my time?</q> and putting his head out of the carriage, he simply roared:</p>
-    
-      
-    
-            <p><q><foreign xml:lang="fr">Rue</foreign> Saint Denis! <foreign xml:lang="fr">Sacré</foreign>!</q></p>
-    
-      
-    
-            <p>They set us down at the corner of our street. When we got in a friend of papa’s was singing to mama and Ada in the parlor:</p>
-    
-      
-    
-            <p><q>In the gloaming, oh, my darling, When the lights are dim and low</q>.</p>
-    
-      
-    
-            <p>He was one of many Englishmen, younger sons of aristocrats, who, not much good in England, were often sent to Canada. They liked to hang around papa, whose family most of them knew. This young man was a thin, harmless sort of fellow, soft spoken and rather silly, Ellen and I thought, but he could play and sing in a pretty, sentimental way, and mama and Ada would listen by the hour to him. He liked Ada, but Ada pretended she had only an indifferent interest in him. His father was the Earl of Albemarle, and Ellen and I used to make Ada furious by calling her <q>Countess</q>, and bowing mockingly before her.</p>
-    
-      
-    
-            <p>Walking on tiptoe, Ellen and I slipped by the parlor door, and up to our own room. That night, after we were in bed, I said to Ellen:</p>
-    
-      
-    
-            <p><q>You know, I think Colonel Stevens is in love with me. Maybe he will want me to elope with him. Would you, if you were me?</q></p>
-    
-      
-    
-            <p><q>Don’t be silly; go to sleep</q>, was Ellen’s cross response. She regretted very much taking that ride, and she said she only did it because she got so tired at the office all day, and thought a little ride would be nice. She had no idea, she said, that those <q>two old fools</q> would act like that.</p>
-    
-      
-    
-          <milestone unit="sectionBreak"/>
-    </div>
-    <div>
-      
-    
-            <p>Wallace, Ellen’s sweetheart, had not sold his play, but he expected to any day. He was, however, impatient to be married—they had now been engaged over a year and he wrote Ellen that he could not wait, anyway, more than two or three months longer. Meanwhile Ellen secured a much better position.</p>
-    
-      
-    
-            <p>The new position was at a greater distance from our house, and as she had to be at the office early she decided to take a room down-town. Papa at first did not want her to leave homd, but Ellen pointed out that Hochelaga was too far away from her office, and then she added, to my delight, that she’d take me along with her. I could make her trousseau and cook for us both, and it wouldn’t cost any more for two than for one.</p>
-    
-      
-    
-            <p>Mama thought we were old enough to take care of ourselves, <q>for</q>, said she, <q>when I was Ellen’s age I was married and had two children. Besides</q>, she added, <q>we are crowded for room in the house, and it will only be for a month or two</q>.</p>
-    
-      
-    
-            <p>So Ellen secured a little room down-town. I thought the house was very grand, for there was thick carpet on all the floors and plush furniture in the parlor.</p>
-    
-      
-    
-            <p>We had been at Mrs. Cohen’s (that was the name of our landlady) less than a month, when Wallace wrote he could wait no longer.</p>
-    
-      
-    
-            <p>He had not sold his play but he had a very good position now as associate editor of a big magazine, and he said he was making ample money to support a wife. So he was coming for his little Ellen at once. We were terribly excited, particularly as Wallace followed up the letter with a telegram to expect him next day, and sure enough the next day he arrived.</p>
-    
-      
-    
-            <p>He did not want any <q>fussy</q> wedding. Only papa and I were to be present. Wallace did not even want us, but Ellen insisted. She looked sweet in her little dress (I had made it), and although I knew Wallace was good, and a genius, and adored my sister, I felt broken-hearted at the thought of losing her, and it was all I could do to keep from crying at the ceremony.</p>
-    
-      
-    
-            <p>As the train pulled out I felt so utterly desolate, that I stretched out my arms to it and cried out aloud:</p>
-    
-      
-    
-            <p><q>Ellen, Ellen, please don’t go! Take me, too!</q> I never realized till then how much I loved my sister. Dear little Ellen, with her love of all that was best in life, her sense of humor, her large, generous heart, and her absolute purity. If only she had stayed by my side I am sure her influence would have kept me from all the mistakes and troubles that followed in my life, if only by her disgust and contempt of all that was dishonorable and unclean. But Wallace had taken our Ellen, and I had lost my best friend, my sister and my chum.</p>
-    
-      
-    
-            <p>I was at the age—nearly eighteen now—when girls want and need chums and confidantes. I was bubbling over with impulses that needed and outlet, and only foolish young things like myself were capable of understanding me. With Ellen gone, I sought and found girl friends I believed to be congenial.</p>
-    
-      
-    
-          <p>My sister Ada, because of her superiority in age and character to me, would not condescend to chum with me. Nevertheless, she heartily disapproved of my choice in friends, and constantly reiterated that my tastes were <pb n="305"/> low. Life was a serious matter to Ada, who had enormous ambitions, and had already been promised a position on our chief newspaper, to which she had contributed poems and stories. To Ada, I was a frivolous, silly young thing, who needed constantly to be squelched, and she undertook to do the squelching, unsparingly, herself.</p>
-    
-      
-    
-            <p><q>Since we are obliged</q>, said Ada, <q>to live in a neighborhood with people who are not our equals, I think it a good plan to keep to ourselves. That’s the only way to be exclusive. Now that Gertie Martin</q> (Gertie was my latest friend) <q>is a noisy American girl. She talks through her nose, and is always criticizing the Canadians and comparing them with the Yankees. As for that Lu Fraser</q> (another of my friends) <q>she can’t even speak the Queen’s English properly, and her uncle keeps a saloon</q>.</p>
-    
-      
-    
-            <p>Though I stoutly defended my friends, Ada’s nagging had an unconscious effect upon me, and for a time I saw very little of the girls.</p>
-    
-      
-    
-            <p>Then one evening Gertie met me on the street, and told me that, through her influence, Mr. Davis (also an American) had decided to ask me to take a part in <q>Ten Nights in a Barroom</q>, which was to be given at a <q>Pop</q> by the Montreal Amateur Theatrical Club, of which he was the head. I was so excited and happy about this that I seized hold of Gertie and danced with her on the sidewalk, much to the disgust of my brother, Charles, who was passing with his new wife.</p>
-    
-      
-    
-            <p>Mr. Davis taught elocution and dramatic art, and he was a man of tremendous importance in my eyes. He was always getting up concerts and entertainments, and no amateur affair in Montreal seemed right without his efficient aid. The series of <q>Pops</q> he was now giving were patronized by all the best people of the city and he had an imposing list of patrons and patronesses. Moreover the plays were to be produced in a real theater, not merely a hall, and so they had somewhat the character of professional performances.</p>
-    
-      
-    
-            <p>To my supreme joy, I was given the part of the drunkard’s wife, and there were two glorious weeks in which we rehearsed and Mr. Davis trained us. He said one day that I was the <q>best actress</q> of them all, and he added that although he charged $25 a month to his regular pupils he would teach me for ten, and if I couldn’t afford that, for five; and if there was no five to be had, then for nothing. I declared fervently that I would repay him some day, and he laughed, and said: <q>I’ll remind you when that ‘some day’ comes</q>.</p>
-    
-      
-    
-            <p>Well, the night arrived, and I was simply delirious with joy. I learned how to <q>make up</q>, and I actually experienced stage fright when I first went on, but I soon forgot myself.</p>
-    
-      
-    
-            <p>When I was crawling on the floor across the stage, trying to get something to my drunken husband, a voice from the audience called out:</p>
-    
-      
-    
-            <p><q>Oh, Ma-ri-on! Oh, Ma-ri-on! You’re on the bum! You’re on the bum!</q></p>
-    
-      
-    
-            <p>It was my little brother, Randle, who with several small boys had got free seats away up front by telling the ticket man that his sister was playing the star part. I vowed mentally to box his ears good and hard when I got home.</p>
-    
-      
-    
-            <p>When the show was over Mr. Davis came to the dressing-room and said, before all the girls:</p>
-    
-      
-    
-            <p><q>Marion, come to my studio next week and we’ll start those lessons, and when we put on the next ‘Pop,’ which I believe will be ‘Uncle Tom’s Cabin,’ we will find a good part for you</q>.</p>
-    
-      
-    
-            <p><q>Oh, Mr. Davis</q>, I cried, <q>are you going to make an actress of me?</q></p>
-    
-      
-    
-            <p><q>We’ll see! We’ll see!</q> he said, smiling. <q>It will depend on yourself, and if you are willing to study</q>.</p>
-    
-      
-    
-            <p><q>I’ll sit up all night long and study</q>, I assured him.</p>
-    
-      
-    
-            <p><q>The worst thing you could do</q>, he answered. <q>We want to save these peaches</q>, and he pinched my cheek.</p>
-    
-      
-    
-            <p>Mr. Davis did lots of things that in other men would have been offensive. He always treated us girls as if we were children. People in Montreal thought him <q>sissified</q>, but I am glad there are some men more like the gentler sex.</p>
-    
-      
-    
-            <p>So I began to take lessons in elocution and dramatic art. Oh! but I was a happy girl in those days. It is true, Mr. Davis was very strict, and he would make me go over lines again and again before he was satisfied, but when I got them finally right and to suit him, he would rub his hands, blow his nose and say:</p>
-    
-      
-    
-            <p><q>Fine! Fine! Marion, there’s the real stuff in you</q>.</p>
-    
-      
-    
-            <p>He once said that I was the only pupil he had who had an atom of promise in her. He declared Montreal peculiarly lacking in talent of that sort, though he said he had searched all over the place for even a <q>spark of fire</q>. I, at least, loved the work, was deadly in earnest, and, finally, so he said, I was pretty, and that was something.</p>
-    
-      
-    
-            <p>We studied <q>Camille</q>, <q>The Marble Heart</q>, and <q>Romeo and Juliet</q>. All of my spare time at home I spent memorizing and rehearsing. I would get a younger sister, Nora, who was absorbedly interested, to act as a dummy. I would make her be Armand or Armand’s father.</p>
-    
-      
-    
-            <p><q>Now, Nora</q>, I would say, <q>when I come to the word ‘Her,’ you must say: ‘Camille! Camille!’</q></p>
-    
-      
-    
-            <p>Then I would begin, addressing Nora as Armand:</p>
-    
-      
-    
-            <p><q>You are not talking to a cherished daughter of society, but a woman of the world, friendless and fearless. Loved by those whose vanity she gratifies, despised by those who ought to pity her—her—<emph>Her</emph>—</q></p>
-    
-      
-    
-            <p>I would look at Nora and repeat: <q>Her--!</q> and Nora would wake up from her trance of admiration of me and say:</p>
-    
-      
-    
-            <p><q>Camel! Camel!</q></p>
-    
-      
-    
-            <p><q>No, no!</q> I would yell. <q><emph>That</emph> is—</q> (pointing to the right—Mr. Davis called that <q>dramatic action</q>) <q><emph>your</emph> way! <emph>This</emph> way—</q> (pointing to the left) <q>is mine!</q></p>
-    
-      
-    
-            <p>Then throwing myself on the dining-room sofa, I would sob and moan and cough (Camille had consumption, you may recall), and what with Nora crying with sympathy and excitement, and the baby generally waking up there would be an awful noise in our house.</p>
-    
-      
-    
-            <p>I remember papa coming half way down the stairs one day and calling out:</p>
-    
-      
-    
-            <p><q>What the dickens is the matter with that Marion? Has she taken leave of her sense?</q></p>
-    
-      
-    
-            <p>Mama answered from the kitchen:</p>
-    
-      
-    
-            <p><q>No, papa, she’s learning elocution and dramatic art from Mr. Davis; but I’m sure she’s not suited to be an actress, for she lisps and her nose is too short. But do make her stop, or the neighbors will think we are quarreling</q>.</p>
-    
-      
-    
-            <p><q>Stop this minute!</q> ordered papa, <q>and don’t let me hear any more such nonsense</q>.</p>
-    
-      
-    
-            <p>I betook myself to the barn.</p>
-    
-      
-    
-          <milestone unit="sectionBreak"/>
-    </div>
-    <div>  
-    
-            <p>The snow was crisp and the air as cold as ice. We were playing the last performance of <q>Uncle Tom’s Cabin</q>. We had been playing it for two weeks, and I had been given two different parts—Marie St. Claire, in which, to my joy, I wore a gold wig and lace tea-gown—which I made from an old pair of lace curtains and a lavender silk dress mama had had when they were rich and she dressed for dinner—and Cassy. I did love that part where Cassy says:</p>
-    
-      
-    
-            <p><q>Simon Legree, you are afraid of me, and you have reason to be, for I have got the devil in me!</q></p>
-            <p>I used to hurl those words at him, and glare until the audience clapped me for that. Ada saw me play Cassy one night, and she went home and told mama that I had <q>sworn like a common woman before all the people on the stage</q> and that I ought not to be allowed to disgrace the family. But little I cared for Ada in those days. I was learning to be an actress!</p>
-    
-      
-    
-            <p>On this last night, in fact, I experienced all the sensations of a successful star. Someone had passed up to me, over the footlights, if you please, a real bouquet of flowers, and with these clasped to my breast I had retired smiling and bowing from the stage.</p>
-    
-      
-    
-            <p>To add to my bliss, Patty Chase, the girl who played Topsy, came running in to say that a gentleman friend of hers was <q>crazy</q> to meet me. He was the one who had sent me the flowers. He wanted to know if I would not take supper with him and a friend and Patty that night.</p>
-    
-      
-    
-            <p>My! I felt like a regular professional actress. To think an unknown man had admired me from the front, and was actually seeking my acquaintance! I hesitated, however, because Patty was not the sort of girl I was accustomed to go out with. I liked Patty pretty well myself, but my brother, Charles, had one day come to the house especially to tell papa some things about her—he had seen me walking with Patty on the street—and papa had forbidden me to go out with her again. As I hesitated, she said:</p>
-    
-      
-    
-          <p><q>It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own fellow. You know how his folks are, and but for them we’d have been married long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too, and he hasn’t been out from England long. Harry says his folks are big nobs over there, and he is studying law here. His folks send him a remittance and I guess it’s a pretty big one, for he’s <pb n="306"/> living at the Windsor, and I guess he can treat us fine. So come along. You’ll not get such a chance again</q>.</p>
-    
-      
-    
-            <p><q>Patty</q>, I said, <q>I’m afraid I dare not. Mama hates me to be out late, and, see, it’s eleven already</q>.</p>
-    
-      
-    
-            <p><q>Why, the night’s just beginning</q>, cried Patty.</p>
-    
-      
-    
-            <p>There was a rap at the door, and Patty exclaimed:</p>
-    
-      
-    
-            <p><q>Here they are now!</q></p>
-            <p>All the girls in the room were watching me—enviously, I thought—and one of them made a catty remark about Patty, who had gone out in the hall, and was whispering to the man. I decided not to go, but when I came out of the room there they were all waiting for me, and Patty exclaimed:</p>
-    
-      
-    
-            <p><q>Here she is</q>, and, dragging me along by the hand, she introduced me to the men.</p>
-    
-      
-    
-            <p>I found myself looking up into the face of a tall man of about twenty-three. He had light curly hair and blue eyes. His features were fine and clear cut, and, to my girlish eyes, he appeared extraordinarily handsome and distinguished, far more so even than Colonel Stevens, who had, up till then, been my ideal of manly perfection. Everything he wore had an elegance about it, from his evening suit and the rich fur-lined overcoat to his opera hat and gold-topped cane. I felt flattered and overwhelmingly impressed to think that such a fine personage should have singled me out for especial attention. What is more, he was looking at me with frank and undisguised admiration. Instead of letting go my hand, which he had taken when Patty introduced us, he held it while he asked me if he couldn’t have the pleasure of taking me out to super. As I hesitated, blushing and awfully thrilled by the hand pressing mine, Patty said:</p>
-    
-      
-    
-            <p><q>She’s scared. Her mother won’t let her stay out late at night. She’s never been out to supper before</q>.</p>
-    
-      
-    
-            <p>Then she and Harry Bond burst out laughing, as if that were a good joke on me, but Mr. Bertie (his name was the Honorable Reginald Bertie—pronounced Bartie) did not laugh. On the contrary, he looked very sympathetic, and pressed my hand the closer. I thought to myself:</p>
-    
-      
-    
-            <p><q>My! I must have looked lovely as Marie St. Claire. Wait till he sees me as Cmille</q>.</p>
-    
-      
-    
-            <p><q>I’m not afraid</q>, I contradicted Patty, <q>but mamma sits up for me</q>.</p>
-    
-      
-    
-            <p>This was not strictly true, but it sounded better than to say that Ada always sat up for anyone in the house who went out at night. She even used to sit up for my brother Charles, before he was married, and I could just imagine the cross-questioning she would put me through when I got in late. Irritated as I used to be in those days at what I called Ada’s interference in my affairs, I know now that she always had my best good at heart. Poor little delicate Ada! with her passionate devotion and loyalty to the family, and her fierce antagonistic attitude to all outside intrusion. She was morbidly sensitive.</p>
-    
-      
-    
-            <p>Mr. Bertie quieted my fears by despatching a messenger boy to our house with a note saying that I had gone with a party of friends to see the Ice Palace.</p>
-    
-      
-    
-            <p>Even with Ada in the back of my mind I was now, as Patty would say, <q>in for a good time</q>, and when Mr. Bertie carefully tucked the fur robes of the sleigh about me I felt warm, excited and recklessly happy.</p>
-    
-      
-    
-            <p>We drove over to the Square, where the Ice Palace was erected. The Windsor Hotel was filled with American guests, who were on the balconies, watching the torchlight procession marching around the mountain. My brother, Charles, was one of the snowshoers, and the men were all dressed in white and striped blanket overcoats, with pointed capuchons on their backs and heads and moccasins on their feet. It was a beautiful sight, that procession, and looked like a snake of light winding about old Mount Royal, and when the fireworks burst all about the monumental Ice Palace, inside of which people were dancing and singing, really it seemed to me like a scene in fairyland. I felt a sense of pride in our Montreal and looking up at Mr. Bertie to note the effect of so much beauty upon him, I found him watching me instead.</p>
-    
-      
-    
-            <p>The English, when they first come out ot Canada, always assume an air of patronage toward the <q>Colonials</q> as they call us, just as if, while interested, they are also highly amused by our crudeness. Now Mr. Bertie said:</p>
-    
-      
-    
-            <p><q>We’ve seen enough of this Ice Palace’s hard, cold beauty. Suppose we go somewhere and get something warm inside us. Gad! I’m dry</q>.</p>
-    
-      
-    
-            <p>Harry told the driver to take us to a place whose name I could not catch, and presently we drew up before a brilliantly lighted restaurant. Harry Bond jumped out, and Patty after him. I was about to follow, when I felt a detaining hand upon my arm, and Bertie called out to Bond:</p>
-    
-      
-    
-            <p><q>I’ve changed my mind, Bond. I’ll be hanged if I care to take Miss Ascough into that place</q>.</p>
-    
-      
-    
-            <p>Bond was angry, and demanded to know why Bertie had told him to order dinner for four. He said he had called the place up from the theatre. <q>Never mind</q>, said Bertie, <q>I’ll fix it up with you later. Go on in without us. It’s all right</q>.</p>
-    
-      
-    
-          <milestone unit="sectionBreak"/>
-    </div>
-    <div>  
-    
-       <fw type="continued" place="center">(Be sure to follow up these experiences of <q>Marion</q> in the May issue of Hearst’s)</fw>
-    
-      
+      <pb n="254"/>
+      <body>
+         <head>Marion: The Story of an Artist’s Model</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">The Author of Me</name></byline>
+            <byline>Illustrated by <name ref="pers:HH1">Henry Hutt</name></byline>
+            <byline><emph>This instalment includes themes and depictions of grooming and sexual harassment.</emph></byline>
+         </opener>
+         <div type="content">
 
-      
-    
+
+            <milestone unit="sectionBreak"/>
+
+
+
+
+            <div type="paratext">
+               <p>The debate is lively: Who wrote <q>Me</q>, that excellent story? And right into
+                  the midst of the discussion comes a second challenge, a new novel by the same
+                     author—<q>Marion</q>. Here’s the challenge: You couldn’t place <q>Me</q>; can
+                  you place my sister <q>Marion</q>? This is more than <q>the story of an artist’s
+                     model</q>. It is an intimate chronicle of the heartaches, the problems of life
+                  and love, of a young French-Canadian girl, who hears the call of art and forsakes
+                  home and native land to follow it. Instead of becoming an actress or a painter she
+                  is forced by dire necessity to earn a living as a model for other more successful
+                  artists. Her struggles, her many adventures in <q>Bohemian</q> life, told in the
+                  gripping language of a gifted, experienced author—they are <q>Marion</q>. This new
+                  novel by the author of <q>Me</q> will only serve to enhance further the deserved
+                  repute of the anonymous writer, who chose to strike out along new lines unhampered
+                  by a literary reputation. <q>Marion</q> will increase the desire of many thousands
+                  to answer the question, <q>Who is the Author of ‘Me’?</q></p>
+            </div>
+
+
+            <milestone unit="sectionBreak"/>
+
+            <div>
+
+               <p>I present my sister Marion’s story in practically her own simple language, as I
+                  have taken it from her notes and journals that she kept over the years.—The
+                  Author.</p>
+
+
+
+               <p><q>In dat familee there are eleven cheeldren, and more—they come! See dat leetle
+                     one? She is très joli, très joli, n’est ce pas? De father he come from England
+                     about ten year ago. He was joost a young man, mebbe twenty-seven or
+                     twenty-eight year old, and he have one leetle foreign wife and six leetle
+                     cheeldren. They were all so cold. They are not use to dis climate of Canada. My
+                     wife and I, we keep de leetle ‘otel at Hochelaga, and my wife she take all dose
+                     leetle ones and she warm dem before the beeg hall stove, and she make for dem
+                     the good French pea-soup</q>.</p>
+
+
+
+               <p>Mama had sent me to the corner grocer to buy some things. Thebeau, the grocer, was
+                  talking, and to a stranger. I felt ashamed and humiliated to hear our family thus
+                  discussed. Why should we always be pointed out in this way and made to feel
+                  conspicuous and freaky? It was horrid  that the size of our family and my mother’s
+                  nationality should be told to everyone by that corner grocer. I glared haughtily
+                  at Thebeau, but he went garrulously on, regardless of my discomfiture.</p>
+
+
+
+               <p><q>De eldest—a boy, monsieur, he was joost nine year old, and my wife she call
+                     him, ‘Le petit père.’ His mother she send him out to walk wiz all hees leetle
+                     sisters, and she say to him: ‘Charles, you are one beeg boy, almost one man,
+                     and you must take care your leetle sisters; so, when the wind she blow too
+                     hard, you will walk you on the side of dat wind, and put yourself between it
+                     and your sisters.’</q></p>
+
+
+
+               <p><q>‘Yes, mama,’ <foreign xml:lang="fr">il dit</foreign>. And we, my wife and I, we
+                     look out de window, and me? I am laugh, and my wife, she cry—she have lost her
+                     only bebby, <foreign xml:lang="fr">Monsieur</foreign>—to see dat leetle boy
+                     walk him in front of his leetle sisters, open hees coat, <foreign xml:lang="fr"
+                        >comme ça</foreign>, <foreign xml:lang="fr">monsieur</foreign>, and spread
+                     it out wiz hees hands, to make him shield the wind from his sisters</q>.</p>
+
+
+
+               <p>The man to whom Thebeau had been speaking, had turned around, and was regarding me
+                  curiously. I felt abashed and angry under his compelling glance. Then he smiled,
+                  and said:</p>
+
+
+
+               <p><q>You are right. She <emph>is</emph> pretty—quite remarkably pretty!</q></p>
+
+
+
+               <p>I forgot everything else. With my little light head and heart awhirl, I picked up
+                  my packages and ran out of the store. It was the first time I had been called
+                  pretty, and I was just twelve years old. I felt exhilarated and utterly
+                  charmed.</p>
+
+
+
+               <p>When I reached home, I deposited the groceries on a table in the kitchen and ran
+                  up to my room. Standing on a chair, I was able to see my face in the oval mirror
+                  that topped a very high and scratched old <foreign xml:lang="fr"
+                     >chiffonier</foreign>. I gazed long and eagerly at the face I had often heard
+                  Thebeau say was <q><foreign xml:lang="fr">très joli</foreign></q>, which French
+                  words I now learned must mean: <q>Pretty—quite remarkably pretty!</q> as had said
+                  that Englishman in the store.</p>
+
+
+
+               <p>Was I really pretty, then? Surely the face reflected there was too fat and too
+                  red. My! my cheeks were as red as apples. I pushed back the offending fat with my
+                  two hands, and I opened my eyes wide and blinked them at myself in the glass. Oh!
+                  if only my hair were gold! I twisted about, and then I made grimaces at my own
+                  face.</p>
+
+
+
+               <p>Suddenly I was thrilled with a great idea—one that for the moment routed my
+                  previous ambition to some day be an artist, as was my father. I would be an
+                  actress! If I were pretty, and both that Frenchman and Englishman had said so, why
+                  should I not be famous?</p>
+
+
+
+               <p>I slipped into mama’s room, found a long skirt, and put it on me; also a feather
+                  which I stuck in my hair. Then, fearing detection, I ran out on tiptoe to the
+                  barn. There, marching up and down, I recited poems. I was pausing, to bow
+                  elaborately to the admiring audience, which, in my imagination, was cheering me
+                  with wild applause, when I heard mama’s voice calling to me shrilly:</p>
+
+
+
+               <p><q>Marion! Marion! Where in the world is that girl?</q></p>
+
+
+
+               <p><q>Coming, mama</q>.</p>
+
+
+
+               <p>I divested myself hastily of skirt and feather, and left the barn on a run for the
+                  house. Here mama thrust our latest baby upon me, with instructions to keep him
+                  quiet while she got dinner. I took that baby in my arms, but I was still in that
+                  charmed world of dreams, and in my hand I clasped a French novel, which I had
+                  filched from my brother Charles’ room. Charles at this time was twenty years of
+                  age, and engaged to be married to a girl we did not like.</p>
+
+
+
+               <p>After dinner, which we had at noon, I received the cherished permission, and ran
+                  along to papa’s room. Dear papa, whose gentle, sensitive hands are now at rest! I
+                  can see him sitting at his easel, with his blue eyes fixed absently upon the
+                  canvas before him. Papa, with the heart and soul of a great artist, <q>painting,
+                     painting</q>, as he would say, with a grim smile, <q>pot-boilers to feed my
+                     hungry children</q>.</p>
+
+
+
+               <p>I pulled out my paints and table, and began to work. From time to time I spoke to
+                  papa.</p>
+
+
+
+               <p><q>Say, papa, what do I use for these pink roses?</q></p>
+
+
+
+               <p><q>Try rose madder, white and emerald green—a little Naples yellow</q>, answered
+                  papa patiently.</p>
+
+
+
+               <p><q>Papa, what shall I use for the leaves?</q></p>
+
+
+
+               <p><q>Oh, try making your greens with blues and yellows</q>.</p>
+
+
+
+               <p>From time to time I bothered him. By and by, I tired of the work, and getting up
+                  with a clatter, I went over and watched him. He was painting cool green waves
+                  dashing over jagged rocks, from a little sketch he had taken down at Lachine.</p>
+
+
+
+               <p><q>Tell me, papa</q>, I said after a moment, <q>if I keep on learning, do you
+                     think I will ever be able to earn my living as an artist?</q></p>
+
+
+
+               <p><q>Who? What—you? Oh!—</q> Absently papa <pb n="255"/>blew the smoke about his
+                  head, gazed at me, but did not seem to see me. He seemed to be talking rather to
+                  himself, not bitterly, but just sadly: <q>Better be a dressmaker, or a plumber, or
+                     a butcher, or a policeman. There is no money in art!</q></p>
+
+
+
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+
+               <p>Next to our garden, separated only by a wooden fence, through which we children
+                  used to peep, was the opulent and well-kept garden of <foreign xml:lang="fr"
+                     >Monsieur</foreign> Prefontaine, who was a very important man, once Mayor of
+                  Hochelaga, the French quarter of Montreal, in which we lived. Madame Prefontaine,
+                  moreover, was an object of unfailing interest and absorbing wonder to us children.
+                  She was an enormously fat woman, and had once taken a trip to New York City, to
+                  look for a wayward sister. There she had been offered a job as fat woman for a big
+                  circus, Madame Prefontaine used to say to the neighbors, who always listened to
+                  her with great respect:</p>
+
+
+
+               <p><q><foreign xml:lang="fr">Mon Dieu</foreign>! That New York—it is one beeg hell!
+                     Never do I feel so hot as in dat terreeble city! I feel de grease it run all
+                     out of me! Mebbe, eef I stay at dat New York, I may be one beeg
+                        meelionaire—<foreign xml:lang="fr">Oui</foreign>! But, <foreign
+                        xml:lang="fr">non</foreign>! Me? I prefer my leetle home, so cool and quiet,
+                     in Hochelaga than be meelionaire in dat New York, dat is like
+                  purgatory</q>.</p>
+
+
+
+               <p>We had an old, straggly garden. Everything about it looked <q>seedy</q> and
+                  uncared for and wild, for we could not afford a gardener. My sisters and I found
+                  small consolation in papa’s stout assertion that it looked picturesque, with its
+                  gnarled old apple-trees and shrubs in their natural wild state. I was sensitive
+                  about that garden. It was awfully poor looking, in comparison with our neighbors’
+                  nicely kept places. It was just like our family, I sometimes treacherously
+                  thought—unkempt and wild and <q>heathenish</q>. A neighbor once called us that. I
+                  stuck out my tongue at her when she said it. Being just next to the fine garden of
+                     <foreign xml:lang="fr">Monsieur</foreign> Prefontaine, it appeared the more
+                  ragged and beggarly, that garden of ours.</p>
+
+
+
+               <p>Mama would send us children to pick the maggots off the currant bushes and the
+                  bugs off the potato plants and, to encourage us, she would give us one cent for
+                  every pint of bugs or maggots we showed her. I hated the bugs and maggots, but it
+                  was fascinating to dig up the potatoes. To see the vegetables actually under the
+                  earth seemed almost like a miracle, and I would pretend the gnomes and fairies put
+                  them there, and hid inside the potatoes. I once told this to my little brothers
+                  and sisters, and Nora, who was just a little tot, wouldn’t eat a potato again for
+                  weeks, for fear she might bite on a fairy. Most of all, I loved to pick
+                  strawberries, and it was a matter of real grief and humiliation to me that our own
+                  strawberries were so dried-up looking and small, as compared with the big,
+                  luscious berries I knew were in the garden of Monsieur Prefontaine.</p>
+
+
+
+               <p>On that day I had been picking strawberries for some time, and the sun was hot and
+                  my basket only half full. I kept thinking of the berries in the garden adjoining,
+                  and the more I thought of them, the more I wished I had some of them.</p>
+
+
+
+               <p>It was very quiet in our garden. Not a sound was anywhere, except the breezes,
+                  making all kinds of mysterious whispers among the leaves. For some time my eye had
+                  become fixed, fascinated, upon a loose board, with a hole in it near the ground. I
+                  looked and looked at that hole, I thought to myself: <q>It is just about big
+                     enough for me to crawl through</q>. Hardly had that thought occurred to me,
+                  when down on hands and knees I dropped, and into the garden of the great Monsieur
+                  Prefontaine I crawled.</p>
+
+
+
+               <p>The strawberry beds were right by the fence. Greedily I fell upon them. Oh, the
+                  exquisite joy of eating forbidden fruit! The fearful thrills that even as I ate
+                  ran up and down my spine, as I glanced about me on all sides. There was even a
+                  wicked feeling of fierce joy in acknowledging to myself that I was a thief.</p>
+
+
+
+               <p><q>Thou shalt not steal!</q> I repeated the commandment that I had broken even
+                  while my mouth was full, and then, all of a sudden, I heard a voice, one that had
+                  inspired me always with feelings of respect, and awe, and fear.</p>
+
+
+
+               <p><q>How you get in here?</q></p>
+
+
+
+               <p><foreign xml:lang="fr">Monsieur</foreign> Prefontaine was towering sternly above
+                  me. He was a big man, bearded, and with a face of preternatural importance and
+                  sternness.</p>
+
+
+
+               <p>I got up. My legs were shaky, and the world was whirling about me. I thought of
+                  the jail, where thieves were taken, and a great terror seized me. <foreign
+                     xml:lang="fr">Monsieur</foreign> Prefontaine had been the Mayor of Hochelaga.
+                  He could have put me in prison for all the rest of my life. We would all be
+                  disgraced.</p>
+
+
+
+               <p><q>Well? Well? How you get in here?</q> demanded <foreign xml:lang="fr"
+                     >Monsieur</foreign> Prefontaine.</p>
+
+
+
+               <p><q>M’sieu? I—I—<emph>crawled in</emph>!</q> I stammered, indicating the hole in
+                  the fence.</p>
+
+
+
+               <p><q><foreign xml:lang="fr">Bien</foreign>! <emph>Crawl out</emph>, <foreign
+                        xml:lang="fr">madame</foreign>!</q></p>
+
+
+
+               <p><q><foreign xml:lang="fr">Madame</foreign></q> to me, who was but twelve years
+                  old!</p>
+
+
+
+               <p><q>CRAWL OUT!</q> commanded <foreign xml:lang="fr">Monsieur</foreign>, pointing to
+                  the hole, and feeling like a worm, ignominiously, under the awful eye of that
+                  ex-Mayor of Hochelaga, on hands and knees and stomach, I crawled out.</p>
+
+
+
+               <p>Once on our side, I felt not the shame of being a thief so much, as the
+                  degradation of <emph>crawling out</emph> with that man looking.</p>
+
+
+
+               <p>Feeling like a desperate criminal, I swaggered up to the house, swinging my
+                  half-filled basket of strawberries. As I came up the path, Ellen, a sister just
+                  two years older than I, put her head out of an upper window and called down to
+                  me:</p>
+
+
+
+               <p><q>Marion, there’s a beggar boy coming in at the <pb n="256"/> gate. Give him some
+                     of that stale bread mama left on the kitchen table to make a pudding
+                  with</q>.</p>
+
+
+
+               <p>The boy was about thirteen, and he was a very dirty boy, with hardly any clothes
+                  on him. As I looked at him, I was thrilled with a most beautiful inspiration. I
+                  could regenerate myself by doing an act of lovely charity.</p>
+
+
+
+               <p><q>Wait a minute, boy</q>.</p>
+
+
+
+               <p>Disregarding the stale bread, I cut a big generous slice of fresh, sweet smelling
+                  bread that Sung Sung, our one very old Chinese servant, had made that day. Heaping
+                  it thick with brown sugar, I handed it to the boy.</p>
+
+
+
+               <p><q>There, beggar boy</q>, I said generously, <q>you can eat it all</q>.</p>
+
+
+
+               <p>He took it with both hands, greedily, and now as I looked at him another fiendish
+                  impulse seized me. Big boys had often hit me, and although I fought back as
+                  valiantly and savagely as my puny fists would let me, I had always been worsted,
+                  and had been made to realize the weakness of my sex and age. Now as I looked at
+                  that beggar boy, I realized that here was my chance to hit a big boy. He was
+                  smiling at me gratefully across that slice of sugared bread, and I leaned over and
+                  suddenly pinched him hard on each of his cheeks. His eyes bulged with amazement,
+                  and I still remember his expression of surprise and pained fear. I made a horrible
+                  grimace at him and then ran out of the room.</p>
+
+
+
+               <p>There was a long, black period when we knew acutely the meaning of what papa
+                  wearily termed <q>Hard Times</q>. Even in <q>Good Times</q> there are few people
+                  who buy paintings, and no one wants them in <q>Hard Times</q>. A terrible epidemic
+                  of smallpox broke out in the city. The French and not the English Canadians were
+                  the ones chiefly afflicted, and my father set this down to the fact that the
+                  French resisted vaccination. In fact, there were anti-vaccination riots all over
+                  the French quarter, where we lived.</p>
+
+
+
+               <p>And now my father, in this desperate crisis, proved the truth of the old adage
+                  that <q>Blood will tell</q>. Ours was the only house on our block, or for that
+                  matter the surrounding streets, where the hideous yellow sign <q><foreign
+                        xml:lang="fr">PICOTTE</foreign></q> (small pox) was not conspicuously nailed
+                  upon the front door, and this despite the fact that we were a large family of
+                  children. Papa hung sheets all over the house, completely saturated with
+                  disinfectants. Every one of us children were vaccinated, and were not allowed to
+                  leave the premises. Papa himself went upon all the messages, even doing the
+                  marketing.</p>
+
+
+
+               <p>He was not absentminded in those days, nor in the gruelling days of dire poverty
+                  that followed the plague. Child as I was, I vividly recall the terrors of that
+                  period, going to bed hungry, my mother crying in the night and my father walking
+                  up and down, up and down. Sometimes it seemed to me as if papa walked up and down
+                  all night long.</p>
+
+
+
+               <p>My brother Charles, who had been for some time our main support, had married (the
+                  girl we did not like), and although he fervently promised to continue to
+                  contribute to the family’s support, his wife took precious care that the
+                  contribution should be of the smallest, and she kept my brother, as much as she
+                  could, from coming to see us.</p>
+
+
+
+               <p>A day came when, with my mother and it seemed all of my brothers and sisters, I
+                  stood on a wharf waving to papa on a great ship. There he stood, by the railing,
+                  looking so young and good. Papa was going to England to try to induce
+                  grandpapa—that grandfather we had never seen—to help us. We clung about mama’s
+                  skirts—poor little mama, who was half distraught—and we all kept waving to papa,
+                  with our hats and hands and handkerchiefs, and calling out:</p>
+
+
+
+               <p><q>Good-by, papa! Come back! Come back soon!</q> until the boat was only a dim,
+                  shadowy outline.</p>
+
+
+
+               <p>The dreadful thought came to me that perhaps we would never see papa again!
+                  Suppose his people, who were rich and grand, should induce our father never to
+                  return to us        !</p>
+
+
+
+               <p>I had kept back my tears. Mama had told us that none of us must let papa see us
+                  cry, as it might <q>unman</q> him, and she herself had heroically set the example
+                  of restraining her grief until after his departure. Now, however, the strain was
+                  loosened. I fancied I read in my brothers’ and sisters’ faces—we were all
+                  imaginative and sensitive and excitable—my own fears. Simultaneously we all began
+                  to cry.</p>
+
+
+
+               <p>Never will I forget that return home, all of us children crying and sobbing, and
+                  mama now weeping as unconcealedly as any of us, and the French people stopping us
+                  on the way to console or commiserate with us; but although they repeated over and
+                  over, <q><foreign xml:lang="fr">Pauvres petits enfants</foreign>! <foreign
+                        xml:lang="fr">Pauvre petite mère</foreign>!</q> I saw their significant
+                  glances, and I knew that in their minds was the same treacherous thought of my
+                  father.</p>
+
+
+
+               <p>But papa did return! He could have stayed in England, and, as my sister Ada
+                  extravagantly put it, <q>lived in the lap of luxury</q>, but he came back to his
+                  noisy, ragged little <q>heathens</q>, and the <q>painting, painting of pot-boilers
+                     to feed my hungry children</q>.</p>
+
+
+
+               <p><q><foreign xml:lang="fr">Monsieur</foreign> de St. Vidal is ringing the
+                     door-bell</q>, called Ellen. <q>Why don’t you open the door, Marion. I believe
+                     he has a birthday present for you in his hand</q>.</p>
+
+
+
+               <p>It was my sixteenth birthday, and <foreign xml:lang="fr">Monsieur</foreign> de St.
+                  Vidal was my first beau! He was a relative of our neighbors, the Prefontaines, and
+                  I liked him pretty well. I think I chiefly liked to be taken about in his stylish
+                  little dog-cart. I felt sure all the other girls envied me.</p>
+
+
+
+               <p><q>You go, Ellen, while I change my dress</q>.</p>
+               <p>I was anxious to appear at my best before St. Vidal. It was very exciting, this
+                  having a beau. I would have enjoyed it much more, however, but for the interfering
+                  inquisitiveness of my sisters, Ada and Ellen, who never failed to ask me each time
+                  I had been out with him, whether he had <q>proposed</q> yet or not.</p>
+
+
+
+               <p>Ellen was running up the stairs, and now she burst into our room excitedly, with a
+                  package in her hand.</p>
+
+
+
+               <p><q>Look, Marion! Here’s your present. He wouldn’t stop—just left it, and he said,
+                     with a Frenchy bow—Whew! I don’t like the French!—‘<foreign xml:lang="fr">Pour
+                        Mamselle Marion, avec mes compliments</foreign>!’</q> and Ellen mimicked St.
+                  Vidal’s best French manner and voice.</p>
+
+
+
+               <p>I opened the package. Oh, such a lovely box of paints—a perfect treasure!</p>
+
+
+
+               <p><q>Just exactly what I wanted!</q> I cried excitedly, looking at the little tubes,
+                  all shiny and clean, and the new brushes and palette.</p>
+
+
+
+               <p>Ada was sitting reading by the window, and now she looked up and said:</p>
+
+
+
+               <p><q>Oh, did that French <emph>wine merchant</emph> give that to Marion?</q></p>
+
+
+
+               <p>She cast a disparaging glance at the box, and then, addressing Ellen, she
+                  continued:</p>
+               <p><q>Marion is disgustingly old for sixteen, but, of course, if he gives her
+                        <emph>presents</emph>—</q> (he had never given me anything but candy before)
+                     <q>he will propose to her, I suppose. Mama married at sixteen, and I suppose
+                        <emph>some</emph> people—</q> Ada gave me another look that was anything but
+                        approving—<q><emph>are</emph> in a hurry to get married. <emph>I</emph>
+                     shall never marry till I am twenty-five!</q> Ada was twenty.</p>
+
+
+
+               <p>This time, Ellen, who was eighteen, got the condemning look. Ellen was engaged to
+                  be married to an American editor, who wrote to her every day in the week and
+                  sometimes telegraphed. They were awfully in love with each other. Ellen said
+                  now:</p>
+               <p><q>Oh, he’ll propose all right. Wallace came around a whole lot, you know, before
+                     he actually popped</q>.</p>
+
+
+
+               <p><q>Well, maybe so</q>, said Ada, <q>but I think we ought to know that French wine
+                     merchant’s intention pretty soon. I’ll ask him if you like</q>, she
+                  volunteered.</p>
+
+
+
+               <p><q>No, no, don’t you dare!</q> I protested. <pb n="257"/></p>
+
+
+
+               <p><q>Well</q>, said Ada, <q>if he doesn’t propose to you soon, you ought to stop
+                     going out with him. It’s bad form</q>.</p>
+
+
+
+               <p>That evening St. Vidal called and took me to the rink, and I enjoyed myself
+                  hugely. He was a graceful skater, and so was I, and I felt sure that everyone’s
+                  eye was upon me. I was very proud of my <q>beau</q>, and I secretly wished that he
+                  was blond. I did prefer the English type. However, conscious of what was expected
+                  of me by my sisters, I smiled my sweetest on St. Vidal, and by the time we started
+                  for home I realized, with a thrill of anticipation, that he was in an especially
+                  tender mood. He helped me along the street carefully and gallantly.</p>
+
+
+
+               <p>It was a clear, frosty night, and the snow was piled up as high as our heads on
+                  each side of the sidewalks. Suddenly St. Vidal stopped, and drawing my hand
+                  through his arm, he began, with his walking stick, to write upon the snow:</p>
+
+
+
+               <p><q>Madame Marion de St. Vida—</q></p>
+
+
+
+               <p>Before he got to the <q>l</q> I was seized with panic. I jerked my hand from his
+                  arm, took to my heels and ran all the way home.</p>
+
+
+
+               <p>Now it had come—that proposal, and I did not want it. It filled me with
+                  embarrassment and fright. When I got home, I burst into Ada’s room and gasped:</p>
+
+
+
+               <p><q>It’s done! He did propose! B-but I said—I said—</q> I hadn’t said anything at
+                  all.</p>
+
+
+
+               <p><q>Well?</q> demanded Ada.</p>
+
+
+
+               <p><q>Why, I’m not going to, that’s all</q>, I said.</p>
+
+
+
+               <p>Ada returned to the plaiting of her hair. Then she said skeptically:</p>
+
+
+
+               <p><q>H’m, that’s very queer. Are you <emph>sure</emph> he proposed, because
+                        <emph>I</emph> heard he was all the time engaged to a girl in Côte des
+                     Neiges</q>.</p>
+
+
+
+               <p><q>Oh, Ada</q>, I cried, <q>do you suppose he’s a bigamist? I think I’m fortunate
+                     to have escaped from his snare!</q></p>
+               <p>The next day <foreign xml:lang="fr">Madame</foreign> Prefontaine told mama that
+                  St. Vidal had said he couldn’t imagine what in the world I had run away suddenly
+                  from him like that for, and he said:</p>
+
+
+
+               <p><q>Maybe she had a stomach-ache</q>.</p>
+
+
+
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+
+               <p><q>Ellen, don’t you wish something would happen?</q></p>
+
+
+
+               <p>Ellen and I were walking up and down the street near the English church.</p>
+
+
+
+               <p><q>Life is so very dull and monotonous</q>, I went on. <q>My! I would be glad if
+                     something real bad happened—some sort of tragedy. Even that is better than this
+                     deadness</q>.</p>
+
+
+
+               <p>Ellen looked at me, and seemed to hesitate.</p>
+
+
+
+               <p><q>Yes, it’s awful to be so poor as we are</q>, she answered, <q>but what I would
+                     like is not so much money as fame, and, of course, love. That usually goes with
+                     fame</q>.</p>
+
+
+
+               <p>Ellen’s fiancé was going to be famous some day. He was in New York, and had
+                  written a wonderful play. As soon as it was accepted, he and Ellen were to be
+                  married.</p>
+
+
+
+               <p><q>Well, I tell you what I’d like above everything else on earth</q>, I said
+                  sweepingly. <q>I would love to be a great actress, and break everybody’s hearts.
+                     It must be perfectly thrilling to be notorious, and we certainly are miserable
+                     girls</q>.</p>
+
+
+
+               <p>We were chewing away with great relish the contents of a bag of candy.</p>
+
+
+
+               <p><q>Anyhow</q>, said Ellen, <q>you seem to be enjoying that candy</q>, and we both
+                  giggled.</p>
+
+
+
+               <p>Two men were coming out of the side door of the church. Attracted by our laughter,
+                  they came over directly to us. One of them we knew well. He was Jimmy McAlpin, the
+                  son of a fine old, very rich, Scotch lady, who had always taken an interest in our
+                  family, and especially mama. Jimmy, though he took up the collection in church,
+                  had been, so heard the neighbors whisper to mama, once very dissipated. He had
+                  known us since we were little girls, and always teased us a lot. He would come up
+                  behind me on the street and pull my long plait of hair, saying: <q>Pull the
+                     string, gentlemen and ladies, and the figure moves!</q></p>
+
+
+
+               <p>Now he came smilingly up to us, followed by his friend, a big stout man, with a
+                  military carriage and gray moustache. I recognized him, too, though we did not
+                  know him. He was a very rich and important citizen of our Montreal. Of him also I
+                  had heard bad things. People said he was <q>fast</q>. That was a word they always
+                  whispered in Montreal, and shook their heads over, but whenever I heard it, its
+                  very mystery and badness thrilled me somehow. Ada said there was a depraved and
+                  low streak in me, and I guiltily admitted to myself that she was right.</p>
+
+
+
+               <p><q>What are you girls laughing about?</q> asked Jimmy, a question that merely
+                  brought forth a fresh accession of giggles.</p>
+
+
+
+               <p>Colonel Stevens was staring at me, and he had thrust his right eye into a shining
+                  monocle. I thought him very grand and distinguished looking, much superior to St.
+                  Vidal. Anyway we were tired of the French, having them on all sides of us, and as
+                  I have said, I admired the blond type of men. Colonel Stevens was not exactly
+                  blond, for his hair was gray (he was bald on top, though his hat covered that),
+                  but he was typically British, and somehow the Englishmen always appeared to me
+                  much superior to our little French Canucks, as we called  them.</p>
+
+
+
+               <p>Said the colonel, pulling at his moustache: <q>A laughing young girl in a
+                     pink-cotton frock is the sweetest thing on earth</q>.</p>
+
+
+
+               <p>I had on a pink-cotton frock, and I was laughing. I thought of what I had heard
+                  Madame Prefontaine say to mama—in a whisper: <q>He is one dangerous man—dat
+                     Colonel Stevens, and any woman seen wiz him will lose her reputation</q>.</p>
+
+
+
+               <p><q>Will I lose mind?</q> I asked myself. I must say my heart beat, fascinated,
+                  with the idea. Something, now, was really happening, and I was excited and
+                  delighted.</p>
+
+
+
+               <p><q>Can’t we take the ladies</q>—I nudged Ellen—<q>some place for a little
+                     refreshment</q>, said the colonel.</p>
+
+
+
+               <p><q>No</q>, said Ellen, <q>mama expects us home</q>.</p>
+
+
+
+               <p><q>Too bad</q>, murmured the colonel, very much disappointed, <q>but how about
+                     some other night? To-morrow, shall we say?</q></p>
+
+
+
+               <p>Looking at me, he added: <q>May I send you some roses, just the color of your
+                     cheeks?</q></p>
+               <p>I nodded from behind Ellen’s back.</p>
+
+
+
+               <p><q>Come on</q>, said Ellen brusquely, <q>we’d better be getting home. You know
+                     you’ve got the dishes to do, Marion</q>.</p>
+
+
+
+               <p>She drew me along. I couldn’t resist looking back, and there was that fascinating
+                  colonel, standing stock still in the street, still pulling <pb n="304"/> at his
+                  moustache, and staring after me. He smiled all over, when I turned, and blew me an
+                  odd little kiss, like a kind of salute, only from his lips.</p>
+
+
+
+               <p>That night, when Ellen and I were getting ready for bed, I said: <q>Isn’t the
+                     colonel thrillingly handsome, though?</q></p>
+
+
+
+               <p><q>Ugh! I should say not</q>, said Ellen. <q>Besides, he’s a married man, and a
+                     flirt</q>.</p>
+
+
+
+               <p><q>Well, I guess he doesn’t love his old wife</q>, said I.</p>
+
+
+
+               <p><q>If she is old</q>, said Ellen, <q>so is he—maybe older. Disgusting!</q></p>
+
+
+
+               <p>All next day I waited for that box of roses and late in the afternoon, sure
+                  enough, it came, and with it a note:</p>
+
+               <q>
+                  <floatingText type="letter">
+                     <body>
+                        <opener><salute>Dear Miss Marion:</salute></opener>
+                        <p>Will you and your charming sister take a little drive with me and a
+                           friend this evening? If so, meet us at eight o’clock, corner of St. James
+                           and St. Denis streets. My friend has seen your sister in Judge Laflamme’s
+                           office <note type="authorial">(Ellen worked there)</note> and he is very
+                           anxious to know her. As for me, I am thinking only of when I shall see my
+                           lovely rose again. I am counting the hours!</p>
+                        <closer>
+                           <salute>Devotedly,</salute>
+                           <signed>Fred Stevens.</signed>
+                        </closer>
+                     </body>
+                  </floatingText>
+               </q>
+
+               <p>The letter was written on the stationary of the fashionable St. James Club. Now I
+                  was positive that Colonel Stevens had fallen in love with me. I thought of his
+                  suffering because he could not marry me. In many of the French novels I had read
+                  men ran away from their wives, and I thought: <q>Maybe the colonel will want me to
+                     elope with him, and if I won’t, perhaps he will kill himself</q>, and I began
+                  to feel very sorry to think of such a fine-looking soldierly man as Colonel
+                  Stevens killing himself just because of me.</p>
+               <p>When I showed Ellen the letter, after she got home from work, to my surprise and
+                  delight, she said:</p>
+
+
+
+               <p><q>All right, let’s go. A little ride will refresh us, and I’ve had a hard week of
+                     it, but better not let mama know where we’re going. We’ll slip out after
+                     supper, when she’s getting the babies to sleep</q>.</p>
+
+
+
+               <p>Reaching the corner of St. James and St. Denis streets that evening, we saw a
+                  beautiful closed carriage, with a coat of arms on the door, and a coachman in
+                  livery jumped down and opened the door for us. We stepped in. With the colonel was
+                  a middle-aged man, with a dry yellowish face and a very black—it looked
+                  dyed—moustache.</p>
+
+
+
+               <p><q>Mr. Mercier!</q> said the colonel, introducing us.</p>
+
+
+
+               <p><q>Oh</q>, exclaimed Ellen, <q>are you related to the Premier?</q></p>
+
+
+
+               <p><q>Non, non, non</q>, laughed Mr. Mercier, and turning about in the seat, he began
+                  to look at Ellen, and to smile at her, until the ends of his waxed moustache
+                  seemed to jump up and scratch his nose. Colonel Stevens had put his arm just at
+                  the back of me, and as it slipped down from the carriage seat to my waist, I sat
+                  forward on the edge of the seat. I didn’t want to hurt his feelings by telling him
+                  to take his arm down, and still I didn’t want him to put it around me. Suddenly
+                  Ellen said:</p>
+
+
+
+               <p><q>Marion, let’s get out of this carriage. That beast there put his arm around me,
+                     and he pinched me, too</q>. She indicated Mercier. She was standing up in the
+                  carriage, clutching at the strap, and she began to tap upon the window, to attract
+                  the attention of the coachman. Mr. Mercier was cursing softly in French.</p>
+
+
+
+               <p><q><foreign xml:lang="fr">Petite folie</foreign>!</q> he said, <q>I am not meaning
+                     to hurt you—joost a little loving. Dat is all</q>.</p>
+
+
+
+               <p><q>You ugly old man</q>, said Ellen, <q>do you think I want <emph>you</emph> to
+                     love me? Let me get out!</q></p>
+
+
+
+               <p><q>Oh, now, Miss Ellen</q>, said the colonel, <q>that is too rude. Mr. Mercier is
+                     a gentleman. See how sweet and loving your little sister is</q>.</p>
+
+
+
+               <p><q>No, no!</q> I cried, <q>I am not sweet and loving. He had no business to touch
+                     my sister</q>.</p>
+
+
+
+               <p>Mr. Mercier turned to the colonel.</p>
+
+
+
+               <p><q>For these children did you ask me to waste my time?</q> and putting his head
+                  out of the carriage, he simply roared:</p>
+
+
+
+               <p><q><foreign xml:lang="fr">Rue</foreign> Saint Denis! <foreign xml:lang="fr"
+                        >Sacré</foreign>!</q></p>
+
+
+
+               <p>They set us down at the corner of our street. When we got in a friend of papa’s
+                  was singing to mama and Ada in the parlor:</p>
+
+
+
+               <p><q>In the gloaming, oh, my darling, When the lights are dim and low</q>.</p>
+
+
+
+               <p>He was one of many Englishmen, younger sons of aristocrats, who, not much good in
+                  England, were often sent to Canada. They liked to hang around papa, whose family
+                  most of them knew. This young man was a thin, harmless sort of fellow, soft spoken
+                  and rather silly, Ellen and I thought, but he could play and sing in a pretty,
+                  sentimental way, and mama and Ada would listen by the hour to him. He liked Ada,
+                  but Ada pretended she had only an indifferent interest in him. His father was the
+                  Earl of Albemarle, and Ellen and I used to make Ada furious by calling her
+                     <q>Countess</q>, and bowing mockingly before her.</p>
+
+
+
+               <p>Walking on tiptoe, Ellen and I slipped by the parlor door, and up to our own room.
+                  That night, after we were in bed, I said to Ellen:</p>
+
+
+
+               <p><q>You know, I think Colonel Stevens is in love with me. Maybe he will want me to
+                     elope with him. Would you, if you were me?</q></p>
+
+
+
+               <p><q>Don’t be silly; go to sleep</q>, was Ellen’s cross response. She regretted very
+                  much taking that ride, and she said she only did it because she got so tired at
+                  the office all day, and thought a little ride would be nice. She had no idea, she
+                  said, that those <q>two old fools</q> would act like that.</p>
+
+
+
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+
+
+               <p>Wallace, Ellen’s sweetheart, had not sold his play, but he expected to any day. He
+                  was, however, impatient to be married—they had now been engaged over a year and he
+                  wrote Ellen that he could not wait, anyway, more than two or three months longer.
+                  Meanwhile Ellen secured a much better position.</p>
+
+
+
+               <p>The new position was at a greater distance from our house, and as she had to be at
+                  the office early she decided to take a room down-town. Papa at first did not want
+                  her to leave home, but Ellen pointed out that Hochelaga was too far away from her
+                  office, and then she added, to my delight, that she’d take me along with her. I
+                  could make her trousseau and cook for us both, and it wouldn’t cost any more for
+                  two than for one.</p>
+
+
+
+               <p>Mama thought we were old enough to take care of ourselves, <q>for</q>, said she,
+                     <q>when I was Ellen’s age I was married and had two children. Besides</q>, she
+                  added, <q>we are crowded for room in the house, and it will only be for a month or
+                     two</q>.</p>
+
+
+
+               <p>So Ellen secured a little room down-town. I thought the house was very grand, for
+                  there was thick carpet on all the floors and plush furniture in the parlor.</p>
+
+
+
+               <p>We had been at Mrs. Cohen’s (that was the name of our landlady) less than a month,
+                  when Wallace wrote he could wait no longer.</p>
+
+
+
+               <p>He had not sold his play but he had a very good position now as associate editor
+                  of a big magazine, and he said he was making ample money to support a wife. So he
+                  was coming for his little Ellen at once. We were terribly excited, particularly as
+                  Wallace followed up the letter with a telegram to expect him next day, and sure
+                  enough the next day he arrived.</p>
+
+
+
+               <p>He did not want any <q>fussy</q> wedding. Only papa and I were to be present.
+                  Wallace did not even want us, but Ellen insisted. She looked sweet in her little
+                  dress (I had made it), and although I knew Wallace was good, and a genius, and
+                  adored my sister, I felt broken-hearted at the thought of losing her, and it was
+                  all I could do to keep from crying at the ceremony.</p>
+
+
+
+               <p>As the train pulled out I felt so utterly desolate, that I stretched out my arms
+                  to it and cried out aloud:</p>
+
+
+
+               <p><q>Ellen, Ellen, please don’t go! Take me, too!</q> I never realized till then how
+                  much I loved my sister. Dear little Ellen, with her love of all that was best in
+                  life, her sense of humor, her large, generous heart, and her absolute purity. If
+                  only she had stayed by my side I am sure her influence would have kept me from all
+                  the mistakes and troubles that followed in my life, if only by her disgust and
+                  contempt of all that was dishonorable and unclean. But Wallace had taken our
+                  Ellen, and I had lost my best friend, my sister and my chum.</p>
+
+
+
+               <p>I was at the age—nearly eighteen now—when girls want and need chums and
+                  confidantes. I was bubbling over with impulses that needed and outlet, and only
+                  foolish young things like myself were capable of understanding me. With Ellen
+                  gone, I sought and found girl friends I believed to be congenial.</p>
+
+
+
+               <p>My sister Ada, because of her superiority in age and character to me, would not
+                  condescend to chum with me. Nevertheless, she heartily disapproved of my choice in
+                  friends, and constantly reiterated that my tastes were <pb n="305"/> low. Life was
+                  a serious matter to Ada, who had enormous ambitions, and had already been promised
+                  a position on our chief newspaper, to which she had contributed poems and stories.
+                  To Ada, I was a frivolous, silly young thing, who needed constantly to be
+                  squelched, and she undertook to do the squelching, unsparingly, herself.</p>
+
+
+
+               <p><q>Since we are obliged</q>, said Ada, <q>to live in a neighborhood with people
+                     who are not our equals, I think it a good plan to keep to ourselves. That’s the
+                     only way to be exclusive. Now that Gertie Martin</q> (Gertie was my latest
+                  friend) <q>is a noisy American girl. She talks through her nose, and is always
+                     criticizing the Canadians and comparing them with the Yankees. As for that Lu
+                     Fraser</q> (another of my friends) <q>she can’t even speak the Queen’s English
+                     properly, and her uncle keeps a saloon</q>.</p>
+
+
+
+               <p>Though I stoutly defended my friends, Ada’s nagging had an unconscious effect upon
+                  me, and for a time I saw very little of the girls.</p>
+
+
+
+               <p>Then one evening Gertie met me on the street, and told me that, through her
+                  influence, Mr. Davis (also an American) had decided to ask me to take a part in
+                     <q>Ten Nights in a Barroom</q>, which was to be given at a <q>Pop</q> by the
+                  Montreal Amateur Theatrical Club, of which he was the head. I was so excited and
+                  happy about this that I seized hold of Gertie and danced with her on the sidewalk,
+                  much to the disgust of my brother, Charles, who was passing with his new wife.</p>
+
+
+
+               <p>Mr. Davis taught elocution and dramatic art, and he was a man of tremendous
+                  importance in my eyes. He was always getting up concerts and entertainments, and
+                  no amateur affair in Montreal seemed right without his efficient aid. The series
+                  of <q>Pops</q> he was now giving were patronized by all the best people of the
+                  city and he had an imposing list of patrons and patronesses. Moreover the plays
+                  were to be produced in a real theater, not merely a hall, and so they had somewhat
+                  the character of professional performances.</p>
+
+
+
+               <p>To my supreme joy, I was given the part of the drunkard’s wife, and there were two
+                  glorious weeks in which we rehearsed and Mr. Davis trained us. He said one day
+                  that I was the <q>best actress</q> of them all, and he added that although he
+                  charged $25 a month to his regular pupils he would teach me for ten, and if I
+                  couldn’t afford that, for five; and if there was no five to be had, then for
+                  nothing. I declared fervently that I would repay him some day, and he laughed, and
+                  said: <q>I’ll remind you when that ‘some day’ comes</q>.</p>
+
+
+
+               <p>Well, the night arrived, and I was simply delirious with joy. I learned how to
+                     <q>make up</q>, and I actually experienced stage fright when I first went on,
+                  but I soon forgot myself.</p>
+
+
+
+               <p>When I was crawling on the floor across the stage, trying to get something to my
+                  drunken husband, a voice from the audience called out:</p>
+
+
+
+               <p><q>Oh, Ma-ri-on! Oh, Ma-ri-on! You’re on the bum! You’re on the bum!</q></p>
+
+
+
+               <p>It was my little brother, Randle, who with several small boys had got free seats
+                  away up front by telling the ticket man that his sister was playing the star part.
+                  I vowed mentally to box his ears good and hard when I got home.</p>
+
+
+
+               <p>When the show was over Mr. Davis came to the dressing-room and said, before all
+                  the girls:</p>
+
+
+
+               <p><q>Marion, come to my studio next week and we’ll start those lessons, and when we
+                     put on the next ‘Pop,’ which I believe will be ‘Uncle Tom’s Cabin,’ we will
+                     find a good part for you</q>.</p>
+
+
+
+               <p><q>Oh, Mr. Davis</q>, I cried, <q>are you going to make an actress of me?</q></p>
+
+
+
+               <p><q>We’ll see! We’ll see!</q> he said, smiling. <q>It will depend on yourself, and
+                     if you are willing to study</q>.</p>
+
+
+
+               <p><q>I’ll sit up all night long and study</q>, I assured him.</p>
+
+
+
+               <p><q>The worst thing you could do</q>, he answered. <q>We want to save these
+                     peaches</q>, and he pinched my cheek.</p>
+
+
+
+               <p>Mr. Davis did lots of things that in other men would have been offensive. He
+                  always treated us girls as if we were children. People in Montreal thought him
+                     <q>sissified</q>, but I am glad there are some men more like the gentler
+                  sex.</p>
+
+
+
+               <p>So I began to take lessons in elocution and dramatic art. Oh! but I was a happy
+                  girl in those days. It is true, Mr. Davis was very strict, and he would make me go
+                  over lines again and again before he was satisfied, but when I got them finally
+                  right and to suit him, he would rub his hands, blow his nose and say:</p>
+
+
+
+               <p><q>Fine! Fine! Marion, there’s the real stuff in you</q>.</p>
+
+
+
+               <p>He once said that I was the only pupil he had who had an atom of promise in her.
+                  He declared Montreal peculiarly lacking in talent of that sort, though he said he
+                  had searched all over the place for even a <q>spark of fire</q>. I, at least,
+                  loved the work, was deadly in earnest, and, finally, so he said, I was pretty, and
+                  that was something.</p>
+
+
+
+               <p>We studied <q>Camille</q>, <q>The Marble Heart</q>, and <q>Romeo and Juliet</q>.
+                  All of my spare time at home I spent memorizing and rehearsing. I would get a
+                  younger sister, Nora, who was absorbedly interested, to act as a dummy. I would
+                  make her be Armand or Armand’s father.</p>
+
+
+
+               <p><q>Now, Nora</q>, I would say, <q>when I come to the word ‘Her,’ you must say:
+                     ‘Camille! Camille!’</q></p>
+
+
+
+               <p>Then I would begin, addressing Nora as Armand:</p>
+
+
+
+               <p><q>You are not talking to a cherished daughter of society, but a woman of the
+                     world, friendless and fearless. Loved by those whose vanity she gratifies,
+                     despised by those who ought to pity her—her—<emph>Her</emph>—</q></p>
+
+
+
+               <p>I would look at Nora and repeat: <q>Her—!</q> and Nora would wake up from her
+                  trance of admiration of me and say:</p>
+
+
+
+               <p><q>Camel! Camel!</q></p>
+
+
+
+               <p><q>No, no!</q> I would yell. <q><emph>That</emph> is—</q> (pointing to the
+                  right—Mr. Davis called that <q>dramatic action</q>) <q><emph>your</emph> way!
+                        <emph>This</emph> way—</q> (pointing to the left) <q>is mine!</q></p>
+
+
+
+               <p>Then throwing myself on the dining-room sofa, I would sob and moan and cough
+                  (Camille had consumption, you may recall), and what with Nora crying with sympathy
+                  and excitement, and the baby generally waking up there would be an awful noise in
+                  our house.</p>
+
+
+
+               <p>I remember papa coming half way down the stairs one day and calling out:</p>
+
+
+
+               <p><q>What the dickens is the matter with that Marion? Has she taken leave of her
+                     sense?</q></p>
+
+
+
+               <p>Mama answered from the kitchen:</p>
+
+
+
+               <p><q>No, papa, she’s learning elocution and dramatic art from Mr. Davis; but I’m
+                     sure she’s not suited to be an actress, for she lisps and her nose is too
+                     short. But do make her stop, or the neighbors will think we are
+                  quarreling</q>.</p>
+
+
+
+               <p><q>Stop this minute!</q> ordered papa, <q>and don’t let me hear any more such
+                     nonsense</q>.</p>
+
+
+
+               <p>I betook myself to the barn.</p>
+
+
+
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+
+               <p>The snow was crisp and the air as cold as ice. We were playing the last
+                  performance of <q>Uncle Tom’s Cabin</q>. We had been playing it for two weeks, and
+                  I had been given two different parts—Marie St. Claire, in which, to my joy, I wore
+                  a gold wig and lace tea-gown—which I made from an old pair of lace curtains and a
+                  lavender silk dress mama had had when they were rich and she dressed for
+                  dinner—and Cassy. I did love that part where Cassy says:</p>
+
+
+
+               <p><q>Simon Legree, you are afraid of me, and you have reason to be, for I have got
+                     the devil in me!</q></p>
+               <p>I used to hurl those words at him, and glare until the audience clapped me for
+                  that. Ada saw me play Cassy one night, and she went home and told mama that I had
+                     <q>sworn like a common woman before all the people on the stage</q> and that I
+                  ought not to be allowed to disgrace the family. But little I cared for Ada in
+                  those days. I was learning to be an actress!</p>
+
+
+
+               <p>On this last night, in fact, I experienced all the sensations of a successful
+                  star. Someone had passed up to me, over the footlights, if you please, a real
+                  bouquet of flowers, and with these clasped to my breast I had retired smiling and
+                  bowing from the stage.</p>
+
+
+
+               <p>To add to my bliss, Patty Chase, the girl who played Topsy, came running in to say
+                  that a gentleman friend of hers was <q>crazy</q> to meet me. He was the one who
+                  had sent me the flowers. He wanted to know if I would not take supper with him and
+                  a friend and Patty that night.</p>
+
+
+
+               <p>My! I felt like a regular professional actress. To think an unknown man had
+                  admired me from the front, and was actually seeking my acquaintance! I hesitated,
+                  however, because Patty was not the sort of girl I was accustomed to go out with. I
+                  liked Patty pretty well myself, but my brother, Charles, had one day come to the
+                  house especially to tell papa some things about her—he had seen me walking with
+                  Patty on the street—and papa had forbidden me to go out with her again. As I
+                  hesitated, she said:</p>
+
+
+
+               <p><q>It isn’t as if they are strangers, you know. One of them, Harry Bond, is my own
+                     fellow. You know how his folks are, and but for them we’d have been married
+                     long ago. Well, Harry’s friend, the one who wants to meet you, is a swell, too,
+                     and he hasn’t been out from England long. Harry says his folks are big nobs
+                     over there, and he is studying law here. His folks send him a remittance and I
+                     guess it’s a pretty big one, for he’s <pb n="306"/> living at the Windsor, and
+                     I guess he can treat us fine. So come along. You’ll not get such a chance
+                     again</q>.</p>
+
+
+
+               <p><q>Patty</q>, I said, <q>I’m afraid I dare not. Mama hates me to be out late, and,
+                     see, it’s eleven already</q>.</p>
+
+
+
+               <p><q>Why, the night’s just beginning</q>, cried Patty.</p>
+
+
+
+               <p>There was a rap at the door, and Patty exclaimed:</p>
+
+
+
+               <p><q>Here they are now!</q></p>
+               <p>All the girls in the room were watching me—enviously, I thought—and one of them
+                  made a catty remark about Patty, who had gone out in the hall, and was whispering
+                  to the man. I decided not to go, but when I came out of the room there they were
+                  all waiting for me, and Patty exclaimed:</p>
+
+
+
+               <p><q>Here she is</q>, and, dragging me along by the hand, she introduced me to the
+                  men.</p>
+
+
+
+               <p>I found myself looking up into the face of a tall man of about twenty-three. He
+                  had light curly hair and blue eyes. His features were fine and clear cut, and, to
+                  my girlish eyes, he appeared extraordinarily handsome and distinguished, far more
+                  so even than Colonel Stevens, who had, up till then, been my ideal of manly
+                  perfection. Everything he wore had an elegance about it, from his evening suit and
+                  the rich fur-lined overcoat to his opera hat and gold-topped cane. I felt
+                  flattered and overwhelmingly impressed to think that such a fine personage should
+                  have singled me out for especial attention. What is more, he was looking at me
+                  with frank and undisguised admiration. Instead of letting go my hand, which he had
+                  taken when Patty introduced us, he held it while he asked me if he couldn’t have
+                  the pleasure of taking me out to super. As I hesitated, blushing and awfully
+                  thrilled by the hand pressing mine, Patty said:</p>
+
+
+
+               <p><q>She’s scared. Her mother won’t let her stay out late at night. She’s never been
+                     out to supper before</q>.</p>
+
+
+
+               <p>Then she and Harry Bond burst out laughing, as if that were a good joke on me, but
+                  Mr. Bertie (his name was the Honorable Reginald Bertie—pronounced Bartie) did not
+                  laugh. On the contrary, he looked very sympathetic, and pressed my hand the
+                  closer. I thought to myself:</p>
+
+
+
+               <p><q>My! I must have looked lovely as Marie St. Claire. Wait till he sees me as
+                     Camille</q>.</p>
+
+
+
+               <p><q>I’m not afraid</q>, I contradicted Patty, <q>but mamma sits up for me</q>.</p>
+
+
+
+               <p>This was not strictly true, but it sounded better than to say that Ada always sat
+                  up for anyone in the house who went out at night. She even used to sit up for my
+                  brother Charles, before he was married, and I could just imagine the
+                  cross-questioning she would put me through when I got in late. Irritated as I used
+                  to be in those days at what I called Ada’s interference in my affairs, I know now
+                  that she always had my best good at heart. Poor little delicate Ada! with her
+                  passionate devotion and loyalty to the family, and her fierce antagonistic
+                  attitude to all outside intrusion. She was morbidly sensitive.</p>
+
+
+
+               <p>Mr. Bertie quieted my fears by despatching a messenger boy to our house with a
+                  note saying that I had gone with a party of friends to see the Ice Palace.</p>
+
+
+
+               <p>Even with Ada in the back of my mind I was now, as Patty would say, <q>in for a
+                     good time</q>, and when Mr. Bertie carefully tucked the fur robes of the sleigh
+                  about me I felt warm, excited and recklessly happy.</p>
+
+
+
+               <p>We drove over to the Square, where the Ice Palace was erected. The Windsor Hotel
+                  was filled with American guests, who were on the balconies, watching the
+                  torchlight procession marching around the mountain. My brother, Charles, was one
+                  of the snowshoers, and the men were all dressed in white and striped blanket
+                  overcoats, with pointed capuchons on their backs and heads and moccasins on their
+                  feet. It was a beautiful sight, that procession, and looked like a snake of light
+                  winding about old Mount Royal, and when the fireworks burst all about the
+                  monumental Ice Palace, inside of which people were dancing and singing, really it
+                  seemed to me like a scene in fairyland. I felt a sense of pride in our Montreal
+                  and looking up at Mr. Bertie to note the effect of so much beauty upon him, I
+                  found him watching me instead.</p>
+
+
+
+               <p>The English, when they first come out ot Canada, always assume an air of patronage
+                  toward the <q>Colonials</q> as they call us, just as if, while interested, they
+                  are also highly amused by our crudeness. Now Mr. Bertie said:</p>
+
+
+
+               <p><q>We’ve seen enough of this Ice Palace’s hard, cold beauty. Suppose we go
+                     somewhere and get something warm inside us. Gad! I’m dry</q>.</p>
+
+
+
+               <p>Harry told the driver to take us to a place whose name I could not catch, and
+                  presently we drew up before a brilliantly lighted restaurant. Harry Bond jumped
+                  out, and Patty after him. I was about to follow, when I felt a detaining hand upon
+                  my arm, and Bertie called out to Bond:</p>
+
+
+
+               <p><q>I’ve changed my mind, Bond. I’ll be hanged if I care to take Miss Ascough into
+                     that place</q>.</p>
+
+
+
+               <p>Bond was angry, and demanded to know why Bertie had told him to order dinner for
+                  four. He said he had called the place up from the theatre.</p>
+               <p><q>Never mind</q>, said Bertie, <q>I’ll fix it up with you later. Go on in without
+                     us. It’s all right</q>.</p>
+
+
+
+               <milestone unit="sectionBreak"/>
+            </div>
+            <div>
+
+               <fw type="continued" place="center">(Be sure to follow up these experiences of
+                     <q>Marion</q> in the May issue of Hearst’s)</fw>
+
+
+
+
+
+            </div>
          </div>
-        </div>
       </body>
    </text>
 </TEI>
