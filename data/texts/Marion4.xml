@@ -15,6 +15,14 @@
                <resp>Encoder</resp>
                <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -37,6 +45,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:SL1" when="2022-08-23" status="published">Fixed typos. Coded letter.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added fw type.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">added paratext and illustrator.</change>
@@ -73,14 +82,26 @@
     <div>                 
       
     
-            <p>I had received, of course, a great many letters from Reggie, and I wrote to him every day. He expected to return in the fall, and he wrote that he was counting the days. He said very little in his letters about his people, though he must have known I was anxiously awaiting word as tohow they had taken the news of our engagement.</p>
+            <p>I had received, of course, a great many letters from Reggie, and I wrote to him every day. He expected to return in the fall, and he wrote that he was counting the days. He said very little in his letters about his people, though he must have known I was anxiously awaiting word as to how they had taken the news of our engagement.</p>
             <p>Toward the end of summer his letters came less frequently, and to my great misery two weeks passed away when I had no word from him at all. I was feeling blue and heartsick and, but for my work at the Château, I think I would have done something desperate. I was really tremendously in love with Reggie and I worried and fretted over his long absence and silence.</p>
             <p>Then one day in late September a messenger boy came with a letter for me. It was from Reggie. He had returned from his trip, and was back in Montreal. Instead of being happy to receive his letter, I was filled with resentment and indignation. He should have come himself and, inspite of what he wrote, I felt I could not excuse him. This was his letter:</p>
-            <p><q>Darling Girlie:</q></p>
-            <p><q>I am counting the hours when I will be with you. I tried to get up to see you last night, but it was impossible. Lord Eaton’s son, young Albert, was on the steamer coming over, and they are friends of the governor’s and I simply had to be with them. You see, darling, it means a good deal to me in the future, to be in touch with these people. His brother-in-law, whom I met last night, is head-cockalorum in the House of Parliament, and as I have often told you, my ambition is to get into politics. It’s the surest high-road to fame for a Barrister</q>.</p>
-            <p><q>Now I hope my foolish little girl will understand and believe me when I say that I am thinking for you as much as for myself</q>.</p>
-            <p><q>I am hungry for a kiss, and I feel I cannot wait till tonight</q>.</p>
-            <p><q>Your own, ‘Reggie.’</q></p>
+        <q>
+           <floatingText type="letter">
+              <body>
+                 <opener>
+                    <salute><q>Darling Girlie:</q></salute>
+                 </opener>
+                 <p>’’I am counting the hours when I will be with you. I tried to get up to see you last night, but it was impossible. Lord Eaton’s son, young Albert, was on the steamer coming over, and they are friends of the governor’s and I simply had to be with them. You see, darling, it means a good deal to me in the future, to be in touch with these people. His brother-in-law, whom I met last night, is head-cockalorum in the House of Parliament, and as I have often told you, my ambition is to get into politics. It’s the surest high-road to fame for a Barrister.</p>
+                 <p>’’Now I hope my foolish little girl will understand and believe me when I say that I am thinking for you as much as for myself.</p>
+                 <p>’’I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
+                 <closer>
+                    <salute>Your own,</salute>
+                    <signed><q>Reggie</q>.</signed>
+                 </closer>
+              </body>
+           </floatingText>
+        </q>
+            
             <p>For the first time in my life I experienced the pangs of jealousy, and yet I was jealous of something intangible. It was lurking in my thought, and all sorts of suspicions and fears came into my hot head.</p>
             <p>When Reggie came that evening, I did not open the door as usual. I heard him say eagerly, when the children let him in:</p>
             <p><q>Where’s Marion?</q></p>
