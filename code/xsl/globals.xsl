@@ -379,4 +379,26 @@
         </xsl:choose>
     </xsl:function>
     
+    <xd:doc>
+        <xd:desc>Function to retrieve word count of a particular node;
+        this is a fairly rushed implementation that could likely be optimized.</xd:desc>
+    </xd:doc>
+    <xsl:function name="wea:getWordCount" as="xs:integer">
+        <xsl:param name="node" as="node()"/>
+        <xsl:choose>
+            <!--If there's a gap, then just skip the thing-->
+            <xsl:when test="$node[descendant::tei:gap[@reason='noTranscriptionAvailable']]">
+                <xsl:sequence select="0"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <!--Retrieve all relevant text nodes-->
+                <xsl:variable name="text" select="$node/descendant::text()[not(ancestor-or-self::tei:note[@type='editorial'] or ancestor-or-self::tei:corr)][matches(.,'\S')]" as="text()*"/>
+                
+                <!--Count them up by analyze the string, finding all matches for non-space characters, and then counting them-->
+                <xsl:variable name="wc" select="count(analyze-string(string-join($text),'\S+')//*:match)" as="xs:integer"/>
+                <xsl:sequence select="$wc"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
 </xsl:stylesheet>

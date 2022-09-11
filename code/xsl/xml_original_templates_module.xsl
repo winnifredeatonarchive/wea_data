@@ -73,6 +73,75 @@
         
     </xsl:template>
     
+    <xsl:template match="divGen[@xml:id='statistics_content']" mode="original">
+        <xsl:variable name="texts" select="$sourceXml//TEI[not(descendant::catRef[matches(@target,'bornDigital','i')])]"/>
+        <xsl:variable name="TOTAL_KEY" select="'Texts in archive '" as="xs:string"/>
+        <xsl:variable name="TRANSCRIBED_KEY" select="'Transcribed texts'" as="xs:string"/>
+        <xsl:variable name="TOTAL_WORDS_KEY" select="'Words transcribed'" as="xs:string"/>
+        <xsl:variable name="WEDA_KEY" select="'Texts inherited from WEDA'" as="xs:string"/>
+        <xsl:variable name="KEYS" 
+            select="$TOTAL_KEY, $TRANSCRIBED_KEY, $WEDA_KEY, $TOTAL_WORDS_KEY" as="xs:string+"/>
+        <xsl:iterate select="$texts">
+            <xsl:param name="stats" as="map(xs:string, xs:integer)"
+                select="map{
+                    $TOTAL_KEY: 0,
+                    $TRANSCRIBED_KEY: 0,
+                    $TOTAL_WORDS_KEY: 0,
+                    $WEDA_KEY: 0
+                }"/>
+            
+            <xsl:on-completion>
+                <table>
+                    <xsl:for-each select="$KEYS">
+                        <row>
+                            <cell role="label">
+                                <xsl:value-of select="."/>
+                            </cell>
+                            <cell>
+                                <xsl:value-of select="$stats(.)"/>
+                            </cell>
+                        </row>
+                    </xsl:for-each>
+                </table>
+                <table>
+                    <xsl:for-each select="map:keys($stats)[not(. = $KEYS)]">
+                        <xsl:sort select="."/>
+                        <xsl:sort select="string-length(.)"/>
+                        <row>
+                            <cell role="label">
+                                <xsl:value-of select="."/>
+                            </cell>
+                            <cell>
+                                <xsl:value-of select="$stats(.)"/>
+                            </cell>
+                        </row>
+                    </xsl:for-each>
+                </table>
+            </xsl:on-completion>
+           
+            <xsl:variable name="newMap" as="map(*)">
+                <xsl:map>
+                    <xsl:map-entry key="$TOTAL_KEY" select="$stats($TOTAL_KEY) + 1"/>
+                    <xsl:map-entry key="$TRANSCRIBED_KEY" select="$stats($TRANSCRIBED_KEY) + xs:integer(not(descendant::gap[@reason='noTranscriptionAvailable']))"/>
+                    <xsl:map-entry key="$TOTAL_WORDS_KEY" select="$stats($TOTAL_WORDS_KEY) + wea:getWordCount(descendant::text)"/>
+                    <!--We know a text precedes the WEA is there's a change statement that precedes the 2010-->
+                    <xsl:map-entry key="$WEDA_KEY" select="$stats($WEDA_KEY) + xs:integer(exists(//change[matches(@when,'^200\d-')]))"/>
+                    <xsl:for-each select="distinct-values(//catRef/@target) ! xs:string(.)">
+                        <xsl:map-entry key="." select="(map:get($stats, .), 0)[1] + 1"/>
+                    </xsl:for-each>
+                </xsl:map>
+            </xsl:variable>
+            <xsl:next-iteration>
+                <xsl:with-param name="stats"
+                    as="map(xs:string, xs:integer)"
+                    select="map:merge(($newMap, $stats))"/>
+            </xsl:next-iteration>
+            
+        </xsl:iterate>
+        
+        
+    </xsl:template>
+    
     <xsl:template match="divGen[@xml:id='we_bibliography_content']" mode="original">
         <xsl:call-template name="createWEBibl"/>
     </xsl:template>

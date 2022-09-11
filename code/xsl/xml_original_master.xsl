@@ -18,6 +18,7 @@
         </xd:desc>
     </xd:doc>
     <xsl:include href="globals.xsl"/>
+
     <xsl:include href="xml_original_category_module.xsl"/>
     <xsl:include href="xml_original_people_module.xsl"/>
     <xsl:include href="xml_original_organizations_module.xsl"/>
