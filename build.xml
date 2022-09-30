@@ -55,7 +55,7 @@
     </target>
     
     <target name="cleanUpStaticSearch">
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-xsl:${project.dir}/code/xsl/clean_up_ss.xsl"/>
             <arg value="-s:${basedir}/products/site/search.html"/>
             <arg value="-o:${basedir}/products/site/search_clean.html"/>
@@ -65,7 +65,7 @@
     </target>
 
     <target name="makeSiteMap">
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
             <arg value="-it:go"/>
             <arg value="outDir=${site.dir}"/>
