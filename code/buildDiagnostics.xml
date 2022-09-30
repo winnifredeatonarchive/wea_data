@@ -31,7 +31,7 @@
     
     <target name="createDiagnostics">
         <echo message="Creating site..."/>
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-s:${project.dir}/documentation/documentation.xml"/>
             <arg value="-xsl:${project.dir}/code/documentation/diagnostics_master.xsl"/>
             <arg value="-o:${project.dir}/documentation/documentation_full.xml"/>
