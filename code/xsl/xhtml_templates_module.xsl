@@ -101,7 +101,7 @@
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher" mode="tei">
+    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher | noteGrp" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -257,10 +257,6 @@
   
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
-           <xsl:call-template name="processAtts">
-               <xsl:with-param name="classes">showTitle</xsl:with-param>
-           </xsl:call-template>
-            <xsl:attribute name="title">This is an authorial note.</xsl:attribute>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>

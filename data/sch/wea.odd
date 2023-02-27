@@ -3,16 +3,16 @@
 <?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="wea.rng" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns:xi="http://www.w3.org/2001/XInclude"
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:math="http://www.w3.org/1998/Math/MathML"
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
      xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:xs="http://www.w3.org/2001/XMLSchema"
      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-     xmlns:math="http://www.w3.org/1998/Math/MathML"
-     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-     xmlns="http://www.tei-c.org/ns/1.0"
-     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
      xml:id="wea">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>ODD Customization for the Winnifred Eaton Archive Project</title>
@@ -28,22 +28,22 @@
             <p>Born digital.</p>
          </sourceDesc>
       </fileDesc>
-     <profileDesc>
-        <textClass>
-           <catRef target="wdt:docBornDigitalDocumentation" scheme="wdt:docType"/>
-        </textClass>
-     </profileDesc>
-     <revisionDesc>
-        <change who="pers:JT1" when="2019-03-29">Created file.</change>
-     </revisionDesc>
-  </teiHeader>
-  <text>
-     <front>
-        <div>
-           <head>Introduction</head>
-           <p>These are the encoding and technical documentation and guidelines for the Winnifred Eaton Archive project. This site is meant to serve as both a record of how the project encoded the texts as well as instructions for building and deploying the final site.</p>
-        </div>
-     </front>
+      <profileDesc>
+         <textClass>
+            <catRef target="wdt:docBornDigitalDocumentation" scheme="wdt:docType"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc>
+         <change who="pers:JT1" when="2019-03-29">Created file.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div>
+            <head>Introduction</head>
+            <p>These are the encoding and technical documentation and guidelines for the Winnifred Eaton Archive project. This site is meant to serve as both a record of how the project encoded the texts as well as instructions for building and deploying the final site.</p>
+         </div>
+      </front>
       <body>
          <div xml:id="gettingStarted">
             <div xml:id="requirements">
@@ -120,7 +120,6 @@
                   <list>
                      <item>Open the terminal</item>
                      <item>Create a directory for working in: <code rend="block">mkdir wea</code>
-                        
                      </item>
                      <item>Go into the directory: <code rend="block">cd wea</code>
                      </item>
@@ -128,20 +127,17 @@
                      </item>
                      <figure>
                         <figDesc>Checkout the repo.</figDesc>
-                        
                         <graphic url="../graphics/git_checkout_1.gif"/>
                      </figure>
                      <item>Pull the repository: <code rend="block">git pull https://github.com/winnifredeatonarchive/wea_data</code>
                      </item>
                      <figure>
                         <figDesc>Pull the repo</figDesc>
-                        
                         <graphic url="../graphics/git_checkout_2.gif"/>
                      </figure>
                   </list>
                   <p>Note that you only need to do this the first time you start working in the Github repository.</p>
                </div>
-               
                <div xml:id="github_workflow">
                   <head>The Github Workflow</head>
                   <p>The normal workflow for working in Github (and any version software) is as follows:
@@ -290,9 +286,7 @@
                   </p>
                </div>
             </div>
-            
          </div>
-         
          <div xml:id="encoding">
             <head>Instructions for Encoders</head>
             <p>The following instructions are meant to document our encoding practices and provide instruction for how to encode different types of documents. Currently, there are three types of documents:
@@ -303,7 +297,6 @@
                
                </list>
             </p>
-            
             <div xml:id="encodingIntroduction">
                <head>Introduction to the WEA Project</head>
                <div>
@@ -373,10 +366,8 @@
                      <head>Database files</head>
                      <p>The files that are at the root of this directory (bibliography.xml et cetera) are database files. See the instructions on <ref target="#encodingDatabases">Encoding Databases</ref> for more information.</p>
                   </div>
-                  
                </div>
             </div>
-
             <div xml:id="encodingWorkflow">
                <head>Workflow</head>
                <p>This document describes the basic workflow for encoding a text for the WEA project. In this section, you will find all of the necessary
@@ -389,11 +380,7 @@
                   <head>Step 2: Metadata</head>
                   <p/>
                </div>
-               
-               
             </div>
-            
-            
             <div xml:id="encodingDatabases">
                <head>Encoding Databases</head>
                <p>The WEA project consists of three databases for linking entities across the site:
@@ -429,7 +416,6 @@
                            </person>
                         </egXML>
                      </p>
-                     
                   </div>
                   <div>
                      <head>Adding Biographical Details</head>
@@ -461,7 +447,6 @@
                   <head>Encoding the Bibliography</head>
                   <p>The WEA bibliography is a major component of the archive; it contains all of the bibliographic information for each text, with each component tagged and, if appropriate, linked to a centralized entity.</p>
                   <p>The entirety of the bibliography is contained within a single large filed, called <code>bibliography.xml</code>. There are two major <gi>listBibl</gi> elements: the first contains the entire bibliography for works by Winnifred Eaton; the second <gi>listBibl</gi> contains all of the secondary sources used in the born digital documents (i.e. critical articles, scholarly monographs, et cetera). Note that these <gi>listBibl</gi>s are merely organization conveniences and do not have any impact, yet, on the site. This may change in the future, however.</p>
-                  
                   <div xml:id="encodingDatabaes_bibliography_styleguide">
                      <head>Bibliographic Style Guidelines</head>
                      <p>The WEA project follows the MLA 8 Guidelines unless otherwise specified. Since we use the <gi>bibl</gi> tag, it is necessary that the proper punctuation and spacing is included within the <gi>bibl</gi>. A few important notes:
@@ -484,7 +469,6 @@
                            </listBibl>
                         </egXML>
                      </p>
-                     
                      <div>
                         <head>Components of a bibl</head>
                         <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
@@ -560,7 +544,6 @@
                            </p>
                            <p>As stated above, wrap all <gi>title</gi>/<att>level</att>=<val>j</val>s in the <gi>publisher</gi> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
                         </div>
-                        
                         <div>
                            <head>Volumes, Issues, and Page Ranges</head>
                            <p>Tag all volumes, issues (also called numbers), and page ranges using the <gi>biblScope</gi> element with the appropriate <att>unit</att>:
@@ -631,9 +614,7 @@
                               </egXML>
                            </p>
                         </div>
-                        
                      </div>
-                     
                   </div>
                </div>
             </div>
@@ -672,8 +653,6 @@
                         </p>
                         <p>Note that there are two necessary things here: the <att>xml:id</att> and the <gi>head</gi> element: the <gi>head</gi> element is the title for the work; the <att>xml:id</att> is the id for the entire work and should correspond with the base id of the new text (i.e. in this instance, CarsAreBad1.xml). Note that this will also be the URL of the document, so try and be consistent with the rest of the texts regarding leading articles, et cetera.</p>
                      </div>
-                     
-                     
                      <div>
                         <head>Step 1b: Adding a new bibliographic entry</head>
                         <p>To add a new bibliographic entry to a work, first add a <gi>bibl</gi> element after the <gi>head</gi> like so:
@@ -685,7 +664,6 @@
                               </listBibl>
                            </egXML>
                         </p>
-
                         <p>oXygen will be mad at you: that's OK and expected. Click on the red underlined <gi>bibl</gi> tag. You should now see a little red lightbulb beside the <gi>bibl</gi> element. Click on the lightbulb and you should see a box that says something like <q>Add a new bibl id</q>. Click on that (or press enter). With any luck, you should then get a properly formed bibl <att>xml:id</att>, which will look something like so:
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
@@ -694,7 +672,6 @@
                               </listBibl>
                            </egXML>
                         </p>
-                        
                         <p>Next, add the details to the bibliography following the <ref target="#encodingDatabases_bibliography_WE">style guidelines here</ref>. Once all of that information has been filled in, you should have a bibl that looks something like this:
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
@@ -723,7 +700,6 @@
                   <head>Adding Transcription</head>
                   <p>To add a new transcription from the Google Drive, go to the file addTextFromDrive.xml in your oXygen project pane on the left and follow the instructions there.</p>
                </div>
-        
             </div>
             <div xml:id="encoding_primary">
                <head>Encoding a Primary Source Document</head>
@@ -824,11 +800,9 @@
                            </choice> messages, and after giving ten years of his precious life to one firm actually receives the magnificent sum of $10 per week!</p>
                      </egXML>
                   </p>
-                  
                   <p>Note that you must supply <emph>both</emph> 
                      <gi>sic</gi> and <gi>corr</gi> in that order; usually these emendations will be supplied by the Project Director.</p>
                </div>
-               
                <div xml:id="encoding_abbrevations">
                   <head>Abbreviations and Expansions</head>
                   <p>To aid reading, we expand common abbreviations using the <gi>choice</gi> element in combination with <gi>abbr</gi> and <gi>expan</gi>. Use the <gi>abbr</gi> element to tag the abbreviation, and the <gi>expan</gi> element for the expansion:
@@ -845,7 +819,6 @@
 Note that we <emph>do not</emph> tag expansions that could be abbreviated; only tag instances in the primary source where an abbreviation could be helpful expanded into a full sequence of words.                  
                   </p>
                </div>
-            
                <div xml:id="encoding_primary_quotations">
                   <head>Quotations</head>
                   <p>Currently, we do not distinguish between various types of quotations--direct speech, indirect speech, titles, et cetera. Instead, we simply use the <gi>q</gi> element:
@@ -854,7 +827,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      
                   </p>
                   <p>To encode quotations, first follow the quick fixes that are keyed to the body of your document. Right click the <gi>body</gi> element of your file, and you should see a red lightbulb. It should give you options to perform a set of automated fixes for your file.</p>
-               
                   <div xml:id="encoding_primary_quotaions_block">
                      <head>Block quotations</head>
                      <p>To tag block quotations, simply use the <gi>q</gi> element with a <gi>p</gi> within it. If it's a block quotation that contains verse, for instance, use the <gi>lg</gi> element (or whatever is the most appropriate for the case):
@@ -926,7 +898,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </egXML>
                      
                      </p>
-                     <p>Note that occassionally the letter is interrupted by authorial/narrative commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as authorial notes. To tag these, use the <gi>note</gi> element with an <att>type</att>=<val>authorial</val>
+                     <p>Note that occassionally the letter is interrupted by parenthetical commentary; we do not respect the quotation mark boundaries, but rather encode these interruptions as parenthetical notes. To tag these, use the <gi>note</gi> element with an <att>type</att>=<val>parenthetical</val>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <q>
                               <floatingText type="letter">
@@ -940,7 +912,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                     <p>Will you and your charming sister take a little drive with me and a
                                  friend this evening? If so, meet us at eight o’clock, corner of St.
                                  James and St. Denis streets. My friend has seen your sister in
-                                 Judge Laflamme’s office <note type="authorial">(Ellen worked there)</note> and he is very
+                                 Judge Laflamme’s office <note type="parenthetical">(Ellen worked there)</note> and he is very
                                  anxious to know her. As for me, I am thinking only of when I shall
                                  see my lovely rose again. I am counting the hours!</p>
                               
@@ -979,7 +951,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <item>Second, we must signal that the continue continues across the page hierarchy, but does not include the image (of course, the image is not part of the quoted material).</item>
                         </list>
                      </p>
-                  
                      <p>To signal the paragraphs continuation, we use the <att>part</att> attribute:
                   <specDesc key="p" atts="part"/>
                   We use the value <val>I</val> to signal the initial paragraph, <val>M</val> to signal any medial paragraphs, and <val>F</val> to signal the final paragraph.
@@ -1002,7 +973,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            can treat us fine. So come along. You’ll not get such a chance again.</p>
                         </egXML>
                      </p>
-                  
                      <p>To handle the overlapping quotations, we use a similar approach using the <att>next</att> and <att>prev</att> attributes to signal explicitly the sequence of quotation elements:
                   <specDesc key="q" atts="next prev"/>
                      </p>
@@ -1062,14 +1032,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            can treat us fine. So come along. You’ll not get such a chance again</q>.</p>
                         </egXML>
                      </p>
-                  
-                 
                   </div>
                </div>
                <div xml:id="codeTemplates">
                   <head>Code Templates (Shortcuts)</head>
                   <p>The table below lists keyboard shortcuts for inserting common encoding features in a text. In most cases, the code template simply requires selecting (i.e. highlighting) the bit of text you want to encode and then typing in the keystroke; the exception currently is the gap element shortcut, which is simply inserted where your cursor is in the document.</p>
-               
                   <table>
                      <row>
                         <cell>M1</cell>
@@ -1148,19 +1115,43 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <cell>M1 M2 W</cell>
                      </row>
                   </table>
-               
                </div>
             </div>
-            
-           <div xml:id="encoding_bornDigital">
-              <head>Encoding Born Digital Documents</head>
-              <p>Born digital documents are documents that are not primary sources (i.e. not texts) and whose contents were written for the purpose of the site: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
-              <div>
-                 <head>Editing the Home Page</head>
-                 <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within code/xsl/xhtml_index_module.xsl.</p>
-                 <div>
-                    <head>Editing the <q>Hero Image</q> Text</head>
-                    <p>The text that overlays the <q>hero image</q> (the big banner image of Winnifred Eaton) is encoded in the <code>div/@xml:id='index_header'</code>. It currently looks like this:
+            <div xml:id="encoding_manuscripts">
+               <head>Encoding Manuscripts</head>
+               <!--Introductory material-->
+               <!--Additions, Deletions, Substitutions-->
+               <!--Variant hands-->
+            </div>
+            <div xml:id="encoding_correspondence">
+               <head>Encoding Correspondence</head>
+               <!--Introductory material-->
+               <!--Openers, closers, salutes-->
+               <!--The correspDesc-->
+            </div>
+            <div xml:id="encoding_screenplays">
+               <head>Encoding Screenplays</head>
+               <!--Introductory material-->
+               <!--Page colours-->
+               <!--Cast lists-->
+               <div xml:id="encoding_screenplays_notes">
+                  <head>Encoding Labelled Notes</head>
+                  <p>Eaton’s screenplays frequently feature blocks of notes
+                  to the production team that serve to explain, justify, or contextualize some aspect of the scene. To encode these notes, first use the <gi>noteGrp</gi> element to group all of the notes together; then encode each note using the <gi>note</gi> element, the label using the <gi>label</gi>, and the content using a sequence of paragraph (<gi>p</gi>) elements.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     
+                  </egXML>
+               </div>
+            </div>
+            <div xml:id="encoding_bornDigital">
+               <head>Encoding Born Digital Documents</head>
+               <p>Born digital documents are documents that are not primary sources (i.e. not texts) and whose contents were written for the purpose of the site: this includes documents like essays, exhibit pages, the home page, et cetera.</p>
+               <div>
+                  <head>Editing the Home Page</head>
+                  <p>All of the content for the home page can be found in <code>info/index.xml</code>; note that the structure of this page does not determine the final order of objects as they appear on the home page. There is specialized processing for the home page, which is embedded within code/xsl/xhtml_index_module.xsl.</p>
+                  <div>
+                     <head>Editing the <q>Hero Image</q> Text</head>
+                     <p>The text that overlays the <q>hero image</q> (the big banner image of Winnifred Eaton) is encoded in the <code>div/@xml:id='index_header'</code>. It currently looks like this:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <div xml:id="index_header">
                               <div>
@@ -1171,10 +1162,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </egXML>
                     The first head creates the larger main site title; the second head element (the one with <att>type</att>=<val>subtitle</val>) creates the smaller text at the bottom of the image. But edit with caution: the CSS is created to handle this precise text, so you may have to fiddle with the CSS in site/css/index.css to get your desired results.
                     </p>
-                 </div>
-                 <div>
-                    <head>Editing the <q>About</q> text</head>
-                    <p>The About text (the small block of text that begins the home page) is found within the <code>div/@xml:id='index_info'</code>. It currently looks something like this:
+                  </div>
+                  <div>
+                     <head>Editing the <q>About</q> text</head>
+                     <p>The About text (the small block of text that begins the home page) is found within the <code>div/@xml:id='index_info'</code>. It currently looks something like this:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <div xml:id="index_info">
                               <head>The wild and wonderful career of a pioneer Asian American writer</head>
@@ -1185,12 +1176,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </egXML>
          The text in the <gi>head</gi> determines the heading content for that block; the text in the paragraph is the paragraph below. The <gi>ptr</gi> is what produces the <q>READ MORE</q> text; more information about READ MORE links below.
                     </p>
-                    
-                 </div>
-                 <div>
-                    <head>Editing the <q>Archive Film Strip</q>
+                  </div>
+                  <div>
+                     <head>Editing the <q>Archive Film Strip</q>
                      </head>
-                    <p>The Archive strip that runs vertically along the right hand side (in desktop view) is currently encoded as a <gi>list</gi> with <att>corresp</att> attributes like so:
+                     <p>The Archive strip that runs vertically along the right hand side (in desktop view) is currently encoded as a <gi>list</gi> with <att>corresp</att> attributes like so:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <div xml:id="index_archive">
                               <list>
@@ -1204,10 +1194,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </egXML>
                     The <att>corresp</att> attribute points to the category listing that should be used in the archive strip block. The actual content for those listings is found in <code>taxonomies.xml</code>. More on the taxonomies below.
                     </p>
-                 </div>
-                 <div>
-                    <head>Adding Featured Items</head>
-                    <p>The featured items carousel is encoded as a list in the index page (currently with boilerplate text):
+                  </div>
+                  <div>
+                     <head>Adding Featured Items</head>
+                     <p>The featured items carousel is encoded as a list in the index page (currently with boilerplate text):
                        
                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
                           <div xml:id="index_featuredItems">
@@ -1225,8 +1215,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                        </egXML>
                     Each <gi>item</gi> uses a <att>corresp</att> attribute to point to the document that should be featured using the <val>doc:</val> prefix scheme (i.e. use <val>doc:LiChingsBaby1</val> to point to the document with <att>xml:id</att> of <val>LiChingsBaby1</val>, which should also be named <code>LiChingsBaby1.xml</code> in the data folder).
                     </p>
-                    <p>To populate the content of those featured items (i.e. to provide a blurb for them), you must add a <gi>abstract</gi> to the featured document. This allows us to re-use abstracts as we see fit.</p>
-                    <p>Place the <gi>abstract</gi> element after the <gi>catRef</gi> elements in the <gi>profileDesc</gi>, like so:
+                     <p>To populate the content of those featured items (i.e. to provide a blurb for them), you must add a <gi>abstract</gi> to the featured document. This allows us to re-use abstracts as we see fit.</p>
+                     <p>Place the <gi>abstract</gi> element after the <gi>catRef</gi> elements in the <gi>profileDesc</gi>, like so:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <profileDesc>
                               <textClass>
@@ -1249,10 +1239,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                        </egXML>
                        Second, you must also include <emph>one</emph> paragraph in the <gi>abstract</gi>, which will contain all of the content for the abstract/<q>headnote</q>. This will also be displayed on the object pages as a collapsible box in the metadata info.
                     </p>
-                 </div>
-              </div>
-           </div>
-            <div>
+                  </div>
+               </div>
+            </div>
+            <div xml:id="encoding_taxonomies">
                <head>Editing the Taxonomies File</head>
                <p>The taxonomy file (<code>taxonomies.xml</code>) contains all of the data for the taxonomies for the WEA project. These taxonomies include:
                <list>
@@ -1329,7 +1319,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </p>
                </div>
             </div>
-            
             <div xml:id="editing_timeline">
                <head>Editing the Timeline Page</head>
                <p>The timeline XML document (about/timeline.xml) is a <gi>listEvent</gi> document with <gi>event</gi> elements. Each <gi>event</gi> element has an <att>when</att> to specify the date and a <gi>p</gi> as a description of the event.
@@ -1353,7 +1342,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </egXML>
                
                </p>
-               
                <p>To add an image to the timeline entry, use an <gi>ab</gi> element with a <gi>type</gi>=<val>graphic</val> and a nested <gi>graphic</gi> element. This <gi>graphic</gi> element should have a <att>url</att> attribute that points to an image file located in the /media/ directory like so:
                   
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1392,7 +1380,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                
                </p>
             </div>
-         
             <div xml:id="encoding_citing">
                <head>How to Cite Things</head>
                <p>To cite an article or essay (by WE or by others), use the <gi>ref</gi> element with a <att>type</att>/<val>bibl</val> and the <att>target</att> pointing to the bibl <att>xml:id</att> using the <val>cite:</val> prefix. For instance:
@@ -1404,9 +1391,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
            Notice that we have two different <att>xml:id</att> mechanisms: for works by Winnifred Eaton, we use an enumerated system and for secondary, critical work we use an alphanumeric system. In both cases, we use the <val>cite:</val> prefix with the <emph>full <att>xml:id</att> value</emph> to establish the link.
              </p>
             </div>
-         
          </div>
-         
          <div xml:id="technical">
             <head>Instructions for Developers/Programmers</head>
             <div xml:id="build">
@@ -1440,7 +1425,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   ant -lib lib
                </code>
                </p>
-               
                <p>The site build happens in a number of steps:
             <list>
                      <item>All of the source files are validated against the RelaxNG schema and the extracted schematron</item>
@@ -1487,14 +1471,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                root of the repository) and add a new link element that points from the old id to the new id.</p>
             </div>
          </div>
-         
-
          <div xml:id="diagnostics">
             <head>Diagnostics</head>
             <p>The following are the diagnostics for the Winnifred Eaton Archive project. The diagnostics provide a report of potential encoding errors, et cetera.</p>
             <divGen xml:id="diagnostics_content"/>
          </div>
-         
          <div xml:id="versions">
             <head>Versions</head>
             <p>The Winnifred Eaton Archive is published in distinct <q>versions</q>. Each version or release can be found on the Winnifred Eaton Archive's
@@ -1502,44 +1483,29 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             statistics for each version.</p>
             <divGen xml:id="versions_content"/>
          </div>
-         
-         
-         
-         
-
       </body>
       <back xml:id="appendix">
          <div xml:id="schema">
             <head>Schema Specification</head>
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
-          
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
                <moduleRef key="header"
-                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
-               
+                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
                <moduleRef key="figures" include="cell figDesc figure table row"/>
-               
                <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
-               
                <moduleRef key="msdescription"
                           include="collection institution msIdentifier repository"/>
-                  
-               
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
                <!--Include all TEI modules-->
                <moduleRef key="tei"/>
-          
                <moduleRef key="textstructure"
                           include="TEI back body byline closer dateline div docAuthor docDate docImprint docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
-          
                <moduleRef key="transcr" include="fw supplied"/>
-          
                <!--MODULE: HEADER-->
-          
                <elementSpec ident="teiHeader" module="header" mode="change">
                   
             <!--Make all the bits we want of the teiHeader mandatory-->
@@ -1551,10 +1517,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <elementRef key="revisionDesc"/>
                   </content>
                </elementSpec>
-               
                <elementSpec ident="revisionDesc" module="header" mode="change">
-              
-                  
                   <constraintSpec scheme="schematron" ident="revisionDesc.changeMustHaveStatus">
                      <desc>The first change element with a status must match the status of the revisionDesc.</desc>
                      <constraint>
@@ -1568,7 +1531,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
-                  </constraintSpec>     
+                  </constraintSpec>
                   <constraintSpec scheme="schematron" ident="revisionDesc.onlyEmptyWhenEmpty">
                      <desc>Status cannot be set to anything but empty if there's nothing in the document.</desc>
                      <constraint>
@@ -1581,15 +1544,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  
-                  
                   <attList>
                      <!--Make status mandatory-->
                      <attDef ident="status" mode="change" usage="req"/>
                   </attList>
                </elementSpec>
-               
-          
                <!--Make profileDesc/textClass mandatory-->
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
@@ -1597,7 +1556,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
                   </content>
                </elementSpec>
-               
                <elementSpec ident="abstract" module="header" mode="change">
                   <content>
                      <!--Constrain the abstract to a single paragraph-->
@@ -1639,7 +1597,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="head" module="core" mode="change">
                   <attList>
                      <attDef ident="type" mode="replace" usage="opt">
@@ -1652,7 +1609,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="lb" module="core" mode="change">
                   <constraintSpec scheme="schematron" ident="textClass.oneofEach">
                      <desc>Don't allow lbs ANYWHERE except in floating texts or front matter.</desc>
@@ -1667,15 +1623,13 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  
                </elementSpec>
-          
                <!--And make at least one catRef mandatory-->
                <elementSpec ident="textClass" module="header" mode="change">
                   <content>
                      <elementRef key="catRef" minOccurs="1" maxOccurs="unbounded"/>
                   </content>
-                  <constraintSpec scheme="schematron" ident="textClass.oneofEach">
+                  <constraintSpec scheme="schematron" ident="catRef.oneofEach">
                      <desc>An XSLT restraint for one of each catRef</desc>
                      <constraint>
                         <sch:pattern>
@@ -1687,9 +1641,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-    
                </elementSpec>
-               
                <elementSpec ident="biblScope" module="core" mode="change">
                   <attList>
                      <attDef ident="unit" mode="replace" usage="req">
@@ -1710,7 +1662,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="extent" module="header" mode="change">
                   <constraintSpec scheme="schematron" ident="extent.legacy">
                      <desc>We allow extent ONLY for legacy purposes.</desc>
@@ -1726,11 +1677,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
-               
-          
                <elementSpec ident="catRef" module="header" mode="change">
-
                   <constraintSpec scheme="schematron" ident="catRef.occurence">
                      <desc>An XsLT generated co-occurence constraint</desc>
                      <constraint>
@@ -1752,7 +1699,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
-                     
                   </constraintSpec>
                   <attList>
                      <attDef ident="cert" mode="delete"/>
@@ -1863,12 +1809,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </valItem>
                         </valList>
                      </attDef>
-                     
                   </attList>
-                  
                </elementSpec>
-         
-          
                <elementSpec mode="change" module="header" ident="sourceDesc">
                   <content>
                      <alternate>
@@ -1894,10 +1836,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
                <!--LINKING-->
-               
-               
                <elementSpec ident="ptr" module="core" mode="change">
                   <constraintSpec scheme="schematron" ident="ptr.readMore">
                      <desc>We allow extent ONLY for legacy purposes.</desc>
@@ -1912,8 +1851,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="ptr.readMore">
-                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                  <constraintSpec scheme="schematron" ident="ptr.docPrefix">
+                     <desc>Pointers must only use the 'doc:' prefix.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:ptr">
@@ -1937,12 +1876,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                      <attDef ident="target" mode="change" usage="req"/>
                   </attList>
-                  
                </elementSpec>
-
-               
                <!--NAMESDATES-->
-               
                <!--Modify persName so that we need at least one of reg, forename, and surname-->
                <elementSpec ident="persName" module="namesdates" mode="change">
                   <content>
@@ -1951,9 +1886,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <elementRef key="surname" minOccurs="1" maxOccurs="unbounded"/>
                   </content>
                </elementSpec>
-               
                <elementSpec ident="person" module="namesdates" mode="change">
-   
                   <constraintSpec scheme="schematron" ident="person.noContentOnlyCorrespInFigure">
                      <constraint>
                         <sch:pattern>
@@ -1961,6 +1894,24 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <sch:assert test="@corresp and normalize-space(string-join(descendant::text())) =''">
                                  ERROR: People referenced in figures should only contain an @corresp to the person 
                                  in question and no content.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec scheme="schematron" ident="persPointersShouldBeCaps">
+                     <desc>All notes within the <gi>q</gi> element should have a type.</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]">
+                              <sch:let name="atts"
+                                       value="for $a in @* return if (contains($a,'pers:')) then tokenize($a,'\s+') else ()"/>
+                              <sch:let name="vals"
+                                       value="for $a in $atts return if (starts-with($a,'pers:')) then $a else ()"/>
+                              <sch:let name="errors"
+                                       value="for $v in $vals return if (matches($v,'^pers:[A-Z]+\d+$')) then () else $v"/>
+                              <sch:assert test="empty($errors)">
+                                 ERROR: All pers pointers (i.e. the string after 'pers:') must be a sequence of capital letters and a digit (bad val: <sch:value-of select="string-join($errors,' ')"/>)
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -1977,7 +1928,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="person.dontUseRoleOtherThanInFigure">
+                  <constraintSpec scheme="schematron" ident="person.mustHaveRole">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person[ancestor::tei:listPerson and ancestor::tei:figure]">
@@ -2007,9 +1958,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <!--CORE-->
-               
                <!--Make respStmt content very strict-->
                <elementSpec ident="respStmt" module="core" mode="change">
                   <content>
@@ -2017,7 +1966,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <elementRef key="name"/>
                   </content>
                </elementSpec>
-               
                <elementSpec ident="author" module="core" mode="change">
                   <attList>
                      <attDef ident="type" mode="replace">
@@ -2041,7 +1989,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="catDesc" module="core" mode="change">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
@@ -2053,7 +2000,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </alternate>
                   </content>
                </elementSpec>
-               
                <elementSpec ident="choice" module="core" mode="change">
                   <content>
                      <alternate>
@@ -2066,18 +2012,31 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <elementRef key="expan"/>
                         </sequence>
                      </alternate>
-   
                   </content>
                </elementSpec>
-               
-               <elementSpec ident="note" module="core" mode="change">
+               <elementSpec ident="note" module="core" mode="replace">
+                  <gloss>note</gloss>
+                  <desc>contains a note or annotation.</desc>
+                  <classes>
+                     <memberOf key="att.global.rendition"/>
+                     <memberOf key="att.placement"/>
+                     <memberOf key="model.noteLike"/>
+                     <memberOf key="model.annotationLike"/>
+                     <memberOf key="model.correspDescPart"/>
+                     <memberOf key="model.correspActionPart"/>
+                     <memberOf key="model.correspContextPart"/>
+                     <memberOf key="model.annotationPart.body"/>
+                  </classes>
+                  <content>
+                     <macroRef key="macro.specialPara"/>
+                  </content>
                   <constraintSpec scheme="schematron" ident="note.authorialInQOnly">
-                     <desc>Use authorial notes only within <gi>q</gi> elements</desc>
+                     <desc>Use parenthetical notes only within <gi>q</gi> elements</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:note[@type='authorial']">
+                           <sch:rule context="tei:note[@type='parenthetical']">
                               <sch:assert test="ancestor::tei:q">
-                                 ERROR: Authorial notes should only be used within the q element.
+                                 ERROR: Parenthetical notes should only be used within the q element.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
@@ -2088,18 +2047,16 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:note[ancestor::tei:q]">
-                              <sch:assert test="@type">
-                                 ERROR: Notes within the q element should have a type of either authorial
+                              <sch:assert test="@type = ('parenthetical','editorial')">
+                                 ERROR: Notes within the q element should have a type of either parenthetical
                                  or editorial.
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  
                   <constraintSpec scheme="schematron" ident="note.editorialOnesShouldFollowTrailingPunct">
-                     <desc>Editorial notes should following trailing punctuation.</desc>
-                     
+                     <desc>Editorial notes should be placed following trailing punctuation.</desc>
                      <constraint>
                         <sch:rule context="tei:note[@type='editorial']">
                            <sch:let name="folText" value="following-sibling::text()[1]"/>
@@ -2107,37 +2064,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               ERROR: Editorial notes should be placed after the trailing punctuation.
                            </sch:assert>
                         </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-                  
-                  <constraintSpec scheme="schematron" ident="persPointersShouldBeCaps">
-                     <desc>All notes within the <gi>q</gi> element should have a type.</desc>
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:*[some $r in @* satisfies matches($r,'pers:')]">
-                              <sch:let name="atts"
-                                       value="for $a in @* return if (contains($a,'pers:')) then tokenize($a,'\s+') else ()"/>
-                              <sch:let name="vals"
-                                       value="for $a in $atts return if (starts-with($a,'pers:')) then $a else ()"/>
-                              <sch:let name="errors"
-                                       value="for $v in $vals return if (matches($v,'^pers:[A-Z]+\d+$')) then () else $v"/>
-                              <sch:assert test="empty($errors)">
-                                 ERROR: All pers pointers (i.e. the string after 'pers:') must be a sequence of capital letters and a digit (bad val: <sch:value-of select="string-join($errors,' ')"/>)
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.editorialShouldHaveResp">
-                     <desc>Editorial notes should always have an <att>resp</att>.</desc>
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:note[@type='editorial']">
-                              <sch:assert test="@resp">
-                                 ERROR: Editorial notes should have a @resp attribute pointing to the person who authored this note.
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
                      </constraint>
                   </constraintSpec>
                   <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
@@ -2151,7 +2077,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                  <constraintSpec scheme="schematron" ident="note.mustHaveP">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2163,24 +2089,52 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <attList>
-                     <attDef ident="type" mode="replace">
-                        <valList mode="add" type="closed">
-                           <valItem ident="editorial" mode="add">
-                              <desc>editorial</desc>
-                              <gloss>an editorial note (i.e. supplied by an editor)</gloss>
-                           </valItem>
-                           <valItem ident="authorial" mode="add">
-                              <desc>authorial</desc>
-                              <gloss>an authorial note; currently only used with quotations where the author
-                                 interrupts the dominant narrative voice by interjecting explanatory commentary.</gloss>
-                           </valItem>
-                        </valList>
-                     </attDef>
+                  <attList org="choice">
+                     <attList org="group">
+                        <attDef ident="type" mode="add" usage="opt">
+                           <desc>characterizes the type of note or annotation</desc>
+                           <valList type="closed">
+                              <valItem ident="parenthetical" mode="add">
+                                 <desc>parenthetical</desc>
+                                 <gloss>a parenthetical note or aside; currently only used with quotations
+                                    where the author interrupts the dominant narrative voice by interjecting
+                                    explanatory commentary.</gloss>
+                              </valItem>
+                           </valList>
+                        </attDef>
+                     </attList>
+                     <attList org="group">
+                        <attDef ident="type" mode="add" usage="opt">
+                           <desc>characterizes the type of note or annotation</desc>
+                           <valList type="closed">
+                              <valItem ident="editorial" mode="add">
+                                 <desc>editorial</desc>
+                                 <gloss>an editorial note (i.e. supplied by an editor)</gloss>
+                              </valItem>
+                           </valList>
+                        </attDef>
+                        <attDef ident="resp" usage="req" mode="add">
+                           <gloss versionDate="2009-11-02" xml:lang="en">responsible party</gloss>
+                           <desc versionDate="2009-11-02" xml:lang="en">indicates the agency responsible for the intervention or interpretation, for example an
+                                editor or transcriber.</desc>
+                           <datatype maxOccurs="unbounded">
+                              <dataRef key="teidata.pointer"/>
+                           </datatype>
+                        </attDef>
+                     </attList>
+                     <attList org="group">
+                        <attDef ident="type" mode="add" usage="opt">
+                           <desc>characterizes the type of note or annotation</desc>
+                           <valList type="closed">
+                              <valItem ident="marginal" mode="add">
+                                 <desc>editorial</desc>
+                                 <gloss>an editorial note (i.e. supplied by an encoder, transcriber, etc)</gloss>
+                              </valItem>
+                           </valList>
+                        </attDef>
+                     </attList>
                   </attList>
-                  
                </elementSpec>
-               
                <elementSpec ident="q" module="core" mode="change">
                   <constraintSpec ident="q.dontStartEndSpaces" scheme="schematron">
                      <desc>
@@ -2197,7 +2151,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
                <elementSpec ident="foreign" module="core" mode="change">
                   <constraintSpec ident="foreign.dontStartEndSpaces" scheme="schematron">
                      <desc>
@@ -2214,7 +2167,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
                <elementSpec ident="name" module="core" mode="change">
                   <attList>
                      <attDef ident="key" mode="add" usage="opt">
@@ -2237,7 +2189,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               </author>
                            </egXML>
                         </exemplum>
-                        
                         <remarks versionDate="2013-06-20" xml:lang="en">
                            <p>For the Winnifred Eaton Project, we use the <att>key</att> attribute to signify the pseudonym
                            for the pseudonym table.</p>
@@ -2266,7 +2217,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="rs" module="core" mode="change">
                   <attList>
                      <attDef ident="key" mode="delete"/>
@@ -2277,8 +2227,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-    
-               
                <elementSpec ident="bibl" module="core" mode="change">
                   <constraintSpec ident="bibl.noJournalTitle" scheme="schematron">
                      <desc>If you have issues and numbers, you should have a journal title.</desc>
@@ -2318,7 +2266,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
                <elementSpec ident="pb" module="core" mode="change">
                   <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
@@ -2357,11 +2304,45 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                   <attList>
-                     <attDef ident="n" mode="change" usage="req"/>                     
+                     <attDef ident="n" mode="change" usage="req"/>
+                     <attDef ident="rendition" mode="change" usage="opt">
+                        <valList mode="add" type="closed">
+                           <valItem mode="add" ident="pgcolour:white">
+                              <desc>White page (default)</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:blue">
+                              <desc>Blue page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:pink">
+                              <desc>Pink page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:yellow">
+                              <desc>Yellow page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:green">
+                              <desc>Green page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:goldenrod">
+                              <desc>Goldenrod page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:buff">
+                              <desc>Buff page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:salmon">
+                              <desc>Salmon page</desc>
+                           </valItem>
+                           <valItem mode="add" ident="pgcolour:cherry">
+                              <desc>Cherry page</desc>
+                           </valItem>
+                        </valList>
+                        <remarks>
+                           <p>The values for <att>rendition</att> for a <gi>pb</gi> element derive from
+                              the Writers Guild of America’s <q>color revision sequence</q> guidelines as described by 
+                           Johnson, <title level="m">The Celluloid Paper Trail</title>, p. 26.</p>
+                        </remarks>
+                     </attDef>
                   </attList>
-                 
                </elementSpec>
-               
                <elementSpec ident="title" module="core" mode="change">
                   <constraintSpec ident="text.onlyJLevelTitlesShouldHaveRef" scheme="schematron">
                      <desc>Only journal titles should have @ref.</desc>
@@ -2376,10 +2357,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
-               
                <!--MODULE:FIGURES-->
-               
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
                      <elementRef key="head" minOccurs="0"/>
@@ -2399,7 +2377,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
-                     </constraint>                     
+                     </constraint>
                   </constraintSpec>
                   <constraintSpec ident="figure.inListFigureMustHaveType" scheme="schematron">
                      <desc>Every figure in the figure database should have a type value.</desc>
@@ -2457,9 +2435,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </valList>
                      </attDef>
                   </attList>
-                  
                </elementSpec>
-               
                <elementSpec ident="graphic" module="core" mode="change">
                   <constraintSpec ident="graphic.inListFigShouldHaveMimetype" scheme="schematron">
                      <desc>All graphics in the listFigure should have a mimetype attribute.</desc>
@@ -2487,8 +2463,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
-               
                <!--MODULE: TEXTSTRUCTURE-->
                <elementSpec ident="div" module="textstructure" mode="change">
                   <constraintSpec ident="div.listFigureShouldContainItselfOrListFigure"
@@ -2547,7 +2521,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
                <elementSpec ident="fw" module="transcr" mode="change">
                   <attList>
                      <attDef ident="type" mode="replace" usage="req">
@@ -2580,11 +2553,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                </elementSpec>
-               
-               
                <!--CLASS SPECS-->
-               
-   
                <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
@@ -2597,7 +2566,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <classSpec ident="att.declarable" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.declaring" module="tei" type="atts" mode="delete"/>
                <!--WE need this for rhyme-->
-               <classSpec ident="att.divLike" module="tei" type="atts" mode="delete"/>               
+               <classSpec ident="att.divLike" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.docStatus" module="tei" type="atts" mode="change">
                   <attList>
                      <attDef mode="replace" ident="status">
@@ -2699,7 +2668,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <classSpec ident="att.scoping" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.segLike" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.sortable" module="tei" type="atts" mode="delete"/>
-                <classSpec ident="att.edition" module="tei" type="atts" mode="delete"/>
+               <classSpec ident="att.edition" module="tei" type="atts" mode="delete"/>
                <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.spanning" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
@@ -2716,8 +2685,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <attDef ident="sort" mode="delete"/>
                   </attList>
                </classSpec>
-               
-               
                <classSpec ident="att.global.analytic"
                           type="atts"
                           module="tei"
@@ -2726,12 +2693,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                           type="atts"
                           module="tei"
                           mode="delete"/>
-               
                <!--CONSTRAINTS-->
-          
                <constraintSpec ident="global" scheme="schematron">
                   <constraint>
-              
                      <sch:pattern>
                         <sch:let name="spaceRegex" value="'(^\s)|(\s$)'"/>
                         <sch:let name="docId" value="root(/)/tei:*/@xml:id"/>
@@ -2756,32 +2720,30 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <sqf:description>
                               <sqf:title>Global Templates</sqf:title>
                            </sqf:description>
-                           
                            <!--GLOBAL XSL VARIABLES-->
                            <xsl:variable name="apos">'</xsl:variable>
                            <xsl:variable name="dq">"</xsl:variable>
-                              <!--TAG BLOCKS TEMPLATE-->
-                              <xsl:template name="tagBlocks">
-                                 <xsl:param name="verse" select="false()"/>
-                                 <xsl:variable name="ancestors" select="count(ancestor::tei:*)"/>
-                                 <xsl:variable name="tabCount" select="$ancestors"/>
-                                 <xsl:variable name="newLine">
-                                    <xsl:text>
+                           <!--TAG BLOCKS TEMPLATE-->
+                           <xsl:template name="tagBlocks">
+                              <xsl:param name="verse" select="false()"/>
+                              <xsl:variable name="ancestors" select="count(ancestor::tei:*)"/>
+                              <xsl:variable name="tabCount" select="$ancestors"/>
+                              <xsl:variable name="newLine">
+                                 <xsl:text>
 </xsl:text>
-                                 </xsl:variable>
-                                 <xsl:variable name="tab"
+                              </xsl:variable>
+                              <xsl:variable name="tab"
                                             select="string-join(for $n in (2 to $tabCount) return '&#x9;','')"/>
-                                 <xsl:variable name="paras"
+                              <xsl:variable name="paras"
                                             select="for $t in tokenize(.,'\n+') return normalize-space($t)"/>
-                                 <xsl:for-each select="$paras[not(.='')]">
-                                    <xsl:value-of select="$newLine"/>
-                                    <xsl:value-of select="$tab"/>
-                                    <xsl:element name="{if ($verse) then 'l' else 'p'}">
-                                       <xsl:value-of select="."/>
-                                    </xsl:element>
-                                 </xsl:for-each>
-                              </xsl:template>
-                           
+                              <xsl:for-each select="$paras[not(.='')]">
+                                 <xsl:value-of select="$newLine"/>
+                                 <xsl:value-of select="$tab"/>
+                                 <xsl:element name="{if ($verse) then 'l' else 'p'}">
+                                    <xsl:value-of select="."/>
+                                 </xsl:element>
+                              </xsl:for-each>
+                           </xsl:template>
                            <xsl:template name="replaceApos">
                               <xsl:param name="useDq" select="false()"/>
                               <xsl:variable name="thisApos" select="if ($useDq) then $dq else $apos"/>
@@ -2813,8 +2775,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                  </xsl:non-matching-substring>
                               </xsl:analyze-string>
                            </xsl:template>
-                           
-                           
                            <xsl:template name="tagQuote">
                               <xsl:param name="left"/>
                               <xsl:param name="right"/>
@@ -2845,7 +2805,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-          
                <!--Basic constraints-->
                <constraintSpec scheme="schematron" ident="TEI.docNameSameAsId">
                   <desc>All root elements must have an <att>xml:id</att> that matches the document filename.</desc>
@@ -2859,7 +2818,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="badPersId">
                   <desc>All person ids must be found in the personography.</desc>
                   <constraint>
@@ -2874,7 +2832,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="linkGrpForRedirects">
                   <desc>All link/linkGrp elements must ONLY occur in the redirects file.</desc>
                   <constraint>
@@ -2892,9 +2849,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
-              
-               
                <!--    <constraintSpec scheme="schematron" ident="badPersId">
                   <desc>All person ids must be found in the personography.</desc>
                   <constraint>
@@ -2922,7 +2876,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="changeWithWho">
                   <desc>All change/@who pointers should be properly formatted.</desc>
                   <constraint>
@@ -2951,8 +2904,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>-->
-               
-
                <constraintSpec scheme="schematron" ident="misMatchedQuote">
                   <constraint>
                      <sch:pattern>
@@ -2966,7 +2917,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="poemsShouldHaveLinegroups">
                   <desc>If a document is classified as a poem, then it should have linegroup elements.</desc>
                   <constraint>
@@ -2980,9 +2930,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
-              
-               
                <constraintSpec scheme="schematron" ident="nextPrevShouldntBeTheRoot">
                   <desc>The attributes next/prev on a text element shouldn't match the root id.</desc>
                   <constraint>
@@ -3013,8 +2960,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:rule>
                   </constraint>
                </constraintSpec>-->
-               
-             
                <constraintSpec scheme="schematron" ident="noSpaceInRefs">
                   <constraint>
                      <sch:pattern>
@@ -3029,7 +2974,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </constraintSpec>
                <!--The square bracket rule won't work, since there 
                   are a few instances where WE uses square brackets-->
-               
                <!--     
                <constraintSpec scheme="schematron" ident="noSpaceInRefs">
                   <constraint>
@@ -3044,7 +2988,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>-->
-               
                <constraintSpec scheme="schematron" ident="noTrailingPeriod.warning">
                   <constraint>
                      <sch:pattern>
@@ -3058,7 +3001,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="noTrailingPunct">
                   <constraint>
                      <sch:pattern>
@@ -3071,9 +3013,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
-               
-               
                <!--DOCUMENT STATUSES:
                   
                   * empty
@@ -3082,12 +3021,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   * published
                   
                   -->
-               
-
-               
-               
                <!--CONSTRAINTS WITH QUICK FIXES-->
-               
                <constraintSpec scheme="schematron" ident="noStraightQuote">
                   <constraint>
                      <sch:pattern>
@@ -3124,7 +3058,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="biblsNeedId">
                   <constraint>
                      <sch:pattern>
@@ -3140,14 +3073,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                                select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
                                  <xsl:variable name="newNum" select="max(for $n in $bibls return xs:integer($n)) + 1"/>
                                  <xsl:value-of select="'bibl' || $newNum"/>
-                                 
                               </sqf:add>
                            </sqf:fix>
                            <sqf:fix id="replaceBiblId">
                               <sqf:description>
                                  <sqf:title>Replace bibl id</sqf:title>
                               </sqf:description>
-                              
                               <sqf:replace match="@xml:id" node-type="attribute" target="xml:id">
                                  <xsl:variable name="rBibls"
                                                select="for $bibl in ancestor::tei:div[@xml:id='bibliography_we']/descendant::tei:bibl[matches(@xml:id,'^bibl')]/@xml:id return substring-after($bibl,'bibl')"/>
@@ -3160,7 +3091,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="noStraightApos">
                   <constraint>
                      <sch:pattern>
@@ -3193,7 +3123,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
                <constraintSpec scheme="schematron" ident="bodyDivsNeedParas">
                   <constraint>
                      <sch:pattern>
@@ -3207,7 +3136,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               ERROR: QUICKFIX: Untagged text should likely be tagged. Use the Quickfix to do so.
                            </sch:assert>
                            <sqf:fixes>
-                              
                               <sqf:fix id="fixDivsHere" use-when="not(self::tei:body)">
                                  <sqf:description>
                                     <sqf:title>LOCAL: Fix this <sch:name/>
@@ -3220,7 +3148,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                     </xsl:call-template>
                                  </sqf:replace>
                               </sqf:fix>
-                              
                               <sqf:fix id="fixDivsEverywhere" use-when="self::tei:body">
                                  <sqf:description>
                                     <sqf:title>GLOBAL: Tag all paragraphs within divs and lines within linegroups.</sqf:title>
@@ -3232,18 +3159,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                     </xsl:call-template>
                                  </sqf:replace>
                               </sqf:fix>
-                              
-                              
                            </sqf:fixes>
                         </sch:rule>
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
-               
-               
-               
-               
                <constraintSpec scheme="schematron" ident="bodyQuotesShouldBeTagged">
                   <constraint>
                      <sch:pattern>
@@ -3267,7 +3187,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                                     <xsl:with-param name="right" select="'”'"/>
                                  </xsl:call-template>
                               </sqf:replace>
-                           </sqf:fix>         
+                           </sqf:fix>
                            <sqf:fix id="fixQuotesEverywhere" use-when="self::tei:body">
                               <sqf:description>
                                  <sqf:title>GLOBAL: Replace curly quotes with q elements.</sqf:title>
@@ -3283,14 +3203,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </sch:pattern>
                   </constraint>
                </constraintSpec>
-               
-              
-               
             </schemaSpec>
          </div>
-         
-        
-     
       </back>
-  </text>
+   </text>
 </TEI>

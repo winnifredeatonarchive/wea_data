@@ -2542,6 +2542,24 @@ div[data-el='note'] > div[data-el='p']{
     display:inline;
 }
 
+
+/* Special inline screenplay notes */
+[data-el='noteGrp'] > div[data-el='note']:has([data-el='label']):has([data-el='p']){
+    display:grid;
+    grid-template-columns: 2fr 8fr;
+    align-items:baseline;
+    justify-content:space-between;
+    gap: 1rem;
+    [data-el='label']{
+        display:block;
+        text-align:right;
+        text-decoration:underline;
+    }    
+}
+
+
+
+
 [data-el='opener'],
 [data-el='byline']{
     text-align:center;
