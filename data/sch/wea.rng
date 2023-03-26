@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-02-27T03:51:35Z. .
+Schema generated from ODD source 2023-03-26T18:26:07Z. .
 TEI Edition: Version 4.5.0. Last updated on
         25th October 2022, revision 3e98e619e
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
@@ -5318,7 +5318,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                </sch:assert>
             </sch:rule>
             <sch:rule context="tei:catRef[@scheme='wdt:genre']">
-               <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+               <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                </sch:assert>
             </sch:rule>
@@ -5364,6 +5364,10 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Non-fiction: Introduction</a:documentation>
                      <value>wdt:genreNFEthnography</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Non-fiction: Ethnography</a:documentation>
+                     <value>wdt:genreNFMiscellany</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Miscellany</a:documentation>
+                     <value>wdt:genreNFMiscellanyBlurb</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Miscellany: Blurb</a:documentation>
                      <value>wdt:genreFilm</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Film</a:documentation>
                      <value>wdt:genreFilmScenario</value>
