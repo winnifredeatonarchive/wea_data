@@ -2024,7 +2024,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <gloss>note</gloss>
                   <desc>contains a note or annotation.</desc>
                   <classes>
-                     <memberOf key="att.global.rendition"/>
+                     <memberOf key="att.global"/>
+                     <memberOf key="att.typed"/>
                      <memberOf key="att.placement"/>
                      <memberOf key="model.noteLike"/>
                      <memberOf key="model.annotationLike"/>
@@ -2095,7 +2096,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <attList org="choice">
+                  <!--                 <attList org="choice">
                      <attList org="group">
                         <attDef ident="type" mode="add" usage="opt">
                            <desc>characterizes the type of note or annotation</desc>
@@ -2139,7 +2140,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            </valList>
                         </attDef>
                      </attList>
-                  </attList>
+                  </attList>-->
                </elementSpec>
                <elementSpec ident="q" module="core" mode="change">
                   <constraintSpec ident="q.dontStartEndSpaces" scheme="schematron">
