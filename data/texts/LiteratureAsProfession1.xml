@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LiteratureAsProfession1">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>[<q>Literature as a Profession</q>]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:JT1">Joey Takeda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:JT1">Joey Takeda</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from the University of Calgary archives</note>
+         </notesStmt>
+         <sourceDesc>
+            <bibl copyOf="bibl:318"/>
+         </sourceDesc>
+      </fileDesc>
+     <profileDesc>
+        <textClass>
+           <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
+           <catRef scheme="wdt:genre" target="wdt:genreNFMiscellanyBlurb"/>
+           <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+           
+        </textClass>
+     </profileDesc>
+     <revisionDesc status="readyForProof">
+       
+        <change who="pers:JT1" when="2020-08-24" status="readyForProof">Created document and added transcription.</change>
+     </revisionDesc>
+  </teiHeader>
+  <text facs="facs:LiteratureAsProfession1">
+      <body>
+         <head>AUTHOR PLAYS A GREAT PART ON WORLD’S STAGE</head>
+         <head type="subtitle">Without Written Article Many Activities Would Be Forced to Cease</head>
+         <head type="subtitle"><name ref="pers:WE1">WINNIFRED REEVE</name> TELLS RADIO FANS</head>
+         <head type="subtitle">Interesting Address on <q>Literature As a Profession</q> Broadcast</head>
+         <p><q>Literature as a Profession</q> was the subject which <name ref="pers:WE1">Winnifred Reeve</name>, an Alberta author of note, dealt with in an address to radio fans over The Herald CFAC broadcasting station on Friday evening. <name ref="pers:WE1">Mrs. Reeve</name> dealt with the subject from a commercial standpoint, yet in such an interesting fashion that many telephone calls were received at the station congratulating The Herald on its enterprise in securing the services of this author.</p>
+         <p>Mrs. Reeve said in part:</p>
+         <p><q>The average business man has only a hazy idea concerning the men and the women who write, and of the value of their product. He looks upon writers as impractical folk engaged in an unremunerative and uncertain employment. Sometimes he goes farther and designates them as <q>nuts</q></q>.</p>
+         <div>
+            <head>What It All Means</head>
+            <p><q>Nevertheless these <q>nuts</q> produce material that make immense fortunes and give employment to thousands of people. Without the writer there would be no publishing houses, no newspapers, no magazines; the gramophone would be silence—for composers are authors of music—advertising agencies and literary brokers would close up shop and the printing enterprises would be at a standstill. The motion picture industry, which is said to be the fourth great business in the United States today, could not carry on without the author. The theatres would close their doors, for the actor could not act without a play written by an author</q>.</p>
+            <p><q>Until recent years the author received but a minimum of the profits that accrued from his work. Though possessed with the power of making fortunes for others, he suffered through his own business inability, and he was the prey and the victim of the very ones who became rich through his labor</q>.</p>
+            <p><q>Bret Harte’s daughter died in the poorhouse. Yet Bret Harte’s publishers are in hte millionare class. <q>Ben Hur</q> sold, I was told for the nominal sum of $1,000. It is impossible to estimate the enormous returns that poured into the coffers of the publishers of that story and the producers of the play</q>.</p>
+            <p>Du Maurier sold <q>Trilby</q> for $500 to the publishers, and the novel ran into edition after edition, had an enormous success as a play, and is running now to crowded houses in the movies. I could mention a score of instances of literary property that has made fortunes for its publishers and for which the author has received scarcely nothing</p>
+         </div>
+         <div>
+            <head>The Author of Today</head>
+            <p><q>But all that is of the past. The author today is no longer a long-haired, dreamy <q>freak of nature</q>. His house may not be as large as the financial magnate’s. Few authors ride in Rolls-Royces, and some of them still have bank rolls as thin as their clothes, but this is the day when at all events in such countries as the United States and England, his interests are safeguarded, and his country realizes his importance and his value. Someone—I think it was Mark Twain—started a campaign in the United States to organize the authors, even as the labor unions were doing. Incidentally, Mark Twain himself died a millionare</q>.</p>
+            <p><q>There came into being the Authors’ League of America. It set out to teach the author the value of his product, and to direct him into the way he should dispose of it. So strong did this league become that I believe there was scarcely an author in the United States who did not enrol. I was myself one of the charter members. The author now said in effect to the publisher: <q>Authors can live without publishers. Publishers cannot live without authors, for authors can themselves become publishers, but publishers cannot become authors, because the author is born—not made</q>. He said practically the same thing to the theatrical manager, and to <q>the magazine editor</q></q>.</p>
+         </div>
+      </body>
+  </text>
+</TEI>
