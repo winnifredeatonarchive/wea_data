@@ -616,6 +616,23 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <sch:rule context="tei:relatedItem[@target]">
+         <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
+                                 ERROR: The @target for this relatedItem should be one of a 
+                                 bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
+                              </sch:assert>
+      </sch:rule>
+   </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
@@ -665,7 +682,7 @@ relatedItem element must be empty</sch:report>
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-lg-atleast1oflggapl-constraint-assert-28">
+            id="wea-lg-atleast1oflggapl-constraint-assert-29">
       <rule context="tei:lg">
          <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                      xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -874,7 +891,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-link-linkTargets3-constraint-assert-40">
+            id="wea-link-linkTargets3-constraint-assert-41">
       <rule context="tei:link">
          <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                      xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -1047,7 +1064,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-47">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-48">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"

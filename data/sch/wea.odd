@@ -2020,6 +2020,44 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </alternate>
                   </content>
                </elementSpec>
+               <!--MODULE: CORE-->
+               <elementSpec ident="relatedItem" module="core" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.global" mode="delete"/>
+                  </classes>
+                  <content>
+                     <empty/>
+                  </content>
+                  <constraintSpec ident="relatedItem.targetShouldBeExternalOrBibl" scheme="schematron">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:relatedItem[@target]">
+                              <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
+                                 ERROR: The @target for this relatedItem should be one of a 
+                                 bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed" mode="add">
+                           <valItem ident="bibliography" mode="add">
+                              <gloss>Bibliography</gloss>
+                              <desc>A bibliography that lists this work (usually an early
+                              bibliography, like Jean Lee Cole and Diana Birchall).</desc>
+                           </valItem>
+                           <valItem ident="edition" mode="add">
+                              <gloss>Edition</gloss>
+                              <desc>An edition or surrogate of this text.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="target" mode="change" usage="req"/>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
                <elementSpec ident="note" module="core" mode="replace">
                   <gloss>note</gloss>
                   <desc>contains a note or annotation.</desc>
