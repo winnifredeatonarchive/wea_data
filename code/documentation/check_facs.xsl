@@ -9,6 +9,7 @@
     xmlns:xd="https://www.oxygenxml.com/ns/doc/xsl"
     xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+    xmlns:array="http://www.w3.org/2005/xpath-functions/array"
     xmlns="http://www.tei-c.org/ns/1.0"
     version="3.0">
     
@@ -156,11 +157,15 @@
     
     <xsl:template match="listPrefixDef" mode="prefixes">
         <xsl:map>
-            <xsl:apply-templates select="*" mode="#current"/>
+            <xsl:for-each-group select="listPrefix" group-by="@ident">
+                <xsl:map-entry key="string(@ident)" select="array{
+                        current-group() ! map{'matchPattern': string(@matchPattern), 'replacementPattern': string(@replacementPattern)}
+                    }"/>
+            </xsl:for-each-group>
         </xsl:map>
     </xsl:template>
     
-    <xsl:template match="prefixDef" mode="prefixes">
+    <!--<xsl:template match="prefixDef" mode="prefixes">
         <xsl:map-entry key="string(@ident)">
             <xsl:map>
                 <xsl:apply-templates select="@*" mode="#current"/>
@@ -172,7 +177,7 @@
         <xsl:if test="not(local-name() = 'ident')">
             <xsl:map-entry key="local-name()" select="string(.)"/>
         </xsl:if>
-    </xsl:template>
+    </xsl:template>-->
         
     <xsl:template match="text()" mode="#all"/>
     
@@ -187,8 +192,16 @@
         <xsl:variable name="bits" select="tokenize($ptr,':')" as="xs:string+"/>
         <xsl:variable name="ident" select="$bits[1]" as="xs:string"/>
         <xsl:variable name="val" select="$bits[2]" as="xs:string"/>
-        <xsl:variable name="map" select="$prefixMap($ident)"/>
-        <xsl:sequence select="replace($val, $map?matchPattern, $map?replacementPattern)"/>
+        <xsl:variable name="maps" select="$prefixMap($ident)" as="array(*)"/>
+        <xsl:iterate select="array:flatten($maps)">
+            <xsl:on-completion>
+                <xsl:sequence select="''"/>
+            </xsl:on-completion>
+            <xsl:variable name="map" select="."/>
+            <xsl:if test="matches($val, $map?matchPattern)">
+                <xsl:break select="replace($val, $map?matchPattern, $map?replacementPattern)"/>
+            </xsl:if>
+        </xsl:iterate>
     </xsl:function>
     
     
