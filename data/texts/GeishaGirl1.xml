@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="GeishaGirl1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="GeishaGirl1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,6 +22,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:149"/>
          </sourceDesc>
@@ -34,13 +37,16 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-07-08" status="published">added and proofread transcription.</change>
-         <change who="pers:MC1" when="2020-07-08" status="inProgress">added transcription.</change><change who="pers:MC1" when="2020-05-18" status="empty">Changed genre and title.</change><change who="pers:SL1" when="2019-06-30" status="empty">Added facs.</change>
+         <change who="pers:MC1" when="2020-07-08" status="inProgress">added transcription.</change>
+         <change who="pers:MC1" when="2020-05-18" status="empty">Changed genre and title.</change>
+         <change who="pers:SL1" when="2019-06-30" status="empty">Added facs.</change>
          <change who="pers:JT1" when="2019-05-15" status="empty">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl149 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-           <text facs="facs:Geisha_Girl2"> 
+   <text facs="facs:Geisha_Girl2"> 
       <body>
    
             <head>The Geisha Girl Is Primarily An Entertainer</head>
@@ -65,5 +71,4 @@
                </div>
       </body>
            </text>
-
 </TEI>

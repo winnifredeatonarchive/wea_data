@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TheHalfCaste1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="TheHalfCaste1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -24,6 +24,7 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Library of Congress</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
             <relatedItem type="edition" target="bibl:MOSE16"/>
          </notesStmt>
          <sourceDesc>
@@ -42,6 +43,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2021-09-07" status="published">Corrected misspelling of Lafcadio.</change>
          <change who="pers:SL1" when="2021-06-16" status="published">Added headnote.</change>
          <change who="pers:SB2" when="2020-07-30" status="published">Proofed.</change>

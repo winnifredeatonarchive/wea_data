@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DeliaDissents1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DeliaDissents1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -25,6 +25,7 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile from Hathi Trust</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
             <relatedItem type="edition" target="bibl:MOSE14"/>
          </notesStmt>
          <sourceDesc>
@@ -39,8 +40,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">tagged illustrator</change>
-         <change who="pers:MC1" when="2020-08-02" status="published">corrected typos.</change><change who="pers:MC1" when="2020-07-02" status="published">Changed genre.</change>
+         <change who="pers:MC1" when="2020-08-02" status="published">corrected typos.</change>
+         <change who="pers:MC1" when="2020-07-02" status="published">Changed genre.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
          <change who="pers:DC1" when="2020-06-28" status="published">Fixing typos.</change>
          <change who="pers:DC1" when="2020-06-26" status="published">Proofreading.</change>

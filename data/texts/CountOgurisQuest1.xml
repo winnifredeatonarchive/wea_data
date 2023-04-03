@@ -60,6 +60,8 @@ Publicly accessible
          <notesStmt>
             <note>Facsimile retrieved from Hathi Trust: <ref target="https://babel.hathitrust.org/cgi/pt?id=njp.32101076426145;view=1up;seq=641">https://babel.hathitrust.org/cgi/pt?id=njp.32101076426145;view=1up;seq=641</ref>.</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatCoun"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:37"/>
@@ -73,6 +75,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SL1" when="2019-05-13" status="published">Final edits per MC; changed status to published.</change>
          <change who="pers:SL1" when="2019-05-09" status="readyForProof">Added genre, facsimile source note, and readied for proofing.</change>

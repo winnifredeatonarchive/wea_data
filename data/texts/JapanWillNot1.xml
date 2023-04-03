@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapanWillNot1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="JapanWillNot1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,6 +22,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:60"/>
          </sourceDesc>
@@ -34,6 +37,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-05-21" status="published">Final proofed</change>
          <change who="pers:MC1" when="2019-06-28" status="published">Final proofed</change>
          <change who="pers:KI1" when="2019-06-17" status="readyForProof">Reviewed encoding. Minor issue with q element in opener byline</change>
@@ -41,8 +45,8 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl60 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-           <text facs="facs:Japan_Will_Not_Go_to_War">
-      <pb n="14"></pb>
+   <text facs="facs:Japan_Will_Not_Go_to_War">
+      <pb n="14"/>
       <body>
          <head>BY <name ref="pers:WE1">Onoto Watanna</name></head>
             <opener>

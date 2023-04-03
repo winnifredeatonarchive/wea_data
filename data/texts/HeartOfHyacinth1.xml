@@ -10,6 +10,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:153"/>
             <biblFull>
@@ -23,7 +26,7 @@
                   <pubPlace>Atlanta, Georgia</pubPlace>
                   <date>2005</date>
                   <availability>
-                    <p>© 2005, Lewis H. Beck Center, Emory University. Emory
+                     <p>© 2005, Lewis H. Beck Center, Emory University. Emory
                         University makes a claim of copyright only to original contributions made by
                         the Women’s Genre Fiction Project participants. Emory University makes no
                         claim of copyright to the original text. Permission is granted to download,
@@ -31,18 +34,18 @@
                         to this work claimed by Emory University for non-profit educational
                         purposes, provided that this header is included in its entirety. For further
                         inquiries about this text’s availability, please contact:<address>
-                            <addrLine>Lewis H. Beck Center</addrLine>
-                            <addrLine>Emory University</addrLine>
-                            <addrLine>Robert W. Woodruff Library</addrLine>
-                            <addrLine>Atlanta, GA 30322-0053</addrLine>
-                            <addrLine>United States of America</addrLine>
-                            <addrLine>Email: beckctr@emory.edu</addrLine>
-                        </address></p>
+                           <addrLine>Lewis H. Beck Center</addrLine>
+                           <addrLine>Emory University</addrLine>
+                           <addrLine>Robert W. Woodruff Library</addrLine>
+                           <addrLine>Atlanta, GA 30322-0053</addrLine>
+                           <addrLine>United States of America</addrLine>
+                           <addrLine>Email: beckctr@emory.edu</addrLine>
+                        </address>
+                     </p>
                   </availability>
                   <idno type="ark">http://pid.emory.edu/ark:/25593/175mh</idno>
                </publicationStmt>
-                
-                <seriesStmt>
+               <seriesStmt>
                   <title>Women’s Genre Fiction, 1860-1920</title>
                   <respStmt>
                      <resp>Principal Investigators</resp>
@@ -53,8 +56,9 @@
                      <name>Charles D. Spornick</name>
                   </respStmt>
                </seriesStmt>
-                <notesStmt>
-                    <note>Facsimile retrieved from Women’s Genre Fiction, 1860-1920, from original at Lewis H. Beck Center, Emory University</note></notesStmt>
+               <notesStmt>
+                  <note>Facsimile retrieved from Women’s Genre Fiction, 1860-1920, from original at Lewis H. Beck Center, Emory University</note>
+               </notesStmt>
                <sourceDesc>
                   <bibl>. <title>The Heart of Hyacinth</title>.
                         <pubPlace>New York and London</pubPlace>: <publisher>Harper &amp;
@@ -65,17 +69,18 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-             <catRef scheme="wdt:genre" target="wdt:genreNovel"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNovel"/>
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="readyForProof">
-          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
-          <change who="pers:MC1" status="inProgress" when="2020-07-02">Added note about source.</change>
-          <change who="pers:SB2" status="inProgress" when="2020-06-30">Proofread chapters 10-29.</change>
-          <change who="pers:SB2" status="inProgress" when="2020-06-29">Proofread chapters 1-9.</change>
-          <change who="pers:JT1" status="inProgress" when="2019-06-11">Converted file.</change>
+         <change who="pers:JT1" when="2023-04-02" status="readyForProof">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+         <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
+         <change who="pers:MC1" status="inProgress" when="2020-07-02">Added note about source.</change>
+         <change who="pers:SB2" status="inProgress" when="2020-06-30">Proofread chapters 10-29.</change>
+         <change who="pers:SB2" status="inProgress" when="2020-06-29">Proofread chapters 1-9.</change>
+         <change who="pers:JT1" status="inProgress" when="2019-06-11">Converted file.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl153 using XSLT.</change>
       </revisionDesc>
    </teiHeader>

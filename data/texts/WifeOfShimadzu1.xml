@@ -52,6 +52,8 @@ Publicly accessible
          <notesStmt>
             <note>Facsimile retrieved from original at University of Michigan via Google Books</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatShim"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:185"/>
@@ -68,6 +70,7 @@ Publicly accessible
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-03-14" status="published">Added headnote.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-07-21" status="published">changed head</change>

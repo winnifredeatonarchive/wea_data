@@ -244,7 +244,8 @@
             <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1"/>
             <prefixDef ident="fig" matchPattern="(.+)" replacementPattern="media.xml#$1"/>
             <prefixDef ident="org" matchPattern="(.+)" replacementPattern="organizations.xml#$1"/>
-            <prefixDef ident="bibl" matchPattern="(.+)" replacementPattern="bibliography.xml#bibl$1"/>
+            <prefixDef ident="bibl" matchPattern="^(\d+)$" replacementPattern="bibliography.xml#bibl$1"/>
+            <prefixDef ident="bibl" matchPattern="^([A-Z]{4}\d+)$" replacementPattern="bibliography.xml#$1"/>
             <prefixDef ident="img" matchPattern="(.+)" replacementPattern="images/$1"/>
             <prefixDef ident="cite" matchPattern="(.+)" replacementPattern="bibliography.xml#$1"/>
             <prefixDef ident="pgcolour" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>

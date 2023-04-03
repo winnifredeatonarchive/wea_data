@@ -655,7 +655,12 @@
     
     
     <xsl:template match="ref" mode="tei">
-        <a href="{wea:resolveTarget(@target)}">
+        <xsl:variable name="resolved" select="wea:resolveTarget(@target)" as="xs:string"/>
+        <a href="{$resolved}">
+            <xsl:if test="matches($resolved, 'https?') and not(contains($resolved,'winnifredeatonarchive.org'))">
+                <xsl:attribute name="target">_blank</xsl:attribute>
+                <xsl:attribute name="rel">noopener noreferrer</xsl:attribute>
+            </xsl:if>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </a>

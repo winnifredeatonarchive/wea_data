@@ -10,12 +10,10 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-
             <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:LW1">Leean Wu</name>
@@ -24,6 +22,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:293"/>
          </sourceDesc>
@@ -36,6 +37,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:LW1" when="2022-05-11" status="published">Set to published..</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
          <change who="pers:SC1" status="inProgress" when="2020-09-08">Added facs and
@@ -178,12 +180,11 @@
                      and apartment houses. And we won’t be able to sit on aged tree stumps then, and
                      tell each other of our love</q>.</p>
                <p><q>We’ll always find a place to tell that in</q>, she said simply, <q>and we won’t
-                     begrudge this lovely place to others. Uncle Dan says when his medicine has <pb
-                        n="890"/>worked its full cure upon his patients, then they become like
+                     begrudge this lovely place to others. Uncle Dan says when his medicine has <pb n="890"/>worked its full cure upon his patients, then they become like
                      beautiful trouble sponges, so he said</q>. She smiled. <q>—trouble sponges that
                      absorb all the grief about us, only to squeeze it out again into oblivion.
                      D’you think <choice>
-                        <sic>its></sic>
+                        <sic>its&gt;</sic>
                         <corr>it’s</corr>
                      </choice> really so, dearest?</q></p>
                <p><q>Possibly, and as long as I have you all to myself, I’ll be a sponge for all the

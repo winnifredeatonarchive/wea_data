@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> 
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LittleTheatreMovement1">
    <teiHeader>
@@ -18,6 +18,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:313"/>
          </sourceDesc>
@@ -30,6 +33,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:LW1" when="2022-05-06" status="published">Added person references.</change>
          <change who="pers:LW1" when="2022-05-05" status="published">Provided further edits and
              low certainty footnote</change>
@@ -40,7 +44,6 @@
             assigned facs.</change>
          <change who="pers:JT1" when="2021-10-12" status="empty">Created shell from bibl
             file.</change>
-
       </revisionDesc>
    </teiHeader>
    <text facs="facs:LittleTheatreMovement">
@@ -103,8 +106,7 @@
                   executive work, orchestra, <supplied cert="low" resp="pers:LW1">shopping</supplied>, 
                   reading of MSS</q>.</p>
             <p>
-               <q>In some of the little theatres princes and millionaires have worked <gap
-                     reason="illegible"/> wielded the broom that has cleaned the stage, while the
+               <q>In some of the little theatres princes and millionaires have worked <gap reason="illegible"/> wielded the broom that has cleaned the stage, while the
                   daughter of a scrub woman has played the star part</q>.</p>
          </div>
          <div>
@@ -144,8 +146,7 @@
                <q>Then there is dancing. Dancing has always been closely allied with the theatre.
                   Its proper setting is the stage</q>.</p>
             <p>
-               <q>All this you see would come with the little theatre. This would <gap
-                     reason="illegible"/> these things not for use in professional life but because
+               <q>All this you see would come with the little theatre. This would <gap reason="illegible"/> these things not for use in professional life but because
                   of love of them because of the culture to mind and body that they would
                impart</q>.</p>
          </div>

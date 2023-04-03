@@ -23,7 +23,7 @@
         <xd:desc><xd:ref name="prefixes" type="variable">$prefixes</xd:ref> is a sequence of all
             of the @ident attributes in the global prefixDef found in taxonomies.xml.</xd:desc>
     </xd:doc>
-    <xsl:variable name="prefixes" select="$originalXml[//TEI/@xml:id='taxonomies']//prefixDef/@ident" as="attribute(ident)*"/>
+    <xsl:variable name="prefixes" select="$originalXml[//TEI/@xml:id='taxonomies']//prefixDef" as="element(prefixDef)*"/>
     
     <xd:doc scope="component">
         <xd:desc><xd:ref name="prefixRegex" type="variable">$prefixRegex</xd:ref> is a Regular
@@ -31,7 +31,7 @@
             '^(prefix1|prefix2|...|prefixn):'</xd:desc>
     </xd:doc>
     <xsl:variable name="prefixRegex" 
-        select="concat('^(',string-join(for $n in $prefixes return concat('(',$n,')'),'|'),'):')" as="xs:string"/>
+        select="concat('^(',string-join(for $n in distinct-values($prefixes/@ident) return concat('(',$n,')'),'|'),'):')" as="xs:string"/>
     
     
     
@@ -83,7 +83,10 @@
         
         <xsl:variable name="orgPtrs" select="for $p in $potentialOrgPtrs return if (ancestor::TEI[descendant-or-self::tei:*[@xml:id=$p]]) then () else $p"/>
         
-        <xsl:variable name="citationPtrs" select="//ref[@type='bibl'][contains(@target,'cite:')]/substring-after(@target,'cite:')" as="xs:string*"/>
+        <xsl:variable name="potentialBiblPointers"
+            select="distinct-values(for $t in (for $p in (//tei:*/@*[contains(.,'bibl:')]) return tokenize($p,'\s+')) return if (matches($t,'bibl:[A-Z]{4}\d+')) then substring-after($t,'bibl:') else ())"/>
+        
+        <xsl:variable name="biblPtrs" select="for $p in $potentialBiblPointers return if (ancestor::TEI[descendant-or-self::tei:*[@xml:id = $p]]) then () else $p"/>
         
         
         <xsl:if test="not(empty(($peoplePtrs,$orgPtrs)))">
@@ -115,9 +118,9 @@
                             </xsl:for-each>
                         </listOrg>
                     </xsl:if>
-                    <xsl:if test="not(empty($citationPtrs))">
+                    <xsl:if test="not(empty($biblPtrs))">
                         <listBibl>
-                            <xsl:for-each select="$citationPtrs">
+                            <xsl:for-each select="$biblPtrs">
                                 <xsl:variable name="thisPtr" select="."/>
                                 <xsl:variable name="thisBibl" select="$originalXml[/TEI[@xml:id='bibliography']]//bibl[@xml:id=$thisPtr]"/>
                                 <bibl>
@@ -328,23 +331,34 @@
                 <xsl:choose>
                     <xsl:when test="matches($token,$prefixRegex)">
                         <xsl:variable name="thisPrefix" select="substring-before($token,':')" as="xs:string"/>
+                        
                         <!--Prefix from delared prefixDef-->
                         <!--We may want to switch this so that it looks at the local header
                             and not the global taxonomies header-->
-                        <xsl:variable name="thisPrefixDef" select="$originalXml[//TEI/@xml:id='taxonomies']//prefixDef[@ident=$thisPrefix]" as="element(prefixDef)*"/>
+                        <xsl:variable name="thisPrefixDef" 
+                            select="$prefixes[@ident=$thisPrefix]" as="element(prefixDef)*"/>
                         <xsl:variable name="thisPointer" select="substring-after($token,concat($thisPrefix,':'))" as="xs:string"/>
-                        <xsl:variable name="match" select="$thisPrefixDef[1]/@matchPattern" as="attribute(matchPattern)?"/>
-                        <xsl:variable name="replacement" select="$thisPrefixDef[1]/@replacementPattern" as="attribute(replacementPattern)?"/>
-                        
-                        <!--$match and $replacement should be regexes-->
-                        <xsl:variable name="resolved" select="replace($thisPointer,$match,$replacement)" as="xs:string"/>
-                        
-                        <!--If this is a local link, make it local-->
-                        <xsl:variable name="localized" 
-                            select="if (matches($resolved, concat('^',$sourceId,'.xml#'))) 
-                            then substring-after($resolved,concat($sourceId,'.xml'))
-                            else $resolved" as="xs:string"/>
-                        <xsl:value-of select="$localized"/>
+                        <xsl:iterate select="$thisPrefixDef">
+                            <xsl:on-completion>
+                                <xsl:if test="not(matches($token,'^(https?|mailto)'))">
+                                    <xsl:message>Couldn't resolve token: <xsl:value-of select="$token"/></xsl:message>
+                                </xsl:if>
+                                <xsl:value-of select="$token"/>
+                            </xsl:on-completion>
+                            <xsl:variable name="match" select="@matchPattern" as="xs:string"/>
+                            <xsl:variable name="replacement" select="@replacementPattern" as="xs:string"/>
+                            <xsl:if test="matches($thisPointer, $match)">
+                                <!--$match and $replacement should be regexes-->
+                                <xsl:variable name="resolved" select="replace($thisPointer,$match,$replacement)" as="xs:string"/>
+                                
+                                <!--If this is a local link, make it local-->
+                                <xsl:variable name="localized" 
+                                    select="if (matches($resolved, concat('^',$sourceId,'.xml#'))) 
+                                    then substring-after($resolved,concat($sourceId,'.xml'))
+                                    else $resolved" as="xs:string"/>
+                                <xsl:break select="$localized"/>
+                            </xsl:if>
+                        </xsl:iterate>
                     </xsl:when>
                     <!--If it doesn't match the local prefix regex,
                 then just spit the token back out, unresolved-->
@@ -352,11 +366,9 @@
                         <xsl:if test="not(matches($token,'^(https?|mailto)'))">
                             <xsl:message>Couldn't resolve token: <xsl:value-of select="$token"/></xsl:message>
                         </xsl:if>
-     
                         <xsl:value-of select="$token"/>
                     </xsl:otherwise>
                 </xsl:choose>
-                
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="$token"/>

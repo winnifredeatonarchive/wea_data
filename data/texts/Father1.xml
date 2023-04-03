@@ -43,6 +43,8 @@ Publicly accessible
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Library of Congress </note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatFath"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:6"/>
@@ -56,6 +58,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" status="published" when="2020-08-05">Added illustrator code.</change>
          <change who="pers:MC1" status="published" when="2020-07-01">Added note about source.</change>

@@ -10,6 +10,9 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:314"/>
          </sourceDesc>
@@ -22,11 +25,12 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2022-04-28">Added catRef genre and exhibit. Added facsimile.</change>
+         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+         <change who="pers:SL1" status="empty" when="2022-04-28">Added catRef genre and exhibit. Added facsimile.</change>
          <change who="pers:JT1" when="2022-04-28" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:MovieMadness5" prev= "doc:MovieMadness4" next="doc:MovieMadness6">
+   <text facs="facs:MovieMadness5" prev="doc:MovieMadness4" next="doc:MovieMadness6">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

@@ -249,13 +249,25 @@
         <xsl:sequence select="'mailto:mary.chapman@ubc.ca,joey.takeda@gmail.com?subject=' || encode-for-uri($subject) || '&amp;body=' || encode-for-uri($body)"/>
     </xsl:function>
     <xsl:template match="listBibl" mode="appendix">
-        <div>
-            <xsl:call-template name="processAtts">
-                <xsl:with-param name="id" select="'works_cited'"/>
-            </xsl:call-template>
-            <h2>Works Cited</h2>
-            <xsl:apply-templates select="bibl" mode="tei"/>
-        </div>
+       <xsl:where-populated>
+           <div>
+               <xsl:on-non-empty>
+                   <xsl:call-template name="processAtts">
+                       <xsl:with-param name="id" select="'works_cited'"/>
+                   </xsl:call-template>
+                   <h2>Works Cited</h2>
+               </xsl:on-non-empty>
+               <xsl:for-each select="bibl">
+                   <xsl:variable name="id" select="@xml:id" as="xs:string"/>
+                   <xsl:if test="ancestor::TEI/descendant::*[not(self::relatedItem)][@*[contains-token(., ('#' || $id))]]">
+                       <xsl:apply-templates select="." mode="tei"/>
+                   </xsl:if>
+               </xsl:for-each>
+ 
+           </div>
+           
+       </xsl:where-populated> 
+
     </xsl:template>
     
     <xsl:template match="listPerson" mode="appendix">
