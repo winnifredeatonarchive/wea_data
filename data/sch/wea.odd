@@ -1490,13 +1490,13 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg resp respStmt rs sic sp speaker term title unclear"/>
                <moduleRef key="header"
                           include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
                <moduleRef key="msdescription"
-                          include="additional collection institution msDesc msIdentifier repository surrogates"/>
+                          include="additional adminInfo collection institution msDesc msContents msItem msIdentifier recordHist repository source surrogates"/>
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname relation"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
@@ -1505,6 +1505,61 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="textstructure"
                           include="TEI back body byline closer dateline div docAuthor docDate docImprint docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
                <moduleRef key="transcr" include="fw supplied"/>
+               <moduleSpec ident="wea" mode="add">
+                  <desc>WEA Module for Customizations</desc>
+               </moduleSpec>
+               <classSpec ident="att.wea.citing" type="atts" module="wea">
+                  <desc>provides attributes for pointing to a bibliographic reference.</desc>
+                  <constraintSpec scheme="schematron" ident="target.mustBeABiblForMsDesc">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:msDesc/tei:listBibl/tei:bibl | tei:source">
+                              <sch:assert test="@target">
+                                 <sch:name/> must have an @target that points to a bibliographic reference (e.g. bibl:ABCD1).</sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="target" usage="rec">
+                        <desc versionDate="2009-11-06" xml:lang="en">points to the related bibliographic element by means of an
+                           absolute or relative URI reference</desc>
+                        <desc versionDate="2017-06-13" xml:lang="de">zeigt auf das in Beziehung stehende bibliografische Objekt durch eine absolute oder relative URI</desc>
+                        <datatype>
+                           <dataRef key="teidata.pointer"/>
+                        </datatype>
+                     </attDef>
+                  </attList>
+                  <remarks>
+                     <p>The <att>target</att> attribute is taken directly from TEI's relatedItem target.</p>
+                  </remarks>
+               </classSpec>
+               <elementSpec ident="repository" module="msdescription" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.canonical" mode="add"/>
+                  </classes>
+               </elementSpec>
+               <elementSpec ident="msDesc" module="msdescription" mode="change">
+                  <!--Update the content model of msDesc-->
+                  <content>
+                     <sequence>
+                        <elementRef key="msIdentifier" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="msContents"/>
+                        <elementRef key="additional"/>
+                     </sequence>
+                  </content>
+                  <remarks mode="add">
+                     <p>Since we are using <gi>msDesc</gi> for all kinds of textual material,
+                     including published works and films, we make msIdentifier optional, as published
+                     texts may appear in multiple versions (and we are not concerned about multiple 
+                     incarnations of a single edition).</p>
+                  </remarks>
+               </elementSpec>
+               <elementSpec ident="source" module="msdescription" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.wea.citing" mode="add"/>
+                  </classes>
+               </elementSpec>
                <!--MODULE: HEADER-->
                <elementSpec ident="teiHeader" module="header" mode="change">
                   
@@ -1828,6 +1883,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <alternate minOccurs="1" maxOccurs="unbounded">
                            <elementRef key="bibl"/>
                            <elementRef key="biblFull"/>
+                           <elementRef key="msDesc"/>
                         </alternate>
                      </alternate>
                   </content>
@@ -1836,7 +1892,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
+                           <sch:rule context="tei:sourceDesc[not(tei:bibl or tei:msDesc)]">
                               <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
@@ -2029,7 +2085,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </content>
                </elementSpec>
                <!--MODULE: CORE-->
-               <elementSpec ident="relatedItem" module="core" mode="change">
+               <!--               <elementSpec ident="relatedItem" module="core" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
                   </classes>
@@ -2065,7 +2121,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <attDef ident="target" mode="change" usage="req"/>
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
-               </elementSpec>
+               </elementSpec>-->
                <elementSpec ident="note" module="core" mode="replace">
                   <gloss>note</gloss>
                   <desc>contains a note or annotation.</desc>
@@ -2281,6 +2337,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </attList>
                </elementSpec>
                <elementSpec ident="bibl" module="core" mode="change">
+                  <classes mode="change">
+                     <memberOf key="att.wea.citing" mode="add"/>
+                  </classes>
                   <constraintSpec ident="bibl.noJournalTitle" scheme="schematron">
                      <desc>If you have issues and numbers, you should have a journal title.</desc>
                      <constraint>

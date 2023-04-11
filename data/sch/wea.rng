@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-04-11T04:48:16Z. .
+Schema generated from ODD source 2023-04-11T06:20:53Z. .
 TEI Edition: Version 4.6.0. Last updated on
         4th April 2023, revision f18deffba
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.6.0/
@@ -2446,6 +2446,21 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="docDate"/>
       </choice>
    </define>
+   <define name="model.msQuoteLike">
+      <choice>
+         <ref name="title"/>
+      </choice>
+   </define>
+   <define name="model.msItemPart">
+      <choice>
+         <ref name="model.biblLike"/>
+         <ref name="model.quoteLike"/>
+         <ref name="model.respLike"/>
+         <ref name="model.msQuoteLike"/>
+         <ref name="idno"/>
+         <ref name="msItem"/>
+      </choice>
+   </define>
    <define name="model.imprintPart">
       <choice>
          <ref name="publisher"/>
@@ -2587,7 +2602,6 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="model.respLike"/>
          <ref name="model.imprintPart"/>
          <ref name="bibl"/>
-         <ref name="relatedItem"/>
          <ref name="edition"/>
          <ref name="extent"/>
          <ref name="availability"/>
@@ -4095,6 +4109,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                               </sch:assert>
             </sch:rule>
          </sch:pattern>
+         <ref name="att.wea.citing.attributes"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.docStatus.attributes"/>
@@ -4138,72 +4153,6 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
          <empty/>
       </element>
    </define>
-   <define name="relatedItem">
-      <element name="relatedItem">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [3.12.2.7. Related Items]</a:documentation>
-         <empty/>
-         <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
-                      xmlns:math="http://www.w3.org/1998/Math/MathML"
-                      xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                      xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                      xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                      xmlns:svg="http://www.w3.org/2000/svg"
-                      xmlns:xi="http://www.w3.org/2001/XInclude"
-                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-            <sch:rule context="tei:relatedItem[@target]">
-               <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
-                                 ERROR: The @target for this relatedItem should be one of a 
-                                 bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
-                              </sch:assert>
-            </sch:rule>
-         </sch:pattern>
-         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relatedItem-targetorcontent1-constraint-report-9">
-            <rule context="tei:relatedItem">
-               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:math="http://www.w3.org/1998/Math/MathML"
-                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                           xmlns:svg="http://www.w3.org/2000/svg"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                           test="@target and count( child::* ) &gt; 0">
-If the @target attribute on <sch:name/> is used, the
-relatedItem element must be empty</sch:report>
-               <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
-                           xmlns:math="http://www.w3.org/1998/Math/MathML"
-                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                           xmlns:svg="http://www.w3.org/2000/svg"
-                           xmlns:xi="http://www.w3.org/2001/XInclude"
-                           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                           test="@target or child::*">A relatedItem element should have either a 'target' attribute
-        or a child element to indicate the related bibliographic item</sch:assert>
-            </rule>
-         </pattern>
-         <attribute name="type">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
-            <choice>
-               <value>bibliography</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Bibliography) A bibliography that lists this work (usually an early bibliography, like Jean Lee Cole and Diana Birchall).</a:documentation>
-               <value>edition</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Edition) An edition or surrogate of this text.</a:documentation>
-            </choice>
-         </attribute>
-         <attribute name="target">
-            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the related bibliographic element by means of an absolute or relative URI reference</a:documentation>
-            <data type="anyURI">
-               <param name="pattern">\S+</param>
-            </data>
-         </attribute>
-         <empty/>
-      </element>
-   </define>
    <define name="l">
       <element name="l">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(verse line) contains a single, possibly incomplete, line of verse. [3.13.1. Core Tags for Verse 3.13. Passages of Verse or Drama 7.2.5. Speech Contents]</a:documentation>
@@ -4217,7 +4166,7 @@ relatedItem element must be empty</sch:report>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-l-abstractModel-structure-l-in-l-constraint-report-10">
+                  id="wea-l-abstractModel-structure-l-in-l-constraint-report-9">
             <rule context="tei:l">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -4275,7 +4224,7 @@ relatedItem element must be empty</sch:report>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-atleast1oflggapl-constraint-assert-29">
+                  id="wea-lg-atleast1oflggapl-constraint-assert-27">
             <rule context="tei:lg">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -4291,7 +4240,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-lg-abstractModel-structure-lg-in-l-constraint-report-11">
+                  id="wea-lg-abstractModel-structure-lg-in-l-constraint-report-10">
             <rule context="tei:lg">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -4761,7 +4710,6 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <oneOrMore>
             <choice>
                <ref name="model.noteLike"/>
-               <ref name="relatedItem"/>
             </choice>
          </oneOrMore>
          <ref name="att.global.attributes"/>
@@ -4777,6 +4725,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                <choice>
                   <ref name="bibl"/>
                   <ref name="biblFull"/>
+                  <ref name="msDesc"/>
                </choice>
             </oneOrMore>
          </choice>
@@ -4789,7 +4738,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-            <sch:rule context="tei:sourceDesc[not(tei:bibl)]">
+            <sch:rule context="tei:sourceDesc[not(tei:bibl or tei:msDesc)]">
                <sch:assert test="some $d in $docTypes satisfies matches($d, 'BornDigital')">
                       ERROR: All not born digital documents must use a &lt;bibl&gt; element in their
                       source descriptions.
@@ -4936,7 +4885,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             <ref name="model.pLike"/>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-quotation-quotationContents-constraint-report-12">
+                  id="wea-quotation-quotationContents-constraint-report-11">
             <rule context="tei:quotation">
                <report xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5787,7 +5736,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(link) defines an association or hypertextual link among elements or passages, of some type not more precisely specifiable by other elements. [16.1. Links]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-link-linkTargets3-constraint-assert-41">
+                  id="wea-link-linkTargets3-constraint-assert-39">
             <rule context="tei:link">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -5831,7 +5780,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any component-level unit of text, acting as a container for phrase or inter level elements analogous to, but without the same constraints as, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
          <ref name="macro.abContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-ab-abstractModel-structure-ab-in-l-or-lg-constraint-report-13">
+                  id="wea-ab-abstractModel-structure-ab-in-l-or-lg-constraint-report-12">
             <rule context="tei:ab">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -5891,25 +5840,32 @@ Suggested values include: 1] label; 2] data</a:documentation>
          </attribute>
       </optional>
    </define>
+   <define name="att.msClass.attributes">
+      <ref name="att.msClass.attribute.class"/>
+   </define>
+   <define name="att.msClass.attribute.class">
+      <optional>
+         <attribute name="class">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the text types or classifications applicable to this item by pointing to other elements or resources defining the classification concerned. </a:documentation>
+            <list>
+               <oneOrMore>
+                  <data type="anyURI">
+                     <param name="pattern">\S+</param>
+                  </data>
+               </oneOrMore>
+            </list>
+         </attribute>
+      </optional>
+   </define>
    <define name="msDesc">
       <element name="msDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript description) contains a description of a single identifiable manuscript or other text-bearing object such as an early printed book. [10.1. Overview]</a:documentation>
          <group>
-            <ref name="msIdentifier"/>
-            <zeroOrMore>
-               <ref name="model.headLike"/>
-            </zeroOrMore>
-            <choice>
-               <oneOrMore>
-                  <ref name="model.pLike"/>
-               </oneOrMore>
-               <group>
-                  <optional>
-                     <ref name="additional"/>
-                  </optional>
-                  <empty/>
-               </group>
-            </choice>
+            <optional>
+               <ref name="msIdentifier"/>
+            </optional>
+            <ref name="msContents"/>
+            <ref name="additional"/>
          </group>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
@@ -5943,7 +5899,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
             </zeroOrMore>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-msIdentifier-msId_minimal-constraint-report-14">
+                  id="wea-msIdentifier-msId_minimal-constraint-report-13">
             <rule context="tei:msIdentifier">
                <report xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -5972,6 +5928,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
       <element name="repository">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(repository) contains the name of a repository within which manuscripts or other objects are stored, possibly forming part of an institution. [10.4. The Manuscript Identifier]</a:documentation>
          <ref name="macro.phraseSeq.limited"/>
+         <ref name="att.canonical.attributes"/>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -5985,10 +5942,63 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="msContents">
+      <element name="msContents">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript contents) describes the intellectual content of a manuscript, manuscript part, or other object either as a series of paragraphs or as a series of structured manuscript items. [10.6. Intellectual Content]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="model.pLike"/>
+            </oneOrMore>
+            <group>
+               <optional>
+                  <ref name="titlePage"/>
+               </optional>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="msItem"/>
+                  </choice>
+               </zeroOrMore>
+            </group>
+         </choice>
+         <ref name="att.global.attributes"/>
+         <ref name="att.msExcerpt.attributes"/>
+         <ref name="att.msClass.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="msItem">
+      <element name="msItem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript item) describes an individual work or item within the intellectual content of a manuscript, manuscript part, or other object. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <choice>
+               <oneOrMore>
+                  <ref name="model.pLike"/>
+               </oneOrMore>
+               <oneOrMore>
+                  <choice>
+                     <ref name="model.titlepagePart"/>
+                     <ref name="model.msItemPart"/>
+                     <ref name="model.global"/>
+                  </choice>
+               </oneOrMore>
+            </choice>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.msExcerpt.attributes"/>
+         <ref name="att.msClass.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="additional">
       <element name="additional">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(additional) groups additional information, combining bibliographic information about a manuscript or other object, or surrogate copies of it, with curatorial or administrative information. [10.9. Additional Information]</a:documentation>
          <group>
+            <optional>
+               <ref name="adminInfo"/>
+            </optional>
             <optional>
                <ref name="surrogates"/>
             </optional>
@@ -5996,6 +6006,51 @@ Suggested values include: 1] label; 2] data</a:documentation>
                <ref name="listBibl"/>
             </optional>
          </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="adminInfo">
+      <element name="adminInfo">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(administrative information) contains information about the present custody and availability of the manuscript or other object, and also about the record description itself. [10.9.1. Administrative Information]</a:documentation>
+         <group>
+            <optional>
+               <ref name="recordHist"/>
+            </optional>
+            <optional>
+               <ref name="availability"/>
+            </optional>
+            <optional>
+               <ref name="model.noteLike"/>
+            </optional>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="recordHist">
+      <element name="recordHist">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(recorded history) provides information about the source and revision status of the parent manuscript or object description itself. [10.9.1. Administrative Information]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="model.pLike"/>
+            </oneOrMore>
+            <group>
+               <ref name="source"/>
+               <zeroOrMore>
+                  <ref name="change"/>
+               </zeroOrMore>
+            </group>
+         </choice>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="source">
+      <element name="source">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source) describes the original source for the information contained with a manuscript or object description. [10.9.1.1. Record History]</a:documentation>
+         <ref name="macro.specialPara"/>
+         <ref name="att.wea.citing.attributes"/>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -6872,7 +6927,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
             <ref name="desc"/>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relation-reforkeyorname-constraint-assert-46">
+                  id="wea-relation-reforkeyorname-constraint-assert-44">
             <rule context="tei:relation">
                <assert xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -6886,7 +6941,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relation-activemutual-constraint-report-15">
+                  id="wea-relation-activemutual-constraint-report-14">
             <rule context="tei:relation">
                <report xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -6900,7 +6955,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-relation-activepassive-constraint-report-16">
+                  id="wea-relation-activepassive-constraint-report-15">
             <rule context="tei:relation">
                <report xmlns:math="http://www.w3.org/1998/Math/MathML"
                        xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -7390,7 +7445,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             </sch:rule>
          </sch:pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-div-abstractModel-structure-div-in-l-or-lg-constraint-report-17">
+                  id="wea-div-abstractModel-structure-div-in-l-or-lg-constraint-report-16">
             <rule context="tei:div">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -7407,7 +7462,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="wea-div-abstractModel-structure-div-in-ab-or-p-constraint-report-18">
+                  id="wea-div-abstractModel-structure-div-in-ab-or-p-constraint-report-17">
             <rule context="tei:div">
                <sch:report xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:math="http://www.w3.org/1998/Math/MathML"
@@ -7828,7 +7883,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-48">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-47">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -7917,6 +7972,32 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <empty/>
       </element>
    </define>
+   <define name="att.wea.citing.attributes">
+      <ref name="att.wea.citing.attribute.target"/>
+   </define>
+   <define name="att.wea.citing.attribute.target">
+      <optional>
+         <attribute name="target">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the related bibliographic element by means of an absolute or relative URI reference</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <sch:rule context="tei:msDesc/tei:listBibl/tei:bibl | tei:source">
+         <sch:assert test="@target">
+            <sch:name/> must have an @target that points to a bibliographic reference (e.g. bibl:ABCD1).</sch:assert>
+      </sch:rule>
+   </sch:pattern>
    <start>
       <choice>
          <ref name="TEI"/>

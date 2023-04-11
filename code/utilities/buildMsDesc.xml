@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="buildMsDesc" default="all">
+  
+  <property name="dest.dir" value="${basedir}/tmp"/>
+
+  <target name="init">
+      <delete dir="${dest.dir}"/>
+      <mkdir dir="${dest.dir}"/>
+  </target>
+    
+    <target name="convert">
+        <exec executable="saxon">
+            <arg line="-xsl:msdesc.xsl -it:go dest=${dest.dir}"/>
+        </exec>
+    </target>
+    
+    <target name="validate">
+        <copy todir="${dest.dir}">
+            <fileset dir="../../data">
+                <include name="sch/**"/>
+            </fileset>
+        </copy>
+        <apply executable="java" parallel="true" failonerror="true">
+            <arg line="-jar ../../lib/jing.jar"/>
+            <arg value="../../data/sch/wea.rng"/>
+            <fileset dir="${dest.dir}">
+                <include name="*.xml"/>
+                <include name="*/**.xml"/>
+            </fileset>
+        </apply>
+    </target>
+    
+    <target name="all" depends="init, convert, validate"/>
+  
+</project>
