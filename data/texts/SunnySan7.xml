@@ -2,43 +2,990 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan7">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Sunny-San [Part 6]</title>
-         </titleStmt>
-         <publicationStmt>
-            <p>Publication Information</p>
-         </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from The British Library.</note>
-         </notesStmt>
-         <sourceDesc>
-            <bibl copyOf="bibl:219"/>
-         </sourceDesc>
-      </fileDesc>
-      <profileDesc>
-         <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
-            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
-            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-         </textClass>
-      </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SB2" status="empty"  when="2020-08-15">Added brief notes statement.</change>
-         <change who="pers:SB2" status="empty"  when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2019-07-31">Changed title.</change>
-         <change who="pers:MC1" status="empty"  when="2019-07-24">Changed title.</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl132 using XSLT.</change>
-      </revisionDesc>
-   </teiHeader>
-   <text facs="facs:Sunny-San7"
-      prev="doc:SunnySan6">
-      <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
-         </div>
-      </body>
-   </text>
+      <teiHeader>
+            <fileDesc>
+                  <titleStmt>
+                        <title>Sunny-San [Part 6]</title>
+                        <respStmt>
+                              <resp>Transcriber</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                        <respStmt>
+                              <resp>Proofreader</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                        <respStmt>
+                              <resp>Encoder</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                  </titleStmt>
+                  <publicationStmt>
+                        <p>Publication Information</p>
+                  </publicationStmt>
+                  <notesStmt>
+                        <note>Facsimile retrieved from The British Library.</note>
+                  </notesStmt>
+                  <sourceDesc>
+                        <bibl copyOf="bibl:219"/>
+                  </sourceDesc>
+            </fileDesc>
+            <profileDesc>
+                  <textClass>
+                        <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
+                        <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+                        <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+                  </textClass>
+            </profileDesc>
+            <revisionDesc status="published">
+                  <change who="pers:LW1" when="2022-06-18" status="published">Encoded and proofed.
+                        Set to published.</change>
+                  <change who="pers:LW1" when="2022-06-18" status="inProgress">Downloaded document
+                        from Google Drive and converted to TEI.</change>
+                  <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
+                        statement.</change>
+                  <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+                  <change who="pers:MC1" status="empty" when="2019-07-31">Changed title.</change>
+                  <change who="pers:MC1" status="empty" when="2019-07-24">Changed title.</change>
+                  <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
+                        exhibit.</change>
+                  <change who="pers:JT1" status="empty" when="2019-04-11">Created file from
+                        bibliography entry bibl132 using XSLT.</change>
+            </revisionDesc>
+      </teiHeader>
+      <text facs="facs:Sunny-San7" prev="doc:SunnySan6">
+            <pb n="193"/>
+            <body>
+                  <div>
+                        <head>Sunny-San</head>
+                        <opener>
+                              <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+                        </opener>
+                  </div>
+                  <div>
+                        <head>Prologue</head>
+                        <p>It was the night of the Festival of the Full Moon, but Hirata, the
+                              proprietor of the House of a Thousand Joys, was infuriated, for was
+                              not Madame Mary Smiles, the famous dancer, lying dead among her robes?
+                              At her feet knelt her child, crushed and hurt by a grief that nothing
+                              could assuage, and it was for the sake of her mother’s honour that
+                              presently she stood a-tiptoe on the tight-rope, laughing at the sea of
+                              faces round her and throwing her kisses right and left. So charming
+                              was she that the Lord of Negato, amorous for this lovely child, tossed
+                              her a jewel and a handful of coin, which she cleverly caught on her
+                              fan but, acting under a sudden impish impulse, she suddenly threw them
+                              in her admirer’s face and, jumping to the ground, vanished into the
+                              tea-house.</p>
+                        <p>A party of English students visiting Japan had witnessed this scene and,
+                              learning that she was to be punished for her slight to the Japanese
+                              nobleman, they made a sudden raid on the tea-house and carried off the
+                              girl before Hirata’s lash could fall a second time upon her
+                              shoulders.</p>
+                        <p>These four students and their tutor then decided to adopt Sunny-san, the
+                              dancer’s child, whose father was a white man. They formed a syndicate,
+                              and together raised sufficient money to provide for Sunny during her
+                              lifetime.</p>
+                        <p>Soon a time came when the Englishmen had to return to their own country,
+                              and they regretfully departed, leaving Sunny in charge of a
+                              missionary. She begged them to take her with them, but the hardest
+                              moment came when she said good-bye to Jerry Hammond, who had been her
+                              faithful champion from the first. However, the ship carrying the
+                              Englishmen sailed away, and left a sorrowful Sunny languishing in
+                              Nagasaki.</p>
+                        <p>As time went on, Sunny’s friends across the sea reached a period where
+                              they thought of her as a charming and amusing episode of an idyllic
+                              summer in Japan. One bleak March day, Jerry was surprised to learn, on
+                              the telephone, that Sunny-san was in London and waiting instructions
+                              from the Syndicate. He hastily collected her other friends, and while
+                              they were discussing position Sunny entered. She had grown to be a
+                              charming young woman, and her friends, agreeably surprised, cannot do
+                              enough for her. Jerry cabled to the Professor to return from Canada to
+                              take charge of Sunny, but he was unable to do so, and she took up her
+                              abode in Jerry’s flat.</p>
+                        <p>Sunny has proposals from Monty, Bobs, and Jinx, but refuses them all.
+                              Acting on the advice of Hatton, Jerry’s valet, she decides to wait
+                              till Leap Year, and then ask Jerry to marry her. She learns then that
+                              Jerry is already engaged, but he goes home to break off his
+                              engagement, because he realizes that he loves Sunny. Two days later
+                              Jerry’s mother and <emph>fiancée</emph> arrive and drive Sunny out of
+                              the flat while Hatton is in a drunken sleep, and Jerry returns to find
+                              her gone.</p>
+                        <p>Katey Clarry, a shopgirl, takes charge of Sunny, and goes with her to
+                              deliver a letter addressed to Stephen Wainwright, the financier, given
+                              to Sunny-San by her mother. In the meantime, after an unsuccessful
+                              search for the missing girl, Jerry is taken seriously ill.</p>
+                        <p>Chapter XVII (<emph>continued</emph>)</p>
+                        <p> Sunny took the chair opposite him. Their glances met and remained for a
+                              long moment locked. Then the man tried to speak lightly.</p>
+                        <p><q>You wished to see me. What can I do for you?</q></p>
+                        <p>Sunny extended the letter. When he took it from her hand, his face came
+                              somewhat nearer to hers, and the closer he saw that young girl’s face,
+                              the greater grew his agitation.</p>
+                        <p><q>What is your name?</q> he demanded abruptly.</p>
+                        <p><q>Sunny</q>, said the girl simply, little dreaming that she was speaking
+                              the name that the man before her had himself invented for her
+                              seventeen and a half years before.</p>
+                        <p>The word touched some electrical cord within him. He started violently
+                              forward in his seat, half arising, and the letter in his hand dropped
+                              on the table before him face up. A moment of gigantic self-control,
+                              and then with fingers that shook, Stephen Wainwright slipped the
+                              envelope open. The words swam before him, but not till <pb n="194"/>
+                              they were indelibly printed upon the man’s conscience-stricken heart.
+                              Through blurred vision he read the message from the dead to the
+                              living:</p>
+                        <q>
+                              <floatingText type="letter">
+                                    <body>
+                                          <p><q>On this sixth day of the Season of Little Plenty, in
+                                                  the reign of Meeijii. A thousand years of joy. It
+                                                  is your honourable daughter, who knows not your
+                                                  name, who brings or sends to you this my letter. I
+                                                  go upon the long journey to the <foreign
+                                                  xml:lang="ja">Moido</foreign>. I send my child to
+                                                  him through whom she has her life. <foreign
+                                                  xml:lang="ja">Sayonara</foreign>. Haru-no</q>.</p>
+                                    </body>
+                              </floatingText>
+                        </q>
+                        <p>For a long, long time the man sat with his two hands gripped before him
+                              on the desk, steadily looking at the girl before him, devouring every
+                              feature of the well-remembered face of the child he had always loved.
+                              It seemed to him that she had changed not at all. His little Sunny of
+                              those charming days of his youth had that same crystal look of supreme
+                              innocence, a quality of refinement, a fragrance of race that seemed to
+                              reach back to some old ancestry, and put its magic print upon the
+                              exquisite young face. He felt he must have been blind not to have
+                              recognised his own child the instant his eye had fallen upon her. He
+                              knew now what that warm rush of emotion had meant when he had looked
+                              at her in that outer office. It was the intuitive instinct that his
+                              own child was near—the only child he had ever had. By exercising all
+                              the self-control that he could command, he was at last able to speak
+                              her name huskily.</p>
+                        <p><q>Sunny, don’t you remember me?</q></p>
+                        <p>Like her father, Sunny was addicted to moments of abstraction. She had
+                              allowed her gaze to wander through the window to the harbour below,
+                              where she could see the great ships at their moorings. It made her
+                              think of the one she had come to America on, and the one on which
+                              Jerry had sailed away from Japan. Painfully, wistfully, she brought
+                              her gaze back to her father’s face. At his question she essayed a
+                              little propitiating smile.</p>
+                        <p><q>Mebbe I are see you face on American ad-ver-tise-ment. I are hear you
+                                    are very grade man</q>, said the child of Stephen
+                              Wainwright.</p>
+                        <p>He winced, and yet grew warm with pride and longing at the girl’s
+                              delicious accent. He, too, tried to smile back at her, but something
+                              sharp bit at the man’s eyelids.</p>
+                        <p><q>No, Sunny. Try and think. Throw your mind far back—back to your sixth
+                                    year, if that may be</q>.</p>
+                        <p>Sunny’s eyes, resting now in troubled question upon the face before her,
+                              grew slowly fixed and enlarged. Through the fogs of memory slowly,
+                              like a vision of the past, she seemed to see again a little child in a
+                              fragrant garden. She was standing by the rim of a pool, and the man
+                              opposite her now was at her side. He was dressed in Japanese <foreign
+                                    xml:lang="ja">kimona</foreign> and <foreign xml:lang="ja"
+                                    >hakama</foreign>, and Sunny remembered that then he was always
+                              laughing at her, shaking the flower weighted trees above her, till the
+                              petals fell in a white and pink shower upon her little head and
+                              shoulders. She was stretching out her hands, catching the falling
+                              blossoms, and, delightedly exclaiming that the flying petals were tiny
+                              birds fluttering through the air. She was leaning over the edge of the
+                              pool, blowing the petals along the water, playing with her father that
+                              they were white prayer ships, carrying the petitions to the gods who
+                              waited on the other side. She remembered drowsing against the arm of
+                              the man; of being tossed aloft, her face cuddled against his neck; of
+                              passing under the great wistaria arbour. Ah, yes, how clearly she
+                              recalled it now. As her father transferred her to her mother’s arms,
+                              he bent and drew that mother into his embrace also.</p>
+                        <p>Two great tears welled up in the eyes of Sunny, but ere they could fall,
+                              the distance between her and her father had vanished. Stephen
+                              Wainwright, kneeling on the floor by his long lost child, had drawn
+                              her hungrily into his arms.</p>
+                        <p><q>My own little girl!</q> said the Man of Steel.</p>
+                        <p>Chapter XVIII</p>
+                        <p>Stephen Wainwright, holding his daughter jealously in his arms, felt
+                              those long-locked founts of emotion that had been pent up behind his
+                              steely exterior bursting all bounds. He had the immense feeling that
+                              he wanted for evermore to cherish and guard this precious thing that
+                              was all his own.</p>
+                        <p><q>Our actions are followed by their consequences as surely as a body by
+                                    its shadow</q>, says the Japanese proverb, and <pb n="195"/>
+                              that cruel act of his mad youth had haunted the days of this man, who
+                              had achieved all that some men sell their souls for in life. And yet
+                              the greatest of all prizes had escaped him—peace of mind. Even now, as
+                              he held Sunny in his arms, he was consumed by remorse and anguish.</p>
+                        <p>In his crowded life of fortune and fame, and a social career at the side
+                              of the brilliant woman who bore his name, Stephen Wainwright’s best
+                              efforts had been unavailing to obliterate from his memory that tragic
+                              face that like a flower petal on a stream he had so lightly blown
+                              away. O-Haru-no was her name then, and she was the child of a Japanese
+                              woman of caste, whose marriage to an attaché of a Russian embassy had,
+                              in its time, created a furore in the capital. Her father had perished
+                              in a shipwreck at sea, and her mother had returned to her people,
+                              there, in her turn, to perish from grief and the cold neglect of the
+                              Japanese relatives who considered her marriage a blot upon the family
+                              escutcheon.</p>
+                        <p>Always a lover and collector of beautiful things, Wainwright had harkened
+                              to the enthusiastic flights of a friend, who had <q>discovered</q> an
+                              incomparable piece of Satsuma, and had accompanied him to an old
+                              mansion, once part of a Satsuma <foreign xml:lang="ja"
+                                    >yashiki</foreign> , there to find that his friend’s <q>piece of
+                                    Satsuma</q> was a living work of art, a little piece of
+                              bric-à-brac that the collector craved to add to his collections. He
+                              had purchased O-Haru-no for a mere song, for her white skin had been a
+                              constant reproach and shame in the house of her ancestors. Moreover,
+                              this branch of the ancient family had fallen upon meagre days, and
+                              despite their pride, they were not above bartering this humble
+                              descendant for the gold of the Englishman. O-Haru-no escaped with joy
+                              from the harsh atmosphere of the house of her ancestors to the gay
+                              home of her purchaser.</p>
+                        <p>The fact that he had practically bought his wife, and that she had been
+                              willing to become a thing of barter and sale, had from the first
+                              caused the man to regard her lightly. We value things often, not by
+                              their intrinsic value, but by the price we have paid for them, and
+                              Haru-no had been thrown upon the bargain counter of life. However, it
+                              was not in Stephen Wainwright’s nature to resist anything as pretty as
+                              the wife he had bought. A favourite and sardonic jest of his at that
+                              time was that she was the choicest piece in his collections, and that
+                              some day he purposed to put her in a glass case, and present her to
+                              the Museum of Art of his native city. Had indeed Stephen Wainwright
+                              seen the dancer, as she lay among her brilliant robes, her wide
+                              sleeves outspread like the wings of a butterfly, and that perfectly
+                              chiselled face on which the smile that had made her famous still
+                              seemed faintly to linger, he might have recalled that utterance of the
+                              past, and realised that no object of art in the great museum of which
+                              his people were so proud, could compare with this masterpiece of
+                              Death’s grim hand.</p>
+                        <p>He tried to delude himself with the thought that the temporary wife of
+                              his young days was but an incident, part of an idyll that had no place
+                              in the life of the man of steel, who had seized upon life with strong,
+                              hot hands.</p>
+                        <p>But Sunny! His own flesh and blood, the child whose hair had suggested
+                              her name. Despite the galloping years she persisted ever in his
+                              memory. He thought of her constantly, of her strange little ways, her
+                              pretty coaxing ways, her smile; her charming love of the little live
+                              things , her perception of beauty, her closeness to nature, her
+                              innocence. There was a quality of psychic sweetness about her,
+                              something rare and delicate that appealed to the epicure as exquisite
+                              and above all price. It was not his gold that had purchased Sunny. She
+                              was a gift of the gods, and his memory of his child contained no
+                              flaw.</p>
+                        <p>It was part of his punishment that the woman he married after his return
+                              to England from Japan should have drifted farther and farther apart
+                              from him with the years. Intuitively his wife had recognised that
+                              hungry heart behind the man’s cold exterior. She knew that the
+                              greatest urge in the character of this man was his desire for
+                              children. From year to year she suffered the agony of seeing the
+                              frustration of their hopes. Highly strung and imaginative, Mrs.
+                              Wainwright feared that her husband would acquire a dislike for her.
+                              The idea persisted like a monomania. She sought distraction from this
+                              ghost that arose between them in social activities and passionate work
+                              in the cause of woman’s suffrage. It was her husband’s misfortune that
+                              his nature was of that unapproachable sort that seldom lets down the
+                              mask, a man who retired within himself, and sought resources of
+                              comfort where indeed they were not to be found. Grimly, cynically, he
+                              watched the devastating effects of their separated interests, and in
+                              time she, too, in a measure was cast aside, in thought at least, just
+                              as the first wife had been. Stephen Wainwright grew grimmer and colder
+                              with the years, and the name applied to him was curiously
+                              suitable.</p>
+                        <p>This was the man whose tears were falling on the soft hair of the strange
+                                    <pb n="196"/> girl from Japan. He had lifted her hat, that he
+                              might again see that hair, so bright and pretty that had first
+                              suggested her name. With awkward gentleness, he smoothed it back from
+                              the girl’s thin little face.</p>
+                        <p><q>Sunny, you know your father now, fully, don’t you? Tell me that you
+                                    do—that you have not forgotten me. You were within a few weeks
+                                    of six when I went away, and we were the greatest of pals.
+                                    Surely you have not forgotten altogether. It seems just the
+                                    other day you were looking at me, just as you are now. It does
+                                    not seem to me as if you have changed at all. You are still my
+                                    little girl. Tell me—you have not forgotten your father
+                                    altogether, have you?</q></p>
+                        <p><q>No. Those year they are push away. You are my <foreign xml:lang="ja"
+                                          >chichi</foreign> (papa). I so happy see you face
+                                    again</q>.</p>
+                        <p>She held him back, her two hands on his shoulders, and now, true to her
+                              sex, she prepared to demand a favour from her father.</p>
+                        <p><q>Now I think you are going to give Katy and me mos’ bes’ job ad you
+                                    business</q>.</p>
+                        <p><q>Job? Who is Katy?</q></p>
+                        <p><q>I are not told you yet of Katy. Katy are my frien’</q>.</p>
+                        <p><q>You’ve told me nothing. I must know everything that has happened to
+                                    you since I left Japan</q>.</p>
+                        <p><q>Thas too long ago</q>, said Sunny sadly, <q>and I am hongry. I lig’
+                                    eat liddle bit something</q>.</p>
+                        <p><q>What! You’ve had no lunch?</q></p>
+                        <p>He leaned over to the desk and pushed the button <choice>
+                                    <sic>?</sic>
+                                    <corr>.</corr>
+                              </choice>? Miss Holliwell, coming to the door, saw a sight that for
+                              the first time in her years of service with Stephen Wainwright took
+                              away her composure. Her employer was kneeling by a chair on which was
+                              seated the strange girl, whose hat was off, and who was holding one of
+                              his hands with both of hers. Even then he did not break the custom of
+                              years and explain or confide in his secretary, and she saw to her
+                              amazement that the eyes of the man she secretly termed <q>The
+                                    Sphinx</q> were red. All he said was:</p>
+                        <p><q>Order a luncheon, Miss Holliwell. Have it brought up here. Have the
+                                    restaurant rush it through. That is all</q>.</p>
+                        <p>Miss Holliwell slowly closed the door, but her amazement at what she had
+                              seen within was turned to indignation at what she encountered without.
+                              As the door opened, Katy pressed up against the keyhole, fell back
+                              upon the floor. Now during the period when Sunny had been in the
+                              private office of Miss Holliwell’s employer, she had had her hands
+                              full with the curious young person left behind. Katy had found relief
+                              from her pent-up curiosity in an endless stream of questions and
+                              gratuitous remarks which she poured out upon the exasperated
+                              secretary. Katy’s tongue and spirit were entirely undaunted by the
+                              chilling monosyllabic replies of Miss Holliwell, and the latter was
+                              finally driven to the extremity of requesting her to wait in the outer
+                              office:</p>
+                        <p><q>I’m awfully busy</q>, said the secretary, <q>and really when you
+                                    chatter like that I cannot concentrate upon my work</q>.</p>
+                        <p>To which, with a wide friendly smile, rejoined Katy:</p>
+                        <p><q>Cheer up, Miss Frozen-Face. Mum’s the word from this time on</q>.</p>
+                        <p><q>Mum</q>, she actually kept, but her alert pose, her cocked-up ears and
+                              eyes, glued upon the door had such a quality of upset about them that
+                              Miss Holliwell found it almost as difficult to concentrate as when her
+                              tongue had rattled along. Now here she was engaged in the degrading
+                              employment of listening and seeing what was never intended for her
+                              ears and eyes. Miss Holliwell pushed her indignantly away.</p>
+                        <p><q>What do you <emph>mean</emph> by doing a thing like that?</q></p>
+                        <p>Between what she had seen inside her employer’s private office, and the
+                              actions of this young gamin, Miss Holliwell was very much disturbed.
+                              She betook herself to the seat with a complete absence of her
+                              cultivated composure. When Katy said, however: <q>Gee! I wish I knew
+                                    whether Sunny is safe in there with that old man</q>, Miss
+                              Holliwell was forced to raise her hand to hide a smile that would come
+                              despite her best efforts. For once in her life she gave the wrong
+                              number, and was cross with the girl at the telephone desk because it
+                              was some time before the restaurant was reached. The carefully ordered
+                              meal dictated by Miss Holliwell aroused in the listening Katy such
+                              mixed emotions, the hungry youngster leaned over and said in a hoarse
+                              pleading whisper:</p>
+                        <p><q>I say, if you’re orderin’ for Sunny, make it a double</q>.</p>
+                        <milestone unit="line"/>
+                        <p>Inside, Sunny was telling her father her story. <q>Begin from the
+                                    first</q>, he had said. <q>Omit nothing. I must know everything
+                                    about you</q>.</p>
+                        <p>Graphically, as they waited for the lunch, she sketched in all the sordid
+                              details of her early life, the days of their mendicancy making the man
+                              feel immeasurably mean. Sitting at the desk now, his eyes shaded with
+                              his hand, he gritted his teeth, and struck the table with repeated
+                              soundless blows when his daughter told him of the lash of the <pb
+                                    n="197"/> man Hirata. But something, a feeling more penetrating
+                              than pain, stung Stephen Wainwright when she told him of those
+                              warmhearted men who had come into her life like a miracle and taken
+                              the place that he should have been there to fill. For the first time
+                              he interrupted her to take down the names of her friends one by one on
+                              a pad of paper. Professor Barrowes. Zoologist and Professor of
+                              Archeology. Wainwright had heard of him somewhere recently. Yes, he
+                              recalled him now. Some dispute about a recent <q>find</q> of the
+                              Professor’s. There was some question raised as to the authenticity of
+                              the fossil. Opposition to its being placed in the Museum. Newspaper
+                              discussion. An effort on the Professor’s part to raise funds for
+                              further exploration in Canada north-west.</p>
+                        <p>Robert Mapson, Jr. Wainwright knew the reporter slightly. He had covered
+                              stories in which Senator Wainwright was interested.</p>
+                        <p>Montague Potter, Jr. City people. His firm did business with them.</p>
+                        <p>J. Lyon Crawford, son of a man once at college with Wainwright. Sunny’s
+                              father recalled some chaffing joke at the club anent <q>Jinx’s</q>
+                              political ambitions. As a prospect in politics he had seemed a joke to
+                              his friends.</p>
+                        <p>And, last, J. Addison Hammond, Jr.—<q>Jerry</q>.</p>
+                        <p>How Sunny had pronounced that name! There was that about that soft
+                              inflection that caused her father to hold his pencil suspended, while
+                              a stab of jealousy struck him.</p>
+                        <p><q>What does he do, Sunny?</q></p>
+                        <p><q>Ho! He are goin’ be grade artist-arki-tuck. He make so beautiful
+                                    pictures, and he have mos’ beautiful thought on inside his head.
+                                    He goin’ to make all these city loog beautiful. He show how make
+                                    ‘partment houses, where all god light and there’s garden grow on
+                                    top, and there’s house where they not put out liddle bebby on
+                                    street. He’s go sleep and play on those garden on top
+                              house</q>.</p>
+                        <p>Her father, his elbow on desk, his chin cupped on his hand, watched the
+                              girl’s kindling face, and suffered pangs that he could not analyse.
+                              Quietly he urged her to continue her story. Unwillingly she turned
+                              from Jerry. Of her life in Jerry’s flat, of Hatton and his <q>yuman
+                                    ‘ankerings</q>; of Itchy, with his two fleas; of the canaries in
+                              the gold cage, of the goldfish who swam in the glass bowl; of the
+                              honourable mice; of the butcher and caretaker gentlemen; of Monty, of
+                              Bobs, of Jinx, who had asked her to marry them, and up to the day when
+                              Mrs. Hammond and Miss Falconer had come to the apartment and turned
+                              her out. Then a pause to catch her breath in a wrathful sob, to
+                              continue the wistful tale of her prayer to Kuonnon in the raging,
+                              noisy street; of the mother’s gentle spirit that had gone with her on
+                              the dark long road that led to—Katy.</p>
+                        <p>It was then that Miss Holliwell tapped, and the waiters came in with the
+                              great loaded trays held aloft, bearing the carefully ordered meal and
+                              the paraphernalia that accompanies a lunch <emph>de luxe</emph>.
+                              Someone besides the waiters had slipped by Miss Holliwell. Katy,
+                              clucking with her tongue against the roof of her mouth, tried to
+                              attract the attention of Sunny, whose back was turned. Sniffing those
+                              delicious odours, Katy came farther into the room, and following the
+                              clucking she let out an unmistakably false cough and loud Ahem.</p>
+                        <p>This time, Sunny turned, saw her friend, and jumped up from her seat and
+                              ran to her. Said Katy in a whisper:</p>
+                        <p><q>Gee! You’re smarter than I gave you credit for being. Got him going,
+                                    ain’t you? Well, pull his leg while the going’s good, and say,
+                                    Sunny, if them things on the tray are for you, remember, I gave
+                                    you half my hot dogs and I always say—</q></p>
+                        <p><q>This are my frien’, Katy</q>, said Sunny proudly, as the very grave
+                              faced man whom Katy had tried to trip came forward and took Katy’s
+                              hand in a tight clasp.</p>
+                        <p><q>Katy, this are my—<foreign xml:lang="ja">Chichi</foreign>—Mr.
+                              Papa</q>, said Sunny.</p>
+                        <p>Katy gasped, staring with wide-open mouth from Mr. Wainwright to Sunny.
+                              Her head reeled with the most extravagantly romantic tale that
+                              instantly flooded it. Then, with a whoop curiously like that of some
+                              small boy, Katy grasped hold of Sunny about the waist.</p>
+                        <p><q>Whuroo!</q> cried Katy. <q>I <emph>knew</emph> you was a princess.
+                                    It’s just like a novel—better than any story I’ve read</q>.</p>
+                        <p>There in the dignified office of the steel magnate the shopgirl girl drew
+                              his daughter into a delicious war dance, full of sheer fun and
+                              impudent youth. For the first time in years Stephen Wainwright threw
+                              back his head and burst into laughter.</p>
+                        <p>Now these two young radiant creatures, who could dance while they
+                              hungered, were seated before that gorgeous luncheon. Sunny’s father
+                              lifted the top from the great steak, entirely surrounded on the board
+                              with fried potatoes, ornamental bits of peas, beans, carrots,
+                              asparagus, cauliflower, and mushrooms.</p>
+                        <p>Sunny let forth one long ecstatic sigh as she clasped her hands together,
+                              while Katy laid both hands piously upon her <pb n="198"/> stomach,
+                              and, raising her eyes as if about to deliver a solemn Grace, she
+                              said:</p>
+                        <p><q>Home, sweet home was never like this!</q></p>
+                        <p>Chapter XIX</p>
+                        <p>Society enjoys a shock. It craves sensation. When  that brilliant and
+                              autocratic leader returned from several months’ absence abroad, with a
+                              young daughter, of whose existence no one had ever heard, her friends
+                              were mystified. When, with the most evident pride and fondness she
+                              referred to the fact that her daughter had spent most of her life in
+                              foreign lands, and was the daughter of Mr. Wainwright’s first wife,
+                              speculation was rife. That the financier had been previously married,
+                              that he had a daughter of eighteen years, set all society agog, and
+                              expectant to see the girl, whose <emph>début</emph> was to be made at
+                              a large coming-out party given by her mother in her honour, the final
+                              touch of mystery and romance was added by the daughter herself. An
+                              enterprising society reporter, had through the magic medium of a card
+                              from her chief, Mr. Mapson, obtained a special interview with Miss
+                              Wainwright on the eve of her ball, and the latter had confided to the
+                              incredulous and delighted newspaper woman the fact that she expected
+                              to be married at an early date. The announcement, however, lost some
+                              of its thrill when Miss Wainwright omitted the name of the happy man.
+                              Application to her mother brought forth the fact that that personage
+                              knew no more about this coming event than the reporter herself. Mrs.
+                              Wainwright promptly denied the story, pronouncing it a probable prank
+                              of Miss Sunny and her friend, Miss Clarry. Here Mrs. Wainwright
+                              sighed. She always sighed at the mention of Katy’s name, sighed
+                              indulgently yet hopelessly. The latter had long since been turned over
+                              to the efficient hands of a Miss Woodhouse, a lady who had accompanied
+                              the Wainwright party abroad. Her especial duty in life was to refine
+                              Katy, a task not devoid of entertainment to said competent young
+                              person, since it stirred to literary activity certain slumbering
+                              talents, and in due time Katy, through the pen of Miss Woodhouse, was
+                              firmly pinned on paper.</p>
+                        <p>However, this is not Katy’s story, though it may not be inapropos to
+                              mention here that the Mrs. J. Lyon Crawford, who for so long queened
+                              it over, bossed, bullied and shepherded society, was under the skin
+                              ever the same little shopgirl who had marched forth with her army of
+                              one down the steps of a tenement house.</p>
+                        <p>Coming back to Sunny. The newspaper woman persisting that the story had
+                              been told her with utmost candour and seriousness, Mrs. Wainwright
+                              sent for her daughter. Sunny, questioned by her mother, smilingly
+                              confirmed the story.</p>
+                        <p><q>But, my dear</q>, said Mrs. Wainwright, <q>You know no young men yet.
+                                    Surely you are just playing. It’s a game between you and Katy,
+                                    isn’t it, dear? Katy is putting you up to it, I’m sure</q>.</p>
+                        <p><q>No, mama, Katy are—is—not do so. <emph>I</emph> am! It is true! I am
+                                    going to make marriage wiz Englishman gentleman mebbe very
+                                    soon</q>.</p>
+                        <p><q>Darling, run along. That will do for just now, dear. <emph>I’ll</emph>
+                                    speak to Miss Ah—What is the name of the newspaper
+                              reporter?</q></p>
+                        <p><q>Holman</q>.</p>
+                        <p><q>Ah, yes, Miss Holman. Run along, dear</q>—in a tone an indulgent
+                              mother uses to a baby. Then with her club smile turned affably on Miss
+                              Holman: <q>Our little Sunny is so mischievous. Now I’m quite sure she
+                                    and Miss Clarry are playing some naughty little game. I don’t
+                                    believe I’d publish that if I were you, Miss Holman</q>.</p>
+                        <p>Miss Holman laughed in Mrs. Wainwright’s face, which brought the colour
+                              to a face that for the last few months had radiated such good humour
+                              upon the world. Mrs. Wainwright smiled, now discomfited, for she knew
+                              that the newspaper woman not only intended to print Sunny’s statement,
+                              but her mother’s denial.</p>
+                        <p><q>Now, Miss Holman, your story will have no value, in view of the fact
+                                    that the name of the man is not mentioned</q>.</p>
+                        <p><q>I thought that a defect at first</q>, said Miss Holman, shamelessly,
+                                    <q>but I’m inclined to think it will add to the interest. Our
+                                    readers dote on mysteries, and I’ll cover the story on those
+                                    lines. Later I’ll do a bit of detective work on the track of the
+                                    man! We’ll get him!</q> And the man-like young woman nodded her
+                              head briskly, and betook herself from the Wainwright home, well
+                              satisfied with her day’s work.</p>
+                        <p>An appeal to the editor of the paper on the telephone brought back the
+                              surprising answer that they would not print the story if Sunny—that
+                              editor referred to the child of Mr. Wainwright as <q>Sunny</q>—herself
+                              denied it. He requested that <q>Sunny</q> should speak on the
+                              telephone. Mrs. Wainwright was especially indignant over this, because
+                              she knew that that editor had arisen to his present position entirely
+                              through a certain private <q>pull</q> of Mr. Wainwright. Of course,
+                              the editor himself did not know this, but Mr. Wainwright’s wife did,
+                              and she thought him <pb n="199"/> exceedingly unappreciative and
+                              exasperating.</p>
+                        <p>Mrs. Wainwright sought Sunny in her room. Here she found that bewildering
+                              young person with her extraordinary friend enthusing over a fashion
+                              book devoted to <emph>trousseaux</emph> and bridal gowns. They looked
+                              up with flushed faces, and Mrs. Wainwright could not resist a feeling
+                              of resentment at the thought that her daughter (she never thought of
+                              Sunny as <q>stepdaughter</q>) should give her confidence to Miss
+                              Clarry in preference to her. However, she masked her feelings, as only
+                              Mrs. Wainwright could, and with a smile to Katy advised her that Miss
+                              Woodhouse was waiting for her. Katy’s reply, <q>Yes, ma’am—I mean,
+                                    Aunt Emma</q>, was submissive and meek enough, but it was hard
+                              for Mrs. Wainwright to overlook that very pronounced wink with which
+                              Katy favoured Sunny ere she departed.</p>
+                        <p><q>And now, dear</q>, said Mrs. Wainwright, putting her arm around Sunny,
+                                    <q>tell me all about it</q>.</p>
+                        <p>Sunny, who loved her dearly, cuddled against her like a child, but
+                              nevertheless shook her bright head.</p>
+                        <p><q>Ho! That is secret I not tell. I are a tomb</q>.</p>
+                        <p><q>Tomb?</q></p>
+                        <p><q>Yes, thas word lig’ Katy use when she have secret. She say it
+                                    are—is—lock up in tomb</q>.</p>
+                        <p><q>To think</q>, said Mrs. Wainwright jealously, <q>that you prefer to
+                                    confide in a stranger like Katy rather than your mother</q>.</p>
+                        <p><q>No, I not told Katy yet</q>, said Sunny quickly. <q>She have ask me
+                                    one tousan’ time, and I are not tol’ her</q>.</p>
+                        <p><q>But, darling, surely you want <emph>me</emph>to know. Is he any young
+                                    man we are acquainted with?</q></p>
+                        <p>Sunny, finger thoughtfully on her lip, considered.</p>
+                        <p><q>No-o; I think you are not know him yet</q>.</p>
+                        <p><q>Is he one of the young men who—er—</q></p>
+                        <p>It was painful for Mrs. Wainwright to contemplate that chapter in Sunny’s
+                              past when she had been the ward of four strange young men. In fact,
+                              she had taken Sunny abroad immediately after that remarkable time when
+                              her husband had brought the strange young girl to the house, and for
+                              the first time she had learned of Sunny’s existence. Life had taken on
+                              a new meaning to Mrs. Wainwright after that. Suddenly she comprehended
+                              the meaning of having someone to live for. Her life and work had a
+                              definite purpose and impetus. Her husband’s child had closed the gulf
+                              that had yawned so long between man and wife, and was threatening to
+                              separate them forever. Her love for Sunny, and her pride in the girl’s
+                              beauty and charm was almost pathetic. Had she been the girl’s own
+                              mother, she could not have been more indulgent or anxious for her
+                              welfare.</p>
+                        <p>Sunny, not answering the last question, Mrs. Wainwright went over in her
+                              mind each one of the young men whose ward Sunny had been. The first
+                              three, Jinx, Monty and Bobs, she soon rejected as possibilities. There
+                              remained Jerry Hammond. Private inquiries concerning Jerry had long
+                              since established the fact that he had been for a number of years
+                              engaged to a Miss Falconer. Mrs. Wainwright had been much distressed
+                              because Sunny insisted on writing numerous letters to Jerry while
+                              abroad. It seemed very improper, so she told the girl, to write
+                              letters to another woman’s <emph>fiancé</emph>. Sunny agreed with this
+                              most earnestly, and after a score of letters had gone unanswered she
+                              promised to desist.</p>
+                        <p>Mrs. Wainwright appreciated all that Mr. Hammond had done for her
+                              daughter. Sunny’s father had indeed expressed that appreciation in
+                              that letter (a similar one had been sent to all members of the Sunny
+                              Syndicate) penned immediately after he had found Sunny. He had,
+                              moreover, done everything in his power privately to advance the
+                              careers and interests of the various men who had befriended his
+                              daughter. But for his engagement to Miss Falconer, Mrs. Wainwright
+                              would not have had the slightest objection to Sunny continuing her
+                              friendship with this Mr. Hammond, but really it was hardly the proper
+                              thing under the circumstances. However, she was both peeved and
+                              relieved when Sunny’s many epistles remained unanswered for months,
+                              and then a single short letter that was hardly calculated to revive
+                              Sunny’s childish passion for this Jerry arrived. Jerry wrote:</p>
+                        <q>
+                              <floatingText type="letter">
+                                    <body>
+                                          <p>’Dear Sunny, — Glad get your many notes. Have been
+                                                away. Glad you are happy. Hope see you when you
+                                                return.</p>
+                                          <closer>
+                                                <signed><q>JERRY</q>.</signed>
+                                          </closer>
+                                    </body>
+                              </floatingText>
+                        </q>
+                        <p>Why, a  telegram would have contained more words, the ruffled Mrs.
+                              Wainwright was assured, and she acquired a prejudice against Jerry,
+                              despite all the good she had heard of him. From that time on her
+                                    <emph>rôle</emph> was to, as far as lay in her power, distract
+                              the dear child from thought of the man who very evidently cared
+                              nothing about her.</p>
+                        <p>Of course Mrs. Wainwright did not know of that illness of Jerry Hammond
+                              when he had hovered between life and death. She did not know that all
+                              of Sunny’s letters <pb n="200"/> had come to his hand at one time,
+                              unwillingly given up by Professor Barrowes, who feared a relapse from
+                              the resulting excitement. She did not know that that shaky scrawl was
+                              due to the fact that Jerry was sitting up in bed, and had penned
+                              twenty or more letters to Sunny, in which he had exhausted all of the
+                              sweet words of a lover’s vocabulary, and then had stopped short to
+                              contemplate the fact that he had done absolutely nothing in the world
+                              to prove himself worthy of Sunny, had torn up the aforementioned
+                              letters, and penned the blank scrawl that told the daughter of Stephen
+                              Wainwright nothing.</p>
+                        <p>But it was shortly after that that Jerry began to <q>come back</q>. He
+                              started upon the highroad to health, and his recuperation was so swift
+                              that he was able to laugh at the protesting and anxious Barrowes, who
+                              moved Heaven and earth to prevent the young man from returning to his
+                              work. Jerry had been, however, <q>away</q> long enough, so he said,
+                              and he fell upon his work with such zeal that no mere friend or mother
+                              could stop him. Never had that star of Beauty of which he had always
+                              dreamed seemed so close to Jerry as now. Never had the incentive to
+                              succeed been so vital and gloriously necessary. At the end of all his
+                              efforts, he saw no longer the elusive face of the imaginary
+                                    <q>Beauty</q>, of which he loved to tell Sunny, and which he
+                              despaired ever to reach. What was a figment of the imagination now
+                              took a definite lovely form. At the end of his rainbow was the living
+                              face of Sunny.</p>
+                        <p>And so with a song within his heart, a light in his eyes, and a spring to
+                              his step, with kind words for everyone he met, Jerry Hammond worked
+                              and waited. Mrs. Wainwright by this time knew the futility of trying
+                              to force Sunny to reveal her secret. Not only was she very Japanese in
+                              her ability to keep a secret when she chose, but she was Stephen
+                              Wainwright’s child. Her mother knew that for months she had neither
+                              seen nor written to Jerry Hammond, for Sunny herself had told her so,
+                              when questioned. Who then was the mysterious <emph>fiancé</emph>?
+                              Could it possibly be someone she had known in Japan? This thought
+                              caused Mrs. Wainwright considerable trepidation. She feared the
+                              possibility of a young Russian, a Japanese, a missionary. To make sure
+                              that Jerry was not the one Sunny had in mind, she asked the girl
+                              whether he had ever proposed to her, and Sunny replied at once, very
+                              sadly:</p>
+                        <p><q>No-o. I ask him do so, but he do not do so. He are got ‘nother girl he
+                                    marry then. Jinx and Monty and Bobs are all ask me marry wiz
+                                    them, but Jerry never ask so</q>.</p>
+                        <p><q>Oh, my dear, did you really <emph>ask</emph> him to ask you to marry
+                                    him?</q></p>
+                        <p><q>No! I hint for him do so</q>, said Sunny, <q>but he do not do so. Thas
+                                    very sad for me</q>, she admitted dejectedly.</p>
+                        <p><q>Very fortunate, I call it</q>, said Mrs. Wainwright.</p>
+                        <p>Thus Jerry’s elimination was completed, and for the nonce the matter of
+                              Sunny’s marriage was dropped for the time being, to be revived,
+                              however, on the night of her ball.</p>
+                        <p>Chapter XX</p>
+                        <p>There have been many marvellous balls given in London, but none exceeding
+                              the famous Wainwright Cherry Blossom ball. The guests stepped into a
+                              vast ball room that had been transformed into a Japanese garden in
+                              spring. On all sides, against the walls, and made into arbours and
+                              groves, cherry trees in full blossom were banked, while above and over
+                              the galleries dripped the long purple and white heads of the wistaria.
+                              The entire arch of the ceiling was covered with cherry branches, and
+                              the floor was of heavy glass, in imitation of a lake in which the
+                              blossoms were reflected.</p>
+                        <p>Through a lane of slender bamboo the guests passed to meet under a cherry
+                              blossom bower the loveliest bud of the season, Sunny, in a fairy-like
+                              maline and chiffon frock, springing out about her diaphanously, and of
+                              the pale pink and white colors of the cherry blossoms. Sunny, with her
+                              bright, shining hair coiffed by the hand of an artist. Sunny, with her
+                              first string of perfect pearls and a monstrous feather fan, that when
+                              dropped seemed to cover half her short fluffy skirts. Sunny, with the
+                              brightest eyes, darting in and out and looking over the heads of her
+                              besieging guests, laughing, noddin, breathlessly, parrying the
+                              questions that poured in on all sides. Everybody wanted to know who
+                                    <emph>the</emph> man was.</p>
+                        <p><q>Oh, do tell us who he is</q>, they would urge, and Sunny would shake
+                              her bright head, slowly unfurl her monstrous fan, and with it
+                              thoughtfully at her lips she would say:</p>
+                        <p><q>Ho, yes, it are true, and mebbe I will tell you some otherday</q>.</p>
+                        <p>Now among those present at Sunny’s party were five men whose acquaintance
+                              the readers of this story have already made. It so happened that they
+                              were very late in arriving at the Wainwright dance, this being due to
+                              the fact that one of their number had to be brought there by physical
+                              force. Jerry at dinner <pb n="201"/> had read that story in the
+                              newspaper, and was reduced to such a condition of distraction that it
+                              was only by the united efforts of his four friends that he was
+                              forcibly shoved into that car. The party arrived late, as stated, and
+                              it may be recorded that as Sunny’s eyes searched that sea of faces
+                              before her, moving to the music of the orchestra and the tinkle of the
+                              Japanese bells, they lost somewhat of their shining look, and became
+                              so wistful that her father, sensitive to every change in the girl,
+                              never left her side; but he could not induce the girl to dance. She
+                              remained with her parents in the receiving arbor. Suddenly two spots
+                              of bright rose came to the cheeks of Sunny, and she arose on tip-toes,
+                              just as she had done as a child on the tight rope. She saw that
+                              arriving party approaching, and heard Katy’s voice as she husbanded
+                              them to what she called <q>the royal throne</q>.</p>
+                        <p>At this juncture, and when he was within but a few feet of the
+                                    <q>throne</q>, Jerry saw Sunny. One long look passed between
+                              them, and then, shameless to relate, Jerry ducked into that throng of
+                              dancers. To further escape the wrathful hands of his friends, he
+                              seized some fat lady hurriedly about the waist and dragged her upon
+                              the glass floor. His rudeness covered up with as much tact as his
+                              friends could muster, they proceeded, as far as lay in their power, to
+                              compensate for his defection. They felt no sympathy nor patience with
+                              the acts of Jerry. Were they not all in the same boat, and equally
+                              stung by the story of Sunny’s engagement?</p>
+                        <p>Both hands held out, Sunny welcomed her friends. First Professor
+                              Barrowes:</p>
+                        <p><q>Ho! How good it is and my eyes see your kind face again</q>.</p>
+                        <p>Alas! for Sunny’s several months with especial tutors and governesses,
+                              and the beautiful example of Mrs. Wainwright. Always in moments of
+                              excitement she lapsed into her strangely-twisted English speech and
+                              topsy-turvy grammar.</p>
+                        <p>Professor Barrowes, with the dust in his eyes and brain of that recent
+                              triumphant trip into the north-west of Canada, brushed aside by the
+                              illness of his friend, was on solid enough earth as Sunny all but
+                              hugged him. Bowing, beaming, chuckling, he took the fragrant little
+                              hand in his own, and with the pride and glow of a true discoverer, his
+                              eye scanned the fairy-like creature before him.</p>
+                        <p><q>Ah! Miss—ah—Sunny. The pleasure is mine—entirely mine, I assure you.
+                                    May I add that you still to me strongly resemble the child I
+                                    first saw in tights</q>—Ah, Man of Fossils!—<q>the child, who
+                                    came upon the tightrope, with a smile upon her face and a
+                                    dewdrop on her cheek</q>.</p>
+                        <p>(Before this I have observed hat poetry is not absent from the soul of
+                              any dreamer.)</p>
+                        <p><q>May I add</q>, continued Professor Barrowes, <q>that it is my devout
+                                    hope, my dear, that you will always remain unchanged. I hope so
+                                    devoutly. I wish it</q>.</p>
+                        <p><q>Ho! Mr. dear Professor, I am jos’ nothing but little moth. Nothing
+                                    moach good on these earth. But you—you are do so moach I am
+                                    hear. You tich all those worl’ <emph>how</emph> those worl’ are
+                                    be ad the firs’ day of all! Tell me ‘bout what happen to you.
+                                    Daikoku (God of Fortune) he have been kind to you—yes?</q></p>
+                        <p><q>Astounding kind—amazingly so. There is much to tell. If you will allow
+                                    me, at an early date, I will do myself the pleasure of calling
+                                    upon you, and—ah—going into detail</q>.</p>
+                        <p>Miss Holliwell, smiling and most efficiently and inconspicuously managing
+                              the occasion, noting the congestion about Sunny, and the undisguised
+                              expressions of deepening disgust and impatience on the faces of
+                              Sunny’s other friends, here interposed. She slipped her hand through
+                              the Professor’s arm, and with a murmured:</p>
+                        <p><q>Oh, Professor Barrowes, do try this waltz with me. It’s one of the old
+                                    ones, and this is Leap Year, so I am going to ask you</q>.</p>
+                        <p>Now, Miss Holliwell had had charge of all the matters pertaining to the
+                              dinornis, her association with Professor Barrowes had been both
+                              pleasant and gratifying to the man of science.</p>
+                        <p>If anyone imagines that sixty-year-old legs cannot move with the
+                              expedition and grace of youth, he should have witnessed the gyrations
+                              and motions of the legs of Professor Barrowes as he guided the
+                              financier’s secretary through the mazes of the waltz.</p>
+                        <p>Came then Monty, upright and rosy, and as shamelessly young as when over
+                              four years before, at seventeen, he imagined himself wise and aged
+                              looking with his bone-ribbed glasses. The down was still on Monty’s
+                              cheek, and the adoration of the puppy still in his eyes.</p>
+                        <p><q>Sunny! It does my soul good to see you. You look perfectly
+                                    great—yum-yum. Jove, you gave us a fright, all right. Haven’t
+                                    got over it yet. Looked for you in the morgue, Sunny, and here
+                                    you are shining like—like a star</q>.</p>
+                        <p><q>Monty! That face of you will make me always shine like star. What you
+                                    are doing these day?</q></p>
+                        <p><q>Oh, just a few little things. Nothing <pb n="202"/> worth
+                                    mentioning</q>, returned Monty, with elaborate carelessness, his
+                              heart thumping with pride and yearning to pour out the full tale into
+                              the sympathetic pink ear of Sunny. <q>I got a year or two still to put
+                                    in—and then I’m going to Panama, Sunny. Connection with fever
+                                    and sanitary work. Greatest opportunity of lifetime. I’m to be
+                                    first assistant—it’s the literal truth, to—</q> He whispered a
+                              name in Sunny’s ear which caused her to start back, gasping with
+                              admiration.</p>
+                        <p><q>Monty, how I am proud of you!</q></p>
+                        <p><q>Oh, it’s nothing much. Don’t know why in the world they picked
+                                          <emph>me</emph> . My work wasn’t better than the other
+                                    chaps’. I was conscientious enough and interested of course, but
+                                    so were the other fellows. You could have knocked me down with a
+                                    feather when they picked me for the job. Why, I was fairly
+                                    stunned by the news. Haven’t got over it yet. Your father knows
+                                    Dr. Roper, the chief, you know. Isn’t the world small? Say,
+                                    Sunny, whose the duck you’re engaged to? Go on, tell your old
+                                    chum</q>.</p>
+                        <p><q>No, Monty, I will tell you—to-nide mebbe some time</q>.</p>
+                        <p><q>Here, here, Monty, you’ve bagged enough of Sunny’s attention. My turn
+                                    now</q>. Bobs pushed the unwilling Monty along, and the
+                              youngster, pretending a lofty indifference to the challenging smiles
+                              directed at him by certain members of the younger set, was
+                              nevertheless soon slipping over the floor, with the prettiest one of
+                              them all, whom Mrs. Wainwright especially led him to.</p>
+                        <p>Bobs meanwhile was grinning at Sunny, while she, with a maternal eye,
+                              examined <q>dear Bobs</q>, and noted that he had gotten into his
+                              clothes hastily, but that nevertheless he was the same charming
+                              friend.</p>
+                        <p><q>Hello, old thing!</q> was his greeting. <q>By gum, you look positively
+                                    edible. What you been doing with yourself, and what’s this
+                                    latest story I’m hearing about your marrying someone?</q></p>
+                        <p><q>Bobs I are goin’ to tell you ‘bout those Sonofagun some time this
+                                    nide</q>, smiled Sunny, <q>but I want to know firs’ of all
+                                    tings, whad you are do, dear Bobs?</q></p>
+                        <p><q>I?</q> Bobs rose up and down on his polished toes. <q>City editor of
+                                    my paper, old top, that’s my job. Youngest ever known on the
+                                    desk, but not, I hope, the least competent</q>.</p>
+                        <p><q>Ho, Bobs. You are  one whole editor man! How I am proud of you. Now
+                                    you are goin’ right up to topnotch. Mebbe by’n by you get to be
+                                    ambassador ad anudder country and—</q></p>
+                        <p><q>Whew-w! How can a mere man climb to the heights you expect of him.
+                                    What I want to know is—how about that marriage story? I printed
+                                    it, because it was good stuff, but who is the lucky dog? Come
+                                    on, now, you know you can tell me anything</q>.</p>
+                        <p><q>Ho, Bobs, I <emph>are</emph> goin’ tell you anything. Loog, Bobs, here
+                                    are a frien’ I wan’ you speag ad. She also have wrote a book.
+                                    Her name are—is Miss Woodenhouse. She is ticher to my frien’,
+                                    Miss Clarry. She are—</q></p>
+                        <p><q>Are! Sunny?</q></p>
+                        <p><q>‘Am.’ She am—no, is, very good ticher. She am—is—make me and Katy spik
+                                    and ride English jos same English lady</q>.</p>
+                        <p>The young and edified instructor of Katy Clarry surveyed the young and
+                              edified editor with a quizzical eye. The young editor in question
+                              returned that quizzical glance, grinned, offered his arm, and they
+                              whirled off to the music of a rippling one-step.</p>
+                        <p>Sunny had swung around and seized the two plump soft hands of Jinx, at
+                              whose elbow Katy was pressing. Katy, much to her delight, had been
+                              assisting Miss Holliwell in caring for the arriving guests, and had
+                              indeed quite surprised and amused that person by her talent for
+                              organisation and real ability. Katy was in her element as she bustled
+                              about in somewhat the proprietary manner of the floor walkers and the
+                              lady heads of departments in the stores where she had one time
+                              worked.</p>
+                        <p><q>Jinx, Jinx, Jinx! My eyes are healty jos’ loog ad you! I am thad  glad
+                                    see you speag also wiz my bes’ frien’, Katy</q>. She clapped her
+                              hands excitedly. <q>How I thing it nize that you and Katy be——</q></p>
+                        <p>Katy coughed loudly. Sunny’s ignorance at times was extremely
+                              distressing. Katy had a real sympathy for Mrs. Wainwright at certain
+                              times. Jinx had blushed as red as a peony.</p>
+                        <p><q>Have a heart, Sunny!</q></p>
+                        <p>Nevertheless he felt a sleepish pride in the thought that the
+                              piquant-looking and piquant-talking young person who was Sunny’s best
+                              friend should have singled him out for special attention. Jinx, though
+                              the desired one of aspiring mothers, was not so popular with the
+                              maidens who were pushed forward and adjured to regard him as a most
+                              desirable husband. Katy was partial to flesh, and she made no bones
+                              about letting the world know it. She had no patience with the artist
+                              who declared that bones were aesthetic, and, to suit his taste, he
+                              liked to hear the bones rattle. Katy averred that there was something
+                              awfully cosy about fat people.</p>
+                        <p><q>I hear some grade news of you, <pb n="203"/> Jinx</q>, said Sunny
+                              admiringly. <q>I hear you are got nomin—ation be on staff those
+                                    governor</q>.</p>
+                        <p><q>Gosh! That’s only the beginning, Sunny. I—well, the fact is, I’m going
+                                    in for politics a bit. Life too purposeless heretofore, and the
+                                    machine wants me. At least, I’ve been told so. Your father,
+                                    Sunny, has been doggone nice about it—a real friend</q>.</p>
+                        <p><q>Sunny</q>, said Katy in her ear, <q>ain’t it perfectly scrumptious to
+                                    be refined like this. It’s positively painful. How’re you
+                                    gettin’ on? Hope your tongue don’t blister twistin’ about words
+                                    you don’t know the meanin’ of</q>.</p>
+                        <p>A broad grin lighted up Katy’s wide Irish face. Shoving her arm
+                              recklessly through Jinx’s, she said:</p>
+                        <p><q>Come along, old chap, let’s show ‘em on the floor what reg’lar dancers
+                                    like you and me can do</q>.</p>
+                        <p>Sunny watched them with shining eyes, and once as they whirled by, Katy’s
+                              voice floated above the murmurs of the dance and music:</p>
+                        <p><q>How light you are on your feet. Plump men usually are. I always
+                                    say—</q></p>
+                        <p>And Katy and Jinx, Monty and Bobs and the Professor and all her friends
+                              were lost to view in that moving, glittering throng of dancers, upon
+                              whom, like fluttering moths the cherry blossom petals were dropping
+                              from above alighting upon their heads and shoulders and giving them
+                              that festival look that Sunny knew so well in Japan. She had a
+                              breathing space for a spell, and now that very wistful longing look
+                              stole like a shadow back to the girl’s young face. All unconsciously a
+                              sigh escaped her. Instantly her father was at her side.</p>
+                        <p><q>You want something, my darling?</q></p>
+                        <p><q>Yes, papa. You love me very much, papa?</q></p>
+                        <p><q><emph>Do</emph>I? If there’s anything in the world you want that I can
+                                    give you, you have only to ask, my little girl</q>.</p>
+                        <p><q>Then papa, you see over dere that young man stand. You see
+                              him?</q></p>
+                        <p><q>Young Hammond</q>.</p>
+                        <p><q>Jerry</q>. Her very pronouncement of his name was a caress. <q>Papa, I
+                                    wan speag to him. All these night I have wan see him. See, wiz
+                                    my fan I are do lig’ this, and nod my head, and wiz my finger,
+                                    too, I call him, but he do not come</q>—dejectedly. <q>Loog! I
+                                    will do so again. You see!</q> She made an unmistakable motion
+                              with her hand and fan at Jerry and that unhappy young fool turned his
+                              back and slunk behind some artificial camphor trees.</p>
+                        <p><q>By George!</q> said Wainwright. <q>Sunny, do you want me to bring that
+                                    young puppy to you?</q></p>
+                        <p><q>Papa, Jerry are not a puppy, but jus’ same, I wan’ you bring him unto
+                                    me. Please. And then, when he come, please you and mamma stand
+                                    liddle bit off, and doan let nobody else speag ad me. I are got
+                                    something I wan ask Jerry all by me</q>.</p>
+                        <p>The music had stopped, but the clapping hands of the dancers were
+                              clamouring for a repetition of the crooning dance song that had just
+                              begun its raging career in the metropolis. Sunny saw her father clap
+                              Jerry upon the shoulder. She saw his effort to escape, and her
+                              father’s smiling insistence. A short interval of breathless suspense,
+                              and then the reluctant, very white, very stern young Jerry was
+                              standing before Sunny. He tried to avoid Sunny’s glance, but
+                              fascinated, found himself looking straight into the girl’s eyes. She
+                              was smiling, but there was something in her dewy glance that reached
+                              out and twisted the boy’s heart strings sadly.</p>
+                        <p><q>Jerry!</q> said Sunny softly, her great fan touching her lips, and
+                              looking up at him with such a glance that all his best resolves to
+                              continue calm seemed threatened with panic. He said, with what he
+                              flattered was an imitation of composure:</p>
+                        <p><q>Lovely day—er—night. How are you?</q></p>
+                        <p><q>I are so happy I are lig’ those soap bubble. I goin’ burst
+                              away</q>.</p>
+                        <p><q>Yes, naturally you would be happy. Beautiful day—er—night, isn’t
+                                    it?</q></p>
+                        <p>He resolved to avoid all personal topics. He would shoot small talk at
+                              her, and she should not suspect the havoc that was raging within
+                              him.</p>
+                        <p><q>How are your mother?</q></p>
+                        <p><q>Well, thank you</q>.</p>
+                        <p><q>How are your frien’, Miss Falconer?</q></p>
+                        <p><q>Don’t know, ’m sure</q>.</p>
+                        <p><q>Hatton are tol’ me all ‘bout her</q>, said Sunny.</p>
+                        <p><q>Hatton? He’s gone. I don’t know where?</q></p>
+                        <p><q>He are officer at Salavation Army. He come to our house, and my father
+                                    give him money for those poor people. Hatton are tell me all
+                                    ‘bout you. I are sawry you sick long time, Jerry. Thas very sad
+                                    news for me</q>.</p>
+                        <p>Jerry, tongue-tied for the moment, knew not what to say or where to look.
+                              Sunny’s dear glance was almost more than he could bear.</p>
+                        <p><q>Beautiful room this. Decoration—</q></p>
+                        <p><q>Jerry, that are your beautiful picture you are made. I am remember it
+                                    all. One time you draw those picture like these <pb n="204"/>
+                                    for me, and you say thas mos’ nize picture for party ever. I
+                                    think so</q>.</p>
+                        <p>Jerry was silent.</p>
+                        <p><q>Jerry, how you are do ad those worl? Please tell me. I lig’ to hear.
+                                    Are you make grade big success? Are you found those Beauty thad
+                                    you are loog for always?</q></p>
+                        <p><q>Beauty!</q> he said furiously. <q>I told you often enough that it was
+                                    an elusive jade, that no one could ever reach. And as for
+                                    success. I suppose I’ve made good enough. I was offered a
+                                    partnership—I can’t take it. I’ll—I’ll have to get away. Sunny,
+                                    for God’s sake, answer me. Is it true you are going to be
+                                    married?</q></p>
+                        <p>Slowly the girl bowed with great seriousness, yet somehow her soft eyes
+                              rested in caress upon the young man’s tortured face.</p>
+                        <p><q>Jerry</q>, said Sunny dreamily, <q>this are the Year of Leap, and I
+                                    are lig’ ask you liddle bit question</q>.</p>
+                        <p>Jerry neither heard nor understood the significance of the girlish words.
+                              His young face had blanched. All the joy of life seemed to have been
+                              extinguished. Yet one last passionate question burst from him.</p>
+                        <p><q>Who—is—he?</q></p>
+                        <p>Slowly Sunny raised that preposterous fan. She brought it to her face, so
+                              that its great expanse acted as a screen and cut her and Jerry off
+                              from the rest of the world. Her bright lovely gaze sank right into
+                              Jerry’s, and Sunny answered softly:</p>
+                        <p><q><emph>You!</emph></q></p>
+                        <milestone unit="line"/>
+                        <p>Now what followed would furnish a true student of psychology with the
+                              most irrefutable proof of the devastating effect upon a young man of
+                              the superior and civilised caste of association with a heathen people
+                              in a heathen land. Even the unsophisticated eye of Sunny saw that
+                              primitive purpose leap up in the eye of Jerry Hammond, as, held in
+                              leash only a moment, he proposed then and there to seize the girl
+                              bodily in his arms. It was at that moment that her oriental guile came
+                              to the top. Sunny stepped back, put out her hand, moved it along the
+                              wall, behind the cherry petalled foliage, and then while Jerry’s wild,
+                              ecstatic intention brought him ever nearer to her, Sunny found and
+                              pushed the button on the wall.</p>
+                        <p>Instantly the room was plunged into darkness. A babble of murmuring
+                              sounds and exclamations; laughter, the sudden ceasing of the music, a
+                              soft pandemonium had broken loose, but in that blissful moment of
+                              complete darkness, oblivious to all the world, feeling and seeing only
+                              each other, Jerry and Sunny kissed.</p>
+                        <p>THE END.</p>
+                  </div>
+            </body>
+      </text>
 </TEI>

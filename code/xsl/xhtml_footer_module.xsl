@@ -36,7 +36,7 @@
     </xsl:template>
     
     <xsl:template match="seg[@type='version']" mode="tei">
-        <xsl:value-of select="$version"/>
+        <xsl:value-of select="substring-after($version,'v')"/>
     </xsl:template>
     
 </xsl:stylesheet>

@@ -68,6 +68,8 @@ Publicly accessible
          <notesStmt>
             <note>Facsimile from Library of Congress.</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatJinr"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:174"/>
@@ -81,13 +83,14 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-07-24" status="published">Proofread code.</change>
          <change who="pers:MC1" when="2020-07-02" status="published">Added note about source.</change>
          <change who="pers:MC1" when="2019-07-03" status="published">Proofed.</change>
          <change who="pers:SL1" when="2019-06-28" status="readyForProof">Added facs and readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl174 using XSLT.</change>
-         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
+         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: <idno type="weda">EatJinr</idno>. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
          <change when="2007-09">Ethan Gruber, University of Virginia Library: Migration. Converted XML markup from TEI Lite to uva-dl-tei (TEI P4 with local customizations).</change>
          <change when="2005-07">John Ivor Carlson: Corrector. Converted SGML to XML. Fixed tagging.</change>
@@ -155,7 +158,7 @@ file and added TEI header.</change>
             <p>Her gowns were still of the finest silk, still very rich, and, yes, still bore the proud crest of her ancestors. </p>
             <p>I want to say that many of the daughters of the <foreign xml:lang="ja">Samourai</foreign> after the Restoration took up the calling of the <foreign xml:lang="ja">geisha</foreign> girl, and, in fact, may have been the first original ones. It was necessary for them to be beautiful, clever, accomplished. This they were, and more; for they were modest, gentle, virtuous, and refined. The <foreign xml:lang="ja">geisha</foreign> girl of today is common and coarse in comparison. Many great lords, <foreign xml:lang="ja">daimyos</foreign> and nobles chose for their brides girls working in this capacity, so that some of them at least were restored to a life that resembled the luxury and ease to which they had been brought up and become accustomed. Whether the Lady Natsu met this happy fate, I do not know, but I have never ceased to pray the great Goddess of Mercy to dry her tears.</p>
 
-<note>To be continued.</note>
+<fw type="continued" place="center">To be continued.</fw>
             <milestone unit="sectionBreak"/>
 
 

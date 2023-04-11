@@ -10,16 +10,23 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:262"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreFilm"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+         <change who="pers:SL1" when="2022-03-12" status="empty">Added catREF info.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>

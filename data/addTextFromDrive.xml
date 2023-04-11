@@ -9,11 +9,13 @@
     
    
     <description>Drive Id: The ID from the Google Drive URL: https://docs.google.com/document/d/14Mc8EUxEDCgrzdjbG212fiYx6p_-_53R/edit</description>
-    <property name="driveId">14Mc8EUxEDCgrzdjbG212fiYx6p_-_53R</property>
+
+    <property name="driveId">1GxjMz0qBmlCI-KSMeZNiPWZughAUKdME</property>
     
     
     <description>Document Id: the TEI document @xml:id in the data/texts folder</description>
-    <property name="documentId">Ropes1</property>
+    <property name="documentId">MovieMadness7</property>
+
     
     
     <description>Your Id: Your @xml:id</description>
@@ -23,19 +25,19 @@
     <property name="encoderId">SL1</property>
     
     <description>Proofreader Id: The proofreader's @xml:id</description>
-    <property name="proofreaderId">MC1</property>
+    <property name="proofreaderId">SL1</property>
     
     <description>Transcriber Id: The transcriber's @xml:id</description>
-    <property name="transcriberId">AK1</property>
+    <property name="transcriberId">NI1</property>
     
     <description>Genre Id: The genre id (i.e. poetry/prose/etc)</description>
-    <property name="genreId">genreFilm</property>
+    <property name="genreId">genreShortStory</property>
     
     <description>Exhibit id: Exhibit id</description>
     <property name="exhibitId">Hollywood</property>
     
     <description>Document Type id: The document type id (PrimarySourcePublished or PrimarySourceMS)</description>
-    <property name="docTypeId">docPrimarySource</property>
+    <property name="docTypeId">docPrimarySourceMS</property>
     
     <condition property="isWindows" value="true">
         <os family="windows"/>
@@ -70,7 +72,8 @@
         <echo message="**********************************************************"/>
         <echo message="Converting document..."/>
         <echo message="**********************************************************"/>
-        <java classpath="addTextFromDrive/saxon9he.jar" classname="net.sf.saxon.Transform" failOnError="true">
+        <java classpath="../lib/saxon-he-10.jar"
+            classname="net.sf.saxon.Transform" failOnError="true">
             <arg value="-xsl:addTextFromDrive/convert_epub_to_TEI.xsl"/>
             <arg value="-it:createDoc"/>
             <arg value="documentId=${documentId}"/>
@@ -101,26 +104,13 @@
     </target>
     
     
-    <scriptdef name="open" language="javascript">
-        <attribute name="file" />
-        <![CDATA[
-        var location = "file://"+attributes.get("file").toString().replaceAll("\\\\","/");
-        location = location.toString().replaceAll(" ","%20");
-        location = java.net.URLEncoder.encode(location, "UTF-8");
-        location = location.toString().replaceAll("%3A",":");
-        location = location.toString().replaceAll("%2F","/");
-        location = location.toString().replaceAll("%25","%");
-        var uriLocation = java.net.URI.create(location);
-        var desktop = java.awt.Desktop.getDesktop();
-        desktop.browse(uriLocation);
-    ]]>
-    </scriptdef>
-    
     
     
     <target name="open">
         <property name="outFile" value="${basedir}/texts/${documentId}.xml"/>
-        <open file="${outFile}"/>
+        <exec executable="open">
+            <arg line="${outFile}"/>
+        </exec>
     </target>
     
     <target name="all" depends="init, download, convert, clean, open"/>

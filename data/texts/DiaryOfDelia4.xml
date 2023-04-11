@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia4">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia4">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>The Diary of Delia (Part 4)</title>
+            <title type="sub">Being a Veracious Chronicle of the Kitchen with Some Side Lights on the Parlor</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:NI1">Nazua Idris</name>
+            </respStmt>
             <respStmt>
                <resp>Proofreader</resp>
-               <name ref="pers:MC1">Mary Chapman</name>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
@@ -27,22 +32,243 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2022-03-12" status="published">Continued editing and set to published.</change>
+         <change who="pers:SL1" when="2022-03-11" status="inProgress">Downloaded document from Google Drive and converted to TEI. Began editing/proofing. Added page numbers.</change>
          <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SL1" status="empty" when="2019-07-04">Added facs and readied for proof.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl145 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:DiaryOfDelia4" prev="doc:DiaryOfDelia3">
+      <pb n="10"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>The Diary of Delia</head>
+         <opener>
+            <byline>Being a Veracious Chronicle of the Kitchen with Some Side Lights on the Parlor</byline>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+         </opener>
+            <div type="content">
+            
+            <div>
+            <p>A WEEK later. Cleening day. Nobody but a dummed eediot wud put the desateful-looking matting down on dacint flures. The doost and dirt finds a natchell place to settle down betwane the cracks. I was rubbing it over wid a damp cloth in Mr. Wolley’s stoody whin he cam in wid the male. In wan hand he held a grate boonch of letters, in the uther wan ploomp, fine-looking letter by itself. He looks quare.</p>
+            <p><q>Has Mr. James gon to town yet?</q> he asks.</p>
+            <p><q>No, sir</q> ses I. <q>Its riting at home he is to-day. He’s in his room, sir</q>.</p>
+            <p><q>Ah!</q> ses the auld gintleman, and, joost thin, Miss Claire cum into the room. Her cheeks are flooshed and she looks ixsited and ankshus.</p>
+            <p><q>You have a letter for me, papa, havent you?</q> ses she.</p>
+            <p>The auld gintleman had throost the fat letter hastily into his pocket. As Miss Claire spoke he fussed over the boonch in his uther hand.</p>
+            <p><q>Let me see</q>, ses he, going over thim. <q>No––there’s nuthing, my deer</q>, ses he.</p>
+            <p>She seemed so disappoynted that, for a moment, she joost stared at the auld gintleman. Then she ses gintly: <q>Papa, wasnt there an English male in yistiday?</q></p>
+            <p><q>I belave there was</q>, ses he.</p>
+            <p>She put out her hand impetchussly and ses she: <q>Let <emph>me</emph> see, papa?</q></p>
+            <p>She wint over the letters, wan be wan. She picked out wan little roll, and she ses:</p>
+            <p><q>Nothing––nothing at all for me––ixcipt this</q>. Thin she wint out from the room suddintly.</p>
+            <p>The auld gintleman looked after her wid a look fool of compashun and guilt. Then he sneeked out of the room.</p>
+            <p><q>You auldd divil!</q> ses I to mesilf. <q>Its a letter ye’ve got in your pockit for Miss Claire, and the puir thing shull have it if I have to turn thafe to get it for her</q>.</p>
+            <p>Wid that I wint after the auld rascal. I hurd the dure of Mr. James’ room shut, and I wint into the bathroom adjyning, and, wid wan eer to the dure, I lissened.</p>
+            <p><q>James–––</q> ses Mr. Wolley stipping in.</p>
+            <p><q>What the–––</q> began Mr. James and I herd him hopping up in his seet. <q>I’m bizzy, father</q> ses he. <q>I must get out this artuckle at latest by noon today</q>, ses he. <q>What is it? What is it?</q></p>
+            <p><q>James</q> ses Mr. Wolley, <q>I’m afrade yure<note type="editorial" resp="pers:NI1">The word <q>your</q> is spelled as both <q>yure</q> and <q>yere</q> throughout the text.</note> sister–––</q></p>
+            <p><q>For Hivin’s sake, father</q>, ses the lad; <q>hoory up. Jes what is it?</q></p>
+            <p>There was silinse for a moment, juring which I knowed from instink Mr. Wolley had tuk out Miss Claire’s letter and shown it to his son. I prissed up close against the dure; but the kay was inside, and I cud see not a thing. Then I herd Mr. Wolley say: <q>You see, it is as we feered. They are corry–––</q></p>
+            <p><q>Hauld on!</q> ses Mr. James, lowering his voyce, and again there follered a sylinse. Suddintly, the dure flew open and I fell upon me face into the room. Mr. James saized me by the neck of me gown and hauled me oop.</p>
+            <p><q>Delia!</q> ses he; <q>ef I ever catch you at sooch a thrick again, I’ll––I’ll throw you out of the winder</q>, ses he. <q>Now git!</q> ses he, and I sloonk aff in shame.</p>
+            <p>I was coming down the stares, scurce looking whare I wint, whin all of a suddint I seen sumthing which sint me hart flying into me mouth. There, by the winder, was Miss Claire striched out on the flure. Her face looked orful white, and fur a moment the dredful thort cam into me hed that the puir yung thing was ded. I scramed wid frite and agunny, and I joomped doon the rist of the stares and run to the child. The paper was on the flure beside her––a torn peece of noospaper, and I seen the pincil marks in blue upon it. The family cam rooshing down whin they herd me scrame, and, at the site of Miss Claire, they all seemed about to faynt also. Mrs. Wolley guv a friteful scrame, and Mr. John throo his arms aboot her and put her into a chare. Mr. James picked up the bit of paper, turned it over and red: <q>Mr. and Mrs. Barclay Robbins announse the ingagemint of their dorter, Miss Una, to Mr. Harry Judd Dudley, son of S. Judd Dudley of New York. The widding will tak place Choosday the 21st. of October</q>.</p>
+            <p>There was silince thin, the hole family looking at aich other and then at puir Miss Claire. Thin Mr. Wolley spoke. <q>Boys</q>, ses he <q>carry your sister gintly to her room</q>.</p>
+            <p>It were a sorry loonch the family et. Mr. John scurcely opened his mouth wanse<note type="editorial" resp="pers:NI1">The word <q>once</q> is spelled as both <q>wanse</q> and <q>wance</q> throughout the text.</note> to spake, and Mr. James spoke only wanse. He sed camly: <q>Father</q>, ses he, <q>I’ve desided to refuse the London corryspondunt job</q>.</p>
+            <p>Mr. Wolley turned feercely upon little, innersint Billy: <q>Billy</q>, ses he, <q>ef you play wid yure salt at the table wanse again</q>, ses he; <q>I’ll tak me razer strap to you</q>.</p>
+            <p>Thin he tuk 2 angry bits at me rolls, and stomped oot to the frunt porch. Looking out, I seen him scowling at the Dudley house. Neyther Miss Claire or her mother cum doon to loonch.</p>
+            <p><q>Mr. John</q>, ses I, whin all had left the table ixcipt him: <q>Is Miss Claire all rite now?</q></p>
+            <p>He put his fingies into fingy bowl and wiped thim thortfully:</p>
+            <p><q>I’m going across the strate</q>, ses he. <q>I belave Jane can make it all rite</q>, ses he, as if spaking to himsilf.</p>
+            <p>I was washing the family dishes in the butler’s pantry, when I seen Miss Claire cum saftly doon the stares. She’d got on a little pink drissing-gown over her nite dress and her long yillow hare was hanging all aboot her. She seen me looking at her; but, whin I wint forward to spake to her, she made a little, impashunt moshun wid her hand, and I stud back. She wint over to the tillyfone and guv a number.</p>
+            <p>Then I herd her say:</p>
+            <p><q>Is this the Planut? Yiss. Well I want the idiotoryell department. Hello!</q> ses she, <q>I want to spake to Mr. Allun––Allun––I sed Allun</q>, ses she, gitting exsited, and she spelled the name. She wated a bit, and thin: <q>Good morning, Mr. Allen</q>, ses she. <q>This is Miss Wolley––Wolley––Claire Wolley</q>, ses she. <q>Now lissen––annownce me ingagemint in tomorrer marning’s Planut––and say that I deny it but its so</q>, ses she, beginning to larf hysturicully. <q>Whats that?</q> ses she, <q>Oh, his name? His name you said? Why, how silly of me! His name is––er––Stevin Vandybilt. Oh! thank you</q>, ses she<q>. <emph>I</emph> hope so, too</q> ses she. <q>What’s that? Oh! thanks. Yes, yes, of corse, he’s wan of <emph>the</emph> Vandybilts. Goodbye</q>.</p>
+            <p>She toorned aboot, an I seen her grarsp hold of the back of a chare. She laned aginst it, and she begun to shake, and thin she larfed. She larfed so hard and quarely that she fell upon her nees. Then I ran oop to her, and thried to put me arms about her, but she guv me a feerce poosh, and, ses she, wid her eyes flushing: <q>Don’t tooch me! Dont dare put yure hand upon me. Its all yure folt. It was you who brort us thegither. It was you who–––Ah, ha ha ha ha ha!</q> ses she, larfing and crying thegither.</p>
+            <p>The widder cam in wid Mr. John, and she run over to Miss Claire wid her arms spred out.</p>
+            <p><q>O me, deer. Me deer!</q> ses she, <q>I worned you! I told you!</q></p>
+            <p>But Miss Claire has cum back to her sinses.</p>
+            <p><q>Mrs. Bangs</q>, ses she, <q>I am not in nade of inny sympathy. Excuse me. Good marning</q>, ses she, and wint up the stares and back to her room. We hurd the dure banged tite.</p>
+            <p>The widder burst into teers; and, as fur me, puir, loan, onhappy crachure that I be, I betuk mesilf to me ritched kitchen<note type="editorial" resp="pers:NI1">The word <q>kitchen</q> is sometimes spelled <q>kitchin</q> in the text.</note> and cryed me hart out into me clane, starched table aprun.</p>
+            <p>I thort the day wud niver<note type="editorial" resp="pers:NI1">The word <q>never</q> is sometimes spelled  <q>niver</q> in the text.</note> ind, and whin the Frinch charfer from the Dudleys came over, its small eers I had for his foine spache:</p>
+            <p><q>Museer</q>, ses I; <q>its a hart-broken wumman I am, and its small cumfut I’m taking in yer perlite langwige to-nite</q>.</p>
+            <p><q>Mumsell Delia</q>, ses he; <q>belave me on me sacred onor, I adoar you wid me hart and soal. Be mine</q>, ses he.</p>
+            <p>Mr. Moolvaney coming in joost thin, guv a larf at the Frinchman, which made the puir Museer furyiss: <q>Mumsell</q>, ses he; <q>I be not of the forchune-hoonting sort, as yere frind there</q>, ses he.</p>
+            <p><q>What’s that ye’re after saying?</q> ses Larry, at wanse. <q>Did you spake me name? ses he</q>.</p>
+            <p>The Frinchman stud his grownd bravely, and, droring himsilf prowdly up, faced Mr. Moolvaney wid a stare.</p>
+    
+            <pb n="11"/>      
+    
+            <p><q>Jaccuse</q>, ses he, <q>Museer Mulvaney of wooing the lady wid his eye on her forchune. Jaccuse</q>––ses he, but Mr. Mulvaney had him by the collar of his coat and museer was setting outside on the lon befure I cud rise to protist. Whin Mr. Mulvaney cam back I’m that insinsed wid his avil manners and the revylashun of his meen and greedy caracter that I skurcely cud aven look at him.</p>
+            <p><q>Mr. Mulvaney</q>, ses I; <q>its a puir, hard working girl I am, and its a mistake ye’re making in yure forchune-hoonting hart whin ye think I’m after being rich! Ah, go!</q> ses I; <q>I’m doon wid avery wan of you</q>.</p>
+            <p>And I wint oop to me milincully room, me hart sore and asking; for Miss Claire do be hating me feercely now, and Larry Mulvaney is no better than the Frinchman, but is after me puir bit of forchune. Ah wirrah! wirrah! wirrah! Its a sorry day whin me muther bore me.</p>
+            <p>Nixt day. I was doing up the bed in Mr. Wolley’s room whin Miss Claire walked in. She wint into her father’s closet and cam out wid her arms fool of his cotes. These she set on the bed and camly wint to wark sarching throo his pockits. Arfter a bit she cam upon what she’s looking for––the fat litter which arrived yistyday. She hild it in her hand a sicond, her eyes closing oop. Thin, suddintly, she wint over to the fire place. She toar the litter acrosst, invillip and all, then neeling throo it into the grate and set it on fire. Joost thin her father cam in, and she looked oop at him and smiled.</p>
+            <p><q>Why, Claire?</q> ses he, <q>What are you doin?</q></p>
+            <p><q>Papa</q>, ses she, <q>sumthing told me that <emph>he</emph> had ritten. I soospected you yistyday. I’ve jest been boorning the letter. Hereafter, papa</q>, ses she, <q>whin anny more such letters cum, trate thim in the same way<emph>–– burn thim!––burn thim!––burn thim!</emph></q></p>
+            <p>Thin she stared up at him, wid her cheeks all red and feverish, and she cryed out suddintly, <q>Oh papa! papa!</q> ses she, crowched doon on the harth and sobbed, wid her face all ooncuvvered and the teers joost poring down.</p>
+            <p><q>My puir Claire!</q> ses the auld man brokenly. Then he seen me, and spoke in a feerce voice: <q>Lave the room, Delia!</q></p>
+            <p>Whin I was gitting ondrissed tonite I herd me dure opening, and I guv a lowd yill, fer I’m in me chimmy aloan. As Miss Claire cum in, I rooshed into me closet, and I spoak to the child frum behind the harf-closed dure.</p>
+            <p><q>What is it, darlint?</q> ses I. <q>Its ashamed I am fur you to see me in dishabeel. What is it, swatehart?</q></p>
+            <p><q>Delia</q>, ses she, in the gintlest voyce, <q>plase forgive me for my croolty and ingratichude. I’ve been thortless and oongrateful too</q>, ses she, spaking into the closet. <q>For aven oonder the sircumstunces I doant regret––Harry.  So you’ll stay––won’t you, Delia?</q> ses she.</p>
+            <p><q>Stay miss?</q> ses I. <q>Why, darlint, you cuddent roon me out wid a steem roller</q>.</p> 
+               
+ </div>
+ 
+  <div>
+            <p>Another day. It do be thray weeks today sinse Miss Claire’s after anounsing her ingagemint to Mr. Vandybilt. The family kept silinse upon the subjeck. Its a straynge and sad house its after being now.</p>
+            <p>Both Mr. John and James wint back to there rayspictif places in the sity on Siptimber 1st, after having spint the intyre summer doing there riting at the hoose.</p>
+            <p>Mr. James do be a famiss riter and there’s hardly a paper pooblished but has a pichure of himsilf looking out frum the frunt page, bauld and agrissive looking, for shure the lad do have his back oop against the intyre warld. Hes jyned the Soshilist and Annykist ordher, I’m after rading in the papers, and its intinded by him (ses wan of the papers, which always nos a person’s plans befure there made) to live in the slooms for the rist of his life, devoating himsilf to sittlemint wark amang the Rooshin Jews.</p>
+            <p>Mr. Wolley’s masheen broak doon aboot a fortnite ago, and the auld gintleman is like a child widout his favrite toy. He do be wayting ivery day for the new carbureater to arrive, and, manewile, he spinds all his time fooling about wid the masheen that isn’t rooning anny longer. Mrs. Wolley has dridful, narviss hidakes, injooced, so she told me in confydunse, as mooch by her wurry over Miss Claire as frum anny uther cause.</p>
+            <p>As for Miss Claire hersilf––Puir child! She do be that quiet and shrinking in her ways. Theres skurcely a site I’m getting of the child ixcipt at male times.</p>
+            <p>Its not warth intering up the milincully ivints of the sad days, and shure I’ll be glad, indade, whin we move back to town in a fu weeks now.</p>
+            <p>There be no troo Nites abownding in this sad and loansum country, for the Nites are an avarashus lot. Since the news wint abrord that I’m having me little bit of forchune in the bank, I’ve been pistered wid the dummed forchune-hoonters till I begin to look wid soospishun on ivery dummed man that spakes to me at all.</p>
+            <p>Ah; its a sad thing to be ritch in these days; for the lads cum accorting wid wan eye on yere pockit and the ither on yere face. Since museer infarmed me of the greedy hart of Mr. Mulvaney its nivver a sivil ward I’ve handed the lad since, and he pretinding to be beside himsilf wid disthress and begging me ivery day to go wid him to the praste.</p>
+            <p><q>Mr. Mulvaney</q>, ses I; <q>whin Delia O’Malley is riddy to marry she’ll be choosing a thrifty lad wid a farchune larger than her own. Ivery dummed wan of those unforchnut crachures do be washing after marruge, handing over there hard-airned wages to the cauld-harted goomps they’ve been loonyticks enuff to marry. Larry Mulvaney</q>, ses I; <q>it’s a smart lad ye are; but Delia O’Malley sees throo yere thricks</q>.</p>
+            <p><q>Delia, me darlint</q>, ses he, wid such airnestness I’m almost like to belave him. <q>I wish</q>, ses he, <q>ye’d tak yere munney frum the bank and drap it into the well</q>, ses he. <q>Its you I want</q>, ses he. <q>Its you I want</q>, ses he; <q>not yere auld munney</q>.</p>
+            <p>        <q>Mr. Mulvaney</q>, ses I cauldly. <q>Anny wan but an eediot</q>, ses I, <q>cud fish up a bit of munney put doon in a well</q>.</p>
+            <p>To museer I likewise ixprissed mesilf consarning forchune-hoonters in gineral and furrinors in pertickler.</p>
+            <p><q>Museer</q>, ses I, <q>I oonderstand its the custum in yure cuntry for the wimmen to guv over there bit of a forchune to there worthliss hoosbunds?</q></p>
+            <p><q>Nay, but me share, Mumsill Delia</q>, ses he. <q>Is it not thin a grand custum? Think, sharee</q>, ses he. <q>Hoo shud be the custoadyun of the joynt wilth of such a onion, if not the hed of the family? Why, sharee</q>, ses he (sharee being Frinch for mavorneen), <q>it is as it shud be</q>, ses he.</p>
+            <p><q>Museer</q>, ses I, <q>I may be auld-fashuned, but I shtand here riddy to state the following facks. I’m a hard warking girl and befure I’d see me hard airned savings parss into the hands of a good-fur-nuthing disiloot Frinch husbund I’d throw it into purgatry and burn it oop insted. Good marning, museer</q>, ses I. <q>Will you plase ixcuse me this avening</q>.</p>
+     
+  </div>
+               
+   <div>     
+            <p>A week later. I got ap this marning at seven. While wiping me face after giving it a good sousing wid warter, I chanst to look from me winder. I seen the rane poaring down frum a gray and milincully sky.</p>
+            <p><q>Its a sad day its going to be today</q>, ses I to mesilf, little noing the throoth of the matter.</p>
+            <p>The day itsilf, to be shure, passed away as yushil. I warked and cooked. The family et. The house looked dark and gloomy, and I belave it cheered us all up a bit whin I’m toorning on the lites.</p>
+            <p>After dinner I planned to rite to Minny, and so was hurrying throo the washing of me pots and pans in the sink whin I herd me bastemint dure open and close wid a bang, and ses I to mesilf: <q>Its that bauld Larry Mulvaney walking into me kitchin widout the dacinsy aven of nocking</q>. So I kipt me contemshus back toorned aven whin the stips cam along throo the bastemint hall and paused at me kitchin dure. Thin I herd a voyce spaking me name:</p>
+            <p><q>Delia!</q></p>
+            <p>I toorned aboot, and thin I lit out a turrible yell which I shoot up quickly be throosting me dish cloth into me open mouth. For there, sthtaning in me kitchin, his long coat dripping wid water, the coller toorned up about his eers, and his saft filt hat pooled doon over his eyes, was</p>
+    
+            <pb n="12"/>     
+    
+            <p>Mr. Harry Dudley himsilf. His eyes looked straynge, and his face was all oonshavin aboot the chin. He cum tords me quickly and clapped a hand on me showlder. If I hadent reckynised the lad, shure I’d be taking him for a thramp.</p>
+            <p><q>Go upstares</q>, ses he; <q>and bring Claire––Miss Wolley doon. I want</q>, ses he, <q>to see her at wanse</q>.</p>
+            <p><q>Yes, sir</q> ses I, trimbling wid ixsitemint; for he do have the wild look of a mainyack in his eye.</p>
+            <p>I rooshed up the stares to Miss Claire’s room, and, forgitting to nock, wint in.</p>
+            <p><q>Miss Claire</q>, ses I, me breth cuming in gasps, <q>w-wud ye be so kind to step into me kitchin a moment</q>.</p>
+            <p>She stud up, looking at me surprysed and bewildyed.  </p>
+            <p><q>What’s the matter, Delia?</q> ses she.</p>
+            <p><q>Plase hilp me, Miss Claire</q>, ses I. <q>For Hivin’s sake</q>, ses I, gitting exsited, <q>cum down at wanse</q>.</p>
+            <p><q>Are you and Larry fiting again?</q> ses she. <q>What can I do this time?</q> ses she, but she let me leed her along doon the stares, and thegither we cum to the bastemint. Me kitchin dure was open, and, I belave, she seen Mr. Harry setting there befure shes cum into the room; fur all of a suddint she guv a turrible start and pulled away frum me arm, trying to go back oop the stares. At that I called: <q>Mr. Harry!</q></p>
+            <p>And thin he stud up, and she wint slowly tord him. They stud for a moment, looking at aich uther, widout spaking a wurd. Then, he tuk his hat off and put it on the table, and she thried to spake and cuddent say a word. I seen her looking wid horrer at his dripping clothes and wite, haggud face, and I belave, she guv a little sob; for so it sownded. Thin he spake in a saft voyce, looking at her full in the eyes.</p>
+            <p><q>Claire</q>, ses he; <q>I tuk a bote back fur home harf an hour after yure letter and that––that––cursed paper came</q>, ses he. Thin he stopped a bit. <q>I’ve cum up strate from the steemer now. I havent been home. Tell me the trooth</q>, ses he. <q>Why did you threat me in that way?</q> ses he.</p>
+            <p>She did not anser,<note type="editorial" resp="pers:NI1">The word <q>answer</q> is spelled as both <q>anser</q> and <q>ansser</q> throughout the text.</note> but the culur cum back to her pale face and she raysed up her hed prowdly.</p>
+            <p><q>Am I to belave</q>, ses he; <q>that <emph>you</emph> wud throw me over for a chap wid more munney? Claire!</q> He wint a step tord her, his hands hild out. <q>For Hivin’s sake</q>, ses he <q>till me that it is all sum horribul mistake</q>.</p>
+            <p>She wint back frum him.</p>
+            <p><q>Mr. Dudley</q>, ses she. <q>I quistshun yure rite to inquire into me affares; but, if you wish me simply to verryfy the annowncemint of me ingagemint to Mr. Vandybilt, I do so</q>.</p>
+            <p>He guv a grone, and set down in the chare, laning forward, wid his hands prissed thegither.</p>
+            <p>Miss Claire stud there cauldly, but she did not look at Mr. Harry anny more.</p>
+            <p>Suddintly he throo back his hed and guv a little larf. Thin he got up and picked up his hat and moved tord the dure.</p>
+            <p><q>Stop!</q> ses Miss Claire, toorning rownd suddintly. <q>Wait wan minit</q> ses she. <q>Ansser me this, Mr. Dudley</q>, ses she. <q>What rite have you, an ingaged man, to spake to me in such a way?</q></p>
+            <p><q>What rite have <emph>I</emph>?</q> ses he, looking bitterly amoosed. <q>Yes</q>, ses he, <q>throo. I <emph>was</emph> ingaged wance,<note type="editorial" resp="pers:NI1">In other sections, <q>once</q> is spelled as <q>wanse</q>.</note> Miss Wolley. I belave</q>, ses he, <q>that I guv you me muther’s ring</q>.</p>
+            <p><q>No!</q> ses she, and her vyse rung out pashunutly. <q>Not that! I dont meen that ingagemint––ef you considered it ever such</q>, ses she, and her voyce catched oop in her throte which she hild wid her hand. <q>I mane</q>, ses she, <q>yure ingagemint to Una Robbins. You–––</q></p>
+            <p>He looked so flabbygasted that she stopped.</p>
+            <p><q>What do you mane</q> ses he.</p>
+            <p><q>Oh, you know, you know</q>, ses she. <q>Befure you were gone a fortnite</q>, ses she <q>yure ingagemint was annownced</q>.</p>
+            <p><q>My ingage–––? <emph>Claire</emph></q>! ses he horsely, and he saized hold of her hand vilintly. <q>There’s sum misurble mistake. You’ve been misled, desaved</q>.</p>
+            <p><q>No, no, no!</q> ses she, struggling to free her hands, which he let go suddintly. <q>It was annownsed</q>, ses she. <q>You know it. You <emph>know</emph> it</q>.</p>
+            <p><q>Annownced whare?</q> ses he cauldly.</p>
+            <p><q>In the London Queen</q>.</p>
+            <p><q>When?</q></p>
+            <p><q>I doant–––</q></p>
+            <p>It was thin I spoke up; for I’d taken the paper frum the recipshun hall the day Miss Claire faynted, intinding to burn the dummed thing. I now guv it to Mr. Harry. He toorned it over contemshusly. Thin, he guv the paper a long scrootiny. Finully, he looked up and fixed his eyes on Miss Claire. His voyse wuz very cam and quiet.</p>
+            <p><q>This notiss</q>, ses he; <q>was published esactly three and a half yeers ago. If you had aven taken the thrubble to examine the paper you wud have seen that, aven tho the date is torn off. Thank you for your faith in me</q>, ses he. <q>Who sint this I do not no. Probably my father. And now</q>, ses he, <q>there’s nothing more to say. I hope you will be happy, Claire. I dont know Vandybilt</q> ses he; <q>but––still I hope you will be happy. Goodnite</q>, ses he; and he wint oot of the dure, widout looking at her again.</p>
+            <p>I seen her wake oop like wan coming out of a transe. She guv a little moan, and thin she wint following after him to the hall.</p>
+            <p><q>Harry! Harry!</q> she called in the dark. I herd him stop short, and thin her voyse again. <q>Oh, forgive me!</q> ses she. <q>I––I––faynted at the time. I never sor the paper again. My––my hart was broken, for I loved you so––I love you yet</q>, ses she.</p>
+            <p>And thin I hurd him joomp tord her.</p>
+            <p><q>But yure––ingagemint to Vandybilt?</q> ses he horsely.</p> 
+            <p><q>There’s <emph>no</emph> Mr. Vandybilt</q>, ses she. <q>I––I made it up</q> ses she; and, then, she stopped spaking and crying too, fur he’s got his arms aboot her and her lips closed oop wid his.</p>
+            <p>I toorned away and sobbed. How long they stud I do not know; but it was a long time whin finully he starts</p>
+            
+            <pb n="24"/>
+            
+            <p>to spake again: <q>Claire––my darlint!</q> ses he, and then again they wuz silint.</p>
+            <p>Then after awile: <q>What will we do?</q> ses she; <q>we––we cant give aich uther up now</q>.</p>
+            <p>He larfed like a boy.</p>
+            <p><q>Give aich uther up?</q> ses he. <q>Why, we belong to aich uther. Now lissen, darlint. I havent a cint to me name. Dad has kept me practicully pinnyliss lately; but I maniged to borrer enuff to get back here. I’ve niver dun a stroke of work in me life, but I’ve a good ijjicashun––I’m yung, strong and willing. I’ve been offered a job out West wid a stepbruther of me muther’s, and we’ll go there as soon as I can rayse the munney to tak us. Oh, my little love!</q> ses he. <q>I only wish I cud take you away tonite and kape you wid me allways</q>.</p>
+            <p><q>Tak me––tak me. Harry!</q> ses she, clinging about his neck. <q>Let us go tonite</q>.</p>
+            <p><q>I wish we cud</q>, ses he. <q>But look!</q> And he drew her into the lite of me kitchin and toorned out all his pockits and shown her how imty they was. It was then a brillyunt thort cum into the hed of Delia O’Malley.  </p>
+            <p><q>Mr. Harry</q>, ses I, interrupting, <q>will you be excoosing me for putting a quischun?</q></p>
+            <p><q>What is it, Delia?</q> ses he kindly.</p>
+            <p><q>How mooch is it ye’re nading?</q> ses I.</p>
+            <p>He smiled.</p>
+            <p><q>A few hundred only</q>, ses he. <q>Just enuff for our imejit ixpinses. Its absurd, but I havent a red sint</q>, ses he. <q>I’ll borrer or steel it if I have to</q>, ses he, trying to larf, the puir lad.</p>
+            <p><q>Mr. Dudley</q>, ses I, <q>will ye be doing a puir, loan, hard-warking girl a favor?</q></p>
+            <p><q>Why, certainly</q>, ses he. <q>What can I do for you?</q></p>
+            <p><q>It’s siven hundred dollars I’m after having in me stocking. I droo it oot of the bank oanly a day or two ago, fur the dummed wilth do be the bane of me existunse. Shure I’ll nivver know anny pace of mind so long as I’m ritch. Mr. Mulvaney do protist that he wishes me munney soonk in hell, and Museer is after saying he loves me better than me bagatell. Its tisting the lads I’d be doing; and, ef ye’ll do me the favor of accipting me bit of munney–––</q></p>
+            <p><q>Oh, Delia!</q> ses Miss Claire.</p>
+            <p><q>No, no</q>, ses Mr. Harry at wanse; but she pulled down his face, and whispered in his eer, and suddintly he toorned and beemed at me.</p>
+            <p><q>Very good! Delia</q>, ses he; <q>guv me the munney</q>.</p>
+            <p>I wint into the china closet and tuk it frum me stocking––thin I brort it over to Mr. Harry. He hild on to me hand after taking it, and his voyse trimbled a bit. <q>Yere a foine woman</q>, ses he, <q>and its a lucky chap who gets you. Your bit of munney</q>, ses he, <q>will be ten times its size whin it reeches you again</q>. </p>
+            <p><q>Now, Claire, darlint</q>, ses he, and he luks at her wid shining eyes, hers smiling back at him. <q>Will you go wid me––<emph>tonite</emph>?</q></p>
+            <p><q>Give me five minits</q> ses she, smiling saftly, <q>to get me hat and coat</q>.</p>
+            <p><q>Make it 2</q>, ses he, and he let her go.</p>
+            <p>He put his watch on the table. After a sicond: <q>One minit!</q> ses he, and waches the stares. <q>One and a harf!</q> ses he, and, joost thin, the bastemint dure be rung, and I let in both Museer and Larry Mulvaney, pushing and ilboing by aich uther.</p>
+            <p><q>Two minutes!</q> ses Mr. Harry, and thin we herd the dure on top of the bastemint steps open, and Miss Claire cum steeling down, her coat and hat in her hand.</p>
+            <p><q>They are all in there rooms</q>, ses she, wispering. Thin she seen Museer and Larry, both of thim wid there mouths and eyes gaping at Mr. Harry. He was smiling quarely, and he toorned to Museer: <q>Alfonse!</q> ses he, <q>ye’ve arrived in the nich of time. I want you</q>, ses he; <q>to go back to our place and get riddy the big Pinkard. We’ll be over in a sicond</q>.</p>
+            <p>Museer bowed, but he hisitated a minit.  </p>
+            <p><q>Well?</q> ses Mr. Harry. <q>What are you waiting for?</q></p>
+            <p><q>Whare is it Museer wishes to go?</q> ses the Frinchman, rubbing his hands narvissly thegither, and giving a look at Miss Claire.</p>
+            <p><q>To New Rosette</q>, ses Mr. Harry smiling. <q>I know a parson there</q>, ses he, <q>will do it in a jiffy. His name’s Hammond</q> ses he, and thin, suddintly, he</p>
+    
+            <pb n="25"/>     
+    
+            <p>turned tord me. <q>And by the way, Alfonse</q>, ses he, <q>puir Delia here will be ixpicting you back airly. She’s lost her little forchune</q>.</p>
+            <p><q>Mon Joor! Sacrey!</q> ses Museer, and looked at me wid his eyes boolging out. Thin he stamped oot, swaring tarribly in Frinch.  </p>
+            <p>Larry guv me wan look, thin he begun to wissel, excusing himsilf a moment after to Miss Claire.</p>
+            <p>Mr. Harry helped Miss Claire on wid her coat, and buttoned it up snug to her chin. <q>For</q>, ses he; <q>its cold and raining, and we have quite a trip to make</q>, ses he.</p>
+            <p>Thin, we all started out frum the house, Mr. Dudley almost carrying Miss Claire over the wet lon, and Larry Mulvaney grasping me titely by the arm.</p>
+            <p>We got into the Dudley driveway and cum up befure the grate barn. Then we seen museer at the tillyfone. Hes spaking franticully harf in Frinch and harf in English. Mr. Harry putrifyes him wid a look, and he drapped the tillyfone and turned sowerly to the big ortermobile, pretinding to start it.  Mr. Harry helped Miss Claire into the tonno, thin the Frinchman climed in frunt. Mr. Harry foosed a bit wid the masheenery, thin he joomped in beside the Frinchman, and all of a suddint he seesed the weel frum the Frinchmans hands, guv a toot to his horn, and wint flying out of the barn dure, joost as auld Mr. Dudley cum rooning frum the house waving his hands and showting:</p>
+            <p><q>Alfonse! Alfonse!</q></p>
+            <p>He cum into the barn farely choking wid rage. The nixt moment he seen Larry and me.</p>
+            <p><q>Larry!</q> ses he, and he climbed into the uther masheen, standing there. <q>Overtake those loonyticks</q>, ses he, <q>and I’ll make you a ritch man</q>.</p>
+            <p><q>I will</q>, ses Larry; <q>I kin beet anny Frinchman living</q>.</p>
+            <p>I fowned me way home erloan, Larry the crool-harted miscreent wid his avoreeshus hart having obeyed the order of Mr. Dudley. As I cum into me kitchin I fownd the hole Wolley family, wid the ixcipshun of Mrs. Wolley and the babby, waiting for me.</p>
+            <p><q>Whare have you been?</q> shouted Mr. James, and Mr. Wolley guv me a look fit to kill me.</p>
+            <p><q>Theres no yuse attimting to desave us, Delia</q>, ses Mr. John quietly, the only cam wan of the boonch. <q>The Dudley charfer tillyfoned us the facks a minit sense. Now, whare’s Claire? I presoom</q>, ses he, <q>they were stopped in time?</q></p>
+            <p><q>Not by a dummed site, sir</q>, ses I, gitting turribly inraged wid the site of the thray strapping men pursooing the puir, yung, luving-harted crachures. <q>They’ve got a good start of that desateful Larry Mulvaney, and Mr. Harry himsilf has got the wheel</q>.</p>
+            <p>Mr. Wolley let out a larf of scorn.</p>
+            <p><q>Boys</q>, ses he; <q>me new carbureater arrived yistyday. We’ll overtake that Frinch car in harf an our</q>.</p>
+            <p>Wid that they all wint for the barn, got out the car and in there exsitemint let me climb in wid them also.</p>
+            <p>Well, we wint spinning at a turrible spead along the auld Boston Post Road; but never a site did we get of the Dudley Frinch car.</p>
+            <p>The roads was turrible for the stiddy rains of the larst week do be cutting it up into ditches, and manny a time me hart was in me mouth feering we’d be going into the gutter. The nite was pitch dark and the ilictrick lites over harf the road being out wid the lightning.</p>
+            <p>As we cam whizzing along over a wild and loansum cuntry we herd a straynge sownd, like sumwan hollering for hilp, and then we seen a lite ahed. We roon up beside it and there in the road was anuther masheen. It was so dark we cud not see the gintleman but whin I herd his voyce I guv a start.</p>
+            <p><q>Can you tak me as far as New Rosette?</q> ses he. <q>I’m soaking wet and cold</q>, ses he, <q>and me man dont understand the meckaneesm of this masheen</q>.</p>
+            <p><q>Climb in</q>, ses Mr. Wolley gruffly, and he got in at the back.</p>
+            <p>We started aff again, and by and by we cam at last to New Rosette. We wint, feeling our way arowned the strates, wid the rane beeting doon upon our lether top and the thoonder and lightning litting out a crack avery wanse in a wile.</p>
+            <p>Thin, suddintly, we cam to a stop. Theres a gas lite burning in the strate, and setting back a bit from the road on a lumpy</p>
+    
+            <pb n="26"/>    
+    
+            <p>bit of lon I seen what looked like a church and, at its very dure, indade there stud the grate Frinch ortermobile of Mr. Dudley. But neyther Miss Claire or Mr. Harry was inside it. The gintleman guv a groont, and thin ses he: <q>Excuse me, sir, allow me to get out here</q>.</p>
+            <p>        Mr. Wolley has turned about, and now he leened over the back of the seet and stuck his face close up to his gest’s. Thin, at wanse, they recknised aich other. The boys too soospicted the trooth at wanse. Mr. Dudley himsilf was for joomping clane out of the masheen, but Mr. John opened the dure wid dignuty, and perlitely hilped him to alite.</p>
+            <p>We wint, all walking up the path to the choorch, and we cud see theres a bit of lite burning inside. We wint into the holy place, which is all very still and quiet wid only a bit of dim lite up neer the altar; but under the lite we sor the luvvers, neeling side be side.</p>
+            <p>Neyther Mr. Dudley or Mr. Wolley spoke a wurd. They joost stud back and let the praste finish the wurds. Thin, I seen two gintlemen stip forward an reckynised them wid horrow––Museer and Larry Mulvaney. The latter seen us at the same time, and he cum, smiling frum eer to eer, up to Mr. Dudley, while the yung cupple stud still wid hands in aich uthers, looking wid smiling faces at their fathers, joost as if indade they were after ixpicting us.</p>
+            <p><q>Mr. Dudley</q>, ses Larry; <q>ye’ll not be haulding it aginst me for me thrick. I boasted</q>, ses he, <q>that I cud beet the Frinchman, and I did</q> ses he, <q>me frate being lite. It was no brake-down ye were after being in on the road</q>, ses he. <q>I simply doomped ye there</q>, ses he; <q>to guv the yung fokes time. Besides</q>, ses he; <q>Delia there made a hyer bid for me sarvisses. All the welth in the world</q>, ses he, <q>cuddent bye me frum me pinnyliss darlint</q>.</p>
+            <p>Mr. Dudley’s silint, but he kipt his eyes stiddily on the yung fokes; then suddintly he hild out his hand to Mr. Wolley.</p>
+            <p><q>I’m afrade, sir</q>, ses he, <q>that <emph>luv</emph> has won the race!</q>  </p>
+            <p>Mr. James was acting strayngely. He wint down the isle in harf a duzzen strydes. He brort his hand down wid a thoomp on Mr. Harry’s back; then he toorned on his sister and guv her a smacking kiss.</p>
+            <p><q>Claire!</q> ses he; <q>ye’ve made me insanely happy</q>.</p>
+            <p>She smiled, and Mr. Harry guv a larf.</p>
+            <p><q>I oonderstand, auld chap</q>, ses he; <q>and here’s a bit of prujent advice. Do as I did, tak the first steemer which will carry you her-wurds</q>.</p>
+            <p><q>By jove, I will!</q> ses Mr. James; <q>I’ll accipt the Londun corryspondint job to-morrow</q>.</p>
+            <p>By this time the hole family wuz crowding about the yung fokes, and Mr. Dudley wuz after kissing the bride and bridegroom too; and both her and Mr. Wolley look as ef they’s blow there noses hard; but seeing they’re in choorch it mite not be perlite.</p>
+            <p>The teers run down me nose, and wan of thim sploshed on Larry’s hand; for I seen him look at it a moment. Thin be whispered in me eer.</p>
+            <p><q>Come, auld girl</q> ses he; <q>hop into the little masheen, which is joost around the corney. Maybe</q>, ses he, <q>we can injuce sum sinsible praste to do us a like favor tonite</q>.</p>
+            <p>And so we wint sneeking out thegither, wid only the Frinchman to obsarve us, and he wid his mouth gaping open and smiling a bit beside; for Mr. Harry do be after giving him the hole of me forchune to act as witniss.</p>
+            <p><q>But dont you be after wurrying, swatehart</q>, ses Larry Mulvaney; <q>for tho ye’re puir yersilf now, darlint, its a ritch man I’ll be air long, wid the grand promisses of Mr. Harry</q>.  </p>
+            <p><q>Ah, go wan, Larry Mulvaney!</q> ses I, guving him a squaze of his arm; <q>its only a bit of a thrick I’ve been playing ye, me wanting to tist yere troo luv for me or me wilth. It was oanly a loan I’m making Mr. Harry, and its hivvy intrest the lad will be after paying on me savings</q>.</p>
+   </div>
+        
          </div>
+         <trailer>(THE END)</trailer>
       </body>
    </text>
 </TEI>

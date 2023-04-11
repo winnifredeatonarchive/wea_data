@@ -15,6 +15,14 @@
                <resp>Encoder</resp>
                <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -37,6 +45,9 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-08-23" status="published">Fixed typos.</change>
+         <change who="pers:LW1" when="2022-08-23" status="published">Fixed typos. Coded letter.</change>
+         <change who="pers:SL1" when="2022-07-16" status="published">Added fw type.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">added paratext and illustrator.</change>
          <change who="pers:SB2" when="2020-06-18" status="inProgress">Proofread and made minor changes.</change>
@@ -72,14 +83,26 @@
     <div>                 
       
     
-            <p>I had received, of course, a great many letters from Reggie, and I wrote to him every day. He expected to return in the fall, and he wrote that he was counting the days. He said very little in his letters about his people, though he must have known I was anxiously awaiting word as tohow they had taken the news of our engagement.</p>
+            <p>I had received, of course, a great many letters from Reggie, and I wrote to him every day. He expected to return in the fall, and he wrote that he was counting the days. He said very little in his letters about his people, though he must have known I was anxiously awaiting word as to how they had taken the news of our engagement.</p>
             <p>Toward the end of summer his letters came less frequently, and to my great misery two weeks passed away when I had no word from him at all. I was feeling blue and heartsick and, but for my work at the Château, I think I would have done something desperate. I was really tremendously in love with Reggie and I worried and fretted over his long absence and silence.</p>
             <p>Then one day in late September a messenger boy came with a letter for me. It was from Reggie. He had returned from his trip, and was back in Montreal. Instead of being happy to receive his letter, I was filled with resentment and indignation. He should have come himself and, inspite of what he wrote, I felt I could not excuse him. This was his letter:</p>
-            <p><q>Darling Girlie:</q></p>
-            <p><q>I am counting the hours when I will be with you. I tried to get up to see you last night, but it was impossible. Lord Eaton’s son, young Albert, was on the steamer coming over, and they are friends of the governor’s and I simply had to be with them. You see, darling, it means a good deal to me in the future, to be in touch with these people. His brother-in-law, whom I met last night, is head-cockalorum in the House of Parliament, and as I have often told you, my ambition is to get into politics. It’s the surest high-road to fame for a Barrister</q>.</p>
-            <p><q>Now I hope my foolish little girl will understand and believe me when I say that I am thinking for you as much as for myself</q>.</p>
-            <p><q>I am hungry for a kiss, and I feel I cannot wait till tonight</q>.</p>
-            <p><q>Your own, ‘Reggie.’</q></p>
+        <q>
+           <floatingText type="letter">
+              <body>
+                 <opener>
+                    <salute><q>Darling Girlie:</q></salute>
+                 </opener>
+                 <p>’’I am counting the hours when I will be with you. I tried to get up to see you last night, but it was impossible. Lord Eaton’s son, young Albert, was on the steamer coming over, and they are friends of the governor’s and I simply had to be with them. You see, darling, it means a good deal to me in the future, to be in touch with these people. His brother-in-law, whom I met last night, is head-cockalorum in the House of Parliament, and as I have often told you, my ambition is to get into politics. It’s the surest high-road to fame for a Barrister.</p>
+                 <p>’’Now I hope my foolish little girl will understand and believe me when I say that I am thinking for you as much as for myself.</p>
+                 <p>’’I am hungry for a kiss, and I feel I cannot wait till tonight.</p>
+                 <closer>
+                    <salute>Your own,</salute>
+                    <signed><q>Reggie</q>.</signed>
+                 </closer>
+              </body>
+           </floatingText>
+        </q>
+            
             <p>For the first time in my life I experienced the pangs of jealousy, and yet I was jealous of something intangible. It was lurking in my thought, and all sorts of suspicions and fears came into my hot head.</p>
             <p>When Reggie came that evening, I did not open the door as usual. I heard him say eagerly, when the children let him in:</p>
             <p><q>Where’s Marion?</q></p>
@@ -106,18 +129,18 @@
       
     
             <p>The days that followed were happy ones for me. Reggie was with me constantly, and I even got off several afternoons from the studio and spent the time with him.</p>
-            <p>One day we made a little trip up the St. Lawrence, Reggie rowing all of the way from the wharf at Montreal to Boucherville. We started at noon and arrived at six. There we tied up our boat, and went to look for a place for dinner. We found a little French hotel and Reggie said to theproprietor:</p>
+            <p>One day we made a little trip up the St. Lawrence, Reggie rowing all of the way from the wharf at Montreal to Boucherville. We started at noon and arrived at six. There we tied up our boat, and went to look for a place for dinner. We found a little French hotel and Reggie said to the proprietor:</p>
             <p><q>We want as good a dinner as you can give us. We’ve rowed all the way from Montreal and are famished</q>.</p>
-            <p><q><foreign xml:lang="fr">Bien</foreign>! You shall have ze turkey which is nearly cook’</q>, said the hotel-keeper. <q>M’sieu he row so far? It is too much. Only Beeg John, ze Indian, row so far. He go anny deestance. Also he go in his canoe down those Rapids of Lachine. <foreign xml:lang="fr">Vous connais</foreign> dat man—Beeg John?</q></p>
+            <p><q><foreign xml:lang="fr">Bien</foreign>! You shall have ze turkey which is nearly cook,’</q> said the hotel-keeper. <q>M’sieu he row so far? It is too much. Only Beeg John, ze Indian, row so far. He go anny deestance. Also he go in his canoe down those Rapids of Lachine. <foreign xml:lang="fr">Vous connais</foreign> dat man—Beeg John?</q></p>
             <p>Yes, we knew about him. Everyone in Montreal did.</p>
-            <p>We waited on the porch while he prepared our dinner. The last rays of the setting sun were dropping down in the wood, and away in the distance the reflections upon the St. Lawrence were turning into dim purple the brilliant orange of a little while ago. Never have I seen a morebeautiful sunset than that over our own St. Lawrence. I said wistfully:</p>
-            <p><q>Reggie, the sunset makes me think of this poem:</q></p>
+            <p>We waited on the porch while he prepared our dinner. The last rays of the setting sun were dropping down in the wood, and away in the distance the reflections upon the St. Lawrence were turning into dim purple the brilliant orange of a little while ago. Never have I seen a more beautiful sunset than that over our own St. Lawrence. I said wistfully:</p>
+       <p>‘‘Reggie, the sunset makes me think of this poem:</p>
       
           <q><lg>
-                <l>‘The sunset gates were opened wide,</l>
+             <l>‘‘The sunset gates were opened wide,</l>
                 <l>Far off in the crimson west,</l>
                 <l>As through them passed the weary day</l>
-                <l>In rugged clouds to rest.’</l>
+             <l>In rugged clouds to rest.’’</l>
           </lg></q>
 
       <p>Before I could finish the last line, Reggie bent over and kissed me right on the mouth.</p>
@@ -171,11 +194,11 @@
             <p><q>Very vell, Miss Ascough. Hurry you out. It is best you come not back again</q>.</p>
             <p><q>Oh, very well!</q> I said. <q>Good-by</q>, and ran down the stairs, feeling much provoked with the foolish old fellow.</p>
             <p>Poor old Count! How I wish I had been kinder and more grateful to him; but in my egotistical youth I was all incapable of hearing or understanding his pathetic call for sympathy and companionship. I was flying along through life, as we do in youth. I was, indeed, as I had said, <q>in a hurry</q>.</p>
-            <p>He died a few years later, in our Montreal, a stranger among strangers, who saw only in the really beauty-loving soul of the artist the grotesque and queer. I wished, then, that I could have been with him in the end, but I myself was in a strange land, and I was experiencing someof the same appalling loneliness that had so oppressed and crushed myold friend.</p>
+            <p>He died a few years later, in our Montreal, a stranger among strangers, who saw only in the really beauty-loving soul of the artist the grotesque and queer. I wished, then, that I could have been with him in the end, but I myself was in a strange land, and I was experiencing some of the same appalling loneliness that had so oppressed and crushed my old friend.</p>
             <p>When I told Reggie I was not going to the Château any more, he was very thoughtful for some time. Then he said:</p>
             <p><q>Why don’t you take a studio up town? You can’t do anything in this God-forsaken Hochelaga</q>.</p>
             <p><q>Why, Reggie</q>, I said, <q>you talk as if a studio were to be had for nothing. Where can I find the money to pay the rent?</q></p>
-            <p><q>Look here</q>, said he, <q>I’m sure to pass my finals this spring, and I’m awfully busy. It takes a deuce of a time to get down here. Now, if you had a studio of your own it would be perfectly proper for me to see you there, and then besides don’t you see, darling, I would have you allto myself? Here we are hardly ever alone, unless I take you out</q>.</p>
+            <p><q>Look here</q>, said he, <q>I’m sure to pass my finals this spring, and I’m awfully busy. It takes a deuce of a time to get down here. Now, if you had a studio of your own it would be perfectly proper for me to see you there, and then besides don’t you see, darling, I would have you all to myself? Here we are hardly ever alone, unless I take you out</q>.</p>
             <p><q>I couldn’t afford to pay for such a place</q>, I said, sighing, for I would have loved to have a studio of my own.</p>
             <p><q>Tell you what you do</q>, said Reggie. <q>You let me pay for the room. You needn’t get an expensive place, you know—just a little studio. Then you tell your governor that you get the room free for teaching or painting for the landlady, or something like that. What do you say, darling?</q></p>
             <p><q>I thought you said you despised a liar?</q> was my answer. <q>You said you would never forgive me if I deceived you or told you a lie</q>.</p>
@@ -205,7 +228,8 @@
             <p><q>If you make any money</q>, said Ada, <q>you ought to help the family, as I have been doing for some time now, and you are much stronger than I am, and almost as old</q>.</p>
             <p>Ada had been delicate from a child, and already I was taller and larger than she. She made up in spirit what she lacked in stature. She was almost fanatically loyal to mama and the family. She devoted herself to them and tried to imbue in all of us the same spirit of pride.</p>
             <p>Lu Frazer went with me to look for a room. Lu was an Irish-Canadian girl, with whom I had gone to school. She worked as a stenographer for an insurance firm, and was very popular with all the girls. There was something about her that made nearly all the girls go to her and consulther about this or that, and tell her all about their love affairs.</p>
-            <p>I had formed the habit of going to Lu about all my worries and anxieties over Reggie, and I always found a willing listener and staunch champion. The girls called her the Irish Jew, as she kept a bank account, and whenever the girls were short of money they would borrow from Lu, who would charge them interest. Reggie heartily disliked her, without any just reason. He said:</p>
+            <p>I had formed the habit of going to Lu about all my worries and anxieties over Reggie, and I always found a willing listener and staunch champion. The girls called her the Irish Jew, as she kept a bank account, and whenever the girls were short of money they would borrow from Lu, who would charge them interest. Reggie heartily disliked her, without any just reason.</p>
+       <p>He said:</p>
             <p><q>She belongs to a class that should by right be scrubbing floors, only she got some schooling, so she is tickling the typewriter instead</q>.</p>
             <p>Nevertheless I liked Lu, and in spite of Reggie kept her as my friend, though she knew how he hated her. When I told her about Reggie’s offer to pay for the studio, she said:</p>
             <p><q>Um! Then take as fine a one as you can get, Marion. Soak him good and hard. I hear he pays a great big price for his own rooms at the Windsor</q>.</p>
@@ -218,12 +242,12 @@
             <p>I looked at Lu, and Lu said:</p>
             <p><q>We’ll call again</q>.</p>
             <p><q>Oh</q>, said the woman, <q>if you decide to take the room, I’ll make a reduction</q>.</p>
-            <p>I felt a sort of disgust come over me and, telling her I did not wantthe room, I made for the door, hurrying Lu along.</p>
+            <p>I felt a sort of disgust come over me and, telling her I did not want the room, I made for the door, hurrying Lu along.</p>
             <p>After looking about, we found a back parlor in a French-Canadian family on University Street. The landlady was very polite, and I paid her eight dollars in advance.</p>
             <p>The following day I moved all my things into the <q>studio</q>, as it now, in fact, began to look like, what with all my paintings about and some of papa’s, an easel, palette and painting materials. I covered up the ugly couch with some draperies the Count sent over for me. Poor old fellow, he had sent word to me the very next day to come back, saying he missed his little pupil very much, but at Reggie’s advice, I wrote him that I had taken a studio of my own. He then sent me a lot of draperies and other things, and wrote that he would come to see me very soon.</p>
             <p>I had a sign painted on black japanned tin, with the following inscription:</p>
-            <p>MISS MARION ASCOUGH</p>
-            <p><emph>ARTIST</emph></p>
+            <p>             MISS MARION ASCOUGH</p>
+            <p>              <emph>ARTIST</emph></p>
             <p><emph>Orders taken for all kinds of work</emph>.</p>
             <p>I got the landlady to put it in the front window.</p>
             <p>The studio was all settled, and I stood to survey my work, a delightful feeling of proprietorship coming over me. I breathed a sigh of blessed relief to think I was now free of all home influence, and had a real place all of my own.</p>
@@ -232,7 +256,7 @@
             <p><q>Isn’t she cute?</q></p>
             <p>Then he introduced us. His friend’s name was Davidson.</p>
             <p><q>We were on our way to the Club</q>, said the Colonel, <q>and as we passed your place I saw your sign, and ‘By Gad,’ I said, ‘I believe that is my little friend, Marion.’ Now Mr. Davidson is very much interested in art</q>. He gave a little wink at Mr. Davidson, and then went on, <q>and I think he wants to buy some of your paintings</q>.</p>
-            <p><q>Oh, sit down</q>, I urged. Customers at once! I was excited and happy. I pushed out a big armchair near the fire and Colonel Stevens sat down, and seemed very much at home. Mr. Davidson followed me to where I had a number of little paintings on a shelf. I began to show them to him,pointing out the places, but he scarcely looked at them. Stretching out his hand, he picked up two and said:</p>
+            <p><q>Oh, sit down</q>, I urged. Customers at once! I was excited and happy. I pushed out a big armchair near the fire and Colonel Stevens sat down, and seemed very much at home. Mr. Davidson followed me to where I had a number of little paintings on a shelf. I began to show them to him, pointing out the places, but he scarcely looked at them. Stretching out his hand, he picked up two and said:</p>
             <p><q>I’ll take these. How much am I to give you?</q></p>
             <p><q>Oh, five—</q>I began.</p>
             <p><q>Charge him the full price, Marion</q>, put in the Colonel. <q>He’s a rich dog</q>.</p><pb n="462"/>
@@ -245,7 +269,7 @@
             <p>When Mr. Davidson shook hands with me he pressed my hand so that I could hardly pull it away, and just as they were passing out, who should come up the stairs but Reggie! When he saw Colonel Stevens and Mr. Davidson his face turned perfectly livid, and he glared at them. The minute the door had closed upon them, he turned on me:</p>
             <p><q>What were those men doing here?</q> he demanded harshly.</p>
             <p>My face got hot, and I felt guilty, though of what, I did not know.</p>
-            <p><q>Well? Why don’t you answer me? What was that notorious libertine, Stevens, and that beast, Davidson, doing here?</q> he shouted, and then as still I did not answer him, he yelled: <q>Why don’t you answer me, instead of standing there and staring at me, looking your guilt? God in heaven!Have I been a fool about you? Have you been false to me, then?</q></p>
+            <p><q>Well? Why don’t you answer me? What was that notorious libertine, Stevens, and that beast, Davidson, doing here?</q> he shouted, and then as still I did not answer him, he yelled: <q>Why don’t you answer me, instead of standing there and staring at me, looking your guilt? God in heaven! Have I been a fool about you? Have you been false to me, then?</q></p>
             <p><q>No, Reggie, indeed I haven’t</q>, I said. <q>I didn’t tell you about Ellen and I going out with him because—because—</q></p>
             <p>I thought he must have heard of that ride!</p>
             <p><q>Going out with him! When? Where?</q></p>
@@ -256,8 +280,8 @@
             <p><q>Well, then, what are they doing here if he bought them?</q> demanded Reggie.</p>
             <p><q>He left them here. He said he’d call some other time for them</q>.</p>
             <p><q>Marion, are you a fool, or just a deceitful actress? Can’t you see he does not want your paintings? He gave you that money for expected favors, and, damn it! I believe you know it, too</q>.</p>
-            <p>I went over to Reggie, and somehow, felt older than he. A great pity for him filled my heart. I put my arms around his neck, and although he tried to push me from him, I stuck to him and then suddenly, to my surprise, Reggie began to cry. He had worked himself up to such a stateof excitement that he was almost hysterical. I gathered his head to my breast, and cried with him.</p>
-            <p>In a little while, we were sitting in the big armchair, and I told Reggie all about the visit, and also about that ride of long ago—before I had even met him—that Ellen and I had taken with Colonel Stevens and Mr. Mercier. I think he was ashamed of himself, but was too stubborn toadmit it. Before he left, he made a parcel of those two paintings, and sent them over, with a bill receipted by me, to the St. James Club.</p>
+            <p>I went over to Reggie, and somehow, felt older than he. A great pity for him filled my heart. I put my arms around his neck, and although he tried to push me from him, I stuck to him and then suddenly, to my surprise, Reggie began to cry. He had worked himself up to such a state of excitement that he was almost hysterical. I gathered his head to my breast, and cried with him.</p>
+            <p>In a little while, we were sitting in the big armchair, and I told Reggie all about the visit, and also about that ride of long ago—before I had even met him—that Ellen and I had taken with Colonel Stevens and Mr. Mercier. I think he was ashamed of himself, but was too stubborn to admit it. Before he left, he made a parcel of those two paintings, and sent them over, with a bill receipted by me, to the St. James Club.</p>
     
       
     
@@ -275,7 +299,7 @@
             <p>Reggie came happily into the studio. He was in evening dress, with his rich fur-lined coat thrown open. He sat down on the arm of my chair.</p>
             <p><q>I’m awfully disappointed, darling</q>, he said. <q>I had been looking forward to spending the evening here by the fire with you, but I’m obliged to go with my partners and a party of friends to a dinner they are giving, and I expect to meet that member of Parliament I told you about. If I can break away early, I’ll come back here and say good-night to the sweetest girl in the world. So don’t go home to-night, as we can have a few moments together anyway</q>.</p>
             <p>I was left once more alone. I sat there staring into the fire. Why did Reggie never take me to these dinners? There were always women there. Why was I not introduced to his friends? Why did he leave me more and more alone like this? He was jealous of every man who spoke to me, and yet he left me alone and went to dinners and parties where he did not think I was good enough to go.</p>
-            <p>Someone was rapping on the door, and I called: <q>Come!</q>It was Lu Frazer.</p>
+            <p>Someone was rapping on the door, and I called: <q>Come!</q> It was Lu Frazer.</p>
             <p><q>Why, Marion Ascough, what are you sitting alone in the dark for? Where is the fair one of the golden locks?</q></p>
             <p>Lu was shaking the snow from her clothes, but she stopped suddenly when she saw my face.</p>
             <p><q>What are you crying about?</q></p>
@@ -304,7 +328,7 @@
     </div>
     <div>
     
-            <p>(Marion’s novel experiences in Boston as an artist’s model take up the July chapters.)</p>
+       <fw type="continued" place="center">(Marion’s novel experiences in Boston as an artist’s model take up the July chapters.)</fw>
 
     
          </div>

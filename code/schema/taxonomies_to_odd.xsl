@@ -71,6 +71,18 @@
             </xsl:for-each>
         </xsl:copy>
     </xsl:template>
+    
+    <xsl:template match="elementSpec[@ident='pb']/attList/attDef[@ident='rendition']/valList">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:for-each select="$taxonomies//tagsDecl[@xml:id='wgaRevisionColorSequence']/rendition">
+                <xsl:variable name="ident" select="replace(@xml:id,'_',':')" as="xs:string"/>
+                <valItem mode="add" ident="{$ident}">
+                    <xsl:sequence select="desc"/>
+                </valItem>
+            </xsl:for-each>
+        </xsl:copy>
+    </xsl:template>
 
     
 

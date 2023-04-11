@@ -28,6 +28,8 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.l0063560585">https://hdl.handle.net/2027/uc1.l0063560585</ref>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="bibl:MOSE7"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:44"/>
@@ -41,6 +43,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">encoded Babcock.</change>
          <change who="pers:MC1" when="2020-06-21" status="published">Proofread.</change>

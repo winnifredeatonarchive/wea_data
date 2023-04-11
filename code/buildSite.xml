@@ -10,14 +10,52 @@
         <mkdir dir="${site.dir}"/>
         <mkdir dir="${site.dir}/xml"/>
     </target>
-  
     
-    <target name="copyAuxFiles">
-        <copy todir="${site.dir}" overwrite="true">
-            <fileset dir="../site">
-                <include name="**/**"/>
+    <target name="copyCSS">
+        <!--First, use sass to minify the CSS files
+            (and to prep for sass in future)-->
+        <copy todir="${site.dir}/sass">
+            <fileset dir="../site/sass">
+                <include name="**.scss"/>
             </fileset>
         </copy>
+        <exec executable="sass">
+            <arg line="${site.dir}/sass:${site.dir}/css --style compressed"/>
+        </exec>
+        <!--And copy the fonts-->
+        <copy todir="${site.dir}/fonts">
+            <fileset dir="../site/fonts">
+                <include name="**"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="copyJS">
+        <!--Then already minified javascript
+            is just copied-->
+        <copy todir="${site.dir}/js">
+            <fileset dir="../site/js">
+                <include name="**.min.js"/>
+            </fileset>
+        </copy>
+        
+        <!--Now use the closure compiler-->
+        <apply executable="java" append="false" parallel="false" force="true">
+            <arg line="-jar ${lib.dir}/closure-compiler.jar"/>
+            <arg line="--warning_level QUIET"/>
+            <arg value="--js"/>
+            <srcfile/>
+            <arg value="--js_output_file"/>
+            <targetfile/>
+            <fileset dir="../site">
+                <include name="**/**.js"/>
+                <exclude name="**/**.min.js"/>
+            </fileset>
+            <globmapper from="*" to="${products.dir}/site/*"/>
+        </apply>
+    </target>
+    
+    <target name="copyImages">
         <copy todir="${site.dir}/images">
             <fileset dir="../data/images">
                 <include name="**"/>
@@ -33,6 +71,10 @@
                 <include name="**"/>
             </fileset>
         </copy>
+    </target>
+    
+    
+    <target name="copySchema">
         <copy todir="${site.dir}/xml/sch">
             <fileset dir="../data/sch">
                 <include name="**"/>
@@ -40,8 +82,9 @@
         </copy>
     </target>
     
-    
-    <target name="processPDFs">
+    <target name="copyAuxFiles" depends="copyCSS, copyJS, copyImages, copySchema"/>
+
+    <target name="processPDFs">        
         <foreach target="convertPDF" param="pdf" parallel="true">
             <path>
                 <fileset dir="${site.dir}/facsimiles">
@@ -56,10 +99,10 @@
         <basename property="base" file="${pdf}" suffix=".pdf"/>
         <!--Now create the thumbnails-->
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.jpg --size 10000x600"/>
+            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}.jpg --size x600"/>
         </exec>
         <exec executable="vipsthumbnail">
-            <arg line="${pdf} -o ${site.dir}/facsimiles/${base}_tiny.jpg --size 10000x300"/>
+            <arg line="${site.dir}/facsimiles/${base}.jpg -o ${site.dir}/facsimiles/${base}_tiny.jpg --size x300"/>
         </exec>
         
     </target>
@@ -92,16 +135,22 @@
  
  <target name="createSourceXml">
      <echo message="Creating source XML..."/>
-     <copy todir="${source.xml.dir}" flatten="true">
-         <fileset refid="dataXml"/>
-     </copy>
+     <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  fork="true">
+         <arg value="-xsl:${project.dir}/code/xsl/xml_source_master.xsl"/>
+         <arg value="-it:go"/>
+         <arg value="projectDir=${project.dir}"/>
+         <arg value="outDir=${site.dir}"/>
+         <arg value="docsToBuild=${docsToBuild}"/>
+         <arg value="version=${version}"/>
+         <arg value="--suppressXsltNamespaceCheck:on"/>          
+     </java>
  </target>
     
     
     
   <target name="createOriginalXml">
       <echo message="Creating site..."/>
-      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  fork="true">
           <arg value="-xsl:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xml_original_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
@@ -120,7 +169,7 @@
     
     <target name="createIndex">
         <echo message="Creating index..."/>
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-xsl:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/xml_index_master.xsl"/>
             <arg value="outDir=${site.dir}"/>
@@ -131,7 +180,7 @@
     </target>
     
  <target name="createStandaloneXml">
-     <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" >
+     <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
          <arg value="-xsl:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="-s:${project.dir}/code/xsl/xml_standalone_master.xsl"/>
          <arg value="outDir=${site.dir}"/>
@@ -186,7 +235,7 @@
     
   <target name="createXhtml">
       <echo message="Creating site..."/>
-      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  >
+      <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
           <arg value="-xsl:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="-s:${project.dir}/code/xsl/xhtml_master.xsl"/>
           <arg value="outDir=${site.dir}"/>
@@ -207,23 +256,21 @@
         <echo message="${echo.separator}"/>
         <echo message="Validating XHTML..."/>
         <echo message="${echo.separator}"/>
-        <mkdir dir="${xh.validation.dir}"/>
-        <copy todir="${xh.validation.dir}">
+        <apply executable="java" failonerror="false" parallel="true">
+            <arg line="-jar ${lib.dir}/vnu/vnu.jar 
+                --format gnu
+                --skip-non-html
+                --errors-only
+                -Dnu.validator.client.content-type=application/xhtml+xml"/>
             <fileset dir="${site.dir}">
                 <include name="*.html"/>
             </fileset>
-        </copy>
-        <java jar="${project.dir}/lib/vnu/vnu.jar" failonerror="false" fork="true">
-            <arg value="-Dnu.validator.client.content-type=application/xhtml+xml"/>
-            <arg value="--format text"/>
-            <arg value="--skip-non-html"/>
-            <arg value="${xh.validation.dir}/"/>
-        </java>
-        <delete dir="${xh.validation.dir}"/>
+        </apply>
+       
     </target>
     
     <target name="createDocDetails">
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-xsl:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
             <arg value="-s:${project.dir}/code/xsl/ss_create_doc_info.xsl"/>
             <arg value="outDir=${site.dir}"/>
@@ -256,6 +303,8 @@
     
   
   <target name="quick" depends="copyAuxFiles, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml, createEncodingPackage"/>
+    
+    <target name="fast" depends="createSourceXml, createOriginalXml, createIndex, createStandaloneXml, createXhtml"/>
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     

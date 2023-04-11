@@ -10,20 +10,26 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from the Thomas Fisher Canadiana Collection on the Internet Archive.</note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:290"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
+            <catRef target="wdt:Japan" scheme="wdt:exhibit"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySource"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:SL1" when="2022-05-01" status="empty">Added facsimile and source note.</change>
+         <change who="pers:SL1" when="2022-03-12" status="empty">Added catREF info.</change>
          <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:WooingOfWistaria15">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

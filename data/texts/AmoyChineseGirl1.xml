@@ -60,6 +60,8 @@ Publicly accessible
          <notesStmt>
             <note>Facsimile from Vancouver Public Library</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatAmoy"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:27"/>
@@ -73,13 +75,14 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-13" status="published">added source.</change>
          <change who="pers:MC1" when="2020-07-24" status="published">Encoded illustrator.</change>
          <change who="pers:MC1" when="2019-05-15" status="published">Final edits.</change>
          <change who="pers:SL1" when="2019-05-09" status="readyForProof">Added facsimile; updated div breaks to milestones; readied for proofing and updated status; added illustrator in byline.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl27 using XSLT.</change>
-         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatAmoy. Old filename: Amoy_Chinese_Girl.xml.)</change>
+         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: <idno type="weda">EatAmoy</idno>. Old filename: Amoy_Chinese_Girl.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
          <change when="2007-09">Ethan Gruber, University of Virginia Library: Migration. Converted XML markup from TEI Lite to uva-dl-tei (TEI P4 with local customizations).</change>
          <change when="2005-07">John Ivor Carlson: Corrector. Converted SGML to XML. Fixed tagging.</change>

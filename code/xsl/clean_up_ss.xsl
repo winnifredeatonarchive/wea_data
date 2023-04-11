@@ -120,7 +120,7 @@
     
     <xsl:function name="wea:isStaticSearchScript">
         <xsl:param name="script"/>
-        <xsl:sequence select="matches($script/@src,'(ssSearch|ssInitialize|wea_search|accordion)\.js$')"/>
+        <xsl:sequence select="matches($script/@src,'(ssSearch|ssInitialize|wea_search|accordion)\.js')"/>
     </xsl:function>
     
     

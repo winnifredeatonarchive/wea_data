@@ -275,7 +275,7 @@
     </xd:doc>
     <xsl:function name="wea:getCatDocs" as="element(TEI)*">
         <xsl:param name="id" as="xs:string"/>
-        <xsl:sequence select="$sourceXml//TEI[descendant::catRef[starts-with(@target,concat('wdt:',$id))]]"/>
+        <xsl:sequence select="$sourceXml//TEI[not(@xml:id=('redirects','footer','menu'))][descendant::catRef[starts-with(@target,concat('wdt:',$id))]]"/>
     </xsl:function>
     
 

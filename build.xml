@@ -25,11 +25,11 @@
     
   <target name="checkFacs">
       <mkdir dir="temp"/>
-      <exec executable="ls" dir="${basedir}/data/facsimiles" output="temp/facs.txt"/>
-      <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+      <java classpath="${saxon}" 
+          classname="net.sf.saxon.Transform" 
+          failonerror="true" fork="true">
           <arg value="-xsl:${project.dir}/code/documentation/check_facs.xsl"/>
           <arg value="-it:check"/>
-          <arg value="facsList=${basedir}/temp/facs.txt"/>
           <arg value="--suppressXsltNamespaceCheck:on"/>
       </java>
   </target>
@@ -49,14 +49,13 @@
     
     <target name="createStaticSearch">
         <ant antfile="${ss.codeDir}/build.xml" inheritall="false" >
-        
             <target name="${ss.target}"/>
             <property name="ssConfigFile" value="${basedir}/code/staticSearch/config.xml"/>
         </ant>
     </target>
     
     <target name="cleanUpStaticSearch">
-        <java classpath="${basedir}/lib/saxon9he.jar" classname="net.sf.saxon.Transform" failonerror="true" >
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
             <arg value="-xsl:${project.dir}/code/xsl/clean_up_ss.xsl"/>
             <arg value="-s:${basedir}/products/site/search.html"/>
             <arg value="-o:${basedir}/products/site/search_clean.html"/>
@@ -64,27 +63,24 @@
         </java>
         <move file="${basedir}/products/site/search_clean.html" tofile="${basedir}/products/site/search.html"/>
     </target>
-    
-    <target name="startLocalServer">
-        <exec executable="python" dir="products/site">
-            <arg line="-m SimpleHTTPServer 8080"/>
-        </exec>
-       
+
+    <target name="makeSiteMap">
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
+            <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
+            <arg value="-it:go"/>
+            <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
     </target>
-    
 
     
+    <target name="all" depends="validate, checkFacs, createSite, createDocSite, search, makeSiteMap"/>
+    
 
-    
-    <target name="all" depends="validate, checkFacs, createSite, createDocSite, search"/>
-    
-    <target name="allServer" depends="all, startLocalServer"/>
-    
     <target name="quick">
         <ant antfile="code/buildSite.xml"  target="quick" inheritall="false"/>
     </target>
-    
-  
     
     <target name="justXml">
         <description>target: justXml
@@ -93,6 +89,10 @@
         all XML/XHTML generation and validation.
         </description>
         <ant antfile="code/buildSite.xml" target="justXml" inheritall="false"/>
+    </target>
+    
+    <target name="fast">
+        <ant antfile="code/buildSite.xml" target="fast" inheritall="false"/>
     </target>
     
     <target name="quickWithFacs">
@@ -105,14 +105,10 @@
         <ant antfile="code/buildSite.xml" target="copyAuxFiles" inheritall="false"/>
     </target>
     
-    <target name="makeSiteMap">
-        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true">
-            <arg value="-xsl:${project.dir}/code/xsl/create_google_sitemap.xsl"/>
-            <arg value="-it:go"/>
-            <arg value="outDir=${site.dir}"/>
-            <arg value="docsToBuild=${docsToBuild}"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-        </java>
+    <target name="copyCSS">
+        <ant antfile="code/buildSite.xml" target="copyCSS" inheritall="false"/>
     </target>
+    
+
     
 </project>

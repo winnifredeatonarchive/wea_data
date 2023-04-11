@@ -18,6 +18,10 @@
                <resp>Encoder</resp>
                <name ref="pers:SL1"/>
             </respStmt>
+            <respStmt>
+               <resp>Illustrator</resp>
+               <name ref="pers:CR2">C. Relyea</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -37,6 +41,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:SL1" when="2022-07-17" status="published">Added illustrator to metadata.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
          <change who="pers:MC1" when="2019-05-14" status="published">Made final proofread edits.</change>

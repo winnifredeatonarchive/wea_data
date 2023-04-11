@@ -34,7 +34,8 @@
            <xsl:with-param name="content">
                <body>
                    <head>A-Z Index</head>
-                   <xsl:for-each-group select="$originalXml//TEI" group-by="some $r in //catRef/@target satisfies matches($r,'PrimarySource')">
+                   <xsl:for-each-group select="$originalXml//TEI[not(@xml:id = ('footer','redirects','menu'))]"
+                       group-by="some $r in //catRef/@target satisfies matches($r,'PrimarySource')">
                        <xsl:sort select="current-grouping-key()" order="descending"/>
                        <div>
                           <head>

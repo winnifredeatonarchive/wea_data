@@ -21,7 +21,8 @@
     <xsl:include href="xhtml_modules_module.xsl"/>
     <xsl:include href="xhtml_index_module.xsl"/>
    
-    
+    <xsl:output method="xhtml" 
+        encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0"/>
     
     <xsl:variable name="menu" select="$standaloneXml//TEI[@xml:id='menu']"/>
     <xsl:variable name="footer" select="$standaloneXml//TEI[@xml:id='footer']"/>
@@ -32,19 +33,42 @@
         <xsl:for-each select="wea:getWorkingDocs($standaloneXml)">
             <!--EXCLUDE INDEX FOR NOW, BUT NOT FOR LONG-->
             <xsl:if test="not(//TEI/@xml:id=('menu','footer'))">
-                <xsl:result-document href="{concat($outDir,'/',//TEI/@xml:id)}.html" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+                <xsl:result-document href="{concat($outDir,'/',//TEI/@xml:id)}.html">
                     <xsl:apply-templates select="." mode="tei"/>
                 </xsl:result-document>
             </xsl:if>
         </xsl:for-each>
+        <xsl:call-template name="createRedirects"/>
         <xsl:call-template name="createSiteMap"/>
         <xsl:call-template name="createAjaxFrags"/>
     </xsl:template>
     
+    <!--Template to create redirect pages-->
+    <xsl:template name="createRedirects">
+        <xsl:variable name="redirectsDoc" select="$sourceXml[//TEI[@xml:id='redirects']]//TEI" as="element(TEI)"/>
+        <xsl:for-each select="$redirectsDoc//linkGrp/link">
+            <xsl:variable name="target" select="tokenize(@target)" as="xs:string+"/>
+            <xsl:variable name="old" select="replace($target[1],'^.+:','')"/>
+            <xsl:variable name="new" select="replace($target[2],'^.+:','')"/>
+            <xsl:result-document href="{$outDir || '/' || $old}.html">
+                <xsl:message>Creating redirect page for <xsl:value-of select="$old"/> --> <xsl:value-of select="$new"/></xsl:message>
+                <html>
+                    <head>
+                        <meta http-equiv="refresh" content="0; URL={$new}.html"/>
+                        <title>Redirect: <xsl:value-of select="$old"/></title>
+                    </head>
+                    <body>
+                        <p>This page does not exist. Redirecting to current URL.</p>
+                    </body>
+                </html>
+            </xsl:result-document>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template name="createSiteMap">
-        <xsl:result-document href="{$outDir || '/ajax/sitemap.html'}" method="xhtml" encoding="UTF-8" indent="no" normalization-form="NFC" exclude-result-prefixes="#all" omit-xml-declaration="yes" html-version="5.0">
+        <xsl:result-document href="{$outDir || '/ajax/sitemap.html'}">
             <section>
-                <xsl:for-each-group select="$standaloneXml" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
+                <xsl:for-each-group select="$standaloneXml[not(//TEI[@xml:id = ('menu','footer','redirects')])]" group-by="exists(descendant::catRef[contains(@target,'Primary')])">
                     <xsl:sort select="current-grouping-key()" order="descending"/>
                     <xsl:variable name="isPrimary" select="current-grouping-key()"/>
                     <div>

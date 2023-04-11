@@ -40,8 +40,8 @@
        <xsl:variable name="thisId" select="@xml:id"/>
        <xsl:variable name="ptr" select="'pers:'||$thisId" as="xs:string"/>
        <xsl:variable name="respStmts" 
-           select="$sourceXml//TEI[descendant::respStmt[name[@ref=$ptr]] or descendant::abstract[contains-token(@resp,$ptr)]]" as="element(TEI)*"/>
-       <xsl:variable name="fragRespStmts" select="$sourceXml//tei:*[self::org or self::person or self::place][contains-token(@resp, $ptr)]" as="element()*"/>
+           select="$sourceXml//TEI[not(@xml:id = ('footer','index','redirects','menu'))][descendant::respStmt[name[@ref=$ptr]] or descendant::abstract[contains-token(@resp,$ptr)]]" as="element(TEI)*"/>
+       <xsl:variable name="fragRespStmts" select="$sourceXml//TEI[not(@xml:id = ('footer','index', 'redirects','menu'))]/descendant::tei:*[self::org or self::person or self::place][contains-token(@resp, $ptr)]" as="element()*"/>
        <body>
            <head><xsl:value-of select="persName/reg"/></head>
            <div>

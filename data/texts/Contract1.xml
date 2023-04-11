@@ -24,6 +24,8 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065174">https://hdl.handle.net/2027/uc1.b3065174</ref>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="bibl:MOSE8"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:2"/>
@@ -37,6 +39,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-06-22" status="published">Added foreign tags and added illustrator information.</change>
          <change who="pers:MC1" when="2020-06-21" status="published">Proofread.</change>

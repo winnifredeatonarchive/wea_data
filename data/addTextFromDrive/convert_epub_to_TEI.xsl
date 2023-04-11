@@ -125,7 +125,6 @@
     <xsl:template match="text/body/div" mode="tei">
         <xsl:copy>
             <xsl:apply-templates select="$xhtmlDoc//xh:body" mode="xh"/>
-            <xsl:message>What is XHTML DOC <xsl:copy-of select="$xhtmlDoc"/></xsl:message>
         </xsl:copy>
     </xsl:template>
     

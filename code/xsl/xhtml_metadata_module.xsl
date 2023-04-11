@@ -82,8 +82,7 @@
         
     </xsl:template>
    
-    
-    
+
     
     <xsl:template name="createCreditsAndCitations">
         <xsl:variable name="root" select="ancestor::TEI"/>
@@ -92,6 +91,7 @@
             <summary class="metadataLabel additionalInfoHeader" id="credits_header">Credits and Citations<span class="mi">chevron_right</span></summary>
             <div id="credits_content" class="content">
                 <xsl:apply-templates select="$root//respStmt[not(ancestor::biblFull)]" mode="metadata"/>
+                
                 <xsl:if test="$root//notesStmt[not(ancestor::biblFull)]/note">
                     <div>
                         <div class="metadataLabel">Notes</div>
@@ -104,55 +104,65 @@
                 </xsl:if>
                 
                 <xsl:call-template name="createCitations"/>
+                
+                <xsl:call-template name="createRelatedItems"/>
+                
+                <xsl:apply-templates select="$root//revisionDesc[not(ancestor::biblFull)]" mode="metadata"/>
+                
+                <xsl:call-template name="createXMLVersions"/>
+                
 
-
-                <div id="xmlVersions">
-                    <div class="metadataLabel">Download XML</div>
-                    <xsl:variable name="sourceUri"
-                        select="concat('xml/original/', $currId, '.xml')"/>
-                    <xsl:variable name="originalUri" select="concat('xml/original/',ancestor::TEI/@xml:id,'.xml')"/>
-                    <xsl:variable name="standaloneUri" 
-                        select="concat('xml/standalone/', $currId ,'.xml')"/>
-                    
-                    <xsl:variable name="thisSourcePath" select="$dataListLines[matches(.,('/' || $currId || '.xml$'))]" as="xs:string?"/>
-                    
-                    <xsl:variable name="sourceSize" select="wea:getFileSize($sourceUri)"/>
-                    <xsl:variable name="originalSize" select="wea:getFileSize($originalUri)"/>
-                    <xsl:variable name="standaloneSize" select="wea:getFileSize($standaloneUri)"/>
-                    
-                    <xsl:variable name="tempList">
-                        <tei:list>
-                            <xsl:if test="exists($sourceUri)">
-                                <tei:item>
-                                    <tei:ref target="{$sourceUri}">Source XML</tei:ref>
-                                    <xsl:if test="not(empty($sourceSize))">
-                                        <xsl:value-of select="' (' || $sourceSize || ')'"/>
-                                    </xsl:if>
-                                    <xsl:text> [</xsl:text><tei:ref target="https://github.com/winnifredeatonarchive/wea_data/blob/{$sha}{$thisSourcePath}">View on Github</tei:ref><xsl:text>]</xsl:text>
-                                </tei:item>
-                            </xsl:if>
-                            <tei:item>
-                                <tei:ref target="{$originalUri}">Original XML</tei:ref>
-                                <xsl:if test="not(empty($originalSize))">
-                                    <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
-                                </xsl:if>
-                            </tei:item>
-                            <tei:item>
-                                <tei:ref target="{$standaloneUri}">Standalone XML</tei:ref>
-                                <xsl:if test="not(empty($originalSize))">
-                                    <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
-                                </xsl:if>
-                            </tei:item>
-                        </tei:list>
-                    </xsl:variable>
-                    <div>
-                        <xsl:apply-templates select="$tempList" mode="tei"/>
-                        <div data-el="p">See the <a href="about.html#about_openSourceCode">About</a> page for information about these XML versions.</div>
-                    </div>
-                </div>
             </div>
             
         </details>
+    </xsl:template>
+    
+    <xsl:template name="createXMLVersions">
+        <xsl:variable name="currId" select="root(.)//TEI/@xml:id" as="xs:string"/>
+        <div id="xmlVersions">
+            <div class="metadataLabel">Download XML</div>
+            <xsl:variable name="sourceUri"
+                select="concat('xml/original/', $currId, '.xml')"/>
+            <xsl:variable name="originalUri" select="concat('xml/original/',$currId,'.xml')"/>
+            <xsl:variable name="standaloneUri" 
+                select="concat('xml/standalone/', $currId ,'.xml')"/>
+            
+            <xsl:variable name="thisSourcePath" select="$dataListLines[matches(.,('/' || $currId || '.xml$'))]" as="xs:string?"/>
+            
+            <xsl:variable name="sourceSize" select="wea:getFileSize($sourceUri)"/>
+            <xsl:variable name="originalSize" select="wea:getFileSize($originalUri)"/>
+            <xsl:variable name="standaloneSize" select="wea:getFileSize($standaloneUri)"/>
+            
+            <xsl:variable name="tempList">
+                <tei:list>
+                    <xsl:if test="exists($sourceUri)">
+                        <tei:item>
+                            <tei:ref target="{$sourceUri}">Source XML</tei:ref>
+                            <xsl:if test="not(empty($sourceSize))">
+                                <xsl:value-of select="' (' || $sourceSize || ')'"/>
+                            </xsl:if>
+                            <xsl:text> [</xsl:text><tei:ref target="https://github.com/winnifredeatonarchive/wea_data/blob/{$sha}{$thisSourcePath}">View on Github</tei:ref><xsl:text>]</xsl:text>
+                        </tei:item>
+                    </xsl:if>
+                    <tei:item>
+                        <tei:ref target="{$originalUri}">Original XML</tei:ref>
+                        <xsl:if test="not(empty($originalSize))">
+                            <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
+                        </xsl:if>
+                    </tei:item>
+                    <tei:item>
+                        <tei:ref target="{$standaloneUri}">Standalone XML</tei:ref>
+                        <xsl:if test="not(empty($originalSize))">
+                            <xsl:text> (</xsl:text><xsl:value-of select="$originalSize"/><xsl:text>)</xsl:text>
+                        </xsl:if>
+                    </tei:item>
+                </tei:list>
+            </xsl:variable>
+            <div>
+                <xsl:apply-templates select="$tempList" mode="tei"/>
+                <div data-el="p">See the <a href="about.html#about_openSourceCode">About</a> page for information about these XML versions.</div>
+            </div>
+        </div>
     </xsl:template>
     
     
@@ -172,6 +182,53 @@
         </div>
     </xsl:template>
     
+    
+    <xsl:template name="createRelatedItems">
+        <xsl:for-each-group select="root(.)//notesStmt/relatedItem" group-by="@type">
+            <xsl:sort select="current-grouping-key()" order="descending"/>
+            <div id="relatedItems_{current-grouping-key()}">
+                <div class="metadataLabel">
+                    <xsl:choose>
+                        <xsl:when test="current-grouping-key() = 'bibliography'">Cited In</xsl:when>
+                        <xsl:when test="current-grouping-key() = 'edition'">Other Editions</xsl:when>
+                        <xsl:otherwise>
+                            <xsl:message terminate="yes">
+                                UNKNOWN relatedItem/@type = <xsl:value-of select="current-grouping-key()"/>
+                            </xsl:message>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </div>
+                <!--Sort these reverse chronological, and fetch the bibl first-->
+                <xsl:for-each select="current-group() ! wea:getBiblFromRelatedItem(.)">
+                    <xsl:sort select="if (date) then tokenize(date/@when,'-')[1] => xs:integer() else 0" order="descending"/>
+                    <xsl:apply-templates select="." mode="tei"/>
+                </xsl:for-each>
+            </div>
+        </xsl:for-each-group>
+    </xsl:template>
+    
+    
+    <xsl:function name="wea:getBiblFromRelatedItem" as="element(tei:bibl)">
+        <xsl:param name="relatedItem" as="element(relatedItem)"/>
+        <xsl:variable name="targ" select="$relatedItem/@target" as="xs:string"/>
+        <xsl:choose>
+            <xsl:when test="starts-with($targ,'#')">
+                <xsl:variable name="targId" select="substring-after($targ,'#')" as="xs:string"/>
+                <xsl:variable name="bibl" select="$relatedItem/ancestor::TEI/descendant::bibl[@xml:id = $targId]" as="element(tei:bibl)"/>
+                <xsl:sequence select="$bibl"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="bibl" as="element(tei:bibl)">
+                    <tei:bibl>
+                        <tei:ref target="{$targ}"><xsl:value-of select="$targ"/></tei:ref>
+                    </tei:bibl>
+                </xsl:variable>
+                <xsl:sequence select="$bibl"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    
     <xsl:template match="biblFull" mode="citation"/>
     
     
@@ -185,7 +242,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template name="createRelatedItems">
+<!--    <xsl:template name="createRelatedItems">
         <xsl:if test="ancestor::TEI//relatedItem">
             <details id="relatedItems" class="additionalInfo expandable">
                 <summary class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></summary>
@@ -193,7 +250,7 @@
                     <xsl:for-each select="ancestor::TEI//relatedItem">
                         <xsl:variable name="targ" select="@target"/>
                         <xsl:choose>
-                            <!--This is a media thing-->
+                            <!-\-This is a media thing-\->
                             <xsl:when test="matches($targ,'^media.xml#')">
                                 <xsl:variable name="thisObject" select="$standaloneXml[/TEI/@xml:id='media']//figure[@xml:id=substring-after($targ,'#')]"/>
                                 <xsl:call-template name="makeRelatedItemBox">
@@ -203,7 +260,7 @@
                                     <xsl:with-param name="imgAlt" select="$thisObject/figDesc"/>
                                 </xsl:call-template>
                             </xsl:when>
-                            <!--This is a document-->
+                            <!-\-This is a document-\->
                             <xsl:when test="matches($targ,'^.+\.xml$') and $standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]">
                                 <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]"/>
                                 <xsl:call-template name="makeRelatedItemBox">
@@ -233,7 +290,7 @@
                     <img src="{$imgSrc}" alt="{normalize-space(string-join($imgAlt,''))}"/>
                 </figure>
         </div>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="figure" mode="metadata">
         <div>
@@ -376,6 +433,8 @@
             <div><a href="{wea:resolveTarget(.)}"><xsl:apply-templates select="wea:getTitle(substring-before(.,'.xml'))" mode="tei"/></a></div>
         </div>
     </xsl:template>
+    
+    
     
     <xsl:template match="catRef" mode="metadata">
         <xsl:variable name="target" select="@target"/>
@@ -603,8 +662,27 @@
     
     
     
-    <xsl:template match="titleStmt/title | revisionDesc | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
+    <xsl:template match="titleStmt/title | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
     
+    <xsl:template match="revisionDesc" mode="metadata">
+        <xsl:variable name="currStatus" select="@status" as="xs:string"/>
+        <xsl:variable name="statusLabel">
+            <xsl:choose>
+                <xsl:when test="$currStatus = 'empty'">Empty</xsl:when>
+                <xsl:when test="$currStatus = 'inProgress'">In Progress</xsl:when>
+                <xsl:when test="$currStatus= 'readyForProof'">Ready for Proof</xsl:when>
+                <xsl:when test="$currStatus = 'published'">Published</xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="whenChanged" select="change[@status = $currStatus][last()]/@when" as="xs:string"/>
+        <div>
+            <div class="metadataLabel">Document Status</div>
+            <div>
+                <xsl:value-of select="$statusLabel"/> (<xsl:value-of select="wea:dateString($whenChanged)"/>)
+            </div>
+        </div>
+        
+    </xsl:template>
     <xsl:template match="respStmt" mode="metadata">
         <div>
             <xsl:call-template name="processAtts"/>
@@ -637,10 +715,11 @@
     
     
     <xsl:template name="createToolbar">
-        <xsl:if test="not(ancestor::TEI/descendant::gap[@reason='noTranscriptionAvailable']) and wea:isObject(ancestor::TEI)">
+        <xsl:variable name="doc" select="ancestor::TEI" as="element(TEI)"/>
+        <xsl:if test="wea:hasTranscription($doc) and wea:isObject($doc)">
             <div id="tools_container">
                 <div id="tools">
-                    <xsl:if test="ancestor::TEI/descendant::text[descendant::div[head]]">
+                    <xsl:if test="$doc/descendant::text[descendant::div[head]]">
                         <div id="tools_toc" title="Table of Contents">
                             <a class="toolbar_item" href="#toc_content">
                                 <div class="mi">list</div>
@@ -687,6 +766,13 @@
                         <a class="toolbar_item" href="#{ancestor::TEI/@xml:id}_citation_MLA">
                             <div class="mi">bookmark</div>
                             <div class="label">Cite</div>  
+                        </a>
+                    </div>
+                    
+                    <div id="tools_info">
+                        <a class="toolbar_item" href="#credits_content">
+                            <div class="mi">info</div>
+                            <div class="label">Metadata</div>
                         </a>
                     </div>
           

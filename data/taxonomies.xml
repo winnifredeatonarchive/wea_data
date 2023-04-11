@@ -20,12 +20,40 @@
          </sourceDesc>
       </fileDesc>
       <profileDesc>
-         
          <textClass>
             <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
          </textClass>
       </profileDesc>
       <encodingDesc>
+         <tagsDecl xml:id="wgaRevisionColorSequence">
+            <rendition xml:id="pgcolour_white">
+               <desc>White page (default)</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_blue">
+               <desc>Blue page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_pink">
+               <desc>Pink page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_yellow">
+               <desc>Yellow page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_green">
+               <desc>Green page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_goldenrod">
+               <desc>Goldenrod page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_buff">
+               <desc>Buff page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_salmon">
+               <desc>Salmon page</desc>
+            </rendition>
+            <rendition xml:id="pgcolour_cherry">
+               <desc>Cherry page</desc>
+            </rendition>
+         </tagsDecl>
          <editorialDecl>
             <normalization>
                <p>There has been no normalization.</p>
@@ -111,6 +139,17 @@
                      <category xml:id="genreNFEthnography">
                         <catDesc><term>Non-fiction: Ethnography</term></catDesc>
                      </category>
+                     <category xml:id="genreNFMiscellany">
+                        <catDesc>
+                           <term>Miscellany</term>
+                        </catDesc>
+                        <category xml:id="genreNFMiscellanyBlurb">
+                           <catDesc>
+                              <term>Miscellany: Blurb</term>
+                              <!--Used for blurbs and excerpted materials-->
+                           </catDesc>
+                        </category>
+                     </category>
                   </category>
                   <category xml:id="genreFilm">
                      <catDesc><term>Film</term></catDesc>
@@ -133,6 +172,8 @@
                         <catDesc><term>Novel: Serial</term></catDesc>
                      </category>
                   </category>
+                  
+                  
                </taxonomy>
                
                
@@ -152,6 +193,7 @@
                     <catDesc>Object: Poster</catDesc>
                  </category>
               </taxonomy>-->
+               
                
                <taxonomy xml:id="exhibit">
                   <bibl>Exhibit</bibl>
@@ -202,11 +244,15 @@
             <prefixDef ident="media" matchPattern="(.+)" replacementPattern="media/$1"/>
             <prefixDef ident="fig" matchPattern="(.+)" replacementPattern="media.xml#$1"/>
             <prefixDef ident="org" matchPattern="(.+)" replacementPattern="organizations.xml#$1"/>
-            <prefixDef ident="bibl" matchPattern="(.+)" replacementPattern="bibliography.xml#bibl$1"/>
+            <prefixDef ident="bibl" matchPattern="^(\d+)$" replacementPattern="bibliography.xml#bibl$1"/>
+            <prefixDef ident="bibl" matchPattern="^([A-Z]{4}\d+)$" replacementPattern="bibliography.xml#$1"/>
             <prefixDef ident="img" matchPattern="(.+)" replacementPattern="images/$1"/>
             <prefixDef ident="cite" matchPattern="(.+)" replacementPattern="bibliography.xml#$1"/>
-            
+            <prefixDef ident="pgcolour" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
+            <prefixDef ident="weda" matchPattern="(.+)"
+               replacementPattern="https://xtf.lib.virginia.edu/xtf/view?docId=modern_english/uvaGenText/tei/$1.xml"/>
          </listPrefixDef>
+         
       </encodingDesc>
       <revisionDesc status="published">
          <change when="2020-08-14" who="pers:MC1" status="published">added more re racial slurs</change>

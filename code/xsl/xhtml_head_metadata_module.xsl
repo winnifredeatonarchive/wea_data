@@ -32,34 +32,16 @@
                     <xsl:call-template name="createStaticSearchMetadata"/>
                 </xsl:otherwise>
             </xsl:choose>
-            <link rel="stylesheet" type="text/css" href="css/wea.css"/>
-            <link rel="stylesheet" type="text/css" href="css/media.css"/>
-            <link rel="stylesheet" type="text/css" media="print" href="css/print.css"/>
+            <link rel="stylesheet" type="text/css" href="css/wea.css?v={normalize-space($version)}"/>
+            <link rel="stylesheet" type="text/css" href="css/media.css?v={normalize-space($version)}"/>
+            <link rel="stylesheet" type="text/css" media="print" href="css/print.css?v={normalize-space($version)}"/>
             <xsl:if test="@xml:id='index'">
-                <link rel="stylesheet" type="text/css" href="css/index.css"/>
+                <!--Special meta to make the twitter widget work-->
+                <meta name="twitter:widgets:csp" content="on"/>
+                <link rel="stylesheet" type="text/css" href="css/index.css?v={normalize-space($version)}"/>
                 <link rel="preload" as="image" href="images/WEA-hero-img.jpg"/>
             </xsl:if>
-<!--            <xsl:if test="@xml:id = 'pseudonyms'">
-                <link rel="stylesheet" type="text/css" href="js/timeline3/css/timeline.css"/>
-            </xsl:if>-->
             <link rel="icon" type="image/png" href="images/icon.png"/>
-            <script src="js/wea.js"/>
-            <script src="js/lazyload.min.js"/>
-            <xsl:if test="//graphic[contains(@url,'media/')]">
-                <script src="js/facsimile_view.js"></script>
-            </xsl:if>
-            <xsl:if test="@xml:id='index'">
-                <script src="js/index.js"></script>
-            </xsl:if>
-            <xsl:if test="@xml:id = 'contribute'">
-                <script src="js/jszip.min.js"/>
-                <script src="js/encoding_package.js"></script>
-            </xsl:if>
-<!--            <xsl:if test="@xml:id ='pseudonyms'">
-                <script src="js/timeline3/js/timeline.js"><!-\-Keep open-\-></script>
-                <script src="js/timeline.js"><!-\-Keep open-\-></script>
-            </xsl:if>
-            -->
 
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
    
@@ -102,7 +84,11 @@
             <xsl:variable name="thisCat" select="$thisTax/descendant::category[@xml:id=$refId]" as="element(category)"/>
             <!--Exclude primary source from being its own category in the SS search-->
             <xsl:if test="not($refId = 'docPrimarySource')">
-                <meta name="{$thisTax/bibl}" class="staticSearch_desc" data-link="{$refId}.html" content="{$thisCat/catDesc/term}"/>
+                <meta name="{$thisTax/bibl}" class="staticSearch_desc" data-link="{$refId}.html" content="{$thisCat/catDesc/term}">
+                    <xsl:if test="$thisCat/@n">
+                        <xsl:attribute name="data-ssfiltersortkey" select="$thisCat/@n"/>
+                    </xsl:if>
+                </meta>
             </xsl:if>
         </xsl:for-each>
         

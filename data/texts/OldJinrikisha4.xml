@@ -68,6 +68,8 @@ Publicly accessible
          <notesStmt>
             <note>Facsimile from Library of Congress.</note>
             <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatJinr"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:177"/>
@@ -81,6 +83,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-08-02" status="published">Proofed code.</change>
          <change who="pers:MC1" when="2020-07-31" status="published">improved title spacing.</change>
@@ -89,7 +92,7 @@ Publicly accessible
          <change who="pers:MC1" when="2019-07-03" status="published">proofed.</change>
          <change who="pers:SL1" when="2019-06-28" status="readyForProof">Added catRef and facs; readied for proof.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl177 using XSLT.</change>
-         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: EatJinr. Old filename: Old_Jinrikisha.xml.)</change>
+         <change when="2019-03-01">Joey Takeda: Converted document from P4 (old <att>xml:id</att>: <idno type="weda">EatJinr</idno>. Old filename: Old_Jinrikisha.xml.)</change>
          <change when="2008-01">Greg Murray, University of Virginia Library: Migration. Programmatically updated TEI header markup (but not header content) for minimal compliance with current QA requirements.</change>
          <change when="2007-09">Ethan Gruber, University of Virginia Library: Migration. Converted XML markup from TEI Lite to uva-dl-tei (TEI P4 with local customizations).</change>
          <change when="2005-07">John Ivor Carlson: Corrector. Converted SGML to XML. Fixed tagging.</change>
@@ -184,8 +187,7 @@ file and added TEI header.</change>
             
             
          </div>
-
-<note>To be continued.</note>
+         <fw type="continued" place="center">To be continued.</fw>
          
       </body>
    </text>

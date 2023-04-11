@@ -162,12 +162,12 @@ background-position: center;
 
 /********************************************************** INDEX ARCHIVE */
 
-#index_archive{
+#mainBody #index_archive{
     flex: 0 0 20rem;
     max-width: 20rem;
     z-index: 99;
     position: relative;
-    margin-top:-20rem;
+    margin-top:-11.5rem;
     
 }
 
@@ -177,6 +177,7 @@ background-position: center;
     align-items: center;
     background-color: var(--wea-info-bg-color);
     border-radius:1rem;
+    margin-top: -2.5rem;    
 }
 
 #index_archive li{
@@ -469,8 +470,8 @@ body.JS #index_featuredItems > a.selected,
 
 
 @media screen and (max-width: 1024px){
-#index_archive{
-    margin-top:2rem;
+#mainBody #index_archive{
+    margin-top:4.25rem;
     margin-left:0;
     max-width: 15rem;
 }

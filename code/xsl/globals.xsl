@@ -11,6 +11,7 @@
     version="3.0">
     
     <xsl:param name="verbose">false</xsl:param>
+    <xsl:param name="projectDir"/>
     <xsl:param name="docsToBuild"/>
     <xsl:param name="outDir"/>
     <xsl:param name="version"/>
@@ -29,6 +30,7 @@
     
     <!--NOTE TO SELF: These collections should be written without the trailing //TEI
          as per the Saxon spec: https://www.saxonica.com/html/documentation/sourcedocs/collections.html-->
+    <xsl:variable name="srcXml" select="collection($projectDir || '/data?select=*.xml;recurse=yes')" as="document-node()+"/>
     
     <xsl:variable name="sourceXml" select="collection(concat($sourceDir,'?select=*.xml&amp;recurse=no'))"/>
     
@@ -36,7 +38,7 @@
     
     <xsl:variable name="standaloneXml" select="collection(concat($standaloneXmlDir,'?select=*.xml&amp;recurse=no'))"/>
     
-    <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')"/>
+    <xsl:variable name="xhtmlDocs" select="collection($outDir || '?select=*.html;recurse=no')[not(descendant::*:meta[@http-equiv='refresh'])]"/>
     
     <xsl:variable name="srcPersonography" select="$sourceXml//TEI[@xml:id='people']" as="element(TEI)"/>
     
@@ -62,7 +64,7 @@
     <xsl:variable name="siteUrl" select="'https://winnifredeatonarchive.org'"/>
     
     <xsl:variable name="sha" as="xs:string">
-        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/master') =>  json-to-xml()"/>
+        <xsl:variable name="jsonXml" select="unparsed-text('https://api.github.com/repos/winnifredeatonarchive/wea_data/commits/main') =>  json-to-xml()"/>
         <xsl:sequence select="$jsonXml/map:map/map:string[@key='sha']/xs:string(.)"/>
     </xsl:variable>
    
@@ -374,6 +376,28 @@
             <xsl:when test="count($tokens) = 1">
                 <xsl:sequence select="xs:date($date || '-01-01')"/>
             </xsl:when>
+        </xsl:choose>
+    </xsl:function>
+    
+    <xd:doc>
+        <xd:desc>Function to retrieve word count of a particular node;
+        this is a fairly rushed implementation that could likely be optimized.</xd:desc>
+    </xd:doc>
+    <xsl:function name="wea:getWordCount" as="xs:integer">
+        <xsl:param name="node" as="node()"/>
+        <xsl:choose>
+            <!--If there's a gap, then just skip the thing-->
+            <xsl:when test="$node[descendant::tei:gap[@reason='noTranscriptionAvailable']]">
+                <xsl:sequence select="0"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <!--Retrieve all relevant text nodes-->
+                <xsl:variable name="text" select="$node/descendant::text()[not(ancestor-or-self::tei:note[@type='editorial'] or ancestor-or-self::tei:corr)][matches(.,'\S')]" as="text()*"/>
+                
+                <!--Count them up by analyze the string, finding all matches for non-space characters, and then counting them-->
+                <xsl:variable name="wc" select="count(analyze-string(string-join($text),'\S+')//*:match)" as="xs:integer"/>
+                <xsl:sequence select="$wc"/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
     

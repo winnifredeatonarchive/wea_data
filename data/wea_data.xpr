@@ -11623,6 +11623,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                         <field name="validationSchema">
                                                             <null/>
                                                         </field>
+                                                        <field name="validationAdvancedSettings">
+                                                            <null/>
+                                                        </field>
                                                     </validationUnit>
                                                     <validationUnit>
                                                         <field name="validationType">
@@ -11652,6 +11655,9 @@ oxy:current-selected-element()[ancestor-or-self::*:th][namespace-uri()= 'http://
                                                             <null/>
                                                         </field>
                                                         <field name="validationSchema">
+                                                            <null/>
+                                                        </field>
+                                                        <field name="validationAdvancedSettings">
                                                             <null/>
                                                         </field>
                                                     </validationUnit>
@@ -15724,6 +15730,9 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                         <field name="validationSchema">
                                                             <null/>
                                                         </field>
+                                                        <field name="validationAdvancedSettings">
+                                                            <null/>
+                                                        </field>
                                                     </validationUnit>
                                                 </list>
                                             </field>
@@ -15811,6 +15820,26 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>addTextFromDrive.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>ANT - Copy</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>ANT</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>addTextsFromBibl.html</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -15841,26 +15870,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>addTextFromDrive.xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>ANT - Copy</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>ANT</String>
                                     </list>
                                 </field>
                                 <field name="scenarioStorageLocations">
@@ -16386,9 +16395,6 @@ oxy:current-selected-element()[ancestor-or-self::*:cell]</String>
                                                 </field>
                                                 <field name="expandAttributeDefaults">
                                                     <Boolean>false</Boolean>
-                                                </field>
-                                                <field name="errorRecoverPolicy">
-                                                    <String>saxon.recover.with.warning</String>
                                                 </field>
                                                 <field name="stripWS">
                                                     <String>saxon.strip.ws.none</String>

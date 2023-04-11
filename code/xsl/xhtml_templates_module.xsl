@@ -81,14 +81,27 @@
             </xsl:if>
 
            <xsl:call-template name="createFooter"/>
-            <script src="js/accordion.js"><!--Keep open--></script>
+
+            <script src="js/lazyload.min.js"/>
+            <xsl:if test="//graphic[contains(@url,'media/')]">
+                <script src="js/facsimile_view.js?v={normalize-space($version)}"></script>
+            </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id='index'">
+                <script src="js/index.js?v={normalize-space($version)}"></script>
+            </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id = 'contribute'">
+                <script src="js/jszip.min.js"/>
+                <script src="js/encoding_package.js?v={normalize-space($version)}"></script>
+            </xsl:if>
+            <script src="js/accordion.js?v={normalize-space($version)}"><!--Keep open--></script>
+            <script src="js/wea.js?v={normalize-space($version)}"/>
         </body>
     </xsl:template>
     
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw" mode="tei">
+    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher | noteGrp" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -244,10 +257,6 @@
   
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
-           <xsl:call-template name="processAtts">
-               <xsl:with-param name="classes">showTitle</xsl:with-param>
-           </xsl:call-template>
-            <xsl:attribute name="title">This is an authorial note.</xsl:attribute>
             <xsl:apply-templates mode="#current"/>
         </span>
     </xsl:template>
@@ -593,13 +602,22 @@
     <xsl:template match="graphic/desc" mode="tei"/>
     
     
-    <xsl:template match="gap[@reason='noTranscriptionAvailable']" mode="tei">
+    <xsl:template match="gap[@reason=('noTranscriptionAvailable','readyForProof','inProgress')]" mode="tei">
         <xsl:variable name="subject">WEA: <xsl:value-of select="ancestor::TEI/teiHeader/fileDesc/titleStmt/title[1]"/> (<xsl:value-of select="ancestor::TEI/@xml:id"/>)</xsl:variable>
         <xsl:variable name="temp" as="element(tei:div)">
             <tei:div type="noTranscriptionAvailable">
-                <tei:head>No Transcription Available</tei:head>
-                <tei:div>There is no transcription available yet for this item. If you would like to contribute a transcription,
-                please contact the <tei:ref target="mailto:mchapman@ubc.ca?subject={encode-for-uri($subject)}">Project Director</tei:ref>.</tei:div>
+
+                <xsl:choose>
+                    <xsl:when test="@reason = 'noTranscriptionAvailable'">
+                        <tei:head>No Transcription Available</tei:head>
+                        <tei:div>There is no transcription available yet for this item. If you would like to contribute a transcription,
+                            please contact the <tei:ref target="mailto:mchapman@ubc.ca?subject={encode-for-uri($subject)}">Project Director</tei:ref>.</tei:div>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <tei:head>Transcription Forthcoming</tei:head>
+                        <tei:div>The transcription for this text is currently in progress.</tei:div>
+                    </xsl:otherwise>
+                </xsl:choose>
             </tei:div>
         </xsl:variable>
         <xsl:apply-templates select="$temp" mode="#current"/>
@@ -637,10 +655,27 @@
     
     
     <xsl:template match="ref" mode="tei">
-        <a href="{wea:resolveTarget(@target)}">
+        <xsl:variable name="resolved" select="wea:resolveTarget(@target)" as="xs:string"/>
+        <a href="{$resolved}">
+            <xsl:if test="matches($resolved, 'https?') and not(contains($resolved,'winnifredeatonarchive.org'))">
+                <xsl:attribute name="target">_blank</xsl:attribute>
+                <xsl:attribute name="rel">noopener noreferrer</xsl:attribute>
+            </xsl:if>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </a>
+    </xsl:template>
+    
+    <xsl:template match="text()[ancestor::ref][contains(.,'/')]" mode="tei">
+        <xsl:analyze-string select="." regex="/+">
+            <xsl:matching-substring>
+                <xsl:value-of select="."/>
+                <wbr/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
     
     <xsl:template match="ptr[@type='readMore']" mode="tei">
@@ -828,6 +863,15 @@
     </xsl:template>
     
     
+    <xsl:template match="divGen[@xml:id='index_twitter']" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <a data-tweet-limit="2" data-dnt="true"
+                class="twitter-timeline" href="https://twitter.com/WEatonArchive?ref_src=twsrc%5Etfw">Tweets by the WEA</a>
+            <script async="async" defer="defer" src="https://platform.twitter.com/widgets.js"><!--KEEP OPEN--></script>
+        </div>
+
+    </xsl:template>
 
     
     <xsl:template match="divGen[@type='searchBox']" mode="tei">

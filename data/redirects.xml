@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="redirects">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Redirects</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:docType" target="wdt:docBornDigital"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:MC1" when="2022-02-27" status="published">Created file.</change>
+      </revisionDesc>
+   </teiHeader>
+  <text>
+      <body>
+         <p>This file lists all of the redirects for the site; these are ids that are no longer available,
+            but were in a previous release. To add a redirect, add a new link element with the OLD id as the first value,
+         and the NEW id as the second.</p>
+         <linkGrp>
+            <link target="doc:BooksLiteraryNotes1 doc:BooksLiteraryNotesWharton1"/>
+            <link target="doc:LondonTown1 doc:rescinded"/>
+            <link target="doc:ToPoets1 doc:rescinded"/>
+            <link target="doc:LondonTown doc:rescinded"/>
+            <link target="doc:ToPoets doc:rescinded"/>
+         </linkGrp>
+      </body>
+  </text>
+</TEI>

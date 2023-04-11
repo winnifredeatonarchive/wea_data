@@ -24,6 +24,8 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from University of Iowa via Google Books</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="bibl:MOSE13"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:21"/>
@@ -37,6 +39,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:DC1" when="2020-08-06" status="published">Encoded formework</change>
          <change who="pers:MC1" when="2020-08-05" status="published">Added illustrator.</change>

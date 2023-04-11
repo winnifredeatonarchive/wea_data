@@ -5,11 +5,14 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Movie Madness [Part Four]</title>
+            <title>Movie Madness [Second Instalment]</title>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:97"/>
          </sourceDesc>
@@ -22,11 +25,15 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2020-07-31">Changed instalment.</change><change who="pers:MC1" status="empty"  when="2020-05-23">Changed genre.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl97 using XSLT.</change>
+         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+         <change who="pers:SL1" status="empty" when="2022-04-28">Added catRef genre and exhibit. Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">Changed instalment.</change>
+         <change who="pers:MC1" status="empty" when="2020-05-23">Changed genre.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl97 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:MovieMadness4" next="doc:MovieMadness5">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

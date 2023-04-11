@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Sunny-San [Part 4]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -19,26 +31,714 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
             <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:SB2" status="empty"  when="2020-08-15">Added brief notes statement.</change>
-         <change who="pers:SB2" status="empty"  when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">fixed title spacing.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-31">Changed title again.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">Changed title.</change><change who="pers:MC1" status="empty"  when="2020-06-30">Added next instalment.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl130 using XSLT.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2022-06-08" status="published">Encoded and proofed. Set to published</change>
+         <change who="pers:LW1" when="2022-06-08" status="inProgress">Downloaded document from
+            Google Drive and converted to TEI.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
+            statement.</change>
+         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">fixed title spacing.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-31">Changed title again.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">Changed title.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added next instalment.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
+            exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography
+            entry bibl130 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Sunny-San5"
-      prev="doc:SunnySan5"
-      next="doc:SunnySan6">
+   <text facs="facs:Sunny-San5" prev="doc:SunnySan5" next="doc:SunnySan6">
+      <pb n="569"/>
       <body>
+         <head>Sunny-San</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+            <byline><emph>Illustrated by <name ref="pers:AF2">Arthur Ferrier</name></emph></byline>
+         </opener>
+         <div type="paratext">
+            <head>Prologue</head>
+            <p>It was the night of the Festival of the Full Moon, but Hirata, the proprietor of the
+               House of a Thousand Joys, was infuriated, for was not Madame Mary Smiles, the famous
+               dancer, lying dead among her robes? At her feet knelt her child, crushed and hurt by
+               a grief that nothing could assuage, and it was for the sake of her mother’s honour
+               that presently she stood a-tiptoe on the tight-rope, laughing at the sea of faces
+               round her and throwing her kisses right and left. So charming was she that the Lord
+               of Negato, amorous for this lovely child, tossed her a jewel and a handful of coin,
+               which she cleverly caught on her fan but, acting under a sudden impish impulse, she
+               suddenly threw them in her admirer’s face and, jumping to the ground, vanished into
+               the tea-house.</p>
+            <p>A party of English students visiting Japan had witnessed this scene and, learning
+               that she was to be punished for her slight to the Japanese nobleman, they made a
+               sudden raid on the tea-house and carried off the girl before Hirata’s lash could fall
+               a second time upon her shoulders.</p>
+            <p>These four students and their tutor then decided to adopt Sunny-san, the dancer’s
+               child, whose father was a white man. They formed a syndicate, and together raised
+               sufficient money to provide for Sunny during her lifetime.</p>
+            <p>Soon a time came when the Englishmen had to return to their own country, and they
+               regretfully departed, leaving Sunny in charge of a missionary. She begged them to
+               take her with them, but the hardest moment came when she said good-bye to Jerry
+               Hammond, who had been her faithful champion from the first. However, the ship
+               carrying the Englishmen sailed away, and left a sorrowful Sunny languishing in
+               Nagasaki.</p>
+            <p>As time went on, Sunny’s friends across the sea reached a period where they thought
+               of her as a charming and amusing episode of an idyllic summer in Japan. One bleak
+               March day, Jerry was surprised to learn, on the telephone, that Sunny-san was in
+               London and waiting instructions from the Syndicate. He hastily collected her other
+               friends, and while they were discussing position Sunny entered. She had grown to be a
+               charming young woman, and her friends, agreeably surprised, cannot do enough for her.
+               Jerry cabled to the Professor to return from Canada to take charge of Sunny, but he
+               was unable to do so, and she took up her abode in Jerry’s flat.</p>
+            <p>Sunny has proposals from Monty and Bobs, but refuses them both. Acting on the advice
+               of Hatton, Jerry’s valet, she decides to wait till Leap Year, and then ask Jerry to
+               marry her.</p>
+         </div>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <head>Chapter XI</head>
+            <p>​​A week after Bobs proposed to Sunny, Jinx, shining like the rising sun by an
+               especially careful grooming administered by his valet, a flower adorning his lapel,
+               and a silk hat topping his head, with a box of chocolates large enough to hold a
+               picture hat in his hand, and a smaller box of another kind in his vest pocket,
+               presented himself at Jerry Hammond’s studio. Flowers preceded and followed this last
+               of Sunny’s ardent suitors.</p>
+            <p>He was received by a young person arrayed in a pink pongee smock, sleeves rolled up,
+               revealing a pair of dimpled arms, hair in distracting disorder, and a little nose on
+               which seductively perched a blotch of flour, which the infatuated Jinx was requested
+               to waft away with silken handchief.</p>
+            <p>Sunny’s cheeks were flushed from close proximity to that gas stove, and her eyes were
+               bright with the warfare which she waged incessantly upon the aforesaid honourable
+               stove.</p>
+            <p>Most of the dishes created by Sunny were more or less under the eye of Hatton, but on
+               this day Hatton had stepped out to the butcher’s. Therefore Jinx’s arrival was hailed
+               by Sunny with appreciation and relief, and she promptly lead the happy fellow to the
+               kitchen and solicited his advice. Now Jinx, the son of the plutocratic rich, had
+               never been inside a kitchen since his small boyhood, and then his recollection of
+               said portion of the house was of a vast white place, where tiles and marble and white
+               capped cooks prevailed, and small boys were chuckled over or stared at and whispered
+               about.</p>
+            <p>The dimensions of Sunny’s kitchen were about seven by nine feet, and it is well to
+               mention at this moment that the room registered 95 degrees Fahrenheit, Jinx <pb n="570"/>
+               weighed two hundred and thirty-five pounds, stripped. His emotions, his preparations,
+               his hurry to enter the presence of his charmer, to say nothing of a volcanic heart,
+               all contributed to add to the heat and discomfort of the fat young man down whose
+               ruddy cheeks the perspiration began to roll. Jinx had come upon a mission that in all
+               times in the history of the world, subsequent to cave days, has called for coolness,
+               tact, and as attractive a physical seeming as it is possible to attain.</p>
+            <p>Sunny drew her friend along to that gas stove, kneeled on the floor, making room for
+               him to kneel beside her—no easy <q>stunt</q> for a fat man—opened the lower door and
+               revealed to him the jets on full blase.</p>
+            <p>Jinx shook his head. The problem was beyond him, but even as his head shook, he
+               sniffed a certain point in Jinx’s anatomy that Sunny would quaintly have designated
+               as his <q>honourable insides</q>. The little kitchen, despite its heat, contained in
+               that oven, Jinx knew, that which was more attractive than anything the cool studio
+               could offer. Seating himself heavily on a frail kitchen chair, which creaked
+               ominously under his weight, Jinx awaited hopefully what he felt sure was soon to
+               follow.</p>
+            <p>In due time Sunny opened the upper door of the oven, withdrew two luscious looking
+               pans of the crispest brown rice cakes, plentifully besprinkled with dates and nuts
+               and over which she dusted powdered sugar, and passing by the really suffering Jinx
+               she transferred the pans to the window ledge, saying with a smile:</p>
+            <p><q>When he are cool, I giving you one, Jinx</q>.</p>
+            <p>Wiping her hands on the roller towel, she had Jinx pull the smock over her head, and
+               revealed her small person in blue taffeta frock, which Jinx himself had had the
+               honour of choosing for her. Unwillingly, and with one longing backward look at those
+               cakes, Jinx followed Sunny into the studio. Here removed from the intoxicating
+               effects of that kitchen, Sunny having his full attention again, he came to the object
+               of his call. Jinx sat forward on the edge of his chair, and his round, fat face
+               looked so comically like the man in the moon’s that Sunny could not forbear smiling
+               at him affectionately.</p>
+            <p><q>Ho! Jinx, how you are going to lig’ those cake when he is getting cold</q>.</p>
+            <p>Jinx liked them hot just as well. However he was not such a gourmand that more rice
+               and date cakes could divert him from the purpose of his call. He sighed so deeply and
+               his expression revealed such a condition of melancholy appeal that Sunny, alarmed,
+               moved over and took his face up in her hand, examining it like a little doctor, head
+               cocked on one side.</p>
+            <p><q>Jinx, you are sick? What you are eat? Show me those tongue</q>.</p>
+            <p><q>Aw, it’s nothing, Sunny—nothing to do with me tongue. It’s—it’s—just a little
+                  heart trouble, Sunny</q>.</p>
+            <p><q>Heart! That are bad place be sick! You are ache on him, Mr. dear Jinx?</q></p>
+            <p><q>Yes—a—little</q>.</p>
+            <p><q>Ye-eh—some</q>.</p>
+            <p><q>I sawry! How I are sawry! You have see doctor</q>.</p>
+            <p><q>You’re the only doctor I need</q>.</p>
+            <p>Which was true enough. It was surprising the healing effects upon Jinx’s aching heart
+               of the solicitous and sympathetic hovering about him of Sunny.</p>
+            <p><q>Oh, Jinx, I go at those telephone ride away, get him Mr. Doctor here come. I
+                  ‘fraid mebbe you more sick than mebbe you know</q>.</p>
+            <p><q>No, no—never mind a doctor</q>. Jinx held her back by force. <q>Look-a-here,
+                  Sunny, I’ll tell you just what’s the matter with my heart. I’m—I’m—in
+               love!</q></p>
+            <p><q>Oh—love! I have hear those word bi-fore, but I have never feel him</q>, said Sunny
+               wistfully.</p>
+            <p><q>You’ll feel it some day all right</q>, groaned Jinx. <q>And you’ll know it, too,
+                  when you’ve got it</q>.</p>
+            <p><q>Ad Japan nobody—loave. Thas not nize word speag ad Japan</q>.</p>
+            <p><q>Gosh! it’s the nicest word in the language in England. You can’t help speaking it.
+                  You can’t help feeling it. When you’re in love, Sunny, you think day and night and
+                  every hour and minute and second of the day of the same person. That’s love,
+                  Sunny</q>.</p>
+            <p><q>Ah!</q> whispered Sunny, her eyes very bright and dewey. <q>I are
+                     <emph>know</emph>  him then!</q> And she stood with that rapt <pb n="572"/>look,
+               scarcely hearing Jinx, and brought back to earth only when he took her hand, and
+               clung to it with both his own somewhat flabby ones.</p>
+            <p><q>Sunny, I’m head over heels in love with you. Put me out of my misery. Say you’ll
+                  be Mrs. Crawford, and you’ll see how quickly this old bunged up heart of mine will
+                  heal</q>.</p>
+            <p><q>Oh, Jinx, you are ask <emph>me</emph> to make marry wiz you?</q></p>
+            <p><q>You bet your life I am. Lord! I’m fully keen on you, Sunny</q>.</p>
+            <p><q>Ho! I sawry I kinnod do thad to-day. I am not good ad my healt’. Aexcuse me. Mebbe
+                  some odder day I do so</q>.</p>
+            <p><q>Any day will do. Any day that suits you, if you’ll just give me your promise—if
+                  you’ll just be engaged to me</q>.</p>
+            <p><q>Engaged?</q> Bobs had already explained to her what that meant, but she repeated
+               it to gain time.</p>
+            <p><q>Why, yes—don’t they have engagements in Japan?</q></p>
+            <p><q>No. Marriage broker go ad girl’s father and boy’s father and make those
+                  marriage</q>.</p>
+            <p><q>Well, this is a civilised land. We do things right here. Gosh, you’re a lucky girl
+                  to have escaped from Japan. Here, in this land, we first engaged, say for a week
+                  or month or even a year—only a short time will do for you and me, Sunny—and then,
+                  well, we marry. How about it?</q></p>
+            <p>Sunny considered the question from several serious angles, very thoughtful, very much
+               impressed.</p>
+            <p><q>Jinx, I do nod like to make marriage, bi-cause thas tie me up wiz jos one frien’
+                  for hosban’</q>.</p>
+            <p><q>But, Gosh, you don’t want more than one husband?</q></p>
+            <p>Jinx remembered hearing somewhere that the Japanese were a polygamous nation, but he
+               thought that only applied to the favoured males of the race.</p>
+            <p><q>No—O thas very nise for Mormon man I am hear of, bud——</q></p>
+            <p><q>Not fit for a woman</q>, warmly declared Jinx. <q>All I ask of you, Sunny, is that
+                  you’ll promise to marry me. If you’ll do that, you’ll make me the happiest man in
+                  England. I’ll be all but off my head, and that’s a fact</q>.</p>
+            <p><q>I sawry, Jinx, but me? I kinnod do so</q>.</p>
+            <p>Jinx relapsed into a state of the darkest gloom. Looking <choice>
+               <sic>our</sic>
+               <corr>out</corr>
+            </choice> from the depths of the big, soft overstuffed chair, he could see not a gleam of
+               light, and presently groaned.</p>
+            <p><q>I suppose if I weren’t such a mass of flesh and fat, I might stand a chow with
+                  you. It’s hell to be fat, I’ll tell the world</q>.</p>
+            <p><q>Jinx, I lig’ those fat. It grow nize on you. And <emph>please</emph>  do not loog
+                  so sad on you face. Wait, I go get you something thas goin’ make you look smile
+                  again</q>.</p>
+            <p>She disappeared into the kitchen, returning with the whole platter of cookies, still
+               quite warm, and irresistibly odorous and toothsome looking. Jinx, endeavouring to
+               refuse, had to close his eyes to steady him in his resolve, but he could not close
+               his nose, nor his mouth either, when Sunny thrust one of the delicious pieces into
+               his mouth. She wooed him back to a semi-normal condition by feeding him crisp morsels
+               of his favourite confection—was it possible to resist something that pushed against
+               one’s mouth, and once having entered that orifice revealed qualities that appealed to
+               the very best in one’s nature?</p>
+            <p>Jinx was not made of the spartan stuff of heroes, and who shall blame him if Nature
+               chose to endow him with a form of rich proportions that included <q>honourable
+                  insides</q> whose capacity was unlimited? So, till the very last cooky, and a
+               sense of well-being and fullness, the sad side of life pushed aside <emph>pro
+                  tem</emph>., Jinx was actually able to smile indulgently at the solicitous Sunny.
+               She clapped her hands delightedly over her success. Jinx’s fingers found their way to
+               his vest pocket. He withdrew a small velvet box, and snapped back the lid. Silently
+               he held it towards Sunny. Her eyes wide, she stared at it with excited rapture.</p>
+            <p><q>Oh-h! Thas mos’ beautifullest thing I are ever see</q>.</p>
+            <p>Never in fact had her eyes beheld anything half so lovely as that shining platinum
+               work of art with its immense diamond.</p>
+            <p><q>Just think</q>, said Jinx huskily, <q>if <pb n="573"/>you say the word, you can have
+                  stones like that covering you all over</q>.</p>
+            <p><q>All over!</q> She made an expressive motionof her hands which took in all of her
+               small person.</p>
+            <p>Melancholy again clouded Jinx’s face. After all, he did not want Sunny to marry him
+               for jewelry.</p>
+            <p><q>I tell you what you do, Sunny. Wear this for me, will you? Wear it for a while,
+                  any way, and then when you decide finally whether you’ll have me or not, keep it
+                  or send it back, as you like</q>.</p>
+            <p>He had slipped the ring onto the third finger of Sunny’s left hand, and holding that
+               hand made him a bit bolder. Sunny, unsuspecting and sympathetic, let her hand rest in
+               his, the ring up, where she could admire it to her heart’s content.</p>
+            <p><q>Look-a-here, Sunny, will you give me a kiss, then—just one. The ring’s worth that,
+                  isn’t it?</q></p>
+            <p>Sunny retreated hurriedly, almost panically.</p>
+            <p><q>Oh, Jinx, please you excuse me to-day, bi-cause I lig’  do so, but Mr. Hatton he
+                  are stand ad those door and loog on you</q>.</p>
+            <p><q>Damn Hatty!</q> groaned Jinx bitterly, and with a sigh that heaved his big breast
+               aloft, he picked up his hat and cane, and ponderously moved toward the door.</p>
+            <p>In the lower hall of the studio apartment, who should the crestfallen Jinx encounter
+               but his old-time friend, Jerry Hammond, returning from his eight hours’ work at the
+               office. His friend’s greeting was both curt and cold, and there was no mistaking that
+               look of dislike and disapproval that the frowning face made no effort to
+               disguise.</p>
+            <p><q>Here again, Jinx. Better move in</q>, was Jerry’s greeting.</p>
+            <p>Jinx muttered something inarticulate and furious, and for a fat man he made quick
+               time across the hall and out into the street, where he climbed with a heavy heart
+               into the great roadster, which he had fondly hoped might also carry Sunny with him
+               upon a prolonged honeymoon.</p>
+         </div>
+         <div>
+            <head>Chapter XII</head>
+            <p>Sunny poured Jerry’s tea, with a hand turned ostentatiously in a direction that
+               revealed to his amazed and indignant eye that enormous stone of fire that blazed on
+               the finger of Sunny’s left hand. His appetite, always excellent, failed him entirely,
+               and after conquering the first surge of impulses that were almost murderous, he
+               lapsed into an ominous silence, which no guile nor question from the girl at the head
+               of his table could break. A steady, a cold, a biting glare, a murmured monosyllabic
+               reply was all the response she received to her amiable overtures. His ill-temper,
+               moreover, reached out to the inoffensive Hatton, whom he ordered to clear out, and
+               stay out, and if it came down to that get out altogether, rather than hang around
+               snickering in that way. Thus Jerry revealed a side to his character, hitherto
+               unsuspected by Sunny, though several rumblings and barks from the <q>dog in the
+                  manger</q> would have apprised one less innocent than she.</p>
+            <p>They finished that meal—or rather Sunny did—in silence electric with coming strife.
+               Then Jerry suddenly left the table, strode into the little hall, took down his hat
+               and coat, and was about to go, heaven knows where, when Sunny, at his elbow, sought
+               to restrain him by force. She took his sleeve and tenaciously held to it, saying:</p>
+            <p><q>Jerry, do not go out these night. I are got some news I lig’ tell to you</q>.</p>
+            <p><q>Let go my arm. I’m not interested in your news. I’ve an appointment of my
+               own</q>.</p>
+            <p><q>But Jerry—</q></p>
+            <p><q>I say, let go my arm, will you</q>.</p>
+            <p>The last was said in a rising voice, as he reached the crest of irritation, and
+               jerking his sleeve so roughly from her clasp, he accomplished the desired freedom,
+               but the look on Sunny’s face stayed with him all the way down the stairs—he ignored
+               the lift—and to the door of the house. There he stopped short, and without more ado,
+               retraced his steps, sprang up the stairs in a great hurry, and jerking open his door
+               again, Jerry returned to his home. He discovered Sunny curled on the floor, with her
+               head buried in the seat of his favourite chair—the one occupied that afternoon by the
+               mischief-making Jinx.</p>
+            <p><q>Sunny! I’m awfully sorry I was such a beast. Say, little girl, look here, I’m not
+                  myself. I don’t know what I’m doing</q>.</p>
+            <p>Sunny slowly lifted her face, revealing <pb n="574"/>to the relieved but indignant Jerry a
+               face on which it is true there were traces of a tear or two, but which nevertheless
+               smiled at him quite shamelessly and even triumphantly. Jerry felt foolish, and he was
+               divided between a notion to remain at home with the culprit—she had done nothing
+               especially wrong, but he felt that she was to blame for something or other—or follow
+               his first intention of going out for the night—just where, he didn’t know—but
+               anywhere would do to escape the thought that had come to him. The thought of Sunny’s
+               probable engagement to Jinx. However, Sunny gave him no time to debate the matter of
+               his movements for the evening. She very calmly assisted him to remove his coat, hung
+               up his hat, and when she had him comfortably ensconced in his favourite chair, had
+               herself lit his pipe and handed it to him, she drew up a stool and sat down in front
+               of his knees, just as if in fact she was entirely guiltless of an engagement of which
+               Jerry positively did not approve. Her audacity, moreover, was such that she did not
+               hesitate to lay her left hand on Jerry’s knee, where he might get the full benefit of
+               the radiant light from that ring. He looked at it, set down his pipe on the stand at
+               his elbow, and stirred in that restless way which portends hasty arising, when
+               Sunny:</p>
+            <p><q>Jerry, Jinx are come to-day to ask me make marriage with him</q>.</p>
+            <p><q>Silly idiot! I pity any girl that has to go through life with that fat
+               head</q>.</p>
+            <p><q>Ho! I are always lig’ thad fat grow on Jinx. It look very good on him. I are told
+                  him so</q>.</p>
+            <p><q>Matter of taste of course</q>, snarled Jerry, fascinated by the twinkling of that
+               ring in spite of himself, and feeling at that moment an emotion that was dangerously
+               like hatred for the girl he had done so much for.</p>
+            <p><q>Monty and Bobs are also ask me marry wis them</q>. Sunny dimpled quite wickedly at
+               this, but Jerry failed to see any humour in the matter. He said with assumed
+               loftiness:</p>
+            <p><q>Well, well, proposals raining down on you in every direction</q>.</p>
+            <p>Jerry felt ashamed of himself, but he did not propose to reveal it, especially when
+               that little hand had crept back to its old place on his knee, and the diamond
+               flaunted brazenly before his gaze. Nobody but a fat-head would buy a diamond of that
+               size anyway, in Jerry’s opinion. There was something extremely vulgar about diamonds.
+               They were not nearly as pretty as rubies or emeralds or even turquoise, and Jerry had
+               never liked them. Of course, Miss Falconer, like every other girl, had to have her
+               diamond, and Jerry recalled with irritation how he had purchased his first diamond,
+               and he hoped his last. He neither enjoyed the expedition nor the memory of it. Jinx’s
+               brazen ring made him think of Miss Falconer’s. However, the thought of Miss Falconer
+               was, for some reason or other, distasteful to Jerry in these days, and, moreover, the
+               girl before him called for full attention at that moment.</p>
+            <p><q>So you decided on Jinx, did you? Bobs and Monty in the discard and the affluent
+                  fat and fair Jinx the winner</q>.</p>
+            <p><q>Jerry, I are <emph>prefer</emph> marry all my friends, but I say ‘No’ to each one
+                  of those</q>.</p>
+            <p><q>What are you wearing Jinx’s ring for, then?</q></p>
+            <p><q>Bi-cause it are loog nize on my hands, and he <emph>ask</emph> me wear it
+                  there</q>.</p>
+            <p>New emotions were flooding over the contrite Jerry. Something was racing like
+               champagne through his veins, and he suddenly realised how jolly life was after all.
+               Still even though Sunny had admitted that no engagement existed between her and Jinx,
+               there was that ring. Poor little girl!</p>
+            <p>A fellow had to teach her all of the western conventions, she was that innocent and
+               simple.</p>
+            <p><q>Sunny, you don’t want to wear a fellow’s ring unless you intend to marry him,
+                  don’t you understand that? The ring means that you are promised to him, do you get
+                  me?</q></p>
+            <p><q>No! But I <emph>are</emph> promise to Jinx. I are promise that I will consider
+                  marry him some day if I do not marry some other man I wan’  ask me also</q>.</p>
+            <p><q>Another man. Who—?</q></p>
+            <p>Sunny’s glance directed full upon him left nothing to the imagination. Jerry’s heart
+               began to thump in a manner that alarmed him.</p>
+            <pb n="575"/>
+            <p><q>Jerry</q>, said Sunny, <q>I going to wear Jinx’s ring <emph>until</emph> that man
+                  also asking me. I <emph>wan’</emph> him do so, bi-cause I are lig’ him mos’ bes’
+                  of all my frien’. I thing—</q> She had both of her hands on his knees now, and was
+               leaning up looking so wistfully into his face that he tried to avert his own gaze. In
+               spite of the lump that rose in his throat, in spite of the frantic beating of his
+               heart, Jerry did not ask the question that the girl was waiting to hear. After a
+               moment, she said gently:</p>
+            <p><q>Jerry, Hatty are tell me that nex’ year he are come a Leap. Then, he say, thas
+                  perlite for girl ask man make marriage wiz her. Jerry, <emph>I</emph> are goin’ to
+                  wait till those year of Leap are come, and then, me? I are goin’ ask
+                     <emph>you</emph> those question</q>.</p>
+            <p>For one thrilling moment there was a great glow in the heart of Jerry Hammond, and
+               then his face seemed suddenly to turn grey and old. His voice was husky and there was
+               a mist before his eyes.</p>
+            <p><q>Sunny, I must tell you—Sunny, I—I—am already engaged to be married to an English
+                  girl—a girl my people want me to marry. I’ve been engaged to her since my
+                  eighteenth year. I—<emph>Don’t</emph> look at me like that, Sunny, or—</q></p>
+            <p>The girl’s head dropped to the level of the floor, her hands slipping helplessly from
+               his knees. She seemed all in a moment to become purely Japanese. There was that in
+               her bowed head that was strangely reminiscent of some old and vanished custom of her
+               race. She did not raise her head, even as she spoke:</p>
+            <p><q>I wishin’ you ten thousand year of joy. <foreign xml:lang="ja">Sayonara</foreign>
+                  for this night</q>.</p>
+            <milestone unit="sectionBreak"/>
+            <p>Sunny had left him alone. Jerry felt the inability to stir. He stared into the dying
+               embers of his fire with the look of one who has seen a vision that has disappeared
+               ere he could sense its full significance. It seemed at that moment to Jerry as if
+               everything desirable and precious in life were within reach, but he was unable to
+               seize it. It was like his dream of beauty, ever above, but beyond man’s power to
+               completely touch. Sunny was like that, as fragile, as elusive as Beauty itself. The
+               thought of his having hurt Sunny tore his heart. She had aroused in him every impulse
+               that was chivalrous. The longing to guard and cherish her was paramount to all other
+               feelings. What was it Professor Barrowes had warned him of? That he should refrain
+               from taking the bloom from the rose. Had he, then, all unwittingly, injured little
+               Sunny?</p>
+            <p>Mechanically, Jerry went into the hall, slowly put his hat on his head and passed out
+               into the street. He walked up and down, round the block in which his flat stood,
+               retracing his steps three times to the studio building, and turning back again. His
+               mind was in a chaos, and he knew not what to do. Only one clear purpose seemed to
+               push through the fog, the passionate determination to care for Sunny. She came first
+               of all. Indeed she occupied the whole of his thought. The claim of the girl who had
+               waited for him seven years seemed of minor importance when compared with the claim of
+               the girl he loved. The disinclination to hurt another had kept him from breaking an
+               engagement that had never been of his own desire, but now Jerry knew there could be
+               no more evasions. The time had come when he must face the issue squarely. His sense
+               of honour demanded that he make a clean breast of the entire matter to Miss Falconer.
+               He reached this resolve while still walking up and down. It gave him no more than
+               time to catch the night train to her home. As he stepped aboard the train that was
+               bearing him from Sunny to Miss Falconer all of the fogs had cleared from Jerry’s
+               mind. He was conscious of an immense sense of relief. It seemed strange to him that
+               he had never taken this step before. Judging the woman by himself, he felt that he
+               knew exactly what she would say when, with complete candour, he would lay his cards
+               upon the table. She was a good sport. He did not delude himself with the idea that an
+               engagement that had been irksome to himself had been of any joy to her. It was
+               simply, so he told himself, a mistake of their parents. They had planned and worked
+               this scheme, and into it they had dumped these two young people at a psychological
+               moment.</p>
+         </div>
+         <div>
+            <head>Chapter XIII</head>
+            <p>For two days Sunny waited for Jerry to return. She was lonely and most unhappy, but
+               hers was a buoyant personality, and, in spite of her hurt, she kept up a bright face
+               before her little world of that duplex studio. In spite of the two nights when no
+               sleep at all came, and she lay through the long hours trying vainly not to think of
+               the wife of Jerry Hammond, in the daytime she moved about the small concerns of the
+               apartment with a smile of cheer, and found a measure of comfort in her pets.</p>
+            <p>It was all very well, however, to hug Itchy passionately to her breast, and assure
+               herself that she had in her arms one true and loving friend. Always she set the dog
+               sadly down again, saying:</p>
+            <p><q>Ah, little honourable dog, you are jos liddle dog, thas all. How you can know whas
+                  ache on my heart. I do nod lig’ you more for to-day</q>.</p>
+            <p>She fed Mr. and Mrs. Satsuma, and whistled and sang to them. After all, a canary is
+               only a canary. Its bright, hard eye is blank and cold. Even the goldfish, swimming to
+               the top of the honourable bowl, and picking the crumbs so cunningly from her finger,
+               lost their charm for her. Miss Spring Morning had long since been vanished with
+               severe Japanese reproaches for his inhuman treatment of Sunny’s first friends, the
+               honourable mice, several of whose little bodies Sunny had confided to a grave she
+               herself had dug, with tears that aroused the caretaker’s sympathy, so that he
+               permitted the interment in the back yard.</p>
+            <p>The gramophone, working incessantly the first day supplied merely noise. On the
+               second morning she banged the top impulsively down, and cried at Caruso:</p>
+            <p><q>Oh, I do not wan’ hear your honourable voice to-day. Shut you up!</q></p>
+            <p>Midway in an aria from <q>Rigoletto</q> the golden voice was quenched.</p>
+            <p>She hovered about the telephone, and several times lifted the receiver, with the idea
+               of calling one of her friends, but always she rejected the impulse. Intuitively Sunny
+               knew that until the first pang of her refusal had passed her friends were better away
+               from her.</p>
+            <p>Little comfort was to be extracted from Hatton, who was acting in a manner that had
+               Sunny not been so absorbed by her own personal trouble would have caused her concern.
+               Hatton talked incessantly and feverishly and with tears about his missus, and what
+               she had driven him to, and of how a poor man tries to do his duty in life, but women
+               were ever trouble-makers, and it was only <q>yuman nature</q> for a man to want a
+               little pleasure, and he, Hatton, had made this perfectly clear to Mr. Hammond when he
+               had taken service with him.</p>
+            <p><q>A yuman being, miss</q>, said Hatton, <q>is yuman, and that’s all there is to it.
+                  Yuman nature ‘as certain ‘ankerings and its against yuman nature to gainsay them
+                  ‘ankerings, if you’ll pardon me saying so, miss</q>.</p>
+            <p>However, he assured Sunny most earnestly that he was fighting the Devil and all his
+               works, which was just what <q>them ‘ankerings</q> was, and he audibly muttered for
+               her especial hearing in proof of his assertion several times through the day: <q>Get
+                  thee be’ind me, Satan</q>. Satan being <q>them ‘ankerings, miss</q>.</p>
+            <p>In normal times Sunny’s fun and cheer would have been of invaluable assistance and
+               diversion to Hatton. Indeed, his long abstention was quite remarkable since she had
+               been there; but Sunny, affect cheer as she might, could not hide from the sympathetic
+               Hatton’s gaze the fact that she was most unhappy. In fact, Sunny’s sadness affected
+               the impressionable Hatton so that the second morning he could stand it no longer, and
+               disappeared for several hours, to return, hiccoughing cravenly, and explainly:</p>
+            <p><q>I couldn’t ‘elp it, miss. My ‘eart haches for you, and it ain’t yuman nature to
+                  gainsay the yuman ‘eart</q>.</p>
+            <p><q>Hatton</q>, said Sunny severely, <q>I are smell you on my nose. You are not smell
+                  good</q>.</p>
+            <p><q>Pardon me, miss</q>, said Hatton, beginning to weep. <q>Hi’m sadly ashamed of
+                  myself, miss. If you’ll pardon me, miss, I’ll betake myself to less ‘appy regions
+                  than Mr. ‘Ammond’s studio, miss, ‘as it’s my desire not to ‘urt your sense of
+                  smell, miss. So if you’ll pardon me, I’ll say good-bye, miss, ‘oping you’ll be in
+                  a ‘appier mood when next we meet</q>.</p>
+            <pb n="578"/>
+            
+            <p>For the rest of that day there was no further sign from Hatton. Left thus alone in
+               the apartment, Sunny was sore put to find something to distract her, for all the old
+               diversions, without Jerry, began to pall. She wished wistfully that Jerry had not
+               forbidden her to make friends with other tenants in the house. She felt the strange
+               need of a friend at this hour.</p>
+            <p>It will be seen, therefore, that Sunny, a stranger in a strange land, shut in alone
+               in a studio, religiously following the instructions of Jerry to refrain from making
+               acquaintances with anyone about her, was in a truly sad state. She started to
+               houseclean, but stopped midway in panic, recalling the Japanese superstition that to
+               clean or sweep a house when one of the family is absent is to precipitate bad fortune
+               upon the house. So she got down all of Jerry’s clothes and piously pressed and
+               sponged them, as she had seen Hatton do, being very careful this time to avoid her
+               first mistake in ironing. So earnestly had she applied herself to ironing the crease
+               in the front of one of Jerry’s trousers that first time that a most disastrous
+               accident was the result. Jerry, wearing the pressed trousers especially to please
+               her, found himself on the street the cynosure of all eyes as he manfully strode along
+               with a complete split down the front of one of the legs, which the too ardent iron of
+               Sunny had scorched. Having brushed and cleaned all of Jerry’s clothes on this day,
+               she prepared her solitary lunch; but this she could not eat. Thoughts of Jerry
+               sharing with her the accustomed meals was too much for the imaginative Sunny, and
+               pushing the rice away from her, she said:</p>
+            <p><q>Oh, I do nod lig’ put food any more ad my insides. I givin’ you to my
+               friends</q>.</p>
+            <p>The contents of her bowl were emptied into the pail under the sink, which she kept
+               always so clean, for she still was under the delusion that said pail helped to feed
+               the caretaker and his family.</p>
+            <p>All of that afternoon hung heavily on her hands, and she vainly sought something to
+               interest her and divert her mind from the thought of Jerry. She found herself
+               unconsciously listening for the bell, but, curiously enough, all of that day neither
+               the buzzer, the telephone nor even the door-bell rang. She made a tour of exploration
+               to Jerry’s sacred room, lovingly arranging his pieces on his chiffonier, and washing
+               her hands in some toilet water that especially appealed to her. Then she found the
+               bottle of hair tonic. Sniffing it, she decided it was very good, and, painfully,
+               Sunny deciphered the legend printed on the outside, assuring a confiding hair world
+               that the miraculous contents had the power to remove dandruff, invigorate,
+               strengthen, force growth on bald heads, cause to curl and in every way improve and
+               cause to shine the hair of the fortunate user of the same.</p>
+            <p><q>Thas very good stuff</q>, said Sunny. <q>He do grade miracle on top those
+               head</q>.</p>
+            <p>She decided to put the shampoo-tonic to the test, and accordingly washed her hair in
+               Jerry’s basin, making an excellent job of it. Descending to the studio, she lit the
+               fireplace, and curled up on a big navahoc by the fire. Wrapped in a gorgeous bathrobe
+               belonging to Jerry, Sunny proceeded to dry her hair.</p>
+            <p>While she was in the midst of this process, the telephone rang. The clerk at the desk
+               announced that visitors were ascending. Sunny had no time to dress or even to put up
+               her hair, and when in response to the sharp bang upon the knocker she opened the door
+               she revealed to the callers a vision that justified their worst fears. Her hair
+               unbound, shining and springing out in lovely curling disorder about her, wrapped
+               about in the bright embroidered bathrobe which the younger woman recognised at once
+               as her Christmas gift to her fiancé, the work in fact, of her own hands. Sunny was a
+               spectacle to rob a rival of complete hope and peace of mind. The cool fury of
+               unrequited love and jealousy in the breast of the younger woman, and the indignant
+               anger in that of the older, was whipped at the sight of Sunny into active and violent
+               eruption.</p>
+            <p><q>What are you doing in my son’s apartment?</q> demanded the mother of Jerry,
+               raising to her eyes what looked to Sunny like a gold stick on which grew a pair of
+               glasses, and surveying with pronounced disapproval the politely bowing though
+               somewhat flurried Sunny.</p>
+            <p><q>I are live ad those house</q>, said Sunny, simply. <q>This are my home</q>.</p>
+            <pb n="579"/>
+            <p><q>You live here, do you! Well, I would have you know that I am the mother of the
+                  young man whose life you are ruining, and this young girl is his fiance</q>.</p>
+            <p><q>Ho! I am very glad make you ‘quaintance</q>, said Sunny, seeking to hide behind a
+               politeness her shock at the discovery of the palpable rudeness of these most
+               barbarian ladies. It was hard for her to admit that the ladies of Jerry’s household
+               were not models of fine manners, as she had fondly supposed, but on the contrary bore
+               faces that showed no trace of the kind hearts which the girl from Japan had been
+               taught by her mother to associate always with true gentility. The two women’s eyes
+               met with that exclamatory expression which says plainer than words:</p>
+            <p><q>Of all the unbounded impudence, this is the worst!</q></p>
+            <p><q>I have been told</q>, went on Mrs. Hammond haughtily, <q>that you are a
+                  foreigner—a Japanese</q>. She pronounced the word as if speaking of something
+               extremely repellent.</p>
+            <p>Sunny bowed, with an attempted smile, that faded away as Jerry’s mother continued
+               ruthlessly:</p>
+            <p><q>You do not look like a Japanese to me, unless you have been peroxiding your hair.
+                  In my opinion you are just an ordinary everyday bad girl</q>.</p>
+            <p>Sunny said very faintly: <q>Aexcuse me</q>.</p>
+            <p>She turned like a hurt thing unjustly punished to the other woman, as if seeking help
+               there. It had been arranged between the two women that Mrs. Hammond was to do the
+               talking. Miss Falconer was having her full of that curious satisfaction some women
+               take in seeing in person one’s rival. Her expression far more moved Sunny than that
+               of the angry older woman.</p>
+            <p><q>No one but a bad woman</q>, went on Mrs. Hammond, <q>would live like this in a
+                  young man’s apartment, or allow him to support her, or take money from him. Decent
+                  girls don’t do that sort of thing in America. You are old enough to get out and
+                  earn for yourself an honest living. Aren’t you ashamed of yourself? Or are you
+                  devoid of shame, you bad creature!</q></p>
+            <p><q>Yes</q>, said Sunny, with such a look that Jerry’s mother’s frown relaxed
+               somewhat, <q>I are ashame. I are sawry thad I are bad—woman. Aexcuse me this time. I
+                  try do better. I sawry I are—bad!</q></p>
+            <p>This was plainly a full and complete confession of wrong and its effect on the older
+               woman was to arouse a measure of the Hammond compunction which always followed a
+               hasty judgment. For a moment Mrs. Hammond considered the advisability of reading to
+               this girl a lecture that she had recently prepared to deliver before an institution
+               for the welfare of such girls as she deemed Sunny to be. However, her benevolent
+               intention was frustrated by Miss Falconer.</p>
+            <p>There is a Japanese proverb which says that the tongue three inches long can kill a
+               man six feet tall, but the tongue of one’s enemy is not the worst thing to fear. The
+               cold smile of the young woman staring so steadily at her had power to wound Sunny far
+               more than the lacerating tongue of the woman whom she realised believed she was
+               fighting in her son’s behalf. Very silken and soft was the manner of Miss Falconer as
+               insinuatingly she brought Mrs. Hammond back to the object of their call. She had used
+               considerable tact and strategy in arranging this call upon Sunny, having in fact
+               induced Jerry to remain for at least a day or two at home, <q>to think matters over,
+                  and see whether absence would not prove to him that what he imagined to be love
+                  was nothing but one of those common aberrations to which men who lived in the East
+                  were said to be addicted</q>. Jerry, feeling that he should at least do this for
+               her, waited at Greenwich. Miss Falconer had called in the able and belligerent aid of
+               his mother.</p>
+            <p><q>Mother dear—</q> She already called Mrs. Hammond <q>mother</q>. <q>Suppose—er—we
+                  make a quick end to the matter. You know what we are here for. Do let us finish
+                  and get away. You know, dear, that I am not used to this sort of thing, and really
+                  I’m beginning to get a nervous headache</q>.</p>
+            <p>Stiffened and upheld by the young woman whom she had chosen as wife for her son, Mrs.
+               Hammond delivered the ultimatum.</p>
+            <p><q>Young woman, I want you to pack your things and clear out from my son’s apartment
+                  at once. No argument! No <pb n="580"/>excuses! If you do not realise the shamelessness of
+                  the life you are leading, I have nothing further to say, but I insist, insist most
+                  emphatically, on your leaving my boy’s apartment this instant</q>.</p>
+            <p>A key turned in the lock. Hatton, dusty and bedraggled, his hat on one side of his
+               head and a cigarette twisting dejectedly in the corner of his mouth, stumbled in at
+               the door.</p>
+            <p>198</p>
+            <p>He stood swaying and smiling at the ladies, stuttering incoherent words of greeting
+               and apology.</p>
+            <p><q>La-adiesh, beggin’ y’r pardon, it’s a pleasure shee thish bright shpring
+               day</q>.</p>
+            <p>Mrs. Hammond, overwhelmed with shame and grief over the revelation of the
+               disreputable inmates of her son’s apartment, turned her broad back upon Hatton. She
+               recognised that man. He was the man she and Jerry’s father had on more than one
+               occasion begged their son to be rid of. Oh, if only Jeremy Hammond, senior, were here
+               now!</p>
+            <p>Sunny, having heard the verdict of banishment, stood helplessly, like one who has
+               received a death sentence, knowing not which way to turn. Hatton staggered up the
+               stairs, felt an uncertain course along the gallery toward his room, and fell in a
+               muddled heap midway of the gallery.</p>
+            <p>Sunny, half-blindly, scarcely conscious of what she was doing, had moved with
+               mechanical obedience toward the door, when Mrs. Hammond haughtily recalled her.</p>
+            <p><q>You cannot go out on the street in that outrageous fashion. Get your things, and
+                  do your hair up decently. We will wait here till you are ready</q>.</p>
+            <p><q>And suppose you take that bathrobe off. It doesn’t belong to you</q>, said Miss
+               Falconer cuttingly.</p>
+            <p><q>Take only what belongs to you</q>, said Mrs. Hammond.</p>
+            <p>Sunny slowly climbed up to her room. Everything appeared now strange and like a queer
+               dream to her. She could scarcely believe that she was the same girl who but a few
+               days before had joyously flitted about the pretty room, which showed evidence of her
+               intensely artistic and feminine hands. She changed from the bathrobe to the blue suit
+               she had worn on the night she had arrived at Jerry’s studio. From a drawer she drew
+               forth the small package containing the last treasures that her mother had placed in
+               her hand. Though she knew that Mrs. Hammond and Miss Falconer were impatiently
+               awaiting her departure, she sat down at her desk and painfully wrote her first letter
+               to Jerry.</p>
+
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <p><q>Jerry sama,—How I thank you three and four time for your kindness to me.
+                           I am sorry I are not got money to pay you back for all that same, but I
+                           will take nothing with me but those clothes on my body. Only bad girls
+                           take money from gentleman at this England. I have hear that to-day, but I
+                           never know that before, or I would not do so. I have pray to <foreign
+                              xml:lang="ja">Amaterasu-oho-mikami</foreign>, making happy sunshine at
+                           your life. May you live ten thousand year. <foreign xml:lang="ja"
+                              >Sayonara</foreign>. SUNNY</q>.</p>
+                  </body>
+               </floatingText>
+            </q>
+
+            <p>She came out along the gallery, bearing her mother’s little package. Kneeling by the
+               half-awake but helpless Hatton she thrust the letter into his hand.</p>
+            <p><q>Good-bye, kind Hatton</q>, said Sunny. <q>I sawry I not see your face no more. I
+                  sawry I are make all those trobble for you wiz those gas stove an’ those
+                  honourable mice. I never do those ting again. I hope mebbe you missus come home
+                  agin some day ad you. <foreign xml:lang="ja">Sayonara</foreign></q>.</p>
+            <p><q>Wh-wheer y’re goin’, Shunny? Whatsh matter?</q> Hatton tried vainly to raise
+               himself. He managed to pull himself a few paces along by holding to the gallery
+               rails, but sprawled heavily down on the floor. The indignant voice of his master’s
+               mother ascended from the stairs:</p>
+            <p><q>If you do not control yourself, my good man, I will be forced to call in outside
+                  aid and have you incarcerated</q>.</p>
+            <p>Downstairs, Sunny, unmindful of the waiting women, ran by them into the kitchen. From
+               goldfish to canaries she turned, whispering softly: <q><foreign xml:lang="ja"
+                     >Sayonara</foreign> my friends. I sawry leaving you</q>.</p>
+            <p>She was opening the window onto the fire-escape, and Itchy with a howl of joy had
+               leaped into her arms, when Mrs. Hammond and Miss Falconer, suspicious of something
+               underhand, appeared at the door.</p>
+            <p><q>What are you doing, miss? What is that you are taking?</q> demanded Mrs.
+               Hammond.</p>
+            <pb n="581"/>
+            <p>Sunny turned, with her dog hugged up close to her breast.</p>
+            <p><q>I are say good-bye to my liddle dog</q>, she said—<q><foreign xml:lang="ja"
+                     >Sayonara</foreign> Itchy. The gods be good unto you</q>.</p>
+            <p>She set the dog hastily back in the box, against his most violent protests, and Itchy
+               immediately set up such a woeful howling and baying as only a small mongrel dog, who
+               possesses psychic qualities and senses the departure of an adored one, could be
+               capable of. Windows were thrown up and ejaculations and protests emanated from
+               tenants in the court, but Sunny had clapped both hands over her ears, and without a
+               look back at her little friend, and ignoring the two women, she ran through the
+               studio, and out of the front door.</p>
+            <p>After her departure a silence fell between Miss Falconer and Mrs. Hammond. The
+               latter’s face suddenly worked spasmodically, and the strain of the day overtook
+               Jerry’s mother. She sobbed unrestrainedly, mopping up the tears that coursed down her
+               face. Miss Falconer fanned herself slowly, and with an absence of her usual
+               solicitude for her prospective mother-in-law, she refrained from offering sympathy to
+               the older woman, who presently said in a muffled voice:</p>
+            <p><q>Oh, Stella, I am afraid that we may have done a wrong act. It’s possible that we
+                  have made a mistake about this girl. She seemed so very young, and her face—it was
+                  not a bad face, Stella—quite the contrary, now I think of it</q>.</p>
+            <p><q>Well, I suppose that’s the way you look at it. Personally you can’t expect me to
+                  feel any sort of sympathy for a bad woman like that</q>.</p>
+            <p><q>Stella, I’ve been thinking that a girl who would say good-bye to her dog like that
+                  cannot be wholly bad</q>.</p>
+            <p><q>I have heard of murderers who trained fleas</q>, said Miss Falconer. Then, with a
+               pretended yawn, she added, <q>But really we must be going now! It’s getting very dark
+                  out, and I’m dining with the Westmores at seven. I told Matthews we’d be through
+                  shortly. He’s downstairs with the car now</q>.</p>
+            <p>She had picked up her gloves and was drawing them smoothly on, when Mrs. Hammond
+               noticed the left hand was ringless.</p>
+            <p><q>Why, my dear, where is your ring?</q></p>
+            <p><q>Why, you didn’t suppose, did you, that I was going to continue my engagement to
+                  Jerry Hammond after what he told me?</q></p>
+            <p><q>But our purpose in coming here—</q></p>
+            <p><q><emph>My</emph>purpose was to make sure that if <emph>I</emph> were not to have
+                  Jerry neither should she—that Japanese doll!</q> All the bottled-up venom of the
+               girl’s nature came forth in that single utterance. <q>Do let us get away. Really I’m
+                  bored to extinction</q>.</p>
+            <p><q>You may go any time you choose, Miss Falconer</q>, said Jerry Hammond’s mother.
+                  <q>I shall stay here till my son returns</q>.</p>
+            <p>It was less than half an hour later that Jerry burst into the studio. He came in with
+               a rush, hurrying across the big room toward the kitchen and calling aloud:</p>
+            <p><q>Sunn-Sany! Hi, Sunny! I’m back!</q></p>
+            <p>So intent was he in discovering Sunny that he did not see his mother sitting in the
+               darkened room by the window. Through dim eyes, Mrs. Hammond had been staring into the
+               street and listening to the nearby rumble of traffic. Somehow the roar of the
+               elevated spelled to the woman the cruelty and the power of the mighty city, out into
+               which she had driven the young girl, whose eyes had entreated her like a little
+               wounded creature. The club woman thought of her admonitions and speeches to the girls
+               she had professionally befriended, yet here, put to a personal test, she had failed
+               signally.</p>
+            <p><q>Jerry</q> her son, wa scoming through the studio again, calling up toward the
+               gallery above.</p>
+            <p><q>Hi, Sunny, old thing, where are you?</q></p>
+            <p>He turned with a start as his mother called his name. His first impulse of welcome
+               halted as he saw her face, and electrically there flashed through Jerry a realisation
+               of the truth. His mother’s presence there was connected with Sunny’s absence.</p>
+            <p><q>Mother, where is Sunny? What are you doing here? Where is Sunny, I say?</q></p>
+         </div>
+         <div type="paratext">
+            <p><emph>Another instalment of this novel will appear in the next issue of the Sovereign
+                  Magazine.</emph></p>
          </div>
       </body>
    </text>

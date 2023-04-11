@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="rescinded">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Document Removed</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2023-02-03"
+                who="pers:JT1" status="published">Created file.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Documented Removed</head>
+            <div>
+               <p>The editorial team has decided to remove this document from the <title level="m">Winnifred Eaton Archive</title>. If you have concerns about this decision, please <ref target="mailto:mchapman@ubc.ca">contact us</ref>.</p>
+            </div>            
+        </body>
+    </text>
+</TEI>

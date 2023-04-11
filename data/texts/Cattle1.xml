@@ -10,6 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+            <relatedItem type="edition" target="bibl:HUNT1"/>
+            <relatedItem type="edition" target="bibl:CHOL1"/>
+         </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:36"/>
          </sourceDesc>
@@ -22,6 +27,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SL1" status="empty" when="2020-05-14">Added author and title.</change>
          <change who="pers:SL1" status="empty" when="2019-08-23">Added facs.</change>

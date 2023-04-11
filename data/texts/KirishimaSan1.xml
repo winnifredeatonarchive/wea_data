@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="KirishimaSan1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="KirishimaSan1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -24,6 +24,8 @@
          </publicationStmt>
          <notesStmt>
             <note>Facsimile retrieved from British Periodicals</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="bibl:MOSE5"/>
          </notesStmt>
          <sourceDesc>
             <bibl copyOf="bibl:68"/>
@@ -37,7 +39,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">made published.</change><change who="pers:MC1" when="2020-07-02" status="inProgress">Note about source.</change><change who="pers:SB2" when="2020-05-27" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">made published.</change>
+         <change who="pers:MC1" when="2020-07-02" status="inProgress">Note about source.</change>
+         <change who="pers:SB2" when="2020-05-27" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl68 using XSLT.</change>
       </revisionDesc>
