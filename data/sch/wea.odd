@@ -1512,11 +1512,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="linking" include="ab seg anchor"/>
                
                <moduleRef key="msdescription"
-                          include="collection institution msIdentifier repository"/>
+                          include="additional collection institution msDesc msIdentifier repository surrogates"/>
                   
                
                <moduleRef key="namesdates"
-                          include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname"/>
+                          include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname relation"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
                <!--Include all TEI modules-->
                <moduleRef key="tei"/>
@@ -1532,11 +1532,14 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   
             <!--Make all the bits we want of the teiHeader mandatory-->
                   <content>
-                     <elementRef key="fileDesc"/>
-                     <elementRef key="profileDesc"/>
-                     <!--Make encodingDesc optional-->
-                     <elementRef key="encodingDesc" minOccurs="0" maxOccurs="1"/>
-                     <elementRef key="revisionDesc"/>
+                     <sequence>
+                        <elementRef key="fileDesc"/>
+                        <elementRef key="profileDesc"/>
+                        <!--Make encodingDesc optional-->
+                        <elementRef key="encodingDesc" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="revisionDesc"/>  
+                     </sequence>
+
                   </content>
                </elementSpec>
                
@@ -1581,8 +1584,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <!--Make profileDesc/textClass mandatory-->
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
-                     <elementRef key="textClass"/>
-                     <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
+                     <sequence>
+                        <elementRef key="textClass"/>
+                        <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>   
+                     </sequence>
                   </content>
                </elementSpec>
                
@@ -1642,7 +1647,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </elementSpec>
                
                <elementSpec ident="lb" module="core" mode="change">
-                  <constraintSpec scheme="schematron" ident="textClass.oneofEach">
+                  <constraintSpec scheme="schematron" ident="lb.floatingTextOnly">
                      <desc>Don't allow lbs ANYWHERE except in floating texts.</desc>
                      <constraint>
                         <sch:pattern>
@@ -1729,8 +1734,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="ptr.readMore">
-                     <desc>We allow extent ONLY for legacy purposes.</desc>
+                  <constraintSpec scheme="schematron" ident="ptr.mustHaveDocPrefix">
+                     <desc>Ptr target should be doc: pointer.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:ptr">
@@ -1929,9 +1934,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <!--Modify persName so that we need at least one of reg, forename, and surname-->
                <elementSpec ident="persName" module="namesdates" mode="change">
                   <content>
-                     <elementRef key="reg" minOccurs="1" maxOccurs="1"/>
-                     <elementRef key="forename" minOccurs="1" maxOccurs="unbounded"/>
-                     <elementRef key="surname" minOccurs="1" maxOccurs="unbounded"/>
+                     <sequence>
+                        <elementRef key="reg" minOccurs="1" maxOccurs="1"/>
+                        <elementRef key="forename" minOccurs="1" maxOccurs="unbounded"/>
+                        <elementRef key="surname" minOccurs="1" maxOccurs="unbounded"/>
+                     </sequence>
+ 
                   </content>
                </elementSpec>
                
@@ -1960,7 +1968,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="person.dontUseRoleOtherThanInFigure">
+                  <constraintSpec scheme="schematron" ident="person.inFigureMustHaveRole">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person[ancestor::tei:listPerson and ancestor::tei:figure]">
@@ -1996,8 +2004,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <!--Make respStmt content very strict-->
                <elementSpec ident="respStmt" module="core" mode="change">
                   <content>
-                     <elementRef key="resp"/>
-                     <elementRef key="name"/>
+                     <sequence>
+                        <elementRef key="resp"/>
+                        <elementRef key="name"/>
+                     </sequence>
+     
                   </content>
                </elementSpec>
                
@@ -2134,7 +2145,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                  <constraintSpec scheme="schematron" ident="note.mustHaveParaForBio">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2365,11 +2376,13 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
-                     <elementRef key="head" minOccurs="0"/>
-                     <elementRef key="graphic" minOccurs="0"/>
-                     <elementRef key="figDesc" minOccurs="0"/>
-                     <elementRef key="bibl" minOccurs="0"/>
-                     <elementRef key="listPerson" minOccurs="0"/>
+                     <sequence>
+                        <elementRef key="head" minOccurs="0"/>
+                        <elementRef key="graphic" minOccurs="0"/>
+                        <elementRef key="figDesc" minOccurs="0"/>
+                        <elementRef key="bibl" minOccurs="0"/>
+                        <elementRef key="listPerson" minOccurs="0"/>
+                     </sequence>
                   </content>
                   <constraintSpec ident="figure.needsSomething" scheme="schematron">
                      <!--This constraint could certainly be done in pure ODD and not

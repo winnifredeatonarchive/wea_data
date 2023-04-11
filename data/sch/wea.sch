@@ -38,6 +38,18 @@
            xmlns:teix="http://www.tei-c.org/ns/Examples"
            prefix="rng"
            uri="http://relaxng.org/ns/structure/1.0"/>
+   <sch:ns xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           prefix="rna"
+           uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
@@ -90,7 +102,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.datable-calendar-calendar-constraint-rule-4">
+            id="wea-att.datable-calendar-calendar-constraint-rule-5">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -99,16 +111,55 @@
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
                 xmlns="http://www.tei-c.org/ns/1.0"
                 context="tei:*[@calendar]">
-            <sch:assert test="string-length(.) gt 0"> @calendar indicates one or more systems or calendars to
-              which the date represented by the content of this element belongs, but this
-              <sch:name/> element has no textual content.</sch:assert>
+            <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
+            systems or calendars to which the date represented by the content of this element belongs,
+            but this <sch:name/> element has no textual content.</sch:assert>
           </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.typed-subtypeTyped-constraint-rule-5">
+            id="wea-att.datable-calendar-constraint-rule-4">
+      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                context="tei:*[@calendar]">
+            <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
+            systems or calendars to which the date represented by the content of this element belongs,
+            but this <sch:name/> element has no textual content.</sch:assert>
+          </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-att.global.source-source-only_1_ODD_source-constraint-rule-6">
+      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                context="tei:*[@source]">
+            <sch:let name="srcs" value="tokenize( normalize-space(@source),' ')"/>
+            <sch:report test="( self::tei:classRef               | self::tei:dataRef               | self::tei:elementRef               | self::tei:macroRef               | self::tei:moduleRef               | self::tei:schemaSpec )               and               $srcs[2]">
+              When used on a schema description element (like
+              <sch:value-of select="name(.)"/>), the @source attribute
+              should have only 1 value. (This one has <sch:value-of select="count($srcs)"/>.)
+            </sch:report>
+          </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-att.typed-subtypeTyped-constraint-rule-7">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -124,7 +175,23 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-6">
+            id="wea-att.pointing-targetLang-constraint-rule-8">
+      <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns="http://www.tei-c.org/ns/1.0"
+                context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
+            <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+          </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-9">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -142,34 +209,36 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-p-abstractModel-structure-p-constraint-report-4">
+            id="wea-p-abstractModel-structure-p-in-ab-or-p-constraint-report-5">
             <rule context="tei:p">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )">
+               <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="(ancestor::tei:ab or ancestor::tei:p) and not( ancestor::tei:floatingText |parent::tei:exemplum |parent::tei:item |parent::tei:note |parent::tei:q |parent::tei:quote |parent::tei:remarks |parent::tei:said |parent::tei:sp |parent::tei:stage |parent::tei:cell |parent::tei:figure )">
         Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-p-abstractModel-structure-l-constraint-report-5">
+            id="wea-p-abstractModel-structure-p-in-l-or-lg-constraint-report-6">
             <rule context="tei:p">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+               <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="(ancestor::tei:l or ancestor::tei:lg) and not( ancestor::tei:floatingText |parent::tei:figure |parent::tei:note )">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -210,7 +279,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-desc-deprecationInfo-only-in-deprecated-constraint-rule-9">
+            id="wea-desc-deprecationInfo-only-in-deprecated-constraint-rule-12">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -265,7 +334,7 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-ptr-ptrAtts-constraint-report-6">
+            id="wea-ptr-ptrAtts-constraint-report-7">
             <rule context="tei:ptr">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -281,7 +350,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-ref-refAtts-constraint-report-7">
+            id="wea-ref-refAtts-constraint-report-8">
             <rule context="tei:ref">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -298,7 +367,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-list-gloss-list-must-have-labels-constraint-rule-12">
+            id="wea-list-gloss-list-must-have-labels-constraint-rule-15">
             <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -347,7 +416,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-note-note.editorialOnesShouldFollowTrailingPunct-constraint-rule-15">
+            id="wea-note-note.editorialOnesShouldFollowTrailingPunct-constraint-rule-18">
             <sch:rule context="tei:note[@type='editorial']">
                            <sch:let name="folText" value="following-sibling::text()[1]"/>
                            <sch:assert test="not(matches($folText, '^[\.,\?:;]'))">
@@ -594,7 +663,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-relatedItem-targetorcontent1-constraint-report-8">
+            id="wea-relatedItem-targetorcontent1-constraint-report-9">
             <rule context="tei:relatedItem">
                <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -621,24 +690,25 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-l-abstractModel-structure-l-constraint-report-9">
+            id="wea-l-abstractModel-structure-l-in-l-constraint-report-10">
             <rule context="tei:l">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
+               <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-atleast1oflggapl-constraint-assert-28">
+            id="wea-lg-atleast1oflggapl-constraint-assert-30">
             <rule context="tei:lg">
                <sch:assert xmlns:xi="http://www.w3.org/2001/XInclude"
                      xmlns:svg="http://www.w3.org/2000/svg"
@@ -655,17 +725,18 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-lg-abstractModel-structure-l-constraint-report-10">
+            id="wea-lg-abstractModel-structure-lg-in-l-constraint-report-11">
             <rule context="tei:lg">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
+               <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -706,7 +777,7 @@ relatedItem element must be empty</sch:report>
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-quotation-quotationContents-constraint-report-11">
+            id="wea-quotation-quotationContents-constraint-report-12">
             <rule context="tei:quotation">
                <report xmlns:xi="http://www.w3.org/2001/XInclude"
                  xmlns:svg="http://www.w3.org/2000/svg"
@@ -846,34 +917,18 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-ab-abstractModel-structure-ab-constraint-report-12">
+            id="wea-ab-abstractModel-structure-ab-in-l-or-lg-constraint-report-13">
             <rule context="tei:ab">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)">
-        Abstract model violation: ab may not occur inside paragraphs or other ab elements.
-      </report>
-            </rule>
-         </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-ab-abstractModel-structure-l-constraint-report-13">
-            <rule context="tei:ab">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+               <sch:report xmlns:xi="http://www.w3.org/2001/XInclude"
+                     xmlns:svg="http://www.w3.org/2000/svg"
+                     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                     xmlns:math="http://www.w3.org/1998/Math/MathML"
+                     xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                     xmlns="http://www.tei-c.org/ns/1.0"
+                     test="(ancestor::tei:l or ancestor::tei:lg) and not( ancestor::tei:floatingText |parent::tei:figure |parent::tei:note )">
         Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -940,6 +995,51 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-relation-reforkeyorname-constraint-assert-45">
+            <rule context="tei:relation">
+               <assert xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="@ref or @key or @name">One of the attributes  'name', 'ref' or 'key' must be supplied</assert>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-relation-activemutual-constraint-report-15">
+            <rule context="tei:relation">
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="@active and @mutual">Only one of the attributes @active and @mutual may be supplied</report>
+            </rule>
+         </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            id="wea-relation-activepassive-constraint-report-16">
+            <rule context="tei:relation">
+               <report xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 test="@passive and not(@active)">the attribute 'passive' may be supplied only if the attribute 'active' is supplied</report>
+            </rule>
+         </pattern>
    <sch:pattern xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -960,41 +1060,29 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-l-constraint-report-15">
+            id="wea-div-abstractModel-structure-div-in-l-or-lg-constraint-report-17">
             <rule context="tei:div">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
+               <sch:report test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-div-abstractModel-structure-p-constraint-report-16">
+            id="wea-div-abstractModel-structure-div-in-ab-or-p-constraint-report-18">
             <rule context="tei:div">
-               <report xmlns:xi="http://www.w3.org/2001/XInclude"
-                 xmlns:svg="http://www.w3.org/2000/svg"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                 xmlns:math="http://www.w3.org/1998/Math/MathML"
-                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                 test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
+               <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-45">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-48">
       <sch:rule xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
