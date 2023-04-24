@@ -1908,7 +1908,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>We allow extent ONLY for legacy purposes.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:ptr">
+                           <sch:rule context="tei:ptr[@type='readMore']">
                               <sch:assert test="ancestor::tei:TEI/@xml:id='index'">
                                  ERROR: Only use the ptr element in the index page,
                                  and it must have type='readMore'.
@@ -1921,18 +1921,18 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>Pointers must only use the 'doc:' prefix.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:ptr">
+                           <sch:rule context="tei:ptr[@type='readMore'] | tei:link[parent::tei:linkGrp]">
                               <sch:assert test="matches(@target,'^doc:')">
-                                 ERROR: All ptr elements must have a @target attribute
+                                 ERROR: All <sch:name/> elements must have a @target attribute
                                  that points to a document using the doc: prefix.
-                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
+                                 (ie. &lt;<sch:name/> target="doc:LiChingsBaby1"/&gt;)
                               </sch:assert>
                            </sch:rule>
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
                   <attList>
-                     <attDef ident="type" mode="replace" usage="req">
+                     <attDef ident="type" mode="replace" usage="opt">
                         <valList type="closed">
                            <valItem ident="readMore" mode="add">
                               <desc>Read More</desc>
@@ -2469,6 +2469,29 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
+               <!--MODULE: LINKING-->
+               <elementSpec ident="linkGrp" module="linking" mode="change">
+                  <attList>
+                     <attDef usage="rec" ident="type" mode="change">
+                        <valList mode="add">
+                           <valItem ident="redirects">
+                              <gloss>redirect</gloss>
+                              <desc>redirects from old links to new</desc>
+                           </valItem>
+                           <valItem ident="work">
+                              <gloss>work</gloss>
+                              <desc>A grouping of works together</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="delete"/>
+                  </attList>
+               </elementSpec>
+               <elementSpec ident="link" module="linking" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.global.meta" mode="delete"/>
+                  </classes>
+               </elementSpec>
                <!--MODULE:FIGURES-->
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
@@ -2775,10 +2798,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <attDef ident="evaluate" mode="delete"/>
                   </attList>
                </classSpec>
-               <classSpec ident="att.pointingGroup"
-                          module="tei"
-                          type="atts"
-                          mode="delete"/>
                <classSpec ident="att.scoping" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.segLike" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.sortable" module="tei" type="atts" mode="delete"/>
@@ -2806,7 +2825,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <classSpec ident="att.pointing.group"
                           type="atts"
                           module="tei"
-                          mode="delete"/>
+                          mode="change">
+                  <attList>
+                     <attDef ident="domains" mode="delete"/>
+                     <attDef ident="targFunc" mode="delete"/>
+                  </attList>
+               </classSpec>
                <!--CONSTRAINTS-->
                <constraintSpec ident="global" scheme="schematron">
                   <constraint>
@@ -2950,7 +2974,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <desc>All link/linkGrp elements must ONLY occur in the redirects file.</desc>
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:linkGrp | tei:link">
+                        <sch:rule context="tei:linkGrp[@type='redirects'] | tei:link">
                            <sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'">
                               ERROR: Only use <sch:name/> in the redirects file.
                            </sch:assert>

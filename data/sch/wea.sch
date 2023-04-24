@@ -305,7 +305,7 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <sch:rule context="tei:ptr">
+      <sch:rule context="tei:ptr[@type='readMore']">
          <sch:assert test="ancestor::tei:TEI/@xml:id='index'">
                                  ERROR: Only use the ptr element in the index page,
                                  and it must have type='readMore'.
@@ -322,11 +322,11 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <sch:rule context="tei:ptr">
+      <sch:rule context="tei:ptr[@type='readMore'] | tei:link[parent::tei:linkGrp]">
          <sch:assert test="matches(@target,'^doc:')">
-                                 ERROR: All ptr elements must have a @target attribute
+                                 ERROR: All <sch:name/> elements must have a @target attribute
                                  that points to a document using the doc: prefix.
-                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
+                                 (ie. &lt;<sch:name/> target="doc:LiChingsBaby1"/&gt;)
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
@@ -1266,7 +1266,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <sch:rule context="tei:linkGrp | tei:link">
+      <sch:rule context="tei:linkGrp[@type='redirects'] | tei:link">
          <sch:assert test="ancestor::tei:TEI/@xml:id = 'redirects'">
                               ERROR: Only use <sch:name/> in the redirects file.
                            </sch:assert>

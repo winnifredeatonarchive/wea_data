@@ -14,6 +14,22 @@
         </exec>
     </target>
     
+    <target name="addComments">
+        <move todir="${dest.dir}2">
+            <fileset dir="${dest.dir}"/>
+        </move>
+        <xslt
+            style="postprocess-comment.xsl" classpath="${basedir}/../../lib/saxon-he-10.jar"
+            destdir="${dest.dir}"
+            extension=".xml"
+            force="true"
+            useimplicitfileset="false">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <fileset dir="${dest.dir}2" casesensitive="no"/>
+        </xslt>
+        <delete dir="${dest.dir}2"/>
+    </target>
+    
     <target name="validate">
         <copy todir="${dest.dir}">
             <fileset dir="../../data">
@@ -26,10 +42,11 @@
             <fileset dir="${dest.dir}">
                 <include name="*.xml"/>
                 <include name="*/**.xml"/>
+                <exclude name="sch/**"/>
             </fileset>
         </apply>
     </target>
     
-    <target name="all" depends="init, convert, validate"/>
+    <target name="all" depends="init, convert, addComments, validate"/>
   
 </project>

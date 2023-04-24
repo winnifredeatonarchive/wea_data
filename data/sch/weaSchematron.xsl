@@ -1126,8 +1126,9 @@
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:ptr" priority="1000" mode="M18">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ptr"/>
+   <xsl:template match="tei:ptr[@type='readMore']" priority="1000" mode="M18">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:ptr[@type='readMore']"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="ancestor::tei:TEI/@xml:id='index'"/>
@@ -1152,8 +1153,11 @@
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:ptr" priority="1000" mode="M19">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ptr"/>
+   <xsl:template match="tei:ptr[@type='readMore'] | tei:link[parent::tei:linkGrp]"
+                 priority="1000"
+                 mode="M19">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:ptr[@type='readMore'] | tei:link[parent::tei:linkGrp]"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(@target,'^doc:')"/>
@@ -1163,9 +1167,13 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>
-                                 ERROR: All ptr elements must have a @target attribute
+                                 ERROR: All <xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/> elements must have a @target attribute
                                  that points to a document using the doc: prefix.
-                                 (ie. &lt;ptr target="doc:LiChingsBaby1"/&gt;)
+                                 (ie. &lt;<xsl:text/>
+                  <xsl:value-of select="name(.)"/>
+                  <xsl:text/> target="doc:LiChingsBaby1"/&gt;)
                               </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -2496,9 +2504,11 @@ On <xsl:text/>
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:linkGrp | tei:link" priority="1001" mode="M69">
+   <xsl:template match="tei:linkGrp[@type='redirects'] | tei:link"
+                 priority="1001"
+                 mode="M69">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:linkGrp | tei:link"/>
+                       context="tei:linkGrp[@type='redirects'] | tei:link"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="ancestor::tei:TEI/@xml:id = 'redirects'"/>

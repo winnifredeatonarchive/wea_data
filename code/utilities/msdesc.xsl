@@ -21,6 +21,7 @@
     <xsl:param name="dest" select="'out/'"/>
     <xsl:output method="xml" indent="yes" />
     <xsl:mode on-no-match="shallow-copy"/>
+    <xsl:mode name="pass2" on-no-match="shallow-copy"/>
     
     <xsl:variable name="today" select="current-date() => format-date('[Y0001]-[M01]-[D01]')" as="xs:string"/>
     <xsl:variable name="texts" select="collection('../../data/texts?select=*.xml')" as="document-node()+"/>
@@ -77,6 +78,7 @@
     </xsl:template>
     
     
+    
     <!--Remove relatedItems-->
     <xsl:template match="notesStmt"/>
     
@@ -97,7 +99,9 @@
                 </xsl:where-populated>
                 <msContents>
                     <msItem>
-                        <xsl:apply-templates select="$srcBibl"/>
+                        <bibl>
+                            <xsl:apply-templates select="$srcBibl/(@*|node())"/>
+                        </bibl>
                     </msItem>
                 </msContents>
                 <xsl:call-template name="makeAdditional"/>
@@ -129,9 +133,9 @@
                 </xsl:sequence>
                 <availability>
                     <xsl:sequence>
-                        <xsl:apply-templates select="$notesStmt/note"/>
+                        <xsl:apply-templates select="$notesStmt/note[matches(string(.),'\S')]"/>
                         <xsl:on-empty>
-                            <p><!--Add information about provenance of facsimile here.--></p>
+                            <p><xsl:comment>[Add information about the holding library (i.e. the source of the facsimile) here]</xsl:comment></p>
                         </xsl:on-empty>
                     </xsl:sequence>
                 </availability>
@@ -160,9 +164,10 @@
     <xsl:template name="createComment">
         <xsl:param name="comment"/>
         <xsl:param name="example"/>
-        <xsl:comment select="normalize-space($comment)"/>
-        <xsl:comment select="serialize($example)"/>
-        
+        <comment><xsl:sequence select="normalize-space($comment)"/></comment>
+        <comment>
+            <xsl:sequence select="$example"/>
+        </comment>
     </xsl:template>
     
     <xsl:template match="notesStmt/note">
@@ -200,15 +205,17 @@
     </xsl:template>
     
     <xsl:template match="listBibl[ancestor::div[@xml:id = 'bibliography_we']]">
-        <relation name="work">
+        <linkGrp type="work">
             <xsl:sequence select="@xml:id"/>
-            <xsl:attribute name="mutual"
-                select="child::bibl ! ('doc:' || $biblToTextMap(string(./@xml:id)))"
-                separator=" "/>
             <desc>
                 <xsl:apply-templates select="head/node()"/>
             </desc>
-        </relation>
+            <xsl:apply-templates select="bibl"/>
+        </linkGrp>
+    </xsl:template>
+    
+    <xsl:template match="bibl[@xml:id]">
+        <ptr target="doc:{$biblToTextMap(string(@xml:id))}"/>
     </xsl:template>
 
     
@@ -230,7 +237,7 @@
                 <teiHeader>
                     <fileDesc>
                         <titleStmt>
-                            <title>Bibliography</title>
+                            <title>Relationships and Linked Data</title>
                         </titleStmt>
                         <publicationStmt>
                             <p>Publication Information</p>
@@ -253,9 +260,9 @@
                 </teiHeader>
                 <text>
                     <body>
-                        <listRelation>
-                            <xsl:apply-templates/>
-                        </listRelation>
+                         <div xml:id="{@xml:id}">
+                             <xsl:apply-templates select="node()"/>
+                         </div>
                     </body>
                 </text>
             </TEI>
