@@ -5,29 +5,55 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-             <title>Marion</title>
-             <title type="sub">The Story of an Artist’s Model</title>
+            <title>Marion</title>
+            <title type="sub">The Story of an Artist’s Model</title>
          </titleStmt>
          <publicationStmt>
             <p>ADD STUFF HERE</p>
          </publicationStmt>
-          <notesStmt>
-              <note>Facsimile retrieved from Project Gutenberg</note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:73"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl73"><author><name ref="pers:WE1">The author of <title level="m">Me</title> and Herself</name></author>. <title level="m">Marion: The
+                     Story of an Artist’s Model</title>. New York, <publisher ref="org:Watt">W.J.
+                     Watt</publisher>, <date when="1916">1916</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Project Gutenberg</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-             <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
+            <catRef scheme="wdt:exhibit" target="wdt:NewYork"/>
             <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
             <catRef target="wdt:genreNovel" scheme="wdt:genre"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-          <change who="pers:SL1" when="2022-05-06" status="published">Updated status.</change>
-          <change who="pers:MC1" when="2020-07-02" status="inProgress">Added note about source.</change>
-          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl73 using XSLT.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:SL1" when="2022-05-06" status="published">Updated status.</change>
+         <change who="pers:MC1" when="2020-07-02" status="inProgress">Added note about source.</change>
+         <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl73 using XSLT.</change>
          <change who="pers:JT1" when="2019-03-12">Created file from Project Gutenberg transcription.</change>
       </revisionDesc>
    </teiHeader>

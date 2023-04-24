@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Kiss1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Kiss1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>A Kiss</title>
- 
             <respStmt>
                <resp>Transcriber</resp>
                <name ref="pers:KI1">Ken Ip</name>
@@ -23,13 +22,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
- 
- <notesStmt> 
- <note>
- Facsimile retrieved from    
- </note></notesStmt> 
          <sourceDesc>
-            <bibl copyOf="bibl:19"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl19"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">A Kiss</title>. Illustrated by <author role="illustrator"><name ref="pers:HB2">Howard V. Brown</name></author>. <publisher ref="org:Smith"><title level="j">Smith’s Magazine</title></publisher>, <date when="1914-10">Oct. 1914</date>, pp. <biblScope unit="page">47-55</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>
+ Facsimile retrieved from    
+ </p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -40,7 +62,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">added illustrator</change><change who="pers:MC1" when="2020-05-21" status="published">final proof</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">added illustrator</change>
+         <change who="pers:MC1" when="2020-05-21" status="published">final proof</change>
          <change who="pers:MC1" when="2019-05-15" status="published"> did final edits</change>
          <change who="pers:KI1" when="2019-05-09" status="readyForProof"> Corrected and prepared encoded xml</change>
          <change who="pers:KI1" when="2019-05-09" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
@@ -67,7 +91,7 @@
             <p><q>I daughter of a fighter</q>, she said gently. <q>I am not ’fraid of anyt’ing</q>. She paused, and added, with just the slightest touch of reproach: <q>Bud you are ’fraid! You ’fraid to speag those words unto my papa</q>.</p>
             <p><q>No, I’m not!</q> he protested. <q>I’ll speak to him—er—to-night! I’ll beard the old lion—I mean I’ll even get down on my knees to him, if necessary!</q></p>
             <p>She shook her head very gravely at that.</p>
-            <pb n="48"></pb>
+            <pb n="48"/>
             <p><q>My papa nod lig knees. He a fighter!</q></p>
             <p><q>Yes, I know</q>, said Mr. Robert Bradley ruefully. Then, edging a bit nearer to her: <q>But as long as <emph>you</emph> have decided for me, that about settles it, doesn’t it?</q></p>
             <p><q>It nod even begun git settled yit!</q> said Pine Tree in remonstrance. <q>Japanese girl kinnod speag for herself in soach matter. She got no tongue. Her papa got speag for her. He say, ‘Yaes’—or, mebbe, ‘No-o.’ Thas hard to say which word he speag unto you</q>.</p>

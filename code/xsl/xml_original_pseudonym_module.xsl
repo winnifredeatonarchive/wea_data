@@ -156,9 +156,8 @@
             
    <xsl:function name="wea:getDateFromBibl" as="xs:string?" new-each-time="no">
        <xsl:param name="node"/>
-       <xsl:variable name="biblPtr" select="$node/ancestor-or-self::TEI//sourceDesc/bibl[@copyOf][1]/translate(@copyOf,':','')"/>
-       <xsl:variable name="bibls" select="$sourceXml//TEI[@xml:id='bibliography']//bibl[date]" as="element(bibl)+"/>
-       <xsl:variable name="date" select="normalize-space($bibls[@xml:id=$biblPtr]/date/(@when|@notBefore)[1])"/>
+       <xsl:variable name="bibls" select="root($node)//bibl[ancestor::msContents]" as="element(bibl)+"/>
+       <xsl:variable name="date" select="$bibls/date/(@when|@notBefore)[1]"/>
        <xsl:value-of select="$date"/>
    </xsl:function>
     

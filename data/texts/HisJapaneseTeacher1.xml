@@ -26,11 +26,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from Hathi Trust</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:50"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl50"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">His Japanese Teacher</title>. <publisher ref="org:Puritan"><title level="j">The Puritan</title></publisher>, <date when="1899-03">Mar.
+                     1899</date>, pp. <biblScope unit="page">209-217</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -41,6 +65,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-17" status="published">Added illustrator to metadata.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>

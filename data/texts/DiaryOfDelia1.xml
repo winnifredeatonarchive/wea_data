@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -23,11 +23,38 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uiug.30112109515871">https://hdl.handle.net/2027/uiug.30112109515871</ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:142"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl142"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">The Diary of Delia: Including Her Experiences in General
+                     Housework and Her Personal Reflections Upon Certain Persons in High Places
+                     [Part 1]</title>. Illustrated by <author role="illustrator"><name ref="pers:MP1">May Wilson Preston</name></author>. <title level="m">Saturday
+                     Evening Post</title>, <date when="1907-02-23">23 Feb. 1907</date>, pp.
+                     <biblScope unit="page">3-5</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uiug.30112109515871">https://hdl.handle.net/2027/uiug.30112109515871</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -38,13 +65,15 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SB2" when="2020-08-11" status="published">Proofed.</change>
          <change who="pers:DC1" when="2020-08-06" status="published">Encoded formework.</change>
          <change who="pers:MC1" status="published" when="2020-08-02">Proofreading.</change>
          <change who="pers:DC1" status="published" when="2019-07-13">Proofreading.</change>
          <change who="pers:DC1" status="inProgress" when="2019-07-06">Encoding.</change>
          <change who="pers:DC1" status="inProgress" when="2019-07-04">Encoding.</change>
-         <change who="pers:DC1" when="2020-07-03" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change> <change who="pers:DC1" status="inProgress" when="2019-07-04">Encoding.</change>
+         <change who="pers:DC1" when="2020-07-03" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:DC1" status="inProgress" when="2019-07-04">Encoding.</change>
          <change who="pers:SL1" status="empty" when="2019-07-04">Added facs.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl142 using XSLT.</change>
       </revisionDesc>

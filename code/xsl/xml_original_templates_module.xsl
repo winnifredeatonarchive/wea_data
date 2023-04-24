@@ -180,7 +180,7 @@
     </xsl:template>
     
     <!--Get the content from the copyOf bibl...-->
-    <xsl:template match="bibl[@copyOf]" mode="original">
+  <!--  <xsl:template match="bibl[@copyOf]" mode="original">
         <xsl:variable name="thisBiblPointer" select="substring-after(@copyOf,'bibl:')"/>
         <xsl:variable name="thisBiblId" select="concat('bibl',$thisBiblPointer)"/>
         <xsl:copy>
@@ -188,7 +188,7 @@
             <xsl:variable name="thisBibl" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id=$thisBiblId]" as="item()+"/>
             <xsl:apply-templates select="$thisBibl/node()" mode="#current"/>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
     
     
     <xsl:template match="item[@corresp]" mode="original">

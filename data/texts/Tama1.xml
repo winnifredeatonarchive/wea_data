@@ -10,11 +10,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from the Thomas Fisher Canadiana Collection on the Internet Archive.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:135"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl135"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Tama</title>. Illustrated by <author role="illustrator"><name ref="pers:GK1">Genjiro Kataoka</name></author>. <publisher ref="org:Harper">Harper and Brothers</publisher>, <date when="1910">1910</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from the Thomas Fisher Canadiana Collection on the Internet Archive.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -25,9 +48,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:SL1" status="empty"  when="2022-04-30">Added facsimile.</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl135 using XSLT.</change>
+         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:SL1" status="empty" when="2022-04-30">Added facsimile.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl135 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Tama1">

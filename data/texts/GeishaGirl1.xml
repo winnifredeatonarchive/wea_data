@@ -22,11 +22,37 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note><!--ADD FACSIMILE SOURCE HERE--></note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:149"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl149"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Geisha Girl is Primarily an Entertainer</title>.
+                     <publisher ref="org:StLouisDispatch"><title level="j">St. Louis
+                        Dispatch</title></publisher>, <date when="1899-10-29">29 Oct. 1899</date>,
+                  p. <biblScope unit="page">41</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +63,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-07-08" status="published">added and proofread transcription.</change>
          <change who="pers:MC1" when="2020-07-08" status="inProgress">added transcription.</change>

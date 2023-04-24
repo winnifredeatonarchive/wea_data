@@ -22,11 +22,42 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from the University of Calgary archives</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:34"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                  <idno>17.3</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl34"><author><name ref="pers:WE1">Eaton Reeve,
+                     Winnifred</name></author>. <title level="a">Books, Literary Notes, etc</title>.
+                     <publisher ref="org:Albertan"><title level="j">Morning
+                     Albertan</title></publisher>, <date when="1924-05-28">28 May 1924</date>
+                  <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>
+                  <idno>17.3</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from the University of Calgary archives</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +68,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-20" status="published">Gaps re-encoded..</change>
          <change who="pers:LW1" when="2022-08-29" status="published">Gaps encoded. Set to
             published.</change>
@@ -95,12 +127,8 @@
             <milestone unit="sectionBreak"/>
             <p>A Canadian writer whose work is coming to the fore is Mrs. M. L Strange of Fenn,
                Alberta, wife of <gap extent="1 word" reason="damage"/> Strange of champion wheat
-                  <gap extent="1 word" reason="damage"/> Mrs. Strange is writing stories <gap
-                  extent="approx. 2 words" reason="damage"/> concerned with farming
-               in <gap extent="half line" reason="damage"/> have been bought for <gap
-                  extent="half line" reason="damage"/> known <gap extent="2 lines"
-                  reason="damage"/> has recently <gap extent="1 line"
-                  reason="damage"/>
+                  <gap extent="1 word" reason="damage"/> Mrs. Strange is writing stories <gap extent="approx. 2 words" reason="damage"/> concerned with farming
+               in <gap extent="half line" reason="damage"/> have been bought for <gap extent="half line" reason="damage"/> known <gap extent="2 lines" reason="damage"/> has recently <gap extent="1 line" reason="damage"/>
                <unclear reason="faded">public</unclear>
                <gap extent="several lines" reason="damage"/></p>
 

@@ -10,24 +10,40 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1">Sijia Cheng</name>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1">Sijia Cheng</name>
             </respStmt>
          </titleStmt>
-         
-         
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from https:/archive.org/</note>
-            <relatedItem type="edition" target="bibl:HUNT1"/>
-            <relatedItem type="edition" target="bibl:CHOL1"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:221"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl221"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Cattle</title>. <pubPlace>Toronto</pubPlace>, <publisher ref="org:Musson">Musson</publisher>, <date when="1923">1923</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from https:/archive.org/</p>
+                     </availability>
+                  </adminInfo>
+                  <listBibl>
+                     <bibl target="bibl:HUNT1"/>
+                     <bibl target="bibl:CHOL1"/>
+                  </listBibl>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -38,7 +54,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">finalized</change><change who="pers:MC1" when="2020-07-01" status="inProgress">Added note about source</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">finalized</change>
+         <change who="pers:MC1" when="2020-07-01" status="inProgress">Added note about source</change>
          <change who="pers:SC1" when="2020-05-26" status="inProgress">Began proofreading</change>
          <change who="pers:JT1" when="2020-05-15" status="empty">Created file from bibl.</change>
       </revisionDesc>
@@ -50,9 +68,7 @@
        
          <head>Cattle</head>
          <opener>
-            <byline>By <name ref="pers:WE1">Onoto Watanna</name>. Author of <q><ref
-            target="doc:JapaneseNightingale6">A Japanese Nightingale</ref></q> and <q><ref
-               target="doc:SunnySan1">Sunny-San</ref></q>, etc.</byline>
+            <byline>By <name ref="pers:WE1">Onoto Watanna</name>. Author of <q><ref target="doc:JapaneseNightingale6">A Japanese Nightingale</ref></q> and <q><ref target="doc:SunnySan1">Sunny-San</ref></q>, etc.</byline>
          </opener>
          
          <pb n="6"/>
@@ -3554,7 +3570,7 @@
                tongue upon the name of the man whom he suspected was responsible for Nettie Day’s
                downfall.</p>
             <p>Nettie’s gaze was bent straight ahead. She did not turn or look at the rider watching
-               her from the trail.</p> <p></p>
+               her from the trail.</p> <p/>
             <p>Things had been going from bad to worse at Bar Q. More than the usual number of
                calves had died from blackleg, and a number of first-class heifers had perished in
                the woods where the larkspur (poison weed) grew wild. A Government veterinary
@@ -4936,7 +4952,4 @@
          </div>
       </body>
    </text>
-
-
-
 </TEI>

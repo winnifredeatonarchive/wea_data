@@ -10,10 +10,34 @@
          <publicationStmt>
             <p>ADD STUFF HERE</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Project Gutenberg</note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:154"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl154"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">The Honorable Miss Moonlight</title>. New York, <publisher ref="org:Harper">Harper and Brothers</publisher>, <date when="1912">1912</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Project Gutenberg</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -24,6 +48,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SB2" when="2020-07-31" status="published">Set status to published.</change>
          <change who="pers:SB2" when="2020-07-30" status="inProgress">Proofed.</change>
          <change who="pers:SB2" when="2020-07-27" status="inProgress">added page numbers. will proof next.</change>

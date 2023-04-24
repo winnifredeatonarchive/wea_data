@@ -19,13 +19,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref
-                  target="https://catalog.hathitrust.org/Record/000542803"
-                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:78"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl78"><author><name ref="pers:WE1">Herself and the author of <title level="m">Me</title></name></author>. <title level="m">Marion: The Story
+                     of an Artist’s Model [Part 5]</title>. Illustrated by <author role="illustrator"><name ref="pers:HH1">Henry Hutt</name></author>. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>,
+                     <date when="1916-08">Aug. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -36,6 +58,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">edited, added fw type, and set to published.</change>
          <change who="pers:LW1" when="2022-06-01" status="readyForProof">Changed letters to floatingText.</change>
          <change who="pers:LW1" when="2022-05-17" status="readyForProof">Added italics.</change>

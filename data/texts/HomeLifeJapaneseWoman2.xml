@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeLifeJapaneseWoman2">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HomeLifeJapaneseWoman2">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,12 +22,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile provided by University of Minnesota Anderson Library.</note>
-            <note>This is an excerpted reprint of <ref target="doc:HomeLifeJapaneseWoman1"><title level= "a">Home Life of Japanese Woman</title></ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:63"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl63"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Japanese Woman</title>. <publisher ref="org:Anderson"><title level="j">Anderson [S.C.] Intelligencer</title></publisher>, <date when="1903-02-25">25 Feb. 1903</date>, p. <biblScope unit="page">6</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile provided by University of Minnesota Anderson Library.</p>
+                        <p>This is an excerpted reprint of <ref target="doc:HomeLifeJapaneseWoman1"><title level="a">Home Life of Japanese Woman</title></ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -38,13 +61,16 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-05-23" status="published">inserted div.</change><change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change><change who="pers:MC1" when="2019-07-03" status="published">proofed.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-05-23" status="published">inserted div.</change>
+         <change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change>
+         <change who="pers:MC1" when="2019-07-03" status="published">proofed.</change>
          <change who="pers:SL1" when="2019-06-17" status="readyForProof">Readied for proof.</change>
          <change who="pers:SL1" when="2019-06-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl62 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-           <text facs="facs:Japanese_Woman_Not_A_Slave">
+   <text facs="facs:Japanese_Woman_Not_A_Slave">
       <body>
 
             <head>The Japanese Woman</head>

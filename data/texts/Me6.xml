@@ -10,11 +10,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of California-Santa Cruz Library, Hathi Trust/</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:87"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl87"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="m">Me: A Book of Remembrance</title>. <pubPlace>New York</pubPlace>,
+                     <publisher ref="org:CenturyCompany">Century Company</publisher>, <date when="1915">1915</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of California-Santa Cruz Library, Hathi Trust/</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -25,9 +48,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty"  when="2020-07-01">Added note about source.</change><change who="pers:SL1" status="empty"  when="2019-08-23">Added facs.</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl87 using XSLT.</change>
+         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-01">Added note about source.</change>
+         <change who="pers:SL1" status="empty" when="2019-08-23">Added facs.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl87 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Me">

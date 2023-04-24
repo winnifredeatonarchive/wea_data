@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea3">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfAzalea3">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,10 +22,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Google Books from original at University of Virginia </note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:165"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl165"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">The Love of Azalea [Part 3]</title>, <publisher ref="org:Bookman"><title level="j">Bookman</title></publisher>, <date when="1904-10-21">21 Oct. 1904</date>, pp. <biblScope unit="page">161-68</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Google Books from original at University of Virginia </p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -36,7 +60,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change><change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change><change who="pers:MC1" when="2019-07-03" status="published">Proofed.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change>
+         <change who="pers:MC1" when="2020-05-23" status="published">changed genre.</change>
+         <change who="pers:MC1" when="2019-07-03" status="published">Proofed.</change>
          <change who="pers:SL1" when="2019-06-27" status="readyForProof">Readied for proof.</change>
          <change who="pers:SL1" when="2019-06-27" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl165 using XSLT.</change>

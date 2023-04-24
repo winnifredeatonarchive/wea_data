@@ -22,12 +22,40 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>
-               <q>The Other Woman</q>, c. 1917-1935, (CU2337782) by Eaton, Winnifred. Courtesy of Libraries and Cultural Resources Digital Collections, University of Calgary.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:278"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</repository>
+                  <idno>6.6</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl278"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">The Other Woman</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</distributor>, <idno>6.6</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>
+               <q>The Other Woman</q>, c. 1917-1935, (CU2337782) by Eaton, Winnifred. Courtesy of Libraries and Cultural Resources Digital Collections, University of Calgary.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -38,7 +66,8 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-            <change who="pers:SL1" when="2022-12-13" status="published">Finished encoding.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:SL1" when="2022-12-13" status="published">Finished encoding.</change>
          <change who="pers:SL1" when="2022-12-13" status="inProgress">Downloaded document from Google Drive and converted to TEI and began encoding.</change>
          <change who="pers:SL1" when="2022-03-12" status="empty">Added catREF info.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>

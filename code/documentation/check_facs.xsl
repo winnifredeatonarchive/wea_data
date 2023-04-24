@@ -149,6 +149,10 @@
         <xsl:map-entry key=". || '.xml'" select="true()"/>
     </xsl:template>
     
+    <xsl:template match="linkGrp/@xml:id" mode="ids">
+        <xsl:map-entry key=". || '.xml'" select="true()"/>
+    </xsl:template>
+    
     <xsl:template match="listBibl/@xml:id" mode="ids">
         <xsl:map-entry key=". || '.xml'" select="true()"/>
     </xsl:template>

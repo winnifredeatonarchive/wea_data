@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?> <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LendMeYourTitle2">
    <teiHeader>
       <fileDesc>
@@ -9,11 +10,37 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from University of British Columbia</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:70"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl70"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Lend Me Your Title [Part 2]</title>. Illustrated by <author role="illustrator"><name ref="pers:CP1">C. F. Peters</name></author>.
+                     <publisher ref="org:Macleans"><title level="j">Maclean’s
+                     Magazine</title></publisher>, <date when="1919-03">Mar. 1919</date>, pp.
+                     <biblScope unit="page">16, 18-19, 66-69</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from University of British Columbia</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -24,6 +51,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-03-09" status="published">Set to published.</change>
          <change who="pers:JT1" when="2021-11-29" status="readyForProof">Edited and added text to repository.</change>
          <change who="pers:SP1" status="inProgress" when="2021-10-28">Transcribed.</change>

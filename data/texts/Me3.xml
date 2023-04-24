@@ -22,11 +22,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:84"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl84"><author><name ref="pers:WE1">Anonymous</name></author>&gt;. <title level="m">Me: A Book of Remembrance [Part Three]</title>. <publisher ref="org:Century"><title level="j">Century Illustrated Monthly
+                     Magazine</title></publisher>. <date when="1915-06">June 1915</date>, pp.
+                     <biblScope unit="page">275-296</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +61,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-09" status="published">Edited content warning.</change>
          <change who="pers:LW1" when="2022-07-28" status="published">Set to published.</change>
          <change who="pers:LW1" when="2022-07-28" status="published">Proofed and encoded.</change>
@@ -213,8 +238,7 @@
                what he meant.</p>
             <p><q>Oh</q>, said I, <q>you needn’t worry about me. If you don’t’ believe that I care
                   nothing about money, look at this</q>.</p>
-            <p>There were a few coins in my pocketbook. I poured them into my hand, and <pb n="278"
-               /> deliberately and impulsively I tossed them out into the road. I am sure I don’t
+            <p>There were a few coins in my pocketbook. I poured them into my hand, and <pb n="278"/> deliberately and impulsively I tossed them out into the road. I am sure I don’t
                know why I did such a senseless thing as that. It was just the impulse of a silly
                moment.</p>
             <p>The subjects we two girls and boys discussed were varied and many, but always by
@@ -1222,8 +1246,7 @@
             <p><q>Nora, I have an A No. 1 pull with old man Smith, and there ain’t nobody going to
                   get my job here; but I’m working them for the New York job. I want to go
                east</q>.</p>
-            <p>That made me feel just as badly, for, if Fred was transferred to the New York <pb
-                  n="295"/> branch, what would become of me? I could not go, too, and I disliked the
+            <p>That made me feel just as badly, for, if Fred was transferred to the New York <pb n="295"/> branch, what would become of me? I could not go, too, and I disliked the
                thought of working under another.</p>
             <p>I felt so badly about it that I wrote to Mr. Hamilton, who had not been to see me for
                three weeks. I suppose if I had not been working so hard, I should have felt worse

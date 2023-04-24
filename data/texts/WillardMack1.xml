@@ -18,11 +18,37 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from University of British Columbia Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:210"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl210"><author><name ref="pers:WE1">Reeve, Mrs.
+                     Frances</name></author>. <title level="a">Willard Mack to Collaborate With Mrs.
+                     Frances Reeve</title>. <publisher ref="org:Calgary"><title level="j">Calgary
+                        Herald</title></publisher>, <date when="1921-09-14">14 Sept. 1921</date>, p.
+                     <biblScope unit="page">4</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from University of British Columbia Library</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -33,6 +59,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-06" status="published">Proof completed and set to
             published.</change>
          <change who="pers:KL1" when="2021-10-28" status="inProgress">Started transcribing.</change>
@@ -48,8 +75,7 @@
       <pb n="4"/>
       <body>
          <head>Willard Mack to Collaborate With Mrs. Frances Reeve</head>
-         <head type="subtitle">Authoress Is Known to Reading Public As <q><name ref="pers:WE1"
-                  >Onotowatanna</name></q>
+         <head type="subtitle">Authoress Is Known to Reading Public As <q><name ref="pers:WE1">Onotowatanna</name></q>
             <name ref="pers:WE1">Mrs. Reeve</name> Says Canada Has Not Attempted to Conserve Cream
             of Natural Resources—The Authors of the Country</head>
          <opener>

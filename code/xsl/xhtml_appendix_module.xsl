@@ -259,7 +259,7 @@
                </xsl:on-non-empty>
                <xsl:for-each select="bibl">
                    <xsl:variable name="id" select="@xml:id" as="xs:string"/>
-                   <xsl:if test="ancestor::TEI/descendant::*[not(self::relatedItem)][@*[contains-token(., ('#' || $id))]]">
+                   <xsl:if test="ancestor::TEI/descendant::*[not(ancestor::teiHeader)][@*[contains-token(., ('#' || $id))]]">
                        <xsl:apply-templates select="." mode="tei"/>
                    </xsl:if>
                </xsl:for-each>

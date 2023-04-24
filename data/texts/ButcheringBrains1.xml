@@ -54,14 +54,32 @@ Publicly accessible
  uva-lib:475911 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Winnifred Eaton Reeve Fonds, University of Calgary</note>
-            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatButc"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:35"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl35"><author><name ref="pers:WE1">Reeve, Winnifred Eaton</name>
+                        (<name ref="pers:WE1">Watanna, Onoto</name>)</author>. <title level="a">Butchering Brains: An Author in Hollywood is as a Lamb in an Abattoir</title>.
+                     <publisher ref="org:MotionPictureMag"><title level="j">Motion Picture
+                        Magazine</title></publisher>, <date when="1928-09">Sept. 1928</date>, pp.
+                     <biblScope unit="page">28-29, 110-11</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <recordHist>
+                        <source target="bibl:COLE3"/>
+                     </recordHist>
+                     <availability>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds, University of Calgary</p>
+                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                     </availability>
+                  </adminInfo>
+                  <listBibl>
+                     <bibl target="weda:EatButc"/>
+                  </listBibl>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -75,6 +93,7 @@ Publicly accessible
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-01" status="published">proofread.</change>

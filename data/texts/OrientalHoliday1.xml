@@ -53,14 +53,29 @@ Publicly accessible
  uva-lib:475930 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Library of Congress</note>
-            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatOrie"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:29"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl29"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">An Oriental Holiday</title>. <publisher ref="org:Conkey"><title level="j">Conkey’s Home Journal</title></publisher>, <date when="1898-12">Dec. 1898</date>, pp. <biblScope unit="page">12-13</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <recordHist>
+                        <source target="bibl:COLE3"/>
+                     </recordHist>
+                     <availability>
+                        <p>Facsimile retrieved from Library of Congress</p>
+                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                     </availability>
+                  </adminInfo>
+                  <listBibl>
+                     <bibl target="weda:EatOrie"/>
+                  </listBibl>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -71,6 +86,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-07-02" status="published">added note about source</change>

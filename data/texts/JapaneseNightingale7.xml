@@ -10,11 +10,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of California Los Angeles.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:317"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl317"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">A Japanese Nightingale</title>. Illustrated by <author role="illustrator"><name ref="pers:GY1">Genjiro Yeto</name></author>.
+                     <pubPlace>London</pubPlace>, <publisher ref="org:ArchibaldConstable">Archibald
+                     Constable &amp; Co. Ltd</publisher>, <date when="1904">1904</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of California Los Angeles.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -25,6 +50,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-05-01" status="empty">Added catref info and facsimile.</change>
          <change who="pers:JT1" when="2022-05-01" status="empty">Created shell from bibl file.</change>
       </revisionDesc>

@@ -92,10 +92,10 @@
             <div id="credits_content" class="content">
                 <xsl:apply-templates select="$root//respStmt[not(ancestor::biblFull)]" mode="metadata"/>
                 
-                <xsl:if test="$root//notesStmt[not(ancestor::biblFull)]/note">
+                <xsl:if test="$root//availability[ancestor::msDesc]/p">
                     <div>
                         <div class="metadataLabel">Notes</div>
-                        <xsl:for-each select="$root//notesStmt[not(ancestor::biblFull)]/note">
+                        <xsl:for-each select="$root//availability[ancestor::msDesc]/p">
                             <div>
                                 <xsl:apply-templates select="node()" mode="tei"/>
                             </div>
@@ -169,10 +169,10 @@
     <xsl:template name="createCitations">
         <xsl:variable name="root" select="ancestor-or-self::TEI"/>
         <xsl:variable name="uri" select="wea:getURL($root)"/>
-        <xsl:if test="$root//sourceDesc[not(ancestor::sourceDesc)]/bibl">
+        <xsl:if test="$root//sourceDesc[not(ancestor::sourceDesc)]/msDesc/msContents/msItem/bibl">
             <div id="source_citation">
                 <div class="metadataLabel">Source Citation</div>
-                <xsl:apply-templates select="$root//sourceDesc[not(ancestor::sourceDesc)]/bibl" mode="tei"/>
+                <xsl:apply-templates select="$root//sourceDesc[not(ancestor::sourceDesc)]/msDesc/msContents/msItem/bibl" mode="tei"/>
             </div>
         </xsl:if>
        
@@ -184,32 +184,29 @@
     
     
     <xsl:template name="createRelatedItems">
-        <xsl:for-each-group select="root(.)//notesStmt/relatedItem" group-by="@type">
-            <xsl:sort select="current-grouping-key()" order="descending"/>
-            <div id="relatedItems_{current-grouping-key()}">
-                <div class="metadataLabel">
-                    <xsl:choose>
-                        <xsl:when test="current-grouping-key() = 'bibliography'">Cited In</xsl:when>
-                        <xsl:when test="current-grouping-key() = 'edition'">Other Editions</xsl:when>
-                        <xsl:otherwise>
-                            <xsl:message terminate="yes">
-                                UNKNOWN relatedItem/@type = <xsl:value-of select="current-grouping-key()"/>
-                            </xsl:message>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </div>
-                <!--Sort these reverse chronological, and fetch the bibl first-->
-                <xsl:for-each select="current-group() ! wea:getBiblFromRelatedItem(.)">
-                    <xsl:sort select="if (date) then tokenize(date/@when,'-')[1] => xs:integer() else 0" order="descending"/>
-                    <xsl:apply-templates select="." mode="tei"/>
-                </xsl:for-each>
+        <xsl:variable name="editions" select="root(.)//additional/listBibl" />
+        <xsl:variable name="citations" select="root(.)//additional/recordHist"/>
+        <xsl:apply-templates select="root(.)//additional/(listBibl|recordHist)" mode="relatedItems"/>
+    </xsl:template>
+    
+    <xsl:template match="listBibl | recordHist" mode="relatedItems">
+        <div id="relatedItems_{if (self::listBibl) then 'editions' else 'citations'}">
+            <div class="metadataLabel">
+                <xsl:choose>
+                    <xsl:when test="self::recordHist">Cited In</xsl:when>
+                    <xsl:otherwise>Other Editions</xsl:otherwise>
+                </xsl:choose>
             </div>
-        </xsl:for-each-group>
+            <xsl:for-each select="* ! wea:getBiblFromRelatedItem(.)">
+                <xsl:sort select="if (date) then tokenize(date/@when,'-')[1] => xs:integer() else 0" order="descending"/>
+                <xsl:apply-templates select="." mode="tei"/>
+            </xsl:for-each>
+        </div>
     </xsl:template>
     
     
     <xsl:function name="wea:getBiblFromRelatedItem" as="element(tei:bibl)">
-        <xsl:param name="relatedItem" as="element(relatedItem)"/>
+        <xsl:param name="relatedItem" as="element()"/>
         <xsl:variable name="targ" select="$relatedItem/@target" as="xs:string"/>
         <xsl:choose>
             <xsl:when test="starts-with($targ,'#')">
@@ -230,7 +227,6 @@
     
     
     <xsl:template match="biblFull" mode="citation"/>
-    
     
     <xsl:template match="bibl/author/name | bibl/author/rs | bibl/publisher" mode="citation">
         <xsl:apply-templates mode="#current"/>
@@ -381,7 +377,9 @@
     
     <xsl:template name="makeMetadata">
         <!--First thing is to apply templates to the sourceDesc-->
-        <xsl:apply-templates select="//sourceDesc[not(ancestor::biblFull)]/bibl/*" mode="metadata"/>
+        <xsl:apply-templates
+            select="//sourceDesc[not(ancestor::biblFull)]/msDesc/msContents/msItem/bibl/*"
+            mode="metadata"/>
         
         <!--Now process the category references-->
         <xsl:apply-templates select="//catRef[not(ancestor::biblFull)]" mode="metadata"/>
@@ -414,11 +412,14 @@
     </xsl:template>
     
     <xsl:template name="getWork">
-        <xsl:variable name="thisBibl" select="//sourceDesc[not(ancestor::biblFull)]/bibl/substring-after(@copyOf,'bibliography.xml#')"/>
-        <xsl:variable name="thisWork" select="$standaloneXml[//TEI[@xml:id='bibliography']]//listBibl[bibl[@xml:id=$thisBibl]]"/>
+        <xsl:variable name="thisId" select="root(.)//TEI/@xml:id" as="xs:string"/>
+        <xsl:variable name="thisWork" select="$standaloneXml[//TEI[@xml:id='relationships']]//linkGrp[@type='work'][ptr[contains-token(@target, ($thisId || '.xml'))]]" as="element(linkGrp)"/>
         <div>
             <div class="metadataLabel">Work</div>
-            <div><a href="{$thisWork/@xml:id}.html"><xsl:apply-templates select="$thisWork/head/node()" mode="tei"/></a>
+            <div>
+                <a href="{$thisWork/@xml:id}.html">
+                    <xsl:apply-templates select="$thisWork/desc/node()" mode="tei"/>
+                </a>
             </div>
         </div>
     </xsl:template>

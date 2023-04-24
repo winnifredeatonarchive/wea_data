@@ -22,11 +22,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:85"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl85"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="m">Me: A Book of Remembrance [Part Four]</title>. <publisher ref="org:Century"><title level="j">Century Illustrated Monthly
+                     Magazine</title></publisher>. <date when="1915-07">July 1915</date>, pp.
+                     <biblScope unit="page">408-432</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +61,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-09" status="published">Content warning added.</change>
          <change who="pers:LW1" when="2022-07-31" status="published">Proofed and encoded. Set to published</change>
          <change who="pers:LW1" when="2022-07-31" status="inProgress">Downloaded document from
@@ -929,8 +954,7 @@
                and others. For hours I sat listening to the jeweled words. No, I could not write
                poetry,—I never shall,—but I had the hungry heart of the poet within me. I know it;
                else I could not so vividly, so ardently have loved the poetry of others.</p>
-            <p>I cannot think of my acquaintance with Bennet without there running immediately <pb
-                  n="423"/> to my mind, like the refrain of an old song, of some of those exquisite
+            <p>I cannot think of my acquaintance with Bennet without there running immediately <pb n="423"/> to my mind, like the refrain of an old song, of some of those exquisite
                poems he read to me—read so slowly, so clearly, so subtly that every word pierced my
                consciousness and understanding. Else how could a girl like me have gasped with sheer
                delight over the <q>Ode on a Grecian Urn</q>? What was there in a poem like that to
@@ -983,8 +1007,7 @@
             <p>After that I went from one position to another. I took anything I could get.
                Sometimes I left because the conditions were intolerable; sometimes because they did
                not pay me; usually I was allowed to go after a brief trial in which I failed to
-               prove my competence. I was very bad at figures and most offices require a certain <pb
-                  n="424"/> amount of that kind of work from their stenographers. These were the
+               prove my competence. I was very bad at figures and most offices require a certain <pb n="424"/> amount of that kind of work from their stenographers. These were the
                places where I failed.</p>
             <p>Of course, changing my position and being out of work so much, I made little
                progress, and although I had had only twenty dollars from Bennet, I was unable to pay
@@ -1154,8 +1177,7 @@
                forgive me. She never answered me, but Hermann wrote me a note, advising me to
                   <q>leave her alone till she gets over it</q>.</p>
             <p>I had to walk to work for two days after that, as I didn’t have a cent left, and I
-               did without luncheon, too. I rather enjoyed the walk, but it was hard getting <pb
-                  n="427"/> up so early, as I had to be at the office at eight. I was working for a
+               did without luncheon, too. I rather enjoyed the walk, but it was hard getting <pb n="427"/> up so early, as I had to be at the office at eight. I was working for a
                clothing firm not unlike the one Estelle was with, and I had obtained the position,
                by the way, through Estelle.</p>
             <p>On Christmas eve Margaret had to go to the house of a client in regard to some case,

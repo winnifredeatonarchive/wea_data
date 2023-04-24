@@ -22,11 +22,40 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from original at University of Calgary, Winnifred Eaton Reeve Fonds</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:65"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred
+                     Eaton Reeve Fonds</repository>
+                  <idno>3.1</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl65"><author><name ref="pers:WE1">Eaton, Ellis</name></author>.
+                     <title level="a">John and I</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>, <distributor ref="org:WERFonds">Winnifred
+                     Eaton Reeve Fonds</distributor>, <idno>3.1</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from original at University of Calgary, Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +66,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Wrote note about source.</change>
          <change who="pers:MC1" when="2020-05-29" status="published">proofread and finished.</change>

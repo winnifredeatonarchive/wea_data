@@ -26,11 +26,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from University of Michigan Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:205"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl205"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Visiting Mlle. Butterfly</title>. <publisher ref="org:Columbian"><title level="j">The Columbian
+                  Magazine</title></publisher>, <date when="1911-09">Sept. 1911</date>, pp.
+                     <biblScope unit="page">1171-1180</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from University of Michigan Library</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -41,6 +66,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-11" status="published">Proofed and set to published.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
          <change who="pers:MC1" when="2020-07-02" status="inProgress">Added note about
@@ -184,9 +210,7 @@
                <p>Butterfly, however, be she ever so rich, is not allowed to grow up in idleness.
                   There are very many tasks to keep both her hands and mind busy, especially during
                   the morning. There are the large wadded quilts (futon) under which the family
-                  sleep to fold and put away in their recesses. The <foreign xml:lang="ja"
-                     >amado</foreign> (verandah walls), must be rolled into their grooves<pb
-                     n="1177"/> to admit the morning sun, and while this task is generally done by
+                  sleep to fold and put away in their recesses. The <foreign xml:lang="ja">amado</foreign> (verandah walls), must be rolled into their grooves<pb n="1177"/> to admit the morning sun, and while this task is generally done by
                   the maids, Butterfly assists or directs them. Indeed, very few servants can be
                   trusted to do their work without intelligent supervision either by the Okusama or
                   Miss Butterfly.</p>
@@ -210,8 +234,7 @@
                   which serves the capacity of both tobacco-box and hearth, if such one might call
                   it. It can be a very beautiful and costly article, according to the family’s
                   resources, and is made of copper, brass, iron, and sometimes even of wood, lined
-                  with copper. With the exception of one other, the polishing of the <foreign
-                     xml:lang="ja">hibachi</foreign> is the most pleasant of Butterfly’s tasks.</p>
+                  with copper. With the exception of one other, the polishing of the <foreign xml:lang="ja">hibachi</foreign> is the most pleasant of Butterfly’s tasks.</p>
                <p>The favorite one with all girls is the placing of the flower of the day, and
                   changing the ornament in the <foreign xml:lang="ja">tokonoma</foreign> (place of
                   honor), which is in every Japanese house, however humble. This is a far more
@@ -250,8 +273,7 @@
                   night, upon her little balcony, the stars and moon. All Japanese girls are given
                   to star-gazing. They will spend hours at the time, seemingly entranced.</p>
                <p>On certain days, Butterfly is taken with her mother to pay formal calls upon
-                  friends and neighbors. Sometimes she does not alight from the <foreign
-                     xml:lang="ja">jinrikisha</foreign>.<pb n="1179"/> When she is permitted to
+                  friends and neighbors. Sometimes she does not alight from the <foreign xml:lang="ja">jinrikisha</foreign>.<pb n="1179"/> When she is permitted to
                   enter the house with her mother, she does not join in the conversation, though she
                   listens very attentively, and, by her amiable, smiling attitude of attention,
                   shows that she is an intelligent and appreciative listener.</p>
@@ -291,8 +313,7 @@
                   you pass in filial service upon him to wave a long sleeve coquettishly in the
                   direction of the youthful guest seated opposite the Supreme Voice of Authority, or
                   slightly move the hand, palm down.</p>
-               <p>These <emph>may</emph> be tricks worthy of a <foreign xml:lang="ja"
-                     >geisha</foreign>, as your more scrupulous girl friends jealously declare.
+               <p>These <emph>may</emph> be tricks worthy of a <foreign xml:lang="ja">geisha</foreign>, as your more scrupulous girl friends jealously declare.
                   Still, youth is saucy, and bound to bubble over even if kept behind locked
                   bars.</p>
                <p>There are other ways, too, of flirting in Japan. They are strictly prohibited, of

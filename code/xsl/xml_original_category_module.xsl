@@ -121,8 +121,6 @@
                 <p><ref target="doc:{@xml:id}">View all documents in this category.</ref></p>
             </div>
         </body>
-        
-        
     </xsl:template>
     
     
@@ -150,9 +148,6 @@
                 <xsl:if test="not(ancestor::taxonomy[@xml:id='exhibit'])">
                     <head><xsl:sequence select="catDesc/term/node()"/></head>   
                 </xsl:if>
-            
-             
-                
                 <table type="exhibit">
                     <row role="label">
                         <cell/>
@@ -186,9 +181,10 @@
                             </cell>
                             <cell>
                                 <xsl:choose>
-                                    <xsl:when test="$thisDoc//sourceDesc/bibl[@copyOf]">
-                                        <xsl:variable name="biblId" select="replace($thisDoc//sourceDesc/bibl/@copyOf,':','')"/>
-                                        <xsl:variable name="biblDate" select="$sourceXml[//TEI[@xml:id='bibliography']]//bibl[@xml:id=$biblId]/date[1]"/>
+                                    <xsl:when test="$thisDoc//sourceDesc/msDesc">
+                                        <xsl:variable name="bibl"
+                                            select="$thisDoc//msDesc/msContents/msItem/bibl"/>
+                                        <xsl:variable name="biblDate" select="$bibl/date[1]"/>
                                         <xsl:choose>
                                             <xsl:when test="not(empty($biblDate))">
                                                 <xsl:sequence select="wea:formatDate($biblDate)"/>

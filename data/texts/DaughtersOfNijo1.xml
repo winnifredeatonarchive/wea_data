@@ -7,10 +7,39 @@
          <titleStmt>
             <title>Daughters of Nijo</title>
          </titleStmt>
-         <publicationStmt><p>Add Stuff Here</p></publicationStmt>
-         <notesStmt><note>Transcription retrieved from Project Gutenberg</note></notesStmt>
+         <publicationStmt>
+            <p>Add Stuff Here</p>
+         </publicationStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:38"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl38"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Daughters of Nijo</title>. Illustrated by <author role="illustrator"><name ref="pers:KS2">Kiyokichi Sano</name></author>.
+                     <pubPlace>New York</pubPlace>, <publisher ref="org:Harper">Harper and
+                     Brothers</publisher>, <date when="1904">1904</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Transcription retrieved from Project Gutenberg</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -21,6 +50,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SB2" when="2020-08-10" status="published">Added foreign tags and proofed.</change>
          <change who="pers:SB2" when="2020-08-10" status="inProgress">Added page numbers.</change>
          <change who="pers:JT1" when="2019-04-11" status="inProgress">Merged file, changed xml:id, and associated with bibliography entry bibl38 using XSLT.</change>

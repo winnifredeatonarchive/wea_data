@@ -92,7 +92,7 @@
     <xsl:function name="wea:returnDate" new-each-time="no" as="map(xs:string, item())">
         <xsl:param name="docId" as="xs:string"/>
         <xsl:variable name="thisTeiDoc" select="$standaloneXml//tei:TEI[@xml:id=$docId]"/>
-        <xsl:variable name="thisPubDate" select="$thisTeiDoc//tei:sourceDesc/tei:bibl[@copyOf]/tei:date[1]" as="element(tei:date)?"/>
+        <xsl:variable name="thisPubDate" select="$thisTeiDoc//tei:sourceDesc/tei:msDesc/tei:msContents/tei:msItem/tei:bibl/tei:date[1]" as="element(tei:date)?"/>
         
         <xsl:variable name="dateToUse" as="element(tei:date)">
             <xsl:choose>

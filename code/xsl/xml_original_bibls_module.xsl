@@ -17,7 +17,6 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:variable name="biblDoc" select="$sourceXml/TEI[@xml:id='bibliography']" as="element(TEI)"/>
     
     <xsl:variable name="weChronoBiblId" select="'we_bibliography_chrono'"/>
     <xsl:variable name="weWorkBiblId" select="'we_bibliography_work'"/>
@@ -31,7 +30,8 @@
     <xsl:template name="createChronoBibl">
         <div xml:id="{$weChronoBiblId}" type="biblio_list">
             <head>Chronological Bibliography</head>
-            <xsl:for-each-group select="$biblDoc//div[@xml:id='bibliography_we']/descendant::bibl" group-by="wea:returnDate(.)">
+            <xsl:for-each-group select="$sourceXml//sourceDesc/msDesc/msContents/msItem/bibl"
+                group-by="wea:returnDate(.)">
                 <xsl:sort select="current-grouping-key() castable as xs:integer" order="descending"/>
                 <xsl:sort select="current-grouping-key()" order="ascending"/>
                 <div xml:id="{$weChronoBiblId}_{current-grouping-key()}">
@@ -51,10 +51,16 @@
     <xsl:template name="createWorkBibl">
         <div xml:id="{$weWorkBiblId}" type="biblio_list">
             <head>Bibliography by Work<!--<note type="editorial">By work, we refer here to groupings of texts based off of their relationship to one another. Reprints, serialized versions of novels, and other texts that are related in some capacity are grouped here as a single <q>work</q>.</note>--></head>
-            <xsl:for-each select="$biblDoc//div[@xml:id='bibliography_we']/listBibl">
-                <xsl:sort select="wea:simpleTitleSortKey(string(head))"/>
+            <xsl:for-each select="$sourceXml//linkGrp[@type='work']">
+                <xsl:sort select="wea:simpleTitleSortKey(string(desc))"/>
                 <div xml:id="{$weWorkBiblId}_{@xml:id}">
-                    <xsl:apply-templates select="." mode="removeId"/>
+                    <xsl:for-each select="ptr">
+                        <xsl:variable name="docId" select="substring-after(@target,'doc:')"/>
+                        <xsl:variable name="doc" select="$sourceXml//TEI[@xml:id = $docId]"/>
+                        <xsl:variable name="bibl" select="$doc//sourceDesc/msDesc/msContents/msItem/bibl"/>
+                        <xsl:apply-templates select="$bibl" mode="removeId"/>
+                    </xsl:for-each>
+
                 </div>
             </xsl:for-each>
         </div>
@@ -66,7 +72,9 @@
     
     <xsl:template name="createResourcesBibl">
         <div type="biblio_list">
-             <xsl:apply-templates select="$biblDoc//div[@xml:id='bibliography_resources']/listBibl" mode="removeId"/>
+             <xsl:apply-templates
+                 select="$sourceXml//TEI[@xml:id='bibliography']/descendant::div[@xml:id='bibliography_resources']/listBibl"
+                 mode="removeId"/>
          </div>
     </xsl:template>
     

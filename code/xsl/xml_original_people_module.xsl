@@ -136,8 +136,8 @@
                         <xsl:for-each select="$creditDocs">
                             <xsl:variable name="docId" select="."/>
                             <xsl:variable name="thisDoc" select="$sourceXml//TEI[@xml:id = $docId]"/>
-                            <xsl:variable name="thisBiblId" select="$thisDoc//sourceDesc/bibl/replace(@copyOf,'bibl:','bibl')"/>
-                            <xsl:variable name="thisBibl" select="$bibls[@xml:id=$thisBiblId]" as="element(bibl)"/>
+                            <xsl:variable name="thisBibl" select="$thisDoc//bibl[ancestor::msItem][1]"
+                                as="element(bibl)"/>
                             <row>
                                 <cell>
                                     <xsl:choose>
@@ -195,7 +195,7 @@
                     <xsl:variable name="thisBiblId" select="@xml:id"/>
                     <xsl:variable name="thisBiblKey" select="replace($thisBiblId,'bibl','bibl:')"/>
                     <xsl:variable name="docId" 
-                        select="$sourceXml//TEI[descendant::sourceDesc[bibl[@copyOf = $thisBiblKey]]]/@xml:id" as="xs:string?"/>
+                        select="ancestor::TEI/@xml:id" as="xs:string?"/>
                     <xsl:variable name="rolesPlayed" as="xs:string*">
                         <xsl:for-each select="$thisBibl/descendant::name[@ref=concat('pers:',$personId)]">
                             <xsl:choose>
@@ -219,7 +219,7 @@
     
     <xsl:function name="wea:getBiblsFromPers" new-each-time="no" as="element(bibl)*">
         <xsl:param name="personId" as="xs:string"/>
-        <xsl:sequence select="$sourceXml//TEI[@xml:id='bibliography']//bibl[descendant::name[@ref=concat('pers:',$personId)]]"/>
+        <xsl:sequence select="$sourceXml//bibl[ancestor::msContents][descendant::name[@ref=concat('pers:',$personId)]]"/>
     </xsl:function>
     
 </xsl:stylesheet>

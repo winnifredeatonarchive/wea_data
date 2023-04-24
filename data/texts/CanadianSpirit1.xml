@@ -18,11 +18,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Original in University of British Columbia Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:139"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl139"><author><name ref="pers:WE1">Reeve, Winnifred</name> (<name ref="pers:WE1">Onoto Watanna</name>)</author>. <title level="a">The Canadian
+                     Spirit in our Literature</title>. <publisher ref="org:Calgary"><title level="j">Calgary Daily Herald</title></publisher>, <date when="1923-03-24">24 Mar.
+                     1923</date>, p. <biblScope unit="page">11</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Original in University of British Columbia Library</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -33,13 +57,15 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" status="published" when="2020-08-02"> Added parataext</change><change who="pers:MC1" status="published" when="2020-06-30"> Added note about source</change>
-         <change who="pers:MC1" status="published" when="2019-08-26"></change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="published" when="2020-08-02"> Added parataext</change>
+         <change who="pers:MC1" status="published" when="2020-06-30"> Added note about source</change>
+         <change who="pers:MC1" status="published" when="2019-08-26"/>
          <change who="pers:JT1" status="readyForProof" when="2019-08-08">Transcribed and encoded.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl139 using XSLT.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl139 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:CanadianSpirit1">
+   <text facs="facs:CanadianSpirit1">
       <body>
          <head>The Canadian Spirit in Our Literature</head>
          <opener>

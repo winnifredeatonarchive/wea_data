@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="FlightOfHyacinth1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="FlightOfHyacinth1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,11 +22,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of Alberta</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:148"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl148"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Flight of Hyacinth</title>. <publisher ref="org:Current"><title level="j">Current Literature</title></publisher>, <date when="1903-10">Oct. 1903</date>, pp. <biblScope unit="page">437-40</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of Alberta</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,8 +60,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">Added paratext.</change><change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
-         <change who="pers:MC1" when="2020-06-21" status="published">proofread.</change><change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">Added paratext.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
+         <change who="pers:MC1" when="2020-06-21" status="published">proofread.</change>
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl148 using XSLT.</change>
       </revisionDesc>

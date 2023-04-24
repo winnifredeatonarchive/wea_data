@@ -45,7 +45,7 @@
                     <xsl:sort select="wea:makeTitleSortKey(string(orgName))"/>
                     <xsl:variable name="thisId" select="@xml:id"/>
                     <xsl:variable name="docsPublished"
-                        select="$sourceXml//TEI[@xml:id='bibliography']/descendant::bibl[descendant::*[@ref = 'org:' || $thisId]]"/>
+                        select="$sourceXml//TEI[descendant::sourceDesc/descendant::bibl[descendant::*[@ref = 'org:' || $thisId]]]"/>
                     <xsl:variable name="count" select="count($docsPublished)" as="xs:integer"/>
                     <xsl:if test="$count gt 0">
                         <row>
@@ -64,8 +64,11 @@
     <xsl:template match="org" mode="orgs">
         <xsl:variable name="thisId" select="@xml:id"/>
         <xsl:variable name="thisIdPtr" select="concat('org:',$thisId)"/>
-        <xsl:variable name="pubBibls" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id][publisher[@ref=$thisIdPtr]]" as="element(bibl)*"/>
-        <xsl:variable name="fondsBibls" select="$sourceXml[//TEI/@xml:id='bibliography']//bibl[@xml:id][distributor[@ref=$thisIdPtr]]" as="element(bibl)*"/>
+        
+        <xsl:variable name="pubBibls" select="$sourceXml//bibl[ancestor::msDesc][publisher[@ref=$thisIdPtr]]"
+            as="element(bibl)*"/>
+        <xsl:variable name="fondsBibls"
+            select="$sourceXml//bibl[ancestor::msDesc][distributor[@ref=$thisIdPtr]]" as="element(bibl)*"/>
         <xsl:variable name="bibls" select="($pubBibls,$fondsBibls)"/>
         <xsl:variable name="isFonds" select="exists($fondsBibls)"/>
         <xsl:if test="$isFonds and exists($pubBibls)">
@@ -93,7 +96,7 @@
                         <xsl:for-each select="$bibls">
                             <xsl:variable name="thisBibl" select="."/>
                             <xsl:variable name="biblId" select="$thisBibl/@xml:id"/>
-                            <xsl:variable name="docs" select="$sourceXml//TEI[//sourceDesc/bibl[@copyOf=replace($biblId,'bibl','bibl:')]]"/>
+                            <xsl:variable name="docs" select="ancestor::TEI"/>
                             <xsl:for-each select="$docs">
                                 <xsl:variable name="thisDoc" select="."/>
                                 <xsl:variable name="docId" select="$thisDoc/@xml:id"/>

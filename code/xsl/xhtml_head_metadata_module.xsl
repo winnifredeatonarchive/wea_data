@@ -56,10 +56,10 @@
     
     <xsl:template name="createDCMetadata">
         <meta property="dc.title" content="{teiHeader/fileDesc/titleStmt/title[1]}"/>
-        <xsl:for-each select="//sourceDesc/bibl/author/name">
+        <xsl:for-each select="//sourceDesc/msDesc/msContents/msItem/bibl/author/name">
             <meta property="dc.creator" content="{.}"/>
         </xsl:for-each>
-        <xsl:for-each select="//sourceDesc/bibl/date">
+        <xsl:for-each select="//sourceDesc/msDesc/msContents/msItem/bibl/date">
             <xsl:for-each select="@when | @notBefore |@notAfter |@to | @from">
                 <meta property="dc.date" content="{.}"/>
             </xsl:for-each>
@@ -121,7 +121,7 @@
            <meta name="Contains Foreign phrases?" class="staticSearch_bool" content="{xs:boolean(exists(//text/descendant::foreign))}"/>-->
             
             
-            <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/bibl[1]/date" as="element(tei:date)?"/>
+            <xsl:variable name="date" select="descendant::teiHeader/fileDesc/sourceDesc/msDesc/msContents/msItem/bibl[1]/date" as="element(tei:date)?"/>
             <xsl:variable name="isRange" select="exists($date[@notAfter or @from])" as="xs:boolean"/>
             <xsl:variable name="dateString" select="if ($isRange) then concat($date/(@notBefore|@from)[1],'/', $date/(@notAfter|@to)[1]) else $date/@when" as="xs:string?"/>
             <xsl:if test="not(empty($date))">

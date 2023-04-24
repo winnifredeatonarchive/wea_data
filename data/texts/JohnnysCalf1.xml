@@ -22,11 +22,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of British Columbia Library.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:66"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl66"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>.
+                     <title level="a">Johnny’s Calf and Pa’s Cow</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-12-24">24 Dec. 1921</date>, p. 28 (p. 2 Feature Section).</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of British Columbia Library.</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -44,6 +67,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-04-30" status="published">Removed incorrect illustrator byline.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-14" status="published"> Added draft headnote.</change>

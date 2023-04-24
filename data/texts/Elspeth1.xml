@@ -14,13 +14,28 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from original at Queen’s University </note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="bibl:MOSE15"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:41"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl41"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Elspeth</title>. <publisher ref="org:Quill"><title level="j">The Quill: The Canadian Short Story Magazine</title></publisher>, <date when="1923-01">Jan. 1923</date>, pp. <biblScope unit="page">23-30</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <recordHist>
+                        <source target="bibl:COLE3"/>
+                     </recordHist>
+                     <availability>
+                        <p>Facsimile retrieved from original at Queen’s University </p>
+                     </availability>
+                  </adminInfo>
+                  <listBibl>
+                     <bibl target="bibl:MOSE15"/>
+                  </listBibl>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -31,6 +46,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" status="published" when="2022-03-01">Proofread.</change>
          <change who="pers:MC1" status="readyForProof" when="2022-02-28">Proofread.</change>

@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,37 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of Saskatchewan Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:112"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl112"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
+                     9]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
+                        Review</title></publisher>, <date when="1919-07-05">5 July 1919</date>, p.
+                     <biblScope unit="page">747</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of Saskatchewan Library</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,14 +59,19 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" status="published" when="2022-03-09">Proofed and set to published.</change>
          <change who="pers:SC1" status="inProgress" when="2020-09-08">Added facs and transcription</change>
          <change who="pers:SC1" status="empty" when="2020-09-08">renumbered instalments</change>
-         <change who="pers:MC1" status="empty"  when="2020-08-21">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-03">Added note about source.</change><change who="pers:MC1" status="empty"  when="2020-06-30">Added links to other instalments.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl112 using XSLT.</change>
+         <change who="pers:MC1" status="empty" when="2020-08-21">renumbered instalments.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-03">Added note about source.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added links to other instalments.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl112 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Other_Peoples_Troubles9" prev= "doc:OtherPeoplesTroubles8" next= "doc:OtherPeoplesTroubles10">
+   <text facs="facs:Other_Peoples_Troubles9" prev="doc:OtherPeoplesTroubles8" next="doc:OtherPeoplesTroubles10">
       <pb n="747"/>
       <body>
        

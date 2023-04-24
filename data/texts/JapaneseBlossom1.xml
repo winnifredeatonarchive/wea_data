@@ -10,61 +10,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note><!--ADD FACSIMILE SOURCE HERE--></note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:10"/>
-            <biblFull>
-               <titleStmt>
-                  <title>A Japanese Blossom, an electronic edition</title>
-                  <author>Watanna, Onoto, 1879-1954</author>
-               </titleStmt>
-               <extent>196kb</extent>
-               <publicationStmt>
-                  <publisher>Emory University, Lewis H. Beck Center</publisher>
-                  <pubPlace>Atlanta, Georgia</pubPlace>
-                  <date>2005</date>
-                  <availability>
-                     <p>© 2005, Lewis H. Beck Center, Emory University. Emory
-                        University makes a claim of copyright only to original contributions made by
-                        the Women’s Genre Fiction Project participants. Emory University makes no
-                        claim of copyright to the original text. Permission is granted to download,
-                        transmit, or otherwise reproduce, distribute, or display the contributions
-                        to this work claimed by Emory University for non-profit educational
-                        purposes, provided that this header is included in its entirety. For further
-                        inquiries about this text’s availability, please contact:<address>
-                           <addrLine>Lewis H. Beck Center</addrLine>
-                           <addrLine>Emory University</addrLine>
-                           <addrLine>Robert W. Woodruff Library</addrLine>
-                           <addrLine>Atlanta, GA 30322-0053</addrLine>
-                           <addrLine>United States of America</addrLine>
-                           <addrLine>Email: beckctr@emory.edu</addrLine>
-                        </address>
-                     </p>
-                  </availability>
-                  <idno type="ark">http://pid.emory.edu/ark:/25593/175nn</idno>
-               </publicationStmt>
-               <seriesStmt>
-                  <title>Women’s Genre Fiction, 1860-1920</title>
-                  <respStmt>
-                     <resp>Principal Investigators</resp>
-                     <name>Sheila T. Cavanagh</name>
-                  </respStmt>
-                  <respStmt>
-                     <resp>Principal Investigators</resp>
-                     <name>Charles D. Spornick</name>
-                  </respStmt>
-               </seriesStmt>
-               <notesStmt>
-                  <note>Facsimile retrieved from Women’s Genre Fiction, 1860-1920, from original at Lewis H. Beck Center, Emory University</note>
-               </notesStmt>
-               <sourceDesc>
-                  <bibl>. <title>A Japanese Blossom</title>.
-                        <pubPlace>New York</pubPlace>: <publisher>Harper &amp; Brothers</publisher>,
-                        <date>1906</date>.</bibl>
-               </sourceDesc>
-            </biblFull>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl10"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">A Japanese Blossom</title>. Illustrated by <author role="illustrator"><name ref="pers:LZ1">L. W. Ziegler</name></author>.
+                     <pubPlace>New York</pubPlace>, <publisher ref="org:Harper">Harper and
+                     Brothers</publisher>, <date when="1906">1906</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -75,6 +50,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-05-03" status="published">Set to published.</change>
          <change who="pers:MC1" when="2020-07-24" status="inProgress">Encoded illustrator.</change>

@@ -22,11 +22,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from Henry Ford, Benson Ford Research Center</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:96"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl96"><author><name ref="pers:WE1">Reeve, Winifred</name></author>.
+                     <title level="a">Movie Madness [Part 3]</title>. Illustrated by <author role="illustrator"><name ref="pers:EB1">Edward Butler</name></author>.
+                     <publisher ref="org:Screen"><title level="j">Screen
+                  Secrets</title></publisher>, <date when="1930-04">Apr. 1930</date>, pp. <biblScope unit="page">72-73</biblScope>, 105.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from Henry Ford, Benson Ford Research Center</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +62,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:JT1" when="2023-04-23" status="inProgress">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2022-03-09">Added prev instalment.</change>
          <change who="pers:MC1" status="empty" when="2020-07-31">Added instalment number.</change>
@@ -186,4 +212,3 @@
       </body>
    </text>
 </TEI>
-

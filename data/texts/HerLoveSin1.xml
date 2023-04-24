@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HerLoveSin1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HerLoveSin1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,11 +22,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of Calgary, Winnifred Eaton Reeve Fonds</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:46"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl46"><author>Anonymous</author>. <title level="a">Her Love Sin: The
+                     Story of a Fallen Woman [Part 1]</title>. <publisher ref="org:IConfess"><title level="j">I Confess</title></publisher>, <date when="1925-01-23">23 Jan.
+                     1925</date>, pp. <biblScope unit="page">10-16</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile from University of Calgary, Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,7 +61,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-07-31" status="published">added instalment.</change><change who="pers:MC1" when="2020-06-30" status="published">added note about source.</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-07-31" status="published">added instalment.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">added note about source.</change>
          <change who="pers:SC1" when="2020-06-10" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl46 using XSLT.</change>

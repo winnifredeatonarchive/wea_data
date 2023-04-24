@@ -6,27 +6,51 @@
       <fileDesc>
          <titleStmt>
             <title>An Art Gallery for Calgary</title>
-         <respStmt>
-            <resp>Transcriber</resp>
-            <name ref="pers:KI1">Ken Ip</name>
-         </respStmt>
-         <respStmt>
-            <resp>Proofreader</resp>
-            <name ref="pers:SL1">Sydney Lines</name>
-         </respStmt>
-         <respStmt>
-            <resp>Encoder</resp>
-            <name ref="pers:KI1">Ken Ip</name>
-         </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:KI1">Ken Ip</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-          <note>Facsimile retrieved from Microfilm held at UBC, Koerner Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:28"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl28"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>.
+                     <title level="a">An Art Gallery for Calgary</title>. <publisher ref="org:Albertan"><title level="j">Albertan</title></publisher>, <date when="1924-04-30">30 Apr. 1924</date>, p. <biblScope unit="page">4 and back
+                     page</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <!--Add information about previous citations or bibliographies using the source element-->
+                     <!--
+                        <recordHist>
+                           <source target="bibl:ABCD1"/>
+                        </recordHist>
+                     -->
+                     <availability>
+                        <p>Facsimile retrieved from Microfilm held at UBC, Koerner Library</p>
+                     </availability>
+                  </adminInfo>
+                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                  <!--
+                     <listBibl>
+                        <bibl target="bibl:ABCD1"/>
+                     </listBibl>
+                  -->
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,11 +61,13 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-08-05" status="published">fixed header</change><change who="pers:MC1" when="2020-05-29" status="published">proofread</change><change who="pers:MC1" when="2020-05-29" status="inProgress">proofread</change><change who="pers:KI1" when="2019-04-30" status="inProgress">Updated file to match new workflow</change>
+         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">fixed header</change>
+         <change who="pers:MC1" when="2020-05-29" status="published">proofread</change>
+         <change who="pers:MC1" when="2020-05-29" status="inProgress">proofread</change>
+         <change who="pers:KI1" when="2019-04-30" status="inProgress">Updated file to match new workflow</change>
          <change who="pers:KI1" when="2019-04-18">Added transcription to file</change>
-
          <change who="pers:JT1" when="2019-04-11">Created file from bibliography entry bibl28 using XSLT.</change>
-       
       </revisionDesc>
    </teiHeader>
    <text facs="facs:An_Art_Gallery_For_Calgary">

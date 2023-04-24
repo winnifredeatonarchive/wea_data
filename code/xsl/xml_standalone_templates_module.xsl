@@ -202,7 +202,7 @@
                     
                     <xsl:otherwise>
                         <bibl type="mla" n="MLA" xml:id="{$root/@xml:id || '_' || 'citation_MLA'}">
-                            <xsl:copy-of select="$root/descendant::sourceDesc/bibl[1]/node()"/>
+                            <xsl:copy-of select="$root/descendant::sourceDesc/msDesc/msContents/msItem/bibl[1]/node()"/>
                             <xsl:sequence select="wea:appendMLA($root)"/>
                         </bibl>
                     </xsl:otherwise>
