@@ -2063,24 +2063,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
-               <elementSpec ident="note" module="core" mode="replace">
-                  <gloss>note</gloss>
-                  <desc>contains a note or annotation.</desc>
-                  <classes>
-                     <memberOf key="att.global"/>
-                     <memberOf key="att.typed"/>
-                     <memberOf key="att.placement"/>
-                     <memberOf key="model.noteLike"/>
-                     <memberOf key="model.annotationLike"/>
-                     <memberOf key="model.correspDescPart"/>
-                     <memberOf key="model.correspActionPart"/>
-                     <memberOf key="model.correspContextPart"/>
-                     <memberOf key="model.annotationPart.body"/>
-                  </classes>
-                  <content>
-                     <macroRef key="macro.specialPara"/>
-                  </content>
-                  <constraintSpec scheme="schematron" ident="note.authorialInQOnly">
+               <elementSpec ident="note" module="core" mode="change">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.authorialInQOnly">
                      <desc>Use parenthetical notes only within <gi>q</gi> elements</desc>
                      <constraint>
                         <sch:pattern>
@@ -2092,7 +2076,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.useAuthorialOrEditorialInQ">
+                  <constraintSpec scheme="schematron"
+                                  mode="add"
+                                  ident="note.useAuthorialOrEditorialInQ">
                      <desc>All notes within the <gi>q</gi> element should have a type.</desc>
                      <constraint>
                         <sch:pattern>
@@ -2105,7 +2091,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.editorialOnesShouldFollowTrailingPunct">
+                  <constraintSpec scheme="schematron"
+                                  mode="add"
+                                  ident="note.editorialOnesShouldFollowTrailingPunct">
                      <desc>Editorial notes should be placed following trailing punctuation.</desc>
                      <constraint>
                         <sch:rule context="tei:note[@type='editorial']">
@@ -2116,7 +2104,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:rule>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.bioOnlyInPerson">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2127,7 +2115,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.mustHaveP">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.mustHaveP">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2139,6 +2127,24 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="editorial" mode="add">
+                              <desc>An editorial note</desc>
+                              <gloss>Editorial note</gloss>
+                           </valItem>
+                           <valItem ident="parenthetical" mode="add">
+                              <desc>A parenthetical (or authorial) note</desc>
+                              <gloss>Parenthetical note</gloss>
+                           </valItem>
+                           <valItem ident="annotation" mode="add">
+                              <desc>A handwritten annotation or marginal note</desc>
+                              <gloss>Annotation</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                   <!--                 <attList org="choice">
                      <attList org="group">
                         <attDef ident="type" mode="add" usage="opt">
