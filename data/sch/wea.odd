@@ -34,6 +34,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc>
+         <change who="pers:JT1" when="2023-08-24">Added drama module.</change>
          <change who="pers:JT1" when="2019-03-29">Created file.</change>
       </revisionDesc>
    </teiHeader>
@@ -1490,9 +1491,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+               <moduleRef key="drama"
+                          include="actor camera caption castGroup castItem castList role roleDesc set sound spGrp tech view"/>
                <moduleRef key="header"
-                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
+                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction correspDesc correspAction correspContext creation distributor edition editorialDecl encodingDesc extent fileDesc handNote hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
                <moduleRef key="msdescription"
@@ -1504,7 +1507,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="tei"/>
                <moduleRef key="textstructure"
                           include="TEI back body byline closer dateline div docAuthor docDate docImprint docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
-               <moduleRef key="transcr" include="fw supplied"/>
+               <moduleRef key="transcr" include="fw handNotes subst supplied"/>
                <!--MODULE: HEADER-->
                <elementSpec ident="teiHeader" module="header" mode="change">
                   
@@ -1553,6 +1556,8 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
                      <elementRef key="textClass"/>
+                     <elementRef key="correspDesc" minOccurs="0" maxOccurs="1"/>
+                     <elementRef key="handNotes" minOccurs="0" maxOccurs="1"/>
                      <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
                   </content>
                </elementSpec>
@@ -2402,6 +2407,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </constraint>
                   </constraintSpec>
                </elementSpec>
+               <!--MODULE:DRAMA-->
+               <elementSpec ident="tech" mode="change">
+                  <attList>
+                     <attDef ident="perf" mode="delete"/>
+                  </attList>
+               </elementSpec>
                <!--MODULE:FIGURES-->
                <elementSpec ident="figure" module="figures" mode="change">
                   <content>
@@ -2600,7 +2611,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </elementSpec>
                <!--CLASS SPECS-->
                <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
-               <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.datable" module="tei" type="atts" mode="change">
                   <attList>

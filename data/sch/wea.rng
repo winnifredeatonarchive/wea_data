@@ -5,10 +5,10 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-04-03T03:22:44Z. .
-TEI Edition: Version 4.5.0. Last updated on
-        25th October 2022, revision 3e98e619e
-TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.5.0/
+Schema generated from ODD source 2023-08-24T21:52:25Z. .
+TEI Edition: Version 4.6.0. Last updated on
+        4th April 2023, revision f18deffba
+TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.6.0/
   
 --><!---->
    <define name="macro.abContent">
@@ -255,6 +255,19 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
 Sample values include: 1] all; 2] most; 3] range</a:documentation>
             <data type="token">
                <param name="pattern">[^\p{C}\p{Z}]+</param>
+            </data>
+         </attribute>
+      </optional>
+   </define>
+   <define name="att.written.attributes">
+      <ref name="att.written.attribute.hand"/>
+   </define>
+   <define name="att.written.attribute.hand">
+      <optional>
+         <attribute name="hand">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to a <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> element describing the hand considered responsible for the content of the element concerned.</a:documentation>
+            <data type="anyURI">
+               <param name="pattern">\S+</param>
             </data>
          </attribute>
       </optional>
@@ -1334,6 +1347,7 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="choice"/>
          <ref name="abbr"/>
          <ref name="expan"/>
+         <ref name="subst"/>
       </choice>
    </define>
    <define name="model.pPart.editorial_alternation">
@@ -1341,12 +1355,14 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="choice"/>
          <ref name="abbr"/>
          <ref name="expan"/>
+         <ref name="subst"/>
       </choice>
    </define>
    <define name="model.pPart.editorial_sequence">
       <ref name="choice"/>
       <ref name="abbr"/>
       <ref name="expan"/>
+      <ref name="subst"/>
    </define>
    <define name="model.pPart.editorial_sequenceOptional">
       <optional>
@@ -1357,6 +1373,9 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </optional>
       <optional>
          <ref name="expan"/>
+      </optional>
+      <optional>
+         <ref name="subst"/>
       </optional>
    </define>
    <define name="model.pPart.editorial_sequenceOptionalRepeatable">
@@ -1369,6 +1388,9 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       <zeroOrMore>
          <ref name="expan"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="subst"/>
+      </zeroOrMore>
    </define>
    <define name="model.pPart.editorial_sequenceRepeatable">
       <oneOrMore>
@@ -1380,12 +1402,17 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       <oneOrMore>
          <ref name="expan"/>
       </oneOrMore>
+      <oneOrMore>
+         <ref name="subst"/>
+      </oneOrMore>
    </define>
    <define name="model.pPart.transcriptional">
       <choice>
          <ref name="sic"/>
          <ref name="corr"/>
          <ref name="reg"/>
+         <ref name="add"/>
+         <ref name="del"/>
          <ref name="unclear"/>
          <ref name="supplied"/>
       </choice>
@@ -1395,6 +1422,8 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="sic"/>
          <ref name="corr"/>
          <ref name="reg"/>
+         <ref name="add"/>
+         <ref name="del"/>
          <ref name="unclear"/>
          <ref name="supplied"/>
       </choice>
@@ -1403,6 +1432,8 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       <ref name="sic"/>
       <ref name="corr"/>
       <ref name="reg"/>
+      <ref name="add"/>
+      <ref name="del"/>
       <ref name="unclear"/>
       <ref name="supplied"/>
    </define>
@@ -1415,6 +1446,12 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </optional>
       <optional>
          <ref name="reg"/>
+      </optional>
+      <optional>
+         <ref name="add"/>
+      </optional>
+      <optional>
+         <ref name="del"/>
       </optional>
       <optional>
          <ref name="unclear"/>
@@ -1434,6 +1471,12 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="reg"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="add"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="del"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="unclear"/>
       </zeroOrMore>
       <zeroOrMore>
@@ -1449,6 +1492,12 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </oneOrMore>
       <oneOrMore>
          <ref name="reg"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="add"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="del"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="unclear"/>
@@ -2091,22 +2140,80 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </oneOrMore>
    </define>
    <define name="model.stageLike">
-      <notAllowed/>
+      <choice>
+         <ref name="view"/>
+         <ref name="camera"/>
+         <ref name="sound"/>
+         <ref name="caption"/>
+         <ref name="tech"/>
+      </choice>
    </define>
    <define name="model.stageLike_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="view"/>
+         <ref name="camera"/>
+         <ref name="sound"/>
+         <ref name="caption"/>
+         <ref name="tech"/>
+      </choice>
    </define>
    <define name="model.stageLike_sequence">
-      <empty/>
+      <ref name="view"/>
+      <ref name="camera"/>
+      <ref name="sound"/>
+      <ref name="caption"/>
+      <ref name="tech"/>
    </define>
    <define name="model.stageLike_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="view"/>
+      </optional>
+      <optional>
+         <ref name="camera"/>
+      </optional>
+      <optional>
+         <ref name="sound"/>
+      </optional>
+      <optional>
+         <ref name="caption"/>
+      </optional>
+      <optional>
+         <ref name="tech"/>
+      </optional>
    </define>
    <define name="model.stageLike_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="view"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="camera"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="sound"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="caption"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tech"/>
+      </zeroOrMore>
    </define>
    <define name="model.stageLike_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="view"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="camera"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="sound"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="caption"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tech"/>
+      </oneOrMore>
    </define>
    <define name="model.entryPart">
       <notAllowed/>
@@ -2151,6 +2258,7 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="model.pLike"/>
          <ref name="lg"/>
          <ref name="sp"/>
+         <ref name="spGrp"/>
       </choice>
    </define>
    <define name="model.persStateLike">
@@ -2394,7 +2502,10 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </choice>
    </define>
    <define name="model.frontPart.drama">
-      <notAllowed/>
+      <choice>
+         <ref name="set"/>
+         <ref name="castList"/>
+      </choice>
    </define>
    <define name="model.pLike.front">
       <choice>
@@ -2444,6 +2555,13 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
    </define>
    <define name="model.catDescPart">
       <notAllowed/>
+   </define>
+   <define name="model.castItemPart">
+      <choice>
+         <ref name="role"/>
+         <ref name="roleDesc"/>
+         <ref name="actor"/>
+      </choice>
    </define>
    <define name="model.addressLike">
       <choice>
@@ -2670,6 +2788,7 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
          <ref name="model.listLike"/>
          <ref name="model.stageLike"/>
          <ref name="model.attributable"/>
+         <ref name="castList"/>
       </choice>
    </define>
    <define name="model.common">
@@ -2762,6 +2881,31 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
             </list>
          </attribute>
       </optional>
+   </define>
+   <define name="model.correspActionPart">
+      <choice>
+         <ref name="model.dateLike"/>
+         <ref name="model.addressLike"/>
+         <ref name="model.nameLike"/>
+         <ref name="note"/>
+         <ref name="noteGrp"/>
+      </choice>
+   </define>
+   <define name="model.correspContextPart">
+      <choice>
+         <ref name="model.ptrLike"/>
+         <ref name="model.pLike"/>
+         <ref name="note"/>
+         <ref name="noteGrp"/>
+      </choice>
+   </define>
+   <define name="model.correspDescPart">
+      <choice>
+         <ref name="note"/>
+         <ref name="noteGrp"/>
+         <ref name="correspAction"/>
+         <ref name="correspContext"/>
+      </choice>
    </define>
    <define name="model.resource">
       <choice>
@@ -2856,6 +3000,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.fragmentable.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -2896,6 +3041,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(highlighted) marks a word or phrase as graphically distinct from the surrounding text, for reasons concerning which no claim is made. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -3134,6 +3280,27 @@ Sample values include: 1] rubbing (rubbing); 2] mildew (mildew); 3] smoke (smoke
          <empty/>
       </element>
    </define>
+   <define name="add">
+      <element name="add">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(addition) contains letters, words, or phrases inserted in the source text by an author, scribe, or a previous annotator or corrector. [3.5.3. Additions, Deletions, and Omissions]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.placement.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.dimensions.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="del">
+      <element name="del">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deletion) contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, or a previous annotator or corrector. [3.5.3. Additions, Deletions, and Omissions]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.dimensions.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="unclear">
       <element name="unclear">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unclear) contains a word, phrase, or passage which cannot be transcribed with certainty because it is illegible or inaudible in the source. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.5.3. Additions, Deletions, and Omissions]</a:documentation>
@@ -3143,7 +3310,7 @@ Sample values include: 1] rubbing (rubbing); 2] mildew (mildew); 3] smoke (smoke
          <optional>
             <attribute name="reason">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates why the material is hard to transcribe.
-Suggested values include: 1] illegible (illegible); 2] inaudible (inaudible); 3] faded (faded); 4] background_noise (background_noise); 5] eccentric_ductus (eccentric_ductus)</a:documentation>
+Suggested values include: 1] illegible (illegible); 2] inaudible (inaudible); 3] faded (faded); 4] background_noise (background noise); 5] eccentric_ductus (eccentric ductus)</a:documentation>
                <list>
                   <oneOrMore>
                      <choice>
@@ -3154,9 +3321,9 @@ Suggested values include: 1] illegible (illegible); 2] inaudible (inaudible); 3]
                         <value>faded</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(faded) </a:documentation>
                         <value>background_noise</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(background_noise) </a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(background noise) </a:documentation>
                         <value>eccentric_ductus</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(eccentric_ductus) indicates illegibility due to an unusual, awkward, or incompetent execution of a glyph or glyphs </a:documentation>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(eccentric ductus) indicates illegibility due to an unusual, awkward, or incompetent execution of a glyph or glyphs </a:documentation>
                         <data type="token">
                            <param name="pattern">[^\p{C}\p{Z}]+</param>
                         </data>
@@ -3545,6 +3712,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.placement.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -3565,6 +3733,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
          <ref name="att.placement.attributes"/>
+         <ref name="att.written.attributes"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -3680,6 +3849,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          <ref name="att.placement.attributes"/>
          <ref name="att.pointing.attributes"/>
          <ref name="att.typed.attributes"/>
+         <ref name="att.written.attributes"/>
          <ref name="att.anchoring.attributes"/>
          <empty/>
       </element>
@@ -4236,6 +4406,7 @@ relatedItem element must be empty</sch:report>
                <ref name="model.lLike"/>
                <ref name="model.stageLike"/>
                <ref name="model.labelLike"/>
+               <ref name="model.pPart.transcriptional"/>
                <ref name="lg"/>
             </choice>
             <zeroOrMore>
@@ -4243,6 +4414,7 @@ relatedItem element must be empty</sch:report>
                   <ref name="model.lLike"/>
                   <ref name="model.stageLike"/>
                   <ref name="model.labelLike"/>
+                  <ref name="model.pPart.transcriptional"/>
                   <ref name="model.global"/>
                   <ref name="lg"/>
                </choice>
@@ -4431,15 +4603,15 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">when present, provides information on whether the token in question is adjacent to another, and if so, on which side.</a:documentation>
             <choice>
                <value>no</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(the token is not adjacent to another) </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the token is not adjacent to another</a:documentation>
                <value>left</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(there is no whitespace on the left side of the token) </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on the left side of the token</a:documentation>
                <value>right</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(there is no whitespace on the right side of the token) </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on the right side of the token</a:documentation>
                <value>both</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(there is no whitespace on either side of the token) </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">there is no whitespace on either side of the token</a:documentation>
                <value>overlap</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(the token overlaps with another; other devices (specifying the extent and the area of overlap) are needed to more precisely locate this token in the character stream) </a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the token overlaps with another; other devices (specifying the extent and the area of overlap) are needed to more precisely locate this token in the character stream</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -4482,6 +4654,304 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
             <attribute name="pre">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether this punctuation mark precedes or follows the unit it delimits.</a:documentation>
                <data type="boolean"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="set">
+      <element name="set">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(setting) contains a description of the setting, time, locale, appearance, etc., of the action of a play, typically found in the front matter of a printed performance text (not a stage direction). [7.1. Front and Back Matter
+ ]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="model.headLike"/>
+                  <ref name="model.global"/>
+               </choice>
+            </zeroOrMore>
+            <zeroOrMore>
+               <group>
+                  <ref name="model.common"/>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="castList">
+      <element name="castList">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cast list) contains a single cast list or dramatis personae. [7.1.4. Cast Lists 7.1. Front and Back Matter
+ ]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="model.divTop"/>
+                  <ref name="model.global"/>
+               </choice>
+            </zeroOrMore>
+            <zeroOrMore>
+               <group>
+                  <ref name="model.common"/>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <choice>
+                     <ref name="castItem"/>
+                     <ref name="castGroup"/>
+                  </choice>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+            <zeroOrMore>
+               <group>
+                  <ref name="model.common"/>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </zeroOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="castGroup">
+      <element name="castGroup">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cast list grouping) groups one or more individual <code xmlns="http://www.w3.org/1999/xhtml">&lt;castItem&gt;</code> elements within a cast list. [7.1.4. Cast Lists]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <choice>
+                  <ref name="model.global"/>
+                  <ref name="model.headLike"/>
+               </choice>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <choice>
+                     <ref name="castItem"/>
+                     <ref name="castGroup"/>
+                     <ref name="roleDesc"/>
+                  </choice>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+            <optional>
+               <group>
+                  <ref name="trailer"/>
+                  <zeroOrMore>
+                     <ref name="model.global"/>
+                  </zeroOrMore>
+               </group>
+            </optional>
+         </group>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="castItem">
+      <element name="castItem">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cast list item) contains a single entry within a cast list, describing either a single role or a list of non-speaking roles. [7.1.4. Cast Lists]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="model.gLike"/>
+               <ref name="model.castItemPart"/>
+               <ref name="model.phrase"/>
+               <ref name="model.global"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
+         <optional>
+            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                       name="type"
+                       a:defaultValue="role">
+               <a:documentation>characterizes the cast item.</a:documentation>
+               <choice>
+                  <value>role</value>
+                  <a:documentation>the item describes a single role.</a:documentation>
+                  <value>list</value>
+                  <a:documentation>the item describes a list of non-speaking roles.</a:documentation>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="role">
+      <element name="role">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(role) contains the name of a dramatic role, as given in a cast list. [7.1.4. Cast Lists]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <optional>
+            <attribute name="gender">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the gender of the role.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="roleDesc">
+      <element name="roleDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(role description) describes a character's role in a drama. [7.1.4. Cast Lists]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="actor">
+      <element name="actor">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of an actor appearing within a cast list. [7.1.4. Cast Lists]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.canonical.attributes"/>
+         <optional>
+            <attribute name="sex">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the sex of the actor.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="gender">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the gender of the actor.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="spGrp">
+      <element name="spGrp">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(speech group) contains a group of speeches or songs in a performance text presented in a source as constituting a single unit or number. [7.2.3. Grouped Speeches]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="model.headLike"/>
+            </zeroOrMore>
+            <oneOrMore>
+               <choice>
+                  <ref name="model.global"/>
+                  <ref name="sp"/>
+                  <ref name="model.stageLike"/>
+               </choice>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.ascribed.directed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="view">
+      <element name="view">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(view) describes the visual context of some part of a screen play in terms of what the spectator sees, generally independent of any dialogue. [7.3.1. Technical Information 7.3. Other Types of Performance Text]</a:documentation>
+         <ref name="macro.specialPara"/>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="camera">
+      <element name="camera">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(camera) describes a particular camera angle or viewpoint in a screen play. [7.3.1. Technical Information 7.3. Other Types of Performance Text]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="sound">
+      <element name="sound">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sound) describes a sound effect or musical sequence specified within a screen play or radio script. [7.3.1. Technical Information 7.3. Other Types of Performance Text]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the sound in some respect, e.g. as music, special effect, etc.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="discrete">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates whether the sound overlaps the surrounding speeches or interrupts them.</a:documentation>
+               <choice>
+                  <data type="boolean"/>
+                  <choice>
+                     <value>unknown</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                     <value>inapplicable</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  </choice>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="caption">
+      <element name="caption">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(caption) contains the text of a caption or other text displayed as part of a film script or screenplay. [7.3.1. Technical Information 7.3. Other Types of Performance Text]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tech">
+      <element name="tech">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(technical stage direction) describes a special-purpose stage direction that is not meant for the actors. [7.3.1. Technical Information]</a:documentation>
+         <ref name="macro.paraContent"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the technical stage direction.
+Suggested values include: 1] light; 2] sound; 3] prop; 4] block</a:documentation>
+               <choice>
+                  <value>light</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a lighting cue</a:documentation>
+                  <value>sound</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a sound cue</a:documentation>
+                  <value>prop</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a prop cue</a:documentation>
+                  <value>block</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a blocking instruction</a:documentation>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </choice>
             </attribute>
          </optional>
          <empty/>
@@ -5187,8 +5657,22 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text-profile description) provides a detailed description of non-bibliographic aspects of a text, specifically the languages and sublanguages used, the situation in which it was produced, the participants and their setting. [2.4. The Profile Description 2.1.1. The TEI Header and Its Components]</a:documentation>
          <ref name="textClass"/>
          <optional>
+            <ref name="correspDesc"/>
+         </optional>
+         <optional>
+            <ref name="handNotes"/>
+         </optional>
+         <optional>
             <ref name="abstract"/>
          </optional>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="handNote">
+      <element name="handNote">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(note on hand) describes a particular style or hand distinguished within a manuscript. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+         <ref name="macro.specialPara"/>
          <ref name="att.global.attributes"/>
          <empty/>
       </element>
@@ -5381,6 +5865,70 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Exhibit</a:documentation>
             </choice>
          </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="correspDesc">
+      <element name="correspDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correspondence description) contains a description of the actions related to one act of correspondence. [2.4.6. Correspondence Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="model.correspDescPart"/>
+            </oneOrMore>
+            <oneOrMore>
+               <ref name="model.pLike"/>
+            </oneOrMore>
+         </choice>
+         <ref name="att.canonical.attributes"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="correspAction">
+      <element name="correspAction">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correspondence action) contains a structured description of the place, the name of a person/organization and the date related to the sending/receiving of a message or any other action related to the correspondence. [2.4.6. Correspondence Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="model.correspActionPart"/>
+            </oneOrMore>
+            <oneOrMore>
+               <ref name="model.pLike"/>
+            </oneOrMore>
+         </choice>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attribute.subtype"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the nature of the action.
+Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5] forwarded</a:documentation>
+               <choice>
+                  <value>sent</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information concerning the sending or dispatch of a message.</a:documentation>
+                  <value>received</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information concerning the receipt of a message.</a:documentation>
+                  <value>transmitted</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information concerning the transmission of a message, i.e. between the dispatch and the next receipt, redirect or forwarding.</a:documentation>
+                  <value>redirected</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information concerning the redirection of an unread message.</a:documentation>
+                  <value>forwarded</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information concerning the forwarding of a message.</a:documentation>
+                  <data type="token">
+                     <param name="pattern">[^\p{C}\p{Z}]+</param>
+                  </data>
+               </choice>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="correspContext">
+      <element name="correspContext">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correspondence context) provides references to preceding or following correspondence related to this piece of correspondence. [2.4.6. Correspondence Description]</a:documentation>
+         <oneOrMore>
+            <ref name="model.correspContextPart"/>
+         </oneOrMore>
+         <ref name="att.global.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5678,6 +6226,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <ref name="att.global.attributes"/>
          <ref name="att.placement.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
+         <ref name="att.written.attributes"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
@@ -5826,6 +6375,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.fragmentable.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -5844,6 +6394,7 @@ Suggested values include: 1] label; 2] data</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
+         <ref name="att.written.attributes"/>
          <ref name="att.notated.attributes"/>
          <empty/>
       </element>
@@ -6932,6 +7483,17 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
                  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                  prefix="rng"
                  uri="http://relaxng.org/ns/structure/1.0"/>
+         <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+                 xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 prefix="rna"
+                 uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <optional>
@@ -6977,6 +7539,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          </group>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7229,6 +7792,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
+         <ref name="att.written.attributes"/>
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
@@ -7274,6 +7838,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <ref name="att.placement.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7339,6 +7904,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             </choice>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7357,6 +7923,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
             </choice>
          </zeroOrMore>
          <ref name="att.global.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7365,6 +7932,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(salutation) contains a salutation or greeting prefixed to a foreword, dedicatory epistle, or other division of a text, or the salutation in the closing of a letter, preface, etc. [4.2.2. Openers and Closers]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7373,6 +7941,7 @@ Sample values include: 1] TEI; 2] DBK (docbook); 3] XX (unknown); 4] Schematron;
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(signature) contains the closing salutation, etc., appended to a foreword, dedicatory epistle, or other division of a text. [4.2.2. Openers and Closers]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
+         <ref name="att.written.attributes"/>
          <empty/>
       </element>
    </define>
@@ -7673,6 +8242,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
          <ref name="macro.phraseSeq"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attribute.subtype"/>
+         <ref name="att.written.attributes"/>
          <attribute name="type">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
@@ -7697,6 +8267,46 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                </oneOrMore>
             </list>
          </attribute>
+         <empty/>
+      </element>
+   </define>
+   <define name="handNotes">
+      <element name="handNotes">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one or more <code xmlns="http://www.w3.org/1999/xhtml">&lt;handNote&gt;</code> elements documenting the different hands identified within the source texts. [11.3.2.1. Document Hands]</a:documentation>
+         <oneOrMore>
+            <ref name="handNote"/>
+         </oneOrMore>
+         <ref name="att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="subst">
+      <element name="subst">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(substitution) groups one or more deletions (or surplus text) with one or more additions when the combination is to be regarded as a single intervention in the text. [11.3.1.5. Substitutions]</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="add"/>
+               <ref name="del"/>
+               <ref name="model.milestoneLike"/>
+            </choice>
+         </oneOrMore>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  id="wea-subst-substContents1-constraint-assert-48">
+            <rule context="tei:subst">
+               <assert xmlns:math="http://www.w3.org/1998/Math/MathML"
+                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                       xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                       xmlns:svg="http://www.w3.org/2000/svg"
+                       xmlns:xi="http://www.w3.org/2001/XInclude"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                       test="child::tei:add and (child::tei:del or child::tei:surplus)">
+                  <name/> must have at least one child add and at least one child del or surplus</assert>
+            </rule>
+         </pattern>
+         <ref name="att.global.attributes"/>
+         <ref name="att.dimensions.attributes"/>
          <empty/>
       </element>
    </define>

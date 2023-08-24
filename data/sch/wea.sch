@@ -38,6 +38,18 @@
            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
            prefix="rng"
            uri="http://relaxng.org/ns/structure/1.0"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0"
+           xmlns:math="http://www.w3.org/1998/Math/MathML"
+           xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns:tei="http://www.tei-c.org/ns/1.0"
+           xmlns:teix="http://www.tei-c.org/ns/Examples"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:xlink="http://www.w3.org/1999/xlink"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+           prefix="rna"
+           uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
@@ -1079,6 +1091,22 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                               ERROR: All facsimile pointers should start with facs: and not include the file extension.
                            </sch:assert>
       </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="wea-subst-substContents1-constraint-assert-48">
+      <rule context="tei:subst">
+         <assert xmlns:math="http://www.w3.org/1998/Math/MathML"
+                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                 xmlns:svg="http://www.w3.org/2000/svg"
+                 xmlns:xi="http://www.w3.org/2001/XInclude"
+                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                 test="child::tei:add and (child::tei:del or child::tei:surplus)">
+            <name/> must have at least one child add and at least one child del or surplus</assert>
+      </rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
