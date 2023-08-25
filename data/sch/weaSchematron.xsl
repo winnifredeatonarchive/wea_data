@@ -1424,8 +1424,9 @@ attributes @target and @cRef may be supplied on <xsl:text/>
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:pb[@n]" priority="1000" mode="M30">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:pb[@n]"/>
+   <xsl:template match="tei:pb[@n][not($isFilm)]" priority="1000" mode="M30">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="tei:pb[@n][not($isFilm)]"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')"/>
@@ -1477,8 +1478,8 @@ attributes @target and @cRef may be supplied on <xsl:text/>
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:pb" priority="1000" mode="M32">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:pb"/>
+   <xsl:template match="tei:pb[not($isFilm)]" priority="1000" mode="M32">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:pb[not($isFilm)]"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="empty(preceding::tei:pb[@n = current()/@n])"/>
@@ -2408,6 +2409,8 @@ On <xsl:text/>
    <xsl:variable name="docStatus" select="//tei:revisionDesc/@status"/>
    <xsl:variable name="isDocumentation"
                  select="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+   <xsl:variable name="isFilm"
+                 select="some $r in $docTypes satisfies matches($r,'Film')"/>
    <xsl:variable name="thisUri" select="document-uri(/)"/>
    <xsl:variable name="thisProjectDir"
                  select="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>

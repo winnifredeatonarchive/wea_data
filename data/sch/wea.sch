@@ -508,7 +508,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <sch:rule context="tei:pb[@n]">
+      <sch:rule context="tei:pb[@n][not($isFilm)]">
          <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
@@ -540,7 +540,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <sch:rule context="tei:pb">
+      <sch:rule context="tei:pb[not($isFilm)]">
          <sch:assert test="empty(preceding::tei:pb[@n = current()/@n])">
                                  ERROR: All pb/@n should be unique within a document: <sch:value-of select="current()/@n"/>.
                               </sch:assert>
@@ -1126,6 +1126,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
       <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
       <sch:let name="isDocumentation"
                value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+      <sch:let name="isFilm" value="some $r in $docTypes satisfies matches($r,'Film')"/>
       <sch:let name="thisUri" value="document-uri(/)"/>
       <sch:let name="thisProjectDir"
                value="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>

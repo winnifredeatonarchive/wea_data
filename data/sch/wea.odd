@@ -1491,7 +1491,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
                <moduleRef key="core"
-                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker stage term title unclear"/>
                <moduleRef key="drama"
                           include="actor camera caption castGroup castItem castList role roleDesc set sound spGrp tech view"/>
                <moduleRef key="header"
@@ -2258,13 +2258,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               on the Web is to use a <att>ref</att> attribute whose value is a tag URI as defined in 
                               <ref target="#RFC4151">RFC 4151</ref>.</p>
                         </remarks>
-                        <remarks versionDate="2009-05-25" xml:lang="fr">
-                           <p>La valeur peut être un identifiant unique dans une base de données, ou toute autre chaîne
-                              définie de façon externe identifiant le référent. </p>
-                        </remarks>
-                        <remarks xml:lang="ja" versionDate="2018-12-31">
-                           <p>値はデータベースにおけるユニークな識別子や、外部で定義された指示対象を特定するなんらかの文字列であってよい。<att>key</att>属性の値に関してさだまった構文は提案されていない。なぜならば、それぞれのプロジェクトのやりかたに完全に依存するからである。同様の理由によって、データの相互交換においてこの属性は推奨されない。在るプロジェクトで用いられた値が他のプロジェクトの値と異なることを保証できないからである。そのような場面における魔法石的対処は、<ref target="#RFC4151">RFC4151</ref>に定義されるタグURIを値とする<att>ref</att>属性を用いて、標準的なウェブにおける習慣にしたがってmagic tokenを使うことである。</p>
-                        </remarks>
                      </attDef>
                      <attDef ident="ref" mode="add">
                         <datatype minOccurs="1" maxOccurs="unbounded">
@@ -2327,7 +2320,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:pb[@n]">
+                           <sch:rule context="tei:pb[@n][not($isFilm)]">
                               <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
@@ -2351,7 +2344,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:pb">
+                           <sch:rule context="tei:pb[not($isFilm)]">
                               <sch:assert test="empty(preceding::tei:pb[@n = current()/@n])">
                                  ERROR: All pb/@n should be unique within a document: <sch:value-of select="current()/@n"/>.
                               </sch:assert>
@@ -2591,13 +2584,17 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>continued</desc>
                               <gloss>A phrase stating a text is continued or a continuation of another text</gloss>
                            </valItem>
+                           <valItem mode="add" ident="pageNum">
+                              <desc>page number</desc>
+                              <gloss>Page number (used for screenplays ONLY)</gloss>
+                           </valItem>
                            <valItem mode="add" ident="copyright">
                               <desc>copyright</desc>
                               <gloss>A statement of copyright</gloss>
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="place" mode="change" usage="req">
+                     <attDef ident="place" mode="change" usage="opt">
                         <valList mode="add" type="closed">
                            <valItem mode="add" ident="left">
                               <desc>left</desc>
@@ -2766,6 +2763,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
                         <sch:let name="isDocumentation"
                                  value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+                        <sch:let name="isFilm" value="some $r in $docTypes satisfies matches($r,'Film')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
                         <sch:let name="thisProjectDir"
                                  value="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>
