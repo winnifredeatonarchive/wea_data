@@ -25942,6 +25942,20 @@ my <num type="ordinal" value="21">twenty-first</num> birthday</p>
                         <cell>
                            <label>Schematron</label>
                         </cell>
+                        <cell>
+                           <code>
+&lt;sch:pattern&gt;
+&lt;sch:rule context="tei:pb[@n]"&gt;
+ &lt;sch:assert test="matches(@n,'^[A-Za-z0-9_\-\.]+$')"&gt;ERROR: @n should contain
+   only letters, digits, underscores, periods, or dashes.&lt;/sch:assert&gt;
+&lt;/sch:rule&gt;
+&lt;/sch:pattern&gt;</code>
+                        </cell>
+                     </row>
+                     <row>
+                        <cell>
+                           <label>Schematron</label>
+                        </cell>
                         <cell>All <att>n</att> attributes on <ref target="#TEI.pb"><gi>pb</gi></ref> elements should be numerical.<code>
 &lt;sch:pattern&gt;
 &lt;sch:rule context="tei:pb[@n][not($isFilm)]"&gt;

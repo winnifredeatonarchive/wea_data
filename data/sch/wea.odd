@@ -2316,6 +2316,16 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraintSpec>
                </elementSpec>
                <elementSpec ident="pb" module="core" mode="change">
+                  <constraintSpec ident="pb.noSpaces" scheme="schematron">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^[A-Za-z0-9_\-\.]+$')">ERROR: @n should contain
+                              only letters, digits, underscores, periods, or dashes.</sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>
