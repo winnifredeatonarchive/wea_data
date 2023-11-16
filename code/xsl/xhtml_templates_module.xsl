@@ -704,14 +704,15 @@
     </xsl:template>
     
     <xsl:template match="pb" mode="tei">
+        <xsl:variable name="id" select="wea:getPageId(.)"/>
        <!--This can't really be an hr anymore, since it can't go in <q> (where it appears a lot).-->
-        <a href="#{ancestor::TEI/@xml:id}_pg_{@n}" class="pb-link">
+        <a href="#{$id}" class="pb-link">
             <span>
                 <xsl:call-template name="processAtts">
                     <xsl:with-param name="classes" select="if (not(preceding::pb)) then 'first' else ()"/>
                 </xsl:call-template>
                 <xsl:if test="@n">
-                    <span class="pbNum" id="{ancestor::TEI/@xml:id}_pg_{@n}">
+                    <span class="pbNum" id="{$id}">
                         <xsl:value-of select="@n"/>
                     </span>
                 </xsl:if>
@@ -720,6 +721,22 @@
         </a>
         
     </xsl:template>
+    
+    <xsl:function name="wea:getPageId" as="xs:string">
+        <xsl:param name="pb" as="element(pb)"/>
+        <xsl:variable name="root" select="$pb/ancestor::TEI" as="element(TEI)"/>
+        <xsl:variable name="prefix" select="$root/@xml:id || '_pg_'"/>
+        <xsl:variable name="n" select="$pb/@n" as="xs:string?"/>
+        <xsl:choose>
+            <xsl:when test="empty($n) or exists($root/descendant::pb[@n = $n] except $pb)">
+                <xsl:sequence select="$prefix || generate-id($pb)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="$prefix || $n"/>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:function>
     
     <xsl:template match="lb" mode="tei">
         <br>
