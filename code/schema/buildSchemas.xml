@@ -63,7 +63,7 @@
     
     <!--*********** TEI SCHEMAS ************-->
     
-    <property name="tei_all.src" value="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng"/>
+    <property name="tei_all.src" value="http://www.tei-c.org/release/xml/tei/custom/schema/rng/tei_all.rng"/>
     
     <!--************ XSLTs ************** -->
     
@@ -71,7 +71,7 @@
     <property name="odd2odd.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/released/odds/odd2odd.xsl"/>
     
     <!--ODD 2 RNG XSLT (from the TEI framework)-->
-    <property name="odd2rng.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/released/profiles/tei/relaxng/to.xsl"/>
+    <property name="odd2rng.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/released/profiles/tei/rng/to.xsl"/>
     
     <!--ODD 2 Schematron XSLT (from the TEI framework)-->
     <property name="odd2sch.xsl" value="https://raw.githubusercontent.com/TEIC/Stylesheets/released/odds/extract-isosch.xsl"/>

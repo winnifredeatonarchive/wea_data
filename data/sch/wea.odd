@@ -2031,12 +2031,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <memberOf key="att.global" mode="delete"/>
                   </classes>
                   <content>
-                     <empty/>
+                     <elementRef key="bibl" minOccurs="0" maxOccurs="1"/>
                   </content>
                   <constraintSpec ident="relatedItem.targetShouldBeExternalOrBibl" scheme="schematron">
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:relatedItem[@target]">
+                           <sch:rule context="tei:relatedItem[@target][not(tei:bibl)]">
                               <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
                                  ERROR: The @target for this relatedItem should be one of a 
                                  bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
@@ -2057,9 +2057,13 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <gloss>Edition</gloss>
                               <desc>An edition or surrogate of this text.</desc>
                            </valItem>
+                           <valItem ident="werfonds" mode="add">
+                              <gloss>WER Fonds</gloss>
+                              <desc>The related item in the WER fonds</desc>
+                           </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="target" mode="change" usage="req"/>
+                     <attDef ident="target" mode="change" usage="opt"/>
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
                </elementSpec>
