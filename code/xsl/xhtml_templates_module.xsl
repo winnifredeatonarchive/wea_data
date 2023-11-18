@@ -253,6 +253,28 @@
         </span>
     </xsl:template>
     
+    <xsl:template match="subst" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="add" mode="tei">
+        <ins>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </ins>
+    </xsl:template>
+    
+    <xsl:template match="del" mode="tei">
+        <del>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </del>
+    </xsl:template>
+    
+    
     
   
     <xsl:template match="note[@type='authorial']" mode="tei">

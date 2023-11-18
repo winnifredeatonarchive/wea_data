@@ -32,8 +32,8 @@
     
     <xsl:variable name="docsByTag" as="map(xs:string, document-node()+)">
         <xsl:map>
-            <!--Get by their directory name-->
-            <xsl:for-each-group select="$oldDocsURIs" group-by="tokenize(.,'/')[last() - 2]">
+            <!--Group these by tag (which we can derive from the directory) -->
+            <xsl:for-each-group select="$oldDocsURIs" group-by="tokenize(substring-before(.,'/data/texts/'),'/')[last()]">
                 
                 <xsl:map-entry 
                     key="current-grouping-key()"
@@ -52,11 +52,13 @@
                         <xsl:for-each select="$docsByTag(.)">
                             <xsl:map-entry key="string(//TEI/@xml:id)">
                                 <xsl:map>
-                                    <xsl:map-entry key="'hasTranscription'" select="matches(string-join(//body),'\S') and //revisionDesc/@status  = 'published'"/>
+                                    <xsl:map-entry key="'hasTranscription'" 
+                                        select="matches(string-join(//body),'\S') and //revisionDesc/@status  = 'published'"/>
                                     <xsl:map-entry key="'hasHeadnote'" select="matches(string-join(//abstract),'\S')"/>
                                     <xsl:map-entry key="'hasFacsimile'" select="exists(//text/@facs)"/>
                                     <xsl:map-entry key="'exhibit'" 
                                         select="replace(descendant::catRef[@scheme='wdt:exhibit']/@target,'wdt:','')"/>
+                                    <xsl:map-entry key="'doctype'" select="string-join(descendant::catRef[@scheme='wdt:docType'] ! replace(@target,'wdt:',''),'; ')"/>
                                 </xsl:map>
                             </xsl:map-entry>
                         </xsl:for-each>
@@ -211,7 +213,12 @@
                 </label>
                 <xsl:for-each select="current-group()">
                     <xsl:sort select="wea:docTitle(., $collection)"/>
-                    <item><xsl:sequence select="wea:docTitleLink(., $collection)"/></item>
+                    <item>
+                        <xsl:sequence select="wea:docTitleLink(., $collection)"/>
+                        <xsl:if test="$currData(.)?doctype">
+                            <xsl:value-of select="' [' || $currData(.)?doctype || ']'"/>
+                        </xsl:if>
+                    </item>
                 </xsl:for-each>
             </list>
         </xsl:for-each-group>

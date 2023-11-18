@@ -24,8 +24,25 @@
         <echo message="${tag}"/>
         <delete dir="${old.dir}/${tag}"/>
         <mkdir dir="${old.dir}/${tag}"/>
-        <exec executable="svn" dir="${old.dir}/${tag}">
-            <arg line="export https://github.com/winnifredeatonarchive/wea_data/tags/${tag}/data/texts"/>
+        <!--First, do a sparse clone of the directory without any of the files
+            etc-->
+        <exec executable="git">
+            <arg line="clone
+                --sparse 
+                --no-checkout
+                --depth=1 
+                --filter=tree:0 
+                --branch=${tag}
+                https://github.com/winnifredeatonarchive/wea_data
+                ${old.dir}/${tag}"/>
+        </exec>
+        <!--Then, set the data/texts as the directory we want to use-->
+        <exec executable="git" dir="${old.dir}/${tag}">
+            <arg line="sparse-checkout set --no-cone data/texts"/>
+        </exec>
+        <!--And now check the whole thing out-->
+        <exec executable="git" dir="${old.dir}/${tag}">
+            <arg line="checkout"/>
         </exec>
     </target>
     
