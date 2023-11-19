@@ -268,7 +268,7 @@
                 <figure>
                     <img src="{$imgSrc}" alt="{normalize-space(string-join($imgAlt,''))}"/>
                 </figure>
-            <div class="metadataLabel"><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label" mode="tei"/></a></div>
+            <div><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label" mode="tei"/></a></div>
         </div>
     </xsl:template>
     
