@@ -372,8 +372,8 @@
         <xsl:apply-templates select="//text/@prev" mode="metadata"/>
         <xsl:apply-templates select="//text/@next" mode="metadata"/>
         
-        <!--And get some information from the work from which it derives-->
-        <xsl:call-template name="getWork"/>
+  <!--      <!-\-And get some information from the work from which it derives-\->
+        <xsl:call-template name="getWork"/>-->
 
     </xsl:template>
     
