@@ -34,6 +34,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc>
+         <change who="pers:JT1" when="2023-08-24">Added drama module.</change>
          <change who="pers:JT1" when="2019-03-29">Created file.</change>
       </revisionDesc>
    </teiHeader>
@@ -1490,9 +1491,11 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
                <moduleRef key="core"
-                          include="abbr address addrLine author bibl biblScope choice cit corr date desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg resp respStmt rs sic sp speaker term title unclear"/>
+                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker stage term title unclear"/>
+               <moduleRef key="drama"
+                          include="actor camera caption castGroup castItem castList role roleDesc set sound spGrp tech view"/>
                <moduleRef key="header"
-                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction creation distributor edition editorialDecl encodingDesc extent fileDesc hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
+                          include="abstract authority availability biblFull catRef catDesc category change classDecl correction correspDesc correspAction correspContext creation distributor edition editorialDecl encodingDesc extent fileDesc handNote hyphenation idno interpretation langUsage language licence listChange listPrefixDef notesStmt normalization prefixDef profileDesc projectDesc publicationStmt punctuation quotation rendition revisionDesc seriesStmt sourceDesc tagsDecl taxonomy teiHeader textClass titleStmt"/>
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
                <moduleRef key="msdescription"
@@ -1504,7 +1507,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="tei"/>
                <moduleRef key="textstructure"
                           include="TEI back body byline closer dateline div docAuthor docDate docImprint docTitle epigraph floatingText front opener text titlePage titlePart trailer salute signed"/>
-               <moduleRef key="transcr" include="fw supplied"/>
+               <moduleRef key="transcr" include="fw handNotes subst supplied"/>
                <moduleSpec ident="wea" mode="add">
                   <desc>WEA Module for Customizations</desc>
                </moduleSpec>
@@ -1609,10 +1612,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <!--Make profileDesc/textClass mandatory-->
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
-                     <sequence>
-                        <elementRef key="textClass"/>
-                        <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
-                     </sequence>
+                     <elementRef key="textClass"/>
+                     <elementRef key="correspDesc" minOccurs="0" maxOccurs="1"/>
+                     <elementRef key="handNotes" minOccurs="0" maxOccurs="1"/>
+                     <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
                   </content>
                </elementSpec>
                <elementSpec ident="abstract" module="header" mode="change">
@@ -1670,7 +1673,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </elementSpec>
                <elementSpec ident="lb" module="core" mode="change">
                   <constraintSpec scheme="schematron" ident="lb.floatingTextOnly">
-                     <desc>Don't allow lbs ANYWHERE except in floating texts.</desc>
+                     <desc>Don't allow lbs ANYWHERE except in floating texts or front matter.</desc>
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:lb">
@@ -2085,17 +2088,17 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </content>
                </elementSpec>
                <!--MODULE: CORE-->
-               <!--               <elementSpec ident="relatedItem" module="core" mode="change">
+               <elementSpec ident="relatedItem" module="core" mode="change">
                   <classes mode="change">
                      <memberOf key="att.global" mode="delete"/>
                   </classes>
                   <content>
-                     <empty/>
+                     <elementRef key="bibl" minOccurs="0" maxOccurs="1"/>
                   </content>
                   <constraintSpec ident="relatedItem.targetShouldBeExternalOrBibl" scheme="schematron">
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:relatedItem[@target]">
+                           <sch:rule context="tei:relatedItem[@target][not(tei:bibl)]">
                               <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
                                  ERROR: The @target for this relatedItem should be one of a 
                                  bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
@@ -2116,30 +2119,18 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <gloss>Edition</gloss>
                               <desc>An edition or surrogate of this text.</desc>
                            </valItem>
+                           <valItem ident="werfonds" mode="add">
+                              <gloss>WER Fonds</gloss>
+                              <desc>The related item in the WER fonds</desc>
+                           </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="target" mode="change" usage="req"/>
+                     <attDef ident="target" mode="change" usage="opt"/>
                      <attDef ident="subtype" mode="delete"/>
                   </attList>
-               </elementSpec>-->
-               <elementSpec ident="note" module="core" mode="replace">
-                  <gloss>note</gloss>
-                  <desc>contains a note or annotation.</desc>
-                  <classes>
-                     <memberOf key="att.global"/>
-                     <memberOf key="att.typed"/>
-                     <memberOf key="att.placement"/>
-                     <memberOf key="model.noteLike"/>
-                     <memberOf key="model.annotationLike"/>
-                     <memberOf key="model.correspDescPart"/>
-                     <memberOf key="model.correspActionPart"/>
-                     <memberOf key="model.correspContextPart"/>
-                     <memberOf key="model.annotationPart.body"/>
-                  </classes>
-                  <content>
-                     <macroRef key="macro.specialPara"/>
-                  </content>
-                  <constraintSpec scheme="schematron" ident="note.authorialInQOnly">
+               </elementSpec>
+               <elementSpec ident="note" module="core" mode="change">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.authorialInQOnly">
                      <desc>Use parenthetical notes only within <gi>q</gi> elements</desc>
                      <constraint>
                         <sch:pattern>
@@ -2151,7 +2142,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.useAuthorialOrEditorialInQ">
+                  <constraintSpec scheme="schematron"
+                                  mode="add"
+                                  ident="note.useAuthorialOrEditorialInQ">
                      <desc>All notes within the <gi>q</gi> element should have a type.</desc>
                      <constraint>
                         <sch:pattern>
@@ -2164,7 +2157,9 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.editorialOnesShouldFollowTrailingPunct">
+                  <constraintSpec scheme="schematron"
+                                  mode="add"
+                                  ident="note.editorialOnesShouldFollowTrailingPunct">
                      <desc>Editorial notes should be placed following trailing punctuation.</desc>
                      <constraint>
                         <sch:rule context="tei:note[@type='editorial']">
@@ -2175,7 +2170,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:rule>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.bioOnlyInPerson">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.bioOnlyInPerson">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2186,7 +2181,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
-                  <constraintSpec scheme="schematron" ident="note.mustHaveParaForBio">
+                  <constraintSpec scheme="schematron" mode="add" ident="note.mustHaveP">
                      <constraint>
                         <sch:pattern>
                            <sch:rule context="tei:person/tei:note | tei:org/tei:note">
@@ -2198,6 +2193,24 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList mode="change" type="closed">
+                           <valItem ident="editorial" mode="add">
+                              <desc>An editorial note</desc>
+                              <gloss>Editorial note</gloss>
+                           </valItem>
+                           <valItem ident="parenthetical" mode="add">
+                              <desc>A parenthetical (or authorial) note</desc>
+                              <gloss>Parenthetical note</gloss>
+                           </valItem>
+                           <valItem ident="annotation" mode="add">
+                              <desc>A handwritten annotation or marginal note</desc>
+                              <gloss>Annotation</gloss>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                   <!--                 <attList org="choice">
                      <attList org="group">
                         <attDef ident="type" mode="add" usage="opt">
@@ -2311,13 +2324,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               on the Web is to use a <att>ref</att> attribute whose value is a tag URI as defined in 
                               <ref target="#RFC4151">RFC 4151</ref>.</p>
                         </remarks>
-                        <remarks versionDate="2009-05-25" xml:lang="fr">
-                           <p>La valeur peut être un identifiant unique dans une base de données, ou toute autre chaîne
-                              définie de façon externe identifiant le référent. </p>
-                        </remarks>
-                        <remarks xml:lang="ja" versionDate="2018-12-31">
-                           <p>値はデータベースにおけるユニークな識別子や、外部で定義された指示対象を特定するなんらかの文字列であってよい。<att>key</att>属性の値に関してさだまった構文は提案されていない。なぜならば、それぞれのプロジェクトのやりかたに完全に依存するからである。同様の理由によって、データの相互交換においてこの属性は推奨されない。在るプロジェクトで用いられた値が他のプロジェクトの値と異なることを保証できないからである。そのような場面における魔法石的対処は、<ref target="#RFC4151">RFC4151</ref>に定義されるタグURIを値とする<att>ref</att>属性を用いて、標準的なウェブにおける習慣にしたがってmagic tokenを使うことである。</p>
-                        </remarks>
                      </attDef>
                      <attDef ident="ref" mode="add">
                         <datatype minOccurs="1" maxOccurs="unbounded">
@@ -2379,11 +2385,21 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   </constraintSpec>
                </elementSpec>
                <elementSpec ident="pb" module="core" mode="change">
+                  <constraintSpec ident="pb.noSpaces" scheme="schematron">
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:pb[@n]">
+                              <sch:assert test="matches(@n,'^[A-Za-z0-9_\-\.]+$')">ERROR: @n should contain
+                              only letters, digits, underscores, periods, or dashes.</sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
                   <constraintSpec ident="pb.pageNumbersShouldBeNumerical" scheme="schematron">
                      <desc>All <att>n</att> attributes on <gi>pb</gi> elements should be numerical.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:pb[@n]">
+                           <sch:rule context="tei:pb[@n][not($isFilm)]">
                               <sch:assert test="matches(@n,'^((\d+[a-z]?)|(frontcover)|(backcover)|([xiv]+))$')">
                                  ERROR: All @n attributes on page beginnings should start with numbers (and optionally end a alphanumeric string).
                               </sch:assert>
@@ -2407,7 +2423,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      <desc>Any text with <gi>pb</gi> elements should have an initial one.</desc>
                      <constraint>
                         <sch:pattern>
-                           <sch:rule context="tei:pb">
+                           <sch:rule context="tei:pb[not($isFilm)]">
                               <sch:assert test="empty(preceding::tei:pb[@n = current()/@n])">
                                  ERROR: All pb/@n should be unique within a document: <sch:value-of select="current()/@n"/>.
                               </sch:assert>
@@ -2468,6 +2484,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+               </elementSpec>
+               <!--MODULE:DRAMA-->
+               <elementSpec ident="tech" mode="change">
+                  <attList>
+                     <attDef ident="perf" mode="delete"/>
+                  </attList>
                </elementSpec>
                <!--MODULE: LINKING-->
                <elementSpec ident="linkGrp" module="linking" mode="change">
@@ -2666,13 +2688,17 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>continued</desc>
                               <gloss>A phrase stating a text is continued or a continuation of another text</gloss>
                            </valItem>
+                           <valItem mode="add" ident="pageNum">
+                              <desc>page number</desc>
+                              <gloss>Page number (used for screenplays ONLY)</gloss>
+                           </valItem>
                            <valItem mode="add" ident="copyright">
                               <desc>copyright</desc>
                               <gloss>A statement of copyright</gloss>
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="place" mode="change" usage="req">
+                     <attDef ident="place" mode="change" usage="opt">
                         <valList mode="add" type="closed">
                            <valItem mode="add" ident="left">
                               <desc>left</desc>
@@ -2692,7 +2718,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </elementSpec>
                <!--CLASS SPECS-->
                <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
-               <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.datable" module="tei" type="atts" mode="change">
                   <attList>
@@ -2843,6 +2868,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:let name="docStatus" value="//tei:revisionDesc/@status"/>
                         <sch:let name="isDocumentation"
                                  value="some $r in $docTypes satisfies matches($r,'Documentation')"/>
+                        <sch:let name="isFilm" value="some $r in $docTypes satisfies matches($r,'Film')"/>
                         <sch:let name="thisUri" value="document-uri(/)"/>
                         <sch:let name="thisProjectDir"
                                  value="if (matches($thisUri,'/data/')) then (substring-before($thisUri,'/data/') || '/data/') else replace($thisUri,'[^/]+$','')"/>
