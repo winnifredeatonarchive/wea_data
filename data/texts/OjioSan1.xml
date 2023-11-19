@@ -57,31 +57,14 @@ Publicly accessible
  uva-lib:475928 
 -->
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatOjio"/>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl103"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Ojio-San: A Noble’s Daughter</title>. <publisher ref="org:AmericanHome"><title level="j">American Home
-                     Journal</title></publisher>, <date when="1898-03">Mar. 1898</date>, pp.
-                     <biblScope unit="page">142-44</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source target="bibl:COLE3"/>
-                     </recordHist>
-                     <availability>
-                        <p>Facsimile retrieved from Library of Congress</p>
-                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
-                     </availability>
-                  </adminInfo>
-                  <listBibl>
-                     <bibl target="weda:EatOjio"/>
-                  </listBibl>
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:103"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -92,7 +75,6 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-07-17" status="published">Added illustrator to metadata.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>

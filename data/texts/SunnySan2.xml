@@ -22,36 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from The British Library.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl130"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                  Illustrated by<author role="illustrator"><name ref="pers:AF2">Arthur
-                        Ferrier</name></author>. <publisher ref="org:Sovereign">Sovereign
-                     Magazine</publisher>. <title level="a">Sunny-San [Part 4]</title>. <title level="j">Sovereign Magazine</title>, vol. <biblScope unit="volume">4</biblScope>, no. <biblScope unit="issue">30</biblScope>, <date when="1922-05">May 1922</date>, pp. <biblScope unit="page">569–582</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from The British Library.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:130"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -62,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-06-08" status="published">Encoded and proofed. Set to published</change>
          <change who="pers:LW1" when="2022-06-08" status="inProgress">Downloaded document from
             Google Drive and converted to TEI.</change>
@@ -675,8 +649,10 @@
                            I am sorry I are not got money to pay you back for all that same, but I
                            will take nothing with me but those clothes on my body. Only bad girls
                            take money from gentleman at this England. I have hear that to-day, but I
-                           never know that before, or I would not do so. I have pray to <foreign xml:lang="ja">Amaterasu-oho-mikami</foreign>, making happy sunshine at
-                           your life. May you live ten thousand year. <foreign xml:lang="ja">Sayonara</foreign>. SUNNY</q>.</p>
+                           never know that before, or I would not do so. I have pray to <foreign
+                              xml:lang="ja">Amaterasu-oho-mikami</foreign>, making happy sunshine at
+                           your life. May you live ten thousand year. <foreign xml:lang="ja"
+                              >Sayonara</foreign>. SUNNY</q>.</p>
                   </body>
                </floatingText>
             </q>
@@ -694,7 +670,8 @@
             <p><q>If you do not control yourself, my good man, I will be forced to call in outside
                   aid and have you incarcerated</q>.</p>
             <p>Downstairs, Sunny, unmindful of the waiting women, ran by them into the kitchen. From
-               goldfish to canaries she turned, whispering softly: <q><foreign xml:lang="ja">Sayonara</foreign> my friends. I sawry leaving you</q>.</p>
+               goldfish to canaries she turned, whispering softly: <q><foreign xml:lang="ja"
+                     >Sayonara</foreign> my friends. I sawry leaving you</q>.</p>
             <p>She was opening the window onto the fire-escape, and Itchy with a howl of joy had
                leaped into her arms, when Mrs. Hammond and Miss Falconer, suspicious of something
                underhand, appeared at the door.</p>
@@ -702,7 +679,8 @@
                Hammond.</p>
             <pb n="581"/>
             <p>Sunny turned, with her dog hugged up close to her breast.</p>
-            <p><q>I are say good-bye to my liddle dog</q>, she said—<q><foreign xml:lang="ja">Sayonara</foreign> Itchy. The gods be good unto you</q>.</p>
+            <p><q>I are say good-bye to my liddle dog</q>, she said—<q><foreign xml:lang="ja"
+                     >Sayonara</foreign> Itchy. The gods be good unto you</q>.</p>
             <p>She set the dog hastily back in the box, against his most violent protests, and Itchy
                immediately set up such a woeful howling and baying as only a small mongrel dog, who
                possesses psychic qualities and senses the departure of an adored one, could be

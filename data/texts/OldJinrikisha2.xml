@@ -65,32 +65,14 @@ Publicly accessible
  uva-lib:475922 
 -->
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from Library of Congress.</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatJinr"/>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl175"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">The Old Jinrikisha [Part 2]</title>. Illustrated by <author role="illustrator"><name ref="pers:JG1">John C. Gilbert</name></author>.
-                     <publisher ref="org:Conkey"><title level="j">Conkey’s Home
-                     Journal</title></publisher>, <date when="1900-03">Mar. 1900</date>, pp.
-                     <biblScope unit="page">5-6</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source target="bibl:COLE3"/>
-                     </recordHist>
-                     <availability>
-                        <p>Facsimile from Library of Congress.</p>
-                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
-                     </availability>
-                  </adminInfo>
-                  <listBibl>
-                     <bibl target="weda:EatJinr"/>
-                  </listBibl>
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:175"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -101,7 +83,6 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2022-03-12" status="published">Adjusted spacing.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>

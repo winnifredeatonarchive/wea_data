@@ -10,6 +10,7 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
+            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -18,37 +19,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from University of Saskatchewan</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl106"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
-                     3]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
-                        Review</title></publisher>, <date when="1919-03-20">20 Mar. 1919</date>, pp.
-                     <biblScope unit="page">331-334</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from University of Saskatchewan</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:106"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -59,21 +34,19 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:SL1" status="published" when="2022-03-10">Added trailer.</change>
-         <change who="pers:MC1" status="published" when="2021-05-14">fixed typos.</change>
-         <change who="pers:MC1" status="published" when="2020-08-12">set to published.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
-         <change who="pers:MC1" status="inProgress" when="2020-07-01">added note about source</change>
-         <change who="pers:MC1" status="inProgress" when="2020-06-30">added next instalment link</change>
-         <change who="pers:SC1" status="inProgress" when="2020-06-21">Begin transcribing</change>
-         <change who="pers:MC1" status="empty" when="2019-07-29">changed text link to pdf.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl106 using XSLT.</change>
+         <change who="pers:SL1" status="published"  when="2022-03-10">Added trailer.</change>
+         <change who="pers:MC1" status="published"  when="2021-05-14">fixed typos.</change>
+         <change who="pers:MC1" status="published"  when="2020-08-12">set to published.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change><change who="pers:MC1" status="inProgress" when="2020-07-01">added note about source</change>
+         <change who="pers:MC1" status="inProgress" when="2020-06-30">added next instalment link</change><change who="pers:SC1" status="inProgress" when="2020-06-21">Begin transcribing</change>
+         <change who="pers:MC1" status="empty"  when="2019-07-29">changed text link to pdf.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl106 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Other_Peoples_Troubles3" prev="doc:OtherPeoplesTroubles2" next="doc:OtherPeoplesTroubles4">
+   <text facs="facs:Other_Peoples_Troubles3" prev="doc:OtherPeoplesTroubles2"  next="doc:OtherPeoplesTroubles4">
       
       <pb n="331"/>
       <body>
@@ -113,7 +86,8 @@
                      black mantle upon us, it is then one’s friends drop off like withered leaves,
                      or cling greenly to the branches. And I cling on to Lenox Holt, in spite of his
                      oftentimes insulting cynicisms regarding my profession and my aims. For Holt
-                     believes all men are knaves and all women wantons and liars</q>.<note type="editorial" resp="pers:SC1">No closing quotation mark in
+                     believes all men are knaves and all women wantons and liars</q>.<note
+                     type="editorial" resp="pers:SC1">No closing quotation mark in
                   original.</note></p>
                <p><q>Are you asleep, Laura?</q></p>
                <p>Her face was hidden against his knee. She looked up slowly, her dark eyes
@@ -356,12 +330,14 @@
                      manner. In fact, my first thought of them was that they were living on the
                      crest of a wave which was bound to break over against the shore, as waves have
                      a habit of doing. For I knew not only that his method of livelihood was
-                     precarious but that he was impractical and somewhat reckless</q>.<note type="editorial" resp="pers:SC1">No end quotation mark in original</note></p>
+                     precarious but that he was impractical and somewhat reckless</q>.<note
+                     type="editorial" resp="pers:SC1">No end quotation mark in original</note></p>
                <p><q>She was radiant in those days, quite the most radiant creature I have ever
                      seen. Passionately in love with her husband, she was surrounded by a coterie of
                      people who lavished upon her the adulation without which an actress’ life feels
                      flat and unreal. She lived on excitement-and flattery, heard it literally
-                     shouted, sung or breathed into her ears on all sides</q>.<note type="editorial" resp="pers:SC1">No end quotation mark in original</note></p>
+                     shouted, sung or breathed into her ears on all sides</q>.<note type="editorial"
+                     resp="pers:SC1">No end quotation mark in original</note></p>
             </div>
          </div>
          <trailer>(To be continued)</trailer>

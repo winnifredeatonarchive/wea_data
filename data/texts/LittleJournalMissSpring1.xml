@@ -22,38 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Rauner Library, Dartmouth College</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl160"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">The Little Journal of Miss Spring</title>. Illustrated by
-                     <author role="illustrator"><name ref="pers:MM1">M. McKinlay</name></author>.
-                     <publisher ref="org:Hutchinson"><title level="j">Hutchinson’s
-                     Magazine</title></publisher><!--<ref target="http://www.philsp.com/homeville/fmi/t/t3403.htm#A73301"><hi rendition="simple:italic">Hutchinson’s Magazine</hi></ref></-->,
-                     <date when="1922-09">Sept. 1922</date>, pp. <biblScope unit="page">300-305</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Rauner Library, Dartmouth College</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:160"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -64,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source.</change>
          <change who="pers:SB2" when="2020-06-22" status="published">Added illustrator tag.</change>

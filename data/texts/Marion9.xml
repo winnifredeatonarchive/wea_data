@@ -23,35 +23,13 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from HathiTrust: <ref
+                  target="https://catalog.hathitrust.org/Record/000542803"
+                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl81"><author><name ref="pers:WE1">Herself and the author of <title level="m">Me</title></name></author>. <title level="m">Marion: The Story
-                     of an Artist’s Model [Part 8]</title>. Illustrated by <author role="illustrator"><name ref="pers:HH1">Henry Hutt</name></author>. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>,
-                     <date when="1916-11">Nov. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">5</biblScope>, pp. <biblScope unit="page">329-330, 338-339</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from HathiTrust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:81"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -62,7 +40,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-29" status="published">Proofed.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Proofed and set to
             published.</change>
@@ -409,7 +386,8 @@
                   match to the kindling, the flames must have crept up to the thin wooden walls from
                   the elbow, and in an instant the wall had ignited. I had on only a night-dress. I
                   seized the quilt off the bed, and threw it on the flames, but it seemed only to
-                  serve as fresh fuel. Lil was crouched back on the bed, petrified with <pb n="339"/>terror, and literally unable to move. Desperately screaming:</p>
+                  serve as fresh fuel. Lil was crouched back on the bed, petrified with <pb n="339"
+                  />terror, and literally unable to move. Desperately screaming:</p>
                <p><q>Fire, fire!</q> I seized the pitcher and flung it at the flames, and then
                   somehow I grabbed hold of Lil by the hand, and both shrieking, we ran out into the
                   hall. Then I fainted. When I came to, the fire was out and the landlady and her

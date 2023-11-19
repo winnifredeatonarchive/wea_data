@@ -22,35 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from The Bodleian Library.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl218"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                   <publisher ref="org:Sovereign">Sovereign
-                     Magazine</publisher>. <title level="a">Sunny-San [Part 5]</title>. <title level="j">Sovereign Magazine</title>, vol. <biblScope unit="volume">4</biblScope>, no. <biblScope unit="issue">31</biblScope>, <date when="1922-05">June 1922</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from The Bodleian Library.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:218"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-06-11" status="published">Fixed typo.</change>
          <change who="pers:LW1" when="2022-06-02" status="published">Proofed and encoded. Set to published.</change>
          <change who="pers:LW1" when="2022-06-02" status="inProgress">Downloaded document from
@@ -157,7 +132,8 @@
 
          <div>
             <head>Chapter XIV</head>
-            <p>Despite all that money and influence could do to aid in the search of the missing <pb n="77"/> girl, no trace of Sunny had been found since the day she passed through
+            <p>Despite all that money and influence could do to aid in the search of the missing <pb
+                  n="77"/> girl, no trace of Sunny had been found since the day she passed through
                the door of the studio apartment and disappeared into the seething throngs
                outside.</p>
             <p>Every policeman, every private detective in the country, aided in that search, keen
@@ -545,8 +521,10 @@
                The touch of her fingers on her mother’s things was a caress and had all the
                reverence that the Japanese child pays in tribute to a departed parent.</p>
             <p><q>These honourable things belong my mother</q>, said Sunny gently. <q>She have give
-                  them to me when she know she got die. See, Katy, this are <foreign xml:lang="ja">kakemona</foreign>. It very old, me be one tousan’ year ole. It belong at
-                  grade Prince of Satsuma. Thas my mother ancestor. This <foreign xml:lang="ja">kakemona</foreign>, <unclear reason="illegible">he</unclear> are so ole as
+                  them to me when she know she got die. See, Katy, this are <foreign xml:lang="ja"
+                     >kakemona</foreign>. It very old, me be one tousan’ year ole. It belong at
+                  grade Prince of Satsuma. Thas my mother ancestor. This <foreign xml:lang="ja"
+                     >kakemona</foreign>, <unclear reason="illegible">he</unclear> are so ole as
                   those ancestor</q>, said Sunny reverently.</p>
             <p><q>Old. I should say it is. Looks as if it belongs in a tomb. You couldn’t pawn
                   nothing like that</q>. What’s that you got there, Sunny?</p>
@@ -565,7 +543,8 @@
             <p><q>Four year now</q>, said Sunny sadly, thinking of the day when her mother had
                placed it in her hand, and of the look on the face of that mother.</p>
             <p><q>Why did you never mail it?</q></p>
-            <p><q>I was await, Katy. I are not need help. I have four and five good frien’ <pb n="84"/> to me then, and I do not need nuther one; but now I are beggar again.
+            <p><q>I was await, Katy. I are not need help. I have four and five good frien’ <pb
+                     n="84"/> to me then, and I do not need nuther one; but now I are beggar again.
                   I nod got those frien’s no more. I need those other one</q>.</p>
             <p><q>Do you know who this letter is addressed to, dearie?</q></p>
             <p><q>No, Katy, I cannot read so big a name. My mother say he will be frien’ to me

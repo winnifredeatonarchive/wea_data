@@ -22,36 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://babel.hathitrust.org/cgi/pt?id=nyp.33433070256155;view=1up;seq=791">https://babel.hathitrust.org/cgi/pt?id=nyp.33433070256155;view=1up;seq=791</ref>.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl23"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">A Prayer for Understanding</title>. <publisher ref="org:ChristianScience"><title level="j">Christian-Science
-                     Monitor</title></publisher>, <date when="1899-02">Feb. 1899</date>, p.
-                     <biblScope unit="page">785</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://babel.hathitrust.org/cgi/pt?id=nyp.33433070256155;view=1up;seq=791">https://babel.hathitrust.org/cgi/pt?id=nyp.33433070256155;view=1up;seq=791</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:23"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -62,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SL1" when="2020-02-12" status="published"> adjusted alignment </change>
          <change who="pers:MC1" when="2019-07-28" status="published"> new facs </change>

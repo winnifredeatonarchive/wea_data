@@ -10,36 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl215"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Yosheda Yone, Lover</title>. <publisher ref="org:Canterbury"><title level="j">The <supplied>Canterbury, NZ</supplied>
-                     Press</title></publisher>, <date when="1902-11-25">25 Nov. 1902</date>, p.
-                     <biblScope unit="page">11439</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:215"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -50,7 +25,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" status="empty" when="2020-07-24">Cahnged title.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>

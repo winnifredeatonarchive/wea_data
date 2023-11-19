@@ -22,35 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl60"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Japan Will Not Go To War</title>. <publisher ref="org:Day"><title level="j">Day Book</title></publisher>, <date when="1914-01-29">29
-                     Jan 1914</date>, p. <biblScope unit="page">14</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:60"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-05-21" status="published">Final proofed</change>
          <change who="pers:MC1" when="2019-06-28" status="published">Final proofed</change>

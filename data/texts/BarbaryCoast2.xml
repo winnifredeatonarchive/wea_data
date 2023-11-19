@@ -10,41 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Original in University of Calgary at Winnifred Eaton Reeve Fonds</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
-                  <idno>5.2</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl32"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>
-                  and <author>Charles Logue</author>. <title level="m">Barbary Coast
-                     [treatment]</title>. <publisher ref="org:Universal">Universal
-                     Studios</publisher>, <date when="1929">1929</date>. <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>
-                  <idno>5.2</idno>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Original in University of Calgary at Winnifred Eaton Reeve Fonds</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:32"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -52,16 +22,15 @@
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreFilmTreatment"/>
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
+
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-31">Identified as treatment.</change>
-         <change who="pers:MC1" status="empty" when="2020-06-30">Added note about source.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl32 using XSLT.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-31">Identified as treatment.</change><change who="pers:MC1" status="empty"  when="2020-06-30">Added note about source.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl32 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:BarbaryCoast2">
+   <text facs= "facs:BarbaryCoast2">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

@@ -14,35 +14,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile provided by Rauner Special Collections Library, Dartmouth College.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl201"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Three Loves</title>. Illustrated by <author role="illustrator"><name ref="pers:CH1">Charles Horell</name></author>. <publisher ref="org:LadysMagazine"><title level="j">Lady’s Magazine</title></publisher>
-                  [England], <date when="1902-07">July 1902</date>, pp. <biblScope unit="page">266-273</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile provided by Rauner Special Collections Library, Dartmouth College.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:201"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -56,7 +32,6 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-11" status="published">tweaked headnote.</change>
          <change who="pers:SL1" when="2020-02-12" status="published">Changed title to indicate difference between reprint and orginal.</change>

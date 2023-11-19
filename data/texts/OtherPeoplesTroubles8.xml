@@ -10,37 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from University of Saskatchewan Library</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl111"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
-                     8]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
-                        Review</title></publisher>, <date when="1919-06-20">20 June 1919</date>,
-                  n.p.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile from University of Saskatchewan Library</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:111"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -51,15 +25,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-03">Added note about source.</change>
-         <change who="pers:MC1" status="empty" when="2020-06-30">Added links to other instalments.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl111 using XSLT.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-03">Added note about source.</change><change who="pers:MC1" status="empty"  when="2020-06-30">Added links to other instalments.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl111 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text prev="doc:OtherPeoplesTroubles7" next="doc:OtherPeoplesTroubles9">
+   <text prev= "doc:OtherPeoplesTroubles7" next= "doc:OtherPeoplesTroubles9">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

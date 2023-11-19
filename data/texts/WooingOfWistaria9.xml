@@ -22,35 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/</ref>.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl192"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. 
-                  <title level="m">The Wooing of Wistaria</title> (Chapters 26-29). Illustrated by <author role="illustrator"><name ref="pers:MHP1">Morris Hall Pancoast</name></author>. <publisher ref="org:LosAngelesHerald"><title level="j">Los Angeles
-                     Herald</title></publisher>, <date when="1906-01-29">29 Jan. 1906</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:192"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,11 +37,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added illustrator and set to published.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
-         <change who="pers:MC1" when="2020-08-10" status="inProgress">changed title from parts to chapter numbers.</change>
-         <change who="pers:JT1" when="2020-06-14" status="inProgress">Changed id from WooingOfWistaria7 to WooingOfWistaria9.</change>
+         <change who="pers:MC1" when="2020-08-10" status="inProgress">changed title from parts to chapter numbers.</change><change who="pers:JT1" when="2020-06-14" status="inProgress">Changed id from WooingOfWistaria7 to WooingOfWistaria9.</change>
          <change who="pers:SB2" when="2020-06-08" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-02">Added facs, notes stmt, and cat refs.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl192 using XSLT.</change>

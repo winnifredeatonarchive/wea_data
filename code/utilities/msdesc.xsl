@@ -113,24 +113,6 @@
         <xsl:variable name="notesStmt" select="ancestor::teiHeader/fileDesc/notesStmt" as="element(notesStmt)?"/>
         <additional>
             <adminInfo>
-                <xsl:sequence>
-                    <xsl:where-populated>
-                        <recordHist>
-                            <xsl:apply-templates select="$notesStmt/relatedItem[@type='bibliography']"/>
-                        </recordHist>
-                    </xsl:where-populated>
-                    <xsl:on-empty>
-                        <xsl:call-template name="createComment">
-                            <xsl:with-param name="comment" select="'Add information about previous citations or bibliographies
-                                using the source element'"/>
-                            <xsl:with-param name="example" as="element()">
-                                <recordHist>
-                                    <source target="bibl:ABCD1"/>
-                                </recordHist>
-                            </xsl:with-param>
-                        </xsl:call-template>
-                    </xsl:on-empty>
-                </xsl:sequence>
                 <availability>
                     <xsl:sequence>
                         <xsl:apply-templates select="$notesStmt/note[matches(string(.),'\S')]"/>
@@ -140,24 +122,21 @@
                     </xsl:sequence>
                 </availability>
             </adminInfo>
-            <xsl:sequence>
-                <xsl:where-populated>
-                    <listBibl>
-                        <xsl:apply-templates select="$notesStmt/relatedItem[@type='edition']"/>
-                    </listBibl>
-                </xsl:where-populated>
-                <xsl:on-empty>
-                    <xsl:call-template name="createComment">
-                        <xsl:with-param name="comment" select="'Add other editions of this text using a bibl element
-                            with a target pointing to its bibl'"/>
-                        <xsl:with-param name="example" as="element()">
-                            <listBibl>
-                                <bibl target="bibl:ABCD1"/>
-                            </listBibl>
-                        </xsl:with-param>
-                    </xsl:call-template>
-                </xsl:on-empty>
-            </xsl:sequence>
+            <surrogates>
+                <xsl:sequence>
+                    <xsl:apply-templates select="$notesStmt/relatedItem"/>
+                    <xsl:on-empty>
+                        <xsl:call-template name="createComment">
+                            <xsl:with-param name="comment" select="'Add other editions of this text using a bibl element
+                                with a target pointing to its bibl'"/>
+                            <xsl:with-param name="example" as="element()+">
+                                 <bibl target="bibl:ABCD1"/>
+                                 <bibl><distributor></distributor>, <idno></idno></bibl>
+                            </xsl:with-param>
+                        </xsl:call-template>
+                    </xsl:on-empty>
+                </xsl:sequence>
+            </surrogates>
         </additional>
     </xsl:template>
     
@@ -184,11 +163,15 @@
     </xsl:template>
     
     <xsl:template match="relatedItem[@type='bibliography']">
-        <source target="{@target}"/>
+        <bibl target="{@target}"/>
     </xsl:template>
     
     <xsl:template match="relatedItem[@type='edition']">
         <bibl target="{@target}"/>
+    </xsl:template>
+    
+    <xsl:template match="relatedItem[bibl]">
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="revisionDesc">

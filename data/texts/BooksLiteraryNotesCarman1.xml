@@ -22,37 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from the University of Calgary archives</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl298"><author><name ref="pers:WE1">Eaton Reeve,
-                     Winnifred</name></author>. <title level="a">Books, Literary Notes, etc</title>.
-                     <publisher ref="org:Albertan"><title level="j">Morning
-                     Albertan</title></publisher>, <date when="1924-01-22">22 Jan 1924</date>, p.
-                     <biblScope unit="page">4</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from the University of Calgary archives</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:298"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -63,8 +37,8 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:LW1" when="2022-05-06" status="published">Proofed, person references added, and set to published.</change>
+         <change who="pers:LW1" when="2022-05-06" 
+            status="published">Proofed, person references added, and set to published.</change>
          <change who="pers:LW1" when="2022-05-06" status="inProgress">Transcribed document. Uploaded
             transcription. Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:JT1" when="2021-09-02" status="empty">Added gap to signal no
@@ -74,6 +48,7 @@
          <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl
             file.</change>
       </revisionDesc>
+
    </teiHeader>
    <text facs="facs:BooksLiteraryNotesCarman1">
       <body>

@@ -18,35 +18,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from University of British Columbia Library</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl116"><author><name ref="pers:WE1">Reeve, Mrs.
-                     Francis</name></author>. <title level="a">Plenty of Opportunity for Men in
-                     Alberta If They Will Go on the Land</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1924-01-19">19 Jan. 1924</date>, p. <biblScope unit="page">7</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile from University of British Columbia Library</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:116"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -57,7 +33,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-05" status="published">Proof completed. Edited and
             added text to repository. </change>
          <change who="pers:LW1" when="2022-05-05" status="readyForProof">Proof in progress. Proofed
@@ -72,6 +47,7 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography
             entry bibl116 using XSLT.</change>
       </revisionDesc>
+
    </teiHeader>
    <text facs="facs:Plenty_of_Opportunity_for_Men_in_Alberta" prev="doc:AlbertaLandOfWork1">
       <pb n="7"/>

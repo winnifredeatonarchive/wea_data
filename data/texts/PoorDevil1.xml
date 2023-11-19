@@ -22,41 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</repository>
-                  <idno>17.2</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl22"><author><name ref="pers:WE1">Eaton, Winnie</name></author>.
-                     <title level="a">A Poor Devil</title>. <publisher ref="org:MetropolitanMag"><title level="j">Metropolitan Magazine</title></publisher>
-                  <pubPlace>Montreal</pubPlace>, <date notBefore="1894" notAfter="1895">1894-1895</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</distributor>, <idno>17.2</idno>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Original at University of Calgary in Winnifred Eaton Reeve Fonds</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:22"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -67,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note re source.</change>
          <change who="pers:SL1" when="2019-05-08" status="published">Added MC final edits and changed status to published.</change>

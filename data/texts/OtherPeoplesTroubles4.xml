@@ -10,6 +10,7 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
+            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -18,37 +19,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from University of Saskatchewan Library</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl107"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
-                     4]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
-                        Review</title></publisher>, <date when="1919-04-05">5 Apr. 1919</date>, p.
-                     <biblScope unit="page">406</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile from University of Saskatchewan Library</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:107"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -59,18 +34,14 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" status="published" when="2022-03-10">Edited title, proofed, and set to published.</change>
          <change who="pers:SC1" status="inProgress" when="2020-09-04">Added transcription</change>
-         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-03">Added note about source.</change>
-         <change who="pers:MC1" status="empty" when="2020-06-30">link to next instalment.</change>
-         <change who="pers:MC1" status="empty" when="2019-07-29">changed text link to pdf.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl107 using XSLT.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-03">Added note about source.</change><change who="pers:MC1" status="empty"  when="2020-06-30">link to next instalment.</change><change who="pers:MC1" status="empty"  when="2019-07-29">changed text link to pdf.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl107 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Other_Peoples_Troubles4" prev="doc:OtherPeoplesTroubles3" next="doc:OtherPeoplesTroubles5">
+   <text facs="facs:Other_Peoples_Troubles4" prev= "doc:OtherPeoplesTroubles3" next= "doc:OtherPeoplesTroubles5">
       <body>
          <head>Other People’s Troubles</head>
          

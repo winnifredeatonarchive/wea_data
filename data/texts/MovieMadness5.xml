@@ -10,40 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
-                  <idno>4.1</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl314"><author><name ref="pers:WE1">Reeve, Winnifred
-                     Eaton</name></author>. <title level="a">Movie Madness [Third
-                     Instalment]</title>. MS in five parts. <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <date when="1930">1930</date>,
-                     <idno>4.1</idno>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:314"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -54,7 +25,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" status="empty" when="2022-04-28">Added catRef genre and exhibit. Added facsimile.</change>
          <change who="pers:JT1" when="2022-04-28" status="empty">Created shell from bibl file.</change>

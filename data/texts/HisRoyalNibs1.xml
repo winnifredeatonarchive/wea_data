@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HisRoyalNibs1">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HisRoyalNibs1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -18,34 +15,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile provided by the University of Alberta’s Peel’s Prairie Provinces. Transcription and and encoded derived from Takeda, Joey. <title level="m">Winnifred Eaton Reeve’s <title level="m">His Royal Nibs</title>: A Critical Edition</title>, MA Thesis, UBC, 2021.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl51"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">His Royal Nibs</title>. New York, <publisher ref="org:Watt">W.J. Watt</publisher>, <date when="1925">1925</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile provided by the University of Alberta’s Peel’s Prairie Provinces. Transcription and and encoded derived from Takeda, Joey. <title level="m">Winnifred Eaton Reeve’s <title level="m">His Royal Nibs</title>: A Critical Edition</title>, MA Thesis, UBC, 2021.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:51"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -56,7 +30,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" status="published" when="2022-03-09">Converted HRN from JT1’s thesis project to WEA-compliant TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl51 using XSLT.</change>

@@ -49,31 +49,14 @@ Publicly accessible
  uva-lib:475921 
 -->
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress</note>
+            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="weda:EatJapa"/>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl157"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">The Japanese in New York</title>. <publisher ref="org:NewMetro"><title level="j">New Metropolitan
-                     Magazine</title></publisher>, <date when="1902-01">Jan. 1902</date>, pp.
-                     <biblScope unit="page">51-55</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source target="bibl:COLE3"/>
-                     </recordHist>
-                     <availability>
-                        <p>Facsimile retrieved from Library of Congress</p>
-                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
-                     </availability>
-                  </adminInfo>
-                  <listBibl>
-                     <bibl target="weda:EatJapa"/>
-                  </listBibl>
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:157"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -84,7 +67,6 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" status="published" when="2020-07-08">proofread</change>

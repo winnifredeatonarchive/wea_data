@@ -22,40 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Original in Winnifred Eaton Reeve Fonds at University of Calgary</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
-                  <idno>7.8</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl125"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>.
-                     <title level="a">Sins of the Fathers</title>. <date when="1936">1936</date>.
-                  ms. <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>,
-                     <idno>7.8</idno>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Original in Winnifred Eaton Reeve Fonds at University of Calgary</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:125"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -66,18 +37,17 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-11-22" status="published">Uncensored n-word in text in line with new note on language and adjusted footnotes with link to note on language.</change>
          <change who="pers:SL1" when="2022-07-17" status="published">Added editorial note, proofed, and published.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
          <change who="pers:MC1" status="inProgress" when="2020-07-20">proofread up to p 15</change>
          <change who="pers:MC1" status="inProgress" when="2020-07-01">added note about source</change>
          <change who="pers:SC1" status="inProgress" when="2020-06-14">Begin Transcribing</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl125 using XSLT.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl125 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:SinsFathers">
+   <text facs= "facs:SinsFathers">
       <pb n="1"/>
       <body>
          <head>Sins of the Fathers</head>

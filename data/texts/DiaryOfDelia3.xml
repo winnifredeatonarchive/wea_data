@@ -1,59 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia3">
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DiaryOfDelia3">
    <teiHeader>
       <fileDesc>
-         <titleStmt>
-            <title>The Diary of Delia (Part 3)</title>
-            <title type="sub">Being a Veracious Chronicle of the Kitchen with Some Side-Lights on the Parlor</title>
-            <respStmt>
-               <resp>Transcriber</resp>
-               <name ref="pers:NI1">Nazua Idris</name>
-            </respStmt>
-            <respStmt>
-               <resp>Proofreader</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
-            </respStmt>
-            <respStmt>
-               <resp>Encoder</resp>
-               <name ref="pers:SL1">Sydney Lines</name>
-            </respStmt>
-         </titleStmt>
+            <titleStmt>
+                  <title>The Diary of Delia (Part 3)</title>
+               <title type="sub">Being a Veracious Chronicle of the Kitchen with Some Side-Lights on the Parlor</title>
+                  <respStmt>
+                        <resp>Transcriber</resp>
+                        <name ref="pers:NI1">Nazua Idris</name>
+                  </respStmt>
+                  <respStmt>
+                        <resp>Proofreader</resp>
+                        <name ref="pers:SL1">Sydney Lines</name>
+                  </respStmt>
+                  <respStmt>
+                        <resp>Encoder</resp>
+                        <name ref="pers:SL1">Sydney Lines</name>
+                  </respStmt>
+            </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uiug.30112109515871">https://hdl.handle.net/2027/uiug.30112109515871</ref>.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl144"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">The Diary of Delia: Being a Veracious Chronicle of the Kitchen
-                     with Some Side-Lights on the Parlor [Part 3]</title>. Illustrated by <author role="illustrator"><name ref="pers:MP1">May Wilson Preston</name></author>.
-                     <title level="m">Saturday Evening Post</title>, <date when="1907-03-09">9 Mar.
-                     1907</date>, pp. <biblScope unit="page">12-13, 24-26</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uiug.30112109515871">https://hdl.handle.net/2027/uiug.30112109515871</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:144"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -64,7 +38,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-03-12" status="published">Finished proofing and set to published.</change>
          <change who="pers:SL1" when="2022-03-12" status="inProgress">Downloaded document from Google Drive and converted to TEI. Began encoding/proofing.</change>
          <change who="pers:JT1" when="2020-08-15" status="empty">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
@@ -72,7 +45,9 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl144 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:DiaryOfDelia3" prev="doc:DiaryOfDelia2" next="doc:DiaryOfDelia4">
+   <text facs="facs:DiaryOfDelia3"
+         prev="doc:DiaryOfDelia2"
+         next="doc:DiaryOfDelia4">
          <pb n="12"/>
       <body>
             <head>The Diary of Delia</head>

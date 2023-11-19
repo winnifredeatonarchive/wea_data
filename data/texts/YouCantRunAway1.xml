@@ -22,41 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred
-                     Eaton Reeve Fonds</repository>
-                  <idno>3.2.5</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl216"><author><name ref="pers:WE1">Reeve, Winnifred Eaton</name>
-                        (<name ref="pers:WE1">Watanna, Onoto</name>)</author>. <title level="a">You
-                     Can’t Run Away from Yourself</title>. ms., <date notBefore="1925" notAfter="1930"> 1925-1930</date>. <distributor ref="org:WERFonds">Winnifred
-                     Eaton Reeve Fonds</distributor>, <idno>3.2.5</idno>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Original at University of Calgary in Winnifred Eaton Reeve Fonds</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:216"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -67,13 +37,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" when="2023-03-16" status="published">proofreading testing.</change>
-         <change who="pers:SL1" when="2022-03-08" status="published">Added editorial notes and finished encoding.</change>
+         <change who="pers:MC1" when="2023-03-16" status="published">proofreading testing.</change><change who="pers:SL1" when="2022-03-08" status="published">Added editorial notes and finished encoding.</change>
          <change who="pers:SL1" when="2022-02-22" status="inProgress">Added facsimile.</change>
          <change who="pers:SL1" when="2021-06-15" status="inProgress">Added transcription and began encoding.Changed status.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl216 using XSLT.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl216 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:YouCantRunAwayFromYourself1">

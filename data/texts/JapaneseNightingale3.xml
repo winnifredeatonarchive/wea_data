@@ -22,36 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from New York Public Library</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl15"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">A Japanese Nightingale (Chapters 5-7)</title>. Illustrated by
-                     <author role="illustrator"><name ref="pers:BC1">B. West
-                     Clinedinst</name></author>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home Companion</title></publisher>, <date when="1901-06">June 1901</date>, pp. <biblScope unit="page">13-14, 43</biblScope>, 43.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile from New York Public Library</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:15"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -62,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-07-24" status="published">encoded illustrator.</change>
          <change who="pers:MC1" when="2020-07-24" status="published">revised parts chapters headings.</change>

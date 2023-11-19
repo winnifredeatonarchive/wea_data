@@ -10,35 +10,10 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</note></notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl173"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>
-                  with <author>H.H. Van Loan</author>. <title level="m">The Mississippi Gambler
-                     [dialogue]</title>, <author>Barker, Reginald</author>, dir. <publisher ref="org:Universal">Universal Studios</publisher>, <date when="1929">1929</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:173"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -49,10 +24,8 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl173 using XSLT.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-02">Added note about source.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl173 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text>

@@ -10,36 +10,10 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Google Books from original at Ohio State University </note></notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl146"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">The Diary of Delia: Being a Veracious Chronicle of the Kitchen
-                     with Some Side-Lights on the Parlour</title>. Illustrated by <author role="illustrator"><name ref="pers:MP1">May Wilson Preston</name></author>. New
-                  York, <publisher ref="org:Doubleday">Doubleday</publisher>, Page, and Co., <date when="1907">1907</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Google Books from original at Ohio State University </p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:146"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -50,11 +24,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2023-04-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-01">Added note about source.</change>
-         <change who="pers:SL1" status="empty" when="2019-08-23">Added facs.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl146 using XSLT.</change>
+         <change who="pers:MC1" status="empty"  when="2020-07-01">Added note about source.</change>
+         <change who="pers:SL1" status="empty"  when="2019-08-23">Added facs.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl146 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:DiaryOfDelia">

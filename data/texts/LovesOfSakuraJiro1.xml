@@ -22,32 +22,13 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/mdp.39076000392691">https://hdl.handle.net/2027/mdp.39076000392691</ref>.</note>
+            <relatedItem type="bibliography" target="bibl:COLE3"/>
+            <relatedItem type="edition" target="bibl:MOSE9"/>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl167"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">The Loves of Sakura Jiro and the Three Headed Maid</title>.
-                  Illustrated by <author role="illustrator"><name ref="pers:JC1">John Cecil
-                        Clay</name></author> and <author role="illustrator"><name ref="pers:AP2">A.
-                        de Ford Pitney</name></author>. <publisher ref="org:Century"><title level="j">Century Magazine</title></publisher>, <date when="1903-03">Mar.
-                     1903</date>, pp. <biblScope unit="page">755-60</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <recordHist>
-                        <source target="bibl:COLE3"/>
-                     </recordHist>
-                     <availability>
-                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/mdp.39076000392691">https://hdl.handle.net/2027/mdp.39076000392691</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <listBibl>
-                     <bibl target="bibl:MOSE9"/>
-                  </listBibl>
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:167"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,7 +42,6 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-03-14" status="published">Added headnote.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">Encoded second illustrator. </change>

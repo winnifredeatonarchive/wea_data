@@ -10,35 +10,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile from Chronicling America.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl99"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Natsu-san</title>. <publisher ref="org:Washington"><title level="j">Washington Times</title></publisher>, <date when="1902-08-06">6
-                     Aug. 1902</date>, p. <biblScope unit="page">6</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile from Chronicling America.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:99"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -49,13 +25,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" when="2020-08-05" status="published">changed code for pers.</change>
-         <change who="pers:MC1" when="2020-07-01" status="published">added note about source.</change>
+         <change who="pers:MC1" when="2020-08-05" status="published">changed code for pers.</change><change who="pers:MC1" when="2020-07-01" status="published">added note about source.</change>
          <change who="pers:MC1" when="2019-08-30" status="published">added facsimile.</change>
          <change who="pers:MC1" when="2019-06-17" status="published">proofread.</change>
          <change who="pers:JT1" when="2019-06-08" status="readyForProof">Readied for proof.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl99 using XSLT.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl99 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:NatsuSanPoem">

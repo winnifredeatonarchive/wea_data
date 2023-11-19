@@ -10,6 +10,7 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
+            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -18,37 +19,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from University of British Columbia</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl129"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="a">Hard Times in New York for Struggling Writers</title>.
-                     <publisher ref="org:Calgary"><title level="j">Calgary
-                     Herald</title></publisher>, <date when="1922-06-24">24 June 1922</date>, p.
-                     <biblScope unit="page">18</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from University of British Columbia</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:129"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -59,13 +34,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="published" when="2020-08-05">added paratext.</change>
-         <change who="pers:MC1" status="published" when="2020-08-01">Proofread.</change>
-         <change who="pers:MC1" status="published" when="2020-07-02">Added note about source.</change>
-         <change who="pers:SC1" status="inProgress" when="2020-06-03">Added transcription.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl129 using XSLT.</change>
+         <change who="pers:MC1" status="published" when="2020-08-05">added paratext.</change><change who="pers:MC1" status="published" when="2020-08-01">Proofread.</change><change who="pers:MC1" status="published" when="2020-07-02">Added note about source.</change><change who="pers:SC1" status="inProgress" when="2020-06-03">Added transcription.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl129 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:HardTimes">

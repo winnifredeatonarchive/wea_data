@@ -19,38 +19,14 @@
                <name ref="pers:SC1">Sijia Cheng</name>
             </respStmt>
          </titleStmt>
+         
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Google Books from original at Harvard University </note></notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl166"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">The Love of Azalea</title>. Illustrated by <author role="illustrator"><name ref="pers:GF1">Gazo Foudji</name></author>. New York,
-                     <publisher ref="org:Dodd">Dodd, Mead</publisher>, <date when="1904">1904</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Google Books from original at Harvard University </p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:166"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,17 +37,14 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-05-06" status="published">Updated status.</change>
          <change who="pers:SC1" when="2020-09-08" status="inProgress">Changed facs to Dodd Mead version</change>
          <change who="pers:SC1" when="2020-09-01" status="inProgress">Proofread</change>
          <change who="pers:SC1" when="2020-08-28" status="inProgress">Begin transcribing and proofreading</change>
-         <change who="pers:MC1" when="2020-07-24" status="empty">Changed title.</change>
-         <change who="pers:MC1" when="2020-07-02" status="empty">Changed genre.</change>
-         <change who="pers:MC1" when="2020-07-01" status="empty">Added note about source.</change>
+         <change who="pers:MC1" when="2020-07-24" status="empty">Changed title.</change><change who="pers:MC1" when="2020-07-02" status="empty">Changed genre.</change><change who="pers:MC1" when="2020-07-01" status="empty">Added note about source.</change>
          <change who="pers:SL1" when="2019-08-23" status="empty">Addes facs.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl166 using XSLT.</change>
+         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl166 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:LoveOfAzalea4">
@@ -80,7 +53,8 @@
          <head>The Love of Azalea</head>
          <opener>
             <byline>By <name ref="pers:WE1">Onoto Watanna</name> 
-               Author of <ref target="doc:JapaneseNightingale6">A Japanese Nightingale</ref>, <ref target="doc:HeartOfHyacinth1">The Heart of Hyacinth</ref>, etc.
+               Author of <ref target="doc:JapaneseNightingale6">A Japanese Nightingale</ref>, <ref
+                     target="doc:HeartOfHyacinth1">The Heart of Hyacinth</ref>, etc.
            </byline>   
             <byline>Illustrated by <name ref="pers:GF1">Gazo Foudji</name></byline>
          </opener>
@@ -214,7 +188,8 @@
                   roof, called by her ungracious step-parent a home for her. Shelter beneath it was
                   only grudgingly accorded, because Azalea’s step-mother was vain and feared the
                   criticism of neighbors and the wrath of the gods should she turn Azalea out. As it
-                  was, the young girl was only half fed and her clothes were those <pb n="19"/>half-worn ones thrown to her by arrogant and fortunate step-sisters, yet the
+                  was, the young girl was only half fed and her clothes were those <pb n="19"
+                  />half-worn ones thrown to her by arrogant and fortunate step-sisters, yet the
                   girl’s nimble fingers made those same threadbare garments objects of
                   attractiveness, which set off her own appealing beauty. But she was seventeen,
                   unmarried and unhappy. Something must be done soon, or she would become the bride
@@ -233,7 +208,8 @@
                   beggar</q>.</p>
                <p>They laughed at her. Only the homeless were beggars in their eyes. In addition,
                   members of her sex were received among them only when they had reached the old
-                  witch age. The country knew many old women beggars, who drifted, <pb n="21"/>whining, upon their staffs from town to town. Often they were blind and clung to
+                  witch age. The country knew many old women beggars, who drifted, <pb n="21"
+                  />whining, upon their staffs from town to town. Often they were blind and clung to
                   the rope about the neck of a tailless cat, which led them. Who ever heard of a
                   maiden beggar? So Azalea’s statement was received in laughter. </p>
                <p><q>How much did the minister give?</q> she demanded, ignoring their jeers. </p>
@@ -353,7 +329,8 @@
                <p><q>What—the——</q>
                </p>
                <p><q>Yes, the rich Matsuda Isami</q>.</p>
-               <p>The woman thrilled with maternal pride. Her bosom heaved. <q>And which of my <pb n="33"/>daughters</q>, she asked, <q>has pleased the taste of the exalted
+               <p>The woman thrilled with maternal pride. Her bosom heaved. <q>And which of my <pb
+                        n="33"/>daughters</q>, she asked, <q>has pleased the taste of the exalted
                      Matsuda?</q></p>
                <p>Okido rubbed his hands softly. </p>
                <p><q>That one</q>, he said, <q>who is augustly named Azalea</q>. </p>
@@ -451,7 +428,8 @@
                      birth. You shall go to Tokyo</q>.</p>
                <p><q>What shall I do there?</q> inquired the girl. </p>
                <p><q>You have beauty and youth</q>, said Madame Yamada slowly. </p>
-               <p>The girl moved uneasily and then catching sight of the expression upon her <pb n="44"/>mother’s face, she made as if to arise; but the other held her by the
+               <p>The girl moved uneasily and then catching sight of the expression upon her <pb
+                     n="44"/>mother’s face, she made as if to arise; but the other held her by the
                   sleeve. </p>
                <p><q>Why do you start so?</q> she inquired gruffly. <q>Do you suppose I referred to
                   the <foreign xml:lang="ja">yoshiwara</foreign>?</q></p>
@@ -548,7 +526,8 @@
                   parsimony had made him rich and kept the whole community poor. In some way, direct
                   or indirect, nearly everyone in the community was in his service or debt. He was
                   the magnate of the town, and accordingly hated, feared, dreaded. He had come on
-                  foot to the humble home of Madame Yamada, he, the taciturn, cold-hearted head <pb n="54"/>man of the town, and all because Azalea, </p>
+                  foot to the humble home of Madame Yamada, he, the taciturn, cold-hearted head <pb
+                     n="54"/>man of the town, and all because Azalea, </p>
                <p>walking in the sun, in a <foreign xml:lang="ja">kimona</foreign>, patched, faded, but pretty, had turned her head
                   toward him quite recently and smiled with childish impudence. Few people smiled
                   upon Matsuda. This shabby daughter of a <foreign xml:lang="ja">samurai</foreign> who in the early days had made no
@@ -594,7 +573,8 @@
                <p><q>It is the wish of your step-mother that I address you personally</q>.</p>
                <p>She looked at him with eyes of inquiry. </p>
                <p>What had Matsuda Isami to say to her? She did not dream that a man as old as her
-                  father, and one who was so exalted in public opinion, would deign to propose <pb n="59"/>marriage with her, so insignificant and humble. </p>
+                  father, and one who was so exalted in public opinion, would deign to propose <pb
+                     n="59"/>marriage with her, so insignificant and humble. </p>
                <p><q>I wish to marry you</q>, said Matsuda bluntly. </p>
                <p>Her lips parted and her eyes enlarged. </p>
                <p><q>Me?</q> she said faintly, and repeated the little word. <q>Me?</q></p>
@@ -694,7 +674,8 @@
                <p><q>The girl Azalea</q>, she answered. <q>I have told her Your Excellency is most
                      busy, but she still stays</q>.</p>
                <p><q>That is right</q>, he said quietly. <q>I am expecting her</q>.</p>
-               <p>The servant pursed her lips and her round cheeks expanded till her little eyes <pb n="70"/>were almost hidden. She muttered discontentedly: <q>Again,
+               <p>The servant pursed her lips and her round cheeks expanded till her little eyes <pb
+                     n="70"/>were almost hidden. She muttered discontentedly: <q>Again,
                      Excellency?</q></p>
                <p><q>Yes</q>, he said, <q>again. What are you waiting for?</q>
                </p>
@@ -990,14 +971,16 @@
                   valley below. The noise of their fall upon the rocks frightened her. She covered
                   her ears with her hands and stood trembling in the sunny light. Then she became
                   conscious of the fact that those who had followed her had suddenly, and it seemed,
-                  silently, disappeared. She stood alone with the man, her husband. For a <pb n="99"/>moment he seemed a stranger. That momentary blind impulse, she knew, cut her off
+                  silently, disappeared. She stood alone with the man, her husband. For a <pb n="99"
+                  />moment he seemed a stranger. That momentary blind impulse, she knew, cut her off
                   forever from her kind. Publicly she had insulted her ancestors. She had chosen
                   between them and this tall white stranger whom she scarcely dared to look at now.
                   The silent departure of those who had followed her told more eloquently than any
                   outcry could have done the resentment of her people. </p>
                <p>Azalea looked about her dazedly. Suppose, after all, her friends spoke truly?
                   Suppose this new God was in reality an evil spirit? Had she not felt its subtle
-                  influence upon her? When in memory could she recall the time that her whole <pb n="100"/>being had thrilled and glowed with emotions and feelings so strange
+                  influence upon her? When in memory could she recall the time that her whole <pb
+                     n="100"/>being had thrilled and glowed with emotions and feelings so strange
                   and new to her? Was it not the influence of this spirit which had forced her to
                   throw away the tablets—had forced her to marry one of its priests? </p>
                <p>Her husband stood looking at her tenderly, yearningly. He was thinking of her
@@ -1005,7 +988,8 @@
                <p><q>Well, they are all gone now</q>, he said, <q>and what was that you threw
                      away?</q></p>
                <p>She shook her head piteously. He waited for her answer, and marvelled that she,
-                  who had gone through the marriage ceremony in such a brave and happy spirit, <pb n="101"/>was now so white and trembling. Surely, she had not begun to fear him?
+                  who had gone through the marriage ceremony in such a brave and happy spirit, <pb
+                     n="101"/>was now so white and trembling. Surely, she had not begun to fear him?
                   Poor little frightened bride! </p>
                <p><q>I din nod mean to throw it away</q>, she said brokenly. <q>I coon nod help
                      me</q>.</p>
@@ -1821,7 +1805,7 @@
                   might make in addressing him. He recalled how, when teaching her to write his
                   address, she had continually forgotten to put the name of the city or State. She
                   was quite sure that everyone in the United States must know him. But as time
-                  <pb n="190"/>&gt;passed, he knew this could not be the reason. His letters urging her to
+                  <pb n="190"/>>passed, he knew this could not be the reason. His letters urging her to
                   answer at once, and giving explicit instructions as to address, received no
                   response. He thought of her condition and became alarmed. When finally, refusing
                   to wait longer, and leaving his duties unfinished, he took ship for Japan, he was
@@ -1829,7 +1813,7 @@
                   Illness, the possible premature birth of the child, when she would be too helpless
                   and ill to write. How foolish he had been not to have arranged communication with
                   her through a third party. And yet, who could he have called upon for such a
-                  service? He thought of <pb n="191"/>&gt;her outcast position since becoming his wife; of
+                  service? He thought of <pb n="191"/>>her outcast position since becoming his wife; of
                   the eccentric and stubborn fears that had impelled her to remain in Japan. And
                   then an overwhelming sense of regret overpowered him, that he had left her at all.
                   His place was by her side. His first duty belonged to her! There had been a flaw

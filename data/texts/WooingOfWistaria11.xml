@@ -22,35 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/</ref>.</note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl194"><author><name ref="pers:WE1">Watanna, Onoto</name></author>. 
-                  <title level="m">The Wooing of Wistaria</title> (Chapters 34-37). Illustrated by <author role="illustrator"><name ref="pers:MHP1">Morris Hall Pancoast</name></author>. <publisher ref="org:LosAngelesHerald"><title level="j">Los Angeles
-                     Herald</title></publisher>, <date when="1906-02-12">12 Feb. 1906</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p>Facsimile retrieved from Library of Congress: Chronicling America: <ref target="https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/">https://chroniclingamerica.loc.gov/lccn/sn85042462/issues/1906/</ref>.</p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:194"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -61,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added illustrator and set to published.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
          <change who="pers:MC1" when="2020-08-10" status="inProgress">changed title from parts to chapter numbers.</change>

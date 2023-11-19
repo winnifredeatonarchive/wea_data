@@ -22,34 +22,11 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
+         <notesStmt>
+            <note><!--ADD FACSIMILE SOURCE HERE--></note>
+         </notesStmt>
          <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl197"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                     <title level="m">The Wooing of Wistaria</title>. New York, <publisher ref="org:Macmillan">Macmillan</publisher>, <date when="1902">1902</date>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <!--Add information about previous citations or bibliographies using the source element-->
-                     <!--
-                        <recordHist>
-                           <source target="bibl:ABCD1"/>
-                        </recordHist>
-                     -->
-                     <availability>
-                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
-                     </availability>
-                  </adminInfo>
-                  <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                  <!--
-                     <listBibl>
-                        <bibl target="bibl:ABCD1"/>
-                     </listBibl>
-                  -->
-               </additional>
-            </msDesc>
+            <bibl copyOf="bibl:197"/>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -60,7 +37,6 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-04-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-05-06" status="published">Updated status.</change>
          <change who="pers:SC1" when="2020-08-27" status="inProgress">Proofread</change>
