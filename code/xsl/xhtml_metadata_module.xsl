@@ -184,7 +184,7 @@
     
     
     <xsl:template name="createRelatedItems">
-        <xsl:for-each-group select="root(.)//notesStmt/relatedItem" group-by="@type">
+        <xsl:for-each-group select="root(.)//notesStmt/relatedItem[@target]" group-by="@type">
             <xsl:sort select="current-grouping-key()" order="descending"/>
             <div id="relatedItems_{current-grouping-key()}">
                 <div class="metadataLabel">
@@ -192,9 +192,10 @@
                         <xsl:when test="current-grouping-key() = 'bibliography'">Cited In</xsl:when>
                         <xsl:when test="current-grouping-key() = 'edition'">Other Editions</xsl:when>
                         <xsl:otherwise>
-                            <xsl:message terminate="yes">
+                            <xsl:message>
                                 UNKNOWN relatedItem/@type = <xsl:value-of select="current-grouping-key()"/>
                             </xsl:message>
+                            <xsl:text>Related Item</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>
