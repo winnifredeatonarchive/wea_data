@@ -124,7 +124,7 @@
             </adminInfo>
             <surrogates>
                 <xsl:sequence>
-                    <xsl:apply-templates select="$notesStmt/relatedItem"/>
+                    <xsl:call-template name="addRelatedItems"/>
                     <xsl:on-empty>
                         <xsl:call-template name="createComment">
                             <xsl:with-param name="comment" select="'Add other editions of this text using a bibl element
@@ -138,6 +138,24 @@
                 </xsl:sequence>
             </surrogates>
         </additional>
+    </xsl:template>
+    
+    <xsl:template name="addRelatedItems">
+        <xsl:variable name="doc" select="ancestor::TEI"/>
+        <xsl:choose>
+            <xsl:when test="$doc/descendant::change[idno[@type='weda']]">
+                <bibl type="bibliography" target="bibl:COLE3"/>
+                <xsl:variable name="uvaNum" select="string($doc/descendant::change/idno[@type='weda'])"/>
+                <bibl type="edition" target="weda:{$uvaNum}"/>
+            </xsl:when>
+            <xsl:when test="$doc/descendant::notesStmt/relatedItem[matches(@target,'bibl:MOSE')]">
+                <bibl type="bibliography" target="bibl:COLE3"/>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
+        <xsl:if test="$doc//relatedItem[bibl]">
+            <xsl:sequence select="$doc//relatedItem/bibl"/>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="createComment">

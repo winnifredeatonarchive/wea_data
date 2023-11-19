@@ -58,6 +58,25 @@
     <xsl:variable name="imageSizeDoc" select="unparsed-text(concat($outDir,'info/images.txt'))"/>
     <xsl:variable name="imageSizeDocLines" select="tokenize($imageSizeDoc,'\n')"/>
     
+    <xsl:variable name="relationships" select="$sourceXml//linkGrp"/>
+    <xsl:variable name="relationshipMap" as="map(xs:string, map(xs:string, element(linkGrp)+))">
+        <xsl:map>
+            <xsl:for-each-group select="$relationships/ptr" group-by="@target">
+                <xsl:variable name="source" select="current-grouping-key()"/>
+                <xsl:map-entry key="substring-after($source,'doc:')">
+                    <xsl:map>
+                        <xsl:for-each-group select="current-group()/parent::linkGrp/ptr[not(@target = $source)]" group-by="@target">
+                            <xsl:variable name="dest" select="current-grouping-key()"/>
+                            <xsl:map-entry key="substring-after($dest,'doc:')" select="current-group() ! parent::linkGrp"/>
+                        </xsl:for-each-group>
+                    </xsl:map>
+                </xsl:map-entry>
+            </xsl:for-each-group>
+            
+        </xsl:map>
+
+    </xsl:variable>
+    
     
     <xsl:variable name="dataListLines" select="unparsed-text-lines($outDir || 'info/dataList.txt')"/>
 

@@ -8,6 +8,7 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xh="http://www.w3.org/1999/xhtml"
+    xmlns:map="http://www.w3.org/2005/xpath-functions/map"
     version="3.0">
     <xd:doc>
         <xd:desc>
@@ -75,7 +76,7 @@
         <div id="additional_info">
             <xsl:call-template name="createCreditsAndCitations"/>
             <xsl:call-template name="createAbstract"/>
-  <!--          <xsl:call-template name="createRelatedItems"/>-->
+            <xsl:call-template name="createRelatedItems"/>
             <xsl:call-template name="createTOC"/>
             
         </div>
@@ -105,7 +106,7 @@
                 
                 <xsl:call-template name="createCitations"/>
                 
-                <xsl:call-template name="createRelatedItems"/>
+                <xsl:call-template name="createSurrogates"/>
                 
                 <xsl:apply-templates select="$root//revisionDesc[not(ancestor::biblFull)]" mode="metadata"/>
                 
@@ -183,35 +184,32 @@
     </xsl:template>
     
     
-    <xsl:template name="createRelatedItems">
-        <xsl:variable name="editions" select="root(.)//additional/listBibl" />
-        <xsl:variable name="citations" select="root(.)//additional/recordHist"/>
-        <xsl:apply-templates select="root(.)//additional/(listBibl|recordHist)" mode="relatedItems"/>
-    </xsl:template>
-    
-    <xsl:template match="listBibl | recordHist" mode="relatedItems">
-        <div id="relatedItems_{if (self::listBibl) then 'editions' else 'citations'}">
-            <div class="metadataLabel">
+    <xsl:template name="createSurrogates">
+        <xsl:for-each-group select="root(.)//surrogates/bibl" group-by="@type">
+            <div id="related_items_{current-grouping-key()}">
                 <xsl:choose>
-                    <xsl:when test="self::recordHist">Cited In</xsl:when>
-                    <xsl:otherwise>Other Editions</xsl:otherwise>
+                    <xsl:when test="current-grouping-key() = 'bibliography'">Cited In</xsl:when>
+                    <xsl:when test="current-grouping-key() = 'edition'">Other Editions</xsl:when>
+                    <xsl:when test="current-grouping-key() = 'archival_copy'">Archival Copy</xsl:when>
                 </xsl:choose>
+                <xsl:for-each select="current-group() ! wea:getBiblFromBiblPtr(.)">
+                    <xsl:sort select="if (date) then tokenize(date/@when,'-')[1] => xs:integer() else 0" order="descending"/>
+                    <xsl:apply-templates select="." mode="tei"/>
+                </xsl:for-each>
             </div>
-            <xsl:for-each select="* ! wea:getBiblFromRelatedItem(.)">
-                <xsl:sort select="if (date) then tokenize(date/@when,'-')[1] => xs:integer() else 0" order="descending"/>
-                <xsl:apply-templates select="." mode="tei"/>
-            </xsl:for-each>
-        </div>
+        </xsl:for-each-group>
     </xsl:template>
     
-    
-    <xsl:function name="wea:getBiblFromRelatedItem" as="element(tei:bibl)">
-        <xsl:param name="relatedItem" as="element()"/>
-        <xsl:variable name="targ" select="$relatedItem/@target" as="xs:string"/>
+    <xsl:function name="wea:getBiblFromBiblPtr" as="element(tei:bibl)">
+        <xsl:param name="bibl" as="element(bibl)"/>        
+        <xsl:variable name="targ" select="$bibl/@target" as="xs:string?"/>
         <xsl:choose>
+            <xsl:when test="empty($targ)">
+                <xsl:sequence select="$bibl"/>
+            </xsl:when>
             <xsl:when test="starts-with($targ,'#')">
                 <xsl:variable name="targId" select="substring-after($targ,'#')" as="xs:string"/>
-                <xsl:variable name="bibl" select="$relatedItem/ancestor::TEI/descendant::bibl[@xml:id = $targId]" as="element(tei:bibl)"/>
+                <xsl:variable name="bibl" select="$bibl/ancestor::TEI/descendant::bibl[@xml:id = $targId]" as="element(tei:bibl)"/>
                 <xsl:sequence select="$bibl"/>
             </xsl:when>
             <xsl:otherwise>
@@ -238,38 +236,24 @@
         </xsl:copy>
     </xsl:template>
     
-<!--    <xsl:template name="createRelatedItems">
-        <xsl:if test="ancestor::TEI//relatedItem">
+    <xsl:template name="createRelatedItems">
+        <xsl:variable name="currId" select="ancestor::TEI/@xml:id" as="xs:string"/>
+        <xsl:variable name="currMap" select="$relationshipMap($currId)" as="map(*)?"/>
+        <xsl:if test="not(empty(map:keys($currMap)))">
             <details id="relatedItems" class="additionalInfo expandable">
                 <summary class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></summary>
                 <div class="content">
-                    <xsl:for-each select="ancestor::TEI//relatedItem">
-                        <xsl:variable name="targ" select="@target"/>
-                        <xsl:choose>
-                            <!-\-This is a media thing-\->
-                            <xsl:when test="matches($targ,'^media.xml#')">
-                                <xsl:variable name="thisObject" select="$standaloneXml[/TEI/@xml:id='media']//figure[@xml:id=substring-after($targ,'#')]"/>
-                                <xsl:call-template name="makeRelatedItemBox">
-                                    <xsl:with-param name="label" select="$thisObject/head/node()"/>
-                                    <xsl:with-param name="link" select="$targ"/>
-                                    <xsl:with-param name="imgSrc" select="$thisObject/graphic/@url"/>
-                                    <xsl:with-param name="imgAlt" select="$thisObject/figDesc"/>
-                                </xsl:call-template>
-                            </xsl:when>
-                            <!-\-This is a document-\->
-                            <xsl:when test="matches($targ,'^.+\.xml$') and $standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]">
-                                <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id=substring-before($targ,'.xml')]"/>
-                                <xsl:call-template name="makeRelatedItemBox">
-                                    <xsl:with-param name="label" select="$relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node()"/>
-                                    <xsl:with-param name="link" select="$targ"/>
-                                    <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.jpg') else 'images/cooking.jpg'"/>
-                                    <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc/teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
-                                </xsl:call-template>
-                            </xsl:when>
-                            <xsl:otherwise/>
-                        </xsl:choose>
+                    <xsl:for-each select="map:keys(map:get($relationshipMap, string($currId)))">
+                        <xsl:variable name="targ" select="."/>
+                        <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id= $targ]"/>
+                        <xsl:call-template name="makeRelatedItemBox">
+                            <xsl:with-param name="label" select="$relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+                            <xsl:with-param name="link" select="$targ || '.xml'"/>
+                            <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.jpg') else 'images/cooking.jpg'"/>
+                            <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
+                        </xsl:call-template>
+                        
                     </xsl:for-each>
-
                 </div>
             </details>
         </xsl:if>
@@ -281,12 +265,12 @@
         <xsl:param name="imgSrc"/>
         <xsl:param name="imgAlt"/>
         <div>
-            <div class="metadataLabel"><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label"/></a></div>
                 <figure>
                     <img src="{$imgSrc}" alt="{normalize-space(string-join($imgAlt,''))}"/>
                 </figure>
+            <div class="metadataLabel"><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label" mode="tei"/></a></div>
         </div>
-    </xsl:template>-->
+    </xsl:template>
     
     <xsl:template match="figure" mode="metadata">
         <div>

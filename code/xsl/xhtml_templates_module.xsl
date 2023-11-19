@@ -274,9 +274,6 @@
         </del>
     </xsl:template>
     
-    
-    
-  
     <xsl:template match="note[@type='authorial']" mode="tei">
         <span>
             <xsl:apply-templates mode="#current"/>

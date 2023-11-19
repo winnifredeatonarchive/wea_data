@@ -1491,7 +1491,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
             <schemaSpec ident="wea" start="TEI">
                <moduleRef key="analysis" include="pc"/>
                <moduleRef key="core"
-                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg relatedItem resp respStmt rs sic sp speaker stage term title unclear"/>
+                          include="abbr add address addrLine author bibl biblScope choice cit corr date del desc divGen editor emph expan foreign gap graphic head hi item l lb label lg list listBibl milestone name note noteGrp num p pb ptr pubPlace publisher q quote ref reg resp respStmt rs sic sp speaker stage term title unclear"/>
                <moduleRef key="drama"
                           include="actor camera caption castGroup castItem castList role roleDesc set sound spGrp tech view"/>
                <moduleRef key="header"
@@ -1499,7 +1499,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <moduleRef key="figures" include="cell figDesc figure table row"/>
                <moduleRef key="linking" include="ab seg anchor link linkGrp"/>
                <moduleRef key="msdescription"
-                          include="additional adminInfo collection institution msDesc msContents msItem msIdentifier recordHist repository source surrogates"/>
+                          include="additional adminInfo collection institution msDesc msContents msItem msIdentifier repository surrogates"/>
                <moduleRef key="namesdates"
                           include="birth death event forename listEvent listOrg listPerson listPlace listRelation location nationality occupation org orgName persName person place placeName surname relation"/>
                <moduleRef key="tagdocs" include="att code gi val ident egXML"/>
@@ -1513,16 +1513,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                </moduleSpec>
                <classSpec ident="att.wea.citing" type="atts" module="wea">
                   <desc>provides attributes for pointing to a bibliographic reference.</desc>
-                  <constraintSpec scheme="schematron" ident="target.mustBeABiblForMsDesc">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:msDesc/tei:listBibl/tei:bibl | tei:source">
-                              <sch:assert test="@target">
-                                 <sch:name/> must have an @target that points to a bibliographic reference (e.g. bibl:ABCD1).</sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
                   <attList>
                      <attDef ident="target" usage="rec">
                         <desc versionDate="2009-11-06" xml:lang="en">points to the related bibliographic element by means of an
@@ -1534,7 +1524,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </attDef>
                   </attList>
                   <remarks>
-                     <p>The <att>target</att> attribute is taken directly from TEI's relatedItem target.</p>
+                     <p>The <att>target</att> attribute is taken directly from TEI's <gi>relatedItem</gi> target.</p>
                   </remarks>
                </classSpec>
                <elementSpec ident="repository" module="msdescription" mode="change">
@@ -1558,10 +1548,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      incarnations of a single edition).</p>
                   </remarks>
                </elementSpec>
-               <elementSpec ident="source" module="msdescription" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.wea.citing" mode="add"/>
-                  </classes>
+               <elementSpec ident="surrogates" module="msdescription" mode="change">
+                  <content>
+                     <elementRef key="bibl" minOccurs="0" maxOccurs="unbounded"/>
+                  </content>
                </elementSpec>
                <!--MODULE: HEADER-->
                <elementSpec ident="teiHeader" module="header" mode="change">
@@ -1612,10 +1602,12 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <!--Make profileDesc/textClass mandatory-->
                <elementSpec ident="profileDesc" module="header" mode="change">
                   <content>
-                     <elementRef key="textClass"/>
-                     <elementRef key="correspDesc" minOccurs="0" maxOccurs="1"/>
-                     <elementRef key="handNotes" minOccurs="0" maxOccurs="1"/>
-                     <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
+                     <sequence>
+                        <elementRef key="textClass"/>
+                        <elementRef key="correspDesc" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="handNotes" minOccurs="0" maxOccurs="1"/>
+                        <elementRef key="abstract" minOccurs="0" maxOccurs="1"/>
+                     </sequence>
                   </content>
                </elementSpec>
                <elementSpec ident="abstract" module="header" mode="change">
@@ -2087,48 +2079,6 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                      </alternate>
                   </content>
                </elementSpec>
-               <!--MODULE: CORE-->
-               <elementSpec ident="relatedItem" module="core" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.global" mode="delete"/>
-                  </classes>
-                  <content>
-                     <elementRef key="bibl" minOccurs="0" maxOccurs="1"/>
-                  </content>
-                  <constraintSpec ident="relatedItem.targetShouldBeExternalOrBibl" scheme="schematron">
-                     <constraint>
-                        <sch:pattern>
-                           <sch:rule context="tei:relatedItem[@target][not(tei:bibl)]">
-                              <sch:assert test="matches(@target,'^((https?://.+)|(bibl:[A-Z]{4}\d+)|(weda:Eat.+))$')">
-                                 ERROR: The @target for this relatedItem should be one of a 
-                                 bibl pointer (bibl:AAAA1), an old WEDA link (weda:Eat...), OR an external link (https://...).
-                              </sch:assert>
-                           </sch:rule>
-                        </sch:pattern>
-                     </constraint>
-                  </constraintSpec>
-                  <attList>
-                     <attDef ident="type" mode="change" usage="req">
-                        <valList type="closed" mode="add">
-                           <valItem ident="bibliography" mode="add">
-                              <gloss>Bibliography</gloss>
-                              <desc>A bibliography that lists this work (usually an early
-                              bibliography, like Jean Lee Cole and Diana Birchall).</desc>
-                           </valItem>
-                           <valItem ident="edition" mode="add">
-                              <gloss>Edition</gloss>
-                              <desc>An edition or surrogate of this text.</desc>
-                           </valItem>
-                           <valItem ident="werfonds" mode="add">
-                              <gloss>WER Fonds</gloss>
-                              <desc>The related item in the WER fonds</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <attDef ident="target" mode="change" usage="opt"/>
-                     <attDef ident="subtype" mode="delete"/>
-                  </attList>
-               </elementSpec>
                <elementSpec ident="note" module="core" mode="change">
                   <constraintSpec scheme="schematron" mode="add" ident="note.authorialInQOnly">
                      <desc>Use parenthetical notes only within <gi>q</gi> elements</desc>
@@ -2383,6 +2333,52 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         </sch:pattern>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="surrogates.bibl.onlyAllowedType"
+                                  scheme="schematron"
+                                  mode="add">
+                     <desc>Only bibl pointers within a surrogate</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:bibl[@type]">
+                              <sch:assert test="../self::tei:surrogates">
+                                 ERROR: @type allowed on bibl only in surrogates.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <constraintSpec ident="surrogates.bibl.mustHaveType" scheme="schematron" mode="add">
+                     <desc>All bibls within surrogate must have a type</desc>
+                     <constraint>
+                        <sch:pattern>
+                           <sch:rule context="tei:surrogates/tei:bibl">
+                              <sch:assert test="@type">
+                                 ERROR: @type required for a bibl pointer in surrogates.
+                              </sch:assert>
+                           </sch:rule>
+                        </sch:pattern>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="opt">
+                        <valList type="closed" mode="add">
+                           <valItem ident="bibliography" mode="add">
+                              <gloss>Bibliography</gloss>
+                              <desc>A bibliography that lists this work (usually an early
+                                 bibliography, like Jean Lee Cole and Diana Birchall).</desc>
+                           </valItem>
+                           <valItem ident="edition" mode="add">
+                              <gloss>Edition</gloss>
+                              <desc>An edition or surrogate of this text.</desc>
+                           </valItem>
+                           <valItem ident="archival_copy" mode="add">
+                              <gloss>Archival Copy</gloss>
+                              <desc>An archival copy of this text (e.g. a copy
+                              preserved in WER's archive)</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                <elementSpec ident="pb" module="core" mode="change">
                   <constraintSpec ident="pb.noSpaces" scheme="schematron">
