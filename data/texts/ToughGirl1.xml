@@ -22,11 +22,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note><!--ADD FACSIMILE SOURCE HERE--></note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:236"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</repository>
+                  <idno>6.18</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl236"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Tough Girl</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</distributor>, <idno>6.18</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +60,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-12-21" status="published">Finished encoding.</change>
          <change who="pers:SL1" when="2022-12-20" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
@@ -204,7 +228,7 @@
             <p><q>What do <choice><sic>yountake</sic><corr>you take</corr></choice> me for anyway? My own mother’s good enough for me and I’m the dead spitting image of her</q>.</p>
             <p>As if she had not spoken at all Miss Trehern continued.</p>
             <p><q>Miriam, I’ve been all over the world looking for you. We spared mothing in money or effort. Then my agents traced you to America---to this very town. I came out here. I used to look into the face of every girl I met, and the first time you looked at me directly, something happened to me---rose up in me just like a tidal wave. Oh I felt --I knew----</q></p>
-            <p></p>
+            <p/>
             <p><q>You keep away from me</q> <choice><sic>xsaid</sic><corr>said</corr></choice> Mamie roughly. <q>Get out of my way I say. I’m going home!</q></p>
             <p><q>This is your home!</q></p>
             <p><q>Like fun it is</q> shouted the girl wildly, and head down, she plunged toward the door.</p>

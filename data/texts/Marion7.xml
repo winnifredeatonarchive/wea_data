@@ -23,13 +23,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref
-                  target="https://catalog.hathitrust.org/Record/000542803"
-                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:79"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl79"><author><name ref="pers:WE1">Herself and the author of <title level="m">Me</title></name></author>. <title level="m">Marion: The Story
+                     of an Artist’s Model [Part 6]</title>. Illustrated by <author role="illustrator"><name ref="pers:HH1">Henry Hutt</name></author>. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>,
+                     <date when="1916-09">Sept. 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">3</biblScope>, pp. <biblScope unit="page">155-157, 190-192</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -40,6 +57,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-28" status="published">Proofed.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">added fw type and set to
             published.</change>
@@ -227,24 +245,20 @@
                   Rose St. Denis. She said:</p>
                <p><q>I tink it is too good to be true. It looks too easy. I tink he will want the
                      model to pose undrape’, ha! You will not do so yet?</q> as I shook my head, she
-                  said with a nod: <q>You will make very poor living if you don’t do so, <foreign
-                        xml:lang="fr">mon enfant</foreign>. The artists have not enough to keep one
+                  said with a nod: <q>You will make very poor living if you don’t do so, <foreign xml:lang="fr">mon enfant</foreign>. The artists have not enough to keep one
                      model in work in ze costume, and then there is so many doing the same ting.
                      Every girl—even ze frien’ of ze artist, she will pose in costume. The model
                      cannot get enough work to keep her, unless she is a friend of some one or maybe
                      she is <foreign xml:lang="fr">complaisante</foreign> to ze artist—yes. Only
                      when she pose in ze schools—see, she get ze work, so long as she have ze
                         <foreign xml:lang="fr">belle</foreign> figure. It is so. Now, which a model
-                     prefer? Pose that way, starve—or perhaps be <foreign xml:lang="fr"
-                        >maîtresse</foreign> to somebody—which is same ting</q>, she added to the
+                     prefer? Pose that way, starve—or perhaps be <foreign xml:lang="fr">maîtresse</foreign> to somebody—which is same ting</q>, she added to the
                   shrug, <q>as <foreign xml:lang="fr">aller au diable!</foreign></q></p>
                <p><q>Which would you prefer?</q> I asked her.</p>
                <p><q><foreign xml:lang="fr">Mais oui!</foreign> Some funny question you ask</q>,
                   said the French girl. <q>It is because I love my Alfred</q> (Alfred was her
-                  fiancé) <q>that I pose un-drape; for ze other mens; for bi-cause I pose <foreign
-                        xml:lang="fr">comme ça</foreign> I can keep myself good and pure for only
-                     him. It would be more easy if I were not good. Do you not see, <foreign
-                        xml:lang="fr">enfant</foreign>? I pose and stand on my poor feet for three,
+                  fiancé) <q>that I pose un-drape; for ze other mens; for bi-cause I pose <foreign xml:lang="fr">comme ça</foreign> I can keep myself good and pure for only
+                     him. It would be more easy if I were not good. Do you not see, <foreign xml:lang="fr">enfant</foreign>? I pose and stand on my poor feet for three,
                      four and sometime nine <foreign xml:lang="fr">heures</foreign> a day—nine
                         <foreign xml:lang="fr">heures</foreign> when I do night work, and for zat I
                      get me fifty cent one <foreign xml:lang="fr">heure</foreign>. Ze bad girl she
@@ -255,8 +269,7 @@
                <p>Someow, when she was speaking, this model who posed so freely looked like the
                   Virgin Mary, and I put my arms around her and kissed her. She said:</p>
                <p><q><foreign xml:lang="fr">Pauvre enfant</foreign>! Me? I know eet is hard for you!
-                     I have ze pity for you; but dat will not put ze food in ze stomach! <foreign
-                        xml:lang="fr">Non</foreign>! Soon you will see!</q></p>
+                     I have ze pity for you; but dat will not put ze food in ze stomach! <foreign xml:lang="fr">Non</foreign>! Soon you will see!</q></p>
                <p>I awoke happily next morning. I was going to start at good steady work. Now, I
                   thought, I would pay back Lu Frazer all I owed her, and I’d send mama money every
                   week, and Reggie’s letters should go unanswered. He had written me saying that he
@@ -386,8 +399,7 @@
                <p>Her poor bare feet were badly swollen. I begged her to let me bathe them in hot
                   water. Mama always bathed our feet in hot water when we had colds or our feet
                   hurt.</p>
-               <p><q><foreign xml:lang="fr">Bien</foreign>!</q> she said. <q>Do so, <foreign
-                        xml:lang="fr">enfant</foreign>, if you wish, but it is so hard to get hot
+               <p><q><foreign xml:lang="fr">Bien</foreign>!</q> she said. <q>Do so, <foreign xml:lang="fr">enfant</foreign>, if you wish, but it is so hard to get hot
                      water in zese boarding-house. Ah! very soon I will have dat little house of all
                      my own, and den, you will see, <foreign xml:lang="fr">enfant</foreign>, what it
                      is to be <foreign xml:lang="fr">tres</foreign> happy!</q></p>
@@ -419,9 +431,7 @@
                   forehead. She was not really ill, just tired out. Presently I said:</p>
                <p><q>Now the time has come for me to pose as you do, or as you say, starve or go to
                      the devil</q>.</p>
-               <p>She opened her eyes with a start, and she said: <q><foreign xml:lang="fr"
-                        >Merci!</foreign> But you do say things so suddenly, <foreign xml:lang="fr"
-                        >enfant</foreign>. You are funniest girl. You say some time ze ting I would
+               <p>She opened her eyes with a start, and she said: <q><foreign xml:lang="fr">Merci!</foreign> But you do say things so suddenly, <foreign xml:lang="fr">enfant</foreign>. You are funniest girl. You say some time ze ting I would
                      not dare to speak, or if I did I would have to confess to my priest; and den
                      you are afraid to do some tings zat is nutting wrong, and you mek one beeg fuss
                      for dat</q>.</p>
@@ -476,8 +486,7 @@
                         <foreign xml:lang="fr">enfant</foreign>, you will forget dat you have no
                      clothes on, and dat <foreign xml:lang="fr">tout le monde</foreign>, he is look’
                      at you. It will be joost like little dream. Dat firs’ time time, also, I am
-                     feel ze shame—but soon it pass—and it is all forget. Courage, <foreign
-                        xml:lang="fr">enfant</foreign>!</q></p>
+                     feel ze shame—but soon it pass—and it is all forget. Courage, <foreign xml:lang="fr">enfant</foreign>!</q></p>
                <p><q>No, no, Miss St. Denis. Oh, I can’t do it! I can’t!</q> I began to cry, and
                   then she seized hold of my hands fiercely and pulled herself up in bed.</p>
                <p><q>Ah, you are ze coward—renegade. You will not help me</q>.</p>
@@ -494,12 +503,10 @@
                      they provide, wiz one chair for you to rest upon. Nobody look at you when you
                      take off dose clothes. Dere also is one wrapper for you to slip on, and when
                      the monitor he call: ‘Pose!’ you will walk wiz ze wrapper on to ze model stage,
-                     and only den you will drop ze wrapper. Listen, <foreign xml:lang="fr"
-                        >enfant</foreign>! If you have take dat dreenk I am tell you ‘bout, you will
+                     and only den you will drop ze wrapper. Listen, <foreign xml:lang="fr">enfant</foreign>! If you have take dat dreenk I am tell you ‘bout, you will
                      forget dat it is you. You will say to yourself: ‘Dis is not me. Dis is jus’
                      some statue—so many lines for dem to draw and paint, to make some peecture. Ze
-                     real me, I am lef’ in my clothes dat are behind dat screen. <foreign
-                        xml:lang="fr">Voilá, enfant?</foreign></q></p>
+                     real me, I am lef’ in my clothes dat are behind dat screen. <foreign xml:lang="fr">Voilá, enfant?</foreign></q></p>
                <p>I was beginning to get her spirit, and I said:</p>
                <p><q>Why, yes, I do see. It’s like acting, isn’t it? I <emph>will</emph> forget it
                      is I</q>. I tried to laugh and added: <q>I will say: ‘O Lord, have mercy on me,
@@ -507,8 +514,7 @@
                   Because I could see she had fatigued herself on my account, and it was my turn now
                   to comfort and reassure her. I put my arms around her and hugged and kissed her.
                   Tears came into her eyes, and she murmured:</p>
-               <p><q><foreign xml:lang="fr">Pauvre petite enfant</foreign>. You look like <foreign
-                        xml:lang="fr">ma petite soeur</foreign>!</q></p>
+               <p><q><foreign xml:lang="fr">Pauvre petite enfant</foreign>. You look like <foreign xml:lang="fr">ma petite soeur</foreign>!</q></p>
                <p>I went directly from Miss St. Denis to the school. I asked to speak to Mr. Lawton,
                   the master, and he came out to the little ante-room and looked at me sharply while
                   I spoke. I knew my voice was trembling, but I said as bravely as I could:</p>

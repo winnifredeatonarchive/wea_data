@@ -22,11 +22,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:86"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl86"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="m">Me: A Book of Remembrance [Part Five]</title>. <publisher ref="org:Century"><title level="j">Century Illustrated Monthly
+                     Magazine</title></publisher>. <date when="1915-08">Aug. 1915</date>, pp.
+                     <biblScope unit="page">557-578</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +56,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-07-12" status="published">Content warning done.</change>
          <change who="pers:LW1" when="2022-07-12" status="published">Working on content warning, not done.</change>
          <change who="pers:LW1" when="2022-07-12" status="published">Set to published. Letter not encoded the way that it looks in text.</change>
@@ -202,8 +222,7 @@
                who had flatly stated he would never marry me. I had only a few qualms about
                deceiving Roger, for with all these other men proposing to me, I resented his not
                doing so, too. However, I was by no means unhappy. I had a good position, a charming
-               home, good friends, a devoted admirer in Bennet, and was not only writing, <pb n="560"
-               /> but selling, stories, with quite astounding facility.</p>
+               home, good friends, a devoted admirer in Bennet, and was not only writing, <pb n="560"/> but selling, stories, with quite astounding facility.</p>
             <p>Add to this my secret attachment to Roger, and one may perceive that mine was not
                such a bad lot. But I was dancing over a volcano, and even dead volcanos sometimes
                unexpectedly erupt.</p>
@@ -492,8 +511,7 @@
                with them. <q>He has been walking about the city like a madman all night long. What
                   did you do to him?</q></p>
             <p><q>Oh George</q>, I said falteringly, <q>I had to break it off</q>.</p>
-            <p>As if distinctly to cut me for calling him <q>George</q> (I always called him <pb
-                  n="565"/> that), he addressed me as <q>Miss Ascough</q>.</p>
+            <p>As if distinctly to cut me for calling him <q>George</q> (I always called him <pb n="565"/> that), he addressed me as <q>Miss Ascough</q>.</p>
             <p><q>Miss Ascough, were you ever really engaged to Bennet?</q> He asked that as if the
                thought of it was something not at all to his liking. I nodded.</p>
             <p><q>And you broke it off, you say?</q></p>
@@ -1018,8 +1036,7 @@
                gods had rewarded me. Mylove was returned; Roger loved me. That was the most
                wonderful, the most beautiful, the most miraculous thing that had ever occurred in
                the world.</p>
-            <p>The telephone was ringing all day, and so was the door-bell. Mama, who wandered <pb
-                  n="574"/> in and out to chat with me about the storm or other things, kept
+            <p>The telephone was ringing all day, and so was the door-bell. Mama, who wandered <pb n="574"/> in and out to chat with me about the storm or other things, kept
                grumbling. She said some one had been trying to get Margaret on the long-distance
                telephone all day, but Margaret had to go out on a case. Whoever it was, he would
                leave no message.</p>

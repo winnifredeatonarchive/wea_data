@@ -2,57 +2,79 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan7">
-      <teiHeader>
-            <fileDesc>
-                  <titleStmt>
-                        <title>Sunny-San [Part 6]</title>
-                        <respStmt>
-                              <resp>Transcriber</resp>
-                              <name ref="pers:LW1">Leean Wu</name>
-                        </respStmt>
-                        <respStmt>
-                              <resp>Proofreader</resp>
-                              <name ref="pers:LW1">Leean Wu</name>
-                        </respStmt>
-                        <respStmt>
-                              <resp>Encoder</resp>
-                              <name ref="pers:LW1">Leean Wu</name>
-                        </respStmt>
-                  </titleStmt>
-                  <publicationStmt>
-                        <p>Publication Information</p>
-                  </publicationStmt>
-                  <notesStmt>
-                        <note>Facsimile retrieved from The British Library.</note>
-                  </notesStmt>
-                  <sourceDesc>
-                        <bibl copyOf="bibl:219"/>
-                  </sourceDesc>
-            </fileDesc>
-            <profileDesc>
-                  <textClass>
-                        <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
-                        <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-                        <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
-                  </textClass>
-            </profileDesc>
-            <revisionDesc status="published">
-                  <change who="pers:LW1" when="2022-06-18" status="published">Encoded and proofed.
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sunny-San [Part 6]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl219"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                  <publisher ref="org:Sovereign">Sovereign Magazine</publisher>.
+                  <title level="a">Sunny-San [Part 6]</title>. <title level="j">Sovereign Magazine</title>, vol. <biblScope unit="volume">4</biblScope>, no.
+                     <biblScope unit="issue">32</biblScope>, <date when="1922-05">July 1922</date>,
+                  pp. <biblScope unit="page">193-201</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from The British Library.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:LW1" when="2022-06-18" status="published">Encoded and proofed.
                         Set to published.</change>
-                  <change who="pers:LW1" when="2022-06-18" status="inProgress">Downloaded document
+         <change who="pers:LW1" when="2022-06-18" status="inProgress">Downloaded document
                         from Google Drive and converted to TEI.</change>
-                  <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
+         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
                         statement.</change>
-                  <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
-                  <change who="pers:MC1" status="empty" when="2019-07-31">Changed title.</change>
-                  <change who="pers:MC1" status="empty" when="2019-07-24">Changed title.</change>
-                  <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
+         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+         <change who="pers:MC1" status="empty" when="2019-07-31">Changed title.</change>
+         <change who="pers:MC1" status="empty" when="2019-07-24">Changed title.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
                         exhibit.</change>
-                  <change who="pers:JT1" status="empty" when="2019-04-11">Created file from
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from
                         bibliography entry bibl132 using XSLT.</change>
-            </revisionDesc>
-      </teiHeader>
-      <text facs="facs:Sunny-San7" prev="doc:SunnySan6">
+      </revisionDesc>
+   </teiHeader>
+   <text facs="facs:Sunny-San7" prev="doc:SunnySan6">
             <pb n="193"/>
             <body>
                   <div>
@@ -139,10 +161,8 @@
                                                   the reign of Meeijii. A thousand years of joy. It
                                                   is your honourable daughter, who knows not your
                                                   name, who brings or sends to you this my letter. I
-                                                  go upon the long journey to the <foreign
-                                                  xml:lang="ja">Moido</foreign>. I send my child to
-                                                  him through whom she has her life. <foreign
-                                                  xml:lang="ja">Sayonara</foreign>. Haru-no</q>.</p>
+                                                  go upon the long journey to the <foreign xml:lang="ja">Moido</foreign>. I send my child to
+                                                  him through whom she has her life. <foreign xml:lang="ja">Sayonara</foreign>. Haru-no</q>.</p>
                                     </body>
                               </floatingText>
                         </q>
@@ -180,9 +200,7 @@
                               grew slowly fixed and enlarged. Through the fogs of memory slowly,
                               like a vision of the past, she seemed to see again a little child in a
                               fragrant garden. She was standing by the rim of a pool, and the man
-                              opposite her now was at her side. He was dressed in Japanese <foreign
-                                    xml:lang="ja">kimona</foreign> and <foreign xml:lang="ja"
-                                    >hakama</foreign>, and Sunny remembered that then he was always
+                              opposite her now was at her side. He was dressed in Japanese <foreign xml:lang="ja">kimona</foreign> and <foreign xml:lang="ja">hakama</foreign>, and Sunny remembered that then he was always
                               laughing at her, shaking the flower weighted trees above her, till the
                               petals fell in a white and pink shower upon her little head and
                               shoulders. She was stretching out her hands, catching the falling
@@ -226,8 +244,7 @@
                         <p>Always a lover and collector of beautiful things, Wainwright had harkened
                               to the enthusiastic flights of a friend, who had <q>discovered</q> an
                               incomparable piece of Satsuma, and had accompanied him to an old
-                              mansion, once part of a Satsuma <foreign xml:lang="ja"
-                                    >yashiki</foreign> , there to find that his friend’s <q>piece of
+                              mansion, once part of a Satsuma <foreign xml:lang="ja">yashiki</foreign> , there to find that his friend’s <q>piece of
                                     Satsuma</q> was a living work of art, a little piece of
                               bric-à-brac that the collector craved to add to his collections. He
                               had purchased O-Haru-no for a mere song, for her white skin had been a
@@ -300,8 +317,7 @@
                                     not seem to me as if you have changed at all. You are still my
                                     little girl. Tell me—you have not forgotten your father
                                     altogether, have you?</q></p>
-                        <p><q>No. Those year they are push away. You are my <foreign xml:lang="ja"
-                                          >chichi</foreign> (papa). I so happy see you face
+                        <p><q>No. Those year they are push away. You are my <foreign xml:lang="ja">chichi</foreign> (papa). I so happy see you face
                                     again</q>.</p>
                         <p>She held him back, her two hands on his shoulders, and now, true to her
                               sex, she prepared to demand a favour from her father.</p>
@@ -371,8 +387,7 @@
                               details of her early life, the days of their mendicancy making the man
                               feel immeasurably mean. Sitting at the desk now, his eyes shaded with
                               his hand, he gritted his teeth, and struck the table with repeated
-                              soundless blows when his daughter told him of the lash of the <pb
-                                    n="197"/> man Hirata. But something, a feeling more penetrating
+                              soundless blows when his daughter told him of the lash of the <pb n="197"/> man Hirata. But something, a feeling more penetrating
                               than pain, stung Stephen Wainwright when she told him of those
                               warmhearted men who had come into her life like a miracle and taken
                               the place that he should have been there to fill. For the first time

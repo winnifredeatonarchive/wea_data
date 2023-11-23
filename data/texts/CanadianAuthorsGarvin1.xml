@@ -10,11 +10,32 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from the University of Calgary archives</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:296"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl296"><author><name ref="pers:WE1">Eaton Reeve,
+                     Winnifred</name></author>. <title level="a">Canadian Authors</title>.
+                     <publisher ref="org:Albertan"><title level="j">Morning
+                     Albertan</title></publisher>, <date when="1924-01-05">5 Jan 1924</date>, p.
+                     <biblScope unit="page">4, 14</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from the University of Calgary archives</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -22,10 +43,10 @@
             <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
             <catRef scheme="wdt:genre" target="wdt:genreNF"/>
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
-            
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>

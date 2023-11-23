@@ -22,12 +22,35 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>
-               <q>The Claw</q>, c. 1927, (CU2337780) by Eaton, Winnifred. Courtesy of Libraries and Cultural Resources Digital Collections, University of Calgary.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:140"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                  <idno>5.8.1-5.8.2</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl140"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>
+                  <title level="m">The Claw [adaptation]</title>. <publisher ref="org:Universal">Universal Studios</publisher>, <date when="1927">1927</date>. <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>,
+                     <idno>5.8.1-5.8.2</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>
+               <q>The Claw</q>, c. 1927, (CU2337780) by Eaton, Winnifred. Courtesy of Libraries and Cultural Resources Digital Collections, University of Calgary.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -38,6 +61,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:JT1" when="2023-11-23" status="inProgress">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2023-11-18" status="inProgress">Encoding</change>
          <change who="pers:LW1" when="2023-11-18" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:MC1" when="2020-07-02" status="empty">Added note about source.</change>

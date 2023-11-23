@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,29 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Original in Winnifred Eaton Reeve Fonds 15.15 at University of Calgary</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:33"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl33"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Because We Were Lonely</title>. <publisher ref="org:TrueStory"><title level="j">True Story Magazine</title></publisher>, <date when="1933-04">Apr.
+                     1933</date>, pp. <biblScope unit="page">28-30, 92-96</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Original in Winnifred Eaton Reeve Fonds 15.15 at University of Calgary</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,13 +51,14 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:MC1" status="published" when="2020-06-30">Added note about source</change>
          <change who="pers:MC1" status="published" when="2020-06-21">Begin transcribing</change>
          <change who="pers:SC1" status="inProgress" when="2020-06-10">Begin transcribing</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl33 using XSLT.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl33 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:BecauseWeWereLonely1">
+   <text facs="facs:BecauseWeWereLonely1">
      <pb n="28"/>
       <body>
         

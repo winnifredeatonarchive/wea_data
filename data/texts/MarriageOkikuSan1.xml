@@ -57,14 +57,27 @@ Publicly accessible
  uva-lib:475929 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile provided by the Internet Archive.</note>
-            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatOkik"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:170"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl170"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Marriage of Okiku-San</title>. Illustrated by <author role="illustrator"><name ref="pers:TS1">Taka Spiro</name></author>. <publisher ref="org:Red"><title level="j">Red Book Magazine</title></publisher>, <date when="1910-06">June 1910</date>, pp. <biblScope unit="page">254-63</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile provided by the Internet Archive.</p>
+                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                     <bibl type="edition" target="weda:EatOkik"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -75,6 +88,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-05-01" status="published">Updated source note.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>

@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from University of British Columbia Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:212"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl212"><author><name ref="pers:WE1">Reeve, Winnifred Eaton</name>
+                        (<name ref="pers:WE1">Onota Watanna</name>)</author>. <title level="a">How I
+                     Came to Write <title level="m">Cattle</title></title>. <publisher ref="org:Edmonton"><title level="j">Edmonton Journal</title></publisher>, <date when="1923-12-08">8 Dec. 1923</date>, p. <biblScope unit="page">20</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from University of British Columbia Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,12 +52,13 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" status="published" when="2020-08-05">Fixed title</change><change who="pers:MC1" status="published" when="2020-07-01">Added note about source</change>
-         
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="published" when="2020-08-05">Fixed title</change>
+         <change who="pers:MC1" status="published" when="2020-07-01">Added note about source</change>
          <change who="pers:MC1" status="published" when="2020-06-08">proofread</change>
          <change who="pers:SC1" status="inProgress" when="2020-06-08">Added transcription</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl212 using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl212 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:WriterTells2">
@@ -73,8 +92,7 @@
                I then thought would make a play. Nevertheless I was not sure of my story, and I
                argued with myself:</p>
             <p><q>This will never do. No publisher will dare to touch it</q> and so forth. And,
-               defending: <q>There’s nothing bad in my story. Truth is never bad.<note
-                     type="editorial" resp="pers:SC1">No period in original.</note> Certain
+               defending: <q>There’s nothing bad in my story. Truth is never bad.<note type="editorial" resp="pers:SC1">No period in original.</note> Certain
                   elemental facts of life are proper subjects for the story writer as well as the
                   psychologists. Some of the greatest books would never have been written had their
                   authors not possessed courage and confidence</q>.</p>
@@ -147,4 +165,4 @@
   
  
    </text>
- </TEI>
+</TEI>

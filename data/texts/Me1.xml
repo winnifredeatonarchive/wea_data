@@ -26,11 +26,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:82"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl82"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="m">Me: A Book of Remembrance [Part One]</title>. <publisher ref="org:Century"><title level="j">Century Illustrated Monthly
+                     Magazine</title></publisher>. <date when="1915-04">Apr. 1915</date>, pp.
+                     <biblScope unit="page">801-827</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -41,6 +60,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-09" status="published">Standardized the em
             dashes.</change>
          <change who="pers:LW1" when="2022-08-09" status="published">Slurs have been discussed with
@@ -112,8 +132,7 @@
             <p>My father was an artist, and we were very poor. My mother had been a tight-rope
                dancer in her early youth. She was an excitable, temperamental creature from whose
                life all romance had been squeezed by the torturing experience of bearing sixteen
-               children. Moreover, she was a native of a far-distant land, and I do not <pb n="802"
-               /> think she ever got over the feeling of being a stranger in Canada.</p>
+               children. Moreover, she was a native of a far-distant land, and I do not <pb n="802"/> think she ever got over the feeling of being a stranger in Canada.</p>
             <p>Time was when my father, a young and ardent adventurer (an English-Irishman) had
                wandered far and wide over the face of the earth. The son of rich parents, he had
                sojourned in China and Japan and India in the days when few white men ventured into
@@ -331,8 +350,7 @@
                seeing me again, but although the captain said (in a big, booming voice that every
                one on deck could hear) that I looked like a nice, blooming peony, I sensitively
                fancied I detected a laugh beneath his words.</p>
-            <p>Tragedies should be measured according to their effects. Trifles prick us in <pb
-                  n="806"/> youth as sharply as the things that ought to count. I sensitively
+            <p>Tragedies should be measured according to their effects. Trifles prick us in <pb n="806"/> youth as sharply as the things that ought to count. I sensitively
                suffered in my pride as much from the humiliation of wearing my heavy woolen clothes
                as physically did from the burden of their weight and heat. I was sure that I
                presented a ridiculous and hideous spectacle. I felt that every one was laughing at
@@ -386,8 +404,7 @@
             <p>I grew uncomfortably red under her amused and amazed glance. In the seven days of
                that voyage my own extraordinary ignorance had been daily brought home to me. I now
                said lamely:</p>
-            <p><q>Well, we had only one servant that I can ever remember, a woman named <pb n="807"
-                  /> Sung-Sung whom papa brought from China; but she was more like one of our
+            <p><q>Well, we had only one servant that I can ever remember, a woman named <pb n="807"/> Sung-Sung whom papa brought from China; but she was more like one of our
                   family, a sort of slave. We never gave her tips, or whatever you call it</q>.</p>
             <p>Did I not know, pursued my American friend, that people gave extra money—that is,
                   <q>tips</q>—to waiters at restaurants and hotels when they got through eating a
@@ -403,8 +420,7 @@
             <p>We brought our bags and belongings out on deck before the boat docked next day. Every
                one was crowded against the rails, watching the approaching land.</p>
             <p>A crowd seemed to be swarming on the wharves, awaiting our boat. As we came nearer, I
-               was amazed to find that this crowd was made up almost entirely of negroes. <note
-                  type="editorial" resp="pers:LW1">This term was <q>the standard designation
+               was amazed to find that this crowd was made up almost entirely of negroes. <note type="editorial" resp="pers:LW1">This term was <q>the standard designation
                      throughout the 17th to 19th centuries</q> to refer to Black people when this
                   text was published in 1915 (<title level="j">Oxford English Dictionary</title>).
                   It is now considered outdated and even offensive but is sometimes still used in
@@ -619,8 +635,7 @@
             <p><q>Oh, well, he’s a crank. You couldn’t please him no matter what you did</q>. Then
                she added: <q>I don’t see, anyhow, why he objected to you. Brains aren’t so much
                   needed in a position like this as legs and a constitution of iron</q>.</p>
-            <p>As the day advanced, the heat encroached. Miss Foster sat fanning herself <pb n="811"
-               /> languidly by the window, looking out with a far-away expression. I told her about
+            <p>As the day advanced, the heat encroached. Miss Foster sat fanning herself <pb n="811"/> languidly by the window, looking out with a far-away expression. I told her about
                my clothes, and how mortified I was to find them so different from those of the
                others on the boat. She said:</p>
             <p><q>You can have all my clothes, if you want. They won’t do for Canada</q>.</p>
@@ -673,8 +688,7 @@
             <p>Mr. Burbank was to fight this bill for the newspapers. He was, in fact, our
                representative and champion. <q>The Lantern</q>, in return, was prepared to support
                him in other measures that he was fathering. Miss Foster and I were to remember to
-               treat him with more than common attention. I did not know, of course, that <pb
-                  n="812"/> this meant in our newspaper references to him, and I made a fervent vow
+               treat him with more than common attention. I did not know, of course, that <pb n="812"/> this meant in our newspaper references to him, and I made a fervent vow
                personally to win the favor of said Burbank.</p>
             <p>We got into a splendid little equipage, upholstered in tan cloth and with a large tan
                umbrella top, which was lined with green.</p>
@@ -1139,8 +1153,7 @@
                   that carriage</q>.</p>
             <p>He said something to the driver. The latter started up his horses, and drove slowly
                down the road. Then Marchmont took my arm, and we started.</p>
-            <p>That interminable walk in the fearful Jamaica heat and sun recurs sometimes to <pb
-                  n="820"/> me still, like a hectic breath of hateful remembrance. The penetrating
+            <p>That interminable walk in the fearful Jamaica heat and sun recurs sometimes to <pb n="820"/> me still, like a hectic breath of hateful remembrance. The penetrating
                sun beat its hot breath down upon our backs. The sand beneath our feet seemed like
                living coals, and even when we got into the cooler paths of the wooded country, the
                closeness and oppressive heaviness of the atmosphere stifled and crushed me.</p>
@@ -1602,8 +1615,7 @@
                was to call her.</p>
             <p>My own room was very large, and it was mostly in shadow. Now, all my life I’ve had
                the most unreasonable and childish fear of <q>being in the dark alone</q>. I seldom
-               went to bed without looking under it, behind bureaus, doors, etc., and I <pb n="828"
-               /> experienced a slight sense of fear as ‘Mandy was about to depart.</p>
+               went to bed without looking under it, behind bureaus, doors, etc., and I <pb n="828"/> experienced a slight sense of fear as ‘Mandy was about to depart.</p>
             <p><q>Isn’t there any one on this floor but us?</q> I asked.</p>
             <p><q>No; no one else sleeps up here, chile</q>, said ‘Mandy; <q>but Dr. Manning he hab
                   he labriterry there, and some time he work all night</q>.</p>

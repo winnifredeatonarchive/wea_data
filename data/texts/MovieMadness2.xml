@@ -22,11 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from Chemung County Historical Society.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:95"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl95"><author><name ref="pers:WE1">Reeve, Winifred</name></author>.
+                     <title level="a">Movie Madness [Part 2]</title>. Illustrated by <author role="illustrator"><name ref="pers:EB1">Edward Butler</name></author>.
+                     <publisher ref="org:Screen"><title level="j">Screen
+                  Secrets</title></publisher>, <date when="1930-03">Mar. 1930</date>, pp. <biblScope unit="page">58-59</biblScope>, 104-105.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from Chemung County Historical Society.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +57,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-08-01" status="published">Downloaded document from Google Drive and converted to TEI. Encoded text and set to published.</change>
          <change who="pers:SL1" status="empty" when="2022-03-09">Added facsimile and prev/next instalment. Added source note.</change>
          <change who="pers:MC1" status="empty" when="2020-07-31">added instalment number</change>
@@ -45,9 +66,7 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl95 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:MovieMadness2"
-         prev="doc:MovieMadness1"
-         next="doc:MovieMadness3">
+   <text facs="facs:MovieMadness2" prev="doc:MovieMadness1" next="doc:MovieMadness3">
       
       <pb n="58"/>
       <body>

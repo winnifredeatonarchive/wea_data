@@ -41,13 +41,27 @@ Publicly accessible
  uva-lib:475916 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Library of Congress </note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatFath"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:6"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl6"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">A Father</title>. Illustrated by <author role="illustrator"><name ref="pers:LB1">Louis Betts</name></author>. <publisher ref="org:Conkey"><title level="j">Conkey’s Home Journal</title></publisher>,
+                     <date when="1900-01">Jan. 1900</date>, pp. <biblScope unit="page">9-10</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Library of Congress </p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                     <bibl type="edition" target="weda:EatFath"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -58,6 +72,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" status="published" when="2020-08-05">Added illustrator code.</change>

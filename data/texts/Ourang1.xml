@@ -10,10 +10,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:114"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                  <idno>5.41</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl114"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>,
+                  and <author>Isadore Bernstein</author>. <title level="m">Ourang [continuity,
+                     adaptation and dialogue]</title>. <publisher ref="org:Universal">Universal
+                     Studios</publisher>, <date when="1930-04-16">1930</date>. <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>,
+                  <idno>5.41</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -24,9 +50,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" status="empty" when="2023-01-20">Added facsimile.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-02">Added note about source.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl114 using XSLT.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl114 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Ourang1">

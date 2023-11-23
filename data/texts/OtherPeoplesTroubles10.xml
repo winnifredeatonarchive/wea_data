@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,32 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of Saskatchewan Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:113"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl113"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
+                     10]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
+                        Review</title></publisher>, <date when="1919-07-21">21 July 1919</date>,
+                  n.p.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from University of Saskatchewan Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,15 +54,19 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" status="published" when="2022-03-10">Edited title, added trailer, and set to published.</change>
          <change who="pers:SC1" status="inProgress" when="2020-09-08">Added facs and transcription</change>
          <change who="pers:SC1" status="empty" when="2020-09-08">renumbered instalments</change>
-         <change who="pers:MC1" status="empty"  when="2020-08-21">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change><change who="pers:MC1" status="empty"  when="2020-07-03">Added note about source.</change>
-         <change who="pers:MC1" status="empty"  when="2020-06-30">Added links to previous instalment.</change><change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl113 using XSLT.</change>
+         <change who="pers:MC1" status="empty" when="2020-08-21">renumbered instalments.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-03">Added note about source.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added links to previous instalment.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl113 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Other_Peoples_Troubles10" prev= "doc:OtherPeoplesTroubles9" next= "doc:OtherPeoplesTroubles11">
+   <text facs="facs:Other_Peoples_Troubles10" prev="doc:OtherPeoplesTroubles9" next="doc:OtherPeoplesTroubles11">
       <body>
          <head>Other People’s Troubles</head>
          <head type="subtitle">An Antidote for Your Own [Part 10]</head>

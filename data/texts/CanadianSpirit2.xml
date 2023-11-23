@@ -8,17 +8,38 @@
             <title>Canada’s Loss of Many Of Best Authors Proves Little Short of Calamity</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:AK2"></name>
+               <name ref="pers:AK2"/>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:301"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl301"><author><name ref="pers:WE1">Reeve, Winnifred</name> (<name ref="pers:WE1">Onoto Watanna</name>)</author>. <title level="a">Canada’s
+                     Loss of Many Of Best Authors Proves Little Short of Calamity</title>.
+                     <publisher ref="org:Edmonton"><title level="j">Edmonton
+                     Journal</title></publisher>, <date when="1923-03-03">03 Mar. 1923</date>, pp.
+                     <biblScope unit="page">2, 5</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -29,6 +50,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-03-06" status="published">Set to published.</change>
          <change who="pers:JT1" when="2021-11-29" status="readyForProof">Added text to repository.</change>
          <change who="pers:AK2" when="2021-10-28" status="inProgress">Transcribed document.</change>

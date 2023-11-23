@@ -22,11 +22,32 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from the University of Calgary archives</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:299"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl299"><author><name ref="pers:WE1">Eaton Reeve,
+                     Winnifred</name></author>. <title level="a">Books, Literary Notes, etc</title>.
+                     <publisher ref="org:Albertan"><title level="j">Morning
+                     Albertan</title></publisher>, <date when="1924-02-05">5 Feb 1924</date>, p.
+                     <biblScope unit="page">4</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from the University of Calgary archives</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +58,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-07" status="published">Added person references for Douglas Durkin.</change>
          <change who="pers:LW1" when="2022-05-06" status="published">Added person
             references for Victor Lauriston and Bliss Carman.</change>
@@ -85,8 +107,7 @@
                <q>Oh, no. Only about a thousand miles</q>.</p>
             <p>On February 8 Calgary will have an opportunity of seeing Canada’s poet laureate in
                recital at the Central Methodist church. This may be the last time that an
-               opportunity will be afforded Calgarians of seeing Canada’s best loved poet, <name
-                  ref="pers:BC2">Bliss Carman</name>, for his health has been poor of late years,
+               opportunity will be afforded Calgarians of seeing Canada’s best loved poet, <name ref="pers:BC2">Bliss Carman</name>, for his health has been poor of late years,
                and the traveling exacts a heavy toll from a man of Mr. Carman’s age.</p>
             <p><q>Oh, did you once see Shelley!</q> Those words still throb with the eager hero
                worship of the poet that wrote them. The time may come when others will ask us
@@ -110,8 +131,7 @@
                women,</p>
             <p><name ref="pers:WM1">Mr. McDonald</name>, as soon as he learned of the Little Theater
                movement in Calgary, immediately offered his opera for an initial vehicle for the
-               association. Besides giving his opera ot the newly formed association, <name
-                  ref="pers:WM1">Mr. McDonald</name> is willing to come to Calgary and personally
+               association. Besides giving his opera ot the newly formed association, <name ref="pers:WM1">Mr. McDonald</name> is willing to come to Calgary and personally
                rehearse the piece, as he has done in other cities. Besides writing the libretto and
                lyrics, he is also the author of the music, and composed the dances, and he plays one
                of the parts himself.</p>

@@ -10,11 +10,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note><!--ADD FACSIMILE SOURCE HERE--></note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:231"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl231"><author><name ref="pers:WE1">Winnifred Eaton
+                     Reeve</name></author>. <title level="m">Phantom of the Opera
+                     [adaptation]</title>. <author>Julian, Rupert</author>, dir. <publisher ref="org:Universal">Universal Studios</publisher>. <date when="1925-01">Jan.
+                     1925</date>. </bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -25,6 +45,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-03-12" status="empty">Added catREF info.</change>
          <change who="pers:JT1" when="2020-07-12" status="empty">Created shell from bibl file.</change>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfGeishaGirl1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LoveOfGeishaGirl1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,10 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:162"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl162"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Love of a Geisha Girl</title>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home
+                     Companion</title></publisher>, <date when="1902-07">July 1902</date>, pp.
+                     <biblScope unit="page">16</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -36,16 +57,18 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SB2" when="2020-07-30" status="published">proofread.</change>
          <change who="pers:MC1" when="2020-07-30" status="published">proofread.</change>
-         <change who="pers:MC1" when="2020-07-02" status="inProgress">Added note about source.</change><change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
+         <change who="pers:MC1" when="2020-07-02" status="inProgress">Added note about source.</change>
+         <change who="pers:SB2" when="2020-05-21" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SB2" status="inProgress" when="2020-05-22">Encoded text.</change>
          <change who="pers:MC1" status="empty" when="2019-08-31">directed to facs.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl162 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-    <text facs="facs:LoveOfAGeishaGirl">
+   <text facs="facs:LoveOfAGeishaGirl">
        <pb n="16"/>
        <body>
           <head>The Love of a Geisha Girl</head>

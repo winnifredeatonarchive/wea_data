@@ -57,14 +57,30 @@ Publicly accessible
  uva-lib:475932 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065173">https://hdl.handle.net/2027/uc1.b3065173</ref>.</note>
-            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatPotp"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:182"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl182"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Pot of Paint</title>. Illustrated by <author role="illustrator"><name ref="pers:GY1">Genjiro Yeto</name></author>.
+                     <publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular
+                        Monthly</title></publisher>, <date when="1902-02">Feb. 1902</date>, pp.
+                     <biblScope unit="page">414-24</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065173">https://hdl.handle.net/2027/uc1.b3065173</ref>.</p>
+                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                     <bibl type="edition" target="weda:EatPotp"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -75,6 +91,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-05-21" status="published">additional proofreading.</change>

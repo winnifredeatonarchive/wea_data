@@ -10,12 +10,10 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1">Sijia Cheng</name>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1">Sijia Cheng</name>
             </respStmt>
-            
             <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:SC1">Sijia Cheng</name>
@@ -24,11 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from New York Public Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:18"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl18"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">A Japanese Nightingale</title>. Illustrated by <author role="illustrator"><name ref="pers:GY1">Genjiro Yeto</name></author>.
+                     <pubPlace>New York</pubPlace>, <publisher ref="org:Harper">Harper and
+                     Brothers</publisher>, <date when="1901">1901</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from New York Public Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -39,9 +57,13 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:MC1" status="published" when="2020-08-13">added source statement</change>
-         <change who="pers:MC1" status="published" when="2020-08-12">mark published</change><change who="pers:SC1" status="inProgress" when="2020-08-02">typo</change><change who="pers:SC1" status="inProgress" when="2020-07-29">Added transcription</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">Changed title.</change><change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl18 using XSLT.</change>
+         <change who="pers:MC1" status="published" when="2020-08-12">mark published</change>
+         <change who="pers:SC1" status="inProgress" when="2020-08-02">typo</change>
+         <change who="pers:SC1" status="inProgress" when="2020-07-29">Added transcription</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">Changed title.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl18 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:JapaneseNightingale6">
@@ -86,15 +108,12 @@
                   fairy vehicles pulled by picturesque runners, clear around the island, under the
                   pine-trees, over miniature brooks, into the mysterious dark of a forest. Suddenly
                   they were in a blaze of swinging, dazzling lights, laughter and music, chatter,
-                  the clattering of dishes, the twang of the <foreign xml:lang="ja"
-                     >samisen</foreign>, the ron-ton-ton of the <foreign xml:lang="ja"
-                     >biwa</foreign>. They had reached the garden and the tea-house. </p>
+                  the clattering of dishes, the twang of the <foreign xml:lang="ja">samisen</foreign>, the ron-ton-ton of the <foreign xml:lang="ja">biwa</foreign>. They had reached the garden and the tea-house. </p>
                <p>Some pleasure-loving Japanese were giving a banquet in honor of the full moon, and
                   the moon, just over their heads, clothed in glorious raiment, and sitting on a
                   sky-throne of luminous silver, was attending the banquet in person, surrounded my
                   myriad twinkling stars, who played at being her courtiers. Each of the guests had
-                  his own little mat, table and waitress. They sat in a semicircle, and <pb n="4"
-                  />drank the <foreign xml:lang="ja">sake</foreign> hot, in tiny cups that went
+                  his own little mat, table and waitress. They sat in a semicircle, and <pb n="4"/>drank the <foreign xml:lang="ja">sake</foreign> hot, in tiny cups that went
                   thirty or more to the pint; or the Kyoto beer that had been ordered for the
                   foreigners who were the chief guests this evening. This is the toast the Japanese
                   made to the moon: <q>May she with us drink a cup of immortality!</q> and then each
@@ -111,8 +130,7 @@
                   flashed on the mat from an opening in the upper part of the house, and out of the
                   shadows sprang onto the mat a wild, vivid little figure, clad in scintillating
                   robes that reflected every ray of the light thrown on them; and with her coming
-                  the air was filled with the weird, wholly fascinating music of the <foreign
-                     xml:lang="ja">koto</foreign> and <foreign xml:lang="ja">samisen</foreign>.</p>
+                  the air was filled with the weird, wholly fascinating music of the <foreign xml:lang="ja">koto</foreign> and <foreign xml:lang="ja">samisen</foreign>.</p>
                
            
                <p>She pirouetted around on the tips of the toes of one little foot, clapped her
@@ -125,8 +143,7 @@
                   garments had increased, and now they seemed to be weeping, at first gradually,
                   then faster and still faster, until finally she was a storm––a dark, blowing,
                   lightning storm. From above the light shot down in quick, sharp flashes, the drums
-                  clashed madly, the <foreign xml:lang="ja">koto</foreign> wept on and the <foreign
-                     xml:lang="ja">samisen</foreign> shrieked vindictively.</p>
+                  clashed madly, the <foreign xml:lang="ja">koto</foreign> wept on and the <foreign xml:lang="ja">samisen</foreign> shrieked vindictively.</p>
                <p>Suddenly the storm quieted down and ceased. A blue light flung itself against the
                   now slightly swaying figure; then the seven colors of the spectrum flashed on her
                   at once. She spread her garments wide; they fluttered above her in a large
@@ -317,8 +334,7 @@
                      along in a moment. But, look here</q>, he continued, <q>you’d better understand
                      that I’m only going through this ceremony for the fun of the thing, mind you. I
                      don’t intend to marry any one—at all events, not a girl of that class</q>.</p>
-               <p><q>Nod for a leetle while whicheven?</q> persuaded the <foreign xml:lang="ja"
-                     >nakoda</foreign>.</p>
+               <p><q>Nod for a leetle while whicheven?</q> persuaded the <foreign xml:lang="ja">nakoda</foreign>.</p>
                <p><q>Nod for a leetle while whicheven</q>, echoed the young man, but the agent had
                   disappeared. </p>
                <p>When Jack, curious to know what she was like, she who was seeking him for a
@@ -338,10 +354,7 @@
              
                
                <p>After he had looked at her a moment, she subsided to the mats and made her
-                  prostration. She was dressed very gayly in a red craêpe <foreign xml:lang="ja"
-                     >kimono</foreign>, tied about with a purple <foreign xml:lang="ja"
-                     >obi</foreign>. Her hair was dressed after the fashion of the <foreign
-                     xml:lang="ja">geisha</foreign>, with a flower ornament at top and long, pointed
+                  prostration. She was dressed very gayly in a red craêpe <foreign xml:lang="ja">kimono</foreign>, tied about with a purple <foreign xml:lang="ja">obi</foreign>. Her hair was dressed after the fashion of the <foreign xml:lang="ja">geisha</foreign>, with a flower ornament at top and long, pointed
                   daggers at either side; but as she bowed her head to the mats, some pin in her
                   hair escaped and slipped, and then a tawny, rebellious mass of hair, which was
                   never meant to be worn smoothly, had fallen all about <pb n="23"/>her, tumbled
@@ -359,8 +372,7 @@
                   him altogether. </p>
                
                <p><q>Don’t do that</q>, he said. <q>Please stand up. Do!</q></p>
-               <p>The <foreign xml:lang="ja">nakoda</foreign> told him to lift her to <pb n="24"
-                  />her feet, and the young man did so, entangling his hands in her hair. When she
+               <p>The <foreign xml:lang="ja">nakoda</foreign> told him to lift her to <pb n="24"/>her feet, and the young man did so, entangling his hands in her hair. When she
                   stood up, he saw her face, which was oval and rosy, the lips very red. She still
                   drooped her eyes, so that her face was incomplete.</p>
                <p><q>What’s your name?</q> he asked her, gently. <q>What do you want with me?</q></p>
@@ -408,8 +420,7 @@
                <p><q>Oh, you need not sell yourself for that</q>, he said, earnestly. <q>Why, I’ll
                      give you some–all you want. You’re awfully young, aren’t you? Just a little
                      girl. <emph>I</emph> can’t marry you. It wouldn’t be fair to you</q>.</p>
-               <p>Again she shrugged her shoulders, and spoke in Japanese to the <foreign
-                     xml:lang="ja">nakoda</foreign>. </p>
+               <p>Again she shrugged her shoulders, and spoke in Japanese to the <foreign xml:lang="ja">nakoda</foreign>. </p>
                <p><q>She says some one else will, then</q>, he interpreted.</p>
                <p><q>All right</q>, said the young man, almost bitterly.</p>
                
@@ -476,11 +487,9 @@
                
               
                
-               <p>There was pleasure, however, in the eyes of the <foreign xml:lang="ja"
-                     >nakoda</foreign>. He had done a good piece of business, a most excellent piece
+               <p>There was pleasure, however, in the eyes of the <foreign xml:lang="ja">nakoda</foreign>. He had done a good piece of business, a most excellent piece
                   of business, for the American gentleman was reputed to be able to buy hundreds and
-                  hundreds of rice-fields if he so cared to do. The <foreign xml:lang="ja"
-                     >nakoda</foreign> came forward with a benignant smile to arrange the terms.</p>
+                  hundreds of rice-fields if he so cared to do. The <foreign xml:lang="ja">nakoda</foreign> came forward with a benignant smile to arrange the terms.</p>
                <p><q>She will cost only three hundred yen per down and fifteen yen each end per
                      week. Soach a cheap price for a wife!</q>
                </p>
@@ -581,8 +590,7 @@
                   house, to try the effect. </p>
                <p>He set her in one of his largest chairs, notwithstanding she would have been much
                   more comfortable on the floor, in this same room, and she added wonderfully to the
-                  appearance of things. He stood her pensively by the <foreign xml:lang="ja"
-                     >tokonona</foreign>; he nodded his head—very good! He placed her out beneath a
+                  appearance of things. He stood her pensively by the <foreign xml:lang="ja">tokonona</foreign>; he nodded his head—very good! He placed her out beneath a
                   cherry-tree in his garden; again he nodded approvingly. And a breakfast with her
                   sitting opposite him! That would be like unto the breakfast eaten by the angels in
                   heaven—if angels partake of other than spiritual nourishment. Yes, she would be
@@ -608,28 +616,24 @@
                   didn’t quite like it. But—oh, well, you know, these Japs have no end of queer
                   customs. This incident just illustrated one of them. She was clearly a superior
                   kind of girl. Not an ordinary <foreign xml:lang="ja">geisha</foreign> as he had
-                  thought when his eyes first fell on her. He had seen enough of the <foreign
-                     xml:lang="ja">geishas</foreign> at the tea-houses to know that she was of a
+                  thought when his eyes first fell on her. He had seen enough of the <foreign xml:lang="ja">geishas</foreign> at the tea-houses to know that she was of a
                   different kind; to his Occidental eyes these last were most pleasing creatures,
                   but—</p>
                <p>Just then his man straggled through the room and brought an end to his musing.
                   Marry her? He sat up <pb n="42"/>straight. What had he been thinking about? The
                   idea was absurd. It was absurd for him to think about marrying any one. He got to
-                  his feet, called back his man, and ordered a <foreign xml:lang="ja"
-                     >jinrikisha</foreign> to be brought to him. and then rode off to Tokyo to
+                  his feet, called back his man, and ordered a <foreign xml:lang="ja">jinrikisha</foreign> to be brought to him. and then rode off to Tokyo to
                   forget all about it.</p>
                
                
                
-               <p>But it would not be forgotten. After he had left the <foreign xml:lang="ja"
-                     >jinrikisha</foreign> he caught sight of her on the opposite side of the
+               <p>But it would not be forgotten. After he had left the <foreign xml:lang="ja">jinrikisha</foreign> he caught sight of her on the opposite side of the
                   street, turning a corner. He hurried after her, but when he reached the corner she
                   was nowhere to be seen. He looked into all the shops on either side of the street
                   for a distance of a hundred yards, but saw no one who bore the least resemblance
                   to her. Then he tramped about the immediate vicinity, his sense of loss deepening
                   with each minute, until he noticed that the shop-keepers were eyeing him with
-                  suspicion. He gave up the search and started back to his <foreign xml:lang="ja"
-                     >jinrikisha</foreign>.</p>
+                  suspicion. He gave up the search and started back to his <foreign xml:lang="ja">jinrikisha</foreign>.</p>
                <p>As he was swinging along disconsolately, his eyes lighted upon another <pb n="43"/>person whom
                   he knew—Ido, the <foreign xml:lang="ja">nakoda</foreign>—and him Jack did not
                   let escape. He pounced down upon him, and clapped a hand upon his shoulder.</p>
@@ -688,8 +692,7 @@
                
                <p>The announcement of his man that Ido and his charge had arrived contained no news
                   for Jack, for he had been watching the road from Tokyo since nine o’clock, and had
-                  seen them while they were yet afar off. Nevertheless he did not enter the <foreign
-                     xml:lang="ja">zashishi</foreign> until his man came to him with the word that
+                  seen them while they were yet afar off. Nevertheless he did not enter the <foreign xml:lang="ja">zashishi</foreign> until his man came to him with the word that
                   guests from the city were awaiting him, and then he had no definite idea of what
                   he intended to do.</p>
                <p>She was dressed exactly as she had been on her previous visit, and she made
@@ -777,8 +780,7 @@
                   claim. </p>
                <pb n="52"/>
                <p>Jack, seeing an unpleasant duty before him, and desiring to have done with it at
-                  once, told Yuki that he would be back in a minute, and led the <foreign
-                     xml:lang="ja">nakoda</foreign> into the room out of which he had just come. </p>
+                  once, told Yuki that he would be back in a minute, and led the <foreign xml:lang="ja">nakoda</foreign> into the room out of which he had just come. </p>
                <p>Ido immediately began to make terms. This part was loathsome to the young man.</p>
                <p><q>Why</q>, he said, hotly, <q>if we’re to be married she can have all she wants and needs</q>.</p>
                <p>That wouldn’t do, the wary <foreign xml:lang="ja">nakoda</foreign> told him,
@@ -788,8 +790,7 @@
                   once agreed to the sums the <foreign xml:lang="ja">nakoda</foreign> mentioned. Ido
                   was to have two hundred dollars, and the girl was to receive a weekly allowance of
                   fifteen dollars.</p>
-               <p>When the ugly terms of the agreement were completed, the <foreign xml:lang="ja"
-                     >nakoda</foreign> bowed himself out, and Jack went back to Yuki. He found her
+               <p>When the ugly terms of the agreement were completed, the <foreign xml:lang="ja">nakoda</foreign> bowed himself out, and Jack went back to Yuki. He found her
                   changed; her simplicity had left her, and her coquetry had returned. She stood off
                   from him, and he felt constrained and awk-<pb n="53"/>ward. After a time she
                   demanded of him, with a shrewd inflection in her voice: </p>
@@ -841,8 +842,7 @@
                   promised.</p>
                <p>But his happiness might have been felt in less measure if his eyes, instead of
                   staring at his mirrored likeness, could have been fixed on Yuki.<pb n="56"/> She
-                  had borne herself with a joyous air to the <foreign xml:lang="ja"
-                     >jinrikisha</foreign>, but once within it, and practically secure from
+                  had borne herself with a joyous air to the <foreign xml:lang="ja">jinrikisha</foreign>, but once within it, and practically secure from
                   observation, the life had seemingly gone out of her. The brown of her skin had
                   paled to gray, and all the way to Tokyo her eyes shifted neither to right nor
                   left, but stared straight ahead into nothingness, and once, when Ido looked down,
@@ -856,8 +856,7 @@
                <p>A few days later they were married. It was a very quiet little tea-drinking
                   ceremony, and, unlike the usualy Japanese wedding, there was not the painful crowd
                   of relatives and friends attendant. In fact, no one was present, besides
-                  themselves, save Jack’s man and maid and the <foreign xml:lang="ja"
-                     >nakoda</foreign>, while Yuki herself sang the marriage song.</p>
+                  themselves, save Jack’s man and maid and the <foreign xml:lang="ja">nakoda</foreign>, while Yuki herself sang the marriage song.</p>
                <p>They started housekeeping in an ideal spot. Their house, a bit of art in itself,
                   was built on the crest of a small hill. On all sides sloped and leaned green
                   highlands, rich in foliage and warm in color. Beyond these smaller hillocks
@@ -885,8 +884,7 @@
                   quite happy and contented. Then she disappeared, and for a week he saw nothing of
                   her. </p>
                <p>He greatly missed her—his little bride of three or four days. He longed ardently
-                  for her return, and her absence alarmed him. Her little arts and <pb n="60"
-                  />witcheries had grown on him even in this short period of their acquaintance. </p>
+                  for her return, and her absence alarmed him. Her little arts and <pb n="60"/>witcheries had grown on him even in this short period of their acquaintance. </p>
                <p>Toward the end of the week she slipped into the house quietly, and then went about
                   her household duties as though nothing unusual had occurred. She did not offer to
                   tell him where she had been, and he felt strangely unwilling to force her
@@ -1021,8 +1019,7 @@
                <p><q>How you like me danze?—liddle bit summer danze?</q></p>
                <p><q>Come over here. What’s a summer dance, anyhow?</q></p>
                <p>She ran lightly indoors, and was back so soon that she seemed scarcely to have
-                  left him. She had slipped on a red-and-yellow flimsy <foreign xml:lang="ja"
-                     >kimono</foreign>, and had decked her hair and bosom with flaming poppies.</p>
+                  left him. She had slipped on a red-and-yellow flimsy <foreign xml:lang="ja">kimono</foreign>, and had decked her hair and bosom with flaming poppies.</p>
                <p><q>Tha’s summer sunshine</q>, she said, spreading her garment out on each side
                   with a joyous little twirl. <q>I am the Sun-goddess, and you?—you jus’ the col’,
                      dark earth. I will descend and warm you with my sunshine</q>. For a moment she
@@ -1110,8 +1107,7 @@
                <p><q>Where do they live?</q></p>
                <p><q>Alas! in so poor part of Tokyo</q>.</p>
                <p><q>And your father and mother?</q></p>
-               <p><q>Alas! Also thad fadder an’ mudder so ole lige this</q>. She illustrated, <pb
-                     n="77"/>bowing herself double and walking feebly across the floor, coughing
+               <p><q>Alas! Also thad fadder an’ mudder so ole lige this</q>. She illustrated, <pb n="77"/>bowing herself double and walking feebly across the floor, coughing
                   weakly.</p>
                <p><q>Well?</q> he prompted sharply.</p>
                <p><q>I god take all thad money thad ole fadder an mudder an’ those seventeen liddle
@@ -1184,9 +1180,7 @@
                   life. She was not a mere passing fancy, and he knew it was folly to endeavor so to
                   convince himself, as in his resentment at her treatment he was trying to do.</p>
                <p>The house was desolate without her. <pb n="82"/>Everywhere there were evidences of
-                  his little girl. Here a pair of her tiny sandals, some piece of tawdry <foreign
-                     xml:lang="ja">kanzashi</foreign> for her hair, her <foreign xml:lang="ja"
-                     >koto</foreign>, <foreign xml:lang="ja">samisen</foreign> and little drum; in
+                  his little girl. Here a pair of her tiny sandals, some piece of tawdry <foreign xml:lang="ja">kanzashi</foreign> for her hair, her <foreign xml:lang="ja">koto</foreign>, <foreign xml:lang="ja">samisen</foreign> and little drum; in
                   the <foreign xml:lang="ja">zashishi</foreign>, in her own little room, and all
                   over the house lingered the faint odor of her favorite perfume, so subtle that it
                   made the young man weak.</p>
@@ -1427,8 +1421,7 @@
                
                <p>And she did, hardly two days later. He was very gentle to her this time. There
                   were no more questions asked, and she vouchsafed no explanation.</p>
-               <p>But she came back to him strangely docile and submissive. All the old <pb n="99"
-                  />mockery and folly had vanished. She was angelic in her sweet tenderness and
+               <p>But she came back to him strangely docile and submissive. All the old <pb n="99"/>mockery and folly had vanished. She was angelic in her sweet tenderness and
                   solicitude. But once he found her in tears. She protested they had come there
                   because she had laughed so hard. Another time, when he offered her money, she
                   refused passionately to accept it. It was the first time since she had lived with
@@ -1576,8 +1569,7 @@
                      they goin’ to thing of me?</q></p>
                <p><q>That you are absolutely adorable. How could they help thinking so, unless they
                      are stone blind. Besides, this isn’t a Japanese affair at all. It’s at a
-                     European hotel, and there’ll be all sorts and conditions of people there.<pb
-                        n="110"/> I was lucky to get the invitations. They aren’t for every one, you
+                     European hotel, and there’ll be all sorts and conditions of people there.<pb n="110"/> I was lucky to get the invitations. They aren’t for every one, you
                      know. This is a big thing</q>.</p>
                  <p><q><emph>You</emph> so big</q>, she said, proudly.</p>
                <p><q>Well, no. It had really nothing to do with my size. You see, I have a half-Jap
@@ -1639,8 +1631,7 @@
                   of it—would be gone. He was really keenly disappointed, but she coaxed and
                   wheedled and petted around him, till, before he knew that he was aggrieved at her
                   backsliding, he was well on his way. </p>
-                 <p>The streets were thronged with a motley crowd of people. <foreign xml:lang="ja"
-                     >Jinrikishas</foreign> were scurrying hither and thither, and little bits of
+                 <p>The streets were thronged with a motley crowd of people. <foreign xml:lang="ja">Jinrikishas</foreign> were scurrying hither and thither, and little bits of
                   humanity, in the shape of small men, small women, small children, and small dogs
                   and cats, were colliding and jostling against the many ramshackle vehicles in the
                   road. Gay flags and bunting were displayed every-<pb n="115"/>where, and the town presented a gala appearance.</p>
@@ -1673,8 +1664,7 @@
                   suddenly struck with her extreme youth. She seemed little more than a tired child,
                   who had grown weary and had fallen asleep among her toys, for beside her on a tiny
                   foot-high table was the little supper she had prepared for him, and which was now
-                  quite cold. On the other side of her were her tiny drum and <foreign xml:lang="ja"
-                     >samisen</foreign>, with which she had been attempting doubtless to pass the
+                  quite cold. On the other side of her were her tiny drum and <foreign xml:lang="ja">samisen</foreign>, with which she had been attempting doubtless to pass the
                   evening by pulling from the strings some of that weird music he knew so well
                   now.</p>
                  <pb n="118"/>
@@ -1725,8 +1715,7 @@
                   over the deserted woods, where the anthem of praise had rung out to the
                   worshipping air all through the golden days and silver nights of summer. </p>
                <p>The still beauty of the autumn evening was piercingly melancholy, and, even with a
-                  loving sunset still lingering in the skies, a silken, gentle rain was <pb n="122"
-                  />falling, as though the gods were weeping over the death of the autumn, were
+                  loving sunset still lingering in the skies, a silken, gentle rain was <pb n="122"/>falling, as though the gods were weeping over the death of the autumn, were
                   weeping hopeless tears—the most tragic of all.</p>
                <p>The little house that stood alone on the hill faced to the west, its wet roofs and
                   shingles sparkling and glistening in the rays of the dying sunset that enveloped
@@ -1897,8 +1886,7 @@
                   note of sheer ecstasy and bliss, that quivered and quavered a moment, and then
                   floated away into the maddest peals of melody, ending in a sob that was
                   excruciating in its intense humanness. The nightingale had returned </p>
-               <p>He sprang to his feet, and, trembling by the veranda rail, stared outward <pb
-                     n="135"/>into the darkness. And then? Yuki came out from the shadows of their
+               <p>He sprang to his feet, and, trembling by the veranda rail, stared outward <pb n="135"/>into the darkness. And then? Yuki came out from the shadows of their
                   garden, and under the light of the moon, beneath their small balcony, she looked
                   up into his eyes, and mur- mured in a voice thrilled by an inward sob, so timid
                   and meek, so beseeching and prayerful </p>
@@ -1990,8 +1978,7 @@
                   remain with him for a few days. However, he got Taro’s consent to accompany him to
                   his home for dinner that evening, in order to meet the <q>Sun-goddess</q>.</p>
                </div><div>
-               <p>Taro was ushered with great ceremony into the quaint <foreign xml:lang="ja"
-                     >zashishi</foreign>, which was supposed to be entirely Japanese, but was in
+               <p>Taro was ushered with great ceremony into the quaint <foreign xml:lang="ja">zashishi</foreign>, which was supposed to be entirely Japanese, but was in
                   reality wholly American, despite the screens and mats and vases. Jack ran
                   up-stairs to prepare his wife to meet his friend.</p>
                <p>The girl was hastily dressing in her prettiest clothes. The maid had brushed her
@@ -2039,16 +2026,13 @@
                   But she did not retreat; nay, she leaned towards him. And her laughter, loud and
                   discordant, <pb n="145"/>sank low, and then faded in a tremulous sob.</p>
        
-               <p>She put out her little speaking, beseeching hands, and <q><foreign xml:lang="ja"
-                        >Sayonara</foreign>!</q> she whispered softly. Then there was a stillness in
-                  the room, though echoes seemed to repeat <q><foreign xml:lang="ja"
-                        >Sayonara</foreign></q>, <q><foreign xml:lang="ja">Sayonara</foreign></q>,
+               <p>She put out her little speaking, beseeching hands, and <q><foreign xml:lang="ja">Sayonara</foreign>!</q> she whispered softly. Then there was a stillness in
+                  the room, though echoes seemed to repeat <q><foreign xml:lang="ja">Sayonara</foreign></q>, <q><foreign xml:lang="ja">Sayonara</foreign></q>,
                   and again <q><foreign xml:lang="ja">Sayonara</foreign></q>, and that means not
                   merely <q>Farewell</q>, but the heart’s resignation: <q>If it must be</q>. </p>
                <p>Jack and Taro were alone together, neither breaking by a word the tragic sadness
                   of that terrible silence. It was the coming into the room of the maid that
-                  recalled them to life. Twilight was settling. She brought the lighted <foreign
-                     xml:lang="ja">andon</foreign> and set it in the darkening room.</p>
+                  recalled them to life. Twilight was settling. She brought the lighted <foreign xml:lang="ja">andon</foreign> and set it in the darkening room.</p>
                <p>Jack got up slowly. The stupor and horror of it all were not gone from him, but he
                   crossed to the other man and looked into the dull, ashen face.</p>
                <p><q>My God, Burton, forgive me</q>, he said, brokenly; <q>I am a gentleman. I will
@@ -2086,8 +2070,7 @@
                   that attested the heartache within at the other man, silent and grim. Taro seemed
                   the calmer, but well the younger man knew that beneath that subdued exterior
                   slumbered a fire that needed but a breath to be turned into avenging fury.</p>
-               <p>At last they reached their destination. The little town once again! <pb n="149"
-                  />But this night Jack was not alone. There was no star or moon overhead to lighten
+               <p>At last they reached their destination. The little town once again! <pb n="149"/>But this night Jack was not alone. There was no star or moon overhead to lighten
                   their pathway; a dull, drizzly, sleety rain was falling. In silence they left the
                   car; in silence plodded through the mud of the road and the damp grass of the
                   field beyond. The little garden gate creaked on its hinges as they went through.
@@ -2098,8 +2081,7 @@
                   toy-like island in the center of the pond.</p>
                 <p>For the first time Taro burton paused, and looked with dreadful eyes at its dull
                   surface, which even the darkness of the night and the miseable rain could not
-                  obliterate entirely. What were the memories that crowded back on him, <pb n="150"
-                  />suffocating him? Here it was that he and Yuki had grown up together. The little
+                  obliterate entirely. What were the memories that crowded back on him, <pb n="150"/>suffocating him? Here it was that he and Yuki had grown up together. The little
                   boat was the same, the island as small and neat, and the house seemed as ever;
                   nothing had changed. Yes, there was Yuki! A deep groan slipped from his lips.</p>
                 <p>There was a difference of seven years in their ages, but a stronger bond of
@@ -2123,8 +2105,7 @@
                   There had been a frost and even a snowfall, which is rare in that part of the
                   country. Moreover, she resembled a snowflake, so soft and white and pure. </p>
                 <p>How was it possible for him, after all these years, to come, as he now had come,
-                  once more to this place of which she had always been a part, and with <pb n="152"
-                  />which she had always been lovingly associated in his mind, and not be filled
+                  once more to this place of which she had always been a part, and with <pb n="152"/>which she had always been lovingly associated in his mind, and not be filled
                   with emotions that rent his heart. She had been his inspiration and all the world
                   to him. </p>
                <p>He remembered how they would drift around in their tiny boat, and she, little
@@ -2136,8 +2117,7 @@
                   her fancy, drifted on and on with her, around and around the little pond, until
                   the sun began to sink in the west and the little mother would call them
                   in-doors.</p>
-                <p>Now the monotonous drip, drip, drip of the rain-drops as they plashed from <pb
-                     n="153"/>the weeping willow-trees that surrounded the tiny lake, fell upon its
+                <p>Now the monotonous drip, drip, drip of the rain-drops as they plashed from <pb n="153"/>the weeping willow-trees that surrounded the tiny lake, fell upon its
                   dull surface with mournful sound. Taro groaned again.</p>
                 <p>When he had knocked loudly a man came shuffling from the rear of the house, and,
                   in reply to his inquiry for Madame Omatsu, informed him gruffly that she had
@@ -2152,8 +2132,7 @@
                   step, for his <pb n="154"/>mistress’s entire household had been taught to treat foreigners with
                   the greatest deference and respect.</p>
                 <p><q>Go to your mistress</q>, said Taro, briefly, <q>and tell her that her son desires to see her at once</q>.</p>
-                <p>There was immediately a fluttering at the other side of the <foreign
-                     xml:lang="ja">shoji</foreign>. Taro saw an eye withdraw from a hole. There was
+                <p>There was immediately a fluttering at the other side of the <foreign xml:lang="ja">shoji</foreign>. Taro saw an eye withdraw from a hole. There was
                   a few moments of silence, and then the <foreign xml:lang="ja">shoji</foreign>
                   parted and a woman entered the room. Her mother-love must have prompted her to
                   rush into the arms of her son, for she had not seen him in five years, but,
@@ -2241,8 +2220,7 @@
                 <p>This for a season had brought them a fair income, and for a time they were able
                   to send him even more than the usual allowance. Then came his request for his
                   passage money. Alas! they were but weak and silly women. They had forgotten to
-                  save against this event in their desire to keep him in comfort. <foreign
-                     xml:lang="ja">Nakodas</foreign> had approached Yuki, and tempting offers were
+                  save against this event in their desire to keep him in comfort. <foreign xml:lang="ja">Nakodas</foreign> had approached Yuki, and tempting offers were
                   made to her. She had resisted all of them, for she was then below the age when
                   girls usually marry, but sixteen years of age. Only when it became imperative to
                   raise the passage money would she even listen to the persuasion of her mother and
@@ -2319,8 +2297,7 @@
                   sick-bed. </p>
                <p>Jack Bigelow went back to Tokyo and began his vigilant search for the missing
                   girl. The services of the en-<pb n="167"/>tire metropolitan police board were
-                  called forth, and money was not spared. The <foreign xml:lang="ja"
-                     >nakoda</foreign> who had brought about their marriage was put through a
+                  called forth, and money was not spared. The <foreign xml:lang="ja">nakoda</foreign> who had brought about their marriage was put through a
                   vigorous catechism, but he could tell them nothing. The proprietor of the
                   tea-garden swore she had not returned to him, and when he bewailed the misfortune
                   which was filling his house and gardens with officers, Jack consoled him by paying
@@ -2499,8 +2476,7 @@
                <p>With somewhat of the heroism of her feudal ancestors Omatsu had prepared herself
                   to face and undertake that perilous journey into the unknown with her son. In the
                   pitiful tangled reasoning that had wrestled in the bosom of this Japanese woman,
-                  always there had disturbed the beauty of such a sacrifice the doubt as to <pb
-                     n="182"/>whether the gods would indeed receive her with this son of hers who
+                  always there had disturbed the beauty of such a sacrifice the doubt as to <pb n="182"/>whether the gods would indeed receive her with this son of hers who
                   had dedicated his soul to an alien and strange God. But she had prepared herself
                   to risk the consequences. And now she stood there swaying and tottering in all her
                   ghastly attire, while opposite to her stood the tall, fair-haired foreigner with
@@ -2548,8 +2524,7 @@
                   leaving her he saw to it that she and her parents should have every comfort
                   possible </p>
                </div><div>
-               <p>The old palace, grim, gray, and haggard in the winter landscape, was <pb n="186"
-                  />now completely deserted. The townspeople looked askance at it, as at a haunted
+               <p>The old palace, grim, gray, and haggard in the winter landscape, was <pb n="186"/>now completely deserted. The townspeople looked askance at it, as at a haunted
                   house, knowing somewhat of the tragedy that hid within its closed portals.</p>
                <p>Jack was the last to leave the place. Omatsu had begged him to see to the closing
                   up, and the paying-off of all the oldservants. When he had finally come out he was
@@ -2577,13 +2552,11 @@
                <head type="subtitle">A Pilgrim of Love</head>
               
                <p>Jack Bigelow went up to Yokohama, where the Tokyo detectives thought they had a
-                  clew to the girl’s whereabouts. A new and very beautiful <foreign xml:lang="ja"
-                     >geisha</foreign> had appeared among the dancing-girls, and as no one seemed to
+                  clew to the girl’s whereabouts. A new and very beautiful <foreign xml:lang="ja">geisha</foreign> had appeared among the dancing-girls, and as no one seemed to
                   know anything about her history it was thought that she might prove to be the
                   missing Yuki. But she had disappeared only the day before his arrival there.</p>
                <p>Jack spent a month in the big metropolis, shadowing the tea-gardens, and watching,
-                  with the assistance of men he had hired, every <foreign xml:lang="ja"
-                     >geisha</foreign> house and garden; but though many girls apparently answering
+                  with the assistance of men he had hired, every <foreign xml:lang="ja">geisha</foreign> house and garden; but though many girls apparently answering
                   to the description <pb n="189"/>of Yuki were brought before him, none of them
                   proved to be the missing girl, and the disgust the young man experienced at their
                   total unlikeness to his wife was only equalled by his bitter disappointment.</p>
@@ -2619,13 +2592,11 @@
                <p>He did not pause to exchange compliments with her. </p>
                <p>Was there not in her house a girl, very beautiful and very young, who sang and
                   danced? </p>
-               <p>Madam Pine-leaf (that was her name) allowed her face to betray surprised <pb
-                     n="192"/>amusement at the question. Why, her place was famous for the beauty of
+               <p>Madam Pine-leaf (that was her name) allowed her face to betray surprised <pb n="192"/>amusement at the question. Why, her place was famous for the beauty of
                   her maidens, and every one of them danced and sang more bewitchingly than the
                   fairies themselves. But she only said, very humbly:</p>
                <p><q>My maidens are all unworthily fair, and all of them indulge in the honorable
-                     dance and song. It is part of the accomplishment of every <foreign
-                        xml:lang="ja">geisha</foreign></q>.</p>
+                     dance and song. It is part of the accomplishment of every <foreign xml:lang="ja">geisha</foreign></q>.</p>
                <p><q>Yes, but you could not mistake this girl. She is distinct from all others.
                   She—her eyes are blue. She is only half Japanese!</q></p>
                <p><q>Ah-h!—a half- caste</q>. Madam Pine-leaf’s lips formed in a <emph>moue</emph>.
@@ -2723,8 +2694,7 @@
                   came back to his mind now, haunting him like a beautiful dream, until the memory
                   of her, and the influence of the beauty of the place, seemed to cast a mystic
                   spell about him. </p>
-               <p>For, oh! the scenes that enwrapped the bay! The slopes and hillocks and <pb
-                     n="200"/>the great mountains beyond were garbed in vestal white, pure and
+               <p>For, oh! the scenes that enwrapped the bay! The slopes and hillocks and <pb n="200"/>the great mountains beyond were garbed in vestal white, pure and
                   glistening. The snowflakes had tipped the branches of the pine, and there they
                   hung, like glistening pearl-drops, sometimes dropping with little bounds on the
                   rocks, there to freeze or melt into the bay.</p>
@@ -2773,8 +2743,7 @@
                   to assist. She took the road for Tokyo, and, head down and sobbing like a little
                   child who has lost its way in the dark, stumbled blindly along until she had come
                   within its limits. </p>
-               <p>She had no idea whither she was going now, what she would do; her mind <pb n="204"
-                  />could only contain her grief. But as she had wandered aimlessly about, weeping
+               <p>She had no idea whither she was going now, what she would do; her mind <pb n="204"/>could only contain her grief. But as she had wandered aimlessly about, weeping
                   silently, an address slipped itself into her consciousness—the address written on
                   the card handed her by the American theatrical man months before, when he had
                   followed her from the tea-house. She had studied the card curiously at the time,
@@ -2942,8 +2911,7 @@
                   witnessed coaxing her to go with him. </p>
                <p>The afternoon previous to the day set for sailing, his melancholy and morbidness
                   grew in intensity. With no fixed purpose in view he started out from his hotel,
-                  tramped half-way across Tokyo, then hailed a <foreign xml:lang="ja"
-                     >jinrikisha</foreign> and gave the runner orders to take him to the little
+                  tramped half-way across Tokyo, then hailed a <foreign xml:lang="ja">jinrikisha</foreign> and gave the runner orders to take him to the little
                   house that had formerly been his home, and which he had struggled against visiting
                   ever since his return to Tokyo. </p>
                <p>As in a dream the interminable stretch of rice-fields, blue mountains, and valleys
@@ -3025,8 +2993,7 @@
                <p>Meanwhile the lovers had wandered out into the open air. He was holding both her
                   hands in his, and his eyes were straying hungrily over her face; her eyes
                   bewitched him; her lips thrilled him. </p>
-               <p>The thousand petals of cherry blossoms were falling about them, and the <pb
-                     n="225"/> birds had all flown to their garden and were twittering and bursting
+               <p>The thousand petals of cherry blossoms were falling about them, and the <pb n="225"/> birds had all flown to their garden and were twittering and bursting
                   their little throats with melody. A fugitive wind came up from the bay and tossed
                   the little scattering curls about her ears and temples. A strand of her hair swept
                   across his hand. He stooped and kissed it reverently, and she laughed and thrilled

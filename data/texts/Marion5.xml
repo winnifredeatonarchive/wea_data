@@ -23,13 +23,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref
-                  target="https://catalog.hathitrust.org/Record/000542803"
-                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:77"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl77"><author><name ref="pers:WE1">Herself and the author of <title level="m">Me</title></name></author>. <title level="m">Marion: The Story
+                     of an Artist’s Model [Part 4]</title>. Illustrated by <author role="illustrator"><name ref="pers:HH1">Henry Hutt</name></author>. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>,
+                     <date when="1916-07">July 1916</date>, vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">1</biblScope>, pp. <biblScope unit="page">9-11, 57-59</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -51,7 +68,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
-         
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added fw type.</change>
          <change who="pers:LW1" when="2022-05-31" status="published">Letters edited to floatingText.</change>
          <change who="pers:LW1" when="2022-05-17" status="published">Block quotes edited.</change>
@@ -351,8 +368,7 @@
                         furriner. She sure talks and looks like no folks I knows</q>.</p>
                   <p>There was a slight laugh, and then a faded little woman in a faded kimono came
                      hurrying down the hall. I call her <q>faded looking</q>, because that describes
-                     her very well. Her face, once pretty, no doubt, made me think of a <pb n="57"
-                     />half-washed-out painting. Her hair was almost colorless, though I suppose it
+                     her very well. Her face, once pretty, no doubt, made me think of a <pb n="57"/>half-washed-out painting. Her hair was almost colorless, though I suppose it
                      had once been dull brown. Now wisps of grayish hair stood out about her face as
                      if ash had blown against it. She had dim, near-sighted eyes, and there was
                      something pathetically worn and tired-looking about her.</p>

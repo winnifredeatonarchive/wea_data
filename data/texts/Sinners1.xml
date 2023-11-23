@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,32 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile at Royal Ontario Museum</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:124"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl124"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Sinners [Part 1]</title>. Illustrated by <author role="illustrator"><name ref="pers:LP1">L. A. C. Panton</name></author>,
+                     <publisher ref="org:NewMag"><title level="j">New Magazine</title></publisher>,
+                     <date when="1920">1920</date>, pp. <biblScope unit="page">13, 15, 118,
+                     120</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile at Royal Ontario Museum</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,11 +54,17 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" status="published" when="2020-08-05">added illustrator</change><change who="pers:MC1" status="published" when="2020-08-04">proofread</change><change who="pers:MC1" status="published" when="2020-08-02">added illustrator</change><change who="pers:MC1" status="published" when="2020-07-31">Added instalment number</change><change who="pers:MC1" status="published" when="2020-07-01">Added note about source</change>
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="published" when="2020-08-05">added illustrator</change>
+         <change who="pers:MC1" status="published" when="2020-08-04">proofread</change>
+         <change who="pers:MC1" status="published" when="2020-08-02">added illustrator</change>
+         <change who="pers:MC1" status="published" when="2020-07-31">Added instalment number</change>
+         <change who="pers:MC1" status="published" when="2020-07-01">Added note about source</change>
          <change who="pers:SC1" status="inProgress" when="2020-06-07">Added transcription</change>
-         <change who="pers:MC1" status="empty"  when="2020-05-29">Directed to bibl 124 instead of 123</change><change who="pers:MC1" status="empty"  when="2019-08-29">Directed to facs</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl123 using XSLT.</change>
+         <change who="pers:MC1" status="empty" when="2020-05-29">Directed to bibl 124 instead of 123</change>
+         <change who="pers:MC1" status="empty" when="2019-08-29">Directed to facs</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl123 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Sinners">

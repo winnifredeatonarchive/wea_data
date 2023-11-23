@@ -22,11 +22,29 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Newberry Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:71"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl71"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Li Ching’s Baby</title>. <publisher ref="org:CartersMonthly"><title level="j">Carter’s Monthly</title></publisher>, vol. <biblScope unit="volume">8</biblScope>, iss. <biblScope unit="issue">4</biblScope>, <date when="1898-04">Apr. 1898</date>, pp. <biblScope unit="page">401-403</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Newberry Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -40,6 +58,7 @@
          </abstract>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-06-30" status="published">Added note about source</change>
          <change who="pers:MC1" when="2019-08-12" status="published">further proofreading</change>

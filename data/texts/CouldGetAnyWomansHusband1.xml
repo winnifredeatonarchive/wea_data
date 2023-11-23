@@ -53,14 +53,30 @@ Publicly accessible
  uva-lib:475908 
 -->
          </publicationStmt>
-         <notesStmt>
-            <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
-            <note>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="weda:EatAnyw"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:58"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl58"><author><name ref="pers:WE1">Reeve, Winifred</name> (<name ref="pers:WE1">Watanna, Onoto</name>)</author>. <title level="a">I Could Get
+                     Any Woman’s Husband!</title>
+                  <publisher ref="org:MotionPictureClassic"><title level="j">Motion Picture Classic
+                        Magazine</title></publisher>, <date when="1929-03">Mar. 1929</date>, pp.
+                     <biblScope unit="page">21, 80</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Original at University of Calgary in Winnifred Eaton Reeve Fonds</p>
+                        <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                     <bibl type="edition" target="weda:EatAnyw"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -71,6 +87,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">removed caps.</change>

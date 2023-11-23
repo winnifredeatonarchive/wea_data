@@ -10,10 +10,34 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-         <note>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</note></notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:224"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</repository>
+                  <idno>17.6</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl224"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Philomena</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>. <distributor ref="org:WERFonds">Winnifred Eaton Reeve
+                     Fonds</distributor>, <idno>17.6</idno>. </bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved University of Calgary, Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -23,9 +47,10 @@
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
          </textClass>
       </profileDesc>
-         
       <revisionDesc status="empty">
-         <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change><change who="pers:MC1" status="empty" when="2020-06-30">Added exhibit and genre.</change>
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
+         <change who="pers:MC1" status="empty" when="2020-06-30">Added exhibit and genre.</change>
          <change who="pers:JT1" status="empty" when="2020-05-21">Created from bibl.</change>
       </revisionDesc>
    </teiHeader>

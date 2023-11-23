@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan5">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan5">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,11 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from The British Library.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:133"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl133"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                  Illustrated by<author role="illustrator"><name ref="pers:AF2">Arthur
+                        Ferrier</name></author>. <publisher ref="org:Sovereign">Sovereign
+                     Magazine</publisher>. <title level="a">Sunny-San [Part 3]</title>. <title level="j">Sovereign Magazine</title>, vol. <biblScope unit="volume">4</biblScope>, no. <biblScope unit="issue">29</biblScope>, <date when="1922-04">Apr. 1922</date>, pp. <biblScope unit="page">510–520</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from The British Library.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +57,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="readyForProof">
+         <change who="pers:JT1" when="2023-11-23" status="readyForProof">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
          <change who="pers:SB2" when="2020-09-09" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes statement.</change>

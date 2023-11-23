@@ -2,48 +2,68 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="MrsReeveReplies1">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Mrs. Reeve Replies</title>
-                <respStmt>
-                    <resp>Encoder</resp>
-                    <name ref="pers:JT1">Joey Takeda</name>
-                </respStmt>
-                <respStmt>
-                    <resp>Proofreader</resp>
-                    <name ref="pers:HR1">Heidi Rennert</name>
-                </respStmt>
-            </titleStmt>
-            <publicationStmt>
-                <p>Publication Information</p>
-            </publicationStmt>
-            <notesStmt>
-                <note>Facsimile provided by the Center for Research Libraries.</note>
-            </notesStmt>
-            <sourceDesc>
-                <bibl copyOf="bibl:303"/>
-            </sourceDesc>
-        </fileDesc>
-        <profileDesc>
-            <textClass>
-                <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
-                <catRef scheme="wdt:genre" target="wdt:genreNF"/>
-                <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
-            </textClass>
-        </profileDesc>
-        <revisionDesc status="published">
-            <change who="pers:HR1" when="2022-05-05" status="published">Proofed, added as proofreader, and set to publish.</change>
-            <change who="pers:JT1" when="2022-03-12" status="readyForProof">Added facsimile and
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Mrs. Reeve Replies</title>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:JT1">Joey Takeda</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:HR1">Heidi Rennert</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl303"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>.
+                     <title level="a">Mrs. Reeve Replies</title>. <publisher ref="org:FarmersAdvocateHomeJournal"><title level="j">Farmer’s Advocate and
+                        Home Journal</title></publisher>, <date when="1918-11-27">27 Nov.
+                     1918</date>, vol. <biblScope unit="volume">53</biblScope>, p. <biblScope unit="page">1869–1870</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile provided by the Center for Research Libraries.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef target="wdt:docPrimarySourcePublished" scheme="wdt:docType"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:HR1" when="2022-05-05" status="published">Proofed, added as proofreader, and set to publish.</change>
+         <change who="pers:JT1" when="2022-03-12" status="readyForProof">Added facsimile and
                 note.</change>
-            <change who="pers:JT1" when="2021-06-03" status="readyForProof">Finalized transcription
+         <change who="pers:JT1" when="2021-06-03" status="readyForProof">Finalized transcription
                 and changed status.</change>
-            <change who="pers:JT1" when="2021-03-06" status="empty">Created file and added
+         <change who="pers:JT1" when="2021-03-06" status="empty">Created file and added
                 transcription.</change>
-         
-        </revisionDesc>
-    </teiHeader>
-    <text facs="facs:MrsReeveReplies1">
+      </revisionDesc>
+   </teiHeader>
+   <text facs="facs:MrsReeveReplies1">
         <pb n="1869"/>
         <body>
             <head><name ref="pers:WE1">Mrs. Reeve</name> Replies</head>
@@ -135,15 +155,12 @@
                     editor, owe it to me, if only for these several pages of script, while are sent
                     to you gratis.</p>
                 <closer>
-                    <signed
-                        style="font-variant:none; display:block; margin-right: 4rem; margin-bottom:1rem;"
-                        >Yours truly,</signed>
+                    <signed style="font-variant:none; display:block; margin-right: 4rem; margin-bottom:1rem;">Yours truly,</signed>
                     <name ref="pers:WE1" style="text-transform:uppercase;">Winnifred Reeve</name>
                 </closer>
             </div>
             <div type="paratext">
-                <p>(We are really glad to know that the views attributed to <name ref="pers:WE1"
-                        >Mrs. Reeve</name> do not represent truly her attitude towards the life and
+                <p>(We are really glad to know that the views attributed to <name ref="pers:WE1">Mrs. Reeve</name> do not represent truly her attitude towards the life and
                     people of the West, and we hope that perhaps some day she <emph>will</emph> give
                     us a novel picturing some phase of prairie life,—D.D.)</p>
             </div>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NewYearsDay1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="NewYearsDay1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,10 +22,29 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from original from Indiana University via Google Books</note>
-         </notesStmt><sourceDesc>
-            <bibl copyOf="bibl:100"/>
+         <sourceDesc>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl100"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">New Year’s Day in Japan</title>. <publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular Monthly</title></publisher>, <date when="1900-01">Jan. 1900</date>, pp. <biblScope unit="page">283-86</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from original from Indiana University via Google Books</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -36,7 +55,10 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-07-24" status="published">Fixed typo.</change><change who="pers:MC1" when="2020-06-30" status="published">Note about source.</change><change who="pers:MC1" when="2020-05-21" status="published">Proofread.</change>
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-07-24" status="published">Fixed typo.</change>
+         <change who="pers:MC1" when="2020-06-30" status="published">Note about source.</change>
+         <change who="pers:MC1" when="2020-05-21" status="published">Proofread.</change>
          <change who="pers:SB2" when="2020-05-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
          <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl100 using XSLT.</change>

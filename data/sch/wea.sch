@@ -1703,7 +1703,7 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-         <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"> ERROR: Document
+         <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.[\w_]+$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
       </sch:rule>
@@ -1744,6 +1744,32 @@ On <name/>, either the @marks attribute should be used, or a paragraph of descri
       <sch:rule context="tei:link">
          <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
                               ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
+      </sch:rule>
+   </sch:pattern>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:tei="http://www.tei-c.org/ns/1.0"
+                xmlns:teix="http://www.tei-c.org/ns/Examples"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <sch:rule context="tei:msDesc/tei:msContents/tei:msItem">
+         <sch:assert test="count(tei:bibl) = 1">
+                              ERROR: All primary source documents must contain a bibliographic citation (i.e. a bibl element)
+                           </sch:assert>
+      </sch:rule>
+      <sch:rule context="tei:msDesc/tei:msContents/tei:msItem/tei:bibl">
+         <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: All primary source documents must have a meaningful bibliographic citation.
+                           </sch:assert>
+      </sch:rule>
+      <sch:rule context="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title">
+         <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: Document titles should not be empty
                            </sch:assert>
       </sch:rule>
    </sch:pattern>

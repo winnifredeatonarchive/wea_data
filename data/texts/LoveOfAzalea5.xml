@@ -14,11 +14,29 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from HathiTrust.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:289"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl289"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">The Love of Azalea</title>. Toronto, <publisher ref="org:Musson">Musson</publisher>, <date when="1904">1904</date>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from HathiTrust.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -29,6 +47,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:SL1" when="2022-07-17" status="empty">Added illustrator to metadata and source note.</change>
          <change who="pers:JT1" when="2020-08-24" status="empty">Created shell from bibl file.</change>
       </revisionDesc>

@@ -22,14 +22,37 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
+                  Fonds</repository>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl255"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Hollywood Melody</title>. ms., <date when="1931">1931</date>,
+                     <distributor ref="org:WERFonds">Winnifred Eaton Reeve
+                  Fonds</distributor>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>
                <q>Hollywood Melody or Star Bright</q>, c. 1931, (CU2337783) by Eaton, Winnifred.
                Courtesy of Libraries and Cultural Resources Digital Collections, University of
-               Calgary.</note>
-         </notesStmt>
-         <sourceDesc>
-            <bibl copyOf="bibl:255"/>
+               Calgary.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -40,6 +63,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:JT1" when="2023-11-23" status="inProgress">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-09-01" status="inProgress">Set back to inProgress. Already proofed and coded, but some code has to be edited to reflect script formatting.</change>
          <change who="pers:LW1" when="2022-08-31" status="published">Proofed and encoded. Set to published. This is a test for formatting.</change>
          <change who="pers:LW1" when="2022-08-31" status="inProgress">Downloaded document from
@@ -73,8 +97,7 @@
             <opener><name ref="pers:WE1">Winnefred Reeve</name></opener>
 
             <note place="inline" style="display:flex; align-items:baseline; justify-content:space-between;">
-            <label style="text-align:right; text-decoration:underline;"
-               >SYNOPSIS:</label></note>
+            <label style="text-align:right; text-decoration:underline;">SYNOPSIS:</label></note>
             <p style="width:40%">Though Mavis Lee is a gay, clever, gorgeous-looking girl, she is
                one of hundreds in Hollywood who has parked the old companionate toothbrush in a
                folding apartment and is waiting for the big break. She can act. She would be a

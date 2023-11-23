@@ -22,11 +22,33 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Google Newspaper Archives</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:300"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl300">
+                  <author><name ref="pers:WE1">Watanna, Onoto</name> (<name ref="pers:WE1">Mrs.
+                        Winnifred Reeve</name>)</author>. <title level="a">My First Appearance in
+                     New York City</title>. <publisher ref="org:Calgary"><title level="j">Calgary
+                        Daily Herald</title></publisher>, <date when="1921-11-16">16 Nov.
+                     1921</date>, p. <biblScope unit="page">17</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Google Newspaper Archives</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +59,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-10" status="published">Proofed and set to published.</change>
          <change who="pers:LW1" when="2022-05-10" status="inProgress">Downloaded document from
             Google Drive and converted to TEI.</change>

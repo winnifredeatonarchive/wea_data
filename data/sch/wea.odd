@@ -51,70 +51,15 @@
                <head>Requirements</head>
                <p>To edit material for the site, you will need to use a computer with the following software:
                   <list>
-                     <item>Git OR SVN (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
-                     <item>Most computers usually come with SVN. See <ref target="http://mapoflondon.uvic.ca/subversion.htm">The Map of Early Modern London</ref>'s documentation on subversion for more information on how to download.</item>
+                     <item>Git (to get data from and commit data to  the repository). Most computers come with git automatically installed. To check this, open the Command Line (Windows) / Terminal (Mac/Linux) and type in <code rend="block">git --version</code>. If you get something like this in response: <code rend="block">git version 2.17.2 (Apple Git-113)</code>, then you have Git installed. Otherwise, follow the instructions <ref target="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here</ref>.</item>
                      <item>oXygen XML Editor. (For current RAs, talk to Mary Chapman about licensing.)</item>
                      <item>You must also set up a free Github account <ref target="https://github.com/">here</ref>. It will be connected to your email address; once the Github account is set up, let the repository owner (currently Joey Takeda) know the email address used so that they can grant you write access to the repository.</item>
                   </list>
                </p>
             </div>
-            <div xml:id="svn">
-               <head>Using Subversion (for most encoders)</head>
-               <p>Most encoders will prefer to use Subversion as the versioning software to interact with the repository. One of the major benefits of using subversion (besides its fairly simple syntax)
-               is the ability to checkout only part of the repository.</p>
-               <p>To checkout the WEA data:</p>
-               <list>
-                  <item>Open the terminal</item>
-                  <item>Create a directory for working in: <code rend="block">mkdir wea</code>
-                     <emph>Note: If you already have the github repository checked out, you will need to delete the Github verison first.</emph>
-                  </item>
-                  <item>Go into the directory: 
-                     <code rend="block">cd wea</code>
-                  </item>
-                  <item>Checkout the repo:</item>
-                  <item>For <emph>encoders</emph>:
-                     <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/data .</code>
-                  </item>
-                  <item>For <emph>developers</emph> (who need the entire codebase):
-                     <code rend="block">svn co https://github.com/winnifredeatonarchive/wea_data/trunk/ .</code>
-                  </item>
-                  <item>In both cases: <emph>note the trailing period</emph>!</item>
-               </list>
-               <div>
-                  <head>Updating the repository</head>
-                  <p>At the beginning of your work day (and as often as you remember), you should <soCalled>up</soCalled> the repository:
-                     <list>
-                        <item>Go into your wea directory: <code rend="block">cd wea</code>
-                        </item>
-                        <item>Then do an svn up: <code rend="block">svn up</code>
-                        </item>
-                     </list>
-                  </p>
-               </div>
-               <div>
-                  <head>Commiting to the repository</head>
-                  <p>To commit to the repository, do an <code>svn commit</code> with a message signified by -m and a message contained in quotation marks:
-                  <code>svn commit -m "Downloading and encoding SneerNot1.xml"</code>
-                  </p>
-               </div>
-               <div>
-                  <head>Guides</head>
-                  <p>
-                     <list>
-                        <item>
-                           <ref target="https://mapoflondon.uvic.ca/subversion.htm#subversion_commands">The MoEML Cheatsheet for Subversion</ref> by Martin Holmes. This table lists the most frequently used commands in subversion.</item>
-                     </list>
-                     <list>
-                        <item>
-                           <ref target="http://svnbook.red-bean.com/">SVN Book</ref> by Ben  Collins-Sussman, Brian W. Fitzpatrick, and C. Michael Pilato. This is an authorative manual for subversion that is very helpful, but extensive.</item>
-                     </list>
-                  </p>
-               </div>
-            </div>
             <div xml:id="github">
                <head>Using Github</head>
                <p>All of the data for the project is kept in a Git repository that is hosted through Github. Git is a version control system, which means that one could <q>roll back</q> the site to any particular version, and retrieve any file at any state of editing. Note that Github is a public repository, so all of the data and commit messages you make are visible to anyone. Our Github repository URL is <ref target="https://github.com/winnifredeatonarchive/wea_data">https://github.com/winnifredeatonarchive/wea_data</ref>.</p>
-               <p/>
                <div xml:id="github_get">
                   <head>Setting up the repository</head>
                   <p>To get the data, you must first checkout a copy of the repository as follows:</p>
@@ -172,7 +117,7 @@
                               <code rend="block">git status</code>
                               If there are no changes to the repository, then you'll like see something like this:
                               <code rend="block">
-                                 On branch master
+                                 On branch main
                                  nothing to commit, working tree clean
                               </code>
                               If there are changes, you should see something like this:
@@ -234,12 +179,12 @@
                               <code rend="block">fatal: The current branch master has no upstream branch.
                                  To push the current branch and set the remote as upstream, use
                                  
-                                 git push --set-upstream wea master
+                                 git push --set-upstream wea main
                                  
                               </code>
                               To resolve that, simply:
                               <code rend="block">
-                                 git push --set-upstream wea master
+                                 git push --set-upstream wea main
                               </code>
                               <figure>
                                  <figDesc>Push the repository.</figDesc>
@@ -329,6 +274,8 @@
                         <item>media.xml</item>
                         <item>organizations.xml</item>
                         <item>people.xml</item>
+                        <item>redirects.xml</item>
+                        <item>relationships.xml</item>
                         <item>taxonomies.xml</item>
                      </list>
                   </p>
@@ -375,7 +322,7 @@
                instructions or pointers to instructions for working with a WEA text. These instructions assume that you have already followed the <ref target="#gettingStarted">Getting Started</ref> instructions for setting up your Github repository locally.</p>
                <div>
                   <head>Step 1: Setting up your document</head>
-                  <p>Most documents already have a <q>shell</q> document in the /text/ repository; however, if you are adding a new document that was not previously listed in the main bibliography, then you will need to <ref target="#encodingDatabases_bibliography_WE">create a new bibliography entry</ref> and create a new file.</p>
+                  <p>Most documents already have a <q>shell</q> document in the /text/ repository; however, if you are adding a new document that was not previously listed in the main bibliography, then you will need to <ref target="#encodingDatabases_bibliography_WE">create a new file</ref>.</p>
                </div>
                <div>
                   <head>Step 2: Metadata</head>
@@ -384,11 +331,12 @@
             </div>
             <div xml:id="encodingDatabases">
                <head>Encoding Databases</head>
-               <p>The WEA project consists of three databases for linking entities across the site:
+               <p>The WEA project consists of four databases for linking entities across the site:
              <list>
                      <item>Person database (<code>people.xml</code>)</item>
                      <item>Organization datbases (<code>organizations.xml</code>)</item>
                      <item>Bibliography (<code>bibliography.xml</code>)</item>
+                     <item>Relationships (<code>relationships.xml</code>)</item>
                   </list>
                </p>
                <div xml:id="encodingDatabases_persons">
@@ -446,9 +394,9 @@
                </div>
                <div xml:id="encodingDatabases_bibliography">
                   <head>Encoding the Bibliography</head>
-                  <p>The WEA bibliography is a major component of the archive; it contains all of the bibliographic information for each text, with each component tagged and, if appropriate, linked to a centralized entity.</p>
-                  <p>The entirety of the bibliography is contained within a single large filed, called <code>bibliography.xml</code>. There are two major <gi>listBibl</gi> elements: the first contains the entire bibliography for works by Winnifred Eaton; the second <gi>listBibl</gi> contains all of the secondary sources used in the born digital documents (i.e. critical articles, scholarly monographs, et cetera). Note that these <gi>listBibl</gi>s are merely organization conveniences and do not have any impact, yet, on the site. This may change in the future, however.</p>
-                  <div xml:id="encodingDatabaes_bibliography_styleguide">
+                  <p>Formerly, the WEA bibliography was a major component of the archive, containing all of the bibliographic information for each text; however, as of v2.0, all bibliographic information for each file is contained within each file. See the sourceDesc section for more information</p>
+                  <p>The bibliography contains all of the secondary sources used by the project (i.e. critical articles, scholarly monographs, et cetera).</p>
+                  <div xml:id="encodingDatabases_bibliography_styleguide">
                      <head>Bibliographic Style Guidelines</head>
                      <p>The WEA project follows the MLA 8 Guidelines unless otherwise specified. Since we use the <gi>bibl</gi> tag, it is necessary that the proper punctuation and spacing is included within the <gi>bibl</gi>. A few important notes:
                      <list>
@@ -457,16 +405,16 @@
                         </list>
                      </p>
                   </div>
-                  <div xml:id="encodingDatabases_bibliography_WE">
+                  <!--<div xml:id="encodingDatabases_bibliography_WE">
                      <head>The Winnifred Eaton Bibliography</head>
                      <p>The Winnifred Eaton bibliography is encoded using a series of nested <gi>listBibl</gi> elements, each containing a <gi>head</gi> element; these <gi>listBibl</gi>s signify the <term>work</term>. In each of these <gi>listBibl</gi>s are a sequence of <gi>bibl</gi> elements, each containing a manifestation of that work. For instance, <title level="m">Diary of Delia</title> was both serialized over a period of time as well as appears as a novel. Each instance of this work gets its own <gi>bibl</gi> nested within a <gi>listBibl</gi> like so (the content of these <gi>bibl</gi>s have been excluded, but will be explained in more detail below): 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <listBibl>
                               <head>Diary of Delia</head>
-                              <bibl><!--Serial #1--></bibl>
-                              <bibl><!--Serial #2--></bibl>
-                              <bibl><!--Serial #3--></bibl>
-                              <bibl><!--Novel--></bibl>
+                              <bibl><!-\-Serial #1-\-></bibl>
+                              <bibl><!-\-Serial #2-\-></bibl>
+                              <bibl><!-\-Serial #3-\-></bibl>
+                              <bibl><!-\-Novel-\-></bibl>
                            </listBibl>
                         </egXML>
                      </p>
@@ -504,7 +452,7 @@
                         Use this like you would the <gi>name</gi> tag, pointing to the person's <att>xml:id</att> using the <att>ref</att> attribute
                                  
                                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <rs ref="pers:WE1"><!--Content here--></rs>
+                                    <rs ref="pers:WE1"><!-\-Content here-\-></rs>
                                  </egXML>
                                  
                                  For the above example, we will also want to encode that the italicized strings are titles; so, in the bibl entry, the encoding should look like so:
@@ -616,13 +564,13 @@
                            </p>
                         </div>
                      </div>
-                  </div>
+                  </div>-->
                </div>
             </div>
             <div xml:id="creatingNewText">
                <head>Creating a New Text</head>
                <p>Most of the WE texts already have shell files in the texts/ folder. If the text already exists in the bibliography and exists in the /texts/ folder, but you want to add the transcription from Google Drive, following the Adding Transcription instructions. Otherwise, following the Adding a New Text instructions below.</p>
-               <div xml:id="creatingNewTextFromScratch">
+               <!--<div xml:id="creatingNewTextFromScratch">
                   <head>Adding a New Text</head>
                   <p>In order for a new text to be added to the WEA, each text must have two necessary components: a bibliographic item in the bibliography file (bibliography.xml) and a corresponding file for the transcription in /data/texts.</p>
                   <p>Note that all of these instructions assume that you have the WEA project file (wea_data.xpr) project open in oXygen. I.e. in the left pane of oXygen, you should see something at the top that says wea_data.xpr.</p>
@@ -661,7 +609,7 @@
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
                                  <head>Cars Are Bad</head>
-                                 <bibl><!--Content goes here--></bibl>
+                                 <bibl><!-\-Content goes here-\-></bibl>
                               </listBibl>
                            </egXML>
                         </p>
@@ -669,7 +617,7 @@
                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
                               <listBibl xml:id="CarsAreBad">
                                  <head>Cars Are Bad</head>
-                                 <bibl xml:id="bibl232"><!--Content goes here--></bibl>
+                                 <bibl xml:id="bibl232"><!-\-Content goes here-\-></bibl>
                               </listBibl>
                            </egXML>
                         </p>
@@ -696,10 +644,257 @@
                      <code rend="block">svn commit -m "Adding new CarsAreBad file from new bibl entry"</code>
                      </p>
                   </div>
-               </div>
+               </div>-->
                <div xml:id="createNewTextTranscription">
                   <head>Adding Transcription</head>
                   <p>To add a new transcription from the Google Drive, go to the file addTextFromDrive.xml in your oXygen project pane on the left and follow the instructions there.</p>
+               </div>
+            </div>
+            <div xml:id="encoding_metadata">
+               <head>Metadata for Texts</head>
+               <div>
+                  <head>The titleStmt</head>
+                  <p>The titleStmt contains all information a document's title and statements of responsibility. Note that we do not include information about the original source citation here (encoding it instead within the <gi>msDesc</gi>; see below for further details)</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <titleStmt>
+                        <title>Alberta, the Land of Work, is New Name Given to This Country by Calgary Author</title>
+                        <respStmt>
+                           <resp>Transcriber</resp>
+                           <name ref="pers:KI1">Ken Ip</name>
+                        </respStmt>
+                        <respStmt>
+                           <resp>Proofreader</resp>
+                           <name ref="pers:MC1">Mary Chapman</name>
+                        </respStmt>
+                        <respStmt>
+                           <resp>Encoder</resp>
+                           <name ref="pers:KI1">Ken Ip</name>
+                        </respStmt>
+                     </titleStmt>
+                  </egXML>
+               </div>
+               <div>
+                  <head>The Source Description</head>
+                  <p>The source description (<gi>sourceDesc</gi>) contains all of the bibliographic metadata for a text in the archive. It's a crucial set of information for all primary source texts.</p>
+                  <p>As of version 2.0, the WEA relies on parts of the TEI's <ident>msdescription</ident> module to describe all texts in the archive (including films, screenplays, et cetera); all source information is thus contained within the <gi>msDesc</gi> element.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <sourceDesc>
+                        <msDesc>
+                           <msContents>
+                              <msItem>
+                                 <bibl xml:id="bibl48">
+                                    <author>
+                                       <name ref="pers:WE1">Watanna, Onoto</name>
+                                    </author>.
+                                    <title level="a">His Interpreter (Part 1)</title>. Illustrated by <author role="illustrator">
+                                       <name ref="pers:CG1">C. Allan Gilbert</name>
+                                    </author>.
+                                    <publisher ref="org:WomansHomeCompanion">
+                                       <title level="j">Woman’s Home
+                                       Companion</title>
+                                    </publisher>, <date when="1899-09">Sept. 1899</date>, pp.
+                                    <biblScope unit="page">9-10</biblScope>.</bibl>
+                              </msItem>
+                           </msContents>
+                           <additional>
+                              <adminInfo>
+                                 <availability>
+                                    <p>Facsimile from Schlesinger Library, Harvard University</p>
+                                    <p>This document was originally encoded in TEI P4 by the <name ref="https://dcs.library.virginia.edu/digital-stewardship-services/etext/">University of Virginia Library Electronic Text Center</name>.</p>
+                                 </availability>
+                              </adminInfo>
+                              <surrogates>
+                                 <bibl type="bibliography" target="bibl:COLE3"/>
+                                 <bibl type="edition" target="weda:EatInte"/>
+                              </surrogates>
+                           </additional>
+                        </msDesc>
+                     </sourceDesc>
+                  </egXML>
+                  <p>All bibliographic information (aka the citation) for the item is contained within the <gi>msItem</gi> element; for information on how to tag bibliographic information, see <ref target="#bibl_components">Components of a bibl</ref>.</p>
+                  <div>
+                     <head>Availability, Copyright, Attribution</head>
+                     <p>While Winnifred Eaton's body of work is in the public domain (both in the United States and Canada), the project has a practice of providing citations about the source of all facsimiles. This information should be encoded in the <gi>availability</gi> element within the <gi>msDesc</gi>:
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <additional>
+                           <adminInfo>
+                              <availability>
+                                 <p>Facsimile retrieved from original at Queen’s University </p>
+                              </availability>
+                           </adminInfo>
+                           <!--[...]-->
+                        </additional>
+                     </egXML>
+                     </p>
+                  </div>
+                  <div>
+                     <head>Surrogates</head>
+                     <p>Given the history of Eaton's literary recovery, the WEA attempts both to credit early bibliographies of Eaton's work as well as to cite scholarly editions of Eaton's work. We do this using the <gi>surrogates</gi> element, which can contain a set of <gi>bibl</gi>s that point to a bibliographic entry encoded within the <ident>bibliography.xml</ident> file. Using the <gi>surrogates</gi> element, you can list separate citations for: 
+                     <list>
+                        <item>bibliography: A citation to this item in a pre-existing bibliography (using the <att>type</att>=<val>bibliography</val>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <surrogates>
+                              <bibl type="bibliography" target="bibl:COLE3"/>
+                           </surrogates>
+                        </egXML>
+                        </item>
+                        <item>edition: pointer to another edition (in this case, a pointer to the edition in Jean Lee Cole's <title level="m">Winnifred Eaton Digital Archive</title>):
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <bibl type="edition" target="weda:EatButc"/>
+                        </egXML>
+                        </item>
+                        <item>archival_copy: Points to a version of the same document in the WER archive; in this case, nest <gi>distributor</gi> and <gi>idno</gi> within the <gi>bibl</gi>. </item>
+                     </list>
+                     
+                     
+                     </p>
+                  </div>
+               </div>
+               <div xml:id="bibl_components">
+                  <head>Components of a bibl</head>
+                  <p>The following outlines the various components of a bibliographic item and how to tag them. While we tag many pieces of a bibliographic item, it is necessary that you include the proper punctuation and spacing as per the MLA 8 guidelines.</p>
+                  <div>
+                     <head>Authors</head>
+                     <p>Tag authors using the <gi>author</gi> tag and use the <gi>name</gi> element with the <att>ref</att> attribute to point to the person <att>xml:id</att>:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <author ref="pers:WE1">Watanna, Onoto</author>.
+                        </egXML>
+                     </p>
+                     <p>Do not include punctuation within the <gi>author</gi> tag and do not regularize the forms of their names.</p>
+                     <p>For multiple authors, separate each author with a comma and add a terminal <q>and</q> to the final author:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <author>
+                              <name ref="pers:WE1">Watanna, Onoto</name>
+                           </author>, and <author>
+                              <name ref="pers:SB1">Sara Bosse</name>
+                           </author>.
+                        </egXML>
+                     </p>
+                     <div>
+                        <head>Relational Author Names</head>
+                        <p>There are cases where an author's name appears only in relation to some other work. For instance, in the case of novelized <title level="m">Marion</title>, the citation is as follows:
+                           <cit>
+                              <quote>
+                                 The author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi> and the author of <hi style="font-style:italic">Me</hi>
+                              </quote>
+                           </cit>
+                           From context, we can derive that the first bit (<q>The author of <hi style="font-style:italic;">Me</hi>, <hi style="font-style:italic">Marion: The Story of an Artist’s Model</hi>, <hi style="font-style:italic">Herself</hi>
+                           </q>) refers to Winnifred Eaton and the latter bit refers to Sara Bosse. In this case, <emph>do not</emph> silently replace or otherwise regularize these names. Keep them as they appear, and tag them using the <gi>author</gi> tag. To associate the string to a person, use the <gi>rs</gi> tag:
+                           <specDesc key="rs"/>
+                           Use this like you would the <gi>name</gi> tag, pointing to the person's <att>xml:id</att> using the <att>ref</att> attribute
+                           
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <rs ref="pers:WE1"><!--Content here--></rs>
+                           </egXML>
+                           
+                           For the above example, we will also want to encode that the italicized strings are titles; so, in the bibl entry, the encoding should look like so:
+                           
+                           <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                              <author>
+                                 <rs ref="pers:WE1">The author of <title level="m">Me</title>, <title level="m">Marion: The Story of an Artist’s Model</title>, Herself</rs>
+                              </author> and <rs ref="pers:SB1">the author of <title level="m">Me</title>
+                              </rs>
+                           </egXML>
+                        </p>
+                     </div>
+                  </div>
+                  <div>
+                     <head>Titles</head>
+                     <p>Tag all titles using the <gi>title</gi> tag with the appropriate <att>level</att> attribute:
+                        <specDesc key="title" atts="level"/>
+                        
+                        
+                        All monographic titles (i.e. books, etc) should use the <att>level</att> value <val>m</val>, all journals <val>j</val>, and all articles and other <q>analytic</q> items (poems, short stories, etc) using <val>a</val>.
+                     </p>
+                     <p>
+                        <emph>Note</emph>: For works by Winnifred Eaton, ensure that you wrap each <gi>title</gi>/<att>level</att>=<val>j</val> in the <gi>publisher</gi> element, with a <att>ref</att> value pointing to the organization described by that journal title. For instance,
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <publisher ref="org:SmartSet">
+                              <title level="j">Smart Set</title>
+                           </publisher>
+                        </egXML>
+                     </p>
+                     <p>Do not include trailing punctuation in either the <gi>title</gi> or the <gi>publisher</gi> element <emph>unless</emph> it is a necessary part of the title (for instance, a question mark).</p>
+                  </div>
+                  <div>
+                     <head>Publishers</head>
+                     <p>Tag all publishers using the <gi>publisher</gi> tag with the <att>ref</att> attribute pointing to the publisher's <att>xml:id</att> from the organizations database:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <publisher ref="org:Harper">Harper and Brothers</publisher>
+                        </egXML>
+                     </p>
+                     <p>As stated above, wrap all <gi>title</gi>/<att>level</att>=<val>j</val>s in the <gi>publisher</gi> element, since we consider the journal as a reference to the larger publication house. In future, we hope to group all of the journal publishers into larger lists, in cases where one large publishing house conglomerates a number of distinct publishing entities.</p>
+                  </div>
+                  <div>
+                     <head>Volumes, Issues, and Page Ranges</head>
+                     <p>Tag all volumes, issues (also called numbers), and page ranges using the <gi>biblScope</gi> element with the appropriate <att>unit</att>:
+                        
+                        <specDesc key="biblScope" atts="unit"/>
+                        
+                        For instance:
+                        
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           vol. <biblScope unit="volume">30</biblScope>, no. <biblScope unit="issue">2</biblScope>, pp. <biblScope unit="page">76-78, 117-118</biblScope>
+                        </egXML>
+                        Do not denote the absence of volumes, issues, or page ranges by using <q>n.p</q> or an equivalent.
+                     </p>
+                  </div>
+                  <div>
+                     <head>Publication Dates</head>
+                     <p>Encode the date of publication using the <gi>date</gi> element. The <gi>date</gi> element is a special case where we <emph>do not</emph> include text in the <gi>date</gi> element. Instead, use the dating attributes provided by the <gi>date</gi> element:
+                        
+                        <specDesc key="date" atts="notBefore notAfter when to from"/>
+                        
+                        All of these dating attributes require a date in the format: YYYY[-MM[-DD]]. In other words, the following are <emph>acceptable</emph>:
+                        <list>
+                           <item>1999</item>
+                           <item>1901-12</item>
+                           <item>1903-11-04</item>
+                        </list>
+                        The following are <emph>unacceptable</emph>:
+                        <list>
+                           <item>1999/12/01</item>
+                           <item>1999-23</item>
+                           <item>-21</item>
+                           <item>21 March 1904</item>
+                        </list>
+                     </p>
+                     <p>In most cases, the <att>when</att> attribute with suffice for encoding the date of publication:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <date when="1901-12-13"/>
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <date when="1901"/>
+                        </egXML>
+                        However, there are often cases where the date of publication is difficult to determine. In these cases use  <att>notBefore</att>, <att>notAfter</att>, and, optionally, the <att>cert</att>
+                     </p>
+                     <p>For instance, the case of certain date ranges (i.e. I know that this had to be published between 1922-1924) would be encoded as follows:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <date notBefore="1922" notAfter="1924"/>
+                        </egXML>
+                        If you know the decade in which something is published, then encode it as follows:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <date notBefore="1900" notAfter="1909"/>
+                        </egXML>
+                        If you are uncertain about the date range, then use the <att>cert</att> attribute with the values of either <val>low</val> or <val>medium</val> to denote your certainty about this date:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <date notBefore="1902" notAfter="1911" cert="low"/>
+                        </egXML>
+                     </p>
+                  </div>
+                  <div>
+                     <head>Manuscript Locations</head>
+                     <p>If an object exists only in manuscript, then record the location of the manuscript using the <gi>distributor</gi> element and, if applicable, the <gi>idno</gi> element. In most cases, this will be an entry in the Winnifred Eaton Reeve fonds at the University of Calgary.</p>
+                     <p>Use the <gi>distributor</gi> element to denote the archive in question:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <distributor>Winnifred Eaton Reeve Fonds</distributor>
+                        </egXML>
+                        . Use the <gi>idno</gi> to encode any archival identification numbers:
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <idno>3.2.5</idno>
+                        </egXML>
+                     </p>
+                  </div>
                </div>
             </div>
             <div xml:id="encoding_primary">
@@ -2971,7 +3166,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                   <constraint>
                      <sch:pattern>
                         <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"> ERROR: Document
+                           <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.[\w_]+$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
                         </sch:rule>
@@ -3004,6 +3199,28 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                         <sch:rule context="tei:link">
                            <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
                               ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
+                        </sch:rule>
+                     </sch:pattern>
+                  </constraint>
+               </constraintSpec>
+               <constraintSpec scheme="schematron" ident="shellFile">
+                  <desc>Various constraints for generated files</desc>
+                  <constraint>
+                     <sch:pattern>
+                        <sch:rule context="tei:msDesc/tei:msContents/tei:msItem">
+                           <sch:assert test="count(tei:bibl) = 1">
+                              ERROR: All primary source documents must contain a bibliographic citation (i.e. a bibl element)
+                           </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:msDesc/tei:msContents/tei:msItem/tei:bibl">
+                           <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: All primary source documents must have a meaningful bibliographic citation.
+                           </sch:assert>
+                        </sch:rule>
+                        <sch:rule context="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title">
+                           <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: Document titles should not be empty
                            </sch:assert>
                         </sch:rule>
                      </sch:pattern>

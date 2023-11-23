@@ -23,13 +23,28 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from Hathi Trust</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="bibl:MOSE14"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:39"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl39"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Delia Dissents</title>. Illustrated by <author role="illustrator"><name ref="pers:MP1">May Wilson Preston</name></author>.
+                     <publisher ref="org:Saturday"><title level="j">Saturday Evening
+                     Post</title></publisher>, <date when="1908-08-22">22 Aug. 1908</date>, pp.
+                     <biblScope unit="page">22-23</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from Hathi Trust</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -40,6 +55,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">tagged illustrator</change>
          <change who="pers:MC1" when="2020-08-02" status="published">corrected typos.</change>

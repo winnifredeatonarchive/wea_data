@@ -22,11 +22,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note><!--ADD FACSIMILE SOURCE HERE--></note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:310"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl310"><title level="a">[I am not a <q>new woman</q></title>.
+                        <publisher><title level="j">The Phonographic Magazine</title></publisher>,
+                  vol. <biblScope unit="volume">12</biblScope>, no. <biblScope unit="issue">1</biblScope>, <date when="1898-01">Jan 1898</date>, p. <biblScope unit="page">8</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +56,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-08-01" status="published">Downloaded document from Google Drive and converted to TEI. Encoded and set to published.</change>
          <change who="pers:JT1" when="2021-08-28" status="empty">Created shell from bibl file.</change>

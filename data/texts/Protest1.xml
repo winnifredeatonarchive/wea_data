@@ -10,11 +10,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of Alberta Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:4"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl4"><author><name ref="pers:WE1">Reeve, Winifred</name> (<name ref="pers:WE1">Onoto Watanna</name>)</author>. <title level="a">A
+                     Protest</title>. <publisher ref="org:CdnBookman"><title level="j">Canadian
+                        Bookman</title></publisher>, <date when="1924-03">Mar. 1924</date>, p.
+                     <biblScope unit="page">72</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from University of Alberta Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -25,17 +45,21 @@
          </textClass>
          <abstract resp="pers:SH1">
             <p>The conflict between two writers in Calgary’s small literary community played out on a national stage over several issues of <title level="j">Canadian Bookman</title> in early 1924. Laura Goodman Salverson and her allies responded to Eaton Reeve’s protest with counter-statements and eventually an affidavit. Eaton Reeve retreated. <q>I should not have allowed what I thought was an unkind and ungrateful act on her part toward me to have hurt me. Few of us can rise above our personalities</q>.</p>
-        </abstract>
+         </abstract>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" status="published" when="2020-08-05">removed caps</change><change who="pers:MC1" status="published" when="2020-08-02">Added NF letter</change><change who="pers:MC1" status="published" when="2020-07-03">Added note about source</change><change who="pers:MC1" status="published" when="2020-07-03">Added note about source</change>
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" status="published" when="2020-08-05">removed caps</change>
+         <change who="pers:MC1" status="published" when="2020-08-02">Added NF letter</change>
+         <change who="pers:MC1" status="published" when="2020-07-03">Added note about source</change>
+         <change who="pers:MC1" status="published" when="2020-07-03">Added note about source</change>
          <change who="pers:MC1" status="published" when="2020-06-08">proofread</change>
          <change who="pers:MC1" status="inProgress" when="2019-11-07">added transcription</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl4 using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl4 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs= "facs:Protest">
+   <text facs="facs:Protest">
       <body>
          <head>A Protest</head>
          <opener>

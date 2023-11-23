@@ -10,7 +10,6 @@
                <resp>Transcriber</resp>
                <name ref="pers:SC1"/>
             </respStmt>
-            
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:SC1"/>
@@ -19,11 +18,32 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from University of Saskatchewan</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:105"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl105"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="m">Other People’s Troubles: An Antidote to Your Own [Part
+                     2]</title>. <publisher ref="org:Farm"><title level="j">Farm and Ranch
+                        Review</title></publisher>, <date when="1919-02-20">20 Feb. 1919</date>,
+                  202.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from University of Saskatchewan</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,15 +54,16 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:SL1" status="published"  when="2022-03-10">Added trailer.</change>
-         <change who="pers:MC1" status="published"  when="2021-05-14">fixed typos.</change>
-         <change who="pers:MC1" status="published"  when="2020-08-11">renumbered instalments.</change>
-         <change who="pers:MC1" status="empty"  when="2020-07-24">renumbered instalments.</change>
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:SL1" status="published" when="2022-03-10">Added trailer.</change>
+         <change who="pers:MC1" status="published" when="2021-05-14">fixed typos.</change>
+         <change who="pers:MC1" status="published" when="2020-08-11">renumbered instalments.</change>
+         <change who="pers:MC1" status="empty" when="2020-07-24">renumbered instalments.</change>
          <change who="pers:MC1" status="inProgress" when="2020-07-01">added note about source</change>
          <change who="pers:MC1" status="inProgress" when="2020-06-30">add link to next instalment</change>
          <change who="pers:SC1" status="inProgress" when="2020-06-21">Begin transcribing</change>
-         <change who="pers:SL1" status="empty"  when="2019-07-08">Added catRef genre and exhibit.</change>
-         <change who="pers:JT1" status="empty"  when="2019-04-11">Created file from bibliography entry bibl105 using XSLT.</change>
+         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and exhibit.</change>
+         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl105 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Other_Peoples_Troubles2" prev="doc:OtherPeoplesTroubles1" next="doc:OtherPeoplesTroubles3">
@@ -163,8 +184,7 @@
                      He was quite young when he married the woman. She was of questionable origin
                      and beneath him in every way. I remember the wedding very well, for the reason
                      that I was called in to attend the bride. She told her husband she was subject
-                     to fainting spells. I diagnosed her case as dipsomania</q>.<note
-                     type="editorial" resp="pers:SC1">No closing quotation mark in
+                     to fainting spells. I diagnosed her case as dipsomania</q>.<note type="editorial" resp="pers:SC1">No closing quotation mark in
                   original</note></p>
                <p><q>She was a light, foolish thing, and like many of her kind as sly and cute as
                   she was weak and frail. He saw only her beauty, which was of a <choice>
@@ -187,8 +207,7 @@
                         <corr>revelation</corr>
                      </choice> came, that was the reason he saw fire and blood, as perhaps you do
                      now, and his hands leaped forth to perform the will of his brain. In desire, at
-                     least, so he has told me, he was for a moment, a murderer. Such impulses<pb
-                        n="203"/>come to us all, Laura, at the crucial moment. We are all sons of
+                     least, so he has told me, he was for a moment, a murderer. Such impulses<pb n="203"/>come to us all, Laura, at the crucial moment. We are all sons of
                      Cain, but not all of us are tempted!</q></p>
                <p><q>They were in Boston at the time—she and her lover, that is. She had trumped up
                      some plausible excuse for her absence. Her mother, I believe she claimed, was
@@ -212,15 +231,13 @@
                <p><q>There was one point in dispute. Did, or did he not fire the shot that killed
                      his betrayer? Only one person besides himself, could answer that question and
                      she had set a price upon her testimony. Can you guess what that price was? No,
-                     not mere money, but the pardon of herself by her husband</q>. <note
-                     type="editorial" resp="pers:SC1">No closing quotation mark in
+                     not mere money, but the pardon of herself by her husband</q>. <note type="editorial" resp="pers:SC1">No closing quotation mark in
                   original</note></p>
           
             <p><q>It’s one of the curious ironies of life that we often blindly injure those we love
                      the best. This was the case with this weak woman. She did love her husband, in
                      spite of her hopeless vileness of character, but she did not realize how much
-                     she loved him until she had lost him</q>. <note type="editorial"
-                     resp="pers:SC1">No closing quotation mark in original</note></p>
+                     she loved him until she had lost him</q>. <note type="editorial" resp="pers:SC1">No closing quotation mark in original</note></p>
             <p><q>At first she sought to win him back by cajolery and tears, and previous to the
                      trial was quite a figure in the papers and about the tombs. But I don’t believe
                      he even saw the woman. What he did see was his past and future—the former
@@ -253,8 +270,7 @@
                      step. Had she gone upon the stand, and freely told the truth, which would have
                      removed from her husband the last suspicion of guilt, his heart might have been
                      touched; but she sought to force him to take her back by withholding the truth;
-                     by threats, since tears had failed</q>. <note type="editorial" resp="pers:SC1"
-                     >No closing quotation mark in original</note></p>
+                     by threats, since tears had failed</q>. <note type="editorial" resp="pers:SC1">No closing quotation mark in original</note></p>
             <p><q>Now that’s Holt’s tragedy, Laura. You, like every one else who have heard of the
                      case, believe him guilty. I do not. I am sure, in fact, he is not. But Holt is
                      aware of the fact that the world, like you, still holds him in suspicion, and

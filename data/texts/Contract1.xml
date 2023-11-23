@@ -22,13 +22,27 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065174">https://hdl.handle.net/2027/uc1.b3065174</ref>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="bibl:MOSE8"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:2"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl2"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">A Contract</title>. Illustrated by <author role="illustrator"><name ref="pers:GY1">Genjiro Yeto</name></author>. <publisher ref="org:Frank"><title level="j">Frank Leslie’s Popular
+                     Monthly</title></publisher>, <date when="1902-08">Aug. 1902</date>, pp.
+                     <biblScope unit="page">370-79</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.b3065174">https://hdl.handle.net/2027/uc1.b3065174</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -39,6 +53,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-06-22" status="published">Added foreign tags and added illustrator information.</change>

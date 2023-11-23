@@ -22,11 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Winterthur Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:53"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl53"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">Home and Social Life of the Japanese</title>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home
+                     Companion</title></publisher>, <date when="1901-02">Feb. 1901</date>, pp.
+                     <biblScope unit="page">3-4</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Winterthur Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,8 +57,11 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:MC1" when="2020-07-24" status="published">Removed all caps</change><change who="pers:MC1" when="2020-07-02" status="published">Added note about source</change>
-         <change who="pers:MC1" when="2020-05-23" status="published">changed genre</change><change who="pers:MC1" when="2020-05-21" status="published">final proofread</change>
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:MC1" when="2020-07-24" status="published">Removed all caps</change>
+         <change who="pers:MC1" when="2020-07-02" status="published">Added note about source</change>
+         <change who="pers:MC1" when="2020-05-23" status="published">changed genre</change>
+         <change who="pers:MC1" when="2020-05-21" status="published">final proofread</change>
          <change who="pers:MC1" when="2019-06-18" status="published">proofread</change>
          <change who="pers:KI1" when="2019-06-17" status="readyForProof">Reviewed file as per encoding standards</change>
          <change who="pers:KI1" when="2019-06-17" status="inProgress">Downloaded document from Google Drive and converted to TEI.</change>
@@ -46,7 +69,7 @@
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Home_Social_Life_of_Japanese">
-      <pb n="3"></pb>
+      <pb n="3"/>
       <body>
          <head>Home and Social  Life of the Japanese</head>
          <opener>
@@ -78,7 +101,7 @@
             <p>After dinner, when the weather permits, the family stroll out into the open air, the children playing in the meadows or gardens or else accompanying the older ones for little pleasure trips on the water. The Japanese are fair exemplars of the old proverb <q>Early to bed and early to rise</q>, as they usually are up with the sun, and retire while the pink and yellow sunset as yet brightens the west. Of course, the older members of the family very often attend banquets and moonlight excursions, and these sometimes last late into the night.</p>
             <p>The Japanese are a social people, and do much visiting among their friends and relatives. Social calls generally are made by the entire family at once; that is, the honorable grandfather and grandmother, husband, wife and the older children, and usually a number of aunts and cousins and nephews and nieces, make their round of visits together.</p>
             <p>Another social custom that prevails among those who belong to the higher class is to start out in the early afternoon in <foreign xml:lang="ja">jinrikishas</foreign> and make a large number of calls on various friends. They do not alight from their vehicles at all, but have cards left at their friends’ doors, usually accompanied with some graceful words of salutation and good wishes. During the New-Year’s season particularly this custom is put into practice by nearly every one who can afford a <foreign xml:lang="ja">jinrikisha</foreign>.</p>
-            <pb n="4"></pb>
+            <pb n="4"/>
             <p>The <foreign xml:lang="ja">zashishi</foreign>, or guest-room, of the rich and noble Japanese is furnished elegantly and with the most perfect taste. In one end ancestral relics are kept. At another end of the room is the family altar, usually with an image of <foreign xml:lang="ja">Amida</foreign>, the Buddhist Queen of Heaven, or <foreign xml:lang="ja">Kwannon</foreign>, the Goddess of Mercy. On this altar is written, or carved, in gold letters on a black-lacquered background, the names of the host’s grandfathers. Beneath the main altar is an image of Buddha on a lotus-flower, and beneath this image are the <q>bell and candle</q> used in daily worship. In a porcelain bowl of ashes stand glowing bundles of fragrant wood, irreverently called <q>joss-sticks</q> by the infidel; and from these are wafted little clouds of incense before great Buddha. In a cabinet are autograph-albums, with the handwriting of emperors and <foreign xml:lang="ja">shoguns</foreign>, the poetry of Japan, words of wisdom from the sages, swords of wonderful workmanship and design, perfumed boxes, girdles and writing-boxes presented by imperial hands; all these have a place in the cabinet, and are there to be seen by any one sufficiently interested to examine them.</p>
             <milestone unit="sectionBreak"/>
             <p>Little dinner-parties, family excursions and tea-house parties are very much favored. To these parties are invited all the relatives of the family, whether near or distantly connected, besides some very near and dear friends. Formal banquets and dinners are given in honor of acquaintances and friends; and quite often, especially among families in the diplomatic service, the particular guests are foreigners or entire strangers to the host, but who come to him highly recommended by some mutual friend. These banquets are the essence of formality, and are almost painfully conventional. Nowadays, however, the Japanese relax and are a little more familiar with the <q>foreigner</q>, giving him a better opportunity to observe them as they really are, for of course it is hardly possible to judge of the Japanese home-life from one of these dinners or banquets. Despite the constraint and formality of these dinners, however, a great many of them are not without their attraction. Very often a rich Japanese will give a banquet in some exquisite old tea-garden, say in honor of the<q>full moon</q>, and to be invited to this is a pleasure and a great honor.</p>

@@ -26,11 +26,29 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from newspaperarchive.com</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:220"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl220"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">A Japanese Girl</title>. <publisher ref="org:Cincinnati"><title level="j">Cincinnati Commercial Tribune</title></publisher>, <date when="1896-11-08">8 Nov. 1896</date>, p. <biblScope unit="page">27</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from newspaperarchive.com</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -41,6 +59,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:SB2" when="2020-08-13" status="published">Added paratext code.</change>
          <change who="pers:MC1" when="2020-08-13" status="published">note about source.</change>

@@ -23,8 +23,14 @@
 
     
     <xsl:variable name="xhDocs" select="collection(concat('../temp/',$documentId,'_files/GoogleDoc/?select=*.xhtml'))"/>
-    <xsl:variable name="xhtmlDoc" select="for $x in $xhDocs return if (not(matches(document-uri($x),'/nav.xhtml'))) then $x else ()" as="document-node()+"/>
-    <xsl:variable name="teiDoc" select="document(concat('../texts/',$documentId,'.xml'))" as="document-node()*"/>
+    <xsl:variable name="xhtmlDoc" 
+        select="for $x in $xhDocs return if (not(matches(document-uri($x),'/nav.xhtml'))) then $x else ()"
+        as="document-node()+"/>
+    <xsl:variable name="existingDoc" 
+        select="document(concat('../texts/',$documentId,'.xml'))" as="document-node()*"/>
+    <xsl:variable name="templateDoc" select="document('./template.xm_')" as="document-node()"/>
+    <xsl:variable name="teiDoc" select="if (doc-available('../texts/' || $documentId || '.xml')) 
+        then $existingDoc else $templateDoc" as="document-node()"/>
     <xsl:variable name="people" select="document('../people.xml')" as="document-node()"/>
     <xsl:variable name="tax" select="document('../taxonomies.xml')" as="document-node()"/>
     
@@ -51,12 +57,12 @@
             <xsl:message terminate="yes">ERROR: Google Doc not available. Check the URL and make sure the document is sharable.</xsl:message>
         </xsl:if>
         
-        <xsl:if test="empty($teiDoc)">
-            <xsl:message terminate="yes">ERROR: TEI document not avaiable. Make sure you've typed the @xml:id correctly.</xsl:message>
+        <xsl:if test="$teiDoc = $templateDoc">
+            <xsl:message terminate="no">WARNING: TEI document not found; creating a new file.</xsl:message>
         </xsl:if>
         
         
-        <xsl:if test="normalize-space(string-join($teiDoc//body,''))">
+        <xsl:if test="matches(string-join($teiDoc//body/descendant::text(),''),'\S')">
             <xsl:message terminate="yes">ERROR: <xsl:value-of select="$documentId"/> has content that would be overwritten. Check to make sure that this is the document you want.</xsl:message>
         </xsl:if>
         

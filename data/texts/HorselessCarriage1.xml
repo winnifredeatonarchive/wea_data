@@ -22,11 +22,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile received from the University of New Hampshire Libraries.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:8"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl8"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
+                     <title level="a">The Horseless Carriage of Japan</title>. Illustrated by
+                     <author role="illustrator"><name ref="pers:KA1">Karl J.
+                     Anderson</name></author>. <publisher ref="org:WomansHomeCompanion"><title level="j">Woman’s Home Companion</title></publisher>, <date when="1900-04">Apr. 1900</date>, p. <biblScope unit="page">13</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile received from the University of New Hampshire Libraries.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +57,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-07-24" status="published">Fixed bylines.</change>
          <change who="pers:MC1" when="2019-05-15" status="published">Updated status to readyForProof.</change>

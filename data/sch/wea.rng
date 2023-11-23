@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2023-11-19T03:06:57Z. . 
+Schema generated from ODD source 2023-11-23T23:46:00Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -9459,7 +9459,7 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <sch:rule context="/tei:TEI[not(ancestor::tei:teiCorpus)] | /tei:teiCorpus">
-         <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.\w+$'))"> ERROR: Document
+         <sch:assert test="@xml:id and matches($docUri,concat('[/\\]',$docId,'.[\w_]+$'))"> ERROR: Document
                     xml:id (<sch:value-of select="$docId"/>) does not match the document file
                     name (<sch:value-of select="$docUri"/>). </sch:assert>
       </sch:rule>
@@ -9496,6 +9496,30 @@ Suggested values include: 1] main (main); 2] sub (subordinate); 3] alt (alternat
       <sch:rule context="tei:link">
          <sch:assert test="@target and count(tokenize(@target,'\s+')) = 2">
                               ERROR: Link must have an @target attribute with two pointers.
+                           </sch:assert>
+      </sch:rule>
+   </sch:pattern>
+   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <sch:rule context="tei:msDesc/tei:msContents/tei:msItem">
+         <sch:assert test="count(tei:bibl) = 1">
+                              ERROR: All primary source documents must contain a bibliographic citation (i.e. a bibl element)
+                           </sch:assert>
+      </sch:rule>
+      <sch:rule context="tei:msDesc/tei:msContents/tei:msItem/tei:bibl">
+         <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: All primary source documents must have a meaningful bibliographic citation.
+                           </sch:assert>
+      </sch:rule>
+      <sch:rule context="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title">
+         <sch:assert test="matches(string-join(descendant::text()),'\S')">
+                              ERROR: Document titles should not be empty
                            </sch:assert>
       </sch:rule>
    </sch:pattern>

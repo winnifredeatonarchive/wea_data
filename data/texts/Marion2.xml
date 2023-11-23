@@ -27,13 +27,31 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref
-                  target="https://catalog.hathitrust.org/Record/000542803"
-                  >https://catalog.hathitrust.org/Record/000542803</ref>.</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:74"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl74"><author><name ref="pers:WE1">Herself</name></author>, and
+                        <author><name ref="pers:WE1">the author of <title level="m">Me</title></name></author>. <title level="m">Marion: The Story of an
+                     Artist’s Model [Part 1]</title>. Illustrated by <author role="illustrator"><name ref="pers:HH1">Henry Hutt</name></author>. <publisher ref="org:Hearsts"><title level="j">Hearst’s International</title></publisher>,
+                     <date when="1916-04">Apr. 1916</date>, vol. <biblScope unit="volume">29</biblScope>, no. <biblScope unit="issue">4</biblScope>, pp. <biblScope unit="page">254-257, 304-306</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://catalog.hathitrust.org/Record/000542803">https://catalog.hathitrust.org/Record/000542803</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -44,6 +62,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-08-20" status="published">Corrected some transcription
             mistakes. Encoded letter. Added content warning.</change>
          <change who="pers:SL1" when="2022-07-16" status="published">Added fw type.</change>
@@ -136,8 +155,7 @@
                <p><q>‘Yes, mama,’ <foreign xml:lang="fr">il dit</foreign>. And we, my wife and I, we
                      look out de window, and me? I am laugh, and my wife, she cry—she have lost her
                      only bebby, <foreign xml:lang="fr">Monsieur</foreign>—to see dat leetle boy
-                     walk him in front of his leetle sisters, open hees coat, <foreign xml:lang="fr"
-                        >comme ça</foreign>, <foreign xml:lang="fr">monsieur</foreign>, and spread
+                     walk him in front of his leetle sisters, open hees coat, <foreign xml:lang="fr">comme ça</foreign>, <foreign xml:lang="fr">monsieur</foreign>, and spread
                      it out wiz hees hands, to make him shield the wind from his sisters</q>.</p>
 
 
@@ -161,8 +179,7 @@
 
                <p>When I reached home, I deposited the groceries on a table in the kitchen and ran
                   up to my room. Standing on a chair, I was able to see my face in the oval mirror
-                  that topped a very high and scratched old <foreign xml:lang="fr"
-                     >chiffonier</foreign>. I gazed long and eagerly at the face I had often heard
+                  that topped a very high and scratched old <foreign xml:lang="fr">chiffonier</foreign>. I gazed long and eagerly at the face I had often heard
                   Thebeau say was <q><foreign xml:lang="fr">très joli</foreign></q>, which French
                   words I now learned must mean: <q>Pretty—quite remarkably pretty!</q> as had said
                   that Englishman in the store.</p>
@@ -263,8 +280,7 @@
             <div>
 
                <p>Next to our garden, separated only by a wooden fence, through which we children
-                  used to peep, was the opulent and well-kept garden of <foreign xml:lang="fr"
-                     >Monsieur</foreign> Prefontaine, who was a very important man, once Mayor of
+                  used to peep, was the opulent and well-kept garden of <foreign xml:lang="fr">Monsieur</foreign> Prefontaine, who was a very important man, once Mayor of
                   Hochelaga, the French quarter of Montreal, in which we lived. Madame Prefontaine,
                   moreover, was an object of unfailing interest and absorbing wonder to us children.
                   She was an enormously fat woman, and had once taken a trip to New York City, to
@@ -277,8 +293,7 @@
                <p><q><foreign xml:lang="fr">Mon Dieu</foreign>! That New York—it is one beeg hell!
                      Never do I feel so hot as in dat terreeble city! I feel de grease it run all
                      out of me! Mebbe, eef I stay at dat New York, I may be one beeg
-                        meelionaire—<foreign xml:lang="fr">Oui</foreign>! But, <foreign
-                        xml:lang="fr">non</foreign>! Me? I prefer my leetle home, so cool and quiet,
+                        meelionaire—<foreign xml:lang="fr">Oui</foreign>! But, <foreign xml:lang="fr">non</foreign>! Me? I prefer my leetle home, so cool and quiet,
                      in Hochelaga than be meelionaire in dat New York, dat is like
                   purgatory</q>.</p>
 
@@ -351,15 +366,13 @@
 
 
                <p>I got up. My legs were shaky, and the world was whirling about me. I thought of
-                  the jail, where thieves were taken, and a great terror seized me. <foreign
-                     xml:lang="fr">Monsieur</foreign> Prefontaine had been the Mayor of Hochelaga.
+                  the jail, where thieves were taken, and a great terror seized me. <foreign xml:lang="fr">Monsieur</foreign> Prefontaine had been the Mayor of Hochelaga.
                   He could have put me in prison for all the rest of my life. We would all be
                   disgraced.</p>
 
 
 
-               <p><q>Well? Well? How you get in here?</q> demanded <foreign xml:lang="fr"
-                     >Monsieur</foreign> Prefontaine.</p>
+               <p><q>Well? Well? How you get in here?</q> demanded <foreign xml:lang="fr">Monsieur</foreign> Prefontaine.</p>
 
 
 
@@ -368,8 +381,7 @@
 
 
 
-               <p><q><foreign xml:lang="fr">Bien</foreign>! <emph>Crawl out</emph>, <foreign
-                        xml:lang="fr">madame</foreign>!</q></p>
+               <p><q><foreign xml:lang="fr">Bien</foreign>! <emph>Crawl out</emph>, <foreign xml:lang="fr">madame</foreign>!</q></p>
 
 
 
@@ -446,8 +458,7 @@
 
                <p>And now my father, in this desperate crisis, proved the truth of the old adage
                   that <q>Blood will tell</q>. Ours was the only house on our block, or for that
-                  matter the surrounding streets, where the hideous yellow sign <q><foreign
-                        xml:lang="fr">PICOTTE</foreign></q> (small pox) was not conspicuously nailed
+                  matter the surrounding streets, where the hideous yellow sign <q><foreign xml:lang="fr">PICOTTE</foreign></q> (small pox) was not conspicuously nailed
                   upon the front door, and this despite the fact that we were a large family of
                   children. Papa hung sheets all over the house, completely saturated with
                   disinfectants. Every one of us children were vaccinated, and were not allowed to
@@ -504,8 +515,7 @@
                <p>Never will I forget that return home, all of us children crying and sobbing, and
                   mama now weeping as unconcealedly as any of us, and the French people stopping us
                   on the way to console or commiserate with us; but although they repeated over and
-                  over, <q><foreign xml:lang="fr">Pauvres petits enfants</foreign>! <foreign
-                        xml:lang="fr">Pauvre petite mère</foreign>!</q> I saw their significant
+                  over, <q><foreign xml:lang="fr">Pauvres petits enfants</foreign>! <foreign xml:lang="fr">Pauvre petite mère</foreign>!</q> I saw their significant
                   glances, and I knew that in their minds was the same treacherous thought of my
                   father.</p>
 
@@ -922,8 +932,7 @@
 
 
 
-               <p><q><foreign xml:lang="fr">Rue</foreign> Saint Denis! <foreign xml:lang="fr"
-                        >Sacré</foreign>!</q></p>
+               <p><q><foreign xml:lang="fr">Rue</foreign> Saint Denis! <foreign xml:lang="fr">Sacré</foreign>!</q></p>
 
 
 

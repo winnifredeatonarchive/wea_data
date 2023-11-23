@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Ropes1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Ropes1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -22,11 +22,36 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Original at University of Calgary in Winnifred Eaton Reeve Fonds</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:118"/>
+            <msDesc>
+               <msIdentifier>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                  <idno>11.7-11.8</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl118"><author><name ref="pers:WE1">Reeve, Winnifred
+                     Eaton</name></author> with <author><name>Wilbur Daniel Steel</name></author>.
+                     <title level="m">Ropes [adaptation, screen story and dialogue]</title>
+                  (released as <title level="m">Undertow</title>). <publisher ref="org:Universal">Universal Studios</publisher>, <date when="1930">1930</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>,
+                     <idno>11.7-11.8</idno>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Original at University of Calgary in Winnifred Eaton Reeve Fonds</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +62,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2021-08-31" status="published">Fixed typo.</change>
          <change who="pers:SL1" when="2021-06-27" status="published">Added additional editorial notes and corrections.</change>
          <change who="pers:SL1" when="2021-06-25" status="published">Adjusted some editorial notes and section headings.</change>

@@ -22,11 +22,30 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile from University of British Columbia Library</note>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:115"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl115"><author><name ref="pers:WE1">Reeve, Winnifred</name></author>.
+                     <title level="a">Plain Pig</title>. <publisher ref="org:Calgary"><title level="j">Calgary Herald</title></publisher>, <date when="1921-09-30">30
+                     Sept. 1921</date>, p. <biblScope unit="page">27</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile from University of British Columbia Library</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -37,6 +56,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-04" status="published">proofread.</change>
          <change who="pers:MC1" when="2020-07-01" status="published">Added note about source.</change>

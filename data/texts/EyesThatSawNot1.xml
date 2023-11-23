@@ -26,13 +26,28 @@
          <publicationStmt>
             <p>Publication Information</p>
          </publicationStmt>
-         <notesStmt>
-            <note>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.l0063560585">https://hdl.handle.net/2027/uc1.l0063560585</ref>.</note>
-            <relatedItem type="bibliography" target="bibl:COLE3"/>
-            <relatedItem type="edition" target="bibl:MOSE7"/>
-         </notesStmt>
          <sourceDesc>
-            <bibl copyOf="bibl:44"/>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl xml:id="bibl44"><author><name ref="pers:WE1">Watanna, Onoto</name></author>
+                  with <author><name>Bertrand W. Babcock</name></author>. <title level="a">Eyes That
+                     Saw Not</title>. <publisher ref="org:HarpersMonthly"><title level="j">Harper’s
+                        Monthly</title></publisher>, <date when="1902-06">June 1902</date>, pp.
+                     <biblScope unit="page">30-38</biblScope>.</bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Hathi Trust: <ref target="https://hdl.handle.net/2027/uc1.l0063560585">https://hdl.handle.net/2027/uc1.l0063560585</ref>.</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <bibl type="bibliography" target="bibl:COLE3"/>
+                  </surrogates>
+               </additional>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -43,6 +58,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
          <change who="pers:MC1" when="2020-08-05" status="published">encoded Babcock.</change>
