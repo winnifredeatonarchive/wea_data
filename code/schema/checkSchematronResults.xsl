@@ -141,7 +141,7 @@
     <xsl:param name="xsl" as="xs:string?"/>
     <xsl:param name="file" as="xs:string?"/>
     <xsl:param name="dir" as="xs:string?"/>
-    <xsl:param name="failOnError" select="'no'" static="yes" as="xs:string?"/>
+    <xsl:param name="failOnError" select="'yes'" static="yes" as="xs:string?"/>
     <xsl:param name="verbose" select="'no'" as="xs:string" static="yes"/>
     <xsl:param name="pattern">*.xml</xsl:param>
     <xsl:param name="recurse">yes</xsl:param>
