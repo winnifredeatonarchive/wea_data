@@ -243,17 +243,21 @@
             <details id="relatedItems" class="additionalInfo expandable">
                 <summary class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></summary>
                 <div class="content">
-                    <xsl:for-each select="map:keys(map:get($relationshipMap, string($currId)))">
-                        <xsl:variable name="targ" select="."/>
-                        <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id= $targ]"/>
-                        <xsl:call-template name="makeRelatedItemBox">
-                            <xsl:with-param name="label" select="$relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
-                            <xsl:with-param name="link" select="$targ || '.xml'"/>
-                            <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.jpg') else 'images/cooking.jpg'"/>
-                            <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
-                        </xsl:call-template>
-                        
-                    </xsl:for-each>
+                    <button class="mi next_prev prev">chevron_left</button>
+                    <ul class="related-items">
+                        <xsl:for-each select="map:keys(map:get($relationshipMap, string($currId)))">
+                            <xsl:variable name="targ" select="."/>
+                            <xsl:variable name="relatedDoc" select="$standaloneXml[/TEI/@xml:id= $targ]"/>
+                            <xsl:call-template name="makeRelatedItemBox">
+                                <xsl:with-param name="label" select="$relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node()"/>
+                                <xsl:with-param name="link" select="$targ || '.xml'"/>
+                                <xsl:with-param name="imgSrc" select="if ($relatedDoc//text/@facs) then $relatedDoc//text/replace(@facs,'.pdf','_tiny.jpg') else 'images/cooking.jpg'"/>
+                                <xsl:with-param name="imgAlt" select="concat('Facsimile image for ', normalize-space(string-join($relatedDoc//teiHeader/fileDesc/titleStmt/title[1]/node(),'')))"/>
+                            </xsl:call-template>
+                            
+                        </xsl:for-each>
+                    </ul>
+                    <button class="mi next_prev next">chevron_right</button>
                 </div>
             </details>
         </xsl:if>
@@ -264,12 +268,14 @@
         <xsl:param name="link"/>
         <xsl:param name="imgSrc"/>
         <xsl:param name="imgAlt"/>
-        <div>
+        <li class="related-item">
+            <a href="{wea:resolveTarget($link)}">
                 <figure>
                     <img src="{$imgSrc}" alt="{normalize-space(string-join($imgAlt,''))}"/>
+                    <figCaption><xsl:apply-templates select="$label" mode="tei"/></figCaption>
                 </figure>
-            <div><a href="{wea:resolveTarget($link)}"><xsl:apply-templates select="$label" mode="tei"/></a></div>
-        </div>
+            </a> 
+        </li>
     </xsl:template>
     
     <xsl:template match="figure" mode="metadata">

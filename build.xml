@@ -109,6 +109,27 @@
         <ant antfile="code/buildSite.xml" target="copyCSS" inheritall="false"/>
     </target>
     
+    <!--Only used in local dev environments-->
+    <!--This doesn't work, so just do it at the command line-->
+    <!--<target name="watch">
+        
+        <parallel>
+            <exec executable="sass">
+                <arg line="site/sass:${site.dir}/css -\-style compressed -\-watch"/>
+            </exec>
+            <apply executable="esbuild" parallel="true">
+                <srcfile/>
+                <arg line="-\-watch"/>
+                <arg line="-\-outdir=./products/site/js"/>
+                <fileset dir=".">
+                    <include name="site/js/*.js"/>
+                </fileset>
+            </apply>
+            
+        </parallel>
+        
+    </target>-->
+    
 
     
 </project>

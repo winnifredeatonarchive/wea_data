@@ -1788,23 +1788,7 @@ border-top-right-radius: 1rem;
     grid-area: relatedItems;
 }
 
-#relatedItems .content{
-    flex-direction:row!important;
-}
 
-#relatedItems .content > div{
-    max-width:8rem;
-    margin:1em;
-    padding:1em;
-}
-
-#relatedItems .content > div > *{
-    margin:0 auto;
-}
-
-.content img{
-    max-width:8rem;
-}
 
 #mainBody{
  /* We need to margin-top if we do a sticky header */
@@ -2088,10 +2072,6 @@ div[data-type='listFigure'] img{
     
 }
 
-#relatedItems .content{
-    flex-wrap:wrap;
-}
-
 details.expandable > summary{
     list-style-type:none;
     &::-webkit-details-marker,
@@ -2121,6 +2101,8 @@ details[aria-expanded='true'] .content{
     opacity: 1;
 }
 
+
+
 details > summary {
     cursor:pointer;
     padding:1rem;
@@ -2149,6 +2131,95 @@ user-select: none;
     transition: transform .5s;
 }
 
+/********* RELATED ITEMS BLOCK */
+
+#relatedItems .content{
+    padding-left:0;
+    padding-right:0;
+    margin:0;
+    flex-direction: row;
+    .next_prev{
+        visibility:hidden;
+        border:none;
+        margin:0;
+        padding:0.6rem;
+        font-size: 1.6rem;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+           opacity:1;
+        }
+        &:disabled{
+          opacity:0;
+        }
+    }
+    &.scroll-visible{
+        .next_prev{
+            visibility: visible;
+        }
+        .related-items{
+            overflow-x:hidden;
+        }
+    }
+}
+
+
+
+.related-items {
+  gap: 1.5rem;
+  display:flex;
+  flex-direction: row;
+  padding-right: 2rem;
+  list-style-type:none;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behaviour-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.related-item{
+    scroll-snap-align: start;
+    padding-left:0;
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	transition: box-shadow 0.2s ease-in-out;
+	display:flex;
+	flex-direction:column;
+	a{
+	    flex: 1;
+	      display: flex;
+  font-size: 0.9rem;
+  padding: 0.85rem;
+  align-content: center;
+	}
+	a, figure{
+	    display:flex;
+	    flex-direction:column;
+	}
+	figure{
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+	}
+	&:hover{
+	        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	    
+	}
+	
+}
+
+
+#relatedItems .content > div > *{
+    margin:0 auto;
+}
+
+.content img{
+    max-width:8rem;
+}
 
 /* 
 .JS .expandable.closed > .content{

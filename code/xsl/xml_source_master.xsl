@@ -41,6 +41,17 @@
         </xsl:result-document>
     </xsl:template>
     
+<!--    <xsl:template match="publicationStmt">
+        <publicationStmt>
+            <publisher>Winnifred Eaton Archive</publisher>
+            <date><xsl:value-of select="year-from-date(current-date())"/></date>
+            <availability status="restricted">
+                <license target="https://creativecommons.org/licenses/by-sa/4.0/"/>
+            </availability>
+        </publicationStmt>
+    </xsl:template>-->
+    
+    
     <!--Only run this template if we are doing a production build-->
     <xsl:template match="text[$isProductionBuild]">
         <xsl:variable name="status" select="ancestor::TEI//revisionDesc/@status" as="xs:string"/>

@@ -94,6 +94,7 @@ function addEvents(){
     makeCitationsResponsive();
     makeNavClickable();
     showHideTitles();
+    makeRelatedItems();
     if (document.querySelectorAll('table')){
         makeTablesSortable();
     }
@@ -105,6 +106,60 @@ function addEvents(){
     }
 }
 
+function makeRelatedItems(){
+    const relatedItemDiv = document.querySelector('#relatedItems');
+    const relatedItems = [...relatedItemDiv.querySelectorAll('.related-item')];
+    const root = relatedItems[0].parentElement;
+    const inView = relatedItems.map(() => false);
+    const [prevBtn, nextBtn] = [...relatedItemDiv.querySelectorAll('button')];
+    const observer = new IntersectionObserver(entries => {
+        for (const entry of entries){
+            const {target, intersectionRatio} = entry;
+            inView.splice(relatedItems.indexOf(target), 1, entry.isIntersecting);
+            reset();
+        }
+    });
+    // Now the logic is:
+    /* 
+     * Get index of first visible: if it's 0, then don't allow left arrow thing
+     * Get index of last visible: if it's the end index, then do allow
+     * If there's a click to go backwards, then find the first visible and subtract 1
+     * If there's a click to go forwards, then find the last visible and add 1
+     */
+    const reset = () => {
+        const firstInView = inView.indexOf(true);
+        const lastInView = inView.lastIndexOf(true);
+        prevBtn.disabled = (firstInView === 0);
+        nextBtn.disabled = (lastInView === relatedItems.length - 1);
+    };
+    const scrollToIdx = (idx, inline='nearest') => {
+        relatedItems[idx].scrollIntoView({
+            block: 'nearest', 
+            inline 
+        });
+    }
+    if (!relatedItemDiv || !relatedItems ){
+        return true;
+    }
+    if (root.scrollWidth <= root.clientWidth){
+        console.log('No scroll necessary');
+        return true;
+    }
+    nextBtn.addEventListener('click', e=>{
+        scrollToIdx(inView.lastIndexOf(true) + 1, "center");
+    });
+    prevBtn.addEventListener('click', e=>{
+        scrollToIdx(inView.indexOf(true) - 1);
+    });
+    relatedItems.forEach((item, idx) => {
+        observer.observe(item, {
+            root,
+            threshold: 0
+        });
+   });
+   window.inView = inView;
+   
+}
 
 function addBiblSort(){
     const listBibl = document.querySelector("#text [data-el='listBibl']");

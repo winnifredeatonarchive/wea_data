@@ -35,9 +35,8 @@
                 <xsl:sort select="current-grouping-key() castable as xs:integer" order="descending"/>
                 <xsl:sort select="current-grouping-key()" order="ascending"/>
                 <div xml:id="{$weChronoBiblId}_{current-grouping-key()}">
-
+                    <head><xsl:value-of select="current-grouping-key()"/></head>
                     <listBibl>
-                        <head><xsl:value-of select="current-grouping-key()"/></head>
                         <xsl:apply-templates select="current-group()" mode="removeId">
                             <xsl:sort select="date"/>
                         </xsl:apply-templates>
@@ -54,6 +53,7 @@
             <xsl:for-each select="$sourceXml//linkGrp[@type='work']">
                 <xsl:sort select="wea:simpleTitleSortKey(string(desc))"/>
                 <div xml:id="{$weWorkBiblId}_{@xml:id}">
+                    <head><xsl:value-of select="desc"/></head>
                     <xsl:for-each select="ptr">
                         <xsl:variable name="docId" select="substring-after(@target,'doc:')"/>
                         <xsl:variable name="doc" select="$sourceXml//TEI[@xml:id = $docId]"/>
@@ -109,11 +109,21 @@
         <xsl:value-of select="normalize-space($str) => replace('^(The|Le|La|An?)\s','') => replace('‘|’','')"/>
     </xsl:function>
     
+    <xsl:template match="bibl[ancestor::msDesc]/title[1]" mode="removeId">
+        <ref target="doc:{ancestor::TEI/@xml:id}">
+            <xsl:copy>
+                <xsl:apply-templates select="@*|node()" mode="#current"/>
+            </xsl:copy>
+        </ref>
+    </xsl:template>
+    
     <xsl:template match="bibl/@xml:id" mode="removeId"/>
     
     
     <xsl:template match="@*|node()" priority="-1" mode="removeId">
-        <xsl:apply-templates select="." mode="original"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()" mode="#current"/>
+        </xsl:copy>
     </xsl:template>
     
     <xsl:function name="wea:returnDate">

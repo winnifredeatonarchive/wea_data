@@ -401,15 +401,15 @@ ul#menu_main > li > ul{
     
     #metadata{
     /* No more flex */
-        display:block;
-        height:100%;
-        flex-flow:unset;
-        max-height:unset;
+        flex-wrap: wrap;
+        flex-direction: row;
+         max-height: unset;
         
     }
     #metadata > div{
         padding:.25rem .25rem .25rem 0;
         max-width:unset;
+        flex: 1 0 33%;
         
     }
     #facsimile{
