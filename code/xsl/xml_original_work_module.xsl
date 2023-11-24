@@ -22,7 +22,7 @@
                 <xsl:with-param name="outDoc" select="concat($outDir,'xml/original/',@xml:id,'.xml')"/>
                 <xsl:with-param name="thisId" select="@xml:id"/>
                 <xsl:with-param name="categories" select="'wdt:docBornDigitalListing'"/>
-                <xsl:with-param name="title"><xsl:value-of select="head"/></xsl:with-param>
+                <xsl:with-param name="title"><xsl:value-of select="desc"/></xsl:with-param>
                 <xsl:with-param name="content">
                     <xsl:apply-templates select="." mode="bibls"/>
                 </xsl:with-param>

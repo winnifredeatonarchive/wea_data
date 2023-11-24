@@ -236,6 +236,20 @@
         </xsl:copy>
     </xsl:template>
     
+    <!--Add an msIdentifier-->
+    <xsl:template match="msDesc[not(msIdentifier)]" mode="original">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="#current"/>
+            <msIdentifier>
+                <repository>Winnifred Eaton Archive</repository>
+                <idno><xsl:value-of select="ancestor::TEI/@xml:id"/></idno>
+            </msIdentifier>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+        
+    </xsl:template>
+    
+    
     <xsl:template match="publicationStmt[not(ancestor::biblFull)][not(following-sibling::notesStmt)]" mode="original">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()" mode="#current"/>

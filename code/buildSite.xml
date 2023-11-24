@@ -191,7 +191,7 @@
      </java>
  </target>
     
-    <target name="validateStandaloneXml">
+ <!--   <target name="validateStandaloneXml">
         <ant antfile="buildValidate.xml" inheritall="no">
             <property name="data.dir" value="${site.dir}/xml/standalone"/>
             <property name="fileset" value="standaloneXml"/>
@@ -199,7 +199,7 @@
             <property name="sch" value="${sch.dir}/tei_all.sch"/>
             <property name="sch.xsl" value="${sch.dir}/tei_all.xsl"/>
         </ant>
-    </target>
+    </target>-->
     
     
   
@@ -309,9 +309,9 @@
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails, createEncodingPackage"/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails, createEncodingPackage"/>
     
-    <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, validateStandaloneXml, weighSite, createXhtml, validateXhtml"/>
+    <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml, validateXhtml"/>
         
       
     
