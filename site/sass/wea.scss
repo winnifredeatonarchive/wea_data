@@ -2267,7 +2267,8 @@ user-select: none;
     justify-content:center;
 }
 
-[data-el='fw'][data-place='right']{
+[data-el='fw'][data-place='right'],
+[data-el='fw'][data-type="pageNum"]{
     justify-content:flex-end;
 }
 
@@ -2734,11 +2735,14 @@ span[data-el='pb']:not(.first)::before{
 }
 
 
+[data-el='trailer']{
+    text-align:center;
+    margin: 1rem auto;
+}
 
-/********************************************************************** SPEECHES  */
+/********************************************************************** DRAMA  */
 
-/* There are a few intances of the document where dramatic dialogue is used */
-
+/* Base styles */
 [data-el='sp']{
     margin: .5rem;
 }
@@ -2750,6 +2754,66 @@ span[data-el='pb']:not(.first)::before{
 [data-el='speaker'] + [data-el='p']{
     display:inline;
 }
+
+dl[data-castList]{
+    margin-top: 1rem;
+}
+
+dt{
+    margin-top:0.8rem;
+    text-decoration:underline;
+    text-underline-offset:2px;
+}
+
+dd{
+    margin-left: 0.5rem;
+}
+
+
+/** Now specific film styling */
+[class *= 'genreFilm']{
+    [data-el='sp']{
+        max-width: 20rem;
+        padding: 0 1rem;
+        margin: 0 auto;
+        margin-top: 0.6rem;
+        & > * {
+            display:block;
+        }
+        [data-el='speaker']{
+            margin-left:0;
+            margin-right:0;
+            text-decoration:underline;
+            text-underline-offset: 2px;
+            text-align:center;
+        }
+        [data-el='p']{
+            margin-top: 0.5rem;
+        }
+        [data-el='speaker'] + [data-el='stage']{
+            text-align:center; 
+        }
+    }
+    
+    [data-el='emph']{
+        text-decoration:underline;        
+    }
+    
+    [data-el='view']{
+        display:block;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    
+    [data-el='p'] [data-el='view']{
+        display:inline;
+        text-decoration:none;
+    }
+    
+    
+}
+
+
 /********************************************************************* MILESTONES *****/
 
 

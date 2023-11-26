@@ -108,6 +108,9 @@ function addEvents(){
 
 function makeRelatedItems(){
     const relatedItemDiv = document.querySelector('#relatedItems');
+    if (!relatedItemDiv){
+        return false;
+    }
     const relatedItems = [...relatedItemDiv.querySelectorAll('.related-item')];
     const root = relatedItems[0].parentElement;
     const inView = relatedItems.map(() => false);

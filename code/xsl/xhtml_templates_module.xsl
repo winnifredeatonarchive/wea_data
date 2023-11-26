@@ -101,7 +101,7 @@
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher | noteGrp" mode="tei">
+    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher | noteGrp | trailer" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
@@ -246,11 +246,44 @@
     
     
     <!--Generic inline-->
-    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label | author | editor" mode="tei">
+    <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label | stage | view | camera | author | editor" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </span>
+    </xsl:template>
+    
+    <xsl:template match="castList" mode="tei">
+        <xsl:where-populated>
+            <h4>
+                <xsl:apply-templates select="head/node()" mode="#current"/>
+            </h4>
+        </xsl:where-populated>
+        <dl>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="node() except head" mode="#current"/>
+        </dl>
+    </xsl:template>
+<!--    
+    <xsl:template match="castItem" mode="tei">
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>-->
+    
+    <xsl:template match="castItem/role" mode="tei">
+        <dt>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>  
+        </dt>
+    </xsl:template>
+    
+    <xsl:template match="castItem/roleDesc" mode="tei">
+        <dd>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>  
+        </dd>
     </xsl:template>
     
     <xsl:template match="subst" mode="tei">
