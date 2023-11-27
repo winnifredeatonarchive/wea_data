@@ -277,6 +277,10 @@
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>  
         </dt>
+        <!--Need to add an empty <dd/> if there's no roleDesc-->
+        <xsl:if test="empty(../roleDesc)">
+            <dd/>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="castItem/roleDesc" mode="tei">
