@@ -6,7 +6,47 @@
       <fileDesc>
          <titleStmt>
             <title>Barbary Coast Treatment</title>
-            <!-- TODO: Add respStmts:
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:CL1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:CL1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:DA1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:DA1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:EE1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:EE1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:AL1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:AL1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:MC2"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:MC2"/>
+            </respStmt>
+            <!-- TODO: Specific respStmts for sections
                Front: CamilleLopez
                Sequence1: Delaney
                Sequence2: UNKNOWN
@@ -56,6 +96,9 @@
             <catRef scheme="wdt:genre" target="wdt:genreFilmTreatment"/>
             <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
          </textClass>
+         <abstract resp="pers:DA1 pers:AL1 pers:MC2 pers:CL1">
+            <p>Written by Winnifred Eaton and Charles Logue, the treatment for <title level="m">Barbary Coast</title> follows Roger Storm’s attempt to sanitize the red light district in San Francisco and the conflict that arises through his infatuation for Lily, a proud resident of the district. Building on Eaton’s earlier outline, the <title level="m">Barbary Coast</title> treatment makes changes to character names and various elements of the plot while giving a clearer voice to her characters through extended sections of dialogue, developing themes of race, class, and female companionship. Many of these revisions reflect the heavy film censorship of the Hays Code era, and despite the treatment being over sixty pages long, little of it, if any, survived the script’s editing and eventual production at MGM studios in 1935. </p>
+         </abstract>
       </profileDesc>
       <revisionDesc status="inProgress">
          <change who="pers:JT1" when="2023-11-25" status="inProgress">Merging documents from ENGL501A and standardizing encoding.</change>

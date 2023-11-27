@@ -144,14 +144,32 @@
     <xsl:function name="wea:returnHeadnoteByline" as="element(ab)">
         <xsl:param name="abstract"/>
         <xsl:variable name="root" select="$abstract/ancestor::tei:TEI"/>
+        <xsl:variable name="authors" select="tokenize($abstract/@resp, '\s+')" as="xs:string*"/>
         <tei:ab type="headnote_byline">
             <xsl:text>Written by </xsl:text>
-            <xsl:for-each select="tokenize($abstract/@resp,'\s+')">
+            
+            <xsl:for-each select="$authors">
                 <xsl:variable name="token" select="."/>
                 <xsl:variable name="persName" select="
                     if (starts-with($token,'#')) 
                     then $root/descendant::respStmt[@xml:id=substring-after($token,'#')]/name
-                    else $sourceXml//TEI[@xml:id='people']/descendant::person[@xml:id=substring-after($token,'pers:')]/persName/reg"/>
+                    else
+                    $sourceXml//TEI[@xml:id='people']/descendant::person[@xml:id=substring-after($token,'pers:')]/persName/reg"
+                    as="element()"/>
+                <xsl:if test="position() gt 1">
+                    <xsl:choose>
+                        <xsl:when test="position() lt last()">
+                            <xsl:text>, </xsl:text>
+                        </xsl:when>
+                        <xsl:when test="position() = last()">
+                            <xsl:if test="position() ne 2">
+                                <xsl:text>,</xsl:text>
+                            </xsl:if>
+                            <xsl:text> and </xsl:text>
+                        </xsl:when>
+                    </xsl:choose>         
+                </xsl:if>
+                
                 <xsl:choose>
                     <xsl:when test="$persName/self::name">
                         <xsl:copy-of select="$persName"/>
@@ -160,7 +178,7 @@
                         <tei:name ref="{$token}"><xsl:sequence select="$persName/node()"/></tei:name>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:if test="not(position() = last())"><xsl:text>, </xsl:text></xsl:if>
+               
             </xsl:for-each>
         </tei:ab>
        
