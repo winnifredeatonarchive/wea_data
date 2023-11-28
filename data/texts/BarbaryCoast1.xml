@@ -49,7 +49,8 @@
             <catRef target="wdt:Hollywood" scheme="wdt:exhibit"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="inProgress">
+         <change who="pers:JT1" when="2023-11-27" status="inProgress">Merging and encoding BarbaryCoast1 document from ENGL501a class.</change>
          <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:MC1" status="empty" when="2020-07-31">Identified as outline.</change>
          <change who="pers:MC1" status="empty" when="2020-06-30">Added note about source.</change>
@@ -57,173 +58,100 @@
       </revisionDesc>
    </teiHeader>
      <text facs="facs:BarbaryCoast1">
-      <pb n="1"/>
-      <body>
-        <div>
-           <head>OUTLINE OF STORY FOR <name>MARY NOLAN</name></head>
-           <list>
-              <head>Temporary titles:</head>
-              <item>HELL HOUSE</item>
-              <item>HELL-CAT SUE</item>
-              <item>TIGER LILY</item>
-           </list>
-        </div>
+        <pb n="1"/>
+      <front>
+         <div>
+            <head>OUTLINE OF STORY FOR <name>MARY NOLAN</name></head>
+            <list>
+               <head>Temporary titles:</head>
+               <item>HELL HOUSE</item>
+               <item>HELL-CAT SUE</item>
+               <item>TIGER LILY</item>
+            </list>
+         </div>
          <div>
             <opener>
                <byline>By <name>Winnifred Reeve</name> and <name><q>Sumner</q></name></byline>
             </opener>
-
+            
             <list>
                <item>THE PLACE: <placeName>San Francisco</placeName></item>
                <item>THE TIME: <date>1905</date></item>
             </list>
-            <!--I tried to put the above list on setting under the element "set" but couldn't do so-->
-        </div>
+            <!-- ENGL501a:I tried to put the above list on setting under the element "set" but couldn't do so-->
+         </div>
+      </front>
+      <body>  
          <div type="sequence" n="1">
            <head>SEQUENCE ONE</head>
-            <!--I tried to put the following two paragraphs under the element "roleDesc" but this element can only be contained by "castGroup" or "castItem"-->
-            <!--I similarly tried to put the names of characters in the two following paragraphs under the element "role" but it can only be contained by "castItem" as well-->
+            <!-- ENGL501a:I tried to put the following two paragraphs under the element "roleDesc" but this element can only be contained by "castGroup" or "castItem"-->
+            <!-- ENGL501a:I similarly tried to put the names of characters in the two following paragraphs under the element "role" but it can only be contained by "castItem" as well-->
             <p><stage type="location">Lodging house.</stage> The Reverend Roger Storm, graduate of Harvard Divinity School. He appears a bit priggish, but in reality is a well meaning, nice young chap, though dead serious so far as his religion is concerned.</p>
             <p>In the same lodging house lives Susy Rooney. Susy is a product of the Barbary Coast, inasmuch as she was actually born there, her father being the owner of one of the gilded palaces--a combination saloon and dance-hall. We bring out that all Susy’s memories of Barbary Coast are pleasant ones. The painted ladies and fashionable gentleman whom she saw in her father’s establishment as a child were her first idols. She is awfully sore because her father insists on her living away from his own place of business, where he has apartment. Big Bill Rooney, her father, thinks that she is safely tucked away in a convent--as we bring out in a line or two of dialogue--when in reality she has escaped from the Dominican Convent across the bay in <placeName>San Rafael</placeName> and is blowing the liberal allowance her father has always prodigally settled on her. She is having a whale of a good time and has gathered about her a number of kindred spirits. Susy, who declares she was raised on whiskey while other kids had milk, always has plenty of booze in her rooms, and she and her friends keep up an eternal <pb n="2"/><fw type="pageNum">2</fw>and infernal racket. (According to the young Reverend Roger Storm). She is her father’s own child--sometimes these parties of hers run on till as late as the appalling hour of eleven o’clock! </p>
             <p>Much to his irritation, and to Susy’s amusement, the young minister and the girl are always meeting on the stairs or in other parts of the lodging-house. Susy never fails to make some audible comment, not especially flattering to Roger’s cloth and dignity. He in turn considers her unregenerate and hopeless. Susy looks upon <emph rendition="rnd:underlined">him</emph> as a joke. He catches her making fun of him and ‘taking him off’ behind his back to her friends, in the lodging-house parlor. He is furious with himself, because he cannot get her off his mind, and finally decides that it is his bounded duty to save her.</p>
-            <p>Susy throws one of her parties, that night, in her rooms, and at the height of the festivities Roger hammer upon the door and threatens the merry-makers with the police. Their ungodly noises are not to be endured, he feels. They all razz him. Susy, who is simply having a good time who appears to the minister to be drunk, <subst>
-               <del>uges</del>
-               <add>urges</add>
-            </subst>her friends to muss his pretty clothes. He refuses to fight, because of his dignity, and goes out with her taunts of <q>Coward! White-liver!</q> ringing in his burning ears. They throw shoes and <subst>
-               <del>botless</del>
-               <add>bottles</add>
-            </subst> at him--one of Susy’s slippers following him out into the hall. He picks up the <subst>
-               <del>shoes</del>
-               <add>slipper</add>
-            </subst>, looks at it thoughtfully, and carries it with him down to his room. One of the girl’s friends suggests that they all go to his <q>prayer-dive</q>--his Midnight Mission, which he conducts in a dilapidated store-room for the benefit of drunkards and bums, and raise a rumpus there.</p>
+            <p>Susy throws one of her parties, that night, in her rooms, and at the height of the festivities Roger hammer upon the door and threatens the merry-makers with the police. Their ungodly noises are not to be endured, he feels. They all razz him. Susy, who is simply having a good time who appears to the minister to be drunk, <subst><del>uges</del><add>urges</add> </subst>her friends to muss his pretty clothes. He refuses to fight, because of his dignity, and goes out with her taunts of <q>Coward! White-liver!</q> ringing in his burning ears. They throw shoes and <del>botless</del> bottles a<supplied>t</supplied> him--one of Susy’s slippers following him out into the hall. He picks up the <del quantity="1" unit="word"/> slipper, looks at it thoughtfully, and carries it with him down to his room. One of the girl’s friends suggests that they all go to his <q>prayer-dive</q>--his Midnight Mission, which he conducts in a dilapidated store-room for the benefit of drunkards and bums, and raise a rumpus there.</p>
             <p>The minister decides that he will move away. He is very much respected by his landlady, and when he gives her notice as he goes out on his way to the Mission, she declares that she’ll clean out all the undesirable element in the house rather than have him leave.</p>
          </div>
          <div type="sequence" n="2">
             <head>SEQUENCE TWO</head>
+            <fw type="continued">(continued)</fw>
             <pb n="3"/><fw type="pageNum">3</fw>
-            <p>This is a Midnight Mission, down in a squalid part of the city--<q>South of The Slot</q>, as it is called in <placeName>San Francisco</placeName>. <view>We show the minister not preaching, but feeding, a long <subst>
-               <del><gap reason="illegible"/></del>
-               <add>queue</add>
-            </subst> of the riff-raff of slum <placeName>San Francisco.</placeName></view> Into this place, now, comes Susy and about three of her men <subst>
-               <del>freidns</del>
-               <add>friends</add>
-            </subst> and a couple of women. They are all a little lit, and ready for anything in the way of fun. One of the men starts for the little barrel-organ in the corner, and they all begin to sing <q>Ta Ra Ra Boom-de-ay</q> and other wild songs of the period, and prance and dance about the place. <note>We will go into the detail of the general effect here.</note> The minister herds his men into an adjoining room, comes back, and in a quiet level voice--very loud and clear--says, <q>I shall give you exactly two minutes to leave this place!</q> They all roar with laughter, and the men lurch towards him belligerently. Rogers watches the clock, and when exactly two minutes have passed <choice>
+            <head>SEQUENCE TWO</head>
+            <p>This is a Midnight Mission, down in a squalid part of the city--<q>South of The Slot</q>, as it is called in <placeName>San Francisco</placeName>. <view>We show the minister not preaching, but feeding, a long <del><gap reason="illegible"/></del> queue of the riff-raff of slum <placeName>San Francisco.</placeName></view> Into this place, now, comes Susy and about three of her men <del><gap reason="illegible"/></del> friends and a couple of women. They are all a little lit, and ready for anything in the way of fun. One of the men starts for the little barrel-organ in the corner, and they all begin to sing <q>Ta Ra Ra Boom-de-ay</q> and other wild songs of the period, and prance and dance about the place. <!--<note>-->We will go into the detail of the general effect here.<!--</note>--> The minister herds his men into an adjoining room, comes back, and in a quiet level voice--very loud and clear--says, <q>I shall give you exactly two minutes to leave this place!</q> They all roar with laughter, and the men lurch towards him belligerently. Rogers watches the clock, and when exactly two minutes have passed <choice>
                <sic>her</sic>
                <corr>he</corr>
             </choice> hurls one of the men through the door. A fight follows, three against one, in which he puts out the whole crew of them. Susy, astonished at seeing it turn out this way and secretly impressed by the prowess of the minister, lingers a moment, when he takes her by the shoulder and says, <q>Now you clear out too!</q>  and pushes her out. This enrages her. She thrusts the door open and shouts defiance at him: <q>You’re not only a prig, you’re a bully!</q></p>
          </div>
          <div type="sequence" n="3">
             <head>SEQUENCE THREE</head>
-            <p><stage type="location">The lodging-house again.</stage> Susy, returning, finds her baggage out on the sidewalk. She rings the bell angrily and arouses the landlady, who tells her that she won’t have trash like her driving away respectable people such as the fine young minister. Susy is in a fine rage. She screams insults, and throws a brick through the window--the minister’s window. He has not returned yet. She is firmly <subst>
-               <del><gap reason="illegible"/></del>
-               <add>convinced</add>
-            </subst> that it is the minister who has had her ejected.</p>
+            <p><stage type="location">The lodging-house again.</stage> Susy, returning, finds her baggage out on the sidewalk. She rings the bell angrily and arouses the landlady, who tells her that she won’t have trash like her driving away respectable people such as the fine young minister. Susy is in a fine rage. She screams insults, and throws a brick through the window--the minister’s window. He has not returned yet. She is firmly                <del><gap reason="illegible"/></del> convinced that it is the minister who has had her ejected.</p>
             <pb n="4"/><fw type="pageNum">4</fw>
-            <p>The minister returns late at night from his Mission. We see him sitting in his room disconsolately. He picks up the little feminine slipper and fondles it. He is thinking--he talks aloud to himself--of what the girl called him. <q>Prig. Bully!</q> <emph rend="underlined">Is</emph> he no more than a well-meaning but stupid prig? he asks himself. This train of thought is running through his mind when the landlady knocks at his door and announces to him self-satisfiedly, <q>That low hussy’ll never bother you again, sir. I threw her out in the stree.</q>--He is astounded, and is angry with the woman for having thrown a girl out into the streets to almost certain ruin there. <q>Ah, she came from the streets, and she can go back to ‘em, the Barbary Coast scum!</q> the landlady says. The young minister is appalled by the realization that if the girl does go to the bad, the responsibility lies solely on his own shoulders. Worse, he is now face to face with the undeniable fact that he is in love with Susy--the wild beautiful creature.</p>
+            <p>The minister returns late at night from his Mission. We see him sitting in his room disconsolately. He picks up the little feminine slipper and fondles it. He is thinking--he talks aloud to himself--of what the girl called him. <q>Prig. Bully!</q> <emph rendition="rnd:underlined">Is</emph> he no more than a well-meaning but stupid prig? he asks himself. This train of thought is running through his mind when the landlady knocks at his door and announces to him self-satisfiedly, <q>That low hussy’ll never bother you again, sir. I threw her out in the <sic>stree</sic></q>.--He is astounded, and is angry with the woman for having thrown a girl out into the streets to almost certain ruin there. <q>Ah, she came from the streets, and she can go back to ‘em, the Barbary Coast scum!</q> the landlady says. The young minister is appalled by the realization that if the girl does go to the bad, the responsibility lies solely on his own shoulders. Worse, he is now face to face with the undeniable fact that he is in love with Susy--the wild beautiful creature.</p>
          </div>
          <div type="sequence" n="4">
             <head>SEQUENCE FOUR</head>
-            <p><stage type="setting">The Barbary Coast--dimly-lighted streets, lurking shadows.</stage><stage type="location">The brilliantly-lighted front of <choice>
-               <sic>Tim Rooney’s</sic>
-               <corr>Bill Rooney’s</corr>
-            </choice>gaudy saloon--The Lucky Shamrock.</stage><view> We see Big <choice>
-               <sic>Tim Rooney’s</sic>
-               <corr>Bill Rooney’s</corr>
-            </choice> mistress, a passionate cheap girl named Magda, a prey to her own emotions, which are like dynamite. We establish the clientele of the saloon, and indicate a few ladies of easy virtue sitting around. </view> Rooney is stunned as he suddenly see his own daughter sitting at one of the tables, regarding him with a mischievous smile. He takes her into his office--literally by the ear</p>
-            <note>NOTE: We can play this scene almost to its finish before letting the audience know that Susy is <choice>
-               <sic>Tim’s</sic>
-               <corr>Bill’s</corr>
-            </choice> daughter and not his mistress. We can get in some very good dialogue.<choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> says, <q>What are yez doing here, ye shameless young baggage. Ain’t I paying good money to get ye eddicated at a convent?</q> And Susy replying, <q>The Barbary Coast’s all the convent I want! You just want to have all the fun yourself.</q></note>
+            <p><stage type="setting">The Barbary Coast--dimly-lighted streets, lurking shadows.</stage><stage type="location">The brilliantly-lighted front of Tim Rooney’s<!-- Corr: Bill Rooney’s -->gaudy saloon--The Lucky Shamrock.</stage><view> We see Big Tim Rooney’s<!-- Corr: Bill Rooney’s --> mistress, a passionate cheap girl named Magda, a prey to her own emotions, which are like dynamite. We establish the clientele of the saloon, and indicate a few ladies of easy virtue sitting around. </view> Rooney is stunned as he suddenly see his own daughter sitting at one of the tables, regarding him with a mischievous smile. He takes her into his office--literally by the ear.</p>
+            <noteGrp>
+               <note>
+                  <label>NOTE:</label>
+                  <p>We can play this scene almost to its finish before letting the audience know that Susy is  Tim’s<!-- Corr: Bill’s --> daughter and not his mistress. We can get in some very good dialogue.Tim<!-- Corr: Bill --> says, <q>What are yez doing here, ye shameless young baggage. Ain’t I paying good money to get ye eddicated at a convent?</q> And Susy replying, <q>The Barbary Coast’s all the convent I want! You just want to have all the fun yourself</q>.</p>
+               </note>
+            </noteGrp>
             <p>
                <camera>Now we cut from this comic scene directly to tragedy. Magda, Tim’s mistress, has overheard the conversation and storms into the office.</camera>
                <pb n="5"/> <fw type="pageNum">5</fw>
-               <!--Suzzie is called Susy in her first appearance. She will later be renamed as Lily. I opted to call character by the name they first appear in. All these variations are marked by the element "choice". I opted for marking out every instance of name changes by doing so because I think that they might point to different stages of revision in Eaton's writing process.-->
-               Magda glares from <choice>
-                  <sic>Suzzie</sic>
-                  <corr>Susy</corr>
-               </choice> to <choice>
-                  <sic>Tim</sic>
-                  <corr>Bill</corr>
-               </choice>. 
-               <!--I thought about coding this exchange of dialogues following the convention of play and used elements such as "sp" and "speaker". However, as these dialogues are accompanied by detailed descriptions of reactions and actions, this part reads more like a novel to me than a play. So I opt to use "lb" instead to reflect the odd formatting of this passage.-->
-               <lb/> <q>What the hell do you mean butting in on my oman?</q></p>
-            <!--Instead of writing Susy's dialogue, Eaton simply use "Her answer" as a stand-in.-->
-               <p>Her answer, <choice>
-                  <sic>Suzzie</sic>
-                  <corr>Susy</corr>
-               </choice> throws back her head and bursts out laughing.</p>
-            <p>Big <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice>roars:
-            <lb/><q>This ain’t a proper woman for you to be speaking to, <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice>.</q> <q>You get on out of here!</q></p>
+               <!-- ENGL501a:Suzzie is called Susy in her first appearance. She will later be renamed as Lily. I opted to call character by the name they first appear in. All these variations are marked by the element "choice". I opted for marking out every instance of name changes by doing so because I think that they might point to different stages of revision in Eaton's writing process.-->
+               Magda glares from Suzzie<!-- Corr: Susy --> to Tim<!-- Corr: Bill -->. 
+               <!-- ENGL501a:I thought about coding this exchange of dialogues following the convention of play and used elements such as "sp" and "speaker". However, as these dialogues are accompanied by detailed descriptions of reactions and actions, this part reads more like a novel to me than a play. So I opt to use "lb" instead to reflect the odd formatting of this passage.-->
+               <!--JT: This would probably be better handled using <persName> and canonical reference;
+                  as such, I've just commented out all of the instances for now-->
+                <q rendition="rnd:block">What the hell do you mean butting in on my oman?</q></p>
+            <!-- ENGL501a:Instead of writing Susy's dialogue, Eaton simply use "Her answer" as a stand-in.-->
+               <p>Her answer, Suzzie<!-- Corr: Susy --> throws back her head and bursts out laughing.</p>
+            <p>Big Tim<!-- Corr: Bill -->roars:
+             <q rendition="rnd:block">This ain’t a proper woman for you to be speaking to, Suzzie<!-- Corr: Susy -->.</q> <q>You get on out of here!</q></p>
             <p>This infuriates Magda:
-            <lb/><q>Oh, I’m not good enough, eh?</q> and leaps at <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice>. She had bitten off more than she can chew for <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice> is more than a match for her. <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> tries vainly to separate them. All the time, as they fight, <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice> is laughing and jeering ‘till suddenly the goaded Magda draws a knife. It is then <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> seizes her by the back of her neck and swings her around <lb/><q>So you’ll <subst>
+             <q rendition="rnd:block">Oh, I’m not good enough, eh?</q> and leaps at Suzzie<!-- Corr: Susy -->. She had bitten off more than she can chew for Suzzie<!-- Corr: Susy --> is more than a match for her. Tim<!-- Corr: Bill --> tries vainly to separate them. All the time, as they fight, Suzzie<!-- Corr: Susy --> is laughing and jeering ‘till suddenly the goaded Magda draws a knife. It is then Tim<!-- Corr: Bill --> seizes her by the back of her neck and swings her around  <q rendition="rnd:block">So you’ll <subst>
                <del>take</del>
                <add>use</add>
             </subst> a knife, will ya--<subst>
                <del>to</del>
                <add><gap reason="illegible"/></add>
             </subst> my gal.</q></p>
-            <p>With that he flings her clear across the room. She falls in a huddled heap. She comes then to her knees and starts screaming and this brings everyone in the place on the run to the door. Someone turns in a police alarm. <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> is once again the huge, dominating, bouncer. He roars to everyone: <lb/><q>Clear out of here--all us youse!</q></p>
-            <p><camera>We CUT TO the police station and pick up our Minister here.</camera> He has been trying to get aid in finding <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice>. The police suggest: <lb/><q>If you want to see some <emph rend="underlined">real</emph> fun, come along.</q></p>
+            <p>With that he flings her clear across the room. She falls in a huddled heap. She comes then to her knees and starts screaming and this brings everyone in the place on the run to the door. Someone turns in a police alarm. Tim<!-- Corr: Bill --> is once again the huge, dominating, bouncer. He roars to everyone:  <q rendition="rnd:block">Clear out of here--all us youse!</q></p>
+            <p><camera>We CUT TO the police station and pick up our Minister here.</camera> He has been trying to get aid in finding Suzzie<!-- Corr: Susy -->. The police suggest:  <q rendition="rnd:block">If you want to see some <emph>real</emph> fun, come along.</q></p>
             <p><subst>
                <del><gap reason="illegible"/></del>
                <add>Here’s</add>
             </subst> a riot call for Rooney’s joint--the toughest place on Barbary.</p>
-            <p><camera>We CUT BACK TO Rooney’s and we show Magda screaming</camera> as she points to <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice> and cries to the hovering crowd:<lb/><q>She tried to take my man from me!</q><lb/>A fit of coughing stop her. We see <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice> look at her and then hurry to her side. She is now all compunction, as she says to Magda: <lb/><q>Ah, he’s nothin’ but my Dad.</q></p>
+            <p><camera>We CUT BACK TO Rooney’s and we show Magda screaming</camera> as she points to Suzzie<!-- Corr: Susy --> and cries to the hovering crowd: <q rendition="rnd:block">She tried to take my man from me!</q>A fit of coughing stop her. We see Suzzie<!-- Corr: Susy --> look at her and then hurry to her side. She is now all compunction, as she says to Magda:  <q rendition="rnd:block">Ah, he’s nothin’ but my Dad.</q></p>
             <p>Just the we hear the <subst>
                <del>police whistle</del>
                <add>arrival</add>
             </subst> of the Police Wagon (Black Maria&gt; and several of the bravest spring from the wagon.
                <pb n="6"/><fw type="pageNum">6</fw>
-            Roger is with them. As they come into the place, we see everyone scattering and almost in a flash the place is empty. The police however, move across the now deserted dance hall to where the roaring voice of <choice>
-               <sic>Tim Rooney</sic>
-               <corr>Bill Rooney</corr>
-            </choice> is heard. He is demanding that <choice>
-               <sic>Sussie</sic>
-               <corr>Susy</corr>
-            </choice> clear out and be damn quick about it</p>
-            <p>As the police break in the door, Rooney has the <choice>
-               <sic>foresite</sic>
-               <corr>foresight</corr>
-            </choice> to shove <choice>
-               <sic>Suxxie</sic>
-               <corr>Susy</corr>
-            </choice> through <subst>
+            Roger is with them. As they come into the place, we see everyone scattering and almost in a flash the place is empty. The police however, move across the now deserted dance hall to where the roaring voice of Tim Rooney<!-- Corr: Bill Rooney --> is heard. He is demanding that Sussie<!-- Corr: Susy --> clear out and be damn quick about it</p>
+            <p>As the police break in the door, Rooney has the foresite<!-- Corr: foresight --> to shove Suxxie<!-- Corr: Susy --> through <subst>
                <del>an opening</del>
                <add>a trap door</add>
             </subst> that is behind the <subst>
@@ -231,31 +159,22 @@
                <add>bar</add>
             </subst> of the main dance hall.</p>
             <p><q>You stay there</q>, he says, <q>or I’ll brain you with a bung-starter!</q></p>
-            <p>The police take Rooney. He goes off fighting and cursing and damning them all. He is bundled into the Black Maria. The Minister has paused to look around the disheveled and now empty place and suddenly a bottle comes flying through the air just missing his head. It has come from behind the bar and presently <choice>
-               <sic>Suzzie’s</sic>
-               <corr>Susy’s</corr>
-            </choice> head arises. A stream of her father’s characteristic profanity pours from the fighting virago.</p>
+            <p>The police take Rooney. He goes off fighting and cursing and damning them all. He is bundled into the Black Maria. The Minister has paused to look around the disheveled and now empty place and suddenly a bottle comes flying through the air just missing his head. It has come from behind the bar and presently Suzzie’s<!-- Corr: Susy’s --> head arises. A stream of her father’s characteristic profanity pours from the fighting virago.</p>
             <p><q>You God Damned Dirty psalm-singing, sneaking, prayer-babbling coot! I suppose it wasn’t enough to get me thrown out of my lodgings--but you had to come here and <subst>
                <del><gap reason="illegible"/></del>
                <add>get the</add>
             </subst> only man in the world I love, arrested by the police!</q></p>
-            <p>Roger tries to hold his dignity. He says: <lb/><q>My child, I have done my duty. Are you aware that this man you say you love is one of the most notorious and infamous characters in <placeName>San Francisco</placeName>?</q></p>
-            <p>The irate girl replies: <lb/><q>You aren’t fit to lick his boots! You say one more word about him or I’ll brain you!</q>--She raises a bottle menacingly.</p>
-            <p>Roger stands his ground:<lb/><q>My heart aches for you, poor little lost lamb. If I could I would give my life to save you.</q> He says.</p>
+            <p>Roger tries to hold his dignity. He says:  <q rendition="rnd:block">My child, I have done my duty. Are you aware that this man you say you love is one of the most notorious and infamous characters in <placeName>San Francisco</placeName>?</q></p>
+            <p>The irate girl replies:  <q rendition="rnd:block">You aren’t fit to lick his boots! You say one more word about him or I’ll brain you!</q>--She raises a bottle menacingly.</p>
+            <p>Roger stands his ground: <q rendition="rnd:block">My heart aches for you, poor little lost lamb. If I could I would give my life to save you.</q> He says.</p>
             <p><q>Oh tell it in heaven</q>, she replies.</p>
             <pb n="7"/><fw type="pageNum">7</fw>
-            <p><q>But,</q> he continues, <q>I thank God that at least I have been the instrument of closing this <choice>
+            <p><q>But</q>, he continues, <q>I thank God that at least I have been the instrument of closing this <choice>
                <sic>infernat</sic>
                <corr>infernal</corr>
-            </choice> brothel.</q></p>
-            <p><choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice> comes out from behind the bar, her two fists on her hips. She picks up one of her father’s big black cigars and chucks it into her mouth.</p>
-            <p><q>Is that so,</q> says <choice>
-               <sic>Suzzie</sic>
-               <corr>Susy</corr>
-            </choice>. <q>Just come around here tomorrow and see what you’ll see, darling.</q></p>
+            </choice> brothel</q>.</p>
+            <p>Suzzie<!-- Corr: Susy --> comes out from behind the bar, her two fists on her hips. She picks up one of her father’s big black cigars and chucks it into her mouth.</p>
+            <p><q>Is that so</q>, says Suzzie<!-- Corr: Susy -->. <q>Just come around here tomorrow and see what you’ll see, darling</q>.</p>
          </div>
          <pb n="8"/><fw type="pageNum">8</fw>
          <div type="sequence" n="5">
@@ -280,7 +199,7 @@
             <p><view>Show now in Lap Dissolves the wheels of moral justice beginning to move.</view></p>
             <p>A delegation before the Mayor of the City, <placeName>San Francisco</placeName>. The Minister presenting a petition signed by important residents. The Mayor is asked to lend his power for a thorough and drastic cleansing of the Barbary Coast.</p>
             <p><view>We LAP DISSOLVE to U.F.A. <camera>Camera shot of half a dozen huge newspaper presses</camera></view>. Through this we reveal that the press is hot behind the moment.</p>
-            <p><view>Show POLICE HEADQUARTERS with the Chief of Police shouting his orders to every officer to get in line for the greatest raid in the history of the City.</view> He says:<lb/><q>Give them women five minutes to pack and clear out!</q></p>
+            <p><view>Show POLICE HEADQUARTERS with the Chief of Police shouting his orders to every officer to get in line for the greatest raid in the history of the City.</view> He says: <q rendition="rnd:block">Give them women five minutes to pack and clear out!</q></p>
             <p>Have one police say: <q>Where’ll we drive them to, Chief?</q></p>
             <p><q>Hell--anywhere--everywhere. Take ‘em to the docks and pack them on the first ship that leaves!</q></p>
          </div>
@@ -288,67 +207,28 @@
          <div type="sequence" n="6">
             <head>SEQUENCE SIX</head>
             <p><camera>Give a great shot of the whole of the brightly lighted Barbary coast. It is running full blast.</camera></p>
-            <p><camera>CUT TO: <stage type="location">Rooney’s place.</stage></camera> Here everything running as usual but now <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> is behind the bar and dominating the place. We bring out in dialogue with one of the helpers, that <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> is expected back and that <subst>
+            <p><camera>CUT TO: <stage type="location">Rooney’s place.</stage></camera> Here everything running as usual but now Lily<!-- Corr: Susy --> is behind the bar and dominating the place. We bring out in dialogue with one of the helpers, that Tim<!-- Corr: Bill --> is expected back and that <subst>
                <del><gap reason="illegible"/></del>
-               <add><choice>
-                  <sic>Lily</sic>
-                  <corr>Susy</corr>
-               </choice></add>
-            </subst> feels vindictive against the Minister because <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> has had to pay a heavy fine as well as having spent some time in jail. As she serves the drinks to the men and thumps the over-flowing glasses down, the men asked her: <lb/><q>When’ll <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice>be back?</q> etc.</p>
+               <add>Lily<!-- Corr: Susy --></add>
+            </subst> feels vindictive against the Minister because Tim<!-- Corr: Bill --> has had to pay a heavy fine as well as having spent some time in jail. As she serves the drinks to the men and thumps the over-flowing glasses down, the men asked her:  <q rendition="rnd:block">When’ll Tim<!-- Corr: Bill -->be back?</q> etc.</p>
             <p><note>And it’s here that we can bring out where he is. Also that the men say that the place won’t be the same when she’s gone.</note></p>
-            <p>Lily says: <q>I ain’t going.</q></p>
-            <p><q><choice>
-               <sic>Tim’ll</sic>
-               <corr>Bill’ll</corr>
-            </choice> never let ya stay.”</q></p>
-            <p><choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> says: <q>Oh, won’t he. When he gets back, he’ll see whose boss here.</q></p>
-            <p><camera>CUT TO the street and show the outsides of a row of houses with red lights outside.</camera><note>(We can spot-color these).</note></p>
+            <p>Lily says: <q>I ain’t going</q>.</p>
+            <p><q>Tim’ll<!-- Corr: Bill’ll --> never let ya stay</q>.</p>
+            <p>Lily<!-- Corr: Susy --> says: <q>Oh, won’t he. When he gets back, he’ll see whose boss here</q>.</p>
+            <p><camera>CUT TO the street and show the outsides of a row of houses with red lights outside.</camera><!--<note>-->(We can spot-color these).<!--</note>--></p>
             <p><camera>Show the police going from place to place.</camera> Screams come from within as one after another prostitutes are driven into the street. This is the beginning of the raid.</p>
-            <p><camera>BACK TO the Rooney place.</camera> A breathless chink suddenly bursts into the place and makes his way to <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. He tries to tell her something and we get in a typical Chinese sentence which, to the audience, will be comprehensible, but which <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> cannot make head or tail off. It will read something like this:</p>
+            <p><camera>BACK TO the Rooney place.</camera> A breathless chink suddenly bursts into the place and makes his way to Lily<!-- Corr: Susy -->. He tries to tell her something and we get in a typical Chinese sentence which, to the audience, will be comprehensible, but which Lily<!-- Corr: Susy --> cannot make head or tail off. It will read something like this:</p>
             <p><q>Allee sameee police he tak rice white ladies down street side. Hully click all sammee go boat side!</q></p>
-            <p><choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> says: <q>Can’t ya see I’m busy? Run along now Chum Lee, don’t bother me.</q></p>
-            <p><view><camera>CUT BACK TO STREET</camera> and show outside the Rooney place the Minister. </view>He is looking in through the window and his glance rests somewhat wistfully on <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>, leaning across the bar and flirting with some good looking tough. Roger grits his teeth and stalks into the place. He stands back a moment surveying the sinful scene.
-            <pb n="10"/><fw type="pageNum">10</fw> Suddenly <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> sees him as she <choice>
-               <sic>screaches</sic>
-               <corr>screeches</corr>
-            </choice> with derisive laughter. Pointing her finger at him she screams:</p>
-            <p><q>Well, if our sweet little praying Willie-boy hasn’t come back. Guess he wants to see us to the hoochie-coochie. Come on over here Willie.</q></p>
-            <p>Roger makes his way through the roar of the crowd. He stops before the bar and surveys her with intense solemnity. He says: <lb/><q>My child. Can you not see the writing on the wall? I warn you that as sure as God Almighty destroyed <choice>
+            <p>Lily<!-- Corr: Susy --> says: <q>Can’t ya see I’m busy? Run along now Chum Lee, don’t bother me</q>.</p>
+            <p><view><camera>CUT BACK TO STREET</camera> and show outside the Rooney place the Minister. </view>He is looking in through the window and his glance rests somewhat wistfully on Lily<!-- Corr: Susy -->, leaning across the bar and flirting with some good looking tough. Roger grits his teeth and stalks into the place. He stands back a moment surveying the sinful scene.
+            <pb n="10"/><fw type="pageNum">10</fw> Suddenly Lily<!-- Corr: Susy --> sees him as she screaches<!-- Corr: screeches --> with derisive laughter. Pointing her finger at him she screams:</p>
+            <p><q>Well, if our sweet little praying Willie-boy hasn’t come back. Guess he wants to see us to the hoochie-coochie. Come on over here Willie</q>.</p>
+            <p>Roger makes his way through the roar of the crowd. He stops before the bar and surveys her with intense solemnity. He says:  <q rendition="rnd:block">My child. Can you not see the writing on the wall? I warn you that as sure as God Almighty destroyed <choice>
                <sic>Sodam and Gaemarrah</sic>
                <corr>Sodom and Gomorrah</corr>
             </choice>, so will he blast this place of sin and wipe out scarlet women who lure men to the depths of destruction.</q></p>
-            <p>Lily pretends to be terribly impressed. She says: <lb/><q>Oh gosh! What do you think he’ll do to me? Ya know I’m scarlet too! That’s what they call me,--Scarlet Lily. But you ought to see the whole of me. I ain’t so red underneath.</q></p>
-            <p>She leaps upon the bar. Putting her hands to her mouth she bawls to the leader of the bank: <lb/><q>Gimme some music</q>, she says. Then winking at the Minister, <q>Watch me do the hoochie-coochie.</q></p>
+            <p>Lily pretends to be terribly impressed. She says:  <q rendition="rnd:block">Oh gosh! What do you think he’ll do to me? Ya know I’m scarlet too! That’s what they call me,--Scarlet Lily. But you ought to see the whole of me. I ain’t so red underneath.</q></p>
+            <p>She leaps upon the bar. Putting her hands to her mouth she bawls to the leader of the bank:  <q rendition="rnd:block">Gimme some music</q>, she says. Then winking at the Minister, <q>Watch me do the hoochie-coochie</q>.</p>
             <p><subst>
                <del><gap reason="illegible"/></del>
                <add>She wears the</add>
@@ -357,22 +237,12 @@
                <del>an</del>
                <add>a</add>
             </subst> score of all the women. We get in all the funny detail and business, all kinds of types, some go fighting, some resignedly along. Some try to vamp the police, etc.</view></p>
-            <p><view><camera>BACK to the Rooney place</camera> and show the Chinamen running from one to another. Get a shrill line from him as he speaks to one of the girls who is the first to comprehend what he means.</view> She screams to the others that those darned blue ribbon crowd had won out. <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> is in the midst of her dance when she sees that some sort of panic has seized everyone in the dance hall. There is scurrying and scuttling in every direction. Magda runs up to her and cries breathlessly:
-            <pb n="11"/><fw type="pageNum">11</fw><lb/>
-            <q><choice>
-               <sic>Lily!</sic>
-               <corr>Susy!</corr>
-            </choice> For God sake--clear out! They say the coppers <choice>
+            <p><view><camera>BACK to the Rooney place</camera> and show the Chinamen running from one to another. Get a shrill line from him as he speaks to one of the girls who is the first to comprehend what he means.</view> She screams to the others that those darned blue ribbon crowd had won out. Lily<!-- Corr: Susy --> is in the midst of her dance when she sees that some sort of panic has seized everyone in the dance hall. There is scurrying and scuttling in every direction. Magda runs up to her and cries breathlessly:
+            <pb n="11"/><fw type="pageNum">11</fw> <q rendition="rnd:block">Lily!<!-- Corr: Susy! --> For God sake--clear out! They say the coppers <choice>
                <sic>is</sic>
                <corr>are</corr>
             </choice> cleanin’ up the whole of Barbary Coast and they’ll be here before we know it!</q></p>
-            <p><choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> has stopped dancing. She whirls around and her glance goes straight to the minister. <lb/><q>So! You and the coppers are in cahoots, heh? Well I’ll show you a thing or two!</q></p>
+            <p>Lily<!-- Corr: Susy --> has stopped dancing. She whirls around and her glance goes straight to the minister.  <q rendition="rnd:block">So! You and the coppers are in cahoots, heh? Well I’ll show you a thing or two!</q></p>
             <p>With that she begins to bark orders to her people and we see everybody rushing to pile tables and chairs <subst>
                <del>of</del>
                <add>and</add>
@@ -380,38 +250,23 @@
                <del>and</del>
                <add>from</add>
             </subst> carving knives to chair legs, bottles, glasses, doorknobs, anything.</p>
-           <p><choice>
-              <sic>Lily</sic>
-              <corr>Susy</corr>
-           </choice> says to the Minister: <lb/><q>Now you! You gave me two minutes to clear out of your dive! I’ll give you one to get outta mine!</q></p> 
-            <p>He looks at her steadily, apparently unafraid and he replies: <lb/><q><choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>, my child, I will stay here to protect you.</q></p>
-            <p>At that she bursts out laughing: <lb/><q>Me?--The Scarlet Lily don’t need no protection from a hymn-<subst>
+           <p>Lily<!-- Corr: Susy --> says to the Minister:  <q rendition="rnd:block">Now you! You gave me two minutes to clear out of your dive! I’ll give you one to get outta mine!</q></p> 
+            <p>He looks at her steadily, apparently unafraid and he replies:  <q rendition="rnd:block">Lily<!-- Corr: Susy -->, my child, I will stay here to protect you.</q></p>
+            <p>At that she bursts out laughing:  <q rendition="rnd:block">Me?--The Scarlet Lily don’t need no protection from a hymn-<subst>
                <del>drewing</del>
                <add><gap reason="illegible"/></add>
             </subst> parson.</q></p>
             <p>With that she lets fly a glass of liquor from which she had been drinking as she danced. Hardly as the glass left her hand when we hear the hammering upon the doors of the police.</p>
             <p>The raid follows. <note>Detailed description and the breaking in of the place and the terrific fight between the police and her people after the police break in.</note></p>
-            <p>The police of course, have the advantage and soon have the toughs subdued and drive them before them. <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> is just about to dart back into the private rooms when a big copper grabs her. She fights for her freedom. The copper handles her none too gently when the indignant minister intervenes.</p>
+            <p>The police of course, have the advantage and soon have the toughs subdued and drive them before them. Lily<!-- Corr: Susy --> is just about to dart back into the private rooms when a big copper grabs her. She fights for her freedom. The copper handles her none too gently when the indignant minister intervenes.</p>
             <p><q>Officer, what do mean by holding that girl’s arm like that?</q></p>
-            <p>The police replies: <q>Aw--keep out of this.</q></p>
-            <p>The minister says: <q>Do you know who I am? I’m at the head of this vice crusade.”</q><q>I order you!</q> The police contemptuously
-               <pb n="12"/><fw type="pageNum">12</fw> brushes past him and drag the scratching, biting, fighting, <choice>
-                  <sic>Lily</sic>
-                  <corr>Susy</corr>
-               </choice> out into the street.</p>
+            <p>The police replies: <q>Aw--keep out of this</q>.</p>
+            <p>The minister says: <q>Do you know who I am? I’m at the head of this vice crusade</q>. <q>I order you!</q> The police contemptuously
+               <pb n="12"/><fw type="pageNum">12</fw> brushes past him and drag the scratching, biting, fighting, Lily<!-- Corr: Susy --> out into the street.</p>
             <p>A mob <subst>
                <del>of</del>
                <add>surges</add>
-            </subst> in between the Minister and <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. The Minister tries to fight his way through.</p>
+            </subst> in between the Minister and Lily<!-- Corr: Susy -->. The Minister tries to fight his way through.</p>
             <p><camera>BACK to the street.</camera> Here is seen, almost <choice>
                <sic>beggering</sic>
                <corr>beggaring</corr>
@@ -422,73 +277,28 @@
                <sic>serge</sic>
                <corr>surge</corr>
             </choice> around them and the police have to clear  a passage for them along the streets.</p>
-            <p>Beating his way through the dense throng we see big <choice>
-               <sic>Tim Sullivan</sic>
-               <corr>Bill Rooney</corr>
-            </choice>. He is hatless and breathless. We see him come outside his own place and for a moment he stands stock still, staring at the broken doors and smashed windows. He whirls around like a bated bull and begins to bellow to the crowds about him: <lb/><q>Where’s my <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>--where’s my girl?!</q></p>
+            <p>Beating his way through the dense throng we see big Tim Sullivan<!-- Corr: Bill Rooney -->. He is hatless and breathless. We see him come outside his own place and for a moment he stands stock still, staring at the broken doors and smashed windows. He whirls around like a bated bull and begins to bellow to the crowds about him:  <q rendition="rnd:block">Where’s my Lily<!-- Corr: Susy -->--where’s my girl?!</q></p>
             <p>No one pays any attention to him.</p>
-            <p><view><camera>CUT BACK TO the parade of women</camera> and show, plodding along with the prostitutes, <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. We pause a moment to see that she is helping along and almost carrying another woman.</view> This is the weak Magda who has just had a <subst>
+            <p><view><camera>CUT BACK TO the parade of women</camera> and show, plodding along with the prostitutes, Lily<!-- Corr: Susy -->. We pause a moment to see that she is helping along and almost carrying another woman.</view> This is the weak Magda who has just had a <subst>
                <del><gap reason="illegible"/></del>
                <add><choice>
                   <sic>hemorage</sic>
                   <corr>hemorrhage</corr>
                </choice></add>
-            </subst>. We show the great tenderness of <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> here.</p>
-            <p><camera>CUT BACK TO <choice>
-               <sic>TIM</sic>
-               <corr>BILL</corr>
-            </choice> and show the minister beside him.</camera> <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> is now almost beside himself.</p>
-            <p><q>My gal! My gal! Where’s my <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>!</q>--he howls.</p>
-            <p>Suddenly he sees the parson looking at him. <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> says: <lb/><q>Mr. Minister--have you seen anything o’ my gal?</q></p>
-            <p>The minister replies sternly: <lb/><q>Are you referring to that sinful woman known as ‘The Scarlet Lily’?</q></p>
-            <p>Tim replies almost pitifully:<lb/><q>My <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> ain’t sinsul--she’s nothin’ but a kid.</q></p>
-            <p>The minister says: <lb/><q>With God’s help I pray that I may pluck this sinful brand from the burning fire.</q></p>
+            </subst>. We show the great tenderness of Lily<!-- Corr: Susy --> here.</p>
+            <p><camera>CUT BACK TO TIM<!-- Corr: BILL --> and show the minister beside him.</camera> Tim<!-- Corr: Bill --> is now almost beside himself.</p>
+            <p><q>My gal! My gal! Where’s my Lily<!-- Corr: Susy -->!</q>--he howls.</p>
+            <p>Suddenly he sees the parson looking at him. Tim<!-- Corr: Bill --> says:  <q rendition="rnd:block">Mr. Minister--have you seen anything o’ my gal?</q></p>
+            <p>The minister replies sternly:  <q rendition="rnd:block">Are you referring to that sinful woman known as ‘The Scarlet Lily’?</q></p>
+            <p>Tim replies almost pitifully: <q rendition="rnd:block">My Lily<!-- Corr: Susy --> ain’t sinsul--she’s nothin’ but a kid.</q></p>
+            <p>The minister says:  <q rendition="rnd:block">With God’s help I pray that I may pluck this sinful brand from the burning fire.</q></p>
             <pb n="13"/><fw type="pageNum">13</fw>
-            <p>At that <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> grasps his arm: <lb/><q>Wholly saints, don’t tell me there’s any burning about my <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>.--Why, she’s all the gal I’ve got. Her mother died when she was born and we didn’t have no other children!</q></p>
-            <p>The Minister takes this big. It dawns upon him that <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> is <choice>
-               <sic>Lily’s</sic>
-               <corr>Susy’s</corr>
-            </choice> father.</p>
+            <p>At that Tim<!-- Corr: Bill --> grasps his arm:  <q rendition="rnd:block">Wholly saints, don’t tell me there’s any burning about my Lily<!-- Corr: Susy -->.--Why, she’s all the gal I’ve got. Her mother died when she was born and we didn’t have no other children!</q></p>
+            <p>The Minister takes this big. It dawns upon him that Tim<!-- Corr: Bill --> is Lily’s<!-- Corr: Susy’s --> father.</p>
             <p><q>You mean she’s your daughter?</q></p>
             <p><q>Sure she is. The only child I ever had. Oh wirra, wirra!</q></p>
-            <p>The minister takes his arm--<lb/><q>My poor fello</q>, he says. <q>I’ve done you a great wrong. Tell me about --<choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>.</q></p>
-            <p><q>Sure--and she’s a good girl</q>, says <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice>. <q>It’s meself who tried to keep her away from all this but she was born on the Barbary and she thought the place was grant and b’gorra it is!</q></p>
+            <p>The minister takes his arm-- <q rendition="rnd:block">My poor fello</q>, he says. <q>I’ve done you a great wrong. Tell me about --Lily<!-- Corr: Susy --></q>.</p>
+            <p><q>Sure--and she’s a good girl</q>, says Tim<!-- Corr: Bill -->. <q>It’s meself who tried to keep her away from all this but she was born on the Barbary and she thought the place was grant and b’gorra it is!</q></p>
             <pb n="14"/><fw type="pageNum">14</fw>
          </div>         
          <div type="sequence" n="7">
@@ -500,59 +310,280 @@
          </div>
          <div type="sequence" n="8">
             <head>SEQUENCE EIGHT</head>
-            <p><view>This covers after the earthquake, a public park where the refugees are being cared for, foremost among them is Roger and his cheif lieutenant is <choice>
-               <sic>Big Tim</sic>
-               <corr>Big Bill</corr>
-            </choice>. We will show the minister feeding and caring for the destitute and homeless thousands. We will show <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> in the long line of people going up for her dole coffee and bread. One of the women workers hand <subst>
+            <p><view>This covers after the earthquake, a public park where the refugees are being cared for, foremost among them is Roger and his cheif lieutenant is Big Tim<!-- Corr: Big Bill -->. We will show the minister feeding and caring for the destitute and homeless thousands. We will show Lily<!-- Corr: Susy --> in the long line of people going up for her dole coffee and bread. One of the women workers hand <subst>
                <del>this</del>
                <add>these</add>
-            </subst> to <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. We will show her running back to some little place.</view> She swipes a shawl from someone and scuttles out of sight ‘till she comes to where Magda is lying on the ground. She puts the shawl around Magda, feeds her. Magda says weakly:</p>
-            <p><q>If only I could have a drop of real liquor.</q></p>
-            <p><q>I’ll get you some</q>, says <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>, <q>don’t worry. I heard there’s a regular guy whose takin’ care of everyone here and I’m gonna get with him personally.</q></p>
-            <p><view>We will show <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> coming up at the back of the minister who is in shirt sleeves with a big rough hat on his head.</view> Someone has pointed him out to <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. He has several days growth of beard on his face. A number of people are gathered around him and on the
+            </subst> to Lily<!-- Corr: Susy -->. We will show her running back to some little place.</view> She swipes a shawl from someone and scuttles out of sight ‘till she comes to where Magda is lying on the ground. She puts the shawl around Magda, feeds her. Magda says weakly:</p>
+            <p><q>If only I could have a drop of real liquor</q>.</p>
+            <p><q>I’ll get you some</q>, says Lily<!-- Corr: Susy -->, <q>don’t worry. I heard there’s a regular guy whose takin’ care of everyone here and I’m gonna get with him personally</q>.</p>
+            <p><view>We will show Lily<!-- Corr: Susy --> coming up at the back of the minister who is in shirt sleeves with a big rough hat on his head.</view> Someone has pointed him out to Lily<!-- Corr: Susy -->. He has several days growth of beard on his face. A number of people are gathered around him and on the
                <pb n="15"/><fw type="pageNum">15</fw>
             grass we see an old organ. A woman is sitting on an upturned <choice>
                <sic>bos</sic>
                <corr>box</corr>
-            </choice> with her hands ready to strike the keys. <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> plucks the sleeve of the minister. He does not look at her. He says:</p>
-            <p><q>One minute, you must wait your turn.</q></p>
-            <p>Then he says, addressing the crowd:<lb/><q>Let us all join in singing: Safe in the Arms of Jesus.</q></p>
-            <p>We see the organist’s hands begin the prelude and a big roaring voice with a wide open mouth, big <choice>
-               <sic>Tim</sic>
-               <corr>Bill</corr>
-            </choice> is starting the hymn. The minister turns, looks down at <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> while leading the music with his hand. His face is transfigured as he sees <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice>. She looks up at him. He says the one word: <q><choice>
-               <sic>Lily!</sic>
-               <corr>Susy!</corr>
-            </choice></q></p>
-            <p>We see her eyes fill and then her lips move and the next we know, <choice>
-               <sic>Lily</sic>
-               <corr>Susy</corr>
-            </choice> is singing: <q>Safe In the Arms of Jesus.</q></p>
+            </choice> with her hands ready to strike the keys. Lily<!-- Corr: Susy --> plucks the sleeve of the minister. He does not look at her. He says:</p>
+            <p><q>One minute, you must wait your turn</q>.</p>
+            <p>Then he says, addressing the crowd: <q rendition="rnd:block">Let us all join in singing: Safe in the Arms of Jesus.</q></p>
+            <p>We see the organist’s hands begin the prelude and a big roaring voice with a wide open mouth, big Tim<!-- Corr: Bill --> is starting the hymn. The minister turns, looks down at Lily<!-- Corr: Susy --> while leading the music with his hand. His face is transfigured as he sees Lily<!-- Corr: Susy -->. She looks up at him. He says the one word: <q>Lily!<!-- Corr: Susy! --></q></p>
+            <p>We see her eyes fill and then her lips move and the next we know, Lily<!-- Corr: Susy --> is singing: <q>Safe In the Arms of Jesus</q>.</p>
          </div>
       </body>
+        <pb n="16"/>
+        <fw type="pageNum" place="left">LN</fw>
+        <back>
+           <div>
+              <head>CHARACTERS</head>
+              <head type="subtitle">(In order of their appearances)</head>
+              <castList>
+                 <castItem>
+                    <role>DAN AVERY.</role>
+                    <roleDesc>Avery is a man of about thirty-five, handsomely set up. His is a firm
+                       square jaw, and, while an advocate of peace, he can fight -- and does,
+                       whenever necessary. He is as far from a reformer type as Wolheim; the type who
+                       will forge his way through difficulties and over obstacles once his course
+                       is determined. He dresses genteely in the mode of the period. </roleDesc>
+                 </castItem>
+                 <castItem>
+                    <role>JOHNSON.</role>
+                    <roleDesc>Johnson is a plain-clothes man, probably graduated from the ranks. He
+                       is Avery’s right-hand man and a rather canny dick in spite of the fact
+                       <corr>that</corr> the one glance at him reveals the fact he is a <q>plain
+                          clothes</q> man.</roleDesc>
+                 </castItem>
+                 <castItem>
+                    <role>SIN LEE.</role>
+                    <roleDesc>A Chinaman at Lun Wong’s hop joint. A rather evil appearing specimen,
+                       snaggle-toothed and with a bum eye over which he wears a black patch.
+                       Impassive in manner, Sin Lee is nevertheless a menacing figure.</roleDesc>
+                 </castItem>
+                 <castItem><role>LUN WONG.</role><roleDesc>In charge of the hop-joint. Lun Wong is
+                    about forty-five; a placid faced Celestial, expression almost benign. He
+                    never raises his voice above a softly modulated level. From the manner in
+                    which he looks one in the eye, it is difficult to believe he is not the
+                    benign character he appears to be.</roleDesc></castItem>
+                 <pb n="17"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <castItem><role>BULL BRANDON.</role><roleDesc>Bull is a political product. In his
+                    early forties, he is a gross man whose general characteristics have won him
+                    the cognomen of <q>Bull</q>. He is always well dressed, but flashily so. He
+                    affects a heavy gold watch chain, attached to the center of which is a charm
+                    in the form of a girl’s leg. He is forever twirling this charm, wrapping the
+                    chain about his finger in the operation. His collar, though it may not be
+                    celluloid, glistens when the light hits it. He wears a diamond stud and
+                    several large diamonds on his paw-like hands. His shirt is of striped
+                    material and he affects a cigar which he never smokes more than about an
+                    inch. His face is normally one to inspire fear, although at times, Bull can
+                    assume an easy affability suited to the occasion if need be.
+                 </roleDesc></castItem>
+                 <castItem><role><q>SLIPPY</q>.</role><roleDesc>Slippy is one of <q>Bull’s boys</q> -- a
+                    product of Barbary Coast. He is fairly tall and rather slender, a <q>dandy</q> --
+                    a sport, affecting the ultra in the mode of the period, derby and all. He is
+                    on intimate terms with Bull and is free to come and go in the place as he
+                    pleases.</roleDesc></castItem>
+                 <castItem><role>LILY BRANDON.</role><roleDesc>Lily is about twenty -- a beautiful,
+                    almost fragile girl with light hair and fair complexion. Her clothes are
+                    expensive, and, inasmuch as purchased <q>uptown</q>, are without doubt in the
+                    best style of the period. Certainly, her appearance is a contrast to the
+                    average woman seen in her father’s dance hall and on the street. Lily is
+                    genuine. She <corr>loves</corr> life and takes it as she finds it. No
+                    pretense whatsoever in her manner; no putting on dog -- but a consummate
+                    actress. She can be soft; she can be hard as nails and full of fire but
+                    quick to tenderness. She is fully aware of the sordidness of the Coast; she
+                    knows that there are tarts -- as a matter fact, is on speaking terms with
+                    several. </roleDesc></castItem>
+                 <castItem><role>SYLVIA AVERY.</role><roleDesc>Sylvia is a girl of not more than
+                    eighteen. She is pretty. Normally inclined to be somewhat wild, our contacts
+                    with Sylvia present her as a girl who has experienced a rather crude
+                    awakening to some of the sordid realities of life. </roleDesc></castItem>
+                 <pb n="18"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <castItem><role>LOUIS.</role><roleDesc> One of the bartenders in Bull Brandon’s
+                    dance hall. He is typical of the period and locale; rather stout, florid and
+                    with a moustache in which he takes great pride. He uses hair oil, resulting
+                    in a black patent leather effect on the top of his head.
+                 </roleDesc></castItem>
+                 <castItem><role>MRS. TIBBETT.</role><roleDesc> Mrs. Tibbett runs a <q>fashionable
+                    boarding house</q> uptown. Having been through the mill, she is an
+                    uncompromising type and has little tolerance for anyone’s
+                    shortcomings--except her own; something of an Emily Fitzroy
+                    type.</roleDesc></castItem>
+                 <castItem><role>CHIEF OF POLICE.</role><roleDesc>The Chief is a man in his middle
+                    forties, with hair slightly gray. He has come up from the ranks and knows
+                    what it’s all about. He has a heavy voice, which however, exhibits a degree
+                    of nervousness when he talks about Bull Brandon on the night of the raid; it
+                    is quite possible that he has accepted some of Bull’s favors and finds his
+                    position a rather awkward one. He is a large man, with a well developed
+                    stomach from drinking too much beer.</roleDesc></castItem>
+                 <castItem><role>PLAIN CLOTHES MAN SEEN IN CHIEF’S OFFICE.</role><roleDesc>A typical
+                    assortment of dicks, the majority of whom present the usual characteristics;
+                    grim-faced men who contact with all phases of life and to whom a raid or a
+                    murder are all within the day’s work.</roleDesc></castItem>
+                 <castItem><role>POLICEMEN SEEN IN CHIEF’S OFFICE.</role><roleDesc>Lieutenants and
+                    Captains. Varying types, but typical men of the force.</roleDesc></castItem>
+                 <castItem><role>TWO REPORTERS.</role><roleDesc>Typical live-wires of the press,
+                    <q>relaxing</q> over a bottle of <q>Old Crow</q> after a hard night’s
+                    work......</roleDesc></castItem>
+                 <pb n="19"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 
+                 <castItem><role>BULL’S <q>GANG</q>.</role><roleDesc>A half dozen <q>mugs</q>, all products of
+                    Barbary Coast. A typical assortment of tough hombres to whom beating up a
+                    man or even murdering him is a mere routine detail. In the main, they are
+                    fairly well dressed, but of course in a common, cheap way. Their association
+                    with Bull pays handsome dividends.</roleDesc></castItem>
+                 <!--These aren't *really* castItems proper...but I'm not sure how best to display this...-->
+                 <castItem>
+                    <role>STREET SCENES.</role>
+                    <roleDesc>Stevedores and their girls; sailors
+                    and their girls; girls of the street, old and young; peddlers; beggars;
+                    Chinamen: dock hands; stokers; policemen; hack drivers -- a cosmopolitan,
+                    heterogeneous assortment from the lower walks of life.</roleDesc>
+                    <!--JT: I have put in a bad hack here to make this a bit easier to use-->
+                    <seg rendition="rnd:block">
+                       <label>ON THE NIGHT OF THE RAID.</label>
+                       <seg>Prostitutes, old and young; Madames;
+                          pimps.</seg>
+                    </seg>
+                 </castItem>
+                 <castItem>
+                    <role>AT THE DOCKS.</role>
+                    <roleDesc>Prostitutes, Madames; plain clothes guards; policemen; 
+                       captains of sailing vessels, etc. </roleDesc>
+                 </castItem>
+              </castList>
+           </div>
+
+           <div>
+              <pb n="20"/>
+              <fw type="pageNum" place="left">LN</fw>
+              <head>SETS</head>
+              <pb n="21"/>
+              <fw type="pageNum" place="left">LN</fw>
+              <!-- ENGL501a: could not use the SET element here for "sets"; I could not find the proper nesting sequence for it to validate. I chose to follow the "Ropes" model instead. -->
+              <!--This is probably better specified as a kind of list-->
+              <list type="sets">
+                 <item>
+                    <num>1.</num>
+                    <label>EXTERIOR. PACIFIC STREET, <placeName>SAN FRANCISCO, CALIFORNIA</placeName>. IN THE YEAR 1916.</label>
+                    <p>This portion of <placeName>Pacific Street</placeName> runs East and West through that section of the city known as Barbary Coast. The normal angle is West, toward <placeName>Chinatown</placeName>, where, just beyond <placeName>Montgomery</placeName>, <placeName>Pacific Street</placeName> starts a fairly abrupt rise. There is a carline on <placeName>Montgomery Street</placeName>. If our set structure permits, it will be effective to show the cars at various intervals.</p>
+                    <p>The principle angle, however, is along the left hand side of the street, where, on the corner at the intersection of <placeName>Sansome and Pacific</placeName>, there is a two-story frame structure known as the <q>PALACE DANCE HALL AND BAR</q>, proclaimed in a flasher electric sign facing on <placeName>Pacific</placeName> and above the Arcade entrance to the dance hall proper.</p>
+                    <p>On the corner, next to the arcade entrance, is a <q>FOR MEN ONLY</q> museum, much in the fashion of an old <q>nickelodeon</q>, with ticket booth and all. In the open space are numerous flashy signs and a few anatomical posters, hinting at the mysteries to be revealed inside. There is a barker’s platform just within the enclosure, <emph>on which a spieler constantly harangues the passing throng to come inside <q>and see things which will amaze you and enlighten you as to the wonders of the human anatomy</q>.</emph></p>
+                    <p>In a similar space on the other side of the arcade, is a small store front, this having been adapted to the requirements of a tattooing establishment and a <q>Your photo for 25 cents</q> picture gallery. The windows are cluttered with pictures and tattoo designs, etc.</p>
+                    <p>Next to this is a narrow alley about three feet wide, arched in front. The space just off the sidewalk is stacked high with an accumulation of empty beer kegs. The rest of the block is a succession of cheap buildings of frame structure, with possibly a brick one now and then. There is a cheap Italian restaurant, a pawn shop, a <q>side show</q> <emph>with a tin-panny going full tilt and again a barker haranguing the crowd</emph>. There is a cheap clothing store with dummy figures close to the door and the usual signs. <q>Take me home for $5.49</q> .etc. Adjoining this, a <q>hotel</q> with a sign, <q>Rooms by Day or Week</q> above the stairs which lead to the floor above. Then comes a saloon and then a Chop Suey joint, with its front done resplendently in Chinese treatment <emph>with wind-bells tinkling above the door.</emph> On the corner of <placeName>Montgomery</placeName>, another saloon.</p>
+                 </item>
+                 <pb n="22"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <item>
+                    <num>2.</num>
+                    <label>ARCADE ENTRANCE TO THE PALACE DANCE HALL.</label>
+                    <p>On either side of this twelve foot wide arcade which leads to the interior proper are a number of <q>Peephole</q> machines which require a penny in the slot and manual operation of the side crank for the viewer to see the racy moving pictures thus disclosed. At the end of this arcade is a partitioning wall, with double doors, which, when swung back, reveal the dance floor.</p>
+                 </item>
+                 <item>
+                    <num>3.</num>
+                    <label>EXTERIOR. AN ALLEY IN THE REAR OF THE PALACE DANCE HALL AND BAR.</label>
+                    <p>This is in striking contrast to the cheap gayness of the street. The alley is dank and dirty with accumulated rubbish -- discarded boxes, barrels, refuse of all kinds scattered around behind the heavily shuttered rears of the warehouses fronting on the street which parallels <placeName>Pacific</placeName>. The feeling should be impressionistic. Two or three clothes lines diagonally across the alley from window to window hint at low living quarters in some of the buildings, for these lines carry articles of dingy clothing. Further up the alley is a narrow intersecting alley about twelve feet long which leads to the entrance of Lun Wong’s hop joint. Close to the point of intersection, is a weather-protected light -- one of small candle power, giving but faint illumination, but sufficient to show any one standing directly under it. At the end of the intersecting alley is a heavy door.</p>
+                 </item>
+                 <item>
+                    <num>4.</num>
+                    <label>INTERIOR. NARROW HALLWAY OF LUN WONG’S HOP JOINT.</label>
+                    <p>The normal angle discloses in foreground, on the right, the door opening into the alley. Upscene, at the end of the hall is another door, which, when opened, shows a small portion of dimly lit room, air heavy with smoke which <emph>kills all details</emph>. The hall is about four or five feet wide, dingy and dirty. Cob webs wave downward from the ceiling; dirty, cracked walls are revealed in the flickering light from an uncertain gas flame. The alley door when opened, shows that it is about four inches thick, fitted with heavy bolts on the hall side. There is a shotbolt at the bottom which drops automatically into a hole in the floor when the door is opened. There is a sliding panel peep-hole in the door which leads to the smoking room.</p>
+                 </item>
+                 <pb n="23"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <item>
+                    <num>5.</num>
+                    <label>INTERIOR. BULL BRANDON’S <q>OFFICE</q>, ABOVE THE PALACE BAR AND DANCE HALL.</label>
+                    <p>This is a moderate-sized room, the walls of which are papered. Upstage is a door opening into the upper hall. When this door is opened, the stairs which descend to the dance hall below may be seen. In right wall, two windows, opening onto the narrow alley between the dance hall and the adjoining building. The windows are rather dirty. Between them, an old-fashioned fireplace with mantle. Above this is a picture of John L. Sullivan or some other pugilist. In the upper left-hand corner is a leather couch. Center, a turned leg table, the top of which is green felt. There is a desk stand telephone, 1900 type. A cigar box, panatela size is handy. Also a whiskey decanter from the bar and several glasses. There are two polished brass spittoons. Illumination is from a combination gas and electric fixture, from one branch of which however, dangles a drop cord with a green tin shade which concentrates the light over the desk. Several magazines, Collier’s Weekly and the Police Gazette are scattered on the table. There are a couple of deeply upholstered leather chairs, one a rocker. The chair at the desk is a high-backed swivel affair, with a cushion fastened to the back by cords. In the right wall is a door opening into an adjoining room.</p>
+                 </item>
+                 <item>
+                    <num>6.</num>
+                    <label>INTERIOR. PALACE DANCE HALL AND BAR.</label>
+                    <p>This view is described from the position of one standing at the arcade doors. Along the left, are a number of booths, with tables and chairs inside, each booth having curtains which may be drawn if the occupants so desire. Midway, on the left, are two swinging doors which open on to <placeName>Sansome</placeName> Street. The rear wall is also a row of booths, terminating at about center, where on a raised platform are the musicians. To the right of this, separated from the adjoining space by curtains of the same cheap material as that of the booths, is a door which opens into the rear and eventually terminates in the alley. On the right of this, a section of wall enclosing a staircase, the door of which is close to that opening into the alley. These stairs ascend to a landing at which point they make an angle turn to the floor above. On the right, between the rear and the end of the bar, are two other booths. The second booth has a wooden partition which separates it from the end of the bar, nearby. Between this
+                     <pb n="24"/>
+                     <fw type="pageNum" place="left">LN</fw>
+                     <fw type="continued">6. (Cont’d)</fw>
+                       wooden partition and the bar, and in the right wall, is a door, or opening which leads to another stairway, this stairway meeting the same landing as the rear stairs. The bar is probably one of the most expensive Brunswick-Balke-Callender ever built. The mirrors are frosted in intricate borders and the glassware is shining like a nigger’s heel. Three bartenders are constantly at work serving patrons this point and filling orders for those at the tables.</p>
+                 </item>
+                 <item>
+                    <num>7.</num>
+                    <label>INTERIOR. A ROOM WHICH ADJOINS BULL’S OFFICE.</label>
+                    <p>The actual nature of this room is not disclosed, for all that is necessary for the action is a portion of the wall, which shows the door opening into Bull’s office. This should be integral with the office set.</p>
+                 </item>
+                 <item>
+                    <num>8.</num>
+                    <label>INTERIOR. LILY’S <q>SITTING ROOM</q> IN MRS. TIBBETT’S BOARDING HOUSE.</label>
+                    <p>This is a moderately small room, typical of the <q>fashionable boarding house</q>. On the right are two windows with lace curtains. These windows look out into the street from the second or third floor. On the left, a door opening into the hall. In center of upscene wall, a pair of sliding doors which open into the bedroom. This opening is hung with knotted velvet cords, tied back to each side. When the doors are pushed back, a glimpse of the bedroom may be had, showing a heavy walnut bed, head against the rear wall. The sitting room boasts a frosted glass combination chandelier. Across the upper right hand corner is a sofa. In the center of the room, a small, square table and on it, one or two books and a small vase. There are one or two pictures on the wall, framed chromos -- and a family <q>portrait</q> which might do credit to a rogue’s gallery. In the left-hand corner, on a small stand, is a music box -- the type which created a sensation in its day, playing punched-zinc records about eighteen inches in diameter.</p>
+                 </item>
+                 <pb n="24"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <item>
+                    <num>9.</num>
+                    <label>INTERIOR. LOWER HALL, MRS. TIBBETT’S BOARDING HOUSE.</label>
+                    <p>This is typical of the <q>fashionable boarding house</q> hallway. On the right, are double sliding doors, giving into what was formerly the <q>parlor</q>, but which is now Mrs. Tibbett’s own room, from which she can get a line on all people coming in and going out. The hall is fairly short. At the upper end, is a door leading to the rear, and in the wall on right, another door opening into the room which adjoins the parlor. On left, terminating in medium foreground, are the stairs which ascend to the next floor. These stairs boast a mahogany rail, terminating in a rather ornate Newel-post. Against the right wall, and between the doors is a wall telephone, pay station type. Near it, an old-fashioned hat rack and umbrella stand. The place is lighted by a combination fixture.</p>
+                 </item>
+                 <item>
+                    <num>10.</num>
+                    <label>UPPER HALL. MRS. TIBBETT’S BOARDING HOUSE.</label>
+                    <p>On the left, upscene, the stairs terminate within a few feet of three doors -- one on the left, one in center of rear wall, and one on the right. In foreground, on right, is the door which opens into Lily’s sitting room. The hallway is lighted by a combination fixture on the wall. The floor is carpeted with some fairly well worn, gaudy material.</p>
+                 </item>
+                 <item>
+                    <num>11.</num>
+                    <label>INTERIOR.POLICE CHIEF’S OFFICE.</label>
+                    <p>This is a medium-sized room. Upstage, are two tall broad windows with small square panes. These look out into the street. Between these windows, hang two pictures -- one of the Mayor, and a smaller one, a group of policemen. On the right is the corridor door, a dark-panelled one matching the wainscoting which goes around the room. Against the wall on right is a leather settee. Above it, another picture -- Washington, crossing the Delaware. Above the door, yet another picture -- a flashlight of the Policemen’s Benefit Ball. The desk is a flat-top, <choice><sic>dounle-ended</sic><corr>double-ended</corr></choice> one. On one corner, a letter tray. On the other, a couple of telephones. Behind the desk, a leather-upholstered swivel chair. There are two other leather chairs to match the settee, and in addition, four or five bent-frame ones in dark brown. At each corner of the desk, is a polished brass spittoon on a rubber mat. The floor is carpeted. An ornate combination chandelier hangs from the center of the room.</p>
+                 </item>
+                 
+                 <pb n="25"/>
+                 <fw type="pageNum" place="left">LN</fw>
+                 <item>
+                    <num>12.</num>
+                    <label>A LARGE WAREHOUSE, AT THE DOCKS.</label>
+                    <p>This is a large, barn-like place -- a warehouse on the <placeName>Embarcadero at the foot of Pacific Street</placeName>. Several large double doors open out on to the dock, upscene, and others on to a loading platform on the left. Through the upscene doors, is a jungle-like forest of ship’s masts and rigging. Scattered about through this cold, uninviting and smelly place, are stores of all kinds; bales of hemp; rattan; coils of rope; bags of copra; boxes; bundles of jute; barrels of oil; crated machinery -- the thousand and one things to be seen in dock warehouses. There will be a reverse angle in this set which will show upscene, smaller double doors, which open into the front part of the warehouse, probably a corridor.</p>
+                 </item>            
+              </list>
+              <closer>
+                 <dateline>Nov. 15, 1929</dateline>
+                 <signed>EDWARD T. LOWE</signed>
+              </closer>
+           </div> 
+           <!-- ENGL501a: the following section is without a title or header, but seems to be the start of an earlier treatment -->
+           <pb n="26"/>
+           <fw type="pageNum" place="left">LN</fw>
+           <div>
+              <p><view><camera>1. MED CLOSE ON ROGER’S ROOM INT</camera></view></p>
+              <p>In a severely furnished lodging-house room we see a young minister at a table, trying to study the Bible. He presses his hands to his ears, with an expression of pain, as he is prevented from reading by the never-ceasing racket of a party going on above his head in a room on the next floor. The camera pans up quickly to: </p>
+              <p><view>2. CEILING OF THE ROOM.</view></p>
+              <p>An old fashioned gas chandelier, trembling with the impact of feet running about in the room above. We hear the laughter and shouts of the people above, only slightly dimmed by having to come through the thin plaster and flooring.</p>
+              <p><view><camera>3. MED CLOSE FLOOR OF LILY’S ROOM INT</camera></view></p>
+              <p>The upper half of the frame is black. In the lower half we see the feet of three women and three men. A hat falls into the picture and is kicked by a laughing woman. A bottle is thrown down with a thud. A glass falls and breaks and is crushed beneath a man’s foot. One couple is dancing to the music of a tinny phonograph. Using the feet alone -- together with laughter, drunken shouts, etc. on the sound track -- we get over the drunken party going on.</p>
+              <p><view><camera>4. FULL SHOT ROGER’S ROOM INT</camera></view></p>
+              <p>Driven frantic by the racket, Roger shuts his Bible, rises -- trying to keep himself from being angry -- takes his hat and starts to exit. As he starts for the door he glances at his watch.</p>
+              <pb n="27"/>
+              <fw type="pageNum" place="left">LN</fw>
+              <p><view>5. LODGING HOUSE ENTRY HALL INT</view></p>
+              <p>A slavy is on her hands and knees with a duster. She is taking orders from the stern-faced landlady as Roger walks into scene on his way to front door. The landlady’s scowl turns into a smile.</p>
+              <sp>
+                 <speaker>LANDLADY</speaker>
+                 <p>Good evening sir.</p>
+              </sp>
+              <sp>
+                 <speaker>ROGER</speaker>
+                 <p>(as he walks)</p>
+                 <p>Good Evening Mrs. Harold.</p>
+              </sp>
+              <sp>
+                 <speaker>LANDLADY</speaker>
+                 <p>(admiringly)</p>
+                 <p>Going to your mass meeting?</p>
+              </sp>
+              <p> As Roger nods in affirmation there is a clatter as half a dozen people rush down the staircase -- the party from Lily’s room. Flashily-dressed, half-drunk, they rush between Roger and the landlady shouting and laughing. As the door is opened by the first to reach it, we see a hack waiting outside for the party.</p>
+              <p>Roger has shrunk back against the wall -- pushed out of the way, but also with an expression which tells us that he wishes to avoid the contaminating touch of the roisterers. He is a bit priggish, which explains his <corr>disgust</corr>.</p>
+              <p>Lily, with her man, a flashily dressed ‘sport’, is the last of the party. As she hurries through the scene she nods to the landlady cordially. As she passes within an inch or two <corr>of</corr> Roger -- near enough for him to smell her perfume -- she smiles pleasantly. 
+              </p> <sp>
+                 <speaker>LILY</speaker>
+                 <p>‘Evening, neighbor.</p>
+              </sp>
+              <p>As Lily exits laughingly we see disgust and injured dignity on Roger’s countenance. At the same time we sense that, whether he knows it or not, he is attracted in some strange animal way to the resplendent, vital Lily. He almost shudders as he nods good evening to the landlady and walks towards the door.</p>
+           </div>
+        </back>
    </text>
 </TEI>
