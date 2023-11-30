@@ -52,6 +52,39 @@
         </xsl:copy>
     </xsl:template>
     
+    <!--Do some manipulation of lists with interstitial stuff; this may need
+    to be expanded for other elements (like stage) -->
+    <xsl:template match="*[self::castList or self::list][fw or pb]"
+        mode="pass1">
+        <xsl:variable name="self" select="."/>
+        <xsl:variable name="id" select="(@xml:id, generate-id())[1]" as="xs:string"/>
+        <xsl:for-each-group select="*" group-adjacent="self::pb or self::fw">
+            <xsl:variable name="pos" select="position()" as="xs:integer"/>
+            <xsl:choose>
+                <xsl:when test="current-grouping-key()">
+                    <xsl:apply-templates select="current-group()" mode="#current"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:variable name="firstItem" select="current-group()[1]"/>
+                    <xsl:variable name="lastItem" select="current-group()[last()]"/>
+                    <xsl:copy select="$self">
+                        <xsl:apply-templates select="$self/@*" mode="#current"/>
+                        <xsl:attribute name="xml:id" select="$id || '_' || $firstItem/generate-id()"/>
+                        <xsl:variable name="nextGroupItem"
+                            select="$lastItem/following-sibling::*[not(self::fw or self::pb)][1]"
+                            as="element()?"/>
+                        <xsl:if test="exists($nextGroupItem)">
+                            <xsl:attribute name="next"
+                                select="'#' || $id || '_' || $nextGroupItem/generate-id()"/>
+                        </xsl:if>
+                        <xsl:apply-templates select="current-group()" mode="#current"/>
+                    </xsl:copy>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each-group>
+        
+    </xsl:template>
+    
     
     
     <xsl:template match="tei:*/@active | tei:*/@adj | tei:*/@adjFrom | tei:*/@adjTo | tei:*/@ana |

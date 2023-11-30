@@ -147,10 +147,13 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="list" mode="tei">
+
+    
+    <xsl:template match="list" priority="1" mode="tei">
+        <xsl:apply-templates select="head" mode="#current"/>
         <ul>
             <xsl:call-template name="processAtts"/>
-            <xsl:apply-templates mode="#current"/>
+            <xsl:apply-templates select="* except head" mode="#current"/>
         </ul>
     </xsl:template>
     
@@ -253,7 +256,7 @@
         </span>
     </xsl:template>
     
-    <xsl:template match="castList" mode="tei">
+    <xsl:template match="castList" priority="1" mode="tei">
         <xsl:where-populated>
             <h4>
                 <xsl:apply-templates select="head/node()" mode="#current"/>

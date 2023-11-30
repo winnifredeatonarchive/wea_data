@@ -16,11 +16,11 @@
             </respStmt>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:TP1"/>
+               <name ref="pers:TP2"/>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
-               <name ref="pers:TP1"/>
+               <name ref="pers:TP2"/>
             </respStmt>
             <respStmt>
                <resp>Encoder</resp>
@@ -68,7 +68,7 @@
             <catRef target="wdt:genreFilmTreatment" scheme="wdt:genre"/>
             <catRef target="wdt:Hollywood" scheme="wdt:exhibit"/>
          </textClass>
-         <abstract resp="pers:EE1 pers:TP1">
+         <abstract resp="pers:EE1 pers:TP2">
             <p>In 1929, Winnifred Eaton wrote an original screenplay outline that tells the story of a young reformer who falls in love with a girl from the San Francisco underworld and realizes the limits of his reformist ideology. Through its sympathetic representation of underworld characters, <title level="m">Barbary Coast</title> challenged the censorship guideline popularly known as the Hays Code and the reformist zeal that necessitated it. It also reflected the industry’s confused shift from silent to sound films through its unconventional form—as it features dialogues, notes about post-production, shot specifications, and set descriptions. In particular, these set descriptions, with their nuanced attention to visual and auditory detail, showcase how Eaton translated her faculty for conjuring evocative visions of time and place (seen previously in texts like <title level="m">A Japanese Nightingale</title> and <title level="m">Cattle</title>) into the novel medium of film.</p>
          </abstract>
       </profileDesc>
@@ -488,12 +488,13 @@
                   <roleDesc>Stevedores and their girls; sailors and their girls; girls of the
                      street, old and young; peddlers; beggars; Chinamen: dock hands; stokers;
                      policemen; hack drivers -- a cosmopolitan, heterogeneous assortment from the
-                     lower walks of life.</roleDesc>
-                  <!--JT: I have put in a bad hack here to make this a bit easier to use-->
-                  <seg rendition="rnd:block">
-                     <label>ON THE NIGHT OF THE RAID.</label>
-                     <seg>Prostitutes, old and young; Madames; pimps.</seg>
-                  </seg>
+                     lower walks of life.
+                     <!--JT: I have put in a bad hack here to make this a bit easier to use-->
+                     <seg rendition="rnd:block">
+                        <label>ON THE NIGHT OF THE RAID.</label>
+                        <seg>Prostitutes, old and young; Madames; pimps.</seg>
+                     </seg>
+                  </roleDesc>
                </castItem>
                <castItem>
                   <role>AT THE DOCKS.</role>
