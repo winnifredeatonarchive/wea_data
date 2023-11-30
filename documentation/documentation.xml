@@ -10127,10 +10127,14 @@ Dr Bero, lately returned from the wars.</stage>
                                                 <item>Film</item>
                                                 <label>wdt:genreFilmScenario</label>
                                                 <item>Film: Scenario</item>
+                                                <label>wdt:genreFilmOutline</label>
+                                                <item>Film: Outline</item>
                                                 <label>wdt:genreFilmTreatment</label>
                                                 <item>Film: Treatment</item>
                                                 <label>wdt:genreFilmScreenplay</label>
                                                 <item>Film: Screenplay</item>
+                                                <label>wdt:genrePlay</label>
+                                                <item>Play</item>
                                                 <label>wdt:genrePoem</label>
                                                 <item>Poem</item>
                                                 <label>wdt:genreNovel</label>
@@ -10257,7 +10261,7 @@ Dr Bero, lately returned from the wars.</stage>
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:genre']"&gt;
- &lt;sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
+ &lt;sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"&gt; ERROR: Value &lt;sch:value-of select="@target"/&gt; not allowed for category reference &lt;sch:value-of select="@scheme"/&gt;
  &lt;/sch:assert&gt;
 &lt;/sch:rule&gt;
 &lt;sch:rule context="tei:catRef[@scheme='wdt:exhibit']"&gt;
@@ -16771,6 +16775,8 @@ supplied to printer.</change>
                                                 <item>(Paratextual material, likely NOT written by WE) paratext</item>
                                                 <label>section</label>
                                                 <item>(An arbitrary section) section</item>
+                                                <label>sequence</label>
+                                                <item>(A sequence of scenes forming a distinct narrative unit) sequence</item>
                                                 <label>letter</label>
                                                 <item>(DO NOT USE: Used in converted text and should be removed. Use the floatingText element instead.) letter</item>
                                                 <label>postscript</label>
@@ -69802,7 +69808,8 @@ a brownstone--</view>
                      <cell>
                         <code>
 &lt;sch:pattern&gt;
-&lt;sch:rule context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"&gt;
+&lt;sch:rule context="tei:q[not(@rendition='rnd:block')][not($isDocumentation) or ($isDocumentation 
+ and not(ancestor::tei:back))]"&gt;
  &lt;sch:let name="text"
   value="string-join(descendant::text(),'')"/&gt;
  &lt;sch:assert test="not(matches($text,'[\.,]$'))"&gt; ERROR: Trailing punctuation should go outside the &lt;sch:name/&gt; element.

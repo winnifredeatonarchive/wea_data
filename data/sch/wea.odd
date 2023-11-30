@@ -1937,7 +1937,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               </sch:assert>
                            </sch:rule>
                            <sch:rule context="tei:catRef[@scheme='wdt:genre']">
-                              <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+                              <sch:assert test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
                             ERROR: Value <sch:value-of select="@target"/> not allowed for category reference <sch:value-of select="@scheme"/>
                               </sch:assert>
                            </sch:rule>
@@ -2032,11 +2032,17 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                            <valItem mode="add" ident="wdt:genreFilmScenario">
                               <desc>Film: Scenario</desc>
                            </valItem>
+                           <valItem mode="add" ident="wdt:genreFilmOutline">
+                              <desc>Film: Outline</desc>
+                           </valItem>
                            <valItem mode="add" ident="wdt:genreFilmTreatment">
                               <desc>Film: Treatment</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genreFilmScreenplay">
                               <desc>Film: Screenplay</desc>
+                           </valItem>
+                           <valItem mode="add" ident="wdt:genrePlay">
+                              <desc>Play</desc>
                            </valItem>
                            <valItem mode="add" ident="wdt:genrePoem">
                               <desc>Poem</desc>
@@ -2847,6 +2853,10 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                               <desc>section</desc>
                               <gloss>An arbitrary section</gloss>
                            </valItem>
+                           <valItem ident="sequence" mode="add">
+                              <desc>sequence</desc>
+                              <gloss>A sequence of scenes forming a distinct narrative unit</gloss>
+                           </valItem>
                            <valItem ident="letter" mode="add">
                               <desc>letter</desc>
                               <gloss>DO NOT USE: Used in converted text and should be removed. Use the floatingText element instead.</gloss>
@@ -3381,7 +3391,7 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <constraintSpec scheme="schematron" ident="noTrailingPunct">
                   <constraint>
                      <sch:pattern>
-                        <sch:rule context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
+                        <sch:rule context="tei:q[not(@rendition='rnd:block')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]">
                            <sch:let name="text" value="string-join(descendant::text(),'')"/>
                            <sch:assert test="not(matches($text,'[\.,]$'))">
                               ERROR: Trailing punctuation should go outside the <sch:name/> element.

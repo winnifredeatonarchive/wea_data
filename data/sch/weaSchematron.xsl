@@ -2412,10 +2412,10 @@ On <xsl:text/>
                        context="tei:catRef[@scheme='wdt:genre']"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+                                test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -3728,11 +3728,11 @@ On <xsl:text/>
    </xsl:template>
    <!--PATTERN -->
    <!--RULE -->
-   <xsl:template match="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
+   <xsl:template match="tei:q[not(@rendition='rnd:block')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"
                  priority="1000"
                  mode="M105">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="tei:q[not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
+                       context="tei:q[not(@rendition='rnd:block')][not($isDocumentation) or ($isDocumentation and not(ancestor::tei:back))]"/>
       <xsl:variable name="text" select="string-join(descendant::text(),'')"/>
       <!--ASSERT -->
       <xsl:choose>

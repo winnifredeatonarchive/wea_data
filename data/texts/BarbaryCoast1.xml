@@ -6,6 +6,26 @@
       <fileDesc>
          <titleStmt>
             <title>Barbary Coast Outline</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:EE1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:EE1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:TP1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:TP1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:JT1"/>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -48,6 +68,9 @@
             <catRef target="wdt:genreFilmTreatment" scheme="wdt:genre"/>
             <catRef target="wdt:Hollywood" scheme="wdt:exhibit"/>
          </textClass>
+         <abstract resp="pers:EE1 pers:TP1">
+            <p>In 1929, Winnifred Eaton wrote an original screenplay outline that tells the story of a young reformer who falls in love with a girl from the San Francisco underworld and realizes the limits of his reformist ideology. Through its sympathetic representation of underworld characters, <title level="m">Barbary Coast</title> challenged the censorship guideline popularly known as the Hays Code and the reformist zeal that necessitated it. It also reflected the industry’s confused shift from silent to sound films through its unconventional form—as it features dialogues, notes about post-production, shot specifications, and set descriptions. In particular, these set descriptions, with their nuanced attention to visual and auditory detail, showcase how Eaton translated her faculty for conjuring evocative visions of time and place (seen previously in texts like <title level="m">A Japanese Nightingale</title> and <title level="m">Cattle</title>) into the novel medium of film.</p>
+         </abstract>
       </profileDesc>
       <revisionDesc status="inProgress">
          <change who="pers:JT1" when="2023-11-27" status="inProgress">Merging and encoding BarbaryCoast1 document from ENGL501a class.</change>
@@ -57,8 +80,8 @@
          <change who="pers:JT1" status="empty" when="2019-04-11">Created file from bibliography entry bibl31 using XSLT.</change>
       </revisionDesc>
    </teiHeader>
-     <text facs="facs:BarbaryCoast1">
-        <pb n="1"/>
+   <text facs="facs:BarbaryCoast1">
+      <pb n="1"/>
       <front>
          <div>
             <head>OUTLINE OF STORY FOR <name>MARY NOLAN</name></head>
@@ -73,7 +96,6 @@
             <opener>
                <byline>By <name>Winnifred Reeve</name> and <name><q>Sumner</q></name></byline>
             </opener>
-            
             <list>
                <item>THE PLACE: <placeName>San Francisco</placeName></item>
                <item>THE TIME: <date>1905</date></item>
@@ -110,7 +132,7 @@
          </div>
          <div type="sequence" n="4">
             <head>SEQUENCE FOUR</head>
-            <p><stage type="setting">The Barbary Coast--dimly-lighted streets, lurking shadows.</stage><stage type="location">The brilliantly-lighted front of Tim Rooney’s<!-- Corr: Bill Rooney’s -->gaudy saloon--The Lucky Shamrock.</stage><view> We see Big Tim Rooney’s<!-- Corr: Bill Rooney’s --> mistress, a passionate cheap girl named Magda, a prey to her own emotions, which are like dynamite. We establish the clientele of the saloon, and indicate a few ladies of easy virtue sitting around. </view> Rooney is stunned as he suddenly see his own daughter sitting at one of the tables, regarding him with a mischievous smile. He takes her into his office--literally by the ear.</p>
+            <p><stage type="setting">The Barbary Coast--dimly-lighted streets, lurking shadows.</stage> <stage type="location">The brilliantly-lighted front of Tim Rooney’s<!-- Corr: Bill Rooney’s -->gaudy saloon--The Lucky Shamrock.</stage> <view>We see Big Tim Rooney’s<!-- Corr: Bill Rooney’s --> mistress, a passionate cheap girl named Magda, a prey to her own emotions, which are like dynamite. We establish the clientele of the saloon, and indicate a few ladies of easy virtue sitting around.</view> Rooney is stunned as he suddenly see his own daughter sitting at one of the tables, regarding him with a mischievous smile. He takes her into his office--literally by the ear.</p>
             <noteGrp>
                <note>
                   <label>NOTE:</label>
@@ -148,10 +170,11 @@
             <p>Just the we hear the <subst>
                <del>police whistle</del>
                <add>arrival</add>
-            </subst> of the Police Wagon (Black Maria&gt; and several of the bravest spring from the wagon.
+            </subst> of the Police Wagon (Black Maria) and several of the bravest <unclear>spring</unclear> from the wagon.
                <pb n="6"/><fw type="pageNum">6</fw>
             Roger is with them. As they come into the place, we see everyone scattering and almost in a flash the place is empty. The police however, move across the now deserted dance hall to where the roaring voice of Tim Rooney<!-- Corr: Bill Rooney --> is heard. He is demanding that Sussie<!-- Corr: Susy --> clear out and be damn quick about it</p>
-            <p>As the police break in the door, Rooney has the foresite<!-- Corr: foresight --> to shove Suxxie<!-- Corr: Susy --> through <subst>
+            <!--Should we do instant deletions and revisions like this?-->
+            <p>As the police break in the door, Rooney has the <choice><sic>foresite</sic><corr>foresight</corr></choice> to shove <choice><sic>Suxxie</sic><corr>Suzzie</corr></choice><!-- Corr: Susy --> through <subst>
                <del>an opening</del>
                <add>a trap door</add>
             </subst> that is behind the <subst>
@@ -330,260 +353,456 @@
       </body>
         <pb n="16"/>
         <fw type="pageNum" place="left">LN</fw>
-        <back>
-           <div>
-              <head>CHARACTERS</head>
-              <head type="subtitle">(In order of their appearances)</head>
-              <castList>
-                 <castItem>
-                    <role>DAN AVERY.</role>
-                    <roleDesc>Avery is a man of about thirty-five, handsomely set up. His is a firm
-                       square jaw, and, while an advocate of peace, he can fight -- and does,
-                       whenever necessary. He is as far from a reformer type as Wolheim; the type who
-                       will forge his way through difficulties and over obstacles once his course
-                       is determined. He dresses genteely in the mode of the period. </roleDesc>
-                 </castItem>
-                 <castItem>
-                    <role>JOHNSON.</role>
-                    <roleDesc>Johnson is a plain-clothes man, probably graduated from the ranks. He
-                       is Avery’s right-hand man and a rather canny dick in spite of the fact
-                       <corr>that</corr> the one glance at him reveals the fact he is a <q>plain
-                          clothes</q> man.</roleDesc>
-                 </castItem>
-                 <castItem>
-                    <role>SIN LEE.</role>
-                    <roleDesc>A Chinaman at Lun Wong’s hop joint. A rather evil appearing specimen,
-                       snaggle-toothed and with a bum eye over which he wears a black patch.
-                       Impassive in manner, Sin Lee is nevertheless a menacing figure.</roleDesc>
-                 </castItem>
-                 <castItem><role>LUN WONG.</role><roleDesc>In charge of the hop-joint. Lun Wong is
-                    about forty-five; a placid faced Celestial, expression almost benign. He
-                    never raises his voice above a softly modulated level. From the manner in
-                    which he looks one in the eye, it is difficult to believe he is not the
-                    benign character he appears to be.</roleDesc></castItem>
-                 <pb n="17"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <castItem><role>BULL BRANDON.</role><roleDesc>Bull is a political product. In his
-                    early forties, he is a gross man whose general characteristics have won him
-                    the cognomen of <q>Bull</q>. He is always well dressed, but flashily so. He
-                    affects a heavy gold watch chain, attached to the center of which is a charm
-                    in the form of a girl’s leg. He is forever twirling this charm, wrapping the
-                    chain about his finger in the operation. His collar, though it may not be
-                    celluloid, glistens when the light hits it. He wears a diamond stud and
-                    several large diamonds on his paw-like hands. His shirt is of striped
-                    material and he affects a cigar which he never smokes more than about an
-                    inch. His face is normally one to inspire fear, although at times, Bull can
-                    assume an easy affability suited to the occasion if need be.
-                 </roleDesc></castItem>
-                 <castItem><role><q>SLIPPY</q>.</role><roleDesc>Slippy is one of <q>Bull’s boys</q> -- a
-                    product of Barbary Coast. He is fairly tall and rather slender, a <q>dandy</q> --
-                    a sport, affecting the ultra in the mode of the period, derby and all. He is
-                    on intimate terms with Bull and is free to come and go in the place as he
-                    pleases.</roleDesc></castItem>
-                 <castItem><role>LILY BRANDON.</role><roleDesc>Lily is about twenty -- a beautiful,
-                    almost fragile girl with light hair and fair complexion. Her clothes are
-                    expensive, and, inasmuch as purchased <q>uptown</q>, are without doubt in the
-                    best style of the period. Certainly, her appearance is a contrast to the
-                    average woman seen in her father’s dance hall and on the street. Lily is
-                    genuine. She <corr>loves</corr> life and takes it as she finds it. No
-                    pretense whatsoever in her manner; no putting on dog -- but a consummate
-                    actress. She can be soft; she can be hard as nails and full of fire but
-                    quick to tenderness. She is fully aware of the sordidness of the Coast; she
-                    knows that there are tarts -- as a matter fact, is on speaking terms with
-                    several. </roleDesc></castItem>
-                 <castItem><role>SYLVIA AVERY.</role><roleDesc>Sylvia is a girl of not more than
-                    eighteen. She is pretty. Normally inclined to be somewhat wild, our contacts
-                    with Sylvia present her as a girl who has experienced a rather crude
-                    awakening to some of the sordid realities of life. </roleDesc></castItem>
-                 <pb n="18"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <castItem><role>LOUIS.</role><roleDesc> One of the bartenders in Bull Brandon’s
-                    dance hall. He is typical of the period and locale; rather stout, florid and
-                    with a moustache in which he takes great pride. He uses hair oil, resulting
-                    in a black patent leather effect on the top of his head.
-                 </roleDesc></castItem>
-                 <castItem><role>MRS. TIBBETT.</role><roleDesc> Mrs. Tibbett runs a <q>fashionable
-                    boarding house</q> uptown. Having been through the mill, she is an
-                    uncompromising type and has little tolerance for anyone’s
-                    shortcomings--except her own; something of an Emily Fitzroy
-                    type.</roleDesc></castItem>
-                 <castItem><role>CHIEF OF POLICE.</role><roleDesc>The Chief is a man in his middle
-                    forties, with hair slightly gray. He has come up from the ranks and knows
-                    what it’s all about. He has a heavy voice, which however, exhibits a degree
-                    of nervousness when he talks about Bull Brandon on the night of the raid; it
-                    is quite possible that he has accepted some of Bull’s favors and finds his
-                    position a rather awkward one. He is a large man, with a well developed
-                    stomach from drinking too much beer.</roleDesc></castItem>
-                 <castItem><role>PLAIN CLOTHES MAN SEEN IN CHIEF’S OFFICE.</role><roleDesc>A typical
-                    assortment of dicks, the majority of whom present the usual characteristics;
-                    grim-faced men who contact with all phases of life and to whom a raid or a
-                    murder are all within the day’s work.</roleDesc></castItem>
-                 <castItem><role>POLICEMEN SEEN IN CHIEF’S OFFICE.</role><roleDesc>Lieutenants and
-                    Captains. Varying types, but typical men of the force.</roleDesc></castItem>
-                 <castItem><role>TWO REPORTERS.</role><roleDesc>Typical live-wires of the press,
-                    <q>relaxing</q> over a bottle of <q>Old Crow</q> after a hard night’s
-                    work......</roleDesc></castItem>
-                 <pb n="19"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 
-                 <castItem><role>BULL’S <q>GANG</q>.</role><roleDesc>A half dozen <q>mugs</q>, all products of
-                    Barbary Coast. A typical assortment of tough hombres to whom beating up a
-                    man or even murdering him is a mere routine detail. In the main, they are
-                    fairly well dressed, but of course in a common, cheap way. Their association
-                    with Bull pays handsome dividends.</roleDesc></castItem>
-                 <!--These aren't *really* castItems proper...but I'm not sure how best to display this...-->
-                 <castItem>
-                    <role>STREET SCENES.</role>
-                    <roleDesc>Stevedores and their girls; sailors
-                    and their girls; girls of the street, old and young; peddlers; beggars;
-                    Chinamen: dock hands; stokers; policemen; hack drivers -- a cosmopolitan,
-                    heterogeneous assortment from the lower walks of life.</roleDesc>
-                    <!--JT: I have put in a bad hack here to make this a bit easier to use-->
-                    <seg rendition="rnd:block">
-                       <label>ON THE NIGHT OF THE RAID.</label>
-                       <seg>Prostitutes, old and young; Madames;
-                          pimps.</seg>
-                    </seg>
-                 </castItem>
-                 <castItem>
-                    <role>AT THE DOCKS.</role>
-                    <roleDesc>Prostitutes, Madames; plain clothes guards; policemen; 
-                       captains of sailing vessels, etc. </roleDesc>
-                 </castItem>
-              </castList>
-           </div>
+      <back>
+         <div>
+            <head>CHARACTERS</head>
+            <head type="subtitle">(In order of their appearances)</head>
+            <castList>
+               <castItem>
+                  <role>DAN AVERY.</role>
+                  <roleDesc>Avery is a man of about thirty-five, handsomely set up. His is a firm
+                     square jaw, and, while an advocate of peace, he can fight -- and does, whenever
+                     necessary. He is as far from a reformer type as Wolheim; the type who will
+                     forge his way through difficulties and over obstacles once his course is
+                     determined. He dresses genteely in the mode of the period. </roleDesc>
+               </castItem>
+               <castItem>
+                  <role>JOHNSON.</role>
+                  <roleDesc>Johnson is a plain-clothes man, probably graduated from the ranks. He is
+                     Avery’s right-hand man and a rather canny dick in spite of the fact
+                        <corr>that</corr> the one glance at him reveals the fact he is a <q>plain
+                        clothes</q> man.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>SIN LEE.</role>
+                  <roleDesc>A Chinaman at Lun Wong’s hop joint. A rather evil appearing specimen,
+                     snaggle-toothed and with a bum eye over which he wears a black patch. Impassive
+                     in manner, Sin Lee is nevertheless a menacing figure.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>LUN WONG.</role>
+                  <roleDesc>In charge of the hop-joint. Lun Wong is about forty-five; a placid faced
+                     Celestial, expression almost benign. He never raises his voice above a softly
+                     modulated level. From the manner in which he looks one in the eye, it is
+                     difficult to believe he is not the benign character he appears to
+                     be.</roleDesc>
+               </castItem>
+               <pb n="17"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <castItem>
+                  <role>BULL BRANDON.</role>
+                  <roleDesc>Bull is a political product. In his early forties, he is a gross man
+                     whose general characteristics have won him the cognomen of <q>Bull</q>. He is
+                     always well dressed, but flashily so. He affects a heavy gold watch chain,
+                     attached to the center of which is a charm in the form of a girl’s leg. He is
+                     forever twirling this charm, wrapping the chain about his finger in the
+                     operation. His collar, though it may not be celluloid, glistens when the light
+                     hits it. He wears a diamond stud and several large diamonds on his paw-like
+                     hands. His shirt is of striped material and he affects a cigar which he never
+                     smokes more than about an inch. His face is normally one to inspire fear,
+                     although at times, Bull can assume an easy affability suited to the occasion if
+                     need be. </roleDesc>
+               </castItem>
+               <castItem>
+                  <role><q>SLIPPY</q>.</role>
+                  <roleDesc>Slippy is one of <q>Bull’s boys</q> -- a product of Barbary Coast. He is
+                     fairly tall and rather slender, a <q>dandy</q> -- a sport, affecting the ultra
+                     in the mode of the period, derby and all. He is on intimate terms with Bull and
+                     is free to come and go in the place as he pleases.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>LILY BRANDON.</role>
+                  <roleDesc>Lily is about twenty -- a beautiful, almost fragile girl with light hair
+                     and fair complexion. Her clothes are expensive, and, inasmuch as purchased
+                        <q>uptown</q>, are without doubt in the best style of the period. Certainly,
+                     her appearance is a contrast to the average woman seen in her father’s dance
+                     hall and on the street. Lily is genuine. She <corr>loves</corr> life and takes
+                     it as she finds it. No pretense whatsoever in her manner; no putting on dog --
+                     but a consummate actress. She can be soft; she can be hard as nails and full of
+                     fire but quick to tenderness. She is fully aware of the sordidness of the
+                     Coast; she knows that there are tarts -- as a matter fact, is on speaking terms
+                     with several. </roleDesc>
+               </castItem>
+               <castItem>
+                  <role>SYLVIA AVERY.</role>
+                  <roleDesc>Sylvia is a girl of not more than eighteen. She is pretty. Normally
+                     inclined to be somewhat wild, our contacts with Sylvia present her as a girl
+                     who has experienced a rather crude awakening to some of the sordid realities of
+                     life. </roleDesc>
+               </castItem>
+               <pb n="18"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <castItem>
+                  <role>LOUIS.</role>
+                  <roleDesc> One of the bartenders in Bull Brandon’s dance hall. He is typical of
+                     the period and locale; rather stout, florid and with a moustache in which he
+                     takes great pride. He uses hair oil, resulting in a black patent leather effect
+                     on the top of his head. </roleDesc>
+               </castItem>
+               <castItem>
+                  <role>MRS. TIBBETT.</role>
+                  <roleDesc> Mrs. Tibbett runs a <q>fashionable boarding house</q> uptown. Having
+                     been through the mill, she is an uncompromising type and has little tolerance
+                     for anyone’s shortcomings--except her own; something of an Emily Fitzroy
+                     type.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>CHIEF OF POLICE.</role>
+                  <roleDesc>The Chief is a man in his middle forties, with hair slightly gray. He
+                     has come up from the ranks and knows what it’s all about. He has a heavy voice,
+                     which however, exhibits a degree of nervousness when he talks about Bull
+                     Brandon on the night of the raid; it is quite possible that he has accepted
+                     some of Bull’s favors and finds his position a rather awkward one. He is a
+                     large man, with a well developed stomach from drinking too much
+                     beer.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>PLAIN CLOTHES MAN SEEN IN CHIEF’S OFFICE.</role>
+                  <roleDesc>A typical assortment of dicks, the majority of whom present the usual
+                     characteristics; grim-faced men who contact with all phases of life and to whom
+                     a raid or a murder are all within the day’s work.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>POLICEMEN SEEN IN CHIEF’S OFFICE.</role>
+                  <roleDesc>Lieutenants and Captains. Varying types, but typical men of the
+                     force.</roleDesc>
+               </castItem>
+               <castItem>
+                  <role>TWO REPORTERS.</role>
+                  <roleDesc>Typical live-wires of the press, <q>relaxing</q> over a bottle of <q>Old
+                        Crow</q> after a hard night’s work......</roleDesc>
+               </castItem>
+               <pb n="19"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <castItem>
+                  <role>BULL’S <q>GANG</q>.</role>
+                  <roleDesc>A half dozen <q>mugs</q>, all products of Barbary Coast. A typical
+                     assortment of tough hombres to whom beating up a man or even murdering him is a
+                     mere routine detail. In the main, they are fairly well dressed, but of course
+                     in a common, cheap way. Their association with Bull pays handsome
+                     dividends.</roleDesc>
+               </castItem>
+               <!--These aren't *really* castItems proper...but I'm not sure how best to display this...-->
+               <castItem>
+                  <role>STREET SCENES.</role>
+                  <roleDesc>Stevedores and their girls; sailors and their girls; girls of the
+                     street, old and young; peddlers; beggars; Chinamen: dock hands; stokers;
+                     policemen; hack drivers -- a cosmopolitan, heterogeneous assortment from the
+                     lower walks of life.</roleDesc>
+                  <!--JT: I have put in a bad hack here to make this a bit easier to use-->
+                  <seg rendition="rnd:block">
+                     <label>ON THE NIGHT OF THE RAID.</label>
+                     <seg>Prostitutes, old and young; Madames; pimps.</seg>
+                  </seg>
+               </castItem>
+               <castItem>
+                  <role>AT THE DOCKS.</role>
+                  <roleDesc>Prostitutes, Madames; plain clothes guards; policemen; captains of
+                     sailing vessels, etc. </roleDesc>
+               </castItem>
+            </castList>
+         </div>
 
-           <div>
-              <pb n="20"/>
-              <fw type="pageNum" place="left">LN</fw>
-              <head>SETS</head>
-              <pb n="21"/>
-              <fw type="pageNum" place="left">LN</fw>
-              <!-- ENGL501a: could not use the SET element here for "sets"; I could not find the proper nesting sequence for it to validate. I chose to follow the "Ropes" model instead. -->
-              <!--This is probably better specified as a kind of list-->
-              <list type="sets">
-                 <item>
-                    <num>1.</num>
-                    <label>EXTERIOR. PACIFIC STREET, <placeName>SAN FRANCISCO, CALIFORNIA</placeName>. IN THE YEAR 1916.</label>
-                    <p>This portion of <placeName>Pacific Street</placeName> runs East and West through that section of the city known as Barbary Coast. The normal angle is West, toward <placeName>Chinatown</placeName>, where, just beyond <placeName>Montgomery</placeName>, <placeName>Pacific Street</placeName> starts a fairly abrupt rise. There is a carline on <placeName>Montgomery Street</placeName>. If our set structure permits, it will be effective to show the cars at various intervals.</p>
-                    <p>The principle angle, however, is along the left hand side of the street, where, on the corner at the intersection of <placeName>Sansome and Pacific</placeName>, there is a two-story frame structure known as the <q>PALACE DANCE HALL AND BAR</q>, proclaimed in a flasher electric sign facing on <placeName>Pacific</placeName> and above the Arcade entrance to the dance hall proper.</p>
-                    <p>On the corner, next to the arcade entrance, is a <q>FOR MEN ONLY</q> museum, much in the fashion of an old <q>nickelodeon</q>, with ticket booth and all. In the open space are numerous flashy signs and a few anatomical posters, hinting at the mysteries to be revealed inside. There is a barker’s platform just within the enclosure, <emph>on which a spieler constantly harangues the passing throng to come inside <q>and see things which will amaze you and enlighten you as to the wonders of the human anatomy</q>.</emph></p>
-                    <p>In a similar space on the other side of the arcade, is a small store front, this having been adapted to the requirements of a tattooing establishment and a <q>Your photo for 25 cents</q> picture gallery. The windows are cluttered with pictures and tattoo designs, etc.</p>
-                    <p>Next to this is a narrow alley about three feet wide, arched in front. The space just off the sidewalk is stacked high with an accumulation of empty beer kegs. The rest of the block is a succession of cheap buildings of frame structure, with possibly a brick one now and then. There is a cheap Italian restaurant, a pawn shop, a <q>side show</q> <emph>with a tin-panny going full tilt and again a barker haranguing the crowd</emph>. There is a cheap clothing store with dummy figures close to the door and the usual signs. <q>Take me home for $5.49</q> .etc. Adjoining this, a <q>hotel</q> with a sign, <q>Rooms by Day or Week</q> above the stairs which lead to the floor above. Then comes a saloon and then a Chop Suey joint, with its front done resplendently in Chinese treatment <emph>with wind-bells tinkling above the door.</emph> On the corner of <placeName>Montgomery</placeName>, another saloon.</p>
-                 </item>
-                 <pb n="22"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <item>
-                    <num>2.</num>
-                    <label>ARCADE ENTRANCE TO THE PALACE DANCE HALL.</label>
-                    <p>On either side of this twelve foot wide arcade which leads to the interior proper are a number of <q>Peephole</q> machines which require a penny in the slot and manual operation of the side crank for the viewer to see the racy moving pictures thus disclosed. At the end of this arcade is a partitioning wall, with double doors, which, when swung back, reveal the dance floor.</p>
-                 </item>
-                 <item>
-                    <num>3.</num>
-                    <label>EXTERIOR. AN ALLEY IN THE REAR OF THE PALACE DANCE HALL AND BAR.</label>
-                    <p>This is in striking contrast to the cheap gayness of the street. The alley is dank and dirty with accumulated rubbish -- discarded boxes, barrels, refuse of all kinds scattered around behind the heavily shuttered rears of the warehouses fronting on the street which parallels <placeName>Pacific</placeName>. The feeling should be impressionistic. Two or three clothes lines diagonally across the alley from window to window hint at low living quarters in some of the buildings, for these lines carry articles of dingy clothing. Further up the alley is a narrow intersecting alley about twelve feet long which leads to the entrance of Lun Wong’s hop joint. Close to the point of intersection, is a weather-protected light -- one of small candle power, giving but faint illumination, but sufficient to show any one standing directly under it. At the end of the intersecting alley is a heavy door.</p>
-                 </item>
-                 <item>
-                    <num>4.</num>
-                    <label>INTERIOR. NARROW HALLWAY OF LUN WONG’S HOP JOINT.</label>
-                    <p>The normal angle discloses in foreground, on the right, the door opening into the alley. Upscene, at the end of the hall is another door, which, when opened, shows a small portion of dimly lit room, air heavy with smoke which <emph>kills all details</emph>. The hall is about four or five feet wide, dingy and dirty. Cob webs wave downward from the ceiling; dirty, cracked walls are revealed in the flickering light from an uncertain gas flame. The alley door when opened, shows that it is about four inches thick, fitted with heavy bolts on the hall side. There is a shotbolt at the bottom which drops automatically into a hole in the floor when the door is opened. There is a sliding panel peep-hole in the door which leads to the smoking room.</p>
-                 </item>
-                 <pb n="23"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <item>
-                    <num>5.</num>
-                    <label>INTERIOR. BULL BRANDON’S <q>OFFICE</q>, ABOVE THE PALACE BAR AND DANCE HALL.</label>
-                    <p>This is a moderate-sized room, the walls of which are papered. Upstage is a door opening into the upper hall. When this door is opened, the stairs which descend to the dance hall below may be seen. In right wall, two windows, opening onto the narrow alley between the dance hall and the adjoining building. The windows are rather dirty. Between them, an old-fashioned fireplace with mantle. Above this is a picture of John L. Sullivan or some other pugilist. In the upper left-hand corner is a leather couch. Center, a turned leg table, the top of which is green felt. There is a desk stand telephone, 1900 type. A cigar box, panatela size is handy. Also a whiskey decanter from the bar and several glasses. There are two polished brass spittoons. Illumination is from a combination gas and electric fixture, from one branch of which however, dangles a drop cord with a green tin shade which concentrates the light over the desk. Several magazines, Collier’s Weekly and the Police Gazette are scattered on the table. There are a couple of deeply upholstered leather chairs, one a rocker. The chair at the desk is a high-backed swivel affair, with a cushion fastened to the back by cords. In the right wall is a door opening into an adjoining room.</p>
-                 </item>
-                 <item>
-                    <num>6.</num>
-                    <label>INTERIOR. PALACE DANCE HALL AND BAR.</label>
-                    <p>This view is described from the position of one standing at the arcade doors. Along the left, are a number of booths, with tables and chairs inside, each booth having curtains which may be drawn if the occupants so desire. Midway, on the left, are two swinging doors which open on to <placeName>Sansome</placeName> Street. The rear wall is also a row of booths, terminating at about center, where on a raised platform are the musicians. To the right of this, separated from the adjoining space by curtains of the same cheap material as that of the booths, is a door which opens into the rear and eventually terminates in the alley. On the right of this, a section of wall enclosing a staircase, the door of which is close to that opening into the alley. These stairs ascend to a landing at which point they make an angle turn to the floor above. On the right, between the rear and the end of the bar, are two other booths. The second booth has a wooden partition which separates it from the end of the bar, nearby. Between this
-                     <pb n="24"/>
+         <div>
+            <pb n="20"/>
+            <fw type="pageNum" place="left">LN</fw>
+            <head>SETS</head>
+            <pb n="21"/>
+            <fw type="pageNum" place="left">LN</fw>
+            <!-- ENGL501a: could not use the SET element here for "sets"; I could not find the proper nesting sequence for it to validate. I chose to follow the "Ropes" model instead. -->
+            <!--This is probably better specified as a kind of list-->
+            <list type="sets">
+               <item>
+                  <num>1.</num>
+                  <label>EXTERIOR. PACIFIC STREET, <placeName>SAN FRANCISCO, CALIFORNIA</placeName>.
+                     IN THE YEAR 1916.</label>
+                  <p>This portion of <placeName>Pacific Street</placeName> runs East and West
+                     through that section of the city known as Barbary Coast. The normal angle is
+                     West, toward <placeName>Chinatown</placeName>, where, just beyond
+                        <placeName>Montgomery</placeName>, <placeName>Pacific Street</placeName>
+                     starts a fairly abrupt rise. There is a carline on <placeName>Montgomery
+                        Street</placeName>. If our set structure permits, it will be effective to
+                     show the cars at various intervals.</p>
+                  <p>The principle angle, however, is along the left hand side of the street, where,
+                     on the corner at the intersection of <placeName>Sansome and
+                     Pacific</placeName>, there is a two-story frame structure known as the
+                        <q>PALACE DANCE HALL AND BAR</q>, proclaimed in a flasher electric sign
+                     facing on <placeName>Pacific</placeName> and above the Arcade entrance to the
+                     dance hall proper.</p>
+                  <p>On the corner, next to the arcade entrance, is a <q>FOR MEN ONLY</q> museum,
+                     much in the fashion of an old <q>nickelodeon</q>, with ticket booth and all. In
+                     the open space are numerous flashy signs and a few anatomical posters, hinting
+                     at the mysteries to be revealed inside. There is a barker’s platform just
+                     within the enclosure, <emph>on which a spieler constantly harangues the passing
+                        throng to come inside <q>and see things which will amaze you and enlighten
+                           you as to the wonders of the human anatomy</q>.</emph></p>
+                  <p>In a similar space on the other side of the arcade, is a small store front,
+                     this having been adapted to the requirements of a tattooing establishment and a
+                        <q>Your photo for 25 cents</q> picture gallery. The windows are cluttered
+                     with pictures and tattoo designs, etc.</p>
+                  <p>Next to this is a narrow alley about three feet wide, arched in front. The
+                     space just off the sidewalk is stacked high with an accumulation of empty beer
+                     kegs. The rest of the block is a succession of cheap buildings of frame
+                     structure, with possibly a brick one now and then. There is a cheap Italian
+                     restaurant, a pawn shop, a <q>side show</q>
+                     <emph>with a tin-panny going full tilt and again a barker haranguing the
+                        crowd</emph>. There is a cheap clothing store with dummy figures close to
+                     the door and the usual signs. <q>Take me home for $5.49</q> .etc. Adjoining
+                     this, a <q>hotel</q> with a sign, <q>Rooms by Day or Week</q> above the stairs
+                     which lead to the floor above. Then comes a saloon and then a Chop Suey joint,
+                     with its front done resplendently in Chinese treatment <emph>with wind-bells
+                        tinkling above the door.</emph> On the corner of
+                        <placeName>Montgomery</placeName>, another saloon.</p>
+               </item>
+               <pb n="22"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <item>
+                  <num>2.</num>
+                  <label>ARCADE ENTRANCE TO THE PALACE DANCE HALL.</label>
+                  <p>On either side of this twelve foot wide arcade which leads to the interior
+                     proper are a number of <q>Peephole</q> machines which require a penny in the
+                     slot and manual operation of the side crank for the viewer to see the racy
+                     moving pictures thus disclosed. At the end of this arcade is a partitioning
+                     wall, with double doors, which, when swung back, reveal the dance floor.</p>
+               </item>
+               <item>
+                  <num>3.</num>
+                  <label>EXTERIOR. AN ALLEY IN THE REAR OF THE PALACE DANCE HALL AND BAR.</label>
+                  <p>This is in striking contrast to the cheap gayness of the street. The alley is
+                     dank and dirty with accumulated rubbish -- discarded boxes, barrels, refuse of
+                     all kinds scattered around behind the heavily shuttered rears of the warehouses
+                     fronting on the street which parallels <placeName>Pacific</placeName>. The
+                     feeling should be impressionistic. Two or three clothes lines diagonally across
+                     the alley from window to window hint at low living quarters in some of the
+                     buildings, for these lines carry articles of dingy clothing. Further up the
+                     alley is a narrow intersecting alley about twelve feet long which leads to the
+                     entrance of Lun Wong’s hop joint. Close to the point of intersection, is a
+                     weather-protected light -- one of small candle power, giving but faint
+                     illumination, but sufficient to show any one standing directly under it. At the
+                     end of the intersecting alley is a heavy door.</p>
+               </item>
+               <item>
+                  <num>4.</num>
+                  <label>INTERIOR. NARROW HALLWAY OF LUN WONG’S HOP JOINT.</label>
+                  <p>The normal angle discloses in foreground, on the right, the door opening into
+                     the alley. Upscene, at the end of the hall is another door, which, when opened,
+                     shows a small portion of dimly lit room, air heavy with smoke which <emph>kills
+                        all details</emph>. The hall is about four or five feet wide, dingy and
+                     dirty. Cob webs wave downward from the ceiling; dirty, cracked walls are
+                     revealed in the flickering light from an uncertain gas flame. The alley door
+                     when opened, shows that it is about four inches thick, fitted with heavy bolts
+                     on the hall side. There is a shotbolt at the bottom which drops automatically
+                     into a hole in the floor when the door is opened. There is a sliding panel
+                     peep-hole in the door which leads to the smoking room.</p>
+               </item>
+               <pb n="23"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <item>
+                  <num>5.</num>
+                  <label>INTERIOR. BULL BRANDON’S <q>OFFICE</q>, ABOVE THE PALACE BAR AND DANCE
+                     HALL.</label>
+                  <p>This is a moderate-sized room, the walls of which are papered. Upstage is a
+                     door opening into the upper hall. When this door is opened, the stairs which
+                     descend to the dance hall below may be seen. In right wall, two windows,
+                     opening onto the narrow alley between the dance hall and the adjoining
+                     building. The windows are rather dirty. Between them, an old-fashioned
+                     fireplace with mantle. Above this is a picture of John L. Sullivan or some
+                     other pugilist. In the upper left-hand corner is a leather couch. Center, a
+                     turned leg table, the top of which is green felt. There is a desk stand
+                     telephone, 1900 type. A cigar box, panatela size is handy. Also a whiskey
+                     decanter from the bar and several glasses. There are two polished brass
+                     spittoons. Illumination is from a combination gas and electric fixture, from
+                     one branch of which however, dangles a drop cord with a green tin shade which
+                     concentrates the light over the desk. Several magazines, Collier’s Weekly and
+                     the Police Gazette are scattered on the table. There are a couple of deeply
+                     upholstered leather chairs, one a rocker. The chair at the desk is a
+                     high-backed swivel affair, with a cushion fastened to the back by cords. In the
+                     right wall is a door opening into an adjoining room.</p>
+               </item>
+               <item>
+                  <num>6.</num>
+                  <label>INTERIOR. PALACE DANCE HALL AND BAR.</label>
+                  <p>This view is described from the position of one standing at the arcade doors.
+                     Along the left, are a number of booths, with tables and chairs inside, each
+                     booth having curtains which may be drawn if the occupants so desire. Midway, on
+                     the left, are two swinging doors which open on to
+                        <placeName>Sansome</placeName> Street. The rear wall is also a row of
+                     booths, terminating at about center, where on a raised platform are the
+                     musicians. To the right of this, separated from the adjoining space by curtains
+                     of the same cheap material as that of the booths, is a door which opens into
+                     the rear and eventually terminates in the alley. On the right of this, a
+                     section of wall enclosing a staircase, the door of which is close to that
+                     opening into the alley. These stairs ascend to a landing at which point they
+                     make an angle turn to the floor above. On the right, between the rear and the
+                     end of the bar, are two other booths. The second booth has a wooden partition
+                     which separates it from the end of the bar, nearby. Between this <pb n="24"/>
                      <fw type="pageNum" place="left">LN</fw>
-                     <fw type="continued">6. (Cont’d)</fw>
-                       wooden partition and the bar, and in the right wall, is a door, or opening which leads to another stairway, this stairway meeting the same landing as the rear stairs. The bar is probably one of the most expensive Brunswick-Balke-Callender ever built. The mirrors are frosted in intricate borders and the glassware is shining like a nigger’s heel. Three bartenders are constantly at work serving patrons this point and filling orders for those at the tables.</p>
-                 </item>
-                 <item>
-                    <num>7.</num>
-                    <label>INTERIOR. A ROOM WHICH ADJOINS BULL’S OFFICE.</label>
-                    <p>The actual nature of this room is not disclosed, for all that is necessary for the action is a portion of the wall, which shows the door opening into Bull’s office. This should be integral with the office set.</p>
-                 </item>
-                 <item>
-                    <num>8.</num>
-                    <label>INTERIOR. LILY’S <q>SITTING ROOM</q> IN MRS. TIBBETT’S BOARDING HOUSE.</label>
-                    <p>This is a moderately small room, typical of the <q>fashionable boarding house</q>. On the right are two windows with lace curtains. These windows look out into the street from the second or third floor. On the left, a door opening into the hall. In center of upscene wall, a pair of sliding doors which open into the bedroom. This opening is hung with knotted velvet cords, tied back to each side. When the doors are pushed back, a glimpse of the bedroom may be had, showing a heavy walnut bed, head against the rear wall. The sitting room boasts a frosted glass combination chandelier. Across the upper right hand corner is a sofa. In the center of the room, a small, square table and on it, one or two books and a small vase. There are one or two pictures on the wall, framed chromos -- and a family <q>portrait</q> which might do credit to a rogue’s gallery. In the left-hand corner, on a small stand, is a music box -- the type which created a sensation in its day, playing punched-zinc records about eighteen inches in diameter.</p>
-                 </item>
-                 <pb n="24"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <item>
-                    <num>9.</num>
-                    <label>INTERIOR. LOWER HALL, MRS. TIBBETT’S BOARDING HOUSE.</label>
-                    <p>This is typical of the <q>fashionable boarding house</q> hallway. On the right, are double sliding doors, giving into what was formerly the <q>parlor</q>, but which is now Mrs. Tibbett’s own room, from which she can get a line on all people coming in and going out. The hall is fairly short. At the upper end, is a door leading to the rear, and in the wall on right, another door opening into the room which adjoins the parlor. On left, terminating in medium foreground, are the stairs which ascend to the next floor. These stairs boast a mahogany rail, terminating in a rather ornate Newel-post. Against the right wall, and between the doors is a wall telephone, pay station type. Near it, an old-fashioned hat rack and umbrella stand. The place is lighted by a combination fixture.</p>
-                 </item>
-                 <item>
-                    <num>10.</num>
-                    <label>UPPER HALL. MRS. TIBBETT’S BOARDING HOUSE.</label>
-                    <p>On the left, upscene, the stairs terminate within a few feet of three doors -- one on the left, one in center of rear wall, and one on the right. In foreground, on right, is the door which opens into Lily’s sitting room. The hallway is lighted by a combination fixture on the wall. The floor is carpeted with some fairly well worn, gaudy material.</p>
-                 </item>
-                 <item>
-                    <num>11.</num>
-                    <label>INTERIOR.POLICE CHIEF’S OFFICE.</label>
-                    <p>This is a medium-sized room. Upstage, are two tall broad windows with small square panes. These look out into the street. Between these windows, hang two pictures -- one of the Mayor, and a smaller one, a group of policemen. On the right is the corridor door, a dark-panelled one matching the wainscoting which goes around the room. Against the wall on right is a leather settee. Above it, another picture -- Washington, crossing the Delaware. Above the door, yet another picture -- a flashlight of the Policemen’s Benefit Ball. The desk is a flat-top, <choice><sic>dounle-ended</sic><corr>double-ended</corr></choice> one. On one corner, a letter tray. On the other, a couple of telephones. Behind the desk, a leather-upholstered swivel chair. There are two other leather chairs to match the settee, and in addition, four or five bent-frame ones in dark brown. At each corner of the desk, is a polished brass spittoon on a rubber mat. The floor is carpeted. An ornate combination chandelier hangs from the center of the room.</p>
-                 </item>
-                 
-                 <pb n="25"/>
-                 <fw type="pageNum" place="left">LN</fw>
-                 <item>
-                    <num>12.</num>
-                    <label>A LARGE WAREHOUSE, AT THE DOCKS.</label>
-                    <p>This is a large, barn-like place -- a warehouse on the <placeName>Embarcadero at the foot of Pacific Street</placeName>. Several large double doors open out on to the dock, upscene, and others on to a loading platform on the left. Through the upscene doors, is a jungle-like forest of ship’s masts and rigging. Scattered about through this cold, uninviting and smelly place, are stores of all kinds; bales of hemp; rattan; coils of rope; bags of copra; boxes; bundles of jute; barrels of oil; crated machinery -- the thousand and one things to be seen in dock warehouses. There will be a reverse angle in this set which will show upscene, smaller double doors, which open into the front part of the warehouse, probably a corridor.</p>
-                 </item>            
-              </list>
-              <closer>
-                 <dateline>Nov. 15, 1929</dateline>
-                 <signed>EDWARD T. LOWE</signed>
-              </closer>
-           </div> 
-           <!-- ENGL501a: the following section is without a title or header, but seems to be the start of an earlier treatment -->
-           <pb n="26"/>
-           <fw type="pageNum" place="left">LN</fw>
-           <div>
-              <p><view><camera>1. MED CLOSE ON ROGER’S ROOM INT</camera></view></p>
-              <p>In a severely furnished lodging-house room we see a young minister at a table, trying to study the Bible. He presses his hands to his ears, with an expression of pain, as he is prevented from reading by the never-ceasing racket of a party going on above his head in a room on the next floor. The camera pans up quickly to: </p>
-              <p><view>2. CEILING OF THE ROOM.</view></p>
-              <p>An old fashioned gas chandelier, trembling with the impact of feet running about in the room above. We hear the laughter and shouts of the people above, only slightly dimmed by having to come through the thin plaster and flooring.</p>
-              <p><view><camera>3. MED CLOSE FLOOR OF LILY’S ROOM INT</camera></view></p>
-              <p>The upper half of the frame is black. In the lower half we see the feet of three women and three men. A hat falls into the picture and is kicked by a laughing woman. A bottle is thrown down with a thud. A glass falls and breaks and is crushed beneath a man’s foot. One couple is dancing to the music of a tinny phonograph. Using the feet alone -- together with laughter, drunken shouts, etc. on the sound track -- we get over the drunken party going on.</p>
-              <p><view><camera>4. FULL SHOT ROGER’S ROOM INT</camera></view></p>
-              <p>Driven frantic by the racket, Roger shuts his Bible, rises -- trying to keep himself from being angry -- takes his hat and starts to exit. As he starts for the door he glances at his watch.</p>
-              <pb n="27"/>
-              <fw type="pageNum" place="left">LN</fw>
-              <p><view>5. LODGING HOUSE ENTRY HALL INT</view></p>
-              <p>A slavy is on her hands and knees with a duster. She is taking orders from the stern-faced landlady as Roger walks into scene on his way to front door. The landlady’s scowl turns into a smile.</p>
-              <sp>
-                 <speaker>LANDLADY</speaker>
-                 <p>Good evening sir.</p>
-              </sp>
-              <sp>
-                 <speaker>ROGER</speaker>
-                 <p>(as he walks)</p>
-                 <p>Good Evening Mrs. Harold.</p>
-              </sp>
-              <sp>
-                 <speaker>LANDLADY</speaker>
-                 <p>(admiringly)</p>
-                 <p>Going to your mass meeting?</p>
-              </sp>
-              <p> As Roger nods in affirmation there is a clatter as half a dozen people rush down the staircase -- the party from Lily’s room. Flashily-dressed, half-drunk, they rush between Roger and the landlady shouting and laughing. As the door is opened by the first to reach it, we see a hack waiting outside for the party.</p>
-              <p>Roger has shrunk back against the wall -- pushed out of the way, but also with an expression which tells us that he wishes to avoid the contaminating touch of the roisterers. He is a bit priggish, which explains his <corr>disgust</corr>.</p>
-              <p>Lily, with her man, a flashily dressed ‘sport’, is the last of the party. As she hurries through the scene she nods to the landlady cordially. As she passes within an inch or two <corr>of</corr> Roger -- near enough for him to smell her perfume -- she smiles pleasantly. 
-              </p> <sp>
-                 <speaker>LILY</speaker>
-                 <p>‘Evening, neighbor.</p>
-              </sp>
-              <p>As Lily exits laughingly we see disgust and injured dignity on Roger’s countenance. At the same time we sense that, whether he knows it or not, he is attracted in some strange animal way to the resplendent, vital Lily. He almost shudders as he nods good evening to the landlady and walks towards the door.</p>
-           </div>
-        </back>
+                     <fw type="continued">6. (Cont’d)</fw> wooden partition and the bar, and in the
+                     right wall, is a door, or opening which leads to another stairway, this
+                     stairway meeting the same landing as the rear stairs. The bar is probably one
+                     of the most expensive Brunswick-Balke-Callender ever built. The mirrors are
+                     frosted in intricate borders and the glassware is shining like a nigger’s heel.
+                     Three bartenders are constantly at work serving patrons this point and filling
+                     orders for those at the tables.</p>
+               </item>
+               <item>
+                  <num>7.</num>
+                  <label>INTERIOR. A ROOM WHICH ADJOINS BULL’S OFFICE.</label>
+                  <p>The actual nature of this room is not disclosed, for all that is necessary for
+                     the action is a portion of the wall, which shows the door opening into Bull’s
+                     office. This should be integral with the office set.</p>
+               </item>
+               <item>
+                  <num>8.</num>
+                  <label>INTERIOR. LILY’S <q>SITTING ROOM</q> IN MRS. TIBBETT’S BOARDING
+                     HOUSE.</label>
+                  <p>This is a moderately small room, typical of the <q>fashionable boarding
+                        house</q>. On the right are two windows with lace curtains. These windows
+                     look out into the street from the second or third floor. On the left, a door
+                     opening into the hall. In center of upscene wall, a pair of sliding doors which
+                     open into the bedroom. This opening is hung with knotted velvet cords, tied
+                     back to each side. When the doors are pushed back, a glimpse of the bedroom may
+                     be had, showing a heavy walnut bed, head against the rear wall. The sitting
+                     room boasts a frosted glass combination chandelier. Across the upper right hand
+                     corner is a sofa. In the center of the room, a small, square table and on it,
+                     one or two books and a small vase. There are one or two pictures on the wall,
+                     framed chromos -- and a family <q>portrait</q> which might do credit to a
+                     rogue’s gallery. In the left-hand corner, on a small stand, is a music box --
+                     the type which created a sensation in its day, playing punched-zinc records
+                     about eighteen inches in diameter.</p>
+               </item>
+               <pb n="24"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <item>
+                  <num>9.</num>
+                  <label>INTERIOR. LOWER HALL, MRS. TIBBETT’S BOARDING HOUSE.</label>
+                  <p>This is typical of the <q>fashionable boarding house</q> hallway. On the right,
+                     are double sliding doors, giving into what was formerly the <q>parlor</q>, but
+                     which is now Mrs. Tibbett’s own room, from which she can get a line on all
+                     people coming in and going out. The hall is fairly short. At the upper end, is
+                     a door leading to the rear, and in the wall on right, another door opening into
+                     the room which adjoins the parlor. On left, terminating in medium foreground,
+                     are the stairs which ascend to the next floor. These stairs boast a mahogany
+                     rail, terminating in a rather ornate Newel-post. Against the right wall, and
+                     between the doors is a wall telephone, pay station type. Near it, an
+                     old-fashioned hat rack and umbrella stand. The place is lighted by a
+                     combination fixture.</p>
+               </item>
+               <item>
+                  <num>10.</num>
+                  <label>UPPER HALL. MRS. TIBBETT’S BOARDING HOUSE.</label>
+                  <p>On the left, upscene, the stairs terminate within a few feet of three doors --
+                     one on the left, one in center of rear wall, and one on the right. In
+                     foreground, on right, is the door which opens into Lily’s sitting room. The
+                     hallway is lighted by a combination fixture on the wall. The floor is carpeted
+                     with some fairly well worn, gaudy material.</p>
+               </item>
+               <item>
+                  <num>11.</num>
+                  <label>INTERIOR.POLICE CHIEF’S OFFICE.</label>
+                  <p>This is a medium-sized room. Upstage, are two tall broad windows with small
+                     square panes. These look out into the street. Between these windows, hang two
+                     pictures -- one of the Mayor, and a smaller one, a group of policemen. On the
+                     right is the corridor door, a dark-panelled one matching the wainscoting which
+                     goes around the room. Against the wall on right is a leather settee. Above it,
+                     another picture -- Washington, crossing the Delaware. Above the door, yet
+                     another picture -- a flashlight of the Policemen’s Benefit Ball. The desk is a
+                     flat-top, <choice>
+                        <sic>dounle-ended</sic>
+                        <corr>double-ended</corr>
+                     </choice> one. On one corner, a letter tray. On the other, a couple of
+                     telephones. Behind the desk, a leather-upholstered swivel chair. There are two
+                     other leather chairs to match the settee, and in addition, four or five
+                     bent-frame ones in dark brown. At each corner of the desk, is a polished brass
+                     spittoon on a rubber mat. The floor is carpeted. An ornate combination
+                     chandelier hangs from the center of the room.</p>
+               </item>
+
+               <pb n="25"/>
+               <fw type="pageNum" place="left">LN</fw>
+               <item>
+                  <num>12.</num>
+                  <label>A LARGE WAREHOUSE, AT THE DOCKS.</label>
+                  <p>This is a large, barn-like place -- a warehouse on the <placeName>Embarcadero
+                        at the foot of Pacific Street</placeName>. Several large double doors open
+                     out on to the dock, upscene, and others on to a loading platform on the left.
+                     Through the upscene doors, is a jungle-like forest of ship’s masts and rigging.
+                     Scattered about through this cold, uninviting and smelly place, are stores of
+                     all kinds; bales of hemp; rattan; coils of rope; bags of copra; boxes; bundles
+                     of jute; barrels of oil; crated machinery -- the thousand and one things to be
+                     seen in dock warehouses. There will be a reverse angle in this set which will
+                     show upscene, smaller double doors, which open into the front part of the
+                     warehouse, probably a corridor.</p>
+               </item>
+            </list>
+            <closer>
+               <dateline>Nov. 15, 1929</dateline>
+               <signed>EDWARD T. LOWE</signed>
+            </closer>
+         </div>
+         <pb n="26"/>
+         <fw type="pageNum" place="left">LN</fw>
+         <div>
+            <p><view><camera>1. MED CLOSE ON ROGER’S ROOM INT</camera></view><note type="editorial">The following section is without a title or header, but seems to be the start of an earlier treatment.</note></p>
+            <p>In a severely furnished lodging-house room we see a young minister at a table, trying
+               to study the Bible. He presses his hands to his ears, with an expression of pain, as
+               he is prevented from reading by the never-ceasing racket of a party going on above
+               his head in a room on the next floor. The camera pans up quickly to: </p>
+            <p><view>2. CEILING OF THE ROOM.</view></p>
+            <p>An old fashioned gas chandelier, trembling with the impact of feet running about in
+               the room above. We hear the laughter and shouts of the people above, only slightly
+               dimmed by having to come through the thin plaster and flooring.</p>
+            <p><view><camera>3. MED CLOSE FLOOR OF LILY’S ROOM INT</camera></view></p>
+            <p>The upper half of the frame is black. In the lower half we see the feet of three
+               women and three men. A hat falls into the picture and is kicked by a laughing woman.
+               A bottle is thrown down with a thud. A glass falls and breaks and is crushed beneath
+               a man’s foot. One couple is dancing to the music of a tinny phonograph. Using the
+               feet alone -- together with laughter, drunken shouts, etc. on the sound track -- we
+               get over the drunken party going on.</p>
+            <p><view><camera>4. FULL SHOT ROGER’S ROOM INT</camera></view></p>
+            <p>Driven frantic by the racket, Roger shuts his Bible, rises -- trying to keep himself
+               from being angry -- takes his hat and starts to exit. As he starts for the door he
+               glances at his watch.</p>
+            <pb n="27"/>
+            <fw type="pageNum" place="left">LN</fw>
+            <p><view>5. LODGING HOUSE ENTRY HALL INT</view></p>
+            <p>A slavy is on her hands and knees with a duster. She is taking orders from the
+               stern-faced landlady as Roger walks into scene on his way to front door. The
+               landlady’s scowl turns into a smile.</p>
+            <sp>
+               <speaker>LANDLADY</speaker>
+               <p>Good evening sir.</p>
+            </sp>
+            <sp>
+               <speaker>ROGER</speaker>
+               <p>(as he walks)</p>
+               <p>Good Evening Mrs. Harold.</p>
+            </sp>
+            <sp>
+               <speaker>LANDLADY</speaker>
+               <p>(admiringly)</p>
+               <p>Going to your mass meeting?</p>
+            </sp>
+            <p> As Roger nods in affirmation there is a clatter as half a dozen people rush down the
+               staircase -- the party from Lily’s room. Flashily-dressed, half-drunk, they rush
+               between Roger and the landlady shouting and laughing. As the door is opened by the
+               first to reach it, we see a hack waiting outside for the party.</p>
+            <p>Roger has shrunk back against the wall -- pushed out of the way, but also with an
+               expression which tells us that he wishes to avoid the contaminating touch of the
+               roisterers. He is a bit priggish, which explains his <corr>disgust</corr>.</p>
+            <p>Lily, with her man, a flashily dressed ‘sport’, is the last of the party. As she
+               hurries through the scene she nods to the landlady cordially. As she passes within an
+               inch or two <corr>of</corr> Roger -- near enough for him to smell her perfume -- she
+               smiles pleasantly. </p>
+            <sp>
+               <speaker>LILY</speaker>
+               <p>‘Evening, neighbor.</p>
+            </sp>
+            <p>As Lily exits laughingly we see disgust and injured dignity on Roger’s countenance.
+               At the same time we sense that, whether he knows it or not, he is attracted in some
+               strange animal way to the resplendent, vital Lily. He almost shudders as he nods good
+               evening to the landlady and walks towards the door.</p>
+         </div>
+      </back>
    </text>
 </TEI>
