@@ -133,12 +133,21 @@
             <p><q>It’s all right, darling</q>, he said. <q>Minton assured me he’d take care of it</q>.</p>
             <p>Inside, Minton turned to his secretary.</p>
             <p><q>Take a memo to Jane Mercer, scenario department</q>.</p>
-            <p>‘My Dear Miss Mercer:</p>
-            <p>Effective today, your services are no longer required.</p>
-            <p>Sincerely yours,</p>
-            <p>H. Minton,</p>
-            <p>General Manager.’</p>
-               
+           
+            <q>
+               <floatingText type="letter">
+                  <body>
+                     <opener>
+                        <salute>My Dear Miss Mercer:</salute>
+                     </opener>
+                     <p>Effective today, your services are no longer required.</p>
+                     <closer>
+                        <salute>Sincerely yours,</salute> <signed>Sincerely yours, General Manager.</signed>
+                     </closer>
+                  </body>
+               </floatingText>
+            </q>
+  
             <p>He turned to his secretary with a wry smile.</p>
             <p><q>When a girl is making trouble between two men, get rid of the girl</q>, he said.</p>
             <p>Next morning when Jane came to work, rested, happy, and feeling that all was well with her and the world, she found the terse little message on her desk. It was so sudden, so overwhelming that at first she could not believe it.</p>
