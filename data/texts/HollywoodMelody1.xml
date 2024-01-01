@@ -63,6 +63,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="inProgress">
+         <change who="pers:LW1" when="2024-01-01" status="inProgress">Coded some headers and pages.</change>
          <change who="pers:JT1" when="2023-11-23" status="inProgress">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-09-01" status="inProgress">Set back to inProgress. Already proofed and coded, but some code has to be edited to reflect script formatting.</change>
          <change who="pers:LW1" when="2022-08-31" status="published">Proofed and encoded. Set to published. This is a test for formatting.</change>
@@ -82,6 +83,7 @@
          <opener>by <name ref="pers:WE1">Onoto Watanna</name>   -- <name ref="pers:WE1">Winnifred Reeve</name></opener>
 
          <div type="content">
+            <fw type="pageNum">Page 1.</fw>
             <p>SYNOPSIS OF NOVEL                                              READ BY* * *</p>
             <p>SUBMITTED BY                                                   Sherill Tyler</p>
             <p>WINNEFRED REEVE                                                September 10th</p>
@@ -128,8 +130,8 @@
                Hollywood. She can’t live without liquor. It begins to tell on her and her work.
                Eventually she</p>
             <milestone unit="page"/>
-            <p>HOLLYWOOD MELODY, Con’t.</p>
-            <p>Page 2.</p>
+            <fw type="continued">HOLLYWOOD MELODY, Con’t.</fw>
+            <fw type="pageNum">Page 2.</fw>
             <p>collapses and is taken to a hospital.</p>
             <p>When she is convalescing, Balnton comes to see her. He is genuinely interested, not
                only in the girl, but in the artist. Together they plan a super, sound production,
@@ -172,8 +174,8 @@
                glasses all conceal the same dear Mavis whom David had known in the dingy little
                side-street apartment, and they both go home together.</p>
             <milestone unit="page"/>
-            <p>HOLLYWOOD MELODY, Con’t.</p>
-            <p>Page 3</p>
+            <fw type="continued">HOLLYWOOD MELODY, Con’t.</fw>
+            <fw type="pageNum">Page 3</fw>
             <div/>
             <div>
                <p>COMMENT: Hollywood’s looseness has been widely publicized in both celluloid and
@@ -196,8 +198,8 @@
             <div>
                <p>A novel of 80,000 words, now in revision.</p>
                <label>Author:</label>
-               <p style="text-decoration:underline">ONOTO WTANNA</p>
-               <p>-- Winnifred Reeve</p>
+               <p style="text-decoration:underline"><name ref="pers:WE1">ONOTO WTANNA</name></p>
+               <p>-- <name ref="pers:WE1">Winnifred Reeve</name></p>
             </div>
             <div>
                <head type="subtitle">HOLLYWOOD MELODY</head>
@@ -331,7 +333,7 @@
                   studio and was told he had quit.</p>
                <p>For a time she was inconsolable, but her work <pb n="6"/> took so much of her time
                   and thought. She embarked moreover upon a dissipated, reckless career.</p>
-               <p>She bought expensive cars, and from Paradise Court she went first to a gaudy
+               <p>She bought expensive cars, and <del rendition="overtyped"><gap  quantity="1" unit="chars" reason="deleted"/></del> from Paradise Court she went first to a gaudy
                   little apartment, with its cheap futuristic flashy furnishings, and from <choice>
                      <sic>ther</sic>
                      <corr>there</corr>
