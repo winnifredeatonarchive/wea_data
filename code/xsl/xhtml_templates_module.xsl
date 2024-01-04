@@ -101,12 +101,14 @@
   
     
     <!--Generic block level element templates-->
-    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | fw | titlePage | titlePart | titlePage/publisher | noteGrp | trailer" mode="tei">
+    <xsl:template match="ab | body | front | div | p | lg | l | byline | opener | closer | item | person/note | note[p] | listBibl | sp | titlePage | titlePart | titlePage/publisher | noteGrp | trailer" mode="tei">
         <div>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
+    
+    
     
     
     
@@ -250,6 +252,13 @@
     
     <!--Generic inline-->
     <xsl:template match="hi | seg | foreign | note | title[@level=('m','j','s')] | milestone[@unit='sectionBreak'] | emph | date | speaker | label | stage | view | camera | author | editor" mode="tei">
+        <span>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates mode="#current"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="fw" mode="tei">
         <span>
             <xsl:call-template name="processAtts"/>
             <xsl:apply-templates mode="#current"/>

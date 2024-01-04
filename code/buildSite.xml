@@ -257,7 +257,7 @@
         <echo message="${echo.separator}"/>
         <echo message="Validating XHTML..."/>
         <echo message="${echo.separator}"/>
-        <apply executable="java" failonerror="false" parallel="true">
+        <apply executable="java" failonerror="true" parallel="true">
             <arg line="-jar ${lib.dir}/vnu/vnu.jar 
                 --format gnu
                 --skip-non-html
