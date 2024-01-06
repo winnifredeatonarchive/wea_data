@@ -6,6 +6,10 @@
       <fileDesc>
          <titleStmt>
             <title>Elmer Clifton</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:FK1"/>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -27,7 +31,7 @@
                <additional>
                   <adminInfo>
                      <availability>
-                        <p><!--[Add information about the holding library (i.e. the source of the facsimile) here]--></p>
+                        <p/>
                      </availability>
                   </adminInfo>
                   <surrogates>
@@ -43,17 +47,19 @@
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
-            <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2021-05-14" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
-   <text>
+   <text facs="facs:ElmerClifton1">
       <body>
          <div>
             <gap reason="noTranscriptionAvailable"/>

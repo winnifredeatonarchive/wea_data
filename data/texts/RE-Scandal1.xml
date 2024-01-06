@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="BoomCity1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="RE-Scandal1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Boom City [Notes]</title>
-            <respStmt>
-               <resp>Transcriber</resp>
-               <name ref="pers:SH1"/>
-            </respStmt>
+            <title>Re: Scandal</title>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -17,15 +13,17 @@
          <sourceDesc>
             <msDesc>
                <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</repository>
-                  <idno>7.14</idno>
-                  <idno type="UofC">CU111912895</idno>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                  <idno type="UofC">CU111850106</idno>
                </msIdentifier>
+               <!--Include an msIdentifier if this text is from an archive-->
+               <!--                    <msIdentifier>
+                        <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                        <idno>10.2</idno>
+                    </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl xml:id="bibl245"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">Boom City</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</distributor>, <idno>7.14</idno>.</bibl>
+                     <bibl><title>Re: Scandal</title></bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -35,36 +33,34 @@
                      </availability>
                   </adminInfo>
                   <surrogates>
-                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                     <!--
+                            <!--Add other editions of this text using a bibl element with
+                                a target pointing to its bibl-->
+                            <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                  </surrogates>
+                        </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
          <textClass>
-            <catRef scheme="wdt:genre" target="wdt:genreNovel"/>
-            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+            <catRef scheme="wdt:genre" target="wdt:genreMemo"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Hollywood"/>
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
-         <change who="pers:SL1" when="2022-02-22" status="empty">Added catRef genre and exhibit.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:BoomCity1">
-      <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
-         </div>
-      </body>
-   </text>
+   <text facs="facs:RE-Scandal1">
+        <body>
+            <div>
+                <gap reason="noTranscriptionAvailable"/>
+            </div>
+        </body>
+    </text>
 </TEI>

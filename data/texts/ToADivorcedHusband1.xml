@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="Vitriol1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ToADivorcedHusband1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Vitriol</title>
+            <title>To a Divorced Husband</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:ER1"/>
+               <name ref="pers:JM2"/>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -17,16 +17,17 @@
          <sourceDesc>
             <msDesc>
                <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</repository>
-                  <idno>12.1</idno>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
                   <idno type="UofC">CU111995213</idno>
                </msIdentifier>
+               <!--Include an msIdentifier if this text is from an archive-->
+               <!--                    <msIdentifier>
+                        <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
+                        <idno>10.2</idno>
+                    </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl xml:id="bibl225"><author><name ref="pers:WE1">Ellis Eaton</name></author>.
-                     <title level="a">Vitriol</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</distributor>, <idno>12.1</idno>. </bibl>
+                     <bibl><title>To a Divorced Husband</title></bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -36,12 +37,13 @@
                      </availability>
                   </adminInfo>
                   <surrogates>
-                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                     <!--
+                            <!--Add other editions of this text using a bibl element with
+                                a target pointing to its bibl-->
+                            <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                  </surrogates>
+                        </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -55,16 +57,14 @@
       </profileDesc>
       <revisionDesc status="empty">
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
-         <change who="pers:MC1" status="empty" when="2020-06-30">Added exhibit and genre.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
-   <text facs="facs:Vitriol1">
-      <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
-         </div>
-      </body>
-   </text>
+   <text facs="facs:ToADivorcedHusband1">
+        <body>
+            <div>
+                <gap reason="noTranscriptionAvailable"/>
+            </div>
+        </body>
+    </text>
 </TEI>
