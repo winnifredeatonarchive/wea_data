@@ -2412,10 +2412,10 @@ On <xsl:text/>
                        context="tei:catRef[@scheme='wdt:genre']"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"/>
+         <xsl:when test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreMemo)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
+                                test="matches(@target,'^((wdt:genreShortStory)|(wdt:genreNF)|(wdt:genreNFAuto)|(wdt:genreNFDedication)|(wdt:genreNFLetter)|(wdt:genreNFInterview)|(wdt:genreNFIntroduction)|(wdt:genreNFEthnography)|(wdt:genreNFMiscellany)|(wdt:genreNFMiscellanyBlurb)|(wdt:genreFilm)|(wdt:genreFilmScenario)|(wdt:genreFilmOutline)|(wdt:genreFilmTreatment)|(wdt:genreFilmScreenplay)|(wdt:genrePlay)|(wdt:genrePoem)|(wdt:genreMemo)|(wdt:genreNovel)|(wdt:genreNovelSerial))$')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
