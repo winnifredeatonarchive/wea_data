@@ -1,12 +1,11 @@
-/* Script for converting /moving stuff. To be run in node */
+/* Script for converting /moving stuff. To be run in Deno */
 
 import { default as papaparse } from "npm:papaparse@latest";
 import { exists } from "https://deno.land/std/fs/mod.ts";
 
 const decoder = new TextDecoder("utf-8");
 const spreadsheet = "./texts-for-transcription.csv";
-const DriveURL =
-  "/Users/takeda/GoogleDrive/work/WEaton Anew/2023 Calgary Conference/Transcribe-a-thon/Transcribe-a-thon Texts";
+const DriveURL = "PATH_TO_DRIVE_URL";
 
 const dataDir = "/Users/takeda/projects/wea_data/data";
 
