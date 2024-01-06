@@ -239,7 +239,7 @@
     <xsl:template name="createRelatedItems">
         <xsl:variable name="currId" select="ancestor::TEI/@xml:id" as="xs:string"/>
         <xsl:variable name="currMap" select="$relationshipMap($currId)" as="map(*)?"/>
-        <xsl:if test="not(empty(map:keys($currMap)))">
+        <xsl:if test="exists($currMap) and not(empty(map:keys($currMap)))">
             <details id="relatedItems" class="additionalInfo expandable">
                 <summary class="metadataLabel additionalInfoHeader" id="relatedItems_header">Related Items<span class="mi">chevron_right</span></summary>
                 <div class="content">
