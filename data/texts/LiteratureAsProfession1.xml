@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:JT1">Joey Takeda</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -49,7 +53,8 @@
             <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="readyForProof">
+      <revisionDesc status="published">
+         <change who="pers:JT1" when="2024-01-13" status="published">Proofed and set to published.</change>
          <change who="pers:JT1" when="2023-11-23" status="readyForProof">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2020-08-24" status="readyForProof">Created document and added transcription.</change>
       </revisionDesc>
