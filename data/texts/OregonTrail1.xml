@@ -61,7 +61,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="readyForProof">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-01-13" status="published">Proofing and encoding complete. Future changes to tags are welcome.</change>
          <change who="pers:JT1" when="2023-11-23" status="readyForProof">Added citation from
             bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2024-01-01" status="readyForProof">Testing view vs p.</change>
@@ -110,12 +111,12 @@
                   <pb n="A-1"/>
                   <head>SEQUENCE A</head>
                   <camera>FADE IN:</camera>
-                  <view>An Indian Village.</view>
+                  <stage type="setting">An Indian Village.</stage>
                   <p>From out of the sky vaguely and hazily, swooping down over the village comes
                      the emaciated and ghostly figure of FAMINE.</p>
-                  <view>The Village itself is revealed in a state of destitution and misery.</view>
+                  <stage type="setting">The Village itself is revealed in a state of destitution and misery.</stage>
                   <view>Against the skyline appear four fiery columns of smoke, and at the same time
-                     is heard the arousing beat of Indian drums. This is the Indian summons to a
+                     is heard <sound>the arousing beat of Indian drums.</sound> This is the Indian summons to a
                      counsel.</view>
                   <view>There is a stir in the village and the Indians are seen leaving their tents
                      and wigwams. Like a swarm of shadows they plod and push dumbly along toward a
@@ -138,7 +139,7 @@
                      or be forced out of his own lands. The time has come when the Indian must repel
                      the advance of these white people. They must be prevented from crossing the
                      Cascades.</p>
-                  <p>His words are greeted by savage cheers.</p>
+                  <sound>His words are greeted by savage cheers.</sound>
                   <view>Through the clamoring throngs a very old chief pushes his way to the fore
                      until he comes alongside the young chief on the brow of the hill. He raises his
                      hands to command silence.</view>
@@ -185,17 +186,17 @@
                   <fw type="pageNum">A-3-A</fw>
                   <sp>
                      <speaker>YOUNG CHIEF</speaker>
-                     <stage>(shouting)</stage>
+                     <stage type="delivery">(shouting)</stage>
                      <p>The Thunder God fights within us! Ee-yah! Eeii---ya-a-a-a!</p>
                   </sp>
-                  <view>The Indians take up the cry. They begin to circle, screaming and shouting
-                     and yelling, as they move in a savage war dance.</view>
+                  <view><sound>The Indians take up the cry. They begin to circle, screaming and shouting
+                     and yelling,</sound> as they move in a savage war dance.</view>
                   <camera>FADE OUT.</camera>
                </div>
                <div>
                   <head>SEQUENCE B</head>
                   <camera>FADE IN</camera>
-                  <view>A trail winding around the side of a precipitous canyon wall.</view>
+                  <stage type="setting">A trail winding around the side of a precipitous canyon wall.</stage>
                   <view>Two riders are loping along. Their outfit consists of their horses,
                      surefooted, swift and tough Indian ponies, and two pack mules, in charge of an
                      Indian who plods along behind. The older of the two men is Ren Bullock. He is
@@ -220,7 +221,7 @@
                      <speaker>REN</speaker>
                      <p>That’s one plumb fine sight - that thar sunset.</p>
                   </sp>
-                  <p>Thad laughs. It is natural for him to laugh.</p>
+                  <stage type="action">Thad laughs. It is natural for him to laugh.</stage>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>I’ve seen prettier sunsets than that in Kentucky.</p>
@@ -231,11 +232,11 @@
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage>(uneasily)</stage>
+                     <stage type="delivery">(uneasily)</stage>
                      <p>That’s right- I’ve never told anyone. Mebbe <note>Maybe</note> I had a
                         reason.</p>
                   </sp>
-                  <view>Ren nods understandingly.</view>
+                  <stage type="action">Ren nods understandingly.</stage>
                   <view>The shadows deepen about them. They top the brow of a hill and draw rein to
                      look down across a great sweep of plain. There, in a wide valley below them,
                      the flares of a score of campfires are seen.</view>
@@ -249,30 +250,30 @@
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage>(Anxiously)</stage>
+                     <stage type="delivery">(Anxiously)</stage>
                      <p>That’s a considerable job you’ve taken on. Think you can pilot two thousand
                         immigrants into the Oregon?</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage>(with a wry smile)</stage>
+                     <stage type="action">(with a wry smile)</stage>
                      <p>What me? Reckon I’ll be lookin’ for a heap a help from you young one.</p>
                   </sp>
                   <pb n="B-3"/>
                   <fw type="pageNum">B-3</fw>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage>(chest swelling)</stage>
+                     <stage type="action">(chest swelling)</stage>
                      <p>Well I reckon we can manage somehow.</p>
                   </sp>
-                  <p>Sound of music and singing comes floating upon the air.</p>
+                  <sound>Sound of music and singing comes floating upon the air.</sound>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>Listen to them singing. Sounds like gospel hymns.</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage>(nodding)</stage>
+                     <stage type="action">(nodding)</stage>
                      <p>They’s a powerful lot of religion ‘mong them. Guess we better be driftin’
                         along. They’ll be lookin’ for us.</p>
                   </sp>
@@ -281,30 +282,30 @@
                      <p>Let’s go on into the town first. I got a parched throat and an empty
                         stomach. And I’m aiming to stretch out on a read bed.</p>
                   </sp>
-                  <p>Ren gives him a good humored thump on the back.</p>
+                  <stage type="action">Ren gives him a good humored thump on the back.</stage>
                   <sp>
                      <speaker>REN</speaker>
                      <p>We’ll ride on into the town and look up our friends down thar later.</p>
                   </sp>
-                  <p>They turn their <choice>
+                  <stage type="action">They turn their <choice>
                         <sic>horses</sic>
                         <corr>horses’</corr>
-                     </choice> heads and move off.</p>
+                     </choice> heads and move off.</stage>
                   <milestone unit="line"/>
-                  <view>THE IMMIGRANT ENCAMPMENT</view>
-                  <p>This is a large field or plain on the outskirts of the town of Independence
+                  <stage type="setting">THE IMMIGRANT ENCAMPMENT</stage>
+                  <stage type="setting">This is a large field or plain on the outskirts of the town of Independence
                      (now a part of Kansas City). Here a host of immigrants, hunters, trappers,
                      voyageurs, traders, gamblers, adventurers, missionaries, teachers, farmers, as
                      well as the rag tag and bobtail and outcasts of the frontier <pb n="B-4."/><fw
                         type="pageNum">B-4.</fw> town have gathered from all parts of the country to
-                     keep a rendezvous at the starting off place for the Oregon trail.</p>
+                     keep a rendezvous at the starting off place for the Oregon trail.</stage>
                   <view>Vehicles of all manner and kind form an immense circle about a central
                      point.</view>
-                  <view>The flares of campfires, stream up, flooding the place with a mellow light,
-                     illuminating the faces of these hardy adventurers and pioneers.</view>
-                  <p>In a way this scene should parallel the Indian scene in as much as the
+                  <tech type="light">The flares of campfires, stream up, flooding the place with a mellow light,
+                     illuminating the faces of these hardy adventurers and pioneers.</tech>
+                  <stage type="novelistic">In a way this scene should parallel the Indian scene in as much as the
                      immigrants are addressed by their commander in chief Colonel Blair
-                     Appleton.</p>
+                     Appleton.</stage>
                   <view>The Colonel is a man of striking appearance, six feet four, stalwart and
                      strong in spite of his sixty-five years. His glance is keen and piercing from
                      under beetling brows. His carriage is military yet his whole personality
@@ -339,24 +340,24 @@
                      black boy with a bullet head and rolling eyes comes slouching lazily to the
                      fore, a bucket in his hand which spills and shakes as Mose moves along. Just as
                      he comes under where Sally is standing Mose puts his thumb and fore-finger into
-                     his mouth and lets out a most unearthly whistle. Mandy casts one enraged glance
+                     his mouth and <sound>lets out a most unearthly whistle.</sound> Mandy casts one enraged glance
                      at Mose and then reaching her left foot she gives him a hard prod on the head
                      knocking him over and the pail of water spilling as he falls.</view>
                   <milestone unit="line"/>
-                  <view>SALOON AND DANCE HALL</view>
-                  <p>This is the town of Independence.</p>
+                  <stage type="setting">SALOON AND DANCE HALL</stage>
+                  <stage type="location">This is the town of Independence.</stage>
                   <view>The atmosphere of the place is smoky and sultry. <pb n="B-6."/><fw
                         type="pageNum">B-6.</fw> rough men of all sorts and kind are about the place
                      gambling, making love to the girls, drinking and lining the bar.</view>
-                  <view>Here are dark French Canadian Voyageurs, long blonde Missourians, Mexicans,
-                     Swedes, Yanks, Jews, Englishmen, big fellows from the frontier towns.</view>
+                  <p>Here are dark French Canadian Voyageurs, long blonde Missourians, Mexicans,
+                     Swedes, Yanks, Jews, Englishmen, big fellows from the frontier towns.</p>
                   <view><choice>
                         <sic>Handsfull</sic>
                         <corr>Hands full</corr>
                      </choice> of silver are thrown or slapped down upon the bar. All comers are
                      treated regardless.</view>
-                  <view>The fiddles scrape and the music rises above the discordant murmurs and
-                     imprecations. Buxom girls of all colors spin out upon the floor. They are
+                  <view><sound>The fiddles scrape and the music rises above the discordant murmurs and
+                     imprecations.</sound> Buxom girls of all colors spin out upon the floor. They are
                      grabbed by the men, whooping with delight, and they thumping or spinning with
                      them across the floor. Near fights or real ones are precipitated and
                      averted.</view>
@@ -379,31 +380,30 @@
                      discussing the Immigrants. Bull is a huge, brutal looking customer. He wears a
                      red flannel shirt and buckskin breeches. His knife is stuck in his belt, his
                      gun on his hip.</view>
-                  <!-- Proofed til here. PDF 11. -->
                   <p>Bull has done a profitable and illicit trade among the Indians, supposedly as a
                      trapper; in reality as a vendor of corn whiskey and rum. The Indians have
                      cached away immense quantities of valuable silver fox and beaver pelts. Bull is
                      anxious to get up into the country to trade his booze for this fur, before the
-                     immigrants pour in. if once they settle upon the land; if in fact they reach
+                     immigrants pour in. If once they settle upon the land; if in fact they reach
                      the Williamette valley<note type="editorial" resp="pers:LW1">Eaton is likely
                         referring to Oregon’s Willamette Valley which is written throughout the
                         screenplay as <q>Williamette</q>.</note> ahead of Bull’s outfit, his
-                     business will be ruined. Already too many immigrants have gone through. How
+                     business will be ruined. Already too many immigrants have gone through. Now
                      this largest of all trains - 2000 strong - will spread over the Indian lands
                      like locusts. It will mean the end of Bull’s trade with the Indians.</p>
                   <milestone unit="line"/>
-                  <p>In the saloon, some commotion and stir is occasioned by the arrival of the two
+                  <view>In the saloon, some commotion and stir is occasioned by the arrival of the two
                      young scouts Ren and Thad. They are popular and well known, and their entrance
                      is greeted with whoops. The young fellows goodnaturedly set up the drinks for
-                     the crows.</p>
+                     the crowd.</view>
                   <pb n="B-8."/>
                   <fw type="pageNum">B-8.</fw>
-                  <p>Bull and his men have also come into the saloon, and at a signal from Bull
+                  <view>Bull and his men have also come into the saloon, and at a signal from Bull
                      Susan speeds to his side. He gives her some orders, and she nods and hurries to
                      obey him. Susan insinuates her way through the crowd till she manages to come
                      alongside Thad and slips her hand through his arm. Thad has had a couple of
                      drinks and is in high good humor. He looks down his shoulder and meets Susan’s
-                     black seductive eyes.</p>
+                     black seductive eyes.</view>
                   <sp>
                      <speaker>SUSAN</speaker>
                      <p>‘Lo Thad! Gee, I’m sure glad to see you. Where you been?</p>
@@ -418,14 +418,14 @@
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage>(uneasily, yet affected)</stage>
+                     <stage type="delivery">(uneasily, yet affected)</stage>
                      <p>Well, I got into a peck of trouble with good times.</p>
                   </sp>
-                  <p>Ren, leaning against the bar, with a couple of girls interposing between him
+                  <view>Ren, leaning against the bar, with a couple of girls interposing between him
                      and his partner. Ren gives a wry squint across at the pair, and then as the
                      bartender puts another drink before Thad, and as Thad picks it up, Ren reaches
                      a long arm across and takes the glass from his hand. His action is good
-                     humored, but firm. There is a small protest.</p>
+                     humored, but firm. There is a squall of protest.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Guess we better be driftin’ along <pb n="B-9."/><fw type="pageNum">B-9.</fw>
@@ -443,8 +443,9 @@
                      <p><q>You’ll be a long time on the trail with those psalm singing folk. Wait a
                            bit</q>!</p>
                   </sp>
-                  <p>And so forth. Susan is hanging tight onto Thad, and her body is pressed against
-                     him. Thad’s glance shifts from his pal to Sue. he feels a bit sheepish. </p>
+                  <view>And so forth. Susan is hanging tight onto Thad, and her body is pressed against
+                     him. Thad’s glance shifts from his pal to Sue. he feels a bit sheepish. </view>
+                  <milestone unit="line"/>
                   <sp>
                      <speaker>SUSAN</speaker>
                      <p>Gee, I’ve missed you! The town’s not been the same since you left.</p>
@@ -454,8 +455,8 @@
                      <speaker>BULL</speaker>
                      <p>How’re you -- Ren Bullock?</p>
                   </sp>
-                  <p>Ren slowly turns, and still leaning up against the bar he looks with a queer,
-                     quizzical slowly sizing up glance at Bull Dorien. </p>
+                  <stage type="action">Ren slowly turns, and still leaning up against the bar he looks with a queer,
+                     quizzical slowly sizing up glance at Bull Dorien. </stage>
                   <sp>
                      <speaker>BULL</speaker>
                      <p>What you doin’ in Independence?</p>
@@ -483,12 +484,12 @@
                      <p>You oughter know. You wuz up there recent - talkin’ with your Indian
                         friends, wasn’t you? </p>
                   </sp>
-                  <p>Bull glares. Ren grins. His grin is not without a touch of boyish malice.
+                  <view>Bull glares. Ren grins. His grin is not without a touch of boyish malice.
                      Almost lazily and reluctantly he slouches a bit nearer to the black browed
                      Bull. Bull’s glance goes by Ren. his eyes bore like gimlets into Susan’s. Hers
-                     reflect their momentary fear. </p>
-                  <p>Thad, as his pal moves toward Bull, half starts to follow. The bartender has
-                     sets another glass before Susan. She lifts it first toward her own lips and
+                     reflect their momentary fear. </view>
+                  <view>Thad, as his pal moves toward Bull, half starts to follow. The bartender has
+                     set another glass before Susan. She lifts it first toward her own lips and
                      then coaxingly toward his. Thad holds back a moment; but the liquor and Susan’s
                      eyes are too much for the weak Thad. he swallows, licks and smacks his lips.
                      Another glass slid across the bar. Thad glances at it wistfully out of the tail
@@ -498,18 +499,15 @@
                         <sic>drousy</sic>
                         <corr>drowsy</corr>
                      </choice> eyes glean with awakening desire, for Susan’s body is pressed against
-                     his. He swallows, his head nodding. They move off. </p>
-                  <p>Ren does not see them go. Elbow on bar, his back against it, Ren’s wry glance
-                     is on Bull. bull shifts his tobacco, spits, waits for the smiling Ren to speak.
-                     Ren says not a word. </p>
+                     his. He swallows, his head nodding. They move off. </view>
+                  <view>Ren does not see them go. Elbow on bar, his back against it, Ren’s wry glance
+                     is on Bull. Bull shifts his tobacco, spits, waits for the smiling Ren to speak.
+                     Ren says not a word. </view>
                   <pb n="B-11"/>
                   <fw type="pageNum">B-11</fw>
                   <sp>
                      <speaker>BULL</speaker>
-                     <p>Hear tell <choice>
-                           <sic>yo’re</sic>
-                           <corr>you’re</corr>
-                        </choice> plannin’ to steer them Immigrants up to the Williamette. </p>
+                     <p>Hear tell yo’re plannin’ to steer them Immigrants up to the Williamette. </p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
@@ -519,7 +517,7 @@
                      <speaker>BULL</speaker>
                      <p>What trail you aimin’ to go by?</p>
                   </sp>
-                  <p>Ren pushes back his wide hat, scratches his head thoughtfully. </p>
+                  <view>Ren pushes back his wide hat, scratches his head thoughtfully. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Which would you take if you was me? </p>
@@ -541,13 +539,13 @@
                      <speaker>REN</speaker>
                      <p>Now you got me worried. </p>
                   </sp>
-                  <p>Bull slouches nearer to him. He lowers his voice to a husky whisper.</p>
+                  <view>Bull slouches nearer to him. He lowers his voice to a husky whisper.</view>
                   <sp>
                      <speaker>BULL</speaker>
                      <p>That ain’t no man’s job -- playin’ nursemaid to a bunch of soft immigrants.
                      </p>
                   </sp>
-                  <p>&gt;Ren considers this, screwing up his eyes thoughtfully.</p>
+                  <view>Ren considers this, screwing up his eyes thoughtfully.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Mebbe <note>Maybe</note> you’re right.</p>
@@ -567,7 +565,7 @@
                      <speaker>BULL</speaker>
                      <p> Whatever they offer -- I’ll double -- see?</p>
                   </sp>
-                  <p>Ren raises his eyes wide with apparent surprise and unholy joy.</p>
+                  <view>Ren raises his eyes wide with apparent surprise and unholy joy.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> Thought you knew the Oregon Country better than I did. </p>
@@ -577,8 +575,8 @@
                      <p> So I do. I ain’t hirin’ you for a guide. </p>
                   </sp>
 
-                  <p>Ren’s manner is guileless and friendly. His eye now lifts unquestioningly. He
-                     lets the other do the talking.</p>
+                  <view>Ren’s manner is guileless and friendly. His eye now lifts unquestioningly. He
+                     lets the other do the talking.</view>
                   <sp>
                      <speaker>BULL</speaker>
                      <p> Without guides them Immigrants can’t get beyond the Dalles. They’ll never
@@ -590,13 +588,13 @@
                   </sp>
                   <sp>
                      <speaker>BULL</speaker>
-                     <stage>(confidentially)</stage>
+                     <stage type="delivery">(confidentially)</stage>
                      <p>You know it. What’s more we don’t want them Immigrants up in the Oregon.
                         They aint’ good for nothin’. They’ll spread <pb n="B-13"/><fw type="pageNum"
                            >B-13</fw> all over the land like lice.</p>
                   </sp>
 
-                  <p>Ren appears to be impressed.</p>
+                  <view>Ren appears to be impressed.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> I hadn’t thought a that. </p>
@@ -618,57 +616,57 @@
                   <sp>
                      <speaker>REN</speaker>
                      <p> It ain’t the Immigrants that’s poison to the Indians. They’ll do a fair and
-                        honest trade with them. It’s the fellows with the Booze that --- ]] </p>
+                        honest trade with them. It’s the fellows with the Booze that ---</p>
                   </sp>
-                  <p>He stops abruptly and smiles at Bull.</p>
+                  <view>He stops abruptly and smiles at Bull.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> Fergot all about that bein’ ye’re game, Bull. </p>
                   </sp>
                   <sp>
                      <speaker>BULL</speaker>
-                     <stage> (angry) </stage>
-                     <p> It don’t make no different what my game is. I put a proposition up to ya.
+                     <stage type="delivery"> (angry) </stage>
+                     <p>It don’t make no different what my game is. I put a proposition up to ya.
                         Is it yes or no? </p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage> (considering) </stage>
-                     <p> I’ll talk it over with my pardner <note>partner</note>-- </p>
+                     <stage type="delivery"> (considering) </stage>
+                     <p> I’ll talk it over with my pardner -- </p>
                   </sp>
                   <pb n="B-14"/>
                   <fw type="pageNum">B-14</fw>
-                  <p>He glances toward where Thad had been, and straightens up.</p>
+                  <view>He glances toward where Thad had been, and straightens up.</view>
                   <sp>
                      <speaker>Ren</speaker>
                      <p> Well guess I’ll drift. See you later. </p>
                   </sp>
-                  <p>He moves away, strolling lazily along, good-naturedly pushing aside the girls
+                  <view>He moves away, strolling lazily along, good-naturedly pushing aside the girls
                      that come around him, or pausing to joke, throwing a handful of silver on the
                      bar and treating all hands except himself, and <q>drifting</q> off gradually
-                     till he comes to a door, giving upon an alley way and exits. </p>
-                  <p>Once outside, his careless lazy manner changes. He is alert, as he looks
-                     swiftly about him. With a hand to the side of his mouth he gives forth a
-                     peculiar whistle three times. At first there is no response. Ren whistles
-                     again. </p>
-                  <p>From a room at the far end of the alley, where a dim light shows comes somewhat
-                     waveringly Thad’s answering whistle. Ren wheels about, and is off in the
-                     direction from which the whistle has come. </p>
+                     till he comes to a door, giving upon an alley way and exits. </view>
+                  <view>Once outside, his careless lazy manner changes. He is alert, as he looks
+                     swiftly about him. With a hand to the side of his mouth he gives forth <sound>a
+                     peculiar whistle three times.</sound> At first there is no response. <sound>Ren whistles
+                     again.</sound> </view>
+                  <view>From a room at the far end of the alley, where a dim light shows comes somewhat
+                     waveringly <sound>Thad’s answering whistle.</sound> Ren wheels about, and is off in the
+                     direction from which the whistle has come. </view>
                   <milestone unit="line"/>
-                  <view>THE IMMIGRANT ENCAMPMENT</view>
-                  <p>The camp presents a cheerful appearance. Groups of cattle, horse and other
+                  <stage type="setting">THE IMMIGRANT ENCAMPMENT</stage>
+                  <stage type="setting">The camp presents a cheerful appearance. Groups of cattle, horse and other
                      stock are grazing on the prairie hardby, while the numerous white tents, the
                      wagon covers and the flares and glow of the brightly burning campfires give
                      almost the appearance of a village, or a homelike community. The music of the
                      fiddle and guitar are heard, and around <pb n="B-15"/><fw type="pageNum"
                         >B-15</fw> the Colonel’s wagon, a number of young folks are gathered, some
-                     of them dancing a gay measure on the greensward.</p>
-                  <p>Sitting by the fires, on the steps of their wagons, on boxes, or camp stools,
-                     the older people look on indulgently. </p>
-                  <p>Gayest of all the young people and the most sought after is Sally Lou, laughing
+                     of them dancing a gay measure on the greensward.</stage>
+                  <view>Sitting by the fires, on the steps of their wagons, on boxes, or camp stools,
+                     the older people look on indulgently. </view>
+                  <view>Gayest of all the young people and the most sought after is Sally Lou, laughing
                      as she dances, and having her hands full keeping pace among the young blades of
-                     the party already contesting for her favor. </p>
-                  <p>Over the brow of a hill, that lies between the encampment and the town of
+                     the party already contesting for her favor. </view>
+                  <view>Over the brow of a hill, that lies between the encampment and the town of
                      Independence, a party of horsemen are seen. They ride down toward the Immigrant
                      camp, dismount outside the circle and come into the enclosure. They are Bull
                      Dorien and a couple of his men. Bull inquires who is in charge of the
@@ -687,7 +685,7 @@
                      </choice> with whom the Colonel has been in correspondence and he has been
                      informed that they know every inch of the country and are absolutely reliable.
                         <pb n="B-16."/><fw type="pageNum">B-16.</fw>
-                  </p>
+                  </view>
                   <sp>
                      <speaker>BULL</speaker>
                      <p>You ain’t speakin’ of Ren Bullock and Thad Jones? </p>
@@ -696,7 +694,7 @@
                      <speaker>COLONEL</speaker>
                      <p>Those are the names of our guides, sir.</p>
                   </sp>
-                  <p>Bull whistles.</p>
+                  <stage><sound>Bull whistles.</sound></stage>
                   <sp>
                      <speaker>BULL</speaker>
                      <p> Well that’s too bad! </p>
@@ -705,7 +703,7 @@
                      <speaker>COLONEL</speaker>
                      <p> What do you mean? </p>
                   </sp>
-                  <p> Bull pretends to hesitate and shakes his head as if worried. </p>
+                  <view> Bull pretends to hesitate and shakes his head as if worried. </view>
                   <sp>
                      <speaker>COLONEL</speaker>
                      <p> Kindly explain yourself, sir. </p>
@@ -715,23 +713,23 @@
                      <p> We-el ya see - them two fellows are up in town on a spree. There ain’t a
                         chance of them bein’ able to pull out for several days. </p>
                   </sp>
-                  <p>This statement causes immense excitement among the Immigrants, who are crowding
+                  <view>This statement causes immense excitement among the Immigrants, who are crowding
                      about the Colonel’s wagon. Sally runs up beside her father and takes his arm.
                      Everyone around is talking at once, and the word soon spreads right and left
                      through the camp that their guides are on a drunk. The Immigrants are opposed
-                     to trusting their fortunes to a couple of drunkards.</p>
-                  <p>While the matter is being heatedly debated and argued, a curious little
+                     to trusting their fortunes to a couple of drunkards.</view>
+                  <view>While the matter is being heatedly debated and argued, a curious little
                      cavalcade rides into the encampment. Sitting straight and easy in the saddle is
                      Ren Bullock. He is leading <pb n="B-17."/><fw type="pageNum">B-17.</fw> another
                      horse across which is the dead drunk Thad, clumsily concealed by a great burlap
                      spread. He brings his horse to a stop, puts back his wide hat and scratches his
                      head as if puzzled. As he raises his voice the Immigrants turn and look toward
-                     him. Red rides right into the circle.</p>
+                     him. Red rides right into the circle.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> Can any of you folks tell me who all is in charge here? </p>
                   </sp>
-                  <p>Colonel Appleton steps forward. He bows a bit stiffly. Ren looks down at him
+                  <view>Colonel Appleton steps forward. He bows a bit stiffly. Ren looks down at him
                      from his place on his horse, and then quite by chance his glance goes beyond
                      the Colonel, and he sees Sally Lou. Sally is standing by her father’s side. She
                      is watching the new arrival with tense interest. For a moment the two young
@@ -742,14 +740,14 @@
                      chief; that there are three divisions each with its individual captain, and
                      that every man in the outfit has been assigned to some special duty. He pauses
                      to ask Ren who he is and what he wants. Ren replies; <q>I’m your guide,
-                     sir</q>.</p>
-                  <p>During the foregoing a certain inquiring spinster has been suspiciously looking
+                     sir</q>.</view>
+                  <view>During the foregoing a certain inquiring spinster has been suspiciously looking
                      at the burden on the other horse’s back. She has edged near to it, and has
                      begun to lift the <pb n="B-18."/><fw type="pageNum">B-18.</fw> burlap, when her
                      hand touches something and she emits a <choice>
                         <sic>squeel</sic>
                         <corr>squeal</corr>
-                     </choice> of terror. </p>
+                     </choice> of terror. </view>
                   <sp>
                      <speaker>SPINSTER</speaker>
                      <p> What’s that? </p>
@@ -762,47 +760,47 @@
                         </choice>. </p>
                   </sp>
 
-                  <p>The spinster looks at him in suspicion. She edges over to the Colonel and says
-                     in a hollow whisper;</p>
+                  <stage type="action">The spinster looks at him in suspicion. She edges over to the Colonel and says
+                     in a hollow whisper;</stage>
                   <sp>
                      <speaker>SPINSTER</speaker>
                      <p> Colonel -- it’s a corpse! </p>
                   </sp>
-                  <p>Bull, who had kept in the background, gives the wink to one of his men. The
+                  <view>Bull, who had kept in the background, gives the wink to one of his men. The
                      latter is a skinny, foxy little one-eyed man named Lefty. Left [[sic Lefty]]
                      slips over and pulls the burlap from the sprawled over figure, revealing Thad,
                      lying face downward, his head dangling over one side of the horse, his legs on
-                     the other. There are screams from some of the women.</p>
+                     the other. There are screams from some of the women.</view>
                   <sp>
                      <speaker>REN</speaker>
-                     <p> It’s just my pardner <note>partner</note>. </p>
-                     <stage> (slightly embarrassed) </stage>
+                     <p> It’s just my pardner. </p>
+                     <stage type="delivery"> (slightly embarrassed) </stage>
                      <p> He’s takin’ a little sleep. </p>
                   </sp>
                   <sp>
                      <speaker>LEFTY</speaker>
-                     <stage> (cackling) </stage>
+                     <stage type="delivery"> (cackling) </stage>
                      <p> He’s drunk. </p>
                   </sp>
-                  <p>The Immigrants by now are thoroughly opposed to being guided by such a
+                  <view>The Immigrants by now are thoroughly opposed to being guided by such a
                      disreputable pair. Colonel Appleton tells Ren that the deal is off. Ren is
-                     disposed to argue the matter. He and his pardner <note>partner</note> have come
+                     disposed to argue the matter. He and his pardner have come
                      all the way from the Williamette Valley to take on the job. They are good
                      guides -- none better in the country. What’s more the Immigrants will have a
                      hard time finding guides who know the Oregon Trail. Col. Appleton tells him
                      they have already engaged other men, and he indicates Lefty and Pete. Ren
                      stares at the two men, and then his glance rests on Bull. A wry smile twists
-                     his features, </p>
+                     his features, </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> I’m powerful sorry for you, sir. Guess me and my pal’ll drift. </p>
                   </sp>
-                  <p>He throws his leg over his horse’s back, and moves off. He barely reached the
+                  <view>He throws his leg over his horse’s back, and moves off. He barely reached the
                      side of the encampment when he is hailed by a curious looking man, who comes
                      running after him. Ren pulls up, and looks down at the bespectacled little man,
                      with rifle slung on his shoulder, and helmet on his head, a portfolio under his
                      arm, and his pockets bulging with various articles. Ren’s face lights with a
-                     friendly grin.</p>
+                     friendly grin.</view>
                   <sp>
                      <speaker>DIGGINS</speaker>
                      <p> One minute! I’ll have a word with you. </p>
@@ -837,8 +835,8 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage> (smiling) </stage>
-                     <p> I reckon ye’re right. Me and my pardner <note>partner</note> was engaged to
+                     <stage type="action"> (smiling) </stage>
+                     <p> I reckon ye’re right. Me and my pardner was engaged to
                         take two thousand so I reckon we can handle your outfit of one. </p>
                   </sp>
                   <sp>
@@ -846,10 +844,10 @@
                      <p> That’s my wagon over there. It’s completely outfitted with every scientific
                         instrument and implement necessary for such a trip.</p>
                   </sp>
-                  <p> They are moving along toward <choice>
+                  <stage type="action"> They are moving along toward <choice>
                         <sic>Diggins</sic>
                         <corr>Diggins’s</corr>
-                     </choice> wagon. </p>
+                     </choice> wagon. </stage>
                   <sp>
                      <speaker>REN</speaker>
                      <p> I hope it’s outfitted with plenty of food, sire. It takes a powerful lot of
@@ -860,16 +858,16 @@
                      <p> Yes, yes, food of course -- the necessary evil I suppose. But as I was
                         saying, the scientific importance --</p>
                   </sp>
-                  <p> They are now at <choice>
+                  <view> They are now at <choice>
                         <sic>Diggins</sic>
                         <corr>Diggins’s</corr>
                      </choice> wagon. Diggons is proudly opening the flap and has crawled into the
                      wagon but Ren does not follow him. Ren has made the delightful discovery that
                      the next wagon to Diggons is none other than the Appleton wagon, on the steps
-                     of which sits Sally Lou. </p>
-                  <p>Ren stands perfectly still, smiling at Sally. Sally, forgetting herself, starts
+                     of which sits Sally Lou. </view>
+                  <view>Ren stands perfectly still, smiling at Sally. Sally, forgetting herself, starts
                      to return the smile and then her face becomes very cool as she tosses her head
-                     and looks over the head of Ren as if he were not there at all. </p>
+                     and looks over the head of Ren as if he were not there at all. </view>
                   <pb n="B-21."/>
                   <fw type="pageNum">B-21.</fw>
                   <sp>
@@ -878,28 +876,28 @@
                   </sp>
                   <sp>
                      <speaker> MANDY’S VOICE </speaker>
-                     <stage> (inside wagon) </stage>
+                     <stage type="location"> (inside wagon) </stage>
                      <p> Yes, Miss Sally Lou. </p>
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p> I’ll be right in, Mandy.</p>
                   </sp>
-                  <p> She stands up. Out of the tail of her eye she manages to see that the young
-                     man is still standing looking at her and then Sally goes inside. </p>
-                  <p> Ren gives a big blissful sigh and turns to <choice>
+                  <view> She stands up. Out of the tail of her eye she manages to see that the young
+                     man is still standing looking at her and then Sally goes inside. </view>
+                  <stage> Ren gives a big blissful sigh and turns to <choice>
                         <sic>Diggin’s</sic>
                         <corr>Diggins’s</corr>
-                     </choice> wagon. </p>
+                     </choice> wagon. </stage><!-- Note by LW1: Should this be stage or view? -->
                </div>
                <div>
                   <pb n="C-0"/>
                   <head>SEQUENCE C</head>
-                  <p> The Immigrant train is now on its way. The long line of wagons, horses, mules,
+                  <stage type="setting"> The Immigrant train is now on its way. The long line of wagons, horses, mules,
                      herds of cattle and other stock move like an army in review. Wide-horned oxen
                      yoked eight to a wagon. These wagons moving households in which the family life
-                     is carried on. </p>
-                  <p>Hickory shirted teamsters roaring <q>Whoos</q> or cursing the oxen. Singing,
+                     is carried on. </stage>
+                  <view>Hickory shirted teamsters roaring <q>Whoos</q> or cursing the oxen. Singing,
                      shouting niggers;<note type="editorial" resp="pers:LW1">This is an offensive
                         racial slur that appears multiple times in this text. Please see our <ref
                            target="doc:note_on_language">note on language</ref>.</note>
@@ -907,29 +905,29 @@
                      Teamsters, cracking eight foot bull whips and squirting yellow tobacco juice
                      from bulging jaws; wagons milling in their dust. Some of the owners of the
                      outfits driving in light springed wagons; other ahorse. Men plodding afoot at
-                     the side of each wagon. </p>
-                  <p> Healthy children, rosy faces, peering from the wagons. </p>
-                  <p> Buxom damsels in sunbonnets and cotton dresses on the front seats of the
+                     the side of each wagon. </view>
+                  <view> Healthy children, rosy faces, peering from the wagons. </view>
+                  <view> Buxom damsels in sunbonnets and cotton dresses on the front seats of the
                      wagon, beside the driver, or driving themselves. Others riding horseback, with
-                     a youngster or two behind them. </p>
-                  <p> Some of the women knitting and sewing as the wagons move along. Others idly
-                     strumming on banjo or guitar. </p>
-                  <p>In the rear of the caravan the droves of cattle and an endless army of
-                     mules.</p>
-                  <p> Immediately following the guides, at the head of the long parade comes the
+                     a youngster or two behind them. </view>
+                  <view> Some of the women knitting and sewing as the wagons move along. Others idly
+                     strumming on banjo or guitar. </view>
+                  <view>In the rear of the caravan the droves of cattle and an endless army of
+                     mules.</view>
+                  <view> Immediately following the guides, at the head of the long parade comes the
                      fine covered wagon of the Commander in Chief, Col. Appleton. It is driven by
                      the drowsy Mose, and <pb n="C-1."/><fw type="pageNum">C-1.</fw> sitting beside
                      Mose is Sally Lou. Occasionally Sally Lou takes the reins in her own competent
                      hands, and once she orders the sleepy Mose off the wagon, and the latter tags
-                     on afoot, yawning. </p>
-                  <p>Riding alongside the Appleton wagon on a fine Kentucky horse is the Colonel. He
+                     on afoot, yawning. </view>
+                  <view>Riding alongside the Appleton wagon on a fine Kentucky horse is the Colonel. He
                      looks very splendid and important and Sally is proud of her father.
                      Occasionally the Colonel forgets his dignity, in so far as to ride to the tail
                      of the wagon, from whence Mandy’s big black hand issues with some favorite
                      edible or delicacy. The Colonel bites into a luscious doughnut or piece of
                      Johnny cake. Then he clears his throat wipes the crumbs from his vest,
                      straightens up in his saddle and looking very stern and serious, canterse down
-                     the line of wagons, on a military tour of inspection.</p>
+                     the line of wagons, on a military tour of inspection.</view>
                   <p>The train is broken up into three companies, each in its way distinctive. The
                      companies are divided from each other by the pack mules, but none the less they
                      are within close touch of each other and then they go into camp all three
@@ -941,12 +939,12 @@
                      company. Although each company has its individual captain they are all under
                      the head of the expedition Commander <pb n="C-2."/><fw type="pageNum">C-2.</fw>
                      in Chief, Col. Appleton. </p>
-                  <p>Travelling over a hill trail comes the little train in charge of Thad and Ren.
+                  <view>Travelling over a hill trail comes the little train in charge of Thad and Ren.
                      the two young guides are on horseback, but Prof. Diggins sits on the front seat
                      of the prairie schooner, and ever and anon almost gives the driver heart
                      failure, as he leaps agilely out in search of some particular specimen in flora
-                     or to examine, on the edge of some sleep precipice, certain rock formations. </p>
-                  <p>Once the little professor gets out of the wagon and slides down a cliff to
+                     or to examine, on the edge of some sleep precipice, certain rock formations. </view>
+                  <view>Once the little professor gets out of the wagon and slides down a cliff to
                      examine some bright specimens he had seen through his field glasses. He seems
                      to have a charmed life, and by clinging to stumps and roots, actually returns
                      with his portfolio of pressed flowers still under his arm and his hand
@@ -954,14 +952,14 @@
                      him to the top, but are in no mood to listen to his excited rhapsodies over his
                      find. Ren picks up his field glasses. As he looks off across the skyline, great
                      clouds of dust or sand seem to be arising. Ren puts the glasses to his eyes,
-                     and focuses them. </p>
+                     and focuses them. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Here they come!</p>
                   </sp>
-                  <p>On the lower trail the Immigrant train is coming into sight. Ren watches
+                  <view>On the lower trail the Immigrant train is coming into sight. Ren watches
                      intently, but his glass moves along the line till it picks out and stays turned
-                     on the first wagon of the train. Then he sighs and smiles.</p>
+                     on the first wagon of the train. Then he sighs and smiles.</view>
                   <pb n="C-3"/>
                   <fw type="pageNum">C-3</fw>
                   <sp>
@@ -982,15 +980,15 @@
                      <speaker>REN</speaker>
                      <p> Well take a look fer yerself an’ give yer eyes a treat.</p>
                   </sp>
-                  <p> Ren hands the glasses to Thad. thad focuses them upon the first wagon. The
+                  <view> Ren hands the glasses to Thad. Thad focuses them upon the first wagon. The
                      girl in the driver’s seat turns her face so that he sees it clearly - she is
                      Sally Lou Appleton. The glasses almost drop from Thad’s hands, his lips are
-                     quivering, his face has turned pale. Ren gives him a sharp look then he smiles. </p>
+                     quivering, his face has turned pale. Ren gives him a sharp look then he smiles. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> Thought you’d get a shock! They ain’t many girls as pretty as that one.</p>
                   </sp>
-                  <p> Thad does not reply. His glance shifts nervously about. </p>
+                  <stage type="action"> Thad does not reply. His glance shifts nervously about. </stage>
                   <sp>
                      <speaker>REN</speaker>
                      <p> What say we go down an’ make a neighborly call? </p>
@@ -1005,51 +1003,51 @@
                   </sp>
                   <pb n="C-4"/>
 
-                  <p>He turns around in his saddle and gives a beaming look at Thad.</p>
+                  <view>He turns around in his saddle and gives a beaming look at Thad.</view>
                   <sp>
-                     <speaker>THAD</speaker>
+                     <speaker>REN</speaker>
                      <p> That’s darn handsome of you, Thad. All right then I’ll be driftin’ along.
                      </p>
                   </sp>
-                  <p> Twilight is falling. The western sky is like a sea of Mother of Pearl. The
-                     inescapable charm of the desert pervades the land. </p>
-                  <p>The caravan of the Immigrants is seen rising and dipping along its course, men,
-                     wagons, horses, mules, cattle. Occasionally voices rise and can be heard over a
+                  <view> Twilight is falling. The western sky is like a sea of Mother of Pearl. The
+                     inescapable charm of the desert pervades the land. </view>
+                  <view>The caravan of the Immigrants is seen rising and dipping along its course, men,
+                     wagons, horses, mules, cattle. <sound>Occasionally voices rise and can be heard over a
                      vast distance because of the clearness of the air. Men speak to their horses;
                      shout to each other. The crack of whips is heard. Someone whistles. There is
-                     the sound of the clear notes of a bugle, calling for a halt. The train has
-                     reached a suitable place for encampment. Now a movement that is almost military
-                     ensues. The train is wheeling into three circles, the leading wagons circling
+                     the sound of the clear notes of a bugle, calling for a halt.</sound> The train has
+                     reached a suitable place for encampment. <sound>Now a movement that is almost military
+                     ensues.</sound> The train is wheeling into three circles, the leading wagons circling
                      along individual tracks, till an almost perfect formation results. As each
                      wagon is brought into position, with their tongues turned toward the center,
                      the teams are unjoked. The cattle turnout out to graze. Horses are hobbled. The
                      men fall to work making fires and setting up the rude tents for the night,
                      while the teamsters and mule boys take care of their charges. The women, both
-                     in the wagons, and on the ground prepare the evening meal.</p>
-                  <p> Ren is disclosed riding toward the camp. He goes directly to the first wagon,
+                     in the wagons, and on the ground prepare the evening meal.</view>
+                  <view> Ren is disclosed riding toward the camp. He goes directly to the first wagon,
                      dismounts and stands hesitatingly <pb n="C-5."/><fw type="pageNum">C-5.</fw>
-                     outside for a moment. As he hesitates, Sally Lou’s voice inside, calls out; </p>
+                     outside for a moment. As he hesitates, Sally Lou’s voice inside, calls out; </view>
                   <sp>
                      <speaker> SALLY LOU </speaker>
                      <p> Is that you, darling? </p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage> (outside wagon) </stage>
+                     <stage type="location"> (outside wagon) </stage>
                      <p> Yes--no--that is--er--yes.</p>
                   </sp>
-                  <p> There is silence for a moment. Inside the wagon, Sally Lou, who has been
-                     setting the table, pauses as she looks at Mandy busy at the stove. </p>
+                  <view> There is silence for a moment. Inside the wagon, Sally Lou, who has been
+                     setting the table, pauses as she looks at Mandy busy at the stove. </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p> That doesn’t sound like daddy --</p>
                   </sp>
-                  <p> She opens the flap at back and stands looking down at Ren. The latter removes
+                  <view> She opens the flap at back and stands looking down at Ren. The latter removes
                      his hat and tries to appear at his ease. Sally gives him a very severe look
-                     however. </p>
+                     however. </view>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <p> I thought I was speaking ot my father. </p>
+                     <p> I thought I was speaking to my father. </p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
@@ -1059,8 +1057,8 @@
                      <speaker>SALLY</speaker>
                      <p> You certainly have most extraordinary hopes.</p>
                   </sp>
-                  <p> She is about to go inside, when Ren makes an impulsive movement toward
-                     her.</p>
+                  <view> She is about to go inside, when Ren makes an impulsive movement toward
+                     her.</view>
                   <pb n="C-6"/>
                   <fw type="pageNum">C-6</fw>
                   <sp>
@@ -1082,10 +1080,10 @@
                      <speaker>SALLY</speaker>
                      <p> We’ve got along very well with the ones we have, thank you.</p>
                   </sp>
-                  <p> Colonel Appleton, who has been on a tour of inspection over the camp, rides up
+                  <view> Colonel Appleton, who has been on a tour of inspection over the camp, rides up
                      and dismounts. He does not immediately recognize Ren, and Sally for the moment
                      forgets that she has told Ren that all has gone well with them. She asks
-                     anxiously; </p>
+                     anxiously; </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p> Well, daddy? Have they found the stock? </p>
@@ -1097,18 +1095,18 @@
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage place="inline">(distressed)</stage>
+                     <stage type="delivery" place="inline">(distressed)</stage>
                      <p> That’s dreadful. If this keeps on -- if we lose any more stock, we won’t
                         have enough to --</p>
                   </sp>
-                  <p> She stops, recalling Ren. her father too looks at the young man inquiringly. </p>
+                  <view> She stops, recalling Ren. Her father too looks at the young man inquiringly. </view>
                   <pb n="C-7."/>
                   <fw type="pageNum">C-7.</fw>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p> Daddy, this man was to have been our guide and --</p>
                   </sp>
-                  <p> Appleton frowns now. </p>
+                  <view> Appleton frowns now. </view>
                   <sp>
                      <speaker>APPLETON</speaker>
                      <p> Rumph! </p>
@@ -1120,9 +1118,9 @@
                   </sp>
                   <sp>
                      <speaker>APPLETON</speaker>
-                     <stage> (curtly) </stage>
+                     <stage type="delivery"> (curtly) </stage>
                      <p> We are not in need of your services. I do not believe in swapping hoses
-                        amid stream -- </p>
+                        amid stream -- </p> 
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
@@ -1137,14 +1135,14 @@
                      <speaker>Appleton</speaker>
                      <p> Not at all -- nothing to speak of.</p>
                   </sp>
-                  <p> He glares grouchily, and then moves to go into the wagon bellowing: </p>
+                  <view> He glares grouchily, and then moves to go into the wagon bellowing: </view>
                   <sp>
                      <speaker>APPLETON</speaker>
                      <p> Mandy! </p>
                   </sp>
                   <sp>
                      <speaker>MANDY</speaker>
-                     <stage place="inline">(inside)</stage>
+                     <stage type="setting" place="inline">(inside)</stage>
                      <p> Ya-as--sir? </p>
                   </sp>
                   <sp>
@@ -1157,9 +1155,9 @@
                      <speaker>MANDY</speaker>
                      <p> Jes’ in a shake, Marse Appleton.</p>
                   </sp>
-                  <p> Sally Lou steals a ruseful glance from her father to Ren. Ren looks at Sally.
+                  <view> Sally Lou steals a ruseful glance from her father to Ren. Ren looks at Sally.
                      He smiles. Sally starts to return the smile and then tries to look very
-                     dignified and haughty. Ren mounts his horse and rides off. </p>
+                     dignified and haughty. Ren mounts his horse and rides off. </view>
                   <p> Sally stands looking after him a moment and then she flashes around on her
                      father. </p>
                   <sp>
@@ -1177,15 +1175,17 @@
                      <p> He came over to see if he could help us, and that’s all the thanks he
                         got.</p>
                   </sp>
-                  <p> She runs up steps of wagon and exits inside. </p>
-                  <p> She appears a few minutes later in the front of the wagon where Mose is <choice>
+                  <view> She runs up steps of wagon and exits inside. </view>
+                  <view> She appears a few minutes later in the front of the wagon where Mose is <choice>
                         <sic>dosing</sic>
                         <corr>dozing</corr>
-                     </choice>. She gives him a shake. </p>
+                     </choice>. She gives him a shake. </view>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage> (in big whisper) </stage>
-                     <p> Mose! Mose --you lazy nigger you -- wake up! </p>
+                     <stage type="delivery"> (in big whisper) </stage>
+                     <p> Mose! Mose --you lazy nigger<note type="editorial" resp="pers:LW1">This is an offensive
+                        racial slur that appears multiple times in this text. Please see our <ref
+                           target="doc:note_on_language">note on language</ref>.</note> you -- wake up! </p>
                   </sp>
 
                   <sp>
@@ -1198,11 +1198,11 @@
                   </sp>
                   <pb n="C-9."/>
                   <fw type="pageNum">C-9.</fw>
-                  <p> She shows him a generous portion of a chicken and a big piece of cornbread.
-                     They are rolled up in a snowy napkin. Mose’s eyes roll, and he swallows. </p>
+                  <view> She shows him a generous portion of a chicken and a big piece of cornbread.
+                     They are rolled up in a snowy napkin. Mose’s eyes roll, and he swallows. </view>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <p> Now listen to me Mose. you see that hoseman travelin’ yonder ----? </p>
+                     <p> Now listen to me Mose. You see that hoseman travelin’ yonder ----? </p>
                   </sp>
                   <sp>
                      <speaker>MOSE</speaker>
@@ -1217,21 +1217,21 @@
                         chicken to him and you can mention the fact that it’s sent with the
                         compliments of Col. Appleton’s wagon.</p>
                   </sp>
-                  <p>The more Mose looks at the chicken the wider awake he becomes. He takes the
+                  <view>The more Mose looks at the chicken the wider awake he becomes. He takes the
                      napkin with its precious contents from Miss Sally, jumps down from the wagon
-                     and is off.</p>
-                  <p>We show Mose. ahead of him, loping slowly and disconsolately along is Ren.
+                     and is off.</view>
+                  <view>We show Mose. ahead of him, loping slowly and disconsolately along is Ren.
                      Mose’s nostrils dilate. He slackens his pace. Mose lifts the chicken to his
-                     nose - sniffs. He begins to shower and shower. Now he licks his lips. His eyes
+                     nose - sniffs. He begins to go <choice><sic>shower and shower</sic><corr>slower and slower</corr></choice>. Now he licks his lips. His eyes
                      shift and roll. He stops. He turns back a bit of the napkin, and succumbs to
-                     temptation. He takes first a nibble, and then a bigger bite. Finally she
-                     swallows the whole of the meal.</p>
+                     temptation. He takes first a nibble, and then a bigger bite. Finally he
+                     swallows the whole of the meal.</view>
                </div>
                <div>
                   <pb n="D-1"/>
                   <head>SEQUENCE D</head>
-                  <view><camera>A series of dissolve shots</camera> should mark the passage and
-                     reveal the gradual deterioration of the Immigrant train.</view>
+                  <stage type="setting"><camera>A series of dissolve shots</camera> should mark the passage and
+                     reveal the gradual deterioration of the Immigrant train.</stage>
                   <milestone unit="line"/>
                   <p> In the beginning it was smooth going. The trail is excellent; the weather
                      clear and fine. Hearts are light and hopes high. The train moves along like a
@@ -1252,70 +1252,70 @@
                      their lot. </p>
                   <pb n="D-2."/>
                   <fw type="pageNum">D-2.</fw>
-                  <p> Mosquitoes and flies and gnats and ants swarmed in clouds about them. <choice>
+                  <view> Mosquitoes and flies and gnats and ants swarmed in clouds about them. <choice>
                         <sic>Rattles names</sic>
                         <corr>Rattlesnakes</corr>
                      </choice> and rats got into their wagons. Axels give way. Tops of poorly built
-                     wagons were blown off. </p>
+                     wagons were blown off. </view>
                   <p> Cholera broke out in the camp, taking its heavy toll. </p>
-                  <p> After a vicious sandstorm, when for hours the cutting blasts of hot sand beat
+                  <view> After a vicious sandstorm, when for hours the cutting blasts of hot sand beat
                      back the travellers, filling their nostrils, burning their eyes, with alkali
                      dust, the morale of the train is so affected that a faction arises demanding
                      that they give up the expedition and return. Delegations wait upon the
                      Commander, and when Appleton refuses to accede to their demands, large groups
                      of the Immigrants begin to desert in growing numbers, carrying away with them,
                      not only their own stock and supplies but quite often the property belonging to
-                     the others. </p>
-                  <p> Miles over a desert country - no water. A long trek and at last a pool of
+                     the others. </view>
+                  <stage type="setting"> Miles over a desert country - no water. A long trek and at last a pool of
                      water. Thirstily the Immigrants dip their cups into the water only to find it
-                     alive with squirming tadpoles. </p>
+                     alive with squirming tadpoles. </stage>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - - - - - -</p>
                </div>
                <div>
                   <pb n="E-2"/>
                   <head>SEQUENCE E</head>
-                  <view>Indian drums.</view>
-                  <p> Three hundred Indians beating their drums, singing and shouting and circling
-                     in a savage war dance. Their dresses simulate wild buffalo and wolves. Their
-                     padding feet seem to become louder with every step. As they circle, their women
-                     and old men and children, squatting on the ground, wail and screech. </p>
+                  <sound>Indian drums.</sound>
+                  <view><sound>Three hundred Indians beating their drums, singing and shouting</sound> and circling
+                     in a savage war dance. Their dresses simulate wild buffalo and wolves. <sound>Their
+                     padding feet seem to become louder with every step.</sound> As they circle, their women
+                     and old men and children, squatting on the ground, <sound>wail and screech.</sound> </view>
                   <milestone unit="line"/>
-                  <p> Suddenly from over the hill resound other wild war whoops. A crowd of horsemen
+                  <view> <sound>Suddenly from over the hill resound other wild war whoops.</sound> A crowd of horsemen
                      appear and ride full speed toward the circling Indians. Another tribe has come
-                     to join. As they ride, each warrior sings his war song. They are in war
+                     to join. As they ride, <sound>each warrior sings his war song.</sound> They are in war
                      regalic, antelope skins and eagle feathers, and around their tunics they carry
                      the scalps of the enemies. On their backs are bows and arrows, and some carry
                      long lances. Their advent is greeted with savage zeal and joy. They join the
-                     circling warriors, themselves forming an outer circle on horse. </p>
+                     circling warriors, themselves forming an outer circle on horse. </view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - -</p>
                </div>
                <div>
                   <pb n="F-1"/>
                   <head>SEQUENCE F.</head>
-                  <view>A thickly wooded glen.</view>
-                  <p>Here we find encamped, Ren and his outfit. It is midday, and their horses are
+                  <stage type="setting">A thickly wooded glen.</stage>
+                  <view>Here we find encamped, Ren and his outfit. It is midday, and their horses are
                      saddled; their mules yoked to the wagon, yet they are not moving. The delay is
                      caused by the absence of Diggins who has wandered off, in his usual way. Ren is
-                     a bit uneasy, and sends his Indian off to look for Diggins. </p>
-                  <p> There will be dialogue here between Ren and Thad bringing out that they are
+                     a bit uneasy, and sends his Indian off to look for Diggins. </view>
+                  <stage type="novelistic"> There will be dialogue here between Ren and Thad bringing out that they are
                      now in Indian territory, and have been about three months on the trail. The
-                     train had left in mid-July. It is now mid-September. Re,, a thorough woodsman,
+                     train had left in mid-July. It is now mid-September. Ren, a thorough woodsman,
                      and knowing the country well, has taken excellent care of his outfit. They show
-                     no signs of hardship. Thad is bored. </p>
+                     no signs of hardship. Thad is bored.</stage>
                   <milestone unit="line"/>
                   <view><camera>We cut to another part of the woods,</camera> and show the wandering
                      Diggins. Magnifying glass in hand he is absorbedly peering through it at some
                      specimen. </view>
-                  <p> Watching him from behind the interlacing shrubbery is and Indian. He drops on
+                  <view> Watching him from behind the interlacing shrubbery is and Indian. He drops on
                      his knees, crawls a few paces on the ground, kneels up, takes his quiver and
-                     bow and aims. </p>
+                     bow and aims. </view>
                   <milestone unit="line"/>
-                  <p> The arrow comes in and barely grazes the cheek of the abstracted and absorbed
+                  <view> The arrow comes in and barely grazes the cheek of the abstracted and absorbed
                      Diggins. The latter merely blinks makes an absent motion with his hand and
-                     continues to examine <pb n="F-2."/><fw type="pageNum">F-2.</fw> specimen. </p>
-                  <p> The Indian in the woods has been joined by others -- five of them. They are
+                     continues to examine <pb n="F-2."/><fw type="pageNum">F-2.</fw> specimen. </view>
+                  <view> The Indian in the woods has been joined by others -- five of them. They are
                      creeping silently and stealthily toward the unconscious Diggins. Now they are
                      on their feet, in a semicircle behind him. One of them brings his two hands
                      down on Diggins shoulders, and the latter is swung around. One of the knocks
@@ -1337,22 +1337,22 @@
                         /><fw type="pageNum">F-3.</fw> would like to accompany them. One of the
                      Indians speaks English and interprets. The others nod vigorously. They are now
                      very friendly. The leader takes off his moccasins. Diggins asks what this
-                     means, and the interpreter replies: </p>
+                     means, and the interpreter replies: </view>
                   <sp>
                      <speaker>INTERPRETER</speaker>
                      <p>It is the peace sign of our tribe, and means; <q>May I forever go barefoot,
                            if I deal not truly by thee</q>.</p>
                   </sp>
-                  <p> So pleased is Diggins to hear this, and anxious to study the Indians at close
+                  <view> So pleased is Diggins to hear this, and anxious to study the Indians at close
                      quarters in their own village and wigwams, that he takes out a real treasure,
                      in the shape of a gold watch. This he dangles by the chain before the chief,
                      holds it to his ear and presents it to him. Then stooping he takes off his own
-                     shoes. The Indians raise their hands, circle him in a dance of peace. </p>
-                  <p> During the foregoing, Ren’s Indian is seen watching from behind a screen of
-                     bushes. </p>
+                     shoes. The Indians raise their hands, circle him in a dance of peace. </view>
+                  <view> During the foregoing, Ren’s Indian is seen watching from behind a screen of
+                     bushes. </view>
                   <milestone unit="line"/>
-                  <view>REN’S CAMP</view>
-                  <p>The sound of muffled Indian drums is heard. Ren, concerned, is listening. His
+                  <stage type="setting">REN’S CAMP</stage>
+                  <p><sound>The sound of muffled Indian drums is heard.</sound> Ren, concerned, is listening. His
                      Indian, Bowlegs, comes on. Ren asks him where Diggins is and Bowlegs explains
                      that he has made friends with the Indians and gone with them.</p>
                   <sp>
@@ -1367,21 +1367,21 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage> (grimly) </stage>
+                     <stage type="delivery"> (grimly) </stage>
                      <p> Well, they’ll have a hard time scalping him anyway. </p>
                   </sp>
                   <sp>
                      <speaker>INDIAN</speaker>
                      <p> He only got small piece of hair in front. </p>
                   </sp>
-                  <p> The drums seem to be coming louder. </p>
+                  <sound> The drums seem to be coming louder. </sound>
                   <sp>
                      <speaker>REN</speaker>
                      <p> I been hearin’ them drums all day. What do they mean? </p>
                   </sp>
                   <sp>
                      <speaker>BOWLEGS</speaker>
-                     <stage>(somberly)</stage>
+                     <stage type="delivery">(somberly)</stage>
                      <p>They speak the language of war. Many braves of many tribes gather a moon’s
                         journey to the east.</p>
                   </sp>
@@ -1394,8 +1394,8 @@
                      <speaker>BOWLEGS</speaker>
                      <p>Maybe perhaps they attack white men.</p>
                   </sp>
-                  <p>Ren turns about sharply. Thad, who has been stretched out on the ground half
-                     asleep, raises himself on his elbow. </p>
+                  <view>Ren turns about sharply. Thad, who has been stretched out on the ground half
+                     asleep, raises himself on his elbow. </view>
                   <sp>
                      <speaker>THAD</speaker>
                      <p> Think there’s any danger? </p>
@@ -1406,98 +1406,98 @@
                   </sp>
                   <pb n="F-5."/>
                   <fw type="pageNum">F-5.</fw>
-                  <p>He speaks to the Indian. He decides to dispatch him with a message to Hudson’s
+                  <view>He speaks to the Indian. He decides to dispatch him with a message to Hudson’s
                      Bay at Fort Vancouver, asking them to send down boats and supplies so that the
                      Immigrants may make the passage down the Columbia River unmolested and safely.
                      Leaving Thad in charge of the outfit, Ren rides off to scout the neighborhood
                      for signs of Indians and a possible truce of Diggins. Bowlegs, mounted on
                      Thad’s horse, is off to the Hudson’s Bay Fort. Thad left alone is in a bad
-                     humor and sulky.</p>
+                     humor and sulky.</view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - - - -</p>
                </div>
                <div>
                   <pb n="G-1"/>
                   <head>SEQUENCE G</head>
-                  <view>Dawn is breaking over the Snake River.</view>
-                  <p>It discloses the Immigrant encampment at the base of a great canyon wall. Of
-                     the 2000 souls that had left Independence, but two hundred remain.</p>
-                  <p>The bugle summons everyone to the morning council. Col. Appleton, calls the
+                  <stage type="setting">Dawn is breaking over the Snake River.</stage>
+                  <view>It discloses the Immigrant encampment at the base of a great canyon wall. Of
+                     the 2000 souls that had left Independence, but two hundred remain.</view>
+                  <stage type="novelistic"><sound>The bugle summons everyone to the morning council.</sound> Col. Appleton, calls the
                      roll of his people. There is a brief summing up of the resources of the train,
                      and then the old Colonel breaks some painful news. During the night, their two
                      guides have deserted the train, taking with them the best of the mules and
-                     raiding the supply wagons. </p>
+                     raiding the supply wagons. </stage>
                   <p>This is the crowning blow. Their supplies are depleted, their best mules gone;
                      they have no guides to lead them. It is characteristic of these hardy pioneers
                      however that after the first consternation and shock, they swiftly rally, and
                      in a short time, men are picked for a posse to go out in search of the renegade
                      guides and carry out without mercy the punishment decreed by the crude little
                      court. </p>
-                  <p>Riding through a thickly wooded mountain trail, Ren stops suddenly, as he sees
+                  <view>Riding through a thickly wooded mountain trail, Ren stops suddenly, as he sees
                      coming up over the circuitous canyon route the two guides, Lefty and Pete. They
                      are driving a number of mules and are riding Appleton’s Kentucky horses. Ren
                      dismounts. From behind a giant rock, thickly overgrown with brush, Ren watches
                      the men as they come up around the circling trail, passing one by one over the
                      peak <pb n="G-2."/><fw type="pageNum">G-2.</fw> of the foothill. For a moment
                      Ren, puzzled, and at the same time having his suspicions aroused, pauses, and
-                     then he follows. </p>
-                  <p>When the last mule goes over the crest and dips down to the other side, Ren
+                     then he follows. </view>
+                  <view>When the last mule goes over the crest and dips down to the other side, Ren
                      realizes that he is taking a chance if he follows, as he will be clearly seen
                      from below. So he takes a perilous trail around the edge of the cliff that
-                     comes out presently into the same canyon for which the guides are making. </p>
-                  <p>He sees, then, camped in a glen halfway down the mountain, near the falls, the
+                     comes out presently into the same canyon for which the guides are making. </view>
+                  <view>He sees, then, camped in a glen halfway down the mountain, near the falls, the
                      company of trappers and others who had left the Immigrant train with Bull
                      Dorien. After watching the camp for a few moments, Ren remounts and rides back
-                     along the trail over which he had come. </p>
-                  <p> Ren returns to his camp. He sees no sign of Thad. giving his customary
-                     whistle, he receives no reply. A survey of the wagon and the hobbled mules
-                     show, everything more or less shipshape, though one mule is missing. Again he
-                     sends out the three whistle signals that the two men are accustomed to give. No
-                     reply. Ren whistles again, and this time, there is an answering shout, but not
+                     along the trail over which he had come. </view>
+                  <view> Ren returns to his camp. He sees no sign of Thad. <sound>Giving his customary
+                     whistle,</sound> he receives no reply. A survey of the wagon and the hobbled mules
+                     show, everything more or less shipshape, though one mule is missing. <sound>Again he
+                     sends out the three whistle signals that the two men are accustomed to give.</sound> No
+                     reply. <sound>Ren whistles again,</sound> and this time, <sound>there is an answering shout,</sound> but not
                      of the sort he had expected. It sounds as if someone were hollering with hands
-                     to mouth. It is not an Indian call. </p>
+                     to mouth. It is not an Indian call. </view>
                   <pb n="G-3."/>
                   <fw type="pageNum">G-3.</fw>
-                  <p> While Ren looks about him puzzled the Immigrant Posse ride into sight and
-                     dismount. Ren hears their story, and his own face becomes as grim as theirs. </p>
-                  <p> It is now getting toward sundown. The men fo the posse are weary. Their horses
+                  <view> While Ren looks about him puzzled the Immigrant Posse ride into sight and
+                     dismount. Ren hears their story, and his own face becomes as grim as theirs. </view>
+                  <view> It is now getting toward sundown. The men of the posse are weary. Their horses
                      are watered and turned out, hobbled to graze. Ren builds a fire, and soon has
                      bacon and potatoes sizzling over it. The Immigrants eat ravenously. Ren learns
-                     that for days the entire train has been on rations. </p>
+                     that for days the entire train has been on rations. </view>
                   <milestone unit="line"/>
-                  <view>BULL’S CAMP</view>
-                  <p> The flares from the campfires light the circle of rough faces. It is about ten
-                     o’clock at night. </p>
-                  <p> Sprawled on the ground, is Thad. he is half drunk and tossing dice with a
+                  <stage type="setting">BULL’S CAMP</stage>
+                  <view> The flares from the campfires light the circle of rough faces. It is about ten
+                     o’clock at night. </view>
+                  <view> Sprawled on the ground, is Thad. he is half drunk and tossing dice with a
                      number of men. Prominent in the circle about the fire are the two guides from
                      the Immigrant train. They are talking to Bull, who grunts with approval.
                      Occasionally the men guffaw and slap their sides. There are about a dozen or
                      more men in the outfit - some of them from the original train, hunters,
-                     trappers, voyageurs and others, as well as Bull’s own run sellers. </p>
-                  <p> Suddenly three whistles are heard from out the bush. Thad lifts his head and
-                     half unconsciously he replies to the whistles. Bull starts up; </p>
+                     trappers, voyageurs and others, as well as Bull’s own run sellers. </view>
+                  <view> <sound>Suddenly three whistles are heard from out the bush.</sound> Thad lifts his head and
+                     half unconsciously <sound>he replies to the whistles.</sound> Bull starts up; </view>
                   <sp>
                      <speaker>BULL</speaker>
-                     <stage>(furiously)</stage>
+                     <stage type="delivery">(furiously)</stage>
                      <pb n="G-4."/>
                      <fw type="pageNum">G-4.</fw>
                      <p>Who are you signalling to?</p>
                   </sp>
-                  <p> From outside the circles comes the answer from a quiet drawling voice, as Ren
-                     lazily strolls toward the fire. </p>
+                  <view> From outside the circles comes the answer from a quiet drawling voice, as Ren
+                     lazily strolls toward the fire. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>What me?</p>
                   </sp>
-                  <p> Thad has partly recovered from his fright, and his shaking hand reaches for
-                     the booze. Bull whirls around and sees the coolly smiling Ren. </p>
+                  <view> Thad has partly recovered from his fright, and his shaking hand reaches for
+                     the booze. Bull whirls around and sees the coolly smiling Ren. </view>
                   <sp>
                      <speaker>BULL</speaker>
                      <p>Well you then - who you whistlin’ to?</p>
                   </sp>
-                  <p> Ren has come up at the back of Thad and, as if by accident, his knee knocks
+                  <view> Ren has come up at the back of Thad and, as if by accident, his knee knocks
                      the drink from Thad’s hand. The latter looks about him uneasily. Bull strides
-                     over till he is facing Ben. </p>
+                     over till he is facing Ben. </view>
                   <sp>
                      <speaker>BULL</speaker>
                      <p> Thad has joined up with my outfit. </p>
@@ -1511,7 +1511,7 @@
                      <speaker>BULL</speaker>
                      <p>Ye-eh - Thad.</p>
                   </sp>
-                  <p> Thad squirms miserably as Ren’s keen glance rests on him a moment. </p>
+                  <view> Thad squirms miserably as Ren’s keen glance rests on him a moment. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p> That so? </p>
@@ -1532,14 +1532,14 @@
                      <speaker>BULL</speaker>
                      <p> I got enough on him to put the rope around his neck.</p>
                   </sp>
-                  <p> Thad crouches back. </p>
+                  <view> Thad crouches back. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>‘Less it gits round your own first.</p>
                   </sp>
-                  <p> As if unaware of the menacing movement toward him, Ren turns around and his
+                  <view> As if unaware of the menacing movement toward him, Ren turns around and his
                      eyes sweep the circle. A sardonic smile breaks over his face, as his glance
-                     becomes fixed on the two guides. </p>
+                     becomes fixed on the two guides. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Thought you wuz packin’ along with the Immigrants.</p>
@@ -1551,7 +1551,7 @@
                   <sp>
                      <speaker>REN</speaker>
                      <p>You don’t say.</p>
-                     <stage>(guilelessly)</stage>
+                     <stage type="delivery">(guilelessly)</stage>
                      <p>Are they leavin’ their horses and mules behind?</p>
                   </sp>
                   <sp>
@@ -1576,14 +1576,14 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage place="inline">(thoughtfully)</stage>
+                     <stage type="delivery" place="inline">(thoughtfully)</stage>
                      <p>I reckon it wouldn’t be so good for some folks. Here tell the Immigrants are
                         takin’ through ploughs and threshers instead of <emph>RUM</emph>.</p>
                   </sp>
-                  <p> Bull pulls off his hat and sends it sailing into the dark. He peels his
+                  <view> Bull pulls off his hat and sends it sailing into the dark. He peels his
                      buckskin shirt over his head and flings it to the ground. The group fall back,
-                     making a wide circle, their excited faces lighted by the camp fire flares. </p>
-                  <p> Ren, who out of the tail of his eye, has watched the action of the other, but
+                     making a wide circle, their excited faces lighted by the camp fire flares. </view>
+                  <view> Ren, who out of the tail of his eye, has watched the action of the other, but
                      has made no stir, suddenly takes a step forward and drives in with a right
                      swing. Bull ducks back, tries to run in and catches Ren’s left with the side of
                      his head. He falls a dozen feet away, but comes up spluttering and cursing,
@@ -1594,41 +1594,41 @@
                      smile on his face - a cool, amused look, and his left eyebrow lifts
                      quizzically. The infuriated Bull springs suddenly, driving with a lifted knee
                      and hard left. Ren sidesteps and gives him a terrific jolt in the belly. The
-                     blow lands with a <pb n="G-7"/><fw type="pageNum">G-7</fw> great thud. Bull
+                     blow lands with a <pb n="G-7"/><fw type="pageNum">G-7</fw> <sound>great thud.</sound> Bull
                      stops in his tracks, while Ren throws a long right at his mouth that splits it
-                     open. Bull sits down, spitting blood and nearly mad with rage. </p>
-                  <p> The crowd is yelling and roaring. </p>
-                  <p> From out of the darkness and shadows of the encircling woods, step the
-                     Immigrants, their guns cocked. Involuntarily hands are up. </p>
-                  <p> Lefty and Pete are nearly petrified with terror. Pete makes a dive for freedom
+                     open. Bull sits down, spitting blood and nearly mad with rage. </view>
+                  <view><sound> The crowd is yelling and roaring. </sound></view>
+                  <view> From out of the darkness and shadows of the encircling woods, step the
+                     Immigrants, their guns cocked. Involuntarily hands are up. </view>
+                  <view> Lefty and Pete are nearly petrified with terror. Pete makes a dive for freedom
                      but finds an iron grip upon his neck, as he is jerked back. Lefty, shaking and
                      stuttering tries to explain that they’d only come for a visit and to get some
                      help for the train. The Immigrants say nothing. They are doing their work
                      competently. While a couple of them round up the lost mules, hobbled hardby;
                      place packs of supplies upon their backs, others keep their guns cocked on the
-                     company, while the group about the now screaming, squealing guides deliberately
+                     company, while the group about the now <sound>screaming, squealing</sound> guides deliberately
                      place nooses about their necks, and prepare to hand them then and there within
-                     sight of the camp. </p>
+                     sight of the camp. </view>
                   <p> A hunter hoarsely demands to know what the men have done, and Ren’s quiet,
                      incisive voice answers for the Immigrants. They have committed the crime of
                      crimes in that country. They had taken on the job of guiding two thousand
                      people into the Oregon country. They have misled and finally deserted them. As
                      a last act of cruelty, they <pb n="G-8."/><fw type="pageNum">G-8.</fw> have
                      stolen the Immigrants mules and most of their chuck. </p>
-                  <p> The men are hanged in the presence of the entire camp. </p>
-                  <p> The little company of Immigrants and Ren, with their mules and supplies, are
+                  <view> The men are hanged in the presence of the entire camp. </view>
+                  <view> The little company of Immigrants and Ren, with their mules and supplies, are
                      leaving. Several of the hunters are returning with them. They prefer to cast
                      their fate again with the Immigrant train rather than continue with Bull’s
                      outfit. Ren is on his horse. He looks dead serious; almost sad, as he throws a
                      last look at the now almost deserted camp. A figure comes staggering toward
-                     him. It is Thad. </p>
+                     him. It is Thad. </view>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>Ren!</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <p>Yes - pardner <note>partner</note>.</p>
+                     <p>Yes - pardner.</p>
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
@@ -1639,24 +1639,24 @@
                      <speaker>REN</speaker>
                      <p>Git on that horse!</p>
                   </sp>
-                  <p>He reaches down a long arm and helps Thad onto the saddle of one of the horses
-                     on which the late guides had ridden. The little cavalcade is off.</p>
+                  <view>He reaches down a long arm and helps Thad onto the saddle of one of the horses
+                     on which the late guides had ridden. The little cavalcade is off.</view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - - - - -</p>
                </div>
                <div>
                   <pb n="H-1"/>
                   <head>SEQUENCE H</head>
-                  <view>The Immigrant camp on the banks of the Snake River.</view>
-                  <p>The Immigrants are in a state of tense anxiety. Their men, three days gone,
+                  <stage type="setting">The Immigrant camp on the banks of the Snake River.</stage>
+                  <view>The Immigrants are in a state of tense anxiety. Their men, three days gone,
                      have not yet returned. Their chuck is reduced to the lowest ebb. A line of men,
                      women and children, are passing with tin plates and tin cups before a chuck
-                     wagon. Sally is passing out the meagre rations.</p>
-                  <p>Inside the wagon Mandy discovers that they have come practically to the end of
+                     wagon. Sally is passing out the meagre rations.</view>
+                  <stage type="novelistic">Inside the wagon Mandy discovers that they have come practically to the end of
                      their supplies. She warns Sally to hand out the stuff sparingly and to be sure
-                     and keep enough for her father and herself.</p>
-                  <p>Some human stuff here, of Sally going among the women and children, cheering
-                     them up, and assuring them their men will be back soon with the lost chuck.</p>
+                     and keep enough for her father and herself.</stage>
+                  <stage type="business">Some human stuff here, of Sally going among the women and children, cheering
+                     them up, and assuring them their men will be back soon with the lost chuck.</stage>
                   <milestone unit="line"/>
                   <view><camera>We cut to the top of the steep canyon wall.</camera> Crouched down
                      behind a boulder we see three Indians. One of them has just shot an arrow into
@@ -1666,39 +1666,39 @@
                      patrolling the encampment. The first one comes around the side of the cliff. An
                      Indian leaps on him from behind. We see the hand of the Indian grasping the
                      sentry’s hair, and we know the hideous scalping operation is in force. </view>
-                  <p>The second sentry has patrolled a portion of his beat <pb n="H-2."/><fw
-                        type="pageNum">H-2.</fw> and has paused to listen to some unaccustomed
-                     sound. He starts to move on, when we see the shadow of an Indian cast before
+                  <view>The second sentry has patrolled a portion of his beat <pb n="H-2."/><fw
+                        type="pageNum">H-2.</fw> and has paused to listen to <sound>some unaccustomed
+                     sound</sound>. He starts to move on, when we see the shadow of an Indian cast before
                      him. For a moment he is petrified with fear. Then he leaps forward but not
                      before an Indian knife plunges into his back. He whirls around. A death
-                     struggle ensues between Indian and whiteman. The white man is the victor.</p>
-                  <p>Fearfully wounded he nonetheless leaps over the cliff to the river bank.
+                     struggle ensues between Indian and <choice><sic>whiteman</sic><corr>white man</corr></choice>. The white man is the victor.</view>
+                  <view>Fearfully wounded he nonetheless leaps over the cliff to the river bank.
                      Staggering to his feet he tries to run to warn the Immigrants; but his life is
                      ebbing. He plunges face downward; tries to rise again; holds himself up by his
-                     two hands on the ground and gives forth his last cry; </p>
+                     two hands on the ground and gives forth his last cry; </view>
                   <sp>
                      <p>INDIANS! INDIANS!</p>
                   </sp>
-                  <p><view>Five or six scenes to show the Indians. Huge lines of them are topping
+                  <view>Five or six scenes to show the Indians. Huge lines of them are topping
                         the knolls and hills and seem to be plunging and charging down toward the
                         River. As they come their savage yells and war whoops rise above the beating
-                        of their drums and the pounding of their horse’s feet. </view></p>
+                        of their drums and the pounding of their horse’s feet. </view>
                   <milestone unit="line"/>
-                  <p>The Immigrant Train. It is strung out in a long line on the River bank. The
+                  <view><stage type="location">The Immigrant Train. It is strung out in a long line on the River bank.</stage> The
                      custom was to form the wagon in a circle. This cannot be done in the narrow
                      space, for on one side are the towering walls of the canyon, and on the other
                      the river. Women and children are under the wagons. The men are behind
                      barricades at the front and the rear and the side of the train. To advance upon
                      them the Indians must <pb n="H-3."/><fw type="pageNum">H-3.</fw> come from
-                     either side of the trail. They are met with a fusilade of shots.</p>
-                  <p>The Indians failing to charge the train, on account of its position, have been
-                     examining <note type="editorial" resp="pers:LW1">Eaton has corrected the type
-                           <q>examin</q> here.</note> the top of the bounder lined canyon walls.
+                     either side of the trail. They are met with a fusilade of shots.</view>
+                  <stage type="novelistic">The Indians failing to charge the train, on account of its position, have been
+                     examining <note type="editorial" resp="pers:LW1">The typo
+                           <q>examin</q> has been corrected in the original text.</note> the top of the bounder lined canyon walls.
                      They discover that it is possible to uproot some of the stupendous boulders and
-                     roll them down upon the train below.</p>
-                  <p>While covering their purpose with a continual barrage of firing, yells and
-                     shouts and the beating of war drums, numbers of them work to shatter the top
-                     part of the natural wall of stone.</p>
+                     roll them down upon the train below.</stage>
+                  <view><sound>While covering their purpose with a continual barrage of firing, yells and
+                     shouts and the beating of war drums,</sound> numbers of them work to shatter the top
+                     part of the natural wall of stone.</view>
                   <milestone unit="line"/>
                   <camera>Open up on an Iris long shot.</camera>
                   <camera>Away in the distance in center of the Iris can be seen a black dot, moving
@@ -1707,73 +1707,73 @@
                      Immigrants and hunters. They seem to be plunging literally into the
                      camera.</camera>
                   <milestone unit="line"/>
-                  <p>The Indians have nearly achieved their purpose. A <choice>
+                  <view>The Indians have nearly achieved their purpose. A <choice>
                         <sic>colossol</sic>
                         <corr>colossal</corr>
                      </choice> boulder is about to be <choice>
                         <sic>loosed</sic>
                         <corr>loosened</corr>
                      </choice>. It hangs, trembling on the edge of the cliff, above the camp of the
-                     all unconscious Immigrant train.</p>
-                  <p>Drunk with war fever, the Indians begins a monster war dance, circling and
+                     all unconscious Immigrant train.</view>
+                  <view>Drunk with war fever, the Indians <choice><sic>begins</sic><corr>begin</corr></choice> a monster war dance, circling and
                      tramping in front of the great boulder, raising their lances to the skies,
-                     yellign and chanting and shouting, while their war drums are pounded. They do
+                     <sound>yellign and chanting and shouting, while their war drums are pounded.</sound> They do
                      not see <pb n="H-4."/><fw type="pageNum">H-4.</fw> the company of horsemen
                      coming down from the higher hills, and forming into a regulation battle line
-                     behind a natural rock wall. Ren and the Immigrant posse have arrived.</p>
+                     behind a natural rock wall. Ren and the Immigrant posse have arrived.</view>
                   <sound>Suddenly multiple shots bark out.</sound>
-                  <p>Half a dozen Indians throw up their arms and drop. The others from the sheer
+                  <view>Half a dozen Indians throw up their arms and drop. The others from the sheer
                      momentum of their war dance tramp over them. More Indians fall. Pandemonium and
                      fright seize the Indians. The shots are coming from the opposite direction of
-                     the Immigrant camp. They cannot see their new antagonists. Screeching wildly
+                     the Immigrant camp. They cannot see their new antagonists. <sound>Screeching wildly</sound>
                      they flee. Ren and the others fire after them, and more fall. Others slip down
-                     the sides of their horses bellies, and ride off, clining by the bare heels.</p>
+                     the sides of their horses bellies, and ride off, clining by the bare heels.</view>
                   <milestone unit="line"/>
-                  <p>In the camp below, the Immigrants begin to realize that help has come to them
+                  <view>In the camp below, the Immigrants begin to realize that help has come to them
                      from an unexpected source. With the panic stricken flight of the Indians, the
                      Immigrants come out from behind their wagons. They scan the cliffs above. They
                      are half mad with apprehension. They scan the trail on either side of the camp,
-                     and then presently they hear a sound that changes their fears and apprehensions
+                     and then presently they hear <sound>a sound</sound> that changes their fears and apprehensions
                      to wild joy. <sound>The clear sound of a bugle is heard, followed by three
-                        shots. </sound> The Immigrants know what that means. Their men are coming
-                     back.</p>
-                  <p>Half beside themselves with relief and joy the entire camp sweep down to meet
+                        shots.</sound> The Immigrants know what that means. Their men are coming
+                     back.</view>
+                  <view>Half beside themselves with relief and joy the entire camp sweep down to meet
                      the oncoming little company of horsemen. <pb n="H-5."/><fw type="pageNum"
-                        >H-5.</fw> Ren is riding at the head fo the troop. Thad is next to him, and
+                        >H-5.</fw> Ren is riding at the head of the troop. Thad is next to him, and
                      the Immigrants, hunters and traders follow. In the rear of the horsemen, a long
                      file of mules and horses, some of them with heavy packs upon their backs are
-                     being driven along.</p>
-                  <p>Crying, laughing, cheering, the Immigrants can scarcely wait for their people
+                     being driven along.</view>
+                  <view><sound>Crying, laughing, cheering,</sound> the Immigrants can scarcely wait for their people
                      to reach the camp. They surge all around the posse, dragging the men literally
                      from the saddles, embracing and kissing and heaping blessings on them. One
                      excited woman runs from one man to the other kissing each in turn. Col.
                      Appleton is shaking hands with each and every one of them. The men are telling
                      him of the fate of the other guides; but that now they have real scouts to take
                      charge of the expedition. The Col. turns to thank and shake the hands of the
-                     scouts.</p>
+                     scouts.</view>
                   <milestone unit="line"/>
-                  <p>Thad, who has ridden along behind Ren, has drawn his horse to an abrupt stop.
+                  <view>Thad, who has ridden along behind Ren, has drawn his horse to an abrupt stop.
                      He sees whom Ren is looking at. Over the heads of the Immigrants Ren is looking
                      at Sally Lou, whose eyes are luminous. When Thad sees Sally Lou he is
                      powerfully moved and startled. His glance goes swiftly about; he sees Mandy,
-                     and coming directly toward him Col. Appleton.</p>
-                  <p>Thad’s hand unconsciously goes to the beard that has grown on his face. He tugs
+                     and coming directly toward him Col. Appleton.</view>
+                  <view>Thad’s hand unconsciously goes to the beard that has grown on his face. He tugs
                      his big hat down over his face and half turns away, as Col. Appleton strides up
                      to him, his hand held out. Thad does not give the Colonel a chance to say much,
                      for with a rough rejoinder, he turns to speak to <pb n="H-6"/><fw
                         type="pageNum">H-6.</fw> one of the men. Col. Appleton looks at him
                      uncertainly, as though puzzled and then a woman runs up to the Colonel and
-                     cries hysterically; </p>
+                     <stage type="delivery">cries hysterically;</stage> </view>
                   <sp>
                      <p><q>Oh, Colonel Appleton, isn’t it <emph>wonderful</emph>! A miracle! We
                            would all have been scalped but for these brave men! -- and that
                            wonderful young scout</q>!</p>
                   </sp>
-                  <p>She indicates where moving slowly toward the camp Sally Lou and Ren are
-                     walking. </p>
-                  <p>They seem to be oblivious to everyone else there. Sally Lou is looking up at
+                  <view>She indicates where moving slowly toward the camp Sally Lou and Ren are
+                     walking. </view>
+                  <view>They seem to be oblivious to everyone else there. Sally Lou is looking up at
                      Ren. and Ren is looking down at Sally. They both start to speak at once, and
-                     stop and laugh. Then after a moment Sally says;</p>
+                     stop and laugh. Then after a moment Sally says;</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>I’m sorry you didn’t like that -- chicken.</p>
@@ -1789,7 +1789,7 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage place="inline">(bewildered)</stage>
+                     <stage type="delivery" place="inline">(bewildered)</stage>
                      <p>Understand? Ma’m -- I don’t even understand now.</p>
                   </sp>
                   <sp>
@@ -1802,24 +1802,28 @@
                   </sp>
                   <pb n="H-7."/>
                   <fw type="pageNum">H-7.</fw>
-                  <p>Sally stops abruptly. She begins to realize that Mose had eaten the chicken
-                     himself. She is very angry. </p>
+                  <view>Sally stops abruptly. She begins to realize that Mose had eaten the chicken
+                     himself. She is very angry. </view>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <p>That wicked nigger! He must’ve eaten it himself. Oh-h! I’m going to skin him
+                     <p>That wicked nigger<note type="editorial" resp="pers:LW1">This is an offensive
+                        racial slur that appears multiple times in this text. Please see our <ref
+                           target="doc:note_on_language">note on language</ref>.</note>! He must’ve eaten it himself. Oh-h! I’m going to skin him
                         alive.</p>
                   </sp>
-                  <p>Colonel Appleton comes into the scene, and Sally turns to him.</p>
+                  <view>Colonel Appleton comes into the scene, and Sally turns to him.</view>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <p>Daddy -- that no account ornery nigger ate the chicken I sent to Mr. --- er
+                     <p>Daddy -- that no account ornery nigger<note type="editorial" resp="pers:LW1">This is an offensive
+                        racial slur that appears multiple times in this text. Please see our <ref
+                           target="doc:note_on_language">note on language</ref>.</note> ate the chicken I sent to Mr. --- er
                         --- Mister ---</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Ren Bullock ---</p>
                   </sp>
-                  <p>Colonel Appleton holds out his hand. The two men shake.</p>
+                  <view>Colonel Appleton holds out his hand. The two men shake.</view>
                   <sp>
                      <speaker>COLONEL</speaker>
                      <stage place="inline">(smiling)</stage>
@@ -1835,7 +1839,7 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage place="inline">(eagerly)</stage>
+                     <stage type="delivery" place="inline">(eagerly)</stage>
                      <p>But we’ve brought your chuck, as well as other stuff back with us. </p>
                   </sp>
                   <sp>
@@ -1845,14 +1849,14 @@
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage place="inline">(gravely)</stage>
+                     <stage type="delivery" place="inline">(gravely)</stage>
                      <p>I’d like a word with your father first. </p>
                   </sp>
                   <pb n="H-8."/>
                   <fw type="pageNum">H-8.</fw>
-                  <p>Sally runs off to where the men and women are beginning the preparations for a
+                  <view>Sally runs off to where the men and women are beginning the preparations for a
                      meal. The men are building the fires. The women tearing food out of the bags,
-                     and shipping stuff on the frying pans and thrusting them over the blazes. </p>
+                     and shipping stuff on the frying pans and thrusting them over the blazes. </view>
                   <p>Ren tells the Colonel that the Inidans will undoubtedly return. This time,
                      probably in greater numbers. It will be necessary for the entire train to get
                      to the other side of the river. The waters are rough - of unknown depths, but
@@ -1871,23 +1875,23 @@
                      side of the river, they must build rafts and bateaus, cork up their wagons and
                      prairie schooners, and on these make the rest of the journey.</p>
                   <milestone unit="line"/>
-                  <view>The incident of the crossing of the Snake River.</view>
-                  <p>The wagons are all fastened together in one long <pb n="H-9."/><fw
+                  <stage type="setting">The incident of the crossing of the Snake River.</stage>
+                  <view>The wagons are all fastened together in one long <pb n="H-9."/><fw
                         type="pageNum">H-9.</fw> string; the strongest in the lead. The women and
-                     children and weaker and older men are also in the wagons. </p>
-                  <p>As soon as the teams were in position, Ren ties a rope around his waist, and
+                     children and weaker and older men are also in the wagons. </view>
+                  <view>As soon as the teams were in position, Ren ties a rope around his waist, and
                      starting his horse into the current, swims over to the other side. Other
                      follow, until a number of the men are on the opposite side of the river. When
                      they have force enough to pull the rope, the lead team is started in. all are
-                     drawn over safely.</p>
-                  <p>As soon as the leading teams are able to get a foothold all is well. Guided by
+                     drawn over safely.</view>
+                  <view>As soon as the leading teams are able to get a foothold all is well. Guided by
                      the strong arms of the men pulling the rope, the weaker ones are helped and
-                     drawn along.</p>
+                     drawn along.</view>
                   <milestone unit="line"/>
-                  <p>They have barely reached the opposite side of the river when the Indians come
+                  <view>They have barely reached the opposite side of the river when the Indians come
                      swooping down in overwhelming numbers, around the trail on to the beach, where
                      but recently the Immigrant train had been. On the opposite side of the river,
-                     the Immigrants have begun to cut a trail through the thick brush. </p>
+                     the Immigrants have begun to cut a trail through the thick brush. </view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - -</p>
                </div>
@@ -1902,29 +1906,29 @@
                      where they can build rafts and trust their fortunes to the swift river itself;
                      a fearfully dangerous undertaking and fraught with inconceivable dangers.</p>
                   <milestone unit="line"/>
-                  <p>As the men cut the passage, the lumbering wagons, drawn by the wide horned
-                     oxen, and the long train of pack mules, follow slowly.</p>
+                  <view>As the men cut the passage, the lumbering wagons, drawn by the wide horned
+                     oxen, and the long train of pack mules, follow slowly.</view>
                   <milestone unit="line"/>
-                  <p>Work stops only with the setting of the sun. then camp is made for the
-                     night.</p>
+                  <view>Work stops only with the setting of the sun. Then camp is made for the
+                     night.</view>
                   <milestone unit="line"/>
-                  <view>THE ENCAMPMENT</view>
-                  <p>There is a redness still in the husky, though it is long past sunset. The river
+                  <stage type="setting">THE ENCAMPMENT</stage>
+                  <stage type="setting">There is a redness still in the husky, though it is long past sunset. The river
                      runs along one side like a streak of dancing quicksilver. On the other are the
                      deep mysterious woods, from whose depths come occasionally the call of wild
-                     things.</p>
+                     things.</stage>
                   <pb n="I-2"/>
                   <fw type="pageNum">I-2</fw>
-                  <p>Stretched or crouched upon the ground by the camp fires, the tired Immigrants
-                     are resting. Some of the younger ones are singing. </p>
+                  <view>Stretched or crouched upon the ground by the camp fires, the tired Immigrants
+                     are resting. <sound>Some of the younger ones are singing.</sound> </view>
                   <milestone unit="line"/>
-                  <view>OUTSIDE THE APPLETON WAGON</view>
-                  <p>Ren stands uncertainty, twisting his hat in his hand and looking longingly at
+                  <stage type="location">OUTSIDE THE APPLETON WAGON</stage>
+                  <view>Ren stands uncertainty, twisting his hat in his hand and looking longingly at
                      the door of the wagon. Finally he summons the courage to knock. There is a
                      somewhat startled around within as if someone inside has cried out something
                      and then quickly muffled the sound. Then the flap door is pushed aside, and
-                     Sally Lou stands lookin down at Ren. sally Lou is breathing swiftly, almost as
-                     if she were frightened about something.</p>
+                     Sally Lou stands lookin down at Ren. Sally Lou is breathing swiftly, almost as
+                     if she were frightened about something.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Miss Sally--c-c-could I have a word w-w-with you?</p>
@@ -1933,11 +1937,11 @@
                      <speaker>SALLY</speaker>
                      <p>Why certainly.</p>
                   </sp>
-                  <p>She looks back and then closes the flap behind her. She hesitates a moment and
+                  <view>She looks back and then closes the flap behind her. She hesitates a moment and
                      then sits down on the step of the wagon. The moonlight is on Sally’s hair
                      turning its darkness to a glorified bronze. Ren feels a dryness in his throat.
                      He does not know how to begin. Sally looks at him curiously, but her eyes are
-                     starry and luminous. Ren points to the tumbling stream.</p>
+                     starry and luminous. Ren points to the tumbling stream.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <pb n="I-3"/>
@@ -1945,7 +1949,7 @@
                      <p>They’s a powerful lot of rainbow trout in the shallow parts of that there
                         stream.</p>
                   </sp>
-                  <p>Ren is finding it more difficult than he had thought.</p>
+                  <stage type="novelistic">Ren is finding it more difficult than he had thought.</stage>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Was that what you wanted to speak to me about?</p>
@@ -1954,9 +1958,9 @@
                      <speaker>REN</speaker>
                      <p>Yes -- no -- yes -- I mean -- no --</p>
                   </sp>
-                  <p>Sally laughs. Her laughter is tender, with a teasing quality to it. She leans a
+                  <view>Sally laughs. Her laughter is tender, with a teasing quality to it. She leans a
                      bit nearer to the young man, and her lovely young face so close to his own
-                     fills him with a panic of ecstasy. His words rush on:</p>
+                     fills him with a panic of ecstasy. <stage type="delivery">His words rush on:</stage></view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>I got a homestead over to the Oregon -- finest part of the Williamette
@@ -1979,16 +1983,16 @@
                      <speaker>REN</speaker>
                      <p>And I’m aimin’ to put up a little snug cabin --</p>
                   </sp>
-                  <p>Sally bent still lower. One little hand steals out, almost as if seeking his.
+                  <view>Sally bent still lower. One little hand steals out, almost as if seeking his.
                      It wavers on his shoulder a <pb n="I-4"/><fw type="pageNum">I-4.</fw> moment
-                     and then rests on his arm. Ren feels as if he were in heaven.</p>
+                     and then rests on his arm. Ren feels as if he were in heaven.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>You like me a lot -- don’t you, Ren?</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <p>Yes. Maam <choice>
+                     <p>Yes. <choice>
                            <sic>Maam</sic>
                            <corr>Ma’am</corr>
                         </choice>.</p>
@@ -1997,17 +2001,17 @@
                      <speaker>SALLY</speaker>
                      <p>Then why don’t you tell me so. A girl likes to hear a man say that.</p>
                   </sp>
-                  <p>Ren’s hands unclinch. His voice is husky. He finds he has no control of his
-                     actions.</p>
+                  <view>Ren’s hands unclinch. His voice is husky. He finds he has no control of his
+                     actions.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>I’ll be telling you in <emph>this</emph> way -- Miss Sally.</p>
                   </sp>
-                  <p>He reaches up, lifts her clear down from the step of the wagon and holds her in
+                  <view>He reaches up, lifts her clear down from the step of the wagon and holds her in
                      his arms. Closer and closer. And closer and closer Sally clings to him; her
                      face upturned, her eyes and lips inviting his that closed upon her own.
                      Presently, gently, Sally, her hands on his shoulders holds him back from
-                     her.</p>
+                     her.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>I must go. There’s someone -- someone waiting for me inside.</p>
@@ -2018,7 +2022,7 @@
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage place="inline">(startled)</stage>
+                     <stage type="delivery" place="inline">(startled)</stage>
                      <p>Leaving!</p>
                   </sp>
                   <pb n="1-5."/>
@@ -2050,26 +2054,26 @@
                      <p>A poor sort of man! You’re the most wonderful man in the world. The only man
                         in the world!</p>
                   </sp>
-                  <p>They go into an embrace again, from which they are brought to earth by the
+                  <view>They go into an embrace again, from which they are brought to earth by the
                      sound of coughing of someone in the wagon. Sally breaks away. She is now the
-                     prey to nervousness and fear.</p>
+                     prey to nervousness and fear.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>I must go -- good-night.</p>
                   </sp>
                   <sp>
                      <speaker>REN</speaker>
-                     <stage place="inline">(huskily)</stage>
+                     <stage type="delivery" place="inline">(huskily)</stage>
                      <p>Good-night.</p>
                   </sp>
-                  <p>Sally goes into the tent.</p>
-                  <p>Ren, like one in a blissful dream moves away, but turns and stands in the
-                     shadows, just looking toward where Sally had gone into the wagon.</p>
+                  <view>Sally goes into the tent.</view>
+                  <view>Ren, like one in a blissful dream moves away, but turns and stands in the
+                     shadows, just looking toward where Sally had gone into the wagon.</view>
                   <pb n="I-6."/>
                   <fw type="pageNum">I-6.</fw>
-                  <p>Suddenly he tenses. His gaze becomes fixed. The flap door of the Appleton wagon
+                  <view>Suddenly he tenses. His gaze becomes fixed. The flap door of the Appleton wagon
                      has been pushed aside and Sally followed by Thad Jones comes out of the wagon.
-                     They pause a moment on the step. Then Sally speaks; </p>
+                     They pause a moment on the step. Then Sally speaks; </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>I’m glad Daddy didn’t see you.</p>
@@ -2080,7 +2084,7 @@
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage place="inline">(in little shaking voice)</stage>
+                     <stage type="delivery" place="inline">(in little shaking voice)</stage>
                      <p><choice>
                            <sic>THad</sic>
                            <corr>Thad</corr>
@@ -2092,7 +2096,7 @@
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage place="inline">(wearily)</stage>
+                     <stage type="delivery" place="inline">(wearily)</stage>
                      <p>Yes -- you’ll be here.</p>
                   </sp>
                   <sp>
@@ -2103,9 +2107,9 @@
                      <speaker>SALLY</speaker>
                      <p>Goodnight, dear.</p>
                   </sp>
-                  <p>They kiss. Thad jumps down from steps of wagon and runs out of scene. Sally
-                     turns and goes into wagon.</p>
-                  <p>Ren, who has witnessed the scene between Sally and his pardner
+                  <view>They kiss. Thad jumps down from steps of wagon and runs out of scene. Sally
+                     turns and goes into wagon.</view>
+                  <view>Ren, who has witnessed the scene between Sally and his pardner
                         <note>partner</note>, stands for a moment as if rooted to the spot. His
                      world seems to be tumbling about him; his dreams shattered his illusions
                      destroyed. He makes a passionate, almost savage motion toward the wagon. <choice>
@@ -2113,78 +2117,78 @@
                         <corr>Then</corr>
                      </choice> he stops short. His <pb n="I-7"/><fw type="pageNum">I-7</fw> hands
                      cinch. His head drops between his shoulders. He moves away with a shambling,
-                     almost staggering gait.</p>
+                     almost staggering gait.</view>
                   <milestone unit="line"/>
-                  <view>The following morning.</view>
-                  <p>The first pale steaks of the rising sun are seen in the sky. There is the
+                  <stage type="setting">The following morning.</stage>
+                  <stage type="setting">The first pale steaks of the rising sun are seen in the sky. There is the
                      murmur and stir of small live things in the bush. The camp is still wrapped in
-                     silence and slumber, for tis is but four o’clock in the morning. As the scene
+                     silence and slumber, for it is but four o’clock in the morning. As the scene
                      proceeds, the light of morning spreads, and over the horizon the sun raises an
-                     inquiring ruddy eye.</p>
-                  <p>At first, only the shadowy outline of tent and wagon top are visible in the
+                     inquiring ruddy eye.</stage>
+                  <view>At first, only the shadowy outline of tent and wagon top are visible in the
                      grey dawn. The we see to one side of the camp a man with a horse, which he is
                      saddling, tightening the cinch, and throwing heavy saddle bags on either side.
                      On the ground is other travelling gear, and he kneels on one knee to sort and
-                     pack then.</p>
-                  <p>The man is Ren Bullock. He wears a white blanket coat (for it is now October) a
+                     pack then.</view>
+                  <view>The man is Ren Bullock. He wears a white blanket coat (for it is now October) a
                      broad felt hat, moccasins and deer skin trousers. His knife is stuck in his
                      belt. Bullet pouch and powder horn are hanging at side. A rifle rests on high
-                     pummel of his saddle in front of him; for he is now a-horse.</p>
-                  <p>Suddenly from the Appleton wagon, Sally appears. She pauses a moment, and then
-                     comes running toward where Ren is on his horse.</p>
+                     pummel of his saddle in front of him; for he is now a-horse.</view>
+                  <view>Suddenly from the Appleton wagon, Sally appears. She pauses a moment, and then
+                     comes running toward where Ren is on his horse.</view>
 
-                  <p>Ren is sitting very still and straight. His wide grey <pb n="I-8."/><fw
+                  <view>Ren is sitting very still and straight. His wide grey <pb n="I-8."/><fw
                         type="pageNum">I-8.</fw> eyes are dead ahead. His thoughts are bitter. To
-                     hell with everything!</p>
-                  <p>His fists are clinched so tightly that the reins feel hard against his palms. </p>
-                  <p>Sally, breathless with the long run, her hair flying about her, comes into the
+                     hell with everything!</view>
+                  <view>His fists are clinched so tightly that the reins feel hard against his palms. </view>
+                  <view>Sally, breathless with the long run, her hair flying about her, comes into the
                      scene. She stands by his saddle, looking up at him appealingly. Ren gives one
-                     look at her, and then again he looks dead ahead.</p>
+                     look at her, and then again he looks dead ahead.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Ren -- you weren’t going without saying goodbye first.</p>
                   </sp>
-                  <p>Ren does not answer. Ren cannot answer. Sally, puzzled, troubled, peers up at
+                  <view>Ren does not answer. Ren cannot answer. Sally, puzzled, troubled, peers up at
                      him. The dawn is breaking all around them. Ren’s face seems carved like a
                      statue, so unmoving and stern is it. Sally’s little hand goes up, rests upon
-                     that clinched pair on the pummel.</p>
+                     that clinched pair on the pummel.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>I couldn’t sleep all night. All I could think was -- Ren is going away --
                         Ren is going -- Ren is going --</p>
                   </sp>
-                  <p>Ren’s face contorts. His voice is almost loud. It is harsh.</p>
+                  <view>Ren’s face contorts.<stage type="delivery">His voice is almost loud. It is harsh.</stage></view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>But -- <emph>Thad’ll</emph> be here!</p>
                   </sp>
-                  <p>His heel presses sharply against his horse’s flank. Before Sally can
+                  <view>His heel presses sharply against his horse’s flank. Before Sally can
                      comprehend, he is off at a stiff canter. <pb n="I-9."/><fw type="pageNum"
                         >I-9.</fw> she stands for a moment startled, shocked, and then she starts
-                     running after the now flying horse. As she runs she calls; </p>
+                     running after the now flying horse. As she runs she calls; </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Ren -- Ren -- Ren -- my Ren ---</p>
                   </sp>
-                  <p>She tries to make her voice carry, by putting her hands to her mouth, and she
-                     keeps on calling, frantically; </p>
+                  <view>She tries to make her voice carry, by putting her hands to her mouth, and she
+                     keeps on calling, <stage type="delivery"></stage>frantically; </view>
                   <sp>
                      <p>Ren! Ren!</p>
                   </sp>
-                  <p>Her voice breaks in <choice>
+                  <stage type="delivery">Her voice breaks in <choice>
                         <sic>an</sic>
                         <corr>a</corr>
-                     </choice> hysterical gasp.</p>
-                  <p>The sunrise is wide over the heavens now. Over a bit of rising ground, the
-                     flying horseman is seen for a moment, and then disappears from sight.</p>
+                     </choice> hysterical gasp.</stage>
+                  <view>The sunrise is wide over the heavens now. Over a bit of rising ground, the
+                     flying horseman is seen for a moment, and then disappears from sight.</view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - - -</p>
                </div>
                <div>
                   <pb n="J-1"/>
                   <head>SEQUENCE J</head>
-                  <p>This is about a month later.</p>
-                  <p>The immigrants have literally out and hewed their way around the Cascades, from
+                  <stage>This is about a month later.</stage>
+                  <view>The immigrants have literally out and hewed their way around the Cascades, from
                      the Upper to the Lower, and now they are halted at the Columbia River, for lack
                      of boats. Their situation is a desperate one. They dare not attempt the passage
                      of the Columbia, with its treacherous rapids and whirlpools merely by the <choice>
@@ -2192,18 +2196,18 @@
                         <corr>prairie</corr>
                      </choice> schooners (wagons) and they are hard at work constructing rafts and a
                      canoe, hewn out of the trunk of a giant tree. The canoe is to go ahead of the
-                     train, and scout down the river, to discover whether it is navigable.</p>
+                     train, and scout down the river, to discover whether it is navigable.</view>
                   <milestone unit="line"/>
-                  <p>A steady rain, which has been falling for days, has turned to snow, bringing
+                  <view>A steady rain, which has been falling for days, has turned to snow, bringing
                      with it penetrating chill and cold. A cutting wind comes out of the North,
                      driving all the women and children and the weaker and older men to the wagon
-                     for shelter.</p>
-                  <p>Sally is not to be daunted so easily. She stays with the workmen, herself <choice>
+                     for shelter.</view>
+                  <view>Sally is not to be daunted so easily. She stays with the workmen, herself <choice>
                         <sic>weilding</sic>
                         <corr>wielding</corr>
                      </choice> a hammer. Thad, no longer the lighthearted youth who had sung on the
                      trail, but feeling the heavy burden of responsibility on his young shoulders,
-                     urges her to go with the women. Sally shakes her head.</p>
+                     urges her to go with the women. Sally shakes her head.</view>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>But father needs you.</p>
@@ -2223,31 +2227,31 @@
                      <p>About everything. I think his mind wanders. Sometimes he thinks we’re back
                         home and --</p>
                   </sp>
-                  <p>She breaks off, her eyes filling. Thad goes on hammering. They are both at work
-                     on one end of a raft, in process of building. </p>
+                  <view>She breaks off, her eyes filling. Thad goes on hammering. They are both at work
+                     on one end of a raft, in process of building. </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Thad, when he’s well again, we must tell him.</p>
                   </sp>
-                  <p>Thad shakes his head and continues to hammer.</p>
+                  <view>Thad shakes his head and continues to hammer.</view>
                   <milestone unit="line"/>
-                  <view>Farther down the Columbia River.</view>
-                  <p>A good sized steamboat is moving up the river. Her upper deck is covered with
+                  <stage type="setting">Farther down the Columbia River.</stage>
+                  <stage type="setting">A good sized steamboat is moving up the river. Her upper deck is covered with
                      sacks and boxes filled with blankets, arms and munitions, bales containing
                      merchandise, medicines, meal, pork, dried flesh and other provisions, and its
                      hold is crammed with supplies for the Immigrants. It is a <choice>
                         <sic>Hudsons</sic>
                         <corr>Hudson’s</corr>
                      </choice> Bay vessel, and Ren Bullock is on deck at the rail with the
-                     captain.</p>
-                  <p>Ren points to the banks of the river, where groups of Indians are standing,
+                     captain.</stage>
+                  <view>Ren points to the banks of the river, where groups of Indians are standing,
                      excitedly gesticulating. Ren does not believe they are friendly. The Captain
-                     assures him that they have nothing to fear from the Indians.</p>
+                     assures him that they have nothing to fear from the Indians.</view>
                   <pb n="J-3."/>
                   <fw type="pageNum">J-3.</fw>
-                  <p>As the boat moves along, more and more Indians seem to be gathering along the
-                     banks. Their drums are beating. War dances are enacted. The Indians are
-                     yelling;</p>
+                  <view>As the boat moves along, more and more Indians seem to be gathering along the
+                     banks. <sound>Their drums are beating.</sound> War dances are enacted. The Indians are
+                     yelling;</view>
                   <q>
                      <lg>
                         <l>The Immigrants are coming!</l>
@@ -2259,8 +2263,8 @@
                      </lg>
                   </q>
                   <p>And so forth.</p>
-                  <p>Parties of the Indians ride off disappearing from the banks of the river, and
-                     reappearing on higher land, still following the river.</p>
+                  <view>Parties of the Indians ride off disappearing from the banks of the river, and
+                     reappearing on higher land, still following the river.</view>
                   <milestone unit="line"/>
                   <p style="text-align: center">- - - - - - - - - - -</p>
                </div>
@@ -2269,8 +2273,8 @@
                   <pb n="K-1"/>
                   <head>SEQUENCE K</head>
                   <camera>FADE IN:</camera>
-                  <p>On a heavy mist and fog. At first it is hard to see anything, but we hear the
-                     sound of the wind blowing, the ripple of waters, the sough of the waves.
+                  <view>On a heavy mist and fog. At first it is hard to see anything, but <sound>we hear the
+                     sound of the wind blowing, the ripple of waters, the sough of the waves.</sound>
                      Through the mist the outlines of a canoe is seen, with three people in it. One
                      of the men, Thad, is wielding an oar. He is to the fore of the <choice>
                         <sic>unweildy</sic>
@@ -2278,7 +2282,7 @@
                      </choice> little craft that the Immigrants have made. The other man seems
                      crouched down, and Sally Lou is also wielding an oar. Her head is wrapped in a
                      small shawl, tied under the chin. Thad looks back, sees Sally and speaks
-                     sharply:</p>
+                     sharply:</view>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>Take that oar, Charlie. What do you mean by letting Miss Sally work.</p>
@@ -2292,15 +2296,15 @@
                      <speaker>THAD</speaker>
                      <p>Never mind about his hands - here you -</p>
                   </sp>
-                  <p>The other man takes the oar. He is a middle-aged, painfully thin and
+                  <view>The other man takes the oar. He is a middle-aged, painfully thin and
                      undernourished immigrant. Though he tries conscientiously to work the oar, it
                      nearly tears him to pieces. Sally kneels in the boat, her shoulders slightly
-                     hunched. There is no sound for <choice>
+                     hunched. <sound>There is no sound for <choice>
                         <sic>awhile</sic>
                         <corr>a while</corr>
                      </choice>, but the waves beating against the boat, and the whistling wind,
-                     blowing. They seem to be alone on the river. It is lighting up, but the
-                     drizzling rain has turned to sleet. After awhile, Sally asks:</p>
+                     blowing.</sound> They seem to be alone on the river. It is lighting up, but the
+                     drizzling rain has turned to sleet. After awhile, Sally asks:</view>
                   <pb n="K-2."/>
                   <fw type="pageNum">K-2.</fw>
                   <sp>
@@ -2312,54 +2316,18 @@
                      <p>If Ren Bullock set out for Fourth Vancouver - he got there. Ren always does
                         what he says he will do.</p>
                   </sp>
-                  <p>The boat drifts on. The wind is dying down. The overcast skies gradually
-                     lighten.</p>
-                  <p>Suddenly an exclamation escapes Sally. She almost stands up in the canoe in her
-                     excitement. Thad tries to steady the boat and calls out sharply: </p>
-                  <sp>
-                     <speaker>THAD</speaker>
-                     <p>Take that oar, Charlie. What do you mean by letting Miss Sally work.</p>
-                  </sp>
-                  <sp>
-                     <speaker>SALLY</speaker>
-                     <p>But Thad I wanted to. I made him give it up. His hands are all torn and
-                        --</p>
-                  </sp>
-                  <sp>
-                     <speaker>THAD</speaker>
-                     <p>Never mind about his hands - here you -</p>
-                  </sp>
-                  <p>The other man takes the oar. He is a middle-aged, painfully thin and
-                     undernourished immigrant. Though he tries conscientiously to work the oar, it
-                     nearly tears him to pieces. Sally kneels in the boat, her shoulders slightly
-                     hunched. There is no sound for <choice>
-                        <sic>awhile</sic>
-                        <corr>a while</corr>
-                     </choice>, but the waves beating against the boat, and the whistling wind,
-                     blowing. They seem to be alone on the river. It is lighting up, but the
-                     drizzling rain has turned to sleet. After awhile, Sally asks:</p>
-                  <pb n="K-2."/>
-                  <fw type="pageNum">K-2.</fw>
-                  <sp>
-                     <speaker>SALLY</speaker>
-                     <p>Thad --d’you suppose Ren reached Fort Vancouver?</p>
-                  </sp>
-                  <sp>
-                     <speaker>THAD</speaker>
-                     <p>If Ren Bullock set out for Fourth Vancouver - he got there. Ren always does
-                        what he says he will do.</p>
-                  </sp>
-                  <p>The boat drifts on. The wind is dying down. The overcast skies gradually
-                     lighten.</p>
-                  <p>Suddenly an exclamation escapes Sally. She almost stands up in the canoe in her
-                     excitement. Thad tries to steady the boat and calls out sharply: </p>
+                  <stage type="location">The boat drifts on. The wind is dying down. The overcast skies gradually
+                     lighten.</stage>
+                  <view>Suddenly an exclamation escapes Sally. She almost stands up in the canoe in her
+                     excitement. Thad tries to steady the boat and calls out <stage type="delivery">sharply</stage>: </view>
+                  
                   <sp>
                      <speaker>THAD</speaker>
                      <p>Look out! We’ll go over.</p>
                   </sp>
                   <sp>
                      <speaker>SALLY</speaker>
-                     <stage place="inline">(bated excitement)</stage>
+                     <stage type="delivery" place="inline">(bated excitement)</stage>
                      <p>Oh, Thad - look--<emph>look</emph> - off there --</p>
                   </sp>
                   <sp>
@@ -2370,37 +2338,36 @@
                      <speaker>SALLY</speaker>
                      <p>B-but--Oh Thad am I dreaming?</p>
                   </sp>
-                  <p><view><camera>In a very long shot</camera> we see at a great distance, what
-                        looks like the shadowy outline of a ship.</view> The Immigrant in the back
+                  <view><camera>In a very long shot</camera> we see at a great distance, what
+                        looks like the shadowy outline of a ship. The Immigrant in the back
                      of the boat stops paddling. His eyes seem to be starting from his head, as he
-                     too peers through the mist of the early day. Then he shouts:</p>
+                     too peers through the mist of the early day. Then he <stage type="delivery"></stage>shouts:</view>
                   <pb n="K-3."/>
                   <fw type="pageNum">K-3.</fw>
                   <sp>
                      <speaker>CHARLIE</speaker>
                      <p>Praise be to God!</p>
                   </sp>
-                  <p>The oar drops from his hands and into the river. He kneels in the bottom of the
+                  <view>The oar drops from his hands and into the river. He kneels in the bottom of the
                      boat raising his hands in prayer, and half singing, half praying, he rocks in
                      an ecstasy. He has gone temporarily out of his mind. Thad, too, sees the
                      vessel. His care now is all for the little craft with its one paddle oar, and
                      he has his hands full steadying it, for they are in a rough part of the
-                     river.</p>
+                     river.</view>
                   <milestone unit="line"/>
-                  <p><camera>Medium long shot</camera>
-                     <view>of the ship.</view> Ren is pacing its deck, restlessly.</p>
-                  <p>Suddenly he stands stock still, his hands gripping the rail. From somewhere up
-                     the river, he hears a whistle. It is repeated three times. Three clear,
-                     familiar notes. For a moment Ren cannot believe he hears aright. His first
+                  <view><camera>Medium long shot</camera> of the ship. Ren is pacing its deck, restlessly.</view>
+                  <view>Suddenly he stands stock still, his hands gripping the rail. From somewhere up
+                     the river, <sound>he hears a whistle. It is repeated three times. Three clear,
+                     familiar notes.</sound> For a moment Ren cannot believe he hears aright. His first
                      reaction is one of powerful joy and exhilaration. His next - he remembers the
                      last time he had seen his pal. Sally Lou raising her face to kiss him goodbye.
-                     Ren’s face hardens. He stares out before him. </p>
-                  <p>Again the three long whistling notes. The man by the rail remains unmoving, but
+                     Ren’s face hardens. He stares out before him. </view>
+                  <view><sound>Again the three long whistling notes.</sound> The man by the rail remains unmoving, but
                      a curious change is breaking over his face. Something soft, tender, gentle,
                      makes it as fine as the face of a mother. He leans forward. He purses his lips.
-                     Three times he sends back that whistling signal. Then, <pb n="K-4."/><fw
+                     <sound>Three times he sends back that whistling signal.</sound> Then, <pb n="K-4."/><fw
                         type="pageNum">K-4.</fw> as if springing to electrical life he rushes toward
-                     the Captain.</p>
+                     the Captain.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Do you hear that?</p>
@@ -2414,13 +2381,12 @@
                      <p>No--not a wild bird. It’s my partner--my pal, Captain. He’s out there
                         somewhere--in the river.</p>
                   </sp>
-                  <p>A few minutes later everything is activit aboard the vessel. Full steam is put
+                  <view>A few minutes later everything is activity aboard the vessel. Full steam is put
                      on. As the ship proceeds, the sunshine breaks through the clouds, and in the
-                     glow far up the stream, tossing upon<note type="editorial">Eaton has corrected
-                        a typo here and added <q>upon</q>.</note> the turbulent water, the descry
-                     the canoe.</p>
+                     glow far up the stream, tossing upon<note type="editorial"><q>upon</q> has been added in the original text.</note> the turbulent water, the descry
+                     the canoe.</view>
                   <milestone unit="line"/>
-                  <p>There is the business of taking Thad, Sally and the Immigrant aboard. Though
+                  <view>There is the business of taking Thad, Sally and the Immigrant aboard. Though
                      cold and wet through, Sally’s eyes are luminous with happiness. The Captain,
                      much concerned that a girl should have been exposed to such hardship and
                      weather, begs her to go immediately to the cabin, but Sally is looking past the
@@ -2430,7 +2396,7 @@
                      on the shoulder. Thad starts to explain how they came to be on the river, and
                      to tell about the plans of the Immigrants, but Sally comes up <pb n="K-5."/><fw
                         type="pageNum">K-5.</fw> beside him. She tries to entrap Ren’s glance, but
-                     Ren is afraid to look at her. </p>
+                     Ren is afraid to look at her. </view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Thad--tell him later. I-I want to say something now. Ren!</p>
@@ -2455,118 +2421,118 @@
                   <sp>
                      <p>You see----you see------</p>
                   </sp>
-                  <p>Now Ren can no longer avoid looking at her, for Sally has put one little hand
-                     on either of his arms, and her face is directly under his.</p>
+                  <view>Now Ren can no longer avoid looking at her, for Sally has put one little hand
+                     on either of his arms, and her face is directly under his.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>You see---Thad’s my brother---</p>
                   </sp>
-                  <p>Ren takes this big. So big that Sally catches her breath as she laughs. </p>
+                  <stage type="novelistic">Ren takes this big. So big that Sally catches her breath as she laughs. </stage>
                   <sp>
                      <p>Yes--my brother--my big, bad brother.</p>
                   </sp>
-                  <p>Ren gulps. Waves of contrition are rolling over him of remorse; of powerful
+                  <stage type="novelistic">Ren gulps. Waves of contrition are rolling over him of remorse; of powerful
                      joy. He longs to take Sally in his arms; he wants to cry like a child. His
-                     voice is hoarse;</p>
+                     voice is hoarse;</stage>
                   <pb n="K-6."/>
                   <fw type="pageNum">K-6.</fw>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Miss Sally---I reckon, I’m the most powerful dunce in Oregon.</p>
                   </sp>
-                  <p>Sally, looking at him, catches her breath in a laugh that breaks, and suddenly
+                  <view>Sally, looking at him, catches her breath in a laugh that breaks, and suddenly
                      her eyes fill with tears -- tears of a long hurt, and of utter physical strain
                      and exhaustion. She sways. With an incoherent murmur Ren takes her into his
-                     arms. </p>
+                     arms. </view>
                   <milestone unit="line"/>
-                  <p>Further up the river a fleet of Indian canoes are coming. Each canoe contains
+                  <view>Further up the river a fleet of Indian canoes are coming. Each canoe contains
                      about eighteen men, dressed in skins and sea otter, their hair powdered with
-                     the white dawn of birds and their faces befogged with paint.</p>
-                  <p>The Chief occupies a place in the middle boat and is distinguished by his high
-                     cap, ornamented with a tuft of eagle feathers. As they come down the river they
+                     the white dawn of birds and their faces befogged with paint.</view>
+                  <view>The Chief occupies a place in the middle boat and is distinguished by his high
+                     cap, ornamented with a tuft of eagle feathers. As they come down the river <sound>they
                      beat time against the <choice>
                         <sic>gunwhale</sic>
                         <corr>gunwale</corr>
-                     </choice> of the boat with their paddles. They are chanting a war song, and at
+                     </choice> of the boat with their paddles. They are chanting a war song,</sound> and at
                      the end of each verse, they point with extended arms to the North and the
-                     South. There is no yelling or whooping; just the monotonous chanting,
-                     triumphant and bold. There are probably two hundred braves in the canoes, as
-                     well as the squaws who shriek in accompaniment, beating their hands together
-                     fiercely.</p>
+                     South. There is no yelling or whooping; just the <stage type="delivery">monotonous chanting,
+                     triumphant and bold.</stage> There are probably two hundred braves in the canoes, as
+                     well as <sound>the squaws who shriek in accompaniment,</sound> beating their hands together
+                     fiercely.</view>
                   <pb n="K-7."/>
                   <fw type="pageNum">K-7.</fw>
-                  <view>On board the <choice>
+                  <stage type="setting">On board the <choice>
                         <sic>Hudsons</sic>
                         <corr>Hudson’s</corr>
-                     </choice> Bay ship.</view>
-                  <p>In the cabin Sally and Thad and the Immigrant are having their first meal since
+                     </choice> Bay ship.</stage>
+                  <view>In the cabin Sally and Thad and the Immigrant are having their first meal since
                      they set out in their crude canoe. Across the table from Sally sits Ren, his
                      elbows on the table, his chin in his hands. He looks only at Sally, and his
-                     gaze is tender, devouring, adoring.</p>
+                     gaze is tender, devouring, adoring.</view>
                   <milestone unit="line"/>
                   <view>A sort of <choice>
                         <sic>suddering</sic>
                         <corr>shuddering</corr>
                      </choice> motion of the boat, and then it stops. A couple of the ship’s men run
-                     past. The Captain’s voice is heard shouting orders. There is the clink of
-                     chains, etc.</view>
+                     past. <sound>The Captain’s voice is heard shouting orders. There is the clink of
+                     chains, etc.</sound></view>
                   <milestone unit="line"/>
-                  <p>Ren has started up. He is about to go on deck, when the Captain comes to the
-                     door.</p>
+                  <view>Ren has started up. He is about to go on deck, when the Captain comes to the
+                     door.</view>
                   <sp>
                      <speaker>CAPTAIN</speaker>
                      <p>Nothing to worry about. We’ve gone aground; but we’ll get her off.
                         Hello--what’s that?</p>
                   </sp>
-                  <p><camera>Off</camera> - the voices of the Indians can be heard. Ren looks at the
+                  <view><camera>Off</camera> - <sound>the voices of the Indians can be heard.</sound> Ren looks at the
                      Captain; the latter, an old pilot of the Columbia says that they are probably
                      to have some visitors. He exits on deck followed by Ren. Thad starts to go
                      also, but Ren bids him remain with Sally; Thad walks about restlessly, moodily.
-                     He is apprehensive and worried.</p>
-                  <p>The Indian canoes are now parading in a circle around the ship. The Captain and
+                     He is apprehensive and worried.</view>
+                  <view>The Indian canoes are now parading in a circle around the ship. The Captain and
                      Ren are at the rail. The <pb n="K-8."/><fw type="pageNum">K-8.</fw> Captain
                      points out that these are Cayuse Indians, friendly to the whites. However, they
-                     are standing up in their canoes, their hands raised the peace sign.</p>
-                  <p>One of the Indians, who speaks English, calls out that a delegation of the
+                     are standing up in their canoes, their hands raised the peace sign.</view>
+                  <stage type="novelistic">One of the Indians, who speaks English, calls out that a delegation of the
                      chiefs would like to come aboard to trade buffalo hides for brass metals and
-                     knives.</p>
-                  <p>The Captain, pleased, in spite of Ren’s uneasiness and suspicion, tells them to
-                     come aboard, and soon about fourteen of the braves climb aboard.</p>
-                  <p>All unsuspecting the captain examines their buffalo hides, and gives them in
-                     exchange the desired brass buttons and knives. </p>
-                  <p>Suddenly one of them lets out a terrifying war whoop. This is immediately
+                     knives.</stage>
+                  <stage type="novelistic">The Captain, pleased, in spite of Ren’s uneasiness and suspicion, tells them to
+                     come aboard, and soon about fourteen of the braves climb aboard.</stage>
+                  <view>All unsuspecting the captain examines their buffalo hides, and gives them in
+                     exchange the desired brass buttons and knives. </view>
+                  <sound>Suddenly one of them lets out a terrifying war whoop. This is immediately
                      echoed by the others, while an answering roar comes from the men in the canoes
-                     below.</p>
-                  <p>They rush upon the whites. The clerk is stabbed in the back. The Captain,
+                     below.</sound>
+                  <view>They rush upon the whites. The clerk is stabbed in the back. The Captain,
                      sitting on the taffrail is clubbed and falls overboard, there to be knifed by
                      the Indians in <choice>
                         <sic>thecanoes</sic>
                         <corr>the canoes</corr>
                      </choice>. One big burly sailor fights for his life with his bare fists, before
-                     he is clubbed and stabbed to death.</p>
-                  <p>Ren, his gun spitting fire leaps for the companionway and reaches the cabin.
-                     There he and Thad and the other men barricade themselves in.</p>
-                  <p>The Indians pour down <choice>
+                     he is clubbed and stabbed to death.</view>
+                  <view>Ren, his gun spitting fire leaps for the companionway and reaches the cabin.
+                     There he and Thad and the other men barricade themselves in.</view>
+                  <view>The Indians pour down <choice>
                         <sic>passageway</sic>
                         <corr>the passage way</corr>
-                     </choice>. Ren and Thad out holes for their <choice>
+                     </choice>. Ren and Thad cut holes for their <choice>
                         <sic>fire arms</sic>
                         <corr>firearms</corr>
                      </choice> in the walls of the cabin, and pour out a withering fire of shot,
                      that has deadly effect <choice>
                         <sic> </sic>
                         <corr>.</corr>
-                     </choice></p>
+                     </choice></view>
                   <pb n="K-9."/>
                   <fw type="pageNum">K-9.</fw>
-                  <p>Leaving their dead and wounded, the Indians flee back up the companionway.</p>
-                  <p>It is now dusK, and the thin snow storm has become a dense one. The Indians
-                     scuttle across the deck, and go over the rail making for their canoes.</p>
-                  <view>IN THE CABIN</view>
-                  <p>Sally is asleep. The Immigrant too is stretched out on the floor, dead to the
-                     world. Ren lights a ship’s lantern. He sets it on the table. In this flickering
+                  <view>Leaving their dead and wounded, the Indians flee back up the companionway.</view>
+                  <view>It is now dusK, and the thin snow storm has become a dense one. The Indians
+                     scuttle across the deck, and go over the rail making for their canoes.</view>
+                  <stage type="setting">IN THE CABIN</stage>
+                  <view>Sally is asleep. The Immigrant too is stretched out on the floor, dead to the
+                     world. Ren lights a ship’s lantern. He sets it on the table. <tech type="light"></tech>In this flickering
                      light he and Thad sit opposite each other. For a long time no word is spoken.
-                     Then:</p>
+                     Then:</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Indians never attack or fight at night. We can get away in one of the ship’s
@@ -2577,14 +2543,14 @@
                      <p>I’m thinking of our people. They’ll be on their way down the river. Those
                         red devils know it. They’re waiting for them.</p>
                   </sp>
-                  <p>Thad’s head drops on his arms on the table. Ren reaches across and pats him on
-                     the head. </p>
+                  <view>Thad’s head drops on his arms on the table. Ren reaches across and pats him on
+                     the head. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Brace up. This is no time to lose your nerve. I’m <emph>leanin</emph> on
                         you, Thad.</p>
                   </sp>
-                  <p>Thad gives him a singularly boyish look at that.</p>
+                  <stage type="action">Thad gives him a singularly boyish look at that.</stage>
                   <pb n="K-10"/>
                   <fw type="pageNum">K-10</fw>
                   <sp>
@@ -2595,7 +2561,7 @@
                      <speaker>REN</speaker>
                      <p>Of course.</p>
                   </sp>
-                  <p>Thad swallows.</p>
+                  <stage type="action">Thad swallows.</stage>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>You see, I never did amount to anything, and I’ve given my father all kinds
@@ -2620,31 +2586,30 @@
                         conscience. Killing one man when we were in a fight is nothing compared to
                         what’s happened to -- those Immigrants.</p>
                   </sp>
-                  <p>While the men have been speaking the shadows have been steadily deepening. Thad
-                     gets up, paces. Ren sits at table, his fine young face lighted by the lantern.
-                     He speaks quietly;</p>
+                  <view>While the men have been speaking the shadows have been steadily deepening. Thad
+                     gets up, paces. Ren sits at table, <tech type="light">his fine young face lighted by the lantern.</tech>
+                     He speaks quietly;</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Come back here, Thad. sit down again. I want to speak to you.</p>
                   </sp>
                   <pb n="K-11"/>
                   <fw type="pageNum">K-11</fw>
-                  <p>Thad sits. Ren gives him an intent look. He lowers his voice as he slightly
-                     leans across the table, fixing the other with his steady regard. </p>
+                  <view>Thad sits. Ren gives him an intent look. He lowers his voice as he slightly
+                     leans across the table, fixing the other with his steady regard. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>I been doin’ a powerful lot of thinkin’.</p>
                   </sp>
-                  <p>On the couch, <note type="editorial">Eaton has corrected the typo <q>courch</q>
-                        here.</note> Sally stirs. Her eyes half open. At first she listens almost
-                     unconsciously; and then with tense interest and fear.</p>
+                  <view>On the couch, <note type="editorial">Typo <q>courch</q> has been corrected in original text.</note> Sally stirs. Her eyes half open. At first she listens almost
+                     unconsciously; and then with tense interest and fear.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>There’s a big powder magazine aboard this ship ---</p>
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage place="inline">(breathlessly)</stage>
+                     <stage type="delivery" place="inline">(breathlessly)</stage>
                      <p>Ye-eh--?</p>
                   </sp>
                   <sp>
@@ -2664,7 +2629,7 @@
                      <speaker>THAD</speaker>
                      <p>How can we! How can we!</p>
                   </sp>
-                  <p>Ren lowers his voice.</p>
+                  <stage type="delivery">Ren lowers his voice.</stage>
                   <pb n="K-12."/>
                   <fw type="pageNum">K-12.</fw>
                   <sp>
@@ -2674,10 +2639,10 @@
                   </sp>
                   <sp>
                      <speaker>THAD</speaker>
-                     <stage>(swallowing hard)</stage>
+                     <stage type="action">(swallowing hard)</stage>
                      <p>Stayin’ - her - alone you mean?</p>
                   </sp>
-                  <p>Ren nods.</p>
+                  <stage type="action">Ren nods.</stage>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>What for?</p>
@@ -2696,8 +2661,8 @@
                      <p>If I touch that powder magazine off - the whole ship and everyone aboard it
                         will be blown to pieces.</p>
                   </sp>
-                  <p>Sally is now sitting up. Thad is staring at Ren, his eyes widening with horror
-                     as he comprehends what Ren intends to do.</p>
+                  <view>Sally is now sitting up. Thad is staring at Ren, his eyes widening with horror
+                     as he comprehends what Ren intends to do.</view>
                   <sp>
                      <speaker>THAD</speaker>
                      <p>Whoever lights that powder magazine will be blown up himself, won’t he?</p>
@@ -2712,7 +2677,7 @@
                      <speaker>THAD</speaker>
                      <p>No, by God! I will!</p>
                   </sp>
-                  <p>Both men have started to their feet.</p>
+                  <view>Both men have started to their feet.</view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>I’ll handle my own job.</p>
@@ -2732,16 +2697,16 @@
                         price on my head-- they’re lookin’ for me in every border town. I’d rather
                         go this way--than--by the rope.</p>
                   </sp>
-                  <p>Suddenly Sally screams. She comes screaming in between them. She cannot speak.
+                  <view>Suddenly Sally screams. She comes screaming in between them. She cannot speak.
                      She can only cry. She clings to Ren. She clings to Thad. She keeps crying and
                      sobbing. Ren, holding her in his arms, looks across at Thad. His face is stern,
-                     grave. </p>
+                     grave. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Sally, I’m goin’ to take you down the river a little ways. We’ll be meeting’
                         up presently with our people--</p>
                   </sp>
-                  <p>Sally clings to him.</p>
+                  <stage type="action">Sally clings to him.</stage>
                   <pb n="K-14"/>
                   <fw type="pageNum">K-14</fw>
                   <sp>
@@ -2761,17 +2726,17 @@
                      <speaker>REN</speaker>
                      <p>It is terrible. We’ll not talk of it any more.</p>
                   </sp>
-                  <p>He soothes her. After awhile, he gently puts a heavy coat about her. </p>
+                  <view>He soothes her. After awhile, he gently puts a heavy coat about her. </view>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Come, we better be driftin’. You go ahead, Thad!</p>
                      <p>Here, Charley--come on now--wake up.</p>
                   </sp>
-                  <p>He shakes the Immigrant awake.</p>
-                  <p>They all go out through the dark passage and up the companionway to the deck.
+                  <stage type="action">He shakes the Immigrant awake.</stage>
+                  <view>They all go out through the dark passage and up the companionway to the deck.
                      The men release the boat. It is a big roomy boat, seaworthy, and
                      well-provisioned and stocked for an emergency. There is also in the rear a
-                     place for shelter and it is propelled both by oars and sail.</p>
+                     place for shelter and it is propelled both by oars and sail.</view>
                </div>
                <div>
                   <pb n="L-1"/>
@@ -2782,45 +2747,45 @@
                         <corr>a</corr>
                      </choice> stiff wind is billowing it out, but the current is against them, for
                      they are going up stream, and they are making slow time.</p>
-                  <p>It is still quite dark, though drawing toward morning. Occasionally the voice
-                     of the Immigrant rises in a gospel hymn. He sings like a madman.</p>
-                  <p>The others are all silent.</p>
-                  <p>Ren is at the helm. Sally is at his side, crouched close to him, her eyes never
+                  <stage type="setting">It is still quite dark, though drawing toward morning. <sound>Occasionally the voice
+                     of the Immigrant rises in a gospel hymn.</sound> <stage type="delivery">He sings like a madman.</stage></stage>
+                  <sound>The others are all silent.</sound>
+                  <view>Ren is at the helm. Sally is at his side, crouched close to him, her eyes never
                      leaving his face. He bends to draw her wrap closer about her. She shakes her
                      head dumbly. His arms are all she news. He holds her close. Her arms go around
-                     his neck. She says passionately:</p>
+                     his neck. She says passionately:</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Promise me--you’ll never leave me now.</p>
                   </sp>
-                  <p>There is a long, deep pause. Then Ren in a hoarse, steady whisper, replies:</p>
+                  <stage type="delivery">There is a long, deep pause. Then Ren in a hoarse, steady whisper, replies:</stage>
                   <sp>
                      <p>I must go back! It is the only way!</p>
                   </sp>
-                  <p>In the stern of the boat, Thad peers at the two in front. There is something
+                  <view>In the stern of the boat, Thad peers at the two in front. There is something
                      very tense about him - something tense and cautious. He <choice>
                         <sic>courches</sic>
                         <corr>crouches</corr>
-                     </choice> farther down in the shadow of the sail.</p>
+                     </choice> farther down in the shadow of the sail.</view>
                   <pb n="L-2."/>
                   <fw type="pageNum">L-2.</fw>
-                  <p>The lovers are still in <choice>
+                  <view>The lovers are still in <choice>
                         <sic>each others</sic>
                         <corr>each other’s</corr>
-                     </choice> arms. Their faces are illuminated. Whatever may befall them, this
-                     moment is all their own.</p>
+                     </choice> arms. <tech type="light">Their faces are illuminated.</tech> Whatever may befall them, this
+                     moment is all their own.</view>
                   <milestone unit="line"/>
-                  <p>Half kneeling, half <choice>
+                  <view>Half kneeling, half <choice>
                         <sic>couuching</sic>
                         <corr>crouching</corr>
                      </choice>, in the shade of the sail, Thad looks at them, and a smile breaks
-                     over the boy’s face making it singularly young and singularly poignant. Without
-                     a sound he swings over the side of the boat. He drops in the water.</p>
+                     over the boy’s face making it singularly young and singularly poignant. <sound>Without
+                     a sound he swings over the side of the boat.</sound> He drops in the water.</view>
                   <milestone unit="line"/>
-                  <p>Sally stirs in Ren’s arms. They can see each other’s faces now, for it is
-                     becoming lighter.</p>
-                  <p>Suddenly Sally holds Ren back from her. A troubled look comes over her face--an
-                     expression of strange and almost psychic fear.</p>
+                  <view>Sally stirs in Ren’s arms. They can see each other’s faces now, for it is
+                     becoming lighter.</view>
+                  <view>Suddenly Sally holds Ren back from her. A troubled look comes over her face--an
+                     expression of strange and almost psychic fear.</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Thad--Thad--I had a sudden feelin that Thad was not ---</p>
@@ -2829,10 +2794,10 @@
                      <speaker>REN</speaker>
                      <p>Don’t worry dear. Thad’s asleep.</p>
                   </sp>
-                  <p>Sally break away from Ren. She is still under some restless spell. She <choice>
+                  <view>Sally break away from Ren. She is still under some restless spell. She <choice>
                         <sic>call</sic>
                         <corr>calls</corr>
-                     </choice>:</p>
+                     </choice>:</view>
                   <sp>
                      <speaker>SALLY</speaker>
                      <p>Thad! Thad!</p>
@@ -2840,17 +2805,17 @@
                   <p>There is no answer. Now her fear has communicated itself to Ren.</p>
                   <pb n="L-3."/>
                   <fw type="pageNum">L-3.</fw>
-                  <p>He calls out roughly:</p>
+                  <stage type="delivery">He calls out roughly:</stage>
                   <sp>
                      <speaker>REN</speaker>
                      <p>Thad! Are you all right?</p>
                   </sp>
-                  <p>But Thad does not answer. Ren moves back to the rear of the boat. Sally comes
+                  <view>But Thad does not answer. Ren moves back to the rear of the boat. Sally comes
                      behind him. She is holding to the side of the boat and half crawling, half
-                     climbing, over the impediments, the ropes, etc.</p>
-                  <p>Ren, in a stunned silence, is staring down at the empty place where Thad had
+                     climbing, over the impediments, the ropes, etc.</view>
+                  <stage type="delivery">Ren, in a stunned silence, is staring down at the empty place where Thad had
                      been. His voice sounds strange. He scarcely knows that it is he who is
-                     speaking.</p>
+                     speaking.</stage>
                   <sp>
                      <speaker>REN</speaker>
                      <p><emph>Thad</emph>---has gone back--for us!</p>
@@ -2860,53 +2825,52 @@
                      <p>Oh, no-no--no,--no! While we were there--while we were in each other’s
                         arms--he--Oh, Thad-- Thad!</p>
                   </sp>
-                  <p>Ren places her on the seat, covers her gently, and then springs for the sail. A
+                  <view>Ren places her on the seat, covers her gently, and then springs for the sail. A
                      few words to the half cracked Immigrant to hoist the sail, which he cannot do,
                      though he sits gibbering there, holding the rope. Ren swings the helm around.
                      The boat turns, slanting, as the wind slaps at the sail. Then it steadies
-                     itself and we - FADE</p>
+                     itself and we<camera> - FADE</camera></view>
                </div>
                <div>
                   <pb n="M-1"/>
                   <fw type="pageNum">M-1</fw>
                   <head>SEQUENCE M.</head>
-                  <view>We <camera>fade in</camera> on the <choice>
+                  <stage type="setting">We <camera>fade in</camera> on the <choice>
                         <sic>Hudsons</sic>
                         <corr>Hudson’s</corr>
                      </choice> Bay Vessel. It is still aground, and the waves are beating about
-                     it.</view>
-                  <p>It is about five o’clock in the morning! The boat is entirely surrounded by
+                     it.</stage>
+                  <view>It is about five o’clock in the morning! The boat is entirely surrounded by
                      Indian canoes. But the canoes are empty. The Indians are swarming over the
                      deck. Not merely a delegation, but the entire tribe. They are going through the
                      bales and sacks and boxes. They are eating and drinking and wrapping the stuffs
-                     about them, and there is great jubilation among them.</p>
+                     about them, and there is great jubilation among them.</view>
                   <milestone unit="line"/>
-                  <p><camera>DISSOLVE</camera>
-                     <view>to the powder magazine of the ship.</view> Pressed up against the wall is
+                  <view><camera>DISSOLVE</camera>to the powder magazine of the ship. Pressed up against the wall is
                      Thad. he is listening to the Indians. Some of them are coming down into the
-                     hold. Thad shrinks back farther. There is a slight crackle as he lights the
-                     torch.</p>
+                     hold. Thad shrinks back farther. <sound><tech type="light">There is a slight crackle as he lights the
+                     torch.</tech></sound></view>
                   <milestone unit="line"/>
                   <view><camera>CUT TO</camera> - The ship’s boat. It is coming along at
                      considerable speed. Both Sally and Ren are at the helm, but they are not in
                      each others’ arms. Their faces are white and lined with fear. They are looking
-                     dead ahead. Suddenly the air seems rent as by some tremendous shock. The roar
-                     of a monster explosion is heard from one end of the river to the other.</view>
+                     dead ahead. Suddenly the air seems rent as by some tremendous shock. <sound>The roar
+                     of a monster explosion is heard from one end of the river to the other.</sound></view>
                   <milestone unit="line"/>
-                  <view>Note: (If desired, show the blowing up of the ship)</view>
+                  <stage type="novelistic">Note: (If desired, show the blowing up of the ship)</stage>
                </div>
                <div>
                   <pb n="N-1"/>
                   <head>SEQUENCE N</head>
-                  <view>This shows the Immigrant train. Down the river, on rafts, on boxes, on crude
+                  <stage type="setting">This shows the Immigrant train. Down the river, on rafts, on boxes, on crude
                      boats, with a few of the prairie schooners, the Immigrants are coming down the
-                     river.</view>
+                     river.</stage>
                   <p>No saga or iliad ever penned could do justice to their heroism, courage and
                      valour; for despite their privations and sufferings, they are coming along on
-                     this, the last lap of their journey, their faces still radiant with hope. They
-                     are singing!</p>
+                     this, the last lap of their journey, their faces still radiant with hope. <sound>They
+                     are singing!</sound></p>
                   <view>Farther down the river, in their boat, Ren and Sally are seen coming.
-                     Sally’s face is illuminated - poignantly beautiful. Ren removes his hat. His
+                     <tech type="light">Sally’s face is illuminated</tech> - poignantly beautiful. Ren removes his hat. His
                      head bows. FADE.</view>
                   <milestone unit="line"/>
                </div>
