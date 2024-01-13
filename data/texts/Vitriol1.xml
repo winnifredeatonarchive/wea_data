@@ -10,6 +10,14 @@
                <resp>Transcriber</resp>
                <name ref="pers:ER1"/>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -24,9 +32,7 @@
                </msIdentifier>
                <msContents>
                   <msItem>
-                     <bibl xml:id="bibl225"><author><name ref="pers:WE1">Ellis Eaton</name></author>.
-                     <title level="a">Vitriol</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve
-                     Fonds</distributor>, <idno>12.1</idno>. </bibl>
+                     <bibl xml:id="bibl225"><author><name ref="pers:WE1">Ellis Eaton</name></author>. <author><name ref="pers:WE1">Winnie Eaton</name></author>. <title level="a">Vitriol</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>. </bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -53,7 +59,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:MC1" status="empty" when="2020-07-02">Added note about source.</change>
@@ -62,8 +69,228 @@
    </teiHeader>
    <text facs="facs:Vitriol1">
       <body>
+         <head>Vitriol</head>
+         <opener>
+            <byline>By <name ref="pers:WE1">Winnie Eaton</name><note type="editorial" resp="pers:ER1">Ellis Eaton is typed and crossed out. Winnie Eaton is handwritten beside it.</note> </byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            
+            <lg>
+               <l>You say I may speak on my own defense,</l>
+               <l>I, on trial today,</l>
+               <l>Then I will tell my story,</l>
+               <l>In my own peculiar way.</l>
+            </lg>
+            
+            <lg>
+               <l>Not as the cunning lawyers,</l>
+               <l>Have planned what I shall say,</l>
+               <l>Gentlemen of the Jury,</l>
+               <l>I’ll tell the truth, if I may.</l>
+            </lg>
+            
+            <lg>
+               <l>He’d been coming home later and later;</l>
+               <l>Not a suspicion had I</l>
+               <l>He always had plausible reasons,</l>
+               <l>And I never questioned why.</l>
+            </lg>
+            
+            <lg>
+               <l>Women, he said, knew nothing,</l>
+               <l>Of the work that men must do,</l>
+               <l>To earn the money to keep them,</l>
+               <l><q>As I am keeping you</q>?</l>
+            </lg>
+            
+            <lg>
+               <l>And he said he must be at the office,</l>
+               <l>For things were not running right,</l>
+               <l>And he found it most expedient</l>
+               <l>To work at his desk at night.</l>
+            </lg>
+            
+            <lg>
+               <l>And so though I missed him sorely,</l>
+               <l>I believed every word he said,</l>
+               <l>I sat at my lone dinner,</l>
+               <l>And I went to my lone bed.</l>
+            </lg>
+            
+            <lg>
+               <l>Then came the morning in April,</l>
+               <l>He had been out all <choice><sic>nightm</sic><corr>night</corr></choice></l>
+               <l>And, anxious, I called his office,</l>
+               <l>He answered , that <q>All was right</q>,</l>
+            </lg>
+            
+            <lg>
+               <l>He was detained ---would be home soon</l>
+               <l>Things were a bit <choice><sic>a-wry</sic><corr>awry</corr></choice>,</l>
+               <l>And I was not to worry,</l>
+               <l>And a foolish girl to cry.</l>
+            </lg>
+            
+            <lg>
+               <l>They say the last to learn the truth,</l>
+               <l>Is the simple, guileless wife,</l>
+               <l>And my faith was such in my husband,</l>
+               <l>I’d have trusted him with my life.</l>
+            </lg>
+            
+            <lg>
+               <l>Unsuspicious and faithful</l>
+               <l>With a child’s blind innocence</l>
+               <l>Snug in my fool’s paradise,</l>
+               <l>There was <q>bliss</q> in my ignorance!</l>
+            </lg>
+            
+            <lg>
+               <l>It happened that day at the telephone,</l>
+               <l>I saw my maid’s sly eye,</l>
+               <l>Drop in a wink to the other girl,</l>
+               <l>Who chanced to be passing by.</l>
+            </lg>
+            
+            <lg>
+               <l>And something significant in that smile,</l>
+               <l>Caused my heart to stand still,</l>
+               <l>For all of a sudden I realized</l>
+               <l>That they were suspecting Will.</l>
+            </lg>
+            
+            <lg>
+               <l>Suspecting my husband untrue to me!</l>
+               <l>I was stunned at the idea,</l>
+               <l>But all day long I saw their smile,</l>
+               <l>And fought the encroaching fear.</l>
+            </lg> 
+            
+            <lg>
+               <l>I went through his things like a thief in the night,</l>
+               <l>Fearing I might be caught,</l>
+               <l>Yet digging about with a frantic fear,</l>
+               <l>Till at last I found what I sought.</l>
+            </lg> 
+            
+            <lg>
+               <l>A note on the back of a photograph,</l>
+               <l>A kodak of him and her,</l>
+               <l>And across the card she had scribbled:</l>
+               <l><q>Your pet stenographer</q>.</l>
+            </lg> 
+            
+            <lg>
+               <l>They have picked me a jury of married men,</l>
+               <l>But it may be that some of you,</l>
+               <l>Are leading lives of deception</l>
+               <l>And to your wives untrue.</l>
+            </lg> 
+            
+            <lg>
+               <l>I hope if you are you will suffer—</l>
+               <l>Yes, suffer, even as he—</l>
+               <l>That man over there, with his face in his hands.</l>
+               <l>He is nothing now to me</l>
+            </lg> 
+            
+            <lg>
+               <l>But I’ll go ahead with my story.</l>
+               <l>I was up to that April day,</l>
+               <l>The day when I was arrested,</l>
+               <l>I had gone quite mad they say.</l>
+            </lg> 
+            
+            <lg>
+               <l>You see, we had had a baby,</l>
+               <l>He lived till he was four.</l>
+               <l>His room was just as he left it.</l>
+               <l>We never once opened the door.</l>
+            </lg>
+            
+            <lg>
+               <l>But I thought of his favorite treasure,</l>
+               <l>A small toy pistol, like this---</l>
+               <l>Jimmy would fill it with water</l>
+               <l>Press the rubber bulb, and----sizz!</l>
+            </lg> 
+            
+            <lg>
+               <l>The water would squirt in your face,</l>
+               <l>And Jimmy would scream with delight.</l>
+               <l>Ah, many’s the time, I scolded,</l>
+               <l>For he played with it even at night.</l>
+            </lg>
+            
+            <lg>
+               <l>And it seemed very strange at that moment,</l>
+               <l>I should think of that little toy,</l>
+               <l>And how the water spluttered,</l>
+               <l>And gave my baby such joy.</l>
+            </lg>
+            
+            <lg>
+               <l>Then I opened the door of that long locked room</l>
+               <l>And I found the little gun,</l>
+               <l>And filled it full of vitriol,</l>
+               <l>The toy of my baby son.</l>
+            </lg>
+            
+            <lg>
+               <l>I went down town in a taxicab,</l>
+               <l>And I laughed as I hugged to my breast,</l>
+               <l>The thing that I knew would avenge me-----</l>
+               <l>I think you know all the rest!</l>
+            </lg>
+            
+            <lg>
+               <l>There! I am rested. Thank you.</l>
+               <l>Yes, I’ll go on with my tale.</l>
+               <l>Excuse my voice —it trembles,</l>
+               <l>And I know that my face is pale.</l>
+            </lg>
+            
+            <lg>
+               <l>You see, I’ve had so much trouble,</l>
+               <l>And this is the worst of all,</l>
+               <l>For <choice><sic>theres</sic><corr>there’s</corr></choice> no disgrace in dying,</l>
+               <l>But black deeds no words may recall.</l>
+            </lg>
+            
+            <lg>
+               <l>Well, well, you are waiting my story,</l>
+               <l>And I’m rambling on so slow.</l>
+               <l>I don’t like to look at that bandaged snake!</l>
+               <l>Move her away! Or I  go!</l>
+            </lg>
+            
+            <lg>
+               <l>There was an outer office,</l>
+               <l>With many girls and men,</l>
+               <l>And I fancied a look went wavering,</l>
+               <l>As I entered the room just then.</l>
+            </lg>
+            
+            <lg>
+               <l>I scanned each face to find her,</l>
+               <l>Whose pictured one I knew.</l>
+               <l>She was not there. A pert girl spoke:</l>
+               <l><q>What can we do for you?</q></l>
+            </lg>
+            
+            <lg>
+               <l><q>Mr. Lorne?</q> <q>He’s busy just now</q>,</l>
+               <l>She languidly fixed her hair,</l>
+               <l><q>--dictating in his office</q>.</l>
+               <l><q>We never disturb him there</q>.</l>
+            </lg>
+            
+            <lg>
+               <l><q>I am Mrs. Lorne</q> I whispered.</l>
+               <l><q>Indeed! Well, you don’t say!</q></l>
+               <l><q>I’m thinking that the boss will want</q>.</l>
+               <l><q>To see you right away</q>.</l>
+            </lg>
          </div>
       </body>
    </text>

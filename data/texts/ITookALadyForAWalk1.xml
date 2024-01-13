@@ -8,7 +8,19 @@
             <title>I Took a Lady for a Walk</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:DF1"/>
+               <name ref="pers:DF1">Dominika Ferens</name>
+            </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +39,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>I Took a Lady for a Walk</title></bibl>
+                     <bibl><author><name ref="pers:WE1">W.E.R.</name></author>.<title>I Took a Lady for a Walk</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>. </bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,16 +67,98 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:ITookALadyForAWalk1">
         <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
+           <head>I Took a Lady for a Walk</head>
+           <opener>
+              <byline>By <name ref="pers:WE1">W.E.R.</name></byline>
+           </opener>
+           <div>
+              
+              <lg>
+                 <l>I took a lady for a walk</l>
+                 <l>And all that lady did was—talk!</l>
+              </lg>
+              
+              <lg>
+                 <l>She talked about the birds that fly</l>
+                 <l>She said we all must some day die</l>
+                 <l>And asked me for the reason why</l>
+              </lg>
+              
+              <lg>
+                 <l>She said wet laws should be enforced</l>
+                 <l>That Doug and Mary were divorced</l>
+                 <l>The Prince of Wales had been unhorsed.</l>
+              </lg>
+              
+              <lg>
+                 <l>She said she got a thrill from Shuler</l>
+                 <l>That he and Aimee couldn’t fool-er.</l>
+                 <l>The temperature was getting cooler.</l>
+              </lg>
+              
+              <lg>
+                 <l>She strayed from literature to art.</l>
+                 <l>She said the world was getting older;</l>
+                 <l>That every winter seemed much colder</l>
+                 <l>And girls were getting bold and bolder.</l>
+              </lg>
+              
+              <lg>
+                 <l>She said she found most men were queer,</l>
+                 <l>But one—guess who?--a perfect dear,</l>
+                 <l>And murmured that the Spring was near!</l>
+              </lg>
+              
+              <lg>
+                 <l>She said the Movies gave her pain</l>
+                 <l>That Gilbert’s lure was on the wane,</l>
+                 <l>That Clara Bow had gone insane.</l>
+              </lg>
+              
+              <lg>
+                 <l>She said that Young had been elected</l>
+                 <l>That Mary Nolan was inspected;</l>
+                 <l>That Lupe Velez had been detected.</l>
+              </lg>
+              
+              <lg>
+                 <l>She raved of virtue versus vice;</l>
+                 <l>She said the latter wasn’t nice,</l>
+                 <l>But she was safe, for she was wise!</l>
+              </lg>
+              
+              <lg>
+                 <l>She talked of Marion’s freckled nose,</l>
+                 <l>She said her lisp was just a pose,</l>
+                 <l>And that the world was full of woes.</l>
+              </lg>
+              
+              <lg>
+                 <l>She talked of Norma and the the Stork</l>
+                 <l>She said she just adored roast pork</l>
+                 <l>And hoped she’d never have to work.</l>
+              </lg>
+              
+              <lg>
+                 <l>She talked of Garbo and her lure,</l>
+                 <l>And of the rich and of the poor</l>
+                 <l>In these days no one could be sure.</l>
+              </lg>
+              
+              <lg>
+                 <l>And then she asked if I were well</l>
+                 <l>And said she had a psychic smell---</l>
+                 <l>At that I shouted: <q>Go to H----!</q></l>
+              </lg> 
+           </div>
         </body>
     </text>
 </TEI>

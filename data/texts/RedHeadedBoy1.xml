@@ -8,7 +8,15 @@
             <title>Red Headed Boy</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:SH1"/>
+               <name ref="pers:SH1">Shaun Hunter</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +35,8 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>Red Headed Boy</title></bibl>
+                     <bibl xml:id="bibl221"><author><name ref="pers:WE1">W.R.</name></author>.
+                        <title>Red Headed Boy</title>. <publisher ref="org:Albertan"><title level="j">Morning Albertan</title></publisher>, <date when="1933-04-05">5 Apr. 1933</date>, p. <biblScope unit="page">4</biblScope>.</bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,15 +64,40 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RedHeadedBoy1">
         <body>
+           <head>Red Headed Boy</head>
+           <opener>
+              <byline>By <name ref="pers:WE1">W.R.</name></byline>
+           </opener>
             <div>
-                <gap reason="noTranscriptionAvailable"/>
+               
+               <lg>
+                  <l>There’s a red-headed boy across our street,</l>
+                  <l>And in spite of his freckles, he’s awfully sweet,</l>
+                  <l>And I’d give a whole lot, if we only might week;</l>
+                  <l>But whenever he sees me, he takes to his feet.</l>
+               </lg>
+               
+               <lg>
+                  <l>For that freckled faced boy with hair so red,</l>
+                  <l>Fears if I caught him, I’d put him to bed;</l>
+                  <l>I’d tuck him in warmly and smooth his red head,</l>
+                  <l>And because he’s a man he’d sooner be dead!</l>
+               </lg>
+               
+               <lg>
+                  <l>I once had a red headed boy of my own,</l>
+                  <l>A broth of a lad – but now he is grown</l>
+                  <l>And the freckles have vanished; the carrots have flown.</l>
+                  <l>He’s a grave, sober man, with a kid of his own!</l>
+               </lg>
             </div>
         </body>
     </text>

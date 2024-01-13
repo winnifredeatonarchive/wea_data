@@ -8,7 +8,15 @@
             <title>Canada</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:PB1"/>
+               <name ref="pers:PB1">Paul Birchall</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +35,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>Canada</title></bibl>
+                     <bibl><author><name ref="pers:WE1">Onoto Watanna</name></author>.<title>Canada</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>. </bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,16 +63,55 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:Canada1">
         <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
+           <head>Canada</head>
+           <div>
+              
+              <lg>
+                 <l>Hail!  Hail, to thee, Oh Canada!</l>
+                 <l>Behold our land so fair,</l>
+                 <l>Where Nature’s bounteous hand doth spread,</l>
+                 <l>Her choicest flavors there.</l>
+              </lg>
+              
+              <lg>
+                 <l>Gold as the sunshine of our land,</l>
+                 <l>The ripening grain doth shine,</l>
+                 <l>Rich emblem of a country’s worth,</l>
+                 <l>An unexhausted mine.</l>
+              </lg>
+              
+              <lg>
+                 <l>Deep are they woods, and wide thy fields,</l>
+                 <l>Great are they mountains tall,</l>
+                 <l>That tower ‘gainst thy matchless skies.</l>
+                 <l>My country!  First of all!</l>
+              </lg>
+              
+              <lg>
+                 <l>Oh sons of Canada, be bold,</l>
+                 <l>Be brave and true and strong,</l>
+                 <l>E’en as the country of thy birth,</l>
+                 <l>And guard her from all wrong!</l>
+              </lg>
+              
+              <lg>
+                 <l>Canada!  My native land!</l>
+                 <l>We rise but at thy call,</l>
+                 <l>Swift champions in thy defense,</l>
+                 <l>My country – First of all!</l>
+              </lg>
+           </div>
+           <closer>
+              <signed>By <name ref="pers:WE1">Onoto Watanna</name></signed>
+           </closer>
         </body>
     </text>
 </TEI>

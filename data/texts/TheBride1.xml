@@ -8,7 +8,15 @@
             <title>The Bride</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:PB1"/>
+               <name ref="pers:PB1">Paul Birchall</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +35,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>The Bride</title></bibl>
+                     <bibl><author><name ref="pers:WE1">Onoto Watanna</name></author>.<title>The Bride</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>. </bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,16 +63,41 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:TheBride1">
         <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
+           <head>The Bride</head>
+           <opener>
+              <byline>By <name ref="pers:WE1">Onoto Watanna</name></byline>
+           </opener>
+           <div>
+              
+              <lg>
+                 <l>Now life unfolds before thee;</l>
+                 <l>The past is but a day.</l>
+                 <l>New vistas stretch before thee,</l>
+                 <l>Love lightens all thy way!</l>
+              </lg>
+              
+              <lg>
+                 <l>Life’s sweetest cup brims for thee,</l>
+                 <l>With sunshine, like the May,</l>
+                 <l>And the bride’s dreams enthral thee.</l>
+                 <l>Love lightens all thy way!</l>
+              </lg>
+              
+              <lg>
+                 <l>What e’er the years hold for thee —</l>
+                 <l>Life’s but a little day,</l>
+                 <l>And, dear, what e’er befals thee,</l>
+                 <l>Love lightens all thy way!</l>
+              </lg>
+           </div>
         </body>
     </text>
 </TEI>

@@ -8,7 +8,15 @@
             <title>To a Divorced Husband</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:JM2"/>
+               <name ref="pers:JM2">Jennifer McDougall</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +35,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>To a Divorced Husband</title></bibl>
+                     <bibl><title>To a Divorced Husband</title>. ms., <date>1922</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>.</bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,16 +63,87 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:ToADivorcedHusband1">
         <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
+           <head>To a <choice><sic>Dvorced</sic><corr>Divorced</corr></choice> Husband</head>
+           <div>
+              
+              <lg>
+                 <l>Fifteen years we lived together,</l>
+                 <l>Five we’ve lived apart,</l>
+                 <l>Half a continent divides us---</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>You’ve a wife and I’ve a husband--</l>
+                 <l>We are far apart!</l>
+                 <l>Each must work out his salvation.</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>We were young when we were married,</l>
+                 <l>Now so far apart!</l>
+                 <l>And we thought we loved so deeply.</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>I was gay and proud and heedless,</l>
+                 <l>Dreamed not we could part.</l>
+                 <l>You were cold and stern and ruthless---</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>In my hurt and angry passion,</l>
+                 <l>Cared not if we part,</l>
+                 <l>I defied you, gibed and jeered you.</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>She, so seeming sweet and tender;</l>
+                 <l>He with cunning, charming art,</l>
+                 <l>Wove with skill the web between us,</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>Hard and Cynical you judged me,</l>
+                 <l>Your decree–we part!</l>
+                 <l>Madness swept me in a whirlwind--</l>
+                 <l>Live I in your heart?</l>
+              </lg>
+              
+              <lg>
+                 <l>but now in the fields where the grain had been</l>
+                 <l>only stubble and stalk;</l>
+                 <l>A barren field, bare, bleak and dry,</l>
+                 <l>A bitter waste and mock.</l>
+              </lg>
+              
+              <lg>
+                 <l>Her man rode in from the harvest fields,</l>
+                 <l>Tired, haggard and grey.</l>
+                 <l>He tried to smile, as he patted her back,</l>
+                 <l>In his rough yet tender way.</l>
+              </lg>
+              
+              <lg>
+                 <l>But her hands went out with a motherhing cry,</l>
+                 <l>As she drew his head to her breast,</l>
+                 <l>And she said with a smile that was sadder than tears;</l>
+                 <l><q><choice><sic>Lets</sic><corr>Let’s</corr></choice> pretend it was for the best!</q></l>
+              </lg>
+           </div>
         </body>
     </text>
 </TEI>

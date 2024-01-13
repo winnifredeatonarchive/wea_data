@@ -8,7 +8,15 @@
             <title>Empty Your Hearts</title>
             <respStmt>
                <resp>Transcriber</resp>
-               <name ref="pers:KT1"/>
+               <name ref="pers:KT1">Karen Tam</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -27,7 +35,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>Empty Your Hearts</title></bibl>
+                     <bibl><author><name ref="pers:WE1">W.E. Reeve</name></author>.<title>Empty Your Hearts</title>. ms., <date notBefore="1924" notAfter="1931">1924-1931</date>, <distributor ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>, <idno>12.1</idno>. </bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -55,16 +63,48 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Added transcription and bibl info. Set to published.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:EmptyYourHearts1">
         <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
+           <head>Empty Your Hearts!</head>
+           <opener>
+              <byline>By <name ref="pers:WE1">W.E. Reeve</name></byline>
+           </opener>
+           <div>
+              
+              <lg>
+                 <l>Empty your hearts of hatred,</l>
+                 <l>Of envy of pride and sin;</l>
+                 <l>Of malice, bitter and cruel---</l>
+                 <l>Oh! let the dear Lord in!</l>
+              </lg>
+              
+              <lg>
+                 <l>Patiently, tenderly waiting.</l>
+                 <l>Yearning your love to win.</l>
+                 <l>Heed him who softly whispers.</l>
+                 <l>Sore heart! Oh, let me in!</l>
+              </lg>
+              
+              <lg>
+                 <l>I am thy Father and Mother.</l>
+                 <l>Nearer than nearest of kin;</l>
+                 <l>I will never forsake thee---</l>
+                 <l>Open! and let me in!</l>
+              </lg>
+              
+              <lg>
+                 <l>Sweet as the dawn of the morning,</l>
+                 <l>Triumph of Love over Sin!</l>
+                 <l>Radiant, rapturous feeling,</l>
+                 <l>Lo! the Christ is within!</l>
+              </lg>
+           </div>
         </body>
     </text>
 </TEI>
