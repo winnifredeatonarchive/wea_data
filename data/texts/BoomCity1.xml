@@ -10,6 +10,14 @@
                <resp>Transcriber</resp>
                <name ref="pers:SH1"/>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -52,7 +60,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-13" status="published">Encoded, proofed, and published text.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
@@ -62,8 +71,65 @@
    </teiHeader>
    <text facs="facs:BoomCity1">
       <body>
+         <head>Notes</head>
+         <head type="subtitle">Novel by Winnifred Eaton Reeve</head>
+         <head type="subtitle">Title: BOOM CITY</head>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>The main locale will be Calgary. Turner Valley, Banff, Sylvan Lake and other places will play a considerable part also in novel.</p>
+            <p>The theme is not yet clearly defined; but the character and the plot are forming steadily.</p>
+            <p>The title <q>Boom City</q> will apply not merely to the oil and real <choice><sic>estates boom</sic><corr>estate booms</corr></choice> that pop up almost over night in the City of the Foothills, but to the boom in music, till the town almost becomes a music center.</p>
+            <p>The story will coil around the fortunes and careers of several well known people of this city. I propose to make composite studies of certain individuals. The Musical Club, and its ambitious executive will be prominently concerned and to the fore, while all of the oil companies, and the seething electrical feverish atmosphere of an oil boom will prevail.</p>
+            <p>For my main character I will take a young girl, with a real musical genius---an artist to her finger tips. She is a poor little girl at the opening, but the Musical Club, through some chance <choice><sic>interestsay</sic><corr>interest say</corr></choice> of a man like R. B. or some big public man have her brought to their attention. Also through his influence she wins a scholarship, and is sent to Europe to finish her musical education. At that time the Musical Club has a charming President, but <choice><sic>unfortunatel</sic><corr>unfortunately</corr></choice> she is German by birth and is therefore persecuted out of office. The girl whom we will call Doris Hope is in London, and she thinks of the man whose influence has sent to her there as a benefactor and feels she should devote her life to proving herself worthy of his belief in her.</p>
+            <p>Meanwhile in Calgary the boom in oil begins. We will carry our story through this boom, bringing in the outstanding figures of that time–the chief among whom will be F.R. whose wife (me) is in another country.</p>
+            <p>Now we have to the story of F. and Mrs. H. She and her friends trim him for a sucker. We take him to California and <choice><sic>therecon ciliation</sic><corr>the reconciliation</corr></choice> with his wife.</p>
+            <p>Now, we come back to Calgary, with the wife, and the city divided. By propaganda the Musical executive taboo the wife, as the woman Mrs. H. is one of the <choice><sic>chief</sic><corr>chiefs</corr></choice>. We show the <choice><sic>prnicious</sic><corr>pernicious</corr></choice> effect on the young musical talent of the city of these ambitious publicity haunting dames who govern the club, themselves <choice><sic>medicocrities</sic><corr>mediocrities</corr></choice>.</p>
+            <p>Meanwhile the internal strife among the oil men carried through the story. The young partner of Frank in the business, son of a wealthy man who throws in his fortune with F. who is fighting the interests and the undercutting from enemies made through this woman. Chief among his <choice><sic>ebemies</sic><corr>enemies</corr></choice> will be of course McK. C. and Jo Price and their wives as well as Wittichen and others---men who owe him <choice><sic>,oney</sic><corr>money</corr></choice>. We will have <choice><sic>in</sic><corr>an</corr></choice> incident of the directors meeting and the votes from the stock he had given to Mrs. H.</p>
+            <p>During all this we take in the affairs of the city, the depression and misery and unrest. The idle of the city, relief gangs, the building of the dam, the dishonesty and graft, as well as the benevolent and unselfish work done by hundreds, the new social reform clubs etc. etc.</p>
+            <p>In the midst of the social unrest, the girl Doris returns to the City. She unfortunately incurs the spite and enmity of the women of the club, by being friendly with F’s wife (Me), and is immediately pilloried and framed. Her heart is nearly broken. Give her recital, with no one introducing her. This we may work into something of a drama.</p>
+            <p>She goes with Mrs. R. to see the ranch at Ghost Lake---the two of them escaping the fever of the city. Previously we have had hints of the insecurity of the dam. We bring out also the love affair that is developing between the young partner of F. and the girl. Mrs. R. who has found her husband with Mrs. H. again and believing the worst, tho his encounter with her is innocent and accidental, decides to leave him. She goes to Morley for a brief separation.</p>
+            <p>Meanwhile the dam breaks. F. and his partner are half way to Morley. Mrs. H. is in the car also. F. deserts her <choice><sic>o</sic><corr>to</corr></choice> reach his wife. The ending not yet clear.</p>
+         </div>
+         
+         <div>
+            <head>Characters to draw from:</head>
+            <p>Oil end.</p>
+            <list>
+            <item>Frank</item>
+            <item>McKinley Cameron</item>
+            <item>Wittichen (Get in hunting episodes etc.)</item>
+            <item>Mayland,</item>
+            <item>Lowry</item>
+            <item>Jo Price</item>
+            <item>Widney</item>
+            <item>(Get others as I go along)</item>
+            </list>
+         
+            <p>Women</p>
+            <list>
+               <item>Doris</item>
+               <item>Me</item>
+               <item>Bailey Price</item>
+               <item>Flos</item>
+               <item>Jessica Kerr</item>
+               <item>Mrs. Anderson</item>
+               <item>Mrs. Hobson</item>
+               <item>Mrs. Stewart</item>
+               <item>Mrs. Sharples</item>
+               <item>Mrs. Widney</item>
+               <item>Mrs. <choice><sic>Wiittichen</sic><corr>Wittichen</corr></choice></item>
+               <item>And the rest of the gang.</item>
+               <item>Besides my friends who will figure throughout the story.</item>
+            </list>
+            <p>Cameron shown as bombastic garrulous, disgusting. Covered with sickening pimples drunk half the time. Started as a barber, becomes champion lawyer for women of the demi monde and under world.</p>
+            <p>Work in incident of bet with F. Work in his borrowing and us using Mrs. Hill to get money from F. His wife also borrowing and pulling F’s leg.</p>
+            <p>Wittichen double crossing son of bitch, <choice><sic>sneeking</sic><corr>sneaking</corr></choice> to F’s enemies and lining up with them, while cultivating F. His wife the vilest sort of a slut.</p>
+            <p>Mrs. Widney one of <choice><sic>mrs.</sic><corr>Mrs.</corr></choice> H’s tool. Ditto old dame Kerr.</p>
+         </div>
+         
+         <div>
+            <head>THE TOWN</head>
+            <p><q>A City</q> they call it proudly. A small metropolis. Cosmopolitan, up to the minute; a gambler’s paradise. Population of 80,000. Wide spreading prairie farms on all sides stretched. Background of the magnificent Rockies etched against a sky of purest blue. A snap in the air. Cold electricity. Pepped you up like champagne. A land of eternal sun. Sunshine even through storm and blizzard. A brute of a land. Sixty below zero today; spring weather tomorrow. Chinook winds coming out of the south thawing a temperature of 40 below zero. <choice><sic>Rover</sic><corr>River</corr></choice> frozen ten feet down; but people on shirt sleeves skating on its thawing top.</p>
+            <p>A boom city. Three booms in six years. Oil, silver, radium, gold, copper. Undreamed of wealth barely scratched. <choice><sic>Sdventurers</sic><corr>Adventurers</corr></choice> from all over the world. Every man woman and child a gambler or a potential gambler. Take a chance on anything.<note type="editorial" resp="pers:SH1">The next three pages appear to be a blue carbon copy of the above. On final page:  handwritten additions in <q>Characters to draw from:</q> section, beside <q>Women</q> – <q>The Grahams &amp; Ingrahams</q> and <q>Byrnes</q>.</note></p>
          </div>
       </body>
    </text>
