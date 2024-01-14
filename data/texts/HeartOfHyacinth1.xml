@@ -6,6 +6,14 @@
       <fileDesc>
          <titleStmt>
             <title>The Heart of Hyacinth</title>
+             <respStmt>
+                 <resp>Proofreader</resp>
+                 <name ref="pers:SB2">Samantha Bowen</name>
+             </respStmt>
+             <respStmt>
+                 <resp>Encoder</resp>
+                 <name ref="pers:SB2">Samantha Bowen</name>
+             </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -43,7 +51,8 @@
             <catRef target="wdt:docPrimarySource" scheme="wdt:docType"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="readyForProof">
+      <revisionDesc status="published">
+          <change who="pers:SL1" when="2024-01-13" status="published">Added respStmt and set to published.</change>
          <change who="pers:JT1" when="2023-11-23" status="readyForProof">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="readyForProof">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-05-06" status="readyForProof">Updated status.</change>
