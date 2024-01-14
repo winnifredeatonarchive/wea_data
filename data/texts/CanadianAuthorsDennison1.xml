@@ -11,12 +11,24 @@
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
                <resp>Proofreader</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
             <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
+            </respStmt>
+            <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:SL1">Sydney Lines</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
@@ -30,14 +42,11 @@
                      Winnifred</name></author>. <title level="a">Canadian Authors</title>.
                      <publisher ref="org:Albertan"><title level="j">Morning
                      Albertan</title></publisher>, <date when="1924-01-09">9 Jan 1924</date>, p.
-                     <biblScope unit="page">4</biblScope>.</bibl>
+                     <biblScope unit="page">4, 14</biblScope>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
-                     <availability>
-                        <p>Facsimile retrieved from the University of Calgary archives</p>
-                     </availability>
                   </adminInfo>
                   <surrogates>
                      <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
@@ -57,7 +66,8 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="inProgress">
+      <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-14" status="published">Found better scan and replaced facs. Completed transcription. Proofed and set to published.</change>
          <change who="pers:JT1" when="2023-11-23" status="inProgress">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:LW1" when="2022-05-06" status="inProgress">Added gaps for illegible word,
             proofreading complete for page one.</change>
@@ -85,7 +95,7 @@
                have achieved international reputations, Canada has produced no dramatist or
                playwright of especial note. During the past year, however, the work of a young
                Canadian author, Merrill Dennison of Toronto, has made the literary and theatrical
-               world of the east sit up and take notice of the fact that a new <gap reason="illegible"/> is rapidly arising.</p>
+               world of the east <q>sit up and take notice</q> of the fact that a new star is rapidly arising.</p>
             <p>Mr Dennison has produced a book of plays of singular originality and power, entitled
                   <q>The Unheroic North</q>. In a former article I briefly mentioned this book and
                it was my intention later to give an extended review.</p>
@@ -154,9 +164,11 @@
                   even yet. It was she who bought Bon Echo, and dedicated its tremendous rock as a
                   monument to Walt Whitman, and it was during the 20 summers I spent</q></p>
             <p>(Continued on Back Page)</p>
-            <pb n="5"/>
+            <pb n="14"/>
             <p>(Continued from Page Four)</p>
-            <p>REMAINING TEXT ALMOST COMPLETELY ILLEGIBLE.</p>
+            <p><q>here, that I came to know the back countrymen</q>.</p>
+            <p>This is the tribute Merrill Dennison pays to his mother. If fame comes to him, he wishes her to have a share in the credit.</p>
+            <p>During the last few weeks, we have been contemplating the possibility of beginning the little theater movement here in Calgary, and I have been asking to undertake something in that direction. We may in the not for distant future find ourselves started with a company of community players. There is undoubtedly dramatic talent in this city, and we should be able to produce sufficient original plays by Canadian authors to make the thing interesting and worth while. The one act plays of Merrill Dennison offer a fascinating opportunity for the community players to put on something new and of typically Canadian interest. Perhaps we shall see them done yet in Calgary--by Calgary players.</p>
          </div>
       </body>
    </text>
