@@ -40,7 +40,7 @@
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Hathi Trust</p>
+                        <p>Facsimile retrieved from HathiTrust</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
@@ -62,6 +62,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:SL1" when="2024-01-27" status="published">Encoded chapter headings and added trailer at end.</change>
          <change who="pers:LW1" when="2024-01-26" status="published">Corrected typos. Updated treatment of slurs. N-slur is now typed as is in the original text with an editorial note to see the <q>note on language</q> page on the website.</change>
          <change who="pers:JT1" when="2023-11-23" status="published">Added citation from
             bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
@@ -284,7 +285,13 @@
                suddenly seized with a most frightful surge of nausea. With my good-looking blond
                sailor still holding me by the arm, and murmuring something that sounded both
                laughing and soothing. I fled over to the side of the boat.</p>
-            <p>II</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         
+         <div>
+            <head>II</head>
             <p>For four days I never left my state-room. <q>A sea-voyage is an inch of hell</q>,
                says an old proverb of my mother’s land, and to this proverb I most heartily
                assented.</p>
@@ -398,7 +405,13 @@
                slightest worry, and when I ran out of my room, humming, and up the stairs and bang
                into the arms of Captain Hollowell, he did not say this time that I looked like a
                peony, but that, <q>By George! I looked like a nice Canadian rose</q>.</p>
-            <p>III</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         
+         <div>
+            <head>III</head>
             <p><q>Do you know</q>, said my room-mate on the night before we reached Jamaica, <q>that
                   that four-fifty you paid me for those waists just about covers my tips</q>.</p>
             <p><q>Tips?</q> I repeated innocently. <q>What are tips?</q></p>
@@ -603,7 +616,12 @@
                   to get used to Jamaica bugs and scorpions. They ought to have screens in the
                   windows!</q></p>
             <p>After that I slept with the sheet over my head.</p>
-            <p>IV</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         <div>
+            <head>IV</head>
             <p>I was awakened at six the following morning. A strange, singsong voice called into
                the room:</p>
             <p><q>Marnin’, missee! Heah’s your coffee</q>.</p>
@@ -843,7 +861,12 @@
                personally repugnant to me. I myself was dark and foreign-looking, but the blond type
                I adored. In all my most fanciful imaginings and dreams I had always been
                golden-haired and blue-eyed.</p>
-            <p>V</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         <div>
+            <head>V</head>
             <p>I got on better with Mr. Campbell after Miss Foster went. He told me it was necessary
                for us to keep on the right side of Mr. Burbank, who was one of the greatest magnates
                and philanthropists of Jamaica, but he took occasion to contradict some of Miss
@@ -1072,7 +1095,12 @@
                bewildering heroes, princes, kings, knights, and great nobles. Now, here was a real
                man who had wanted to kiss me. I experienced no aversion to him at the thought; only
                a cool sort of wonder and a flattering sense of pride.  </p>
-            <p>VI</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         <div>
+            <head>VI</head>
             <p>It was a cruel coincidence that the dreadful thing that befell me next day should
                have followed at a time when my young mind was thus dreamily engrossed.</p>
             <p>The day had been a hard one, and I know not why, but I could not concentrate my mind
@@ -1270,7 +1298,7 @@
                like a boy, and he took one of my hands in his. All the time he talked to me he never
                let go my hand.</p>
             <p><q>Did that nigger <note type="editorial" resp="pers:LW1">This is an offensive racial
-                     slur that appears multiple times in this text. Please see our <ref target="doc:note_on_language">note on language</ref>.</note> insult you?</q>
+                     slur that appears multiple times in this text. Please see our <ref target="doc:note_on_language">note on language.</ref></note> insult you?</q>
                he asked.</p>
             <p>I said:</p>
             <p><q>He asked me to marry him</q>.</p>
@@ -1316,7 +1344,12 @@
             <p><q>What do you want?</q></p>
             <p><q>This</q>. he said, and, stooping, kissed me.</p>
             <p>I like to think always that that was my first real kiss.</p>
-            <p>VII</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         <div>
+            <head>VII</head>
             <p>The trip home was uneventful, and, on account of Verley, spent for the most part in
                my state-room. The minute I left the room he would start to whine and bark so
                piercingly and piteously that of course I got into trouble, and was obliged either to
@@ -1414,7 +1447,12 @@
                Dr. Manning, received by telegraph order money for my fare. I at once set out for
                Richmond, and I did not see my sister again for nearly five years. left her crying at
                the station.</p>
-            <p>VIII</p>
+            
+            <p><milestone unit="sectionBreak"/></p>
+            
+         </div>
+         <div>
+            <head>VIII</head>
             <p>They would not let me keep my little dog with me on the train, although I had
                smuggled him into my Pullman in a piece of hand baggage; but in the morning he
                betrayed us. Naughty, excitable, lonely little Verley! The conductor’s heart, unlike
@@ -1508,7 +1546,7 @@
                excitedly. When I was through, he said softly:</p>
             <p><q>Down South we lynch a nigger<note type="editorial" resp="pers:LW1">This is an
                      offensive racial slur that appears multiple times in this text. Please see our
-                        <ref target="doc:note_on_language">note on language</ref>.</note> for less
+                        <ref target="doc:note_on_language">note on language.</ref></note> for less
                   than that</q>, and one of his long hands, lying on the table, clenched.</p>
             <pb n="826"/>
             <p>Although we were now through dinner, and I had finished my story, he made no move to
@@ -1657,8 +1695,8 @@
             <p><q>No, no, I won’t go back to that room</q>.</p>
             <p><q>It ain’t ha’nted, chile</q>, declared ‘Mandy.</p>
             <p><q>Oh, I know it isn’t</q>, I sobbed; <q>but, O ‘Mandy, I’m afraid!</q></p>
-            <p>(To be continued)</p>
          </div>
+         <trailer>(To be continued)</trailer>
       </body>
    </text>
 </TEI>
