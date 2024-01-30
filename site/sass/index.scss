@@ -1,16 +1,10 @@
 /*  This is a special CSS file just for the index page */
 
-#mainBody{
-    --main-padding-left: 2%;
-    --main-padding-right: 2%;
-}
-
-
-
 /**************************************** INDEX OVERRIDES */
 
 div#mainBody{
     background-image:none!important;
+    margin-top:0;
 }
 
 ul,li{
@@ -56,35 +50,25 @@ a[data-el='ptr'][data-type='readMore']::after{
 
 .container{
     width: 100%;
-    padding-right: 3rem;
-    padding-left: 3rem;
     margin-right: auto;
     margin-left: auto;
+    z-index:999;
 }
 
 .row {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -0.125rem;
-    margin-left: -0.125rem;
+    justify-content: space-between;
+    gap: 3rem;
 }
 
 .left{
-    position: relative;
-    width: 100%;
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-left: 5%;
+    flex: 1;
+    width: clamp(20rem, 50%, var(--max-body-width));
 }
 
 .middle-spacer{
-    position: relative;
-    width:100%;
-    -ms-flex: 0 0 8.333333%;
-    flex: 0 0 8.333333%;
-    max-width: 8.333333%;
+    display:none;
 }
 
 .left > div{
@@ -98,27 +82,40 @@ a[data-el='ptr'][data-type='readMore']::after{
 
 #index_header{
     grid-area: header;
-    background-image: url(../images/WEA-hero-img.jpg);
     background-color: rgb(43, 52, 78);
     height: 85vh;
     min-height: 300px;
+    
     margin-top:0!important;
-background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-      -webkit-backface-visibility: hidden;
+    position: relative;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    display:grid;
+    align-content:end;
+    padding-bottom:2rem;
+}
+
+#index_header:before{
+    content:"";
+    left: 50%;
+    height:100%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 100%;
+    top:0;
+    width: 100vw;
+    position:absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/WEA-hero-img.jpg);
 }
 
 #index_header > div{
     color:white;
-    bottom:0;
-    position:absolute;
-    padding-left:7.5rem;
-    padding-bottom:2.5%;
     line-height:1.2;
-    z-index:10;   
+    z-index:999;  
 }
 
 #index_header h3{
@@ -163,10 +160,7 @@ background-position: center;
 /********************************************************** INDEX ARCHIVE */
 
 #mainBody #index_archive{
-    flex: 0 0 20rem;
-    max-width: 20rem;
-    z-index: 99;
-    position: relative;
+    z-index: 999;
     margin-top:-11.5rem;
     display:flex;
     flex-direction:column;
@@ -177,10 +171,11 @@ background-position: center;
     flex-direction: column;
     align-items: center;
     background-color: var(--wea-info-bg-color);
-    border-radius:1rem;
-    margin-top: -2.5rem;  
+    border-radius:1rem;  
     height: fit-content;
-    flex:0;
+    padding: 0 2rem;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 #index_archive li{
@@ -490,9 +485,6 @@ body.JS #index_featuredItems > a.selected,
     .left{
         padding-left:0;
     }
-    #index_header > div {
-        padding-left:3rem;
-    }
     
     #index_archive li{ 
         margin-top: 1.5rem;
@@ -603,7 +595,7 @@ body.JS #index_featuredItems > a.selected,
 
 .row > .left,
 .row > #index_archive{
-    max-width:85%;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
 }

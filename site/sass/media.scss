@@ -2,8 +2,7 @@
 /* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
 @media screen and (max-width: 1205px){
     :root{
-        --main-padding-left: 5%;
-        --main-padding-right: 5%;
+
     }
     div#nav_search input{
         width:10rem;
@@ -52,9 +51,8 @@ ul#menu_main > li:focus-within > ul{
 
 
 .JS #tools_container{
-        margin-left:-4%;
         font-size:85%;
-        }
+    }
 }
 
 
@@ -67,9 +65,6 @@ ul#menu_main > li:focus-within > ul{
 
 
 .JS #tools_container{
-    margin-left:-7%;
-    width:2rem;
-
 }
 
 
@@ -538,15 +533,6 @@ ul#menu_main > li > ul{
     
    #nav_main{
        font-size:1rem;
-   }
-   
-   footer div[data-el='p']{
-       text-align:justify;
-   }
-   
-   footer > div{
-       padding-left:0;
-       padding-right:0;
    }
    
    
