@@ -849,7 +849,7 @@ nav > div > div > a:last-child{
     display:grid;
     grid-template-areas: 
         "toolbar text .";
-    gap: 1rem;
+    gap: 3rem;
 }
 
 #tools_container{
@@ -906,9 +906,9 @@ nav > div > div > a:last-child{
 #tools a{
     text-align:center;
     display:block;
-     color:inherit;
-      opacity:0.7;
-     transition: opacity 0.25s ease-in-out;
+    color:inherit;
+    opacity:0.6;
+    transition: opacity 0.25s ease-in-out;
 }
 
 #tools div.mi{
@@ -1807,7 +1807,7 @@ border-top-right-radius: 1rem;
       "additional_info additional_info additional_info additional_info";
       
       grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
-      grid-column-gap:1.5rem;
+      grid-column-gap:3rem;
       grid-row-gap:1.5rem;
 }
 #relatedItems{
