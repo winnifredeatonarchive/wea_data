@@ -282,7 +282,6 @@
                 <xsl:apply-templates select="change" mode="#current"/>
             </tei:table>
         </xsl:variable>
-        <xsl:message select="$tempTable"/>
         <xsl:apply-templates select="$tempTable" mode="tei">
             <xsl:with-param name="isSortable" tunnel="yes" select="false()"/>
         </xsl:apply-templates>
