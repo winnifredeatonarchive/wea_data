@@ -2,8 +2,7 @@
 /* NOTE THESE ARE THINGS AVAILABLE ONLY IN DEKSTOP */
 @media screen and (max-width: 1205px){
     :root{
-        --main-padding-left: 5%;
-        --main-padding-right: 5%;
+
     }
     div#nav_search input{
         width:10rem;
@@ -52,9 +51,8 @@ ul#menu_main > li:focus-within > ul{
 
 
 .JS #tools_container{
-        margin-left:-4%;
         font-size:85%;
-        }
+    }
 }
 
 
@@ -67,9 +65,12 @@ ul#menu_main > li:focus-within > ul{
 
 
 .JS #tools_container{
-    margin-left:-7%;
-    width:2rem;
+    margin-left: calc(-1 * var(--main-padding-left));
+    margin-right: var(--main-padding-left);
+}
 
+#tools_container a{
+    opacity: 0.4;
 }
 
 
@@ -90,13 +91,14 @@ ul#menu_main > li:focus-within > ul{
 
 
 nav{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 5px;
   justify-items: center;
   margin-left:0;
   margin-right:0;
   color:black;
+  width:unset;
 }
 
 nav > a.home{
@@ -112,10 +114,10 @@ nav > a#nav_toggle{
     font-size:2rem;
     line-height:inherit;
     color:black;
-     display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin-left: auto;
     width: 2.5rem;
     height: 2.5rem;
     opacity: 0.8;
@@ -532,21 +534,8 @@ ul#menu_main > li > ul{
         margin-bottom:0;
     }
     
-    .pbNum{
-        margin-left:90%;
-    }
-    
    #nav_main{
        font-size:1rem;
-   }
-   
-   footer div[data-el='p']{
-       text-align:justify;
-   }
-   
-   footer > div{
-       padding-left:0;
-       padding-right:0;
    }
    
    

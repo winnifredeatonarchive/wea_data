@@ -12,8 +12,7 @@
         <xd:desc>
             <xd:p>Created on: March 11, 2022</xd:p>
             <xd:p>Author: Joey Takeda</xd:p>
-            <xd:p>This stylesheet creates the "source" XML, which is mostly just the flattened version of the documents.
-            However, there are some manipulations we make depending on the environment as controlled by the version file.</xd:p>
+            <xd:p>This stylesheet creates the "source" XML, which is mostly just the flattened version of the documents.</xd:p>
         </xd:desc>
     </xd:doc>
     
@@ -23,14 +22,7 @@
     
     <xsl:variable name="workingDocs" select="wea:getWorkingDocs($srcXml)" as="document-node()*"/>
     
-    <xsl:variable name="isProductionBuild"
-        select="not(matches(normalize-space($version),'a$'))"
-        as="xs:boolean"/>
-    
     <xsl:template name="go">
-        <xsl:if test="$isProductionBuild">
-            <xsl:message>PRODUCTION BUILD: <xsl:value-of select="$version"/></xsl:message>
-        </xsl:if>
         <xsl:apply-templates select="$workingDocs"/>
     </xsl:template>
     
@@ -53,7 +45,7 @@
     
     
     <!--Only run this template if we are doing a production build-->
-    <xsl:template match="text[$isProductionBuild]">
+  <!--  <xsl:template match="text[$isProductionBuild]">
         <xsl:variable name="status" select="ancestor::TEI//revisionDesc/@status" as="xs:string"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
@@ -71,7 +63,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
 
     
     
