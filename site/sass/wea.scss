@@ -1619,12 +1619,14 @@ div.result:focus > a{
     flex-flow:column wrap;
     max-width:40rem;
     font-size: 0.95rem;
+    align-items: baseline;
+    align-content: baseline;
+    column-gap: 3rem;
 }
 
 #metadata > div,
 #additional_info .content> div{
     min-width:0;
-    flex-basis:content;
     padding:.5rem .5rem .5rem 0;
 }
 
@@ -1806,7 +1808,7 @@ border-top-right-radius: 1rem;
       "facsimile metadata_container metadata_container metadata_container"
       "additional_info additional_info additional_info additional_info";
       
-      grid-template-columns: minmax(8rem, 18rem) 58% 1fr 1fr;
+      grid-template-columns: auto 1fr 1fr 1fr;
       grid-column-gap:3rem;
       grid-row-gap:1.5rem;
 }
