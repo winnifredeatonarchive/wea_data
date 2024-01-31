@@ -250,6 +250,41 @@
                </taxonomy>
                
             </taxonomy>
+            <taxonomy xml:id="docStatusTaxonomy">
+               <category xml:id="status_empty">
+                  <catDesc>
+                     <term>Empty</term>
+                     <note><p>A document that has not yet been transcribed or encoded. Do not use if we cannot find or otherwise we believe the text of this document is lost.</p></note>
+                  </catDesc>
+               </category>
+               
+               <category xml:id="status_inProgress">
+                  <catDesc>
+                     <term>In Progress</term>
+                     <note>
+                        <p>A document that is currently in progress and is not yet ready to be proofed. This may be because the transcription is in progress, a facsimile needs to be added, or for any other reason where the document has content but is not yet ready to be approved by the project director.</p>
+                     </note>
+                  </catDesc>
+               </category>
+               
+               <category xml:id="status_readyForProof">
+                  <catDesc>
+                     <term>Ready for Proof</term>
+                     <note>
+                        <p>A document that has been transcribed, encoded, validated, and edited, but is awaiting a final proof from the project director before publication. </p>
+                     </note>
+                  </catDesc>
+               </category>
+               <category xml:id="status_published">
+                  <catDesc>
+                     <term>Published</term>
+                     <note>
+                        <p>A document that has been proofed by the project director. Documents that are published may continue to be subsequently revised.</p>
+                     </note>
+                  </catDesc>
+                  
+               </category>
+            </taxonomy>
          </classDecl>
          <listPrefixDef>
             <prefixDef ident="facs" matchPattern="(.+)" replacementPattern="facsimiles/$1.pdf"/>

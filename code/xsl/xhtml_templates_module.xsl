@@ -333,7 +333,7 @@
     
     
     <xsl:template match="table" mode="tei">
-        <xsl:variable name="isSortable" select="wea:isSortableTable(.)" as="xs:boolean"/>
+        <xsl:param name="isSortable" select="wea:isSortableTable(.)" tunnel="yes" as="xs:boolean"/>
         
         <table>
             <xsl:call-template name="processAtts">
@@ -344,8 +344,11 @@
                     <xsl:sequence select="wea:makeSortableTable(.)"/>
                 </xsl:when>
                 <xsl:otherwise>
+                    <thead>
+                        <xsl:apply-templates select="row[@role='label']" mode="#current"/>
+                    </thead>
                     <tbody>
-                        <xsl:apply-templates mode="#current"/>
+                        <xsl:apply-templates select="row[not(@role='label')]" mode="#current"/>
                     </tbody>
                 </xsl:otherwise>
             </xsl:choose>
@@ -356,10 +359,11 @@
 
     
     <xsl:template match="row[@role='label'][count(preceding-sibling::row) = 0]/cell" mode="tei">
+        <xsl:param name="isSortable" select="wea:isSortableTable(ancestor::table[1])" tunnel="yes" as="xs:boolean"/>
         <xsl:param name="firstToSortBy" tunnel="yes" as="xs:integer?"/>
         <th>
             <xsl:variable name="classes" as="xs:string*">
-                <xsl:if test="normalize-space(string-join(descendant::text(),'')) ne ''">
+                <xsl:if test="$isSortable and normalize-space(string-join(descendant::text(),'')) ne '' ">
                     <xsl:value-of>sortable</xsl:value-of>
                 </xsl:if>
                 <xsl:if test="not(empty($firstToSortBy)) and (count(preceding-sibling::cell) + 1 = $firstToSortBy)">

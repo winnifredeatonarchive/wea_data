@@ -680,6 +680,9 @@ function makeCitationsResponsive(){
                 headingText = 'Cite this Page';
             } else if (parId === 'tools_toc'){
                 headingText = "Table of Contents"
+            } else if (parId === 'tools_status')
+            {
+                headingText = "Document Status" 
             } else {
                 headingText = this.querySelector('div.label').innerHTML;
             }

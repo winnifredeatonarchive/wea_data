@@ -50,6 +50,20 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="classSpec[@ident='att.docStatus']/attList/attDef[@ident='status']/valList">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:for-each select="$taxonomies//taxonomy[@xml:id='docStatusTaxonomy']/category">
+                <valItem mode="add" ident="{substring-after(@xml:id,'status_')}">
+                    <desc><xsl:value-of select="catDesc/term"/></desc>
+                    <gloss>
+                        <xsl:sequence select="catDesc/note/p[1]/node()"/>
+                    </gloss>
+                </valItem>
+            </xsl:for-each>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="elementSpec[@ident='publisher']/attList/attDef[@ident='ref']/valList">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>

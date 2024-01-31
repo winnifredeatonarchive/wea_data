@@ -475,12 +475,6 @@ body.JS #index_featuredItems > a.selected,
 
 /* Media queries for the index page */
 @media screen and (max-width: 1186px){
-
-
-   #mainBody #index_archive{
-        margin-left:4rem;
-        max-width: 16.85rem;
-    }
     
     .left{
         padding-left:0;
@@ -539,6 +533,7 @@ body.JS #index_featuredItems > a.selected,
  }
  .row{
      display:block;
+     padding: 0 2rem;
  }
  
  .middle-spacer{
@@ -549,20 +544,22 @@ body.JS #index_featuredItems > a.selected,
      height:70vh;
  }
  .left {
-     max-width:80%;
+     max-width:100%;
  }
  .left > div{
      max-width:100%;
  }
  
 #mainBody #index_archive{
-     max-width:85%;
-     margin-left:auto;
-     margin-right:auto;
+     max-width:unset;
+
  }
  
  #index_archive ul{
          border-radius:0;
+         width: unset;
+              margin-left:0;
+     margin-right:0;
  }
  #index_archive li{
     width:16rem;

@@ -239,7 +239,80 @@
             <xsl:apply-templates select="ancestor::TEI/text[@type='standoff']" mode="appendix">
                 <xsl:with-param name="rootDoc" select="ancestor::TEI" tunnel="yes"/>
             </xsl:apply-templates>
+            
+          <xsl:call-template name="createStatusAppendix"/>
         </div>
+    </xsl:template>
+    
+    <xsl:template name="createStatusAppendix">
+        <xsl:variable name="revisionDesc" as="element(revisionDesc)"
+            select="ancestor::TEI//revisionDesc"/>
+        <xsl:variable name="currStatus" select="$revisionDesc/@status" as="xs:string"/>
+        <div id="status">
+            <dl>
+            <xsl:for-each select="reverse($taxonomies//taxonomy[@xml:id='docStatusTaxonomy']/category)">
+                <xsl:variable name="current" select="@xml:id = ('status_' || $currStatus)" as="xs:boolean"/>
+                <dt class="metadataLabel{if ($current) then ' current' else ()}">
+                    <xsl:value-of select="catDesc/term"/>
+                </dt>
+                <dd>
+                    <xsl:if test="$current">
+                        <xsl:attribute name="class" select="'current'"/>
+                    </xsl:if>
+                    <xsl:apply-templates select="catDesc/note/p" mode="tei"/>
+                </dd>
+            </xsl:for-each>
+            </dl>
+            <div>
+                <h5>Full Revision History</h5>
+                <xsl:apply-templates select="ancestor::TEI//revisionDesc" mode="appendix"/>
+            </div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="revisionDesc" mode="appendix">
+        <xsl:variable name="tempTable" as="element(tei:table)">
+            <tei:table>
+                <tei:row role="label">
+                    <tei:cell>Who</tei:cell>
+                    <tei:cell>When</tei:cell>
+                    <tei:cell>Status</tei:cell>
+                    <tei:cell>Description</tei:cell>
+                </tei:row>
+                <xsl:apply-templates select="change" mode="#current"/>
+            </tei:table>
+        </xsl:variable>
+        <xsl:message select="$tempTable"/>
+        <xsl:apply-templates select="$tempTable" mode="tei">
+            <xsl:with-param name="isSortable" tunnel="yes" select="false()"/>
+        </xsl:apply-templates>
+    </xsl:template>
+    
+    <xsl:template match="revisionDesc/change" mode="appendix">
+        <xsl:variable name="date" as="element(tei:date)">
+            <tei:date>
+                <xsl:sequence select="(@when | @notBefore | @notAfter | @from | @to)"/>
+            </tei:date>
+        </xsl:variable>
+        <tei:row>
+            <tei:cell>
+                <xsl:for-each select="tokenize(@who,'\s+')">
+                    <tei:name ref="{.}"><xsl:value-of select="replace(.,'^#|\d+$','')"/></tei:name>
+                    <xsl:if test="position() ne last()">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
+            </tei:cell>
+            <tei:cell><xsl:sequence select="wea:formatDate($date)"/></tei:cell>
+            <tei:cell>
+                <xsl:if test="@status">
+                    <xsl:value-of select="wea:getCategoryFromStatus(@status)/catDesc/term"/>
+                </xsl:if>
+
+            </tei:cell>
+            <tei:cell><xsl:sequence select="node()"/></tei:cell>
+        </tei:row>
+        
     </xsl:template>
     
     

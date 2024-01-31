@@ -656,20 +656,11 @@
     <xsl:template match="titleStmt/title | publicationStmt| profileDesc | encodingDesc" mode="metadata"/>
     
     <xsl:template match="revisionDesc" mode="metadata">
-        <xsl:variable name="currStatus" select="@status" as="xs:string"/>
-        <xsl:variable name="statusLabel">
-            <xsl:choose>
-                <xsl:when test="$currStatus = 'empty'">Empty</xsl:when>
-                <xsl:when test="$currStatus = 'inProgress'">In Progress</xsl:when>
-                <xsl:when test="$currStatus= 'readyForProof'">Ready for Proof</xsl:when>
-                <xsl:when test="$currStatus = 'published'">Published</xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="whenChanged" select="change[@status = $currStatus][last()]/@when" as="xs:string"/>
+        <xsl:variable name="status" select="wea:getDocStatus(ancestor::TEI)" as="map(*)"/>
         <div>
             <div class="metadataLabel">Document Status</div>
             <div>
-                <xsl:value-of select="$statusLabel"/> (<xsl:value-of select="wea:dateString($whenChanged)"/>)
+                <xsl:value-of select="$status?term"/> (<xsl:value-of select="wea:dateString($status?when)"/>)
             </div>
         </div>
         
@@ -739,7 +730,6 @@
                                 <div class="label">Headnote</div>
                             </a>
                         </div>
-                        
                     </xsl:if>
                     
                     
@@ -775,7 +765,15 @@
                         </a>
                     </div>
                     
-  
+                    <xsl:variable name="docStatus" select="wea:getDocStatus($doc)" as="map(*)"/>
+                    <div id="tools_status">
+                        <a class="toolbar_item badge {$docStatus?ident}" href="#status">
+                            <xsl:value-of select="$docStatus?term"/> (<xsl:value-of 
+                                select="wea:dateString($docStatus?when)"/>)
+                        </a>
+                    </div>
+                    
+<!--  
 
                     <div id="unhighlightButton" class="tool_search">
                         <a>
@@ -809,7 +807,7 @@
                         </a>
                         
                         
-                    </div>
+                    </div>-->
                     
                 </div>
             </div>

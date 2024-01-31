@@ -482,6 +482,10 @@ ul#menu_main > li > ul{
         font-size:.95rem;
     }
     
+    #text_container{
+        grid-template-areas: "text";
+    }
+    
     
 /*#mainBody[class*="BornDigital"]:not([class*='Listing']){
     background-repeat: no-repeat;
@@ -499,12 +503,7 @@ ul#menu_main > li > ul{
         width:105%;
         margin-left:-2.5%;
     }
-    
-    span[data-el='pb'].first:before{
-        content:unset;
-        margin-left:87.5%;
-        
-    }
+   
 
 
     
@@ -524,6 +523,10 @@ ul#menu_main > li > ul{
     [data-el='fw'][data-place='left'] + [data-el='fw'][data-place='right']{
     margin-top:1rem;
     
+}
+
+footer > div{
+    padding: 0 1rem;
 }
 
 .popupCredits{

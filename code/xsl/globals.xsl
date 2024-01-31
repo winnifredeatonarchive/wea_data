@@ -44,7 +44,7 @@
     
     <xsl:variable name="personography" select="$standaloneXml[//TEI/@xml:id='people']/TEI" as="element(TEI)"/>
     
-    <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']" as="element(TEI)"/>
+    <xsl:variable name="taxonomies" select="$standaloneXml[//TEI/@xml:id='taxonomies']/TEI" as="element(TEI)"/>
     
     <xsl:variable name="prefixDefs" select="$taxonomies/descendant::prefixDef" as="element(prefixDef)+"/>
     
@@ -150,6 +150,7 @@
             
             <xsl:for-each select="$authors">
                 <xsl:variable name="token" select="."/>
+                    
                 <xsl:variable name="persName" select="
                     if (starts-with($token,'#')) 
                     then $root/descendant::respStmt[@xml:id=substring-after($token,'#')]/name
@@ -300,6 +301,28 @@
     <xsl:function name="wea:namecase">
         <xsl:param name="name"/>
         <xsl:value-of select="for $r in tokenize($name,'\s+') return wea:capitalize($r)" separator=" "/>
+    </xsl:function>
+    
+    <xsl:function name="wea:getDocStatus" as="map(*)">
+        <xsl:param name="doc" as="element(TEI)"/>
+        <xsl:variable name="currStatus" select="$doc//revisionDesc/@status"/>
+        <xsl:variable name="statusCat" as="element(category)" select="wea:getCategoryFromStatus($currStatus)"/>
+        <xsl:variable name="term" select="normalize-space($statusCat/catDesc/term)" as="xs:string"/>
+        <xsl:variable name="when"
+            select="$doc//revisionDesc/change[@status = $currStatus][last()]/@when"
+            as="xs:string"/>
+        <xsl:sequence select="map{
+                'term': $term,
+                'when': $when,
+                'ident': $currStatus
+            }"/>
+        
+    </xsl:function>
+    
+    <xsl:function name="wea:getCategoryFromStatus" new-each-time="no" as="element(category)">
+        <xsl:param name="status" as="xs:string"/>
+        <xsl:sequence 
+            select="$taxonomies//category[@xml:id = ('status_' || $status)]"/>
     </xsl:function>
     
     
