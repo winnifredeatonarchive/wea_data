@@ -263,7 +263,7 @@
                 </dd>
             </xsl:for-each>
             </dl>
-            <div>
+            <div class="rev_history">
                 <h5>Full Revision History</h5>
                 <xsl:apply-templates select="ancestor::TEI//revisionDesc" mode="appendix"/>
             </div>
@@ -273,12 +273,12 @@
     <xsl:template match="revisionDesc" mode="appendix">
         <xsl:variable name="tempTable" as="element(tei:table)">
             <tei:table>
-                <tei:row role="label">
+               <!-- <tei:row role="label">
                     <tei:cell>Who</tei:cell>
                     <tei:cell>When</tei:cell>
                     <tei:cell>Status</tei:cell>
                     <tei:cell>Description</tei:cell>
-                </tei:row>
+                </tei:row>-->
                 <xsl:apply-templates select="change" mode="#current"/>
             </tei:table>
         </xsl:variable>
@@ -294,6 +294,7 @@
             </tei:date>
         </xsl:variable>
         <tei:row>
+            <tei:cell><xsl:sequence select="wea:formatDate($date)"/></tei:cell>
             <tei:cell>
                 <xsl:for-each select="tokenize(@who,'\s+')">
                     <tei:name ref="{.}"><xsl:value-of select="replace(.,'^#|\d+$','')"/></tei:name>
@@ -302,7 +303,6 @@
                     </xsl:if>
                 </xsl:for-each>
             </tei:cell>
-            <tei:cell><xsl:sequence select="wea:formatDate($date)"/></tei:cell>
             <tei:cell>
                 <xsl:if test="@status">
                     <xsl:value-of select="wea:getCategoryFromStatus(@status)/catDesc/term"/>

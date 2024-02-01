@@ -260,6 +260,7 @@
     --wea-pink: #DF006E;
     --wea-grey: #efefef;
     --wea-pink-rgb: rgb(223, 0, 110);
+    --wea-pink-transparent: rgb(223, 0, 110, 0.3);
     
     --wea-text-color: #292929;
     --wea-footer-bg-color: #f8f9fa;
@@ -855,7 +856,8 @@ nav > div > div > a:last-child{
     display:grid;
     grid-template-areas: 
         "toolbar text .";
-    gap: 3rem;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
 }
 
 #tools_container{
@@ -3166,13 +3168,15 @@ figure.placeholder h2{
 
 #popup_closer{
     float:right;
-    top:5rem;
+    top:0;
+    position:sticky;
     font-size:200%;
     color: #ccc;
     margin-top:-.5rem;
     transition: color 0.2s ease-in-out;
     cursor:pointer;
     margin-right: -2rem;
+    line-height:1;
 }
 
 #popup.textual-note{
@@ -3491,19 +3495,36 @@ ul,li{
     padding-top:.25rem;
 }
 
-#status :is(dt, dd){
-    margin-left:0;
-    margin-bottom:0;
-    padding-left: 0.8rem;
-}
+/** Special status styles */
 
-#status dd{
-    padding-top: 0.5rem;
+#status{
+    :is(dt, dd){
+        margin-left:0;
+        margin-bottom:0;
+        padding-left: 0.8rem;
+        &.current{
+          border-left: 2px solid var(--wea-pink-transparent);
+        }
+    }
     
-}
-
-#status dl .current{
-    border-left: 2px solid var(--wea-pink);
+    dd{
+        padding-top: 0.5rem;
+    }
+    
+    .rev_history{
+        margin-top:1rem;
+        padding-top:1rem;
+        border-top: 2px solid var(--wea-grey);
+    }
+    
+    table{
+        table-layout:auto;
+        font-size: 0.8rem;
+        tbody{
+            word-break: normal;
+        }
+    }
+    
 }
 /************************************************************************** TABLES */
 
