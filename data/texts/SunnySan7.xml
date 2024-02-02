@@ -2,79 +2,87 @@
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="SunnySan7">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Sunny-San [Part 6]</title>
-            <respStmt>
-               <resp>Transcriber</resp>
-               <name ref="pers:LW1">Leean Wu</name>
-            </respStmt>
-            <respStmt>
-               <resp>Proofreader</resp>
-               <name ref="pers:LW1">Leean Wu</name>
-            </respStmt>
-            <respStmt>
-               <resp>Encoder</resp>
-               <name ref="pers:LW1">Leean Wu</name>
-            </respStmt>
-         </titleStmt>
-         <publicationStmt>
-            <p>Publication Information</p>
-         </publicationStmt>
-         <sourceDesc>
-            <msDesc>
-               <msContents>
-                  <msItem>
-                     <bibl xml:id="bibl219"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
-                  <publisher ref="org:Sovereign">Sovereign Magazine</publisher>.
-                  <title level="a">Sunny-San [Part 6]</title>. <title level="j">Sovereign Magazine</title>, vol. <biblScope unit="volume">4</biblScope>, no.
-                     <biblScope unit="issue">32</biblScope>, <date when="1922-05">July 1922</date>,
-                  pp. <biblScope unit="page">193-201</biblScope>.</bibl>
-                  </msItem>
-               </msContents>
-               <additional>
-                  <adminInfo>
-                     <availability>
-                        <p>Facsimile retrieved from The British Library.</p>
-                     </availability>
-                  </adminInfo>
-                  <surrogates>
-                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
-                     <!--
+      <teiHeader>
+            <fileDesc>
+                  <titleStmt>
+                        <title>Sunny-San [Part 6]</title>
+                        <respStmt>
+                              <resp>Transcriber</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                        <respStmt>
+                              <resp>Proofreader</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                        <respStmt>
+                              <resp>Encoder</resp>
+                              <name ref="pers:LW1">Leean Wu</name>
+                        </respStmt>
+                  </titleStmt>
+                  <publicationStmt>
+                        <p>Publication Information</p>
+                  </publicationStmt>
+                  <sourceDesc>
+                        <msDesc>
+                              <msContents>
+                                    <msItem>
+                                          <bibl xml:id="bibl219"><author><name ref="pers:WE1"
+                                                  >Watanna, Onoto</name></author>. <publisher
+                                                  ref="org:Sovereign">Sovereign
+                                                Magazine</publisher>. <title level="a">Sunny-San
+                                                  [Part 6]</title>. <title level="j">Sovereign
+                                                  Magazine</title>, vol. <biblScope unit="volume"
+                                                  >4</biblScope>, no. <biblScope unit="issue"
+                                                  >32</biblScope>, <date when="1922-05">July
+                                                  1922</date>, pp. <biblScope unit="page"
+                                                  >193-201</biblScope>.</bibl>
+                                    </msItem>
+                              </msContents>
+                              <additional>
+                                    <adminInfo>
+                                          <availability>
+                                                <p>Facsimile retrieved from The British Library.</p>
+                                          </availability>
+                                    </adminInfo>
+                                    <surrogates>
+                                          <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                                          <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                  </surrogates>
-               </additional>
-            </msDesc>
-         </sourceDesc>
-      </fileDesc>
-      <profileDesc>
-         <textClass>
-            <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
-            <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
-            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
-         </textClass>
-      </profileDesc>
-      <revisionDesc status="published">
-         <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:LW1" when="2022-06-18" status="published">Encoded and proofed.
+                                    </surrogates>
+                              </additional>
+                        </msDesc>
+                  </sourceDesc>
+            </fileDesc>
+            <profileDesc>
+                  <textClass>
+                        <catRef scheme="wdt:genre" target="wdt:genreNovelSerial"/>
+                        <catRef scheme="wdt:exhibit" target="wdt:Japan"/>
+                        <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+                  </textClass>
+            </profileDesc>
+            <revisionDesc status="published">
+                  <change who="pers:LW1" when="2024-02-01" status="published">Encoded headings and
+                        end trailer. Corrected typos.</change>
+                  <change who="pers:JT1" when="2023-11-23" status="published">Added citation from
+                        bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+                  <change who="pers:LW1" when="2022-06-18" status="published">Encoded and proofed.
                         Set to published.</change>
-         <change who="pers:LW1" when="2022-06-18" status="inProgress">Downloaded document
+                  <change who="pers:LW1" when="2022-06-18" status="inProgress">Downloaded document
                         from Google Drive and converted to TEI.</change>
-         <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
+                  <change who="pers:SB2" status="empty" when="2020-08-15">Added brief notes
                         statement.</change>
-         <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
-         <change who="pers:MC1" status="empty" when="2019-07-31">Changed title.</change>
-         <change who="pers:MC1" status="empty" when="2019-07-24">Changed title.</change>
-         <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
+                  <change who="pers:SB2" status="empty" when="2020-08-14">Added facsimile.</change>
+                  <change who="pers:MC1" status="empty" when="2019-07-31">Changed title.</change>
+                  <change who="pers:MC1" status="empty" when="2019-07-24">Changed title.</change>
+                  <change who="pers:SL1" status="empty" when="2019-07-08">Added catRef genre and
                         exhibit.</change>
-         <change who="pers:JT1" status="empty" when="2019-04-11">Created file from
+                  <change who="pers:JT1" status="empty" when="2019-04-11">Created file from
                         bibliography entry bibl132 using XSLT.</change>
-      </revisionDesc>
-   </teiHeader>
-   <text facs="facs:Sunny-San7" prev="doc:SunnySan6">
+            </revisionDesc>
+      </teiHeader>
+      <text facs="facs:Sunny-San7" prev="doc:SunnySan6">
             <pb n="193"/>
             <body>
                   <div>
@@ -84,7 +92,7 @@
                         </opener>
                   </div>
                   <div>
-                        <head>Prologue</head>
+                        <head>SYNOPSIS OF PREVIOUS INSTALMENTS.</head>
                         <p>It was the night of the Festival of the Full Moon, but Hirata, the
                               proprietor of the House of a Thousand Joys, was infuriated, for was
                               not Madame Mary Smiles, the famous dancer, lying dead among her robes?
@@ -135,7 +143,9 @@
                               deliver a letter addressed to Stephen Wainwright, the financier, given
                               to Sunny-San by her mother. In the meantime, after an unsuccessful
                               search for the missing girl, Jerry is taken seriously ill.</p>
-                        <p>Chapter XVII (<emph>continued</emph>)</p>
+                  </div>
+                  <div>
+                        <head>CHAPTER XVII (<emph>continued</emph>)</head>
                         <p> Sunny took the chair opposite him. Their glances met and remained for a
                               long moment locked. Then the man tried to speak lightly.</p>
                         <p><q>You wished to see me. What can I do for you?</q></p>
@@ -161,8 +171,10 @@
                                                   the reign of Meeijii. A thousand years of joy. It
                                                   is your honourable daughter, who knows not your
                                                   name, who brings or sends to you this my letter. I
-                                                  go upon the long journey to the <foreign xml:lang="ja">Moido</foreign>. I send my child to
-                                                  him through whom she has her life. <foreign xml:lang="ja">Sayonara</foreign>. Haru-no</q>.</p>
+                                                  go upon the long journey to the <foreign
+                                                  xml:lang="ja">Moido</foreign>. I send my child to
+                                                  him through whom she has her life. <foreign
+                                                  xml:lang="ja">Sayonara</foreign>. Haru-no</q>.</p>
                                     </body>
                               </floatingText>
                         </q>
@@ -200,7 +212,9 @@
                               grew slowly fixed and enlarged. Through the fogs of memory slowly,
                               like a vision of the past, she seemed to see again a little child in a
                               fragrant garden. She was standing by the rim of a pool, and the man
-                              opposite her now was at her side. He was dressed in Japanese <foreign xml:lang="ja">kimona</foreign> and <foreign xml:lang="ja">hakama</foreign>, and Sunny remembered that then he was always
+                              opposite her now was at her side. He was dressed in Japanese <foreign
+                                    xml:lang="ja">kimona</foreign> and <foreign xml:lang="ja"
+                                    >hakama</foreign>, and Sunny remembered that then he was always
                               laughing at her, shaking the flower weighted trees above her, till the
                               petals fell in a white and pink shower upon her little head and
                               shoulders. She was stretching out her hands, catching the falling
@@ -218,7 +232,7 @@
                               Wainwright, kneeling on the floor by his long lost child, had drawn
                               her hungrily into his arms.</p>
                         <p><q>My own little girl!</q> said the Man of Steel.</p>
-                        <p>Chapter XVIII</p>
+                        <p>CHAPTER XVIII</p>
                         <p>Stephen Wainwright, holding his daughter jealously in his arms, felt
                               those long-locked founts of emotion that had been pent up behind his
                               steely exterior bursting all bounds. He had the immense feeling that
@@ -244,7 +258,8 @@
                         <p>Always a lover and collector of beautiful things, Wainwright had harkened
                               to the enthusiastic flights of a friend, who had <q>discovered</q> an
                               incomparable piece of Satsuma, and had accompanied him to an old
-                              mansion, once part of a Satsuma <foreign xml:lang="ja">yashiki</foreign> , there to find that his friend’s <q>piece of
+                              mansion, once part of a Satsuma <foreign xml:lang="ja"
+                                    >yashiki</foreign> , there to find that his friend’s <q>piece of
                                     Satsuma</q> was a living work of art, a little piece of
                               bric-à-brac that the collector craved to add to his collections. He
                               had purchased O-Haru-no for a mere song, for her white skin had been a
@@ -317,7 +332,8 @@
                                     not seem to me as if you have changed at all. You are still my
                                     little girl. Tell me—you have not forgotten your father
                                     altogether, have you?</q></p>
-                        <p><q>No. Those year they are push away. You are my <foreign xml:lang="ja">chichi</foreign> (papa). I so happy see you face
+                        <p><q>No. Those year they are push away. You are my <foreign xml:lang="ja"
+                                          >chichi</foreign> (papa). I so happy see you face
                                     again</q>.</p>
                         <p>She held him back, her two hands on his shoulders, and now, true to her
                               sex, she prepared to demand a favour from her father.</p>
@@ -333,9 +349,9 @@
                         <p>He leaned over to the desk and pushed the button <choice>
                                     <sic>?</sic>
                                     <corr>.</corr>
-                              </choice>? Miss Holliwell, coming to the door, saw a sight that for
-                              the first time in her years of service with Stephen Wainwright took
-                              away her composure. Her employer was kneeling by a chair on which was
+                              </choice> Miss Holliwell, coming to the door, saw a sight that for the
+                              first time in her years of service with Stephen Wainwright took away
+                              her composure. Her employer was kneeling by a chair on which was
                               seated the strange girl, whose hat was off, and who was holding one of
                               his hands with both of hers. Even then he did not break the custom of
                               years and explain or confide in his secretary, and she saw to her
@@ -387,7 +403,8 @@
                               details of her early life, the days of their mendicancy making the man
                               feel immeasurably mean. Sitting at the desk now, his eyes shaded with
                               his hand, he gritted his teeth, and struck the table with repeated
-                              soundless blows when his daughter told him of the lash of the <pb n="197"/> man Hirata. But something, a feeling more penetrating
+                              soundless blows when his daughter told him of the lash of the <pb
+                                    n="197"/> man Hirata. But something, a feeling more penetrating
                               than pain, stung Stephen Wainwright when she told him of those
                               warmhearted men who had come into her life like a miracle and taken
                               the place that he should have been there to fill. For the first time
@@ -470,7 +487,10 @@
                               and, raising her eyes as if about to deliver a solemn Grace, she
                               said:</p>
                         <p><q>Home, sweet home was never like this!</q></p>
-                        <p>Chapter XIX</p>
+                  </div>
+
+                  <div>
+                        <head>CHAPTER XIX</head>
                         <p>Society enjoys a shock. It craves sensation. When  that brilliant and
                               autocratic leader returned from several months’ absence abroad, with a
                               young daughter, of whose existence no one had ever heard, her friends
@@ -683,7 +703,9 @@
                         <p>Thus Jerry’s elimination was completed, and for the nonce the matter of
                               Sunny’s marriage was dropped for the time being, to be revived,
                               however, on the night of her ball.</p>
-                        <p>Chapter XX</p>
+                  </div>
+                  <div>
+                        <head>CHAPTER XX</head>
                         <p>There have been many marvellous balls given in London, but none exceeding
                               the famous Wainwright Cherry Blossom ball. The guests stepped into a
                               vast ball room that had been transformed into a Japanese garden in
@@ -707,7 +729,7 @@
                         <p><q>Oh, do tell us who he is</q>, they would urge, and Sunny would shake
                               her bright head, slowly unfurl her monstrous fan, and with it
                               thoughtfully at her lips she would say:</p>
-                        <p><q>Ho, yes, it are true, and mebbe I will tell you some otherday</q>.</p>
+                        <p><q>Ho, yes, it are true, and mebbe I will tell you some other day</q>.</p>
                         <p>Now among those present at Sunny’s party were five men whose acquaintance
                               the readers of this story have already made. It so happened that they
                               were very late in arriving at the Wainwright dance, this being due to
@@ -754,7 +776,7 @@
                                     first saw in tights</q>—Ah, Man of Fossils!—<q>the child, who
                                     came upon the tightrope, with a smile upon her face and a
                                     dewdrop on her cheek</q>.</p>
-                        <p>(Before this I have observed hat poetry is not absent from the soul of
+                        <p>(Before this I have observed that poetry is not absent from the soul of
                               any dreamer.)</p>
                         <p><q>May I add</q>, continued Professor Barrowes, <q>that it is my devout
                                     hope, my dear, that you will always remain unchanged. I hope so
@@ -902,7 +924,7 @@
                               sigh escaped her. Instantly her father was at her side.</p>
                         <p><q>You want something, my darling?</q></p>
                         <p><q>Yes, papa. You love me very much, papa?</q></p>
-                        <p><q><emph>Do</emph>I? If there’s anything in the world you want that I can
+                        <p><q><emph>Do</emph> I? If there’s anything in the world you want that I can
                                     give you, you have only to ask, my little girl</q>.</p>
                         <p><q>Then papa, you see over dere that young man stand. You see
                               him?</q></p>
@@ -999,7 +1021,7 @@
                               soft pandemonium had broken loose, but in that blissful moment of
                               complete darkness, oblivious to all the world, feeling and seeing only
                               each other, Jerry and Sunny kissed.</p>
-                        <p>THE END.</p>
+                        <trailer>THE END.</trailer>
                   </div>
             </body>
       </text>
