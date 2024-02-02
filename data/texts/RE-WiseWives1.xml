@@ -10,6 +10,10 @@
                <resp>Transcriber</resp>
                <name ref="pers:KS1"/>
             </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -27,7 +31,7 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title>Re: Wise Wives</title></bibl>
+                     <bibl><title>Re: Wise Wives</title>. <date when="1930-01-30">January 30th  30</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -56,6 +60,7 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
+         <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
          <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
          <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
       </revisionDesc>
