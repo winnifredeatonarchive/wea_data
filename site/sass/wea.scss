@@ -1813,6 +1813,10 @@ li{
     max-width: var(--max-body-width);
 }
 
+#search #mainBody #text_container{
+    grid-template-areas: "text text text"
+}
+
 
 #mainBody.docBornDigitalListing [data-el='p']{
     max-width: var(--max-text-width);
