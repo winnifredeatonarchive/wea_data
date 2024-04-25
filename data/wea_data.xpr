@@ -7059,6 +7059,180 @@ ${caret}</String>
                                     <null/>
                                 </field>
                             </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteCustomizableTransformationScenarioOperation',
+          arg-scenarioName, '',
+          arg-scenarioParameters, '',
+          arg-markInProgressXPathLocation, '',
+          arg-markOthersInProgressXPathLocation, ''</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Run a named transformation scenario with specific parameters defined in the associated document type.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>scenarioName&lt;/b> = The name of the transformation scenario which will be executed.&lt;/li>&lt;li>&lt;b>scenarioParameters&lt;/b> = Provided parameters for the transformation scenario.
+Parameters are inserted as name=value pairs separated by line breaks.
+The set parameters are taken into account for XSLT, DITA, Chemistry and ANT Transformation scenario types.&lt;/li>&lt;li>&lt;b>markInProgressXPathLocation&lt;/b> = XPath expression that identifies the element(s) on which a specific  '-oxy-transformation-in-progress' pseudo class is set before transformation is started.The pseudo class is reset when the transformation ends.If this XPath expression is not defined, the current node is used.&lt;/li>&lt;li>&lt;b>markOthersInProgressXPathLocation&lt;/b> = XPath expression that indentifies other elements on which a specific '-oxy-transformation-in-progress-others' pseudo class is set before the transformation is started.The pseudo class is reset when the transformation ends.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteCustomizableTransformationScenarioOperation',&lt;br/>          arg-scenarioName, '',&lt;br/>          arg-scenarioParameters, '',&lt;br/>          arg-markInProgressXPathLocation, '',&lt;br/>          arg-markOthersInProgressXPathLocation, ''&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ExecuteCustomizableTransformationScenarioOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.MoveBlockAuthorOperation',
+          arg-direction, 'up'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Move the current block element containing the caret offset or the current selected block elements up or down.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>direction&lt;/b> = Move direction can have values "up" or "down"&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.MoveBlockAuthorOperation',&lt;br/>          arg-direction, 'up'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_MoveBlockAuthorOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.StopCurrentTransformationScenarioOperation'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Stop the current running transformation scenario.&lt;/p>&lt;br/>Arguments: &lt;p style="margin-left:10px;">This operation has no arguments.&lt;/p> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.StopCurrentTransformationScenarioOperation'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_StopCurrentTransformationScenarioOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/css</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ToggleCommentOperation'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Wrap selection in an XML comment or unwrap existing XML comment&lt;/p>&lt;br/>Arguments: &lt;p style="margin-left:10px;">This operation has no arguments.&lt;/p> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ToggleCommentOperation'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ToggleCommentOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteCustomizableTransformationScenarioOperation',
+          arg-scenarioName, '',
+          arg-scenarioParameters, '',
+          arg-markInProgressXPathLocation, '',
+          arg-markOthersInProgressXPathLocation, ''</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Run a named transformation scenario with specific parameters defined in the associated document type.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>scenarioName&lt;/b> = The name of the transformation scenario which will be executed.&lt;/li>&lt;li>&lt;b>scenarioParameters&lt;/b> = Provided parameters for the transformation scenario.
+Parameters are inserted as name=value pairs separated by line breaks.
+The set parameters are taken into account for XSLT, DITA, Chemistry and ANT Transformation scenario types.&lt;/li>&lt;li>&lt;b>markInProgressXPathLocation&lt;/b> = XPath expression that identifies the element(s) on which a specific  '-oxy-transformation-in-progress' pseudo class is set before transformation is started.The pseudo class is reset when the transformation ends.If this XPath expression is not defined, the current node is used.&lt;/li>&lt;li>&lt;b>markOthersInProgressXPathLocation&lt;/b> = XPath expression that indentifies other elements on which a specific '-oxy-transformation-in-progress-others' pseudo class is set before the transformation is started.The pseudo class is reset when the transformation ends.&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ExecuteCustomizableTransformationScenarioOperation',&lt;br/>          arg-scenarioName, '',&lt;br/>          arg-scenarioParameters, '',&lt;br/>          arg-markInProgressXPathLocation, '',&lt;br/>          arg-markOthersInProgressXPathLocation, ''&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ExecuteCustomizableTransformationScenarioOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.MoveBlockAuthorOperation',
+          arg-direction, 'up'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Move the current block element containing the caret offset or the current selected block elements up or down.&lt;/p>&lt;br/>Arguments: &lt;ul>&lt;li>&lt;b>direction&lt;/b> = Move direction can have values "up" or "down"&lt;/li>&lt;/ul> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.MoveBlockAuthorOperation',&lt;br/>          arg-direction, 'up'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_MoveBlockAuthorOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.StopCurrentTransformationScenarioOperation'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Stop the current running transformation scenario.&lt;/p>&lt;br/>Arguments: &lt;p style="margin-left:10px;">This operation has no arguments.&lt;/p> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.StopCurrentTransformationScenarioOperation'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_StopCurrentTransformationScenarioOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
+                            <codeTemplateItem>
+                                <field name="contentType">
+                                    <String>text/less</String>
+                                </field>
+                                <field name="unparsedInsertString">
+                                    <String>operation, 'ro.sync.ecss.extensions.commons.operations.ToggleCommentOperation'</String>
+                                </field>
+                                <field name="descriptionString">
+                                    <String>&lt;html>&lt;head>&lt;/head>&lt;body>Description:&lt;p style="margin-left:10px;">Wrap selection in an XML comment or unwrap existing XML comment&lt;/p>&lt;br/>Arguments: &lt;p style="margin-left:10px;">This operation has no arguments.&lt;/p> &lt;br/> Template: &lt;br/>&lt;p style="margin-left:10px;">operation, 'ro.sync.ecss.extensions.commons.operations.ToggleCommentOperation'&lt;/p>&lt;/body>&lt;/html></String>
+                                </field>
+                                <field name="renderString">
+                                    <String>op_ToggleCommentOperation</String>
+                                </field>
+                                <field name="enabled">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="accelerator">
+                                    <null/>
+                                </field>
+                            </codeTemplateItem>
                         </codeTemplateItem-array>
                     </entry>
                     <entry>
