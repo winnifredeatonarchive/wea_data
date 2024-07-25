@@ -281,6 +281,17 @@
         </java>
     </target>
     
+    <target name="createJSONData">
+        <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true" fork="true">
+            <arg value="-xsl:${project.dir}/code/xsl/json_master.xsl"/>
+            <arg value="-s:${project.dir}/code/xsl/json_master.xsl"/>
+            <arg value="-it:go"/>
+            <arg value="outDir=${site.dir}"/>
+            <arg value="docsToBuild=${docsToBuild}"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+        </java>
+    </target>
+    
     <target name="createEncodingPackage">
         <delete file="${site.dir}/encoding_package.zip"/>
         <zip destfile="${site.dir}/encoding_package.zip">
@@ -309,7 +320,7 @@
     
     <target name="quickWithFacs" depends="copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml"/>
     
-    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails, createEncodingPackage"/>
+    <target name="all" depends="init, copyAuxFiles, processPDFs, processMedia, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml, validateXhtml, createDocDetails, createJSONData, createEncodingPackage"/>
     
     <target name="justXml" depends="copyAuxFiles, createSourceXml, createOriginalXml, validateOriginalXml, createIndex, createStandaloneXml, weighSite, createXhtml, validateXhtml"/>
         
