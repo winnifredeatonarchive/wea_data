@@ -104,7 +104,7 @@
             
             <xsl:for-each-group select="//msItem/bibl/publisher[@ref]" 
                 group-by="normalize-space($self//org[@xml:id = substring-after(@ref,'#')]/orgName/string(.))">
-                <meta name="Publisher" class="staticSearch_desc" content="{.}"/>
+                <meta name="Publisher" class="staticSearch_desc" content="{current-grouping-key()}"/>
             </xsl:for-each-group>
             
             <meta name="docImage" class="staticSearch_docImage">
