@@ -1132,6 +1132,30 @@ transition: border-bottom-color 0.15s ease-in-out;
     padding-bottom:2.5rem;
 }
 
+#staticSearch{
+  .wea-ss-filters{
+      .heading{
+          position:sticky;
+          top:0;
+          background:white;
+          z-index:999;
+          width: calc(100% + var(--main-padding-left));
+      }
+      
+      .heading > *{
+          background:white;
+         
+          width: calc(100% - var(--main-padding-left));
+      }
+        
+  }
+}
+
+.wea-ss-filters .heading{
+    position:sticky;
+    top:0;
+}
+
 .postFilterSearchBtn{
     display:none;
 }
