@@ -1404,9 +1404,11 @@ fieldset.ssFieldset > span{
 
 #ssDoSearch{
     position:relative;
-    right:2.5rem;
+    right:0;
+    top:0;
+    transform:translateX(-100%);
     background:none;
-    border:none;
+    border:none!important;
     cursor:pointer;
     padding:0 .5rem;
 }

@@ -51,7 +51,7 @@
             <div class="wea-ss-filters">
                 <div class="heading">
                     <div class="metadataLabel">Search Filters</div>
-                    <button id="filterSearch">Filter</button>
+                    <button id="filterSearch">Apply Filters</button>
                 </div>
                 <xsl:apply-templates select="form/div[contains-token(@class,'ssDateFilters')]"/>
                 <xsl:apply-templates select="form/div[contains-token(@class,'ssDescFilters')]"/>
