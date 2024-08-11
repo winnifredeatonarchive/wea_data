@@ -76,7 +76,9 @@
     </xsl:template>
     
     <xsl:template name="createStaticSearchMetadata">
+        <xsl:variable name="self" select="." as="element(TEI)"/>
         <xsl:variable name="taxo" select="$standaloneXml//TEI[@xml:id='taxonomies']" as="element(TEI)"/>
+
         <xsl:for-each select="descendant::catRef">
             <xsl:variable name="schemeId" select="substring-after(@scheme,'#')" as="xs:string"/>
             <xsl:variable name="refId" select="substring-after(@target,'#')" as="xs:string"/>
@@ -100,6 +102,10 @@
                 <meta name="Pseudonym" class="staticSearch_desc" content="{.}"/>
             </xsl:for-each>
             
+            <xsl:for-each-group select="//msItem/bibl/publisher[@ref]" 
+                group-by="normalize-space($self//org[@xml:id = substring-after(@ref,'#')]/orgName/string(.))">
+                <meta name="Publisher" class="staticSearch_desc" content="{.}"/>
+            </xsl:for-each-group>
             
             <meta name="docImage" class="staticSearch_docImage">
                 <xsl:attribute name="content">
@@ -113,6 +119,7 @@
                     </xsl:choose>
                 </xsl:attribute>
             </meta>
+            
            
   
             <!--Removing boolean filters-->
