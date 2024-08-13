@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Checkout repository
-         uses: actions/checkout@v2
+         uses: actions/checkout@v4
        - name: Fetch tags
          run: git fetch --prune --unshallow --tags
-       - uses: actions/setup-node@v2
+       - uses: actions/setup-node@v4
          with:
-            node-version: '16'
+            node-version: 20
        - name: Setup sass
          run: npm install sass -g
        - name: Set environment variables
@@ -44,7 +44,7 @@ jobs:
          run: ant -f ${{ github.workspace }}/buildDist.xml
          # Upload the artifacts
        - name: Archive artifacts
-         uses: actions/upload-artifact@v2
+         uses: actions/upload-artifact@v4
          with:
             name: wea_small
             path: ${{ github.workspace }}/dist/wea_small.zip
@@ -52,15 +52,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
-           node-version: '16'
+           node-version: 20
       - name: Download packages
         run: npm install pa11y-ci pa11y-ci-reporter-html -g
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Download all artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
       - name: Unzip site
         run: unzip wea_small/wea_small.zip
       - name: Debugging
@@ -69,7 +69,7 @@ jobs:
         run: pa11y-ci --config ${{ github.workspace }}/.pa11yci ./products/site/*.html
       - name: Archive reports
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
             name: pa11y-ci-report
             path: pa11y-ci-report
