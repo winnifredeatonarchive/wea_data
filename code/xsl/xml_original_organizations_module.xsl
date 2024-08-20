@@ -119,7 +119,7 @@
                                     <cell>
                                         <xsl:choose>
                                             <xsl:when test="not(empty($thisBibl/date))">
-                                                <xsl:copy-of select="$thisBibl/date"/>
+                                                <xsl:sequence select="wea:formatDate($thisBibl/date)"/>
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <date/>

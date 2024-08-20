@@ -646,7 +646,7 @@
         <div>
             <div class="metadataLabel">Date</div>
             <div>
-                <xsl:apply-templates mode="tei"/>
+                <xsl:value-of select="wea:formatDate(.)"/>
             </div>
         </div>
     </xsl:template>
