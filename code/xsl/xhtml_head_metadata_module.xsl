@@ -102,9 +102,13 @@
                 <meta name="Pseudonym" class="staticSearch_desc" content="{.}"/>
             </xsl:for-each>
             
-            <xsl:for-each-group select="//msItem/bibl/publisher[@ref]" 
-                group-by="normalize-space($self//org[@xml:id = substring-after(@ref,'#')]/orgName/string(.))">
-                <meta name="Publisher" class="staticSearch_desc" content="{current-grouping-key()}"/>
+            <xsl:for-each-group select="//msItem/bibl/publisher[@ref]" group-by="substring-after(@ref,'#')">
+                <xsl:variable name="org"
+                    select="//org[@xml:id = current-grouping-key()]"
+                    as="element(org)"/>
+                <xsl:variable name="orgName" select="normalize-space($org/orgName[1])" as="xs:string"/>
+
+                <meta name="Publisher" class="staticSearch_desc" content="{$orgName}"/>
             </xsl:for-each-group>
             
             <meta name="docImage" class="staticSearch_docImage">
