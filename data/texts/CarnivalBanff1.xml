@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="CarnivalBanff1">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Carnival Spirit in Full Swing at Banff; Lack of Snow no Deterrent to Fun</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msContents>
+                  <msItem>
+                     <bibl><author><name ref="pers:WE1">Watanna, Onota</name></author>. <title level="a">Carnival Spirit in Full Swing at Banff; Lack of Snow no Deterrent to Fun</title>. <publisher ref="org:Albertan"><title level="j">The Morning Albertan</title></publisher>, <date when="1923-03-03">March 3, 1923</date>, p. <biblScope unit="page">7</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[An odd piece of reporting…but was <title level="a">Written Specially for The Morning Albertan by Onota Watann</title>.]</note>--></bibl>
+                  </msItem>
+               </msContents>
+               <additional>
+                  <adminInfo>
+                     <availability>
+                        <p>Facsimile retrieved from Newspapers.com</p>
+                     </availability>
+                  </adminInfo>
+                  <surrogates>
+                     <!--Add other editions of this text using a bibl element with a target pointing to its bibl-->
+                     <!--
+                        <bibl target="bibl:ABCD1"/>
+                        <bibl><distributor/>, <idno/></bibl>
+                     -->
+                  </surrogates>
+               </additional>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="wdt:genre" target="wdt:genreNF"/>
+            <catRef scheme="wdt:exhibit" target="wdt:Alberta"/>
+            <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
+         </textClass>
+      </profileDesc>
+      <revisionDesc status="empty">
+         <change who="pers:JT1" when="2024-08-19" status="empty">Created document.</change>
+      </revisionDesc>
+   </teiHeader>
+   <text facs="facs:CarnivalBanff1">
+      <body>
+         <div>
+            <gap reason="noTranscriptionAvailable"/>
+         </div>
+      </body>
+   </text>
+</TEI>
