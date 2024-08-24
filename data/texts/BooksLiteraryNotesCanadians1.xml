@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Books</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -14,7 +26,11 @@
             <msDesc>
                <msContents>
                   <msItem>
-                     <bibl><author><name ref="pers:WE1">Eaton Reeve, Winnifred</name></author>. <title level="a">Books</title>. <publisher ref="org:Albertan"><title level="j">The Morning Albertan</title></publisher>, <date when="1924-02-05">February 5, 1924</date>, p. <biblScope unit="page">4</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Discusses/critiques new short stories by American authors writing about Canada; urges readers to see Bliss Carman, Canada’s poet laureate, in upcoming visit]</note>--></bibl>
+                     <bibl><author><name ref="pers:WE1">Eaton Reeve, Winnifred</name></author>.
+                           <title level="a">Books</title>. <publisher ref="org:Albertan"><title
+                              level="j">The Morning Albertan</title></publisher>, <date
+                           when="1924-02-05">February 5, 1924</date>, p. <biblScope unit="page"
+                           >4</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Discusses/critiques new short stories by American authors writing about Canada; urges readers to see Bliss Carman, Canada’s poet laureate, in upcoming visit]</note>--></bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -41,14 +57,78 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-08-23" status="published">Encoded. Set to published.</change>
          <change who="pers:JT1" when="2024-08-19" status="empty">Created document.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:BooksLiteraryNotesCanadians1">
       <body>
+         <head>Books, Literary Notes, &amp;.</head>
+         <opener>
+            <byline>(By <name ref="pers:WE1">Winnifred Eaton Reeve</name>)</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>In a recent number of the Top-Notch Magazine there appeared a <q>Canadian</q> story
+               by an American author. The story is entitled <q>The Terror of the North</q>. The
+               following description will amaze and amuse Canadians and give some idea of how Canada
+               is described in American fiction.</p>
+            <p><q>The man who carreid the mail from Regina to Saskatoon cracked his whip over the
+                  shaggy backs of his six huskies and peered into the encompassing blackness. It was
+                  somewhere near midday, but almost as dark as midnight, for masses of blue-black
+                  clouds hid the sun, and a storm was raging in the heights of the north</q>.</p>
+            <p>Not to be outdone in description of Canada, another American author, one who writes
+               with skill, pictures a baseball match at Guelph, Ontario, watched by a stolid
+               audience of Indians and squaws<note type="editorial" resp="pers:LW1">This is an
+                  offensive racial slur. Please see our <ref target="doc:note_on_language">note on
+                     language</ref>.</note> in blankets and feather headdresses. </p>
+            <p>Victor Lauriston, the Canadian author of <q>The Twenty-first Burr</q>, draws
+               attention to the fact that Indians of that sort in Guelph would draw a bigger crowd
+               than a baseball match, for <q>the baseball germ in the Royal City is so old a
+                  resident that the place is pretty well immunized. The Guelph ‘Maple Leafs’ toured
+                  the States in the days when the great American pastime was still young</q>.</p>
+            <p>Mr. Lauriston, in a recent letter, tells of a personal experience with an American
+               editor in New York to whom he was trying to sell some stories whose locale was
+               Chatham, Ontario. </p>
+            <p><q>A neighbor of yours writes for us quite a bit</q>, said the editor.</p>
+            <p><q>A neighbor! Who is he?</q></p>
+            <p><q>Douglas Durkin. You’re from Chatham, aren’t you? Well, he lives right near
+               you</q></p>
+            <p><q>Durkin lives in the west — near Winnipeg</q>.</p>
+            <p><q>That’s not far from Chatham, is it?</q></p>
+            <p><q>Oh, no. Only about a thousand miles</q>.</p>
+            <p>On February 8 Calgary will have an opportunity of seeing Canada’s poet laureate in
+               recital at the Central Methodist church. This may be the last time that an
+               opportunity will be afforded Calgarians of seeing Canada’s best loved poet, Bliss
+               Carman, for his health has been poor of late years, and the traveling exacts a heavy
+               toll from a man of Mr. Carman’s age. </p>
+            <p><q>Oh, did you once see Shelley!</q> Those words still throb with the eager hero
+               worship of the poet that wrote them. The time may come when others will ask us
+               whether we had actually seen Canada’s Carman. </p>
+            <p>It is said that the Normal school, from which a large attendance had been expected,
+               have invited the Normal school of Carbon to come to Calgary for a dance on the night
+               of the poet’s recital. An effort is to be made to induce the Normal school to change
+               their invitation to read <q>recital</q> instead of dance, or to bring their friends
+               to hear the Canadian poet prior to the dance.</p>
+            <p>Mrs. McClung, in her address before the local council of women at their recent
+               banquet, pointed out that the coming of the Canadian poet to Calgary was an event
+               that should be noted by all who are lovers of poetry and are patriotic. </p>
+            <p>Wilson McDonald, the Canadian poet, was a recent visitor for a couple of days in
+               Calgary. WHile here he attended the Gladys Attree special performance of exhibition
+               dancing, and expressed a deep interest in the Little Theater movement in Calgary. Mr
+               McDonald is the author of an opera entitled <q>In Sunny France</q>. It was put on in
+               Toronto by Hart House, the <q>Little Theater</q> of that city, and ran continuously
+               for a couple of weeks, playing to capacity audiences. It has also been put on by
+               other Little Theaters, and is now being rehearsed in Moose Jaw, under the auspices of
+               the local council of women.</p>
+            <p>Mr. McDonald, as soon as he learned of the Little Theater movement in Calgary,
+               immediately offered his opera for an initial vehicle for the association. Besides
+               giving his opera to the newly formed association, Mr. McDonald is willing to come to
+               Calgary and personally rehearse the piece, as he has done in other cities. Besides
+               writing the libretto and lyrics, he is also the author of the music, and composed the
+               dances, and he plays one of the parts himself.</p>
+            <p>This generous offer may well appeal to the association which is to be formed some day
+               this week at an open meeting to which the public is urged to come. </p>
          </div>
       </body>
    </text>
