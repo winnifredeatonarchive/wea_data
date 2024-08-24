@@ -108,7 +108,7 @@
                     as="element(org)"/>
                 <xsl:variable name="orgName" select="normalize-space($org/orgName[1])" as="xs:string"/>
 
-                <meta name="Publisher" class="staticSearch_desc" content="{$orgName}"/>
+                <meta name="Publisher" class="staticSearch_desc" data-link="{current-grouping-key()}.html" content="{$orgName}"/>
             </xsl:for-each-group>
             
             <meta name="docImage" class="staticSearch_docImage">
