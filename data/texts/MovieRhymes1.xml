@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Movie Rhymes 1</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -29,17 +41,18 @@
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -51,16 +64,75 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-08-23" status="published">Encoded. Set to
+            published.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:MovieRhymes1">
-        <body>
+      <body>
+         <head>MOVIE RHYMES</head>
+         <opener>
+            <byline>by</byline>
+            <byline><name ref="pers:WE1">W.E.R.</name></byline>
+         </opener>
+         <div>
             <div>
-                <gap reason="noTranscriptionAvailable"/>
+               <head>MOVIE STAR</head>
+               <lg>
+                  <l>Twinkle, twinkle, movie star!</l>
+                  <l>Who, in the heck, do you think you are?</l>
+                  <l>Just a year ago, sweet Mable,</l>
+                  <l>You were waiting on a table.</l>
+               </lg>
             </div>
-        </body>
-    </text>
+            <div>
+               <head>MAY</head>
+               <lg>
+                  <l>She danced like a fairy,</l>
+                  <l>She acted with grace;</l>
+                  <l>Her form was entrancing,</l>
+                  <l>And so was her face;</l>
+                  <l>But her tongue they said,</l>
+                  <l>Was a thing to fear,</l>
+                  <l>And that is the reason</l>
+                  <l>She failed, my dear.</l>
+               </lg>
+            </div>
+            <div>
+               <head>JOAN</head>
+               <l>‘‘Better than Fame</l>
+               <l>Is a kiss and a hug,</l>
+               <l>Provided the man</l>
+               <l>Is the Junior Doug’’!</l>
+            </div>
+            <div>
+               <head>BESSIE</head>
+               <lg>
+                  <l>I must confess</l>
+                  <l>I like you, Bess,</l>
+                  <l>Tho it gives me quite a jar,</l>
+                  <l>To think that you,</l>
+                  <l>Whom once I knew</l>
+                  <l>Are a scintilating star.</l>
+               </lg>
+            </div>
+            <div>
+               <head>MARY</head>
+               <lg>
+                  <l>What a fuss they make of you,</l>
+                  <l>Every little thing you do</l>
+                  <l>Is printed, ballyhooed and shouted,</l>
+                  <l>You are very ordinary</l>
+                  <l>Not at all extraordinary</l>
+                  <l>Darned if I see why you are touted!</l>
+               </lg>
+            </div>
+         </div>
+      </body>
+   </text>
 </TEI>
