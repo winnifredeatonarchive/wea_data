@@ -508,27 +508,8 @@
     
     
     <xsl:template match="bibl/author/name | bibl/author/rs" mode="metadata">
-        <xsl:variable name="nameEl" as="element(name)">
-            <tei:name>
-                <xsl:copy-of select="@*"/>
-                <xsl:choose>
-                    <xsl:when test="self::name and not(child::*)">
-                        <xsl:analyze-string select="string(.)" regex="^([A-Z][^,]+),\s*([A-Z][^,]+)$">
-                            <xsl:matching-substring>
-                                <xsl:value-of select="regex-group(2)"/><xsl:text> </xsl:text><xsl:value-of select="regex-group(1)"/>
-                            </xsl:matching-substring>
-                            <xsl:non-matching-substring>
-                                <xsl:value-of select="."/>
-                            </xsl:non-matching-substring>
-                        </xsl:analyze-string>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:sequence select="node()"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-                
-            </tei:name>
-        </xsl:variable>
+        <xsl:variable name="nameEl" as="element(name)" select="wea:createSplitNameEl(.)"/>
+         
         <span class="authorName">
             <xsl:apply-templates select="$nameEl" mode="tei"/>
         </span>

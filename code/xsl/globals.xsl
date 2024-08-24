@@ -303,6 +303,26 @@
         <xsl:value-of select="for $r in tokenize($name,'\s+') return wea:capitalize($r)" separator=" "/>
     </xsl:function>
     
+    <xsl:function name="wea:createSplitNameEl" as="element(tei:name)">
+        <xsl:param name="nameEl" as="element(tei:name)"/>
+        <tei:name>
+            <xsl:copy-of select="$nameEl/@*"/>
+            <xsl:sequence select="wea:splitName($nameEl)"/>
+        </tei:name>
+    </xsl:function>
+    
+    <xsl:function name="wea:splitName" as="xs:string">
+        <xsl:param name="node" as="item()"/>
+        <xsl:analyze-string select="string($node)" regex="^([A-Z][^,]+),\s*([A-Z][^,]+)$">
+            <xsl:matching-substring>
+                <xsl:sequence select="regex-group(2) || ' ' || regex-group(1)"/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:sequence select="string(.)"/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:function>
+    
     <xsl:function name="wea:getDocStatus" as="map(*)">
         <xsl:param name="doc" as="element(TEI)"/>
         <xsl:variable name="currStatus" select="$doc//revisionDesc/@status"/>
