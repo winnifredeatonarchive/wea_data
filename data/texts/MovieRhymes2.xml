@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Movie Rhymes 2</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -29,17 +41,18 @@
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -52,15 +65,70 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="empty">
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:MovieRhymes2">
-        <body>
+      <body>
+         <head>MOVIE RHYMES</head>
+         <opener>
+            <byline>by</byline>
+            <byline><name ref="pers:WE1">W.E.R.</name></byline>
+         </opener>
+         <div>
             <div>
-                <gap reason="noTranscriptionAvailable"/>
+               <head>MOVIE STAR</head>
+               <lg>
+                  <l>Twinkle, twinkle, movie star!</l>
+                  <l>Who, in the heck, do you think you are?</l>
+                  <l>Just a year ago, sweet Mable,</l>
+                  <l>You were waiting on a table.</l>
+               </lg>
             </div>
-        </body>
-    </text>
+            <div>
+               <head>M.</head>
+               <lg>
+                  <l>She danced like a fairy,</l>
+                  <l>She acted with grace,</l>
+                  <l>Her form was entrancing,</l>
+                  <l>And so was her face;</l>
+                  <l>But her tongue, they said,</l>
+                  <l>Was a thing to fear,</l>
+                  <l>And that is the reason</l>
+                  <l>She failed, my dear.</l>
+               </lg>
+            </div>
+            <div>
+               <head>JOAN SPEAKS</head>
+               <l>Better than fame</l>
+               <l>Is a kiss and a hug</l>
+               <l>Provided the man</l>
+               <l>Is the Junior Doug.</l>
+            </div>
+            <div>
+               <head>L.</head>
+               <lg>
+                  <l>We don’t believe</l>
+                  <l>You’re so naive</l>
+                  <l>As you would like us to believe</l>
+                  <l>You’re cute, we will admit</l>
+                  <l>Though you bore us quite a bit</l>
+                  <l>And your antics simply make us grieve.</l>
+               </lg>
+            </div>
+            <div>
+               <head>B.H.</head>
+               <lg>
+                  <l>On the screen you look a darned <unclear>good</unclear> scout</l>
+                  <l>And we’re always sorry when the screen fades out;</l>
+                  <l>But when we learn of those you’ve kissed----</l>
+                  <l>Boy--Boy! ---We’ll slap you on the wrist!</l>
+               </lg>
+            </div>
+         </div>
+      </body>
+   </text>
 </TEI>
