@@ -29,17 +29,20 @@
                 <include name="**"/>
             </fileset>
         </copy>
-        <copy todir="${site.dir}/json">
-            <fileset dir="${project.dir}/documentation/json">
-                <include name="**"/>
-            </fileset>
-        </copy>
+       
     </target>
     
     <target name="runDiagnostics">
         <ant antfile="${project.dir}/code/buildDiagnostics.xml" usenativebasedir="true"/>
     </target>
     
+    <target name="copyJSON">
+        <copy todir="${site.dir}/json">
+            <fileset dir="${project.dir}/documentation/json">
+                <include name="**"/>
+            </fileset>
+        </copy>
+    </target>
     
     <target name="createDocSite">
         <java classpath="${saxon}" classname="net.sf.saxon.Transform" failonerror="true"  fork="true">
@@ -72,6 +75,6 @@
         
     </target>
   
-  <target name="all" depends="init, copy, runDiagnostics, createDocSite, validateDocumentationSite"/>
+  <target name="all" depends="init, copy, runDiagnostics, copyJSON, createDocSite, validateDocumentationSite"/>
   
 </project>
