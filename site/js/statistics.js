@@ -86,9 +86,6 @@ class Viz {
       },
       toolbox: {
         feature: {
-          dataView: { show: true, readOnly: false },
-          magicType: { show: true, type: ["line", "bar", "pie"] },
-          restore: { show: true },
           saveAsImage: { show: true },
         },
       },
