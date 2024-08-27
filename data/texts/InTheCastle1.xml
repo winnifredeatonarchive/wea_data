@@ -14,6 +14,18 @@
                <resp>Transcriber</resp>
                <name ref="pers:SG1"/>
             </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -21,21 +33,24 @@
          <sourceDesc>
             <msDesc>
                <msIdentifier>
-                  <repository ref="org:WERFonds">Winnifred
-                     Eaton Reeve Fonds</repository>
+                  <repository ref="org:WERFonds">Winnifred Eaton Reeve Fonds</repository>
                   <idno>5.7</idno>
                   <idno type="UofC">CU111913101</idno>
                </msIdentifier>
                <msContents>
                   <msItem>
-                     <bibl xml:id="bibl275"><author><name ref="pers:WE1">Anonymous</name></author>. <title level="a">In the Castle of Hikone</title>. ms., <date notBefore="1917" notAfter="1935">1917-1935</date>, <distributor ref="org:WERFonds">Winnifred
-                     Eaton Reeve Fonds</distributor>, <idno>5.7</idno>.</bibl>
+                     <bibl xml:id="bibl275"><author><name ref="pers:WE1">Anonymous</name></author>.
+                           <title level="a">In the Castle of Hikone</title>. ms., <date
+                           notBefore="1917" notAfter="1935">1917-1935</date>, <distributor
+                           ref="org:WERFonds">Winnifred Eaton Reeve Fonds</distributor>,
+                           <idno>5.7</idno>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
@@ -56,18 +71,479 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
-         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-08-24" status="published">Encoded. Set to
+            published.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2023-11-23" status="empty">Added citation from
+            bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
+         <change who="pers:JT1" when="2023-04-02" status="empty">Adding <gi>relatedItem</gi>s and
+               <gi>notesStmt</gi>.</change>
          <change who="pers:SL1" when="2022-03-12" status="empty">Added catREF info.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:InTheCastle1">
+      <pb n="1"/>
       <body>
-         <div>
-            <gap reason="noTranscriptionAvailable"/>
+         <head>IN THE CASTLE OF <choice>
+               <sic>HIKONE’</sic>
+               <corr>HIKONE</corr>
+            </choice></head>
+         <opener>
+            <byline>by</byline>
+            <byline><unclear reason="faded"><name ref="pers:WE1">ONOTO
+               WATANNA</name></unclear></byline>
+         </opener>
+         <div type="content">
+            <p><q>How lovely the little Princess Sado-Ko looks</q>, murmured the young Frenchman
+               dreamily.</p>
+
+            <p><q>If I were you</q>, gruffly responded his companion, in an undertone, <q>I should
+                  not look at her so much</q>.</p>
+
+            <p>The young Frenchman sighed, but his inconstant gaze wandered back to that great
+               Chamber of Honor, which was separated from the one in which they were only by one
+               deep step.</p>
+
+            <p><q>There is something about her appealing and gentle</q>, said the young Frenchman.
+                  <q>I am sure her voice is sweet, though I have never heard her speak. Have you,
+                  Von Bernheim?</q></p>
+
+            <p><q>Certainly not. No foreigner, or for that matter, no ordinary Japanese, can
+                  approach the ladies of the Premier’s household</q>.</p>
+
+            <p>The young Frenchman did not seem to hear his friend. He leaned farther forward, the
+               better to see the little figure by the half opened screen.</p>
+
+            <p><q>How charmingly she bends her little neck</q>, he said. <q>It looks as white as
+                  milk from here</q>.</p>
+
+            <p>His companion’s hand closed angrily upon his arm, and he drew the young Frenchman
+               forcibly about, so that he was now faced the colossal columns of the Castle.</p>
+
+            <p><q>You may have reasons to think of your own neck, my friend!</q> he growled, <q>if
+                  one of her kinsmen <pb n="2"/> suspect your folly. Look about you. On all sides,
+                  what do you see? Here in the Castle, beneath their silken robes, these
+                  soft-speaking Japanese carry the sword. Below, there in the vast courtyard, inside
+                  and out of the <foreign xml:lang="ja">Yashiki</foreign> (fortified dwelling) there
+                  are a thousand <foreign xml:lang="ja">samourai</foreign>, who are the servants of
+                  this Premier Ii-Kamon-no-Kami. Their faces are blank, inscrutable, as they look at
+                  us ever askance; but I will tell you of what they are thinking. They are thinking
+                  of the day, when they can throw aside the mask. One word, one look, from this
+                  Ii-Kamon-no-Kami, and our lives would not be worth that</q>, and he snapped his
+               fingers together in an eloquent motion.</p>
+
+            <p>The young Frenchman regarded the fierce old face of the German with an element of
+               reproach.</p>
+
+            <p><q>Why, Von Bernheim</q>, he protested gently, <q>every courtesy has been shown us
+                  here. Let us not question the motives of His Excellency, while we are beneath his
+                  roof. Are we not his especially honored guests?</q></p>
+
+            <p><q>Guests!</q> repeated the German savagely, <q>Say rather -- prisoners! We did not
+                  come here to be the guests of this Japanese</q>.</p>
+
+            <p><q>But when he so graciously invited us to remain, we are delighted to
+               accept</q>.</p>
+
+            <p><q>Are you then obsessed?</q> demanded the older man, in rising exasperation. <q>What
+                  can I say to you that will wake you up to the terrible realities of our situation.
+                  Surely you know as well as I what our position in the Castle Hikone is</q>.</p>
+
+            <pb n="2b"/>
+            <!-- This page is an addition with no page #, so I have for now named it 2b -->
+
+            <pb n="3"/>
+
+            <p>The young Frenchman stirred uneasily.</p>
+
+            <p><q>Since we are here</q>, he said, <q>why should we not endeavor to make our enforced
+                  stay tolerable? It can do no harm to look at this little Princess Sado-Ko</q>. He
+               spoke the last sentence with a certain wistfulness, and, again, almost unconsciously
+               his sentimental glance strayed back to that charming upper chamber, which was
+               elevated like a throne, whose screens were all of gold, through which the sunlight
+               pierced, and whose floors shone like glass. The latticed wall at back had been pushed
+               to either side, making of the chamber an opened pavilion, and revealing the garden
+               without. Like an exquisite, impressionistic picture of some fairy scene, a grove of
+               cherry trees blew all pink and white against a sky of purest blue.</p>
+
+            <p>The air was soft and full of the essence of Spring. There was a faint fragrance in
+               the atmosphere, a dim odor as of some subtle incense, which pervaded and made
+               pleasant the place. It acted like a charm upon the senses, and to the romantic young
+               Frenchman seemed the last touch to a scene that was perfect. He forgot the grumbling,
+               warning old German at his side. His face flushed with emotion, his dark eyes humid,
+               he gazed so ardently and compellingly at the little Princess Sado-Ko, that her head
+               drooped like a flower and her own cheek grew warm. Under his breath, the young
+               Frenchman murmured:</p>
+
+            <p><q>One cannot help but look at her! It is impossible <pb n="4"/> to resist</q>.</p>
+
+            <p><q>You are mad -- mad</q>, said the German, staring at him, with an enraged and
+               indignant expression.</p>
+
+            <p><q>Ah, good friend</q>, said the young Frenchman gently, <q>have not you in your time
+                  loved? Look! She is turning this way now! How <emph>pretty</emph> she is! How
+                  incredibly pretty! I did not think it was possible for a Japanese woman to be so
+                  lovely. I never see her soft little cheek, but I long to touch it -- to press it.
+                  I am sure it is as fragrant as a flower!</q></p>
+
+            <p>Von Bernheim’s voice was hoarse.</p>
+
+            <p><q>And while you are mooning over the cheek of this Japanese princess</q>, he said,
+                  <q>you forget what may be happening to your fellow-countrymen in Japan!</q></p>
+
+            <p>Slowly the young Frenchman turned, his long patrician face paling.</p>
+
+            <p><q>No, no, good Von Bernheim, do not suggest anything horrible. The day is so lovely.
+                  There is friendliness and kindness in the faces of all about us. I feel -- I feel
+                  so strangely light and happy, like one who is being drawn up to some blissful
+                  height. I am sure that everything is good and well with our people. Why do you
+                  suggest something that is sinister and horrible?</q></p>
+
+            <p><q>I do not suggest -- I assert! Our people are in dire peril. You yourself realized
+                  that before we came to Castle Hikone. You know what our mission was here. Were we
+                  not warned by our friends -- friends we could trust and believe, even though they
+                  were Japanese --</q> He added the last with a fierce reluctance, <q>that a
+                  massacre of the <pb n="5"/>White people in Japan is impending? We came here to
+                  demand protection for our people. With flattering promises and assurances he has
+                  kept us here --- as his honored guests! Why? That is the question I keep asking
+                  myself</q>.</p>
+
+            <p><q>It may be</q>, eagerly declared the young Frenchman, <q>that he wishes to
+                  demonstrate his friendship. His liking for the white people is well known. It was
+                  he who signed the Treaties that have made the trouble</q>.</p>
+
+            <p><q>He dared not do otherwise, while the allied fleet was afloat in the waters of
+                  Japan. Now he must placate the enraged Japanese. His is a dangerous position. It
+                  is said he is the worst hated man in Japan. But whatever may be his reasons for
+                  keeping us here, whether to protect us, or as hostages while demands are made upon
+                  our people -- I cannot say -- let us, at least, do nothing that may arouse his
+                  antagonism. Let us capitalize our time by guarding every word, every look every
+                  thought. Ah, my young friend, I speak only for your good</q>.</p>
+
+            <p><q>I know you do, Von Bernheim</q>, said the young Frenchman in a low voice.
+                  <q>Pardon me that I have tried your patience</q>.</p>
+
+            <p><q>This is what troubles me the most -- what gives me no rest, day or night --- the
+                  thought of what may be happening to those we left. Oh my friend, with the passing
+                  of each day -- each hour, I seem to feel a sense of terrible disaster rushing upon
+                  us</q>.</p>
+
+            <pb n="6"/>
+
+            <p>Impulsively, the young Frenchman cried out at that:</p>
+
+            <p><q>Let us go. Let us leave this place, Von Bernheim. We should not be here. You are
+                  right. I did wrong to think of anything save those who trusted me. Let us go to
+                  them now. Let us not stay another moment. Traitor that I am, I had lulled my
+                  conscience to sleep with pretty dreams and fancies. I see now the danger that
+                  encircles us</q>.</p>
+
+            <p><q>Even if we could freely pass the countless doors of the Castle Hikone</q>, said
+               the German, shaking his head gravely, <q>we would be simply throwing ourselves upon
+                  the waiting swords without. It would be suicidal and useless. It might prove to be
+                  a signal for a general attack upon those we wish to save. No -- we cannot leave.
+                  Here is our place for the present. Yet, while we are here, I beg you do no single
+                  act that may hurt us. Keep your young eyes from this Princess Sado-Ko. Lovely she
+                  may be, but do not forget, she is Japanese, and hence our enemy</q>.</p>
+
+            <p><q>Ah Von Bernheim</q>, pleaded the young Frenchman, <q>do not think too hardly of
+                  these people. I am sure we have many friends among them. Let us not judge a race
+                  by the acts of individuals</q>.</p>
+
+            <p>Said the German doggedly and bitterly: <q>I know these people well. I have studied
+                  them as under a microscope. Beneath their silken veneer of smiles and purring
+                  flattery, they are a race of savages! You will see! You have seen already! How
+                  many of our good friends, who blindly trusted them, as you are doing, have paid
+                  for their trust with their lives. Not in open fights -- as we white <pb n="7"/>
+                  men meet our foes -- as man to man, in the square light of day! We’ve been cut
+                  down in the dark -- stabbed in the back by unseen assassins!</q></p>
+
+            <p>The young Frenchman was silent. He stood with his slender hand cupping his chin, in
+               some troubled thought. Half protestingly, half conciliating, at last he spoke:</p>
+
+            <p><q>It is pleasant to think of the men of our race who have died in Japan as martyrs;
+                  yet, we foreigners should be honest, at least, with ourselves. We know that moat
+                  of these acts of violence were cruelly provoked. Have we not acted here as
+                  disdainful conquerors, rather than friends? Have we not arrogantly usurped to
+                  ourselves insolent authorities? There is a Japanese proverb peculiarly applicable,
+                  Von Bernheim, in our case: ’Our actions are followed by their consequences as
+                  surely as a body by its shadow’</q>.</p>
+
+            <p>The old German diplomat had removed his glasses and polished them fiercely. Now he
+               shook them in the face of the young Frenchman.</p>
+
+            <p><q>Men like you should remain at home. We white men must be served by our partisans,
+                  not dreamers. It does not matter whether we have done right or wrong, whether our
+                  desserts should be good or bad. That is not the problem we face now, and we cannot
+                  give a thought to the causes that have precipitated the trouble. All that we can
+                  think of now, is that these Japanese contemplate an assault upon our people. What
+                  are we to do? How prevent this horrible calamity?</q></p>
+
+            <pb n="8"/>
+
+            <p><q>Let us go -- to our friends</q>, said the young Frenchman, with emotion.</p>
+
+            <p><q>No -- this is the only place of safety for us at least</q>, declared the
+               other.</p>
+
+            <p><q>Ah, but I do not wish to be safe when our friends are in peril</q>, said the
+               Frenchman.</p>
+
+            <p>Von Bernheim made a hopeless motion with his hands, and then cautiously signalled for
+               the other to be silent. A group of young courtiers, their silken robes of many colors
+               trailing in the ancient style from their shoulders, and their fans fluttering like
+               butterflies, came from out the quarters of the <foreign xml:lang="ja">Kuge</foreign>
+               (Nobles) of the Castle Hikone, paused to bow with deep respect before the elevated
+               room of the Princens Sado-Ko and passed the white men with flattering bows and
+               hissing intakes of breath, ere they descended, whispering behind their fans, down
+               into the Court yard below.</p>
+
+            <p>The ladies of the Princess Sado-Ko craned their little necks at the passing nobles,
+               peeped from behind their fans, and fell to chattering among themselves, laughing and
+               teasing each other like a lot of playful children. Their merry, musical voices,
+               floated down to the two men by the balustrade, and the young Frenchman turned slowly
+               about, as if reluctantly charmed. Even as he turned, the Princeaa Sado-Ko looked up
+               suddenly from her work, and for the space of a long moment, her bright dark eyes
+               rested upon his own. It seemed to the young Frenchman at that moment as if he stood
+               under some gloriously hued rainbow, that all the world had turned once more fair and
+               charming, and that above all<pb n="9"/> else eyes that were full of a sweet mystery
+               dumbly spoke across a great abyss to him a story that was like the passionate song of
+               Lorelei. He scarcely heard the words of the German in his ear. He was conscious only
+               of a ruthless, stabbing pain, as mechanically, true to his promise to his friend, he
+               tore his gaze from the face of the Princess Sado-Ko, and as if forever to emphasize
+               his heroic resolve, turned his back harshly upon her.</p>
+
+            <p>And she? She had wondered much lately over this strange, exquisite tumult that had
+               come floodingly to her heart. All through the golden days of this Season of Clear
+               Weather, she had been warmly conscious of those long, yearning glances of the young
+               Frenchman. She knew not why, as she sat among her maidens, her mind had ever wandered
+               from her work to question with gentle wonder this blissful radiance that quivered
+               within her. and now, it seemed to her at this moment, a calamity had suddenly
+               befallen. Her eyes very wide and dark turned not away from that averted face. A
+               strangely piteous look crept across her sensitive features. Abstractedly, she leaned
+               forward. The ball of silk fell from her knee and the needle stuck idly in the <choice>
+                  <sic>emboridery</sic>
+                  <corr>embroidery</corr>
+               </choice> frame. As still, stiffly, rigidly, sternly, the young Frenchman’s face
+               remained turned from her, a sigh that was very long and <choice>
+                  <sic>woful</sic>
+                  <corr>woeful</corr>
+               </choice> came from the lips of the Princess Sado-Ko. Her little world of sun and
+               glitter seemed to swim about her. Something came welling up to her sweet long eyes
+               and dropped upon the head of her little handmaiden kneeling at her feet. The child
+               looked up, startled, an unuttered question upon <pb n="10"/> her lips.</p>
+
+            <p><q>Alas!</q> said the Princess Sado-Ko, <q>the honorable needle was sharp. It had
+                  pricked me!</q></p>
+
+            <p><q>Where is it your graciousness has wounded her celestial self?</q> queried the
+               anxious little maid, seizing the hands of her mistress and eagerly examining
+               them.</p>
+
+            <p><q>Ah, nay!</q> said the Princess Sado-Ko, arising and standing very straight and
+               white among her maidens, her gaze still upon the young Frenchman, <q>it is not my
+                  miserable hands I have hurt, my ladies!</q></p>
+
+            <p>With fluttering murmurs of sympathy they came about her, asking solicitously what
+               especial part of her most august anatomy the sacriligious needle had dared to pierce.
+               But the Princess Sado-Ko did not answer her maidens. She had drawn her little white
+               hands --- they were soft and fragrant as sweet slender lilies --- from the grasp of
+               the kneeling child at her feet, and now she laid them crushingly upon her heart.</p>
+
+            <milestone unit="line"/>
+
+            <p>There was a festival in the streets below that night. They called it: <q>A Festival
+                  of the Lanterns</q>, but to the two men, looking over the ballustrade, those
+               dancing flames seemed something more than the friendly light of lanterns. Why did
+               they run so fleetly, those brown, whispering people, and what gave to their voices
+               that exultant snarl, as of fanatic madmen bent upon some conquering course? How
+               horribly menacing seemed their savage faces under the threatening light of the angry,
+               waving torches. A crowd had <pb n="11"/> gathered directly under the gates of the
+               Castle Hikone, and suddenly a crier’s voice, shrill and sweet as a woman’s, but with
+               a throbbing note of wild defiance, rang out upon the air, drowning the rumbling
+               murmurs of the throng.</p>
+
+            <p><q>Ii-Kamon-no-Kami!</q> cried the shrill, fierce voice, <q>friend of the white
+                  barbarians, make your peace with the Eternal Gods!</q></p>
+
+            <p>The cry was caught up by a hundred throats, till it seemed to come thundering against
+               the iron gates of the Castle and to sweep beyong them into the fortified Yaskiki of
+               the Premier Prince of Japan. A file of <foreign xml:lang="ja">Samurai</foreign>
+               passed along the walls of the courtyard and slipped out of the gates into the street.
+               A hubub arose without -- angry, defiant outcries, strangling shrieks, and the savage
+               clatter of sword meeting sword; then the clacking patter of a hundred clogs beating
+               in hurried retreat upon the pavement. The light of the angry torches died away. A
+               silence fell all about the Castle Hikone.</p>
+
+            <p>To the two white men, looking with haggard faces and straining eyes off over the
+               marble balustrade of the second enciente of tho Castle, that silence was more
+               appaling than the menacing cries of before. Waiting for they knew not what terror,
+               scarcely breathing, they tried to pierce the thick darkness. Suddenly the older man
+               gripped the arm of the younger and pointed off toward the west. Like a snake, against
+               the blackness of the sky, a flame had suddenly leaped. It spread like forked
+               lightning, licking its zigzag way across <pb n="12"/> the darkness, and joined in one
+               dark blur of smoke and flame.</p>
+
+
+
+            <p><q>My God!</q> cried the young Frenchman stranglingly, <q>the legations are
+                  afire!</q></p>
+
+            <p>Like some, wild, enraged beast, prodded and beaten beyound hurt, up leaped the old
+               German, ran with his great head lowered almost as a battering ram before him, blindly
+               along the parapet, till he reached the forbidden stairs. Darkness was beneath him,
+               but he plunged down, down, into that mad pandemonium of hoarsely shouting, moving
+               shapes that were pouring out through the now wide open gates of the Castle
+               Hikone.</p>
+
+            <p>For a moment only the young Frenchman hesitated. Then with a cry: <q>Von Bernheim, my
+                  friend!</q> he started to follow. Something seemed to blow like a fluttering bird
+               across his path, holding and staying his progress.</p>
+
+            <p>Under the reflected light of that fearful flame in the west, he saw her face, white
+               and wild, close to his own. Her little hands had somehow found their way to his
+               shoulders. He tried to shake them off but there they clung resiatlessly.</p>
+
+            <p><q>Outside country-man!</q> she whisperingly cried, <q>go not outside the Castle
+                  Hikone tonight!</q></p>
+
+            <p>He tried to speak, to turn his head back toward that flaming west, but the little
+               frantic hands, clutching at his shoulders, drew him ever along, farther and farther
+               back toward that golden room, where always she had sat among her maidens. Her face
+               was so close to his own. Her soft, black hair came blowing against his lips. Like the
+               wings of a bird, her long, silken sleeves seemed to reach out and <pb n="13"/> enwrap
+               him to her. Dazed and charmed he moved along with her, but ever as he moved, he
+               murmured hoarsely, like one who speaks in distress.</p>
+
+            <p><q>Ah -- my people! my people! I must go to them!</q></p>
+
+            <p><q>No, no</q> she said, <q>it is here you shall remain</q>.</p>
+
+            <p><q>If I could -- if I dared -- how gladly would I stay</q> he stammered, like one in
+               a sweet bewilderment, <q>but my people---my people---</q>.<note type="editorial"
+                  >Period in original.</note></p>
+
+            <p><q>They shall be saved</q> she said. <q>In my father’s name I promise it. He himself
+                  will personally go to them. Rest you in confidence and safety, outside
+                  country-man. I and my maidens will guard you from all harm!</q></p>
+
+            <milestone unit="line"/>
+
+            <p>He awoke with a start. The dim, grey light of dawn had fallen. A robin twittered and
+               called. A dull, slow rain fell sounctlessly. Everywhere he was enclosed by screens
+               that were so freighted with gold and lacquer that they shone even in the dark. For a
+               long time he stared before him, like one struggling to awaken from a trance. Then
+               gradually there crept across his mobile features a strangely startled look -- the
+               look of one mortally afraid. Blotting out all memory of that strange, sweet night of
+               ecstacy, there came up suddenly to his mind with scorching vividness that flaming sky
+               of the West.</p>
+
+            <p>What was he doing here, resting among those silken futons, like a child soothed to
+               sleep by a song? He reached out a hand and cautiously shoves aside a screen. Without,
+               still asleep, those she had set to guard and care for him lay, like a <choice>
+                  <sic>barriacade</sic>
+                  <corr>barricade</corr>
+               </choice> in his path. He stepped across them, <pb n="14"/> holding his breath,
+               fearing with every move to awaken them. He came to a latticed <foreign xml:lang="ja"
+                  >shoji</foreign>, and pushed it along its groove. It was still dark without, and
+               the rain fell sullenly. All about him was silence, save for the twittering robin.
+               Along the wide verandah that stretched without the apartments of the Princess
+               Sado-Ko, he felt his way, till he came to the rampart of the Castle and crept along
+               the ballustrade to the stairs.</p>
+
+            <p>The Courtyard was strangely still and empty. Not a guard patrolled the inner walls,
+               and the gates gaped wide open, unguarded. He stayed not to question this strange
+               dereliction of the servants of his host, but, glancing upward suddenly, his agonized
+               gaze fell upon something that sent him for a moment staggering back. Swinging on a
+               line drawn from post to post of the great gates of the Castle Hikone, hung by his
+               long, damp hair, was the head of the Baron Ii-Kamon-no-Kami, the friend of the white
+               men!</p>
+
+            <p>For a moment the young Frenchman stared up at this ghastly object, and then, his head
+               dropping, as Von Bernheim’s had done, he dashed out of those terrible gates.</p>
+
+            <p><del>Out into</del> the dark and silent streets sped the Frenchman. As the Castle
+               Hikone had been, so seemed this whole city, enwrapped in a stillness and silence that
+               was not merely of the dawn.</p>
+
+            <p>On and on, through the deserted streets, blindly ran the young Frenchman.</p>
+
+            <p>The sun came up in the eastern sky, and showed a dim questioning face through the
+               mist. Far off in the hills <pb n="15"/> came the dull booming of a Temple bell, but
+               its mellow chant found no response from the temples of this haggard city which dared
+               not to awake.</p>
+
+            <p>On and on, over miles of streets and bare stretches of land, up endless hills and
+               down through dales and valleys, and again through streets that never seemed to end,
+               until at last (but not, alas! like one who has run a great race -- home!) he dashed
+               into the debris and the smouldering ruins of <q>The Street of White Devils</q>, as
+               they had named it in Japan.</p>
+
+            <p><q>My God, My God, My God!</q> he cried like one gone mad.</p>
+
+            <p>There as a great dismantled litter in the center of the street, once doubtless, the
+                  <foreign xml:lang="ja">norimon</foreign> of some personage of high rank. In his
+               distraction, the young Frenchman neither saw nor recognized that luxurious equipage,
+               that had so often pleased and interested his fancy. His glance went wildly from one
+               stricken form to another. Here was a white woman, her bare arms and shoulders still
+               gleaming like white ivory above her beautiful gown, lying with her tortured face all
+               torn, Here was a man he had known well -- one of Japan’s truest friends -- and here
+               was a child -- a little boy, whose small, chubby hand still grasped a toy -- an
+               American warboa!? How many times the young Frenchman had held the little fellow upon
+               his knee and played with him! And here -- and here was one he had knowm better than
+               all -- Von Bernheim!</p>
+
+            <p>So he had come in time, in time to die with those he loved. Never again would the
+               young Frenchroan hear his biting voice or laugh at his quaint accent. How gallant he
+               looked, even in <pb n="16"/> death? How clean -- and strong!</p>
+
+            <p> How clean -- and strong? The yound Frenchman burst into frantic tears, crying with
+               the unbounded grief of one who never again may be comforted, and calling upon his
+               friend to speak to him but once -- to forgive him!</p>
+
+            <p>And as he wept, one crept from under that dismantled <foreign xml:lang="ja"
+                  >norimon</foreign>, paused a moment to look at the young Frenchman with a
+               brooding, passionate gaze, and then with her hand to her cheek, her dark eyes wide
+               and sunken in her withered little face, the Princess Sado-Ko crept on her knees to
+               his feet. </p>
+
+            <p>It seemed not strange to him that she should be there, in this place of horror, she
+               who had saved him at the expense of his honor. He covered his face with his hands,
+               lest he should see hers, which he knew to be too fair. Her voice was like a thin
+               thread of melody that comes from very far away.</p>
+
+            <p><q>Outside countryman</q>, she said, <q>do not lose faith in our Japan. We are not
+                  all base. See, here are the native servants and body guard of the foreigners, who
+                  have fought and died for them. Japan stands at the dawn of a new era! We are going
+                  to be born again. Do not forget that at the time of the rebirth of a nation, there
+                  are always madmen who seek to destroy where our leaders strive to uplift
+               us</q>.</p>
+
+            <p>Against his will, he had permitted her to draw him close to that wrecked <foreign
+                  xml:lang="ja">norimon</foreign>, and now, very calmly, she drew aside the
+               curtains, and showed him what was within.</p>
+
+            <p><q>See---here is my father, the Premier of the <pb n="17"/>
+                  <foreign xml:lang="ja">Shogun</foreign>, lying headless in his own blood. He came
+                  here to help your countrymen. He was a friend of the white men, and of the
+                  Japanese; but there he lies, a great martyr, a far-seeing patriot! May his journey
+                  to the Lotus Land be one of bliss!</q></p>
+
+            <p>He turned with a sick shudder from that fearful sight. He was conscious of a heavy
+               sense of lassitude and despair. The charming sunny world had turned all black to him.
+               Never again would his heart beat with with ambition and desire. In a single night
+               Youth had leaped away from him.</p>
+
+            <p>Now the day had fully dawned. The rain was quenched, and a bright red Run sailed out
+               across the sky. Under its light, the pallid, steaming ruins showed in all their
+               hideous nakedness. The young Frenchman threw up his arm, and cowered against it, then
+               staggering, swaying, looking back not once at that desolate figure there alone among
+               the ruins, he found his way through the deserted streets down to the harbor, where
+               the ships of the white nations were vengefully pulling in to the shore.</p>
          </div>
       </body>
    </text>
