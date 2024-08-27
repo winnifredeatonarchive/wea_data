@@ -37,6 +37,7 @@
         <copy todir="${site.dir}/js">
             <fileset dir="../site/js">
                 <include name="**.min.js"/>
+                <include name="**/statistics.js"/>
             </fileset>
         </copy>
         
@@ -50,6 +51,7 @@
             <targetfile/>
             <fileset dir="../site">
                 <include name="**/**.js"/>
+                <exclude name="**/statistics.js"/>
                 <exclude name="**/**.min.js"/>
             </fileset>
             <globmapper from="*" to="${products.dir}/site/*"/>

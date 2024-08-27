@@ -20,6 +20,7 @@
     
     <!--The directory that contains all of the old versions-->
     <xsl:param name="oldDir" as="xs:string"/>
+    <xsl:param name="outDir" as="xs:string"/>
    
     <!--All of the URIs-->
     <xsl:variable name="oldDocsURIs" select="uri-collection($oldDir || '?select=*.xml;recurse=yes')"/>
@@ -29,7 +30,7 @@
     <xsl:variable name="taxonomyDoc" select="$dataDocs//TEI[@xml:id = 'taxonomies']" as="element(TEI)"/>
     
     <xsl:variable name="redirectsDoc" select="$dataDocs//TEI[@xml:id='redirects']" as="element(TEI)"/>
-    
+        
     <xsl:variable name="docsByTag" as="map(xs:string, document-node()+)">
         <xsl:map>
             <!--Group these by tag (which we can derive from the directory) -->
@@ -54,11 +55,14 @@
                                 <xsl:map>
                                     <xsl:map-entry key="'hasTranscription'" 
                                         select="matches(string-join(//body),'\S') and //revisionDesc/@status  = 'published'"/>
+                                    <xsl:map-entry key="'wc'" select="wea:getWordCount(//text)"/>
                                     <xsl:map-entry key="'hasHeadnote'" select="matches(string-join(//abstract),'\S')"/>
                                     <xsl:map-entry key="'hasFacsimile'" select="exists(//text/@facs)"/>
                                     <xsl:map-entry key="'exhibit'" 
                                         select="replace(descendant::catRef[@scheme='wdt:exhibit']/@target,'wdt:','')"/>
                                     <xsl:map-entry key="'doctype'" select="string-join(descendant::catRef[@scheme='wdt:docType'] ! replace(@target,'wdt:',''),'; ')"/>
+                                    <xsl:map-entry key="'genre'" select="array{descendant::catRef[@scheme='wdt:genre']/@target ! substring-after(.,'wdt:')}"/>
+                                    
                                 </xsl:map>
                             </xsl:map-entry>
                         </xsl:for-each>
@@ -85,9 +89,17 @@
     
     <xsl:template match="divGen[@xml:id='versions_content']">
         <xsl:message>Generating version stats...</xsl:message>
+        <xsl:call-template name="createJSONStats"/>
         <xsl:for-each select="$sortedTags">
             <xsl:call-template name="createVersions"/>
         </xsl:for-each>
+
+    </xsl:template>
+    
+    <xsl:template name="createJSONStats">
+        <xsl:result-document href="{$outDir}/json/versions.json" method="json">
+            <xsl:sequence select="$versionsMap"/>
+        </xsl:result-document>
     </xsl:template>
     
     <xsl:template name="createVersions">
@@ -543,6 +555,25 @@
         <xsl:param name="docs" as="document-node()+"/>
         <xsl:value-of select="$docs//TEI[@xml:id=$id]/teiHeader/fileDesc/titleStmt/title[1]"/>
     </xsl:function>
+    
+    <xsl:function name="wea:getWordCount" as="xs:integer">
+        <xsl:param name="node" as="node()"/>
+        <xsl:choose>
+            <!--If there's a gap, then just skip the thing-->
+            <xsl:when test="$node[descendant::tei:gap[@reason='noTranscriptionAvailable']]">
+                <xsl:sequence select="0"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <!--Retrieve all relevant text nodes-->
+                <xsl:variable name="text" select="$node/descendant::text()[not(ancestor-or-self::tei:note[@type='editorial'] or ancestor-or-self::tei:corr)][matches(.,'\S')]" as="text()*"/>
+                
+                <!--Count them up by analyze the string, finding all matches for non-space characters, and then counting them-->
+                <xsl:variable name="wc" select="count(analyze-string(string-join($text),'\S+')//*:match)" as="xs:integer"/>
+                <xsl:sequence select="$wc"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
     
     <xsl:template match="@*|node()" priority="-1">
         <xsl:copy>

@@ -29,6 +29,11 @@
                 <include name="**"/>
             </fileset>
         </copy>
+        <copy todir="${site.dir}/json">
+            <fileset dir="${project.dir}/documentation/json">
+                <include name="**"/>
+            </fileset>
+        </copy>
     </target>
     
     <target name="runDiagnostics">

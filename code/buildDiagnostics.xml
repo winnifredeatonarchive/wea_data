@@ -53,6 +53,7 @@
             <arg value="-xsl:${project.dir}/code/documentation/diagnostics_master.xsl"/>
             <arg value="-o:${project.dir}/documentation/documentation_full.xml"/>
             <arg value="oldDir=${old.dir}"/>
+            <arg value="outDir=${project.dir}/documentation"/>
             <arg value="--suppressXsltNamespaceCheck:on"/>          
         </java>
     </target>
