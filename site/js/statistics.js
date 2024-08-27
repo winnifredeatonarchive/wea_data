@@ -182,7 +182,6 @@ class Viz {
   }
 
   debug(data) {
-    console.log(data);
     document.querySelector("#json").data = data;
     return true;
   }
@@ -193,7 +192,6 @@ class Viz {
 
   isFiction(array) {
     return !array.some((i) => {
-      console.log(i);
       const { parent } = this.taxonomies[i];
       return i === "genreNF" || parent === "genreNF";
     });
@@ -210,7 +208,7 @@ class Viz {
 
 (async () => {
    document.querySelector(`#info + [data-el="div"]`).insertAdjacentHTML('afterbegin', `<div id="echart" class="echart"></div>`);
-   const c = new Viz();
+   const c = new Viz('./json/texts.json');
    await c.init();
    await c.buildChart();
    window.addEventListener("resize", function () {
