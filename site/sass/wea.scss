@@ -3687,7 +3687,7 @@ nav a.home{
     font-family: "hack-serif"!important;
 }
 
-/* *****  */
+/********************************************************** CONTRIBUTE */
 
 ul#contribute_package_texts_texts {
     max-height: 30rem;
@@ -3758,5 +3758,17 @@ button.download_btn {
     width: 100%;
     display: block;
     padding: 1rem;
+}
+
+/********************************************************** STATISTICS */
+
+html#statistics #text{
+    --max-text-width: 100%;
+}
+
+.echart{
+    min-height:60vh;
+    width:100%;
+    margin: 1rem 0;
 }
 

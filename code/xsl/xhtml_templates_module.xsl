@@ -93,6 +93,9 @@
                 <script src="js/jszip.min.js"/>
                 <script src="js/encoding_package.js?v={normalize-space($version)}"></script>
             </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id='statistics'">
+                <script src="js/statistics.js" type="module"><!--Keep open--></script>
+            </xsl:if>
             <script src="js/accordion.js?v={normalize-space($version)}"><!--Keep open--></script>
             <script src="js/wea.js?v={normalize-space($version)}"/>
         </body>
