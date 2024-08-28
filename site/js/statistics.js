@@ -38,7 +38,7 @@ class Viz {
   }
 
   async _setTaxonomies() {
-    const taxonomies = await this.get("../json/taxonomies.json");
+    const taxonomies = await this.get("./json/taxonomies.json");
     this.taxonomies = taxonomies;
     return true;
   }
