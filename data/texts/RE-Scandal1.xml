@@ -7,7 +7,15 @@
          <titleStmt>
             <title>Re: Scandal</title>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
                <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
          </titleStmt>
@@ -27,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Scandal</title>. <date when="1930-01-26">January 26th  30</date>.</bibl>
+                     <bibl><title level="a">Re: Scandal</title>. <date when="1930-01-26">January
+                           26th 30</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -57,15 +67,33 @@
       </profileDesc>
       <revisionDesc status="empty">
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-Scandal1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>January 26th 30</date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From <name
+                  ref="pers:WE1">Winnifred Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>RE: <q>SCANDAL</q></p>
+
+            <p>I think this would make a dandy, sophisticaed, smart and flashy story for Laura La
+               Plante.</p>
+            <p>I dimly recall seeing the play - it was not so long ago at that, about four or five
+               years ago and <q>SCANDAL</q> is more up-to-date than many of the new stories that are
+               being written.</p>
+
+         </div>
+      </body>
+   </text>
 </TEI>
