@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Cattle 2</title>. <date when="1929-11-16">November 16, 1929</date>.</bibl>
+                     <bibl><title level="a">Re: Cattle 2</title>. <date when="1929-11-16">November
+                           16, 1929</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,46 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed,
+            encoded.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-Cattle2">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <byline>INTER-OFFICE COMMUNICATION</byline>
+            <dateline>
+               <date>November 16, 1929.</date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From <name
+                  ref="pers:WE1">Mrs. Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>Perhaps you have noticed that Metro are announcing a big out-door special entitled
+                  <q>Montana</q>. I call this to your attention because it does seem as if all the
+               companies realize that <q>Western Specials</q> are destined to be sure-fire for the
+               box office. The <q>Virginian</q> is a fair example. </p>
+
+            <p>May I emphasize the fact that both <q>Cattle</q> and <q>His Royal Nibs</q> would make
+               big out-door pictures. It may be that <q>Cattle</q> is a bit sombre and tragic but it
+               has an almighty drama nevertheless. <q>His Royal Nibs</q> has everything that
+                  <q>Cattle</q> lacks in the way of humor, romance and love interest. <q>His Royal
+                  Nibs</q> was bought from me by Al Cohn. He sold it to a Mr. Cronenweth, a
+               speculator. I believe it can be bought at quite a nominal price. I own the dialogue
+               rights of both these novels. I know I could do a big adaptation of either of these
+               books. I was eight years on a cattle ranch in Northwestern Canada and was secretary
+               of the largest cattle company in the Northwest - my husband being the president so I
+               know my subject well, in fact I know <emph>cattle</emph> as few women do. </p>
+
+         </div>
+      </body>
+   </text>
 </TEI>
