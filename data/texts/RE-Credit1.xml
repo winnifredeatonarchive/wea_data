@@ -11,7 +11,15 @@
                <name ref="pers:SH1"/>
             </respStmt>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
                <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
          </titleStmt>
@@ -31,23 +39,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Credit</title>. <date when="1929-11-25">November 25, 1929</date>.</bibl>
+                     <bibl><title level="a">Re: Credit</title>. <date when="1929-11-25">November 25,
+                           1929</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +69,40 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed, encoded.
+            Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-Credit1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>November 25, 1929.</date>
+            </dateline>
+            <byline>To: <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From: <name
+                  ref="pers:WE1">Mrs. Reeve</name></byline>
+         </opener>
+         <div>
+            <p>RE: <emph>CREDIT</emph></p>
+
+            <p>I am going to ask that I be given credit for the original story as well as the
+               dialogue of <q>BARBARY COAST</q>. <name ref="pers:CL2">Charley Logue</name> should
+               share credit with me for the story inasmuch as although I wrote the story he
+               contributed much by his suggestions in the plotting.</p>
+
+            <p>RE: <emph>CARNIVAL</emph></p>
+
+            <p>May I also be given the full credit for the screen story and dialogue, I wrote this
+               in its entirety - a detailed script with dialogue of eighty-six pages practically
+               ready to broken up.</p>
+
+         </div>
+      </body>
+   </text>
 </TEI>
