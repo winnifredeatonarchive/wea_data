@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Cattle 1</title>. <date when="1929-11-13">November 13th, 1929</date>.</bibl>
+                     <bibl><title level="a">Re: Cattle 1</title>. <date when="1929-11-13">November
+                           13th, 1929</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,79 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed,
+            encoded.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-Cattle1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <byline>INTER-OFFICE COMMUNICATION</byline>
+            <dateline>
+               <date>November 13, 1929</date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">C. Gardner Sullivan</name> From <name ref="pers:WE1"
+                  >Mrs. Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>RE: -- <emph>CATTLE</emph></p>
+
+            <p>In calling your attention to my novel, CATTLE, may I set down, for your information
+               and reference, several matters in connection with the novel?</p>
+
+            <list type="instructions" rendition="numbered">
+
+               <item>It should not be considered in the class with the ordinary western picture. It
+                  would make a Super-Western.</item>
+
+               <item>There is no company so well outfitted to do a special story of this sort, as
+                  Universal.</item>
+
+               <item>The tremendous success of THE VIRGINIAN and IN OLD ARIZONA brings home the fact
+                  that big western pictures are certain to go across with great success. Len Fields
+                  has said that CATTLE would make an epic picture.</item>
+
+               <item>The novel was published in 1924. No sooner was it out than nearly every motion
+                  picture company negotiated with my agents in New York for the purchase of this
+                  novel. At that time I was living on a ranch in Northwestern Canada. <name
+                     ref="pers:HC1">Harry Carr</name>, then scenario editor for <name
+                     ref="pers:DWG1">D. W. Griffith</name>, wrote me in Alberta and gave his opinion
+                  that CATTLE was the greatest outdoor novel he had ever read. This he has repeated
+                  several times in his column in The Los Angeles Times, <q>The Lancer</q>. <name
+                     ref="pers:EC1">Elmer Clifton</name> was at that time associated with <name
+                     ref="pers:DWG1">D. W. Griffith</name>. He made the trip to Alberta – a six <choice>
+                     <sic>day’s</sic>
+                     <corr>day</corr>
+                  </choice> journey from New York – especially to see me and he bought the rights to
+                  CATTLE. For years he held the property at a prohibitive figure, but I know now
+                  that it could be bought at a reasonable price and at a very <choice>
+                     <sic>nomenial</sic>
+                     <corr>nominal</corr>
+                  </choice> figure, in fact, if <name ref="pers:EC1">Clifton</name>, who is crazy
+                  about it, were allowed to direct it or be associated in the production.</item>
+
+               <item>The novel had a large sale and it is still issued each year. The London Times
+                  referred to it as a Canadian <q>Tess of the D’Urbervilles</q>. It was reviewed
+                  enthusiastically by such critics as Menken and <name ref="pers:CJF1">Charles J.
+                     Finger</name>, who ordinarily do not notice current fiction. <name
+                     ref="pers:CJF1">Mr. Finger</name> compared it with the work of Ruth Suchow and
+                  the stories of the Russian Modernists.</item>
+
+            </list>
+
+            <p>We have in our files an excellent synopsis and you will note, from the comments of
+               the reader, how strongly she recommended this story. I might say in passing, that I
+               was not at the time in the employ of Universal, but was out in the northwest of
+               Canada.</p>
+         </div>
+      </body>
+   </text>
 </TEI>
