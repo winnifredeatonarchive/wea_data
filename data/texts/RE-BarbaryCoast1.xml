@@ -11,7 +11,15 @@
                <name ref="pers:PB1"/>
             </respStmt>
             <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
                <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
          </titleStmt>
@@ -31,23 +39,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Barbary Coast 1</title>. <date when="1929-11-26">November 26, 1929</date>.</bibl>
+                     <bibl><title level="a">Re: Barbary Coast 1</title>. <date when="1929-11-26"
+                           >November 26, 1929</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +69,35 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed, encoded.
+            Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-BarbaryCoast1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+
+         <head>INTER-OFFICE COMMUNICATION</head>
+
+         <opener>
+            <dateline>
+               <date>January 13th, 1930</date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">C. Gardner Sullivan</name> From <name ref="pers:WE1"
+                  >Winnifred Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>Please do not let the dialogue or the main situations in CARNIVAL be altered.</p>
+            <p>I wish that I could work directly with Mr. Collins. </p>
+
+         </div>
+      </body>
+   </text>
 </TEI>
