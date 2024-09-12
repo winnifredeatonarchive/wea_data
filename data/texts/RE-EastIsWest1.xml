@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: East is West</title>. <date when="1930-03-05">Mch 5th. 1930</date>.</bibl>
+                     <bibl><title level="a">Re: East is West</title>. <date when="1930-03-05">Mch
+                           5th. 1930</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,47 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed,
+            encoded.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-EastIsWest1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+
+
+      <body>
+         <opener>
+            <byline>INTER-OFFICE COMMUNICATION</byline>
+            <dateline>
+               <date>Mch 5th. 1930</date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From <name
+                  ref="pers:WE1">Mrs. Reeve</name></byline>
+         </opener>
+         <div>
+
+
+            <p>Re: <emph>EAST IS WEST</emph></p>
+
+            <p>If we have bought this play, as the newspapers say, may I be assigned to the
+               adaptation? This is the sort of thing I do best, and I could turn you out a corking
+               treatment.</p>
+
+            <p>I have any number of lyrics and jingles--Japanese---which could easily be transposed
+               for a Chinese picture, and if <name ref="pers:LV1">Lupe Velez</name> were to do this
+               picture, she could sing them charmingly and cutely. </p>
+
+            <p>I think you know that I have written a great many oriental novels. One of my books
+               had a sale of over two million, and was listed as being the largest seller of any
+               novel of the orient ever published. If we do an oriental picture-I’d like to work on
+               it---when of course--I am back on the pay roll. </p>
+
+         </div>
+      </body>
+   </text>
 </TEI>
