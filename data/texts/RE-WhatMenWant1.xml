@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: What Men Want 1</title>. <date when="1930-02-19">Feb. 19th, 1930</date>.</bibl>
+                     <bibl><title level="a">Re: What Men Want 1</title>. <date when="1930-02-19"
+                           >Feb. 19th, 1930</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,50 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed, encoded.
+            Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-WhatMenWant1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>Feb. 19th, 1930</date>
+            </dateline>
+            <byline><name ref="pers:CGS1">C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>RE: WHAT MEN WANT</p>
+
+            <p>May I ask that the umbrella gag, which is original with me, be left out of the new
+               version of <q>WHAT MEN WANT</q>? I would like very much to use this incident in some
+               other story that I might write for Universal.</p>
+
+            <p>I read the new version and it follows in the main my original adaptation - - values,
+               characterizations and even incidents but is treated differently, with the added
+               incident of Lee being the mistress of some man which you personally suggested. You
+               may recall I wrote an outline based on your idea.</p>
+
+            <p>Personally, I think the first version is the best, but of course I’m prejudiced. I
+               maintain however that there is more drama to it and the characters are more real and
+               there is a <foreign xml:lang="fr">raison d’etre</foreign> for their actions. This is
+               not meant in any way as criticism of the new version, for I hope my mind is
+               sufficiently elastic to allow for the opinions of others.</p>
+
+            <p>Although many of my ideas are embodied in the new version I would much prefer not to
+               have my name on this.</p>
+
+
+         </div>
+      </body>
+   </text>
 </TEI>
