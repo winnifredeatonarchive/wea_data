@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: The Flirt 1</title>. <date>February 5th 19__</date>.</bibl>
+                     <bibl><title level="a">Re: The Flirt 1</title>. <date>February 5th
+                        19__</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,45 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-TheFlirt1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <byline>INTER-OFFICE COMMUNICATION</byline>
+            <dateline>
+               <date>February 5th 19__<note type="editorial" resp="pers:LW1">Date unwritten in
+                  original. Possibly 1930 as another inter-office memo regarding <q>The Flirt</q> is dated January 26, 1930.</note></date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">C. Gardner Sullivan</name> From <name ref="pers:WE1"
+               >Winnifred Reeve</name></byline>
+         </opener>
+         <div>
+            <p>RE <q>THE FLIRT</q></p>
+            
+            <p>This is the first sequence or rather an outline of it. I would have gone a bit
+               further but am anxious to know if I am going along the line that you want.</p>
+            
+            <p>I think a pretty good picture can be made out of <q>THE FLIRT</q> using the same
+               ingredients as the original story, but adapting them in such a way that they will be
+               interesting and up-to-date for today. There is so much <choice>
+                  <sic>s tory</sic>
+                  <corr>story</corr>
+               </choice> - so much plot and the characterisations are really so good that I don’t
+               believe I could write an original story that would be as good as this, and with your
+               permission, I would like to treat it along lines that will follow the original story
+               so far as the plot is concerned.</p>
+            
+            <closer><signed><name ref="pers:WE1">Winnifred Reeve</name></signed></closer>
+            
+         </div>
+      </body>
+   </text>
 </TEI>

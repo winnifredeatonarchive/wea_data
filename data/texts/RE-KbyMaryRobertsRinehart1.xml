@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: K by Mary Roberts Rinehart 1</title>. <date when="1930-01-21">January 21st, 30</date>.</bibl>
+                     <bibl><title level="a">Re: K by Mary Roberts Rinehart 1</title>. <date
+                           when="1930-01-21">January 21st, 30</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,45 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-KbyMaryRobertsRinehart1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date> January 21st, 30 </date>
+            </dateline>
+            <byline><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+            <byline>cc<name ref="pers:CL3">Mr. Carl Laemmle Jr</name>.</byline>
+         </opener>
+         <div>
+            <p>RE: K by <name ref="pers:MRR1">Mary Roberts Rinehart</name>.</p>
+
+            <p>This is a very fine story, a human and even dramatic tale. The characterizations are
+               especially fine. Though it may be considered old fashioned, in my opinion there is no
+               question but what a very fine picture could be made from this novel. Considerable
+               adaptation will be necessary to make it up-to-date. But, tale n all in all although
+               it is fifteen years old it nonetheless remains a grand story.</p>
+
+            <p>Of course there is the question to consider whether we wish to do a picture that, to
+               a large extent, is concerned with a hospital, surgery etc. for the main theme of the
+               story is concerned with a great surgeon who has become a recluse on account of his
+               supposed failure in a serious operation. And the main character is a nurse in the
+               hospital; in fact a great deal of the action takes place in a hospital.</p>
+
+            <p>It’s quite true that <q>K</q> may be considered as of the old school of writing to a
+               certain extent, but the old formula is as good as ever under new treatment. </p>
+
+
+         </div>
+      </body>
+   </text>
 </TEI>

@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Wild Rose</title>. <date when="1929-11-16">September 16   29</date>.</bibl>
+                     <bibl><title level="a">Re: Wild Rose</title>. <date when="1929-11-16">September
+                           16 29</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,45 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-WildRose1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>September 16 29</date>
+            </dateline>
+            <byline><name ref="pers:CGS1">C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+         </opener>
+         <div>
+            <p>Attached find outline of the story originally entitled WILD ROSE but for which I now
+               have the better title of HELL HOUSE. </p>
+
+            <p>When I told you this story, I had a totally different idea for the first part. I’m
+               enclosing that idea but think it is far more commonplace than a new one I have
+               plotted out.</p>
+
+            <p>I know my ending of this story is very much at loose ends but it will iron out when I
+               come to the actual treatment. I could, of course, bring Diamond Bill out to the
+               Northwest and Rose could then reject his offer of marriage, which would set her right
+               with the young Forest Ranger.</p>
+
+            <p>Another thing that bothers me is the fact that my hero, Jim the Forest Ranger, does
+               not come into the story until the second part but I thought possibly that we might
+               even adapt the story so that it might not even be necessary to lay the first part in
+               New York, though it does make a mighty good sequence that ought to suit Nolan. We
+               have not shown her yet with luxurious surroundings and yet I imagine she could wear
+               clothes and look gorgeous.</p>
+
+         </div>
+      </body>
+   </text>
 </TEI>

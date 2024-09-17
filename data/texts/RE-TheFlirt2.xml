@@ -10,6 +10,14 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Writer</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -27,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: The Flirt 2</title>. <date when="1930-01-26">January 26th 30</date>.</bibl>
+                     <bibl><title level="a">Re: The Flirt 2</title>. <date when="1930-01-26">January
+                           26th 30</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -55,17 +65,44 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-TheFlirt2">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>January 26th 30</date>
+            </dateline>
+            <byline><name ref="pers:CGS1">C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+         </opener>
+         <div>
+            <p>RE <q>THE FLIRT</q></p>
+
+            <p>This is a typical <name ref="pers:BT1">Booth <choice>
+                     <sic>Tarrkington</sic>
+                     <corr>Tarkington</corr></choice></name> story. A small town, homespun, human yarn.</p>
+
+            <p>The characters are the familiar hump-dump, everyday sort. They are a bit
+               old-fashioned, and the general effect of the story in its treatment is too
+               provincial.</p>
+
+            <p>Small town residents are as up-to-date today as city dwellers.</p>
+
+            <p>However, taken all in all, it’s a nice story. There is room for improvement in the
+               dialogue and it seems to me a bit too much is made of the family, though as a whole,
+               it is in fact a family story.</p>
+
+            <p>I don’t see this as a starring vehicle for La Plante, because the sister of the flirt
+               is a more sympathetic role. However, the flirt is a great characterization.</p>
+         </div>
+      </body>
+   </text>
 </TEI>

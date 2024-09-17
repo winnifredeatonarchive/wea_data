@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Sunday’s Times</title>. <date>November 19__</date>.</bibl>
+                     <bibl><title level="a">Re: Sunday’s Times</title>. <date>November
+                        19__</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,39 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-SundaysTimes1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <byline>INTER-OFFICE COMMUNICATION</byline>
+            <dateline>
+               <date>November 19__<note type="editorial">Date unwritten in original.</note></date>
+            </dateline>
+            <byline>To <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From <name
+                  ref="pers:WE1">Mrs. Reeve</name></byline>
+         </opener>
+         <div>
+
+
+            <p>In case this little review may have escaped your notice in Sunday’s Times, I am <choice>
+                  <sic>ataching</sic>
+                  <corr>attaching</corr>
+               </choice> it herewith. It is not inapropos to say here that Norbert Lusk’s opinion is
+               worth that of half a dozen so-called local critics. I think there was a disposition
+               anyway to knife Miss Nolan and <q>Shanghai Lady</q>. But New York is the best
+               criterion of what is going to prove <q>box-office</q> at least it always has been in
+               the past. I hope Junior<note type="editorial" resp="pers:LW1">Possibly referring to
+                     <name ref="pers:CL3">Carl Laemmle Jr</name>.</note> sees this. </p>
+
+         </div>
+      </body>
+   </text>
 </TEI>

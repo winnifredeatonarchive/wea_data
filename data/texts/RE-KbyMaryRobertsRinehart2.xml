@@ -14,6 +14,10 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -31,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: K by Mary Roberts Rinehart 2</title>. <date when="1930-01-22">January 22nd, 30</date>.</bibl>
+                     <bibl><title level="a">Re: K by Mary Roberts Rinehart 2</title>. <date
+                           when="1930-01-22">January 22nd, 30</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -59,17 +65,47 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-KbyMaryRobertsRinehart2">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <body>
+         <opener>
+            <dateline>
+               <date>January 22nd, 30</date>
+            </dateline>
+            <byline><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+            <byline>cc<name ref="pers:CL3">Mr. Carl Laemmle Jr</name>.</byline>
+         </opener>
+         <div>
+            <p>RE: <q>K</q> by <name ref="pers:MRR1">Mary Roberts Rinehart</name></p>
+
+            <p>Supplementing my previous memo, I have since read the continuity of this story, and
+               which probably was used for the picture we produced.</p>
+
+            <p>This contains considerable stuff that is not in the book. This is by way of comedy of
+               an exaggerated nature but very popular a number of years ago. As, for instance, the
+               old familiar stuff of the squabbling youths calling upon the heroine - - one losing
+               the seat of his pants and unable to turn around, the other turning the lawn sprinkler
+               on his rival, the other retaliating by hurling ripe tomatoes in his face. Also we
+               have familiar trio of spinster gossips all nodding and shaking their heads in unison
+               as they retail the tid-bits or big bits of scandal of the town, and quite a bit of
+               footage is given to the old time picnic with the popular games etc.</p>
+
+            <p>I dare say the above contributed in considerable measure to the success of the
+               picture because I know that this sort of slap-stick comedy was much liked as that
+               time, but it is very doubtful indeed, whether it would click today with a motion
+               picture audience. </p>
+
+
+         </div>
+      </body>
+   </text>
 </TEI>
