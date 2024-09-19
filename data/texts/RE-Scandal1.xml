@@ -66,7 +66,9 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
-         <change who="pers:LW1" when="2024-09-17" status="published">Added pers ref for Laura La Plante.</change>
+         <change who="pers:LW1" when="2024-09-19" status="published">Using fw to try to capture letter formatting. Using type=continued for now but is likely incorrect.</change>
+         <change who="pers:LW1" when="2024-09-17" status="published">Added pers ref for Laura La
+            Plante.</change>
          <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed, encoded.
             Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
@@ -78,6 +80,11 @@
    </teiHeader>
    <text facs="facs:RE-Scandal1">
       <body>
+         <fw type="continued" place="right"><date>January 26th 30</date></fw>
+         <fw type="continued" place="left"><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name></fw>
+         <fw type="continued" place="left"><name ref="pers:WE1">Winnifred Reeve</name></fw>
+         <fw type="continued" place="center">RE: <q>SCANDAL</q></fw>
+<!-- Using fw to try to capture letter formatting. Using type=continued for now but is likely incorrect. -->
          <opener>
             <dateline>
                <date>January 26th 30</date>

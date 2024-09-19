@@ -10,6 +10,14 @@
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
             </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -27,23 +35,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Knight of the Sea</title>. <date when="1929-11-02">November 2, 29</date>.</bibl>
+                     <bibl><title level="a">Re: Knight of the Sea</title>. <date when="1929-11-02"
+                           >November 2, 29</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -55,17 +65,80 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-17" status="published">Added pers ref for Laura La
+            Plante.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-KnightOfTheSea1">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <pb n="1"/>
+      <body>
+         <opener>
+            <dateline>
+               <date>November 2, 29</date>
+            </dateline>
+            <byline><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name>
+               <name ref="pers:WE1">Winnifred Reeve</name></byline>
+         </opener>
+
+         <div type="content">
+
+            <p>RE: KNIGHT OF THE <choice>
+                  <sic>SEA.By:</sic>
+                  <corr>SEA. By:</corr>
+               </choice> X. Martin Smith</p>
+
+            <p>You will recall that I spoke to you the other day about an old sea story which had
+               been brought to my attention by a young lady in the Publicity department -- one of
+               the writers there. She told me that <name ref="pers:JS2">Joseph Schildkraut</name>
+               was very much interested in it and that it was concerned with <name ref="pers:JPJ1"
+                  >John Paul Jones</name> and there was a background of the old sailing ships and
+               the chantees of those times.</p>
+            <p>You asked me to get hold of the manuscript and yesterday <name ref="pers:JS2"
+                  >Schildkraut’s</name> manager brought it to my office. He made the remark that
+                  <name ref="pers:JS2">Mr. Schildkraut</name> liked it very much.</p>
+            <p>I read the story in part and I thought I would tell you that it is a very schoalrly
+               and thoughtful piece of work on which I can see Mr. Smith has put a great deal fo
+               time and probably enthusiasm.</p>
+            <p>I know that the first opinion of a reader would be that it is too invovled, too
+               historic, too episodic. Nevertheless if one cares to dig deeply enough into this work
+               I think it is possible to discover a tremendous theme for a novelty super-picture. It
+               is not written or constructed according to preconceived movie formula but the stuff
+               is there <choice>
+                  <sic>none the less</sic>
+                  <corr>nonetheless</corr>
+               </choice> though it makes tedious reading in the first part and we would need to
+               contrive a better romance as far as the love story is concerned. Also we would need
+               to do away with all the biographical, rather woodenly told, data. I can comprehend
+               the sincerity with which this author set out to tell his story.</p>
+            <p><name ref="pers:JPJ1">John Paul Jones</name> would make a great hero for a big
+               picture. Every child in the United States and in every other country -- grown up
+                  children<pb n="2"/><fw type="pageNum" place="center">-2-</fw> too, know of the
+                  <name ref="pers:JPJ1"><q>Father of the American Navy</q></name> as he is called in
+               history.</p>
+            <p>I forgot to mention that there is the greatest sea fight described in this story that
+               I’ve read.</p>
+            <p>I believe the author has given us an authentic and vivid story of a great national
+               hero. I don’t see why a picture of the American Revolution would not prove
+               tremendously successful at this time and if tied up with a story with a salty flavor
+               of the sea it might be something totally new. For that reason I recommend that we do
+               not dismiss this story without further serious consideration.</p>
+            <p>I’ve never met and do not know the writer of <q>KNIGHT OF THE SEA</q> but was told by
+               the young lady whose name I don’t recall that he is a <choice>
+                  <sic>navel</sic>
+                  <corr>naval</corr>
+               </choice> officer so I dare say he knows his subject well.</p>
+
+
+
+
+         </div>
+      </body>
+   </text>
 </TEI>
