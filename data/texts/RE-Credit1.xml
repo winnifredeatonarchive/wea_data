@@ -10,7 +10,7 @@
                <resp>Transcriber</resp>
                <name ref="pers:SH1"/>
             </respStmt>
-            
+
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
@@ -78,22 +78,26 @@
    </teiHeader>
    <text facs="facs:RE-Credit1">
       <body>
-         <opener>
-            <dateline>
-               <date>November 25, 1929.</date>
-            </dateline>
-            <byline>To: <name ref="pers:CGS1">Mr. C. Gardner Sullivan</name> From: <name
-                  ref="pers:WE1">Mrs. Reeve</name></byline>
-         </opener>
-         <div>
-            <p>RE: <emph>CREDIT</emph></p>
+
+         <fw type="continued" place="right"><date>November 25, 1929.</date></fw>
+         <fw type="continued" place="left">To:&#160;<name ref="pers:CGS1">Mr. C. Gardner
+               Sullivan</name></fw>
+         <fw type="continued" place="right">From:&#160;<name ref="pers:WE1">Mrs. Reeve</name></fw>
+         <fw type="continued" place="center">RE:&#160;<emph>CREDIT</emph></fw>
+
+         <div type="content">
+
+
 
             <p>I am going to ask that I be given credit for the original story as well as the
                dialogue of <q>BARBARY COAST</q>. <name ref="pers:CL2">Charley Logue</name> should
                share credit with me for the story inasmuch as although I wrote the story he
                contributed much by his suggestions in the plotting.</p>
+         </div>
 
-            <p>RE: <emph>CARNIVAL</emph></p>
+         <div type="content">
+
+            <fw type="continued" place="center">RE:&#160;<emph>CARNIVAL</emph></fw>
 
             <p>May I also be given the full credit for the screen story and dialogue, I wrote this
                in its entirety - a detailed script with dialogue of eighty-six pages practically
