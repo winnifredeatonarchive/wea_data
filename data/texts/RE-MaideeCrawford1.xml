@@ -10,7 +10,7 @@
                <resp>Transcriber</resp>
                <name ref="pers:FK1"/>
             </respStmt>
-            
+
             <respStmt>
                <resp>Encoder</resp>
                <name ref="pers:LW1">Leean Wu</name>
@@ -36,23 +36,25 @@
                     </msIdentifier>-->
                <msContents>
                   <msItem>
-                     <bibl><title level="a">Re: Maidee Crawford 1</title>. <date when="1939-01-23">January 23rd, 1939</date>.</bibl>
+                     <bibl><title level="a">Re: Maidee Crawford 1</title>. <date when="1939-01-23"
+                           >January 23rd, 1939</date>.</bibl>
                   </msItem>
                </msContents>
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -65,30 +67,39 @@
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-19" status="published">Reformatted.</change>
          <change who="pers:LW1" when="2024-09-12" status="published">Transcribed, proofed, encoded.
             Set to published.</change>
          <change who="pers:LW1" when="2024-02-02" status="empty">Added date.</change>
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-MaideeCrawford1">
       <body>
-         <opener>
-            
-            <dateline>
-               <date>January 23rd, 1929</date>
-            </dateline>
-              <byline><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name>    <name
-               ref="pers:WE1">Winnifred Reeve</name></byline>
-         </opener>
-         
+
+         <fw type="continued" place="right"><date>January 23rd, 1929</date></fw>
+         <fw type="continued" place="left"><name ref="pers:CGS1">Mr. C. Gardner Sullivan</name></fw>
+         <fw type="continued" place="right"><name ref="pers:WE1">Winnifred Reeve</name></fw>
+
+
          <div type="content">
-            
-            <p>With reference to the attached communication from <name ref="pers:MC3">Maidee Crawford</name>:</p>
-            <p>All that I know about <name ref="pers:MC3">Miss Crawford</name> is that she was the Censor on the lot when I was here before as story editor. I believe she did <choice><sic>her work her work</sic><corr>her work</corr></choice> very efficiently. She also once or twice told me that she could do continuity but I do not believe she was ever given a script to do so. Neither have I ever read any story by her.</p>
-            <p>She is a very ambitious young woman and, I think has some executive ability. She dropped in to see me last week but I only had a few words with her as I was very busy at the time.</p>
+
+            <p>With reference to the attached communication from <name ref="pers:MC3">Maidee
+                  Crawford</name>:</p>
+            <p>All that I know about <name ref="pers:MC3">Miss Crawford</name> is that she was the
+               Censor on the lot when I was here before as story editor. I believe she did <choice>
+                  <sic>her work her work</sic>
+                  <corr>her work</corr>
+               </choice> very efficiently. She also once or twice told me that she could do
+               continuity but I do not believe she was ever given a script to do so. Neither have I
+               ever read any story by her.</p>
+            <p>She is a very ambitious young woman and, I think has some executive ability. She
+               dropped in to see me last week but I only had a few words with her as I was very busy
+               at the time.</p>
          </div>
       </body>
-    </text>
+   </text>
 </TEI>
