@@ -10,6 +10,18 @@
                <resp>Transcriber</resp>
                <name ref="pers:PB1"/>
             </respStmt>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1">Leean Wu</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -33,17 +45,18 @@
                <additional>
                   <adminInfo>
                      <availability>
-                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of Calgary.</p>
+                        <p>Facsimile retrieved from Winnifred Eaton Reeve Fonds at University of
+                           Calgary.</p>
                      </availability>
                   </adminInfo>
                   <surrogates>
-                            <!--Add other editions of this text using a bibl element with
+                     <!--Add other editions of this text using a bibl element with
                                 a target pointing to its bibl-->
-                            <!--
+                     <!--
                         <bibl target="bibl:ABCD1"/>
                         <bibl><distributor/>, <idno/></bibl>
                      -->
-                        </surrogates>
+                  </surrogates>
                </additional>
             </msDesc>
          </sourceDesc>
@@ -55,16 +68,55 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourceMS"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
-         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary Transcribe-a-thon.</change>
-         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl file.</change>
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-09-27" status="published">Transcribed, proofed, encoded.
+            Set to published.</change>
+         <change who="pers:JT1" when="2024-01-05" status="empty">Adding document from 2023 Calgary
+            Transcribe-a-thon.</change>
+         <change who="pers:JT1" when="2020-07-30" status="empty">Created shell from bibl
+            file.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:RE-BarbaryCoast2">
-        <body>
-            <div>
-                <gap reason="noTranscriptionAvailable"/>
-            </div>
-        </body>
-    </text>
+      <pb n="1"/>
+      <body>
+         <fw type="continued" place="center">INTER-OFFICE COMMUNICATION</fw>
+         <fw type="continued" place="right"><date>19__</date></fw>
+         <fw type="continued" place="left">To&#160;<name ref="pers:CGS1">Mr. C. Gardner
+               Sullivan</name></fw>
+         <fw type="continued" place="right">From&#160;<name ref="pers:WE1">Mrs. Reeve</name></fw>
+
+         <div type="content">
+
+            <p>I am going to take the liberty of asking for a bonus for my work on <q>Barbary
+                  Coast</q>. At the time I signed my contract <name ref="pers:CL3">Junior
+                  Laemmle</name> mentioned that he would give me a bonus on stories I worked on. As
+               you know, I have worked steadily and skillfully and have delivered my scripts in
+               record time. <q>Barbary Coast</q> moreover is an original story and it is unique. Mr.
+               Robertson told me that he could shoot the picture right from my eighty-five page
+               story with just breaking it up.</p>
+
+            <p>I understand that I am receiving the lowest salary of any of the scenario writers
+               here with one exception. I am not complaining especially so long as I am granted some
+               sort of recognition and bonus when I write an original story or a treatment that is
+               practically an original which was the case with <q>Ropes</q>, but I do feel that
+               without this encouragement and incentive I could hardly feel the enthusiasm necessary
+               when one is at work upon a story.</p>
+
+            <p>I might point out the fact that <q>Shanghai Lady</q> is enjoying a big success now.
+                  <name ref="pers:DA2">Del Andrews</name> told me that <q>Ropes</q> is even better
+               and I am quite sure that both <q>Barbary Coast</q> and <q>Carnival</q> will top
+               these.</p>
+
+            <p>I am especially grateful to you for your kindness to me and I know that you are the
+               one person in this industry who was able to bring out my capabilities. Under your
+               guidance I <pb n="2"/> feel as if there is no limits to the work I can do. At the
+               same time, I am not unmindful of the fact that the work I have done owed much of its
+               inspiration to you. I know there was absolutely no changes or suggestions that you
+               made that I did not try faithfully to follow and that did not immensely improve the
+               work.</p>
+
+         </div>
+      </body>
+   </text>
 </TEI>

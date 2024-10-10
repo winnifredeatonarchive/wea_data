@@ -6,6 +6,18 @@
       <fileDesc>
          <titleStmt>
             <title>Books [<title level="m">The Bond Triumphant</title>, part 1]</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -14,7 +26,12 @@
             <msDesc>
                <msContents>
                   <msItem>
-                     <bibl><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Books [<title level="m">The Bond Triumphant</title>, part 1]</title>. <publisher ref="org:Albertan"><title level="j">The Morning Albertan</title></publisher>, <date when="1923-08-07">August 7, 1923</date>, p. <biblScope unit="page">4</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Also condemns Maclean’s, a Canadian publication, for giving first prize to an American novel, Thoroughbred]</note>--></bibl>
+                     <bibl><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title
+                           level="a">Books [<title level="m">The Bond Triumphant</title>, part
+                           1]</title>. <publisher ref="org:Albertan"><title level="j">The Morning
+                              Albertan</title></publisher>, <date when="1923-08-07">August 7,
+                           1923</date>, p. <biblScope unit="page"
+                        >4</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Also condemns Maclean’s, a Canadian publication, for giving first prize to an American novel, Thoroughbred]</note>--></bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -41,14 +58,44 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2024-10-01" status="published">Completed. Set to
+            published.</change>
          <change who="pers:JT1" when="2024-08-19" status="empty">Created document.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:BooksLiteraryNotesGrahame1">
       <body>
+         <head>BOOKS</head>
+         <opener>
+            <byline>(By <name ref="pers:WE1">Winnifred Reeve</name>)</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>The first instalment of the prize novel, <q>The Bond Triumphant</q>, by <name
+                  ref="pers:GG2">Gordon Hill Grahame</name>, in the July 1 issue of the MacLean’s
+               Magazine, has created such excitement and indignation in Catholic circles, that the
+               publishers of this magazine announce the discontinuance of the serial. In a strong
+               editorial in the Catholic Register and Canadian Extension, the novel is denounced as:
+                  <q>A misrepresentation of things Catholic, a distortion of facts, a caricature of
+                  the Catholic priesthood, a gross libel on <name ref="pers:FL1">Laval</name>, a
+                  tissue of historical inaccuracies</q>, and so forth. This excoriating editorial is
+               followed by another in the same paper by L. Minehan in defense of the <q>great
+                  prelate, great patriot, great humanitarian</q>, <name ref="pers:FL1">Bishop
+                  Laval</name>, whom, it would appear, <name ref="pers:GG2">Mr. Grahame</name>’s
+               novel has pictured in unflattering terms. MacLean’s Magazine now announce that <q>The
+                  Bond Triumphant</q> is to be substituted by <name ref="pers:NW1">Mrs. Wilson
+                  Woodrow</name>’s novel, <q>Thoroughbred</q>.</p>
+            <p>The second prize in this novel contest was taken by a resident of Calgary, <name
+                  ref="pers:FW1">Mrs. Flos Jewel Williams</name>, and it would seem as if her novel,
+                  <q>The <choice>
+                     <sic>Judgment</sic>
+                     <corr>Judgement</corr>
+                  </choice> of Solomon</q>, was the proper vehicle to take the place of the
+               discarded serial. Particularly so, in view of the fact that MacLean’s have always
+               harped upon the fact that they are an <q>all-Canadian</q> magazine, and, as such,
+               solicit subscriptions throughout Canada. I am an admirer of the American author,
+                  <name ref="pers:NW1">Mrs. Wilson Woodrow</name>, but in a Canadian prize novel
+               contest one naturally looks for a novel by a Canadian.</p>
          </div>
       </body>
    </text>
