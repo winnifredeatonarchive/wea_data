@@ -341,6 +341,13 @@
     <xsl:template match="head/descendant::note | head/descendant::app | head/descendant::lb | head/descendant::gap | head/descendant::label | head/descendant::anchor" mode="toc"/>
     
     <xd:doc>
+        <xd:desc>Strip any links from the TOC, since it's going be linked</xd:desc>
+    </xd:doc>
+    <xsl:template match="head/descendant::name | head/descendant::persName | head/descendant::ref | head/descendant::orgName" mode="toc">
+        <xsl:apply-templates select="node()" mode="#current"/>
+    </xsl:template>
+    
+    <xd:doc>
         <xd:desc>Attributes to delete, since we don't want this styling in the TOC.</xd:desc>
     </xd:doc>
     <xsl:template match="@style | @rendition" mode="toc"/>
