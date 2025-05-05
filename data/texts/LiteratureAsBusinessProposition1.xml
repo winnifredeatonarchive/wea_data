@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
-     xml:id="LiteratureAsBusinessProposition1">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="LiteratureAsBusinessProposition1">
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Literature as a Business Proposition</title>
+            <respStmt>
+               <resp>Transcriber</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Proofreader</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
+            <respStmt>
+               <resp>Encoder</resp>
+               <name ref="pers:LW1"/>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -15,7 +26,12 @@
             <msDesc>
                <msContents>
                   <msItem>
-                     <bibl><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title level="a">Literature as a Business Proposition</title>. <publisher ref="org:Albertan"><title level="j">The Morning Albertan</title></publisher>, <date when="1923-11-26">November 26, 1923</date>, pp. <biblScope unit="page">4, 14</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Full version of <title level="a">Literature as a Profession</title>. I think — but also great]</note>--></bibl>
+                     <bibl><author><name ref="pers:WE1">Reeve, Winnifred</name></author>. <title
+                           level="a">Literature as a Business Proposition</title>. <publisher
+                           ref="org:Albertan"><title level="j">The Morning
+                           Albertan</title></publisher>, <date when="1923-11-26">November 26,
+                           1923</date>, pp. <biblScope unit="page">4,
+                        14</biblScope>.<!--<note xmlns="http://www.tei-c.org/ns/1.0">[Full version of <title level="a">Literature as a Profession</title>. I think — but also great]</note>--></bibl>
                   </msItem>
                </msContents>
                <additional>
@@ -42,14 +58,187 @@
             <catRef scheme="wdt:docType" target="wdt:docPrimarySourcePublished"/>
          </textClass>
       </profileDesc>
-      <revisionDesc status="empty">
+      <revisionDesc status="published">
+         <change who="pers:LW1" when="2025-05-04" status="published"></change>
          <change who="pers:JT1" when="2024-08-19" status="empty">Created document.</change>
       </revisionDesc>
    </teiHeader>
    <text facs="facs:LiteratureAsBusinessProposition1">
       <body>
+         <head>LITERATURE AS A BUSINESS PROPOSITION</head>
+         <opener>
+            <byline>(By <name ref="pers:WE1">WINNIFRED REEVE</name>)</byline>
+         </opener>
          <div>
-            <gap reason="noTranscriptionAvailable"/>
+            <p>The average business man has only a hazy idea concerning the men and women who write,
+               and of the value of their product. He looks upon writers as impractical folks engaged
+               in an unrenumerative and uncertain employment. Sometimes he goes farther and
+               desingates them as <q>nuts</q>.</p>
+
+            <p>Nevertheless these <q>nuts</q> produce material that make immense fortunes and give
+               employment to thousands of people. Without the writers there would be no publishing
+               houses, no newspapers, no magazines; the gramophone would be silent—for composers are
+               authors of music—advertising agencies and literary brokers would close up shop and
+               the printing enterprises would be at a standstill. The motion picture industry, which
+               is said to be the fourth great business in the United States today, could not carry
+               on without the author. The theaters would close their doors, for the actor could not
+               act without a play written by an author.</p>
+
+            <p>Until recent years the author received but a minimum of the profits that accrue from
+               his work. Though possessed with the power of making fortunes for others, he suffered
+               through his own business inability and he was the prey and the victim of the very
+               ones who became rich through his labor.</p>
+
+            <p><name ref="pers:BH1">Bret Harte</name>’s daughter died in the poorhouse. Yet <name>Bret
+               Harte</name>’s publishers are in the millionaire class. <q>Ben Hur</q>, I
+               am told, sold for the nominal sum of $1000. It is impossible to estimate the enormous
+               returns that poured into the coffers of the publishers of that story and the
+               producers of the play.</p>
+
+            <p><name ref="pers:GM3">Du Maurier</name> sold <q>Trillby</q> for $500 to the publishers and the novel
+               ran into edition after edition, had an enormous success as a play and is running now
+               to crowded houses in the movies. I could mention a score of instances of literary
+               property that has made fortunes for its publishers and for which the author has
+               received scarcely anything.</p>
+
+            <p>But all that is of the past. The author today is no longer a long-haired, dreamy
+               freak of nature. His house may not be as large as the financial magnate’s; few
+               authors ride in Rolls-Royces, and some of them still have bank rolls as thin as their
+               clothes, but this is the day when at all events in such countries as the United
+               States and Englanad his interests are safeguarded and his country realizes his
+               importance and his value. Someone—I think it was Mark Twain—started a
+               campaign in the United States to organize the authors even as the labor unions were
+               doing. Incidentally, Mark Twain himself died a millionaire.</p>
+
+            <p>There came into being the Authors’ League of America. It set out to teach the authors
+               the value of their product and to direct him into the way he should dispose of it. So
+               strong did this league become that I believe there was scarcely an author in the
+               United States who did not enrol. I was myself one of the charter members. The author
+               now says in effect to the publisher: <q>Authors can live without publishers.
+                  Publishers cannot live without authors, for authors can themselves become
+                  publishers, but publishers cannot become authors, because the author is born—not
+                  made</q>. He said practically the same thing to the theatrical manager and to the
+               magazine editors. The author sent his emissaries to Washington and they said in effect
+               to the legislators there: <q>You have been rooting long enough for the other
+                  fellow—the fellow who is sitting on the back of the author. We are here to see
+                  that you change the laws so that they will be made just and right, and if you do
+                  not give us justice, every pen in this country will be used to expose and condemn
+                  you</q>. <q>The pen is mightier than the sword</q>, goes the old adage, and few
+               men in public life could withstand the onslaught of the united men and women who
+               controlled the nation’s pen.</p>
+
+            <p>The laws were changed. Literary brigandage became a dangerous and a criminal game
+               that brought a heavy penalty. Copyright laws were framed to protect and not merely to
+               exploit the author. His children’s rights in that property after his death were
+               safeguarded. Piracy of the work of an American author is punishable with a heavy
+               penalty under the law. This is only a small part of what the coming together of the
+               authors brought to pass.</p>
+
+            <p>Today the annual earnings of a popular and successful author compare with the salary
+               of the president of the United States. I know personally several authors who are
+               earning fifty or sixty thousand dollars a year, and some of them have cleared a cool
+               million. I myself, when in New York seven years ago, made an average of ten thousand
+               a year, and I made $60,000 from one book alone. I am speaking in terms of dollars and
+               cents because I want to make clear the fact that literature represents one of the
+               most profitable enterprises in the world.</p>
+
+            <p>The point I wish especially to bring out is this: Canada might very well have a share
+               in the profits as well as the prestige that accrues from the product of the authors.
+               Such an enterprise—and I am calling it by a business term—should be cultivated and
+               encouraged. It should grow and expand here in Canada as it has in the United States.
+               Under present conditions, Canada’s authors who have not gone over to the States are
+               driven to earn their living by other means than their pen. Our market is small and
+               sometimes mean. We have few periodicals that pay well—and a snubishness exists which
+               sometimes turns the Canadian editor’s eye greedily toward the work of authors in
+               other countries. Our publishers are doing the best they can for the author, but we
+               need the support and sympathy of the Canadian public. We need protection from men who
+               frame laws that are levelled at our craft. The present copyright law is a disgrace to
+               Canada. No self-respecting author could do otherwise than resent its terms. Our work
+               is not only open to piracy, but we are discriminated against in favor of those who
+               were born in other lands. Under the terms of the law, the Canadian, born in England
+               or other lands is exempted while the native born Canadian author is ham-strung.</p>
+
+            <p>I wrote and spoke to <name ref="pers:JL1">Sir James Lougheed</name> concerning this law. He denied
+               that he had sponsored it. He said it was a government measure. He said that we had to
+               have a copyright law and that this was the best they could do at that time. He stated
+               that he realized it was not perfect, but they were beset by the labor unions at the
+               time. Now no emergency, however pressing, is justification for a wrong. Kicking one
+               man in order to make another laugh is not good work. I cannot see that even the labor
+               unions would desire to profit at the expense of another craft.</p>
+
+            <p>We know that this country is in sore need of both capital and immigration. It does us
+               no good to hug to ourselves the secret that this country possesses immense mineral
+               and agricultural resources; that its climate is unrivalled, and that this might
+               become the real Land of Opportunity and Promise, if only we could bring to it the
+               right sort of people. The only way in which we can do this is by the most intensive
+               kind of publicity, and the greatest publicity conveyors that this country possesses
+               are its authors. Professional advertising and publicity stuff cannot compete with the
+               work that the author can do. <name ref="pers:HL1">Longfellow</name>’s <q>Evangeline</q> did more to
+               show the world the lovely land of Nova Scotia than a ton of adveritising would have
+               done.</p>
+
+            <p>We all know what has happened to Canada through not having authors of her own to
+               describe her to the world. Charlatans of the pen from other lands have come to this
+               country for short visits and returned to exploit the country in books, magazines and
+               upon the screen. None of us relish being depicted in the weird and wild fashion that
+               Canadians are revealed in snow stories to the world. A young woman here in Calgary
+               recently returned from abroad, and in London she was induced by friends to go to see
+               a <q>Canadian</q> play in a local theater. They described it as <q>wonderful</q>, and
+               it was written by an English dramatist who should have known better. She stayed but
+               for the first act. It was a scene in Calgary. The curtain rose on a rough bar-room.
+               (The dramatist by the way ignored the prohibition laws existing at the time). Upon
+               the bar leaned a noble mounted policeman. He wore, of course, the red coat, but as he
+               had just come in from riding in a wild storm, his legs were encased in chaps made of
+               tiger skins. Dancing alternately on the bar, the chairs and tables and the floor was
+               a young Calgary girl arrayed in pink skin tights and some <name ref="pers:MP4">Mary Pickford</name>
+               curls. From the corner table a villainous looking French-Canuck snevgalied <choice>
+                  <sic>har</sic>
+                  <corr>her</corr>
+               </choice>. Presently the door burst open, and a fearful blast of hail and wind and
+               snow and icicles and everything that the Canadian climate alone produces rushed in
+               through the door, bearing with it a pitiful young Indian girl, around whose head was
+               a red ribbon in which was struck a turkey feather at the back, and who was dressed in
+               a beaded skirt something like they use in the can-can ballet dances. With her white
+               papoose hugged to her back she cast one anguished glance at the dancing girl in
+               tights, and then her bold outraged eyes lighted upon the man in the corner, now
+               shrinking back against the wall. A pause and the Indian girl leaped at the white girl.
+               They struggled back and forth while crawling from beneath the bar came an aged Indian
+               chief, father of the wronged girl. He wiggled his way in full sight of all, yet
+               unseen by them, across that Calgary bar-room, till suddenly he was upon the neck of
+               the <choice>
+                  <sic>terrifeid</sic>
+                  <corr>terrified</corr>
+               </choice> French-Canuck, and a moment later he had scalped him neatly from neck to
+               brow.</p>
+
+            <p>Now, there’s a Canadian play for you. True, is it not? Do you imagine that anyone who
+               sees it will pine to come to Canada? But think:</p>
+
+            <p>Supposing a Canadian author should write a play or a story of this country.
+               Supposing, instead of showing the land all garbed in snow and ice, he revealed the
+               wide spreading fields of grain, the blue sungilt skies, the noble mountains rising
+               like a miracle across the horizon. Supposing he showed something of the spirit, of
+               the feeling of tip-topness which we all feel here—the feeling that makes a man hold
+               his chest up and walking along with a spring to his feet. Supposing the Canadian
+               author took his pen and with a loving full heart wrote a role that was redolent with
+               color and romance, that fascinated and enthralled its readers, would not then this
+               country seem not only a desirable place to visit, but the veritable land of promise.
+               Only the Canadian author can tell the true Canadian story, and do not think that
+               among our writers we have not the talent—aye, genius needed for such a work. The two
+               most distinctive novels published in New York last year were the work of Canadians—I
+               refer to Maria Chapdelaine and to <name ref="pers:MP2">Marjorie Pickthall</name>’s
+                  <q>The Bridge</q>. Yet the author of Maria Chapdelaine was a hired man on an
+               Ontario farm who was run over by a train and buried as a tramp. It is true he was
+               born in France, but he was <choice>
+                  <sic>saturateed</sic>
+                  <corr>saturated</corr>
+               </choice> with the lore and the love of his adopted Canada. <name ref="pers:MP2"
+                  >Marjorie Pickthall</name> lived only a few years after she had achieved
+               recognition and fame. There are many other Canadian authors, equally talented. They
+               need only encouragement and a chance to make a livelihood in a country where laws are
+               not enacted especially to discriminate against their craft.</p>
+
+
          </div>
       </body>
    </text>
