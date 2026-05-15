@@ -152,6 +152,11 @@
         </div>
     </xsl:template>
     
+    <xsl:template match="figure/bibl" mode="tei">
+        <figcaption>
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </figcaption>
+    </xsl:template>
 
     
     <xsl:template match="list" priority="1" mode="tei">
