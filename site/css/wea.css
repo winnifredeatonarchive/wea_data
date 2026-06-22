@@ -2064,6 +2064,49 @@ div[data-type='listFigure'] img{
     border-color:var(--wea-pink);
     transition: border-color 0.25s ease-in-out;
 }
+/* ***************************************************** TIMELINE DECADE NAV ********** */
+#timeline .decadeNav{
+    position: sticky;
+    top: var(--header-height);
+    z-index: 7000;
+    background: var(--wea-header-bg-color);
+    border-bottom: 1px solid #dedede;
+    margin: 0 0 1.5rem 0;
+    padding: 0.4rem 0.5rem;
+}
+#timeline .decadeNav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem 0.4rem;
+    margin: 0;
+    padding: 0;
+}
+#timeline .decadeNav li{
+    margin: 0;
+}
+#timeline .decadeNav a{
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--wea-pink);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    text-decoration: none;
+    color: var(--wea-pink);
+    white-space: nowrap;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+#timeline .decadeNav a:hover,
+#timeline .decadeNav a:focus{
+    background: var(--wea-pink);
+    color: #fff;
+}
+/* Offset jump targets so they clear both the header and the sticky decade nav */
+#timeline #mainBody [data-el='event'][id]{
+    scroll-margin-top: calc(var(--header-height) + 3.5rem);
+}
 
 
 

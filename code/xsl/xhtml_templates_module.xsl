@@ -151,7 +151,40 @@
             <xsl:apply-templates mode="#current"/>
         </div>
     </xsl:template>
+    <!--TIMELINE DECADE NAVIGATION.-->
+    <xsl:template match="listEvent[ancestor::TEI/@xml:id='timeline']" mode="tei" priority="2">
+        <xsl:variable name="decades" as="xs:integer*"
+                      select="distinct-values(for $e in event return xs:integer(floor(number($e/@when) div 10) * 10))"/>
+        <nav class="decadeNav" aria-label="Jump to decade">
+            <ul>
+                <xsl:for-each select="$decades">
+                    <xsl:sort select="." order="ascending"/>
+                    <li><a href="#d{.}s"><xsl:value-of select="."/>s</a></li>
+                </xsl:for-each>
+            </ul>
+        </nav>
+        <div>
+            <xsl:call-template name="processAtts"/>
+            <xsl:apply-templates select="event" mode="#current">
+                <xsl:sort select="@when" order="ascending"/>
+            </xsl:apply-templates>
+        </div>
+    </xsl:template>
     
+    <!--Timeline events -->
+    <xsl:template match="event[@when][ancestor::TEI/@xml:id='timeline']" mode="tei" priority="2">
+        <xsl:variable name="dec" select="xs:integer(floor(number(@when) div 10) * 10)"/>
+        <xsl:variable name="isFirstOfDecade" as="xs:boolean"
+                      select="empty(preceding-sibling::event[xs:integer(floor(number(@when) div 10) * 10) = $dec])"/>
+        <div>
+            <xsl:if test="$isFirstOfDecade">
+                <xsl:attribute name="id" select="concat('d', $dec, 's')"/>
+            </xsl:if>
+            <xsl:call-template name="processAtts"/>
+            <div data-el="label"><xsl:value-of select="@when"/></div>
+            <xsl:apply-templates mode="#current"/>
+        </div>
+    </xsl:template>
     <xsl:template match="figure/bibl" mode="tei">
         <figcaption>
             <xsl:apply-templates select="node()" mode="#current"/>
