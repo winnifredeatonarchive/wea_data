@@ -157,7 +157,7 @@
                       select="distinct-values(for $e in event return xs:integer(floor(number($e/@when) div 10) * 10))"/>
         <nav class="decadeNav" aria-label="Jump to decade">
             <ul>
-                <xsl:for-each select="$decades">
+                <xsl:for-each select="$decades[. ge 1850]">
                     <xsl:sort select="." order="ascending"/>
                     <li><a href="#d{.}s"><xsl:value-of select="."/>s</a></li>
                 </xsl:for-each>

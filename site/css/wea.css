@@ -2077,7 +2077,8 @@ div[data-type='listFigure'] img{
 #timeline .decadeNav ul{
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: center;
     gap: 0.3rem 0.4rem;
     margin: 0;
