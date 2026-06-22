@@ -2150,19 +2150,22 @@ div[data-type='listFigure'] img{
     border-bottom: 1px solid #dedede;
     margin: 0 0 1.5rem 0;
     padding: 0.4rem 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 #timeline .decadeNav ul{
     list-style: none;
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: center;
-    gap: 0.3rem 0.4rem;
-    margin: 0;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto;
     padding: 0;
+    gap: 0.3rem 0.4rem;
 }
 #timeline .decadeNav li{
     margin: 0;
+    flex: 0 0 auto;
 }
 #timeline .decadeNav a{
     display: inline-block;
@@ -2181,7 +2184,7 @@ div[data-type='listFigure'] img{
     background: var(--wea-pink);
     color: #fff;
 }
-/* Offset jump targets so they clear both the header and the sticky decade nav */
+/* Offset jump targets so they clear BOTH the header and the sticky decade nav */
 #timeline #mainBody [data-el='event'][id]{
     scroll-margin-top: calc(var(--header-height) + 3.5rem);
 }
