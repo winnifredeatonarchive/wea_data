@@ -2165,6 +2165,9 @@ div[data-type='listFigure'] img{
 }
 #timeline .decadeNav li{
     margin: 0;
+    /* Reset the global list rules (li{padding-left:1.5em} and
+       li + li{padding-top:.25em}) that otherwise leak in and skew the pills. */
+    padding: 0;
     flex: 0 0 auto;
 }
 #timeline .decadeNav a{

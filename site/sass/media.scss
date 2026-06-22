@@ -631,4 +631,38 @@ fieldset{
     width:100%;
 }
 
+/* ***** TIMELINE***** */
+#timeline [data-el="listEvent"]{
+    margin-left: 0;
+    width: 100%;
+}
+#timeline [data-el='event'],
+#timeline [data-el='event']:nth-of-type(2n){
+    width: 100%;
+    right: auto;
+    border-left: 5px solid pink;
+    border-right: none;
+    padding: 1.25rem 0;
+}
+#timeline [data-el='event'] > *,
+#timeline [data-el='event']:nth-of-type(2n) > *{
+    text-align: left;
+    padding-left: 1.25rem;
+    padding-right: 0.75rem;
+}
+#timeline [data-el='event'] > div[data-el='p'],
+#timeline [data-el='event']:nth-of-type(2n) > div[data-el='p']{
+    padding-left: 1.25rem;
+    padding-right: 0.75rem;
+}
+/* Smaller year label so it fits a narrow column */
+#timeline [data-el='event'] [data-el='label']{
+    font-size: 1.5rem;
+}
+/* Let the decade nav scroll from the left edge rather than centring
+   (centred max-content + overflow can clip the first pills on mobile) */
+#timeline .decadeNav ul{
+    margin: 0;
+}
+
 }
