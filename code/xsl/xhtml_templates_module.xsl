@@ -96,6 +96,9 @@
             <xsl:if test="ancestor::TEI/@xml:id='statistics'">
                 <script src="js/statistics.js" type="module"><!--Keep open--></script>
             </xsl:if>
+            <xsl:if test="ancestor::TEI/@xml:id='timeline'">
+                <script src="js/timeline.js?v={normalize-space($version)}"><!--Keep open--></script>
+            </xsl:if>
             <script src="js/accordion.js?v={normalize-space($version)}"><!--Keep open--></script>
             <script src="js/wea.js?v={normalize-space($version)}"/>
         </body>
@@ -157,10 +160,12 @@
                       select="distinct-values(for $e in event return xs:integer(floor(number($e/@when) div 10) * 10))"/>
         <nav class="decadeNav" aria-label="Jump to decade">
             <ul>
-                <xsl:for-each select="$decades[. ge 1850]">
+                <li class="decadeNav-jump"><a class="decadeNav-top" href="#top" aria-label="Jump to top of page" title="Top of page">&#8593;</a></li>
+                <xsl:for-each select="$decades[. ge 1830]">
                     <xsl:sort select="." order="ascending"/>
                     <li><a href="#d{.}s"><xsl:value-of select="."/>s</a></li>
                 </xsl:for-each>
+                <li class="decadeNav-jump"><a class="decadeNav-bottom" href="#bottom" aria-label="Jump to bottom of page" title="Bottom of page">&#8595;</a></li>
             </ul>
         </nav>
         <div>

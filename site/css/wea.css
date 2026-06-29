@@ -2088,6 +2088,9 @@ div[data-type='listFigure'] img{
 }
 #timeline .decadeNav li{
     margin: 0;
+    /* Reset the global list rules (li{padding-left:1.5em} and
+       li + li{padding-top:.25em}) that otherwise leak in and skew the pills. */
+    padding: 0;
     flex: 0 0 auto;
 }
 #timeline .decadeNav a{
@@ -2106,6 +2109,18 @@ div[data-type='listFigure'] img{
 #timeline .decadeNav a:focus{
     background: var(--wea-pink);
     color: #fff;
+}
+/* Current decade while scrolling (set by timeline.js) */
+#timeline .decadeNav a.active{
+    background: var(--wea-pink);
+    color: #fff;
+    font-weight: 600;
+}
+/* Up / down jump arrows: same pill shape, stay inline with the decades */
+#timeline .decadeNav a.decadeNav-top,
+#timeline .decadeNav a.decadeNav-bottom{
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
 }
 /* Offset jump targets so they clear BOTH the header and the sticky decade nav */
 #timeline #mainBody [data-el='event'][id]{
