@@ -924,7 +924,7 @@
                        <cell>Note</cell>
                    </row>
                    <xsl:for-each select="//person[@xml:id]">
-                       <row>
+                       <row xml:id="{@xml:id}">
                            <cell><ref target="{@xml:id}.html"><xsl:value-of select="@xml:id"/></ref></cell>
                            <cell><xsl:value-of select="wea:capitalize(parent::listPerson/@type)"/></cell>
                            <cell><xsl:sequence select="persName/reg/node()"/></cell>
@@ -949,7 +949,7 @@
                         <cell>Note</cell>
                     </row>
                     <xsl:for-each select="//org[@xml:id]">
-                        <row>
+                        <row xml:id="{@xml:id}">
                             <cell><ref target="{@xml:id}.html"><xsl:value-of select="@xml:id"/></ref></cell>
                             <cell><xsl:sequence select="orgName/node()"/></cell>
                             <cell><xsl:sequence select="note/node()"/></cell>
