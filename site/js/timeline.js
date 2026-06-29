@@ -1,72 +1,42 @@
-/* Timeline decade nav: highlight the current decade bubble while scrolling,
-   and wire up the top/bottom jump arrows. */
 (function () {
     "use strict";
+    Array.prototype.slice.call(document.querySelectorAll('.decadeNav')).forEach(initDecadeNav);
 
-    var nav = document.querySelector('#timeline .decadeNav');
-    if (!nav) { return; }
+    function initDecadeNav(nav) {
+        var links = Array.prototype.slice.call(nav.querySelectorAll('li:not(.decadeNav-jump) a'));
+        var sections = links.map(function (link) {
+            return { link: link, el: document.getElementById(link.getAttribute('href').slice(1)) };
+        }).filter(function (s) { return s.el; });
 
-    // The decade pills (skip the up/down arrows).
-    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#d"]'));
-
-    // Pair each pill with the section it points to.
-    var sections = links.map(function (link) {
-        return { link: link, el: document.getElementById(link.getAttribute('href').slice(1)) };
-    }).filter(function (s) { return s.el; });
-
-    function setActive(activeLink) {
-        links.forEach(function (l) {
-            l.classList.toggle('active', l === activeLink);
-        });
-        // Keep the highlighted pill in view inside the horizontal scroller.
-        if (activeLink && activeLink.scrollIntoView) {
-            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        function setActive(activeLink) {
+            links.forEach(function (l) { l.classList.toggle('active', l === activeLink); });
+            if (!activeLink) { return; }
+            // Scroll ONLY the nav strip horizontally — never the page/window.
+            var navR = nav.getBoundingClientRect(), linkR = activeLink.getBoundingClientRect();
+            if (linkR.left < navR.left) { nav.scrollLeft -= (navR.left - linkR.left) + 16; }
+            else if (linkR.right > navR.right) { nav.scrollLeft += (linkR.right - navR.right) + 16; }
         }
-    }
-
-    // Anything above this Y line counts as "passed" (clears the sticky nav).
-    function lineY() {
-        return nav.getBoundingClientRect().bottom + 8;
-    }
-
-    function onScroll() {
-        if (!sections.length) { return; }
-        var current = sections[0];
-        var y = lineY();
-        for (var i = 0; i < sections.length; i++) {
-            if (sections[i].el.getBoundingClientRect().top <= y) {
-                current = sections[i];
-            } else {
-                break;
+        function lineY() { return nav.getBoundingClientRect().bottom + 8; }
+        function onScroll() {
+            if (!sections.length) { return; }
+            var current = sections[0], y = lineY();
+            for (var i = 0; i < sections.length; i++) {
+                if (sections[i].el.getBoundingClientRect().top <= y) { current = sections[i]; }
+                else { break; }
             }
+            setActive(current.link);
         }
-        setActive(current.link);
-    }
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) { requestAnimationFrame(function () { onScroll(); ticking = false; }); ticking = true; }
+        }, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
 
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-        if (!ticking) {
-            window.requestAnimationFrame(function () { onScroll(); ticking = false; });
-            ticking = true;
-        }
-    }, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
+        var scroller = document.scrollingElement || document.documentElement;
+        var up = nav.querySelector('.decadeNav-top'), down = nav.querySelector('.decadeNav-bottom');
+        if (up) up.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        if (down) down.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: scroller.scrollHeight, behavior: 'smooth' }); });
 
-    // Up / down jump arrows.
-    var upBtn = nav.querySelector('.decadeNav-top');
-    var downBtn = nav.querySelector('.decadeNav-bottom');
-    if (upBtn) {
-        upBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        onScroll();
     }
-    if (downBtn) {
-        downBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-        });
-    }
-
-    onScroll();
 }());

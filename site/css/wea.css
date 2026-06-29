@@ -2116,11 +2116,26 @@ div[data-type='listFigure'] img{
     color: #fff;
     font-weight: 600;
 }
-/* Up / down jump arrows: same pill shape, stay inline with the decades */
-#timeline .decadeNav a.decadeNav-top,
-#timeline .decadeNav a.decadeNav-bottom{
-    font-weight: 700;
+/* Up / down jump arrows: <button>s styled to match the decade pills */
+.decadeNav button.decadeNav-top,
+.decadeNav button.decadeNav-bottom{
+    display: inline-block;
     padding: 0.2rem 0.6rem;
+    border: 1px solid var(--wea-pink);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--wea-pink);
+    font: inherit;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.decadeNav button.decadeNav-top:hover,  .decadeNav button.decadeNav-bottom:hover,
+.decadeNav button.decadeNav-top:focus,  .decadeNav button.decadeNav-bottom:focus{
+    background: var(--wea-pink);
+    color: #fff;
 }
 /* Offset jump targets so they clear BOTH the header and the sticky decade nav */
 #timeline #mainBody [data-el='event'][id]{
