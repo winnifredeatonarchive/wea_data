@@ -101,6 +101,20 @@ nav{
   width:unset;
 }
 
+/* The generic header `nav` rule above turns EVERY <nav> into a 3-column grid
+   on mobile, including the timeline's <nav class="decadeNav">. That grid
+   overflowed the page, which pushed the fixed header (width:100vw) and the
+   slide-in menu (position:fixed; right:0) off-screen and clipped content.
+   Keep the decade bar a horizontal scroller instead. */
+nav.decadeNav{
+  display: flex;
+  grid-template-columns: none;
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 1.5rem 0;
+  overflow-x: auto;
+}
+
 nav > a.home{
     grid-column-start: 2;
     margin-right:0;
