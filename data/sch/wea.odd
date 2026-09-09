@@ -3036,7 +3036,14 @@ Note that we <emph>do not</emph> tag expansions that could be abbreviated; only 
                <classSpec ident="att.transcriptional"
                           type="atts"
                           module="tei"
-                          mode="delete"/>
+                          mode="change">
+                  <attList>
+                     <attDef ident="status" mode="delete"/>
+                     <attDef ident="cause" mode="delete"/>
+                     <attDef ident="seq" mode="delete"/>
+                  </attList>
+               </classSpec>
+               <classSpec ident="att.editLike" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.partials" type="atts" module="tei" mode="delete"/>
                <classSpec ident="att.personal" type="atts" module="tei" mode="change">

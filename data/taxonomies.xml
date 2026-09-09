@@ -301,6 +301,7 @@
             <prefixDef ident="pgcolour" matchPattern="(.+)" replacementPattern="taxonomies.xml#$1"/>
             <prefixDef ident="weda" matchPattern="(.+)"
                replacementPattern="https://xtf.lib.virginia.edu/xtf/view?docId=modern_english/uvaGenText/tei/$1.xml"/>
+            <prefixDef ident="rsrc" matchPattern="(.+)" replacementPattern="resources/$1"/>
          </listPrefixDef>
          
       </encodingDesc>
