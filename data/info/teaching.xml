@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../sch/wea.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="teaching">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Teaching Winnifred Eaton</title>
+                
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <textClass>
+                <catRef scheme="wdt:docType"
+                    target="wdt:docBornDigital"/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc status="published">
+            <change when="2026-09-09" who="pers:JT1" status="published">Created file.</change>
+           
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <head>Teaching Winnifred Eaton</head>
+            <div>
+                <head>Syllabi and Assignments</head>
+                <list>
+                    <item></item>
+                </list>
+            </div>
+            <div>
+                <head>Student Projects</head>
+                <list>
+                    <item>Morgan Kelly (College of Charleston): <ref target="rsrc:Kelly-AContract.pdf">Edition</ref> of <title level="a">A Contract</title>, completed for J. Michael Duvall. </item>
+                </list>
+            </div>
+           
+        </body>
+    </text>
+</TEI>

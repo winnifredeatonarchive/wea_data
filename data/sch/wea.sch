@@ -152,9 +152,9 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:*[@source]">
          <sch:let name="srcs" value="tokenize( normalize-space(@source),' ')"/>
-         <sch:report test="( self::tei:classRef               | self::tei:dataRef               | self::tei:elementRef               | self::tei:macroRef               | self::tei:moduleRef               | self::tei:schemaSpec )               and               $srcs[2]">
+         <sch:report test="(   self::tei:classRef                                 | self::tei:dataRef                                 | self::tei:elementRef                                 | self::tei:macroRef                                 | self::tei:moduleRef                                 | self::tei:schemaSpec )                                   and                                   $srcs[2]">
               When used on a schema description element (like
-              <sch:value-of select="name(.)"/>), the @source attribute
+              &lt;<sch:value-of select="name(.)"/>&gt;), the @source attribute
               should have only 1 value. (This one has <sch:value-of select="count($srcs)"/>.)
             </sch:report>
       </sch:rule>
@@ -163,23 +163,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-att.typed-subtypeTyped-constraint-rule-6">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@subtype]">
-         <sch:assert test="@type">The <sch:name/> element should not be categorized in detail with @subtype unless also categorized in general with @type</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-att.pointing-targetLang-constraint-rule-7">
+            id="wea-att.pointing-targetLang-constraint-rule-6">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -188,14 +172,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:*[not(self::tei:schemaSpec)][@targetLang]">
-         <sch:assert test="@target">@targetLang should only be used on <sch:name/> if @target is specified.</sch:assert>
+         <sch:assert test="@target">@targetLang should only be used on &lt;<sch:name/>&gt; if @target is specified.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-8">
+            id="wea-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-7">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -204,9 +188,27 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:*[@schemeVersion]">
-         <sch:assert test="@scheme and not(@scheme = 'free')">
+         <sch:assert test="@scheme and not(@scheme eq 'free')">
               @schemeVersion can only be used if @scheme is specified.
             </sch:assert>
+      </sch:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+            xmlns:tei="http://www.tei-c.org/ns/1.0"
+            xmlns:teix="http://www.tei-c.org/ns/Examples"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            id="wea-att.typed-subtypeTyped-constraint-rule-8">
+      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
+                xmlns:math="http://www.w3.org/1998/Math/MathML"
+                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns:xi="http://www.w3.org/2001/XInclude"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                context="tei:*[@subtype]">
+         <sch:assert test="@type">
+          The &lt;<sch:name/>&gt; element should not be categorized in detail with @subtype unless also categorized in general with @type.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -224,7 +226,7 @@
                 context="tei:*[@calendar]">
          <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
               systems or calendars to which the date represented by the content of this element belongs,
-              but this <sch:name/> element has no textual content.</sch:assert>
+              but this &lt;<sch:name/>&gt; element has no textual content.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
@@ -241,7 +243,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:p">
          <sch:report test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
-          Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
+          Abstract model violation: Paragraphs may not occur inside other paragraphs or &lt;ab&gt; elements.
         </sch:report>
       </sch:rule>
    </pattern>
@@ -249,7 +251,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-p-abstractModel-structure-p-in-l-or-lg-constraint-rule-11">
+            id="wea-p-abstractModel-structure-p-in-l-constraint-rule-11">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -257,10 +259,10 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:p">
-         <sch:report test="( ancestor::tei:l  or  ancestor::tei:lg ) and                        not( ancestor::tei:floatingText                           | parent::tei:figure                           | parent::tei:note )">
-          Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
-        </sch:report>
+                context="tei:l//tei:p">
+         <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, &lt;p&gt;, or &lt;ab&gt;, unless &lt;p&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
@@ -317,42 +319,6 @@
         type="deprecationInfo"&gt;.</sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-name-calendar-check-name-constraint-rule-15">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-name-calendar-calendar-check-name-constraint-rule-16">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -392,7 +358,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-ptr-ptrAtts-constraint-rule-19">
+            id="wea-ptr-ptrAtts-constraint-rule-17">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -401,14 +367,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:ptr">
-         <sch:report test="@target and @cRef">Only one of the attributes @target and @cRef may be supplied on <sch:name/>.</sch:report>
+         <sch:report test="@target and @cRef">Only one of the attributes @target and @cRef may be supplied on &lt;<sch:name/>&gt;.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-ref-refAtts-constraint-rule-20">
+            id="wea-ref-refAtts-constraint-rule-18">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -417,15 +383,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:ref">
-         <sch:report test="@target and @cRef">Only one of the attributes @target' and @cRef' may be supplied on <sch:name/>
-         </sch:report>
+         <sch:report test="@target and @cRef">Only one of the attributes @target and @cRef may be supplied on &lt;<sch:name/>&gt;.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-list-gloss-list-must-have-labels-constraint-rule-21">
+            id="wea-list-gloss-list-must-have-labels-constraint-rule-19">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -434,7 +399,11 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:list[@type='gloss']">
-         <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
+         <sch:assert test="tei:label">
+          The content of a "gloss" list should include a sequence of
+          one or more pairs of a &lt;label&gt; element followed by an
+          &lt;item&gt; element.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
@@ -474,7 +443,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-note-note.editorialOnesShouldFollowTrailingPunct-constraint-rule-24">
+            id="wea-note-note.editorialOnesShouldFollowTrailingPunct-constraint-rule-22">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -636,78 +605,6 @@
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-author-calendar-check-author-constraint-rule-34">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-author-calendar-calendar-check-author-constraint-rule-35">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-editor-calendar-calendar-check-editor-constraint-rule-36">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-resp-calendar-calendar-check-resp-constraint-rule-37">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -724,42 +621,6 @@
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-title-calendar-check-title-constraint-rule-39">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-title-calendar-calendar-check-title-constraint-rule-40">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -845,7 +706,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-l-abstractModel-structure-l-in-l-constraint-rule-46">
+            id="wea-l-abstractModel-structure-l-in-l-constraint-rule-38">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -854,14 +715,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:l">
-         <sch:report test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">Abstract model violation: Lines may not contain lines or lg elements.</sch:report>
+         <sch:report test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain &lt;l&gt; or &lt;lg&gt; elements.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-lg-atleast1oflggapl-constraint-rule-47">
+            id="wea-lg-atleast1oflggapl-constraint-rule-39">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -870,14 +731,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:lg">
-         <sch:assert test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 0">An lg element must contain at least one child l, lg, or gap element.</sch:assert>
+         <sch:assert test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 0">An &lt;lg&gt; element must contain at least one child &lt;l&gt;, &lt;lg&gt;, or &lt;gap&gt; element.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-lg-abstractModel-structure-lg-in-l-constraint-rule-48">
+            id="wea-lg-abstractModel-structure-lg-in-l-constraint-rule-40">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -906,42 +767,6 @@
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-idno-calendar-calendar-check-idno-constraint-rule-50">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-licence-calendar-calendar-check-licence-constraint-rule-51">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -963,7 +788,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-quotation-quotationContents-constraint-rule-53">
+            id="wea-quotation-quotationContents-constraint-rule-43">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -973,7 +798,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:quotation">
          <sch:report test="not( @marks )  and  not( tei:p )">
-          On <sch:name/>, either the @marks attribute should be used, or a paragraph of description provided
+          On &lt;<sch:name/>&gt;, either the @marks attribute should be used, or a paragraph of description provided.
         </sch:report>
       </sch:rule>
    </pattern>
@@ -1053,24 +878,6 @@
                               </sch:assert>
       </sch:rule>
    </sch:pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-change-calendar-calendar-check-change-constraint-rule-61">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1123,7 +930,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-link-linkTargets3-constraint-rule-65">
+            id="wea-link-linkTargets3-constraint-rule-53">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1132,15 +939,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:link">
-         <sch:assert test="contains(normalize-space(@target),' ')">You must supply at least two values for @target or  on <sch:name/>
-         </sch:assert>
+         <sch:assert test="contains(normalize-space(@target),' ')">You must supply at least two values for @target on &lt;<sch:name/>&gt;.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-ab-abstractModel-structure-ab-in-l-or-lg-constraint-rule-66">
+            id="wea-ab-abstractModel-structure-ab-in-l-constraint-rule-54">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1148,17 +954,17 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:ab">
-         <sch:report test="(ancestor::tei:l or ancestor::tei:lg) and not( ancestor::tei:floatingText |parent::tei:figure |parent::tei:note )">
-          Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
-        </sch:report>
+                context="tei:l//tei:ab">
+         <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level divisions such as &lt;p&gt; or &lt;ab&gt;, unless &lt;ab&gt; is a child of &lt;figure&gt; or &lt;note&gt;, or is a descendant of &lt;floatingText&gt;.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-msDesc-one_ms_singleton_max-constraint-rule-67">
+            id="wea-msDesc-one_ms_singleton_max-constraint-rule-55">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1169,7 +975,7 @@
                 context="tei:msContents|tei:physDesc|tei:history|tei:additional">
          <sch:let name="gi" value="name(.)"/>
          <sch:report test="preceding-sibling::*[ name(.) eq $gi ]                           and                           not( following-sibling::*[ name(.) eq $gi ] )">
-          Only one <sch:name/> is allowed as a child of <sch:value-of select="name(..)"/>.
+          Only one &lt;<sch:name/>&gt; is allowed as a child of &lt;<sch:value-of select="name(..)"/>&gt;.
         </sch:report>
       </sch:rule>
    </pattern>
@@ -1177,7 +983,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-msIdentifier-msId_minimal-constraint-rule-68">
+            id="wea-msIdentifier-msId_minimal-constraint-rule-56">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1186,187 +992,7 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:msIdentifier">
-         <sch:report test="not( parent::tei:msPart )                           and                           ( child::*[1]/self::idno  or  child::*[1]/self::altIdentifier  or  normalize-space(.) eq '')">An msIdentifier must contain either a repository or location.</sch:report>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-orgName-calendar-calendar-check-orgName-constraint-rule-69">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-persName-calendar-check-persName-constraint-rule-70">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-persName-calendar-calendar-check-persName-constraint-rule-71">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-placeName-calendar-calendar-check-placeName-constraint-rule-72">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-birth-calendar-calendar-check-birth-constraint-rule-73">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-death-calendar-calendar-check-death-constraint-rule-74">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-event-calendar-calendar-check-event-constraint-rule-75">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-            systems or calendars to which the date represented by the content of this element belongs,
-            but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-location-calendar-calendar-check-location-constraint-rule-76">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-nationality-calendar-calendar-check-nationality-constraint-rule-77">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-occupation-calendar-calendar-check-occupation-constraint-rule-78">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-                        systems or calendars to which the date represented by the content of this element belongs,
-                        but this <sch:name/> element has no textual content.</sch:assert>
+         <sch:report test="not( parent::tei:msPart )                           and                           ( child::*[1]/self::idno  or  child::*[1]/self::altIdentifier  or  normalize-space(.) eq '')">An &lt;msIdentifier&gt; must contain either a &lt;repository&gt; or &lt;location&gt;.</sch:report>
       </sch:rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
@@ -1444,7 +1070,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-relation-ref-or-key-or-name-constraint-rule-83">
+            id="wea-relation-ref-or-key-or-name-constraint-rule-61">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1453,14 +1079,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:relation">
-         <sch:assert test="@ref or @key or @name">One of the attributes @name, @ref or @key must be supplied</sch:assert>
+         <sch:assert test="@ref or @key or @name">One of the attributes @name, @ref or @key must be supplied.</sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-relation-active-mutual-constraint-rule-84">
+            id="wea-relation-active-mutual-constraint-rule-62">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1469,14 +1095,14 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:relation">
-         <sch:report test="@active and @mutual">Only one of the attributes @active and @mutual may be supplied</sch:report>
+         <sch:report test="@active and @mutual">Only one of the attributes @active and @mutual may be supplied.</sch:report>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-relation-active-passive-constraint-rule-85">
+            id="wea-relation-active-passive-constraint-rule-63">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1485,25 +1111,7 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:relation">
-         <sch:report test="@passive and not(@active)">the attribute @passive may be supplied only if the attribute @active is supplied</sch:report>
-      </sch:rule>
-   </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            xmlns:tei="http://www.tei-c.org/ns/1.0"
-            xmlns:teix="http://www.tei-c.org/ns/Examples"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-relation-calendar-calendar-check-relation-constraint-rule-86">
-      <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
-                xmlns:math="http://www.w3.org/1998/Math/MathML"
-                xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns:xi="http://www.w3.org/2001/XInclude"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:*[@calendar]">
-         <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
-              systems or calendars to which the date represented by the content of this element belongs,
-              but this <sch:name/> element has no textual content.</sch:assert>
+         <sch:report test="@passive and not(@active)">the attribute @passive may be supplied only if the attribute @active is supplied.</sch:report>
       </sch:rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
@@ -1526,7 +1134,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-div-abstractModel-structure-div-in-l-or-lg-constraint-rule-88">
+            id="wea-div-abstractModel-structure-div-in-l-constraint-rule-65">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1534,17 +1142,17 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                context="tei:div">
-         <sch:report test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
-          Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
-        </sch:report>
+                context="tei:l//tei:div">
+         <sch:assert test="ancestor::tei:floatingText">
+          Abstract model violation: Metrical lines (&lt;l&gt; elements) may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
+        </sch:assert>
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-89">
+            id="wea-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-66">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1554,7 +1162,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:div">
          <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
-          Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
+          Abstract model violation: &lt;p&gt; and &lt;ab&gt; may not contain higher-level structural elements such as &lt;div&gt;, unless &lt;div&gt; is a descendant of &lt;floatingText&gt;.
         </sch:report>
       </sch:rule>
    </pattern>
@@ -1562,7 +1170,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-90">
+            id="wea-att.global.facs-facs.mustStartWithFacs-constraint-rule-67">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1582,7 +1190,7 @@
             xmlns:tei="http://www.tei-c.org/ns/1.0"
             xmlns:teix="http://www.tei-c.org/ns/Examples"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            id="wea-subst-substContents1-constraint-rule-91">
+            id="wea-subst-substContents1-constraint-rule-68">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:math="http://www.w3.org/1998/Math/MathML"
                 xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
@@ -1592,7 +1200,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 context="tei:subst">
          <sch:assert test="child::tei:add and (child::tei:del or child::tei:surplus)">
-            <sch:name/> must have at least one child add and at least one child del or surplus</sch:assert>
+        &lt;<sch:name/>&gt; must have at least one child &lt;add&gt; and at least one child &lt;del&gt; or &lt;surplus&gt;.</sch:assert>
       </sch:rule>
    </pattern>
    <sch:pattern xmlns="http://www.tei-c.org/ns/1.0"
