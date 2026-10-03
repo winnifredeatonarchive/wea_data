@@ -59,7 +59,7 @@ Publicly accessible
                   <msItem>
                      <bibl xml:id="bibl30"><author><name ref="pers:WE1">Watanna, Onoto</name></author>.
                      <title level="a">An Unexpected Grandchild</title>. <publisher ref="org:Lippincott"><title level="j">Lippincott’s Monthly</title></publisher>,
-                  volume <biblScope unit="volume">84</biblScope>, <date when="1909-12">Dec.
+                  vol. <biblScope unit="volume">84</biblScope>, <date when="1909-12">Dec.
                      1909</date>, pp. <biblScope unit="page">684-700</biblScope>.</bibl>
                   </msItem>
                </msContents>
@@ -86,6 +86,7 @@ Publicly accessible
          </textClass>
       </profileDesc>
       <revisionDesc status="published">
+         <change who="pers:LA1" when="2026-10-03" status="published">Changed volume to vol. in bibl for consistency.</change>
          <change who="pers:JT1" when="2023-11-23" status="published">Added citation from bibliography.xml to <gi>sourceDesc</gi> using utilities/msdesc.xsl.</change>
          <change who="pers:JT1" when="2023-04-02" status="published">Adding <gi>relatedItem</gi>s and <gi>notesStmt</gi>.</change>
          <change who="pers:JT1" when="2020-08-15" status="published">Removed primary source people from <gi>respStmt</gi> using XSLT.</change>
