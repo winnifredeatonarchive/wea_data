@@ -2015,7 +2015,9 @@ footer > div
     margin-top:1rem;
 }
 
-[data-el='listBibl']:not([data-order='chrono']) .bibl > span:first-of-type{
+/* Bold only a leading author. Previously any first span was bolded, so author-less entries
+   rendered their journal title (e.g. The Morning Albertan) in bold italics. */
+[data-el='listBibl']:not([data-order='chrono']) .bibl > span[data-el='author']:first-child{
     font-weight:500;
 }
 
@@ -2142,6 +2144,9 @@ div[data-type='listFigure'] img{
     transition: border-color 0.25s ease-in-out;
 }
 /* ***************************************************** TIMELINE DECADE NAV ********** */
+#timeline #text{
+    min-width: 0;
+}
 #timeline .decadeNav{
     position: sticky;
     top: var(--header-height);

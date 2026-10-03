@@ -38,7 +38,8 @@
                     <head><xsl:value-of select="current-grouping-key()"/></head>
                     <listBibl>
                         <xsl:apply-templates select="current-group()" mode="removeId">
-                            <xsl:sort select="date"/>
+                            <!-- Sort by the machine-readable date, not the display text (which sorted "Apr." before "Feb.") -->
+                            <xsl:sort select="(date/@when, date/@notBefore, date/@from, string(date))[1]"/>
                         </xsl:apply-templates>
                     </listBibl>
         
